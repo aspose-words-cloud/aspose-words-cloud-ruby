@@ -1,4 +1,6 @@
-----------------------------------------------------------------------------------
+
+ #
+ # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="GetDocumentHyperlinksRequest.rb">
  #   Copyright (c) 2017 Aspose.Words for Cloud
  # </copyright>
@@ -62,6 +64,4 @@ class GetDocumentHyperlinksRequest
 		end
 	
 	end
-end
- #
- # ----------------------------------------------
+end

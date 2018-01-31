@@ -1,4 +1,6 @@
-----------------
+
+ #
+ # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="GetDocumentDrawingObjectOleDataRequest.rb">
  #   Copyright (c) 2017 Aspose.Words for Cloud
  # </copyright>
@@ -72,6 +74,4 @@ class GetDocumentDrawingObjectOleDataRequest
 		end
 	
 	end
-end
- #
- # --------------------------------------------------------
+end

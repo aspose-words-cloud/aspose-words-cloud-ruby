@@ -1,4 +1,6 @@
---------------
+
+ #
+ # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="PostInsertDocumentWatermarkTextRequest.rb">
  #   Copyright (c) 2017 Aspose.Words for Cloud
  # </copyright>
@@ -82,6 +84,4 @@ class PostInsertDocumentWatermarkTextRequest
 		end
 	
 	end
-end
- #
- # --------------------------------------------------------------------------------
+end

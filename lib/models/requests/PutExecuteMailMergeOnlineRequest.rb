@@ -1,4 +1,6 @@
-----------------------------------------------------------------
+
+ #
+ # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="PutExecuteMailMergeOnlineRequest.rb">
  #   Copyright (c) 2017 Aspose.Words for Cloud
  # </copyright>
@@ -57,6 +59,4 @@ class PutExecuteMailMergeOnlineRequest
 		end
 	
 	end
-end
- #
- # ------------------------------------------------
+end

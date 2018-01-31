@@ -1,4 +1,7 @@
-copyright company="Aspose" file="PostDocumentExecuteMailMergeRequest.rb">
+
+ #
+ # --------------------------------------------------------------------------------------------------------------------
+ # <copyright company="Aspose" file="PostDocumentExecuteMailMergeRequest.rb">
  #   Copyright (c) 2017 Aspose.Words for Cloud
  # </copyright>
  # <summary>
@@ -91,7 +94,4 @@ class PostDocumentExecuteMailMergeRequest
 		end
 	
 	end
-end
- #
- # --------------------------------------------------------------------------------------------------------------------
- # <
+end

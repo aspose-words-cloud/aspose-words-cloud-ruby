@@ -1,4 +1,6 @@
-----------------------------------------------------------------------------------------------
+
+ #
+ # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="PutCreateDocumentRequest.rb">
  #   Copyright (c) 2017 Aspose.Words for Cloud
  # </copyright>
@@ -52,6 +54,4 @@ class PutCreateDocumentRequest
 		end
 	
 	end
-end
- #
- # ------------------------
+end

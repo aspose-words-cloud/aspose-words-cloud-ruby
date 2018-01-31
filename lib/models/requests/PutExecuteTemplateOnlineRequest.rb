@@ -1,4 +1,6 @@
---------------------------------------------------------------------
+
+ #
+ # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="PutExecuteTemplateOnlineRequest.rb">
  #   Copyright (c) 2017 Aspose.Words for Cloud
  # </copyright>
@@ -62,6 +64,4 @@ class PutExecuteTemplateOnlineRequest
 		end
 	
 	end
-end
- #
- # --------------------------------------------
+end

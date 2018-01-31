@@ -1,4 +1,6 @@
---------------------------------------------------------------------------------------------
+
+ #
+ # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="PutDocumentFieldNamesRequest.rb">
  #   Copyright (c) 2017 Aspose.Words for Cloud
  # </copyright>
@@ -47,11 +49,4 @@ class PutDocumentFieldNamesRequest
 		end
 	
 	end
-end
- #
- # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose" file="putDocumentSaveAsTiffRequest.rb">
- #   Copyright (c) 2017 Aspose.Words for Cloud
- # </copyright>
- # <summary>
- # 
+end

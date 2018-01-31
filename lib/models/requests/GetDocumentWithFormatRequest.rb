@@ -1,4 +1,6 @@
---------------------------------------------
+
+ #
+ # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="GetDocumentWithFormatRequest.rb">
  #   Copyright (c) 2017 Aspose.Words for Cloud
  # </copyright>
@@ -77,6 +79,4 @@ class GetDocumentWithFormatRequest
 		end
 	
 	end
-end
- #
- # ----------------------------
+end

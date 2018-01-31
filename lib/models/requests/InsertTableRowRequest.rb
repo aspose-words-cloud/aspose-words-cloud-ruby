@@ -1,4 +1,6 @@
--------------------------------------------------------
+
+ #
+ # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="InsertTableRowRequest.rb">
  #   Copyright (c) 2017 Aspose.Words for Cloud
  # </copyright>
@@ -87,6 +89,4 @@ class InsertTableRowRequest
 		end
 	
 	end
-end
- #
- # ----------------------------------------------------------
+end

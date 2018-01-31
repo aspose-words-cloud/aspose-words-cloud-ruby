@@ -1,4 +1,6 @@
-----------------------------------------------------------
+
+ #
+ # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="RenderMathObjectRequest.rb">
  #   Copyright (c) 2017 Aspose.Words for Cloud
  # </copyright>
@@ -82,6 +84,4 @@ class RenderMathObjectRequest
 		end
 	
 	end
-end
- #
- # --------------------------------
+end

@@ -1,4 +1,6 @@
-------------------------
+
+ #
+ # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="UpdateTableRowFormatRequest.rb">
  #   Copyright (c) 2017 Aspose.Words for Cloud
  # </copyright>

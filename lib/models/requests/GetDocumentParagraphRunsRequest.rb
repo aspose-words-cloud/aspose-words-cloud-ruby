@@ -1,4 +1,6 @@
-------------------------------------------------------------
+
+ #
+ # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="GetDocumentParagraphRunsRequest.rb">
  #   Copyright (c) 2017 Aspose.Words for Cloud
  # </copyright>
@@ -67,6 +69,4 @@ class GetDocumentParagraphRunsRequest
 		end
 	
 	end
-end
- #
- # ----------------------------------------
+end

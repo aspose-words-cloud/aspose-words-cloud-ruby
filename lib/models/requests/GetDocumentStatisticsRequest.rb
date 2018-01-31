@@ -1,4 +1,6 @@
-----------------------------------------------------------------
+
+ #
+ # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="GetDocumentStatisticsRequest.rb">
  #   Copyright (c) 2017 Aspose.Words for Cloud
  # </copyright>
@@ -77,6 +79,4 @@ class GetDocumentStatisticsRequest
 		end
 	
 	end
-end
- #
- # ------------------------------------------------
+end

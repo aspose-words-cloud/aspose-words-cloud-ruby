@@ -1,4 +1,6 @@
-----------------------------------------
+
+ #
+ # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="PostDrawingObjectRequest.rb">
  #   Copyright (c) 2017 Aspose.Words for Cloud
  # </copyright>
@@ -97,6 +99,4 @@ class PostDrawingObjectRequest
 		end
 	
 	end
-end
- #
- # ----------------------------------------------------------------
+end

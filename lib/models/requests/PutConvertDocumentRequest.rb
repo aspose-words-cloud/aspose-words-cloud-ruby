@@ -1,4 +1,6 @@
-----------------------------------------------------------------------------------
+
+ #
+ # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="PutConvertDocumentRequest.rb">
  #   Copyright (c) 2017 Aspose.Words for Cloud
  # </copyright>
@@ -62,6 +64,4 @@ class PutConvertDocumentRequest
 		end
 	
 	end
-end
- #
- # ----------------------
+end

@@ -1,4 +1,6 @@
---------------------------------------------------------------------
+
+ #
+ # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="GetDocumentTextItemsRequest.rb">
  #   Copyright (c) 2017 Aspose.Words for Cloud
  # </copyright>
@@ -62,6 +64,4 @@ class GetDocumentTextItemsRequest
 		end
 	
 	end
-end
- #
- # ------------------------------------------------------------------------
+end

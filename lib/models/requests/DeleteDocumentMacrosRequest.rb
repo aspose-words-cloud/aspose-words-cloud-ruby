@@ -1,4 +1,6 @@
-----------------------------------------------------------------
+
+ #
+ # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="DeleteDocumentMacrosRequest.rb">
  #   Copyright (c) 2017 Aspose.Words for Cloud
  # </copyright>
@@ -77,6 +79,4 @@ class DeleteDocumentMacrosRequest
 		end
 	
 	end
-end
- #
- # ----------------------------------------------------------
+end
