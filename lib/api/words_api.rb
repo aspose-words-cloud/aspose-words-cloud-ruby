@@ -40,13 +40,7 @@ module RubySDK
 
     # Accept all revisions in document
     # 
-    # @param name The document name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+	# @param request AcceptAllRevisionsRequest
     # @return [RevisionsModificationResponse]
     def accept_all_revisions(request)
       data, _status_code, _headers = accept_all_revisions_with_http_info(request)
@@ -55,13 +49,7 @@ module RubySDK
 
     # Accept all revisions in document
     # 
-    # @param name The document name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+    # # @param request AcceptAllRevisionsRequest
     # @return [Array<(RevisionsModificationResponse, Fixnum, Hash)>] RevisionsModificationResponse data, response status code and response headers
     def accept_all_revisions_with_http_info(request)
 	  unless request.is_a? AcceptAllRevisionsRequest
@@ -115,17 +103,7 @@ module RubySDK
 
     # Add new or update existing document property.
     # 
-    # @param name The document name.
-    # @param property_name The property name.
-    # @param property The property with new value.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
+	# @param request CreateOrUpdateDocumentPropertyRequest
     # @return [DocumentPropertyResponse]
     def create_or_update_document_property(request)
       data, _status_code, _headers = create_or_update_document_property_with_http_info(request)
@@ -134,17 +112,7 @@ module RubySDK
 
     # Add new or update existing document property.
     # 
-    # @param name The document name.
-    # @param property_name The property name.
-    # @param property The property with new value.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
+    # # @param request CreateOrUpdateDocumentPropertyRequest
     # @return [Array<(DocumentPropertyResponse, Fixnum, Hash)>] DocumentPropertyResponse data, response status code and response headers
     def create_or_update_document_property_with_http_info(request)
 	  unless request.is_a? CreateOrUpdateDocumentPropertyRequest
@@ -209,17 +177,7 @@ module RubySDK
 
     # Resets border properties to default values.             
     # 'nodePath' should refer to node with cell or row
-    # @param name The document name.
-    # @param node_path Path to node with border(node should be cell or row).
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
+	# @param request DeleteBorderRequest
     # @return [BorderResponse]
     def delete_border(request)
       data, _status_code, _headers = delete_border_with_http_info(request)
@@ -228,17 +186,7 @@ module RubySDK
 
     # Resets border properties to default values.             
     # &#39;nodePath&#39; should refer to node with cell or row
-    # @param name The document name.
-    # @param node_path Path to node with border(node should be cell or row).
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
+    # # @param request DeleteBorderRequest
     # @return [Array<(BorderResponse, Fixnum, Hash)>] BorderResponse data, response status code and response headers
     def delete_border_with_http_info(request)
 	  unless request.is_a? DeleteBorderRequest
@@ -304,16 +252,7 @@ module RubySDK
 
     # Resets borders properties to default values.             
     # 'nodePath' should refer to node with cell or row
-    # @param name The document name.
-    # @param node_path Path to node with borders(node should be cell or row).
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
+	# @param request DeleteBordersRequest
     # @return [BordersResponse]
     def delete_borders(request)
       data, _status_code, _headers = delete_borders_with_http_info(request)
@@ -322,16 +261,7 @@ module RubySDK
 
     # Resets borders properties to default values.             
     # &#39;nodePath&#39; should refer to node with cell or row
-    # @param name The document name.
-    # @param node_path Path to node with borders(node should be cell or row).
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
+    # # @param request DeleteBordersRequest
     # @return [Array<(BordersResponse, Fixnum, Hash)>] BordersResponse data, response status code and response headers
     def delete_borders_with_http_info(request)
 	  unless request.is_a? DeleteBordersRequest
@@ -392,16 +322,7 @@ module RubySDK
 
     # Remove comment from document.
     # 
-    # @param name The file name.
-    # @param comment_index Comment index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
+	# @param request DeleteCommentRequest
     # @return [AsposeResponse]
     def delete_comment(request)
       data, _status_code, _headers = delete_comment_with_http_info(request)
@@ -410,16 +331,7 @@ module RubySDK
 
     # Remove comment from document.
     # 
-    # @param name The file name.
-    # @param comment_index Comment index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
+    # # @param request DeleteCommentRequest
     # @return [Array<(AsposeResponse, Fixnum, Hash)>] AsposeResponse data, response status code and response headers
     def delete_comment_with_http_info(request)
 	  unless request.is_a? DeleteCommentRequest
@@ -480,15 +392,7 @@ module RubySDK
 
     # Remove macros from document.
     # 
-    # @param name The file name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
+	# @param request DeleteDocumentMacrosRequest
     # @return [AsposeResponse]
     def delete_document_macros(request)
       data, _status_code, _headers = delete_document_macros_with_http_info(request)
@@ -497,15 +401,7 @@ module RubySDK
 
     # Remove macros from document.
     # 
-    # @param name The file name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
+    # # @param request DeleteDocumentMacrosRequest
     # @return [Array<(AsposeResponse, Fixnum, Hash)>] AsposeResponse data, response status code and response headers
     def delete_document_macros_with_http_info(request)
 	  unless request.is_a? DeleteDocumentMacrosRequest
@@ -561,16 +457,7 @@ module RubySDK
 
     # Delete document property.
     # 
-    # @param name The document name.
-    # @param property_name The property name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
+	# @param request DeleteDocumentPropertyRequest
     # @return [AsposeResponse]
     def delete_document_property(request)
       data, _status_code, _headers = delete_document_property_with_http_info(request)
@@ -579,16 +466,7 @@ module RubySDK
 
     # Delete document property.
     # 
-    # @param name The document name.
-    # @param property_name The property name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
+    # # @param request DeleteDocumentPropertyRequest
     # @return [Array<(AsposeResponse, Fixnum, Hash)>] AsposeResponse data, response status code and response headers
     def delete_document_property_with_http_info(request)
 	  unless request.is_a? DeleteDocumentPropertyRequest
@@ -649,15 +527,7 @@ module RubySDK
 
     # Delete watermark (for deleting last watermark from the document).
     # 
-    # @param name The document name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
+	# @param request DeleteDocumentWatermarkRequest
     # @return [DocumentResponse]
     def delete_document_watermark(request)
       data, _status_code, _headers = delete_document_watermark_with_http_info(request)
@@ -666,15 +536,7 @@ module RubySDK
 
     # Delete watermark (for deleting last watermark from the document).
     # 
-    # @param name The document name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
+    # # @param request DeleteDocumentWatermarkRequest
     # @return [Array<(DocumentResponse, Fixnum, Hash)>] DocumentResponse data, response status code and response headers
     def delete_document_watermark_with_http_info(request)
 	  unless request.is_a? DeleteDocumentWatermarkRequest
@@ -730,17 +592,7 @@ module RubySDK
 
     # Removes drawing object from document.
     # 
-    # @param name The file name.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [String] :node_path Path to node, which contains collection of drawing objects.
+	# @param request DeleteDrawingObjectRequest
     # @return [AsposeResponse]
     def delete_drawing_object(request)
       data, _status_code, _headers = delete_drawing_object_with_http_info(request)
@@ -749,17 +601,7 @@ module RubySDK
 
     # Removes drawing object from document.
     # 
-    # @param name The file name.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [String] :node_path Path to node, which contains collection of drawing objects.
+    # # @param request DeleteDrawingObjectRequest
     # @return [Array<(AsposeResponse, Fixnum, Hash)>] AsposeResponse data, response status code and response headers
     def delete_drawing_object_with_http_info(request)
 	  unless request.is_a? DeleteDrawingObjectRequest
@@ -821,17 +663,7 @@ module RubySDK
 
     # Delete field from document.
     # 
-    # @param name The file name.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [String] :node_path Path to node, which contains collection of fields.
+	# @param request DeleteFieldRequest
     # @return [AsposeResponse]
     def delete_field(request)
       data, _status_code, _headers = delete_field_with_http_info(request)
@@ -840,17 +672,7 @@ module RubySDK
 
     # Delete field from document.
     # 
-    # @param name The file name.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [String] :node_path Path to node, which contains collection of fields.
+    # # @param request DeleteFieldRequest
     # @return [Array<(AsposeResponse, Fixnum, Hash)>] AsposeResponse data, response status code and response headers
     def delete_field_with_http_info(request)
 	  unless request.is_a? DeleteFieldRequest
@@ -912,16 +734,7 @@ module RubySDK
 
     # Remove fields from section paragraph.
     # 
-    # @param name The file name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [String] :node_path Path to node, which contains collection of fields.
+	# @param request DeleteFieldsRequest
     # @return [AsposeResponse]
     def delete_fields(request)
       data, _status_code, _headers = delete_fields_with_http_info(request)
@@ -930,16 +743,7 @@ module RubySDK
 
     # Remove fields from section paragraph.
     # 
-    # @param name The file name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [String] :node_path Path to node, which contains collection of fields.
+    # # @param request DeleteFieldsRequest
     # @return [Array<(AsposeResponse, Fixnum, Hash)>] AsposeResponse data, response status code and response headers
     def delete_fields_with_http_info(request)
 	  unless request.is_a? DeleteFieldsRequest
@@ -996,17 +800,7 @@ module RubySDK
 
     # Removes footnote from document.
     # 
-    # @param name The file name.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [String] :node_path Path to node, which contains collection of footnotes.
+	# @param request DeleteFootnoteRequest
     # @return [AsposeResponse]
     def delete_footnote(request)
       data, _status_code, _headers = delete_footnote_with_http_info(request)
@@ -1015,17 +809,7 @@ module RubySDK
 
     # Removes footnote from document.
     # 
-    # @param name The file name.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [String] :node_path Path to node, which contains collection of footnotes.
+    # # @param request DeleteFootnoteRequest
     # @return [Array<(AsposeResponse, Fixnum, Hash)>] AsposeResponse data, response status code and response headers
     def delete_footnote_with_http_info(request)
 	  unless request.is_a? DeleteFootnoteRequest
@@ -1087,17 +871,7 @@ module RubySDK
 
     # Removes form field from document.
     # 
-    # @param name The document name.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [String] :node_path Path to node that contains collection of formfields.
+	# @param request DeleteFormFieldRequest
     # @return [AsposeResponse]
     def delete_form_field(request)
       data, _status_code, _headers = delete_form_field_with_http_info(request)
@@ -1106,17 +880,7 @@ module RubySDK
 
     # Removes form field from document.
     # 
-    # @param name The document name.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [String] :node_path Path to node that contains collection of formfields.
+    # # @param request DeleteFormFieldRequest
     # @return [Array<(AsposeResponse, Fixnum, Hash)>] AsposeResponse data, response status code and response headers
     def delete_form_field_with_http_info(request)
 	  unless request.is_a? DeleteFormFieldRequest
@@ -1178,17 +942,7 @@ module RubySDK
 
     # Delete header/footer from document.
     # 
-    # @param name The document name.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [String] :section_path Path to parent section.
+	# @param request DeleteHeaderFooterRequest
     # @return [AsposeResponse]
     def delete_header_footer(request)
       data, _status_code, _headers = delete_header_footer_with_http_info(request)
@@ -1197,17 +951,7 @@ module RubySDK
 
     # Delete header/footer from document.
     # 
-    # @param name The document name.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [String] :section_path Path to parent section.
+    # # @param request DeleteHeaderFooterRequest
     # @return [Array<(AsposeResponse, Fixnum, Hash)>] AsposeResponse data, response status code and response headers
     def delete_header_footer_with_http_info(request)
 	  unless request.is_a? DeleteHeaderFooterRequest
@@ -1269,17 +1013,7 @@ module RubySDK
 
     # Delete document headers and footers.
     # 
-    # @param name The document name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [String] :section_path Path to parent section.
-    # @option opts [String] :headers_footers_types List of types of headers and footers.
+	# @param request DeleteHeadersFootersRequest
     # @return [AsposeResponse]
     def delete_headers_footers(request)
       data, _status_code, _headers = delete_headers_footers_with_http_info(request)
@@ -1288,17 +1022,7 @@ module RubySDK
 
     # Delete document headers and footers.
     # 
-    # @param name The document name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [String] :section_path Path to parent section.
-    # @option opts [String] :headers_footers_types List of types of headers and footers.
+    # # @param request DeleteHeadersFootersRequest
     # @return [Array<(AsposeResponse, Fixnum, Hash)>] AsposeResponse data, response status code and response headers
     def delete_headers_footers_with_http_info(request)
 	  unless request.is_a? DeleteHeadersFootersRequest
@@ -1356,17 +1080,7 @@ module RubySDK
 
     # Removes OfficeMath object from document.
     # 
-    # @param name The file name.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [String] :node_path Path to node, which contains collection of OfficeMath objects.
+	# @param request DeleteOfficeMathObjectRequest
     # @return [AsposeResponse]
     def delete_office_math_object(request)
       data, _status_code, _headers = delete_office_math_object_with_http_info(request)
@@ -1375,17 +1089,7 @@ module RubySDK
 
     # Removes OfficeMath object from document.
     # 
-    # @param name The file name.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [String] :node_path Path to node, which contains collection of OfficeMath objects.
+    # # @param request DeleteOfficeMathObjectRequest
     # @return [Array<(AsposeResponse, Fixnum, Hash)>] AsposeResponse data, response status code and response headers
     def delete_office_math_object_with_http_info(request)
 	  unless request.is_a? DeleteOfficeMathObjectRequest
@@ -1447,17 +1151,7 @@ module RubySDK
 
     # Remove paragraph from section.
     # 
-    # @param name The file name.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [String] :node_path Path to node which contains paragraphs.
+	# @param request DeleteParagraphRequest
     # @return [AsposeResponse]
     def delete_paragraph(request)
       data, _status_code, _headers = delete_paragraph_with_http_info(request)
@@ -1466,17 +1160,7 @@ module RubySDK
 
     # Remove paragraph from section.
     # 
-    # @param name The file name.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [String] :node_path Path to node which contains paragraphs.
+    # # @param request DeleteParagraphRequest
     # @return [Array<(AsposeResponse, Fixnum, Hash)>] AsposeResponse data, response status code and response headers
     def delete_paragraph_with_http_info(request)
 	  unless request.is_a? DeleteParagraphRequest
@@ -1538,17 +1222,7 @@ module RubySDK
 
     # Removes run from document.
     # 
-    # @param name The file name.
-    # @param paragraph_path Path to parent paragraph.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
+	# @param request DeleteRunRequest
     # @return [AsposeResponse]
     def delete_run(request)
       data, _status_code, _headers = delete_run_with_http_info(request)
@@ -1557,17 +1231,7 @@ module RubySDK
 
     # Removes run from document.
     # 
-    # @param name The file name.
-    # @param paragraph_path Path to parent paragraph.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
+    # # @param request DeleteRunRequest
     # @return [Array<(AsposeResponse, Fixnum, Hash)>] AsposeResponse data, response status code and response headers
     def delete_run_with_http_info(request)
 	  unless request.is_a? DeleteRunRequest
@@ -1633,17 +1297,7 @@ module RubySDK
 
     # Delete a table.
     # 
-    # @param name The document name.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [String] :node_path Path to node, which contains tables.
+	# @param request DeleteTableRequest
     # @return [AsposeResponse]
     def delete_table(request)
       data, _status_code, _headers = delete_table_with_http_info(request)
@@ -1652,17 +1306,7 @@ module RubySDK
 
     # Delete a table.
     # 
-    # @param name The document name.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [String] :node_path Path to node, which contains tables.
+    # # @param request DeleteTableRequest
     # @return [Array<(AsposeResponse, Fixnum, Hash)>] AsposeResponse data, response status code and response headers
     def delete_table_with_http_info(request)
 	  unless request.is_a? DeleteTableRequest
@@ -1724,17 +1368,7 @@ module RubySDK
 
     # Delete a table cell.
     # 
-    # @param name The document name.
-    # @param table_row_path Path to table row.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
+	# @param request DeleteTableCellRequest
     # @return [AsposeResponse]
     def delete_table_cell(request)
       data, _status_code, _headers = delete_table_cell_with_http_info(request)
@@ -1743,17 +1377,7 @@ module RubySDK
 
     # Delete a table cell.
     # 
-    # @param name The document name.
-    # @param table_row_path Path to table row.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
+    # # @param request DeleteTableCellRequest
     # @return [Array<(AsposeResponse, Fixnum, Hash)>] AsposeResponse data, response status code and response headers
     def delete_table_cell_with_http_info(request)
 	  unless request.is_a? DeleteTableCellRequest
@@ -1819,17 +1443,7 @@ module RubySDK
 
     # Delete a table row.
     # 
-    # @param name The document name.
-    # @param table_path Path to table.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
+	# @param request DeleteTableRowRequest
     # @return [AsposeResponse]
     def delete_table_row(request)
       data, _status_code, _headers = delete_table_row_with_http_info(request)
@@ -1838,17 +1452,7 @@ module RubySDK
 
     # Delete a table row.
     # 
-    # @param name The document name.
-    # @param table_path Path to table.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
+    # # @param request DeleteTableRowRequest
     # @return [Array<(AsposeResponse, Fixnum, Hash)>] AsposeResponse data, response status code and response headers
     def delete_table_row_with_http_info(request)
 	  unless request.is_a? DeleteTableRowRequest
@@ -1914,14 +1518,7 @@ module RubySDK
 
     # Unprotect document.
     # 
-    # @param name The document name.
-    # @param protection_request with protection settings.            
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+	# @param request DeleteUnprotectDocumentRequest
     # @return [ProtectionDataResponse]
     def delete_unprotect_document(request)
       data, _status_code, _headers = delete_unprotect_document_with_http_info(request)
@@ -1930,14 +1527,7 @@ module RubySDK
 
     # Unprotect document.
     # 
-    # @param name The document name.
-    # @param protection_request with protection settings.            
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+    # # @param request DeleteUnprotectDocumentRequest
     # @return [Array<(ProtectionDataResponse, Fixnum, Hash)>] ProtectionDataResponse data, response status code and response headers
     def delete_unprotect_document_with_http_info(request)
 	  unless request.is_a? DeleteUnprotectDocumentRequest
@@ -1995,14 +1585,7 @@ module RubySDK
 
     # Return a border.
     # 'nodePath' should refer to node with cell or row
-    # @param name The document name.
-    # @param node_path Path to node with border(node should be cell or row).
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+	# @param request GetBorderRequest
     # @return [BorderResponse]
     def get_border(request)
       data, _status_code, _headers = get_border_with_http_info(request)
@@ -2011,14 +1594,7 @@ module RubySDK
 
     # Return a border.
     # &#39;nodePath&#39; should refer to node with cell or row
-    # @param name The document name.
-    # @param node_path Path to node with border(node should be cell or row).
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+    # # @param request GetBorderRequest
     # @return [Array<(BorderResponse, Fixnum, Hash)>] BorderResponse data, response status code and response headers
     def get_border_with_http_info(request)
 	  unless request.is_a? GetBorderRequest
@@ -2081,13 +1657,7 @@ module RubySDK
 
     # Return a collection of borders.
     # 'nodePath' should refer to node with cell or row
-    # @param name The document name.
-    # @param node_path Path to node with borders(node should be cell or row).
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+	# @param request GetBordersRequest
     # @return [BordersResponse]
     def get_borders(request)
       data, _status_code, _headers = get_borders_with_http_info(request)
@@ -2096,13 +1666,7 @@ module RubySDK
 
     # Return a collection of borders.
     # &#39;nodePath&#39; should refer to node with cell or row
-    # @param name The document name.
-    # @param node_path Path to node with borders(node should be cell or row).
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+    # # @param request GetBordersRequest
     # @return [Array<(BordersResponse, Fixnum, Hash)>] BordersResponse data, response status code and response headers
     def get_borders_with_http_info(request)
 	  unless request.is_a? GetBordersRequest
@@ -2160,13 +1724,7 @@ module RubySDK
 
     # Get comment from document.
     # 
-    # @param name The file name.
-    # @param comment_index Comment index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+	# @param request GetCommentRequest
     # @return [CommentResponse]
     def get_comment(request)
       data, _status_code, _headers = get_comment_with_http_info(request)
@@ -2175,13 +1733,7 @@ module RubySDK
 
     # Get comment from document.
     # 
-    # @param name The file name.
-    # @param comment_index Comment index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+    # # @param request GetCommentRequest
     # @return [Array<(CommentResponse, Fixnum, Hash)>] CommentResponse data, response status code and response headers
     def get_comment_with_http_info(request)
 	  unless request.is_a? GetCommentRequest
@@ -2239,12 +1791,7 @@ module RubySDK
 
     # Get comments from document.
     # 
-    # @param name The file name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+	# @param request GetCommentsRequest
     # @return [CommentsResponse]
     def get_comments(request)
       data, _status_code, _headers = get_comments_with_http_info(request)
@@ -2253,12 +1800,7 @@ module RubySDK
 
     # Get comments from document.
     # 
-    # @param name The file name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+    # # @param request GetCommentsRequest
     # @return [Array<(CommentsResponse, Fixnum, Hash)>] CommentsResponse data, response status code and response headers
     def get_comments_with_http_info(request)
 	  unless request.is_a? GetCommentsRequest
@@ -2311,12 +1853,7 @@ module RubySDK
 
     # Read document common info.
     # 
-    # @param document_name The file name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+	# @param request GetDocumentRequest
     # @return [DocumentResponse]
     def get_document(request)
       data, _status_code, _headers = get_document_with_http_info(request)
@@ -2325,12 +1862,7 @@ module RubySDK
 
     # Read document common info.
     # 
-    # @param document_name The file name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+    # # @param request GetDocumentRequest
     # @return [Array<(DocumentResponse, Fixnum, Hash)>] DocumentResponse data, response status code and response headers
     def get_document_with_http_info(request)
 	  unless request.is_a? GetDocumentRequest
@@ -2383,13 +1915,7 @@ module RubySDK
 
     # Read document bookmark data by its name.
     # 
-    # @param name The document name.
-    # @param bookmark_name The bookmark name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+	# @param request GetDocumentBookmarkByNameRequest
     # @return [BookmarkResponse]
     def get_document_bookmark_by_name(request)
       data, _status_code, _headers = get_document_bookmark_by_name_with_http_info(request)
@@ -2398,13 +1924,7 @@ module RubySDK
 
     # Read document bookmark data by its name.
     # 
-    # @param name The document name.
-    # @param bookmark_name The bookmark name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+    # # @param request GetDocumentBookmarkByNameRequest
     # @return [Array<(BookmarkResponse, Fixnum, Hash)>] BookmarkResponse data, response status code and response headers
     def get_document_bookmark_by_name_with_http_info(request)
 	  unless request.is_a? GetDocumentBookmarkByNameRequest
@@ -2462,12 +1982,7 @@ module RubySDK
 
     # Read document bookmarks common info.
     # 
-    # @param name The document name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+	# @param request GetDocumentBookmarksRequest
     # @return [BookmarksResponse]
     def get_document_bookmarks(request)
       data, _status_code, _headers = get_document_bookmarks_with_http_info(request)
@@ -2476,12 +1991,7 @@ module RubySDK
 
     # Read document bookmarks common info.
     # 
-    # @param name The document name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+    # # @param request GetDocumentBookmarksRequest
     # @return [Array<(BookmarksResponse, Fixnum, Hash)>] BookmarksResponse data, response status code and response headers
     def get_document_bookmarks_with_http_info(request)
 	  unless request.is_a? GetDocumentBookmarksRequest
@@ -2534,14 +2044,7 @@ module RubySDK
 
     # Read document drawing object common info by its index or convert to format specified.
     # 
-    # @param name The document name.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :node_path Path to node, which contains collection of drawing objects.
+	# @param request GetDocumentDrawingObjectByIndexRequest
     # @return [DrawingObjectResponse]
     def get_document_drawing_object_by_index(request)
       data, _status_code, _headers = get_document_drawing_object_by_index_with_http_info(request)
@@ -2550,14 +2053,7 @@ module RubySDK
 
     # Read document drawing object common info by its index or convert to format specified.
     # 
-    # @param name The document name.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :node_path Path to node, which contains collection of drawing objects.
+    # # @param request GetDocumentDrawingObjectByIndexRequest
     # @return [Array<(DrawingObjectResponse, Fixnum, Hash)>] DrawingObjectResponse data, response status code and response headers
     def get_document_drawing_object_by_index_with_http_info(request)
 	  unless request.is_a? GetDocumentDrawingObjectByIndexRequest
@@ -2616,14 +2112,7 @@ module RubySDK
 
     # Read drawing object image data.
     # 
-    # @param name The document name.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :node_path Path to node, which contains collection of drawing objects.
+	# @param request GetDocumentDrawingObjectImageDataRequest
     # @return [File]
     def get_document_drawing_object_image_data(request)
       data, _status_code, _headers = get_document_drawing_object_image_data_with_http_info(request)
@@ -2632,14 +2121,7 @@ module RubySDK
 
     # Read drawing object image data.
     # 
-    # @param name The document name.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :node_path Path to node, which contains collection of drawing objects.
+    # # @param request GetDocumentDrawingObjectImageDataRequest
     # @return [Array<(File, Fixnum, Hash)>] File data, response status code and response headers
     def get_document_drawing_object_image_data_with_http_info(request)
 	  unless request.is_a? GetDocumentDrawingObjectImageDataRequest
@@ -2698,14 +2180,7 @@ module RubySDK
 
     # Get drawing object OLE data.
     # 
-    # @param name The document name.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :node_path Path to node, which contains collection of drawing objects.
+	# @param request GetDocumentDrawingObjectOleDataRequest
     # @return [File]
     def get_document_drawing_object_ole_data(request)
       data, _status_code, _headers = get_document_drawing_object_ole_data_with_http_info(request)
@@ -2714,14 +2189,7 @@ module RubySDK
 
     # Get drawing object OLE data.
     # 
-    # @param name The document name.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :node_path Path to node, which contains collection of drawing objects.
+    # # @param request GetDocumentDrawingObjectOleDataRequest
     # @return [Array<(File, Fixnum, Hash)>] File data, response status code and response headers
     def get_document_drawing_object_ole_data_with_http_info(request)
 	  unless request.is_a? GetDocumentDrawingObjectOleDataRequest
@@ -2780,13 +2248,7 @@ module RubySDK
 
     # Read document drawing objects common info.
     # 
-    # @param name The document name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :node_path Path to node, which contains collection of drawing objects.
+	# @param request GetDocumentDrawingObjectsRequest
     # @return [DrawingObjectsResponse]
     def get_document_drawing_objects(request)
       data, _status_code, _headers = get_document_drawing_objects_with_http_info(request)
@@ -2795,13 +2257,7 @@ module RubySDK
 
     # Read document drawing objects common info.
     # 
-    # @param name The document name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :node_path Path to node, which contains collection of drawing objects.
+    # # @param request GetDocumentDrawingObjectsRequest
     # @return [Array<(DrawingObjectsResponse, Fixnum, Hash)>] DrawingObjectsResponse data, response status code and response headers
     def get_document_drawing_objects_with_http_info(request)
 	  unless request.is_a? GetDocumentDrawingObjectsRequest
@@ -2855,13 +2311,7 @@ module RubySDK
 
     # Read document field names.
     # 
-    # @param name The document name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [BOOLEAN] :use_non_merge_fields If true, result includes \&quot;mustache\&quot; field names. (default to false)
+	# @param request GetDocumentFieldNamesRequest
     # @return [FieldNamesResponse]
     def get_document_field_names(request)
       data, _status_code, _headers = get_document_field_names_with_http_info(request)
@@ -2870,13 +2320,7 @@ module RubySDK
 
     # Read document field names.
     # 
-    # @param name The document name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [BOOLEAN] :use_non_merge_fields If true, result includes \&quot;mustache\&quot; field names.
+    # # @param request GetDocumentFieldNamesRequest
     # @return [Array<(FieldNamesResponse, Fixnum, Hash)>] FieldNamesResponse data, response status code and response headers
     def get_document_field_names_with_http_info(request)
 	  unless request.is_a? GetDocumentFieldNamesRequest
@@ -2930,13 +2374,7 @@ module RubySDK
 
     # Read document hyperlink by its index.
     # 
-    # @param name The document name.
-    # @param hyperlink_index The hyperlink index.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+	# @param request GetDocumentHyperlinkByIndexRequest
     # @return [HyperlinkResponse]
     def get_document_hyperlink_by_index(request)
       data, _status_code, _headers = get_document_hyperlink_by_index_with_http_info(request)
@@ -2945,13 +2383,7 @@ module RubySDK
 
     # Read document hyperlink by its index.
     # 
-    # @param name The document name.
-    # @param hyperlink_index The hyperlink index.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+    # # @param request GetDocumentHyperlinkByIndexRequest
     # @return [Array<(HyperlinkResponse, Fixnum, Hash)>] HyperlinkResponse data, response status code and response headers
     def get_document_hyperlink_by_index_with_http_info(request)
 	  unless request.is_a? GetDocumentHyperlinkByIndexRequest
@@ -3009,12 +2441,7 @@ module RubySDK
 
     # Read document hyperlinks common info.
     # 
-    # @param name The document name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+	# @param request GetDocumentHyperlinksRequest
     # @return [HyperlinksResponse]
     def get_document_hyperlinks(request)
       data, _status_code, _headers = get_document_hyperlinks_with_http_info(request)
@@ -3023,12 +2450,7 @@ module RubySDK
 
     # Read document hyperlinks common info.
     # 
-    # @param name The document name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+    # # @param request GetDocumentHyperlinksRequest
     # @return [Array<(HyperlinksResponse, Fixnum, Hash)>] HyperlinksResponse data, response status code and response headers
     def get_document_hyperlinks_with_http_info(request)
 	  unless request.is_a? GetDocumentHyperlinksRequest
@@ -3081,14 +2503,7 @@ module RubySDK
 
     # This resource represents one of the paragraphs contained in the document.
     # 
-    # @param name The document name.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :node_path Path to node which contains paragraphs.
+	# @param request GetDocumentParagraphRequest
     # @return [ParagraphResponse]
     def get_document_paragraph(request)
       data, _status_code, _headers = get_document_paragraph_with_http_info(request)
@@ -3097,14 +2512,7 @@ module RubySDK
 
     # This resource represents one of the paragraphs contained in the document.
     # 
-    # @param name The document name.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :node_path Path to node which contains paragraphs.
+    # # @param request GetDocumentParagraphRequest
     # @return [Array<(ParagraphResponse, Fixnum, Hash)>] ParagraphResponse data, response status code and response headers
     def get_document_paragraph_with_http_info(request)
 	  unless request.is_a? GetDocumentParagraphRequest
@@ -3163,14 +2571,7 @@ module RubySDK
 
     # This resource represents run of text contained in the document.
     # 
-    # @param name The document name.
-    # @param paragraph_path Path to parent paragraph.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+	# @param request GetDocumentParagraphRunRequest
     # @return [RunResponse]
     def get_document_paragraph_run(request)
       data, _status_code, _headers = get_document_paragraph_run_with_http_info(request)
@@ -3179,14 +2580,7 @@ module RubySDK
 
     # This resource represents run of text contained in the document.
     # 
-    # @param name The document name.
-    # @param paragraph_path Path to parent paragraph.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+    # # @param request GetDocumentParagraphRunRequest
     # @return [Array<(RunResponse, Fixnum, Hash)>] RunResponse data, response status code and response headers
     def get_document_paragraph_run_with_http_info(request)
 	  unless request.is_a? GetDocumentParagraphRunRequest
@@ -3249,14 +2643,7 @@ module RubySDK
 
     # This resource represents font of run.
     # 
-    # @param name The document name.
-    # @param paragraph_path Path to parent paragraph.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+	# @param request GetDocumentParagraphRunFontRequest
     # @return [FontResponse]
     def get_document_paragraph_run_font(request)
       data, _status_code, _headers = get_document_paragraph_run_font_with_http_info(request)
@@ -3265,14 +2652,7 @@ module RubySDK
 
     # This resource represents font of run.
     # 
-    # @param name The document name.
-    # @param paragraph_path Path to parent paragraph.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+    # # @param request GetDocumentParagraphRunFontRequest
     # @return [Array<(FontResponse, Fixnum, Hash)>] FontResponse data, response status code and response headers
     def get_document_paragraph_run_font_with_http_info(request)
 	  unless request.is_a? GetDocumentParagraphRunFontRequest
@@ -3335,13 +2715,7 @@ module RubySDK
 
     # This resource represents collection of runs in the paragraph.
     # 
-    # @param name The document name.
-    # @param paragraph_path Path to parent paragraph.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+	# @param request GetDocumentParagraphRunsRequest
     # @return [RunsResponse]
     def get_document_paragraph_runs(request)
       data, _status_code, _headers = get_document_paragraph_runs_with_http_info(request)
@@ -3350,13 +2724,7 @@ module RubySDK
 
     # This resource represents collection of runs in the paragraph.
     # 
-    # @param name The document name.
-    # @param paragraph_path Path to parent paragraph.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+    # # @param request GetDocumentParagraphRunsRequest
     # @return [Array<(RunsResponse, Fixnum, Hash)>] RunsResponse data, response status code and response headers
     def get_document_paragraph_runs_with_http_info(request)
 	  unless request.is_a? GetDocumentParagraphRunsRequest
@@ -3414,13 +2782,7 @@ module RubySDK
 
     # Return a list of paragraphs that are contained in the document.
     # 
-    # @param name The document name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :node_path Path to node which contains paragraphs.
+	# @param request GetDocumentParagraphsRequest
     # @return [ParagraphLinkCollectionResponse]
     def get_document_paragraphs(request)
       data, _status_code, _headers = get_document_paragraphs_with_http_info(request)
@@ -3429,13 +2791,7 @@ module RubySDK
 
     # Return a list of paragraphs that are contained in the document.
     # 
-    # @param name The document name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :node_path Path to node which contains paragraphs.
+    # # @param request GetDocumentParagraphsRequest
     # @return [Array<(ParagraphLinkCollectionResponse, Fixnum, Hash)>] ParagraphLinkCollectionResponse data, response status code and response headers
     def get_document_paragraphs_with_http_info(request)
 	  unless request.is_a? GetDocumentParagraphsRequest
@@ -3489,12 +2845,7 @@ module RubySDK
 
     # Read document properties info.
     # 
-    # @param name The document&#39;s name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+	# @param request GetDocumentPropertiesRequest
     # @return [DocumentPropertiesResponse]
     def get_document_properties(request)
       data, _status_code, _headers = get_document_properties_with_http_info(request)
@@ -3503,12 +2854,7 @@ module RubySDK
 
     # Read document properties info.
     # 
-    # @param name The document&#39;s name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+    # # @param request GetDocumentPropertiesRequest
     # @return [Array<(DocumentPropertiesResponse, Fixnum, Hash)>] DocumentPropertiesResponse data, response status code and response headers
     def get_document_properties_with_http_info(request)
 	  unless request.is_a? GetDocumentPropertiesRequest
@@ -3561,13 +2907,7 @@ module RubySDK
 
     # Read document property info by the property name.
     # 
-    # @param name The document name.
-    # @param property_name The property name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+	# @param request GetDocumentPropertyRequest
     # @return [DocumentPropertyResponse]
     def get_document_property(request)
       data, _status_code, _headers = get_document_property_with_http_info(request)
@@ -3576,13 +2916,7 @@ module RubySDK
 
     # Read document property info by the property name.
     # 
-    # @param name The document name.
-    # @param property_name The property name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+    # # @param request GetDocumentPropertyRequest
     # @return [Array<(DocumentPropertyResponse, Fixnum, Hash)>] DocumentPropertyResponse data, response status code and response headers
     def get_document_property_with_http_info(request)
 	  unless request.is_a? GetDocumentPropertyRequest
@@ -3640,12 +2974,7 @@ module RubySDK
 
     # Read document protection common info.
     # 
-    # @param name The document name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+	# @param request GetDocumentProtectionRequest
     # @return [ProtectionDataResponse]
     def get_document_protection(request)
       data, _status_code, _headers = get_document_protection_with_http_info(request)
@@ -3654,12 +2983,7 @@ module RubySDK
 
     # Read document protection common info.
     # 
-    # @param name The document name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+    # # @param request GetDocumentProtectionRequest
     # @return [Array<(ProtectionDataResponse, Fixnum, Hash)>] ProtectionDataResponse data, response status code and response headers
     def get_document_protection_with_http_info(request)
 	  unless request.is_a? GetDocumentProtectionRequest
@@ -3712,15 +3036,7 @@ module RubySDK
 
     # Read document statistics.
     # 
-    # @param name The document name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [BOOLEAN] :include_comments Support including/excluding comments from the WordCount. Default value is \&quot;true\&quot;. (default to false)
-    # @option opts [BOOLEAN] :include_footnotes Support including/excluding footnotes from the WordCount. Default value is \&quot;false\&quot;. (default to false)
-    # @option opts [BOOLEAN] :include_text_in_shapes Support including/excluding shape&#39;s text from the WordCount. Default value is \&quot;false\&quot; (default to false)
+	# @param request GetDocumentStatisticsRequest
     # @return [StatDataResponse]
     def get_document_statistics(request)
       data, _status_code, _headers = get_document_statistics_with_http_info(request)
@@ -3729,15 +3045,7 @@ module RubySDK
 
     # Read document statistics.
     # 
-    # @param name The document name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [BOOLEAN] :include_comments Support including/excluding comments from the WordCount. Default value is \&quot;true\&quot;.
-    # @option opts [BOOLEAN] :include_footnotes Support including/excluding footnotes from the WordCount. Default value is \&quot;false\&quot;.
-    # @option opts [BOOLEAN] :include_text_in_shapes Support including/excluding shape&#39;s text from the WordCount. Default value is \&quot;false\&quot;
+    # # @param request GetDocumentStatisticsRequest
     # @return [Array<(StatDataResponse, Fixnum, Hash)>] StatDataResponse data, response status code and response headers
     def get_document_statistics_with_http_info(request)
 	  unless request.is_a? GetDocumentStatisticsRequest
@@ -3793,12 +3101,7 @@ module RubySDK
 
     # Read document text items.
     # 
-    # @param name The document name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+	# @param request GetDocumentTextItemsRequest
     # @return [TextItemsResponse]
     def get_document_text_items(request)
       data, _status_code, _headers = get_document_text_items_with_http_info(request)
@@ -3807,12 +3110,7 @@ module RubySDK
 
     # Read document text items.
     # 
-    # @param name The document name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+    # # @param request GetDocumentTextItemsRequest
     # @return [Array<(TextItemsResponse, Fixnum, Hash)>] TextItemsResponse data, response status code and response headers
     def get_document_text_items_with_http_info(request)
 	  unless request.is_a? GetDocumentTextItemsRequest
@@ -3865,15 +3163,7 @@ module RubySDK
 
     # Export the document into the specified format.
     # 
-    # @param name The file name.
-    # @param format The destination format.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :out_path Path to save result
-    # @option opts [String] :fonts_location Folder in filestorage with custom fonts.
+	# @param request GetDocumentWithFormatRequest
     # @return [File]
     def get_document_with_format(request)
       data, _status_code, _headers = get_document_with_format_with_http_info(request)
@@ -3882,15 +3172,7 @@ module RubySDK
 
     # Export the document into the specified format.
     # 
-    # @param name The file name.
-    # @param format The destination format.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :out_path Path to save result
-    # @option opts [String] :fonts_location Folder in filestorage with custom fonts.
+    # # @param request GetDocumentWithFormatRequest
     # @return [Array<(File, Fixnum, Hash)>] File data, response status code and response headers
     def get_document_with_format_with_http_info(request)
 	  unless request.is_a? GetDocumentWithFormatRequest
@@ -3950,14 +3232,7 @@ module RubySDK
 
     # Get field from document.
     # 
-    # @param name The file name.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :node_path Path to node, which contains collection of fields.
+	# @param request GetFieldRequest
     # @return [FieldResponse]
     def get_field(request)
       data, _status_code, _headers = get_field_with_http_info(request)
@@ -3966,14 +3241,7 @@ module RubySDK
 
     # Get field from document.
     # 
-    # @param name The file name.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :node_path Path to node, which contains collection of fields.
+    # # @param request GetFieldRequest
     # @return [Array<(FieldResponse, Fixnum, Hash)>] FieldResponse data, response status code and response headers
     def get_field_with_http_info(request)
 	  unless request.is_a? GetFieldRequest
@@ -4032,13 +3300,7 @@ module RubySDK
 
     # Get fields from document.
     # 
-    # @param name The file name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :node_path Path to node, which contains collection of fields.
+	# @param request GetFieldsRequest
     # @return [FieldsResponse]
     def get_fields(request)
       data, _status_code, _headers = get_fields_with_http_info(request)
@@ -4047,13 +3309,7 @@ module RubySDK
 
     # Get fields from document.
     # 
-    # @param name The file name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :node_path Path to node, which contains collection of fields.
+    # # @param request GetFieldsRequest
     # @return [Array<(FieldsResponse, Fixnum, Hash)>] FieldsResponse data, response status code and response headers
     def get_fields_with_http_info(request)
 	  unless request.is_a? GetFieldsRequest
@@ -4107,14 +3363,7 @@ module RubySDK
 
     # Read footnote by index.
     # 
-    # @param name The document name.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :node_path Path to node, which contains collection of footnotes.
+	# @param request GetFootnoteRequest
     # @return [FootnoteResponse]
     def get_footnote(request)
       data, _status_code, _headers = get_footnote_with_http_info(request)
@@ -4123,14 +3372,7 @@ module RubySDK
 
     # Read footnote by index.
     # 
-    # @param name The document name.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :node_path Path to node, which contains collection of footnotes.
+    # # @param request GetFootnoteRequest
     # @return [Array<(FootnoteResponse, Fixnum, Hash)>] FootnoteResponse data, response status code and response headers
     def get_footnote_with_http_info(request)
 	  unless request.is_a? GetFootnoteRequest
@@ -4189,13 +3431,7 @@ module RubySDK
 
     # Get footnotes from document.
     # 
-    # @param name The file name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :node_path Path to node, which contains collection of footnotes.
+	# @param request GetFootnotesRequest
     # @return [FootnotesResponse]
     def get_footnotes(request)
       data, _status_code, _headers = get_footnotes_with_http_info(request)
@@ -4204,13 +3440,7 @@ module RubySDK
 
     # Get footnotes from document.
     # 
-    # @param name The file name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :node_path Path to node, which contains collection of footnotes.
+    # # @param request GetFootnotesRequest
     # @return [Array<(FootnotesResponse, Fixnum, Hash)>] FootnotesResponse data, response status code and response headers
     def get_footnotes_with_http_info(request)
 	  unless request.is_a? GetFootnotesRequest
@@ -4264,14 +3494,7 @@ module RubySDK
 
     # Returns representation of an one of the form field.
     # 
-    # @param name The document name.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :node_path Path to node that contains collection of formfields.
+	# @param request GetFormFieldRequest
     # @return [FormFieldResponse]
     def get_form_field(request)
       data, _status_code, _headers = get_form_field_with_http_info(request)
@@ -4280,14 +3503,7 @@ module RubySDK
 
     # Returns representation of an one of the form field.
     # 
-    # @param name The document name.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :node_path Path to node that contains collection of formfields.
+    # # @param request GetFormFieldRequest
     # @return [Array<(FormFieldResponse, Fixnum, Hash)>] FormFieldResponse data, response status code and response headers
     def get_form_field_with_http_info(request)
 	  unless request.is_a? GetFormFieldRequest
@@ -4346,13 +3562,7 @@ module RubySDK
 
     # Get form fields from document.
     # 
-    # @param name The file name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :node_path Path to node containing collection of form fields.
+	# @param request GetFormFieldsRequest
     # @return [FormFieldsResponse]
     def get_form_fields(request)
       data, _status_code, _headers = get_form_fields_with_http_info(request)
@@ -4361,13 +3571,7 @@ module RubySDK
 
     # Get form fields from document.
     # 
-    # @param name The file name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :node_path Path to node containing collection of form fields.
+    # # @param request GetFormFieldsRequest
     # @return [Array<(FormFieldsResponse, Fixnum, Hash)>] FormFieldsResponse data, response status code and response headers
     def get_form_fields_with_http_info(request)
 	  unless request.is_a? GetFormFieldsRequest
@@ -4421,14 +3625,7 @@ module RubySDK
 
     # Return a header/footer that is contained in the document.
     # 
-    # @param name The document name.
-    # @param header_footer_index Header/footer index.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :filter_by_type List of types of headers and footers.
+	# @param request GetHeaderFooterRequest
     # @return [HeaderFooterResponse]
     def get_header_footer(request)
       data, _status_code, _headers = get_header_footer_with_http_info(request)
@@ -4437,14 +3634,7 @@ module RubySDK
 
     # Return a header/footer that is contained in the document.
     # 
-    # @param name The document name.
-    # @param header_footer_index Header/footer index.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :filter_by_type List of types of headers and footers.
+    # # @param request GetHeaderFooterRequest
     # @return [Array<(HeaderFooterResponse, Fixnum, Hash)>] HeaderFooterResponse data, response status code and response headers
     def get_header_footer_with_http_info(request)
 	  unless request.is_a? GetHeaderFooterRequest
@@ -4503,15 +3693,7 @@ module RubySDK
 
     # Return a header/footer that is contained in the document.
     # 
-    # @param name The document name.
-    # @param header_footer_index Header/footer index.
-    # @param section_index Section index.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :filter_by_type List of types of headers and footers.
+	# @param request GetHeaderFooterOfSectionRequest
     # @return [HeaderFooterResponse]
     def get_header_footer_of_section(request)
       data, _status_code, _headers = get_header_footer_of_section_with_http_info(request)
@@ -4520,15 +3702,7 @@ module RubySDK
 
     # Return a header/footer that is contained in the document.
     # 
-    # @param name The document name.
-    # @param header_footer_index Header/footer index.
-    # @param section_index Section index.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :filter_by_type List of types of headers and footers.
+    # # @param request GetHeaderFooterOfSectionRequest
     # @return [Array<(HeaderFooterResponse, Fixnum, Hash)>] HeaderFooterResponse data, response status code and response headers
     def get_header_footer_of_section_with_http_info(request)
 	  unless request.is_a? GetHeaderFooterOfSectionRequest
@@ -4592,14 +3766,7 @@ module RubySDK
 
     # Return a list of header/footers that are contained in the document.
     # 
-    # @param name The document name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :section_path Path to parent section.
-    # @option opts [String] :filter_by_type List of types of headers and footers.
+	# @param request GetHeaderFootersRequest
     # @return [HeaderFootersResponse]
     def get_header_footers(request)
       data, _status_code, _headers = get_header_footers_with_http_info(request)
@@ -4608,14 +3775,7 @@ module RubySDK
 
     # Return a list of header/footers that are contained in the document.
     # 
-    # @param name The document name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :section_path Path to parent section.
-    # @option opts [String] :filter_by_type List of types of headers and footers.
+    # # @param request GetHeaderFootersRequest
     # @return [Array<(HeaderFootersResponse, Fixnum, Hash)>] HeaderFootersResponse data, response status code and response headers
     def get_header_footers_with_http_info(request)
 	  unless request.is_a? GetHeaderFootersRequest
@@ -4670,14 +3830,7 @@ module RubySDK
 
     # Read OfficeMath object by index.
     # 
-    # @param name The document name.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :node_path Path to node, which contains collection of OfficeMath objects.
+	# @param request GetOfficeMathObjectRequest
     # @return [OfficeMathObjectResponse]
     def get_office_math_object(request)
       data, _status_code, _headers = get_office_math_object_with_http_info(request)
@@ -4686,14 +3839,7 @@ module RubySDK
 
     # Read OfficeMath object by index.
     # 
-    # @param name The document name.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :node_path Path to node, which contains collection of OfficeMath objects.
+    # # @param request GetOfficeMathObjectRequest
     # @return [Array<(OfficeMathObjectResponse, Fixnum, Hash)>] OfficeMathObjectResponse data, response status code and response headers
     def get_office_math_object_with_http_info(request)
 	  unless request.is_a? GetOfficeMathObjectRequest
@@ -4752,13 +3898,7 @@ module RubySDK
 
     # Get OfficeMath objects from document.
     # 
-    # @param name The file name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :node_path Path to node, which contains collection of OfficeMath objects.
+	# @param request GetOfficeMathObjectsRequest
     # @return [OfficeMathObjectsResponse]
     def get_office_math_objects(request)
       data, _status_code, _headers = get_office_math_objects_with_http_info(request)
@@ -4767,13 +3907,7 @@ module RubySDK
 
     # Get OfficeMath objects from document.
     # 
-    # @param name The file name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :node_path Path to node, which contains collection of OfficeMath objects.
+    # # @param request GetOfficeMathObjectsRequest
     # @return [Array<(OfficeMathObjectsResponse, Fixnum, Hash)>] OfficeMathObjectsResponse data, response status code and response headers
     def get_office_math_objects_with_http_info(request)
 	  unless request.is_a? GetOfficeMathObjectsRequest
@@ -4827,13 +3961,7 @@ module RubySDK
 
     # Get document section by index.
     # 
-    # @param name The document name.
-    # @param section_index Section index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+	# @param request GetSectionRequest
     # @return [SectionResponse]
     def get_section(request)
       data, _status_code, _headers = get_section_with_http_info(request)
@@ -4842,13 +3970,7 @@ module RubySDK
 
     # Get document section by index.
     # 
-    # @param name The document name.
-    # @param section_index Section index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+    # # @param request GetSectionRequest
     # @return [Array<(SectionResponse, Fixnum, Hash)>] SectionResponse data, response status code and response headers
     def get_section_with_http_info(request)
 	  unless request.is_a? GetSectionRequest
@@ -4906,13 +4028,7 @@ module RubySDK
 
     # Get page setup of section.
     # 
-    # @param name The document name.
-    # @param section_index Section index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+	# @param request GetSectionPageSetupRequest
     # @return [SectionPageSetupResponse]
     def get_section_page_setup(request)
       data, _status_code, _headers = get_section_page_setup_with_http_info(request)
@@ -4921,13 +4037,7 @@ module RubySDK
 
     # Get page setup of section.
     # 
-    # @param name The document name.
-    # @param section_index Section index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+    # # @param request GetSectionPageSetupRequest
     # @return [Array<(SectionPageSetupResponse, Fixnum, Hash)>] SectionPageSetupResponse data, response status code and response headers
     def get_section_page_setup_with_http_info(request)
 	  unless request.is_a? GetSectionPageSetupRequest
@@ -4985,12 +4095,7 @@ module RubySDK
 
     # Return a list of sections that are contained in the document.
     # 
-    # @param name The document name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+	# @param request GetSectionsRequest
     # @return [SectionLinkCollectionResponse]
     def get_sections(request)
       data, _status_code, _headers = get_sections_with_http_info(request)
@@ -4999,12 +4104,7 @@ module RubySDK
 
     # Return a list of sections that are contained in the document.
     # 
-    # @param name The document name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+    # # @param request GetSectionsRequest
     # @return [Array<(SectionLinkCollectionResponse, Fixnum, Hash)>] SectionLinkCollectionResponse data, response status code and response headers
     def get_sections_with_http_info(request)
 	  unless request.is_a? GetSectionsRequest
@@ -5057,14 +4157,7 @@ module RubySDK
 
     # Return a table.
     # 
-    # @param name The document name.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :node_path Path to node, which contains tables.
+	# @param request GetTableRequest
     # @return [TableResponse]
     def get_table(request)
       data, _status_code, _headers = get_table_with_http_info(request)
@@ -5073,14 +4166,7 @@ module RubySDK
 
     # Return a table.
     # 
-    # @param name The document name.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :node_path Path to node, which contains tables.
+    # # @param request GetTableRequest
     # @return [Array<(TableResponse, Fixnum, Hash)>] TableResponse data, response status code and response headers
     def get_table_with_http_info(request)
 	  unless request.is_a? GetTableRequest
@@ -5139,14 +4225,7 @@ module RubySDK
 
     # Return a table cell.
     # 
-    # @param name The document name.
-    # @param table_row_path Path to table row.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+	# @param request GetTableCellRequest
     # @return [TableCellResponse]
     def get_table_cell(request)
       data, _status_code, _headers = get_table_cell_with_http_info(request)
@@ -5155,14 +4234,7 @@ module RubySDK
 
     # Return a table cell.
     # 
-    # @param name The document name.
-    # @param table_row_path Path to table row.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+    # # @param request GetTableCellRequest
     # @return [Array<(TableCellResponse, Fixnum, Hash)>] TableCellResponse data, response status code and response headers
     def get_table_cell_with_http_info(request)
 	  unless request.is_a? GetTableCellRequest
@@ -5225,14 +4297,7 @@ module RubySDK
 
     # Return a table cell format.
     # 
-    # @param name The document name.
-    # @param table_row_path Path to table row.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+	# @param request GetTableCellFormatRequest
     # @return [TableCellFormatResponse]
     def get_table_cell_format(request)
       data, _status_code, _headers = get_table_cell_format_with_http_info(request)
@@ -5241,14 +4306,7 @@ module RubySDK
 
     # Return a table cell format.
     # 
-    # @param name The document name.
-    # @param table_row_path Path to table row.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+    # # @param request GetTableCellFormatRequest
     # @return [Array<(TableCellFormatResponse, Fixnum, Hash)>] TableCellFormatResponse data, response status code and response headers
     def get_table_cell_format_with_http_info(request)
 	  unless request.is_a? GetTableCellFormatRequest
@@ -5311,14 +4369,7 @@ module RubySDK
 
     # Return a table properties.
     # 
-    # @param name The document name.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :node_path Path to node, which contains tables.
+	# @param request GetTablePropertiesRequest
     # @return [TablePropertiesResponse]
     def get_table_properties(request)
       data, _status_code, _headers = get_table_properties_with_http_info(request)
@@ -5327,14 +4378,7 @@ module RubySDK
 
     # Return a table properties.
     # 
-    # @param name The document name.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :node_path Path to node, which contains tables.
+    # # @param request GetTablePropertiesRequest
     # @return [Array<(TablePropertiesResponse, Fixnum, Hash)>] TablePropertiesResponse data, response status code and response headers
     def get_table_properties_with_http_info(request)
 	  unless request.is_a? GetTablePropertiesRequest
@@ -5393,14 +4437,7 @@ module RubySDK
 
     # Return a table row.
     # 
-    # @param name The document name.
-    # @param table_path Path to table.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+	# @param request GetTableRowRequest
     # @return [TableRowResponse]
     def get_table_row(request)
       data, _status_code, _headers = get_table_row_with_http_info(request)
@@ -5409,14 +4446,7 @@ module RubySDK
 
     # Return a table row.
     # 
-    # @param name The document name.
-    # @param table_path Path to table.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+    # # @param request GetTableRowRequest
     # @return [Array<(TableRowResponse, Fixnum, Hash)>] TableRowResponse data, response status code and response headers
     def get_table_row_with_http_info(request)
 	  unless request.is_a? GetTableRowRequest
@@ -5479,14 +4509,7 @@ module RubySDK
 
     # Return a table row format.
     # 
-    # @param name The document name.
-    # @param table_path Path to table.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+	# @param request GetTableRowFormatRequest
     # @return [TableRowFormatResponse]
     def get_table_row_format(request)
       data, _status_code, _headers = get_table_row_format_with_http_info(request)
@@ -5495,14 +4518,7 @@ module RubySDK
 
     # Return a table row format.
     # 
-    # @param name The document name.
-    # @param table_path Path to table.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+    # # @param request GetTableRowFormatRequest
     # @return [Array<(TableRowFormatResponse, Fixnum, Hash)>] TableRowFormatResponse data, response status code and response headers
     def get_table_row_format_with_http_info(request)
 	  unless request.is_a? GetTableRowFormatRequest
@@ -5565,13 +4581,7 @@ module RubySDK
 
     # Return a list of tables that are contained in the document.
     # 
-    # @param name The document name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :node_path Path to node, which contains tables.
+	# @param request GetTablesRequest
     # @return [TableLinkCollectionResponse]
     def get_tables(request)
       data, _status_code, _headers = get_tables_with_http_info(request)
@@ -5580,13 +4590,7 @@ module RubySDK
 
     # Return a list of tables that are contained in the document.
     # 
-    # @param name The document name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :node_path Path to node, which contains tables.
+    # # @param request GetTablesRequest
     # @return [Array<(TableLinkCollectionResponse, Fixnum, Hash)>] TableLinkCollectionResponse data, response status code and response headers
     def get_tables_with_http_info(request)
 	  unless request.is_a? GetTablesRequest
@@ -5640,17 +4644,7 @@ module RubySDK
 
     # Adds table to document, returns added table's data.             
     # 
-    # @param name The document name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [TableInsert] :table Table parameters/
-    # @option opts [String] :node_path Path to node, which contains tables.
+	# @param request InsertTableRequest
     # @return [TableResponse]
     def insert_table(request)
       data, _status_code, _headers = insert_table_with_http_info(request)
@@ -5659,17 +4653,7 @@ module RubySDK
 
     # Adds table to document, returns added table&#39;s data.             
     # 
-    # @param name The document name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [TableInsert] :table Table parameters/
-    # @option opts [String] :node_path Path to node, which contains tables.
+    # # @param request InsertTableRequest
     # @return [Array<(TableResponse, Fixnum, Hash)>] TableResponse data, response status code and response headers
     def insert_table_with_http_info(request)
 	  unless request.is_a? InsertTableRequest
@@ -5726,17 +4710,7 @@ module RubySDK
 
     # Adds table cell to table, returns added cell's data.             
     # 
-    # @param name The document name.
-    # @param table_row_path Path to table row.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [TableCellInsert] :cell Table cell parameters/
+	# @param request InsertTableCellRequest
     # @return [TableCellResponse]
     def insert_table_cell(request)
       data, _status_code, _headers = insert_table_cell_with_http_info(request)
@@ -5745,17 +4719,7 @@ module RubySDK
 
     # Adds table cell to table, returns added cell&#39;s data.             
     # 
-    # @param name The document name.
-    # @param table_row_path Path to table row.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [TableCellInsert] :cell Table cell parameters/
+    # # @param request InsertTableCellRequest
     # @return [Array<(TableCellResponse, Fixnum, Hash)>] TableCellResponse data, response status code and response headers
     def insert_table_cell_with_http_info(request)
 	  unless request.is_a? InsertTableCellRequest
@@ -5816,17 +4780,7 @@ module RubySDK
 
     # Adds table row to table, returns added row's data.             
     # 
-    # @param name The document name.
-    # @param table_path Path to table.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [TableRowInsert] :row Table row parameters/
+	# @param request InsertTableRowRequest
     # @return [TableRowResponse]
     def insert_table_row(request)
       data, _status_code, _headers = insert_table_row_with_http_info(request)
@@ -5835,17 +4789,7 @@ module RubySDK
 
     # Adds table row to table, returns added row&#39;s data.             
     # 
-    # @param name The document name.
-    # @param table_path Path to table.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [TableRowInsert] :row Table row parameters/
+    # # @param request InsertTableRowRequest
     # @return [Array<(TableRowResponse, Fixnum, Hash)>] TableRowResponse data, response status code and response headers
     def insert_table_row_with_http_info(request)
 	  unless request.is_a? InsertTableRowRequest
@@ -5906,16 +4850,7 @@ module RubySDK
 
     # Append documents to original document.
     # 
-    # @param name Original document name.
-    # @param document_list with a list of documents to append.            
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
+	# @param request PostAppendDocumentRequest
     # @return [DocumentResponse]
     def post_append_document(request)
       data, _status_code, _headers = post_append_document_with_http_info(request)
@@ -5924,16 +4859,7 @@ module RubySDK
 
     # Append documents to original document.
     # 
-    # @param name Original document name.
-    # @param document_list with a list of documents to append.            
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
+    # # @param request PostAppendDocumentRequest
     # @return [Array<(DocumentResponse, Fixnum, Hash)>] DocumentResponse data, response status code and response headers
     def post_append_document_with_http_info(request)
 	  unless request.is_a? PostAppendDocumentRequest
@@ -5993,14 +4919,7 @@ module RubySDK
 
     # Change document protection.
     # 
-    # @param name The document name.
-    # @param protection_request with protection settings.            
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+	# @param request PostChangeDocumentProtectionRequest
     # @return [ProtectionDataResponse]
     def post_change_document_protection(request)
       data, _status_code, _headers = post_change_document_protection_with_http_info(request)
@@ -6009,14 +4928,7 @@ module RubySDK
 
     # Change document protection.
     # 
-    # @param name The document name.
-    # @param protection_request with protection settings.            
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+    # # @param request PostChangeDocumentProtectionRequest
     # @return [Array<(ProtectionDataResponse, Fixnum, Hash)>] ProtectionDataResponse data, response status code and response headers
     def post_change_document_protection_with_http_info(request)
 	  unless request.is_a? PostChangeDocumentProtectionRequest
@@ -6074,17 +4986,7 @@ module RubySDK
 
     # Updates the comment, returns updated comment's data.
     # 
-    # @param name The document name.
-    # @param comment_index Comment index
-    # @param comment Comment data.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
+	# @param request PostCommentRequest
     # @return [CommentResponse]
     def post_comment(request)
       data, _status_code, _headers = post_comment_with_http_info(request)
@@ -6093,17 +4995,7 @@ module RubySDK
 
     # Updates the comment, returns updated comment&#39;s data.
     # 
-    # @param name The document name.
-    # @param comment_index Comment index
-    # @param comment Comment data.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
+    # # @param request PostCommentRequest
     # @return [Array<(CommentResponse, Fixnum, Hash)>] CommentResponse data, response status code and response headers
     def post_comment_with_http_info(request)
 	  unless request.is_a? PostCommentRequest
@@ -6168,14 +5060,7 @@ module RubySDK
 
     # Compare document with original document.
     # 
-    # @param name Original document name.
-    # @param compare_data with a document to compare.            
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+	# @param request PostCompareDocumentRequest
     # @return [DocumentResponse]
     def post_compare_document(request)
       data, _status_code, _headers = post_compare_document_with_http_info(request)
@@ -6184,14 +5069,7 @@ module RubySDK
 
     # Compare document with original document.
     # 
-    # @param name Original document name.
-    # @param compare_data with a document to compare.            
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+    # # @param request PostCompareDocumentRequest
     # @return [Array<(DocumentResponse, Fixnum, Hash)>] DocumentResponse data, response status code and response headers
     def post_compare_document_with_http_info(request)
 	  unless request.is_a? PostCompareDocumentRequest
@@ -6249,18 +5127,7 @@ module RubySDK
 
     # Execute document mail merge operation.
     # 
-    # @param name The document name.
-    # @param with_regions With regions flag.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :data Mail merge data
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :mail_merge_data_file Mail merge data.
-    # @option opts [String] :cleanup Clean up options.
-    # @option opts [BOOLEAN] :use_whole_paragraph_as_region Gets or sets a value indicating whether paragraph with TableStart or              TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.              The default value is true. (default to true)
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved with autogenerated name.
+	# @param request PostDocumentExecuteMailMergeRequest
     # @return [DocumentResponse]
     def post_document_execute_mail_merge(request)
       data, _status_code, _headers = post_document_execute_mail_merge_with_http_info(request)
@@ -6269,18 +5136,7 @@ module RubySDK
 
     # Execute document mail merge operation.
     # 
-    # @param name The document name.
-    # @param with_regions With regions flag.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :data Mail merge data
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :mail_merge_data_file Mail merge data.
-    # @option opts [String] :cleanup Clean up options.
-    # @option opts [BOOLEAN] :use_whole_paragraph_as_region Gets or sets a value indicating whether paragraph with TableStart or              TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.              The default value is true.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved with autogenerated name.
+    # # @param request PostDocumentExecuteMailMergeRequest
     # @return [Array<(DocumentResponse, Fixnum, Hash)>] DocumentResponse data, response status code and response headers
     def post_document_execute_mail_merge_with_http_info(request)
 	  unless request.is_a? PostDocumentExecuteMailMergeRequest
@@ -6343,18 +5199,7 @@ module RubySDK
 
     # Updates font properties, returns updated font data.
     # 
-    # @param name The document name.
-    # @param font_dto Font dto object
-    # @param paragraph_path Path to parent paragraph.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
+	# @param request PostDocumentParagraphRunFontRequest
     # @return [FontResponse]
     def post_document_paragraph_run_font(request)
       data, _status_code, _headers = post_document_paragraph_run_font_with_http_info(request)
@@ -6363,18 +5208,7 @@ module RubySDK
 
     # Updates font properties, returns updated font data.
     # 
-    # @param name The document name.
-    # @param font_dto Font dto object
-    # @param paragraph_path Path to parent paragraph.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
+    # # @param request PostDocumentParagraphRunFontRequest
     # @return [Array<(FontResponse, Fixnum, Hash)>] FontResponse data, response status code and response headers
     def post_document_paragraph_run_font_with_http_info(request)
 	  unless request.is_a? PostDocumentParagraphRunFontRequest
@@ -6444,15 +5278,7 @@ module RubySDK
 
     # Convert document to destination format with detailed settings and save result to storage.
     # 
-    # @param name The document name.
-    # @param save_options_data Save options.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :fonts_location Folder in filestorage with custom fonts.
+	# @param request PostDocumentSaveAsRequest
     # @return [SaveResponse]
     def post_document_save_as(request)
       data, _status_code, _headers = post_document_save_as_with_http_info(request)
@@ -6461,15 +5287,7 @@ module RubySDK
 
     # Convert document to destination format with detailed settings and save result to storage.
     # 
-    # @param name The document name.
-    # @param save_options_data Save options.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :fonts_location Folder in filestorage with custom fonts.
+    # # @param request PostDocumentSaveAsRequest
     # @return [Array<(SaveResponse, Fixnum, Hash)>] SaveResponse data, response status code and response headers
     def post_document_save_as_with_http_info(request)
 	  unless request.is_a? PostDocumentSaveAsRequest
@@ -6528,19 +5346,7 @@ module RubySDK
 
     # Updates drawing object, returns updated  drawing object's data.
     # 
-    # @param name The document name.
-    # @param drawing_object Drawing object parameters
-    # @param image_file File with image
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [String] :node_path Path to node, which contains collection of drawing objects.
+	# @param request PostDrawingObjectRequest
     # @return [DrawingObjectResponse]
     def post_drawing_object(request)
       data, _status_code, _headers = post_drawing_object_with_http_info(request)
@@ -6549,19 +5355,7 @@ module RubySDK
 
     # Updates drawing object, returns updated  drawing object&#39;s data.
     # 
-    # @param name The document name.
-    # @param drawing_object Drawing object parameters
-    # @param image_file File with image
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [String] :node_path Path to node, which contains collection of drawing objects.
+    # # @param request PostDrawingObjectRequest
     # @return [Array<(DrawingObjectResponse, Fixnum, Hash)>] DrawingObjectResponse data, response status code and response headers
     def post_drawing_object_with_http_info(request)
 	  unless request.is_a? PostDrawingObjectRequest
@@ -6633,17 +5427,7 @@ module RubySDK
 
     # Populate document template with data.
     # 
-    # @param name The template document name.
-    # @param data Mail merge data
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :cleanup Clean up options.
-    # @option opts [BOOLEAN] :use_whole_paragraph_as_region Gets or sets a value indicating whether paragraph with TableStart or  TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.   The default value is true. (default to true)
-    # @option opts [BOOLEAN] :with_regions Merge with regions or not. True by default (default to true)
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved with autogenerated name.
+	# @param request PostExecuteTemplateRequest
     # @return [DocumentResponse]
     def post_execute_template(request)
       data, _status_code, _headers = post_execute_template_with_http_info(request)
@@ -6652,17 +5436,7 @@ module RubySDK
 
     # Populate document template with data.
     # 
-    # @param name The template document name.
-    # @param data Mail merge data
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :cleanup Clean up options.
-    # @option opts [BOOLEAN] :use_whole_paragraph_as_region Gets or sets a value indicating whether paragraph with TableStart or  TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.   The default value is true.
-    # @option opts [BOOLEAN] :with_regions Merge with regions or not. True by default
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved with autogenerated name.
+    # # @param request PostExecuteTemplateRequest
     # @return [Array<(DocumentResponse, Fixnum, Hash)>] DocumentResponse data, response status code and response headers
     def post_execute_template_with_http_info(request)
 	  unless request.is_a? PostExecuteTemplateRequest
@@ -6724,18 +5498,7 @@ module RubySDK
 
     # Updates field's properties, returns updated field's data.
     # 
-    # @param name The document name.
-    # @param field Field data.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [String] :node_path Path to node, which contains collection of fields.
+	# @param request PostFieldRequest
     # @return [FieldResponse]
     def post_field(request)
       data, _status_code, _headers = post_field_with_http_info(request)
@@ -6744,18 +5507,7 @@ module RubySDK
 
     # Updates field&#39;s properties, returns updated field&#39;s data.
     # 
-    # @param name The document name.
-    # @param field Field data.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [String] :node_path Path to node, which contains collection of fields.
+    # # @param request PostFieldRequest
     # @return [Array<(FieldResponse, Fixnum, Hash)>] FieldResponse data, response status code and response headers
     def post_field_with_http_info(request)
 	  unless request.is_a? PostFieldRequest
@@ -6821,18 +5573,7 @@ module RubySDK
 
     # Updates footnote's properties, returns updated run's data.
     # 
-    # @param name The document name.
-    # @param footnote_dto Footnote data.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [String] :node_path Path to node, which contains collection of footnotes.
+	# @param request PostFootnoteRequest
     # @return [FootnoteResponse]
     def post_footnote(request)
       data, _status_code, _headers = post_footnote_with_http_info(request)
@@ -6841,18 +5582,7 @@ module RubySDK
 
     # Updates footnote&#39;s properties, returns updated run&#39;s data.
     # 
-    # @param name The document name.
-    # @param footnote_dto Footnote data.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [String] :node_path Path to node, which contains collection of footnotes.
+    # # @param request PostFootnoteRequest
     # @return [Array<(FootnoteResponse, Fixnum, Hash)>] FootnoteResponse data, response status code and response headers
     def post_footnote_with_http_info(request)
 	  unless request.is_a? PostFootnoteRequest
@@ -6918,18 +5648,7 @@ module RubySDK
 
     # Updates properties of form field, returns updated form field.
     # 
-    # @param name The document name.
-    # @param form_field From field data.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [String] :node_path Path to node that contains collection of formfields.
+	# @param request PostFormFieldRequest
     # @return [FormFieldResponse]
     def post_form_field(request)
       data, _status_code, _headers = post_form_field_with_http_info(request)
@@ -6938,18 +5657,7 @@ module RubySDK
 
     # Updates properties of form field, returns updated form field.
     # 
-    # @param name The document name.
-    # @param form_field From field data.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [String] :node_path Path to node that contains collection of formfields.
+    # # @param request PostFormFieldRequest
     # @return [Array<(FormFieldResponse, Fixnum, Hash)>] FormFieldResponse data, response status code and response headers
     def post_form_field_with_http_info(request)
 	  unless request.is_a? PostFormFieldRequest
@@ -7015,18 +5723,7 @@ module RubySDK
 
     # Insert document watermark image.
     # 
-    # @param name The document name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [File] :image_file File with image
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [Float] :rotation_angle The watermark rotation angle. (default to 0.0)
-    # @option opts [String] :image The image file server full name. If the name is empty the image is expected in request content.
+	# @param request PostInsertDocumentWatermarkImageRequest
     # @return [DocumentResponse]
     def post_insert_document_watermark_image(request)
       data, _status_code, _headers = post_insert_document_watermark_image_with_http_info(request)
@@ -7035,18 +5732,7 @@ module RubySDK
 
     # Insert document watermark image.
     # 
-    # @param name The document name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [File] :image_file File with image
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [Float] :rotation_angle The watermark rotation angle.
-    # @option opts [String] :image The image file server full name. If the name is empty the image is expected in request content.
+    # # @param request PostInsertDocumentWatermarkImageRequest
     # @return [Array<(DocumentResponse, Fixnum, Hash)>] DocumentResponse data, response status code and response headers
     def post_insert_document_watermark_image_with_http_info(request)
 	  unless request.is_a? PostInsertDocumentWatermarkImageRequest
@@ -7105,16 +5791,7 @@ module RubySDK
 
     # Insert document watermark text.
     # 
-    # @param name The document name.
-    # @param watermark_text with the watermark data.            
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
+	# @param request PostInsertDocumentWatermarkTextRequest
     # @return [DocumentResponse]
     def post_insert_document_watermark_text(request)
       data, _status_code, _headers = post_insert_document_watermark_text_with_http_info(request)
@@ -7123,16 +5800,7 @@ module RubySDK
 
     # Insert document watermark text.
     # 
-    # @param name The document name.
-    # @param watermark_text with the watermark data.            
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
+    # # @param request PostInsertDocumentWatermarkTextRequest
     # @return [Array<(DocumentResponse, Fixnum, Hash)>] DocumentResponse data, response status code and response headers
     def post_insert_document_watermark_text_with_http_info(request)
 	  unless request.is_a? PostInsertDocumentWatermarkTextRequest
@@ -7192,16 +5860,7 @@ module RubySDK
 
     # Insert document page numbers.
     # 
-    # @param name A document name.
-    # @param page_number with the page numbers settings.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
+	# @param request PostInsertPageNumbersRequest
     # @return [DocumentResponse]
     def post_insert_page_numbers(request)
       data, _status_code, _headers = post_insert_page_numbers_with_http_info(request)
@@ -7210,16 +5869,7 @@ module RubySDK
 
     # Insert document page numbers.
     # 
-    # @param name A document name.
-    # @param page_number with the page numbers settings.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
+    # # @param request PostInsertPageNumbersRequest
     # @return [Array<(DocumentResponse, Fixnum, Hash)>] DocumentResponse data, response status code and response headers
     def post_insert_page_numbers_with_http_info(request)
 	  unless request.is_a? PostInsertPageNumbersRequest
@@ -7279,9 +5929,7 @@ module RubySDK
 
     # Loads new document from web into the file with any supported format of data.
     # 
-    # @param data Parameters of loading.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :storage File storage, which have to be used.
+	# @param request PostLoadWebDocumentRequest
     # @return [SaveResponse]
     def post_load_web_document(request)
       data, _status_code, _headers = post_load_web_document_with_http_info(request)
@@ -7290,9 +5938,7 @@ module RubySDK
 
     # Loads new document from web into the file with any supported format of data.
     # 
-    # @param data Parameters of loading.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :storage File storage, which have to be used.
+    # # @param request PostLoadWebDocumentRequest
     # @return [Array<(SaveResponse, Fixnum, Hash)>] SaveResponse data, response status code and response headers
     def post_load_web_document_with_http_info(request)
 	  unless request.is_a? PostLoadWebDocumentRequest
@@ -7341,16 +5987,7 @@ module RubySDK
 
     # Replace document text.
     # 
-    # @param name The document name.
-    # @param replace_text with the replace operation settings.            
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
+	# @param request PostReplaceTextRequest
     # @return [ReplaceTextResponse]
     def post_replace_text(request)
       data, _status_code, _headers = post_replace_text_with_http_info(request)
@@ -7359,16 +5996,7 @@ module RubySDK
 
     # Replace document text.
     # 
-    # @param name The document name.
-    # @param replace_text with the replace operation settings.            
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
+    # # @param request PostReplaceTextRequest
     # @return [Array<(ReplaceTextResponse, Fixnum, Hash)>] ReplaceTextResponse data, response status code and response headers
     def post_replace_text_with_http_info(request)
 	  unless request.is_a? PostReplaceTextRequest
@@ -7428,18 +6056,7 @@ module RubySDK
 
     # Updates run's properties, returns updated run's data.
     # 
-    # @param name The document name.
-    # @param run Run data.
-    # @param paragraph_path Path to parent paragraph.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
+	# @param request PostRunRequest
     # @return [RunResponse]
     def post_run(request)
       data, _status_code, _headers = post_run_with_http_info(request)
@@ -7448,18 +6065,7 @@ module RubySDK
 
     # Updates run&#39;s properties, returns updated run&#39;s data.
     # 
-    # @param name The document name.
-    # @param run Run data.
-    # @param paragraph_path Path to parent paragraph.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
+    # # @param request PostRunRequest
     # @return [Array<(RunResponse, Fixnum, Hash)>] RunResponse data, response status code and response headers
     def post_run_with_http_info(request)
 	  unless request.is_a? PostRunRequest
@@ -7529,18 +6135,7 @@ module RubySDK
 
     # Split document.
     # 
-    # @param name Original document name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :format Format to split.
-    # @option opts [Integer] :from Start page.
-    # @option opts [Integer] :to End page.
-    # @option opts [BOOLEAN] :zip_output ZipOutput or not. (default to false)
-    # @option opts [String] :fonts_location Folder in filestorage with custom fonts.
+	# @param request PostSplitDocumentRequest
     # @return [SplitDocumentResponse]
     def post_split_document(request)
       data, _status_code, _headers = post_split_document_with_http_info(request)
@@ -7549,18 +6144,7 @@ module RubySDK
 
     # Split document.
     # 
-    # @param name Original document name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :format Format to split.
-    # @option opts [Integer] :from Start page.
-    # @option opts [Integer] :to End page.
-    # @option opts [BOOLEAN] :zip_output ZipOutput or not.
-    # @option opts [String] :fonts_location Folder in filestorage with custom fonts.
+    # # @param request PostSplitDocumentRequest
     # @return [Array<(SplitDocumentResponse, Fixnum, Hash)>] SplitDocumentResponse data, response status code and response headers
     def post_split_document_with_http_info(request)
 	  unless request.is_a? PostSplitDocumentRequest
@@ -7619,17 +6203,7 @@ module RubySDK
 
     # Update document bookmark.
     # 
-    # @param name The document name.
-    # @param bookmark_data with new bookmark data.            
-    # @param bookmark_name The bookmark name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
+	# @param request PostUpdateDocumentBookmarkRequest
     # @return [BookmarkResponse]
     def post_update_document_bookmark(request)
       data, _status_code, _headers = post_update_document_bookmark_with_http_info(request)
@@ -7638,17 +6212,7 @@ module RubySDK
 
     # Update document bookmark.
     # 
-    # @param name The document name.
-    # @param bookmark_data with new bookmark data.            
-    # @param bookmark_name The bookmark name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
+    # # @param request PostUpdateDocumentBookmarkRequest
     # @return [Array<(BookmarkResponse, Fixnum, Hash)>] BookmarkResponse data, response status code and response headers
     def post_update_document_bookmark_with_http_info(request)
 	  unless request.is_a? PostUpdateDocumentBookmarkRequest
@@ -7713,13 +6277,7 @@ module RubySDK
 
     # Update (reevaluate) fields in document.
     # 
-    # @param name The document name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+	# @param request PostUpdateDocumentFieldsRequest
     # @return [DocumentResponse]
     def post_update_document_fields(request)
       data, _status_code, _headers = post_update_document_fields_with_http_info(request)
@@ -7728,13 +6286,7 @@ module RubySDK
 
     # Update (reevaluate) fields in document.
     # 
-    # @param name The document name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+    # # @param request PostUpdateDocumentFieldsRequest
     # @return [Array<(DocumentResponse, Fixnum, Hash)>] DocumentResponse data, response status code and response headers
     def post_update_document_fields_with_http_info(request)
 	  unless request.is_a? PostUpdateDocumentFieldsRequest
@@ -7788,16 +6340,7 @@ module RubySDK
 
     # Adds comment to document, returns inserted comment's data.
     # 
-    # @param name The document name.
-    # @param comment Comment data.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
+	# @param request PutCommentRequest
     # @return [CommentResponse]
     def put_comment(request)
       data, _status_code, _headers = put_comment_with_http_info(request)
@@ -7806,16 +6349,7 @@ module RubySDK
 
     # Adds comment to document, returns inserted comment&#39;s data.
     # 
-    # @param name The document name.
-    # @param comment Comment data.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
+    # # @param request PutCommentRequest
     # @return [Array<(CommentResponse, Fixnum, Hash)>] CommentResponse data, response status code and response headers
     def put_comment_with_http_info(request)
 	  unless request.is_a? PutCommentRequest
@@ -7875,12 +6409,7 @@ module RubySDK
 
     # Convert document from request content to format specified.
     # 
-    # @param document Converting document
-    # @param format Format to convert.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :out_path Path for saving operation result to the local storage.
-    # @option opts [String] :fonts_location Folder in filestorage with custom fonts.
+	# @param request PutConvertDocumentRequest
     # @return [File]
     def put_convert_document(request)
       data, _status_code, _headers = put_convert_document_with_http_info(request)
@@ -7889,12 +6418,7 @@ module RubySDK
 
     # Convert document from request content to format specified.
     # 
-    # @param document Converting document
-    # @param format Format to convert.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :out_path Path for saving operation result to the local storage.
-    # @option opts [String] :fonts_location Folder in filestorage with custom fonts.
+    # # @param request PutConvertDocumentRequest
     # @return [Array<(File, Fixnum, Hash)>] File data, response status code and response headers
     def put_convert_document_with_http_info(request)
 	  unless request.is_a? PutConvertDocumentRequest
@@ -7951,10 +6475,7 @@ module RubySDK
 
     # Creates new document. Document is created with format which is recognized from file extensions.  Supported extentions: \".doc\", \".docx\", \".docm\", \".dot\", \".dotm\", \".dotx\", \".flatopc\", \".fopc\", \".flatopc_macro\", \".fopc_macro\", \".flatopc_template\", \".fopc_template\", \".flatopc_template_macro\", \".fopc_template_macro\", \".wordml\", \".wml\", \".rtf\"
     # 
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :file_name The file name.
-    # @option opts [String] :folder The document folder.
+	# @param request PutCreateDocumentRequest
     # @return [DocumentResponse]
     def put_create_document(request)
       data, _status_code, _headers = put_create_document_with_http_info(request)
@@ -7963,10 +6484,7 @@ module RubySDK
 
     # Creates new document. Document is created with format which is recognized from file extensions.  Supported extentions: \&quot;.doc\&quot;, \&quot;.docx\&quot;, \&quot;.docm\&quot;, \&quot;.dot\&quot;, \&quot;.dotm\&quot;, \&quot;.dotx\&quot;, \&quot;.flatopc\&quot;, \&quot;.fopc\&quot;, \&quot;.flatopc_macro\&quot;, \&quot;.fopc_macro\&quot;, \&quot;.flatopc_template\&quot;, \&quot;.fopc_template\&quot;, \&quot;.flatopc_template_macro\&quot;, \&quot;.fopc_template_macro\&quot;, \&quot;.wordml\&quot;, \&quot;.wml\&quot;, \&quot;.rtf\&quot;
     # 
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :file_name The file name.
-    # @option opts [String] :folder The document folder.
+    # # @param request PutCreateDocumentRequest
     # @return [Array<(DocumentResponse, Fixnum, Hash)>] DocumentResponse data, response status code and response headers
     def put_create_document_with_http_info(request)
 	  unless request.is_a? PutCreateDocumentRequest
@@ -8013,9 +6531,7 @@ module RubySDK
 
     # Read document field names.
     # 
-    # @param template File with template
-    # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :use_non_merge_fields Use non merge fields or not. (default to false)
+	# @param request PutDocumentFieldNamesRequest
     # @return [FieldNamesResponse]
     def put_document_field_names(request)
       data, _status_code, _headers = put_document_field_names_with_http_info(request)
@@ -8024,9 +6540,7 @@ module RubySDK
 
     # Read document field names.
     # 
-    # @param template File with template
-    # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :use_non_merge_fields Use non merge fields or not.
+    # # @param request PutDocumentFieldNamesRequest
     # @return [Array<(FieldNamesResponse, Fixnum, Hash)>] FieldNamesResponse data, response status code and response headers
     def put_document_field_names_with_http_info(request)
 	  unless request.is_a? PutDocumentFieldNamesRequest
@@ -8076,33 +6590,7 @@ module RubySDK
 
     # Convert document to tiff with detailed settings and save result to storage.
     # 
-    # @param name The document name.
-    # @param save_options Tiff save options.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :result_file The resulting file name.
-    # @option opts [BOOLEAN] :use_anti_aliasing Use antialiasing flag.
-    # @option opts [BOOLEAN] :use_high_quality_rendering Use high quality flag.
-    # @option opts [Float] :image_brightness Brightness for the generated images.
-    # @option opts [String] :image_color_mode Color mode for the generated images.
-    # @option opts [Float] :image_contrast The contrast for the generated images.
-    # @option opts [String] :numeral_format The images numeral format.
-    # @option opts [Integer] :page_count Number of pages to render.
-    # @option opts [Integer] :page_index Page index to start rendering.
-    # @option opts [String] :paper_color Background image color.
-    # @option opts [String] :pixel_format The pixel format of generated images.
-    # @option opts [Float] :resolution The resolution of generated images.
-    # @option opts [Float] :scale Zoom factor for generated images.
-    # @option opts [String] :tiff_compression The compression tipe.
-    # @option opts [String] :dml_rendering_mode Optional, default is Fallback.
-    # @option opts [String] :dml_effects_rendering_mode Optional, default is Simplified.
-    # @option opts [String] :tiff_binarization_method Optional, Tiff binarization method, possible values are: FloydSteinbergDithering, Threshold.
-    # @option opts [BOOLEAN] :zip_output Optional. A value determining zip output or not.
-    # @option opts [String] :fonts_location Folder in filestorage with custom fonts.
+	# @param request PutDocumentSaveAsTiffRequest
     # @return [SaveResponse]
     def put_document_save_as_tiff(request)
       data, _status_code, _headers = put_document_save_as_tiff_with_http_info(request)
@@ -8111,33 +6599,7 @@ module RubySDK
 
     # Convert document to tiff with detailed settings and save result to storage.
     # 
-    # @param name The document name.
-    # @param save_options Tiff save options.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :result_file The resulting file name.
-    # @option opts [BOOLEAN] :use_anti_aliasing Use antialiasing flag.
-    # @option opts [BOOLEAN] :use_high_quality_rendering Use high quality flag.
-    # @option opts [Float] :image_brightness Brightness for the generated images.
-    # @option opts [String] :image_color_mode Color mode for the generated images.
-    # @option opts [Float] :image_contrast The contrast for the generated images.
-    # @option opts [String] :numeral_format The images numeral format.
-    # @option opts [Integer] :page_count Number of pages to render.
-    # @option opts [Integer] :page_index Page index to start rendering.
-    # @option opts [String] :paper_color Background image color.
-    # @option opts [String] :pixel_format The pixel format of generated images.
-    # @option opts [Float] :resolution The resolution of generated images.
-    # @option opts [Float] :scale Zoom factor for generated images.
-    # @option opts [String] :tiff_compression The compression tipe.
-    # @option opts [String] :dml_rendering_mode Optional, default is Fallback.
-    # @option opts [String] :dml_effects_rendering_mode Optional, default is Simplified.
-    # @option opts [String] :tiff_binarization_method Optional, Tiff binarization method, possible values are: FloydSteinbergDithering, Threshold.
-    # @option opts [BOOLEAN] :zip_output Optional. A value determining zip output or not.
-    # @option opts [String] :fonts_location Folder in filestorage with custom fonts.
+    # # @param request PutDocumentSaveAsTiffRequest
     # @return [Array<(SaveResponse, Fixnum, Hash)>] SaveResponse data, response status code and response headers
     def put_document_save_as_tiff_with_http_info(request)
 	  unless request.is_a? PutDocumentSaveAsTiffRequest
@@ -8214,18 +6676,7 @@ module RubySDK
 
     # Adds  drawing object to document, returns added  drawing object's data.
     # 
-    # @param name The document name.
-    # @param drawing_object Drawing object parameters
-    # @param image_file File with image
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [String] :node_path Path to node, which contains collection of drawing objects.
+	# @param request PutDrawingObjectRequest
     # @return [DrawingObjectResponse]
     def put_drawing_object(request)
       data, _status_code, _headers = put_drawing_object_with_http_info(request)
@@ -8234,18 +6685,7 @@ module RubySDK
 
     # Adds  drawing object to document, returns added  drawing object&#39;s data.
     # 
-    # @param name The document name.
-    # @param drawing_object Drawing object parameters
-    # @param image_file File with image
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [String] :node_path Path to node, which contains collection of drawing objects.
+    # # @param request PutDrawingObjectRequest
     # @return [Array<(DrawingObjectResponse, Fixnum, Hash)>] DrawingObjectResponse data, response status code and response headers
     def put_drawing_object_with_http_info(request)
 	  unless request.is_a? PutDrawingObjectRequest
@@ -8312,11 +6752,7 @@ module RubySDK
 
     # Execute document mail merge online.
     # 
-    # @param template File with template
-    # @param data File with mailmerge data
-    # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :with_regions With regions flag.
-    # @option opts [String] :cleanup Clean up options.
+	# @param request PutExecuteMailMergeOnlineRequest
     # @return [File]
     def put_execute_mail_merge_online(request)
       data, _status_code, _headers = put_execute_mail_merge_online_with_http_info(request)
@@ -8325,11 +6761,7 @@ module RubySDK
 
     # Execute document mail merge online.
     # 
-    # @param template File with template
-    # @param data File with mailmerge data
-    # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :with_regions With regions flag.
-    # @option opts [String] :cleanup Clean up options.
+    # # @param request PutExecuteMailMergeOnlineRequest
     # @return [Array<(File, Fixnum, Hash)>] File data, response status code and response headers
     def put_execute_mail_merge_online_with_http_info(request)
 	  unless request.is_a? PutExecuteMailMergeOnlineRequest
@@ -8385,12 +6817,7 @@ module RubySDK
 
     # Populate document template with data online.
     # 
-    # @param template File with template
-    # @param data File with mailmerge data
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :cleanup Clean up options.
-    # @option opts [BOOLEAN] :use_whole_paragraph_as_region Gets or sets a value indicating whether paragraph with TableStart or              TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.              The default value is true. (default to true)
-    # @option opts [BOOLEAN] :with_regions Merge with regions or not. True by default (default to true)
+	# @param request PutExecuteTemplateOnlineRequest
     # @return [File]
     def put_execute_template_online(request)
       data, _status_code, _headers = put_execute_template_online_with_http_info(request)
@@ -8399,12 +6826,7 @@ module RubySDK
 
     # Populate document template with data online.
     # 
-    # @param template File with template
-    # @param data File with mailmerge data
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :cleanup Clean up options.
-    # @option opts [BOOLEAN] :use_whole_paragraph_as_region Gets or sets a value indicating whether paragraph with TableStart or              TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.              The default value is true.
-    # @option opts [BOOLEAN] :with_regions Merge with regions or not. True by default
+    # # @param request PutExecuteTemplateOnlineRequest
     # @return [Array<(File, Fixnum, Hash)>] File data, response status code and response headers
     def put_execute_template_online_with_http_info(request)
 	  unless request.is_a? PutExecuteTemplateOnlineRequest
@@ -8461,18 +6883,7 @@ module RubySDK
 
     # Adds field to document, returns inserted field's data.
     # 
-    # @param name The document name.
-    # @param field Field data.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [String] :node_path Path to node, which contains collection of fields.
-    # @option opts [String] :insert_before_node Field will be inserted before node with id&#x3D;\&quot;nodeId\&quot;.
+	# @param request PutFieldRequest
     # @return [FieldResponse]
     def put_field(request)
       data, _status_code, _headers = put_field_with_http_info(request)
@@ -8481,18 +6892,7 @@ module RubySDK
 
     # Adds field to document, returns inserted field&#39;s data.
     # 
-    # @param name The document name.
-    # @param field Field data.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [String] :node_path Path to node, which contains collection of fields.
-    # @option opts [String] :insert_before_node Field will be inserted before node with id&#x3D;\&quot;nodeId\&quot;.
+    # # @param request PutFieldRequest
     # @return [Array<(FieldResponse, Fixnum, Hash)>] FieldResponse data, response status code and response headers
     def put_field_with_http_info(request)
 	  unless request.is_a? PutFieldRequest
@@ -8554,17 +6954,7 @@ module RubySDK
 
     # Adds footnote to document, returns added footnote's data.
     # 
-    # @param name The document name.
-    # @param footnote_dto Footnote data.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [String] :node_path Path to node, which contains collection of footnotes.
+	# @param request PutFootnoteRequest
     # @return [FootnoteResponse]
     def put_footnote(request)
       data, _status_code, _headers = put_footnote_with_http_info(request)
@@ -8573,17 +6963,7 @@ module RubySDK
 
     # Adds footnote to document, returns added footnote&#39;s data.
     # 
-    # @param name The document name.
-    # @param footnote_dto Footnote data.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [String] :node_path Path to node, which contains collection of footnotes.
+    # # @param request PutFootnoteRequest
     # @return [Array<(FootnoteResponse, Fixnum, Hash)>] FootnoteResponse data, response status code and response headers
     def put_footnote_with_http_info(request)
 	  unless request.is_a? PutFootnoteRequest
@@ -8644,18 +7024,7 @@ module RubySDK
 
     # Adds form field to paragraph, returns added form field's data.
     # 
-    # @param name The document name.
-    # @param form_field From field data.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [String] :node_path Path to node that contains collection of formfields.
-    # @option opts [String] :insert_before_node Form field will be inserted before node with index.
+	# @param request PutFormFieldRequest
     # @return [FormFieldResponse]
     def put_form_field(request)
       data, _status_code, _headers = put_form_field_with_http_info(request)
@@ -8664,18 +7033,7 @@ module RubySDK
 
     # Adds form field to paragraph, returns added form field&#39;s data.
     # 
-    # @param name The document name.
-    # @param form_field From field data.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [String] :node_path Path to node that contains collection of formfields.
-    # @option opts [String] :insert_before_node Form field will be inserted before node with index.
+    # # @param request PutFormFieldRequest
     # @return [Array<(FormFieldResponse, Fixnum, Hash)>] FormFieldResponse data, response status code and response headers
     def put_form_field_with_http_info(request)
 	  unless request.is_a? PutFormFieldRequest
@@ -8737,17 +7095,7 @@ module RubySDK
 
     # Insert to document header or footer.
     # 
-    # @param name The document name.
-    # @param header_footer_type Type of header/footer.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [String] :section_path Path to parent section.
+	# @param request PutHeaderFooterRequest
     # @return [HeaderFooterResponse]
     def put_header_footer(request)
       data, _status_code, _headers = put_header_footer_with_http_info(request)
@@ -8756,17 +7104,7 @@ module RubySDK
 
     # Insert to document header or footer.
     # 
-    # @param name The document name.
-    # @param header_footer_type Type of header/footer.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [String] :section_path Path to parent section.
+    # # @param request PutHeaderFooterRequest
     # @return [Array<(HeaderFooterResponse, Fixnum, Hash)>] HeaderFooterResponse data, response status code and response headers
     def put_header_footer_with_http_info(request)
 	  unless request.is_a? PutHeaderFooterRequest
@@ -8827,18 +7165,7 @@ module RubySDK
 
     # Adds paragraph to document, returns added paragraph's data.
     # 
-    # @param name The document name.
-    # @param paragraph Paragraph data.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [String] :node_path Path to node which contains paragraphs.
-    # @option opts [String] :insert_before_node Paragraph will be inserted before node with index.
+	# @param request PutParagraphRequest
     # @return [ParagraphResponse]
     def put_paragraph(request)
       data, _status_code, _headers = put_paragraph_with_http_info(request)
@@ -8847,18 +7174,7 @@ module RubySDK
 
     # Adds paragraph to document, returns added paragraph&#39;s data.
     # 
-    # @param name The document name.
-    # @param paragraph Paragraph data.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [String] :node_path Path to node which contains paragraphs.
-    # @option opts [String] :insert_before_node Paragraph will be inserted before node with index.
+    # # @param request PutParagraphRequest
     # @return [Array<(ParagraphResponse, Fixnum, Hash)>] ParagraphResponse data, response status code and response headers
     def put_paragraph_with_http_info(request)
 	  unless request.is_a? PutParagraphRequest
@@ -8920,14 +7236,7 @@ module RubySDK
 
     # Protect document.
     # 
-    # @param name The document name.
-    # @param protection_request with protection settings.            
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+	# @param request PutProtectDocumentRequest
     # @return [ProtectionDataResponse]
     def put_protect_document(request)
       data, _status_code, _headers = put_protect_document_with_http_info(request)
@@ -8936,14 +7245,7 @@ module RubySDK
 
     # Protect document.
     # 
-    # @param name The document name.
-    # @param protection_request with protection settings.            
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+    # # @param request PutProtectDocumentRequest
     # @return [Array<(ProtectionDataResponse, Fixnum, Hash)>] ProtectionDataResponse data, response status code and response headers
     def put_protect_document_with_http_info(request)
 	  unless request.is_a? PutProtectDocumentRequest
@@ -9001,18 +7303,7 @@ module RubySDK
 
     # Adds run to document, returns added paragraph's data.
     # 
-    # @param name The document name.
-    # @param paragraph_path Path to parent paragraph.
-    # @param run Run data.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [String] :insert_before_node Paragraph will be inserted before node with index.
+	# @param request PutRunRequest
     # @return [RunResponse]
     def put_run(request)
       data, _status_code, _headers = put_run_with_http_info(request)
@@ -9021,18 +7312,7 @@ module RubySDK
 
     # Adds run to document, returns added paragraph&#39;s data.
     # 
-    # @param name The document name.
-    # @param paragraph_path Path to parent paragraph.
-    # @param run Run data.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [String] :insert_before_node Paragraph will be inserted before node with index.
+    # # @param request PutRunRequest
     # @return [Array<(RunResponse, Fixnum, Hash)>] RunResponse data, response status code and response headers
     def put_run_with_http_info(request)
 	  unless request.is_a? PutRunRequest
@@ -9098,13 +7378,7 @@ module RubySDK
 
     # Reject all revisions in document
     # 
-    # @param name The document name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+	# @param request RejectAllRevisionsRequest
     # @return [RevisionsModificationResponse]
     def reject_all_revisions(request)
       data, _status_code, _headers = reject_all_revisions_with_http_info(request)
@@ -9113,13 +7387,7 @@ module RubySDK
 
     # Reject all revisions in document
     # 
-    # @param name The document name.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+    # # @param request RejectAllRevisionsRequest
     # @return [Array<(RevisionsModificationResponse, Fixnum, Hash)>] RevisionsModificationResponse data, response status code and response headers
     def reject_all_revisions_with_http_info(request)
 	  unless request.is_a? RejectAllRevisionsRequest
@@ -9173,16 +7441,7 @@ module RubySDK
 
     # Renders drawing object to specified format.
     # 
-    # @param name The file name.
-    # @param format The destination format.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :node_path Path to node, which contains drawing objects.
-    # @option opts [String] :fonts_location Folder in filestorage with custom fonts.
+	# @param request RenderDrawingObjectRequest
     # @return [File]
     def render_drawing_object(request)
       data, _status_code, _headers = render_drawing_object_with_http_info(request)
@@ -9191,16 +7450,7 @@ module RubySDK
 
     # Renders drawing object to specified format.
     # 
-    # @param name The file name.
-    # @param format The destination format.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :node_path Path to node, which contains drawing objects.
-    # @option opts [String] :fonts_location Folder in filestorage with custom fonts.
+    # # @param request RenderDrawingObjectRequest
     # @return [Array<(File, Fixnum, Hash)>] File data, response status code and response headers
     def render_drawing_object_with_http_info(request)
 	  unless request.is_a? RenderDrawingObjectRequest
@@ -9265,16 +7515,7 @@ module RubySDK
 
     # Renders math object to specified format.
     # 
-    # @param name The file name.
-    # @param format The destination format.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :node_path Path to node, which contains office math objects.
-    # @option opts [String] :fonts_location Folder in filestorage with custom fonts.
+	# @param request RenderMathObjectRequest
     # @return [File]
     def render_math_object(request)
       data, _status_code, _headers = render_math_object_with_http_info(request)
@@ -9283,16 +7524,7 @@ module RubySDK
 
     # Renders math object to specified format.
     # 
-    # @param name The file name.
-    # @param format The destination format.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :node_path Path to node, which contains office math objects.
-    # @option opts [String] :fonts_location Folder in filestorage with custom fonts.
+    # # @param request RenderMathObjectRequest
     # @return [Array<(File, Fixnum, Hash)>] File data, response status code and response headers
     def render_math_object_with_http_info(request)
 	  unless request.is_a? RenderMathObjectRequest
@@ -9357,15 +7589,7 @@ module RubySDK
 
     # Renders page to specified format.
     # 
-    # @param name The file name.
-    # @param page_index Comment index
-    # @param format The destination format.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :fonts_location Folder in filestorage with custom fonts.
+	# @param request RenderPageRequest
     # @return [File]
     def render_page(request)
       data, _status_code, _headers = render_page_with_http_info(request)
@@ -9374,15 +7598,7 @@ module RubySDK
 
     # Renders page to specified format.
     # 
-    # @param name The file name.
-    # @param page_index Comment index
-    # @param format The destination format.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :fonts_location Folder in filestorage with custom fonts.
+    # # @param request RenderPageRequest
     # @return [Array<(File, Fixnum, Hash)>] File data, response status code and response headers
     def render_page_with_http_info(request)
 	  unless request.is_a? RenderPageRequest
@@ -9446,16 +7662,7 @@ module RubySDK
 
     # Renders paragraph to specified format.
     # 
-    # @param name The file name.
-    # @param format The destination format.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :node_path Path to node, which contains paragraphs.
-    # @option opts [String] :fonts_location Folder in filestorage with custom fonts.
+	# @param request RenderParagraphRequest
     # @return [File]
     def render_paragraph(request)
       data, _status_code, _headers = render_paragraph_with_http_info(request)
@@ -9464,16 +7671,7 @@ module RubySDK
 
     # Renders paragraph to specified format.
     # 
-    # @param name The file name.
-    # @param format The destination format.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :node_path Path to node, which contains paragraphs.
-    # @option opts [String] :fonts_location Folder in filestorage with custom fonts.
+    # # @param request RenderParagraphRequest
     # @return [Array<(File, Fixnum, Hash)>] File data, response status code and response headers
     def render_paragraph_with_http_info(request)
 	  unless request.is_a? RenderParagraphRequest
@@ -9538,16 +7736,7 @@ module RubySDK
 
     # Renders table to specified format.
     # 
-    # @param name The file name.
-    # @param format The destination format.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :node_path Path to node, which contains tables.
-    # @option opts [String] :fonts_location Folder in filestorage with custom fonts.
+	# @param request RenderTableRequest
     # @return [File]
     def render_table(request)
       data, _status_code, _headers = render_table_with_http_info(request)
@@ -9556,16 +7745,7 @@ module RubySDK
 
     # Renders table to specified format.
     # 
-    # @param name The file name.
-    # @param format The destination format.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :node_path Path to node, which contains tables.
-    # @option opts [String] :fonts_location Folder in filestorage with custom fonts.
+    # # @param request RenderTableRequest
     # @return [Array<(File, Fixnum, Hash)>] File data, response status code and response headers
     def render_table_with_http_info(request)
 	  unless request.is_a? RenderTableRequest
@@ -9630,7 +7810,7 @@ module RubySDK
 
     # Resets font's cache.
     # 
-    # @param [Hash] opts the optional parameters
+	# @param request ResetCacheRequest
     # @return [AsposeResponse]
     def reset_cache(request)
       data, _status_code, _headers = reset_cache_with_http_info(request)
@@ -9639,7 +7819,7 @@ module RubySDK
 
     # Resets font&#39;s cache.
     # 
-    # @param [Hash] opts the optional parameters
+    # # @param request ResetCacheRequest
     # @return [Array<(AsposeResponse, Fixnum, Hash)>] AsposeResponse data, response status code and response headers
     def reset_cache_with_http_info(request)
 	  unless request.is_a? ResetCacheRequest
@@ -9683,13 +7863,7 @@ module RubySDK
 
     # Search text in document.
     # 
-    # @param name The document name.
-    # @param pattern The regular expression used to find matches.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+	# @param request SearchRequest
     # @return [SearchResponse]
     def search(request)
       data, _status_code, _headers = search_with_http_info(request)
@@ -9698,13 +7872,7 @@ module RubySDK
 
     # Search text in document.
     # 
-    # @param name The document name.
-    # @param pattern The regular expression used to find matches.
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
+    # # @param request SearchRequest
     # @return [Array<(SearchResponse, Fixnum, Hash)>] SearchResponse data, response status code and response headers
     def search_with_http_info(request)
 	  unless request.is_a? SearchRequest
@@ -9762,18 +7930,7 @@ module RubySDK
 
     # Updates border properties.             
     # 'nodePath' should refer to node with cell or row
-    # @param name The document name.
-    # @param border_properties Border properties
-    # @param node_path Path to node with border(node should be cell or row).
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
+	# @param request UpdateBorderRequest
     # @return [BorderResponse]
     def update_border(request)
       data, _status_code, _headers = update_border_with_http_info(request)
@@ -9782,18 +7939,7 @@ module RubySDK
 
     # Updates border properties.             
     # &#39;nodePath&#39; should refer to node with cell or row
-    # @param name The document name.
-    # @param border_properties Border properties
-    # @param node_path Path to node with border(node should be cell or row).
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
+    # # @param request UpdateBorderRequest
     # @return [Array<(BorderResponse, Fixnum, Hash)>] BorderResponse data, response status code and response headers
     def update_border_with_http_info(request)
 	  unless request.is_a? UpdateBorderRequest
@@ -9863,17 +8009,7 @@ module RubySDK
 
     # Update page setup of section.
     # 
-    # @param name The document name.
-    # @param section_index Section index
-    # @param page_setup Page setup properties dto
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
+	# @param request UpdateSectionPageSetupRequest
     # @return [SectionPageSetupResponse]
     def update_section_page_setup(request)
       data, _status_code, _headers = update_section_page_setup_with_http_info(request)
@@ -9882,17 +8018,7 @@ module RubySDK
 
     # Update page setup of section.
     # 
-    # @param name The document name.
-    # @param section_index Section index
-    # @param page_setup Page setup properties dto
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
+    # # @param request UpdateSectionPageSetupRequest
     # @return [Array<(SectionPageSetupResponse, Fixnum, Hash)>] SectionPageSetupResponse data, response status code and response headers
     def update_section_page_setup_with_http_info(request)
 	  unless request.is_a? UpdateSectionPageSetupRequest
@@ -9957,18 +8083,7 @@ module RubySDK
 
     # Updates a table cell format.
     # 
-    # @param name The document name.
-    # @param table_row_path Path to table row.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [TableCellFormat] :format The properties.
+	# @param request UpdateTableCellFormatRequest
     # @return [TableCellFormatResponse]
     def update_table_cell_format(request)
       data, _status_code, _headers = update_table_cell_format_with_http_info(request)
@@ -9977,18 +8092,7 @@ module RubySDK
 
     # Updates a table cell format.
     # 
-    # @param name The document name.
-    # @param table_row_path Path to table row.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [TableCellFormat] :format The properties.
+    # # @param request UpdateTableCellFormatRequest
     # @return [Array<(TableCellFormatResponse, Fixnum, Hash)>] TableCellFormatResponse data, response status code and response headers
     def update_table_cell_format_with_http_info(request)
 	  unless request.is_a? UpdateTableCellFormatRequest
@@ -10054,18 +8158,7 @@ module RubySDK
 
     # Updates a table properties.
     # 
-    # @param name The document name.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [TableProperties] :properties The properties.
-    # @option opts [String] :node_path Path to node, which contains tables.
+	# @param request UpdateTablePropertiesRequest
     # @return [TablePropertiesResponse]
     def update_table_properties(request)
       data, _status_code, _headers = update_table_properties_with_http_info(request)
@@ -10074,18 +8167,7 @@ module RubySDK
 
     # Updates a table properties.
     # 
-    # @param name The document name.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [TableProperties] :properties The properties.
-    # @option opts [String] :node_path Path to node, which contains tables.
+    # # @param request UpdateTablePropertiesRequest
     # @return [Array<(TablePropertiesResponse, Fixnum, Hash)>] TablePropertiesResponse data, response status code and response headers
     def update_table_properties_with_http_info(request)
 	  unless request.is_a? UpdateTablePropertiesRequest
@@ -10147,18 +8229,7 @@ module RubySDK
 
     # Updates a table row format.
     # 
-    # @param name The document name.
-    # @param table_path Path to table.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [TableRowFormat] :format Table row format.
+	# @param request UpdateTableRowFormatRequest
     # @return [TableRowFormatResponse]
     def update_table_row_format(request)
       data, _status_code, _headers = update_table_row_format_with_http_info(request)
@@ -10167,18 +8238,7 @@ module RubySDK
 
     # Updates a table row format.
     # 
-    # @param name The document name.
-    # @param table_path Path to table.
-    # @param index Object&#39;s index
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :folder Original document folder.
-    # @option opts [String] :storage File storage, which have to be used.
-    # @option opts [String] :load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @option opts [String] :password Password for opening an encrypted document.
-    # @option opts [String] :dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @option opts [String] :revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @option opts [String] :revision_date_time The date and time to use for revisions.
-    # @option opts [TableRowFormat] :format Table row format.
+    # # @param request UpdateTableRowFormatRequest
     # @return [Array<(TableRowFormatResponse, Fixnum, Hash)>] TableRowFormatResponse data, response status code and response headers
     def update_table_row_format_with_http_info(request)
 	  unless request.is_a? UpdateTableRowFormatRequest
@@ -10249,4 +8309,4 @@ module RubySDK
 	def downcase_first_letter(str)
 		str[0].downcase + str[1..-1]
 	end
-end
+end
