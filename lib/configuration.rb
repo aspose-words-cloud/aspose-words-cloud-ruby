@@ -1,7 +1,7 @@
 #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="configuration.rb">
- #  Copyright (c) 2017 Aspose.Words for Cloud
+ #  Copyright (c) 2018 Aspose.Words for Cloud
  # </copyright>
  # <summary>
  #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -69,6 +69,9 @@ module RubySDK
 
     # Defines the access token (Bearer) used with OAuth2.
     attr_accessor :access_token
+	
+	# Defines the refresh token (Bearer) used with OAuth2.
+    attr_accessor :refresh_token
 
     # Set this to enable/disable debugging. When enabled (set to true), HTTP request/response
     # details will be logged with `logger.debug` (see the `logger` attribute).
@@ -147,7 +150,7 @@ module RubySDK
 
     def initialize
       @scheme = 'https'
-      @host = 'localhost'
+      @host = "api-dev.aspose.cloud"
       @base_path = '/v1.1'
       @api_key = {}
       @api_key_prefix = {}

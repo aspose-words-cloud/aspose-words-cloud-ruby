@@ -1,0 +1,1 @@
+docker run --rm -v %cd%/:/opt/project -w="/opt/project" ruby:2.1 /bin/bash test.sh

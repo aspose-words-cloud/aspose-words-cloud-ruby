@@ -31,6 +31,8 @@ require 'logger'
 require 'tempfile'
 require 'typhoeus'
 require 'uri'
+require_relative 'version'
+require_relative 'api_error'
 
  #
  # api client is mainly responsible for making the HTTP call to the API backend.
@@ -52,7 +54,7 @@ module RubySDK
       @default_headers = {
         'Content-Type' => "application/json",
         'x-aspose-client' => "ruby sdk",
-        'x-aspose-version' => "#{VERSION}"
+        'x-aspose-version' => "#{RubySDK::VERSION}"
       }
     end
 

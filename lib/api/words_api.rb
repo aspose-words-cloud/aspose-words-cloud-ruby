@@ -74,6 +74,8 @@ module RubySDK
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
       query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -148,6 +150,8 @@ module RubySDK
       query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -223,6 +227,8 @@ module RubySDK
       query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -293,6 +299,8 @@ module RubySDK
       query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -363,6 +371,8 @@ module RubySDK
       query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -428,6 +438,8 @@ module RubySDK
       query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -498,6 +510,8 @@ module RubySDK
       query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -563,6 +577,8 @@ module RubySDK
       query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -634,6 +650,8 @@ module RubySDK
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
       query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -705,6 +723,8 @@ module RubySDK
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
       query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -771,6 +791,8 @@ module RubySDK
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
       query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -842,6 +864,8 @@ module RubySDK
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
       query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -913,6 +937,8 @@ module RubySDK
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
       query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -984,6 +1010,8 @@ module RubySDK
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
       query_params[downcase_first_letter('SectionPath')] = request.section_path unless request.section_path.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -1051,6 +1079,8 @@ module RubySDK
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
       query_params[downcase_first_letter('SectionPath')] = request.section_path unless request.section_path.nil?
       query_params[downcase_first_letter('HeadersFootersTypes')] = request.headers_footers_types unless request.headers_footers_types.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -1122,6 +1152,8 @@ module RubySDK
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
       query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -1193,6 +1225,8 @@ module RubySDK
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
       query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -1268,6 +1302,8 @@ module RubySDK
       query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -1339,6 +1375,8 @@ module RubySDK
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
       query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -1414,6 +1452,8 @@ module RubySDK
       query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -1489,6 +1529,8 @@ module RubySDK
       query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -1556,6 +1598,8 @@ module RubySDK
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
       query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -1628,6 +1672,8 @@ module RubySDK
       query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -1695,6 +1741,8 @@ module RubySDK
       query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -1762,6 +1810,8 @@ module RubySDK
       query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -1824,6 +1874,8 @@ module RubySDK
       query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -1886,6 +1938,8 @@ module RubySDK
       query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -1953,6 +2007,8 @@ module RubySDK
       query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -2015,6 +2071,8 @@ module RubySDK
       query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -2083,6 +2141,8 @@ module RubySDK
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
       query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -2151,6 +2211,8 @@ module RubySDK
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
       query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -2219,6 +2281,8 @@ module RubySDK
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
       query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -2282,6 +2346,8 @@ module RubySDK
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
       query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -2345,6 +2411,8 @@ module RubySDK
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
       query_params[downcase_first_letter('UseNonMergeFields')] = request.use_non_merge_fields unless request.use_non_merge_fields.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -2412,6 +2480,8 @@ module RubySDK
       query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -2474,6 +2544,8 @@ module RubySDK
       query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -2542,6 +2614,8 @@ module RubySDK
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
       query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -2614,6 +2688,8 @@ module RubySDK
       query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -2686,6 +2762,8 @@ module RubySDK
       query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -2753,6 +2831,8 @@ module RubySDK
       query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -2816,6 +2896,8 @@ module RubySDK
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
       query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -2878,6 +2960,8 @@ module RubySDK
       query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -2945,6 +3029,8 @@ module RubySDK
       query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -3007,6 +3093,8 @@ module RubySDK
       query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -3072,6 +3160,8 @@ module RubySDK
       query_params[downcase_first_letter('IncludeComments')] = request.include_comments unless request.include_comments.nil?
       query_params[downcase_first_letter('IncludeFootnotes')] = request.include_footnotes unless request.include_footnotes.nil?
       query_params[downcase_first_letter('IncludeTextInShapes')] = request.include_text_in_shapes unless request.include_text_in_shapes.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -3134,6 +3224,8 @@ module RubySDK
       query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -3203,6 +3295,8 @@ module RubySDK
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
       query_params[downcase_first_letter('OutPath')] = request.out_path unless request.out_path.nil?
       query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -3271,6 +3365,8 @@ module RubySDK
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
       query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -3334,6 +3430,8 @@ module RubySDK
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
       query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -3402,6 +3500,8 @@ module RubySDK
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
       query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -3465,6 +3565,8 @@ module RubySDK
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
       query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -3533,6 +3635,8 @@ module RubySDK
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
       query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -3596,6 +3700,8 @@ module RubySDK
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
       query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -3664,6 +3770,8 @@ module RubySDK
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
       query_params[downcase_first_letter('FilterByType')] = request.filter_by_type unless request.filter_by_type.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -3737,6 +3845,8 @@ module RubySDK
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
       query_params[downcase_first_letter('FilterByType')] = request.filter_by_type unless request.filter_by_type.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -3801,6 +3911,8 @@ module RubySDK
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
       query_params[downcase_first_letter('SectionPath')] = request.section_path unless request.section_path.nil?
       query_params[downcase_first_letter('FilterByType')] = request.filter_by_type unless request.filter_by_type.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -3869,6 +3981,8 @@ module RubySDK
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
       query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -3932,6 +4046,8 @@ module RubySDK
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
       query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -3999,6 +4115,8 @@ module RubySDK
       query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -4066,6 +4184,8 @@ module RubySDK
       query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -4128,6 +4248,8 @@ module RubySDK
       query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -4196,6 +4318,8 @@ module RubySDK
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
       query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -4268,6 +4392,8 @@ module RubySDK
       query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -4340,6 +4466,8 @@ module RubySDK
       query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -4408,6 +4536,8 @@ module RubySDK
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
       query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -4480,6 +4610,8 @@ module RubySDK
       query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -4552,6 +4684,8 @@ module RubySDK
       query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -4615,6 +4749,8 @@ module RubySDK
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
       query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -4681,6 +4817,8 @@ module RubySDK
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
       query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -4751,6 +4889,8 @@ module RubySDK
       query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -4821,6 +4961,8 @@ module RubySDK
       query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -4890,6 +5032,8 @@ module RubySDK
       query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -4957,6 +5101,8 @@ module RubySDK
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
       query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -5031,6 +5177,8 @@ module RubySDK
       query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -5098,6 +5246,8 @@ module RubySDK
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
       query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -5169,6 +5319,8 @@ module RubySDK
       query_params[downcase_first_letter('Cleanup')] = request.cleanup unless request.cleanup.nil?
       query_params[downcase_first_letter('UseWholeParagraphAsRegion')] = request.use_whole_paragraph_as_region unless request.use_whole_paragraph_as_region.nil?
       query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -5249,6 +5401,8 @@ module RubySDK
       query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -5317,6 +5471,8 @@ module RubySDK
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
       query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
       query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -5396,6 +5552,8 @@ module RubySDK
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
       query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -5468,6 +5626,8 @@ module RubySDK
       query_params[downcase_first_letter('UseWholeParagraphAsRegion')] = request.use_whole_paragraph_as_region unless request.use_whole_paragraph_as_region.nil?
       query_params[downcase_first_letter('WithRegions')] = request.with_regions unless request.with_regions.nil?
       query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -5544,6 +5704,8 @@ module RubySDK
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
       query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -5619,6 +5781,8 @@ module RubySDK
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
       query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -5694,6 +5858,8 @@ module RubySDK
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
       query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -5761,6 +5927,8 @@ module RubySDK
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
       query_params[downcase_first_letter('RotationAngle')] = request.rotation_angle unless request.rotation_angle.nil?
       query_params[downcase_first_letter('Image')] = request.image unless request.image.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -5831,6 +5999,8 @@ module RubySDK
       query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -5900,6 +6070,8 @@ module RubySDK
       query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -5958,6 +6130,8 @@ module RubySDK
       # query parameters
       query_params = {}
       query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -6027,6 +6201,8 @@ module RubySDK
       query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -6106,6 +6282,8 @@ module RubySDK
       query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -6174,6 +6352,8 @@ module RubySDK
       query_params[downcase_first_letter('To')] = request.to unless request.to.nil?
       query_params[downcase_first_letter('ZipOutput')] = request.zip_output unless request.zip_output.nil?
       query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -6248,6 +6428,8 @@ module RubySDK
       query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -6311,6 +6493,8 @@ module RubySDK
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
       query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -6380,6 +6564,8 @@ module RubySDK
       query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -6445,6 +6631,8 @@ module RubySDK
       query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
       query_params[downcase_first_letter('OutPath')] = request.out_path unless request.out_path.nil?
       query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -6502,6 +6690,8 @@ module RubySDK
       query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
       query_params[downcase_first_letter('FileName')] = request.file_name unless request.file_name.nil?
       query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -6560,6 +6750,8 @@ module RubySDK
       # query parameters
       query_params = {}
       query_params[downcase_first_letter('UseNonMergeFields')] = request.use_non_merge_fields unless request.use_non_merge_fields.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -6647,6 +6839,8 @@ module RubySDK
       query_params[downcase_first_letter('TiffBinarizationMethod')] = request.tiff_binarization_method unless request.tiff_binarization_method.nil?
       query_params[downcase_first_letter('ZipOutput')] = request.zip_output unless request.zip_output.nil?
       query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -6721,6 +6915,8 @@ module RubySDK
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
       query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -6786,6 +6982,8 @@ module RubySDK
       query_params = {}
       query_params[downcase_first_letter('WithRegions')] = request.with_regions unless request.with_regions.nil?
       query_params[downcase_first_letter('Cleanup')] = request.cleanup unless request.cleanup.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -6852,6 +7050,8 @@ module RubySDK
       query_params[downcase_first_letter('Cleanup')] = request.cleanup unless request.cleanup.nil?
       query_params[downcase_first_letter('UseWholeParagraphAsRegion')] = request.use_whole_paragraph_as_region unless request.use_whole_paragraph_as_region.nil?
       query_params[downcase_first_letter('WithRegions')] = request.with_regions unless request.with_regions.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -6925,6 +7125,8 @@ module RubySDK
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
       query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
       query_params[downcase_first_letter('InsertBeforeNode')] = request.insert_before_node unless request.insert_before_node.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -6995,6 +7197,8 @@ module RubySDK
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
       query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -7066,6 +7270,8 @@ module RubySDK
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
       query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
       query_params[downcase_first_letter('InsertBeforeNode')] = request.insert_before_node unless request.insert_before_node.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -7136,6 +7342,8 @@ module RubySDK
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
       query_params[downcase_first_letter('SectionPath')] = request.section_path unless request.section_path.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -7207,6 +7415,8 @@ module RubySDK
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
       query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
       query_params[downcase_first_letter('InsertBeforeNode')] = request.insert_before_node unless request.insert_before_node.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -7274,6 +7484,8 @@ module RubySDK
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
       query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -7349,6 +7561,8 @@ module RubySDK
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
       query_params[downcase_first_letter('InsertBeforeNode')] = request.insert_before_node unless request.insert_before_node.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -7412,6 +7626,8 @@ module RubySDK
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
       query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -7486,6 +7702,8 @@ module RubySDK
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
       query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
       query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -7560,6 +7778,8 @@ module RubySDK
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
       query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
       query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -7633,6 +7853,8 @@ module RubySDK
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
       query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -7707,6 +7929,8 @@ module RubySDK
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
       query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
       query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -7781,6 +8005,8 @@ module RubySDK
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
       query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
       query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -7834,6 +8060,8 @@ module RubySDK
 
       # query parameters
       query_params = {}
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -7901,6 +8129,8 @@ module RubySDK
       query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
       query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -7980,6 +8210,8 @@ module RubySDK
       query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -8054,6 +8286,8 @@ module RubySDK
       query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -8129,6 +8363,8 @@ module RubySDK
       query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -8200,6 +8436,8 @@ module RubySDK
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
       query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -8275,6 +8513,8 @@ module RubySDK
       query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
       query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	  
+	  
 
       # header parameters
       header_params = {}
@@ -8301,12 +8541,25 @@ module RubySDK
       end
       return data, status_code, headers
     end
+
+         #
+	     # Helper method to convert first letter to downcase
+	     #
+        def downcase_first_letter(str)
+		    str[0].downcase + str[1..-1]
+	    end
+	
+	     #
+         # Gets a request token from server
+         #
+        def request_token
+          config = @api_client.config
+          config.base_path = ''
+          request_url = "/oauth2/token"
+          post_data = "grant_type=client_credentials" + "&client_id=" + config.api_key['app_sid'] + "&client_secret=" + config.api_key['app_key']
+          data, status_code, header = @api_client.call_api(:POST, request_url, :body => post_data, :return_type => 'Object')
+          config.access_token = data['access_token']
+	      config.refresh_token = data['refresh_token']
+        end
   end
-  
-	#
-	# Helper method to convert first letter to downcase
-	#
-	def downcase_first_letter(str)
-		str[0].downcase + str[1..-1]
-	end
 end
