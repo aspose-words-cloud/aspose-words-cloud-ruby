@@ -34,6 +34,7 @@ module RubySDK
     # Link to the document.
     attr_accessor :link
 
+    # Collection of text items.
     attr_accessor :list
 
 
@@ -134,9 +135,9 @@ module RubySDK
     def _deserialize(type, value)
       case type.to_sym
       when :DateTime
-        DateTime.parse(value)
+        Time.at(/\d/.match(value)[0].to_f).to_datetime
       when :Date
-        Date.parse(value)
+        Time.at(/\d/.match(value)[0].to_f).to_date
       when :String
         value.to_s
       when :Integer

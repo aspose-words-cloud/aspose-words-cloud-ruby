@@ -31,6 +31,8 @@ require 'logger'
 require 'tempfile'
 require 'typhoeus'
 require 'uri'
+require 'faraday'
+require 'mimemagic'
 require_relative 'version'
 require_relative 'api_error'
 
@@ -67,25 +69,22 @@ module RubySDK
     # @return [Array<(Object, Fixnum, Hash)>] an array of 3 elements:
     #   the data deserialized from response body (could be nil), response status code and response headers.
     def call_api(http_method, path, opts = {})
-      request = build_request(http_method, path, opts)
-      response = request.run
-
+      response = build_request(http_method, path, opts)
+      download_file response if opts[:return_type] == 'File'
       if @config.debugging
         @config.logger.debug "HTTP response body ~BEGIN~\n#{response.body}\n~END~\n"
       end
 
       unless response.success?
-        if response.timed_out?
-          fail ApiError.new('Connection timed out')
-        elsif response.code == 0
+        if response.status == 0
           # Errors from libcurl will be made visible here
           fail ApiError.new(:code => 0,
-                            :message => response.return_message)
+                            :message => response.reason_phrase)
         else
-          fail ApiError.new(:code => response.code,
+          fail ApiError.new(:code => response.status,
                             :response_headers => response.headers,
                             :response_body => response.body),
-               response.status_message
+               response.reason_phrase
         end
       end
 
@@ -94,7 +93,7 @@ module RubySDK
       else
         data = nil
       end
-      return data, response.code, response.headers
+      return data, response.status, response.headers
     end
 
     # Builds the HTTP request
@@ -105,7 +104,7 @@ module RubySDK
     # @option opts [Hash] :query_params Query parameters
     # @option opts [Hash] :form_params Query parameters
     # @option opts [Object] :body HTTP body (JSON/XML)
-    # @return [Typhoeus::Request] A Typhoeus Request
+    # @return [Faraday::Response] A Faraday Response
     def build_request(http_method, path, opts = {})
       url = build_request_url(path)
       http_method = http_method.to_sym.downcase
@@ -113,23 +112,16 @@ module RubySDK
       header_params = @default_headers.merge(opts[:header_params] || {})
       query_params = opts[:query_params] || {}
       form_params = opts[:form_params] || {}
+      body = opts[:body] || {}
 
       update_params_for_auth! header_params, query_params, opts[:auth_names]
 
-      # set ssl_verifyhosts option based on @config.verify_ssl_host (true/false)
-      _verify_ssl_host = @config.verify_ssl_host ? 2 : 0
 
       req_opts = {
         :method => http_method,
         :headers => header_params,
         :params => query_params,
-        :params_encoding => @config.params_encoding,
-        :timeout => @config.timeout,
-        :ssl_verifypeer => @config.verify_ssl,
-        :ssl_verifyhost => _verify_ssl_host,
-        :sslcert => @config.cert_file,
-        :sslkey => @config.key_file,
-        :verbose => @config.debugging
+        :body => body
       }
 
       # set custom cert, if provided
@@ -143,9 +135,24 @@ module RubySDK
         end
       end
 
-      request = Typhoeus::Request.new(url, req_opts)
-      download_file(request) if opts[:return_type] == 'File'
-      request
+      conn = Faraday.new url, {:params => query_params, :headers => header_params} do |f|
+      f.request :multipart
+      f.request :url_encoded
+      f.adapter Faraday.default_adapter
+      end
+
+      case http_method
+        when :post
+          return conn.post url, req_opts[:body]
+        when :put
+          return conn.put url, req_opts[:body]
+        when :get
+          return conn.get url, req_opts[:body]
+        else
+          return conn.delete url do |c|
+            c.body = req_opts[:body]
+          end
+      end
     end
 
     # Check if the given MIME is a JSON MIME.
@@ -243,27 +250,22 @@ module RubySDK
     # process can use.
     #
     # @see Configuration#temp_folder_path
-    def download_file(request)
+    def download_file(response)
       tempfile = nil
       encoding = nil
-      request.on_headers do |response|
-        content_disposition = response.headers['Content-Disposition']
-        if content_disposition and content_disposition =~ /filename=/i
-          filename = content_disposition[/filename=['"]?([^'"\s]+)['"]?/, 1]
-          prefix = sanitize_filename(filename)
-        else
-          prefix = 'download-'
-        end
-        prefix = prefix + '-' unless prefix.end_with?('-')
-        encoding = response.body.encoding
-        tempfile = Tempfile.open(prefix, @config.temp_folder_path, encoding: encoding)
-        @tempfile = tempfile
+      content_disposition = response.headers['Content-Disposition']
+      if content_disposition and content_disposition =~ /filename=/i
+        filename = content_disposition[/filename=['"]?([^'"\s]+)['"]?/, 1]
+        prefix = sanitize_filename(filename)
+      else
+        prefix = 'download-'
       end
-      request.on_body do |chunk|
-        chunk.force_encoding(encoding)
-        tempfile.write(chunk)
-      end
-      request.on_complete do |response|
+      prefix = prefix + '-' unless prefix.end_with?('-')
+      encoding = response.body.encoding
+      tempfile = Tempfile.open(prefix, @config.temp_folder_path, encoding: encoding)
+      @tempfile = tempfile
+      tempfile.write(response.body)
+      response.on_complete do |resp|
         tempfile.close
         @config.logger.info "Temp file written to #{tempfile.path}, please copy the file to a proper folder "\
                             "with e.g. `FileUtils.cp(tempfile.path, '/new/file/path')` otherwise the temp file "\
@@ -300,8 +302,9 @@ module RubySDK
         data = {}
         form_params.each do |key, value|
           case value
-          when ::File, ::Array, nil
-            # let typhoeus handle File, Array and nil parameters
+          when ::File
+            data[key] = Faraday::UploadIO.new(value.path, MimeMagic.by_magic(value).to_s, key)
+          when ::Array, nil
             data[key] = value
           else
             data[key] = value.to_s
@@ -365,7 +368,8 @@ module RubySDK
     # @param [Object] model object to be converted into JSON string
     # @return [String] JSON string representation of the object
     def object_to_http_body(model)
-      return model if model.nil? || model.is_a?(String)
+      return '"' + model + '"' if model.is_a?(String)
+      return model if model.nil? 
       local_body = nil
       if model.is_a?(Array)
         local_body = model.map{|m| object_to_hash(m) }

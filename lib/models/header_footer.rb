@@ -130,10 +130,14 @@ module RubySDK
     # @param [Object] type Object to be assigned
     def type=(type)
       validator = EnumAttributeValidator.new('String', ["HeaderEven", "HeaderPrimary", "FooterEven", "FooterPrimary", "HeaderFirst", "FooterFirst"])
-      unless validator.valid?(type)
-        fail ArgumentError, "invalid value for 'type', must be one of #{validator.allowable_values}."
+      if type.to_i == 0
+        unless validator.valid?(type)
+          fail ArgumentError, "invalid value for 'type', must be one of #{validator.allowable_values}."
+        end
+        @type = type
+      else
+        @type = validator.allowable_values[type.to_i]
       end
-      @type = type
     end
 
     # Checks equality by comparing each attribute.
@@ -186,9 +190,9 @@ module RubySDK
     def _deserialize(type, value)
       case type.to_sym
       when :DateTime
-        DateTime.parse(value)
+        Time.at(/\d/.match(value)[0].to_f).to_datetime
       when :Date
-        Date.parse(value)
+        Time.at(/\d/.match(value)[0].to_f).to_date
       when :String
         value.to_s
       when :Integer

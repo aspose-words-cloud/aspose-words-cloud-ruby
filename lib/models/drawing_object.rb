@@ -208,30 +208,42 @@ module RubySDK
     # @param [Object] relative_horizontal_position Object to be assigned
     def relative_horizontal_position=(relative_horizontal_position)
       validator = EnumAttributeValidator.new('String', ["Margin", "Page", "Column", "Default", "Character", "LeftMargin", "RightMargin", "InsideMargin", "OutsideMargin"])
-      unless validator.valid?(relative_horizontal_position)
-        fail ArgumentError, "invalid value for 'relative_horizontal_position', must be one of #{validator.allowable_values}."
+      if relative_horizontal_position.to_i == 0
+        unless validator.valid?(relative_horizontal_position)
+          fail ArgumentError, "invalid value for 'relative_horizontal_position', must be one of #{validator.allowable_values}."
+        end
+        @relative_horizontal_position = relative_horizontal_position
+      else
+        @relative_horizontal_position = validator.allowable_values[relative_horizontal_position.to_i]
       end
-      @relative_horizontal_position = relative_horizontal_position
     end
 
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] relative_vertical_position Object to be assigned
     def relative_vertical_position=(relative_vertical_position)
       validator = EnumAttributeValidator.new('String', ["Margin", "TableDefault", "Page", "Paragraph", "TextFrameDefault", "Line", "TopMargin", "BottomMargin", "InsideMargin", "OutsideMargin"])
-      unless validator.valid?(relative_vertical_position)
-        fail ArgumentError, "invalid value for 'relative_vertical_position', must be one of #{validator.allowable_values}."
+      if relative_vertical_position.to_i == 0
+        unless validator.valid?(relative_vertical_position)
+          fail ArgumentError, "invalid value for 'relative_vertical_position', must be one of #{validator.allowable_values}."
+        end
+        @relative_vertical_position = relative_vertical_position
+      else
+        @relative_vertical_position = validator.allowable_values[relative_vertical_position.to_i]
       end
-      @relative_vertical_position = relative_vertical_position
     end
 
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] wrap_type Object to be assigned
     def wrap_type=(wrap_type)
       validator = EnumAttributeValidator.new('String', ["Inline", "TopBottom", "Square", "None", "Tight", "Through"])
-      unless validator.valid?(wrap_type)
-        fail ArgumentError, "invalid value for 'wrap_type', must be one of #{validator.allowable_values}."
+      if wrap_type.to_i == 0
+        unless validator.valid?(wrap_type)
+          fail ArgumentError, "invalid value for 'wrap_type', must be one of #{validator.allowable_values}."
+        end
+        @wrap_type = wrap_type
+      else
+        @wrap_type = validator.allowable_values[wrap_type.to_i]
       end
-      @wrap_type = wrap_type
     end
 
     # Checks equality by comparing each attribute.
@@ -292,9 +304,9 @@ module RubySDK
     def _deserialize(type, value)
       case type.to_sym
       when :DateTime
-        DateTime.parse(value)
+        Time.at(/\d/.match(value)[0].to_f).to_datetime
       when :Date
-        Date.parse(value)
+        Time.at(/\d/.match(value)[0].to_f).to_date
       when :String
         value.to_s
       when :Integer

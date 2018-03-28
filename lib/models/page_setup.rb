@@ -378,80 +378,112 @@ module RubySDK
     # @param [Object] border_applies_to Object to be assigned
     def border_applies_to=(border_applies_to)
       validator = EnumAttributeValidator.new('String', ["AllPages", "FirstPage", "OtherPages"])
-      unless validator.valid?(border_applies_to)
-        fail ArgumentError, "invalid value for 'border_applies_to', must be one of #{validator.allowable_values}."
+      if border_applies_to.to_i == 0
+        unless validator.valid?(border_applies_to)
+          fail ArgumentError, "invalid value for 'border_applies_to', must be one of #{validator.allowable_values}."
+        end
+        @border_applies_to = border_applies_to
+      else
+        @border_applies_to = validator.allowable_values[border_applies_to.to_i]
       end
-      @border_applies_to = border_applies_to
     end
 
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] border_distance_from Object to be assigned
     def border_distance_from=(border_distance_from)
       validator = EnumAttributeValidator.new('String', ["Text", "PageEdge"])
-      unless validator.valid?(border_distance_from)
-        fail ArgumentError, "invalid value for 'border_distance_from', must be one of #{validator.allowable_values}."
+      if border_distance_from.to_i == 0
+        unless validator.valid?(border_distance_from)
+          fail ArgumentError, "invalid value for 'border_distance_from', must be one of #{validator.allowable_values}."
+        end
+        @border_distance_from = border_distance_from
+      else
+        @border_distance_from = validator.allowable_values[border_distance_from.to_i]
       end
-      @border_distance_from = border_distance_from
     end
 
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] line_number_restart_mode Object to be assigned
     def line_number_restart_mode=(line_number_restart_mode)
       validator = EnumAttributeValidator.new('String', ["RestartPage", "RestartSection", "Continuous"])
-      unless validator.valid?(line_number_restart_mode)
-        fail ArgumentError, "invalid value for 'line_number_restart_mode', must be one of #{validator.allowable_values}."
+      if line_number_restart_mode.to_i == 0
+        unless validator.valid?(line_number_restart_mode)
+          fail ArgumentError, "invalid value for 'line_number_restart_mode', must be one of #{validator.allowable_values}."
+        end
+        @line_number_restart_mode = line_number_restart_mode
+      else
+        @line_number_restart_mode = validator.allowable_values[line_number_restart_mode.to_i]
       end
-      @line_number_restart_mode = line_number_restart_mode
     end
 
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] orientation Object to be assigned
     def orientation=(orientation)
       validator = EnumAttributeValidator.new('String', ["Portrait", "Landscape"])
-      unless validator.valid?(orientation)
-        fail ArgumentError, "invalid value for 'orientation', must be one of #{validator.allowable_values}."
+      if orientation.to_i == 0
+        unless validator.valid?(orientation)
+          fail ArgumentError, "invalid value for 'orientation', must be one of #{validator.allowable_values}."
+        end
+        @orientation = orientation
+      else
+        @orientation = validator.allowable_values[orientation.to_i]
       end
-      @orientation = orientation
     end
 
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] page_number_style Object to be assigned
     def page_number_style=(page_number_style)
       validator = EnumAttributeValidator.new('String', ["Arabic", "UppercaseRoman", "LowercaseRoman", "UppercaseLetter", "LowercaseLetter", "Ordinal", "Number", "OrdinalText", "Hex", "ChicagoManual", "Kanji", "KanjiDigit", "AiueoHalfWidth", "IrohaHalfWidth", "ArabicFullWidth", "ArabicHalfWidth", "KanjiTraditional", "KanjiTraditional2", "NumberInCircle", "DecimalFullWidth", "Aiueo", "Iroha", "LeadingZero", "Bullet", "Ganada", "Chosung", "GB1", "GB2", "GB3", "GB4", "Zodiac1", "Zodiac2", "Zodiac3", "TradChinNum1", "TradChinNum2", "TradChinNum3", "TradChinNum4", "SimpChinNum1", "SimpChinNum2", "SimpChinNum3", "SimpChinNum4", "HanjaRead", "HanjaReadDigit", "Hangul", "Hanja", "Hebrew1", "Arabic1", "Hebrew2", "Arabic2", "HindiLetter1", "HindiLetter2", "HindiArabic", "HindiCardinalText", "ThaiLetter", "ThaiArabic", "ThaiCardinalText", "VietCardinalText", "NumberInDash", "NumInDash", "LowercaseRussian", "UppercaseRussian", "None", "Custom"])
-      unless validator.valid?(page_number_style)
-        fail ArgumentError, "invalid value for 'page_number_style', must be one of #{validator.allowable_values}."
+      if page_number_style.to_i == 0
+        unless validator.valid?(page_number_style)
+          fail ArgumentError, "invalid value for 'page_number_style', must be one of #{validator.allowable_values}."
+        end
+        @page_number_style = page_number_style
+      else
+        @page_number_style = validator.allowable_values[page_number_style.to_i]
       end
-      @page_number_style = page_number_style
     end
 
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] paper_size Object to be assigned
     def paper_size=(paper_size)
       validator = EnumAttributeValidator.new('String', ["A3", "A4", "A5", "B4", "B5", "Executive", "Folio", "Ledger", "Legal", "Letter", "EnvelopeDL", "Quarto", "Statement", "Tabloid", "Paper10x14", "Paper11x17", "Custom"])
-      unless validator.valid?(paper_size)
-        fail ArgumentError, "invalid value for 'paper_size', must be one of #{validator.allowable_values}."
+      if paper_size.to_i == 0
+        unless validator.valid?(paper_size)
+          fail ArgumentError, "invalid value for 'paper_size', must be one of #{validator.allowable_values}."
+        end
+        @paper_size = paper_size
+      else
+        @paper_size = validator.allowable_values[paper_size.to_i]
       end
-      @paper_size = paper_size
     end
 
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] section_start Object to be assigned
     def section_start=(section_start)
       validator = EnumAttributeValidator.new('String', ["Continuous", "NewColumn", "NewPage", "EvenPage", "OddPage"])
-      unless validator.valid?(section_start)
-        fail ArgumentError, "invalid value for 'section_start', must be one of #{validator.allowable_values}."
+      if section_start.to_i == 0
+        unless validator.valid?(section_start)
+          fail ArgumentError, "invalid value for 'section_start', must be one of #{validator.allowable_values}."
+        end
+        @section_start = section_start
+      else
+        @section_start = validator.allowable_values[section_start.to_i]
       end
-      @section_start = section_start
     end
 
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] vertical_alignment Object to be assigned
     def vertical_alignment=(vertical_alignment)
       validator = EnumAttributeValidator.new('String', ["Top", "Center", "Justify", "Bottom"])
-      unless validator.valid?(vertical_alignment)
-        fail ArgumentError, "invalid value for 'vertical_alignment', must be one of #{validator.allowable_values}."
+      if vertical_alignment.to_i == 0
+        unless validator.valid?(vertical_alignment)
+          fail ArgumentError, "invalid value for 'vertical_alignment', must be one of #{validator.allowable_values}."
+        end
+        @vertical_alignment = vertical_alignment
+      else
+        @vertical_alignment = validator.allowable_values[vertical_alignment.to_i]
       end
-      @vertical_alignment = vertical_alignment
     end
 
     # Checks equality by comparing each attribute.
@@ -530,9 +562,9 @@ module RubySDK
     def _deserialize(type, value)
       case type.to_sym
       when :DateTime
-        DateTime.parse(value)
+        Time.at(/\d/.match(value)[0].to_f).to_datetime
       when :Date
-        Date.parse(value)
+        Time.at(/\d/.match(value)[0].to_f).to_date
       when :String
         value.to_s
       when :Integer

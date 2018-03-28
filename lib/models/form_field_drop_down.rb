@@ -64,11 +64,11 @@ module RubySDK
     # Returns or sets an exit macro name for the form field.
     attr_accessor :exit_macro
 
-    # Provides access to the items of a dropdown form field.
-    attr_accessor :drop_down_items
-
     # Gets or sets the index specifying the currently selected item in a dropdown form field.
     attr_accessor :drop_down_selected_index
+
+    # Provides access to the items of a dropdown form field.
+    attr_accessor :drop_down_items
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -85,8 +85,8 @@ module RubySDK
         :'calculate_on_exit' => :'CalculateOnExit',
         :'entry_macro' => :'EntryMacro',
         :'exit_macro' => :'ExitMacro',
-        :'drop_down_items' => :'DropDownItems',
-        :'drop_down_selected_index' => :'DropDownSelectedIndex'
+        :'drop_down_selected_index' => :'DropDownSelectedIndex',
+        :'drop_down_items' => :'DropDownItems'
       }
     end
 
@@ -104,8 +104,8 @@ module RubySDK
         :'calculate_on_exit' => :'BOOLEAN',
         :'entry_macro' => :'String',
         :'exit_macro' => :'String',
-        :'drop_down_items' => :'Array<String>',
-        :'drop_down_selected_index' => :'Integer'
+        :'drop_down_selected_index' => :'Integer',
+        :'drop_down_items' => :'Array<String>'
       }
     end
 
@@ -161,14 +161,14 @@ module RubySDK
         self.exit_macro = attributes[:'ExitMacro']
       end
 
+      if attributes.has_key?(:'DropDownSelectedIndex')
+        self.drop_down_selected_index = attributes[:'DropDownSelectedIndex']
+      end
+
       if attributes.has_key?(:'DropDownItems')
         if (value = attributes[:'DropDownItems']).is_a?(Array)
           self.drop_down_items = value
         end
-      end
-
-      if attributes.has_key?(:'DropDownSelectedIndex')
-        self.drop_down_selected_index = attributes[:'DropDownSelectedIndex']
       end
 
     end
@@ -202,8 +202,8 @@ module RubySDK
           calculate_on_exit == o.calculate_on_exit &&
           entry_macro == o.entry_macro &&
           exit_macro == o.exit_macro &&
-          drop_down_items == o.drop_down_items &&
-          drop_down_selected_index == o.drop_down_selected_index
+          drop_down_selected_index == o.drop_down_selected_index &&
+          drop_down_items == o.drop_down_items
     end
 
     # @see the `==` method
@@ -215,7 +215,7 @@ module RubySDK
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, node_id, name, enabled, status_text, own_status, help_text, own_help, calculate_on_exit, entry_macro, exit_macro, drop_down_items, drop_down_selected_index].hash
+      [link, node_id, name, enabled, status_text, own_status, help_text, own_help, calculate_on_exit, entry_macro, exit_macro, drop_down_selected_index, drop_down_items].hash
     end
 
     # Builds the object from hash
@@ -245,9 +245,9 @@ module RubySDK
     def _deserialize(type, value)
       case type.to_sym
       when :DateTime
-        DateTime.parse(value)
+        Time.at(/\d/.match(value)[0].to_f).to_datetime
       when :Date
-        Date.parse(value)
+        Time.at(/\d/.match(value)[0].to_f).to_date
       when :String
         value.to_s
       when :Integer

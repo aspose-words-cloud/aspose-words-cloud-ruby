@@ -34,8 +34,23 @@ module RubySDK
     # Link to the document.
     attr_accessor :link
 
+    # Returns or sets the amount of space (in points) to add below the contents of cell.
+    attr_accessor :bottom_padding
+
+    # If true, fits text in the cell, compressing each paragraph to the width of the cell.
+    attr_accessor :fit_text
+
+    # Specifies how the cell is merged horizontally with other cells in the row.
+    attr_accessor :horizontal_merge
+
     # Returns or sets the amount of space (in points) to add to the left of the contents of cell.
     attr_accessor :left_padding
+
+    # Returns or sets the orientation of text in a table cell.
+    attr_accessor :orientation
+
+    # Returns or sets the preferred width of the cell.
+    attr_accessor :preferred_width
 
     # Returns or sets the amount of space (in points) to add to the right of the contents of cell.
     attr_accessor :right_padding
@@ -43,29 +58,14 @@ module RubySDK
     # Returns or sets the amount of space (in points) to add above the contents of cell.
     attr_accessor :top_padding
 
-    # Returns or sets the amount of space (in points) to add below the contents of cell.
-    attr_accessor :bottom_padding
-
     # Returns or sets the vertical alignment of text in the cell.
     attr_accessor :vertical_alignment
-
-    # Gets the width of the cell in points.
-    attr_accessor :width
-
-    # Returns or sets the preferred width of the cell.
-    attr_accessor :preferred_width
 
     # Specifies how the cell is merged with other cells vertically.
     attr_accessor :vertical_merge
 
-    # Specifies how the cell is merged horizontally with other cells in the row.
-    attr_accessor :horizontal_merge
-
-    # Returns or sets the orientation of text in a table cell.
-    attr_accessor :orientation
-
-    # If true, fits text in the cell, compressing each paragraph to the width of the cell.
-    attr_accessor :fit_text
+    # Gets the width of the cell in points.
+    attr_accessor :width
 
     # If true, wrap text for the cell.
     attr_accessor :wrap_text
@@ -96,17 +96,17 @@ module RubySDK
     def self.attribute_map
       {
         :'link' => :'link',
+        :'bottom_padding' => :'BottomPadding',
+        :'fit_text' => :'FitText',
+        :'horizontal_merge' => :'HorizontalMerge',
         :'left_padding' => :'LeftPadding',
+        :'orientation' => :'Orientation',
+        :'preferred_width' => :'PreferredWidth',
         :'right_padding' => :'RightPadding',
         :'top_padding' => :'TopPadding',
-        :'bottom_padding' => :'BottomPadding',
         :'vertical_alignment' => :'VerticalAlignment',
-        :'width' => :'Width',
-        :'preferred_width' => :'PreferredWidth',
         :'vertical_merge' => :'VerticalMerge',
-        :'horizontal_merge' => :'HorizontalMerge',
-        :'orientation' => :'Orientation',
-        :'fit_text' => :'FitText',
+        :'width' => :'Width',
         :'wrap_text' => :'WrapText'
       }
     end
@@ -115,17 +115,17 @@ module RubySDK
     def self.swagger_types
       {
         :'link' => :'WordsApiLink',
+        :'bottom_padding' => :'Float',
+        :'fit_text' => :'BOOLEAN',
+        :'horizontal_merge' => :'String',
         :'left_padding' => :'Float',
+        :'orientation' => :'String',
+        :'preferred_width' => :'PreferredWidth',
         :'right_padding' => :'Float',
         :'top_padding' => :'Float',
-        :'bottom_padding' => :'Float',
         :'vertical_alignment' => :'String',
-        :'width' => :'Float',
-        :'preferred_width' => :'PreferredWidth',
         :'vertical_merge' => :'String',
-        :'horizontal_merge' => :'String',
-        :'orientation' => :'String',
-        :'fit_text' => :'BOOLEAN',
+        :'width' => :'Float',
         :'wrap_text' => :'BOOLEAN'
       }
     end
@@ -142,8 +142,28 @@ module RubySDK
         self.link = attributes[:'link']
       end
 
+      if attributes.has_key?(:'BottomPadding')
+        self.bottom_padding = attributes[:'BottomPadding']
+      end
+
+      if attributes.has_key?(:'FitText')
+        self.fit_text = attributes[:'FitText']
+      end
+
+      if attributes.has_key?(:'HorizontalMerge')
+        self.horizontal_merge = attributes[:'HorizontalMerge']
+      end
+
       if attributes.has_key?(:'LeftPadding')
         self.left_padding = attributes[:'LeftPadding']
+      end
+
+      if attributes.has_key?(:'Orientation')
+        self.orientation = attributes[:'Orientation']
+      end
+
+      if attributes.has_key?(:'PreferredWidth')
+        self.preferred_width = attributes[:'PreferredWidth']
       end
 
       if attributes.has_key?(:'RightPadding')
@@ -154,36 +174,16 @@ module RubySDK
         self.top_padding = attributes[:'TopPadding']
       end
 
-      if attributes.has_key?(:'BottomPadding')
-        self.bottom_padding = attributes[:'BottomPadding']
-      end
-
       if attributes.has_key?(:'VerticalAlignment')
         self.vertical_alignment = attributes[:'VerticalAlignment']
-      end
-
-      if attributes.has_key?(:'Width')
-        self.width = attributes[:'Width']
-      end
-
-      if attributes.has_key?(:'PreferredWidth')
-        self.preferred_width = attributes[:'PreferredWidth']
       end
 
       if attributes.has_key?(:'VerticalMerge')
         self.vertical_merge = attributes[:'VerticalMerge']
       end
 
-      if attributes.has_key?(:'HorizontalMerge')
-        self.horizontal_merge = attributes[:'HorizontalMerge']
-      end
-
-      if attributes.has_key?(:'Orientation')
-        self.orientation = attributes[:'Orientation']
-      end
-
-      if attributes.has_key?(:'FitText')
-        self.fit_text = attributes[:'FitText']
+      if attributes.has_key?(:'Width')
+        self.width = attributes[:'Width']
       end
 
       if attributes.has_key?(:'WrapText')
@@ -202,55 +202,71 @@ module RubySDK
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      vertical_alignment_validator = EnumAttributeValidator.new('String', ["Top", "Center", "Bottom"])
-      return false unless vertical_alignment_validator.valid?(@vertical_alignment)
-      vertical_merge_validator = EnumAttributeValidator.new('String', ["None", "First", "Previous"])
-      return false unless vertical_merge_validator.valid?(@vertical_merge)
       horizontal_merge_validator = EnumAttributeValidator.new('String', ["None", "First", "Previous"])
       return false unless horizontal_merge_validator.valid?(@horizontal_merge)
       orientation_validator = EnumAttributeValidator.new('String', ["Horizontal", "Downward", "Upward", "HorizontalRotatedFarEast", "VerticalFarEast", "VerticalRotatedFarEast"])
       return false unless orientation_validator.valid?(@orientation)
+      vertical_alignment_validator = EnumAttributeValidator.new('String', ["Top", "Center", "Bottom"])
+      return false unless vertical_alignment_validator.valid?(@vertical_alignment)
+      vertical_merge_validator = EnumAttributeValidator.new('String', ["None", "First", "Previous"])
+      return false unless vertical_merge_validator.valid?(@vertical_merge)
       return true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] vertical_alignment Object to be assigned
-    def vertical_alignment=(vertical_alignment)
-      validator = EnumAttributeValidator.new('String', ["Top", "Center", "Bottom"])
-      unless validator.valid?(vertical_alignment)
-        fail ArgumentError, "invalid value for 'vertical_alignment', must be one of #{validator.allowable_values}."
-      end
-      @vertical_alignment = vertical_alignment
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] vertical_merge Object to be assigned
-    def vertical_merge=(vertical_merge)
-      validator = EnumAttributeValidator.new('String', ["None", "First", "Previous"])
-      unless validator.valid?(vertical_merge)
-        fail ArgumentError, "invalid value for 'vertical_merge', must be one of #{validator.allowable_values}."
-      end
-      @vertical_merge = vertical_merge
     end
 
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] horizontal_merge Object to be assigned
     def horizontal_merge=(horizontal_merge)
       validator = EnumAttributeValidator.new('String', ["None", "First", "Previous"])
-      unless validator.valid?(horizontal_merge)
-        fail ArgumentError, "invalid value for 'horizontal_merge', must be one of #{validator.allowable_values}."
+      if horizontal_merge.to_i == 0
+        unless validator.valid?(horizontal_merge)
+          fail ArgumentError, "invalid value for 'horizontal_merge', must be one of #{validator.allowable_values}."
+        end
+        @horizontal_merge = horizontal_merge
+      else
+        @horizontal_merge = validator.allowable_values[horizontal_merge.to_i]
       end
-      @horizontal_merge = horizontal_merge
     end
 
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] orientation Object to be assigned
     def orientation=(orientation)
       validator = EnumAttributeValidator.new('String', ["Horizontal", "Downward", "Upward", "HorizontalRotatedFarEast", "VerticalFarEast", "VerticalRotatedFarEast"])
-      unless validator.valid?(orientation)
-        fail ArgumentError, "invalid value for 'orientation', must be one of #{validator.allowable_values}."
+      if orientation.to_i == 0
+        unless validator.valid?(orientation)
+          fail ArgumentError, "invalid value for 'orientation', must be one of #{validator.allowable_values}."
+        end
+        @orientation = orientation
+      else
+        @orientation = validator.allowable_values[orientation.to_i]
       end
-      @orientation = orientation
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] vertical_alignment Object to be assigned
+    def vertical_alignment=(vertical_alignment)
+      validator = EnumAttributeValidator.new('String', ["Top", "Center", "Bottom"])
+      if vertical_alignment.to_i == 0
+        unless validator.valid?(vertical_alignment)
+          fail ArgumentError, "invalid value for 'vertical_alignment', must be one of #{validator.allowable_values}."
+        end
+        @vertical_alignment = vertical_alignment
+      else
+        @vertical_alignment = validator.allowable_values[vertical_alignment.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] vertical_merge Object to be assigned
+    def vertical_merge=(vertical_merge)
+      validator = EnumAttributeValidator.new('String', ["None", "First", "Previous"])
+      if vertical_merge.to_i == 0
+        unless validator.valid?(vertical_merge)
+          fail ArgumentError, "invalid value for 'vertical_merge', must be one of #{validator.allowable_values}."
+        end
+        @vertical_merge = vertical_merge
+      else
+        @vertical_merge = validator.allowable_values[vertical_merge.to_i]
+      end
     end
 
     # Checks equality by comparing each attribute.
@@ -259,17 +275,17 @@ module RubySDK
       return true if self.equal?(o)
       self.class == o.class &&
           link == o.link &&
+          bottom_padding == o.bottom_padding &&
+          fit_text == o.fit_text &&
+          horizontal_merge == o.horizontal_merge &&
           left_padding == o.left_padding &&
+          orientation == o.orientation &&
+          preferred_width == o.preferred_width &&
           right_padding == o.right_padding &&
           top_padding == o.top_padding &&
-          bottom_padding == o.bottom_padding &&
           vertical_alignment == o.vertical_alignment &&
-          width == o.width &&
-          preferred_width == o.preferred_width &&
           vertical_merge == o.vertical_merge &&
-          horizontal_merge == o.horizontal_merge &&
-          orientation == o.orientation &&
-          fit_text == o.fit_text &&
+          width == o.width &&
           wrap_text == o.wrap_text
     end
 
@@ -282,7 +298,7 @@ module RubySDK
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, left_padding, right_padding, top_padding, bottom_padding, vertical_alignment, width, preferred_width, vertical_merge, horizontal_merge, orientation, fit_text, wrap_text].hash
+      [link, bottom_padding, fit_text, horizontal_merge, left_padding, orientation, preferred_width, right_padding, top_padding, vertical_alignment, vertical_merge, width, wrap_text].hash
     end
 
     # Builds the object from hash
@@ -312,9 +328,9 @@ module RubySDK
     def _deserialize(type, value)
       case type.to_sym
       when :DateTime
-        DateTime.parse(value)
+        Time.at(/\d/.match(value)[0].to_f).to_datetime
       when :Date
-        Date.parse(value)
+        Time.at(/\d/.match(value)[0].to_f).to_date
       when :String
         value.to_s
       when :Integer

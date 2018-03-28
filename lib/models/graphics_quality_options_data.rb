@@ -156,50 +156,70 @@ module RubySDK
     # @param [Object] compositing_mode Object to be assigned
     def compositing_mode=(compositing_mode)
       validator = EnumAttributeValidator.new('String', ["SourceOver", "SourceCopy"])
-      unless validator.valid?(compositing_mode)
-        fail ArgumentError, "invalid value for 'compositing_mode', must be one of #{validator.allowable_values}."
+      if compositing_mode.to_i == 0
+        unless validator.valid?(compositing_mode)
+          fail ArgumentError, "invalid value for 'compositing_mode', must be one of #{validator.allowable_values}."
+        end
+        @compositing_mode = compositing_mode
+      else
+        @compositing_mode = validator.allowable_values[compositing_mode.to_i]
       end
-      @compositing_mode = compositing_mode
     end
 
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] compositing_quality Object to be assigned
     def compositing_quality=(compositing_quality)
       validator = EnumAttributeValidator.new('String', ["Default", "HighSpeed", "HighQuality", "GammaCorrected", "AssumeLinear", "Invalid"])
-      unless validator.valid?(compositing_quality)
-        fail ArgumentError, "invalid value for 'compositing_quality', must be one of #{validator.allowable_values}."
+      if compositing_quality.to_i == 0
+        unless validator.valid?(compositing_quality)
+          fail ArgumentError, "invalid value for 'compositing_quality', must be one of #{validator.allowable_values}."
+        end
+        @compositing_quality = compositing_quality
+      else
+        @compositing_quality = validator.allowable_values[compositing_quality.to_i]
       end
-      @compositing_quality = compositing_quality
     end
 
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] interpolation_mode Object to be assigned
     def interpolation_mode=(interpolation_mode)
       validator = EnumAttributeValidator.new('String', ["Default", "Low", "High", "Bilinear", "Bicubic", "NearestNeighbor", "HighQualityBilinear", "HighQualityBicubic", "Invalid"])
-      unless validator.valid?(interpolation_mode)
-        fail ArgumentError, "invalid value for 'interpolation_mode', must be one of #{validator.allowable_values}."
+      if interpolation_mode.to_i == 0
+        unless validator.valid?(interpolation_mode)
+          fail ArgumentError, "invalid value for 'interpolation_mode', must be one of #{validator.allowable_values}."
+        end
+        @interpolation_mode = interpolation_mode
+      else
+        @interpolation_mode = validator.allowable_values[interpolation_mode.to_i]
       end
-      @interpolation_mode = interpolation_mode
     end
 
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] smoothing_mode Object to be assigned
     def smoothing_mode=(smoothing_mode)
       validator = EnumAttributeValidator.new('String', ["Default", "HighSpeed", "HighQuality", "None", "AntiAlias", "Invalid"])
-      unless validator.valid?(smoothing_mode)
-        fail ArgumentError, "invalid value for 'smoothing_mode', must be one of #{validator.allowable_values}."
+      if smoothing_mode.to_i == 0
+        unless validator.valid?(smoothing_mode)
+          fail ArgumentError, "invalid value for 'smoothing_mode', must be one of #{validator.allowable_values}."
+        end
+        @smoothing_mode = smoothing_mode
+      else
+        @smoothing_mode = validator.allowable_values[smoothing_mode.to_i]
       end
-      @smoothing_mode = smoothing_mode
     end
 
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] text_rendering_hint Object to be assigned
     def text_rendering_hint=(text_rendering_hint)
       validator = EnumAttributeValidator.new('String', ["SystemDefault", "SingleBitPerPixelGridFit", "SingleBitPerPixel", "AntiAliasGridFit", "AntiAlias", "ClearTypeGridFit"])
-      unless validator.valid?(text_rendering_hint)
-        fail ArgumentError, "invalid value for 'text_rendering_hint', must be one of #{validator.allowable_values}."
+      if text_rendering_hint.to_i == 0
+        unless validator.valid?(text_rendering_hint)
+          fail ArgumentError, "invalid value for 'text_rendering_hint', must be one of #{validator.allowable_values}."
+        end
+        @text_rendering_hint = text_rendering_hint
+      else
+        @text_rendering_hint = validator.allowable_values[text_rendering_hint.to_i]
       end
-      @text_rendering_hint = text_rendering_hint
     end
 
     # Checks equality by comparing each attribute.
@@ -254,9 +274,9 @@ module RubySDK
     def _deserialize(type, value)
       case type.to_sym
       when :DateTime
-        DateTime.parse(value)
+        Time.at(/\d/.match(value)[0].to_f).to_datetime
       when :Date
-        Date.parse(value)
+        Time.at(/\d/.match(value)[0].to_f).to_date
       when :String
         value.to_s
       when :Integer

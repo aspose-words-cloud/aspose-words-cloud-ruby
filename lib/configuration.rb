@@ -150,7 +150,7 @@ module RubySDK
 
     def initialize
       @scheme = 'https'
-      @host = "api-dev.aspose.cloud"
+      @host = "api.aspose.cloud"
       @base_path = '/v1.1'
       @api_key = {}
       @api_key_prefix = {}

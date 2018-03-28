@@ -152,30 +152,42 @@ module RubySDK
     # @param [Object] display_type Object to be assigned
     def display_type=(display_type)
       validator = EnumAttributeValidator.new('String', ["Display", "Inline"])
-      unless validator.valid?(display_type)
-        fail ArgumentError, "invalid value for 'display_type', must be one of #{validator.allowable_values}."
+      if display_type.to_i == 0
+        unless validator.valid?(display_type)
+          fail ArgumentError, "invalid value for 'display_type', must be one of #{validator.allowable_values}."
+        end
+        @display_type = display_type
+      else
+        @display_type = validator.allowable_values[display_type.to_i]
       end
-      @display_type = display_type
     end
 
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] justification Object to be assigned
     def justification=(justification)
       validator = EnumAttributeValidator.new('String', ["CenterGroup", "Default", "Center", "Left", "Right", "Inline"])
-      unless validator.valid?(justification)
-        fail ArgumentError, "invalid value for 'justification', must be one of #{validator.allowable_values}."
+      if justification.to_i == 0
+        unless validator.valid?(justification)
+          fail ArgumentError, "invalid value for 'justification', must be one of #{validator.allowable_values}."
+        end
+        @justification = justification
+      else
+        @justification = validator.allowable_values[justification.to_i]
       end
-      @justification = justification
     end
 
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] math_object_type Object to be assigned
     def math_object_type=(math_object_type)
       validator = EnumAttributeValidator.new('String', ["OMath", "OMathPara", "Accent", "Bar", "BorderBox", "Box", "Delimiter", "Degree", "Argument", "Array", "Fraction", "Denominator", "Numerator", "Function", "FunctionName", "GroupCharacter", "Limit", "LowerLimit", "UpperLimit", "Matrix", "MatrixRow", "NAry", "Phantom", "Radical", "SubscriptPart", "SuperscriptPart", "PreSubSuperscript", "Subscript", "SubSuperscript", "Supercript"])
-      unless validator.valid?(math_object_type)
-        fail ArgumentError, "invalid value for 'math_object_type', must be one of #{validator.allowable_values}."
+      if math_object_type.to_i == 0
+        unless validator.valid?(math_object_type)
+          fail ArgumentError, "invalid value for 'math_object_type', must be one of #{validator.allowable_values}."
+        end
+        @math_object_type = math_object_type
+      else
+        @math_object_type = validator.allowable_values[math_object_type.to_i]
       end
-      @math_object_type = math_object_type
     end
 
     # Checks equality by comparing each attribute.
@@ -230,9 +242,9 @@ module RubySDK
     def _deserialize(type, value)
       case type.to_sym
       when :DateTime
-        DateTime.parse(value)
+        Time.at(/\d/.match(value)[0].to_f).to_datetime
       when :Date
-        Date.parse(value)
+        Time.at(/\d/.match(value)[0].to_f).to_date
       when :String
         value.to_s
       when :Integer

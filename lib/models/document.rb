@@ -154,7 +154,7 @@ module RubySDK
     # @return true if the model is valid
     def valid?
       return false if @source_format.nil?
-      source_format_validator = EnumAttributeValidator.new('String', ["Unknown", "Doc", "Dot", "DocPreWord60", "Docx", "Docm", "Dotx", "Dotm", "FlatOpc", "Rtf", "WordML", "Html", "Mhtml", "Epub", "Text", "Odt", "Ott", "Pdf", "Xps", "Swf", "Tiff", "Svg"])
+      source_format_validator = EnumAttributeValidator.new('String', ["Unknown", "Doc", "Dot", "DocPreWord60", "Docx", "Docm", "Dotx", "Dotm", "FlatOpc", "Rtf", "WordML", "Html", "Mhtml", "Epub", "Text", "Odt", "Ott", "Pdf", "Xps", "Tiff", "Svg"])
       return false unless source_format_validator.valid?(@source_format)
       return false if @is_encrypted.nil?
       return false if @is_signed.nil?
@@ -164,11 +164,15 @@ module RubySDK
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] source_format Object to be assigned
     def source_format=(source_format)
-      validator = EnumAttributeValidator.new('String', ["Unknown", "Doc", "Dot", "DocPreWord60", "Docx", "Docm", "Dotx", "Dotm", "FlatOpc", "Rtf", "WordML", "Html", "Mhtml", "Epub", "Text", "Odt", "Ott", "Pdf", "Xps", "Swf", "Tiff", "Svg"])
-      unless validator.valid?(source_format)
-        fail ArgumentError, "invalid value for 'source_format', must be one of #{validator.allowable_values}."
+      validator = EnumAttributeValidator.new('String', ["Unknown", "Doc", "Dot", "DocPreWord60", "Docx", "Docm", "Dotx", "Dotm", "FlatOpc", "Rtf", "WordML", "Html", "Mhtml", "Epub", "Text", "Odt", "Ott", "Pdf", "Xps", "Tiff", "Svg"])
+      if source_format.to_i == 0
+        unless validator.valid?(source_format)
+          fail ArgumentError, "invalid value for 'source_format', must be one of #{validator.allowable_values}."
+        end
+        @source_format = source_format
+      else
+        @source_format = validator.allowable_values[source_format.to_i]
       end
-      @source_format = source_format
     end
 
     # Checks equality by comparing each attribute.
@@ -223,9 +227,9 @@ module RubySDK
     def _deserialize(type, value)
       case type.to_sym
       when :DateTime
-        DateTime.parse(value)
+        Time.at(/\d/.match(value)[0].to_f).to_datetime
       when :Date
-        Date.parse(value)
+        Time.at(/\d/.match(value)[0].to_f).to_date
       when :String
         value.to_s
       when :Integer

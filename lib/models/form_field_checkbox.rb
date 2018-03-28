@@ -64,14 +64,14 @@ module RubySDK
     # Returns or sets an exit macro name for the form field.
     attr_accessor :exit_macro
 
-    # Gets or sets the checked status of the check box form field.
-    attr_accessor :checked
-
     # Gets or sets the boolean value that indicates whether the size of the textbox is automatic or specified explicitly.
     attr_accessor :is_check_box_exact_size
 
     # Gets or sets the size of the checkbox in points. Has effect only when  is true.
     attr_accessor :check_box_size
+
+    # Gets or sets the checked status of the check box form field.
+    attr_accessor :checked
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -88,9 +88,9 @@ module RubySDK
         :'calculate_on_exit' => :'CalculateOnExit',
         :'entry_macro' => :'EntryMacro',
         :'exit_macro' => :'ExitMacro',
-        :'checked' => :'Checked',
         :'is_check_box_exact_size' => :'IsCheckBoxExactSize',
-        :'check_box_size' => :'CheckBoxSize'
+        :'check_box_size' => :'CheckBoxSize',
+        :'checked' => :'Checked'
       }
     end
 
@@ -108,9 +108,9 @@ module RubySDK
         :'calculate_on_exit' => :'BOOLEAN',
         :'entry_macro' => :'String',
         :'exit_macro' => :'String',
-        :'checked' => :'BOOLEAN',
         :'is_check_box_exact_size' => :'BOOLEAN',
-        :'check_box_size' => :'Float'
+        :'check_box_size' => :'Float',
+        :'checked' => :'BOOLEAN'
       }
     end
 
@@ -166,16 +166,16 @@ module RubySDK
         self.exit_macro = attributes[:'ExitMacro']
       end
 
-      if attributes.has_key?(:'Checked')
-        self.checked = attributes[:'Checked']
-      end
-
       if attributes.has_key?(:'IsCheckBoxExactSize')
         self.is_check_box_exact_size = attributes[:'IsCheckBoxExactSize']
       end
 
       if attributes.has_key?(:'CheckBoxSize')
         self.check_box_size = attributes[:'CheckBoxSize']
+      end
+
+      if attributes.has_key?(:'Checked')
+        self.checked = attributes[:'Checked']
       end
 
     end
@@ -209,9 +209,9 @@ module RubySDK
           calculate_on_exit == o.calculate_on_exit &&
           entry_macro == o.entry_macro &&
           exit_macro == o.exit_macro &&
-          checked == o.checked &&
           is_check_box_exact_size == o.is_check_box_exact_size &&
-          check_box_size == o.check_box_size
+          check_box_size == o.check_box_size &&
+          checked == o.checked
     end
 
     # @see the `==` method
@@ -223,7 +223,7 @@ module RubySDK
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, node_id, name, enabled, status_text, own_status, help_text, own_help, calculate_on_exit, entry_macro, exit_macro, checked, is_check_box_exact_size, check_box_size].hash
+      [link, node_id, name, enabled, status_text, own_status, help_text, own_help, calculate_on_exit, entry_macro, exit_macro, is_check_box_exact_size, check_box_size, checked].hash
     end
 
     # Builds the object from hash
@@ -253,9 +253,9 @@ module RubySDK
     def _deserialize(type, value)
       case type.to_sym
       when :DateTime
-        DateTime.parse(value)
+        Time.at(/\d/.match(value)[0].to_f).to_datetime
       when :Date
-        Date.parse(value)
+        Time.at(/\d/.match(value)[0].to_f).to_date
       when :String
         value.to_s
       when :Integer

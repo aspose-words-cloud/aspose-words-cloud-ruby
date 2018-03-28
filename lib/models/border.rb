@@ -34,11 +34,8 @@ module RubySDK
     # Link to the document.
     attr_accessor :link
 
-    # Gets or sets the border style.
-    attr_accessor :line_style
-
-    # Gets or sets the border width in points.
-    attr_accessor :line_width
+    # Gets or sets the border type.             
+    attr_accessor :border_type
 
     # Gets or sets the border color.             
     attr_accessor :color
@@ -46,11 +43,14 @@ module RubySDK
     # Gets or sets distance of the border from text or from the page edge in points.
     attr_accessor :distance_from_text
 
+    # Gets or sets the border style.
+    attr_accessor :line_style
+
+    # Gets or sets the border width in points.
+    attr_accessor :line_width
+
     # Gets or sets a value indicating whether the border has a shadow.
     attr_accessor :shadow
-
-    # Gets or sets the border type.             
-    attr_accessor :border_type
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -78,12 +78,12 @@ module RubySDK
     def self.attribute_map
       {
         :'link' => :'link',
-        :'line_style' => :'LineStyle',
-        :'line_width' => :'LineWidth',
+        :'border_type' => :'BorderType',
         :'color' => :'Color',
         :'distance_from_text' => :'DistanceFromText',
-        :'shadow' => :'Shadow',
-        :'border_type' => :'BorderType'
+        :'line_style' => :'LineStyle',
+        :'line_width' => :'LineWidth',
+        :'shadow' => :'Shadow'
       }
     end
 
@@ -91,12 +91,12 @@ module RubySDK
     def self.swagger_types
       {
         :'link' => :'WordsApiLink',
-        :'line_style' => :'String',
-        :'line_width' => :'Float',
+        :'border_type' => :'String',
         :'color' => :'XmlColor',
         :'distance_from_text' => :'Float',
-        :'shadow' => :'BOOLEAN',
-        :'border_type' => :'String'
+        :'line_style' => :'String',
+        :'line_width' => :'Float',
+        :'shadow' => :'BOOLEAN'
       }
     end
 
@@ -112,12 +112,8 @@ module RubySDK
         self.link = attributes[:'link']
       end
 
-      if attributes.has_key?(:'LineStyle')
-        self.line_style = attributes[:'LineStyle']
-      end
-
-      if attributes.has_key?(:'LineWidth')
-        self.line_width = attributes[:'LineWidth']
+      if attributes.has_key?(:'BorderType')
+        self.border_type = attributes[:'BorderType']
       end
 
       if attributes.has_key?(:'Color')
@@ -128,12 +124,16 @@ module RubySDK
         self.distance_from_text = attributes[:'DistanceFromText']
       end
 
-      if attributes.has_key?(:'Shadow')
-        self.shadow = attributes[:'Shadow']
+      if attributes.has_key?(:'LineStyle')
+        self.line_style = attributes[:'LineStyle']
       end
 
-      if attributes.has_key?(:'BorderType')
-        self.border_type = attributes[:'BorderType']
+      if attributes.has_key?(:'LineWidth')
+        self.line_width = attributes[:'LineWidth']
+      end
+
+      if attributes.has_key?(:'Shadow')
+        self.shadow = attributes[:'Shadow']
       end
 
     end
@@ -148,31 +148,39 @@ module RubySDK
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      line_style_validator = EnumAttributeValidator.new('String', ["None", "Single", "Thick", "Double", "Hairline", "Dot", "DashLargeGap", "DotDash", "DotDotDash", "Triple", "ThinThickSmallGap", "ThickThinSmallGap", "ThinThickThinSmallGap", "ThinThickMediumGap", "ThickThinMediumGap", "ThinThickThinMediumGap", "ThinThickLargeGap", "ThickThinLargeGap", "ThinThickThinLargeGap", "Wave", "DoubleWave", "DashSmallGap", "DashDotStroker", "Emboss3D", "Engrave3D", "Outset", "Inset"])
-      return false unless line_style_validator.valid?(@line_style)
       border_type_validator = EnumAttributeValidator.new('String', ["Bottom", "Left", "Right", "Top", "Horizontal", "Vertical", "DiagonalDown", "DiagonalUp", "None"])
       return false unless border_type_validator.valid?(@border_type)
+      line_style_validator = EnumAttributeValidator.new('String', ["None", "Single", "Thick", "Double", "Hairline", "Dot", "DashLargeGap", "DotDash", "DotDotDash", "Triple", "ThinThickSmallGap", "ThickThinSmallGap", "ThinThickThinSmallGap", "ThinThickMediumGap", "ThickThinMediumGap", "ThinThickThinMediumGap", "ThinThickLargeGap", "ThickThinLargeGap", "ThinThickThinLargeGap", "Wave", "DoubleWave", "DashSmallGap", "DashDotStroker", "Emboss3D", "Engrave3D", "Outset", "Inset"])
+      return false unless line_style_validator.valid?(@line_style)
       return true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] line_style Object to be assigned
-    def line_style=(line_style)
-      validator = EnumAttributeValidator.new('String', ["None", "Single", "Thick", "Double", "Hairline", "Dot", "DashLargeGap", "DotDash", "DotDotDash", "Triple", "ThinThickSmallGap", "ThickThinSmallGap", "ThinThickThinSmallGap", "ThinThickMediumGap", "ThickThinMediumGap", "ThinThickThinMediumGap", "ThinThickLargeGap", "ThickThinLargeGap", "ThinThickThinLargeGap", "Wave", "DoubleWave", "DashSmallGap", "DashDotStroker", "Emboss3D", "Engrave3D", "Outset", "Inset"])
-      unless validator.valid?(line_style)
-        fail ArgumentError, "invalid value for 'line_style', must be one of #{validator.allowable_values}."
-      end
-      @line_style = line_style
     end
 
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] border_type Object to be assigned
     def border_type=(border_type)
       validator = EnumAttributeValidator.new('String', ["Bottom", "Left", "Right", "Top", "Horizontal", "Vertical", "DiagonalDown", "DiagonalUp", "None"])
-      unless validator.valid?(border_type)
-        fail ArgumentError, "invalid value for 'border_type', must be one of #{validator.allowable_values}."
+      if border_type.to_i == 0
+        unless validator.valid?(border_type)
+          fail ArgumentError, "invalid value for 'border_type', must be one of #{validator.allowable_values}."
+        end
+        @border_type = border_type
+      else
+        @border_type = validator.allowable_values[border_type.to_i]
       end
-      @border_type = border_type
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] line_style Object to be assigned
+    def line_style=(line_style)
+      validator = EnumAttributeValidator.new('String', ["None", "Single", "Thick", "Double", "Hairline", "Dot", "DashLargeGap", "DotDash", "DotDotDash", "Triple", "ThinThickSmallGap", "ThickThinSmallGap", "ThinThickThinSmallGap", "ThinThickMediumGap", "ThickThinMediumGap", "ThinThickThinMediumGap", "ThinThickLargeGap", "ThickThinLargeGap", "ThinThickThinLargeGap", "Wave", "DoubleWave", "DashSmallGap", "DashDotStroker", "Emboss3D", "Engrave3D", "Outset", "Inset"])
+      if line_style.to_i == 0
+        unless validator.valid?(line_style)
+          fail ArgumentError, "invalid value for 'line_style', must be one of #{validator.allowable_values}."
+        end
+        @line_style = line_style
+      else
+        @line_style = validator.allowable_values[line_style.to_i]
+      end
     end
 
     # Checks equality by comparing each attribute.
@@ -181,12 +189,12 @@ module RubySDK
       return true if self.equal?(o)
       self.class == o.class &&
           link == o.link &&
-          line_style == o.line_style &&
-          line_width == o.line_width &&
+          border_type == o.border_type &&
           color == o.color &&
           distance_from_text == o.distance_from_text &&
-          shadow == o.shadow &&
-          border_type == o.border_type
+          line_style == o.line_style &&
+          line_width == o.line_width &&
+          shadow == o.shadow
     end
 
     # @see the `==` method
@@ -198,7 +206,7 @@ module RubySDK
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, line_style, line_width, color, distance_from_text, shadow, border_type].hash
+      [link, border_type, color, distance_from_text, line_style, line_width, shadow].hash
     end
 
     # Builds the object from hash
@@ -228,9 +236,9 @@ module RubySDK
     def _deserialize(type, value)
       case type.to_sym
       when :DateTime
-        DateTime.parse(value)
+        Time.at(/\d/.match(value)[0].to_f).to_datetime
       when :Date
-        Date.parse(value)
+        Time.at(/\d/.match(value)[0].to_f).to_date
       when :String
         value.to_s
       when :Integer

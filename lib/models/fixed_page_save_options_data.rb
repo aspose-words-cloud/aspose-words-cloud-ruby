@@ -29,7 +29,7 @@ module RubySDK
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # Contains common options that can be specified when saving a document into fixed page formats (PDF, XPS, SWF, images etc).
+  # Contains common options that can be specified when saving a document into fixed page formats (PDF, XPS, images etc).
   class FixedPageSaveOptionsData
     # Gets or sets a value determining how colors are rendered. { Normal | Grayscale}
     attr_accessor :color_mode
@@ -253,9 +253,9 @@ module RubySDK
     def _deserialize(type, value)
       case type.to_sym
       when :DateTime
-        DateTime.parse(value)
+        Time.at(/\d/.match(value)[0].to_f).to_datetime
       when :Date
-        Date.parse(value)
+        Time.at(/\d/.match(value)[0].to_f).to_date
       when :String
         value.to_s
       when :Integer

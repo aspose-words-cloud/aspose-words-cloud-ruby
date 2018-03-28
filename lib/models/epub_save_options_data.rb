@@ -510,20 +510,28 @@ module RubySDK
     # @param [Object] html_version Object to be assigned
     def html_version=(html_version)
       validator = EnumAttributeValidator.new('String', ["Xhtml", "Html5"])
-      unless validator.valid?(html_version)
-        fail ArgumentError, "invalid value for 'html_version', must be one of #{validator.allowable_values}."
+      if html_version.to_i == 0
+        unless validator.valid?(html_version)
+          fail ArgumentError, "invalid value for 'html_version', must be one of #{validator.allowable_values}."
+        end
+        @html_version = html_version
+      else
+        @html_version = validator.allowable_values[html_version.to_i]
       end
-      @html_version = html_version
     end
 
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] office_math_output_mode Object to be assigned
     def office_math_output_mode=(office_math_output_mode)
       validator = EnumAttributeValidator.new('String', ["Image", "MathML", "Text"])
-      unless validator.valid?(office_math_output_mode)
-        fail ArgumentError, "invalid value for 'office_math_output_mode', must be one of #{validator.allowable_values}."
+      if office_math_output_mode.to_i == 0
+        unless validator.valid?(office_math_output_mode)
+          fail ArgumentError, "invalid value for 'office_math_output_mode', must be one of #{validator.allowable_values}."
+        end
+        @office_math_output_mode = office_math_output_mode
+      else
+        @office_math_output_mode = validator.allowable_values[office_math_output_mode.to_i]
       end
-      @office_math_output_mode = office_math_output_mode
     end
 
     # Checks equality by comparing each attribute.
@@ -618,9 +626,9 @@ module RubySDK
     def _deserialize(type, value)
       case type.to_sym
       when :DateTime
-        DateTime.parse(value)
+        Time.at(/\d/.match(value)[0].to_f).to_datetime
       when :Date
-        Date.parse(value)
+        Time.at(/\d/.match(value)[0].to_f).to_date
       when :String
         value.to_s
       when :Integer

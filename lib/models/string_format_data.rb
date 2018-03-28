@@ -147,50 +147,70 @@ module RubySDK
     # @param [Object] alignment Object to be assigned
     def alignment=(alignment)
       validator = EnumAttributeValidator.new('String', ["Near", "Center", "Far"])
-      unless validator.valid?(alignment)
-        fail ArgumentError, "invalid value for 'alignment', must be one of #{validator.allowable_values}."
+      if alignment.to_i == 0
+        unless validator.valid?(alignment)
+          fail ArgumentError, "invalid value for 'alignment', must be one of #{validator.allowable_values}."
+        end
+        @alignment = alignment
+      else
+        @alignment = validator.allowable_values[alignment.to_i]
       end
-      @alignment = alignment
     end
 
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] format_flags Object to be assigned
     def format_flags=(format_flags)
       validator = EnumAttributeValidator.new('String', ["DirectionRightToLeft", "DirectionVertical", "FitBlackBox", "DisplayFormatControl", "NoFontFallback", "MeasureTrailingSpaces", "NoWrap", "LineLimit", "NoClip"])
-      unless validator.valid?(format_flags)
-        fail ArgumentError, "invalid value for 'format_flags', must be one of #{validator.allowable_values}."
+      if format_flags.to_i == 0
+        unless validator.valid?(format_flags)
+          fail ArgumentError, "invalid value for 'format_flags', must be one of #{validator.allowable_values}."
+        end
+        @format_flags = format_flags
+      else
+        @format_flags = validator.allowable_values[format_flags.to_i]
       end
-      @format_flags = format_flags
     end
 
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] hotkey_prefix Object to be assigned
     def hotkey_prefix=(hotkey_prefix)
       validator = EnumAttributeValidator.new('String', ["None", "Show", "Hide"])
-      unless validator.valid?(hotkey_prefix)
-        fail ArgumentError, "invalid value for 'hotkey_prefix', must be one of #{validator.allowable_values}."
+      if hotkey_prefix.to_i == 0
+        unless validator.valid?(hotkey_prefix)
+          fail ArgumentError, "invalid value for 'hotkey_prefix', must be one of #{validator.allowable_values}."
+        end
+        @hotkey_prefix = hotkey_prefix
+      else
+        @hotkey_prefix = validator.allowable_values[hotkey_prefix.to_i]
       end
-      @hotkey_prefix = hotkey_prefix
     end
 
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] line_alignment Object to be assigned
     def line_alignment=(line_alignment)
       validator = EnumAttributeValidator.new('String', ["Near", "Center", "Far"])
-      unless validator.valid?(line_alignment)
-        fail ArgumentError, "invalid value for 'line_alignment', must be one of #{validator.allowable_values}."
+      if line_alignment.to_i == 0
+        unless validator.valid?(line_alignment)
+          fail ArgumentError, "invalid value for 'line_alignment', must be one of #{validator.allowable_values}."
+        end
+        @line_alignment = line_alignment
+      else
+        @line_alignment = validator.allowable_values[line_alignment.to_i]
       end
-      @line_alignment = line_alignment
     end
 
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] trimming Object to be assigned
     def trimming=(trimming)
       validator = EnumAttributeValidator.new('String', ["None", "Character", "Word", "EllipsisCharacter", "EllipsisWord", "EllipsisPath"])
-      unless validator.valid?(trimming)
-        fail ArgumentError, "invalid value for 'trimming', must be one of #{validator.allowable_values}."
+      if trimming.to_i == 0
+        unless validator.valid?(trimming)
+          fail ArgumentError, "invalid value for 'trimming', must be one of #{validator.allowable_values}."
+        end
+        @trimming = trimming
+      else
+        @trimming = validator.allowable_values[trimming.to_i]
       end
-      @trimming = trimming
     end
 
     # Checks equality by comparing each attribute.
@@ -244,9 +264,9 @@ module RubySDK
     def _deserialize(type, value)
       case type.to_sym
       when :DateTime
-        DateTime.parse(value)
+        Time.at(/\d/.match(value)[0].to_f).to_datetime
       when :Date
-        Date.parse(value)
+        Time.at(/\d/.match(value)[0].to_f).to_date
       when :String
         value.to_s
       when :Integer

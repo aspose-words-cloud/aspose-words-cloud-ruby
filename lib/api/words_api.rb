@@ -51,7 +51,7 @@ module RubySDK
     # 
     # # @param request AcceptAllRevisionsRequest
     # @return [Array<(RevisionsModificationResponse, Fixnum, Hash)>] RevisionsModificationResponse data, response status code and response headers
-    def accept_all_revisions_with_http_info(request)
+    private def accept_all_revisions_with_http_info(request)
 	  unless request.is_a? AcceptAllRevisionsRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -65,15 +65,35 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/revisions/acceptAll"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
 	  
 	  
 
@@ -87,9 +107,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -116,7 +137,7 @@ module RubySDK
     # 
     # # @param request CreateOrUpdateDocumentPropertyRequest
     # @return [Array<(DocumentPropertyResponse, Fixnum, Hash)>] DocumentPropertyResponse data, response status code and response headers
-    def create_or_update_document_property_with_http_info(request)
+    private def create_or_update_document_property_with_http_info(request)
 	  unless request.is_a? CreateOrUpdateDocumentPropertyRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -138,18 +159,46 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/documentProperties/{propertyName}"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('PropertyName') + '}', request.property_name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('PropertyName') + '}', request.property_name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
 	  
 	  
 
@@ -163,9 +212,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.property)
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -192,7 +242,7 @@ module RubySDK
     # &#39;nodePath&#39; should refer to node with cell or row
     # # @param request DeleteBorderRequest
     # @return [Array<(BorderResponse, Fixnum, Hash)>] BorderResponse data, response status code and response headers
-    def delete_border_with_http_info(request)
+    private def delete_border_with_http_info(request)
 	  unless request.is_a? DeleteBorderRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -214,19 +264,47 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/borders/{index}"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
 	  
 	  
 
@@ -240,9 +318,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -269,7 +348,7 @@ module RubySDK
     # &#39;nodePath&#39; should refer to node with cell or row
     # # @param request DeleteBordersRequest
     # @return [Array<(BordersResponse, Fixnum, Hash)>] BordersResponse data, response status code and response headers
-    def delete_borders_with_http_info(request)
+    private def delete_borders_with_http_info(request)
 	  unless request.is_a? DeleteBordersRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -287,18 +366,46 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/borders"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
 	  
 	  
 
@@ -312,9 +419,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -341,7 +449,7 @@ module RubySDK
     # 
     # # @param request DeleteCommentRequest
     # @return [Array<(AsposeResponse, Fixnum, Hash)>] AsposeResponse data, response status code and response headers
-    def delete_comment_with_http_info(request)
+    private def delete_comment_with_http_info(request)
 	  unless request.is_a? DeleteCommentRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -359,18 +467,46 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/comments/{commentIndex}"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('CommentIndex') + '}', request.comment_index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('CommentIndex') + '}', request.comment_index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
 	  
 	  
 
@@ -384,9 +520,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -413,7 +550,7 @@ module RubySDK
     # 
     # # @param request DeleteDocumentMacrosRequest
     # @return [Array<(AsposeResponse, Fixnum, Hash)>] AsposeResponse data, response status code and response headers
-    def delete_document_macros_with_http_info(request)
+    private def delete_document_macros_with_http_info(request)
 	  unless request.is_a? DeleteDocumentMacrosRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -427,17 +564,45 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/macros"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
 	  
 	  
 
@@ -451,9 +616,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -480,7 +646,7 @@ module RubySDK
     # 
     # # @param request DeleteDocumentPropertyRequest
     # @return [Array<(AsposeResponse, Fixnum, Hash)>] AsposeResponse data, response status code and response headers
-    def delete_document_property_with_http_info(request)
+    private def delete_document_property_with_http_info(request)
 	  unless request.is_a? DeleteDocumentPropertyRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -498,18 +664,46 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/documentProperties/{propertyName}"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('PropertyName') + '}', request.property_name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('PropertyName') + '}', request.property_name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
 	  
 	  
 
@@ -523,9 +717,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -552,7 +747,7 @@ module RubySDK
     # 
     # # @param request DeleteDocumentWatermarkRequest
     # @return [Array<(DocumentResponse, Fixnum, Hash)>] DocumentResponse data, response status code and response headers
-    def delete_document_watermark_with_http_info(request)
+    private def delete_document_watermark_with_http_info(request)
 	  unless request.is_a? DeleteDocumentWatermarkRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -566,17 +761,45 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/watermark"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
 	  
 	  
 
@@ -590,9 +813,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -619,7 +843,7 @@ module RubySDK
     # 
     # # @param request DeleteDrawingObjectRequest
     # @return [Array<(AsposeResponse, Fixnum, Hash)>] AsposeResponse data, response status code and response headers
-    def delete_drawing_object_with_http_info(request)
+    private def delete_drawing_object_with_http_info(request)
 	  unless request.is_a? DeleteDrawingObjectRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -637,19 +861,51 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/drawingObjects/{index}"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-      query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('NodePath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+	    else
+	     query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    end  
 	  
 	  
 
@@ -663,9 +919,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -692,7 +949,7 @@ module RubySDK
     # 
     # # @param request DeleteFieldRequest
     # @return [Array<(AsposeResponse, Fixnum, Hash)>] AsposeResponse data, response status code and response headers
-    def delete_field_with_http_info(request)
+    private def delete_field_with_http_info(request)
 	  unless request.is_a? DeleteFieldRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -710,19 +967,51 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/fields/{index}"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-      query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('NodePath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+	    else
+	     query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    end  
 	  
 	  
 
@@ -736,9 +1025,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -765,7 +1055,7 @@ module RubySDK
     # 
     # # @param request DeleteFieldsRequest
     # @return [Array<(AsposeResponse, Fixnum, Hash)>] AsposeResponse data, response status code and response headers
-    def delete_fields_with_http_info(request)
+    private def delete_fields_with_http_info(request)
 	  unless request.is_a? DeleteFieldsRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -779,18 +1069,50 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/fields"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-      query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('NodePath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+	    else
+	     query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    end  
 	  
 	  
 
@@ -804,9 +1126,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -833,7 +1156,7 @@ module RubySDK
     # 
     # # @param request DeleteFootnoteRequest
     # @return [Array<(AsposeResponse, Fixnum, Hash)>] AsposeResponse data, response status code and response headers
-    def delete_footnote_with_http_info(request)
+    private def delete_footnote_with_http_info(request)
 	  unless request.is_a? DeleteFootnoteRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -851,19 +1174,51 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/footnotes/{index}"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-      query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('NodePath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+	    else
+	     query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    end  
 	  
 	  
 
@@ -877,9 +1232,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -906,7 +1262,7 @@ module RubySDK
     # 
     # # @param request DeleteFormFieldRequest
     # @return [Array<(AsposeResponse, Fixnum, Hash)>] AsposeResponse data, response status code and response headers
-    def delete_form_field_with_http_info(request)
+    private def delete_form_field_with_http_info(request)
 	  unless request.is_a? DeleteFormFieldRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -924,19 +1280,51 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/formfields/{index}"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-      query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('NodePath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+	    else
+	     query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    end  
 	  
 	  
 
@@ -950,9 +1338,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -979,7 +1368,7 @@ module RubySDK
     # 
     # # @param request DeleteHeaderFooterRequest
     # @return [Array<(AsposeResponse, Fixnum, Hash)>] AsposeResponse data, response status code and response headers
-    def delete_header_footer_with_http_info(request)
+    private def delete_header_footer_with_http_info(request)
 	  unless request.is_a? DeleteHeaderFooterRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -997,19 +1386,51 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{sectionPath}/headersfooters/{index}"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-      query_params[downcase_first_letter('SectionPath')] = request.section_path unless request.section_path.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('SectionPath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('SectionPath') + '}', request.section_path.to_s)
+	    else
+	     query_params[downcase_first_letter('SectionPath')] = request.section_path unless request.section_path.nil?
+	    end  
 	  
 	  
 
@@ -1023,9 +1444,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -1052,7 +1474,7 @@ module RubySDK
     # 
     # # @param request DeleteHeadersFootersRequest
     # @return [Array<(AsposeResponse, Fixnum, Hash)>] AsposeResponse data, response status code and response headers
-    def delete_headers_footers_with_http_info(request)
+    private def delete_headers_footers_with_http_info(request)
 	  unless request.is_a? DeleteHeadersFootersRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -1066,19 +1488,55 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{sectionPath}/headersfooters"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-      query_params[downcase_first_letter('SectionPath')] = request.section_path unless request.section_path.nil?
-      query_params[downcase_first_letter('HeadersFootersTypes')] = request.headers_footers_types unless request.headers_footers_types.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('SectionPath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('SectionPath') + '}', request.section_path.to_s)
+	    else
+	     query_params[downcase_first_letter('SectionPath')] = request.section_path unless request.section_path.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('HeadersFootersTypes')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('HeadersFootersTypes') + '}', request.headers_footers_types.to_s)
+	    else
+	     query_params[downcase_first_letter('HeadersFootersTypes')] = request.headers_footers_types unless request.headers_footers_types.nil?
+	    end  
 	  
 	  
 
@@ -1092,9 +1550,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -1121,7 +1580,7 @@ module RubySDK
     # 
     # # @param request DeleteOfficeMathObjectRequest
     # @return [Array<(AsposeResponse, Fixnum, Hash)>] AsposeResponse data, response status code and response headers
-    def delete_office_math_object_with_http_info(request)
+    private def delete_office_math_object_with_http_info(request)
 	  unless request.is_a? DeleteOfficeMathObjectRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -1139,19 +1598,51 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/OfficeMathObjects/{index}"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-      query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('NodePath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+	    else
+	     query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    end  
 	  
 	  
 
@@ -1165,9 +1656,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -1194,7 +1686,7 @@ module RubySDK
     # 
     # # @param request DeleteParagraphRequest
     # @return [Array<(AsposeResponse, Fixnum, Hash)>] AsposeResponse data, response status code and response headers
-    def delete_paragraph_with_http_info(request)
+    private def delete_paragraph_with_http_info(request)
 	  unless request.is_a? DeleteParagraphRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -1212,19 +1704,51 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/paragraphs/{index}"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-      query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('NodePath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+	    else
+	     query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    end  
 	  
 	  
 
@@ -1238,9 +1762,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -1267,7 +1792,7 @@ module RubySDK
     # 
     # # @param request DeleteRunRequest
     # @return [Array<(AsposeResponse, Fixnum, Hash)>] AsposeResponse data, response status code and response headers
-    def delete_run_with_http_info(request)
+    private def delete_run_with_http_info(request)
 	  unless request.is_a? DeleteRunRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -1289,19 +1814,47 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{paragraphPath}/runs/{index}"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('ParagraphPath') + '}', request.paragraph_path.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('ParagraphPath') + '}', request.paragraph_path.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
 	  
 	  
 
@@ -1315,9 +1868,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -1344,7 +1898,7 @@ module RubySDK
     # 
     # # @param request DeleteTableRequest
     # @return [Array<(AsposeResponse, Fixnum, Hash)>] AsposeResponse data, response status code and response headers
-    def delete_table_with_http_info(request)
+    private def delete_table_with_http_info(request)
 	  unless request.is_a? DeleteTableRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -1362,19 +1916,51 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/tables/{index}"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-      query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('NodePath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+	    else
+	     query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    end  
 	  
 	  
 
@@ -1388,9 +1974,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -1417,7 +2004,7 @@ module RubySDK
     # 
     # # @param request DeleteTableCellRequest
     # @return [Array<(AsposeResponse, Fixnum, Hash)>] AsposeResponse data, response status code and response headers
-    def delete_table_cell_with_http_info(request)
+    private def delete_table_cell_with_http_info(request)
 	  unless request.is_a? DeleteTableCellRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -1439,19 +2026,47 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{tableRowPath}/cells/{index}"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('TableRowPath') + '}', request.table_row_path.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('TableRowPath') + '}', request.table_row_path.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
 	  
 	  
 
@@ -1465,9 +2080,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -1494,7 +2110,7 @@ module RubySDK
     # 
     # # @param request DeleteTableRowRequest
     # @return [Array<(AsposeResponse, Fixnum, Hash)>] AsposeResponse data, response status code and response headers
-    def delete_table_row_with_http_info(request)
+    private def delete_table_row_with_http_info(request)
 	  unless request.is_a? DeleteTableRowRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -1516,19 +2132,47 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{tablePath}/rows/{index}"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('TablePath') + '}', request.table_path.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('TablePath') + '}', request.table_path.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
 	  
 	  
 
@@ -1542,9 +2186,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -1571,7 +2216,7 @@ module RubySDK
     # 
     # # @param request DeleteUnprotectDocumentRequest
     # @return [Array<(ProtectionDataResponse, Fixnum, Hash)>] ProtectionDataResponse data, response status code and response headers
-    def delete_unprotect_document_with_http_info(request)
+    private def delete_unprotect_document_with_http_info(request)
 	  unless request.is_a? DeleteUnprotectDocumentRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -1589,15 +2234,35 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/protection"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
 	  
 	  
 
@@ -1611,9 +2276,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.protection_request)
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -1640,7 +2306,7 @@ module RubySDK
     # &#39;nodePath&#39; should refer to node with cell or row
     # # @param request GetBorderRequest
     # @return [Array<(BorderResponse, Fixnum, Hash)>] BorderResponse data, response status code and response headers
-    def get_border_with_http_info(request)
+    private def get_border_with_http_info(request)
 	  unless request.is_a? GetBorderRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -1662,16 +2328,32 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/borders/{index}"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
 	  
 	  
 
@@ -1685,9 +2367,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -1714,7 +2397,7 @@ module RubySDK
     # &#39;nodePath&#39; should refer to node with cell or row
     # # @param request GetBordersRequest
     # @return [Array<(BordersResponse, Fixnum, Hash)>] BordersResponse data, response status code and response headers
-    def get_borders_with_http_info(request)
+    private def get_borders_with_http_info(request)
 	  unless request.is_a? GetBordersRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -1732,15 +2415,31 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/borders"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
 	  
 	  
 
@@ -1754,9 +2453,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -1783,7 +2483,7 @@ module RubySDK
     # 
     # # @param request GetCommentRequest
     # @return [Array<(CommentResponse, Fixnum, Hash)>] CommentResponse data, response status code and response headers
-    def get_comment_with_http_info(request)
+    private def get_comment_with_http_info(request)
 	  unless request.is_a? GetCommentRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -1801,15 +2501,31 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/comments/{commentIndex}"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('CommentIndex') + '}', request.comment_index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('CommentIndex') + '}', request.comment_index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
 	  
 	  
 
@@ -1823,9 +2539,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -1852,7 +2569,7 @@ module RubySDK
     # 
     # # @param request GetCommentsRequest
     # @return [Array<(CommentsResponse, Fixnum, Hash)>] CommentsResponse data, response status code and response headers
-    def get_comments_with_http_info(request)
+    private def get_comments_with_http_info(request)
 	  unless request.is_a? GetCommentsRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -1866,14 +2583,30 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/comments"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
 	  
 	  
 
@@ -1887,9 +2620,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -1916,7 +2650,7 @@ module RubySDK
     # 
     # # @param request GetDocumentRequest
     # @return [Array<(DocumentResponse, Fixnum, Hash)>] DocumentResponse data, response status code and response headers
-    def get_document_with_http_info(request)
+    private def get_document_with_http_info(request)
 	  unless request.is_a? GetDocumentRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -1930,14 +2664,30 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{documentName}"
-	  local_var_path.sub('{' + downcase_first_letter('DocumentName') + '}', request.document_name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('DocumentName') + '}', request.document_name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
 	  
 	  
 
@@ -1951,9 +2701,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -1980,7 +2731,7 @@ module RubySDK
     # 
     # # @param request GetDocumentBookmarkByNameRequest
     # @return [Array<(BookmarkResponse, Fixnum, Hash)>] BookmarkResponse data, response status code and response headers
-    def get_document_bookmark_by_name_with_http_info(request)
+    private def get_document_bookmark_by_name_with_http_info(request)
 	  unless request.is_a? GetDocumentBookmarkByNameRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -1998,15 +2749,31 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/bookmarks/{bookmarkName}"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('BookmarkName') + '}', request.bookmark_name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('BookmarkName') + '}', request.bookmark_name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
 	  
 	  
 
@@ -2020,9 +2787,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -2049,7 +2817,7 @@ module RubySDK
     # 
     # # @param request GetDocumentBookmarksRequest
     # @return [Array<(BookmarksResponse, Fixnum, Hash)>] BookmarksResponse data, response status code and response headers
-    def get_document_bookmarks_with_http_info(request)
+    private def get_document_bookmarks_with_http_info(request)
 	  unless request.is_a? GetDocumentBookmarksRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -2063,14 +2831,30 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/bookmarks"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
 	  
 	  
 
@@ -2084,9 +2868,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -2113,7 +2898,7 @@ module RubySDK
     # 
     # # @param request GetDocumentDrawingObjectByIndexRequest
     # @return [Array<(DrawingObjectResponse, Fixnum, Hash)>] DrawingObjectResponse data, response status code and response headers
-    def get_document_drawing_object_by_index_with_http_info(request)
+    private def get_document_drawing_object_by_index_with_http_info(request)
 	  unless request.is_a? GetDocumentDrawingObjectByIndexRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -2131,16 +2916,36 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/drawingObjects/{index}"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('NodePath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+	    else
+	     query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    end  
 	  
 	  
 
@@ -2154,9 +2959,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -2183,7 +2989,7 @@ module RubySDK
     # 
     # # @param request GetDocumentDrawingObjectImageDataRequest
     # @return [Array<(File, Fixnum, Hash)>] File data, response status code and response headers
-    def get_document_drawing_object_image_data_with_http_info(request)
+    private def get_document_drawing_object_image_data_with_http_info(request)
 	  unless request.is_a? GetDocumentDrawingObjectImageDataRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -2201,16 +3007,36 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/drawingObjects/{index}/imageData"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('NodePath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+	    else
+	     query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    end  
 	  
 	  
 
@@ -2224,9 +3050,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -2253,7 +3080,7 @@ module RubySDK
     # 
     # # @param request GetDocumentDrawingObjectOleDataRequest
     # @return [Array<(File, Fixnum, Hash)>] File data, response status code and response headers
-    def get_document_drawing_object_ole_data_with_http_info(request)
+    private def get_document_drawing_object_ole_data_with_http_info(request)
 	  unless request.is_a? GetDocumentDrawingObjectOleDataRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -2271,16 +3098,36 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/drawingObjects/{index}/oleData"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('NodePath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+	    else
+	     query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    end  
 	  
 	  
 
@@ -2294,9 +3141,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -2323,7 +3171,7 @@ module RubySDK
     # 
     # # @param request GetDocumentDrawingObjectsRequest
     # @return [Array<(DrawingObjectsResponse, Fixnum, Hash)>] DrawingObjectsResponse data, response status code and response headers
-    def get_document_drawing_objects_with_http_info(request)
+    private def get_document_drawing_objects_with_http_info(request)
 	  unless request.is_a? GetDocumentDrawingObjectsRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -2337,15 +3185,35 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/drawingObjects"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('NodePath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+	    else
+	     query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    end  
 	  
 	  
 
@@ -2359,9 +3227,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -2388,7 +3257,7 @@ module RubySDK
     # 
     # # @param request GetDocumentFieldNamesRequest
     # @return [Array<(FieldNamesResponse, Fixnum, Hash)>] FieldNamesResponse data, response status code and response headers
-    def get_document_field_names_with_http_info(request)
+    private def get_document_field_names_with_http_info(request)
 	  unless request.is_a? GetDocumentFieldNamesRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -2402,15 +3271,35 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/mailMergeFieldNames"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('UseNonMergeFields')] = request.use_non_merge_fields unless request.use_non_merge_fields.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('UseNonMergeFields')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('UseNonMergeFields') + '}', request.use_non_merge_fields.to_s)
+	    else
+	     query_params[downcase_first_letter('UseNonMergeFields')] = request.use_non_merge_fields unless request.use_non_merge_fields.nil?
+	    end  
 	  
 	  
 
@@ -2424,9 +3313,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -2453,7 +3343,7 @@ module RubySDK
     # 
     # # @param request GetDocumentHyperlinkByIndexRequest
     # @return [Array<(HyperlinkResponse, Fixnum, Hash)>] HyperlinkResponse data, response status code and response headers
-    def get_document_hyperlink_by_index_with_http_info(request)
+    private def get_document_hyperlink_by_index_with_http_info(request)
 	  unless request.is_a? GetDocumentHyperlinkByIndexRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -2471,15 +3361,31 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/hyperlinks/{hyperlinkIndex}"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('HyperlinkIndex') + '}', request.hyperlink_index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('HyperlinkIndex') + '}', request.hyperlink_index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
 	  
 	  
 
@@ -2493,9 +3399,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -2522,7 +3429,7 @@ module RubySDK
     # 
     # # @param request GetDocumentHyperlinksRequest
     # @return [Array<(HyperlinksResponse, Fixnum, Hash)>] HyperlinksResponse data, response status code and response headers
-    def get_document_hyperlinks_with_http_info(request)
+    private def get_document_hyperlinks_with_http_info(request)
 	  unless request.is_a? GetDocumentHyperlinksRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -2536,14 +3443,30 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/hyperlinks"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
 	  
 	  
 
@@ -2557,9 +3480,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -2586,7 +3510,7 @@ module RubySDK
     # 
     # # @param request GetDocumentParagraphRequest
     # @return [Array<(ParagraphResponse, Fixnum, Hash)>] ParagraphResponse data, response status code and response headers
-    def get_document_paragraph_with_http_info(request)
+    private def get_document_paragraph_with_http_info(request)
 	  unless request.is_a? GetDocumentParagraphRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -2604,16 +3528,36 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/paragraphs/{index}"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('NodePath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+	    else
+	     query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    end  
 	  
 	  
 
@@ -2627,9 +3571,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -2656,7 +3601,7 @@ module RubySDK
     # 
     # # @param request GetDocumentParagraphRunRequest
     # @return [Array<(RunResponse, Fixnum, Hash)>] RunResponse data, response status code and response headers
-    def get_document_paragraph_run_with_http_info(request)
+    private def get_document_paragraph_run_with_http_info(request)
 	  unless request.is_a? GetDocumentParagraphRunRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -2678,16 +3623,32 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{paragraphPath}/runs/{index}"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('ParagraphPath') + '}', request.paragraph_path.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('ParagraphPath') + '}', request.paragraph_path.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
 	  
 	  
 
@@ -2701,9 +3662,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -2730,7 +3692,7 @@ module RubySDK
     # 
     # # @param request GetDocumentParagraphRunFontRequest
     # @return [Array<(FontResponse, Fixnum, Hash)>] FontResponse data, response status code and response headers
-    def get_document_paragraph_run_font_with_http_info(request)
+    private def get_document_paragraph_run_font_with_http_info(request)
 	  unless request.is_a? GetDocumentParagraphRunFontRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -2752,16 +3714,32 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{paragraphPath}/runs/{index}/font"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('ParagraphPath') + '}', request.paragraph_path.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('ParagraphPath') + '}', request.paragraph_path.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
 	  
 	  
 
@@ -2775,9 +3753,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -2804,7 +3783,7 @@ module RubySDK
     # 
     # # @param request GetDocumentParagraphRunsRequest
     # @return [Array<(RunsResponse, Fixnum, Hash)>] RunsResponse data, response status code and response headers
-    def get_document_paragraph_runs_with_http_info(request)
+    private def get_document_paragraph_runs_with_http_info(request)
 	  unless request.is_a? GetDocumentParagraphRunsRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -2822,15 +3801,31 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{paragraphPath}/runs"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('ParagraphPath') + '}', request.paragraph_path.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('ParagraphPath') + '}', request.paragraph_path.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
 	  
 	  
 
@@ -2844,9 +3839,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -2873,7 +3869,7 @@ module RubySDK
     # 
     # # @param request GetDocumentParagraphsRequest
     # @return [Array<(ParagraphLinkCollectionResponse, Fixnum, Hash)>] ParagraphLinkCollectionResponse data, response status code and response headers
-    def get_document_paragraphs_with_http_info(request)
+    private def get_document_paragraphs_with_http_info(request)
 	  unless request.is_a? GetDocumentParagraphsRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -2887,15 +3883,35 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/paragraphs"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('NodePath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+	    else
+	     query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    end  
 	  
 	  
 
@@ -2909,9 +3925,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -2938,7 +3955,7 @@ module RubySDK
     # 
     # # @param request GetDocumentPropertiesRequest
     # @return [Array<(DocumentPropertiesResponse, Fixnum, Hash)>] DocumentPropertiesResponse data, response status code and response headers
-    def get_document_properties_with_http_info(request)
+    private def get_document_properties_with_http_info(request)
 	  unless request.is_a? GetDocumentPropertiesRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -2952,14 +3969,30 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/documentProperties"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
 	  
 	  
 
@@ -2973,9 +4006,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -3002,7 +4036,7 @@ module RubySDK
     # 
     # # @param request GetDocumentPropertyRequest
     # @return [Array<(DocumentPropertyResponse, Fixnum, Hash)>] DocumentPropertyResponse data, response status code and response headers
-    def get_document_property_with_http_info(request)
+    private def get_document_property_with_http_info(request)
 	  unless request.is_a? GetDocumentPropertyRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -3020,15 +4054,31 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/documentProperties/{propertyName}"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('PropertyName') + '}', request.property_name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('PropertyName') + '}', request.property_name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
 	  
 	  
 
@@ -3042,9 +4092,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -3071,7 +4122,7 @@ module RubySDK
     # 
     # # @param request GetDocumentProtectionRequest
     # @return [Array<(ProtectionDataResponse, Fixnum, Hash)>] ProtectionDataResponse data, response status code and response headers
-    def get_document_protection_with_http_info(request)
+    private def get_document_protection_with_http_info(request)
 	  unless request.is_a? GetDocumentProtectionRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -3085,14 +4136,30 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/protection"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
 	  
 	  
 
@@ -3106,9 +4173,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -3135,7 +4203,7 @@ module RubySDK
     # 
     # # @param request GetDocumentStatisticsRequest
     # @return [Array<(StatDataResponse, Fixnum, Hash)>] StatDataResponse data, response status code and response headers
-    def get_document_statistics_with_http_info(request)
+    private def get_document_statistics_with_http_info(request)
 	  unless request.is_a? GetDocumentStatisticsRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -3149,17 +4217,45 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/statistics"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('IncludeComments')] = request.include_comments unless request.include_comments.nil?
-      query_params[downcase_first_letter('IncludeFootnotes')] = request.include_footnotes unless request.include_footnotes.nil?
-      query_params[downcase_first_letter('IncludeTextInShapes')] = request.include_text_in_shapes unless request.include_text_in_shapes.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('IncludeComments')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('IncludeComments') + '}', request.include_comments.to_s)
+	    else
+	     query_params[downcase_first_letter('IncludeComments')] = request.include_comments unless request.include_comments.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('IncludeFootnotes')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('IncludeFootnotes') + '}', request.include_footnotes.to_s)
+	    else
+	     query_params[downcase_first_letter('IncludeFootnotes')] = request.include_footnotes unless request.include_footnotes.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('IncludeTextInShapes')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('IncludeTextInShapes') + '}', request.include_text_in_shapes.to_s)
+	    else
+	     query_params[downcase_first_letter('IncludeTextInShapes')] = request.include_text_in_shapes unless request.include_text_in_shapes.nil?
+	    end  
 	  
 	  
 
@@ -3173,9 +4269,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -3202,7 +4299,7 @@ module RubySDK
     # 
     # # @param request GetDocumentTextItemsRequest
     # @return [Array<(TextItemsResponse, Fixnum, Hash)>] TextItemsResponse data, response status code and response headers
-    def get_document_text_items_with_http_info(request)
+    private def get_document_text_items_with_http_info(request)
 	  unless request.is_a? GetDocumentTextItemsRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -3216,14 +4313,30 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/textItems"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
 	  
 	  
 
@@ -3237,9 +4350,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -3266,7 +4380,7 @@ module RubySDK
     # 
     # # @param request GetDocumentWithFormatRequest
     # @return [Array<(File, Fixnum, Hash)>] File data, response status code and response headers
-    def get_document_with_format_with_http_info(request)
+    private def get_document_with_format_with_http_info(request)
 	  unless request.is_a? GetDocumentWithFormatRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -3284,17 +4398,42 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
       query_params[downcase_first_letter('Format')] = request.format
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('OutPath')] = request.out_path unless request.out_path.nil?
-      query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
+
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('OutPath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('OutPath') + '}', request.out_path.to_s)
+	    else
+	     query_params[downcase_first_letter('OutPath')] = request.out_path unless request.out_path.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('FontsLocation')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('FontsLocation') + '}', request.fonts_location.to_s)
+	    else
+	     query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
+	    end  
 	  
 	  
 
@@ -3308,9 +4447,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -3337,7 +4477,7 @@ module RubySDK
     # 
     # # @param request GetFieldRequest
     # @return [Array<(FieldResponse, Fixnum, Hash)>] FieldResponse data, response status code and response headers
-    def get_field_with_http_info(request)
+    private def get_field_with_http_info(request)
 	  unless request.is_a? GetFieldRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -3355,16 +4495,36 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/fields/{index}"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('NodePath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+	    else
+	     query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    end  
 	  
 	  
 
@@ -3378,9 +4538,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -3407,7 +4568,7 @@ module RubySDK
     # 
     # # @param request GetFieldsRequest
     # @return [Array<(FieldsResponse, Fixnum, Hash)>] FieldsResponse data, response status code and response headers
-    def get_fields_with_http_info(request)
+    private def get_fields_with_http_info(request)
 	  unless request.is_a? GetFieldsRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -3421,15 +4582,35 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/fields"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('NodePath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+	    else
+	     query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    end  
 	  
 	  
 
@@ -3443,9 +4624,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -3472,7 +4654,7 @@ module RubySDK
     # 
     # # @param request GetFootnoteRequest
     # @return [Array<(FootnoteResponse, Fixnum, Hash)>] FootnoteResponse data, response status code and response headers
-    def get_footnote_with_http_info(request)
+    private def get_footnote_with_http_info(request)
 	  unless request.is_a? GetFootnoteRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -3490,16 +4672,36 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/footnotes/{index}"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('NodePath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+	    else
+	     query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    end  
 	  
 	  
 
@@ -3513,9 +4715,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -3542,7 +4745,7 @@ module RubySDK
     # 
     # # @param request GetFootnotesRequest
     # @return [Array<(FootnotesResponse, Fixnum, Hash)>] FootnotesResponse data, response status code and response headers
-    def get_footnotes_with_http_info(request)
+    private def get_footnotes_with_http_info(request)
 	  unless request.is_a? GetFootnotesRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -3556,15 +4759,35 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/footnotes"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('NodePath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+	    else
+	     query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    end  
 	  
 	  
 
@@ -3578,9 +4801,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -3607,7 +4831,7 @@ module RubySDK
     # 
     # # @param request GetFormFieldRequest
     # @return [Array<(FormFieldResponse, Fixnum, Hash)>] FormFieldResponse data, response status code and response headers
-    def get_form_field_with_http_info(request)
+    private def get_form_field_with_http_info(request)
 	  unless request.is_a? GetFormFieldRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -3625,16 +4849,36 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/formfields/{index}"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('NodePath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+	    else
+	     query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    end  
 	  
 	  
 
@@ -3648,9 +4892,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -3677,7 +4922,7 @@ module RubySDK
     # 
     # # @param request GetFormFieldsRequest
     # @return [Array<(FormFieldsResponse, Fixnum, Hash)>] FormFieldsResponse data, response status code and response headers
-    def get_form_fields_with_http_info(request)
+    private def get_form_fields_with_http_info(request)
 	  unless request.is_a? GetFormFieldsRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -3691,15 +4936,35 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/formfields"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('NodePath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+	    else
+	     query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    end  
 	  
 	  
 
@@ -3713,9 +4978,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -3742,7 +5008,7 @@ module RubySDK
     # 
     # # @param request GetHeaderFooterRequest
     # @return [Array<(HeaderFooterResponse, Fixnum, Hash)>] HeaderFooterResponse data, response status code and response headers
-    def get_header_footer_with_http_info(request)
+    private def get_header_footer_with_http_info(request)
 	  unless request.is_a? GetHeaderFooterRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -3760,16 +5026,36 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/headersfooters/{headerFooterIndex}"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('HeaderFooterIndex') + '}', request.header_footer_index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('HeaderFooterIndex') + '}', request.header_footer_index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('FilterByType')] = request.filter_by_type unless request.filter_by_type.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('FilterByType')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('FilterByType') + '}', request.filter_by_type.to_s)
+	    else
+	     query_params[downcase_first_letter('FilterByType')] = request.filter_by_type unless request.filter_by_type.nil?
+	    end  
 	  
 	  
 
@@ -3783,9 +5069,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -3812,7 +5099,7 @@ module RubySDK
     # 
     # # @param request GetHeaderFooterOfSectionRequest
     # @return [Array<(HeaderFooterResponse, Fixnum, Hash)>] HeaderFooterResponse data, response status code and response headers
-    def get_header_footer_of_section_with_http_info(request)
+    private def get_header_footer_of_section_with_http_info(request)
 	  unless request.is_a? GetHeaderFooterOfSectionRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -3834,17 +5121,37 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/sections/{sectionIndex}/headersfooters/{headerFooterIndex}"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('HeaderFooterIndex') + '}', request.header_footer_index.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('SectionIndex') + '}', request.section_index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('HeaderFooterIndex') + '}', request.header_footer_index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('SectionIndex') + '}', request.section_index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('FilterByType')] = request.filter_by_type unless request.filter_by_type.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('FilterByType')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('FilterByType') + '}', request.filter_by_type.to_s)
+	    else
+	     query_params[downcase_first_letter('FilterByType')] = request.filter_by_type unless request.filter_by_type.nil?
+	    end  
 	  
 	  
 
@@ -3858,9 +5165,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -3887,7 +5195,7 @@ module RubySDK
     # 
     # # @param request GetHeaderFootersRequest
     # @return [Array<(HeaderFootersResponse, Fixnum, Hash)>] HeaderFootersResponse data, response status code and response headers
-    def get_header_footers_with_http_info(request)
+    private def get_header_footers_with_http_info(request)
 	  unless request.is_a? GetHeaderFootersRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -3901,16 +5209,40 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{sectionPath}/headersfooters"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('SectionPath')] = request.section_path unless request.section_path.nil?
-      query_params[downcase_first_letter('FilterByType')] = request.filter_by_type unless request.filter_by_type.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('SectionPath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('SectionPath') + '}', request.section_path.to_s)
+	    else
+	     query_params[downcase_first_letter('SectionPath')] = request.section_path unless request.section_path.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('FilterByType')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('FilterByType') + '}', request.filter_by_type.to_s)
+	    else
+	     query_params[downcase_first_letter('FilterByType')] = request.filter_by_type unless request.filter_by_type.nil?
+	    end  
 	  
 	  
 
@@ -3924,9 +5256,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -3953,7 +5286,7 @@ module RubySDK
     # 
     # # @param request GetOfficeMathObjectRequest
     # @return [Array<(OfficeMathObjectResponse, Fixnum, Hash)>] OfficeMathObjectResponse data, response status code and response headers
-    def get_office_math_object_with_http_info(request)
+    private def get_office_math_object_with_http_info(request)
 	  unless request.is_a? GetOfficeMathObjectRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -3971,16 +5304,36 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/OfficeMathObjects/{index}"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('NodePath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+	    else
+	     query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    end  
 	  
 	  
 
@@ -3994,9 +5347,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -4023,7 +5377,7 @@ module RubySDK
     # 
     # # @param request GetOfficeMathObjectsRequest
     # @return [Array<(OfficeMathObjectsResponse, Fixnum, Hash)>] OfficeMathObjectsResponse data, response status code and response headers
-    def get_office_math_objects_with_http_info(request)
+    private def get_office_math_objects_with_http_info(request)
 	  unless request.is_a? GetOfficeMathObjectsRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -4037,15 +5391,35 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/OfficeMathObjects"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('NodePath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+	    else
+	     query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    end  
 	  
 	  
 
@@ -4059,9 +5433,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -4088,7 +5463,7 @@ module RubySDK
     # 
     # # @param request GetSectionRequest
     # @return [Array<(SectionResponse, Fixnum, Hash)>] SectionResponse data, response status code and response headers
-    def get_section_with_http_info(request)
+    private def get_section_with_http_info(request)
 	  unless request.is_a? GetSectionRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -4106,15 +5481,31 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/sections/{sectionIndex}"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('SectionIndex') + '}', request.section_index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('SectionIndex') + '}', request.section_index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
 	  
 	  
 
@@ -4128,9 +5519,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -4157,7 +5549,7 @@ module RubySDK
     # 
     # # @param request GetSectionPageSetupRequest
     # @return [Array<(SectionPageSetupResponse, Fixnum, Hash)>] SectionPageSetupResponse data, response status code and response headers
-    def get_section_page_setup_with_http_info(request)
+    private def get_section_page_setup_with_http_info(request)
 	  unless request.is_a? GetSectionPageSetupRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -4175,15 +5567,31 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/sections/{sectionIndex}/pageSetup"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('SectionIndex') + '}', request.section_index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('SectionIndex') + '}', request.section_index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
 	  
 	  
 
@@ -4197,9 +5605,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -4226,7 +5635,7 @@ module RubySDK
     # 
     # # @param request GetSectionsRequest
     # @return [Array<(SectionLinkCollectionResponse, Fixnum, Hash)>] SectionLinkCollectionResponse data, response status code and response headers
-    def get_sections_with_http_info(request)
+    private def get_sections_with_http_info(request)
 	  unless request.is_a? GetSectionsRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -4240,14 +5649,30 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/sections"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
 	  
 	  
 
@@ -4261,9 +5686,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -4290,7 +5716,7 @@ module RubySDK
     # 
     # # @param request GetTableRequest
     # @return [Array<(TableResponse, Fixnum, Hash)>] TableResponse data, response status code and response headers
-    def get_table_with_http_info(request)
+    private def get_table_with_http_info(request)
 	  unless request.is_a? GetTableRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -4308,16 +5734,36 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/tables/{index}"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('NodePath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+	    else
+	     query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    end  
 	  
 	  
 
@@ -4331,9 +5777,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -4360,7 +5807,7 @@ module RubySDK
     # 
     # # @param request GetTableCellRequest
     # @return [Array<(TableCellResponse, Fixnum, Hash)>] TableCellResponse data, response status code and response headers
-    def get_table_cell_with_http_info(request)
+    private def get_table_cell_with_http_info(request)
 	  unless request.is_a? GetTableCellRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -4382,16 +5829,32 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{tableRowPath}/cells/{index}"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('TableRowPath') + '}', request.table_row_path.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('TableRowPath') + '}', request.table_row_path.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
 	  
 	  
 
@@ -4405,9 +5868,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -4434,7 +5898,7 @@ module RubySDK
     # 
     # # @param request GetTableCellFormatRequest
     # @return [Array<(TableCellFormatResponse, Fixnum, Hash)>] TableCellFormatResponse data, response status code and response headers
-    def get_table_cell_format_with_http_info(request)
+    private def get_table_cell_format_with_http_info(request)
 	  unless request.is_a? GetTableCellFormatRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -4456,16 +5920,32 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{tableRowPath}/cells/{index}/cellformat"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('TableRowPath') + '}', request.table_row_path.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('TableRowPath') + '}', request.table_row_path.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
 	  
 	  
 
@@ -4479,9 +5959,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -4508,7 +5989,7 @@ module RubySDK
     # 
     # # @param request GetTablePropertiesRequest
     # @return [Array<(TablePropertiesResponse, Fixnum, Hash)>] TablePropertiesResponse data, response status code and response headers
-    def get_table_properties_with_http_info(request)
+    private def get_table_properties_with_http_info(request)
 	  unless request.is_a? GetTablePropertiesRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -4526,16 +6007,36 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/tables/{index}/properties"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('NodePath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+	    else
+	     query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    end  
 	  
 	  
 
@@ -4549,9 +6050,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -4578,7 +6080,7 @@ module RubySDK
     # 
     # # @param request GetTableRowRequest
     # @return [Array<(TableRowResponse, Fixnum, Hash)>] TableRowResponse data, response status code and response headers
-    def get_table_row_with_http_info(request)
+    private def get_table_row_with_http_info(request)
 	  unless request.is_a? GetTableRowRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -4600,16 +6102,32 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{tablePath}/rows/{index}"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('TablePath') + '}', request.table_path.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('TablePath') + '}', request.table_path.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
 	  
 	  
 
@@ -4623,9 +6141,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -4652,7 +6171,7 @@ module RubySDK
     # 
     # # @param request GetTableRowFormatRequest
     # @return [Array<(TableRowFormatResponse, Fixnum, Hash)>] TableRowFormatResponse data, response status code and response headers
-    def get_table_row_format_with_http_info(request)
+    private def get_table_row_format_with_http_info(request)
 	  unless request.is_a? GetTableRowFormatRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -4674,16 +6193,32 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{tablePath}/rows/{index}/rowformat"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('TablePath') + '}', request.table_path.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('TablePath') + '}', request.table_path.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
 	  
 	  
 
@@ -4697,9 +6232,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -4726,7 +6262,7 @@ module RubySDK
     # 
     # # @param request GetTablesRequest
     # @return [Array<(TableLinkCollectionResponse, Fixnum, Hash)>] TableLinkCollectionResponse data, response status code and response headers
-    def get_tables_with_http_info(request)
+    private def get_tables_with_http_info(request)
 	  unless request.is_a? GetTablesRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -4740,15 +6276,35 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/tables"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('NodePath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+	    else
+	     query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    end  
 	  
 	  
 
@@ -4762,9 +6318,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -4791,7 +6348,7 @@ module RubySDK
     # 
     # # @param request InsertTableRequest
     # @return [Array<(TableResponse, Fixnum, Hash)>] TableResponse data, response status code and response headers
-    def insert_table_with_http_info(request)
+    private def insert_table_with_http_info(request)
 	  unless request.is_a? InsertTableRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -4805,18 +6362,50 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/tables"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-      query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('NodePath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+	    else
+	     query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    end  
 	  
 	  
 
@@ -4830,9 +6419,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.table)
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -4859,7 +6449,7 @@ module RubySDK
     # 
     # # @param request InsertTableCellRequest
     # @return [Array<(TableCellResponse, Fixnum, Hash)>] TableCellResponse data, response status code and response headers
-    def insert_table_cell_with_http_info(request)
+    private def insert_table_cell_with_http_info(request)
 	  unless request.is_a? InsertTableCellRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -4877,18 +6467,46 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{tableRowPath}/cells"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('TableRowPath') + '}', request.table_row_path.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('TableRowPath') + '}', request.table_row_path.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
 	  
 	  
 
@@ -4902,9 +6520,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.cell)
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -4931,7 +6550,7 @@ module RubySDK
     # 
     # # @param request InsertTableRowRequest
     # @return [Array<(TableRowResponse, Fixnum, Hash)>] TableRowResponse data, response status code and response headers
-    def insert_table_row_with_http_info(request)
+    private def insert_table_row_with_http_info(request)
 	  unless request.is_a? InsertTableRowRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -4949,18 +6568,46 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{tablePath}/rows"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('TablePath') + '}', request.table_path.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('TablePath') + '}', request.table_path.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
 	  
 	  
 
@@ -4974,9 +6621,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.row)
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -5003,7 +6651,7 @@ module RubySDK
     # 
     # # @param request PostAppendDocumentRequest
     # @return [Array<(DocumentResponse, Fixnum, Hash)>] DocumentResponse data, response status code and response headers
-    def post_append_document_with_http_info(request)
+    private def post_append_document_with_http_info(request)
 	  unless request.is_a? PostAppendDocumentRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -5021,17 +6669,45 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/appendDocument"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
 	  
 	  
 
@@ -5045,9 +6721,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.document_list)
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -5074,7 +6751,7 @@ module RubySDK
     # 
     # # @param request PostChangeDocumentProtectionRequest
     # @return [Array<(ProtectionDataResponse, Fixnum, Hash)>] ProtectionDataResponse data, response status code and response headers
-    def post_change_document_protection_with_http_info(request)
+    private def post_change_document_protection_with_http_info(request)
 	  unless request.is_a? PostChangeDocumentProtectionRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -5092,15 +6769,35 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/protection"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
 	  
 	  
 
@@ -5114,9 +6811,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.protection_request)
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -5143,7 +6841,7 @@ module RubySDK
     # 
     # # @param request PostCommentRequest
     # @return [Array<(CommentResponse, Fixnum, Hash)>] CommentResponse data, response status code and response headers
-    def post_comment_with_http_info(request)
+    private def post_comment_with_http_info(request)
 	  unless request.is_a? PostCommentRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -5165,18 +6863,46 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/comments/{commentIndex}"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('CommentIndex') + '}', request.comment_index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('CommentIndex') + '}', request.comment_index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
 	  
 	  
 
@@ -5190,9 +6916,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.comment)
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -5219,7 +6946,7 @@ module RubySDK
     # 
     # # @param request PostCompareDocumentRequest
     # @return [Array<(DocumentResponse, Fixnum, Hash)>] DocumentResponse data, response status code and response headers
-    def post_compare_document_with_http_info(request)
+    private def post_compare_document_with_http_info(request)
 	  unless request.is_a? PostCompareDocumentRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -5237,15 +6964,35 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/compareDocument"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
 	  
 	  
 
@@ -5259,9 +7006,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.compare_data)
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -5288,7 +7036,7 @@ module RubySDK
     # 
     # # @param request PostDocumentExecuteMailMergeRequest
     # @return [Array<(DocumentResponse, Fixnum, Hash)>] DocumentResponse data, response status code and response headers
-    def post_document_execute_mail_merge_with_http_info(request)
+    private def post_document_execute_mail_merge_with_http_info(request)
 	  unless request.is_a? PostDocumentExecuteMailMergeRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -5306,19 +7054,52 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/executeMailMerge"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
       query_params[downcase_first_letter('WithRegions')] = request.with_regions
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('MailMergeDataFile')] = request.mail_merge_data_file unless request.mail_merge_data_file.nil?
-      query_params[downcase_first_letter('Cleanup')] = request.cleanup unless request.cleanup.nil?
-      query_params[downcase_first_letter('UseWholeParagraphAsRegion')] = request.use_whole_paragraph_as_region unless request.use_whole_paragraph_as_region.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('MailMergeDataFile')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('MailMergeDataFile') + '}', request.mail_merge_data_file.to_s)
+	    else
+	     query_params[downcase_first_letter('MailMergeDataFile')] = request.mail_merge_data_file unless request.mail_merge_data_file.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Cleanup')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Cleanup') + '}', request.cleanup.to_s)
+	    else
+	     query_params[downcase_first_letter('Cleanup')] = request.cleanup unless request.cleanup.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('UseWholeParagraphAsRegion')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('UseWholeParagraphAsRegion') + '}', request.use_whole_paragraph_as_region.to_s)
+	    else
+	     query_params[downcase_first_letter('UseWholeParagraphAsRegion')] = request.use_whole_paragraph_as_region unless request.use_whole_paragraph_as_region.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
 	  
 	  
 
@@ -5333,9 +7114,10 @@ module RubySDK
       form_params = {}
       form_params[downcase_first_letter('Data')] = request.data unless request.data.nil?
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -5362,7 +7144,7 @@ module RubySDK
     # 
     # # @param request PostDocumentParagraphRunFontRequest
     # @return [Array<(FontResponse, Fixnum, Hash)>] FontResponse data, response status code and response headers
-    def post_document_paragraph_run_font_with_http_info(request)
+    private def post_document_paragraph_run_font_with_http_info(request)
 	  unless request.is_a? PostDocumentParagraphRunFontRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -5388,19 +7170,47 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{paragraphPath}/runs/{index}/font"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('ParagraphPath') + '}', request.paragraph_path.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('ParagraphPath') + '}', request.paragraph_path.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
 	  
 	  
 
@@ -5414,9 +7224,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.font_dto)
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -5443,7 +7254,7 @@ module RubySDK
     # 
     # # @param request PostDocumentSaveAsRequest
     # @return [Array<(SaveResponse, Fixnum, Hash)>] SaveResponse data, response status code and response headers
-    def post_document_save_as_with_http_info(request)
+    private def post_document_save_as_with_http_info(request)
 	  unless request.is_a? PostDocumentSaveAsRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -5461,16 +7272,40 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/saveAs"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('FontsLocation')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('FontsLocation') + '}', request.fonts_location.to_s)
+	    else
+	     query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
+	    end  
 	  
 	  
 
@@ -5484,9 +7319,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.save_options_data)
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -5513,7 +7349,7 @@ module RubySDK
     # 
     # # @param request PostDrawingObjectRequest
     # @return [Array<(DrawingObjectResponse, Fixnum, Hash)>] DrawingObjectResponse data, response status code and response headers
-    def post_drawing_object_with_http_info(request)
+    private def post_drawing_object_with_http_info(request)
 	  unless request.is_a? PostDrawingObjectRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -5539,19 +7375,51 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/drawingObjects/{index}"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-      query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('NodePath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+	    else
+	     query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    end  
 	  
 	  
 
@@ -5567,9 +7435,10 @@ module RubySDK
       form_params[downcase_first_letter('DrawingObject')] = request.drawing_object
       form_params[downcase_first_letter('ImageFile')] = request.image_file
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -5596,7 +7465,7 @@ module RubySDK
     # 
     # # @param request PostExecuteTemplateRequest
     # @return [Array<(DocumentResponse, Fixnum, Hash)>] DocumentResponse data, response status code and response headers
-    def post_execute_template_with_http_info(request)
+    private def post_execute_template_with_http_info(request)
 	  unless request.is_a? PostExecuteTemplateRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -5614,18 +7483,50 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/executeTemplate"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('Cleanup')] = request.cleanup unless request.cleanup.nil?
-      query_params[downcase_first_letter('UseWholeParagraphAsRegion')] = request.use_whole_paragraph_as_region unless request.use_whole_paragraph_as_region.nil?
-      query_params[downcase_first_letter('WithRegions')] = request.with_regions unless request.with_regions.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Cleanup')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Cleanup') + '}', request.cleanup.to_s)
+	    else
+	     query_params[downcase_first_letter('Cleanup')] = request.cleanup unless request.cleanup.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('UseWholeParagraphAsRegion')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('UseWholeParagraphAsRegion') + '}', request.use_whole_paragraph_as_region.to_s)
+	    else
+	     query_params[downcase_first_letter('UseWholeParagraphAsRegion')] = request.use_whole_paragraph_as_region unless request.use_whole_paragraph_as_region.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('WithRegions')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('WithRegions') + '}', request.with_regions.to_s)
+	    else
+	     query_params[downcase_first_letter('WithRegions')] = request.with_regions unless request.with_regions.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
 	  
 	  
 
@@ -5640,9 +7541,10 @@ module RubySDK
       form_params = {}
       form_params[downcase_first_letter('Data')] = request.data
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -5669,7 +7571,7 @@ module RubySDK
     # 
     # # @param request PostFieldRequest
     # @return [Array<(FieldResponse, Fixnum, Hash)>] FieldResponse data, response status code and response headers
-    def post_field_with_http_info(request)
+    private def post_field_with_http_info(request)
 	  unless request.is_a? PostFieldRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -5691,19 +7593,51 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/fields/{index}"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-      query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('NodePath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+	    else
+	     query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    end  
 	  
 	  
 
@@ -5717,9 +7651,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.field)
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -5746,7 +7681,7 @@ module RubySDK
     # 
     # # @param request PostFootnoteRequest
     # @return [Array<(FootnoteResponse, Fixnum, Hash)>] FootnoteResponse data, response status code and response headers
-    def post_footnote_with_http_info(request)
+    private def post_footnote_with_http_info(request)
 	  unless request.is_a? PostFootnoteRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -5768,19 +7703,51 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/footnotes/{index}"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-      query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('NodePath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+	    else
+	     query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    end  
 	  
 	  
 
@@ -5794,9 +7761,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.footnote_dto)
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -5823,7 +7791,7 @@ module RubySDK
     # 
     # # @param request PostFormFieldRequest
     # @return [Array<(FormFieldResponse, Fixnum, Hash)>] FormFieldResponse data, response status code and response headers
-    def post_form_field_with_http_info(request)
+    private def post_form_field_with_http_info(request)
 	  unless request.is_a? PostFormFieldRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -5845,19 +7813,51 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/formfields/{index}"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-      query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('NodePath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+	    else
+	     query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    end  
 	  
 	  
 
@@ -5871,9 +7871,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.form_field)
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -5900,7 +7901,7 @@ module RubySDK
     # 
     # # @param request PostInsertDocumentWatermarkImageRequest
     # @return [Array<(DocumentResponse, Fixnum, Hash)>] DocumentResponse data, response status code and response headers
-    def post_insert_document_watermark_image_with_http_info(request)
+    private def post_insert_document_watermark_image_with_http_info(request)
 	  unless request.is_a? PostInsertDocumentWatermarkImageRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -5914,19 +7915,55 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/watermark/insertImage"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-      query_params[downcase_first_letter('RotationAngle')] = request.rotation_angle unless request.rotation_angle.nil?
-      query_params[downcase_first_letter('Image')] = request.image unless request.image.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RotationAngle')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RotationAngle') + '}', request.rotation_angle.to_s)
+	    else
+	     query_params[downcase_first_letter('RotationAngle')] = request.rotation_angle unless request.rotation_angle.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Image')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Image') + '}', request.image.to_s)
+	    else
+	     query_params[downcase_first_letter('Image')] = request.image unless request.image.nil?
+	    end  
 	  
 	  
 
@@ -5941,9 +7978,10 @@ module RubySDK
       form_params = {}
       form_params[downcase_first_letter('ImageFile')] = request.image_file unless request.image_file.nil?
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -5970,7 +8008,7 @@ module RubySDK
     # 
     # # @param request PostInsertDocumentWatermarkTextRequest
     # @return [Array<(DocumentResponse, Fixnum, Hash)>] DocumentResponse data, response status code and response headers
-    def post_insert_document_watermark_text_with_http_info(request)
+    private def post_insert_document_watermark_text_with_http_info(request)
 	  unless request.is_a? PostInsertDocumentWatermarkTextRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -5988,17 +8026,45 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/watermark/insertText"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
 	  
 	  
 
@@ -6012,9 +8078,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.watermark_text)
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -6041,7 +8108,7 @@ module RubySDK
     # 
     # # @param request PostInsertPageNumbersRequest
     # @return [Array<(DocumentResponse, Fixnum, Hash)>] DocumentResponse data, response status code and response headers
-    def post_insert_page_numbers_with_http_info(request)
+    private def post_insert_page_numbers_with_http_info(request)
 	  unless request.is_a? PostInsertPageNumbersRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -6059,17 +8126,45 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/insertPageNumbers"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
 	  
 	  
 
@@ -6083,9 +8178,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.page_number)
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -6112,7 +8208,7 @@ module RubySDK
     # 
     # # @param request PostLoadWebDocumentRequest
     # @return [Array<(SaveResponse, Fixnum, Hash)>] SaveResponse data, response status code and response headers
-    def post_load_web_document_with_http_info(request)
+    private def post_load_web_document_with_http_info(request)
 	  unless request.is_a? PostLoadWebDocumentRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -6129,7 +8225,11 @@ module RubySDK
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
 	  
 	  
 
@@ -6143,9 +8243,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.data)
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -6172,7 +8273,7 @@ module RubySDK
     # 
     # # @param request PostReplaceTextRequest
     # @return [Array<(ReplaceTextResponse, Fixnum, Hash)>] ReplaceTextResponse data, response status code and response headers
-    def post_replace_text_with_http_info(request)
+    private def post_replace_text_with_http_info(request)
 	  unless request.is_a? PostReplaceTextRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -6190,17 +8291,45 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/replaceText"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
 	  
 	  
 
@@ -6214,9 +8343,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.replace_text)
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -6243,7 +8373,7 @@ module RubySDK
     # 
     # # @param request PostRunRequest
     # @return [Array<(RunResponse, Fixnum, Hash)>] RunResponse data, response status code and response headers
-    def post_run_with_http_info(request)
+    private def post_run_with_http_info(request)
 	  unless request.is_a? PostRunRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -6269,19 +8399,47 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{paragraphPath}/runs/{index}"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('ParagraphPath') + '}', request.paragraph_path.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('ParagraphPath') + '}', request.paragraph_path.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
 	  
 	  
 
@@ -6295,9 +8453,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.run)
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -6324,7 +8483,7 @@ module RubySDK
     # 
     # # @param request PostSplitDocumentRequest
     # @return [Array<(SplitDocumentResponse, Fixnum, Hash)>] SplitDocumentResponse data, response status code and response headers
-    def post_split_document_with_http_info(request)
+    private def post_split_document_with_http_info(request)
 	  unless request.is_a? PostSplitDocumentRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -6338,20 +8497,60 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/split"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('Format')] = request.format unless request.format.nil?
-      query_params[downcase_first_letter('From')] = request.from unless request.from.nil?
-      query_params[downcase_first_letter('To')] = request.to unless request.to.nil?
-      query_params[downcase_first_letter('ZipOutput')] = request.zip_output unless request.zip_output.nil?
-      query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Format')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Format') + '}', request.format.to_s)
+	    else
+	     query_params[downcase_first_letter('Format')] = request.format unless request.format.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('From')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('From') + '}', request.from.to_s)
+	    else
+	     query_params[downcase_first_letter('From')] = request.from unless request.from.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('To')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('To') + '}', request.to.to_s)
+	    else
+	     query_params[downcase_first_letter('To')] = request.to unless request.to.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('ZipOutput')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('ZipOutput') + '}', request.zip_output.to_s)
+	    else
+	     query_params[downcase_first_letter('ZipOutput')] = request.zip_output unless request.zip_output.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('FontsLocation')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('FontsLocation') + '}', request.fonts_location.to_s)
+	    else
+	     query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
+	    end  
 	  
 	  
 
@@ -6365,9 +8564,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -6394,7 +8594,7 @@ module RubySDK
     # 
     # # @param request PostUpdateDocumentBookmarkRequest
     # @return [Array<(BookmarkResponse, Fixnum, Hash)>] BookmarkResponse data, response status code and response headers
-    def post_update_document_bookmark_with_http_info(request)
+    private def post_update_document_bookmark_with_http_info(request)
 	  unless request.is_a? PostUpdateDocumentBookmarkRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -6416,18 +8616,46 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/bookmarks/{bookmarkName}"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('BookmarkName') + '}', request.bookmark_name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('BookmarkName') + '}', request.bookmark_name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
 	  
 	  
 
@@ -6441,9 +8669,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.bookmark_data)
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -6470,7 +8699,7 @@ module RubySDK
     # 
     # # @param request PostUpdateDocumentFieldsRequest
     # @return [Array<(DocumentResponse, Fixnum, Hash)>] DocumentResponse data, response status code and response headers
-    def post_update_document_fields_with_http_info(request)
+    private def post_update_document_fields_with_http_info(request)
 	  unless request.is_a? PostUpdateDocumentFieldsRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -6484,15 +8713,35 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/updateFields"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
 	  
 	  
 
@@ -6506,9 +8755,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -6535,7 +8785,7 @@ module RubySDK
     # 
     # # @param request PutCommentRequest
     # @return [Array<(CommentResponse, Fixnum, Hash)>] CommentResponse data, response status code and response headers
-    def put_comment_with_http_info(request)
+    private def put_comment_with_http_info(request)
 	  unless request.is_a? PutCommentRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -6553,17 +8803,45 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/comments"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
 	  
 	  
 
@@ -6577,9 +8855,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.comment)
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -6606,7 +8885,7 @@ module RubySDK
     # 
     # # @param request PutConvertDocumentRequest
     # @return [Array<(File, Fixnum, Hash)>] File data, response status code and response headers
-    def put_convert_document_with_http_info(request)
+    private def put_convert_document_with_http_info(request)
 	  unless request.is_a? PutConvertDocumentRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -6628,9 +8907,22 @@ module RubySDK
       # query parameters
       query_params = {}
       query_params[downcase_first_letter('Format')] = request.format
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('OutPath')] = request.out_path unless request.out_path.nil?
-      query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
+
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('OutPath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('OutPath') + '}', request.out_path.to_s)
+	    else
+	     query_params[downcase_first_letter('OutPath')] = request.out_path unless request.out_path.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('FontsLocation')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('FontsLocation') + '}', request.fonts_location.to_s)
+	    else
+	     query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
+	    end  
 	  
 	  
 
@@ -6645,9 +8937,10 @@ module RubySDK
       form_params = {}
       form_params[downcase_first_letter('Document')] = request.document
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -6674,7 +8967,7 @@ module RubySDK
     # 
     # # @param request PutCreateDocumentRequest
     # @return [Array<(DocumentResponse, Fixnum, Hash)>] DocumentResponse data, response status code and response headers
-    def put_create_document_with_http_info(request)
+    private def put_create_document_with_http_info(request)
 	  unless request.is_a? PutCreateDocumentRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -6687,9 +8980,21 @@ module RubySDK
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('FileName')] = request.file_name unless request.file_name.nil?
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('FileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('FileName') + '}', request.file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('FileName')] = request.file_name unless request.file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
 	  
 	  
 
@@ -6703,9 +9008,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -6732,7 +9038,7 @@ module RubySDK
     # 
     # # @param request PutDocumentFieldNamesRequest
     # @return [Array<(FieldNamesResponse, Fixnum, Hash)>] FieldNamesResponse data, response status code and response headers
-    def put_document_field_names_with_http_info(request)
+    private def put_document_field_names_with_http_info(request)
 	  unless request.is_a? PutDocumentFieldNamesRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -6749,7 +9055,11 @@ module RubySDK
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('UseNonMergeFields')] = request.use_non_merge_fields unless request.use_non_merge_fields.nil?
+	    if local_var_path.include? downcase_first_letter('UseNonMergeFields')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('UseNonMergeFields') + '}', request.use_non_merge_fields.to_s)
+	    else
+	     query_params[downcase_first_letter('UseNonMergeFields')] = request.use_non_merge_fields unless request.use_non_merge_fields.nil?
+	    end  
 	  
 	  
 
@@ -6764,9 +9074,10 @@ module RubySDK
       form_params = {}
       form_params[downcase_first_letter('Template')] = request.template
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -6793,7 +9104,7 @@ module RubySDK
     # 
     # # @param request PutDocumentSaveAsTiffRequest
     # @return [Array<(SaveResponse, Fixnum, Hash)>] SaveResponse data, response status code and response headers
-    def put_document_save_as_tiff_with_http_info(request)
+    private def put_document_save_as_tiff_with_http_info(request)
 	  unless request.is_a? PutDocumentSaveAsTiffRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -6811,34 +9122,130 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/saveAs/tiff"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('ResultFile')] = request.result_file unless request.result_file.nil?
-      query_params[downcase_first_letter('UseAntiAliasing')] = request.use_anti_aliasing unless request.use_anti_aliasing.nil?
-      query_params[downcase_first_letter('UseHighQualityRendering')] = request.use_high_quality_rendering unless request.use_high_quality_rendering.nil?
-      query_params[downcase_first_letter('ImageBrightness')] = request.image_brightness unless request.image_brightness.nil?
-      query_params[downcase_first_letter('ImageColorMode')] = request.image_color_mode unless request.image_color_mode.nil?
-      query_params[downcase_first_letter('ImageContrast')] = request.image_contrast unless request.image_contrast.nil?
-      query_params[downcase_first_letter('NumeralFormat')] = request.numeral_format unless request.numeral_format.nil?
-      query_params[downcase_first_letter('PageCount')] = request.page_count unless request.page_count.nil?
-      query_params[downcase_first_letter('PageIndex')] = request.page_index unless request.page_index.nil?
-      query_params[downcase_first_letter('PaperColor')] = request.paper_color unless request.paper_color.nil?
-      query_params[downcase_first_letter('PixelFormat')] = request.pixel_format unless request.pixel_format.nil?
-      query_params[downcase_first_letter('Resolution')] = request.resolution unless request.resolution.nil?
-      query_params[downcase_first_letter('Scale')] = request.scale unless request.scale.nil?
-      query_params[downcase_first_letter('TiffCompression')] = request.tiff_compression unless request.tiff_compression.nil?
-      query_params[downcase_first_letter('DmlRenderingMode')] = request.dml_rendering_mode unless request.dml_rendering_mode.nil?
-      query_params[downcase_first_letter('DmlEffectsRenderingMode')] = request.dml_effects_rendering_mode unless request.dml_effects_rendering_mode.nil?
-      query_params[downcase_first_letter('TiffBinarizationMethod')] = request.tiff_binarization_method unless request.tiff_binarization_method.nil?
-      query_params[downcase_first_letter('ZipOutput')] = request.zip_output unless request.zip_output.nil?
-      query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('ResultFile')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('ResultFile') + '}', request.result_file.to_s)
+	    else
+	     query_params[downcase_first_letter('ResultFile')] = request.result_file unless request.result_file.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('UseAntiAliasing')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('UseAntiAliasing') + '}', request.use_anti_aliasing.to_s)
+	    else
+	     query_params[downcase_first_letter('UseAntiAliasing')] = request.use_anti_aliasing unless request.use_anti_aliasing.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('UseHighQualityRendering')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('UseHighQualityRendering') + '}', request.use_high_quality_rendering.to_s)
+	    else
+	     query_params[downcase_first_letter('UseHighQualityRendering')] = request.use_high_quality_rendering unless request.use_high_quality_rendering.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('ImageBrightness')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('ImageBrightness') + '}', request.image_brightness.to_s)
+	    else
+	     query_params[downcase_first_letter('ImageBrightness')] = request.image_brightness unless request.image_brightness.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('ImageColorMode')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('ImageColorMode') + '}', request.image_color_mode.to_s)
+	    else
+	     query_params[downcase_first_letter('ImageColorMode')] = request.image_color_mode unless request.image_color_mode.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('ImageContrast')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('ImageContrast') + '}', request.image_contrast.to_s)
+	    else
+	     query_params[downcase_first_letter('ImageContrast')] = request.image_contrast unless request.image_contrast.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('NumeralFormat')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('NumeralFormat') + '}', request.numeral_format.to_s)
+	    else
+	     query_params[downcase_first_letter('NumeralFormat')] = request.numeral_format unless request.numeral_format.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('PageCount')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('PageCount') + '}', request.page_count.to_s)
+	    else
+	     query_params[downcase_first_letter('PageCount')] = request.page_count unless request.page_count.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('PageIndex')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('PageIndex') + '}', request.page_index.to_s)
+	    else
+	     query_params[downcase_first_letter('PageIndex')] = request.page_index unless request.page_index.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('PaperColor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('PaperColor') + '}', request.paper_color.to_s)
+	    else
+	     query_params[downcase_first_letter('PaperColor')] = request.paper_color unless request.paper_color.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('PixelFormat')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('PixelFormat') + '}', request.pixel_format.to_s)
+	    else
+	     query_params[downcase_first_letter('PixelFormat')] = request.pixel_format unless request.pixel_format.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Resolution')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Resolution') + '}', request.resolution.to_s)
+	    else
+	     query_params[downcase_first_letter('Resolution')] = request.resolution unless request.resolution.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Scale')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Scale') + '}', request.scale.to_s)
+	    else
+	     query_params[downcase_first_letter('Scale')] = request.scale unless request.scale.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('TiffCompression')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('TiffCompression') + '}', request.tiff_compression.to_s)
+	    else
+	     query_params[downcase_first_letter('TiffCompression')] = request.tiff_compression unless request.tiff_compression.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DmlRenderingMode')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DmlRenderingMode') + '}', request.dml_rendering_mode.to_s)
+	    else
+	     query_params[downcase_first_letter('DmlRenderingMode')] = request.dml_rendering_mode unless request.dml_rendering_mode.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DmlEffectsRenderingMode')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DmlEffectsRenderingMode') + '}', request.dml_effects_rendering_mode.to_s)
+	    else
+	     query_params[downcase_first_letter('DmlEffectsRenderingMode')] = request.dml_effects_rendering_mode unless request.dml_effects_rendering_mode.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('TiffBinarizationMethod')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('TiffBinarizationMethod') + '}', request.tiff_binarization_method.to_s)
+	    else
+	     query_params[downcase_first_letter('TiffBinarizationMethod')] = request.tiff_binarization_method unless request.tiff_binarization_method.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('ZipOutput')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('ZipOutput') + '}', request.zip_output.to_s)
+	    else
+	     query_params[downcase_first_letter('ZipOutput')] = request.zip_output unless request.zip_output.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('FontsLocation')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('FontsLocation') + '}', request.fonts_location.to_s)
+	    else
+	     query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
+	    end  
 	  
 	  
 
@@ -6852,9 +9259,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.save_options)
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -6881,7 +9289,7 @@ module RubySDK
     # 
     # # @param request PutDrawingObjectRequest
     # @return [Array<(DrawingObjectResponse, Fixnum, Hash)>] DrawingObjectResponse data, response status code and response headers
-    def put_drawing_object_with_http_info(request)
+    private def put_drawing_object_with_http_info(request)
 	  unless request.is_a? PutDrawingObjectRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -6903,18 +9311,50 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/drawingObjects"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-      query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('NodePath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+	    else
+	     query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    end  
 	  
 	  
 
@@ -6930,9 +9370,10 @@ module RubySDK
       form_params[downcase_first_letter('DrawingObject')] = request.drawing_object
       form_params[downcase_first_letter('ImageFile')] = request.image_file
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -6959,7 +9400,7 @@ module RubySDK
     # 
     # # @param request PutExecuteMailMergeOnlineRequest
     # @return [Array<(File, Fixnum, Hash)>] File data, response status code and response headers
-    def put_execute_mail_merge_online_with_http_info(request)
+    private def put_execute_mail_merge_online_with_http_info(request)
 	  unless request.is_a? PutExecuteMailMergeOnlineRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -6980,8 +9421,16 @@ module RubySDK
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('WithRegions')] = request.with_regions unless request.with_regions.nil?
-      query_params[downcase_first_letter('Cleanup')] = request.cleanup unless request.cleanup.nil?
+	    if local_var_path.include? downcase_first_letter('WithRegions')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('WithRegions') + '}', request.with_regions.to_s)
+	    else
+	     query_params[downcase_first_letter('WithRegions')] = request.with_regions unless request.with_regions.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Cleanup')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Cleanup') + '}', request.cleanup.to_s)
+	    else
+	     query_params[downcase_first_letter('Cleanup')] = request.cleanup unless request.cleanup.nil?
+	    end  
 	  
 	  
 
@@ -6997,9 +9446,10 @@ module RubySDK
       form_params[downcase_first_letter('Template')] = request.template
       form_params[downcase_first_letter('Data')] = request.data
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -7026,7 +9476,7 @@ module RubySDK
     # 
     # # @param request PutExecuteTemplateOnlineRequest
     # @return [Array<(File, Fixnum, Hash)>] File data, response status code and response headers
-    def put_execute_template_online_with_http_info(request)
+    private def put_execute_template_online_with_http_info(request)
 	  unless request.is_a? PutExecuteTemplateOnlineRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -7047,9 +9497,21 @@ module RubySDK
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Cleanup')] = request.cleanup unless request.cleanup.nil?
-      query_params[downcase_first_letter('UseWholeParagraphAsRegion')] = request.use_whole_paragraph_as_region unless request.use_whole_paragraph_as_region.nil?
-      query_params[downcase_first_letter('WithRegions')] = request.with_regions unless request.with_regions.nil?
+	    if local_var_path.include? downcase_first_letter('Cleanup')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Cleanup') + '}', request.cleanup.to_s)
+	    else
+	     query_params[downcase_first_letter('Cleanup')] = request.cleanup unless request.cleanup.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('UseWholeParagraphAsRegion')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('UseWholeParagraphAsRegion') + '}', request.use_whole_paragraph_as_region.to_s)
+	    else
+	     query_params[downcase_first_letter('UseWholeParagraphAsRegion')] = request.use_whole_paragraph_as_region unless request.use_whole_paragraph_as_region.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('WithRegions')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('WithRegions') + '}', request.with_regions.to_s)
+	    else
+	     query_params[downcase_first_letter('WithRegions')] = request.with_regions unless request.with_regions.nil?
+	    end  
 	  
 	  
 
@@ -7065,9 +9527,10 @@ module RubySDK
       form_params[downcase_first_letter('Template')] = request.template
       form_params[downcase_first_letter('Data')] = request.data
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -7094,7 +9557,7 @@ module RubySDK
     # 
     # # @param request PutFieldRequest
     # @return [Array<(FieldResponse, Fixnum, Hash)>] FieldResponse data, response status code and response headers
-    def put_field_with_http_info(request)
+    private def put_field_with_http_info(request)
 	  unless request.is_a? PutFieldRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -7112,19 +9575,55 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/fields"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-      query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
-      query_params[downcase_first_letter('InsertBeforeNode')] = request.insert_before_node unless request.insert_before_node.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('NodePath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+	    else
+	     query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('InsertBeforeNode')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('InsertBeforeNode') + '}', request.insert_before_node.to_s)
+	    else
+	     query_params[downcase_first_letter('InsertBeforeNode')] = request.insert_before_node unless request.insert_before_node.nil?
+	    end  
 	  
 	  
 
@@ -7138,9 +9637,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.field)
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -7167,7 +9667,7 @@ module RubySDK
     # 
     # # @param request PutFootnoteRequest
     # @return [Array<(FootnoteResponse, Fixnum, Hash)>] FootnoteResponse data, response status code and response headers
-    def put_footnote_with_http_info(request)
+    private def put_footnote_with_http_info(request)
 	  unless request.is_a? PutFootnoteRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -7185,18 +9685,50 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/footnotes"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-      query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('NodePath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+	    else
+	     query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    end  
 	  
 	  
 
@@ -7210,9 +9742,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.footnote_dto)
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -7239,7 +9772,7 @@ module RubySDK
     # 
     # # @param request PutFormFieldRequest
     # @return [Array<(FormFieldResponse, Fixnum, Hash)>] FormFieldResponse data, response status code and response headers
-    def put_form_field_with_http_info(request)
+    private def put_form_field_with_http_info(request)
 	  unless request.is_a? PutFormFieldRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -7257,19 +9790,55 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/formfields"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-      query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
-      query_params[downcase_first_letter('InsertBeforeNode')] = request.insert_before_node unless request.insert_before_node.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('NodePath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+	    else
+	     query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('InsertBeforeNode')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('InsertBeforeNode') + '}', request.insert_before_node.to_s)
+	    else
+	     query_params[downcase_first_letter('InsertBeforeNode')] = request.insert_before_node unless request.insert_before_node.nil?
+	    end  
 	  
 	  
 
@@ -7283,9 +9852,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.form_field)
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -7312,7 +9882,7 @@ module RubySDK
     # 
     # # @param request PutHeaderFooterRequest
     # @return [Array<(HeaderFooterResponse, Fixnum, Hash)>] HeaderFooterResponse data, response status code and response headers
-    def put_header_footer_with_http_info(request)
+    private def put_header_footer_with_http_info(request)
 	  unless request.is_a? PutHeaderFooterRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -7330,18 +9900,50 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{sectionPath}/headersfooters"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-      query_params[downcase_first_letter('SectionPath')] = request.section_path unless request.section_path.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('SectionPath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('SectionPath') + '}', request.section_path.to_s)
+	    else
+	     query_params[downcase_first_letter('SectionPath')] = request.section_path unless request.section_path.nil?
+	    end  
 	  
 	  
 
@@ -7355,9 +9957,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.header_footer_type)
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -7384,7 +9987,7 @@ module RubySDK
     # 
     # # @param request PutParagraphRequest
     # @return [Array<(ParagraphResponse, Fixnum, Hash)>] ParagraphResponse data, response status code and response headers
-    def put_paragraph_with_http_info(request)
+    private def put_paragraph_with_http_info(request)
 	  unless request.is_a? PutParagraphRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -7402,19 +10005,55 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/paragraphs"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-      query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
-      query_params[downcase_first_letter('InsertBeforeNode')] = request.insert_before_node unless request.insert_before_node.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('NodePath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+	    else
+	     query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('InsertBeforeNode')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('InsertBeforeNode') + '}', request.insert_before_node.to_s)
+	    else
+	     query_params[downcase_first_letter('InsertBeforeNode')] = request.insert_before_node unless request.insert_before_node.nil?
+	    end  
 	  
 	  
 
@@ -7428,9 +10067,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.paragraph)
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -7457,7 +10097,7 @@ module RubySDK
     # 
     # # @param request PutProtectDocumentRequest
     # @return [Array<(ProtectionDataResponse, Fixnum, Hash)>] ProtectionDataResponse data, response status code and response headers
-    def put_protect_document_with_http_info(request)
+    private def put_protect_document_with_http_info(request)
 	  unless request.is_a? PutProtectDocumentRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -7475,15 +10115,35 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/protection"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
 	  
 	  
 
@@ -7497,9 +10157,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.protection_request)
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -7526,7 +10187,7 @@ module RubySDK
     # 
     # # @param request PutRunRequest
     # @return [Array<(RunResponse, Fixnum, Hash)>] RunResponse data, response status code and response headers
-    def put_run_with_http_info(request)
+    private def put_run_with_http_info(request)
 	  unless request.is_a? PutRunRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -7548,19 +10209,51 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{paragraphPath}/runs"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('ParagraphPath') + '}', request.paragraph_path.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('ParagraphPath') + '}', request.paragraph_path.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-      query_params[downcase_first_letter('InsertBeforeNode')] = request.insert_before_node unless request.insert_before_node.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('InsertBeforeNode')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('InsertBeforeNode') + '}', request.insert_before_node.to_s)
+	    else
+	     query_params[downcase_first_letter('InsertBeforeNode')] = request.insert_before_node unless request.insert_before_node.nil?
+	    end  
 	  
 	  
 
@@ -7574,9 +10267,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.run)
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -7603,7 +10297,7 @@ module RubySDK
     # 
     # # @param request RejectAllRevisionsRequest
     # @return [Array<(RevisionsModificationResponse, Fixnum, Hash)>] RevisionsModificationResponse data, response status code and response headers
-    def reject_all_revisions_with_http_info(request)
+    private def reject_all_revisions_with_http_info(request)
 	  unless request.is_a? RejectAllRevisionsRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -7617,15 +10311,35 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/revisions/rejectAll"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
 	  
 	  
 
@@ -7639,9 +10353,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -7668,7 +10383,7 @@ module RubySDK
     # 
     # # @param request RenderDrawingObjectRequest
     # @return [Array<(File, Fixnum, Hash)>] File data, response status code and response headers
-    def render_drawing_object_with_http_info(request)
+    private def render_drawing_object_with_http_info(request)
 	  unless request.is_a? RenderDrawingObjectRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -7690,18 +10405,43 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/drawingObjects/{index}/render"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
       # query parameters
       query_params = {}
       query_params[downcase_first_letter('Format')] = request.format
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
-      query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
+
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('NodePath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+	    else
+	     query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('FontsLocation')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('FontsLocation') + '}', request.fonts_location.to_s)
+	    else
+	     query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
+	    end  
 	  
 	  
 
@@ -7715,9 +10455,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -7744,7 +10485,7 @@ module RubySDK
     # 
     # # @param request RenderMathObjectRequest
     # @return [Array<(File, Fixnum, Hash)>] File data, response status code and response headers
-    def render_math_object_with_http_info(request)
+    private def render_math_object_with_http_info(request)
 	  unless request.is_a? RenderMathObjectRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -7766,18 +10507,43 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/OfficeMathObjects/{index}/render"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
       # query parameters
       query_params = {}
       query_params[downcase_first_letter('Format')] = request.format
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
-      query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
+
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('NodePath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+	    else
+	     query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('FontsLocation')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('FontsLocation') + '}', request.fonts_location.to_s)
+	    else
+	     query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
+	    end  
 	  
 	  
 
@@ -7791,9 +10557,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -7820,7 +10587,7 @@ module RubySDK
     # 
     # # @param request RenderPageRequest
     # @return [Array<(File, Fixnum, Hash)>] File data, response status code and response headers
-    def render_page_with_http_info(request)
+    private def render_page_with_http_info(request)
 	  unless request.is_a? RenderPageRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -7842,17 +10609,38 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/pages/{pageIndex}/render"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('PageIndex') + '}', request.page_index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('PageIndex') + '}', request.page_index.to_s)
 
       # query parameters
       query_params = {}
       query_params[downcase_first_letter('Format')] = request.format
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
+
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('FontsLocation')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('FontsLocation') + '}', request.fonts_location.to_s)
+	    else
+	     query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
+	    end  
 	  
 	  
 
@@ -7866,9 +10654,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -7895,7 +10684,7 @@ module RubySDK
     # 
     # # @param request RenderParagraphRequest
     # @return [Array<(File, Fixnum, Hash)>] File data, response status code and response headers
-    def render_paragraph_with_http_info(request)
+    private def render_paragraph_with_http_info(request)
 	  unless request.is_a? RenderParagraphRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -7917,18 +10706,43 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/paragraphs/{index}/render"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
       # query parameters
       query_params = {}
       query_params[downcase_first_letter('Format')] = request.format
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
-      query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
+
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('NodePath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+	    else
+	     query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('FontsLocation')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('FontsLocation') + '}', request.fonts_location.to_s)
+	    else
+	     query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
+	    end  
 	  
 	  
 
@@ -7942,9 +10756,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -7971,7 +10786,7 @@ module RubySDK
     # 
     # # @param request RenderTableRequest
     # @return [Array<(File, Fixnum, Hash)>] File data, response status code and response headers
-    def render_table_with_http_info(request)
+    private def render_table_with_http_info(request)
 	  unless request.is_a? RenderTableRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -7993,18 +10808,43 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/tables/{index}/render"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
       # query parameters
       query_params = {}
       query_params[downcase_first_letter('Format')] = request.format
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
-      query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
+
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('NodePath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+	    else
+	     query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('FontsLocation')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('FontsLocation') + '}', request.fonts_location.to_s)
+	    else
+	     query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
+	    end  
 	  
 	  
 
@@ -8018,9 +10858,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -8047,7 +10888,7 @@ module RubySDK
     # 
     # # @param request ResetCacheRequest
     # @return [Array<(AsposeResponse, Fixnum, Hash)>] AsposeResponse data, response status code and response headers
-    def reset_cache_with_http_info(request)
+    private def reset_cache_with_http_info(request)
 	  unless request.is_a? ResetCacheRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -8073,9 +10914,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -8102,7 +10944,7 @@ module RubySDK
     # 
     # # @param request SearchRequest
     # @return [Array<(SearchResponse, Fixnum, Hash)>] SearchResponse data, response status code and response headers
-    def search_with_http_info(request)
+    private def search_with_http_info(request)
 	  unless request.is_a? SearchRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -8120,15 +10962,32 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/search"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
       query_params[downcase_first_letter('Pattern')] = request.pattern
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
 	  
 	  
 
@@ -8142,9 +11001,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -8171,7 +11031,7 @@ module RubySDK
     # &#39;nodePath&#39; should refer to node with cell or row
     # # @param request UpdateBorderRequest
     # @return [Array<(BorderResponse, Fixnum, Hash)>] BorderResponse data, response status code and response headers
-    def update_border_with_http_info(request)
+    private def update_border_with_http_info(request)
 	  unless request.is_a? UpdateBorderRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -8197,19 +11057,47 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/borders/{index}"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
 	  
 	  
 
@@ -8223,9 +11111,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.border_properties)
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -8252,7 +11141,7 @@ module RubySDK
     # 
     # # @param request UpdateSectionPageSetupRequest
     # @return [Array<(SectionPageSetupResponse, Fixnum, Hash)>] SectionPageSetupResponse data, response status code and response headers
-    def update_section_page_setup_with_http_info(request)
+    private def update_section_page_setup_with_http_info(request)
 	  unless request.is_a? UpdateSectionPageSetupRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -8274,18 +11163,46 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/sections/{sectionIndex}/pageSetup"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('SectionIndex') + '}', request.section_index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('SectionIndex') + '}', request.section_index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
 	  
 	  
 
@@ -8299,9 +11216,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.page_setup)
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -8328,7 +11246,7 @@ module RubySDK
     # 
     # # @param request UpdateTableCellFormatRequest
     # @return [Array<(TableCellFormatResponse, Fixnum, Hash)>] TableCellFormatResponse data, response status code and response headers
-    def update_table_cell_format_with_http_info(request)
+    private def update_table_cell_format_with_http_info(request)
 	  unless request.is_a? UpdateTableCellFormatRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -8350,19 +11268,47 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{tableRowPath}/cells/{index}/cellformat"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('TableRowPath') + '}', request.table_row_path.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('TableRowPath') + '}', request.table_row_path.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
 	  
 	  
 
@@ -8376,9 +11322,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.format)
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -8405,7 +11352,7 @@ module RubySDK
     # 
     # # @param request UpdateTablePropertiesRequest
     # @return [Array<(TablePropertiesResponse, Fixnum, Hash)>] TablePropertiesResponse data, response status code and response headers
-    def update_table_properties_with_http_info(request)
+    private def update_table_properties_with_http_info(request)
 	  unless request.is_a? UpdateTablePropertiesRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -8423,19 +11370,51 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{nodePath}/tables/{index}/properties"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-      query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('NodePath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+	    else
+	     query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+	    end  
 	  
 	  
 
@@ -8449,9 +11428,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.properties)
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -8478,7 +11458,7 @@ module RubySDK
     # 
     # # @param request UpdateTableRowFormatRequest
     # @return [Array<(TableRowFormatResponse, Fixnum, Hash)>] TableRowFormatResponse data, response status code and response headers
-    def update_table_row_format_with_http_info(request)
+    private def update_table_row_format_with_http_info(request)
 	  unless request.is_a? UpdateTableRowFormatRequest
 	    fail ArgumentError, "Incorrect request type"
 	  end
@@ -8500,19 +11480,47 @@ module RubySDK
       end
       # resource path
       local_var_path = "/words/{name}/{tablePath}/rows/{index}/rowformat"
-	  local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('TablePath') + '}', request.table_path.to_s)
-	  local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('TablePath') + '}', request.table_path.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-      query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-      query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+	    else
+	     query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+	    else
+	     query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+	    else
+	     query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+	    else
+	     query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+	    else
+	     query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+	    end  
+	    if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+	    else
+	     query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+	    end  
 	  
 	  
 
@@ -8526,9 +11534,10 @@ module RubySDK
       # form parameters
       form_params = {}
 
+      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.format)
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -8545,21 +11554,24 @@ module RubySDK
          #
 	     # Helper method to convert first letter to downcase
 	     #
-        def downcase_first_letter(str)
-		    str[0].downcase + str[1..-1]
-	    end
-	
-	     #
+        private def downcase_first_letter(str)
+          value = str[0].downcase + str[1..-1]
+          value
+        end
+         		
+         #
          # Gets a request token from server
          #
-        def request_token
+        private def request_token
           config = @api_client.config
+          api_version = config.base_path
           config.base_path = ''
           request_url = "/oauth2/token"
-          post_data = "grant_type=client_credentials" + "&client_id=" + config.api_key['app_sid'] + "&client_secret=" + config.api_key['app_key']
+          post_data = "grant_type=client_credentials" + "&client_id=" + config.api_key['app_sid'] + "&client_secret=" + config.api_key['api_key']
           data, status_code, header = @api_client.call_api(:POST, request_url, :body => post_data, :return_type => 'Object')
-          config.access_token = data['access_token']
-	      config.refresh_token = data['refresh_token']
+          @api_client.config.access_token = data[:access_token]
+          @api_client.config.base_path = api_version
+          @api_client.config.refresh_token = data[:refresh_token]
         end
   end
 end

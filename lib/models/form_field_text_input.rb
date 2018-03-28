@@ -229,10 +229,14 @@ module RubySDK
     # @param [Object] text_input_type Object to be assigned
     def text_input_type=(text_input_type)
       validator = EnumAttributeValidator.new('String', ["Regular", "Number", "Date", "CurrentDate", "CurrentTime", "Calculated"])
-      unless validator.valid?(text_input_type)
-        fail ArgumentError, "invalid value for 'text_input_type', must be one of #{validator.allowable_values}."
+      if text_input_type.to_i == 0
+        unless validator.valid?(text_input_type)
+          fail ArgumentError, "invalid value for 'text_input_type', must be one of #{validator.allowable_values}."
+        end
+        @text_input_type = text_input_type
+      else
+        @text_input_type = validator.allowable_values[text_input_type.to_i]
       end
-      @text_input_type = text_input_type
     end
 
     # Checks equality by comparing each attribute.
@@ -296,9 +300,9 @@ module RubySDK
     def _deserialize(type, value)
       case type.to_sym
       when :DateTime
-        DateTime.parse(value)
+        Time.at(/\d/.match(value)[0].to_f).to_datetime
       when :Date
-        Date.parse(value)
+        Time.at(/\d/.match(value)[0].to_f).to_date
       when :String
         value.to_s
       when :Integer

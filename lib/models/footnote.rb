@@ -157,10 +157,14 @@ module RubySDK
     # @param [Object] footnote_type Object to be assigned
     def footnote_type=(footnote_type)
       validator = EnumAttributeValidator.new('String', ["Footnote", "Endnote"])
-      unless validator.valid?(footnote_type)
-        fail ArgumentError, "invalid value for 'footnote_type', must be one of #{validator.allowable_values}."
+      if footnote_type.to_i == 0
+        unless validator.valid?(footnote_type)
+          fail ArgumentError, "invalid value for 'footnote_type', must be one of #{validator.allowable_values}."
+        end
+        @footnote_type = footnote_type
+      else
+        @footnote_type = validator.allowable_values[footnote_type.to_i]
       end
-      @footnote_type = footnote_type
     end
 
     # Checks equality by comparing each attribute.
@@ -216,9 +220,9 @@ module RubySDK
     def _deserialize(type, value)
       case type.to_sym
       when :DateTime
-        DateTime.parse(value)
+        Time.at(/\d/.match(value)[0].to_f).to_datetime
       when :Date
-        Date.parse(value)
+        Time.at(/\d/.match(value)[0].to_f).to_date
       when :String
         value.to_s
       when :Integer

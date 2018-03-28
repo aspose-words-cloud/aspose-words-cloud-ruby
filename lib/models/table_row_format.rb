@@ -139,10 +139,14 @@ module RubySDK
     # @param [Object] height_rule Object to be assigned
     def height_rule=(height_rule)
       validator = EnumAttributeValidator.new('String', ["AtLeast", "Exactly", "Auto"])
-      unless validator.valid?(height_rule)
-        fail ArgumentError, "invalid value for 'height_rule', must be one of #{validator.allowable_values}."
+      if height_rule.to_i == 0
+        unless validator.valid?(height_rule)
+          fail ArgumentError, "invalid value for 'height_rule', must be one of #{validator.allowable_values}."
+        end
+        @height_rule = height_rule
+      else
+        @height_rule = validator.allowable_values[height_rule.to_i]
       end
-      @height_rule = height_rule
     end
 
     # Checks equality by comparing each attribute.
@@ -196,9 +200,9 @@ module RubySDK
     def _deserialize(type, value)
       case type.to_sym
       when :DateTime
-        DateTime.parse(value)
+        Time.at(/\d/.match(value)[0].to_f).to_datetime
       when :Date
-        Date.parse(value)
+        Time.at(/\d/.match(value)[0].to_f).to_date
       when :String
         value.to_s
       when :Integer

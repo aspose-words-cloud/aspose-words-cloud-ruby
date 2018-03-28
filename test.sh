@@ -1,2 +1,2 @@
 #!/bin/bash
-gem install bundler && bundle install && ruby test/o_auth_test.rb
+gem install bundler && bundle install && find ./tests -name "*_tests.rb" -maxdepth 4 -type f -exec ruby -W0 {} \;
