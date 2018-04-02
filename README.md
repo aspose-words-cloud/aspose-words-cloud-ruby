@@ -20,18 +20,9 @@ To use Aspose Words for Cloud PHP SDK you need to register an account with [Aspo
 
 ### Installation
 
-#### Via Composer:
-*words-sdk-php* is available on Packagist as the
-[`words-sdk-php`](https://packagist.org/packages/aspose/words-sdk-php) package. Run the following command:
-```bash
-composer require aspose/words-sdk-php
-```
-
-To use the SDK, use Composer's [autoload](https://getcomposer.org/doc/00-intro.md#autoloading):
-
 
 ### Sample usage
-
+```ruby
 @config = Configuration.new
 @config.api_key['api_key'] = '' # Put your's api_key and app_sid
 @config.api_key['app_sid'] = ''
@@ -43,7 +34,7 @@ request = DeleteDocumentWatermarkRequest.new remote_name, remote_test_folder + t
 result = @words_api.delete_document_watermark request
 ```
       
-[Tests](tests) contain various examples of using the SDK.
+[Tests](tests/) contain various examples of using the SDK.
 Please put your credentials into [Configuration](lib/configuration.rb).
 
 ## Dependencies
