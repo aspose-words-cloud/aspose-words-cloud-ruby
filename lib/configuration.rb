@@ -93,6 +93,11 @@ module RubySDK
     # @return [String]
     attr_accessor :temp_folder_path
 
+    # Set this to false to skip client side validation in the operation.
+    # Default to true.
+    # @return [true, false]
+    attr_accessor :client_side_validation
+
 	
     def initialize
       @scheme = 'https'
@@ -100,6 +105,7 @@ module RubySDK
       @api_version = '/v1.1'
       @api_key = {}
       @api_key_prefix = {}
+      @client_side_validation = true
       @debugging = false
       @logger = defined?(Rails) ? Rails.logger : Logger.new(STDOUT)
 
