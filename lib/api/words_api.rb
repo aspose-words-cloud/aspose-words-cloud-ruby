@@ -11564,13 +11564,13 @@ module RubySDK
          #
         private def request_token
           config = @api_client.config
-          api_version = config.base_path
-          config.base_path = ''
+          api_version = config.api_version
+          config.api_version = ''
           request_url = "/oauth2/token"
           post_data = "grant_type=client_credentials" + "&client_id=" + config.api_key['app_sid'] + "&client_secret=" + config.api_key['api_key']
           data, status_code, header = @api_client.call_api(:POST, request_url, :body => post_data, :return_type => 'Object')
           @api_client.config.access_token = data[:access_token]
-          @api_client.config.base_path = api_version
+          @api_client.config.api_version = api_version
           @api_client.config.refresh_token = data[:refresh_token]
         end
   end

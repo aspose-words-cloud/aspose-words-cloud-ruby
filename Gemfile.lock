@@ -13,7 +13,6 @@ GEM
     mimemagic (0.3.2)
     minitest (5.11.3)
     multipart-post (2.0.0)
-    rake (12.3.0)
     typhoeus (0.8.0)
       ethon (>= 0.8.0)
 
@@ -25,7 +24,6 @@ DEPENDENCIES
   faraday (~> 0.14.0)
   mimemagic (~> 0.3.2)
   minitest (~> 5.11, >= 5.11.3)
-  rake (~> 12.3)
 
 BUNDLED WITH
    1.16.1

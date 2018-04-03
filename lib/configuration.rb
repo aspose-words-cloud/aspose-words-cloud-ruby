@@ -32,6 +32,19 @@ require 'uri'
  #
 module RubySDK
   class Configuration
+    
+    # Defines v1 api version
+    V1_API_VERSION = '/v1'
+    
+    # Defines v2 api version
+    V2_API_VERSION = '/v2'
+    
+    # Defines v3 api version
+    V3_API_VERSION = '/v3'
+    
+    # Defines v1.1 api version
+    V1_1_API_VERSION = '/v1.1'
+    
     # Defines url scheme
     attr_accessor :scheme
 
@@ -100,9 +113,9 @@ module RubySDK
 
 	
     def initialize
-      @scheme = 'https'
+      @scheme = 'http'
       @host = "api.aspose.cloud"
-      @api_version = '/v1.1'
+      @api_version = V1_API_VERSION
       @api_key = {}
       @api_key_prefix = {}
       @client_side_validation = true
