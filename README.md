@@ -16,7 +16,7 @@ The complete source code is available in this repository folder. You can either 
 
 ### Prerequisites
 
-To use Aspose Words for Cloud PHP SDK you need to register an account with [Aspose Cloud](https://www.aspose.cloud/) and lookup/create App Key and SID at [Cloud Dashboard](https://dashboard.aspose.cloud/#/apps). There is free quota available. For more details, see [Aspose Cloud Pricing](https://purchase.aspose.cloud/pricing).
+To use Aspose Words for Cloud Ruby SDK you need to register an account with [Aspose Cloud](https://www.aspose.cloud/) and lookup/create App Key and SID at [Cloud Dashboard](https://dashboard.aspose.cloud/#/apps). There is free quota available. For more details, see [Aspose Cloud Pricing](https://purchase.aspose.cloud/pricing).
 
 ### Installation
 
@@ -38,7 +38,7 @@ result = @words_api.delete_document_watermark request
 Please put your credentials into [Configuration](lib/configuration.rb).
 
 ## Dependencies
-- Ruby 2.1
+- Ruby 2.1 or later
 - referenced packages (see [here](Gemfile) for more details)
 
 ## Comparison with Old generation SDK
