@@ -38,8 +38,8 @@ module RubySDK
     # Defines url host
     attr_accessor :host
 
-    # Defines url base path
-    attr_accessor :base_path
+    # Defines url api version
+    attr_accessor :api_version
 
     # Defines API keys used with API Key authentications.
     #
@@ -93,77 +93,14 @@ module RubySDK
     # @return [String]
     attr_accessor :temp_folder_path
 
-    # The time limit for HTTP request in seconds.
-    # Default to 0 (never times out).
-    attr_accessor :timeout
-
-    # Set this to false to skip client side validation in the operation.
-    # Default to true.
-    # @return [true, false]
-    attr_accessor :client_side_validation
-
-    ### TLS/SSL setting
-    # Set this to false to skip verifying SSL certificate when calling API from https server.
-    # Default to true.
-    #
-    # @note Do NOT set it to false in production code, otherwise you would face multiple types of cryptographic attacks.
-    #
-    # @return [true, false]
-    attr_accessor :verify_ssl
-
-    ### TLS/SSL setting
-    # Set this to false to skip verifying SSL host name
-    # Default to true.
-    #
-    # @note Do NOT set it to false in production code, otherwise you would face multiple types of cryptographic attacks.
-    #
-    # @return [true, false]
-    attr_accessor :verify_ssl_host
-
-    ### TLS/SSL setting
-    # Set this to customize the certificate file to verify the peer.
-    #
-    # @return [String] the path to the certificate file
-    #
-    # @see The `cainfo` option of Typhoeus, `--cert` option of libcurl. Related source code:
-    # https://github.com/typhoeus/typhoeus/blob/master/lib/typhoeus/easy_factory.rb#L145
-    attr_accessor :ssl_ca_cert
-
-    ### TLS/SSL setting
-    # Client certificate file (for client certificate)
-    attr_accessor :cert_file
-
-    ### TLS/SSL setting
-    # Client private key file (for client certificate)
-    attr_accessor :key_file
-
-    # Set this to customize parameters encoding of array parameter with multi collectionFormat.
-    # Default to nil.
-    #
-    # @see The params_encoding option of Ethon. Related source code:
-    # https://github.com/typhoeus/ethon/blob/master/lib/ethon/easy/queryable.rb#L96
-    attr_accessor :params_encoding
-
-    attr_accessor :inject_format
-
-    attr_accessor :force_ending_format
-
+	
     def initialize
       @scheme = 'https'
       @host = "api.aspose.cloud"
-      @base_path = '/v1.1'
+      @api_version = '/v1.1'
       @api_key = {}
       @api_key_prefix = {}
-      @timeout = 0
-      @client_side_validation = true
-      @verify_ssl = true
-      @verify_ssl_host = true
-      @params_encoding = nil
-      @cert_file = nil
-      @key_file = nil
       @debugging = false
-      @inject_format = false
-      @force_ending_format = false
       @logger = defined?(Rails) ? Rails.logger : Logger.new(STDOUT)
 
       yield(self) if block_given?
@@ -188,14 +125,14 @@ module RubySDK
       @host = host.sub(/https?:\/\//, '').split('/').first
     end
 
-    def base_path=(base_path)
-      # Add leading and trailing slashes to base_path
-      @base_path = "/#{base_path}".gsub(/\/+/, '/')
-      @base_path = "" if @base_path == "/"
+    def api_version=(api_version)
+      # Add leading and trailing slashes to api_version
+      @api_version = "/#{api_version}".gsub(/\/+/, '/')
+      @api_version = "" if @api_version == "/"
     end
 
     def base_url
-      url = "#{scheme}://#{[host, base_path].join('/').gsub(/\/+/, '/')}".sub(/\/+\z/, '')
+      url = "#{scheme}://#{[host, api_version].join('/').gsub(/\/+/, '/')}".sub(/\/+\z/, '')
       URI.encode(url)
     end
 

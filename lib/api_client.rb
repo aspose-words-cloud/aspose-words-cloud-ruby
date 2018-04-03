@@ -29,7 +29,6 @@ require 'date'
 require 'json'
 require 'logger'
 require 'tempfile'
-require 'typhoeus'
 require 'uri'
 require 'faraday'
 require 'mimemagic'
@@ -123,9 +122,6 @@ module RubySDK
         :params => query_params,
         :body => body
       }
-
-      # set custom cert, if provided
-      req_opts[:cainfo] = @config.ssl_ca_cert if @config.ssl_ca_cert
 
       if [:post, :patch, :put, :delete].include?(http_method)
         req_body = build_request_body(header_params, form_params, opts[:body])
@@ -403,7 +399,7 @@ module RubySDK
       when :pipes
         param.join('|')
       when :multi
-        # return the array directly as typhoeus will handle it as expected
+        # return the array directly as faraday will handle it as expected
         param
       else
         fail "unknown collection format: #{collection_format.inspect}"
