@@ -24,10 +24,8 @@
 # </summary>
 # --------------------------------------------------------------------------------------------------------------------
 #
-module RubySDK
+module WordsRubySdk
   require_relative '../base_test_context'
-  require_relative '../../lib/models/requests/AcceptAllRevisionsRequest'
-  require_relative '../../lib/models/requests/RejectAllRevisionsRequest'
   class RevisionsTests < BaseTestContext
     def test_folder
       'DocumentActions/Revisions'

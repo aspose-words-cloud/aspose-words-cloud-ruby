@@ -24,9 +24,8 @@
 # </summary>
 # --------------------------------------------------------------------------------------------------------------------
 #
-module RubySDK
+module WordsRubySdk
   require_relative '../base_test_context'
-  require_relative '../../lib/models/requests/PostCompareDocumentRequest'
   class CompareDocumentTests < BaseTestContext
 
     def test_folder

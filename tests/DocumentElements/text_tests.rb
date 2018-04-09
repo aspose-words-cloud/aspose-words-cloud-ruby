@@ -24,11 +24,8 @@
 # </summary>
 # --------------------------------------------------------------------------------------------------------------------
 #
-module RubySDK
+module WordsRubySdk
   require_relative '../base_test_context'
-  require_relative '../../lib/models/requests/GetDocumentTextItemsRequest'
-  require_relative '../../lib/models/requests/PostReplaceTextRequest'
-  require_relative '../../lib/models/requests/SearchRequest'
   class TextTests < BaseTestContext
     def test_folder
       'DocumentElements/Text'

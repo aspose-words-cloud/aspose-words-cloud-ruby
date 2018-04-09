@@ -24,12 +24,8 @@
 # </summary>
 # --------------------------------------------------------------------------------------------------------------------
 #
-module RubySDK
+module WordsRubySdk
   require_relative '../base_test_context'
-  require_relative '../../lib/models/requests/CreateOrUpdateDocumentPropertyRequest'
-  require_relative '../../lib/models/requests/DeleteDocumentPropertyRequest'
-  require_relative '../../lib/models/requests/GetDocumentPropertiesRequest'
-  require_relative '../../lib/models/requests/GetDocumentPropertyRequest'
   class DocumentPropertiesTests < BaseTestContext
     def test_folder
       'DocumentElements/DocumentProperties'

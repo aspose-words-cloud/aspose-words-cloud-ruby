@@ -24,12 +24,8 @@
 # </summary>
 # --------------------------------------------------------------------------------------------------------------------
 #
-module RubySDK
+module WordsRubySdk
   require_relative '../base_test_context'
-  require_relative '../../lib/models/requests/GetDocumentProtectionRequest'
-  require_relative '../../lib/models/requests/PutProtectDocumentRequest'
-  require_relative '../../lib/models/requests/PostChangeDocumentProtectionRequest'
-  require_relative '../../lib/models/requests/DeleteUnprotectDocumentRequest'
   class DocumentProtectionTests < BaseTestContext
     def test_folder
       'DocumentActions/DocumentProtection'

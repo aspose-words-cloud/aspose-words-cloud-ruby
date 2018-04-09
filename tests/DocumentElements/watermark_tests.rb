@@ -24,11 +24,8 @@
 # </summary>
 # --------------------------------------------------------------------------------------------------------------------
 #
-module RubySDK
+module WordsRubySdk
   require_relative '../base_test_context'
-  require_relative '../../lib/models/requests/DeleteDocumentWatermarkRequest'
-  require_relative '../../lib/models/requests/PostInsertDocumentWatermarkImageRequest'
-  require_relative '../../lib/models/requests/PostInsertDocumentWatermarkTextRequest'
   class WatermarkTests < BaseTestContext
     def test_folder
       'DocumentElements/Watermarks'

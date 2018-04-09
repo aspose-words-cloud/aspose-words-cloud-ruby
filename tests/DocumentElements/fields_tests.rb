@@ -24,16 +24,8 @@
 # </summary>
 # --------------------------------------------------------------------------------------------------------------------
 #
-module RubySDK
+module WordsRubySdk
   require_relative '../base_test_context'
-  require_relative '../../lib/models/requests/GetFieldsRequest'
-  require_relative '../../lib/models/requests/GetFieldRequest'
-  require_relative '../../lib/models/requests/PostFieldRequest'
-  require_relative '../../lib/models/requests/PutFieldRequest'
-  require_relative '../../lib/models/requests/PostUpdateDocumentFieldsRequest'
-  require_relative '../../lib/models/requests/PostInsertPageNumbersRequest'
-  require_relative '../../lib/models/requests/DeleteFieldRequest'
-  require_relative '../../lib/models/requests/DeleteFieldsRequest'
   class FieldsTests < BaseTestContext
     def test_folder
       'DocumentElements/Fields'

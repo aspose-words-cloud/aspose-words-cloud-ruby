@@ -24,11 +24,8 @@
 # </summary>
 # --------------------------------------------------------------------------------------------------------------------
 #
-module RubySDK
+module WordsRubySdk
   require_relative '../base_test_context'
-  require_relative '../../lib/models/requests/RenderPageRequest'
-  require_relative '../../lib/models/requests/GetSectionPageSetupRequest'
-  require_relative '../../lib/models/requests/UpdateSectionPageSetupRequest'
   class PagesTests < BaseTestContext
     def test_folder
       'DocumentElements/Pages'

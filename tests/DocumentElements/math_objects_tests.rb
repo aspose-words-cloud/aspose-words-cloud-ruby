@@ -24,12 +24,8 @@
 # </summary>
 # --------------------------------------------------------------------------------------------------------------------
 #
-module RubySDK
+module WordsRubySdk
   require_relative '../base_test_context'
-  require_relative '../../lib/models/requests/DeleteOfficeMathObjectRequest'
-  require_relative '../../lib/models/requests/GetOfficeMathObjectRequest'
-  require_relative '../../lib/models/requests/GetOfficeMathObjectsRequest'
-  require_relative '../../lib/models/requests/RenderMathObjectRequest'
   class MathObjectsTests < BaseTestContext
     def test_folder
       'DocumentElements/MathObjects'

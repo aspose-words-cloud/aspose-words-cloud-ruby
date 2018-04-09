@@ -24,17 +24,8 @@
 # </summary>
 # --------------------------------------------------------------------------------------------------------------------
 #
-module RubySDK
+module WordsRubySdk
   require_relative '../base_test_context'
-  require_relative '../../lib/models/requests/DeleteParagraphRequest'
-  require_relative '../../lib/models/requests/GetDocumentParagraphRequest'
-  require_relative '../../lib/models/requests/GetDocumentParagraphRunRequest'
-  require_relative '../../lib/models/requests/GetDocumentParagraphRunFontRequest'
-  require_relative '../../lib/models/requests/GetDocumentParagraphRunsRequest'
-  require_relative '../../lib/models/requests/GetDocumentParagraphsRequest'
-  require_relative '../../lib/models/requests/PostDocumentParagraphRunFontRequest'
-  require_relative '../../lib/models/requests/PutParagraphRequest'
-  require_relative '../../lib/models/requests/RenderParagraphRequest'
   class ParagraphsTests < BaseTestContext
     def test_folder
       'DocumentElements/Paragraphs'

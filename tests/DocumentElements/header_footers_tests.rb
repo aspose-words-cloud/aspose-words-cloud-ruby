@@ -24,14 +24,8 @@
 # </summary>
 # --------------------------------------------------------------------------------------------------------------------
 #
-module RubySDK
+module WordsRubySdk
   require_relative '../base_test_context'
-  require_relative '../../lib/models/requests/PutHeaderFooterRequest'
-  require_relative '../../lib/models/requests/GetHeaderFooterRequest'
-  require_relative '../../lib/models/requests/GetHeaderFootersRequest'
-  require_relative '../../lib/models/requests/GetHeaderFooterOfSectionRequest'
-  require_relative '../../lib/models/requests/DeleteHeaderFooterRequest'
-  require_relative '../../lib/models/requests/DeleteHeadersFootersRequest'
   class HeaderFootersTests < BaseTestContext
     def test_folder
       'DocumentElements/HeaderFooters'

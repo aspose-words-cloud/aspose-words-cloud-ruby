@@ -24,13 +24,8 @@
 # </summary>
 # --------------------------------------------------------------------------------------------------------------------
 #
-module RubySDK
+module WordsRubySdk
   require_relative '../base_test_context'
-  require_relative '../../lib/models/requests/GetFootnoteRequest'
-  require_relative '../../lib/models/requests/GetFootnotesRequest'
-  require_relative '../../lib/models/requests/DeleteFootnoteRequest'
-  require_relative '../../lib/models/requests/PostFootnoteRequest'
-  require_relative '../../lib/models/requests/PutFootnoteRequest'
   class FootnoteTests < BaseTestContext
     def test_folder
       'DocumentElements/Footnotes'

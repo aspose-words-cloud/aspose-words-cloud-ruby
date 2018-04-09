@@ -24,7 +24,7 @@
 # </summary>
 # --------------------------------------------------------------------------------------------------------------------
 #
-module RubySDK
+module WordsRubySdk
   require_relative '../base_test_context'
   class ApiCoverageTests < BaseTestContext
     #
@@ -43,14 +43,14 @@ module RubySDK
               SectionsTests, TablesTests, TextTests, WatermarkTests, FontCacheTests]
       test_methods = []
       arr.each {|el| (test_methods << el.instance_methods(false).select{ |m| /test_folder/ !~ m}).flatten! }
-      methods = @words_api.public_methods(false).select {|m| /api_client/ !~ m }.map {|m| 'test_' + m.to_s}
+      methods = @words_api.public_methods(false).select {|m| /api_client/ !~ m }.map {|m| m.to_s}
       uncovered_methods = []
       methods.each do |el|
-        unless test_methods.any? {|elem| elem.to_s === el.to_s}
+        unless test_methods.any? {|elem| elem.to_s === 'test_' + el.to_s}
           uncovered_methods.insert(0, el.to_s)
         end
       end
-      puts uncovered_methods
+      assert uncovered_methods.empty?, 'There are methods you have to cover with tests ' + uncovered_methods.to_s
     end
 
     # requires all files recursively inside a directory from current dir

@@ -1,0 +1,1 @@
+rubocop -o testReports/codeStyleErrors.txt

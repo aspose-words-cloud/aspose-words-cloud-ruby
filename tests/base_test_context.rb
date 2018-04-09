@@ -24,33 +24,22 @@
 # </summary>
 # --------------------------------------------------------------------------------------------------------------------
 #
-module RubySDK
+module WordsRubySdk
   require "minitest/autorun"
   require "minitest/unit"
-  require_relative '../lib/api/words_api'
-  require_relative '../lib/configuration'
-  require_relative '../lib/api_client'
+  require_relative '../lib/words_ruby_sdk'
   require 'aspose_storage_cloud'
   class BaseTestContext < Minitest::Test
     include AsposeStorageCloud
     include MiniTest::Assertions
     def setup
-      @config = Configuration.new
-      @config.api_key['api_key'] = ''
-      @config.api_key['app_sid'] = ''
-      @api_client = ApiClient.new @config
-      @words_api = WordsApi.new @api_client
-      AsposeApp.app_key_and_sid(@config.api_key['api_key'], @config.api_key['app_sid'])
-      @storage_api = StorageApi.new
-      require_all '../lib/models'
-    end
-
-    # requires all files recursively inside a directory from current dir
-    # @param _dir can be relative path like '/lib' or "../lib"
-    def require_all(_dir)
-      Dir[File.expand_path(File.join(File.dirname(File.absolute_path(__FILE__)), _dir)) + "/*.rb"].each do |file|
-        require file
+      WordsRubySdk.configure do |config|
+        config.api_key['api_key'] = ''
+        config.api_key['app_sid'] = ''
+        AsposeApp.app_key_and_sid(config.api_key['api_key'], config.api_key['app_sid'])
       end
+      @words_api = WordsApi.new
+      @storage_api = StorageApi.new
     end
 
     def local_test_folder

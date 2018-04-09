@@ -24,11 +24,8 @@
 # </summary>
 # --------------------------------------------------------------------------------------------------------------------
 #
-module RubySDK
+module WordsRubySdk
   require_relative '../base_test_context'
-  require_relative '../../lib/models/requests/DeleteRunRequest'
-  require_relative '../../lib/models/requests/PostRunRequest'
-  require_relative '../../lib/models/requests/PutRunRequest'
   class RunsTests < BaseTestContext
     def test_folder
       'DocumentElements/Runs'

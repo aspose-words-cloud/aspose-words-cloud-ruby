@@ -24,10 +24,8 @@
 # </summary>
 # --------------------------------------------------------------------------------------------------------------------
 #
-module RubySDK
+module WordsRubySdk
   require_relative '../base_test_context'
-  require_relative '../../lib/models/requests/PostExecuteTemplateRequest'
-  require_relative '../../lib/models/requests/PutExecuteTemplateOnlineRequest'
   class ExecuteTemplateTests < BaseTestContext
     def test_folder
       'DocumentActions/MailMerge'

@@ -24,10 +24,8 @@
 # </summary>
 # --------------------------------------------------------------------------------------------------------------------
 #
-module RubySDK
+module WordsRubySdk
   require_relative '../base_test_context'
-  require_relative '../../lib/models/requests/GetDocumentRequest'
-  require_relative '../../lib/models/requests/PutCreateDocumentRequest'
   class DocumentTests < BaseTestContext
     def test_folder
       'document'

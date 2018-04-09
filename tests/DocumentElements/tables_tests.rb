@@ -24,30 +24,8 @@
 # </summary>
 # --------------------------------------------------------------------------------------------------------------------
 #
-module RubySDK
+module WordsRubySdk
   require_relative '../base_test_context'
-  require_relative '../../lib/models/requests/DeleteTableRequest'
-  require_relative '../../lib/models/requests/DeleteTableCellRequest'
-  require_relative '../../lib/models/requests/DeleteTableRowRequest'
-  require_relative '../../lib/models/requests/GetBorderRequest'
-  require_relative '../../lib/models/requests/GetBordersRequest'
-  require_relative '../../lib/models/requests/GetTableRequest'
-  require_relative '../../lib/models/requests/GetTableCellRequest'
-  require_relative '../../lib/models/requests/GetTableCellFormatRequest'
-  require_relative '../../lib/models/requests/GetTableRowRequest'
-  require_relative '../../lib/models/requests/GetTableRowFormatRequest'
-  require_relative '../../lib/models/requests/GetTablesRequest'
-  require_relative '../../lib/models/requests/InsertTableRequest'
-  require_relative '../../lib/models/requests/InsertTableCellRequest'
-  require_relative '../../lib/models/requests/InsertTableRowRequest'
-  require_relative '../../lib/models/requests/RenderTableRequest'
-  require_relative '../../lib/models/requests/UpdateTableCellFormatRequest'
-  require_relative '../../lib/models/requests/GetTablePropertiesRequest'
-  require_relative '../../lib/models/requests/UpdateTablePropertiesRequest'
-  require_relative '../../lib/models/requests/UpdateTableRowFormatRequest'
-  require_relative '../../lib/models/requests/DeleteBorderRequest'
-  require_relative '../../lib/models/requests/DeleteBordersRequest'
-  require_relative '../../lib/models/requests/UpdateBorderRequest'
   class TablesTests < BaseTestContext
     def test_folder
       'DocumentElements/Tables'

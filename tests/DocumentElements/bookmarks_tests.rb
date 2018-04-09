@@ -24,11 +24,8 @@
 # </summary>
 # --------------------------------------------------------------------------------------------------------------------
 #
-module RubySDK
+module WordsRubySdk
   require_relative '../base_test_context'
-  require_relative '../../lib/models/requests/GetDocumentBookmarkByNameRequest'
-  require_relative '../../lib/models/requests/GetDocumentBookmarksRequest'
-  require_relative '../../lib/models/requests/PostUpdateDocumentBookmarkRequest'
   class BookmarksTests < BaseTestContext
     def test_folder
       'DocumentElements/Bookmarks'

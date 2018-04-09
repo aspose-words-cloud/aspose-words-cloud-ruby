@@ -24,12 +24,8 @@
 # </summary>
 # --------------------------------------------------------------------------------------------------------------------
 #
-module RubySDK
+module WordsRubySdk
   require_relative '../base_test_context'
-  require_relative '../../lib/models/requests/PostDocumentSaveAsRequest'
-  require_relative '../../lib/models/requests/PutDocumentSaveAsTiffRequest'
-  require_relative '../../lib/models/requests/PutConvertDocumentRequest'
-  require_relative '../../lib/models/requests/GetDocumentWithFormatRequest'
   class ConvertDocumentTests < BaseTestContext
     def test_folder
       'DocumentActions/ConvertDocument'

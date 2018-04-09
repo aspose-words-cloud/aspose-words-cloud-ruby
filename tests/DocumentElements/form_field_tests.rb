@@ -24,13 +24,8 @@
 # </summary>
 # --------------------------------------------------------------------------------------------------------------------
 #
-module RubySDK
+module WordsRubySdk
   require_relative '../base_test_context'
-  require_relative '../../lib/models/requests/PostFormFieldRequest'
-  require_relative '../../lib/models/requests/PutFormFieldRequest'
-  require_relative '../../lib/models/requests/DeleteFormFieldRequest'
-  require_relative '../../lib/models/requests/GetFormFieldRequest'
-  require_relative '../../lib/models/requests/GetFormFieldsRequest'
   class FormFieldTests < BaseTestContext
     def test_folder
       'DocumentElements/FormFields'

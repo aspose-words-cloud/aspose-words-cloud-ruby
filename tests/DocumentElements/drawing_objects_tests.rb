@@ -24,16 +24,8 @@
 # </summary>
 # --------------------------------------------------------------------------------------------------------------------
 #
-module RubySDK
+module WordsRubySdk
   require_relative '../base_test_context'
-  require_relative '../../lib/models/requests/GetDocumentDrawingObjectByIndexRequest'
-  require_relative '../../lib/models/requests/GetDocumentDrawingObjectImageDataRequest'
-  require_relative '../../lib/models/requests/GetDocumentDrawingObjectOleDataRequest'
-  require_relative '../../lib/models/requests/GetDocumentDrawingObjectsRequest'
-  require_relative '../../lib/models/requests/PostDrawingObjectRequest'
-  require_relative '../../lib/models/requests/PutDrawingObjectRequest'
-  require_relative '../../lib/models/requests/RenderDrawingObjectRequest'
-  require_relative '../../lib/models/requests/DeleteDrawingObjectRequest'
   class DrawingObjectsTests < BaseTestContext
     def test_folder
       'DocumentElements/DrawingObjects'

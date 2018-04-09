@@ -24,10 +24,8 @@
 # </summary>
 # --------------------------------------------------------------------------------------------------------------------
 #
-module RubySDK
+module WordsRubySdk
   require_relative '../base_test_context'
-  require_relative '../../lib/models/requests/GetSectionRequest'
-  require_relative '../../lib/models/requests/GetSectionsRequest'
   class SectionsTests < BaseTestContext
     def test_folder
       'DocumentElements/Sections'

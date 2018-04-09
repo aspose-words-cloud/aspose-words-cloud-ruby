@@ -24,13 +24,8 @@
 # </summary>
 # --------------------------------------------------------------------------------------------------------------------
 #
-module RubySDK
+module WordsRubySdk
   require_relative '../base_test_context'
-  require_relative '../../lib/models/requests/DeleteCommentRequest'
-  require_relative '../../lib/models/requests/GetCommentRequest'
-  require_relative '../../lib/models/requests/GetCommentsRequest'
-  require_relative '../../lib/models/requests/PostCommentRequest'
-  require_relative '../../lib/models/requests/PutCommentRequest'
   class CommentsTests < BaseTestContext
     def test_folder
       'DocumentElements/Comments'
