@@ -33,9 +33,14 @@ module WordsRubySdk
     include AsposeStorageCloud
     include MiniTest::Assertions
     def setup
+      file = File.read('Settings/servercreds.json')
+      if file.length == 0
+        raise ArgumentError, 'Put your credentials into servercreds.json'
+      end
+      creds = JSON.parse(file)
       WordsRubySdk.configure do |config|
-        config.api_key['api_key'] = ''
-        config.api_key['app_sid'] = ''
+        config.api_key['api_key'] = creds['AppKey']
+        config.api_key['app_sid'] = creds['AppSid']
         AsposeApp.app_key_and_sid(config.api_key['api_key'], config.api_key['app_sid'])
       end
       @words_api = WordsApi.new

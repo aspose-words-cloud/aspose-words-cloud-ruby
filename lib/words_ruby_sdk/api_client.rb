@@ -1,29 +1,27 @@
- #
- # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose" file="api_client.rb">
- #   Copyright (c) 2018 Aspose.Words for Cloud
- # </copyright>
- # <summary>
- #   Permission is hereby granted, free of charge, to any person obtaining a copy
- #  of this software and associated documentation files (the "Software"), to deal
- #  in the Software without restriction, including without limitation the rights
- #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- #  copies of the Software, and to permit persons to whom the Software is
- #  furnished to do so, subject to the following conditions:
- # 
- #  The above copyright notice and this permission notice shall be included in all
- #  copies or substantial portions of the Software.
- # 
- #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- #  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- #  SOFTWARE.
- # </summary>
- # --------------------------------------------------------------------------------------------------------------------
- #
+# -----------------------------------------------------------------------------------
+# <copyright company="Aspose" file="api_client.rb">
+#   Copyright (c) 2018 Aspose.Words for Cloud
+# </copyright>
+# <summary>
+#   Permission is hereby granted, free of charge, to any person obtaining a copy
+#  of this software and associated documentation files (the "Software"), to deal
+#  in the Software without restriction, including without limitation the rights
+#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#  copies of the Software, and to permit persons to whom the Software is
+#  furnished to do so, subject to the following conditions:
+#
+#  The above copyright notice and this permission notice shall be included in all
+#  copies or substantial portions of the Software.
+#
+#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+#  SOFTWARE.
+# </summary>
+# -----------------------------------------------------------------------------------
 
 require 'date'
 require 'json'
@@ -35,10 +33,10 @@ require 'mimemagic'
 require_relative 'version'
 require_relative 'api_error'
 
- #
- # api client is mainly responsible for making the HTTP call to the API backend.
- # 
 module WordsRubySdk
+  #
+  # api client is mainly responsible for making the HTTP call to the API backend.
+  # 
   class ApiClient
     # The Configuration object holding settings to be used in the API client.
     attr_accessor :config
@@ -92,7 +90,7 @@ module WordsRubySdk
       else
         data = nil
       end
-      return data, response.status, response.headers
+      [data, response.status, response.headers]
     end
 
     # Builds the HTTP request
@@ -114,7 +112,6 @@ module WordsRubySdk
       body = opts[:body] || {}
 
       update_params_for_auth! header_params, query_params, opts[:auth_names]
-
 
       req_opts = {
         :method => http_method,
@@ -182,7 +179,7 @@ module WordsRubySdk
       # ensuring a default content type
       content_type = response.headers['Content-Type'] || 'application/json'
 
-      fail "Content-Type is not supported: #{content_type}" unless json_mime?(content_type)
+      raise "Content-Type is not supported: #{content_type}" unless json_mime?(content_type)
 
       begin
         data = JSON.parse("[#{body}]", :symbolize_names => true)[0]
@@ -326,7 +323,7 @@ module WordsRubySdk
         case auth_setting[:in]
         when 'header' then header_params[auth_setting[:key]] = auth_setting[:value]
         when 'query'  then query_params[auth_setting[:key]] = auth_setting[:value]
-        else fail ArgumentError, 'Authentication token must be in `query` of `header`'
+        else raise ArgumentError, 'Authentication token must be in `query` of `header`'
         end
       end
     end
