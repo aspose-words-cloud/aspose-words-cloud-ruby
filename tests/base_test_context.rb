@@ -41,7 +41,12 @@ module WordsRubySdk
       WordsRubySdk.configure do |config|
         config.api_key['api_key'] = creds['AppKey']
         config.api_key['app_sid'] = creds['AppSid']
+        config.host = creds['BaseUrl']
         AsposeApp.app_key_and_sid(config.api_key['api_key'], config.api_key['app_sid'])
+        AsposeStorageCloud.configure do |st_conf|
+          st_conf.host = config.host
+          st_conf.scheme = config.scheme
+        end
       end
       @words_api = WordsApi.new
       @storage_api = StorageApi.new
