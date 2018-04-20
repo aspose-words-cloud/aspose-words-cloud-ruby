@@ -29,7 +29,7 @@ module WordsRubySdk
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # This resonse should be returned by the service when handling: GET {nodeWithBorders}/borders.
+  # This response should be returned by the service when handling: GET {nodeWithBorders}/borders.
   class BorderResponse
     # Response status code.
     attr_accessor :code

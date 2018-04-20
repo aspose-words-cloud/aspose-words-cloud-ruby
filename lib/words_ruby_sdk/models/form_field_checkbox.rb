@@ -37,26 +37,11 @@ module WordsRubySdk
     # Node id
     attr_accessor :node_id
 
-    # Gets or sets the form field name.
-    attr_accessor :name
+    # True if references to the specified form field are automatically updated whenever the field is exited.
+    attr_accessor :calculate_on_exit
 
     # True if a form field is enabled.
     attr_accessor :enabled
-
-    # Returns or sets the text that's displayed in the status bar when a form field has the focus.
-    attr_accessor :status_text
-
-    # Specifies the source of the text that's displayed in the status bar when a form field has the focus.
-    attr_accessor :own_status
-
-    # Returns or sets the text that's displayed in a message box when the form field has the focus and the user presses F1.
-    attr_accessor :help_text
-
-    # Specifies the source of the text that's displayed in a message box when a form field has the focus and the user presses F1.
-    attr_accessor :own_help
-
-    # True if references to the specified form field are automatically updated whenever the field is exited.
-    attr_accessor :calculate_on_exit
 
     # Returns or sets an entry macro name for the form field.
     attr_accessor :entry_macro
@@ -64,8 +49,20 @@ module WordsRubySdk
     # Returns or sets an exit macro name for the form field.
     attr_accessor :exit_macro
 
-    # Gets or sets the boolean value that indicates whether the size of the textbox is automatic or specified explicitly.
-    attr_accessor :is_check_box_exact_size
+    # Returns or sets the text that's displayed in a message box when the form field has the focus and the user presses F1.
+    attr_accessor :help_text
+
+    # Gets or sets the form field name.
+    attr_accessor :name
+
+    # Specifies the source of the text that's displayed in a message box when a form field has the focus and the user presses F1.
+    attr_accessor :own_help
+
+    # Specifies the source of the text that's displayed in the status bar when a form field has the focus.
+    attr_accessor :own_status
+
+    # Returns or sets the text that's displayed in the status bar when a form field has the focus.
+    attr_accessor :status_text
 
     # Gets or sets the size of the checkbox in points. Has effect only when  is true.
     attr_accessor :check_box_size
@@ -73,24 +70,27 @@ module WordsRubySdk
     # Gets or sets the checked status of the check box form field.
     attr_accessor :checked
 
+    # Gets or sets the boolean value that indicates whether the size of the textbox is automatic or specified explicitly.
+    attr_accessor :is_check_box_exact_size
+
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'link' => :'link',
         :'node_id' => :'NodeId',
-        :'name' => :'Name',
-        :'enabled' => :'Enabled',
-        :'status_text' => :'StatusText',
-        :'own_status' => :'OwnStatus',
-        :'help_text' => :'HelpText',
-        :'own_help' => :'OwnHelp',
         :'calculate_on_exit' => :'CalculateOnExit',
+        :'enabled' => :'Enabled',
         :'entry_macro' => :'EntryMacro',
         :'exit_macro' => :'ExitMacro',
-        :'is_check_box_exact_size' => :'IsCheckBoxExactSize',
+        :'help_text' => :'HelpText',
+        :'name' => :'Name',
+        :'own_help' => :'OwnHelp',
+        :'own_status' => :'OwnStatus',
+        :'status_text' => :'StatusText',
         :'check_box_size' => :'CheckBoxSize',
-        :'checked' => :'Checked'
+        :'checked' => :'Checked',
+        :'is_check_box_exact_size' => :'IsCheckBoxExactSize'
       }
     end
 
@@ -99,18 +99,18 @@ module WordsRubySdk
       {
         :'link' => :'WordsApiLink',
         :'node_id' => :'String',
-        :'name' => :'String',
-        :'enabled' => :'BOOLEAN',
-        :'status_text' => :'String',
-        :'own_status' => :'BOOLEAN',
-        :'help_text' => :'String',
-        :'own_help' => :'BOOLEAN',
         :'calculate_on_exit' => :'BOOLEAN',
+        :'enabled' => :'BOOLEAN',
         :'entry_macro' => :'String',
         :'exit_macro' => :'String',
-        :'is_check_box_exact_size' => :'BOOLEAN',
+        :'help_text' => :'String',
+        :'name' => :'String',
+        :'own_help' => :'BOOLEAN',
+        :'own_status' => :'BOOLEAN',
+        :'status_text' => :'String',
         :'check_box_size' => :'Float',
-        :'checked' => :'BOOLEAN'
+        :'checked' => :'BOOLEAN',
+        :'is_check_box_exact_size' => :'BOOLEAN'
       }
     end
 
@@ -130,32 +130,12 @@ module WordsRubySdk
         self.node_id = attributes[:'NodeId']
       end
 
-      if attributes.has_key?(:'Name')
-        self.name = attributes[:'Name']
+      if attributes.has_key?(:'CalculateOnExit')
+        self.calculate_on_exit = attributes[:'CalculateOnExit']
       end
 
       if attributes.has_key?(:'Enabled')
         self.enabled = attributes[:'Enabled']
-      end
-
-      if attributes.has_key?(:'StatusText')
-        self.status_text = attributes[:'StatusText']
-      end
-
-      if attributes.has_key?(:'OwnStatus')
-        self.own_status = attributes[:'OwnStatus']
-      end
-
-      if attributes.has_key?(:'HelpText')
-        self.help_text = attributes[:'HelpText']
-      end
-
-      if attributes.has_key?(:'OwnHelp')
-        self.own_help = attributes[:'OwnHelp']
-      end
-
-      if attributes.has_key?(:'CalculateOnExit')
-        self.calculate_on_exit = attributes[:'CalculateOnExit']
       end
 
       if attributes.has_key?(:'EntryMacro')
@@ -166,8 +146,24 @@ module WordsRubySdk
         self.exit_macro = attributes[:'ExitMacro']
       end
 
-      if attributes.has_key?(:'IsCheckBoxExactSize')
-        self.is_check_box_exact_size = attributes[:'IsCheckBoxExactSize']
+      if attributes.has_key?(:'HelpText')
+        self.help_text = attributes[:'HelpText']
+      end
+
+      if attributes.has_key?(:'Name')
+        self.name = attributes[:'Name']
+      end
+
+      if attributes.has_key?(:'OwnHelp')
+        self.own_help = attributes[:'OwnHelp']
+      end
+
+      if attributes.has_key?(:'OwnStatus')
+        self.own_status = attributes[:'OwnStatus']
+      end
+
+      if attributes.has_key?(:'StatusText')
+        self.status_text = attributes[:'StatusText']
       end
 
       if attributes.has_key?(:'CheckBoxSize')
@@ -176,6 +172,10 @@ module WordsRubySdk
 
       if attributes.has_key?(:'Checked')
         self.checked = attributes[:'Checked']
+      end
+
+      if attributes.has_key?(:'IsCheckBoxExactSize')
+        self.is_check_box_exact_size = attributes[:'IsCheckBoxExactSize']
       end
 
     end
@@ -200,18 +200,18 @@ module WordsRubySdk
       self.class == o.class &&
           link == o.link &&
           node_id == o.node_id &&
-          name == o.name &&
-          enabled == o.enabled &&
-          status_text == o.status_text &&
-          own_status == o.own_status &&
-          help_text == o.help_text &&
-          own_help == o.own_help &&
           calculate_on_exit == o.calculate_on_exit &&
+          enabled == o.enabled &&
           entry_macro == o.entry_macro &&
           exit_macro == o.exit_macro &&
-          is_check_box_exact_size == o.is_check_box_exact_size &&
+          help_text == o.help_text &&
+          name == o.name &&
+          own_help == o.own_help &&
+          own_status == o.own_status &&
+          status_text == o.status_text &&
           check_box_size == o.check_box_size &&
-          checked == o.checked
+          checked == o.checked &&
+          is_check_box_exact_size == o.is_check_box_exact_size
     end
 
     # @see the `==` method
@@ -223,7 +223,7 @@ module WordsRubySdk
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, node_id, name, enabled, status_text, own_status, help_text, own_help, calculate_on_exit, entry_macro, exit_macro, is_check_box_exact_size, check_box_size, checked].hash
+      [link, node_id, calculate_on_exit, enabled, entry_macro, exit_macro, help_text, name, own_help, own_status, status_text, check_box_size, checked, is_check_box_exact_size].hash
     end
 
     # Builds the object from hash

@@ -37,7 +37,7 @@ module WordsRubySdk
     # Specifies the owner password for the encrypted PDF document
     attr_accessor :owner_password
 
-    # Specifies the operations that are allowed to a user on an encrypted PDF document
+    # Specifies the operations that are allowed to a user on an encrypted PDF document        
     attr_accessor :permissions
 
     # Specifies the user password required for opening the encrypted PDF document

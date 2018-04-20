@@ -55,14 +55,14 @@ module WordsRubySdk
     # Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is true
     attr_accessor :update_fields
 
-    # Specifies whether or not use pretty formats output
-    attr_accessor :pretty_format
-
     # Allows to make output RTF documents smaller in size, but if they contain RTL (right-to-left) text, it will not be displayed correctly
     attr_accessor :export_compact_size
 
     # Specifies whether the keywords for \"old readers\" are written to RTF or not
     attr_accessor :export_images_for_old_readers
+
+    # Specifies whether or not use pretty formats output
+    attr_accessor :pretty_format
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -76,9 +76,9 @@ module WordsRubySdk
         :'zip_output' => :'ZipOutput',
         :'update_sdt_content' => :'UpdateSdtContent',
         :'update_fields' => :'UpdateFields',
-        :'pretty_format' => :'PrettyFormat',
         :'export_compact_size' => :'ExportCompactSize',
-        :'export_images_for_old_readers' => :'ExportImagesForOldReaders'
+        :'export_images_for_old_readers' => :'ExportImagesForOldReaders',
+        :'pretty_format' => :'PrettyFormat'
       }
     end
 
@@ -93,9 +93,9 @@ module WordsRubySdk
         :'zip_output' => :'BOOLEAN',
         :'update_sdt_content' => :'BOOLEAN',
         :'update_fields' => :'BOOLEAN',
-        :'pretty_format' => :'BOOLEAN',
         :'export_compact_size' => :'BOOLEAN',
-        :'export_images_for_old_readers' => :'BOOLEAN'
+        :'export_images_for_old_readers' => :'BOOLEAN',
+        :'pretty_format' => :'BOOLEAN'
       }
     end
 
@@ -139,16 +139,16 @@ module WordsRubySdk
         self.update_fields = attributes[:'UpdateFields']
       end
 
-      if attributes.has_key?(:'PrettyFormat')
-        self.pretty_format = attributes[:'PrettyFormat']
-      end
-
       if attributes.has_key?(:'ExportCompactSize')
         self.export_compact_size = attributes[:'ExportCompactSize']
       end
 
       if attributes.has_key?(:'ExportImagesForOldReaders')
         self.export_images_for_old_readers = attributes[:'ExportImagesForOldReaders']
+      end
+
+      if attributes.has_key?(:'PrettyFormat')
+        self.pretty_format = attributes[:'PrettyFormat']
       end
 
     end
@@ -179,9 +179,9 @@ module WordsRubySdk
           zip_output == o.zip_output &&
           update_sdt_content == o.update_sdt_content &&
           update_fields == o.update_fields &&
-          pretty_format == o.pretty_format &&
           export_compact_size == o.export_compact_size &&
-          export_images_for_old_readers == o.export_images_for_old_readers
+          export_images_for_old_readers == o.export_images_for_old_readers &&
+          pretty_format == o.pretty_format
     end
 
     # @see the `==` method
@@ -193,7 +193,7 @@ module WordsRubySdk
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [color_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_sdt_content, update_fields, pretty_format, export_compact_size, export_images_for_old_readers].hash
+      [color_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_sdt_content, update_fields, export_compact_size, export_images_for_old_readers, pretty_format].hash
     end
 
     # Builds the object from hash

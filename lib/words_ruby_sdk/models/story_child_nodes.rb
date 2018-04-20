@@ -31,7 +31,7 @@ module WordsRubySdk
 
   # Child nodes of  or 
   class StoryChildNodes
-    # Child nodes.        
+    # Child nodes.
     attr_accessor :child_nodes
 
 

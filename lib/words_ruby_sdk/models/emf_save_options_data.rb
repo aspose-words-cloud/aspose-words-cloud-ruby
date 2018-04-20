@@ -73,6 +73,12 @@ module WordsRubySdk
     # Determines 0-based index of the first page to render
     attr_accessor :page_index
 
+    # Allows to specify additional System.Drawing.Graphics quality options.
+    attr_accessor :graphics_quality_options
+
+    # Gets or sets the horizontal resolution for the generated images, in dots per inch.  This property has effect only when saving to raster image formats. The default value is 96.
+    attr_accessor :horizontal_resolution
+
     # Brightness of image
     attr_accessor :image_brightness
 
@@ -82,35 +88,29 @@ module WordsRubySdk
     # Contrast of image
     attr_accessor :image_contrast
 
-    # Allows to specify additional System.Drawing.Graphics quality options.
-    attr_accessor :graphics_quality_options
+    # Background (paper) color of image
+    attr_accessor :paper_color
 
     # Pixel format of image
     attr_accessor :pixel_format
 
-    # Background (paper) color of image
-    attr_accessor :paper_color
-
     # Sets both horizontal and vertical resolution for the generated images, in dots per inch.  This property has effect only when saving to raster image formats. The default value is 96.
     attr_accessor :resolution
 
-    # Gets or sets the horizontal resolution for the generated images, in dots per inch.  This property has effect only when saving to raster image formats. The default value is 96.
-    attr_accessor :horizontal_resolution
-
-    # Gets or sets the vertical resolution for the generated images, in dots per inch.  This property has effect only when saving to raster image formats. The default value is 96.
-    attr_accessor :vertical_resolution
-
     # Zoom factor of image
     attr_accessor :scale
-
-    # Determine whether or not to use high quality (i.e. slow) rendering algorithms
-    attr_accessor :use_high_quality_rendering
 
     # Determine whether or not to use anti-aliasing for rendering
     attr_accessor :use_anti_aliasing
 
     # Gets or sets a value determining whether to use GDI+ or Aspose.Words metafile renderer when saving to EMF.
     attr_accessor :use_gdi_emf_renderer
+
+    # Determine whether or not to use high quality (i.e. slow) rendering algorithms
+    attr_accessor :use_high_quality_rendering
+
+    # Gets or sets the vertical resolution for the generated images, in dots per inch.  This property has effect only when saving to raster image formats. The default value is 96.
+    attr_accessor :vertical_resolution
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -130,19 +130,19 @@ module WordsRubySdk
         :'optimize_output' => :'OptimizeOutput',
         :'page_count' => :'PageCount',
         :'page_index' => :'PageIndex',
+        :'graphics_quality_options' => :'GraphicsQualityOptions',
+        :'horizontal_resolution' => :'HorizontalResolution',
         :'image_brightness' => :'ImageBrightness',
         :'image_color_mode' => :'ImageColorMode',
         :'image_contrast' => :'ImageContrast',
-        :'graphics_quality_options' => :'GraphicsQualityOptions',
-        :'pixel_format' => :'PixelFormat',
         :'paper_color' => :'PaperColor',
+        :'pixel_format' => :'PixelFormat',
         :'resolution' => :'Resolution',
-        :'horizontal_resolution' => :'HorizontalResolution',
-        :'vertical_resolution' => :'VerticalResolution',
         :'scale' => :'Scale',
-        :'use_high_quality_rendering' => :'UseHighQualityRendering',
         :'use_anti_aliasing' => :'UseAntiAliasing',
-        :'use_gdi_emf_renderer' => :'UseGdiEmfRenderer'
+        :'use_gdi_emf_renderer' => :'UseGdiEmfRenderer',
+        :'use_high_quality_rendering' => :'UseHighQualityRendering',
+        :'vertical_resolution' => :'VerticalResolution'
       }
     end
 
@@ -163,19 +163,19 @@ module WordsRubySdk
         :'optimize_output' => :'BOOLEAN',
         :'page_count' => :'Integer',
         :'page_index' => :'Integer',
+        :'graphics_quality_options' => :'GraphicsQualityOptionsData',
+        :'horizontal_resolution' => :'Float',
         :'image_brightness' => :'Float',
         :'image_color_mode' => :'String',
         :'image_contrast' => :'Float',
-        :'graphics_quality_options' => :'GraphicsQualityOptionsData',
-        :'pixel_format' => :'String',
         :'paper_color' => :'String',
+        :'pixel_format' => :'String',
         :'resolution' => :'Float',
-        :'horizontal_resolution' => :'Float',
-        :'vertical_resolution' => :'Float',
         :'scale' => :'Float',
-        :'use_high_quality_rendering' => :'BOOLEAN',
         :'use_anti_aliasing' => :'BOOLEAN',
-        :'use_gdi_emf_renderer' => :'BOOLEAN'
+        :'use_gdi_emf_renderer' => :'BOOLEAN',
+        :'use_high_quality_rendering' => :'BOOLEAN',
+        :'vertical_resolution' => :'Float'
       }
     end
 
@@ -243,6 +243,14 @@ module WordsRubySdk
         self.page_index = attributes[:'PageIndex']
       end
 
+      if attributes.has_key?(:'GraphicsQualityOptions')
+        self.graphics_quality_options = attributes[:'GraphicsQualityOptions']
+      end
+
+      if attributes.has_key?(:'HorizontalResolution')
+        self.horizontal_resolution = attributes[:'HorizontalResolution']
+      end
+
       if attributes.has_key?(:'ImageBrightness')
         self.image_brightness = attributes[:'ImageBrightness']
       end
@@ -255,36 +263,20 @@ module WordsRubySdk
         self.image_contrast = attributes[:'ImageContrast']
       end
 
-      if attributes.has_key?(:'GraphicsQualityOptions')
-        self.graphics_quality_options = attributes[:'GraphicsQualityOptions']
+      if attributes.has_key?(:'PaperColor')
+        self.paper_color = attributes[:'PaperColor']
       end
 
       if attributes.has_key?(:'PixelFormat')
         self.pixel_format = attributes[:'PixelFormat']
       end
 
-      if attributes.has_key?(:'PaperColor')
-        self.paper_color = attributes[:'PaperColor']
-      end
-
       if attributes.has_key?(:'Resolution')
         self.resolution = attributes[:'Resolution']
       end
 
-      if attributes.has_key?(:'HorizontalResolution')
-        self.horizontal_resolution = attributes[:'HorizontalResolution']
-      end
-
-      if attributes.has_key?(:'VerticalResolution')
-        self.vertical_resolution = attributes[:'VerticalResolution']
-      end
-
       if attributes.has_key?(:'Scale')
         self.scale = attributes[:'Scale']
-      end
-
-      if attributes.has_key?(:'UseHighQualityRendering')
-        self.use_high_quality_rendering = attributes[:'UseHighQualityRendering']
       end
 
       if attributes.has_key?(:'UseAntiAliasing')
@@ -293,6 +285,14 @@ module WordsRubySdk
 
       if attributes.has_key?(:'UseGdiEmfRenderer')
         self.use_gdi_emf_renderer = attributes[:'UseGdiEmfRenderer']
+      end
+
+      if attributes.has_key?(:'UseHighQualityRendering')
+        self.use_high_quality_rendering = attributes[:'UseHighQualityRendering']
+      end
+
+      if attributes.has_key?(:'VerticalResolution')
+        self.vertical_resolution = attributes[:'VerticalResolution']
       end
 
     end
@@ -329,19 +329,19 @@ module WordsRubySdk
           optimize_output == o.optimize_output &&
           page_count == o.page_count &&
           page_index == o.page_index &&
+          graphics_quality_options == o.graphics_quality_options &&
+          horizontal_resolution == o.horizontal_resolution &&
           image_brightness == o.image_brightness &&
           image_color_mode == o.image_color_mode &&
           image_contrast == o.image_contrast &&
-          graphics_quality_options == o.graphics_quality_options &&
-          pixel_format == o.pixel_format &&
           paper_color == o.paper_color &&
+          pixel_format == o.pixel_format &&
           resolution == o.resolution &&
-          horizontal_resolution == o.horizontal_resolution &&
-          vertical_resolution == o.vertical_resolution &&
           scale == o.scale &&
-          use_high_quality_rendering == o.use_high_quality_rendering &&
           use_anti_aliasing == o.use_anti_aliasing &&
-          use_gdi_emf_renderer == o.use_gdi_emf_renderer
+          use_gdi_emf_renderer == o.use_gdi_emf_renderer &&
+          use_high_quality_rendering == o.use_high_quality_rendering &&
+          vertical_resolution == o.vertical_resolution
     end
 
     # @see the `==` method
@@ -353,7 +353,7 @@ module WordsRubySdk
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [color_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_sdt_content, update_fields, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, image_brightness, image_color_mode, image_contrast, graphics_quality_options, pixel_format, paper_color, resolution, horizontal_resolution, vertical_resolution, scale, use_high_quality_rendering, use_anti_aliasing, use_gdi_emf_renderer].hash
+      [color_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_sdt_content, update_fields, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, graphics_quality_options, horizontal_resolution, image_brightness, image_color_mode, image_contrast, paper_color, pixel_format, resolution, scale, use_anti_aliasing, use_gdi_emf_renderer, use_high_quality_rendering, vertical_resolution].hash
     end
 
     # Builds the object from hash

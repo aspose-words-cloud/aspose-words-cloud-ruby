@@ -37,11 +37,11 @@ module WordsRubySdk
     # Response status.
     attr_accessor :status
 
-    # Statistical data of the document
-    attr_accessor :stat_data
-
     # Link to the document
     attr_accessor :document_link
+
+    # Statistical data of the document
+    attr_accessor :stat_data
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -49,8 +49,8 @@ module WordsRubySdk
       {
         :'code' => :'Code',
         :'status' => :'Status',
-        :'stat_data' => :'StatData',
-        :'document_link' => :'DocumentLink'
+        :'document_link' => :'DocumentLink',
+        :'stat_data' => :'StatData'
       }
     end
 
@@ -59,8 +59,8 @@ module WordsRubySdk
       {
         :'code' => :'Integer',
         :'status' => :'String',
-        :'stat_data' => :'DocumentStatData',
-        :'document_link' => :'FileLink'
+        :'document_link' => :'FileLink',
+        :'stat_data' => :'DocumentStatData'
       }
     end
 
@@ -80,12 +80,12 @@ module WordsRubySdk
         self.status = attributes[:'Status']
       end
 
-      if attributes.has_key?(:'StatData')
-        self.stat_data = attributes[:'StatData']
-      end
-
       if attributes.has_key?(:'DocumentLink')
         self.document_link = attributes[:'DocumentLink']
+      end
+
+      if attributes.has_key?(:'StatData')
+        self.stat_data = attributes[:'StatData']
       end
 
     end
@@ -115,8 +115,8 @@ module WordsRubySdk
       self.class == o.class &&
           code == o.code &&
           status == o.status &&
-          stat_data == o.stat_data &&
-          document_link == o.document_link
+          document_link == o.document_link &&
+          stat_data == o.stat_data
     end
 
     # @see the `==` method
@@ -128,7 +128,7 @@ module WordsRubySdk
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [code, status, stat_data, document_link].hash
+      [code, status, document_link, stat_data].hash
     end
 
     # Builds the object from hash

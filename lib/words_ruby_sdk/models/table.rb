@@ -37,11 +37,11 @@ module WordsRubySdk
     # Node id
     attr_accessor :node_id
 
-    # Collection of table's rows.
-    attr_accessor :table_row_list
-
     # Table properties.
     attr_accessor :table_properties
+
+    # Collection of table's rows.
+    attr_accessor :table_row_list
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -49,8 +49,8 @@ module WordsRubySdk
       {
         :'link' => :'link',
         :'node_id' => :'NodeId',
-        :'table_row_list' => :'TableRowList',
-        :'table_properties' => :'TableProperties'
+        :'table_properties' => :'TableProperties',
+        :'table_row_list' => :'TableRowList'
       }
     end
 
@@ -59,8 +59,8 @@ module WordsRubySdk
       {
         :'link' => :'WordsApiLink',
         :'node_id' => :'String',
-        :'table_row_list' => :'Array<TableRow>',
-        :'table_properties' => :'TableProperties'
+        :'table_properties' => :'TableProperties',
+        :'table_row_list' => :'Array<TableRow>'
       }
     end
 
@@ -80,14 +80,14 @@ module WordsRubySdk
         self.node_id = attributes[:'NodeId']
       end
 
+      if attributes.has_key?(:'TableProperties')
+        self.table_properties = attributes[:'TableProperties']
+      end
+
       if attributes.has_key?(:'TableRowList')
         if (value = attributes[:'TableRowList']).is_a?(Array)
           self.table_row_list = value
         end
-      end
-
-      if attributes.has_key?(:'TableProperties')
-        self.table_properties = attributes[:'TableProperties']
       end
 
     end
@@ -112,8 +112,8 @@ module WordsRubySdk
       self.class == o.class &&
           link == o.link &&
           node_id == o.node_id &&
-          table_row_list == o.table_row_list &&
-          table_properties == o.table_properties
+          table_properties == o.table_properties &&
+          table_row_list == o.table_row_list
     end
 
     # @see the `==` method
@@ -125,7 +125,7 @@ module WordsRubySdk
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, node_id, table_row_list, table_properties].hash
+      [link, node_id, table_properties, table_row_list].hash
     end
 
     # Builds the object from hash

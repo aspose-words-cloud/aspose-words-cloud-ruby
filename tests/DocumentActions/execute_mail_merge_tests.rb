@@ -42,7 +42,7 @@ module WordsRubySdk
 
       @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
 
-      request = PostDocumentExecuteMailMergeRequest.new remote_name, false, data, remote_test_folder + test_folder, :dest_file_name => dest_name
+      request = PostDocumentExecuteMailMergeRequest.new remote_name, data, remote_test_folder + test_folder, :dest_file_name => dest_name
       result = @words_api.post_document_execute_mail_merge request
       assert_equal 200, result.code
     end

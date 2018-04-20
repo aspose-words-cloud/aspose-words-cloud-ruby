@@ -4,7 +4,7 @@ require 'date'
 module WordsRubySdk
  #
  # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose" file="Section.rb">
+ # <copyright company="Aspose" file="ClassificationRequestParameters.rb">
  #   Copyright (c) 2017 Aspose.Words for Cloud
  # </copyright>
  # <summary>
@@ -29,48 +29,28 @@ module WordsRubySdk
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # Section element
-  class Section
-    # Link to the document.
-    attr_accessor :link
+  # This request should be send to REST api: PUT http://api.aspose.com/v1.1/words/classify
+  class ClassificationRequestParameters
+    # Text for classification.
+    attr_accessor :text
 
-    # Child nodes.
-    attr_accessor :child_nodes
-
-    # Link to HeaderFooters resource
-    attr_accessor :header_footers
-
-    # Link to PageSetup resource
-    attr_accessor :page_setup
-
-    # Link to Paragraphs resource
-    attr_accessor :paragraphs
-
-    # Link to Tables resource
-    attr_accessor :tables
+    # Number of best classes.
+    attr_accessor :best_classes_count
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'link' => :'link',
-        :'child_nodes' => :'ChildNodes',
-        :'header_footers' => :'HeaderFooters',
-        :'page_setup' => :'PageSetup',
-        :'paragraphs' => :'Paragraphs',
-        :'tables' => :'Tables'
+        :'text' => :'Text',
+        :'best_classes_count' => :'BestClassesCount'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'link' => :'WordsApiLink',
-        :'child_nodes' => :'Array<NodeLink>',
-        :'header_footers' => :'LinkElement',
-        :'page_setup' => :'LinkElement',
-        :'paragraphs' => :'LinkElement',
-        :'tables' => :'LinkElement'
+        :'text' => :'String',
+        :'best_classes_count' => :'Integer'
       }
     end
 
@@ -82,30 +62,12 @@ module WordsRubySdk
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'link')
-        self.link = attributes[:'link']
+      if attributes.has_key?(:'Text')
+        self.text = attributes[:'Text']
       end
 
-      if attributes.has_key?(:'ChildNodes')
-        if (value = attributes[:'ChildNodes']).is_a?(Array)
-          self.child_nodes = value
-        end
-      end
-
-      if attributes.has_key?(:'HeaderFooters')
-        self.header_footers = attributes[:'HeaderFooters']
-      end
-
-      if attributes.has_key?(:'PageSetup')
-        self.page_setup = attributes[:'PageSetup']
-      end
-
-      if attributes.has_key?(:'Paragraphs')
-        self.paragraphs = attributes[:'Paragraphs']
-      end
-
-      if attributes.has_key?(:'Tables')
-        self.tables = attributes[:'Tables']
+      if attributes.has_key?(:'BestClassesCount')
+        self.best_classes_count = attributes[:'BestClassesCount']
       end
 
     end
@@ -128,12 +90,8 @@ module WordsRubySdk
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          link == o.link &&
-          child_nodes == o.child_nodes &&
-          header_footers == o.header_footers &&
-          page_setup == o.page_setup &&
-          paragraphs == o.paragraphs &&
-          tables == o.tables
+          text == o.text &&
+          best_classes_count == o.best_classes_count
     end
 
     # @see the `==` method
@@ -145,7 +103,7 @@ module WordsRubySdk
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, child_nodes, header_footers, page_setup, paragraphs, tables].hash
+      [text, best_classes_count].hash
     end
 
     # Builds the object from hash

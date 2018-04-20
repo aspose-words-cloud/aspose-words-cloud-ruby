@@ -37,20 +37,20 @@ module WordsRubySdk
     # Node id
     attr_accessor :node_id
 
-    # Link to comment range start node.
-    attr_accessor :position
+    # Content of footnote.
+    attr_accessor :content
 
     # Returns a value that specifies whether this is a footnote or endnote.
     attr_accessor :footnote_type
+
+    # Link to comment range start node.
+    attr_accessor :position
 
     # Gets/sets custom reference mark to be used for this footnote. Default value is , meaning auto-numbered footnotes are used.
     attr_accessor :reference_mark
 
     # This is a convenience property that allows to easily get or set text of the footnote.
     attr_accessor :text
-
-    # Content of footnote.
-    attr_accessor :content
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -79,11 +79,11 @@ module WordsRubySdk
       {
         :'link' => :'link',
         :'node_id' => :'NodeId',
-        :'position' => :'Position',
+        :'content' => :'Content',
         :'footnote_type' => :'FootnoteType',
+        :'position' => :'Position',
         :'reference_mark' => :'ReferenceMark',
-        :'text' => :'Text',
-        :'content' => :'Content'
+        :'text' => :'Text'
       }
     end
 
@@ -92,11 +92,11 @@ module WordsRubySdk
       {
         :'link' => :'WordsApiLink',
         :'node_id' => :'String',
-        :'position' => :'DocumentPosition',
+        :'content' => :'StoryChildNodes',
         :'footnote_type' => :'String',
+        :'position' => :'DocumentPosition',
         :'reference_mark' => :'String',
-        :'text' => :'String',
-        :'content' => :'StoryChildNodes'
+        :'text' => :'String'
       }
     end
 
@@ -116,12 +116,16 @@ module WordsRubySdk
         self.node_id = attributes[:'NodeId']
       end
 
-      if attributes.has_key?(:'Position')
-        self.position = attributes[:'Position']
+      if attributes.has_key?(:'Content')
+        self.content = attributes[:'Content']
       end
 
       if attributes.has_key?(:'FootnoteType')
         self.footnote_type = attributes[:'FootnoteType']
+      end
+
+      if attributes.has_key?(:'Position')
+        self.position = attributes[:'Position']
       end
 
       if attributes.has_key?(:'ReferenceMark')
@@ -130,10 +134,6 @@ module WordsRubySdk
 
       if attributes.has_key?(:'Text')
         self.text = attributes[:'Text']
-      end
-
-      if attributes.has_key?(:'Content')
-        self.content = attributes[:'Content']
       end
 
     end
@@ -174,11 +174,11 @@ module WordsRubySdk
       self.class == o.class &&
           link == o.link &&
           node_id == o.node_id &&
-          position == o.position &&
+          content == o.content &&
           footnote_type == o.footnote_type &&
+          position == o.position &&
           reference_mark == o.reference_mark &&
-          text == o.text &&
-          content == o.content
+          text == o.text
     end
 
     # @see the `==` method
@@ -190,7 +190,7 @@ module WordsRubySdk
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, node_id, position, footnote_type, reference_mark, text, content].hash
+      [link, node_id, content, footnote_type, position, reference_mark, text].hash
     end
 
     # Builds the object from hash

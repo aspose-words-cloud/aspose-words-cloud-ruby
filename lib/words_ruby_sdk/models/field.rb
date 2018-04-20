@@ -40,11 +40,11 @@ module WordsRubySdk
     # Field code
     attr_accessor :field_code
 
-    # Field result
-    attr_accessor :result
-
     # Gets or sets LCID of the field.
     attr_accessor :locale_id
+
+    # Field result
+    attr_accessor :result
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -53,8 +53,8 @@ module WordsRubySdk
         :'link' => :'link',
         :'node_id' => :'NodeId',
         :'field_code' => :'FieldCode',
-        :'result' => :'Result',
-        :'locale_id' => :'LocaleId'
+        :'locale_id' => :'LocaleId',
+        :'result' => :'Result'
       }
     end
 
@@ -64,8 +64,8 @@ module WordsRubySdk
         :'link' => :'WordsApiLink',
         :'node_id' => :'String',
         :'field_code' => :'String',
-        :'result' => :'String',
-        :'locale_id' => :'String'
+        :'locale_id' => :'String',
+        :'result' => :'String'
       }
     end
 
@@ -89,12 +89,12 @@ module WordsRubySdk
         self.field_code = attributes[:'FieldCode']
       end
 
-      if attributes.has_key?(:'Result')
-        self.result = attributes[:'Result']
-      end
-
       if attributes.has_key?(:'LocaleId')
         self.locale_id = attributes[:'LocaleId']
+      end
+
+      if attributes.has_key?(:'Result')
+        self.result = attributes[:'Result']
       end
 
     end
@@ -120,8 +120,8 @@ module WordsRubySdk
           link == o.link &&
           node_id == o.node_id &&
           field_code == o.field_code &&
-          result == o.result &&
-          locale_id == o.locale_id
+          locale_id == o.locale_id &&
+          result == o.result
     end
 
     # @see the `==` method
@@ -133,7 +133,7 @@ module WordsRubySdk
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, node_id, field_code, result, locale_id].hash
+      [link, node_id, field_code, locale_id, result].hash
     end
 
     # Builds the object from hash

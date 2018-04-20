@@ -37,11 +37,11 @@ module WordsRubySdk
     # Response status.
     attr_accessor :status
 
-    # Result of the changing of protection
-    attr_accessor :protection_result
-
     # Link to the document
     attr_accessor :document_link
+
+    # Result of the changing of protection
+    attr_accessor :protection_result
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -49,8 +49,8 @@ module WordsRubySdk
       {
         :'code' => :'Code',
         :'status' => :'Status',
-        :'protection_result' => :'ProtectionResult',
-        :'document_link' => :'DocumentLink'
+        :'document_link' => :'DocumentLink',
+        :'protection_result' => :'ProtectionResult'
       }
     end
 
@@ -59,8 +59,8 @@ module WordsRubySdk
       {
         :'code' => :'Integer',
         :'status' => :'String',
-        :'protection_result' => :'BOOLEAN',
-        :'document_link' => :'FileLink'
+        :'document_link' => :'FileLink',
+        :'protection_result' => :'BOOLEAN'
       }
     end
 
@@ -80,12 +80,12 @@ module WordsRubySdk
         self.status = attributes[:'Status']
       end
 
-      if attributes.has_key?(:'ProtectionResult')
-        self.protection_result = attributes[:'ProtectionResult']
-      end
-
       if attributes.has_key?(:'DocumentLink')
         self.document_link = attributes[:'DocumentLink']
+      end
+
+      if attributes.has_key?(:'ProtectionResult')
+        self.protection_result = attributes[:'ProtectionResult']
       end
 
     end
@@ -115,8 +115,8 @@ module WordsRubySdk
       self.class == o.class &&
           code == o.code &&
           status == o.status &&
-          protection_result == o.protection_result &&
-          document_link == o.document_link
+          document_link == o.document_link &&
+          protection_result == o.protection_result
     end
 
     # @see the `==` method
@@ -128,7 +128,7 @@ module WordsRubySdk
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [code, status, protection_result, document_link].hash
+      [code, status, document_link, protection_result].hash
     end
 
     # Builds the object from hash

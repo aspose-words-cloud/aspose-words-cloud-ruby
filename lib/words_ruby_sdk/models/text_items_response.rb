@@ -29,7 +29,7 @@ module WordsRubySdk
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # This resonse should be returned by the service when handling:  GET /{name}/textItems .
+  # This response should be returned by the service when handling:  GET /{name}/textItems .
   class TextItemsResponse
     # Response status code.
     attr_accessor :code

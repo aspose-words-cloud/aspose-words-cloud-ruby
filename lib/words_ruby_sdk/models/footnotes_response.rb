@@ -29,7 +29,7 @@ module WordsRubySdk
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # This resonse should be returned by the service when handling: GET http://api.aspose.com/v1.1/words/Test.doc/footnotes 
+  # This response should be returned by the service when handling: GET http://api.aspose.com/v1.1/words/Test.doc/footnotes 
   class FootnotesResponse
     # Response status code.
     attr_accessor :code

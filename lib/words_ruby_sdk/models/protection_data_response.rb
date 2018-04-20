@@ -37,11 +37,11 @@ module WordsRubySdk
     # Response status.
     attr_accessor :status
 
-    # Protection's data of the document
-    attr_accessor :protection_data
-
     # Link to the document
     attr_accessor :document_link
+
+    # Protection's data of the document
+    attr_accessor :protection_data
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -49,8 +49,8 @@ module WordsRubySdk
       {
         :'code' => :'Code',
         :'status' => :'Status',
-        :'protection_data' => :'ProtectionData',
-        :'document_link' => :'DocumentLink'
+        :'document_link' => :'DocumentLink',
+        :'protection_data' => :'ProtectionData'
       }
     end
 
@@ -59,8 +59,8 @@ module WordsRubySdk
       {
         :'code' => :'Integer',
         :'status' => :'String',
-        :'protection_data' => :'ProtectionData',
-        :'document_link' => :'FileLink'
+        :'document_link' => :'FileLink',
+        :'protection_data' => :'ProtectionData'
       }
     end
 
@@ -80,12 +80,12 @@ module WordsRubySdk
         self.status = attributes[:'Status']
       end
 
-      if attributes.has_key?(:'ProtectionData')
-        self.protection_data = attributes[:'ProtectionData']
-      end
-
       if attributes.has_key?(:'DocumentLink')
         self.document_link = attributes[:'DocumentLink']
+      end
+
+      if attributes.has_key?(:'ProtectionData')
+        self.protection_data = attributes[:'ProtectionData']
       end
 
     end
@@ -115,8 +115,8 @@ module WordsRubySdk
       self.class == o.class &&
           code == o.code &&
           status == o.status &&
-          protection_data == o.protection_data &&
-          document_link == o.document_link
+          document_link == o.document_link &&
+          protection_data == o.protection_data
     end
 
     # @see the `==` method
@@ -128,7 +128,7 @@ module WordsRubySdk
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [code, status, protection_data, document_link].hash
+      [code, status, document_link, protection_data].hash
     end
 
     # Builds the object from hash

@@ -4,7 +4,7 @@ require 'date'
 module WordsRubySdk
  #
  # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose" file="Section.rb">
+ # <copyright company="Aspose" file="ClassificationResult.rb">
  #   Copyright (c) 2017 Aspose.Words for Cloud
  # </copyright>
  # <summary>
@@ -29,48 +29,28 @@ module WordsRubySdk
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # Section element
-  class Section
-    # Link to the document.
-    attr_accessor :link
+  # Represents a single classification result.
+  class ClassificationResult
+    # Gets or sets the name of the class.
+    attr_accessor :class_name
 
-    # Child nodes.
-    attr_accessor :child_nodes
-
-    # Link to HeaderFooters resource
-    attr_accessor :header_footers
-
-    # Link to PageSetup resource
-    attr_accessor :page_setup
-
-    # Link to Paragraphs resource
-    attr_accessor :paragraphs
-
-    # Link to Tables resource
-    attr_accessor :tables
+    # Gets or sets the probability of class.
+    attr_accessor :class_probability
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'link' => :'link',
-        :'child_nodes' => :'ChildNodes',
-        :'header_footers' => :'HeaderFooters',
-        :'page_setup' => :'PageSetup',
-        :'paragraphs' => :'Paragraphs',
-        :'tables' => :'Tables'
+        :'class_name' => :'ClassName',
+        :'class_probability' => :'ClassProbability'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'link' => :'WordsApiLink',
-        :'child_nodes' => :'Array<NodeLink>',
-        :'header_footers' => :'LinkElement',
-        :'page_setup' => :'LinkElement',
-        :'paragraphs' => :'LinkElement',
-        :'tables' => :'LinkElement'
+        :'class_name' => :'String',
+        :'class_probability' => :'Float'
       }
     end
 
@@ -82,30 +62,12 @@ module WordsRubySdk
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'link')
-        self.link = attributes[:'link']
+      if attributes.has_key?(:'ClassName')
+        self.class_name = attributes[:'ClassName']
       end
 
-      if attributes.has_key?(:'ChildNodes')
-        if (value = attributes[:'ChildNodes']).is_a?(Array)
-          self.child_nodes = value
-        end
-      end
-
-      if attributes.has_key?(:'HeaderFooters')
-        self.header_footers = attributes[:'HeaderFooters']
-      end
-
-      if attributes.has_key?(:'PageSetup')
-        self.page_setup = attributes[:'PageSetup']
-      end
-
-      if attributes.has_key?(:'Paragraphs')
-        self.paragraphs = attributes[:'Paragraphs']
-      end
-
-      if attributes.has_key?(:'Tables')
-        self.tables = attributes[:'Tables']
+      if attributes.has_key?(:'ClassProbability')
+        self.class_probability = attributes[:'ClassProbability']
       end
 
     end
@@ -114,12 +76,17 @@ module WordsRubySdk
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @class_probability.nil?
+        invalid_properties.push("invalid value for 'class_probability', class_probability cannot be nil.")
+      end
+
       return invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @class_probability.nil?
       return true
     end
 
@@ -128,12 +95,8 @@ module WordsRubySdk
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          link == o.link &&
-          child_nodes == o.child_nodes &&
-          header_footers == o.header_footers &&
-          page_setup == o.page_setup &&
-          paragraphs == o.paragraphs &&
-          tables == o.tables
+          class_name == o.class_name &&
+          class_probability == o.class_probability
     end
 
     # @see the `==` method
@@ -145,7 +108,7 @@ module WordsRubySdk
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, child_nodes, header_footers, page_setup, paragraphs, tables].hash
+      [class_name, class_probability].hash
     end
 
     # Builds the object from hash

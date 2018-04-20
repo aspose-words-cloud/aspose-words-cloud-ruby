@@ -37,11 +37,11 @@ module WordsRubySdk
     # Node id
     attr_accessor :node_id
 
-    # Collection of table's rows.
-    attr_accessor :table_cell_list
-
     # Provides access to the formatting properties of the row.
     attr_accessor :row_format
+
+    # Collection of table's rows.
+    attr_accessor :table_cell_list
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -49,8 +49,8 @@ module WordsRubySdk
       {
         :'link' => :'link',
         :'node_id' => :'NodeId',
-        :'table_cell_list' => :'TableCellList',
-        :'row_format' => :'RowFormat'
+        :'row_format' => :'RowFormat',
+        :'table_cell_list' => :'TableCellList'
       }
     end
 
@@ -59,8 +59,8 @@ module WordsRubySdk
       {
         :'link' => :'WordsApiLink',
         :'node_id' => :'String',
-        :'table_cell_list' => :'Array<TableCell>',
-        :'row_format' => :'TableRowFormat'
+        :'row_format' => :'TableRowFormat',
+        :'table_cell_list' => :'Array<TableCell>'
       }
     end
 
@@ -80,14 +80,14 @@ module WordsRubySdk
         self.node_id = attributes[:'NodeId']
       end
 
+      if attributes.has_key?(:'RowFormat')
+        self.row_format = attributes[:'RowFormat']
+      end
+
       if attributes.has_key?(:'TableCellList')
         if (value = attributes[:'TableCellList']).is_a?(Array)
           self.table_cell_list = value
         end
-      end
-
-      if attributes.has_key?(:'RowFormat')
-        self.row_format = attributes[:'RowFormat']
       end
 
     end
@@ -112,8 +112,8 @@ module WordsRubySdk
       self.class == o.class &&
           link == o.link &&
           node_id == o.node_id &&
-          table_cell_list == o.table_cell_list &&
-          row_format == o.row_format
+          row_format == o.row_format &&
+          table_cell_list == o.table_cell_list
     end
 
     # @see the `==` method
@@ -125,7 +125,7 @@ module WordsRubySdk
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, node_id, table_cell_list, row_format].hash
+      [link, node_id, row_format, table_cell_list].hash
     end
 
     # Builds the object from hash

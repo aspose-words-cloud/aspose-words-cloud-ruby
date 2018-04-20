@@ -34,17 +34,17 @@ module WordsRubySdk
     # Link to the document.
     attr_accessor :link
 
-    # Gets or sets the height of the table row in points.
-    attr_accessor :height
-
-    # Gets or sets the rule for determining the height of the table row.
-    attr_accessor :height_rule
-
     # True if the text in a table row is allowed to split across a page break.
     attr_accessor :allow_break_across_pages
 
     # True if the row is repeated as a table heading on every page when the table spans more than one page.
     attr_accessor :heading_format
+
+    # Gets or sets the height of the table row in points.
+    attr_accessor :height
+
+    # Gets or sets the rule for determining the height of the table row.
+    attr_accessor :height_rule
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -72,10 +72,10 @@ module WordsRubySdk
     def self.attribute_map
       {
         :'link' => :'link',
-        :'height' => :'Height',
-        :'height_rule' => :'HeightRule',
         :'allow_break_across_pages' => :'AllowBreakAcrossPages',
-        :'heading_format' => :'HeadingFormat'
+        :'heading_format' => :'HeadingFormat',
+        :'height' => :'Height',
+        :'height_rule' => :'HeightRule'
       }
     end
 
@@ -83,10 +83,10 @@ module WordsRubySdk
     def self.swagger_types
       {
         :'link' => :'WordsApiLink',
-        :'height' => :'Float',
-        :'height_rule' => :'String',
         :'allow_break_across_pages' => :'BOOLEAN',
-        :'heading_format' => :'BOOLEAN'
+        :'heading_format' => :'BOOLEAN',
+        :'height' => :'Float',
+        :'height_rule' => :'String'
       }
     end
 
@@ -102,20 +102,20 @@ module WordsRubySdk
         self.link = attributes[:'link']
       end
 
-      if attributes.has_key?(:'Height')
-        self.height = attributes[:'Height']
-      end
-
-      if attributes.has_key?(:'HeightRule')
-        self.height_rule = attributes[:'HeightRule']
-      end
-
       if attributes.has_key?(:'AllowBreakAcrossPages')
         self.allow_break_across_pages = attributes[:'AllowBreakAcrossPages']
       end
 
       if attributes.has_key?(:'HeadingFormat')
         self.heading_format = attributes[:'HeadingFormat']
+      end
+
+      if attributes.has_key?(:'Height')
+        self.height = attributes[:'Height']
+      end
+
+      if attributes.has_key?(:'HeightRule')
+        self.height_rule = attributes[:'HeightRule']
       end
 
     end
@@ -155,10 +155,10 @@ module WordsRubySdk
       return true if self.equal?(o)
       self.class == o.class &&
           link == o.link &&
-          height == o.height &&
-          height_rule == o.height_rule &&
           allow_break_across_pages == o.allow_break_across_pages &&
-          heading_format == o.heading_format
+          heading_format == o.heading_format &&
+          height == o.height &&
+          height_rule == o.height_rule
     end
 
     # @see the `==` method
@@ -170,7 +170,7 @@ module WordsRubySdk
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, height, height_rule, allow_break_across_pages, heading_format].hash
+      [link, allow_break_across_pages, heading_format, height, height_rule].hash
     end
 
     # Builds the object from hash

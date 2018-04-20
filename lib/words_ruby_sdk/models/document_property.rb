@@ -34,23 +34,23 @@ module WordsRubySdk
     # Link to the document.
     attr_accessor :link
 
+    # Flag indicates whether the property is built-in or not. If true the property is built-in, if false the property is custom.
+    attr_accessor :built_in
+
     # Name of the document property.
     attr_accessor :name
 
-    # String value of the document property. 
+    # string value of the document property. 
     attr_accessor :value
-
-    # Flag indicates whether the property is built-in or not. If true the property is built-in, if false the property is custom.
-    attr_accessor :built_in
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'link' => :'link',
+        :'built_in' => :'BuiltIn',
         :'name' => :'Name',
-        :'value' => :'Value',
-        :'built_in' => :'BuiltIn'
+        :'value' => :'Value'
       }
     end
 
@@ -58,9 +58,9 @@ module WordsRubySdk
     def self.swagger_types
       {
         :'link' => :'WordsApiLink',
+        :'built_in' => :'BOOLEAN',
         :'name' => :'String',
-        :'value' => :'String',
-        :'built_in' => :'BOOLEAN'
+        :'value' => :'String'
       }
     end
 
@@ -76,16 +76,16 @@ module WordsRubySdk
         self.link = attributes[:'link']
       end
 
+      if attributes.has_key?(:'BuiltIn')
+        self.built_in = attributes[:'BuiltIn']
+      end
+
       if attributes.has_key?(:'Name')
         self.name = attributes[:'Name']
       end
 
       if attributes.has_key?(:'Value')
         self.value = attributes[:'Value']
-      end
-
-      if attributes.has_key?(:'BuiltIn')
-        self.built_in = attributes[:'BuiltIn']
       end
 
     end
@@ -109,9 +109,9 @@ module WordsRubySdk
       return true if self.equal?(o)
       self.class == o.class &&
           link == o.link &&
+          built_in == o.built_in &&
           name == o.name &&
-          value == o.value &&
-          built_in == o.built_in
+          value == o.value
     end
 
     # @see the `==` method
@@ -123,7 +123,7 @@ module WordsRubySdk
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, name, value, built_in].hash
+      [link, built_in, name, value].hash
     end
 
     # Builds the object from hash

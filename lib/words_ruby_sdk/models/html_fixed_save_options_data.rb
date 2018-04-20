@@ -76,6 +76,9 @@ module WordsRubySdk
     # Specifies prefix which is added to all class names in style.css file. Default value is \"aw\".
     attr_accessor :css_class_names_prefix
 
+    # Encoding.
+    attr_accessor :encoding
+
     # Specifies whether the CSS (Cascading Style Sheet) should be embedded into Html document.
     attr_accessor :export_embedded_css
 
@@ -88,11 +91,14 @@ module WordsRubySdk
     # Gets or sets indication of whether form fields are exported as interactive items (as 'input' tag) rather than converted to text or graphics.
     attr_accessor :export_form_fields
 
-    # Encoding.
-    attr_accessor :encoding
-
     # Specifies export format of fonts
     attr_accessor :font_format
+
+    # Specifies the horizontal alignment of pages in an HTML document. Default value is HtmlFixedHorizontalPageAlignment.Center.
+    attr_accessor :page_horizontal_alignment
+
+    # Specifies the margins around pages in an HTML document. The margins value is measured in points and should be equal to or greater than 0. Default value is 10 points.
+    attr_accessor :page_margins
 
     # Specifies the physical folder where resources are saved when exporting a document
     attr_accessor :resources_folder
@@ -102,12 +108,6 @@ module WordsRubySdk
 
     # Specifies whether border around pages should be shown.
     attr_accessor :show_page_border
-
-    # Specifies the horizontal alignment of pages in an HTML document. Default value is HtmlFixedHorizontalPageAlignment.Center.
-    attr_accessor :page_horizontal_alignment
-
-    # Specifies the margins around pages in an HTML document. The margins value is measured in points and should be equal to or greater than 0. Default value is 10 points.
-    attr_accessor :page_margins
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -128,17 +128,17 @@ module WordsRubySdk
         :'page_count' => :'PageCount',
         :'page_index' => :'PageIndex',
         :'css_class_names_prefix' => :'CssClassNamesPrefix',
+        :'encoding' => :'Encoding',
         :'export_embedded_css' => :'ExportEmbeddedCss',
         :'export_embedded_fonts' => :'ExportEmbeddedFonts',
         :'export_embedded_images' => :'ExportEmbeddedImages',
         :'export_form_fields' => :'ExportFormFields',
-        :'encoding' => :'Encoding',
         :'font_format' => :'FontFormat',
+        :'page_horizontal_alignment' => :'PageHorizontalAlignment',
+        :'page_margins' => :'PageMargins',
         :'resources_folder' => :'ResourcesFolder',
         :'resources_folder_alias' => :'ResourcesFolderAlias',
-        :'show_page_border' => :'ShowPageBorder',
-        :'page_horizontal_alignment' => :'PageHorizontalAlignment',
-        :'page_margins' => :'PageMargins'
+        :'show_page_border' => :'ShowPageBorder'
       }
     end
 
@@ -160,17 +160,17 @@ module WordsRubySdk
         :'page_count' => :'Integer',
         :'page_index' => :'Integer',
         :'css_class_names_prefix' => :'String',
+        :'encoding' => :'String',
         :'export_embedded_css' => :'BOOLEAN',
         :'export_embedded_fonts' => :'BOOLEAN',
         :'export_embedded_images' => :'BOOLEAN',
         :'export_form_fields' => :'BOOLEAN',
-        :'encoding' => :'String',
         :'font_format' => :'String',
+        :'page_horizontal_alignment' => :'String',
+        :'page_margins' => :'Float',
         :'resources_folder' => :'String',
         :'resources_folder_alias' => :'String',
-        :'show_page_border' => :'BOOLEAN',
-        :'page_horizontal_alignment' => :'String',
-        :'page_margins' => :'Float'
+        :'show_page_border' => :'BOOLEAN'
       }
     end
 
@@ -242,6 +242,10 @@ module WordsRubySdk
         self.css_class_names_prefix = attributes[:'CssClassNamesPrefix']
       end
 
+      if attributes.has_key?(:'Encoding')
+        self.encoding = attributes[:'Encoding']
+      end
+
       if attributes.has_key?(:'ExportEmbeddedCss')
         self.export_embedded_css = attributes[:'ExportEmbeddedCss']
       end
@@ -258,12 +262,16 @@ module WordsRubySdk
         self.export_form_fields = attributes[:'ExportFormFields']
       end
 
-      if attributes.has_key?(:'Encoding')
-        self.encoding = attributes[:'Encoding']
-      end
-
       if attributes.has_key?(:'FontFormat')
         self.font_format = attributes[:'FontFormat']
+      end
+
+      if attributes.has_key?(:'PageHorizontalAlignment')
+        self.page_horizontal_alignment = attributes[:'PageHorizontalAlignment']
+      end
+
+      if attributes.has_key?(:'PageMargins')
+        self.page_margins = attributes[:'PageMargins']
       end
 
       if attributes.has_key?(:'ResourcesFolder')
@@ -276,14 +284,6 @@ module WordsRubySdk
 
       if attributes.has_key?(:'ShowPageBorder')
         self.show_page_border = attributes[:'ShowPageBorder']
-      end
-
-      if attributes.has_key?(:'PageHorizontalAlignment')
-        self.page_horizontal_alignment = attributes[:'PageHorizontalAlignment']
-      end
-
-      if attributes.has_key?(:'PageMargins')
-        self.page_margins = attributes[:'PageMargins']
       end
 
     end
@@ -321,17 +321,17 @@ module WordsRubySdk
           page_count == o.page_count &&
           page_index == o.page_index &&
           css_class_names_prefix == o.css_class_names_prefix &&
+          encoding == o.encoding &&
           export_embedded_css == o.export_embedded_css &&
           export_embedded_fonts == o.export_embedded_fonts &&
           export_embedded_images == o.export_embedded_images &&
           export_form_fields == o.export_form_fields &&
-          encoding == o.encoding &&
           font_format == o.font_format &&
+          page_horizontal_alignment == o.page_horizontal_alignment &&
+          page_margins == o.page_margins &&
           resources_folder == o.resources_folder &&
           resources_folder_alias == o.resources_folder_alias &&
-          show_page_border == o.show_page_border &&
-          page_horizontal_alignment == o.page_horizontal_alignment &&
-          page_margins == o.page_margins
+          show_page_border == o.show_page_border
     end
 
     # @see the `==` method
@@ -343,7 +343,7 @@ module WordsRubySdk
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [color_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_sdt_content, update_fields, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, css_class_names_prefix, export_embedded_css, export_embedded_fonts, export_embedded_images, export_form_fields, encoding, font_format, resources_folder, resources_folder_alias, show_page_border, page_horizontal_alignment, page_margins].hash
+      [color_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_sdt_content, update_fields, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, css_class_names_prefix, encoding, export_embedded_css, export_embedded_fonts, export_embedded_images, export_form_fields, font_format, page_horizontal_alignment, page_margins, resources_folder, resources_folder_alias, show_page_border].hash
     end
 
     # Builds the object from hash

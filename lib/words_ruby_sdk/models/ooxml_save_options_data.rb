@@ -55,14 +55,14 @@ module WordsRubySdk
     # Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is true
     attr_accessor :update_fields
 
-    # Specifies whether or not use pretty formats output
-    attr_accessor :pretty_format
-
     # Specifies the OOXML version for the output document
     attr_accessor :compliance
 
     # Specifies a password to encrypt document using ECMA376 Standard encryption algorithm
     attr_accessor :password
+
+    # Specifies whether or not use pretty formats output
+    attr_accessor :pretty_format
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -76,9 +76,9 @@ module WordsRubySdk
         :'zip_output' => :'ZipOutput',
         :'update_sdt_content' => :'UpdateSdtContent',
         :'update_fields' => :'UpdateFields',
-        :'pretty_format' => :'PrettyFormat',
         :'compliance' => :'Compliance',
-        :'password' => :'Password'
+        :'password' => :'Password',
+        :'pretty_format' => :'PrettyFormat'
       }
     end
 
@@ -93,9 +93,9 @@ module WordsRubySdk
         :'zip_output' => :'BOOLEAN',
         :'update_sdt_content' => :'BOOLEAN',
         :'update_fields' => :'BOOLEAN',
-        :'pretty_format' => :'BOOLEAN',
         :'compliance' => :'String',
-        :'password' => :'String'
+        :'password' => :'String',
+        :'pretty_format' => :'BOOLEAN'
       }
     end
 
@@ -139,16 +139,16 @@ module WordsRubySdk
         self.update_fields = attributes[:'UpdateFields']
       end
 
-      if attributes.has_key?(:'PrettyFormat')
-        self.pretty_format = attributes[:'PrettyFormat']
-      end
-
       if attributes.has_key?(:'Compliance')
         self.compliance = attributes[:'Compliance']
       end
 
       if attributes.has_key?(:'Password')
         self.password = attributes[:'Password']
+      end
+
+      if attributes.has_key?(:'PrettyFormat')
+        self.pretty_format = attributes[:'PrettyFormat']
       end
 
     end
@@ -179,9 +179,9 @@ module WordsRubySdk
           zip_output == o.zip_output &&
           update_sdt_content == o.update_sdt_content &&
           update_fields == o.update_fields &&
-          pretty_format == o.pretty_format &&
           compliance == o.compliance &&
-          password == o.password
+          password == o.password &&
+          pretty_format == o.pretty_format
     end
 
     # @see the `==` method
@@ -193,7 +193,7 @@ module WordsRubySdk
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [color_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_sdt_content, update_fields, pretty_format, compliance, password].hash
+      [color_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_sdt_content, update_fields, compliance, password, pretty_format].hash
     end
 
     # Builds the object from hash

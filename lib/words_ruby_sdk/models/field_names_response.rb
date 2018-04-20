@@ -29,7 +29,7 @@ module WordsRubySdk
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # This resonse should be returned by the service when handling:  GET /{name}/mailMergeFieldNames.
+  # This response should be returned by the service when handling:  GET /{name}/mailMergeFieldNames.
   class FieldNamesResponse
     # Response status code.
     attr_accessor :code

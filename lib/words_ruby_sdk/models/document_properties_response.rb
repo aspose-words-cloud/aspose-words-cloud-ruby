@@ -29,7 +29,7 @@ module WordsRubySdk
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # This resonse should be returned by the service when handling:  GET /documentProperties.
+  # This response should be returned by the service when handling:  GET /documentProperties.
   class DocumentPropertiesResponse
     # Response status code.
     attr_accessor :code

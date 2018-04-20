@@ -4,7 +4,7 @@ require 'date'
 module WordsRubySdk
  #
  # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose" file="Section.rb">
+ # <copyright company="Aspose" file="ClassificationResponse.rb">
  #   Copyright (c) 2017 Aspose.Words for Cloud
  # </copyright>
  # <summary>
@@ -29,48 +29,43 @@ module WordsRubySdk
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # Section element
-  class Section
-    # Link to the document.
-    attr_accessor :link
+  # This response should be returned by the service when handling: PUT http://api.aspose.com/v1.1/words/classify
+  class ClassificationResponse
+    # Response status code.
+    attr_accessor :code
 
-    # Child nodes.
-    attr_accessor :child_nodes
+    # Response status.
+    attr_accessor :status
 
-    # Link to HeaderFooters resource
-    attr_accessor :header_footers
+    # Best class name.        
+    attr_accessor :best_class_name
 
-    # Link to PageSetup resource
-    attr_accessor :page_setup
+    # Best class probability.
+    attr_accessor :best_class_probability
 
-    # Link to Paragraphs resource
-    attr_accessor :paragraphs
-
-    # Link to Tables resource
-    attr_accessor :tables
+    # Array of best classes results.
+    attr_accessor :best_results
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'link' => :'link',
-        :'child_nodes' => :'ChildNodes',
-        :'header_footers' => :'HeaderFooters',
-        :'page_setup' => :'PageSetup',
-        :'paragraphs' => :'Paragraphs',
-        :'tables' => :'Tables'
+        :'code' => :'Code',
+        :'status' => :'Status',
+        :'best_class_name' => :'BestClassName',
+        :'best_class_probability' => :'BestClassProbability',
+        :'best_results' => :'BestResults'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'link' => :'WordsApiLink',
-        :'child_nodes' => :'Array<NodeLink>',
-        :'header_footers' => :'LinkElement',
-        :'page_setup' => :'LinkElement',
-        :'paragraphs' => :'LinkElement',
-        :'tables' => :'LinkElement'
+        :'code' => :'Integer',
+        :'status' => :'String',
+        :'best_class_name' => :'String',
+        :'best_class_probability' => :'Float',
+        :'best_results' => :'Array<ClassificationResult>'
       }
     end
 
@@ -82,30 +77,26 @@ module WordsRubySdk
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'link')
-        self.link = attributes[:'link']
+      if attributes.has_key?(:'Code')
+        self.code = attributes[:'Code']
       end
 
-      if attributes.has_key?(:'ChildNodes')
-        if (value = attributes[:'ChildNodes']).is_a?(Array)
-          self.child_nodes = value
+      if attributes.has_key?(:'Status')
+        self.status = attributes[:'Status']
+      end
+
+      if attributes.has_key?(:'BestClassName')
+        self.best_class_name = attributes[:'BestClassName']
+      end
+
+      if attributes.has_key?(:'BestClassProbability')
+        self.best_class_probability = attributes[:'BestClassProbability']
+      end
+
+      if attributes.has_key?(:'BestResults')
+        if (value = attributes[:'BestResults']).is_a?(Array)
+          self.best_results = value
         end
-      end
-
-      if attributes.has_key?(:'HeaderFooters')
-        self.header_footers = attributes[:'HeaderFooters']
-      end
-
-      if attributes.has_key?(:'PageSetup')
-        self.page_setup = attributes[:'PageSetup']
-      end
-
-      if attributes.has_key?(:'Paragraphs')
-        self.paragraphs = attributes[:'Paragraphs']
-      end
-
-      if attributes.has_key?(:'Tables')
-        self.tables = attributes[:'Tables']
       end
 
     end
@@ -114,12 +105,17 @@ module WordsRubySdk
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @code.nil?
+        invalid_properties.push("invalid value for 'code', code cannot be nil.")
+      end
+
       return invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @code.nil?
       return true
     end
 
@@ -128,12 +124,11 @@ module WordsRubySdk
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          link == o.link &&
-          child_nodes == o.child_nodes &&
-          header_footers == o.header_footers &&
-          page_setup == o.page_setup &&
-          paragraphs == o.paragraphs &&
-          tables == o.tables
+          code == o.code &&
+          status == o.status &&
+          best_class_name == o.best_class_name &&
+          best_class_probability == o.best_class_probability &&
+          best_results == o.best_results
     end
 
     # @see the `==` method
@@ -145,7 +140,7 @@ module WordsRubySdk
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, child_nodes, header_footers, page_setup, paragraphs, tables].hash
+      [code, status, best_class_name, best_class_probability, best_results].hash
     end
 
     # Builds the object from hash

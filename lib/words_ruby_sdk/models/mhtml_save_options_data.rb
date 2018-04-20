@@ -55,9 +55,6 @@ module WordsRubySdk
     # Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is true
     attr_accessor :update_fields
 
-    # Specifies whether or not use pretty formats output
-    attr_accessor :pretty_format
-
     # Specifies whether negative left and right indents of paragraphs are allowed (not normalized)
     attr_accessor :allow_negative_indent
 
@@ -79,11 +76,14 @@ module WordsRubySdk
     # Specifies whether to export built-in and custom document properties
     attr_accessor :export_document_properties
 
-    # Specifies whether fonts resources should be embedded to HTML in Base64 encoding.  Default is false.
-    attr_accessor :export_fonts_as_base64
+    # Controls how drop-down form fields are saved to HTML. Default value is false.
+    attr_accessor :export_drop_down_form_field_as_text
 
     # Specifies whether font resources should be exported
     attr_accessor :export_font_resources
+
+    # Specifies whether fonts resources should be embedded to HTML in Base64 encoding.  Default is false.
+    attr_accessor :export_fonts_as_base64
 
     # Specifies how headers and footers are output
     attr_accessor :export_headers_footers_mode
@@ -97,7 +97,7 @@ module WordsRubySdk
     # Controls how list labels are output
     attr_accessor :export_list_labels
 
-    # Specifies whether to convert metafiles into raster images when exporting
+    # Specifies whether to convert metafiles into raster images when exporting.  Deprecated - use the MetafileFormat property instead
     attr_accessor :export_metafile_as_raster
 
     # Specifies whether original URL should be used as the URL of the linked images. Default value is false.
@@ -127,17 +127,20 @@ module WordsRubySdk
     # Specifies whether to write the DOCTYPE declaration when saving
     attr_accessor :export_xhtml_transitional
 
+    # Controls which font resources need subsetting when saving
+    attr_accessor :font_resources_subsetting_size_threshold
+
     # Specifies the physical folder where fonts are saved when exporting a document
     attr_accessor :fonts_folder
 
     # Specifies the name of the folder used to construct font URIs
     attr_accessor :fonts_folder_alias
 
-    # Controls which font resources need subsetting when saving
-    attr_accessor :font_resources_subsetting_size_threshold
-
     # Specifies version of HTML standard that should be used when saving the document to HTML or MHTML.   Default value is Aspose.Words.Saving.HtmlVersion.Xhtml.
     attr_accessor :html_version
+
+    # Specifies the output resolution for images when exporting
+    attr_accessor :image_resolution
 
     # Specifies the physical folder where images are saved when exporting a document
     attr_accessor :images_folder
@@ -145,11 +148,11 @@ module WordsRubySdk
     # Specifies the name of the folder used to construct image URIs
     attr_accessor :images_folder_alias
 
-    # Specifies the output resolution for images when exporting
-    attr_accessor :image_resolution
-
     # Controls how OfficeMath objects are exported to HTML, MHTML or EPUB.  Default value is HtmlOfficeMathOutputMode.Image.
     attr_accessor :office_math_output_mode
+
+    # Specifies whether or not use pretty formats output
+    attr_accessor :pretty_format
 
     # Specifies a physical folder where all resources like images, fonts, and external CSS are saved when a document is exported to HTML. Default is an empty string.
     attr_accessor :resource_folder
@@ -162,9 +165,6 @@ module WordsRubySdk
 
     # Controls how table, row and cell widths are exported
     attr_accessor :table_width_output_mode
-
-    # Controls how drop-down form fields are saved to HTML. Default value is false.
-    attr_accessor :export_drop_down_form_field_as_text
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -199,7 +199,6 @@ module WordsRubySdk
         :'zip_output' => :'ZipOutput',
         :'update_sdt_content' => :'UpdateSdtContent',
         :'update_fields' => :'UpdateFields',
-        :'pretty_format' => :'PrettyFormat',
         :'allow_negative_indent' => :'AllowNegativeIndent',
         :'css_style_sheet_file_name' => :'CssStyleSheetFileName',
         :'css_style_sheet_type' => :'CssStyleSheetType',
@@ -207,8 +206,9 @@ module WordsRubySdk
         :'document_split_heading_level' => :'DocumentSplitHeadingLevel',
         :'encoding' => :'Encoding',
         :'export_document_properties' => :'ExportDocumentProperties',
-        :'export_fonts_as_base64' => :'ExportFontsAsBase64',
+        :'export_drop_down_form_field_as_text' => :'ExportDropDownFormFieldAsText',
         :'export_font_resources' => :'ExportFontResources',
+        :'export_fonts_as_base64' => :'ExportFontsAsBase64',
         :'export_headers_footers_mode' => :'ExportHeadersFootersMode',
         :'export_images_as_base64' => :'ExportImagesAsBase64',
         :'export_language_information' => :'ExportLanguageInformation',
@@ -223,19 +223,19 @@ module WordsRubySdk
         :'export_text_input_form_field_as_text' => :'ExportTextInputFormFieldAsText',
         :'export_toc_page_numbers' => :'ExportTocPageNumbers',
         :'export_xhtml_transitional' => :'ExportXhtmlTransitional',
+        :'font_resources_subsetting_size_threshold' => :'FontResourcesSubsettingSizeThreshold',
         :'fonts_folder' => :'FontsFolder',
         :'fonts_folder_alias' => :'FontsFolderAlias',
-        :'font_resources_subsetting_size_threshold' => :'FontResourcesSubsettingSizeThreshold',
         :'html_version' => :'HtmlVersion',
+        :'image_resolution' => :'ImageResolution',
         :'images_folder' => :'ImagesFolder',
         :'images_folder_alias' => :'ImagesFolderAlias',
-        :'image_resolution' => :'ImageResolution',
         :'office_math_output_mode' => :'OfficeMathOutputMode',
+        :'pretty_format' => :'PrettyFormat',
         :'resource_folder' => :'ResourceFolder',
         :'resource_folder_alias' => :'ResourceFolderAlias',
         :'scale_image_to_shape_size' => :'ScaleImageToShapeSize',
-        :'table_width_output_mode' => :'TableWidthOutputMode',
-        :'export_drop_down_form_field_as_text' => :'ExportDropDownFormFieldAsText'
+        :'table_width_output_mode' => :'TableWidthOutputMode'
       }
     end
 
@@ -250,7 +250,6 @@ module WordsRubySdk
         :'zip_output' => :'BOOLEAN',
         :'update_sdt_content' => :'BOOLEAN',
         :'update_fields' => :'BOOLEAN',
-        :'pretty_format' => :'BOOLEAN',
         :'allow_negative_indent' => :'BOOLEAN',
         :'css_style_sheet_file_name' => :'String',
         :'css_style_sheet_type' => :'String',
@@ -258,8 +257,9 @@ module WordsRubySdk
         :'document_split_heading_level' => :'Integer',
         :'encoding' => :'String',
         :'export_document_properties' => :'BOOLEAN',
-        :'export_fonts_as_base64' => :'BOOLEAN',
+        :'export_drop_down_form_field_as_text' => :'BOOLEAN',
         :'export_font_resources' => :'BOOLEAN',
+        :'export_fonts_as_base64' => :'BOOLEAN',
         :'export_headers_footers_mode' => :'String',
         :'export_images_as_base64' => :'BOOLEAN',
         :'export_language_information' => :'BOOLEAN',
@@ -274,19 +274,19 @@ module WordsRubySdk
         :'export_text_input_form_field_as_text' => :'BOOLEAN',
         :'export_toc_page_numbers' => :'BOOLEAN',
         :'export_xhtml_transitional' => :'BOOLEAN',
+        :'font_resources_subsetting_size_threshold' => :'Integer',
         :'fonts_folder' => :'String',
         :'fonts_folder_alias' => :'String',
-        :'font_resources_subsetting_size_threshold' => :'Integer',
         :'html_version' => :'String',
+        :'image_resolution' => :'Integer',
         :'images_folder' => :'String',
         :'images_folder_alias' => :'String',
-        :'image_resolution' => :'Integer',
         :'office_math_output_mode' => :'String',
+        :'pretty_format' => :'BOOLEAN',
         :'resource_folder' => :'String',
         :'resource_folder_alias' => :'String',
         :'scale_image_to_shape_size' => :'BOOLEAN',
-        :'table_width_output_mode' => :'String',
-        :'export_drop_down_form_field_as_text' => :'BOOLEAN'
+        :'table_width_output_mode' => :'String'
       }
     end
 
@@ -330,10 +330,6 @@ module WordsRubySdk
         self.update_fields = attributes[:'UpdateFields']
       end
 
-      if attributes.has_key?(:'PrettyFormat')
-        self.pretty_format = attributes[:'PrettyFormat']
-      end
-
       if attributes.has_key?(:'AllowNegativeIndent')
         self.allow_negative_indent = attributes[:'AllowNegativeIndent']
       end
@@ -362,12 +358,16 @@ module WordsRubySdk
         self.export_document_properties = attributes[:'ExportDocumentProperties']
       end
 
-      if attributes.has_key?(:'ExportFontsAsBase64')
-        self.export_fonts_as_base64 = attributes[:'ExportFontsAsBase64']
+      if attributes.has_key?(:'ExportDropDownFormFieldAsText')
+        self.export_drop_down_form_field_as_text = attributes[:'ExportDropDownFormFieldAsText']
       end
 
       if attributes.has_key?(:'ExportFontResources')
         self.export_font_resources = attributes[:'ExportFontResources']
+      end
+
+      if attributes.has_key?(:'ExportFontsAsBase64')
+        self.export_fonts_as_base64 = attributes[:'ExportFontsAsBase64']
       end
 
       if attributes.has_key?(:'ExportHeadersFootersMode')
@@ -426,6 +426,10 @@ module WordsRubySdk
         self.export_xhtml_transitional = attributes[:'ExportXhtmlTransitional']
       end
 
+      if attributes.has_key?(:'FontResourcesSubsettingSizeThreshold')
+        self.font_resources_subsetting_size_threshold = attributes[:'FontResourcesSubsettingSizeThreshold']
+      end
+
       if attributes.has_key?(:'FontsFolder')
         self.fonts_folder = attributes[:'FontsFolder']
       end
@@ -434,12 +438,12 @@ module WordsRubySdk
         self.fonts_folder_alias = attributes[:'FontsFolderAlias']
       end
 
-      if attributes.has_key?(:'FontResourcesSubsettingSizeThreshold')
-        self.font_resources_subsetting_size_threshold = attributes[:'FontResourcesSubsettingSizeThreshold']
-      end
-
       if attributes.has_key?(:'HtmlVersion')
         self.html_version = attributes[:'HtmlVersion']
+      end
+
+      if attributes.has_key?(:'ImageResolution')
+        self.image_resolution = attributes[:'ImageResolution']
       end
 
       if attributes.has_key?(:'ImagesFolder')
@@ -450,12 +454,12 @@ module WordsRubySdk
         self.images_folder_alias = attributes[:'ImagesFolderAlias']
       end
 
-      if attributes.has_key?(:'ImageResolution')
-        self.image_resolution = attributes[:'ImageResolution']
-      end
-
       if attributes.has_key?(:'OfficeMathOutputMode')
         self.office_math_output_mode = attributes[:'OfficeMathOutputMode']
+      end
+
+      if attributes.has_key?(:'PrettyFormat')
+        self.pretty_format = attributes[:'PrettyFormat']
       end
 
       if attributes.has_key?(:'ResourceFolder')
@@ -472,10 +476,6 @@ module WordsRubySdk
 
       if attributes.has_key?(:'TableWidthOutputMode')
         self.table_width_output_mode = attributes[:'TableWidthOutputMode']
-      end
-
-      if attributes.has_key?(:'ExportDropDownFormFieldAsText')
-        self.export_drop_down_form_field_as_text = attributes[:'ExportDropDownFormFieldAsText']
       end
 
     end
@@ -538,7 +538,6 @@ module WordsRubySdk
           zip_output == o.zip_output &&
           update_sdt_content == o.update_sdt_content &&
           update_fields == o.update_fields &&
-          pretty_format == o.pretty_format &&
           allow_negative_indent == o.allow_negative_indent &&
           css_style_sheet_file_name == o.css_style_sheet_file_name &&
           css_style_sheet_type == o.css_style_sheet_type &&
@@ -546,8 +545,9 @@ module WordsRubySdk
           document_split_heading_level == o.document_split_heading_level &&
           encoding == o.encoding &&
           export_document_properties == o.export_document_properties &&
-          export_fonts_as_base64 == o.export_fonts_as_base64 &&
+          export_drop_down_form_field_as_text == o.export_drop_down_form_field_as_text &&
           export_font_resources == o.export_font_resources &&
+          export_fonts_as_base64 == o.export_fonts_as_base64 &&
           export_headers_footers_mode == o.export_headers_footers_mode &&
           export_images_as_base64 == o.export_images_as_base64 &&
           export_language_information == o.export_language_information &&
@@ -562,19 +562,19 @@ module WordsRubySdk
           export_text_input_form_field_as_text == o.export_text_input_form_field_as_text &&
           export_toc_page_numbers == o.export_toc_page_numbers &&
           export_xhtml_transitional == o.export_xhtml_transitional &&
+          font_resources_subsetting_size_threshold == o.font_resources_subsetting_size_threshold &&
           fonts_folder == o.fonts_folder &&
           fonts_folder_alias == o.fonts_folder_alias &&
-          font_resources_subsetting_size_threshold == o.font_resources_subsetting_size_threshold &&
           html_version == o.html_version &&
+          image_resolution == o.image_resolution &&
           images_folder == o.images_folder &&
           images_folder_alias == o.images_folder_alias &&
-          image_resolution == o.image_resolution &&
           office_math_output_mode == o.office_math_output_mode &&
+          pretty_format == o.pretty_format &&
           resource_folder == o.resource_folder &&
           resource_folder_alias == o.resource_folder_alias &&
           scale_image_to_shape_size == o.scale_image_to_shape_size &&
-          table_width_output_mode == o.table_width_output_mode &&
-          export_drop_down_form_field_as_text == o.export_drop_down_form_field_as_text
+          table_width_output_mode == o.table_width_output_mode
     end
 
     # @see the `==` method
@@ -586,7 +586,7 @@ module WordsRubySdk
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [color_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_sdt_content, update_fields, pretty_format, allow_negative_indent, css_style_sheet_file_name, css_style_sheet_type, document_split_criteria, document_split_heading_level, encoding, export_document_properties, export_fonts_as_base64, export_font_resources, export_headers_footers_mode, export_images_as_base64, export_language_information, export_list_labels, export_metafile_as_raster, export_original_url_for_linked_images, export_page_margins, export_page_setup, export_relative_font_size, export_roundtrip_information, export_text_box_as_svg, export_text_input_form_field_as_text, export_toc_page_numbers, export_xhtml_transitional, fonts_folder, fonts_folder_alias, font_resources_subsetting_size_threshold, html_version, images_folder, images_folder_alias, image_resolution, office_math_output_mode, resource_folder, resource_folder_alias, scale_image_to_shape_size, table_width_output_mode, export_drop_down_form_field_as_text].hash
+      [color_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_sdt_content, update_fields, allow_negative_indent, css_style_sheet_file_name, css_style_sheet_type, document_split_criteria, document_split_heading_level, encoding, export_document_properties, export_drop_down_form_field_as_text, export_font_resources, export_fonts_as_base64, export_headers_footers_mode, export_images_as_base64, export_language_information, export_list_labels, export_metafile_as_raster, export_original_url_for_linked_images, export_page_margins, export_page_setup, export_relative_font_size, export_roundtrip_information, export_text_box_as_svg, export_text_input_form_field_as_text, export_toc_page_numbers, export_xhtml_transitional, font_resources_subsetting_size_threshold, fonts_folder, fonts_folder_alias, html_version, image_resolution, images_folder, images_folder_alias, office_math_output_mode, pretty_format, resource_folder, resource_folder_alias, scale_image_to_shape_size, table_width_output_mode].hash
     end
 
     # Builds the object from hash

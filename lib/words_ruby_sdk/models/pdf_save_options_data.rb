@@ -73,14 +73,14 @@ module WordsRubySdk
     # Determines 0-based index of the first page to render
     attr_accessor :page_index
 
-    # Specifies the level in the PDF document outline at which to display Word bookmarks
-    attr_accessor :bookmarks_outline_level
+    # Specifies the PDF standards compliance level for output documents
+    attr_accessor :compliance
 
     # Specifies whether to convert footnote/endnote references in main text story into active hyperlinks. When clicked the hyperlink will lead to the corresponding footnote/endnote. Default is false.
     attr_accessor :create_note_hyperlinks
 
-    # Specifies the PDF standards compliance level for output documents
-    attr_accessor :compliance
+    # Gets or sets a value determining the way  are exported to PDF file. Default value is .
+    attr_accessor :custom_properties_export
 
     # Specifies the details for signing the output PDF document
     attr_accessor :digital_signature_details
@@ -88,29 +88,14 @@ module WordsRubySdk
     # A flag specifying whether the window’s title bar should display the document title taken from the Title entry of the document information dictionary.
     attr_accessor :display_doc_title
 
-    # Specifies whether or not the images should be downsampled
-    attr_accessor :downsample_images
-
-    # Specifies the resolution in pixels per inch to which the images should be downsampled
-    attr_accessor :downsample_resolution
-
     # Allows to specify downsample options.
     attr_accessor :downsample_options
 
     # Controls how fonts are embedded into the resulting PDF documents
     attr_accessor :embed_full_fonts
 
-    # Determines whether or not to embed standard windows fonts Arial and Times New Roman
-    attr_accessor :embed_standard_windows_fonts
-
     # Specifies the details for encrypting the output PDF document
     attr_accessor :encryption_details
-
-    # Specifies how many levels in the PDF document outline to show expanded when the PDF file is viewed
-    attr_accessor :expanded_outline_levels
-
-    # Determines whether or not to export custom properties of document as Metadata
-    attr_accessor :export_custom_properties_as_metadata
 
     # Determines whether or not to export document structure
     attr_accessor :export_document_structure
@@ -118,8 +103,8 @@ module WordsRubySdk
     # Specifies the font embedding mode
     attr_accessor :font_embedding_mode
 
-    # Specifies how many levels of headings (paragraphs formatted with the Heading styles) to include in the PDF document outline
-    attr_accessor :headings_outline_levels
+    # Specifies how the color space will be selected for the images in PDF document.
+    attr_accessor :image_color_space_export_mode
 
     # Specifies compression type to be used for all images in the document
     attr_accessor :image_compression
@@ -133,8 +118,8 @@ module WordsRubySdk
     # Specifies how the PDF document should be displayed when opened in the PDF reader
     attr_accessor :page_mode
 
-    # Specifies how the color space will be selected for the images in PDF document.
-    attr_accessor :image_color_space_export_mode
+    # Gets or sets a value determining whether or not to preblend transparent images with black background color.
+    attr_accessor :preblend_images
 
     # Specifies whether to preserve Microsoft Word form fields as form fields in PDF or convert them to text
     attr_accessor :preserve_form_fields
@@ -142,23 +127,17 @@ module WordsRubySdk
     # Specifies compression type to be used for all textual content in the document
     attr_accessor :text_compression
 
-    # Determines whether or not to substitute TrueType fonts Arial, Times New Roman, Courier New and Symbol with core PDF Type 1 fonts
-    attr_accessor :use_core_fonts
-
     # Determines whether the document should be saved using a booklet printing layout
     attr_accessor :use_book_fold_printing_settings
+
+    # Determines whether or not to substitute TrueType fonts Arial, Times New Roman, Courier New and Symbol with core PDF Type 1 fonts
+    attr_accessor :use_core_fonts
 
     # Determines what type of zoom should be applied when a document is opened with a PDF viewer
     attr_accessor :zoom_behavior
 
     # Determines zoom factor (in percentages) for a document
     attr_accessor :zoom_factor
-
-    # Gets or sets a value determining the way  are exported to PDF file. Default value is .
-    attr_accessor :custom_properties_export
-
-    # Gets or sets a value determining whether or not to preblend transparent images with black background color.
-    attr_accessor :preblend_images
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -178,35 +157,28 @@ module WordsRubySdk
         :'optimize_output' => :'OptimizeOutput',
         :'page_count' => :'PageCount',
         :'page_index' => :'PageIndex',
-        :'bookmarks_outline_level' => :'BookmarksOutlineLevel',
-        :'create_note_hyperlinks' => :'CreateNoteHyperlinks',
         :'compliance' => :'Compliance',
+        :'create_note_hyperlinks' => :'CreateNoteHyperlinks',
+        :'custom_properties_export' => :'CustomPropertiesExport',
         :'digital_signature_details' => :'DigitalSignatureDetails',
         :'display_doc_title' => :'DisplayDocTitle',
-        :'downsample_images' => :'DownsampleImages',
-        :'downsample_resolution' => :'DownsampleResolution',
         :'downsample_options' => :'DownsampleOptions',
         :'embed_full_fonts' => :'EmbedFullFonts',
-        :'embed_standard_windows_fonts' => :'EmbedStandardWindowsFonts',
         :'encryption_details' => :'EncryptionDetails',
-        :'expanded_outline_levels' => :'ExpandedOutlineLevels',
-        :'export_custom_properties_as_metadata' => :'ExportCustomPropertiesAsMetadata',
         :'export_document_structure' => :'ExportDocumentStructure',
         :'font_embedding_mode' => :'FontEmbeddingMode',
-        :'headings_outline_levels' => :'HeadingsOutlineLevels',
+        :'image_color_space_export_mode' => :'ImageColorSpaceExportMode',
         :'image_compression' => :'ImageCompression',
         :'open_hyperlinks_in_new_window' => :'OpenHyperlinksInNewWindow',
         :'outline_options' => :'OutlineOptions',
         :'page_mode' => :'PageMode',
-        :'image_color_space_export_mode' => :'ImageColorSpaceExportMode',
+        :'preblend_images' => :'PreblendImages',
         :'preserve_form_fields' => :'PreserveFormFields',
         :'text_compression' => :'TextCompression',
-        :'use_core_fonts' => :'UseCoreFonts',
         :'use_book_fold_printing_settings' => :'UseBookFoldPrintingSettings',
+        :'use_core_fonts' => :'UseCoreFonts',
         :'zoom_behavior' => :'ZoomBehavior',
-        :'zoom_factor' => :'ZoomFactor',
-        :'custom_properties_export' => :'CustomPropertiesExport',
-        :'preblend_images' => :'PreblendImages'
+        :'zoom_factor' => :'ZoomFactor'
       }
     end
 
@@ -227,35 +199,28 @@ module WordsRubySdk
         :'optimize_output' => :'BOOLEAN',
         :'page_count' => :'Integer',
         :'page_index' => :'Integer',
-        :'bookmarks_outline_level' => :'Integer',
-        :'create_note_hyperlinks' => :'BOOLEAN',
         :'compliance' => :'String',
+        :'create_note_hyperlinks' => :'BOOLEAN',
+        :'custom_properties_export' => :'String',
         :'digital_signature_details' => :'PdfDigitalSignatureDetailsData',
         :'display_doc_title' => :'BOOLEAN',
-        :'downsample_images' => :'BOOLEAN',
-        :'downsample_resolution' => :'Integer',
         :'downsample_options' => :'DownsampleOptionsData',
         :'embed_full_fonts' => :'BOOLEAN',
-        :'embed_standard_windows_fonts' => :'BOOLEAN',
         :'encryption_details' => :'PdfEncryptionDetailsData',
-        :'expanded_outline_levels' => :'Integer',
-        :'export_custom_properties_as_metadata' => :'BOOLEAN',
         :'export_document_structure' => :'BOOLEAN',
         :'font_embedding_mode' => :'String',
-        :'headings_outline_levels' => :'Integer',
+        :'image_color_space_export_mode' => :'String',
         :'image_compression' => :'String',
         :'open_hyperlinks_in_new_window' => :'BOOLEAN',
         :'outline_options' => :'OutlineOptionsData',
         :'page_mode' => :'String',
-        :'image_color_space_export_mode' => :'String',
+        :'preblend_images' => :'BOOLEAN',
         :'preserve_form_fields' => :'BOOLEAN',
         :'text_compression' => :'String',
-        :'use_core_fonts' => :'BOOLEAN',
         :'use_book_fold_printing_settings' => :'BOOLEAN',
+        :'use_core_fonts' => :'BOOLEAN',
         :'zoom_behavior' => :'String',
-        :'zoom_factor' => :'Integer',
-        :'custom_properties_export' => :'String',
-        :'preblend_images' => :'BOOLEAN'
+        :'zoom_factor' => :'Integer'
       }
     end
 
@@ -323,16 +288,16 @@ module WordsRubySdk
         self.page_index = attributes[:'PageIndex']
       end
 
-      if attributes.has_key?(:'BookmarksOutlineLevel')
-        self.bookmarks_outline_level = attributes[:'BookmarksOutlineLevel']
+      if attributes.has_key?(:'Compliance')
+        self.compliance = attributes[:'Compliance']
       end
 
       if attributes.has_key?(:'CreateNoteHyperlinks')
         self.create_note_hyperlinks = attributes[:'CreateNoteHyperlinks']
       end
 
-      if attributes.has_key?(:'Compliance')
-        self.compliance = attributes[:'Compliance']
+      if attributes.has_key?(:'CustomPropertiesExport')
+        self.custom_properties_export = attributes[:'CustomPropertiesExport']
       end
 
       if attributes.has_key?(:'DigitalSignatureDetails')
@@ -343,14 +308,6 @@ module WordsRubySdk
         self.display_doc_title = attributes[:'DisplayDocTitle']
       end
 
-      if attributes.has_key?(:'DownsampleImages')
-        self.downsample_images = attributes[:'DownsampleImages']
-      end
-
-      if attributes.has_key?(:'DownsampleResolution')
-        self.downsample_resolution = attributes[:'DownsampleResolution']
-      end
-
       if attributes.has_key?(:'DownsampleOptions')
         self.downsample_options = attributes[:'DownsampleOptions']
       end
@@ -359,20 +316,8 @@ module WordsRubySdk
         self.embed_full_fonts = attributes[:'EmbedFullFonts']
       end
 
-      if attributes.has_key?(:'EmbedStandardWindowsFonts')
-        self.embed_standard_windows_fonts = attributes[:'EmbedStandardWindowsFonts']
-      end
-
       if attributes.has_key?(:'EncryptionDetails')
         self.encryption_details = attributes[:'EncryptionDetails']
-      end
-
-      if attributes.has_key?(:'ExpandedOutlineLevels')
-        self.expanded_outline_levels = attributes[:'ExpandedOutlineLevels']
-      end
-
-      if attributes.has_key?(:'ExportCustomPropertiesAsMetadata')
-        self.export_custom_properties_as_metadata = attributes[:'ExportCustomPropertiesAsMetadata']
       end
 
       if attributes.has_key?(:'ExportDocumentStructure')
@@ -383,8 +328,8 @@ module WordsRubySdk
         self.font_embedding_mode = attributes[:'FontEmbeddingMode']
       end
 
-      if attributes.has_key?(:'HeadingsOutlineLevels')
-        self.headings_outline_levels = attributes[:'HeadingsOutlineLevels']
+      if attributes.has_key?(:'ImageColorSpaceExportMode')
+        self.image_color_space_export_mode = attributes[:'ImageColorSpaceExportMode']
       end
 
       if attributes.has_key?(:'ImageCompression')
@@ -403,8 +348,8 @@ module WordsRubySdk
         self.page_mode = attributes[:'PageMode']
       end
 
-      if attributes.has_key?(:'ImageColorSpaceExportMode')
-        self.image_color_space_export_mode = attributes[:'ImageColorSpaceExportMode']
+      if attributes.has_key?(:'PreblendImages')
+        self.preblend_images = attributes[:'PreblendImages']
       end
 
       if attributes.has_key?(:'PreserveFormFields')
@@ -415,12 +360,12 @@ module WordsRubySdk
         self.text_compression = attributes[:'TextCompression']
       end
 
-      if attributes.has_key?(:'UseCoreFonts')
-        self.use_core_fonts = attributes[:'UseCoreFonts']
-      end
-
       if attributes.has_key?(:'UseBookFoldPrintingSettings')
         self.use_book_fold_printing_settings = attributes[:'UseBookFoldPrintingSettings']
+      end
+
+      if attributes.has_key?(:'UseCoreFonts')
+        self.use_core_fonts = attributes[:'UseCoreFonts']
       end
 
       if attributes.has_key?(:'ZoomBehavior')
@@ -429,14 +374,6 @@ module WordsRubySdk
 
       if attributes.has_key?(:'ZoomFactor')
         self.zoom_factor = attributes[:'ZoomFactor']
-      end
-
-      if attributes.has_key?(:'CustomPropertiesExport')
-        self.custom_properties_export = attributes[:'CustomPropertiesExport']
-      end
-
-      if attributes.has_key?(:'PreblendImages')
-        self.preblend_images = attributes[:'PreblendImages']
       end
 
     end
@@ -473,35 +410,28 @@ module WordsRubySdk
           optimize_output == o.optimize_output &&
           page_count == o.page_count &&
           page_index == o.page_index &&
-          bookmarks_outline_level == o.bookmarks_outline_level &&
-          create_note_hyperlinks == o.create_note_hyperlinks &&
           compliance == o.compliance &&
+          create_note_hyperlinks == o.create_note_hyperlinks &&
+          custom_properties_export == o.custom_properties_export &&
           digital_signature_details == o.digital_signature_details &&
           display_doc_title == o.display_doc_title &&
-          downsample_images == o.downsample_images &&
-          downsample_resolution == o.downsample_resolution &&
           downsample_options == o.downsample_options &&
           embed_full_fonts == o.embed_full_fonts &&
-          embed_standard_windows_fonts == o.embed_standard_windows_fonts &&
           encryption_details == o.encryption_details &&
-          expanded_outline_levels == o.expanded_outline_levels &&
-          export_custom_properties_as_metadata == o.export_custom_properties_as_metadata &&
           export_document_structure == o.export_document_structure &&
           font_embedding_mode == o.font_embedding_mode &&
-          headings_outline_levels == o.headings_outline_levels &&
+          image_color_space_export_mode == o.image_color_space_export_mode &&
           image_compression == o.image_compression &&
           open_hyperlinks_in_new_window == o.open_hyperlinks_in_new_window &&
           outline_options == o.outline_options &&
           page_mode == o.page_mode &&
-          image_color_space_export_mode == o.image_color_space_export_mode &&
+          preblend_images == o.preblend_images &&
           preserve_form_fields == o.preserve_form_fields &&
           text_compression == o.text_compression &&
-          use_core_fonts == o.use_core_fonts &&
           use_book_fold_printing_settings == o.use_book_fold_printing_settings &&
+          use_core_fonts == o.use_core_fonts &&
           zoom_behavior == o.zoom_behavior &&
-          zoom_factor == o.zoom_factor &&
-          custom_properties_export == o.custom_properties_export &&
-          preblend_images == o.preblend_images
+          zoom_factor == o.zoom_factor
     end
 
     # @see the `==` method
@@ -513,7 +443,7 @@ module WordsRubySdk
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [color_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_sdt_content, update_fields, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, bookmarks_outline_level, create_note_hyperlinks, compliance, digital_signature_details, display_doc_title, downsample_images, downsample_resolution, downsample_options, embed_full_fonts, embed_standard_windows_fonts, encryption_details, expanded_outline_levels, export_custom_properties_as_metadata, export_document_structure, font_embedding_mode, headings_outline_levels, image_compression, open_hyperlinks_in_new_window, outline_options, page_mode, image_color_space_export_mode, preserve_form_fields, text_compression, use_core_fonts, use_book_fold_printing_settings, zoom_behavior, zoom_factor, custom_properties_export, preblend_images].hash
+      [color_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_sdt_content, update_fields, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, compliance, create_note_hyperlinks, custom_properties_export, digital_signature_details, display_doc_title, downsample_options, embed_full_fonts, encryption_details, export_document_structure, font_embedding_mode, image_color_space_export_mode, image_compression, open_hyperlinks_in_new_window, outline_options, page_mode, preblend_images, preserve_form_fields, text_compression, use_book_fold_printing_settings, use_core_fonts, zoom_behavior, zoom_factor].hash
     end
 
     # Builds the object from hash

@@ -29,7 +29,7 @@ module WordsRubySdk
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # This resonse should be returned by the service when handling:  GET bookmarks.
+  # This response should be returned by the service when handling:  GET bookmarks.
   class BookmarksResponse
     # Response status code.
     attr_accessor :code

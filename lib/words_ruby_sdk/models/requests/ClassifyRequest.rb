@@ -1,7 +1,7 @@
 
  #
  # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose" file="PutExecuteMailMergeOnlineRequest.rb">
+ # <copyright company="Aspose" file="ClassifyRequest.rb">
  #   Copyright (c) 2018 Aspose.Words for Cloud
  # </copyright>
  # <summary>
@@ -29,38 +29,18 @@
 module WordsRubySdk
 
  #
- # Request model for put_execute_mail_merge_online operation.
+ # Request model for classify operation.
  #
-class PutExecuteMailMergeOnlineRequest
+class ClassifyRequest
 
-     # File with template
-		attr_accessor :template
-		
-     # File with mailmerge data
-		attr_accessor :data
-		
-     # With regions flag.
-		attr_accessor :with_regions
-		
-     # Clean up options.
-		attr_accessor :cleanup
-		
-     # This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, \"template\" will be used instead. 
-		attr_accessor :document_file_name
+     # Classification request parameters.
+		attr_accessor :request
 	
      #
      # Initializes a new instance.
-     # @param template File with template
-     # @param data File with mailmerge data
-     # @param with_regions With regions flag.
-     # @param cleanup Clean up options.
-     # @param document_file_name This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, \"template\" will be used instead. 
-		def initialize(template, data, with_regions=nil, cleanup=nil, document_file_name=nil)
-			self.template=template
-			self.data=data
-			self.with_regions=with_regions
-			self.cleanup=cleanup
-			self.document_file_name=document_file_name
+     # @param request Classification request parameters.
+		def initialize(request)
+			self.request=request
 		end
 	
 	end

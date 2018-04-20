@@ -37,32 +37,32 @@ module WordsRubySdk
     # Node id
     attr_accessor :node_id
 
-    # A list of links that originate from this .
-    attr_accessor :render_links
-
-    # Width of the drawing objects in points.
-    attr_accessor :width
-
     # Height of the drawing object in points.
     attr_accessor :height
-
-    # Link to ole object. Can be null if shape does not have ole data.
-    attr_accessor :ole_data_link
 
     # Link to image data. Can be null if shape does not have an image.
     attr_accessor :image_data_link
 
-    # Specifies where the distance to the image is measured from.             
-    attr_accessor :relative_horizontal_position
-
     # Distance in points from the origin to the left side of the image.             
     attr_accessor :left
+
+    # Link to ole object. Can be null if shape does not have ole data.
+    attr_accessor :ole_data_link
+
+    # Specifies where the distance to the image is measured from.             
+    attr_accessor :relative_horizontal_position
 
     # Specifies where the distance to the image measured from.
     attr_accessor :relative_vertical_position
 
+    # A list of links that originate from this .
+    attr_accessor :render_links
+
     # Distance in points from the origin to the top side of the image.
     attr_accessor :top
+
+    # Width of the drawing objects in points.
+    attr_accessor :width
 
     # Specifies how to wrap text around the image.
     attr_accessor :wrap_type
@@ -94,15 +94,15 @@ module WordsRubySdk
       {
         :'link' => :'link',
         :'node_id' => :'NodeId',
-        :'render_links' => :'RenderLinks',
-        :'width' => :'Width',
         :'height' => :'Height',
-        :'ole_data_link' => :'OleDataLink',
         :'image_data_link' => :'ImageDataLink',
-        :'relative_horizontal_position' => :'RelativeHorizontalPosition',
         :'left' => :'Left',
+        :'ole_data_link' => :'OleDataLink',
+        :'relative_horizontal_position' => :'RelativeHorizontalPosition',
         :'relative_vertical_position' => :'RelativeVerticalPosition',
+        :'render_links' => :'RenderLinks',
         :'top' => :'Top',
+        :'width' => :'Width',
         :'wrap_type' => :'WrapType'
       }
     end
@@ -112,15 +112,15 @@ module WordsRubySdk
       {
         :'link' => :'WordsApiLink',
         :'node_id' => :'String',
-        :'render_links' => :'Array<WordsApiLink>',
-        :'width' => :'Float',
         :'height' => :'Float',
-        :'ole_data_link' => :'WordsApiLink',
         :'image_data_link' => :'WordsApiLink',
-        :'relative_horizontal_position' => :'String',
         :'left' => :'Float',
+        :'ole_data_link' => :'WordsApiLink',
+        :'relative_horizontal_position' => :'String',
         :'relative_vertical_position' => :'String',
+        :'render_links' => :'Array<WordsApiLink>',
         :'top' => :'Float',
+        :'width' => :'Float',
         :'wrap_type' => :'String'
       }
     end
@@ -141,42 +141,42 @@ module WordsRubySdk
         self.node_id = attributes[:'NodeId']
       end
 
-      if attributes.has_key?(:'RenderLinks')
-        if (value = attributes[:'RenderLinks']).is_a?(Array)
-          self.render_links = value
-        end
-      end
-
-      if attributes.has_key?(:'Width')
-        self.width = attributes[:'Width']
-      end
-
       if attributes.has_key?(:'Height')
         self.height = attributes[:'Height']
-      end
-
-      if attributes.has_key?(:'OleDataLink')
-        self.ole_data_link = attributes[:'OleDataLink']
       end
 
       if attributes.has_key?(:'ImageDataLink')
         self.image_data_link = attributes[:'ImageDataLink']
       end
 
-      if attributes.has_key?(:'RelativeHorizontalPosition')
-        self.relative_horizontal_position = attributes[:'RelativeHorizontalPosition']
-      end
-
       if attributes.has_key?(:'Left')
         self.left = attributes[:'Left']
+      end
+
+      if attributes.has_key?(:'OleDataLink')
+        self.ole_data_link = attributes[:'OleDataLink']
+      end
+
+      if attributes.has_key?(:'RelativeHorizontalPosition')
+        self.relative_horizontal_position = attributes[:'RelativeHorizontalPosition']
       end
 
       if attributes.has_key?(:'RelativeVerticalPosition')
         self.relative_vertical_position = attributes[:'RelativeVerticalPosition']
       end
 
+      if attributes.has_key?(:'RenderLinks')
+        if (value = attributes[:'RenderLinks']).is_a?(Array)
+          self.render_links = value
+        end
+      end
+
       if attributes.has_key?(:'Top')
         self.top = attributes[:'Top']
+      end
+
+      if attributes.has_key?(:'Width')
+        self.width = attributes[:'Width']
       end
 
       if attributes.has_key?(:'WrapType')
@@ -253,15 +253,15 @@ module WordsRubySdk
       self.class == o.class &&
           link == o.link &&
           node_id == o.node_id &&
-          render_links == o.render_links &&
-          width == o.width &&
           height == o.height &&
-          ole_data_link == o.ole_data_link &&
           image_data_link == o.image_data_link &&
-          relative_horizontal_position == o.relative_horizontal_position &&
           left == o.left &&
+          ole_data_link == o.ole_data_link &&
+          relative_horizontal_position == o.relative_horizontal_position &&
           relative_vertical_position == o.relative_vertical_position &&
+          render_links == o.render_links &&
           top == o.top &&
+          width == o.width &&
           wrap_type == o.wrap_type
     end
 
@@ -274,7 +274,7 @@ module WordsRubySdk
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, node_id, render_links, width, height, ole_data_link, image_data_link, relative_horizontal_position, left, relative_vertical_position, top, wrap_type].hash
+      [link, node_id, height, image_data_link, left, ole_data_link, relative_horizontal_position, relative_vertical_position, render_links, top, width, wrap_type].hash
     end
 
     # Builds the object from hash

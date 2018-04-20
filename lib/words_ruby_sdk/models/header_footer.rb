@@ -37,11 +37,11 @@ module WordsRubySdk
     # Paragraph's text
     attr_accessor :type
 
-    # Link to Paragraphs resource
-    attr_accessor :paragraphs
-
     # Link to DrawingObjects resource
     attr_accessor :drawing_objects
+
+    # Link to Paragraphs resource
+    attr_accessor :paragraphs
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -70,8 +70,8 @@ module WordsRubySdk
       {
         :'link' => :'link',
         :'type' => :'Type',
-        :'paragraphs' => :'Paragraphs',
-        :'drawing_objects' => :'DrawingObjects'
+        :'drawing_objects' => :'DrawingObjects',
+        :'paragraphs' => :'Paragraphs'
       }
     end
 
@@ -80,8 +80,8 @@ module WordsRubySdk
       {
         :'link' => :'WordsApiLink',
         :'type' => :'String',
-        :'paragraphs' => :'LinkElement',
-        :'drawing_objects' => :'LinkElement'
+        :'drawing_objects' => :'LinkElement',
+        :'paragraphs' => :'LinkElement'
       }
     end
 
@@ -101,12 +101,12 @@ module WordsRubySdk
         self.type = attributes[:'Type']
       end
 
-      if attributes.has_key?(:'Paragraphs')
-        self.paragraphs = attributes[:'Paragraphs']
-      end
-
       if attributes.has_key?(:'DrawingObjects')
         self.drawing_objects = attributes[:'DrawingObjects']
+      end
+
+      if attributes.has_key?(:'Paragraphs')
+        self.paragraphs = attributes[:'Paragraphs']
       end
 
     end
@@ -147,8 +147,8 @@ module WordsRubySdk
       self.class == o.class &&
           link == o.link &&
           type == o.type &&
-          paragraphs == o.paragraphs &&
-          drawing_objects == o.drawing_objects
+          drawing_objects == o.drawing_objects &&
+          paragraphs == o.paragraphs
     end
 
     # @see the `==` method
@@ -160,7 +160,7 @@ module WordsRubySdk
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, type, paragraphs, drawing_objects].hash
+      [link, type, drawing_objects, paragraphs].hash
     end
 
     # Builds the object from hash

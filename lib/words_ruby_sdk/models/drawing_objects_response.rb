@@ -29,7 +29,7 @@ module WordsRubySdk
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # This resonse should be returned by the service when handling:  GET /drawingObjects.
+  # This response should be returned by the service when handling:  GET /drawingObjects.
   class DrawingObjectsResponse
     # Response status code.
     attr_accessor :code

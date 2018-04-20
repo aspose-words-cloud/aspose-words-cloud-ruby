@@ -37,11 +37,11 @@ module WordsRubySdk
     # Response status.
     attr_accessor :status
 
-    # Number of occurrences of the captured text in the document.
-    attr_accessor :matches
-
     # Link to the document.
     attr_accessor :document_link
+
+    # Number of occurrences of the captured text in the document.
+    attr_accessor :matches
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -49,8 +49,8 @@ module WordsRubySdk
       {
         :'code' => :'Code',
         :'status' => :'Status',
-        :'matches' => :'Matches',
-        :'document_link' => :'DocumentLink'
+        :'document_link' => :'DocumentLink',
+        :'matches' => :'Matches'
       }
     end
 
@@ -59,8 +59,8 @@ module WordsRubySdk
       {
         :'code' => :'Integer',
         :'status' => :'String',
-        :'matches' => :'Integer',
-        :'document_link' => :'FileLink'
+        :'document_link' => :'FileLink',
+        :'matches' => :'Integer'
       }
     end
 
@@ -80,12 +80,12 @@ module WordsRubySdk
         self.status = attributes[:'Status']
       end
 
-      if attributes.has_key?(:'Matches')
-        self.matches = attributes[:'Matches']
-      end
-
       if attributes.has_key?(:'DocumentLink')
         self.document_link = attributes[:'DocumentLink']
+      end
+
+      if attributes.has_key?(:'Matches')
+        self.matches = attributes[:'Matches']
       end
 
     end
@@ -115,8 +115,8 @@ module WordsRubySdk
       self.class == o.class &&
           code == o.code &&
           status == o.status &&
-          matches == o.matches &&
-          document_link == o.document_link
+          document_link == o.document_link &&
+          matches == o.matches
     end
 
     # @see the `==` method
@@ -128,7 +128,7 @@ module WordsRubySdk
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [code, status, matches, document_link].hash
+      [code, status, document_link, matches].hash
     end
 
     # Builds the object from hash

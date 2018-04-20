@@ -29,7 +29,7 @@ module WordsRubySdk
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # This resonse should be returned by the service when handling:  GET /{name}/hyperlinks/{hyperlinkIndex} .
+  # This response should be returned by the service when handling:  GET /{name}/hyperlinks/{hyperlinkIndex} .
   class HyperlinkResponse
     # Response status code.
     attr_accessor :code

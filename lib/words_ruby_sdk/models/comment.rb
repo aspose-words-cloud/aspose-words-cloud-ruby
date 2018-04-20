@@ -34,39 +34,39 @@ module WordsRubySdk
     # Link to the document.
     attr_accessor :link
 
-    # Link to comment range start node.
-    attr_accessor :range_start
-
-    # Link to comment range end node.
-    attr_accessor :range_end
-
     # Returns or sets the author name for a comment.
     attr_accessor :author
 
-    # Returns or sets the initials of the user associated with a specific comment.
-    attr_accessor :initial
+    # Content of comment
+    attr_accessor :content
 
     # Gets the date and time that the comment was made.
     attr_accessor :date_time
 
+    # Returns or sets the initials of the user associated with a specific comment.
+    attr_accessor :initial
+
+    # Link to comment range end node.
+    attr_accessor :range_end
+
+    # Link to comment range start node.
+    attr_accessor :range_start
+
     # This is a convenience property that allows to easily get or set text of the comment.
     attr_accessor :text
-
-    # Content of comment
-    attr_accessor :content
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'link' => :'link',
-        :'range_start' => :'RangeStart',
-        :'range_end' => :'RangeEnd',
         :'author' => :'Author',
-        :'initial' => :'Initial',
+        :'content' => :'Content',
         :'date_time' => :'DateTime',
-        :'text' => :'Text',
-        :'content' => :'Content'
+        :'initial' => :'Initial',
+        :'range_end' => :'RangeEnd',
+        :'range_start' => :'RangeStart',
+        :'text' => :'Text'
       }
     end
 
@@ -74,13 +74,13 @@ module WordsRubySdk
     def self.swagger_types
       {
         :'link' => :'WordsApiLink',
-        :'range_start' => :'DocumentPosition',
-        :'range_end' => :'DocumentPosition',
         :'author' => :'String',
-        :'initial' => :'String',
+        :'content' => :'StoryChildNodes',
         :'date_time' => :'DateTime',
-        :'text' => :'String',
-        :'content' => :'StoryChildNodes'
+        :'initial' => :'String',
+        :'range_end' => :'DocumentPosition',
+        :'range_start' => :'DocumentPosition',
+        :'text' => :'String'
       }
     end
 
@@ -96,32 +96,32 @@ module WordsRubySdk
         self.link = attributes[:'link']
       end
 
-      if attributes.has_key?(:'RangeStart')
-        self.range_start = attributes[:'RangeStart']
-      end
-
-      if attributes.has_key?(:'RangeEnd')
-        self.range_end = attributes[:'RangeEnd']
-      end
-
       if attributes.has_key?(:'Author')
         self.author = attributes[:'Author']
       end
 
-      if attributes.has_key?(:'Initial')
-        self.initial = attributes[:'Initial']
+      if attributes.has_key?(:'Content')
+        self.content = attributes[:'Content']
       end
 
       if attributes.has_key?(:'DateTime')
         self.date_time = attributes[:'DateTime']
       end
 
-      if attributes.has_key?(:'Text')
-        self.text = attributes[:'Text']
+      if attributes.has_key?(:'Initial')
+        self.initial = attributes[:'Initial']
       end
 
-      if attributes.has_key?(:'Content')
-        self.content = attributes[:'Content']
+      if attributes.has_key?(:'RangeEnd')
+        self.range_end = attributes[:'RangeEnd']
+      end
+
+      if attributes.has_key?(:'RangeStart')
+        self.range_start = attributes[:'RangeStart']
+      end
+
+      if attributes.has_key?(:'Text')
+        self.text = attributes[:'Text']
       end
 
     end
@@ -145,13 +145,13 @@ module WordsRubySdk
       return true if self.equal?(o)
       self.class == o.class &&
           link == o.link &&
-          range_start == o.range_start &&
-          range_end == o.range_end &&
           author == o.author &&
-          initial == o.initial &&
+          content == o.content &&
           date_time == o.date_time &&
-          text == o.text &&
-          content == o.content
+          initial == o.initial &&
+          range_end == o.range_end &&
+          range_start == o.range_start &&
+          text == o.text
     end
 
     # @see the `==` method
@@ -163,7 +163,7 @@ module WordsRubySdk
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, range_start, range_end, author, initial, date_time, text, content].hash
+      [link, author, content, date_time, initial, range_end, range_start, text].hash
     end
 
     # Builds the object from hash

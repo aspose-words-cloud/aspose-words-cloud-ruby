@@ -40,20 +40,8 @@ module WordsRubySdk
     # Allows Microsoft Word and Aspose.Words to automatically resize cells in a table to fit their contents.
     attr_accessor :allow_auto_fit
 
-    # Gets or sets the table preferred width.  Preferred width can be specified as a percentage, number of points or a special \"auto\" value.
-    attr_accessor :preferred_width
-
     # Gets or sets whether this is a right-to-left table.
     attr_accessor :bidi
-
-    # Gets or sets the amount of space (in points) to add to the left of the contents of cells.
-    attr_accessor :left_padding
-
-    # Gets or sets the amount of space (in points) to add to the right of the contents of cells.
-    attr_accessor :right_padding
-
-    # Gets or sets the amount of space (in points) to add above the contents of cells.
-    attr_accessor :top_padding
 
     # Gets or sets the amount of space (in points) to add below the contents of cells.
     attr_accessor :bottom_padding
@@ -64,17 +52,29 @@ module WordsRubySdk
     # Gets or sets the value that represents the left indent of the table.
     attr_accessor :left_indent
 
-    # Gets or sets bit flags that specify how a table style is applied to this table.
-    attr_accessor :style_options
+    # Gets or sets the amount of space (in points) to add to the left of the contents of cells.
+    attr_accessor :left_padding
 
-    # Gets or sets the name of the table style applied to this table.
-    attr_accessor :style_name
+    # Gets or sets the table preferred width.  Preferred width can be specified as a percentage, number of points or a special \"auto\" value.
+    attr_accessor :preferred_width
+
+    # Gets or sets the amount of space (in points) to add to the right of the contents of cells.
+    attr_accessor :right_padding
 
     # Gets or sets the locale independent style identifier of the table style applied to this table.
     attr_accessor :style_identifier
 
+    # Gets or sets the name of the table style applied to this table.
+    attr_accessor :style_name
+
+    # Gets or sets bit flags that specify how a table style is applied to this table.
+    attr_accessor :style_options
+
     # Get or sets TextWrapping  for table.
     attr_accessor :text_wrapping
+
+    # Gets or sets the amount of space (in points) to add above the contents of cells.
+    attr_accessor :top_padding
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -104,18 +104,18 @@ module WordsRubySdk
         :'link' => :'link',
         :'alignment' => :'Alignment',
         :'allow_auto_fit' => :'AllowAutoFit',
-        :'preferred_width' => :'PreferredWidth',
         :'bidi' => :'Bidi',
-        :'left_padding' => :'LeftPadding',
-        :'right_padding' => :'RightPadding',
-        :'top_padding' => :'TopPadding',
         :'bottom_padding' => :'BottomPadding',
         :'cell_spacing' => :'CellSpacing',
         :'left_indent' => :'LeftIndent',
-        :'style_options' => :'StyleOptions',
-        :'style_name' => :'StyleName',
+        :'left_padding' => :'LeftPadding',
+        :'preferred_width' => :'PreferredWidth',
+        :'right_padding' => :'RightPadding',
         :'style_identifier' => :'StyleIdentifier',
-        :'text_wrapping' => :'TextWrapping'
+        :'style_name' => :'StyleName',
+        :'style_options' => :'StyleOptions',
+        :'text_wrapping' => :'TextWrapping',
+        :'top_padding' => :'TopPadding'
       }
     end
 
@@ -125,18 +125,18 @@ module WordsRubySdk
         :'link' => :'WordsApiLink',
         :'alignment' => :'String',
         :'allow_auto_fit' => :'BOOLEAN',
-        :'preferred_width' => :'PreferredWidth',
         :'bidi' => :'BOOLEAN',
-        :'left_padding' => :'Float',
-        :'right_padding' => :'Float',
-        :'top_padding' => :'Float',
         :'bottom_padding' => :'Float',
         :'cell_spacing' => :'Float',
         :'left_indent' => :'Float',
-        :'style_options' => :'String',
-        :'style_name' => :'String',
+        :'left_padding' => :'Float',
+        :'preferred_width' => :'PreferredWidth',
+        :'right_padding' => :'Float',
         :'style_identifier' => :'String',
-        :'text_wrapping' => :'String'
+        :'style_name' => :'String',
+        :'style_options' => :'String',
+        :'text_wrapping' => :'String',
+        :'top_padding' => :'Float'
       }
     end
 
@@ -160,24 +160,8 @@ module WordsRubySdk
         self.allow_auto_fit = attributes[:'AllowAutoFit']
       end
 
-      if attributes.has_key?(:'PreferredWidth')
-        self.preferred_width = attributes[:'PreferredWidth']
-      end
-
       if attributes.has_key?(:'Bidi')
         self.bidi = attributes[:'Bidi']
-      end
-
-      if attributes.has_key?(:'LeftPadding')
-        self.left_padding = attributes[:'LeftPadding']
-      end
-
-      if attributes.has_key?(:'RightPadding')
-        self.right_padding = attributes[:'RightPadding']
-      end
-
-      if attributes.has_key?(:'TopPadding')
-        self.top_padding = attributes[:'TopPadding']
       end
 
       if attributes.has_key?(:'BottomPadding')
@@ -192,20 +176,36 @@ module WordsRubySdk
         self.left_indent = attributes[:'LeftIndent']
       end
 
-      if attributes.has_key?(:'StyleOptions')
-        self.style_options = attributes[:'StyleOptions']
+      if attributes.has_key?(:'LeftPadding')
+        self.left_padding = attributes[:'LeftPadding']
       end
 
-      if attributes.has_key?(:'StyleName')
-        self.style_name = attributes[:'StyleName']
+      if attributes.has_key?(:'PreferredWidth')
+        self.preferred_width = attributes[:'PreferredWidth']
+      end
+
+      if attributes.has_key?(:'RightPadding')
+        self.right_padding = attributes[:'RightPadding']
       end
 
       if attributes.has_key?(:'StyleIdentifier')
         self.style_identifier = attributes[:'StyleIdentifier']
       end
 
+      if attributes.has_key?(:'StyleName')
+        self.style_name = attributes[:'StyleName']
+      end
+
+      if attributes.has_key?(:'StyleOptions')
+        self.style_options = attributes[:'StyleOptions']
+      end
+
       if attributes.has_key?(:'TextWrapping')
         self.text_wrapping = attributes[:'TextWrapping']
+      end
+
+      if attributes.has_key?(:'TopPadding')
+        self.top_padding = attributes[:'TopPadding']
       end
 
     end
@@ -222,10 +222,10 @@ module WordsRubySdk
     def valid?
       alignment_validator = EnumAttributeValidator.new('String', ["Left", "Center", "Right"])
       return false unless alignment_validator.valid?(@alignment)
-      style_options_validator = EnumAttributeValidator.new('String', ["None", "FirstRow", "LastRow", "FirstColumn", "LastColumn", "RowBands", "Default", "ColumnBands", "Default2003"])
-      return false unless style_options_validator.valid?(@style_options)
       style_identifier_validator = EnumAttributeValidator.new('String', ["Normal", "Heading1", "Heading2", "Heading3", "Heading4", "Heading5", "Heading6", "Heading7", "Heading8", "Heading9", "Index1", "Index2", "Index3", "Index4", "Index5", "Index6", "Index7", "Index8", "Index9", "Toc1", "Toc2", "Toc3", "Toc4", "Toc5", "Toc6", "Toc7", "Toc8", "Toc9", "NormalIndent", "FootnoteText", "CommentText", "Header", "Footer", "IndexHeading", "Caption", "TableOfFigures", "EnvelopeAddress", "EnvelopeReturn", "FootnoteReference", "CommentReference", "LineNumber", "PageNumber", "EndnoteReference", "EndnoteText", "TableOfAuthorities", "Macro", "ToaHeading", "List", "ListBullet", "ListNumber", "List2", "List3", "List4", "List5", "ListBullet2", "ListBullet3", "ListBullet4", "ListBullet5", "ListNumber2", "ListNumber3", "ListNumber4", "ListNumber5", "Title", "Closing", "Signature", "DefaultParagraphFont", "BodyText", "BodyTextInd", "ListContinue", "ListContinue2", "ListContinue3", "ListContinue4", "ListContinue5", "MessageHeader", "Subtitle", "Salutation", "Date", "BodyText1I", "BodyText1I2", "NoteHeading", "BodyText2", "BodyText3", "BodyTextInd2", "BodyTextInd3", "BlockText", "Hyperlink", "FollowedHyperlink", "Strong", "Emphasis", "DocumentMap", "PlainText", "EmailSignature", "HtmlTopOfForm", "HtmlBottomOfForm", "NormalWeb", "HtmlAcronym", "HtmlAddress", "HtmlCite", "HtmlCode", "HtmlDefinition", "HtmlKeyboard", "HtmlPreformatted", "HtmlSample", "HtmlTypewriter", "HtmlVariable", "TableNormal", "CommentSubject", "NoList", "OutlineList1", "OutlineList2", "OutlineList3", "TableSimple1", "TableSimple2", "TableSimple3", "TableClassic1", "TableClassic2", "TableClassic3", "TableClassic4", "TableColorful1", "TableColorful2", "TableColorful3", "TableColumns1", "TableColumns2", "TableColumns3", "TableColumns4", "TableColumns5", "TableGrid1", "TableGrid2", "TableGrid3", "TableGrid4", "TableGrid5", "TableGrid6", "TableGrid7", "TableGrid8", "TableList1", "TableList2", "TableList3", "TableList4", "TableList5", "TableList6", "TableList7", "TableList8", "Table3DEffects1", "Table3DEffects2", "Table3DEffects3", "TableContemporary", "TableElegant", "TableProfessional", "TableSubtle1", "TableSubtle2", "TableWeb1", "TableWeb2", "TableWeb3", "BalloonText", "TableGrid", "TableTheme", "PlaceholderText", "NoSpacing", "LightShading", "LightList", "LightGrid", "MediumShading1", "MediumShading2", "MediumList1", "MediumList2", "MediumGrid1", "MediumGrid2", "MediumGrid3", "DarkList", "ColorfulShading", "ColorfulList", "ColorfulGrid", "LightShadingAccent1", "LightListAccent1", "LightGridAccent1", "MediumShading1Accent1", "MediumShading2Accent1", "MediumList1Accent1", "Revision", "ListParagraph", "Quote", "IntenseQuote", "MediumList2Accent1", "MediumGrid1Accent1", "MediumGrid2Accent1", "MediumGrid3Accent1", "DarkListAccent1", "ColorfulShadingAccent1", "ColorfulListAccent1", "ColorfulGridAccent1", "LightShadingAccent2", "LightListAccent2", "LightGridAccent2", "MediumShading1Accent2", "MediumShading2Accent2", "MediumList1Accent2", "MediumList2Accent2", "MediumGrid1Accent2", "MediumGrid2Accent2", "MediumGrid3Accent2", "DarkListAccent2", "ColorfulShadingAccent2", "ColorfulListAccent2", "ColorfulGridAccent2", "LightShadingAccent3", "LightListAccent3", "LightGridAccent3", "MediumShading1Accent3", "MediumShading2Accent3", "MediumList1Accent3", "MediumList2Accent3", "MediumGrid1Accent3", "MediumGrid2Accent3", "MediumGrid3Accent3", "DarkListAccent3", "ColorfulShadingAccent3", "ColorfulListAccent3", "ColorfulGridAccent3", "LightShadingAccent4", "LightListAccent4", "LightGridAccent4", "MediumShading1Accent4", "MediumShading2Accent4", "MediumList1Accent4", "MediumList2Accent4", "MediumGrid1Accent4", "MediumGrid2Accent4", "MediumGrid3Accent4", "DarkListAccent4", "ColorfulShadingAccent4", "ColorfulListAccent4", "ColorfulGridAccent4", "LightShadingAccent5", "LightListAccent5", "LightGridAccent5", "MediumShading1Accent5", "MediumShading2Accent5", "MediumList1Accent5", "MediumList2Accent5", "MediumGrid1Accent5", "MediumGrid2Accent5", "MediumGrid3Accent5", "DarkListAccent5", "ColorfulShadingAccent5", "ColorfulListAccent5", "ColorfulGridAccent5", "LightShadingAccent6", "LightListAccent6", "LightGridAccent6", "MediumShading1Accent6", "MediumShading2Accent6", "MediumList1Accent6", "MediumList2Accent6", "MediumGrid1Accent6", "MediumGrid2Accent6", "MediumGrid3Accent6", "DarkListAccent6", "ColorfulShadingAccent6", "ColorfulListAccent6", "ColorfulGridAccent6", "SubtleEmphasis", "IntenseEmphasis", "SubtleReference", "IntenseReference", "BookTitle", "Bibliography", "TocHeading", "PlainTable1", "PlainTable2", "PlainTable3", "PlainTable4", "PlainTable5", "TableGridLight", "GridTable1Light", "GridTable2", "GridTable3", "GridTable4", "GridTable5Dark", "GridTable6Colorful", "GridTable7Colorful", "GridTable1LightAccent1", "GridTable2Accent1", "GridTable3Accent1", "GridTable4Accent1", "GridTable5DarkAccent1", "GridTable6ColorfulAccent1", "GridTable7ColorfulAccent1", "GridTable1LightAccent2", "GridTable2Accent2", "GridTable3Accent2", "GridTable4Accent2", "GridTable5DarkAccent2", "GridTable6ColorfulAccent2", "GridTable7ColorfulAccent2", "GridTable1LightAccent3", "GridTable2Accent3", "GridTable3Accent3", "GridTable4Accent3", "GridTable5DarkAccent3", "GridTable6ColorfulAccent3", "GridTable7ColorfulAccent3", "GridTable1LightAccent4", "GridTable2Accent4", "GridTable3Accent4", "GridTable4Accent4", "GridTable5DarkAccent4", "GridTable6ColorfulAccent4", "GridTable7ColorfulAccent4", "GridTable1LightAccent5", "GridTable2Accent5", "GridTable3Accent5", "GridTable4Accent5", "GridTable5DarkAccent5", "GridTable6ColorfulAccent5", "GridTable7ColorfulAccent5", "GridTable1LightAccent6", "GridTable2Accent6", "GridTable3Accent6", "GridTable4Accent6", "GridTable5DarkAccent6", "GridTable6ColorfulAccent6", "GridTable7ColorfulAccent6", "ListTable1Light", "ListTable2", "ListTable3", "ListTable4", "ListTable5Dark", "ListTable6Colorful", "ListTable7Colorful", "ListTable1LightAccent1", "ListTable2Accent1", "ListTable3Accent1", "ListTable4Accent1", "ListTable5DarkAccent1", "ListTable6ColorfulAccent1", "ListTable7ColorfulAccent1", "ListTable1LightAccent2", "ListTable2Accent2", "ListTable3Accent2", "ListTable4Accent2", "ListTable5DarkAccent2", "ListTable6ColorfulAccent2", "ListTable7ColorfulAccent2", "ListTable1LightAccent3", "ListTable2Accent3", "ListTable3Accent3", "ListTable4Accent3", "ListTable5DarkAccent3", "ListTable6ColorfulAccent3", "ListTable7ColorfulAccent3", "ListTable1LightAccent4", "ListTable2Accent4", "ListTable3Accent4", "ListTable4Accent4", "ListTable5DarkAccent4", "ListTable6ColorfulAccent4", "ListTable7ColorfulAccent4", "ListTable1LightAccent5", "ListTable2Accent5", "ListTable3Accent5", "ListTable4Accent5", "ListTable5DarkAccent5", "ListTable6ColorfulAccent5", "ListTable7ColorfulAccent5", "ListTable1LightAccent6", "ListTable2Accent6", "ListTable3Accent6", "ListTable4Accent6", "ListTable5DarkAccent6", "ListTable6ColorfulAccent6", "ListTable7ColorfulAccent6", "User", "Nil"])
       return false unless style_identifier_validator.valid?(@style_identifier)
+      style_options_validator = EnumAttributeValidator.new('String', ["None", "FirstRow", "LastRow", "FirstColumn", "LastColumn", "RowBands", "Default", "ColumnBands", "Default2003"])
+      return false unless style_options_validator.valid?(@style_options)
       text_wrapping_validator = EnumAttributeValidator.new('String', ["Default", "None", "Around"])
       return false unless text_wrapping_validator.valid?(@text_wrapping)
       return true
@@ -246,20 +246,6 @@ module WordsRubySdk
     end
 
     # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] style_options Object to be assigned
-    def style_options=(style_options)
-      validator = EnumAttributeValidator.new('String', ["None", "FirstRow", "LastRow", "FirstColumn", "LastColumn", "RowBands", "Default", "ColumnBands", "Default2003"])
-      if style_options.to_i == 0
-        unless validator.valid?(style_options)
-          fail ArgumentError, "invalid value for 'style_options', must be one of #{validator.allowable_values}."
-        end
-        @style_options = style_options
-      else
-        @style_options = validator.allowable_values[style_options.to_i]
-      end
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
     # @param [Object] style_identifier Object to be assigned
     def style_identifier=(style_identifier)
       validator = EnumAttributeValidator.new('String', ["Normal", "Heading1", "Heading2", "Heading3", "Heading4", "Heading5", "Heading6", "Heading7", "Heading8", "Heading9", "Index1", "Index2", "Index3", "Index4", "Index5", "Index6", "Index7", "Index8", "Index9", "Toc1", "Toc2", "Toc3", "Toc4", "Toc5", "Toc6", "Toc7", "Toc8", "Toc9", "NormalIndent", "FootnoteText", "CommentText", "Header", "Footer", "IndexHeading", "Caption", "TableOfFigures", "EnvelopeAddress", "EnvelopeReturn", "FootnoteReference", "CommentReference", "LineNumber", "PageNumber", "EndnoteReference", "EndnoteText", "TableOfAuthorities", "Macro", "ToaHeading", "List", "ListBullet", "ListNumber", "List2", "List3", "List4", "List5", "ListBullet2", "ListBullet3", "ListBullet4", "ListBullet5", "ListNumber2", "ListNumber3", "ListNumber4", "ListNumber5", "Title", "Closing", "Signature", "DefaultParagraphFont", "BodyText", "BodyTextInd", "ListContinue", "ListContinue2", "ListContinue3", "ListContinue4", "ListContinue5", "MessageHeader", "Subtitle", "Salutation", "Date", "BodyText1I", "BodyText1I2", "NoteHeading", "BodyText2", "BodyText3", "BodyTextInd2", "BodyTextInd3", "BlockText", "Hyperlink", "FollowedHyperlink", "Strong", "Emphasis", "DocumentMap", "PlainText", "EmailSignature", "HtmlTopOfForm", "HtmlBottomOfForm", "NormalWeb", "HtmlAcronym", "HtmlAddress", "HtmlCite", "HtmlCode", "HtmlDefinition", "HtmlKeyboard", "HtmlPreformatted", "HtmlSample", "HtmlTypewriter", "HtmlVariable", "TableNormal", "CommentSubject", "NoList", "OutlineList1", "OutlineList2", "OutlineList3", "TableSimple1", "TableSimple2", "TableSimple3", "TableClassic1", "TableClassic2", "TableClassic3", "TableClassic4", "TableColorful1", "TableColorful2", "TableColorful3", "TableColumns1", "TableColumns2", "TableColumns3", "TableColumns4", "TableColumns5", "TableGrid1", "TableGrid2", "TableGrid3", "TableGrid4", "TableGrid5", "TableGrid6", "TableGrid7", "TableGrid8", "TableList1", "TableList2", "TableList3", "TableList4", "TableList5", "TableList6", "TableList7", "TableList8", "Table3DEffects1", "Table3DEffects2", "Table3DEffects3", "TableContemporary", "TableElegant", "TableProfessional", "TableSubtle1", "TableSubtle2", "TableWeb1", "TableWeb2", "TableWeb3", "BalloonText", "TableGrid", "TableTheme", "PlaceholderText", "NoSpacing", "LightShading", "LightList", "LightGrid", "MediumShading1", "MediumShading2", "MediumList1", "MediumList2", "MediumGrid1", "MediumGrid2", "MediumGrid3", "DarkList", "ColorfulShading", "ColorfulList", "ColorfulGrid", "LightShadingAccent1", "LightListAccent1", "LightGridAccent1", "MediumShading1Accent1", "MediumShading2Accent1", "MediumList1Accent1", "Revision", "ListParagraph", "Quote", "IntenseQuote", "MediumList2Accent1", "MediumGrid1Accent1", "MediumGrid2Accent1", "MediumGrid3Accent1", "DarkListAccent1", "ColorfulShadingAccent1", "ColorfulListAccent1", "ColorfulGridAccent1", "LightShadingAccent2", "LightListAccent2", "LightGridAccent2", "MediumShading1Accent2", "MediumShading2Accent2", "MediumList1Accent2", "MediumList2Accent2", "MediumGrid1Accent2", "MediumGrid2Accent2", "MediumGrid3Accent2", "DarkListAccent2", "ColorfulShadingAccent2", "ColorfulListAccent2", "ColorfulGridAccent2", "LightShadingAccent3", "LightListAccent3", "LightGridAccent3", "MediumShading1Accent3", "MediumShading2Accent3", "MediumList1Accent3", "MediumList2Accent3", "MediumGrid1Accent3", "MediumGrid2Accent3", "MediumGrid3Accent3", "DarkListAccent3", "ColorfulShadingAccent3", "ColorfulListAccent3", "ColorfulGridAccent3", "LightShadingAccent4", "LightListAccent4", "LightGridAccent4", "MediumShading1Accent4", "MediumShading2Accent4", "MediumList1Accent4", "MediumList2Accent4", "MediumGrid1Accent4", "MediumGrid2Accent4", "MediumGrid3Accent4", "DarkListAccent4", "ColorfulShadingAccent4", "ColorfulListAccent4", "ColorfulGridAccent4", "LightShadingAccent5", "LightListAccent5", "LightGridAccent5", "MediumShading1Accent5", "MediumShading2Accent5", "MediumList1Accent5", "MediumList2Accent5", "MediumGrid1Accent5", "MediumGrid2Accent5", "MediumGrid3Accent5", "DarkListAccent5", "ColorfulShadingAccent5", "ColorfulListAccent5", "ColorfulGridAccent5", "LightShadingAccent6", "LightListAccent6", "LightGridAccent6", "MediumShading1Accent6", "MediumShading2Accent6", "MediumList1Accent6", "MediumList2Accent6", "MediumGrid1Accent6", "MediumGrid2Accent6", "MediumGrid3Accent6", "DarkListAccent6", "ColorfulShadingAccent6", "ColorfulListAccent6", "ColorfulGridAccent6", "SubtleEmphasis", "IntenseEmphasis", "SubtleReference", "IntenseReference", "BookTitle", "Bibliography", "TocHeading", "PlainTable1", "PlainTable2", "PlainTable3", "PlainTable4", "PlainTable5", "TableGridLight", "GridTable1Light", "GridTable2", "GridTable3", "GridTable4", "GridTable5Dark", "GridTable6Colorful", "GridTable7Colorful", "GridTable1LightAccent1", "GridTable2Accent1", "GridTable3Accent1", "GridTable4Accent1", "GridTable5DarkAccent1", "GridTable6ColorfulAccent1", "GridTable7ColorfulAccent1", "GridTable1LightAccent2", "GridTable2Accent2", "GridTable3Accent2", "GridTable4Accent2", "GridTable5DarkAccent2", "GridTable6ColorfulAccent2", "GridTable7ColorfulAccent2", "GridTable1LightAccent3", "GridTable2Accent3", "GridTable3Accent3", "GridTable4Accent3", "GridTable5DarkAccent3", "GridTable6ColorfulAccent3", "GridTable7ColorfulAccent3", "GridTable1LightAccent4", "GridTable2Accent4", "GridTable3Accent4", "GridTable4Accent4", "GridTable5DarkAccent4", "GridTable6ColorfulAccent4", "GridTable7ColorfulAccent4", "GridTable1LightAccent5", "GridTable2Accent5", "GridTable3Accent5", "GridTable4Accent5", "GridTable5DarkAccent5", "GridTable6ColorfulAccent5", "GridTable7ColorfulAccent5", "GridTable1LightAccent6", "GridTable2Accent6", "GridTable3Accent6", "GridTable4Accent6", "GridTable5DarkAccent6", "GridTable6ColorfulAccent6", "GridTable7ColorfulAccent6", "ListTable1Light", "ListTable2", "ListTable3", "ListTable4", "ListTable5Dark", "ListTable6Colorful", "ListTable7Colorful", "ListTable1LightAccent1", "ListTable2Accent1", "ListTable3Accent1", "ListTable4Accent1", "ListTable5DarkAccent1", "ListTable6ColorfulAccent1", "ListTable7ColorfulAccent1", "ListTable1LightAccent2", "ListTable2Accent2", "ListTable3Accent2", "ListTable4Accent2", "ListTable5DarkAccent2", "ListTable6ColorfulAccent2", "ListTable7ColorfulAccent2", "ListTable1LightAccent3", "ListTable2Accent3", "ListTable3Accent3", "ListTable4Accent3", "ListTable5DarkAccent3", "ListTable6ColorfulAccent3", "ListTable7ColorfulAccent3", "ListTable1LightAccent4", "ListTable2Accent4", "ListTable3Accent4", "ListTable4Accent4", "ListTable5DarkAccent4", "ListTable6ColorfulAccent4", "ListTable7ColorfulAccent4", "ListTable1LightAccent5", "ListTable2Accent5", "ListTable3Accent5", "ListTable4Accent5", "ListTable5DarkAccent5", "ListTable6ColorfulAccent5", "ListTable7ColorfulAccent5", "ListTable1LightAccent6", "ListTable2Accent6", "ListTable3Accent6", "ListTable4Accent6", "ListTable5DarkAccent6", "ListTable6ColorfulAccent6", "ListTable7ColorfulAccent6", "User", "Nil"])
@@ -270,6 +256,20 @@ module WordsRubySdk
         @style_identifier = style_identifier
       else
         @style_identifier = validator.allowable_values[style_identifier.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] style_options Object to be assigned
+    def style_options=(style_options)
+      validator = EnumAttributeValidator.new('String', ["None", "FirstRow", "LastRow", "FirstColumn", "LastColumn", "RowBands", "Default", "ColumnBands", "Default2003"])
+      if style_options.to_i == 0
+        unless validator.valid?(style_options)
+          fail ArgumentError, "invalid value for 'style_options', must be one of #{validator.allowable_values}."
+        end
+        @style_options = style_options
+      else
+        @style_options = validator.allowable_values[style_options.to_i]
       end
     end
 
@@ -295,18 +295,18 @@ module WordsRubySdk
           link == o.link &&
           alignment == o.alignment &&
           allow_auto_fit == o.allow_auto_fit &&
-          preferred_width == o.preferred_width &&
           bidi == o.bidi &&
-          left_padding == o.left_padding &&
-          right_padding == o.right_padding &&
-          top_padding == o.top_padding &&
           bottom_padding == o.bottom_padding &&
           cell_spacing == o.cell_spacing &&
           left_indent == o.left_indent &&
-          style_options == o.style_options &&
-          style_name == o.style_name &&
+          left_padding == o.left_padding &&
+          preferred_width == o.preferred_width &&
+          right_padding == o.right_padding &&
           style_identifier == o.style_identifier &&
-          text_wrapping == o.text_wrapping
+          style_name == o.style_name &&
+          style_options == o.style_options &&
+          text_wrapping == o.text_wrapping &&
+          top_padding == o.top_padding
     end
 
     # @see the `==` method
@@ -318,7 +318,7 @@ module WordsRubySdk
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, alignment, allow_auto_fit, preferred_width, bidi, left_padding, right_padding, top_padding, bottom_padding, cell_spacing, left_indent, style_options, style_name, style_identifier, text_wrapping].hash
+      [link, alignment, allow_auto_fit, bidi, bottom_padding, cell_spacing, left_indent, left_padding, preferred_width, right_padding, style_identifier, style_name, style_options, text_wrapping, top_padding].hash
     end
 
     # Builds the object from hash

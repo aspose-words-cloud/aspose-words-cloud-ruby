@@ -38,7 +38,7 @@ module WordsRubySdk
     end
 
     # Accept all revisions in document
-    #
+    # 
     # @param request AcceptAllRevisionsRequest
     # @return [RevisionsModificationResponse]
     def accept_all_revisions(request)
@@ -123,8 +123,68 @@ module WordsRubySdk
       [data, status_code, headers]
     end
 
+    # Classify raw text.
+    # 
+    # @param request ClassifyRequest
+    # @return [ClassificationResponse]
+    def classify(request)
+      data, _status_code, _headers = classify_with_http_info(request)
+      data
+    end
+
+    # Classify raw text.
+    # 
+    # @param request ClassifyRequest
+    # @return [Array<(ClassificationResponse, Fixnum, Hash)>]
+    # ClassificationResponse data, response status code and response headers
+    private def classify_with_http_info(request)
+      unless request.is_a? ClassifyRequest
+        raise ArgumentError, 'Incorrect request type'
+      end
+
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: WordsApi.classify ...'
+      end
+      # verify the required parameter 'request' is set
+      if @api_client.config.client_side_validation && request.request.nil?
+        raise ArgumentError, 'Missing the required parameter request when calling WordsApi.classify'
+      end
+      # resource path
+      local_var_path = '/words/classify'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/xml', 'application/json'])
+
+      # form parameters
+      form_params = {}
+
+      request_token
+      # http body (model)
+      post_body = @api_client.object_to_http_body(request.request)
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        header_params: header_params,
+        query_params: query_params,
+        form_params: form_params,
+        body: post_body,
+        auth_names: auth_names,
+        return_type: 'ClassificationResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: 
+        WordsApi#classify\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
     # Add new or update existing document property.
-    #
+    # 
     # @param request CreateOrUpdateDocumentPropertyRequest
     # @return [DocumentPropertyResponse]
     def create_or_update_document_property(request)
@@ -229,7 +289,7 @@ module WordsRubySdk
     end
 
     # Resets border properties to default values.             
-    #'nodePath' should refer to node with cell or row
+    # 'nodePath' should refer to node with cell or row
     # @param request DeleteBorderRequest
     # @return [BorderResponse]
     def delete_border(request)
@@ -335,7 +395,7 @@ module WordsRubySdk
     end
 
     # Resets borders properties to default values.             
-    #'nodePath' should refer to node with cell or row
+    # 'nodePath' should refer to node with cell or row
     # @param request DeleteBordersRequest
     # @return [BordersResponse]
     def delete_borders(request)
@@ -436,7 +496,7 @@ module WordsRubySdk
     end
 
     # Remove comment from document.
-    #
+    # 
     # @param request DeleteCommentRequest
     # @return [AsposeResponse]
     def delete_comment(request)
@@ -537,7 +597,7 @@ module WordsRubySdk
     end
 
     # Remove macros from document.
-    #
+    # 
     # @param request DeleteDocumentMacrosRequest
     # @return [AsposeResponse]
     def delete_document_macros(request)
@@ -633,7 +693,7 @@ module WordsRubySdk
     end
 
     # Delete document property.
-    #
+    # 
     # @param request DeleteDocumentPropertyRequest
     # @return [AsposeResponse]
     def delete_document_property(request)
@@ -734,7 +794,7 @@ module WordsRubySdk
     end
 
     # Delete watermark (for deleting last watermark from the document).
-    #
+    # 
     # @param request DeleteDocumentWatermarkRequest
     # @return [DocumentResponse]
     def delete_document_watermark(request)
@@ -830,7 +890,7 @@ module WordsRubySdk
     end
 
     # Removes drawing object from document.
-    #
+    # 
     # @param request DeleteDrawingObjectRequest
     # @return [AsposeResponse]
     def delete_drawing_object(request)
@@ -936,7 +996,7 @@ module WordsRubySdk
     end
 
     # Delete field from document.
-    #
+    # 
     # @param request DeleteFieldRequest
     # @return [AsposeResponse]
     def delete_field(request)
@@ -1042,7 +1102,7 @@ module WordsRubySdk
     end
 
     # Remove fields from section paragraph.
-    #
+    # 
     # @param request DeleteFieldsRequest
     # @return [AsposeResponse]
     def delete_fields(request)
@@ -1143,7 +1203,7 @@ module WordsRubySdk
     end
 
     # Removes footnote from document.
-    #
+    # 
     # @param request DeleteFootnoteRequest
     # @return [AsposeResponse]
     def delete_footnote(request)
@@ -1249,7 +1309,7 @@ module WordsRubySdk
     end
 
     # Removes form field from document.
-    #
+    # 
     # @param request DeleteFormFieldRequest
     # @return [AsposeResponse]
     def delete_form_field(request)
@@ -1355,7 +1415,7 @@ module WordsRubySdk
     end
 
     # Delete header/footer from document.
-    #
+    # 
     # @param request DeleteHeaderFooterRequest
     # @return [AsposeResponse]
     def delete_header_footer(request)
@@ -1461,7 +1521,7 @@ module WordsRubySdk
     end
 
     # Delete document headers and footers.
-    #
+    # 
     # @param request DeleteHeadersFootersRequest
     # @return [AsposeResponse]
     def delete_headers_footers(request)
@@ -1567,7 +1627,7 @@ module WordsRubySdk
     end
 
     # Removes OfficeMath object from document.
-    #
+    # 
     # @param request DeleteOfficeMathObjectRequest
     # @return [AsposeResponse]
     def delete_office_math_object(request)
@@ -1673,7 +1733,7 @@ module WordsRubySdk
     end
 
     # Remove paragraph from section.
-    #
+    # 
     # @param request DeleteParagraphRequest
     # @return [AsposeResponse]
     def delete_paragraph(request)
@@ -1779,7 +1839,7 @@ module WordsRubySdk
     end
 
     # Removes run from document.
-    #
+    # 
     # @param request DeleteRunRequest
     # @return [AsposeResponse]
     def delete_run(request)
@@ -1885,7 +1945,7 @@ module WordsRubySdk
     end
 
     # Delete a table.
-    #
+    # 
     # @param request DeleteTableRequest
     # @return [AsposeResponse]
     def delete_table(request)
@@ -1991,7 +2051,7 @@ module WordsRubySdk
     end
 
     # Delete a table cell.
-    #
+    # 
     # @param request DeleteTableCellRequest
     # @return [AsposeResponse]
     def delete_table_cell(request)
@@ -2097,7 +2157,7 @@ module WordsRubySdk
     end
 
     # Delete a table row.
-    #
+    # 
     # @param request DeleteTableRowRequest
     # @return [AsposeResponse]
     def delete_table_row(request)
@@ -2203,7 +2263,7 @@ module WordsRubySdk
     end
 
     # Unprotect document.
-    #
+    # 
     # @param request DeleteUnprotectDocumentRequest
     # @return [ProtectionDataResponse]
     def delete_unprotect_document(request)
@@ -2293,7 +2353,7 @@ module WordsRubySdk
     end
 
     # Return a border.
-    #'nodePath' should refer to node with cell or row
+    # 'nodePath' should refer to node with cell or row
     # @param request GetBorderRequest
     # @return [BorderResponse]
     def get_border(request)
@@ -2384,7 +2444,7 @@ module WordsRubySdk
     end
 
     # Return a collection of borders.
-    #'nodePath' should refer to node with cell or row
+    # 'nodePath' should refer to node with cell or row
     # @param request GetBordersRequest
     # @return [BordersResponse]
     def get_borders(request)
@@ -2470,7 +2530,7 @@ module WordsRubySdk
     end
 
     # Get comment from document.
-    #
+    # 
     # @param request GetCommentRequest
     # @return [CommentResponse]
     def get_comment(request)
@@ -2556,7 +2616,7 @@ module WordsRubySdk
     end
 
     # Get comments from document.
-    #
+    # 
     # @param request GetCommentsRequest
     # @return [CommentsResponse]
     def get_comments(request)
@@ -2637,7 +2697,7 @@ module WordsRubySdk
     end
 
     # Read document common info.
-    #
+    # 
     # @param request GetDocumentRequest
     # @return [DocumentResponse]
     def get_document(request)
@@ -2718,7 +2778,7 @@ module WordsRubySdk
     end
 
     # Read document bookmark data by its name.
-    #
+    # 
     # @param request GetDocumentBookmarkByNameRequest
     # @return [BookmarkResponse]
     def get_document_bookmark_by_name(request)
@@ -2804,7 +2864,7 @@ module WordsRubySdk
     end
 
     # Read document bookmarks common info.
-    #
+    # 
     # @param request GetDocumentBookmarksRequest
     # @return [BookmarksResponse]
     def get_document_bookmarks(request)
@@ -2885,7 +2945,7 @@ module WordsRubySdk
     end
 
     # Read document drawing object common info by its index or convert to format specified.
-    #
+    # 
     # @param request GetDocumentDrawingObjectByIndexRequest
     # @return [DrawingObjectResponse]
     def get_document_drawing_object_by_index(request)
@@ -2976,7 +3036,7 @@ module WordsRubySdk
     end
 
     # Read drawing object image data.
-    #
+    # 
     # @param request GetDocumentDrawingObjectImageDataRequest
     # @return [File]
     def get_document_drawing_object_image_data(request)
@@ -3067,7 +3127,7 @@ module WordsRubySdk
     end
 
     # Get drawing object OLE data.
-    #
+    # 
     # @param request GetDocumentDrawingObjectOleDataRequest
     # @return [File]
     def get_document_drawing_object_ole_data(request)
@@ -3158,7 +3218,7 @@ module WordsRubySdk
     end
 
     # Read document drawing objects common info.
-    #
+    # 
     # @param request GetDocumentDrawingObjectsRequest
     # @return [DrawingObjectsResponse]
     def get_document_drawing_objects(request)
@@ -3244,7 +3304,7 @@ module WordsRubySdk
     end
 
     # Read document field names.
-    #
+    # 
     # @param request GetDocumentFieldNamesRequest
     # @return [FieldNamesResponse]
     def get_document_field_names(request)
@@ -3330,7 +3390,7 @@ module WordsRubySdk
     end
 
     # Read document hyperlink by its index.
-    #
+    # 
     # @param request GetDocumentHyperlinkByIndexRequest
     # @return [HyperlinkResponse]
     def get_document_hyperlink_by_index(request)
@@ -3416,7 +3476,7 @@ module WordsRubySdk
     end
 
     # Read document hyperlinks common info.
-    #
+    # 
     # @param request GetDocumentHyperlinksRequest
     # @return [HyperlinksResponse]
     def get_document_hyperlinks(request)
@@ -3497,7 +3557,7 @@ module WordsRubySdk
     end
 
     # This resource represents one of the paragraphs contained in the document.
-    #
+    # 
     # @param request GetDocumentParagraphRequest
     # @return [ParagraphResponse]
     def get_document_paragraph(request)
@@ -3588,7 +3648,7 @@ module WordsRubySdk
     end
 
     # This resource represents run of text contained in the document.
-    #
+    # 
     # @param request GetDocumentParagraphRunRequest
     # @return [RunResponse]
     def get_document_paragraph_run(request)
@@ -3679,7 +3739,7 @@ module WordsRubySdk
     end
 
     # This resource represents font of run.
-    #
+    # 
     # @param request GetDocumentParagraphRunFontRequest
     # @return [FontResponse]
     def get_document_paragraph_run_font(request)
@@ -3770,7 +3830,7 @@ module WordsRubySdk
     end
 
     # This resource represents collection of runs in the paragraph.
-    #
+    # 
     # @param request GetDocumentParagraphRunsRequest
     # @return [RunsResponse]
     def get_document_paragraph_runs(request)
@@ -3856,7 +3916,7 @@ module WordsRubySdk
     end
 
     # Return a list of paragraphs that are contained in the document.
-    #
+    # 
     # @param request GetDocumentParagraphsRequest
     # @return [ParagraphLinkCollectionResponse]
     def get_document_paragraphs(request)
@@ -3942,7 +4002,7 @@ module WordsRubySdk
     end
 
     # Read document properties info.
-    #
+    # 
     # @param request GetDocumentPropertiesRequest
     # @return [DocumentPropertiesResponse]
     def get_document_properties(request)
@@ -4023,7 +4083,7 @@ module WordsRubySdk
     end
 
     # Read document property info by the property name.
-    #
+    # 
     # @param request GetDocumentPropertyRequest
     # @return [DocumentPropertyResponse]
     def get_document_property(request)
@@ -4109,7 +4169,7 @@ module WordsRubySdk
     end
 
     # Read document protection common info.
-    #
+    # 
     # @param request GetDocumentProtectionRequest
     # @return [ProtectionDataResponse]
     def get_document_protection(request)
@@ -4190,7 +4250,7 @@ module WordsRubySdk
     end
 
     # Read document statistics.
-    #
+    # 
     # @param request GetDocumentStatisticsRequest
     # @return [StatDataResponse]
     def get_document_statistics(request)
@@ -4286,7 +4346,7 @@ module WordsRubySdk
     end
 
     # Read document text items.
-    #
+    # 
     # @param request GetDocumentTextItemsRequest
     # @return [TextItemsResponse]
     def get_document_text_items(request)
@@ -4367,7 +4427,7 @@ module WordsRubySdk
     end
 
     # Export the document into the specified format.
-    #
+    # 
     # @param request GetDocumentWithFormatRequest
     # @return [File]
     def get_document_with_format(request)
@@ -4464,7 +4524,7 @@ module WordsRubySdk
     end
 
     # Get field from document.
-    #
+    # 
     # @param request GetFieldRequest
     # @return [FieldResponse]
     def get_field(request)
@@ -4555,7 +4615,7 @@ module WordsRubySdk
     end
 
     # Get fields from document.
-    #
+    # 
     # @param request GetFieldsRequest
     # @return [FieldsResponse]
     def get_fields(request)
@@ -4641,7 +4701,7 @@ module WordsRubySdk
     end
 
     # Read footnote by index.
-    #
+    # 
     # @param request GetFootnoteRequest
     # @return [FootnoteResponse]
     def get_footnote(request)
@@ -4732,7 +4792,7 @@ module WordsRubySdk
     end
 
     # Get footnotes from document.
-    #
+    # 
     # @param request GetFootnotesRequest
     # @return [FootnotesResponse]
     def get_footnotes(request)
@@ -4818,7 +4878,7 @@ module WordsRubySdk
     end
 
     # Returns representation of an one of the form field.
-    #
+    # 
     # @param request GetFormFieldRequest
     # @return [FormFieldResponse]
     def get_form_field(request)
@@ -4909,7 +4969,7 @@ module WordsRubySdk
     end
 
     # Get form fields from document.
-    #
+    # 
     # @param request GetFormFieldsRequest
     # @return [FormFieldsResponse]
     def get_form_fields(request)
@@ -4995,7 +5055,7 @@ module WordsRubySdk
     end
 
     # Return a header/footer that is contained in the document.
-    #
+    # 
     # @param request GetHeaderFooterRequest
     # @return [HeaderFooterResponse]
     def get_header_footer(request)
@@ -5086,7 +5146,7 @@ module WordsRubySdk
     end
 
     # Return a header/footer that is contained in the document.
-    #
+    # 
     # @param request GetHeaderFooterOfSectionRequest
     # @return [HeaderFooterResponse]
     def get_header_footer_of_section(request)
@@ -5182,7 +5242,7 @@ module WordsRubySdk
     end
 
     # Return a list of header/footers that are contained in the document.
-    #
+    # 
     # @param request GetHeaderFootersRequest
     # @return [HeaderFootersResponse]
     def get_header_footers(request)
@@ -5273,7 +5333,7 @@ module WordsRubySdk
     end
 
     # Read OfficeMath object by index.
-    #
+    # 
     # @param request GetOfficeMathObjectRequest
     # @return [OfficeMathObjectResponse]
     def get_office_math_object(request)
@@ -5364,7 +5424,7 @@ module WordsRubySdk
     end
 
     # Get OfficeMath objects from document.
-    #
+    # 
     # @param request GetOfficeMathObjectsRequest
     # @return [OfficeMathObjectsResponse]
     def get_office_math_objects(request)
@@ -5450,7 +5510,7 @@ module WordsRubySdk
     end
 
     # Get document section by index.
-    #
+    # 
     # @param request GetSectionRequest
     # @return [SectionResponse]
     def get_section(request)
@@ -5536,7 +5596,7 @@ module WordsRubySdk
     end
 
     # Get page setup of section.
-    #
+    # 
     # @param request GetSectionPageSetupRequest
     # @return [SectionPageSetupResponse]
     def get_section_page_setup(request)
@@ -5622,7 +5682,7 @@ module WordsRubySdk
     end
 
     # Return a list of sections that are contained in the document.
-    #
+    # 
     # @param request GetSectionsRequest
     # @return [SectionLinkCollectionResponse]
     def get_sections(request)
@@ -5703,7 +5763,7 @@ module WordsRubySdk
     end
 
     # Return a table.
-    #
+    # 
     # @param request GetTableRequest
     # @return [TableResponse]
     def get_table(request)
@@ -5794,7 +5854,7 @@ module WordsRubySdk
     end
 
     # Return a table cell.
-    #
+    # 
     # @param request GetTableCellRequest
     # @return [TableCellResponse]
     def get_table_cell(request)
@@ -5885,7 +5945,7 @@ module WordsRubySdk
     end
 
     # Return a table cell format.
-    #
+    # 
     # @param request GetTableCellFormatRequest
     # @return [TableCellFormatResponse]
     def get_table_cell_format(request)
@@ -5976,7 +6036,7 @@ module WordsRubySdk
     end
 
     # Return a table properties.
-    #
+    # 
     # @param request GetTablePropertiesRequest
     # @return [TablePropertiesResponse]
     def get_table_properties(request)
@@ -6067,7 +6127,7 @@ module WordsRubySdk
     end
 
     # Return a table row.
-    #
+    # 
     # @param request GetTableRowRequest
     # @return [TableRowResponse]
     def get_table_row(request)
@@ -6158,7 +6218,7 @@ module WordsRubySdk
     end
 
     # Return a table row format.
-    #
+    # 
     # @param request GetTableRowFormatRequest
     # @return [TableRowFormatResponse]
     def get_table_row_format(request)
@@ -6249,7 +6309,7 @@ module WordsRubySdk
     end
 
     # Return a list of tables that are contained in the document.
-    #
+    # 
     # @param request GetTablesRequest
     # @return [TableLinkCollectionResponse]
     def get_tables(request)
@@ -6335,7 +6395,7 @@ module WordsRubySdk
     end
 
     # Adds table to document, returns added table's data.             
-    #
+    # 
     # @param request InsertTableRequest
     # @return [TableResponse]
     def insert_table(request)
@@ -6436,7 +6496,7 @@ module WordsRubySdk
     end
 
     # Adds table cell to table, returns added cell's data.             
-    #
+    # 
     # @param request InsertTableCellRequest
     # @return [TableCellResponse]
     def insert_table_cell(request)
@@ -6537,7 +6597,7 @@ module WordsRubySdk
     end
 
     # Adds table row to table, returns added row's data.             
-    #
+    # 
     # @param request InsertTableRowRequest
     # @return [TableRowResponse]
     def insert_table_row(request)
@@ -6638,7 +6698,7 @@ module WordsRubySdk
     end
 
     # Append documents to original document.
-    #
+    # 
     # @param request PostAppendDocumentRequest
     # @return [DocumentResponse]
     def post_append_document(request)
@@ -6738,7 +6798,7 @@ module WordsRubySdk
     end
 
     # Change document protection.
-    #
+    # 
     # @param request PostChangeDocumentProtectionRequest
     # @return [ProtectionDataResponse]
     def post_change_document_protection(request)
@@ -6828,7 +6888,7 @@ module WordsRubySdk
     end
 
     # Updates the comment, returns updated comment's data.
-    #
+    # 
     # @param request PostCommentRequest
     # @return [CommentResponse]
     def post_comment(request)
@@ -6933,7 +6993,7 @@ module WordsRubySdk
     end
 
     # Compare document with original document.
-    #
+    # 
     # @param request PostCompareDocumentRequest
     # @return [DocumentResponse]
     def post_compare_document(request)
@@ -7023,7 +7083,7 @@ module WordsRubySdk
     end
 
     # Execute document mail merge operation.
-    #
+    # 
     # @param request PostDocumentExecuteMailMergeRequest
     # @return [DocumentResponse]
     def post_document_execute_mail_merge(request)
@@ -7048,18 +7108,12 @@ module WordsRubySdk
       if @api_client.config.client_side_validation && request.name.nil?
         raise ArgumentError, 'Missing the required parameter name when calling WordsApi.post_document_execute_mail_merge'
       end
-      # verify the required parameter 'with_regions' is set
-      if @api_client.config.client_side_validation && request.with_regions.nil?
-        raise ArgumentError, 'Missing the required parameter with_regions when calling WordsApi.post_document_execute_mail_merge'
-      end
       # resource path
       local_var_path = '/words/{name}/executeMailMerge'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('WithRegions')] = request.with_regions
-
       if local_var_path.include? downcase_first_letter('Folder')
         local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
       else
@@ -7079,6 +7133,11 @@ module WordsRubySdk
         local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
       else
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+      end
+      if local_var_path.include? downcase_first_letter('WithRegions')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('WithRegions') + '}', request.with_regions.to_s)
+      else
+        query_params[downcase_first_letter('WithRegions')] = request.with_regions unless request.with_regions.nil?
       end
       if local_var_path.include? downcase_first_letter('MailMergeDataFile')
         local_var_path = local_var_path.sub('{' + downcase_first_letter('MailMergeDataFile') + '}', request.mail_merge_data_file.to_s)
@@ -7131,7 +7190,7 @@ module WordsRubySdk
     end
 
     # Updates font properties, returns updated font data.
-    #
+    # 
     # @param request PostDocumentParagraphRunFontRequest
     # @return [FontResponse]
     def post_document_paragraph_run_font(request)
@@ -7241,7 +7300,7 @@ module WordsRubySdk
     end
 
     # Convert document to destination format with detailed settings and save result to storage.
-    #
+    # 
     # @param request PostDocumentSaveAsRequest
     # @return [SaveResponse]
     def post_document_save_as(request)
@@ -7336,7 +7395,7 @@ module WordsRubySdk
     end
 
     # Updates drawing object, returns updated  drawing object's data.
-    #
+    # 
     # @param request PostDrawingObjectRequest
     # @return [DrawingObjectResponse]
     def post_drawing_object(request)
@@ -7452,7 +7511,7 @@ module WordsRubySdk
     end
 
     # Populate document template with data.
-    #
+    # 
     # @param request PostExecuteTemplateRequest
     # @return [DocumentResponse]
     def post_execute_template(request)
@@ -7558,7 +7617,7 @@ module WordsRubySdk
     end
 
     # Updates field's properties, returns updated field's data.
-    #
+    # 
     # @param request PostFieldRequest
     # @return [FieldResponse]
     def post_field(request)
@@ -7668,7 +7727,7 @@ module WordsRubySdk
     end
 
     # Updates footnote's properties, returns updated run's data.
-    #
+    # 
     # @param request PostFootnoteRequest
     # @return [FootnoteResponse]
     def post_footnote(request)
@@ -7778,7 +7837,7 @@ module WordsRubySdk
     end
 
     # Updates properties of form field, returns updated form field.
-    #
+    # 
     # @param request PostFormFieldRequest
     # @return [FormFieldResponse]
     def post_form_field(request)
@@ -7888,7 +7947,7 @@ module WordsRubySdk
     end
 
     # Insert document watermark image.
-    #
+    # 
     # @param request PostInsertDocumentWatermarkImageRequest
     # @return [DocumentResponse]
     def post_insert_document_watermark_image(request)
@@ -7995,7 +8054,7 @@ module WordsRubySdk
     end
 
     # Insert document watermark text.
-    #
+    # 
     # @param request PostInsertDocumentWatermarkTextRequest
     # @return [DocumentResponse]
     def post_insert_document_watermark_text(request)
@@ -8095,7 +8154,7 @@ module WordsRubySdk
     end
 
     # Insert document page numbers.
-    #
+    # 
     # @param request PostInsertPageNumbersRequest
     # @return [DocumentResponse]
     def post_insert_page_numbers(request)
@@ -8195,7 +8254,7 @@ module WordsRubySdk
     end
 
     # Loads new document from web into the file with any supported format of data.
-    #
+    # 
     # @param request PostLoadWebDocumentRequest
     # @return [SaveResponse]
     def post_load_web_document(request)
@@ -8260,7 +8319,7 @@ module WordsRubySdk
     end
 
     # Replace document text.
-    #
+    # 
     # @param request PostReplaceTextRequest
     # @return [ReplaceTextResponse]
     def post_replace_text(request)
@@ -8360,7 +8419,7 @@ module WordsRubySdk
     end
 
     # Updates run's properties, returns updated run's data.
-    #
+    # 
     # @param request PostRunRequest
     # @return [RunResponse]
     def post_run(request)
@@ -8470,7 +8529,7 @@ module WordsRubySdk
     end
 
     # Split document.
-    #
+    # 
     # @param request PostSplitDocumentRequest
     # @return [SplitDocumentResponse]
     def post_split_document(request)
@@ -8581,7 +8640,7 @@ module WordsRubySdk
     end
 
     # Update document bookmark.
-    #
+    # 
     # @param request PostUpdateDocumentBookmarkRequest
     # @return [BookmarkResponse]
     def post_update_document_bookmark(request)
@@ -8686,7 +8745,7 @@ module WordsRubySdk
     end
 
     # Update (reevaluate) fields in document.
-    #
+    # 
     # @param request PostUpdateDocumentFieldsRequest
     # @return [DocumentResponse]
     def post_update_document_fields(request)
@@ -8772,7 +8831,7 @@ module WordsRubySdk
     end
 
     # Adds comment to document, returns inserted comment's data.
-    #
+    # 
     # @param request PutCommentRequest
     # @return [CommentResponse]
     def put_comment(request)
@@ -8872,7 +8931,7 @@ module WordsRubySdk
     end
 
     # Convert document from request content to format specified.
-    #
+    # 
     # @param request PutConvertDocumentRequest
     # @return [File]
     def put_convert_document(request)
@@ -8918,6 +8977,11 @@ module WordsRubySdk
       else
         query_params[downcase_first_letter('OutPath')] = request.out_path unless request.out_path.nil?
       end
+      if local_var_path.include? downcase_first_letter('DocumentFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DocumentFileName') + '}', request.document_file_name.to_s)
+      else
+        query_params[downcase_first_letter('DocumentFileName')] = request.document_file_name unless request.document_file_name.nil?
+      end
       if local_var_path.include? downcase_first_letter('FontsLocation')
         local_var_path = local_var_path.sub('{' + downcase_first_letter('FontsLocation') + '}', request.fonts_location.to_s)
       else
@@ -8954,7 +9018,7 @@ module WordsRubySdk
     end
 
     # Creates new document. Document is created with format which is recognized from file extensions.  Supported extentions: \".doc\", \".docx\", \".docm\", \".dot\", \".dotm\", \".dotx\", \".flatopc\", \".fopc\", \".flatopc_macro\", \".fopc_macro\", \".flatopc_template\", \".fopc_template\", \".flatopc_template_macro\", \".fopc_template_macro\", \".wordml\", \".wml\", \".rtf\"
-    #
+    # 
     # @param request PutCreateDocumentRequest
     # @return [DocumentResponse]
     def put_create_document(request)
@@ -9025,7 +9089,7 @@ module WordsRubySdk
     end
 
     # Read document field names.
-    #
+    # 
     # @param request PutDocumentFieldNamesRequest
     # @return [FieldNamesResponse]
     def put_document_field_names(request)
@@ -9091,7 +9155,7 @@ module WordsRubySdk
     end
 
     # Convert document to tiff with detailed settings and save result to storage.
-    #
+    # 
     # @param request PutDocumentSaveAsTiffRequest
     # @return [SaveResponse]
     def put_document_save_as_tiff(request)
@@ -9276,7 +9340,7 @@ module WordsRubySdk
     end
 
     # Adds  drawing object to document, returns added  drawing object's data.
-    #
+    # 
     # @param request PutDrawingObjectRequest
     # @return [DrawingObjectResponse]
     def put_drawing_object(request)
@@ -9387,7 +9451,7 @@ module WordsRubySdk
     end
 
     # Execute document mail merge online.
-    #
+    # 
     # @param request PutExecuteMailMergeOnlineRequest
     # @return [File]
     def put_execute_mail_merge_online(request)
@@ -9431,6 +9495,11 @@ module WordsRubySdk
       else
         query_params[downcase_first_letter('Cleanup')] = request.cleanup unless request.cleanup.nil?
       end
+      if local_var_path.include? downcase_first_letter('DocumentFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DocumentFileName') + '}', request.document_file_name.to_s)
+      else
+        query_params[downcase_first_letter('DocumentFileName')] = request.document_file_name unless request.document_file_name.nil?
+      end
 
       # header parameters
       header_params = {}
@@ -9463,7 +9532,7 @@ module WordsRubySdk
     end
 
     # Populate document template with data online.
-    #
+    # 
     # @param request PutExecuteTemplateOnlineRequest
     # @return [File]
     def put_execute_template_online(request)
@@ -9512,6 +9581,11 @@ module WordsRubySdk
       else
         query_params[downcase_first_letter('WithRegions')] = request.with_regions unless request.with_regions.nil?
       end
+      if local_var_path.include? downcase_first_letter('DocumentFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DocumentFileName') + '}', request.document_file_name.to_s)
+      else
+        query_params[downcase_first_letter('DocumentFileName')] = request.document_file_name unless request.document_file_name.nil?
+      end
 
       # header parameters
       header_params = {}
@@ -9544,7 +9618,7 @@ module WordsRubySdk
     end
 
     # Adds field to document, returns inserted field's data.
-    #
+    # 
     # @param request PutFieldRequest
     # @return [FieldResponse]
     def put_field(request)
@@ -9654,7 +9728,7 @@ module WordsRubySdk
     end
 
     # Adds footnote to document, returns added footnote's data.
-    #
+    # 
     # @param request PutFootnoteRequest
     # @return [FootnoteResponse]
     def put_footnote(request)
@@ -9759,7 +9833,7 @@ module WordsRubySdk
     end
 
     # Adds form field to paragraph, returns added form field's data.
-    #
+    # 
     # @param request PutFormFieldRequest
     # @return [FormFieldResponse]
     def put_form_field(request)
@@ -9869,7 +9943,7 @@ module WordsRubySdk
     end
 
     # Insert to document header or footer.
-    #
+    # 
     # @param request PutHeaderFooterRequest
     # @return [HeaderFooterResponse]
     def put_header_footer(request)
@@ -9974,7 +10048,7 @@ module WordsRubySdk
     end
 
     # Adds paragraph to document, returns added paragraph's data.
-    #
+    # 
     # @param request PutParagraphRequest
     # @return [ParagraphResponse]
     def put_paragraph(request)
@@ -10084,7 +10158,7 @@ module WordsRubySdk
     end
 
     # Protect document.
-    #
+    # 
     # @param request PutProtectDocumentRequest
     # @return [ProtectionDataResponse]
     def put_protect_document(request)
@@ -10174,7 +10248,7 @@ module WordsRubySdk
     end
 
     # Adds run to document, returns added paragraph's data.
-    #
+    # 
     # @param request PutRunRequest
     # @return [RunResponse]
     def put_run(request)
@@ -10284,7 +10358,7 @@ module WordsRubySdk
     end
 
     # Reject all revisions in document
-    #
+    # 
     # @param request RejectAllRevisionsRequest
     # @return [RevisionsModificationResponse]
     def reject_all_revisions(request)
@@ -10370,7 +10444,7 @@ module WordsRubySdk
     end
 
     # Renders drawing object to specified format.
-    #
+    # 
     # @param request RenderDrawingObjectRequest
     # @return [File]
     def render_drawing_object(request)
@@ -10472,7 +10546,7 @@ module WordsRubySdk
     end
 
     # Renders math object to specified format.
-    #
+    # 
     # @param request RenderMathObjectRequest
     # @return [File]
     def render_math_object(request)
@@ -10574,7 +10648,7 @@ module WordsRubySdk
     end
 
     # Renders page to specified format.
-    #
+    # 
     # @param request RenderPageRequest
     # @return [File]
     def render_page(request)
@@ -10671,7 +10745,7 @@ module WordsRubySdk
     end
 
     # Renders paragraph to specified format.
-    #
+    # 
     # @param request RenderParagraphRequest
     # @return [File]
     def render_paragraph(request)
@@ -10773,7 +10847,7 @@ module WordsRubySdk
     end
 
     # Renders table to specified format.
-    #
+    # 
     # @param request RenderTableRequest
     # @return [File]
     def render_table(request)
@@ -10875,7 +10949,7 @@ module WordsRubySdk
     end
 
     # Resets font's cache.
-    #
+    # 
     # @param request ResetCacheRequest
     # @return [AsposeResponse]
     def reset_cache(request)
@@ -10931,7 +11005,7 @@ module WordsRubySdk
     end
 
     # Search text in document.
-    #
+    # 
     # @param request SearchRequest
     # @return [SearchResponse]
     def search(request)
@@ -11018,7 +11092,7 @@ module WordsRubySdk
     end
 
     # Updates border properties.             
-    #'nodePath' should refer to node with cell or row
+    # 'nodePath' should refer to node with cell or row
     # @param request UpdateBorderRequest
     # @return [BorderResponse]
     def update_border(request)
@@ -11128,7 +11202,7 @@ module WordsRubySdk
     end
 
     # Update page setup of section.
-    #
+    # 
     # @param request UpdateSectionPageSetupRequest
     # @return [SectionPageSetupResponse]
     def update_section_page_setup(request)
@@ -11233,7 +11307,7 @@ module WordsRubySdk
     end
 
     # Updates a table cell format.
-    #
+    # 
     # @param request UpdateTableCellFormatRequest
     # @return [TableCellFormatResponse]
     def update_table_cell_format(request)
@@ -11339,7 +11413,7 @@ module WordsRubySdk
     end
 
     # Updates a table properties.
-    #
+    # 
     # @param request UpdateTablePropertiesRequest
     # @return [TablePropertiesResponse]
     def update_table_properties(request)
@@ -11445,7 +11519,7 @@ module WordsRubySdk
     end
 
     # Updates a table row format.
-    #
+    # 
     # @param request UpdateTableRowFormatRequest
     # @return [TableRowFormatResponse]
     def update_table_row_format(request)
