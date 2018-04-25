@@ -1,4 +1,4 @@
-
+nd
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="UpdateTablePropertiesRequest.rb">
@@ -94,4 +94,4 @@ class UpdateTablePropertiesRequest
 		end
 	
 	end
-end
+e

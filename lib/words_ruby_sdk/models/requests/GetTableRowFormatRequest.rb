@@ -1,4 +1,4 @@
-
+nd
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="GetTableRowFormatRequest.rb">
@@ -74,4 +74,4 @@ class GetTableRowFormatRequest
 		end
 	
 	end
-end
+e

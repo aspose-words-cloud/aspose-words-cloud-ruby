@@ -1,4 +1,4 @@
-
+nd
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="GetDocumentBookmarksRequest.rb">
@@ -64,4 +64,4 @@ class GetDocumentBookmarksRequest
 		end
 	
 	end
-end
+e

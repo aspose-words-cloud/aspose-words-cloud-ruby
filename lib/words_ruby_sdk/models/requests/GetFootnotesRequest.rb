@@ -1,4 +1,4 @@
-
+nd
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="GetFootnotesRequest.rb">
@@ -69,4 +69,4 @@ class GetFootnotesRequest
 		end
 	
 	end
-end
+e

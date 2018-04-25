@@ -1,4 +1,4 @@
-
+nd
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="GetDocumentWithFormatRequest.rb">
@@ -79,4 +79,4 @@ class GetDocumentWithFormatRequest
 		end
 	
 	end
-end
+e

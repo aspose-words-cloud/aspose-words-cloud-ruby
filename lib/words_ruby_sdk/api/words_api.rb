@@ -183,6 +183,92 @@ module WordsRubySdk
       [data, status_code, headers]
     end
 
+    # Classify document.
+    # 
+    # @param request ClassifyDocumentRequest
+    # @return [ClassificationResponse]
+    def classify_document(request)
+      data, _status_code, _headers = classify_document_with_http_info(request)
+      data
+    end
+
+    # Classify document.
+    # 
+    # @param request ClassifyDocumentRequest
+    # @return [Array<(ClassificationResponse, Fixnum, Hash)>]
+    # ClassificationResponse data, response status code and response headers
+    private def classify_document_with_http_info(request)
+      unless request.is_a? ClassifyDocumentRequest
+        raise ArgumentError, 'Incorrect request type'
+      end
+
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: WordsApi.classify_document ...'
+      end
+      # verify the required parameter 'document_name' is set
+      if @api_client.config.client_side_validation && request.document_name.nil?
+        raise ArgumentError, 'Missing the required parameter document_name when calling WordsApi.classify_document'
+      end
+      # resource path
+      local_var_path = '/words/{documentName}/classify'
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('DocumentName') + '}', request.document_name.to_s)
+
+      # query parameters
+      query_params = {}
+      if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+      else
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+      else
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+      end
+      if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+      else
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+      else
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+      end
+      if local_var_path.include? downcase_first_letter('BestClassesCount')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('BestClassesCount') + '}', request.best_classes_count.to_s)
+      else
+        query_params[downcase_first_letter('BestClassesCount')] = request.best_classes_count unless request.best_classes_count.nil?
+      end
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/xml', 'application/json'])
+
+      # form parameters
+      form_params = {}
+
+      request_token
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        header_params: header_params,
+        query_params: query_params,
+        form_params: form_params,
+        body: post_body,
+        auth_names: auth_names,
+        return_type: 'ClassificationResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: 
+        WordsApi#classify_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
     # Add new or update existing document property.
     # 
     # @param request CreateOrUpdateDocumentPropertyRequest
@@ -11655,4 +11741,4 @@ module WordsRubySdk
       end
     end
   end
-end
+e

@@ -1,4 +1,4 @@
-
+nd
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="GetOfficeMathObjectsRequest.rb">
@@ -69,4 +69,4 @@ class GetOfficeMathObjectsRequest
 		end
 	
 	end
-end
+e

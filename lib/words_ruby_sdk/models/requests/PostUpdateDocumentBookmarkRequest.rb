@@ -1,4 +1,4 @@
-
+nd
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="PostUpdateDocumentBookmarkRequest.rb">
@@ -89,4 +89,4 @@ class PostUpdateDocumentBookmarkRequest
 		end
 	
 	end
-end
+e

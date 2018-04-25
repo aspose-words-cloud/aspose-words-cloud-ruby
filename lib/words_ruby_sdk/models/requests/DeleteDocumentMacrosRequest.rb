@@ -1,4 +1,4 @@
-
+nd
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="DeleteDocumentMacrosRequest.rb">
@@ -79,4 +79,4 @@ class DeleteDocumentMacrosRequest
 		end
 	
 	end
-end
+e

@@ -1,4 +1,4 @@
-
+nd
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="GetDocumentDrawingObjectsRequest.rb">
@@ -69,4 +69,4 @@ class GetDocumentDrawingObjectsRequest
 		end
 	
 	end
-end
+e

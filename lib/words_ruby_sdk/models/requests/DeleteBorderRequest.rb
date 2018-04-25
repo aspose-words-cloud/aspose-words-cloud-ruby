@@ -1,4 +1,4 @@
-
+nd
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="DeleteBorderRequest.rb">
@@ -89,4 +89,4 @@ class DeleteBorderRequest
 		end
 	
 	end
-end
+e

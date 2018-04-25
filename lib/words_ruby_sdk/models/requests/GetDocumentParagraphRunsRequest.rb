@@ -1,4 +1,4 @@
-
+nd
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="GetDocumentParagraphRunsRequest.rb">
@@ -69,4 +69,4 @@ class GetDocumentParagraphRunsRequest
 		end
 	
 	end
-end
+e

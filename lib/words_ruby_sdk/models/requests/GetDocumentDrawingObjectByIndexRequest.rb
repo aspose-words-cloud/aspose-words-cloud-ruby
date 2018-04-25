@@ -1,4 +1,4 @@
-
+nd
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="GetDocumentDrawingObjectByIndexRequest.rb">
@@ -74,4 +74,4 @@ class GetDocumentDrawingObjectByIndexRequest
 		end
 	
 	end
-end
+e
