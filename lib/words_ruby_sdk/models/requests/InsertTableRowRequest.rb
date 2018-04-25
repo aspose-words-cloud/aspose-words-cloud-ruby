@@ -1,4 +1,3 @@
-nd
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="InsertTableRowRequest.rb">
@@ -89,4 +88,4 @@ class InsertTableRowRequest
 		end
 	
 	end
-e
+end

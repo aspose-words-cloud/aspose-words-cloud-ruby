@@ -1,4 +1,3 @@
-nd
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="DeleteDocumentWatermarkRequest.rb">
@@ -79,4 +78,4 @@ class DeleteDocumentWatermarkRequest
 		end
 	
 	end
-e
+end

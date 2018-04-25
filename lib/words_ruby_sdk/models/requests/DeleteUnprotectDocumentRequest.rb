@@ -1,4 +1,3 @@
-nd
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="DeleteUnprotectDocumentRequest.rb">
@@ -74,4 +73,4 @@ class DeleteUnprotectDocumentRequest
 		end
 	
 	end
-e
+end

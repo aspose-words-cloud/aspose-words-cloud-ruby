@@ -1,4 +1,3 @@
-nd
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="DeleteFieldRequest.rb">
@@ -89,4 +88,4 @@ class DeleteFieldRequest
 		end
 	
 	end
-e
+end

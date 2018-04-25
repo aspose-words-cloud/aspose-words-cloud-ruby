@@ -1,4 +1,3 @@
-nd
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="GetFieldRequest.rb">
@@ -74,4 +73,4 @@ class GetFieldRequest
 		end
 	
 	end
-e
+end

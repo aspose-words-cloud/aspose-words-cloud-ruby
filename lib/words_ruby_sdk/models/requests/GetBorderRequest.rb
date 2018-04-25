@@ -1,4 +1,3 @@
-nd
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="GetBorderRequest.rb">
@@ -74,4 +73,4 @@ class GetBorderRequest
 		end
 	
 	end
-e
+end

@@ -1,4 +1,3 @@
-nd
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="ClassifyRequest.rb">
@@ -44,4 +43,4 @@ class ClassifyRequest
 		end
 	
 	end
-e
+end

@@ -1,4 +1,3 @@
-nd
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="PostUpdateDocumentFieldsRequest.rb">
@@ -69,4 +68,4 @@ class PostUpdateDocumentFieldsRequest
 		end
 	
 	end
-e
+end

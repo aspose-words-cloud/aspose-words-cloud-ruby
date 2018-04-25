@@ -1,4 +1,3 @@
-nd
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="ResetCacheRequest.rb">
@@ -34,4 +33,4 @@ module WordsRubySdk
 class ResetCacheRequest
 
 	end
-e
+end

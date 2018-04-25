@@ -1,4 +1,3 @@
-nd
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="GetDocumentDrawingObjectImageDataRequest.rb">
@@ -74,4 +73,4 @@ class GetDocumentDrawingObjectImageDataRequest
 		end
 	
 	end
-e
+end

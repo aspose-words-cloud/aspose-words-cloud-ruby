@@ -1,4 +1,3 @@
-nd
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="PostInsertDocumentWatermarkImageRequest.rb">
@@ -94,4 +93,4 @@ class PostInsertDocumentWatermarkImageRequest
 		end
 	
 	end
-e
+end

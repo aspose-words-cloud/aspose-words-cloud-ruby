@@ -1,4 +1,3 @@
-nd
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="UpdateTableCellFormatRequest.rb">
@@ -94,4 +93,4 @@ class UpdateTableCellFormatRequest
 		end
 	
 	end
-e
+end

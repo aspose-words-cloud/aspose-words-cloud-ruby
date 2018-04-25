@@ -1,4 +1,3 @@
-nd
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="GetDocumentParagraphRunFontRequest.rb">
@@ -74,4 +73,4 @@ class GetDocumentParagraphRunFontRequest
 		end
 	
 	end
-e
+end

@@ -1,4 +1,3 @@
-nd
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="DeleteHeadersFootersRequest.rb">
@@ -89,4 +88,4 @@ class DeleteHeadersFootersRequest
 		end
 	
 	end
-e
+end

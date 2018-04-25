@@ -1,4 +1,3 @@
-nd
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="DeleteDocumentPropertyRequest.rb">
@@ -84,4 +83,4 @@ class DeleteDocumentPropertyRequest
 		end
 	
 	end
-e
+end

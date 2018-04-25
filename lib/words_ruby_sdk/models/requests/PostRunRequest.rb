@@ -1,4 +1,3 @@
-nd
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="PostRunRequest.rb">
@@ -94,4 +93,4 @@ class PostRunRequest
 		end
 	
 	end
-e
+end

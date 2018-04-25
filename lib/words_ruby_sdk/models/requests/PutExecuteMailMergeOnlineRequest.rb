@@ -1,4 +1,3 @@
-nd
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="PutExecuteMailMergeOnlineRequest.rb">
@@ -64,4 +63,4 @@ class PutExecuteMailMergeOnlineRequest
 		end
 	
 	end
-e
+end

@@ -1,4 +1,3 @@
-nd
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="GetDocumentHyperlinksRequest.rb">
@@ -64,4 +63,4 @@ class GetDocumentHyperlinksRequest
 		end
 	
 	end
-e
+end

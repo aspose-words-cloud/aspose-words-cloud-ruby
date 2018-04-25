@@ -1,4 +1,3 @@
-nd
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="PostDrawingObjectRequest.rb">
@@ -99,4 +98,4 @@ class PostDrawingObjectRequest
 		end
 	
 	end
-e
+end

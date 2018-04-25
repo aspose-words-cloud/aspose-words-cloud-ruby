@@ -1,4 +1,3 @@
-nd
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="PostInsertPageNumbersRequest.rb">
@@ -84,4 +83,4 @@ class PostInsertPageNumbersRequest
 		end
 	
 	end
-e
+end

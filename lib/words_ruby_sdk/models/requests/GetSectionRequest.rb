@@ -1,4 +1,3 @@
-nd
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="GetSectionRequest.rb">
@@ -69,4 +68,4 @@ class GetSectionRequest
 		end
 	
 	end
-e
+end

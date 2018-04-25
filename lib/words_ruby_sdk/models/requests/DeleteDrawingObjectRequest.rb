@@ -1,4 +1,3 @@
-nd
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="DeleteDrawingObjectRequest.rb">
@@ -89,4 +88,4 @@ class DeleteDrawingObjectRequest
 		end
 	
 	end
-e
+end

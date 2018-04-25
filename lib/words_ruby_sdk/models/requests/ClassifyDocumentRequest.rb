@@ -1,4 +1,3 @@
-nd
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="ClassifyDocumentRequest.rb">
@@ -69,4 +68,4 @@ class ClassifyDocumentRequest
 		end
 	
 	end
-e
+end

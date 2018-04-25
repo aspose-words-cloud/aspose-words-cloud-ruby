@@ -1,4 +1,3 @@
-nd
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="GetDocumentTextItemsRequest.rb">
@@ -64,4 +63,4 @@ class GetDocumentTextItemsRequest
 		end
 	
 	end
-e
+end

@@ -1,4 +1,3 @@
-nd
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="PostChangeDocumentProtectionRequest.rb">
@@ -74,4 +73,4 @@ class PostChangeDocumentProtectionRequest
 		end
 	
 	end
-e
+end

@@ -1,4 +1,3 @@
-nd
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="GetTableRowRequest.rb">
@@ -74,4 +73,4 @@ class GetTableRowRequest
 		end
 	
 	end
-e
+end

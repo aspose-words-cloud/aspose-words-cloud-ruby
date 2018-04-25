@@ -1,4 +1,3 @@
-nd
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="GetHeaderFootersRequest.rb">
@@ -74,4 +73,4 @@ class GetHeaderFootersRequest
 		end
 	
 	end
-e
+end
