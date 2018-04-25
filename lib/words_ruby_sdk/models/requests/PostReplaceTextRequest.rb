@@ -1,4 +1,3 @@
-
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="PostReplaceTextRequest.rb">
@@ -84,4 +83,4 @@ class PostReplaceTextRequest
 		end
 	
 	end
-end
+end

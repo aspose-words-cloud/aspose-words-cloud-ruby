@@ -1,4 +1,3 @@
-
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="GetCommentRequest.rb">
@@ -69,4 +68,4 @@ class GetCommentRequest
 		end
 	
 	end
-end
+end

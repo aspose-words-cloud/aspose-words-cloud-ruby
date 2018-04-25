@@ -1,6 +1,6 @@
  #
  # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose" file="UpdateSectionPageSetupRequest.rb">
+ # <copyright company="Aspose" file="ClassifyDocumentRequest.rb">
  #   Copyright (c) 2018 Aspose.Words for Cloud
  # </copyright>
  # <summary>
@@ -28,18 +28,12 @@
 module WordsRubySdk
 
  #
- # Request model for update_section_page_setup operation.
+ # Request model for classify_document operation.
  #
-class UpdateSectionPageSetupRequest
+class ClassifyDocumentRequest
 
      # The document name.
-		attr_accessor :name
-		
-     # Section index
-		attr_accessor :section_index
-		
-     # Page setup properties dto
-		attr_accessor :page_setup
+		attr_accessor :document_name
 		
      # Original document folder.
 		attr_accessor :folder
@@ -53,38 +47,24 @@ class UpdateSectionPageSetupRequest
      # Password for opening an encrypted document.
 		attr_accessor :password
 		
-     # Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-		attr_accessor :dest_file_name
-		
-     # Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-		attr_accessor :revision_author
-		
-     # The date and time to use for revisions.
-		attr_accessor :revision_date_time
+     # Count of the best classes to return.
+		attr_accessor :best_classes_count
 	
      #
      # Initializes a new instance.
-     # @param name The document name.
-     # @param section_index Section index
-     # @param page_setup Page setup properties dto
+     # @param document_name The document name.
      # @param folder Original document folder.
      # @param storage File storage, which have to be used.
      # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      # @param password Password for opening an encrypted document.
-     # @param dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-     # @param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-     # @param revision_date_time The date and time to use for revisions.
-		def initialize(name, section_index, page_setup, folder=nil, storage=nil, load_encoding=nil, password=nil, dest_file_name=nil, revision_author=nil, revision_date_time=nil)
-			self.name=name
-			self.section_index=section_index
-			self.page_setup=page_setup
+     # @param best_classes_count Count of the best classes to return.
+		def initialize(document_name, folder=nil, storage=nil, load_encoding=nil, password=nil, best_classes_count=nil)
+			self.document_name=document_name
 			self.folder=folder
 			self.storage=storage
 			self.load_encoding=load_encoding
 			self.password=password
-			self.dest_file_name=dest_file_name
-			self.revision_author=revision_author
-			self.revision_date_time=revision_date_time
+			self.best_classes_count=best_classes_count
 		end
 	
 	end

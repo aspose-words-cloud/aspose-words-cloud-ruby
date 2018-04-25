@@ -1,4 +1,3 @@
-
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="DeleteParagraphRequest.rb">
@@ -89,4 +88,4 @@ class DeleteParagraphRequest
 		end
 	
 	end
-end
+end

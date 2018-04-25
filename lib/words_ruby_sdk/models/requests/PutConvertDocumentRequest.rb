@@ -1,4 +1,3 @@
-
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="PutConvertDocumentRequest.rb">
@@ -69,4 +68,4 @@ class PutConvertDocumentRequest
 		end
 	
 	end
-end
+end

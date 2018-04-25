@@ -1,4 +1,3 @@
-
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="PostCommentRequest.rb">
@@ -89,4 +88,4 @@ class PostCommentRequest
 		end
 	
 	end
-end
+end

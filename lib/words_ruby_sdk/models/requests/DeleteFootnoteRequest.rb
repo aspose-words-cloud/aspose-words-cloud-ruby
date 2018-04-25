@@ -1,4 +1,3 @@
-
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="DeleteFootnoteRequest.rb">
@@ -89,4 +88,4 @@ class DeleteFootnoteRequest
 		end
 	
 	end
-end
+end

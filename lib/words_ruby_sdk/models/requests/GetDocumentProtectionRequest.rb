@@ -1,4 +1,3 @@
-
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="GetDocumentProtectionRequest.rb">
@@ -64,4 +63,4 @@ class GetDocumentProtectionRequest
 		end
 	
 	end
-end
+end

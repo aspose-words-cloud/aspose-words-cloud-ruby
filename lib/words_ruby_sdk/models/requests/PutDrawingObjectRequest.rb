@@ -1,4 +1,3 @@
-
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="PutDrawingObjectRequest.rb">
@@ -94,4 +93,4 @@ class PutDrawingObjectRequest
 		end
 	
 	end
-end
+end

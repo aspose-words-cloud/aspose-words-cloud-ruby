@@ -1,4 +1,3 @@
-
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="RenderParagraphRequest.rb">
@@ -84,4 +83,4 @@ class RenderParagraphRequest
 		end
 	
 	end
-end
+end

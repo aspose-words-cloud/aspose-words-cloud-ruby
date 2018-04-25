@@ -1,4 +1,3 @@
-
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="PostCompareDocumentRequest.rb">
@@ -74,4 +73,4 @@ class PostCompareDocumentRequest
 		end
 	
 	end
-end
+end

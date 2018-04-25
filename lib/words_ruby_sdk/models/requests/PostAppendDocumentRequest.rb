@@ -1,4 +1,3 @@
-
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="PostAppendDocumentRequest.rb">
@@ -84,4 +83,4 @@ class PostAppendDocumentRequest
 		end
 	
 	end
-end
+end

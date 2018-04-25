@@ -1,4 +1,3 @@
-
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="PutRunRequest.rb">
@@ -94,4 +93,4 @@ class PutRunRequest
 		end
 	
 	end
-end
+end

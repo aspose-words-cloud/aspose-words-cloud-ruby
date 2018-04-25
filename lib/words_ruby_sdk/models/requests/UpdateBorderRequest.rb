@@ -1,4 +1,3 @@
-
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="UpdateBorderRequest.rb">
@@ -94,4 +93,4 @@ class UpdateBorderRequest
 		end
 	
 	end
-end
+end

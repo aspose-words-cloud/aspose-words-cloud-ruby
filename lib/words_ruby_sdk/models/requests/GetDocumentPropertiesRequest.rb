@@ -1,4 +1,3 @@
-
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="GetDocumentPropertiesRequest.rb">
@@ -64,4 +63,4 @@ class GetDocumentPropertiesRequest
 		end
 	
 	end
-end
+end

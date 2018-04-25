@@ -1,4 +1,3 @@
-
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="GetTablePropertiesRequest.rb">
@@ -74,4 +73,4 @@ class GetTablePropertiesRequest
 		end
 	
 	end
-end
+end

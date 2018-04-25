@@ -1,4 +1,3 @@
-
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="DeleteTableRequest.rb">
@@ -89,4 +88,4 @@ class DeleteTableRequest
 		end
 	
 	end
-end
+end

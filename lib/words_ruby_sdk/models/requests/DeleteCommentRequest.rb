@@ -1,4 +1,3 @@
-
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="DeleteCommentRequest.rb">
@@ -84,4 +83,4 @@ class DeleteCommentRequest
 		end
 	
 	end
-end
+end

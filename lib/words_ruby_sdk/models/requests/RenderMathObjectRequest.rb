@@ -1,4 +1,3 @@
-
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="RenderMathObjectRequest.rb">
@@ -84,4 +83,4 @@ class RenderMathObjectRequest
 		end
 	
 	end
-end
+end

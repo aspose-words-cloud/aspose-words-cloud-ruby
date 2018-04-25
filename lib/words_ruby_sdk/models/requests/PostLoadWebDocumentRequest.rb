@@ -1,4 +1,3 @@
-
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="PostLoadWebDocumentRequest.rb">
@@ -49,4 +48,4 @@ class PostLoadWebDocumentRequest
 		end
 	
 	end
-end
+end

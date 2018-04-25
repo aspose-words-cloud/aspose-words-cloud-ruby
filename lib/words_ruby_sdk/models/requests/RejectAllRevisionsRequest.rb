@@ -1,4 +1,3 @@
-
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="RejectAllRevisionsRequest.rb">
@@ -69,4 +68,4 @@ class RejectAllRevisionsRequest
 		end
 	
 	end
-end
+end

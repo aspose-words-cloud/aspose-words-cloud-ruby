@@ -1,4 +1,3 @@
-
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="SearchRequest.rb">
@@ -69,4 +68,4 @@ class SearchRequest
 		end
 	
 	end
-end
+end

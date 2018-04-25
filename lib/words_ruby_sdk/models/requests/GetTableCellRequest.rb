@@ -1,4 +1,3 @@
-
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="GetTableCellRequest.rb">
@@ -74,4 +73,4 @@ class GetTableCellRequest
 		end
 	
 	end
-end
+end

@@ -1,4 +1,3 @@
-
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="GetSectionPageSetupRequest.rb">
@@ -69,4 +68,4 @@ class GetSectionPageSetupRequest
 		end
 	
 	end
-end
+end

@@ -1,4 +1,3 @@
-
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="PostDocumentExecuteMailMergeRequest.rb">
@@ -94,4 +93,4 @@ class PostDocumentExecuteMailMergeRequest
 		end
 	
 	end
-end
+end

@@ -1,4 +1,3 @@
-
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="GetHeaderFooterOfSectionRequest.rb">
@@ -79,4 +78,4 @@ class GetHeaderFooterOfSectionRequest
 		end
 	
 	end
-end
+end

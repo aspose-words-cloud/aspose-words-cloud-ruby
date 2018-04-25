@@ -1,4 +1,3 @@
-
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="RenderPageRequest.rb">
@@ -79,4 +78,4 @@ class RenderPageRequest
 		end
 	
 	end
-end
+end

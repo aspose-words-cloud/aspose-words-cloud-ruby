@@ -1,4 +1,3 @@
-
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="DeleteOfficeMathObjectRequest.rb">
@@ -89,4 +88,4 @@ class DeleteOfficeMathObjectRequest
 		end
 	
 	end
-end
+end

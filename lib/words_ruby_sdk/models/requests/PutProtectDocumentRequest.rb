@@ -1,4 +1,3 @@
-
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="PutProtectDocumentRequest.rb">
@@ -74,4 +73,4 @@ class PutProtectDocumentRequest
 		end
 	
 	end
-end
+end
