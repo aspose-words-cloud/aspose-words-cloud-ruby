@@ -32,11 +32,14 @@ module WordsRubySdk
     # Test for text classification.
     #
     def test_classify
-	  request_parameters = ClassificationRequestParameters.new
-	  request_parameters.text = "Try text classification"
-	  request_parameters.best_classes_count = 3
+      # move parameters initialization into constructor like this SaveOptionsData.new({:SaveFormat => 'pdf', :FileName => dest_name})
+      request_parameters = ClassificationRequestParameters.new
+	    request_parameters.text = "Try text classification"
+	    request_parameters.best_classes_count = 3
+
       request = ClassifyRequest.new request_parameters
       result = @words_api.classify request
+      
       assert_equal 200, result.code
     end
   end
