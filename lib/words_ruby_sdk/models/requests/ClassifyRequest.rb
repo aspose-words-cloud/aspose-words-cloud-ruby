@@ -33,13 +33,13 @@ module WordsRubySdk
 class ClassifyRequest
 
      # Classification request parameters.
-		attr_accessor :request
+		attr_accessor :parameters
 	
      #
      # Initializes a new instance.
-     # @param request Classification request parameters.
-		def initialize(request)
-			self.request=request
+     # @param parameters Classification request parameters.
+		def initialize(parameters)
+			self.parameters=parameters
 		end
 	
 	end
