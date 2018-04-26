@@ -27,19 +27,32 @@
 module WordsRubySdk
   require_relative '../base_test_context'
   class ClassificationTests < BaseTestContext
+    def test_folder
+      'Common'
+    end
     
-    #
-    # Test for text classification.
+	#
+    # Test for raw text classification.
     #
     def test_classify
-      # move parameters initialization into constructor like this SaveOptionsData.new({:SaveFormat => 'pdf', :FileName => dest_name})
-      request_parameters = ClassificationRequestParameters.new
-	    request_parameters.text = "Try text classification"
-	    request_parameters.best_classes_count = 3
+      request_parameters = ClassificationRequestParameters.new({:Text => "Try text classification", :BestClassesCount => 3})
 
       request = ClassifyRequest.new request_parameters
       result = @words_api.classify request
       
+      assert_equal 200, result.code
+    end
+	
+	#
+    # Test for document classification
+    #
+    def test_get_document_classify
+      filename = 'test_multi_pages.docx'
+      remote_name = 'Source.docx'
+      
+      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+	  request = ClassifyDocumentRequest.new remote_name, remote_test_folder + test_folder
+      result = @words_api.classify_document request
       assert_equal 200, result.code
     end
   end
