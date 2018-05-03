@@ -97,9 +97,6 @@ module WordsRubySdk
     # Controls how list labels are output
     attr_accessor :export_list_labels
 
-    # Specifies whether to convert metafiles into raster images when exporting.  Deprecated - use the MetafileFormat property instead
-    attr_accessor :export_metafile_as_raster
-
     # Specifies whether original URL should be used as the URL of the linked images. Default value is false.
     attr_accessor :export_original_url_for_linked_images
 
@@ -213,7 +210,6 @@ module WordsRubySdk
         :'export_images_as_base64' => :'ExportImagesAsBase64',
         :'export_language_information' => :'ExportLanguageInformation',
         :'export_list_labels' => :'ExportListLabels',
-        :'export_metafile_as_raster' => :'ExportMetafileAsRaster',
         :'export_original_url_for_linked_images' => :'ExportOriginalUrlForLinkedImages',
         :'export_page_margins' => :'ExportPageMargins',
         :'export_page_setup' => :'ExportPageSetup',
@@ -264,7 +260,6 @@ module WordsRubySdk
         :'export_images_as_base64' => :'BOOLEAN',
         :'export_language_information' => :'BOOLEAN',
         :'export_list_labels' => :'String',
-        :'export_metafile_as_raster' => :'BOOLEAN',
         :'export_original_url_for_linked_images' => :'BOOLEAN',
         :'export_page_margins' => :'BOOLEAN',
         :'export_page_setup' => :'BOOLEAN',
@@ -384,10 +379,6 @@ module WordsRubySdk
 
       if attributes.has_key?(:'ExportListLabels')
         self.export_list_labels = attributes[:'ExportListLabels']
-      end
-
-      if attributes.has_key?(:'ExportMetafileAsRaster')
-        self.export_metafile_as_raster = attributes[:'ExportMetafileAsRaster']
       end
 
       if attributes.has_key?(:'ExportOriginalUrlForLinkedImages')
@@ -552,7 +543,6 @@ module WordsRubySdk
           export_images_as_base64 == o.export_images_as_base64 &&
           export_language_information == o.export_language_information &&
           export_list_labels == o.export_list_labels &&
-          export_metafile_as_raster == o.export_metafile_as_raster &&
           export_original_url_for_linked_images == o.export_original_url_for_linked_images &&
           export_page_margins == o.export_page_margins &&
           export_page_setup == o.export_page_setup &&
@@ -586,7 +576,7 @@ module WordsRubySdk
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [color_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_sdt_content, update_fields, allow_negative_indent, css_style_sheet_file_name, css_style_sheet_type, document_split_criteria, document_split_heading_level, encoding, export_document_properties, export_drop_down_form_field_as_text, export_font_resources, export_fonts_as_base64, export_headers_footers_mode, export_images_as_base64, export_language_information, export_list_labels, export_metafile_as_raster, export_original_url_for_linked_images, export_page_margins, export_page_setup, export_relative_font_size, export_roundtrip_information, export_text_box_as_svg, export_text_input_form_field_as_text, export_toc_page_numbers, export_xhtml_transitional, font_resources_subsetting_size_threshold, fonts_folder, fonts_folder_alias, html_version, image_resolution, images_folder, images_folder_alias, office_math_output_mode, pretty_format, resource_folder, resource_folder_alias, scale_image_to_shape_size, table_width_output_mode].hash
+      [color_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_sdt_content, update_fields, allow_negative_indent, css_style_sheet_file_name, css_style_sheet_type, document_split_criteria, document_split_heading_level, encoding, export_document_properties, export_drop_down_form_field_as_text, export_font_resources, export_fonts_as_base64, export_headers_footers_mode, export_images_as_base64, export_language_information, export_list_labels, export_original_url_for_linked_images, export_page_margins, export_page_setup, export_relative_font_size, export_roundtrip_information, export_text_box_as_svg, export_text_input_form_field_as_text, export_toc_page_numbers, export_xhtml_transitional, font_resources_subsetting_size_threshold, fonts_folder, fonts_folder_alias, html_version, image_resolution, images_folder, images_folder_alias, office_math_output_mode, pretty_format, resource_folder, resource_folder_alias, scale_image_to_shape_size, table_width_output_mode].hash
     end
 
     # Builds the object from hash
