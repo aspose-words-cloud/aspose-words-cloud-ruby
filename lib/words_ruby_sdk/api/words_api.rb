@@ -145,15 +145,20 @@ module WordsRubySdk
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: WordsApi.classify ...'
       end
-      # verify the required parameter 'parameters' is set
-      if @api_client.config.client_side_validation && request.parameters.nil?
-        raise ArgumentError, 'Missing the required parameter parameters when calling WordsApi.classify'
+      # verify the required parameter 'text' is set
+      if @api_client.config.client_side_validation && request.text.nil?
+        raise ArgumentError, 'Missing the required parameter text when calling WordsApi.classify'
       end
       # resource path
       local_var_path = '/words/classify'
 
       # query parameters
       query_params = {}
+      if local_var_path.include? downcase_first_letter('BestClassesCount')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('BestClassesCount') + '}', request.best_classes_count.to_s)
+      else
+        query_params[downcase_first_letter('BestClassesCount')] = request.best_classes_count unless request.best_classes_count.nil?
+      end
 
       # header parameters
       header_params = {}
@@ -167,7 +172,7 @@ module WordsRubySdk
 
       request_token
       # http body (model)
-      post_body = @api_client.object_to_http_body(request.parameters)
+      post_body = @api_client.object_to_http_body(request.text)
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         header_params: header_params,
