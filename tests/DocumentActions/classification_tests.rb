@@ -35,9 +35,7 @@ module WordsRubySdk
     # Test for raw text classification.
     #
     def test_classify
-      request_parameters = ClassificationRequestParameters.new({:Text => "Try text classification", :BestClassesCount => 3})
-
-      request = ClassifyRequest.new request_parameters
+      request = ClassifyRequest.new "Try text classification", "3"
       result = @words_api.classify request
       
       assert_equal 200, result.code
