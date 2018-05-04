@@ -145,6 +145,9 @@ module WordsRubySdk
     # Specifies the name of the folder used to construct image URIs
     attr_accessor :images_folder_alias
 
+    # Specifies in what format metafiles are saved when exporting to HTML, MHTML, or EPUB.  Default value is Aspose.Words.Saving.HtmlMetafileFormat.Png, meaning that metafiles are rendered to raster PNG images.  Metafiles are not natively displayed by HTML browsers. By default, Aspose.Words converts WMF and EMF images into PNG files when exporting to HTML.Other options are to convert metafiles to SVG images or to export them as is without conversion. Some image transforms, in particular image cropping, will not be applied to metafile images if they are exported to HTML without conversion.
+    attr_accessor :metafile_format
+
     # Controls how OfficeMath objects are exported to HTML, MHTML or EPUB.  Default value is HtmlOfficeMathOutputMode.Image.
     attr_accessor :office_math_output_mode
 
@@ -229,6 +232,7 @@ module WordsRubySdk
         :'image_resolution' => :'ImageResolution',
         :'images_folder' => :'ImagesFolder',
         :'images_folder_alias' => :'ImagesFolderAlias',
+        :'metafile_format' => :'MetafileFormat',
         :'office_math_output_mode' => :'OfficeMathOutputMode',
         :'pretty_format' => :'PrettyFormat',
         :'resource_folder' => :'ResourceFolder',
@@ -280,6 +284,7 @@ module WordsRubySdk
         :'image_resolution' => :'Integer',
         :'images_folder' => :'String',
         :'images_folder_alias' => :'String',
+        :'metafile_format' => :'String',
         :'office_math_output_mode' => :'String',
         :'pretty_format' => :'BOOLEAN',
         :'resource_folder' => :'String',
@@ -450,6 +455,10 @@ module WordsRubySdk
         self.images_folder_alias = attributes[:'ImagesFolderAlias']
       end
 
+      if attributes.has_key?(:'MetafileFormat')
+        self.metafile_format = attributes[:'MetafileFormat']
+      end
+
       if attributes.has_key?(:'OfficeMathOutputMode')
         self.office_math_output_mode = attributes[:'OfficeMathOutputMode']
       end
@@ -492,6 +501,8 @@ module WordsRubySdk
     def valid?
       html_version_validator = EnumAttributeValidator.new('String', ["Xhtml", "Html5"])
       return false unless html_version_validator.valid?(@html_version)
+      metafile_format_validator = EnumAttributeValidator.new('String', ["Png", "Svg", "EmfOrWmf"])
+      return false unless metafile_format_validator.valid?(@metafile_format)
       office_math_output_mode_validator = EnumAttributeValidator.new('String', ["Image", "MathML", "Text"])
       return false unless office_math_output_mode_validator.valid?(@office_math_output_mode)
       return true
@@ -508,6 +519,20 @@ module WordsRubySdk
         @html_version = html_version
       else
         @html_version = validator.allowable_values[html_version.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] metafile_format Object to be assigned
+    def metafile_format=(metafile_format)
+      validator = EnumAttributeValidator.new('String', ["Png", "Svg", "EmfOrWmf"])
+      if metafile_format.to_i == 0
+        unless validator.valid?(metafile_format)
+          fail ArgumentError, "invalid value for 'metafile_format', must be one of #{validator.allowable_values}."
+        end
+        @metafile_format = metafile_format
+      else
+        @metafile_format = validator.allowable_values[metafile_format.to_i]
       end
     end
 
@@ -568,6 +593,7 @@ module WordsRubySdk
           image_resolution == o.image_resolution &&
           images_folder == o.images_folder &&
           images_folder_alias == o.images_folder_alias &&
+          metafile_format == o.metafile_format &&
           office_math_output_mode == o.office_math_output_mode &&
           pretty_format == o.pretty_format &&
           resource_folder == o.resource_folder &&
@@ -586,7 +612,7 @@ module WordsRubySdk
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [color_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_sdt_content, update_fields, allow_negative_indent, css_style_sheet_file_name, css_style_sheet_type, document_split_criteria, document_split_heading_level, encoding, export_document_properties, export_drop_down_form_field_as_text, export_font_resources, export_fonts_as_base64, export_headers_footers_mode, export_images_as_base64, export_language_information, export_list_labels, export_original_url_for_linked_images, export_page_margins, export_page_setup, export_relative_font_size, export_roundtrip_information, export_text_box_as_svg, export_text_input_form_field_as_text, export_toc_page_numbers, export_xhtml_transitional, font_resources_subsetting_size_threshold, fonts_folder, fonts_folder_alias, html_version, image_resolution, images_folder, images_folder_alias, office_math_output_mode, pretty_format, resource_folder, resource_folder_alias, scale_image_to_shape_size, table_width_output_mode, epub_navigation_map_level].hash
+      [color_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_sdt_content, update_fields, allow_negative_indent, css_style_sheet_file_name, css_style_sheet_type, document_split_criteria, document_split_heading_level, encoding, export_document_properties, export_drop_down_form_field_as_text, export_font_resources, export_fonts_as_base64, export_headers_footers_mode, export_images_as_base64, export_language_information, export_list_labels, export_original_url_for_linked_images, export_page_margins, export_page_setup, export_relative_font_size, export_roundtrip_information, export_text_box_as_svg, export_text_input_form_field_as_text, export_toc_page_numbers, export_xhtml_transitional, font_resources_subsetting_size_threshold, fonts_folder, fonts_folder_alias, html_version, image_resolution, images_folder, images_folder_alias, metafile_format, office_math_output_mode, pretty_format, resource_folder, resource_folder_alias, scale_image_to_shape_size, table_width_output_mode, epub_navigation_map_level].hash
     end
 
     # Builds the object from hash
