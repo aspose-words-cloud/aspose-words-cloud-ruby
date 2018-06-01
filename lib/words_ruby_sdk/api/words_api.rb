@@ -35,6 +35,7 @@ module WordsRubySdk
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
       require_all '../models/requests'
+      request_token
     end
 
     # Accept all revisions in document
@@ -105,7 +106,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -170,7 +170,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.text)
       auth_names = ['oauth']
@@ -256,7 +255,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -361,7 +359,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.property)
       auth_names = ['oauth']
@@ -467,7 +464,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -568,7 +564,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -669,7 +664,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -765,7 +759,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -866,7 +859,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -962,7 +954,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -1068,7 +1059,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -1174,7 +1164,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -1275,7 +1264,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -1381,7 +1369,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -1487,7 +1474,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -1593,7 +1579,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -1699,7 +1684,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -1805,7 +1789,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -1911,7 +1894,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -2017,7 +1999,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -2123,7 +2104,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -2229,7 +2209,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -2335,7 +2314,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -2425,7 +2403,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.protection_request)
       auth_names = ['oauth']
@@ -2516,7 +2493,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -2602,7 +2578,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -2688,7 +2663,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -2769,7 +2743,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -2850,7 +2823,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -2936,7 +2908,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -3017,7 +2988,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -3108,7 +3078,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -3199,7 +3168,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -3290,7 +3258,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -3376,7 +3343,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -3462,7 +3428,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -3548,7 +3513,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -3629,7 +3593,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -3720,7 +3683,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -3811,7 +3773,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -3902,7 +3863,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -3988,7 +3948,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -4074,7 +4033,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -4155,7 +4113,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -4241,7 +4198,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -4322,7 +4278,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -4418,7 +4373,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -4499,7 +4453,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -4596,7 +4549,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -4687,7 +4639,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -4773,7 +4724,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -4864,7 +4814,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -4950,7 +4899,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -5041,7 +4989,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -5127,7 +5074,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -5218,7 +5164,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -5314,7 +5259,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -5405,7 +5349,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -5496,7 +5439,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -5582,7 +5524,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -5668,7 +5609,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -5754,7 +5694,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -5835,7 +5774,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -5926,7 +5864,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -6017,7 +5954,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -6108,7 +6044,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -6199,7 +6134,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -6290,7 +6224,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -6381,7 +6314,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -6467,7 +6399,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -6568,7 +6499,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.table)
       auth_names = ['oauth']
@@ -6669,7 +6599,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.cell)
       auth_names = ['oauth']
@@ -6770,7 +6699,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.row)
       auth_names = ['oauth']
@@ -6870,7 +6798,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.document_list)
       auth_names = ['oauth']
@@ -6960,7 +6887,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.protection_request)
       auth_names = ['oauth']
@@ -7065,7 +6991,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.comment)
       auth_names = ['oauth']
@@ -7155,7 +7080,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.compare_data)
       auth_names = ['oauth']
@@ -7262,7 +7186,6 @@ module WordsRubySdk
       form_params = {}
       form_params[downcase_first_letter('Data')] = request.data unless request.data.nil?
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -7372,7 +7295,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.font_dto)
       auth_names = ['oauth']
@@ -7467,7 +7389,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.save_options_data)
       auth_names = ['oauth']
@@ -7583,7 +7504,6 @@ module WordsRubySdk
       form_params[downcase_first_letter('DrawingObject')] = request.drawing_object
       form_params[downcase_first_letter('ImageFile')] = request.image_file
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -7689,7 +7609,6 @@ module WordsRubySdk
       form_params = {}
       form_params[downcase_first_letter('Data')] = request.data
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -7799,7 +7718,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.field)
       auth_names = ['oauth']
@@ -7909,7 +7827,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.footnote_dto)
       auth_names = ['oauth']
@@ -8019,7 +7936,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.form_field)
       auth_names = ['oauth']
@@ -8126,7 +8042,6 @@ module WordsRubySdk
       form_params = {}
       form_params[downcase_first_letter('ImageFile')] = request.image_file unless request.image_file.nil?
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -8226,7 +8141,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.watermark_text)
       auth_names = ['oauth']
@@ -8326,7 +8240,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.page_number)
       auth_names = ['oauth']
@@ -8391,7 +8304,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.data)
       auth_names = ['oauth']
@@ -8491,7 +8403,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.replace_text)
       auth_names = ['oauth']
@@ -8601,7 +8512,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.run)
       auth_names = ['oauth']
@@ -8712,7 +8622,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -8817,7 +8726,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.bookmark_data)
       auth_names = ['oauth']
@@ -8903,7 +8811,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -9003,7 +8910,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.comment)
       auth_names = ['oauth']
@@ -9090,7 +8996,6 @@ module WordsRubySdk
       form_params = {}
       form_params[downcase_first_letter('Document')] = request.document
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -9161,7 +9066,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -9227,7 +9131,6 @@ module WordsRubySdk
       form_params = {}
       form_params[downcase_first_letter('Template')] = request.template
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -9412,7 +9315,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.save_options)
       auth_names = ['oauth']
@@ -9523,7 +9425,6 @@ module WordsRubySdk
       form_params[downcase_first_letter('DrawingObject')] = request.drawing_object
       form_params[downcase_first_letter('ImageFile')] = request.image_file
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -9604,7 +9505,6 @@ module WordsRubySdk
       form_params[downcase_first_letter('Template')] = request.template
       form_params[downcase_first_letter('Data')] = request.data
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -9690,7 +9590,6 @@ module WordsRubySdk
       form_params[downcase_first_letter('Template')] = request.template
       form_params[downcase_first_letter('Data')] = request.data
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -9800,7 +9699,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.field)
       auth_names = ['oauth']
@@ -9905,7 +9803,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.footnote_dto)
       auth_names = ['oauth']
@@ -10015,7 +9912,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.form_field)
       auth_names = ['oauth']
@@ -10120,7 +10016,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.header_footer_type)
       auth_names = ['oauth']
@@ -10230,7 +10125,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.paragraph)
       auth_names = ['oauth']
@@ -10320,7 +10214,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.protection_request)
       auth_names = ['oauth']
@@ -10430,7 +10323,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.run)
       auth_names = ['oauth']
@@ -10516,7 +10408,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -10618,7 +10509,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -10720,7 +10610,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -10817,7 +10706,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -10919,7 +10807,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -11021,7 +10908,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -11077,7 +10963,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -11164,7 +11049,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = nil
       auth_names = ['oauth']
@@ -11274,7 +11158,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.border_properties)
       auth_names = ['oauth']
@@ -11379,7 +11262,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.page_setup)
       auth_names = ['oauth']
@@ -11485,7 +11367,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.format)
       auth_names = ['oauth']
@@ -11591,7 +11472,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.properties)
       auth_names = ['oauth']
@@ -11697,7 +11577,6 @@ module WordsRubySdk
       # form parameters
       form_params = {}
 
-      request_token
       # http body (model)
       post_body = @api_client.object_to_http_body(request.format)
       auth_names = ['oauth']
