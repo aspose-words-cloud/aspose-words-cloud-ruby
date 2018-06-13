@@ -49,6 +49,9 @@ module WordsRubySdk
     # Controls zip output or not. Default value is false.
     attr_accessor :zip_output
 
+    # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
+    attr_accessor :update_last_saved_time_property
+
     # Gets or sets value determining whether content of  is updated before saving.
     attr_accessor :update_sdt_content
 
@@ -58,9 +61,33 @@ module WordsRubySdk
     # Specifies whether export should correspond to ODT specification 1.1 strictly
     attr_accessor :is_strict_schema11
 
+    # Allows to specify units of measure to apply to document content. The default value is Aspose.Words.Saving.OdtSaveMeasureUnit.Centimeters  Open Office uses centimeters when specifying lengths, widths and other measurable formatting and content properties in documents whereas MS Office uses inches.
+    attr_accessor :measure_unit
+
     # Specifies whether or not use pretty formats output
     attr_accessor :pretty_format
 
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -71,9 +98,11 @@ module WordsRubySdk
         :'dml_rendering_mode' => :'DmlRenderingMode',
         :'dml_effects_rendering_mode' => :'DmlEffectsRenderingMode',
         :'zip_output' => :'ZipOutput',
+        :'update_last_saved_time_property' => :'UpdateLastSavedTimeProperty',
         :'update_sdt_content' => :'UpdateSdtContent',
         :'update_fields' => :'UpdateFields',
         :'is_strict_schema11' => :'IsStrictSchema11',
+        :'measure_unit' => :'MeasureUnit',
         :'pretty_format' => :'PrettyFormat'
       }
     end
@@ -87,9 +116,11 @@ module WordsRubySdk
         :'dml_rendering_mode' => :'String',
         :'dml_effects_rendering_mode' => :'String',
         :'zip_output' => :'BOOLEAN',
+        :'update_last_saved_time_property' => :'BOOLEAN',
         :'update_sdt_content' => :'BOOLEAN',
         :'update_fields' => :'BOOLEAN',
         :'is_strict_schema11' => :'BOOLEAN',
+        :'measure_unit' => :'String',
         :'pretty_format' => :'BOOLEAN'
       }
     end
@@ -126,6 +157,10 @@ module WordsRubySdk
         self.zip_output = attributes[:'ZipOutput']
       end
 
+      if attributes.has_key?(:'UpdateLastSavedTimeProperty')
+        self.update_last_saved_time_property = attributes[:'UpdateLastSavedTimeProperty']
+      end
+
       if attributes.has_key?(:'UpdateSdtContent')
         self.update_sdt_content = attributes[:'UpdateSdtContent']
       end
@@ -136,6 +171,10 @@ module WordsRubySdk
 
       if attributes.has_key?(:'IsStrictSchema11')
         self.is_strict_schema11 = attributes[:'IsStrictSchema11']
+      end
+
+      if attributes.has_key?(:'MeasureUnit')
+        self.measure_unit = attributes[:'MeasureUnit']
       end
 
       if attributes.has_key?(:'PrettyFormat')
@@ -154,7 +193,23 @@ module WordsRubySdk
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      measure_unit_validator = EnumAttributeValidator.new('String', ["Centimeters", "Inches"])
+      return false unless measure_unit_validator.valid?(@measure_unit)
       return true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] measure_unit Object to be assigned
+    def measure_unit=(measure_unit)
+      validator = EnumAttributeValidator.new('String', ["Centimeters", "Inches"])
+      if measure_unit.to_i == 0
+        unless validator.valid?(measure_unit)
+          fail ArgumentError, "invalid value for 'measure_unit', must be one of #{validator.allowable_values}."
+        end
+        @measure_unit = measure_unit
+      else
+        @measure_unit = validator.allowable_values[measure_unit.to_i]
+      end
     end
 
     # Checks equality by comparing each attribute.
@@ -168,9 +223,11 @@ module WordsRubySdk
           dml_rendering_mode == o.dml_rendering_mode &&
           dml_effects_rendering_mode == o.dml_effects_rendering_mode &&
           zip_output == o.zip_output &&
+          update_last_saved_time_property == o.update_last_saved_time_property &&
           update_sdt_content == o.update_sdt_content &&
           update_fields == o.update_fields &&
           is_strict_schema11 == o.is_strict_schema11 &&
+          measure_unit == o.measure_unit &&
           pretty_format == o.pretty_format
     end
 
@@ -183,7 +240,7 @@ module WordsRubySdk
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [color_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_sdt_content, update_fields, is_strict_schema11, pretty_format].hash
+      [color_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, is_strict_schema11, measure_unit, pretty_format].hash
     end
 
     # Builds the object from hash

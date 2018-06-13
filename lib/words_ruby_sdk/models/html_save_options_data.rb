@@ -49,6 +49,9 @@ module WordsRubySdk
     # Controls zip output or not. Default value is false.
     attr_accessor :zip_output
 
+    # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
+    attr_accessor :update_last_saved_time_property
+
     # Gets or sets value determining whether content of  is updated before saving.
     attr_accessor :update_sdt_content
 
@@ -197,6 +200,7 @@ module WordsRubySdk
         :'dml_rendering_mode' => :'DmlRenderingMode',
         :'dml_effects_rendering_mode' => :'DmlEffectsRenderingMode',
         :'zip_output' => :'ZipOutput',
+        :'update_last_saved_time_property' => :'UpdateLastSavedTimeProperty',
         :'update_sdt_content' => :'UpdateSdtContent',
         :'update_fields' => :'UpdateFields',
         :'allow_negative_indent' => :'AllowNegativeIndent',
@@ -248,6 +252,7 @@ module WordsRubySdk
         :'dml_rendering_mode' => :'String',
         :'dml_effects_rendering_mode' => :'String',
         :'zip_output' => :'BOOLEAN',
+        :'update_last_saved_time_property' => :'BOOLEAN',
         :'update_sdt_content' => :'BOOLEAN',
         :'update_fields' => :'BOOLEAN',
         :'allow_negative_indent' => :'BOOLEAN',
@@ -320,6 +325,10 @@ module WordsRubySdk
 
       if attributes.has_key?(:'ZipOutput')
         self.zip_output = attributes[:'ZipOutput']
+      end
+
+      if attributes.has_key?(:'UpdateLastSavedTimeProperty')
+        self.update_last_saved_time_property = attributes[:'UpdateLastSavedTimeProperty']
       end
 
       if attributes.has_key?(:'UpdateSdtContent')
@@ -552,6 +561,7 @@ module WordsRubySdk
           dml_rendering_mode == o.dml_rendering_mode &&
           dml_effects_rendering_mode == o.dml_effects_rendering_mode &&
           zip_output == o.zip_output &&
+          update_last_saved_time_property == o.update_last_saved_time_property &&
           update_sdt_content == o.update_sdt_content &&
           update_fields == o.update_fields &&
           allow_negative_indent == o.allow_negative_indent &&
@@ -602,7 +612,7 @@ module WordsRubySdk
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [color_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_sdt_content, update_fields, allow_negative_indent, css_style_sheet_file_name, css_style_sheet_type, document_split_criteria, document_split_heading_level, encoding, export_document_properties, export_drop_down_form_field_as_text, export_font_resources, export_fonts_as_base64, export_headers_footers_mode, export_images_as_base64, export_language_information, export_list_labels, export_original_url_for_linked_images, export_page_margins, export_page_setup, export_relative_font_size, export_roundtrip_information, export_text_box_as_svg, export_text_input_form_field_as_text, export_toc_page_numbers, export_xhtml_transitional, font_resources_subsetting_size_threshold, fonts_folder, fonts_folder_alias, html_version, image_resolution, images_folder, images_folder_alias, metafile_format, office_math_output_mode, pretty_format, resource_folder, resource_folder_alias, scale_image_to_shape_size, table_width_output_mode].hash
+      [color_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, allow_negative_indent, css_style_sheet_file_name, css_style_sheet_type, document_split_criteria, document_split_heading_level, encoding, export_document_properties, export_drop_down_form_field_as_text, export_font_resources, export_fonts_as_base64, export_headers_footers_mode, export_images_as_base64, export_language_information, export_list_labels, export_original_url_for_linked_images, export_page_margins, export_page_setup, export_relative_font_size, export_roundtrip_information, export_text_box_as_svg, export_text_input_form_field_as_text, export_toc_page_numbers, export_xhtml_transitional, font_resources_subsetting_size_threshold, fonts_folder, fonts_folder_alias, html_version, image_resolution, images_folder, images_folder_alias, metafile_format, office_math_output_mode, pretty_format, resource_folder, resource_folder_alias, scale_image_to_shape_size, table_width_output_mode].hash
     end
 
     # Builds the object from hash

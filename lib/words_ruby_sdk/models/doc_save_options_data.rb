@@ -49,6 +49,9 @@ module WordsRubySdk
     # Controls zip output or not. Default value is false.
     attr_accessor :zip_output
 
+    # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
+    attr_accessor :update_last_saved_time_property
+
     # Gets or sets value determining whether content of  is updated before saving.
     attr_accessor :update_sdt_content
 
@@ -71,6 +74,7 @@ module WordsRubySdk
         :'dml_rendering_mode' => :'DmlRenderingMode',
         :'dml_effects_rendering_mode' => :'DmlEffectsRenderingMode',
         :'zip_output' => :'ZipOutput',
+        :'update_last_saved_time_property' => :'UpdateLastSavedTimeProperty',
         :'update_sdt_content' => :'UpdateSdtContent',
         :'update_fields' => :'UpdateFields',
         :'password' => :'Password',
@@ -87,6 +91,7 @@ module WordsRubySdk
         :'dml_rendering_mode' => :'String',
         :'dml_effects_rendering_mode' => :'String',
         :'zip_output' => :'BOOLEAN',
+        :'update_last_saved_time_property' => :'BOOLEAN',
         :'update_sdt_content' => :'BOOLEAN',
         :'update_fields' => :'BOOLEAN',
         :'password' => :'String',
@@ -124,6 +129,10 @@ module WordsRubySdk
 
       if attributes.has_key?(:'ZipOutput')
         self.zip_output = attributes[:'ZipOutput']
+      end
+
+      if attributes.has_key?(:'UpdateLastSavedTimeProperty')
+        self.update_last_saved_time_property = attributes[:'UpdateLastSavedTimeProperty']
       end
 
       if attributes.has_key?(:'UpdateSdtContent')
@@ -168,6 +177,7 @@ module WordsRubySdk
           dml_rendering_mode == o.dml_rendering_mode &&
           dml_effects_rendering_mode == o.dml_effects_rendering_mode &&
           zip_output == o.zip_output &&
+          update_last_saved_time_property == o.update_last_saved_time_property &&
           update_sdt_content == o.update_sdt_content &&
           update_fields == o.update_fields &&
           password == o.password &&
@@ -183,7 +193,7 @@ module WordsRubySdk
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [color_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_sdt_content, update_fields, password, save_routing_slip].hash
+      [color_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, password, save_routing_slip].hash
     end
 
     # Builds the object from hash
