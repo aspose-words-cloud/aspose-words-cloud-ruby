@@ -38,7 +38,8 @@ module WordsRubySdk
       filename = 'test_multi_pages.docx'
       remote_name = 'TestGetDocumentTextItems.docx'
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = GetDocumentTextItemsRequest.new remote_name, remote_test_folder + test_folder
       result = @words_api.get_document_text_items request
@@ -54,7 +55,8 @@ module WordsRubySdk
       dest_name = remote_test_out + remote_name
       body = ReplaceTextRequest.new({:OldValue => 'aspose', :NewValue => 'aspose new'})
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = PostReplaceTextRequest.new remote_name, body, remote_test_folder + test_folder, :dest_file_name => dest_name
       result = @words_api.post_replace_text request
@@ -69,7 +71,8 @@ module WordsRubySdk
       remote_name = 'TestSearch.docx'
       pattern = 'aspose'
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = SearchRequest.new remote_name, pattern, remote_test_folder + test_folder
       result = @words_api.search request

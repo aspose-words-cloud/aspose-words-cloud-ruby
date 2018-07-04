@@ -46,10 +46,10 @@ module WordsRubySdk
                                          :Author => 'author',
                                          :ComparingWithDocument => remote_test_folder + test_folder + '/' + remote_name2,
                                          :DateTime => DateTime.new})
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name1,
-                              File.open(local_test_folder + test_folder + '/' + local_name1).read
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name2,
-                              File.open(local_test_folder + test_folder + '/' + local_name2).read
+      st_request1 = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name1, File.open(local_test_folder + test_folder + '/' + local_name1).read
+      @storage_api.put_create st_request1
+      st_request2 = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name2, File.open(local_test_folder + test_folder + '/' + local_name2).read
+      @storage_api.put_create st_request2
 
       request = PostCompareDocumentRequest.new remote_name1, compare_data, remote_test_folder + test_folder, :dest_file_name => dest_name
       result = @words_api.post_compare_document request

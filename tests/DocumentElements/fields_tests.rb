@@ -38,7 +38,8 @@ module WordsRubySdk
       filename = 'GetField.docx'
       remote_name = 'TestGetFields.docx'
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
+      @storage_api.put_create st_request
 
       request = GetFieldsRequest.new remote_name, remote_test_folder + test_folder, :node_path => 'sections/0'
       result = @words_api.get_fields request
@@ -53,7 +54,8 @@ module WordsRubySdk
       remote_name = 'TestGetField.docx'
       index = 0
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
+      @storage_api.put_create st_request
 
       request = GetFieldRequest.new remote_name, index, remote_test_folder + test_folder, :node_path => 'sections/0/paragraphs/0'
       result = @words_api.get_field request
@@ -70,7 +72,8 @@ module WordsRubySdk
       index = 0
       body = Field.new({ :FieldCode => '{ NUMPAGES }', :NodeId => '0.0.3' })
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
+      @storage_api.put_create st_request
 
       request = PostFieldRequest.new remote_name, body, index, remote_test_folder + test_folder,
                                      nil, nil, nil, dest_name, nil,
@@ -87,7 +90,8 @@ module WordsRubySdk
       remote_name = 'TestPutField.docx'
       body = Field.new({:Result => 3, :FieldCode => '{ NUMPAGES }', :NodeId => '0.0.3'})
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
+      @storage_api.put_create st_request
 
       request = PutFieldRequest.new remote_name, body, remote_test_folder + test_folder, :node_path => 'sections/0/paragraphs/0'
       result = @words_api.put_field request
@@ -101,7 +105,8 @@ module WordsRubySdk
       filename = 'test_multi_pages.docx'
       remote_name = 'TestPostUpdateDocumentFields.docx'
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = PostUpdateDocumentFieldsRequest.new remote_name, remote_test_folder + test_folder
       result = @words_api.post_update_document_fields request
@@ -117,7 +122,8 @@ module WordsRubySdk
       dest_name = remote_test_out + remote_name
       body = PageNumber.new({:Alignment => 'center', :Format => '{PAGE} of { NUMPAGES }'})
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = PostInsertPageNumbersRequest.new remote_name, body, remote_test_folder + test_folder, :dest_file_name => dest_name
       result = @words_api.post_insert_page_numbers request
@@ -132,7 +138,8 @@ module WordsRubySdk
       remote_name = 'TestDeleteField.docx'
       index = 0
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
+      @storage_api.put_create st_request
 
       request = DeleteFieldRequest.new remote_name, index, remote_test_folder + test_folder, :node_path => 'sections/0/paragraphs/0'
       result = @words_api.delete_field request
@@ -146,7 +153,8 @@ module WordsRubySdk
       filename = 'test_multi_pages.docx'
       remote_name = 'TestDeleteFields.docx'
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = DeleteFieldsRequest.new remote_name, remote_test_folder + test_folder
       result = @words_api.delete_fields request

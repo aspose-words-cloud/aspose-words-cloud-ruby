@@ -38,7 +38,8 @@ module WordsRubySdk
       filename = 'test_doc.docx'
       remote_name = 'TestAcceptAllRevisions.docx'
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = AcceptAllRevisionsRequest.new remote_name, remote_test_folder + test_folder
       result = @words_api.accept_all_revisions request
@@ -53,7 +54,8 @@ module WordsRubySdk
       remote_name = 'TestRejectAllRevisions.docx'
       dest_name = remote_test_out + remote_name
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = RejectAllRevisionsRequest.new remote_name, remote_test_folder + test_folder, :dest_file_name => dest_name
       result = @words_api.reject_all_revisions request

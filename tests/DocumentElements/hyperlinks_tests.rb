@@ -39,7 +39,8 @@ module WordsRubySdk
       remote_name = 'TestGetDocumentHyperlinkByIndex.docx'
       index = 0
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = GetDocumentHyperlinkByIndexRequest.new remote_name, index, remote_test_folder + test_folder
       result = @words_api.get_document_hyperlink_by_index request
@@ -53,7 +54,8 @@ module WordsRubySdk
       filename = 'test_doc.docx'
       remote_name = 'TestGetDocumentHyperlinks.docx'
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = GetDocumentHyperlinksRequest.new remote_name, remote_test_folder + test_folder
       result = @words_api.get_document_hyperlinks request

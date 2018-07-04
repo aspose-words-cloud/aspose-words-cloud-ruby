@@ -40,7 +40,8 @@ module WordsRubySdk
       dest_name = remote_test_out + remote_name
       data = File.read(local_test_folder + test_folder + '/TestExecuteTemplateData.txt')
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      @storage_api.put_create st_request
 
       request = PostExecuteTemplateRequest.new remote_name, data, remote_test_folder + test_folder, :dest_file_name => dest_name
       result = @words_api.post_execute_template request

@@ -39,7 +39,8 @@ module WordsRubySdk
       remote_name = 'TestGetFootnote.docx'
       index = 0
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
+      @storage_api.put_create st_request
 
       request = GetFootnoteRequest.new remote_name, index, remote_test_folder + test_folder
       result = @words_api.get_footnote request
@@ -53,7 +54,8 @@ module WordsRubySdk
       filename = 'Footnote.doc'
       remote_name = 'TestGetFootnotes.docx'
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
+      @storage_api.put_create st_request
 
       request = GetFootnotesRequest.new remote_name, remote_test_folder + test_folder
       result = @words_api.get_footnotes request
@@ -68,7 +70,8 @@ module WordsRubySdk
       remote_name = 'TestDeleteFootnote.docx'
       index = 0
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
+      @storage_api.put_create st_request
 
       request = DeleteFootnoteRequest.new remote_name, index, remote_test_folder + test_folder
       result = @words_api.delete_footnote request
@@ -84,7 +87,8 @@ module WordsRubySdk
       index = 0
       footnote = Footnote.new({:Text => 'new text is here'})
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
+      @storage_api.put_create st_request
 
       request = PostFootnoteRequest.new remote_name, footnote, index, remote_test_folder + test_folder
       result = @words_api.post_footnote request
@@ -99,7 +103,8 @@ module WordsRubySdk
       remote_name = 'TestPutFootnote.docx'
       footnote = Footnote.new({:Text => 'test endnote', :FootnoteType => 'Endnote'})
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
+      @storage_api.put_create st_request
 
       request = PutFootnoteRequest.new remote_name, footnote, remote_test_folder + test_folder
       result = @words_api.put_footnote request

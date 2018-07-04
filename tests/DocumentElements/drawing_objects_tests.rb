@@ -39,7 +39,8 @@ module WordsRubySdk
       remote_name = 'TestGetDocumentDrawingObjectByIndex.docx'
       index = 0
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = GetDocumentDrawingObjectByIndexRequest.new remote_name, index, remote_test_folder + test_folder, :node_path => 'sections/0'
       result = @words_api.get_document_drawing_object_by_index request
@@ -54,7 +55,8 @@ module WordsRubySdk
       remote_name = 'TestGetDocumentDrawingObjectImageData.docx'
       index = 0
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = GetDocumentDrawingObjectImageDataRequest.new remote_name, index, remote_test_folder + test_folder, :node_path => 'sections/0'
       result = @words_api.get_document_drawing_object_image_data request
@@ -69,7 +71,8 @@ module WordsRubySdk
       remote_name = 'TestGetDocumentDrawingObjectOleData.docx'
       index = 0
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
+      @storage_api.put_create st_request
 
       request = GetDocumentDrawingObjectOleDataRequest.new remote_name, index, remote_test_folder + test_folder, :node_path => 'sections/0'
       result = @words_api.get_document_drawing_object_ole_data request
@@ -83,7 +86,8 @@ module WordsRubySdk
       filename = 'test_multi_pages.docx'
       remote_name = 'TestGetDocumentDrawingObjects.docx'
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = GetDocumentDrawingObjectsRequest.new remote_name, remote_test_folder + test_folder, :node_path => 'sections/0'
       result = @words_api.get_document_drawing_objects request
@@ -99,7 +103,8 @@ module WordsRubySdk
       data = File.open(local_common_folder + 'aspose-cloud.png')
       index = 0
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = PostDrawingObjectRequest.new remote_name, '{"Left": 0}', data, index, remote_test_folder + test_folder
       result = @words_api.post_drawing_object request
@@ -114,7 +119,8 @@ module WordsRubySdk
       remote_name = 'TestPutDrawingObject.docx'
       data = File.open(local_common_folder + 'aspose-cloud.png')
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = PutDrawingObjectRequest.new remote_name, '{"Left": 0}', data, remote_test_folder + test_folder
       result = @words_api.put_drawing_object request
@@ -130,7 +136,8 @@ module WordsRubySdk
       index = 0
       format = 'png'
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = RenderDrawingObjectRequest.new remote_name, format, index, remote_test_folder + test_folder, :node_path => 'sections/0'
       result = @words_api.render_drawing_object request
@@ -145,7 +152,8 @@ module WordsRubySdk
       remote_name = 'TestDeleteDrawingObject.docx'
       index = 0
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = DeleteDrawingObjectRequest.new remote_name, index, remote_test_folder + test_folder
       result = @words_api.delete_drawing_object request

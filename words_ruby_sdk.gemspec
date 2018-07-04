@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'faraday', '~> 0.14.0'
   s.add_runtime_dependency 'mimemagic', '~> 0.3.2'
   
-  s.add_development_dependency 'aspose_storage_cloud', '~> 1.0', '>= 1.0.0'
+  s.add_development_dependency 'aspose_storage_cloud', '~> 18.6', '>= 18.5'
   s.add_development_dependency 'minitest', '~> 5.11', '>= 5.11.3'
 
   s.files         = Dir['lib/**/*.rb']

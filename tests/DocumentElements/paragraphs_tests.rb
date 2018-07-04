@@ -39,7 +39,8 @@ module WordsRubySdk
       remote_name = 'TestDeleteParagraph.docx'
       index = 0
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = DeleteParagraphRequest.new remote_name, index, remote_test_folder + test_folder
       result = @words_api.delete_paragraph request
@@ -54,7 +55,8 @@ module WordsRubySdk
        remote_name = 'TestGetDocumentParagraph.docx'
        index = 0
 
-       @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+       st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
        request = GetDocumentParagraphRequest.new remote_name, index, remote_test_folder + test_folder
        result = @words_api.get_document_paragraph request
@@ -69,7 +71,8 @@ module WordsRubySdk
       remote_name = 'TestGetDocumentParagraphRun.docx'
       index = 0
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = GetDocumentParagraphRunRequest.new remote_name, 'paragraphs/0', index, remote_test_folder + test_folder
       result = @words_api.get_document_paragraph_run request
@@ -84,7 +87,8 @@ module WordsRubySdk
       remote_name = 'TestGetDocumentParagraphRunFont.docx'
       index = 0
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = GetDocumentParagraphRunFontRequest.new remote_name, 'paragraphs/0', index, remote_test_folder + test_folder
       result = @words_api.get_document_paragraph_run_font request
@@ -98,7 +102,8 @@ module WordsRubySdk
       filename = 'test_multi_pages.docx'
       remote_name = 'TestGetDocumentParagraphRuns.docx'
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = GetDocumentParagraphRunsRequest.new remote_name, 'sections/0/paragraphs/0', remote_test_folder + test_folder
       result = @words_api.get_document_paragraph_runs request
@@ -112,7 +117,8 @@ module WordsRubySdk
       filename = 'test_multi_pages.docx'
       remote_name = 'TestGetDocumentParagraphs.docx'
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = GetDocumentParagraphsRequest.new remote_name, remote_test_folder + test_folder, :node_path => 'sections/0'
       result = @words_api.get_document_paragraphs request
@@ -129,7 +135,8 @@ module WordsRubySdk
       dest_name = remote_test_out + remote_name
       font_dto = Font.new({:Bold => true})
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = PostDocumentParagraphRunFontRequest.new remote_name, font_dto, 'paragraphs/0', index, remote_test_folder + test_folder, :dest_file_name => dest_name
       result = @words_api.post_document_paragraph_run_font request
@@ -144,7 +151,8 @@ module WordsRubySdk
       remote_name = 'TestPutParagraph.docx'
       paragraph = ParagraphInsert.new({:Text => 'This is a new paragraph for your document'})
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = PutParagraphRequest.new remote_name, paragraph, remote_test_folder + test_folder, nil,
                                         nil,nil,nil,nil,
@@ -162,7 +170,8 @@ module WordsRubySdk
       index = 0
       format = 'png'
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = RenderParagraphRequest.new remote_name, format, index, remote_test_folder + test_folder
       result = @words_api.render_paragraph request

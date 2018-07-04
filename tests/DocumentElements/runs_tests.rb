@@ -39,7 +39,8 @@ module WordsRubySdk
       remote_name = 'TestDeleteRun.docx'
       index = 0
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
+      @storage_api.put_create st_request
 
       request = DeleteRunRequest.new remote_name, 'paragraphs/1', index, remote_test_folder + test_folder
       result = @words_api.delete_run request
@@ -55,7 +56,8 @@ module WordsRubySdk
       index = 0
       run = Run.new({:Text => 'Run with text'})
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
+      @storage_api.put_create st_request
 
       request = PostRunRequest.new remote_name, run, 'paragraphs/1', index, remote_test_folder + test_folder
       result = @words_api.post_run request
@@ -70,7 +72,8 @@ module WordsRubySdk
       remote_name = 'TestPutRun.docx'
       run = Run.new({:Text => 'Run with text'})
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
+      @storage_api.put_create st_request
 
       request = PutRunRequest.new remote_name,  'paragraphs/1', run, remote_test_folder + test_folder
       result = @words_api.put_run request

@@ -39,7 +39,8 @@ module WordsRubySdk
       remote_name = 'TestGetDocumentBookmarkByName.docx'
       bookmark_name = 'aspose'
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = GetDocumentBookmarkByNameRequest.new remote_name, bookmark_name, remote_test_folder + test_folder
       result = @words_api.get_document_bookmark_by_name request
@@ -53,7 +54,8 @@ module WordsRubySdk
       filename = 'test_multi_pages.docx'
       remote_name = 'TestGetDocumentBookmarks.docx'
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = GetDocumentBookmarksRequest.new remote_name, remote_test_folder + test_folder
       result = @words_api.get_document_bookmarks request
@@ -70,7 +72,8 @@ module WordsRubySdk
       bookmark_name = 'aspose'
       body = BookmarkData.new({:Name => bookmark_name, :Text => 'This will be the text for Aspose'})
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = PostUpdateDocumentBookmarkRequest.new remote_name, body, bookmark_name, remote_test_folder + test_folder, :dest_file_name => dest_name
       result = @words_api.post_update_document_bookmark request

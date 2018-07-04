@@ -39,7 +39,8 @@ module WordsRubySdk
       remote_name = 'TestPutHeaderFooter.doc'
       footer_type = "FooterEven"
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
+      @storage_api.put_create st_request
 
       request = PutHeaderFooterRequest.new remote_name, footer_type, remote_test_folder + test_folder
       result = @words_api.put_header_footer request
@@ -54,7 +55,8 @@ module WordsRubySdk
       remote_name = 'TestGetHeaderFooter.doc'
       index = 0
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
+      @storage_api.put_create st_request
 
       request = GetHeaderFooterRequest.new remote_name, index, remote_test_folder + test_folder
       result = @words_api.get_header_footer request
@@ -68,7 +70,8 @@ module WordsRubySdk
       filename = 'HeadersFooters.doc'
       remote_name = 'TestGetHeaderFooters.doc'
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
+      @storage_api.put_create st_request
 
       request = GetHeaderFootersRequest.new remote_name, remote_test_folder + test_folder
       result = @words_api.get_header_footers request
@@ -84,7 +87,8 @@ module WordsRubySdk
       index = 0
       section_index = 0
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
+      @storage_api.put_create st_request
 
       request = GetHeaderFooterOfSectionRequest.new remote_name, index, section_index, remote_test_folder + test_folder
       result = @words_api.get_header_footer_of_section request
@@ -99,7 +103,8 @@ module WordsRubySdk
       remote_name = 'TestDeleteHeaderFooter.doc'
       index = 0
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
+      @storage_api.put_create st_request
 
       request = DeleteHeaderFooterRequest.new remote_name, index, remote_test_folder + test_folder
       result = @words_api.delete_header_footer request
@@ -113,7 +118,8 @@ module WordsRubySdk
       filename = 'HeadersFooters.doc'
       remote_name = 'TestDeleteHeadersFooters.doc'
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
+      @storage_api.put_create st_request
 
       request = DeleteHeadersFootersRequest.new remote_name, remote_test_folder + test_folder
       result = @words_api.delete_headers_footers request

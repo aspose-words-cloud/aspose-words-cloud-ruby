@@ -38,7 +38,8 @@ module WordsRubySdk
       filename = 'test_doc.docx'
       remote_name = 'TestDeleteDocumentWatermark.docx'
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = DeleteDocumentWatermarkRequest.new remote_name, remote_test_folder + test_folder
       result = @words_api.delete_document_watermark request
@@ -55,7 +56,8 @@ module WordsRubySdk
       rotation_angle = 0
       image = File.open(local_common_folder + 'aspose-cloud.png', 'r')
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = PostInsertDocumentWatermarkImageRequest.new remote_name, image, remote_test_folder + test_folder,
                                                             nil,nil,nil, dest_name,
@@ -73,8 +75,9 @@ module WordsRubySdk
       dest_name = remote_test_out + remote_name
       body = WatermarkText.new({:Text => 'This is the text', :RotationAngle => 90})
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
-
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
+      
       request = PostInsertDocumentWatermarkTextRequest.new remote_name, body, remote_test_folder + test_folder,
                                                             nil,nil,nil, dest_name
       result = @words_api.post_insert_document_watermark_text request

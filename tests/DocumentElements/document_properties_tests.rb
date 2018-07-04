@@ -40,7 +40,8 @@ module WordsRubySdk
       property_name = 'AsposeAuthor'
       property = DocumentProperty.new({:Name => 'Author', :Value => 'Yaroslav Ekimov'})
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = CreateOrUpdateDocumentPropertyRequest.new remote_name, property_name, property, remote_test_folder + test_folder
       result = @words_api.create_or_update_document_property request
@@ -56,7 +57,8 @@ module WordsRubySdk
       dest_name = remote_test_out + remote_name
       property_name = 'testProp'
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = DeleteDocumentPropertyRequest.new remote_name, property_name, remote_test_folder + test_folder, :dest_file_name => dest_name
       result = @words_api.delete_document_property request
@@ -70,7 +72,8 @@ module WordsRubySdk
       filename = 'test_multi_pages.docx'
       remote_name = 'TestGetDocumentProperties.docx'
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = GetDocumentPropertiesRequest.new remote_name, remote_test_folder + test_folder
       result = @words_api.get_document_properties request
@@ -85,7 +88,8 @@ module WordsRubySdk
       remote_name = 'TestGetDocumentProperty.docx'
       property_name = 'Author'
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = GetDocumentPropertyRequest.new remote_name, property_name, remote_test_folder + test_folder
       result = @words_api.get_document_property request

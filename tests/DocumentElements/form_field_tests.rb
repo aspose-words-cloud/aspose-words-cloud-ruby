@@ -42,7 +42,8 @@ module WordsRubySdk
       body = FormFieldTextInput.new({:Name => 'FullName', :Enabled => true, :CalculateOnExit => true,
                                      :StatusText => '', :TextInputType => 'Regular', :TextInputDefault => ''})
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
+      @storage_api.put_create st_request
 
       request = PostFormFieldRequest.new remote_name, body, index, remote_test_folder + test_folder, :dest_file_name => dest_name, :node_path => 'sections/0'
       result = @words_api.post_form_field request
@@ -60,7 +61,8 @@ module WordsRubySdk
                                      :StatusText => '', :TextInputType => 'Regular', :TextInputDefault => '123',
                                     :TextInputFormat => 'UPPERCASE'})
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = PutFormFieldRequest.new remote_name, body, remote_test_folder + test_folder, :dest_file_name => dest_name, :node_path => 'sections/0/paragraphs/0'
       result = @words_api.put_form_field request
@@ -75,7 +77,8 @@ module WordsRubySdk
       remote_name = 'TestDeleteFormField.docx'
       index = 0
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
+      @storage_api.put_create st_request
 
       request = DeleteFormFieldRequest.new remote_name, index, remote_test_folder + test_folder, :node_path => 'sections/0'
       result = @words_api.delete_form_field request
@@ -90,7 +93,8 @@ module WordsRubySdk
       remote_name = 'TestGetFormField.docx'
       index = 0
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
+      @storage_api.put_create st_request
 
       request = GetFormFieldRequest.new remote_name, index, remote_test_folder + test_folder, :node_path => 'sections/0'
       result = @words_api.get_form_field request
@@ -104,7 +108,8 @@ module WordsRubySdk
       filename = 'FormFilled.docx'
       remote_name = 'TestGetFormFields.docx'
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
+      @storage_api.put_create st_request
 
       request = GetFormFieldsRequest.new remote_name, remote_test_folder + test_folder, :node_path => 'sections/0'
       result = @words_api.get_form_fields request

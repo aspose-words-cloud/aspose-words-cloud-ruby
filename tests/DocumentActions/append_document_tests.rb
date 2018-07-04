@@ -42,7 +42,8 @@ module WordsRubySdk
       doc_entry = DocumentEntry.new({:Href => remote_test_folder + test_folder + '/' + remote_name, :ImportFormatMode => "KeepSourceFormatting"})
       body = DocumentEntryList.new({:DocumentEntries => [doc_entry]})
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = PostAppendDocumentRequest.new remote_name, body, remote_test_folder + test_folder, :dest_file_name => dest_name
       result = @words_api.post_append_document request

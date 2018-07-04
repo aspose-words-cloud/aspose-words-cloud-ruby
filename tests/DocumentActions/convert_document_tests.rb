@@ -40,7 +40,8 @@ module WordsRubySdk
       dest_name = remote_test_out + 'TestPostDocumentSaveAs.pdf'
       save_options = SaveOptionsData.new({:SaveFormat => 'pdf', :FileName => dest_name})
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = PostDocumentSaveAsRequest.new remote_name, save_options, remote_test_folder + test_folder
       result = @words_api.post_document_save_as request
@@ -56,7 +57,8 @@ module WordsRubySdk
       dest_name = remote_test_out + 'TestPostDocumentSaveAs.docx'
       save_options = SaveOptionsData.new({:SaveFormat => 'docx', :FileName => dest_name})
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      @storage_api.put_create st_request
 
       request = PostDocumentSaveAsRequest.new remote_name, save_options, remote_test_folder + test_folder, :dest_file_name => dest_name
       result = @words_api.post_document_save_as request
@@ -83,7 +85,8 @@ module WordsRubySdk
       dest_name = remote_test_out + 'TestPostDocumentSaveAsTiff.tiff'
       save_options = TiffSaveOptionsData.new({:SaveFormat => 'tiff', :FileName => dest_name})
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      @storage_api.put_create st_request
 
       request = PutDocumentSaveAsTiffRequest.new remote_name, save_options, remote_test_folder + test_folder, :dest_file_name => dest_name
       result = @words_api.put_document_save_as_tiff request
@@ -98,7 +101,8 @@ module WordsRubySdk
       remote_name = 'TestGetDocumentWithFormat.docx'
       format = 'text'
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = GetDocumentWithFormatRequest.new remote_name, format, remote_test_folder + test_folder
       result = @words_api.get_document_with_format request
@@ -114,7 +118,8 @@ module WordsRubySdk
       format = 'text'
       out_path = 'Out/TestGetDocumentWithFormat.txt'
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = GetDocumentWithFormatRequest.new remote_name, format, remote_test_folder + test_folder, :out_path => out_path
       result = @words_api.get_document_with_format request

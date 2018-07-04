@@ -39,7 +39,8 @@ module WordsRubySdk
       remote_name = 'TestDeleteComment.docx'
       comment_index = 0
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = DeleteCommentRequest.new remote_name, comment_index, remote_test_folder + test_folder
       result = @words_api.delete_comment request
@@ -54,7 +55,8 @@ module WordsRubySdk
       remote_name = 'TestGetComment.docx'
       comment_index = 0
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = GetCommentRequest.new remote_name, comment_index, remote_test_folder + test_folder
       result = @words_api.get_comment request
@@ -68,7 +70,8 @@ module WordsRubySdk
       filename = 'test_multi_pages.docx'
       remote_name = 'TestGetComments.docx'
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = GetCommentsRequest.new remote_name, remote_test_folder + test_folder
       result = @words_api.get_comments request
@@ -86,7 +89,8 @@ module WordsRubySdk
       document_position = DocumentPosition.new({:Node => node_link, :Offset => 0})
       body = Comment.new({:RangeStart => document_position, :RangeEnd => document_position, :Initial => 'YE', :Author => 'Yaroslav Ekimov', :Text => 'A new comment'})
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = PostCommentRequest.new remote_name, comment_index, body, remote_test_folder + test_folder
       result = @words_api.post_comment request
@@ -103,7 +107,8 @@ module WordsRubySdk
       document_position = DocumentPosition.new({:Node => node_link, :Offset => 0})
       body = Comment.new({:RangeStart => document_position, :RangeEnd => document_position, :Initial => 'YE', :Author => 'Yaroslav Ekimov', :Text => 'A new comment'})
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = PutCommentRequest.new remote_name, body, remote_test_folder + test_folder
       result = @words_api.put_comment request

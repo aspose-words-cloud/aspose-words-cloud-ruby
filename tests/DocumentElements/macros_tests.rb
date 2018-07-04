@@ -38,7 +38,8 @@ module WordsRubySdk
       filename = 'test_multi_pages.docx'
       remote_name = 'TestDeleteDocumentMacros.docx'
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = DeleteDocumentMacrosRequest.new remote_name, remote_test_folder + test_folder
       result = @words_api.delete_document_macros request

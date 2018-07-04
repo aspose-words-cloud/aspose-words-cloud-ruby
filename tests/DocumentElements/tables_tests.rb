@@ -39,7 +39,8 @@ module WordsRubySdk
       remote_name = 'TestDeleteTable.docx'
       index = 1
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read  
+      @storage_api.put_create st_request
 
       request = DeleteTableRequest.new remote_name, index, remote_test_folder + test_folder
       result = @words_api.delete_table request
@@ -54,7 +55,8 @@ module WordsRubySdk
       remote_name = 'TestDeleteTableCell.docx'
       index = 0
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read 
+      @storage_api.put_create st_request
 
       request = DeleteTableCellRequest.new remote_name, 'sections/0/tables/2/rows/0', index, remote_test_folder + test_folder
       result = @words_api.delete_table_cell request
@@ -69,7 +71,8 @@ module WordsRubySdk
       remote_name = 'TestDeleteTableRow.docx'
       index = 0
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read   
+      @storage_api.put_create st_request
 
       request = DeleteTableRowRequest.new remote_name, 'tables/1', index, remote_test_folder + test_folder
       result = @words_api.delete_table_row request
@@ -84,7 +87,8 @@ module WordsRubySdk
       remote_name = 'TestGetBorder.docx'
       index = 0
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read  
+      @storage_api.put_create st_request
 
       request = GetBorderRequest.new remote_name, 'sections/0/tables/2/rows/0', index, remote_test_folder + test_folder
       result = @words_api.get_border request
@@ -98,7 +102,8 @@ module WordsRubySdk
       filename = 'TablesGet.docx'
       remote_name = 'TestGetBorders.docx'
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read 
+      @storage_api.put_create st_request
 
       request = GetBordersRequest.new remote_name, 'sections/0/tables/2/rows/0', remote_test_folder + test_folder
       result = @words_api.get_borders request
@@ -113,7 +118,8 @@ module WordsRubySdk
       remote_name = 'TestGetTable.docx'
       index = 1
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read 
+      @storage_api.put_create st_request
 
       request = GetTableRequest.new remote_name, index, remote_test_folder + test_folder
       result = @words_api.get_table request
@@ -128,7 +134,8 @@ module WordsRubySdk
       remote_name = 'TestGetTableCell.docx'
       index = 0
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read   
+      @storage_api.put_create st_request
 
       request = GetTableCellRequest.new remote_name, 'sections/0/tables/2/rows/0', index, remote_test_folder + test_folder
       result = @words_api.get_table_cell request
@@ -143,7 +150,8 @@ module WordsRubySdk
       remote_name = 'TestGetTableCellFormat.docx'
       index = 0
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read    
+      @storage_api.put_create st_request
 
       request = GetTableCellFormatRequest.new remote_name, 'sections/0/tables/2/rows/0', index, remote_test_folder + test_folder
       result = @words_api.get_table_cell_format request
@@ -158,7 +166,8 @@ module WordsRubySdk
       remote_name = 'TestGetTableRow.docx'
       index = 0
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read  
+      @storage_api.put_create st_request
 
       request = GetTableRowRequest.new remote_name, 'tables/1', index, remote_test_folder + test_folder
       result = @words_api.get_table_row request
@@ -173,7 +182,8 @@ module WordsRubySdk
       remote_name = 'TestGetTableRowFormat.docx'
       index = 0
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read 
+      @storage_api.put_create st_request
 
       request = GetTableRowFormatRequest.new remote_name, 'sections/0/tables/2', index, remote_test_folder + test_folder
       result = @words_api.get_table_row_format request
@@ -187,7 +197,8 @@ module WordsRubySdk
       filename = 'TablesGet.docx'
       remote_name = 'TestGetTables.docx'
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      @storage_api.put_create st_request
 
       request = GetTablesRequest.new remote_name, remote_test_folder + test_folder
       result = @words_api.get_tables request
@@ -202,7 +213,8 @@ module WordsRubySdk
       remote_name = 'TestInsertTable.docx'
       table_dto = TableInsert.new({:ColumnsCount => 3, :RowsCount => 5})
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      @storage_api.put_create st_request
 
       request = InsertTableRequest.new remote_name, remote_test_folder + test_folder, nil,nil,
                                        nil,nil,nil,nil, table_dto
@@ -218,7 +230,8 @@ module WordsRubySdk
       remote_name = 'TestInsertTableCell.docx'
       cell = TableCellInsert.new
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      @storage_api.put_create st_request
 
       request = InsertTableCellRequest.new remote_name, 'sections/0/tables/2/rows/0', remote_test_folder + test_folder,
                                            nil,nil, nil,nil,
@@ -235,7 +248,8 @@ module WordsRubySdk
       remote_name = 'TestInsertTableRow.docx'
       row = TableRowInsert.new({:ColumnsCount => 5})
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      @storage_api.put_create st_request
 
       request = InsertTableRowRequest.new remote_name, 'sections/0/tables/2', remote_test_folder + test_folder,nil,
                                           nil,nil,nil,nil,nil,
@@ -253,7 +267,8 @@ module WordsRubySdk
       index = 0
       format = 'png'
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      @storage_api.put_create st_request
 
       request = RenderTableRequest.new remote_name, format, index, remote_test_folder + test_folder
       result = @words_api.render_table request
@@ -269,7 +284,8 @@ module WordsRubySdk
       index = 0
       format = TableCellFormat.new({:BottomPadding => 5, :FitText => true, :HorizontalMerge => 'First', :WrapText => true})
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      @storage_api.put_create st_request
 
       request = UpdateTableCellFormatRequest.new remote_name, 'sections/0/tables/2/rows/0', index, remote_test_folder + test_folder, nil,
                                                  nil,nil,nil,nil,nil,
@@ -286,7 +302,8 @@ module WordsRubySdk
       remote_name = 'TestGetTableProperties.docx'
       index = 1
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      @storage_api.put_create st_request
 
       request = GetTablePropertiesRequest.new remote_name, index, remote_test_folder + test_folder
       result = @words_api.get_table_properties request
@@ -304,7 +321,8 @@ module WordsRubySdk
                                   :CellSpacing => 2, :LeftIndent => 3, :LeftPadding => 4, :RightPadding => 5,
                                    :StyleOptions => 'ColumnBands', :TopPadding => 6})
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      @storage_api.put_create st_request
 
       request = UpdateTablePropertiesRequest.new remote_name, index, remote_test_folder + test_folder, :properties => props
       result = @words_api.update_table_properties request
@@ -320,7 +338,8 @@ module WordsRubySdk
       index = 0
       format = TableRowFormat.new({:AllowBreakAcrossPAges => true, :HeadingFormat => true, :Height => 10, :HeightRule => 'Auto'})
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      @storage_api.put_create st_request
 
       request = UpdateTableRowFormatRequest.new remote_name, 'sections/0/tables/2', index, remote_test_folder + test_folder, :format => format
       result = @words_api.update_table_row_format request
@@ -336,7 +355,8 @@ module WordsRubySdk
       dest_name = remote_test_out + remote_name
       index = 0
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      @storage_api.put_create st_request
 
       request = DeleteBorderRequest.new remote_name, 'tables/1/rows/0/cells/0/', index, remote_test_folder + test_folder, :dest_file_name => dest_name
       result = @words_api.delete_border request
@@ -350,7 +370,8 @@ module WordsRubySdk
       filename = 'TablesGet.docx'
       remote_name = 'TestDeleteTableBorders.docx'
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      @storage_api.put_create st_request
 
       request = DeleteBordersRequest.new remote_name, 'tables/1/rows/0/cells/0/', remote_test_folder + test_folder
       result = @words_api.delete_borders request
@@ -368,7 +389,8 @@ module WordsRubySdk
                           :DistanceFromText => 6, :LineStyle => 'DashDotStroker',
                           :LineWith => 2, :Shadow => true})
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      @storage_api.put_create st_request
 
       request = UpdateBorderRequest.new remote_name, border, 'tables/1/rows/0/cells/0/', index, remote_test_folder + test_folder
       result = @words_api.update_border request

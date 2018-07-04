@@ -40,7 +40,8 @@ module WordsRubySdk
       page_number = 1
       format = 'png'
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = RenderPageRequest.new remote_name, page_number, format, remote_test_folder + test_folder
       result = @words_api.render_page request
@@ -55,7 +56,8 @@ module WordsRubySdk
       remote_name = 'TestGetSectionPageSetup.docx'
       index = 0
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = GetSectionPageSetupRequest.new remote_name, index, remote_test_folder + test_folder
       result = @words_api.get_section_page_setup request
@@ -71,7 +73,8 @@ module WordsRubySdk
       index = 0
       body = PageSetup.new({:RtlGutter => true, :LeftMargin => 10, :Orientation => 'Landscape', :PaperSize => 'A5'})
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = UpdateSectionPageSetupRequest.new remote_name, index, body, remote_test_folder + test_folder
       result = @words_api.update_section_page_setup request

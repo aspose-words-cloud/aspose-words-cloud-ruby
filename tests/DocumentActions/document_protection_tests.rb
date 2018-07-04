@@ -38,7 +38,8 @@ module WordsRubySdk
       filename = 'test_multi_pages.docx'
       remote_name = 'TestGetDocumentProtection.docx'
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = GetDocumentProtectionRequest.new remote_name, remote_test_folder + test_folder
       result = @words_api.get_document_protection request
@@ -54,7 +55,8 @@ module WordsRubySdk
       dest_name = remote_test_out + remote_name
       body = ProtectionRequest.new({:NewPassword => '123'})
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = PutProtectDocumentRequest.new remote_name, body, remote_test_folder + test_folder, nil,
                                               nil, nil, dest_name
@@ -70,7 +72,8 @@ module WordsRubySdk
       remote_name = 'TestPostChangeDocumentProtection.docx'
       body = ProtectionRequest.new({:NewPassword => ''})
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
 
       request = PostChangeDocumentProtectionRequest.new remote_name, body, remote_test_folder + test_folder
       result = @words_api.post_change_document_protection request
@@ -85,7 +88,8 @@ module WordsRubySdk
       remote_name = 'TestDeleteUnprotectDocument.docx'
       body = ProtectionRequest.new({:Password => 'aspose'})
 
-      @storage_api.put_create remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
+      @storage_api.put_create st_request
 
       request = DeleteUnprotectDocumentRequest.new remote_name, body, remote_test_folder + test_folder
       result = @words_api.delete_unprotect_document request
