@@ -1,0 +1,44 @@
+# This is the default configuration file. Enabling and disabling is configured
+# in separate files. This file adds all other parameters apart from Enabled.
+
+# Common configuration.
+Metrics/LineLength:
+  Max: 600
+Style/AccessModifierDeclarations:
+  EnforcedStyle: inline
+Metrics/ClassLength:
+  Max: 10000
+Metrics/MethodLength:
+  Max: 200
+Metrics/PerceivedComplexity:
+  Max: 100
+Metrics/CyclomaticComplexity:
+  Max: 60
+Metrics/AbcSize:
+  Max: 350
+Style/HashSyntax:
+  EnforcedStyle: no_mixed_keys
+Style/IfUnlessModifier:
+  Enabled: false
+Style/ClassVars:
+  Enabled: false
+Style/NumericPredicate:
+  Enabled: false
+Style/GuardClause:
+  Enabled: false
+Style/RegexpLiteral:
+  Enabled: false
+Style/DateTime:
+  Enabled: false
+Style/SymbolLiteral:
+  Enabled: false
+Lint:
+  Enabled: false
+Naming/UncommunicativeMethodParamName:
+  Enabled: false
+Style/RedundantSelf:
+  Enabled: false
+Style/StringLiterals:
+  Enabled: false
+Style/RedundantReturn:
+  Enabled: false
