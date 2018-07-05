@@ -42,3 +42,13 @@ Style/StringLiterals:
   Enabled: false
 Style/RedundantReturn:
   Enabled: false
+Layout/TrailingWhitespace:
+  Enabled: false
+Layout/CommentIndentation:
+  Enabled: false
+Style/PerlBackrefs:
+  Enabled: false
+Layout/MultilineOperationIndentation:
+  Enabled: false
+Layout:
+  Enabled:false
