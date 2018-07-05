@@ -1,4 +1,4 @@
-require 'words_ruby_sdk/version'
+require './lib/words_ruby_sdk/version'
 
 Gem::Specification.new do |s|
   s.name        = 'words_ruby_sdk'
