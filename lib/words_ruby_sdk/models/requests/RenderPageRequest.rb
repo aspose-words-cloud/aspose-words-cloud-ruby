@@ -32,50 +32,42 @@ module WordsRubySdk
  #
 class RenderPageRequest
 
-     # The file name.
-		attr_accessor :name
-		
-     # Comment index
-		attr_accessor :page_index
-		
-     # The destination format.
-		attr_accessor :format
-		
-     # Original document folder.
-		attr_accessor :folder
-		
-     # File storage, which have to be used.
-		attr_accessor :storage
-		
-     # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-		attr_accessor :load_encoding
-		
-     # Password for opening an encrypted document.
-		attr_accessor :password
-		
-     # Folder in filestorage with custom fonts.
-		attr_accessor :fonts_location
+        # The file name.
+        attr_accessor :name
+        # Comment index
+        attr_accessor :page_index
+        # The destination format.
+        attr_accessor :format
+        # Original document folder.
+        attr_accessor :folder
+        # File storage, which have to be used.
+        attr_accessor :storage
+        # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        attr_accessor :load_encoding
+        # Password for opening an encrypted document.
+        attr_accessor :password
+        # Folder in filestorage with custom fonts.
+        attr_accessor :fonts_location
 	
-     #
-     # Initializes a new instance.
-     # @param name The file name.
-     # @param page_index Comment index
-     # @param format The destination format.
-     # @param folder Original document folder.
-     # @param storage File storage, which have to be used.
-     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-     # @param password Password for opening an encrypted document.
-     # @param fonts_location Folder in filestorage with custom fonts.
-		def initialize(name, page_index, format, folder=nil, storage=nil, load_encoding=nil, password=nil, fonts_location=nil)
-			self.name=name
-			self.page_index=page_index
-			self.format=format
-			self.folder=folder
-			self.storage=storage
-			self.load_encoding=load_encoding
-			self.password=password
-			self.fonts_location=fonts_location
-		end
-	
-	end
+        #
+        # Initializes a new instance.
+        # @param name The file name.
+        # @param page_index Comment index
+        # @param format The destination format.
+        # @param folder Original document folder.
+        # @param storage File storage, which have to be used.
+        # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        # @param password Password for opening an encrypted document.
+        # @param fonts_location Folder in filestorage with custom fonts.
+        def initialize(name, page_index, format, folder = nil, storage = nil, load_encoding = nil, password = nil, fonts_location = nil)
+           self.name = name
+           self.page_index = page_index
+           self.format = format
+           self.folder = folder
+           self.storage = storage
+           self.load_encoding = load_encoding
+           self.password = password
+           self.fonts_location = fonts_location
+        end
+    end
 end

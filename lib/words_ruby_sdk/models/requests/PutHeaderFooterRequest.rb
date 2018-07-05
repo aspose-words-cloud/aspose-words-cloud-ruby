@@ -32,60 +32,50 @@ module WordsRubySdk
  #
 class PutHeaderFooterRequest
 
-     # The document name.
-		attr_accessor :name
-		
-     # Type of header/footer.
-		attr_accessor :header_footer_type
-		
-     # Original document folder.
-		attr_accessor :folder
-		
-     # File storage, which have to be used.
-		attr_accessor :storage
-		
-     # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-		attr_accessor :load_encoding
-		
-     # Password for opening an encrypted document.
-		attr_accessor :password
-		
-     # Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-		attr_accessor :dest_file_name
-		
-     # Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-		attr_accessor :revision_author
-		
-     # The date and time to use for revisions.
-		attr_accessor :revision_date_time
-		
-     # Path to parent section.
-		attr_accessor :section_path
+        # The document name.
+        attr_accessor :name
+        # Type of header/footer.
+        attr_accessor :header_footer_type
+        # Original document folder.
+        attr_accessor :folder
+        # File storage, which have to be used.
+        attr_accessor :storage
+        # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        attr_accessor :load_encoding
+        # Password for opening an encrypted document.
+        attr_accessor :password
+        # Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        attr_accessor :dest_file_name
+        # Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        attr_accessor :revision_author
+        # The date and time to use for revisions.
+        attr_accessor :revision_date_time
+        # Path to parent section.
+        attr_accessor :section_path
 	
-     #
-     # Initializes a new instance.
-     # @param name The document name.
-     # @param header_footer_type Type of header/footer.
-     # @param folder Original document folder.
-     # @param storage File storage, which have to be used.
-     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-     # @param password Password for opening an encrypted document.
-     # @param dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-     # @param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-     # @param revision_date_time The date and time to use for revisions.
-     # @param section_path Path to parent section.
-		def initialize(name, header_footer_type, folder=nil, storage=nil, load_encoding=nil, password=nil, dest_file_name=nil, revision_author=nil, revision_date_time=nil, section_path=nil)
-			self.name=name
-			self.header_footer_type=header_footer_type
-			self.folder=folder
-			self.storage=storage
-			self.load_encoding=load_encoding
-			self.password=password
-			self.dest_file_name=dest_file_name
-			self.revision_author=revision_author
-			self.revision_date_time=revision_date_time
-			self.section_path=section_path
-		end
-	
-	end
+        #
+        # Initializes a new instance.
+        # @param name The document name.
+        # @param header_footer_type Type of header/footer.
+        # @param folder Original document folder.
+        # @param storage File storage, which have to be used.
+        # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        # @param password Password for opening an encrypted document.
+        # @param dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        # @param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        # @param revision_date_time The date and time to use for revisions.
+        # @param section_path Path to parent section.
+        def initialize(name, header_footer_type, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil, revision_author = nil, revision_date_time = nil, section_path = nil)
+           self.name = name
+           self.header_footer_type = header_footer_type
+           self.folder = folder
+           self.storage = storage
+           self.load_encoding = load_encoding
+           self.password = password
+           self.dest_file_name = dest_file_name
+           self.revision_author = revision_author
+           self.revision_date_time = revision_date_time
+           self.section_path = section_path
+        end
+    end
 end

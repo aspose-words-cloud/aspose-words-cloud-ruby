@@ -32,5 +32,5 @@ module WordsRubySdk
  #
 class ResetCacheRequest
 
-	end
+    end
 end

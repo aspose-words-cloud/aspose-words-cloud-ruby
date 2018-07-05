@@ -32,40 +32,34 @@ module WordsRubySdk
  #
 class GetDocumentFieldNamesRequest
 
-     # The document name.
-		attr_accessor :name
-		
-     # Original document folder.
-		attr_accessor :folder
-		
-     # File storage, which have to be used.
-		attr_accessor :storage
-		
-     # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-		attr_accessor :load_encoding
-		
-     # Password for opening an encrypted document.
-		attr_accessor :password
-		
-     # If true, result includes \"mustache\" field names.
-		attr_accessor :use_non_merge_fields
+        # The document name.
+        attr_accessor :name
+        # Original document folder.
+        attr_accessor :folder
+        # File storage, which have to be used.
+        attr_accessor :storage
+        # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        attr_accessor :load_encoding
+        # Password for opening an encrypted document.
+        attr_accessor :password
+        # If true, result includes \"mustache\" field names.
+        attr_accessor :use_non_merge_fields
 	
-     #
-     # Initializes a new instance.
-     # @param name The document name.
-     # @param folder Original document folder.
-     # @param storage File storage, which have to be used.
-     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-     # @param password Password for opening an encrypted document.
-     # @param use_non_merge_fields If true, result includes \"mustache\" field names.
-		def initialize(name, folder=nil, storage=nil, load_encoding=nil, password=nil, use_non_merge_fields=nil)
-			self.name=name
-			self.folder=folder
-			self.storage=storage
-			self.load_encoding=load_encoding
-			self.password=password
-			self.use_non_merge_fields=use_non_merge_fields
-		end
-	
-	end
+        #
+        # Initializes a new instance.
+        # @param name The document name.
+        # @param folder Original document folder.
+        # @param storage File storage, which have to be used.
+        # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        # @param password Password for opening an encrypted document.
+        # @param use_non_merge_fields If true, result includes \"mustache\" field names.
+        def initialize(name, folder = nil, storage = nil, load_encoding = nil, password = nil, use_non_merge_fields = nil)
+           self.name = name
+           self.folder = folder
+           self.storage = storage
+           self.load_encoding = load_encoding
+           self.password = password
+           self.use_non_merge_fields = use_non_merge_fields
+        end
+    end
 end

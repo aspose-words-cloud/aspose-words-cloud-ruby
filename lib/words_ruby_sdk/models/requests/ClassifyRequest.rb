@@ -32,20 +32,18 @@ module WordsRubySdk
  #
 class ClassifyRequest
 
-     # Text to classify.
-		attr_accessor :text
-		
-     # Count of the best classes to return.
-		attr_accessor :best_classes_count
+        # Text to classify.
+        attr_accessor :text
+        # Count of the best classes to return.
+        attr_accessor :best_classes_count
 	
-     #
-     # Initializes a new instance.
-     # @param text Text to classify.
-     # @param best_classes_count Count of the best classes to return.
-		def initialize(text, best_classes_count=nil)
-			self.text=text
-			self.best_classes_count=best_classes_count
-		end
-	
-	end
+        #
+        # Initializes a new instance.
+        # @param text Text to classify.
+        # @param best_classes_count Count of the best classes to return.
+        def initialize(text, best_classes_count = nil)
+           self.text = text
+           self.best_classes_count = best_classes_count
+        end
+    end
 end

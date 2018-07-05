@@ -32,35 +32,30 @@ module WordsRubySdk
  #
 class PutExecuteMailMergeOnlineRequest
 
-     # File with template
-		attr_accessor :template
-		
-     # File with mailmerge data
-		attr_accessor :data
-		
-     # With regions flag.
-		attr_accessor :with_regions
-		
-     # Clean up options.
-		attr_accessor :cleanup
-		
-     # This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, \"template\" will be used instead. 
-		attr_accessor :document_file_name
+        # File with template
+        attr_accessor :template
+        # File with mailmerge data
+        attr_accessor :data
+        # With regions flag.
+        attr_accessor :with_regions
+        # Clean up options.
+        attr_accessor :cleanup
+        # This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, \"template\" will be used instead. 
+        attr_accessor :document_file_name
 	
-     #
-     # Initializes a new instance.
-     # @param template File with template
-     # @param data File with mailmerge data
-     # @param with_regions With regions flag.
-     # @param cleanup Clean up options.
-     # @param document_file_name This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, \"template\" will be used instead. 
-		def initialize(template, data, with_regions=nil, cleanup=nil, document_file_name=nil)
-			self.template=template
-			self.data=data
-			self.with_regions=with_regions
-			self.cleanup=cleanup
-			self.document_file_name=document_file_name
-		end
-	
-	end
+        #
+        # Initializes a new instance.
+        # @param template File with template
+        # @param data File with mailmerge data
+        # @param with_regions With regions flag.
+        # @param cleanup Clean up options.
+        # @param document_file_name This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, \"template\" will be used instead. 
+        def initialize(template, data, with_regions = nil, cleanup = nil, document_file_name = nil)
+           self.template = template
+           self.data = data
+           self.with_regions = with_regions
+           self.cleanup = cleanup
+           self.document_file_name = document_file_name
+        end
+    end
 end

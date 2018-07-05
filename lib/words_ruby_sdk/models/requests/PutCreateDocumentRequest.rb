@@ -32,25 +32,22 @@ module WordsRubySdk
  #
 class PutCreateDocumentRequest
 
-     # File storage, which have to be used.
-		attr_accessor :storage
-		
-     # The file name.
-		attr_accessor :file_name
-		
-     # The document folder.
-		attr_accessor :folder
+        # File storage, which have to be used.
+        attr_accessor :storage
+        # The file name.
+        attr_accessor :file_name
+        # The document folder.
+        attr_accessor :folder
 	
-     #
-     # Initializes a new instance.
-     # @param storage File storage, which have to be used.
-     # @param file_name The file name.
-     # @param folder The document folder.
-		def initialize(storage=nil, file_name=nil, folder=nil)
-			self.storage=storage
-			self.file_name=file_name
-			self.folder=folder
-		end
-	
-	end
+        #
+        # Initializes a new instance.
+        # @param storage File storage, which have to be used.
+        # @param file_name The file name.
+        # @param folder The document folder.
+        def initialize(storage = nil, file_name = nil, folder = nil)
+           self.storage = storage
+           self.file_name = file_name
+           self.folder = folder
+        end
+    end
 end

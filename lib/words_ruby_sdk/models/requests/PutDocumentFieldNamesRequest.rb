@@ -32,20 +32,18 @@ module WordsRubySdk
  #
 class PutDocumentFieldNamesRequest
 
-     # File with template
-		attr_accessor :template
-		
-     # Use non merge fields or not.
-		attr_accessor :use_non_merge_fields
+        # File with template
+        attr_accessor :template
+        # Use non merge fields or not.
+        attr_accessor :use_non_merge_fields
 	
-     #
-     # Initializes a new instance.
-     # @param template File with template
-     # @param use_non_merge_fields Use non merge fields or not.
-		def initialize(template, use_non_merge_fields=nil)
-			self.template=template
-			self.use_non_merge_fields=use_non_merge_fields
-		end
-	
-	end
+        #
+        # Initializes a new instance.
+        # @param template File with template
+        # @param use_non_merge_fields Use non merge fields or not.
+        def initialize(template, use_non_merge_fields = nil)
+           self.template = template
+           self.use_non_merge_fields = use_non_merge_fields
+        end
+    end
 end

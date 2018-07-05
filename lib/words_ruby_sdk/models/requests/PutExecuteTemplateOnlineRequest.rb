@@ -32,40 +32,34 @@ module WordsRubySdk
  #
 class PutExecuteTemplateOnlineRequest
 
-     # File with template
-		attr_accessor :template
-		
-     # File with mailmerge data
-		attr_accessor :data
-		
-     # Clean up options.
-		attr_accessor :cleanup
-		
-     # Gets or sets a value indicating whether paragraph with TableStart or              TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.              The default value is true.
-		attr_accessor :use_whole_paragraph_as_region
-		
-     # Merge with regions or not. True by default
-		attr_accessor :with_regions
-		
-     # This file name will be used when resulting document has dynamic field for document file name {filename}.  If it is not setted, \"template\" will be used instead.  Note: if withRegions == true executeTemplate updates fields only inside regions
-		attr_accessor :document_file_name
+        # File with template
+        attr_accessor :template
+        # File with mailmerge data
+        attr_accessor :data
+        # Clean up options.
+        attr_accessor :cleanup
+        # Gets or sets a value indicating whether paragraph with TableStart or              TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.              The default value is true.
+        attr_accessor :use_whole_paragraph_as_region
+        # Merge with regions or not. True by default
+        attr_accessor :with_regions
+        # This file name will be used when resulting document has dynamic field for document file name {filename}.  If it is not setted, \"template\" will be used instead.  Note: if withRegions == true executeTemplate updates fields only inside regions
+        attr_accessor :document_file_name
 	
-     #
-     # Initializes a new instance.
-     # @param template File with template
-     # @param data File with mailmerge data
-     # @param cleanup Clean up options.
-     # @param use_whole_paragraph_as_region Gets or sets a value indicating whether paragraph with TableStart or              TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.              The default value is true.
-     # @param with_regions Merge with regions or not. True by default
-     # @param document_file_name This file name will be used when resulting document has dynamic field for document file name {filename}.  If it is not setted, \"template\" will be used instead.  Note: if withRegions == true executeTemplate updates fields only inside regions
-		def initialize(template, data, cleanup=nil, use_whole_paragraph_as_region=nil, with_regions=nil, document_file_name=nil)
-			self.template=template
-			self.data=data
-			self.cleanup=cleanup
-			self.use_whole_paragraph_as_region=use_whole_paragraph_as_region
-			self.with_regions=with_regions
-			self.document_file_name=document_file_name
-		end
-	
-	end
+        #
+        # Initializes a new instance.
+        # @param template File with template
+        # @param data File with mailmerge data
+        # @param cleanup Clean up options.
+        # @param use_whole_paragraph_as_region Gets or sets a value indicating whether paragraph with TableStart or              TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.              The default value is true.
+        # @param with_regions Merge with regions or not. True by default
+        # @param document_file_name This file name will be used when resulting document has dynamic field for document file name {filename}.  If it is not setted, \"template\" will be used instead.  Note: if withRegions == true executeTemplate updates fields only inside regions
+        def initialize(template, data, cleanup = nil, use_whole_paragraph_as_region = nil, with_regions = nil, document_file_name = nil)
+           self.template = template
+           self.data = data
+           self.cleanup = cleanup
+           self.use_whole_paragraph_as_region = use_whole_paragraph_as_region
+           self.with_regions = with_regions
+           self.document_file_name = document_file_name
+        end
+    end
 end

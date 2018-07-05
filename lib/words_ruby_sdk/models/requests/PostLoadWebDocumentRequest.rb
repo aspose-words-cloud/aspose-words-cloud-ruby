@@ -32,20 +32,18 @@ module WordsRubySdk
  #
 class PostLoadWebDocumentRequest
 
-     # Parameters of loading.
-		attr_accessor :data
-		
-     # File storage, which have to be used.
-		attr_accessor :storage
+        # Parameters of loading.
+        attr_accessor :data
+        # File storage, which have to be used.
+        attr_accessor :storage
 	
-     #
-     # Initializes a new instance.
-     # @param data Parameters of loading.
-     # @param storage File storage, which have to be used.
-		def initialize(data, storage=nil)
-			self.data=data
-			self.storage=storage
-		end
-	
-	end
+        #
+        # Initializes a new instance.
+        # @param data Parameters of loading.
+        # @param storage File storage, which have to be used.
+        def initialize(data, storage = nil)
+           self.data = data
+           self.storage = storage
+        end
+    end
 end

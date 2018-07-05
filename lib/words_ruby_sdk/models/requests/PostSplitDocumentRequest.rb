@@ -32,65 +32,54 @@ module WordsRubySdk
  #
 class PostSplitDocumentRequest
 
-     # Original document name.
-		attr_accessor :name
-		
-     # Original document folder.
-		attr_accessor :folder
-		
-     # File storage, which have to be used.
-		attr_accessor :storage
-		
-     # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-		attr_accessor :load_encoding
-		
-     # Password for opening an encrypted document.
-		attr_accessor :password
-		
-     # Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-		attr_accessor :dest_file_name
-		
-     # Format to split.
-		attr_accessor :format
-		
-     # Start page.
-		attr_accessor :from
-		
-     # End page.
-		attr_accessor :to
-		
-     # ZipOutput or not.
-		attr_accessor :zip_output
-		
-     # Folder in filestorage with custom fonts.
-		attr_accessor :fonts_location
+        # Original document name.
+        attr_accessor :name
+        # Original document folder.
+        attr_accessor :folder
+        # File storage, which have to be used.
+        attr_accessor :storage
+        # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        attr_accessor :load_encoding
+        # Password for opening an encrypted document.
+        attr_accessor :password
+        # Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        attr_accessor :dest_file_name
+        # Format to split.
+        attr_accessor :format
+        # Start page.
+        attr_accessor :from
+        # End page.
+        attr_accessor :to
+        # ZipOutput or not.
+        attr_accessor :zip_output
+        # Folder in filestorage with custom fonts.
+        attr_accessor :fonts_location
 	
-     #
-     # Initializes a new instance.
-     # @param name Original document name.
-     # @param folder Original document folder.
-     # @param storage File storage, which have to be used.
-     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-     # @param password Password for opening an encrypted document.
-     # @param dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-     # @param format Format to split.
-     # @param from Start page.
-     # @param to End page.
-     # @param zip_output ZipOutput or not.
-     # @param fonts_location Folder in filestorage with custom fonts.
-		def initialize(name, folder=nil, storage=nil, load_encoding=nil, password=nil, dest_file_name=nil, format=nil, from=nil, to=nil, zip_output=nil, fonts_location=nil)
-			self.name=name
-			self.folder=folder
-			self.storage=storage
-			self.load_encoding=load_encoding
-			self.password=password
-			self.dest_file_name=dest_file_name
-			self.format=format
-			self.from=from
-			self.to=to
-			self.zip_output=zip_output
-			self.fonts_location=fonts_location
-		end
-	
-	end
+        #
+        # Initializes a new instance.
+        # @param name Original document name.
+        # @param folder Original document folder.
+        # @param storage File storage, which have to be used.
+        # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        # @param password Password for opening an encrypted document.
+        # @param dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        # @param format Format to split.
+        # @param from Start page.
+        # @param to End page.
+        # @param zip_output ZipOutput or not.
+        # @param fonts_location Folder in filestorage with custom fonts.
+        def initialize(name, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil, format = nil, from = nil, to = nil, zip_output = nil, fonts_location = nil)
+           self.name = name
+           self.folder = folder
+           self.storage = storage
+           self.load_encoding = load_encoding
+           self.password = password
+           self.dest_file_name = dest_file_name
+           self.format = format
+           self.from = from
+           self.to = to
+           self.zip_output = zip_output
+           self.fonts_location = fonts_location
+        end
+    end
 end
