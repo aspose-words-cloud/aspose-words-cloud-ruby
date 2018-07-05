@@ -2,6 +2,10 @@
 # in separate files. This file adds all other parameters apart from Enabled.
 
 # Common configuration.
+AllCops:
+  TargetRubyVersion: 2.3
+  Exclude:
+    - lib/words_ruby_sdk/api_client.rb
 Metrics/LineLength:
   Max: 7010
 Style/AccessModifierDeclarations:
@@ -69,4 +73,8 @@ Style/TrailingCommaInHashLiteral:
 Style/AsciiComments:
   Enabled: false
 Layout/IndentationWidth:
+  Enabled: false
+Layout/Tab:
+  Enabled: false
+Style/FrozenStringLiteralComment:
   Enabled: false
