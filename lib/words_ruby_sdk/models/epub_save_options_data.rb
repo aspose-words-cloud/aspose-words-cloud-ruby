@@ -517,11 +517,11 @@ module WordsRubySdk
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      html_version_validator = EnumAttributeValidator.new('String', %w("Xhtml", "Html5"))
+      html_version_validator = EnumAttributeValidator.new('String', %w["Xhtml", "Html5"])
       return false unless html_version_validator.valid?(@html_version)
-      metafile_format_validator = EnumAttributeValidator.new('String', %w("Png", "Svg", "EmfOrWmf"))
+      metafile_format_validator = EnumAttributeValidator.new('String', %w["Png", "Svg", "EmfOrWmf"])
       return false unless metafile_format_validator.valid?(@metafile_format)
-      office_math_output_mode_validator = EnumAttributeValidator.new('String', %w("Image", "MathML", "Text"))
+      office_math_output_mode_validator = EnumAttributeValidator.new('String', %w["Image", "MathML", "Text"])
       return false unless office_math_output_mode_validator.valid?(@office_math_output_mode)
       return true
     end
@@ -529,10 +529,10 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] html_version Object to be assigned
     def html_version=(html_version)
-      validator = EnumAttributeValidator.new('String', %w("Xhtml", "Html5"))
+      validator = EnumAttributeValidator.new('String', %w["Xhtml", "Html5"])
       if html_version.to_i == 0
         unless validator.valid?(html_version)
-          fail ArgumentError, "invalid value for 'html_version', must be one of #{validator.allowable_values}."
+          raise ArgumentError, "invalid value for 'html_version', must be one of #{validator.allowable_values}."
         end
         @html_version = html_version
       else
@@ -543,10 +543,10 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] metafile_format Object to be assigned
     def metafile_format=(metafile_format)
-      validator = EnumAttributeValidator.new('String', %w("Png", "Svg", "EmfOrWmf"))
+      validator = EnumAttributeValidator.new('String', %w["Png", "Svg", "EmfOrWmf"])
       if metafile_format.to_i == 0
         unless validator.valid?(metafile_format)
-          fail ArgumentError, "invalid value for 'metafile_format', must be one of #{validator.allowable_values}."
+          raise ArgumentError, "invalid value for 'metafile_format', must be one of #{validator.allowable_values}."
         end
         @metafile_format = metafile_format
       else
@@ -557,10 +557,10 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] office_math_output_mode Object to be assigned
     def office_math_output_mode=(office_math_output_mode)
-      validator = EnumAttributeValidator.new('String', %w("Image", "MathML", "Text"))
+      validator = EnumAttributeValidator.new('String', %w["Image", "MathML", "Text"])
       if office_math_output_mode.to_i == 0
         unless validator.valid?(office_math_output_mode)
-          fail ArgumentError, "invalid value for 'office_math_output_mode', must be one of #{validator.allowable_values}."
+          raise ArgumentError, "invalid value for 'office_math_output_mode', must be one of #{validator.allowable_values}."
         end
         @office_math_output_mode = office_math_output_mode
       else
@@ -650,7 +650,7 @@ module WordsRubySdk
         elsif !attributes[self.class.attribute_map[key]].nil?
           self.send("#{key}=", _deserialize(type, attributes[self.class.attribute_map[key]]))
         end
-		# or else data not found in attributes(hash), not an issue as the data can be optional
+        # or else data not found in attributes(hash), not an issue as the data can be optional
       end
 
       self
@@ -693,7 +693,7 @@ module WordsRubySdk
           end
         end
       else
-	  # model
+      # model
         temp_model = WordsRubySdk.const_get(type).new
         temp_model.build_from_hash(value)
       end

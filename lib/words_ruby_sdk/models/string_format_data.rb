@@ -130,15 +130,15 @@ module WordsRubySdk
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      alignment_validator = EnumAttributeValidator.new('String', %w("Near", "Center", "Far"))
+      alignment_validator = EnumAttributeValidator.new('String', %w["Near", "Center", "Far"])
       return false unless alignment_validator.valid?(@alignment)
-      format_flags_validator = EnumAttributeValidator.new('String', %w("DirectionRightToLeft", "DirectionVertical", "FitBlackBox", "DisplayFormatControl", "NoFontFallback", "MeasureTrailingSpaces", "NoWrap", "LineLimit", "NoClip"))
+      format_flags_validator = EnumAttributeValidator.new('String', %w["DirectionRightToLeft", "DirectionVertical", "FitBlackBox", "DisplayFormatControl", "NoFontFallback", "MeasureTrailingSpaces", "NoWrap", "LineLimit", "NoClip"])
       return false unless format_flags_validator.valid?(@format_flags)
-      hotkey_prefix_validator = EnumAttributeValidator.new('String', %w("None", "Show", "Hide"))
+      hotkey_prefix_validator = EnumAttributeValidator.new('String', %w["None", "Show", "Hide"])
       return false unless hotkey_prefix_validator.valid?(@hotkey_prefix)
-      line_alignment_validator = EnumAttributeValidator.new('String', %w("Near", "Center", "Far"))
+      line_alignment_validator = EnumAttributeValidator.new('String', %w["Near", "Center", "Far"])
       return false unless line_alignment_validator.valid?(@line_alignment)
-      trimming_validator = EnumAttributeValidator.new('String', %w("None", "Character", "Word", "EllipsisCharacter", "EllipsisWord", "EllipsisPath"))
+      trimming_validator = EnumAttributeValidator.new('String', %w["None", "Character", "Word", "EllipsisCharacter", "EllipsisWord", "EllipsisPath"])
       return false unless trimming_validator.valid?(@trimming)
       return true
     end
@@ -146,10 +146,10 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] alignment Object to be assigned
     def alignment=(alignment)
-      validator = EnumAttributeValidator.new('String', %w("Near", "Center", "Far"))
+      validator = EnumAttributeValidator.new('String', %w["Near", "Center", "Far"])
       if alignment.to_i == 0
         unless validator.valid?(alignment)
-          fail ArgumentError, "invalid value for 'alignment', must be one of #{validator.allowable_values}."
+          raise ArgumentError, "invalid value for 'alignment', must be one of #{validator.allowable_values}."
         end
         @alignment = alignment
       else
@@ -160,10 +160,10 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] format_flags Object to be assigned
     def format_flags=(format_flags)
-      validator = EnumAttributeValidator.new('String', %w("DirectionRightToLeft", "DirectionVertical", "FitBlackBox", "DisplayFormatControl", "NoFontFallback", "MeasureTrailingSpaces", "NoWrap", "LineLimit", "NoClip"))
+      validator = EnumAttributeValidator.new('String', %w["DirectionRightToLeft", "DirectionVertical", "FitBlackBox", "DisplayFormatControl", "NoFontFallback", "MeasureTrailingSpaces", "NoWrap", "LineLimit", "NoClip"])
       if format_flags.to_i == 0
         unless validator.valid?(format_flags)
-          fail ArgumentError, "invalid value for 'format_flags', must be one of #{validator.allowable_values}."
+          raise ArgumentError, "invalid value for 'format_flags', must be one of #{validator.allowable_values}."
         end
         @format_flags = format_flags
       else
@@ -174,10 +174,10 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] hotkey_prefix Object to be assigned
     def hotkey_prefix=(hotkey_prefix)
-      validator = EnumAttributeValidator.new('String', %w("None", "Show", "Hide"))
+      validator = EnumAttributeValidator.new('String', %w["None", "Show", "Hide"])
       if hotkey_prefix.to_i == 0
         unless validator.valid?(hotkey_prefix)
-          fail ArgumentError, "invalid value for 'hotkey_prefix', must be one of #{validator.allowable_values}."
+          raise ArgumentError, "invalid value for 'hotkey_prefix', must be one of #{validator.allowable_values}."
         end
         @hotkey_prefix = hotkey_prefix
       else
@@ -188,10 +188,10 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] line_alignment Object to be assigned
     def line_alignment=(line_alignment)
-      validator = EnumAttributeValidator.new('String', %w("Near", "Center", "Far"))
+      validator = EnumAttributeValidator.new('String', %w["Near", "Center", "Far"])
       if line_alignment.to_i == 0
         unless validator.valid?(line_alignment)
-          fail ArgumentError, "invalid value for 'line_alignment', must be one of #{validator.allowable_values}."
+          raise ArgumentError, "invalid value for 'line_alignment', must be one of #{validator.allowable_values}."
         end
         @line_alignment = line_alignment
       else
@@ -202,10 +202,10 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] trimming Object to be assigned
     def trimming=(trimming)
-      validator = EnumAttributeValidator.new('String', %w("None", "Character", "Word", "EllipsisCharacter", "EllipsisWord", "EllipsisPath"))
+      validator = EnumAttributeValidator.new('String', %w["None", "Character", "Word", "EllipsisCharacter", "EllipsisWord", "EllipsisPath"])
       if trimming.to_i == 0
         unless validator.valid?(trimming)
-          fail ArgumentError, "invalid value for 'trimming', must be one of #{validator.allowable_values}."
+          raise ArgumentError, "invalid value for 'trimming', must be one of #{validator.allowable_values}."
         end
         @trimming = trimming
       else
@@ -252,7 +252,7 @@ module WordsRubySdk
         elsif !attributes[self.class.attribute_map[key]].nil?
           self.send("#{key}=", _deserialize(type, attributes[self.class.attribute_map[key]]))
         end
-		# or else data not found in attributes(hash), not an issue as the data can be optional
+        # or else data not found in attributes(hash), not an issue as the data can be optional
       end
 
       self
@@ -295,7 +295,7 @@ module WordsRubySdk
           end
         end
       else
-	  # model
+      # model
         temp_model = WordsRubySdk.const_get(type).new
         temp_model.build_from_hash(value)
       end

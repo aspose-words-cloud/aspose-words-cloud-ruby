@@ -139,11 +139,11 @@ module WordsRubySdk
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      display_type_validator = EnumAttributeValidator.new('String', %w("Display", "Inline"))
+      display_type_validator = EnumAttributeValidator.new('String', %w["Display", "Inline"])
       return false unless display_type_validator.valid?(@display_type)
-      justification_validator = EnumAttributeValidator.new('String', %w("CenterGroup", "Default", "Center", "Left", "Right", "Inline"))
+      justification_validator = EnumAttributeValidator.new('String', %w["CenterGroup", "Default", "Center", "Left", "Right", "Inline"])
       return false unless justification_validator.valid?(@justification)
-      math_object_type_validator = EnumAttributeValidator.new('String', %w("OMath", "OMathPara", "Accent", "Bar", "BorderBox", "Box", "Delimiter", "Degree", "Argument", "Array", "Fraction", "Denominator", "Numerator", "Function", "FunctionName", "GroupCharacter", "Limit", "LowerLimit", "UpperLimit", "Matrix", "MatrixRow", "NAry", "Phantom", "Radical", "SubscriptPart", "SuperscriptPart", "PreSubSuperscript", "Subscript", "SubSuperscript", "Supercript"))
+      math_object_type_validator = EnumAttributeValidator.new('String', %w["OMath", "OMathPara", "Accent", "Bar", "BorderBox", "Box", "Delimiter", "Degree", "Argument", "Array", "Fraction", "Denominator", "Numerator", "Function", "FunctionName", "GroupCharacter", "Limit", "LowerLimit", "UpperLimit", "Matrix", "MatrixRow", "NAry", "Phantom", "Radical", "SubscriptPart", "SuperscriptPart", "PreSubSuperscript", "Subscript", "SubSuperscript", "Supercript"])
       return false unless math_object_type_validator.valid?(@math_object_type)
       return true
     end
@@ -151,10 +151,10 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] display_type Object to be assigned
     def display_type=(display_type)
-      validator = EnumAttributeValidator.new('String', %w("Display", "Inline"))
+      validator = EnumAttributeValidator.new('String', %w["Display", "Inline"])
       if display_type.to_i == 0
         unless validator.valid?(display_type)
-          fail ArgumentError, "invalid value for 'display_type', must be one of #{validator.allowable_values}."
+          raise ArgumentError, "invalid value for 'display_type', must be one of #{validator.allowable_values}."
         end
         @display_type = display_type
       else
@@ -165,10 +165,10 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] justification Object to be assigned
     def justification=(justification)
-      validator = EnumAttributeValidator.new('String', %w("CenterGroup", "Default", "Center", "Left", "Right", "Inline"))
+      validator = EnumAttributeValidator.new('String', %w["CenterGroup", "Default", "Center", "Left", "Right", "Inline"])
       if justification.to_i == 0
         unless validator.valid?(justification)
-          fail ArgumentError, "invalid value for 'justification', must be one of #{validator.allowable_values}."
+          raise ArgumentError, "invalid value for 'justification', must be one of #{validator.allowable_values}."
         end
         @justification = justification
       else
@@ -179,10 +179,10 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] math_object_type Object to be assigned
     def math_object_type=(math_object_type)
-      validator = EnumAttributeValidator.new('String', %w("OMath", "OMathPara", "Accent", "Bar", "BorderBox", "Box", "Delimiter", "Degree", "Argument", "Array", "Fraction", "Denominator", "Numerator", "Function", "FunctionName", "GroupCharacter", "Limit", "LowerLimit", "UpperLimit", "Matrix", "MatrixRow", "NAry", "Phantom", "Radical", "SubscriptPart", "SuperscriptPart", "PreSubSuperscript", "Subscript", "SubSuperscript", "Supercript"))
+      validator = EnumAttributeValidator.new('String', %w["OMath", "OMathPara", "Accent", "Bar", "BorderBox", "Box", "Delimiter", "Degree", "Argument", "Array", "Fraction", "Denominator", "Numerator", "Function", "FunctionName", "GroupCharacter", "Limit", "LowerLimit", "UpperLimit", "Matrix", "MatrixRow", "NAry", "Phantom", "Radical", "SubscriptPart", "SuperscriptPart", "PreSubSuperscript", "Subscript", "SubSuperscript", "Supercript"])
       if math_object_type.to_i == 0
         unless validator.valid?(math_object_type)
-          fail ArgumentError, "invalid value for 'math_object_type', must be one of #{validator.allowable_values}."
+          raise ArgumentError, "invalid value for 'math_object_type', must be one of #{validator.allowable_values}."
         end
         @math_object_type = math_object_type
       else
@@ -230,7 +230,7 @@ module WordsRubySdk
         elsif !attributes[self.class.attribute_map[key]].nil?
           self.send("#{key}=", _deserialize(type, attributes[self.class.attribute_map[key]]))
         end
-		# or else data not found in attributes(hash), not an issue as the data can be optional
+        # or else data not found in attributes(hash), not an issue as the data can be optional
       end
 
       self
@@ -273,7 +273,7 @@ module WordsRubySdk
           end
         end
       else
-	  # model
+      # model
         temp_model = WordsRubySdk.const_get(type).new
         temp_model.build_from_hash(value)
       end

@@ -148,7 +148,7 @@ module WordsRubySdk
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      footnote_type_validator = EnumAttributeValidator.new('String', %w("Footnote", "Endnote"))
+      footnote_type_validator = EnumAttributeValidator.new('String', %w["Footnote", "Endnote"])
       return false unless footnote_type_validator.valid?(@footnote_type)
       return true
     end
@@ -156,10 +156,10 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] footnote_type Object to be assigned
     def footnote_type=(footnote_type)
-      validator = EnumAttributeValidator.new('String', %w("Footnote", "Endnote"))
+      validator = EnumAttributeValidator.new('String', %w["Footnote", "Endnote"])
       if footnote_type.to_i == 0
         unless validator.valid?(footnote_type)
-          fail ArgumentError, "invalid value for 'footnote_type', must be one of #{validator.allowable_values}."
+          raise ArgumentError, "invalid value for 'footnote_type', must be one of #{validator.allowable_values}."
         end
         @footnote_type = footnote_type
       else
@@ -208,7 +208,7 @@ module WordsRubySdk
         elsif !attributes[self.class.attribute_map[key]].nil?
           self.send("#{key}=", _deserialize(type, attributes[self.class.attribute_map[key]]))
         end
-		# or else data not found in attributes(hash), not an issue as the data can be optional
+        # or else data not found in attributes(hash), not an issue as the data can be optional
       end
 
       self
@@ -251,7 +251,7 @@ module WordsRubySdk
           end
         end
       else
-	  # model
+      # model
         temp_model = WordsRubySdk.const_get(type).new
         temp_model.build_from_hash(value)
       end

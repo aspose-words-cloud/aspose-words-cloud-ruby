@@ -130,7 +130,7 @@ module WordsRubySdk
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      height_rule_validator = EnumAttributeValidator.new('String', %w("AtLeast", "Exactly", "Auto"))
+      height_rule_validator = EnumAttributeValidator.new('String', %w["AtLeast", "Exactly", "Auto"])
       return false unless height_rule_validator.valid?(@height_rule)
       return true
     end
@@ -138,10 +138,10 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] height_rule Object to be assigned
     def height_rule=(height_rule)
-      validator = EnumAttributeValidator.new('String', %w("AtLeast", "Exactly", "Auto"))
+      validator = EnumAttributeValidator.new('String', %w["AtLeast", "Exactly", "Auto"])
       if height_rule.to_i == 0
         unless validator.valid?(height_rule)
-          fail ArgumentError, "invalid value for 'height_rule', must be one of #{validator.allowable_values}."
+          raise ArgumentError, "invalid value for 'height_rule', must be one of #{validator.allowable_values}."
         end
         @height_rule = height_rule
       else
@@ -188,7 +188,7 @@ module WordsRubySdk
         elsif !attributes[self.class.attribute_map[key]].nil?
           self.send("#{key}=", _deserialize(type, attributes[self.class.attribute_map[key]]))
         end
-		# or else data not found in attributes(hash), not an issue as the data can be optional
+        # or else data not found in attributes(hash), not an issue as the data can be optional
       end
 
       self
@@ -231,7 +231,7 @@ module WordsRubySdk
           end
         end
       else
-	  # model
+      # model
         temp_model = WordsRubySdk.const_get(type).new
         temp_model.build_from_hash(value)
       end

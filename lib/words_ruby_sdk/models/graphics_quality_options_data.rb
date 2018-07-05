@@ -139,15 +139,15 @@ module WordsRubySdk
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      compositing_mode_validator = EnumAttributeValidator.new('String', %w("SourceOver", "SourceCopy"))
+      compositing_mode_validator = EnumAttributeValidator.new('String', %w["SourceOver", "SourceCopy"])
       return false unless compositing_mode_validator.valid?(@compositing_mode)
-      compositing_quality_validator = EnumAttributeValidator.new('String', %w("Default", "HighSpeed", "HighQuality", "GammaCorrected", "AssumeLinear", "Invalid"))
+      compositing_quality_validator = EnumAttributeValidator.new('String', %w["Default", "HighSpeed", "HighQuality", "GammaCorrected", "AssumeLinear", "Invalid"])
       return false unless compositing_quality_validator.valid?(@compositing_quality)
-      interpolation_mode_validator = EnumAttributeValidator.new('String', %w("Default", "Low", "High", "Bilinear", "Bicubic", "NearestNeighbor", "HighQualityBilinear", "HighQualityBicubic", "Invalid"))
+      interpolation_mode_validator = EnumAttributeValidator.new('String', %w["Default", "Low", "High", "Bilinear", "Bicubic", "NearestNeighbor", "HighQualityBilinear", "HighQualityBicubic", "Invalid"])
       return false unless interpolation_mode_validator.valid?(@interpolation_mode)
-      smoothing_mode_validator = EnumAttributeValidator.new('String', %w("Default", "HighSpeed", "HighQuality", "None", "AntiAlias", "Invalid"))
+      smoothing_mode_validator = EnumAttributeValidator.new('String', %w["Default", "HighSpeed", "HighQuality", "None", "AntiAlias", "Invalid"])
       return false unless smoothing_mode_validator.valid?(@smoothing_mode)
-      text_rendering_hint_validator = EnumAttributeValidator.new('String', %w("SystemDefault", "SingleBitPerPixelGridFit", "SingleBitPerPixel", "AntiAliasGridFit", "AntiAlias", "ClearTypeGridFit"))
+      text_rendering_hint_validator = EnumAttributeValidator.new('String', %w["SystemDefault", "SingleBitPerPixelGridFit", "SingleBitPerPixel", "AntiAliasGridFit", "AntiAlias", "ClearTypeGridFit"])
       return false unless text_rendering_hint_validator.valid?(@text_rendering_hint)
       return true
     end
@@ -155,10 +155,10 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] compositing_mode Object to be assigned
     def compositing_mode=(compositing_mode)
-      validator = EnumAttributeValidator.new('String', %w("SourceOver", "SourceCopy"))
+      validator = EnumAttributeValidator.new('String', %w["SourceOver", "SourceCopy"])
       if compositing_mode.to_i == 0
         unless validator.valid?(compositing_mode)
-          fail ArgumentError, "invalid value for 'compositing_mode', must be one of #{validator.allowable_values}."
+          raise ArgumentError, "invalid value for 'compositing_mode', must be one of #{validator.allowable_values}."
         end
         @compositing_mode = compositing_mode
       else
@@ -169,10 +169,10 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] compositing_quality Object to be assigned
     def compositing_quality=(compositing_quality)
-      validator = EnumAttributeValidator.new('String', %w("Default", "HighSpeed", "HighQuality", "GammaCorrected", "AssumeLinear", "Invalid"))
+      validator = EnumAttributeValidator.new('String', %w["Default", "HighSpeed", "HighQuality", "GammaCorrected", "AssumeLinear", "Invalid"])
       if compositing_quality.to_i == 0
         unless validator.valid?(compositing_quality)
-          fail ArgumentError, "invalid value for 'compositing_quality', must be one of #{validator.allowable_values}."
+          raise ArgumentError, "invalid value for 'compositing_quality', must be one of #{validator.allowable_values}."
         end
         @compositing_quality = compositing_quality
       else
@@ -183,10 +183,10 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] interpolation_mode Object to be assigned
     def interpolation_mode=(interpolation_mode)
-      validator = EnumAttributeValidator.new('String', %w("Default", "Low", "High", "Bilinear", "Bicubic", "NearestNeighbor", "HighQualityBilinear", "HighQualityBicubic", "Invalid"))
+      validator = EnumAttributeValidator.new('String', %w["Default", "Low", "High", "Bilinear", "Bicubic", "NearestNeighbor", "HighQualityBilinear", "HighQualityBicubic", "Invalid"])
       if interpolation_mode.to_i == 0
         unless validator.valid?(interpolation_mode)
-          fail ArgumentError, "invalid value for 'interpolation_mode', must be one of #{validator.allowable_values}."
+          raise ArgumentError, "invalid value for 'interpolation_mode', must be one of #{validator.allowable_values}."
         end
         @interpolation_mode = interpolation_mode
       else
@@ -197,10 +197,10 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] smoothing_mode Object to be assigned
     def smoothing_mode=(smoothing_mode)
-      validator = EnumAttributeValidator.new('String', %w("Default", "HighSpeed", "HighQuality", "None", "AntiAlias", "Invalid"))
+      validator = EnumAttributeValidator.new('String', %w["Default", "HighSpeed", "HighQuality", "None", "AntiAlias", "Invalid"])
       if smoothing_mode.to_i == 0
         unless validator.valid?(smoothing_mode)
-          fail ArgumentError, "invalid value for 'smoothing_mode', must be one of #{validator.allowable_values}."
+          raise ArgumentError, "invalid value for 'smoothing_mode', must be one of #{validator.allowable_values}."
         end
         @smoothing_mode = smoothing_mode
       else
@@ -211,10 +211,10 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] text_rendering_hint Object to be assigned
     def text_rendering_hint=(text_rendering_hint)
-      validator = EnumAttributeValidator.new('String', %w("SystemDefault", "SingleBitPerPixelGridFit", "SingleBitPerPixel", "AntiAliasGridFit", "AntiAlias", "ClearTypeGridFit"))
+      validator = EnumAttributeValidator.new('String', %w["SystemDefault", "SingleBitPerPixelGridFit", "SingleBitPerPixel", "AntiAliasGridFit", "AntiAlias", "ClearTypeGridFit"])
       if text_rendering_hint.to_i == 0
         unless validator.valid?(text_rendering_hint)
-          fail ArgumentError, "invalid value for 'text_rendering_hint', must be one of #{validator.allowable_values}."
+          raise ArgumentError, "invalid value for 'text_rendering_hint', must be one of #{validator.allowable_values}."
         end
         @text_rendering_hint = text_rendering_hint
       else
@@ -262,7 +262,7 @@ module WordsRubySdk
         elsif !attributes[self.class.attribute_map[key]].nil?
           self.send("#{key}=", _deserialize(type, attributes[self.class.attribute_map[key]]))
         end
-		# or else data not found in attributes(hash), not an issue as the data can be optional
+        # or else data not found in attributes(hash), not an issue as the data can be optional
       end
 
       self
@@ -305,7 +305,7 @@ module WordsRubySdk
           end
         end
       else
-	  # model
+      # model
         temp_model = WordsRubySdk.const_get(type).new
         temp_model.build_from_hash(value)
       end

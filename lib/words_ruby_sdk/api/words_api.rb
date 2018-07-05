@@ -111,7 +111,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'RevisionsModificationResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#accept_all_revisions\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -169,7 +169,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'ClassificationResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#classify\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -248,7 +248,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'ClassificationResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#classify_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -342,7 +342,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentPropertyResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#create_or_update_document_property\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -437,7 +437,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'BorderResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#delete_border\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -529,7 +529,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'BordersResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#delete_borders\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -621,7 +621,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'AsposeResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#delete_comment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -710,7 +710,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'AsposeResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#delete_document_macros\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -802,7 +802,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'AsposeResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#delete_document_property\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -891,7 +891,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#delete_document_watermark\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -988,7 +988,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'AsposeResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#delete_drawing_object\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -1085,7 +1085,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'AsposeResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#delete_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -1179,7 +1179,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'AsposeResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#delete_fields\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -1276,7 +1276,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'AsposeResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#delete_footnote\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -1373,7 +1373,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'AsposeResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#delete_form_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -1470,7 +1470,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'AsposeResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#delete_header_footer\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -1569,7 +1569,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'AsposeResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#delete_headers_footers\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -1666,7 +1666,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'AsposeResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#delete_office_math_object\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -1763,7 +1763,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'AsposeResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#delete_paragraph\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -1858,7 +1858,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'AsposeResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#delete_run\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -1955,7 +1955,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'AsposeResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#delete_table\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -2050,7 +2050,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'AsposeResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#delete_table_cell\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -2145,7 +2145,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'AsposeResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#delete_table_row\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -2226,7 +2226,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'ProtectionDataResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#delete_unprotect_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -2306,7 +2306,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'BorderResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_border\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -2383,7 +2383,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'BordersResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_borders\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -2460,7 +2460,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'CommentResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_comment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -2534,7 +2534,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'CommentsResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_comments\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -2608,7 +2608,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -2685,7 +2685,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'BookmarkResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_document_bookmark_by_name\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -2759,7 +2759,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'BookmarksResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_document_bookmarks\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -2841,7 +2841,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'DrawingObjectResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_document_drawing_object_by_index\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -2923,7 +2923,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'File')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_document_drawing_object_image_data\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -3005,7 +3005,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'File')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_document_drawing_object_ole_data\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -3084,7 +3084,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'DrawingObjectsResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_document_drawing_objects\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -3163,7 +3163,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'FieldNamesResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_document_field_names\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -3240,7 +3240,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'HyperlinkResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_document_hyperlink_by_index\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -3314,7 +3314,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'HyperlinksResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_document_hyperlinks\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -3396,7 +3396,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'ParagraphResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_document_paragraph\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -3476,7 +3476,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'RunResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_document_paragraph_run\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -3556,7 +3556,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'FontResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_document_paragraph_run_font\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -3633,7 +3633,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'RunsResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_document_paragraph_runs\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -3712,7 +3712,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'ParagraphLinkCollectionResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_document_paragraphs\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -3786,7 +3786,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentPropertiesResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_document_properties\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -3863,7 +3863,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentPropertyResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_document_property\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -3937,7 +3937,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'ProtectionDataResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_document_protection\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -4026,7 +4026,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'StatDataResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_document_statistics\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -4100,7 +4100,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'TextItemsResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_document_text_items\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -4188,7 +4188,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'File')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_document_with_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -4270,7 +4270,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'FieldResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -4349,7 +4349,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'FieldsResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_fields\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -4431,7 +4431,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'FootnoteResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_footnote\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -4510,7 +4510,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'FootnotesResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_footnotes\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -4592,7 +4592,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'FormFieldResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_form_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -4671,7 +4671,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'FormFieldsResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_form_fields\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -4753,7 +4753,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'HeaderFooterResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_header_footer\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -4838,7 +4838,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'HeaderFooterResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_header_footer_of_section\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -4922,7 +4922,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'HeaderFootersResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_header_footers\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -5004,7 +5004,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'OfficeMathObjectResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_office_math_object\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -5083,7 +5083,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'OfficeMathObjectsResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_office_math_objects\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -5160,7 +5160,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'SectionResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_section\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -5237,7 +5237,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'SectionPageSetupResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_section_page_setup\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -5311,7 +5311,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'SectionLinkCollectionResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_sections\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -5393,7 +5393,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'TableResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_table\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -5473,7 +5473,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'TableCellResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_table_cell\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -5553,7 +5553,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'TableCellFormatResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_table_cell_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -5635,7 +5635,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'TablePropertiesResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_table_properties\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -5715,7 +5715,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'TableRowResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_table_row\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -5795,7 +5795,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'TableRowFormatResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_table_row_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -5874,7 +5874,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'TableLinkCollectionResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#get_tables\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -5968,7 +5968,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'TableResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#insert_table\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -6060,7 +6060,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'TableCellResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#insert_table_cell\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -6152,7 +6152,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'TableRowResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#insert_table_row\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -6243,7 +6243,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#post_append_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -6324,7 +6324,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'ProtectionDataResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#post_change_document_protection\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -6418,7 +6418,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'CommentResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#post_comment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -6499,7 +6499,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#post_compare_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -6599,7 +6599,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#post_document_execute_mail_merge\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -6696,7 +6696,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'FontResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#post_document_paragraph_run_font\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -6782,7 +6782,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'SaveResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#post_document_save_as\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -6885,7 +6885,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'DrawingObjectResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#post_drawing_object\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -6982,7 +6982,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#post_execute_template\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -7081,7 +7081,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'FieldResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#post_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -7180,7 +7180,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'FootnoteResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#post_footnote\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -7279,7 +7279,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'FormFieldResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#post_form_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -7379,7 +7379,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#post_insert_document_watermark_image\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -7470,7 +7470,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#post_insert_document_watermark_text\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -7561,7 +7561,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#post_insert_page_numbers\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -7619,7 +7619,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'SaveResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#post_load_web_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -7710,7 +7710,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'ReplaceTextResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#post_replace_text\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -7807,7 +7807,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'RunResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#post_run\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -7911,7 +7911,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'SplitDocumentResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#post_split_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -8005,7 +8005,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'BookmarkResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#post_update_document_bookmark\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -8084,7 +8084,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#post_update_document_fields\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -8175,7 +8175,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'CommentResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#put_comment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -8253,7 +8253,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'File')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#put_convert_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -8319,7 +8319,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#put_create_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -8378,7 +8378,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'FieldNamesResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#put_document_field_names\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -8554,7 +8554,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'SaveResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#put_document_save_as_tiff\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -8654,7 +8654,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'DrawingObjectResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#put_drawing_object\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -8726,7 +8726,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'File')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#put_execute_mail_merge_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -8803,7 +8803,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'File')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#put_execute_template_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -8904,7 +8904,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'FieldResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#put_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -9000,7 +9000,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'FootnoteResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#put_footnote\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -9101,7 +9101,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'FormFieldResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#put_form_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -9197,7 +9197,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'HeaderFooterResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#put_header_footer\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -9298,7 +9298,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'ParagraphResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#put_paragraph\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -9379,7 +9379,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'ProtectionDataResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#put_protect_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -9478,7 +9478,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'RunResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#put_run\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -9557,7 +9557,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'RevisionsModificationResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#reject_all_revisions\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -9648,7 +9648,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'File')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#render_drawing_object\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -9739,7 +9739,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'File')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#render_math_object\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -9825,7 +9825,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'File')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#render_page\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -9916,7 +9916,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'File')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#render_paragraph\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -10007,7 +10007,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'File')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#render_table\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -10058,7 +10058,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'AsposeResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#reset_cache\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -10136,7 +10136,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'SearchResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#search\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -10233,7 +10233,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'BorderResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#update_border\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -10327,7 +10327,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'SectionPageSetupResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#update_section_page_setup\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -10422,7 +10422,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'TableCellFormatResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#update_table_cell_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -10519,7 +10519,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'TablePropertiesResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#update_table_properties\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
@@ -10614,7 +10614,7 @@ module WordsRubySdk
                                                         auth_names: auth_names,
                                                         return_type: 'TableRowFormatResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: 
+        @api_client.config.logger.debug "API called:
         WordsApi#update_table_row_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]

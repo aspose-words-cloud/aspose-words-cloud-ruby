@@ -108,7 +108,7 @@ module WordsRubySdk
     # @return true if the model is valid
     def valid?
       return false if @type.nil?
-      type_validator = EnumAttributeValidator.new('String', %w("Auto", "Percent", "Points"))
+      type_validator = EnumAttributeValidator.new('String', %w["Auto", "Percent", "Points"])
       return false unless type_validator.valid?(@type)
       return true
     end
@@ -116,10 +116,10 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] type Object to be assigned
     def type=(type)
-      validator = EnumAttributeValidator.new('String', %w("Auto", "Percent", "Points"))
+      validator = EnumAttributeValidator.new('String', %w["Auto", "Percent", "Points"])
       if type.to_i == 0
         unless validator.valid?(type)
-          fail ArgumentError, "invalid value for 'type', must be one of #{validator.allowable_values}."
+          raise ArgumentError, "invalid value for 'type', must be one of #{validator.allowable_values}."
         end
         @type = type
       else
@@ -163,7 +163,7 @@ module WordsRubySdk
         elsif !attributes[self.class.attribute_map[key]].nil?
           self.send("#{key}=", _deserialize(type, attributes[self.class.attribute_map[key]]))
         end
-		# or else data not found in attributes(hash), not an issue as the data can be optional
+        # or else data not found in attributes(hash), not an issue as the data can be optional
       end
 
       self
@@ -206,7 +206,7 @@ module WordsRubySdk
           end
         end
       else
-	  # model
+      # model
         temp_model = WordsRubySdk.const_get(type).new
         temp_model.build_from_hash(value)
       end

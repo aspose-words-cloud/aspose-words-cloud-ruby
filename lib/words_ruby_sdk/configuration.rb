@@ -32,16 +32,16 @@ module WordsRubySdk
   class Configuration
     
     # Defines v1 api version
-    V1_API_VERSION = '/v1'
+    V1_API_VERSION = '/v1'.freeze
     
     # Defines v2 api version
-    V2_API_VERSION = '/v2'
+    V2_API_VERSION = '/v2'.freeze
     
     # Defines v3 api version
-    V3_API_VERSION = '/v3'
+    V3_API_VERSION = '/v3'.freeze
     
     # Defines v1.1 api version
-    V1_1_API_VERSION = '/v1.1'
+    V1_1_API_VERSION = '/v1.1'.freeze
     
     # Defines url scheme
     attr_accessor :scheme

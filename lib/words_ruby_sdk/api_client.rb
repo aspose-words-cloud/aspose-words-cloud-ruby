@@ -53,7 +53,7 @@ module WordsRubySdk
       @default_headers = {
         'Content-Type' => "application/json",
         'x-aspose-client' => "ruby sdk",
-        'x-aspose-version' => "#{ WordsRubySdk::VERSION }"
+        'x-aspose-version' => "WordsRubySdk::VERSION.to_s
       }
     end
 
@@ -75,21 +75,18 @@ module WordsRubySdk
       unless response.success?
         if response.status == 0
           # Errors from libcurl will be made visible here
-          fail ApiError.new(:code => 0,
+          raise ApiError.new(:code => 0,
                             :message => response.reason_phrase)
         else
-          fail ApiError.new(:code => response.status,
+          raise ApiError.new(:code => response.status,
                             :response_headers => response.headers,
                             :response_body => response.body),
                response.reason_phrase
         end
       end
 
-      if opts[:return_type]
-        data = deserialize(response, opts[:return_type])
-      else
-        data = nil
-      end
+      
+      data = deserialize(response, opts[:return_type]) if opts[:return_type]
       [data, response.status, response.headers]
     end
 
@@ -120,7 +117,7 @@ module WordsRubySdk
         :body => body
       }
 
-      if [:post, :patch, :put, :delete].include?(http_method)
+      if %i[:post, :patch, :put, :delete].include?(http_method)
         req_body = build_request_body(header_params, form_params, opts[:body])
         req_opts.update :body => req_body
         if @config.debugging
@@ -128,23 +125,23 @@ module WordsRubySdk
         end
       end
 
-      conn = Faraday.new url, {:params => query_params, :headers => header_params} do |f|
+      conn = Faraday.new url, { :params => query_params, :headers => header_params } do |f|
       f.request :multipart
       f.request :url_encoded
       f.adapter Faraday.default_adapter
       end
 
       case http_method
-        when :post
-          return conn.post url, req_opts[:body]
-        when :put
-          return conn.put url, req_opts[:body]
-        when :get
-          return conn.get url, req_opts[:body]
-        else
-          return conn.delete url do |c|
-            c.body = req_opts[:body]
-          end
+      when :post
+        return conn.post url, req_opts[:body]
+      when :put
+        return conn.put url, req_opts[:body]
+      when :get
+        return conn.get url, req_opts[:body]
+      else
+        return conn.delete url do |c|
+          c.body = req_opts[:body]
+        end
       end
     end
 
@@ -184,7 +181,7 @@ module WordsRubySdk
       begin
         data = JSON.parse("[#{body}]", :symbolize_names => true)[0]
       rescue JSON::ParserError => e
-        if %w(String Date DateTime).include?(return_type)
+        if %w[String Date DateTime].include?(return_type)
           data = body
         else
           raise e
@@ -253,7 +250,7 @@ module WordsRubySdk
       else
         prefix = 'download-'
       end
-      prefix = prefix + '-' unless prefix.end_with?('-')
+      prefix += '-' unless prefix.end_with?('-')
       encoding = response.body.encoding
       tempfile = Tempfile.open(prefix, @config.temp_folder_path, encoding: encoding)
       @tempfile = tempfile
@@ -365,7 +362,7 @@ module WordsRubySdk
       return model if model.nil? 
       local_body = nil
       if model.is_a?(Array)
-        local_body = model.map{|m| object_to_hash(m) }
+        local_body = model.map { |m| object_to_hash(m) }
       else
         local_body = object_to_hash(model)
       end
@@ -399,7 +396,7 @@ module WordsRubySdk
         # return the array directly as faraday will handle it as expected
         param
       else
-        fail "unknown collection format: #{collection_format.inspect}"
+        raise "unknown collection format: #{collection_format.inspect}"
       end
     end
   end

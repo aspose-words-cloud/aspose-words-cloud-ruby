@@ -154,7 +154,7 @@ module WordsRubySdk
     # @return true if the model is valid
     def valid?
       return false if @source_format.nil?
-      source_format_validator = EnumAttributeValidator.new('String', %w("Unknown", "Doc", "Dot", "DocPreWord60", "Docx", "Docm", "Dotx", "Dotm", "FlatOpc", "Rtf", "WordML", "Html", "Mhtml", "Epub", "Text", "Odt", "Ott", "Pdf", "Xps", "Tiff", "Svg"))
+      source_format_validator = EnumAttributeValidator.new('String', %w["Unknown", "Doc", "Dot", "DocPreWord60", "Docx", "Docm", "Dotx", "Dotm", "FlatOpc", "Rtf", "WordML", "Html", "Mhtml", "Epub", "Text", "Odt", "Ott", "Pdf", "Xps", "Tiff", "Svg"])
       return false unless source_format_validator.valid?(@source_format)
       return false if @is_encrypted.nil?
       return false if @is_signed.nil?
@@ -164,10 +164,10 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] source_format Object to be assigned
     def source_format=(source_format)
-      validator = EnumAttributeValidator.new('String', %w("Unknown", "Doc", "Dot", "DocPreWord60", "Docx", "Docm", "Dotx", "Dotm", "FlatOpc", "Rtf", "WordML", "Html", "Mhtml", "Epub", "Text", "Odt", "Ott", "Pdf", "Xps", "Tiff", "Svg"))
+      validator = EnumAttributeValidator.new('String', %w["Unknown", "Doc", "Dot", "DocPreWord60", "Docx", "Docm", "Dotx", "Dotm", "FlatOpc", "Rtf", "WordML", "Html", "Mhtml", "Epub", "Text", "Odt", "Ott", "Pdf", "Xps", "Tiff", "Svg"])
       if source_format.to_i == 0
         unless validator.valid?(source_format)
-          fail ArgumentError, "invalid value for 'source_format', must be one of #{validator.allowable_values}."
+          raise ArgumentError, "invalid value for 'source_format', must be one of #{validator.allowable_values}."
         end
         @source_format = source_format
       else
@@ -215,7 +215,7 @@ module WordsRubySdk
         elsif !attributes[self.class.attribute_map[key]].nil?
           self.send("#{key}=", _deserialize(type, attributes[self.class.attribute_map[key]]))
         end
-		# or else data not found in attributes(hash), not an issue as the data can be optional
+        # or else data not found in attributes(hash), not an issue as the data can be optional
       end
 
       self
@@ -258,7 +258,7 @@ module WordsRubySdk
           end
         end
       else
-	  # model
+      # model
         temp_model = WordsRubySdk.const_get(type).new
         temp_model.build_from_hash(value)
       end

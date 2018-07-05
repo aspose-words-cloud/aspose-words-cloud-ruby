@@ -193,7 +193,7 @@ module WordsRubySdk
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      measure_unit_validator = EnumAttributeValidator.new('String', %w("Centimeters", "Inches"))
+      measure_unit_validator = EnumAttributeValidator.new('String', %w["Centimeters", "Inches"])
       return false unless measure_unit_validator.valid?(@measure_unit)
       return true
     end
@@ -201,10 +201,10 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] measure_unit Object to be assigned
     def measure_unit=(measure_unit)
-      validator = EnumAttributeValidator.new('String', %w("Centimeters", "Inches"))
+      validator = EnumAttributeValidator.new('String', %w["Centimeters", "Inches"])
       if measure_unit.to_i == 0
         unless validator.valid?(measure_unit)
-          fail ArgumentError, "invalid value for 'measure_unit', must be one of #{validator.allowable_values}."
+          raise ArgumentError, "invalid value for 'measure_unit', must be one of #{validator.allowable_values}."
         end
         @measure_unit = measure_unit
       else
@@ -258,7 +258,7 @@ module WordsRubySdk
         elsif !attributes[self.class.attribute_map[key]].nil?
           self.send("#{key}=", _deserialize(type, attributes[self.class.attribute_map[key]]))
         end
-		# or else data not found in attributes(hash), not an issue as the data can be optional
+        # or else data not found in attributes(hash), not an issue as the data can be optional
       end
 
       self
@@ -301,7 +301,7 @@ module WordsRubySdk
           end
         end
       else
-	  # model
+      # model
         temp_model = WordsRubySdk.const_get(type).new
         temp_model.build_from_hash(value)
       end
