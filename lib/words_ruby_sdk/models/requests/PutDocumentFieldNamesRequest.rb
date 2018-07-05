@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for put_document_field_names operation.
- #
-class PutDocumentFieldNamesRequest
+  #
+  # Request model for put_document_field_names operation.
+  #
+  class PutDocumentFieldNamesRequest
 
         # File with template
         attr_accessor :template
@@ -45,5 +45,5 @@ class PutDocumentFieldNamesRequest
            self.template = template
            self.use_non_merge_fields = use_non_merge_fields
         end
-    end
+  end
 end

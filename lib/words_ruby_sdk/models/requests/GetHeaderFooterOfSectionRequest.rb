@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for get_header_footer_of_section operation.
- #
-class GetHeaderFooterOfSectionRequest
+  #
+  # Request model for get_header_footer_of_section operation.
+  #
+  class GetHeaderFooterOfSectionRequest
 
         # The document name.
         attr_accessor :name
@@ -69,5 +69,5 @@ class GetHeaderFooterOfSectionRequest
            self.password = password
            self.filter_by_type = filter_by_type
         end
-    end
+  end
 end

@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for update_section_page_setup operation.
- #
-class UpdateSectionPageSetupRequest
+  #
+  # Request model for update_section_page_setup operation.
+  #
+  class UpdateSectionPageSetupRequest
 
         # The document name.
         attr_accessor :name
@@ -77,5 +77,5 @@ class UpdateSectionPageSetupRequest
            self.revision_author = revision_author
            self.revision_date_time = revision_date_time
         end
-    end
+  end
 end

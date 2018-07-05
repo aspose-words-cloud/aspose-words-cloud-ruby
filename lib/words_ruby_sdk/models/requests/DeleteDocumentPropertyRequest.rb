@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for delete_document_property operation.
- #
-class DeleteDocumentPropertyRequest
+  #
+  # Request model for delete_document_property operation.
+  #
+  class DeleteDocumentPropertyRequest
 
         # The document name.
         attr_accessor :name
@@ -73,5 +73,5 @@ class DeleteDocumentPropertyRequest
            self.revision_author = revision_author
            self.revision_date_time = revision_date_time
         end
-    end
+  end
 end

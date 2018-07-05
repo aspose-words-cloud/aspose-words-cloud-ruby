@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for get_document operation.
- #
-class GetDocumentRequest
+  #
+  # Request model for get_document operation.
+  #
+  class GetDocumentRequest
 
         # The file name.
         attr_accessor :document_name
@@ -57,5 +57,5 @@ class GetDocumentRequest
            self.load_encoding = load_encoding
            self.password = password
         end
-    end
+  end
 end

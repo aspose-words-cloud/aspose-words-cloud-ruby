@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for delete_document_macros operation.
- #
-class DeleteDocumentMacrosRequest
+  #
+  # Request model for delete_document_macros operation.
+  #
+  class DeleteDocumentMacrosRequest
 
         # The file name.
         attr_accessor :name
@@ -69,5 +69,5 @@ class DeleteDocumentMacrosRequest
            self.revision_author = revision_author
            self.revision_date_time = revision_date_time
         end
-    end
+  end
 end

@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for post_compare_document operation.
- #
-class PostCompareDocumentRequest
+  #
+  # Request model for post_compare_document operation.
+  #
+  class PostCompareDocumentRequest
 
         # Original document name.
         attr_accessor :name
@@ -65,5 +65,5 @@ class PostCompareDocumentRequest
            self.password = password
            self.dest_file_name = dest_file_name
         end
-    end
+  end
 end

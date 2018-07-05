@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for post_replace_text operation.
- #
-class PostReplaceTextRequest
+  #
+  # Request model for post_replace_text operation.
+  #
+  class PostReplaceTextRequest
 
         # The document name.
         attr_accessor :name
@@ -73,5 +73,5 @@ class PostReplaceTextRequest
            self.revision_author = revision_author
            self.revision_date_time = revision_date_time
         end
-    end
+  end
 end

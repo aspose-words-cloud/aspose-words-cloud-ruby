@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for get_section_page_setup operation.
- #
-class GetSectionPageSetupRequest
+  #
+  # Request model for get_section_page_setup operation.
+  #
+  class GetSectionPageSetupRequest
 
         # The document name.
         attr_accessor :name
@@ -61,5 +61,5 @@ class GetSectionPageSetupRequest
            self.load_encoding = load_encoding
            self.password = password
         end
-    end
+  end
 end

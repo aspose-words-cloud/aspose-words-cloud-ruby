@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for get_office_math_object operation.
- #
-class GetOfficeMathObjectRequest
+  #
+  # Request model for get_office_math_object operation.
+  #
+  class GetOfficeMathObjectRequest
 
         # The document name.
         attr_accessor :name
@@ -65,5 +65,5 @@ class GetOfficeMathObjectRequest
            self.password = password
            self.node_path = node_path
         end
-    end
+  end
 end

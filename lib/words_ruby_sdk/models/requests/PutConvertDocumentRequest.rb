@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for put_convert_document operation.
- #
-class PutConvertDocumentRequest
+  #
+  # Request model for put_convert_document operation.
+  #
+  class PutConvertDocumentRequest
 
         # Converting document
         attr_accessor :document
@@ -61,5 +61,5 @@ class PutConvertDocumentRequest
            self.document_file_name = document_file_name
            self.fonts_location = fonts_location
         end
-    end
+  end
 end

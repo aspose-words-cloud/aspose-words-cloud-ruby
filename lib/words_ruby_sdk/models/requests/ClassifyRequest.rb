@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for classify operation.
- #
-class ClassifyRequest
+  #
+  # Request model for classify operation.
+  #
+  class ClassifyRequest
 
         # Text to classify.
         attr_accessor :text
@@ -45,5 +45,5 @@ class ClassifyRequest
            self.text = text
            self.best_classes_count = best_classes_count
         end
-    end
+  end
 end

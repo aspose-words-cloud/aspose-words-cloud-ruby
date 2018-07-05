@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for delete_drawing_object operation.
- #
-class DeleteDrawingObjectRequest
+  #
+  # Request model for delete_drawing_object operation.
+  #
+  class DeleteDrawingObjectRequest
 
         # The file name.
         attr_accessor :name
@@ -77,5 +77,5 @@ class DeleteDrawingObjectRequest
            self.revision_date_time = revision_date_time
            self.node_path = node_path
         end
-    end
+  end
 end

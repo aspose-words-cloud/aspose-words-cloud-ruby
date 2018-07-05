@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for get_document_statistics operation.
- #
-class GetDocumentStatisticsRequest
+  #
+  # Request model for get_document_statistics operation.
+  #
+  class GetDocumentStatisticsRequest
 
         # The document name.
         attr_accessor :name
@@ -69,5 +69,5 @@ class GetDocumentStatisticsRequest
            self.include_footnotes = include_footnotes
            self.include_text_in_shapes = include_text_in_shapes
         end
-    end
+  end
 end

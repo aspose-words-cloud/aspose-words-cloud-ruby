@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for get_footnote operation.
- #
-class GetFootnoteRequest
+  #
+  # Request model for get_footnote operation.
+  #
+  class GetFootnoteRequest
 
         # The document name.
         attr_accessor :name
@@ -65,5 +65,5 @@ class GetFootnoteRequest
            self.password = password
            self.node_path = node_path
         end
-    end
+  end
 end

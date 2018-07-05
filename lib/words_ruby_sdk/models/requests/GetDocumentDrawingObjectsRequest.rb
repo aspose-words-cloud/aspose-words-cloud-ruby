@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for get_document_drawing_objects operation.
- #
-class GetDocumentDrawingObjectsRequest
+  #
+  # Request model for get_document_drawing_objects operation.
+  #
+  class GetDocumentDrawingObjectsRequest
 
         # The document name.
         attr_accessor :name
@@ -61,5 +61,5 @@ class GetDocumentDrawingObjectsRequest
            self.password = password
            self.node_path = node_path
         end
-    end
+  end
 end

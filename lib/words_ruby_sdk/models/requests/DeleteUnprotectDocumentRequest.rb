@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for delete_unprotect_document operation.
- #
-class DeleteUnprotectDocumentRequest
+  #
+  # Request model for delete_unprotect_document operation.
+  #
+  class DeleteUnprotectDocumentRequest
 
         # The document name.
         attr_accessor :name
@@ -65,5 +65,5 @@ class DeleteUnprotectDocumentRequest
            self.password = password
            self.dest_file_name = dest_file_name
         end
-    end
+  end
 end

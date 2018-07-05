@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for update_border operation.
- #
-class UpdateBorderRequest
+  #
+  # Request model for update_border operation.
+  #
+  class UpdateBorderRequest
 
         # The document name.
         attr_accessor :name
@@ -81,5 +81,5 @@ class UpdateBorderRequest
            self.revision_author = revision_author
            self.revision_date_time = revision_date_time
         end
-    end
+  end
 end

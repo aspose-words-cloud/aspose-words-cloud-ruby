@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for post_update_document_fields operation.
- #
-class PostUpdateDocumentFieldsRequest
+  #
+  # Request model for post_update_document_fields operation.
+  #
+  class PostUpdateDocumentFieldsRequest
 
         # The document name.
         attr_accessor :name
@@ -61,5 +61,5 @@ class PostUpdateDocumentFieldsRequest
            self.password = password
            self.dest_file_name = dest_file_name
         end
-    end
+  end
 end

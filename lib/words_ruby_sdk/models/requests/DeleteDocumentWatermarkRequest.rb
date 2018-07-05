@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for delete_document_watermark operation.
- #
-class DeleteDocumentWatermarkRequest
+  #
+  # Request model for delete_document_watermark operation.
+  #
+  class DeleteDocumentWatermarkRequest
 
         # The document name.
         attr_accessor :name
@@ -69,5 +69,5 @@ class DeleteDocumentWatermarkRequest
            self.revision_author = revision_author
            self.revision_date_time = revision_date_time
         end
-    end
+  end
 end

@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for post_run operation.
- #
-class PostRunRequest
+  #
+  # Request model for post_run operation.
+  #
+  class PostRunRequest
 
         # The document name.
         attr_accessor :name
@@ -81,5 +81,5 @@ class PostRunRequest
            self.revision_author = revision_author
            self.revision_date_time = revision_date_time
         end
-    end
+  end
 end

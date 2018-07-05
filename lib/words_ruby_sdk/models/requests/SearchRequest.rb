@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for search operation.
- #
-class SearchRequest
+  #
+  # Request model for search operation.
+  #
+  class SearchRequest
 
         # The document name.
         attr_accessor :name
@@ -61,5 +61,5 @@ class SearchRequest
            self.load_encoding = load_encoding
            self.password = password
         end
-    end
+  end
 end

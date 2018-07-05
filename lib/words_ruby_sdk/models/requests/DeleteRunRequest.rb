@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for delete_run operation.
- #
-class DeleteRunRequest
+  #
+  # Request model for delete_run operation.
+  #
+  class DeleteRunRequest
 
         # The file name.
         attr_accessor :name
@@ -77,5 +77,5 @@ class DeleteRunRequest
            self.revision_author = revision_author
            self.revision_date_time = revision_date_time
         end
-    end
+  end
 end

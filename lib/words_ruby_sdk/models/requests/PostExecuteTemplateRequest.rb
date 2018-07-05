@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for post_execute_template operation.
- #
-class PostExecuteTemplateRequest
+  #
+  # Request model for post_execute_template operation.
+  #
+  class PostExecuteTemplateRequest
 
         # The template document name.
         attr_accessor :name
@@ -77,5 +77,5 @@ class PostExecuteTemplateRequest
            self.with_regions = with_regions
            self.dest_file_name = dest_file_name
         end
-    end
+  end
 end

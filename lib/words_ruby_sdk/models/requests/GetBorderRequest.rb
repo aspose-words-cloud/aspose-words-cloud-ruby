@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for get_border operation.
- #
-class GetBorderRequest
+  #
+  # Request model for get_border operation.
+  #
+  class GetBorderRequest
 
         # The document name.
         attr_accessor :name
@@ -65,5 +65,5 @@ class GetBorderRequest
            self.load_encoding = load_encoding
            self.password = password
         end
-    end
+  end
 end

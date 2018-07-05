@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for post_insert_document_watermark_image operation.
- #
-class PostInsertDocumentWatermarkImageRequest
+  #
+  # Request model for post_insert_document_watermark_image operation.
+  #
+  class PostInsertDocumentWatermarkImageRequest
 
         # The document name.
         attr_accessor :name
@@ -81,5 +81,5 @@ class PostInsertDocumentWatermarkImageRequest
            self.rotation_angle = rotation_angle
            self.image = image
         end
-    end
+  end
 end

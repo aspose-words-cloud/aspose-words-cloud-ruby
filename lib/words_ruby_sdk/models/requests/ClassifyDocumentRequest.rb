@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for classify_document operation.
- #
-class ClassifyDocumentRequest
+  #
+  # Request model for classify_document operation.
+  #
+  class ClassifyDocumentRequest
 
         # The document name.
         attr_accessor :document_name
@@ -61,5 +61,5 @@ class ClassifyDocumentRequest
            self.password = password
            self.best_classes_count = best_classes_count
         end
-    end
+  end
 end

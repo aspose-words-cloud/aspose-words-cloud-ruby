@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for delete_footnote operation.
- #
-class DeleteFootnoteRequest
+  #
+  # Request model for delete_footnote operation.
+  #
+  class DeleteFootnoteRequest
 
         # The file name.
         attr_accessor :name
@@ -77,5 +77,5 @@ class DeleteFootnoteRequest
            self.revision_date_time = revision_date_time
            self.node_path = node_path
         end
-    end
+  end
 end

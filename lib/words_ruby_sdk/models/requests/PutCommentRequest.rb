@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for put_comment operation.
- #
-class PutCommentRequest
+  #
+  # Request model for put_comment operation.
+  #
+  class PutCommentRequest
 
         # The document name.
         attr_accessor :name
@@ -73,5 +73,5 @@ class PutCommentRequest
            self.revision_author = revision_author
            self.revision_date_time = revision_date_time
         end
-    end
+  end
 end

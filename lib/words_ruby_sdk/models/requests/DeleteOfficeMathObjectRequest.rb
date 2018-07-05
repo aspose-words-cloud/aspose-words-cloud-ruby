@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for delete_office_math_object operation.
- #
-class DeleteOfficeMathObjectRequest
+  #
+  # Request model for delete_office_math_object operation.
+  #
+  class DeleteOfficeMathObjectRequest
 
         # The file name.
         attr_accessor :name
@@ -77,5 +77,5 @@ class DeleteOfficeMathObjectRequest
            self.revision_date_time = revision_date_time
            self.node_path = node_path
         end
-    end
+  end
 end

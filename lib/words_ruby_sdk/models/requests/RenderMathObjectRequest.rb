@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for render_math_object operation.
- #
-class RenderMathObjectRequest
+  #
+  # Request model for render_math_object operation.
+  #
+  class RenderMathObjectRequest
 
         # The file name.
         attr_accessor :name
@@ -73,5 +73,5 @@ class RenderMathObjectRequest
            self.node_path = node_path
            self.fonts_location = fonts_location
         end
-    end
+  end
 end

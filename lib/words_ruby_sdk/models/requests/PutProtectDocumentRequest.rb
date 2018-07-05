@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for put_protect_document operation.
- #
-class PutProtectDocumentRequest
+  #
+  # Request model for put_protect_document operation.
+  #
+  class PutProtectDocumentRequest
 
         # The document name.
         attr_accessor :name
@@ -65,5 +65,5 @@ class PutProtectDocumentRequest
            self.password = password
            self.dest_file_name = dest_file_name
         end
-    end
+  end
 end

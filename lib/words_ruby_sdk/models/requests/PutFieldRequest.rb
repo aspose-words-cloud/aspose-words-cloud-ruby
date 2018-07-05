@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for put_field operation.
- #
-class PutFieldRequest
+  #
+  # Request model for put_field operation.
+  #
+  class PutFieldRequest
 
         # The document name.
         attr_accessor :name
@@ -81,5 +81,5 @@ class PutFieldRequest
            self.node_path = node_path
            self.insert_before_node = insert_before_node
         end
-    end
+  end
 end

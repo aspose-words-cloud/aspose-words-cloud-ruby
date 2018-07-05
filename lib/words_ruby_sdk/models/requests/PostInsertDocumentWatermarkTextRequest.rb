@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for post_insert_document_watermark_text operation.
- #
-class PostInsertDocumentWatermarkTextRequest
+  #
+  # Request model for post_insert_document_watermark_text operation.
+  #
+  class PostInsertDocumentWatermarkTextRequest
 
         # The document name.
         attr_accessor :name
@@ -73,5 +73,5 @@ class PostInsertDocumentWatermarkTextRequest
            self.revision_author = revision_author
            self.revision_date_time = revision_date_time
         end
-    end
+  end
 end

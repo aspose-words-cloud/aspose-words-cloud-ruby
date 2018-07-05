@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for put_header_footer operation.
- #
-class PutHeaderFooterRequest
+  #
+  # Request model for put_header_footer operation.
+  #
+  class PutHeaderFooterRequest
 
         # The document name.
         attr_accessor :name
@@ -77,5 +77,5 @@ class PutHeaderFooterRequest
            self.revision_date_time = revision_date_time
            self.section_path = section_path
         end
-    end
+  end
 end

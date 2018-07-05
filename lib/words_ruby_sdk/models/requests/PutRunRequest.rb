@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for put_run operation.
- #
-class PutRunRequest
+  #
+  # Request model for put_run operation.
+  #
+  class PutRunRequest
 
         # The document name.
         attr_accessor :name
@@ -81,5 +81,5 @@ class PutRunRequest
            self.revision_date_time = revision_date_time
            self.insert_before_node = insert_before_node
         end
-    end
+  end
 end

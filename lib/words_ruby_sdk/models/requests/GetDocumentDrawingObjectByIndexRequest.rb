@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for get_document_drawing_object_by_index operation.
- #
-class GetDocumentDrawingObjectByIndexRequest
+  #
+  # Request model for get_document_drawing_object_by_index operation.
+  #
+  class GetDocumentDrawingObjectByIndexRequest
 
         # The document name.
         attr_accessor :name
@@ -65,5 +65,5 @@ class GetDocumentDrawingObjectByIndexRequest
            self.password = password
            self.node_path = node_path
         end
-    end
+  end
 end

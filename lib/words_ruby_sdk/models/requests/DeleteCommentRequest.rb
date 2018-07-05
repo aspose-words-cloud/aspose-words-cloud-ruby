@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for delete_comment operation.
- #
-class DeleteCommentRequest
+  #
+  # Request model for delete_comment operation.
+  #
+  class DeleteCommentRequest
 
         # The file name.
         attr_accessor :name
@@ -73,5 +73,5 @@ class DeleteCommentRequest
            self.revision_author = revision_author
            self.revision_date_time = revision_date_time
         end
-    end
+  end
 end

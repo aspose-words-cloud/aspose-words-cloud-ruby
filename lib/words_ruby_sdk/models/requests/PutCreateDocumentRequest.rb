@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for put_create_document operation.
- #
-class PutCreateDocumentRequest
+  #
+  # Request model for put_create_document operation.
+  #
+  class PutCreateDocumentRequest
 
         # File storage, which have to be used.
         attr_accessor :storage
@@ -49,5 +49,5 @@ class PutCreateDocumentRequest
            self.file_name = file_name
            self.folder = folder
         end
-    end
+  end
 end

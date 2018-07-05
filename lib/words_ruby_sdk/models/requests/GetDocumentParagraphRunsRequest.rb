@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for get_document_paragraph_runs operation.
- #
-class GetDocumentParagraphRunsRequest
+  #
+  # Request model for get_document_paragraph_runs operation.
+  #
+  class GetDocumentParagraphRunsRequest
 
         # The document name.
         attr_accessor :name
@@ -61,5 +61,5 @@ class GetDocumentParagraphRunsRequest
            self.load_encoding = load_encoding
            self.password = password
         end
-    end
+  end
 end

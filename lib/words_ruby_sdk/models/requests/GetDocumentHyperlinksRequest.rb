@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for get_document_hyperlinks operation.
- #
-class GetDocumentHyperlinksRequest
+  #
+  # Request model for get_document_hyperlinks operation.
+  #
+  class GetDocumentHyperlinksRequest
 
         # The document name.
         attr_accessor :name
@@ -57,5 +57,5 @@ class GetDocumentHyperlinksRequest
            self.load_encoding = load_encoding
            self.password = password
         end
-    end
+  end
 end

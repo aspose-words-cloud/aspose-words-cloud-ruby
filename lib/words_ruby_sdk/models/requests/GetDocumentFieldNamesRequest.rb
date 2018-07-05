@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for get_document_field_names operation.
- #
-class GetDocumentFieldNamesRequest
+  #
+  # Request model for get_document_field_names operation.
+  #
+  class GetDocumentFieldNamesRequest
 
         # The document name.
         attr_accessor :name
@@ -61,5 +61,5 @@ class GetDocumentFieldNamesRequest
            self.password = password
            self.use_non_merge_fields = use_non_merge_fields
         end
-    end
+  end
 end

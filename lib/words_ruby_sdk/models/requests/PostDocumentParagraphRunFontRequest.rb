@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for post_document_paragraph_run_font operation.
- #
-class PostDocumentParagraphRunFontRequest
+  #
+  # Request model for post_document_paragraph_run_font operation.
+  #
+  class PostDocumentParagraphRunFontRequest
 
         # The document name.
         attr_accessor :name
@@ -81,5 +81,5 @@ class PostDocumentParagraphRunFontRequest
            self.revision_author = revision_author
            self.revision_date_time = revision_date_time
         end
-    end
+  end
 end

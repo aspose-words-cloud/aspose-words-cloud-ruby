@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for post_document_execute_mail_merge operation.
- #
-class PostDocumentExecuteMailMergeRequest
+  #
+  # Request model for post_document_execute_mail_merge operation.
+  #
+  class PostDocumentExecuteMailMergeRequest
 
         # The document name.
         attr_accessor :name
@@ -81,5 +81,5 @@ class PostDocumentExecuteMailMergeRequest
            self.use_whole_paragraph_as_region = use_whole_paragraph_as_region
            self.dest_file_name = dest_file_name
         end
-    end
+  end
 end

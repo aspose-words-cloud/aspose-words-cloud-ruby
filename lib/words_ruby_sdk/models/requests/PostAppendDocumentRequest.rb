@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for post_append_document operation.
- #
-class PostAppendDocumentRequest
+  #
+  # Request model for post_append_document operation.
+  #
+  class PostAppendDocumentRequest
 
         # Original document name.
         attr_accessor :name
@@ -73,5 +73,5 @@ class PostAppendDocumentRequest
            self.revision_author = revision_author
            self.revision_date_time = revision_date_time
         end
-    end
+  end
 end

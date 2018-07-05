@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for post_update_document_bookmark operation.
- #
-class PostUpdateDocumentBookmarkRequest
+  #
+  # Request model for post_update_document_bookmark operation.
+  #
+  class PostUpdateDocumentBookmarkRequest
 
         # The document name.
         attr_accessor :name
@@ -77,5 +77,5 @@ class PostUpdateDocumentBookmarkRequest
            self.revision_author = revision_author
            self.revision_date_time = revision_date_time
         end
-    end
+  end
 end

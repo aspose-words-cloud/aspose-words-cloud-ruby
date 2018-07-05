@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for post_document_save_as operation.
- #
-class PostDocumentSaveAsRequest
+  #
+  # Request model for post_document_save_as operation.
+  #
+  class PostDocumentSaveAsRequest
 
         # The document name.
         attr_accessor :name
@@ -69,5 +69,5 @@ class PostDocumentSaveAsRequest
            self.dest_file_name = dest_file_name
            self.fonts_location = fonts_location
         end
-    end
+  end
 end

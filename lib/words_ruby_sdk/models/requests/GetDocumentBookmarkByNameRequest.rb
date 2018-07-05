@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for get_document_bookmark_by_name operation.
- #
-class GetDocumentBookmarkByNameRequest
+  #
+  # Request model for get_document_bookmark_by_name operation.
+  #
+  class GetDocumentBookmarkByNameRequest
 
         # The document name.
         attr_accessor :name
@@ -61,5 +61,5 @@ class GetDocumentBookmarkByNameRequest
            self.load_encoding = load_encoding
            self.password = password
         end
-    end
+  end
 end

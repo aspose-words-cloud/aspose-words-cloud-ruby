@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for delete_fields operation.
- #
-class DeleteFieldsRequest
+  #
+  # Request model for delete_fields operation.
+  #
+  class DeleteFieldsRequest
 
         # The file name.
         attr_accessor :name
@@ -73,5 +73,5 @@ class DeleteFieldsRequest
            self.revision_date_time = revision_date_time
            self.node_path = node_path
         end
-    end
+  end
 end

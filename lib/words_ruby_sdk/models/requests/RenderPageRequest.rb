@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for render_page operation.
- #
-class RenderPageRequest
+  #
+  # Request model for render_page operation.
+  #
+  class RenderPageRequest
 
         # The file name.
         attr_accessor :name
@@ -69,5 +69,5 @@ class RenderPageRequest
            self.password = password
            self.fonts_location = fonts_location
         end
-    end
+  end
 end

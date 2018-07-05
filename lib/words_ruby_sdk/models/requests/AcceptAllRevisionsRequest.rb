@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for accept_all_revisions operation.
- #
-class AcceptAllRevisionsRequest
+  #
+  # Request model for accept_all_revisions operation.
+  #
+  class AcceptAllRevisionsRequest
 
         # The document name.
         attr_accessor :name
@@ -61,5 +61,5 @@ class AcceptAllRevisionsRequest
            self.password = password
            self.dest_file_name = dest_file_name
         end
-    end
+  end
 end

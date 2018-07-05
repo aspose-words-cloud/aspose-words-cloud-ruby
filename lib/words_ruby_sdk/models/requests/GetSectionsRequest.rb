@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for get_sections operation.
- #
-class GetSectionsRequest
+  #
+  # Request model for get_sections operation.
+  #
+  class GetSectionsRequest
 
         # The document name.
         attr_accessor :name
@@ -57,5 +57,5 @@ class GetSectionsRequest
            self.load_encoding = load_encoding
            self.password = password
         end
-    end
+  end
 end

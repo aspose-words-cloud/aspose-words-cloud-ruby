@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for post_load_web_document operation.
- #
-class PostLoadWebDocumentRequest
+  #
+  # Request model for post_load_web_document operation.
+  #
+  class PostLoadWebDocumentRequest
 
         # Parameters of loading.
         attr_accessor :data
@@ -45,5 +45,5 @@ class PostLoadWebDocumentRequest
            self.data = data
            self.storage = storage
         end
-    end
+  end
 end

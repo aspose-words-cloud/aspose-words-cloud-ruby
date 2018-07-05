@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for put_execute_mail_merge_online operation.
- #
-class PutExecuteMailMergeOnlineRequest
+  #
+  # Request model for put_execute_mail_merge_online operation.
+  #
+  class PutExecuteMailMergeOnlineRequest
 
         # File with template
         attr_accessor :template
@@ -57,5 +57,5 @@ class PutExecuteMailMergeOnlineRequest
            self.cleanup = cleanup
            self.document_file_name = document_file_name
         end
-    end
+  end
 end

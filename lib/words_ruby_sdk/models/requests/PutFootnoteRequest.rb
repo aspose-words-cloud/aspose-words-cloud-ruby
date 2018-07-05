@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for put_footnote operation.
- #
-class PutFootnoteRequest
+  #
+  # Request model for put_footnote operation.
+  #
+  class PutFootnoteRequest
 
         # The document name.
         attr_accessor :name
@@ -77,5 +77,5 @@ class PutFootnoteRequest
            self.revision_date_time = revision_date_time
            self.node_path = node_path
         end
-    end
+  end
 end

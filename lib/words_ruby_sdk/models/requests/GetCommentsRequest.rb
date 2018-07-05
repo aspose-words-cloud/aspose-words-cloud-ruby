@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for get_comments operation.
- #
-class GetCommentsRequest
+  #
+  # Request model for get_comments operation.
+  #
+  class GetCommentsRequest
 
         # The file name.
         attr_accessor :name
@@ -57,5 +57,5 @@ class GetCommentsRequest
            self.load_encoding = load_encoding
            self.password = password
         end
-    end
+  end
 end

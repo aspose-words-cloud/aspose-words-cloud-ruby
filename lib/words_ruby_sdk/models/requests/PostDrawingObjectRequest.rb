@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for post_drawing_object operation.
- #
-class PostDrawingObjectRequest
+  #
+  # Request model for post_drawing_object operation.
+  #
+  class PostDrawingObjectRequest
 
         # The document name.
         attr_accessor :name
@@ -85,5 +85,5 @@ class PostDrawingObjectRequest
            self.revision_date_time = revision_date_time
            self.node_path = node_path
         end
-    end
+  end
 end

@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for insert_table_cell operation.
- #
-class InsertTableCellRequest
+  #
+  # Request model for insert_table_cell operation.
+  #
+  class InsertTableCellRequest
 
         # The document name.
         attr_accessor :name
@@ -77,5 +77,5 @@ class InsertTableCellRequest
            self.revision_date_time = revision_date_time
            self.cell = cell
         end
-    end
+  end
 end

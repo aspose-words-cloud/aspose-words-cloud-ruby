@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for render_table operation.
- #
-class RenderTableRequest
+  #
+  # Request model for render_table operation.
+  #
+  class RenderTableRequest
 
         # The file name.
         attr_accessor :name
@@ -73,5 +73,5 @@ class RenderTableRequest
            self.node_path = node_path
            self.fonts_location = fonts_location
         end
-    end
+  end
 end

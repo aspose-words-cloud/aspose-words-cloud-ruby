@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for update_table_properties operation.
- #
-class UpdateTablePropertiesRequest
+  #
+  # Request model for update_table_properties operation.
+  #
+  class UpdateTablePropertiesRequest
 
         # The document name.
         attr_accessor :name
@@ -81,5 +81,5 @@ class UpdateTablePropertiesRequest
            self.properties = properties
            self.node_path = node_path
         end
-    end
+  end
 end

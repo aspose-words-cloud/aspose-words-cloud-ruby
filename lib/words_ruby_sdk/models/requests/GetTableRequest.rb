@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for get_table operation.
- #
-class GetTableRequest
+  #
+  # Request model for get_table operation.
+  #
+  class GetTableRequest
 
         # The document name.
         attr_accessor :name
@@ -65,5 +65,5 @@ class GetTableRequest
            self.password = password
            self.node_path = node_path
         end
-    end
+  end
 end

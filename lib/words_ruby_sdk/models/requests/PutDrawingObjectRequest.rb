@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for put_drawing_object operation.
- #
-class PutDrawingObjectRequest
+  #
+  # Request model for put_drawing_object operation.
+  #
+  class PutDrawingObjectRequest
 
         # The document name.
         attr_accessor :name
@@ -81,5 +81,5 @@ class PutDrawingObjectRequest
            self.revision_date_time = revision_date_time
            self.node_path = node_path
         end
-    end
+  end
 end

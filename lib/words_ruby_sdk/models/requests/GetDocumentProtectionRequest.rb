@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for get_document_protection operation.
- #
-class GetDocumentProtectionRequest
+  #
+  # Request model for get_document_protection operation.
+  #
+  class GetDocumentProtectionRequest
 
         # The document name.
         attr_accessor :name
@@ -57,5 +57,5 @@ class GetDocumentProtectionRequest
            self.load_encoding = load_encoding
            self.password = password
         end
-    end
+  end
 end

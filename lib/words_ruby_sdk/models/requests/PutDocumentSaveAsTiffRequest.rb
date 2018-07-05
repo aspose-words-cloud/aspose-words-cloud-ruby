@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for put_document_save_as_tiff operation.
- #
-class PutDocumentSaveAsTiffRequest
+  #
+  # Request model for put_document_save_as_tiff operation.
+  #
+  class PutDocumentSaveAsTiffRequest
 
         # The document name.
         attr_accessor :name
@@ -141,5 +141,5 @@ class PutDocumentSaveAsTiffRequest
            self.zip_output = zip_output
            self.fonts_location = fonts_location
         end
-    end
+  end
 end

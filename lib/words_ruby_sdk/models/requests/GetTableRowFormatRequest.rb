@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for get_table_row_format operation.
- #
-class GetTableRowFormatRequest
+  #
+  # Request model for get_table_row_format operation.
+  #
+  class GetTableRowFormatRequest
 
         # The document name.
         attr_accessor :name
@@ -65,5 +65,5 @@ class GetTableRowFormatRequest
            self.load_encoding = load_encoding
            self.password = password
         end
-    end
+  end
 end

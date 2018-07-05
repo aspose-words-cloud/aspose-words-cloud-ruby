@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for insert_table operation.
- #
-class InsertTableRequest
+  #
+  # Request model for insert_table operation.
+  #
+  class InsertTableRequest
 
         # The document name.
         attr_accessor :name
@@ -77,5 +77,5 @@ class InsertTableRequest
            self.table = table
            self.node_path = node_path
         end
-    end
+  end
 end

@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for put_execute_template_online operation.
- #
-class PutExecuteTemplateOnlineRequest
+  #
+  # Request model for put_execute_template_online operation.
+  #
+  class PutExecuteTemplateOnlineRequest
 
         # File with template
         attr_accessor :template
@@ -61,5 +61,5 @@ class PutExecuteTemplateOnlineRequest
            self.with_regions = with_regions
            self.document_file_name = document_file_name
         end
-    end
+  end
 end

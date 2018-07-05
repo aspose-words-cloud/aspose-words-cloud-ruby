@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for update_table_cell_format operation.
- #
-class UpdateTableCellFormatRequest
+  #
+  # Request model for update_table_cell_format operation.
+  #
+  class UpdateTableCellFormatRequest
 
         # The document name.
         attr_accessor :name
@@ -81,5 +81,5 @@ class UpdateTableCellFormatRequest
            self.revision_date_time = revision_date_time
            self.format = format
         end
-    end
+  end
 end

@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for get_document_with_format operation.
- #
-class GetDocumentWithFormatRequest
+  #
+  # Request model for get_document_with_format operation.
+  #
+  class GetDocumentWithFormatRequest
 
         # The file name.
         attr_accessor :name
@@ -69,5 +69,5 @@ class GetDocumentWithFormatRequest
            self.out_path = out_path
            self.fonts_location = fonts_location
         end
-    end
+  end
 end

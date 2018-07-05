@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for post_field operation.
- #
-class PostFieldRequest
+  #
+  # Request model for post_field operation.
+  #
+  class PostFieldRequest
 
         # The document name.
         attr_accessor :name
@@ -81,5 +81,5 @@ class PostFieldRequest
            self.revision_date_time = revision_date_time
            self.node_path = node_path
         end
-    end
+  end
 end

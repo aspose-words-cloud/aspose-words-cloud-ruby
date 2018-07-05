@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for get_field operation.
- #
-class GetFieldRequest
+  #
+  # Request model for get_field operation.
+  #
+  class GetFieldRequest
 
         # The file name.
         attr_accessor :name
@@ -65,5 +65,5 @@ class GetFieldRequest
            self.password = password
            self.node_path = node_path
         end
-    end
+  end
 end

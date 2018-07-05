@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for post_split_document operation.
- #
-class PostSplitDocumentRequest
+  #
+  # Request model for post_split_document operation.
+  #
+  class PostSplitDocumentRequest
 
         # Original document name.
         attr_accessor :name
@@ -81,5 +81,5 @@ class PostSplitDocumentRequest
            self.zip_output = zip_output
            self.fonts_location = fonts_location
         end
-    end
+  end
 end

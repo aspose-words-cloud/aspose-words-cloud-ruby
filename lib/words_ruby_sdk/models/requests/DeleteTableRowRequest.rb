@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for delete_table_row operation.
- #
-class DeleteTableRowRequest
+  #
+  # Request model for delete_table_row operation.
+  #
+  class DeleteTableRowRequest
 
         # The document name.
         attr_accessor :name
@@ -77,5 +77,5 @@ class DeleteTableRowRequest
            self.revision_author = revision_author
            self.revision_date_time = revision_date_time
         end
-    end
+  end
 end

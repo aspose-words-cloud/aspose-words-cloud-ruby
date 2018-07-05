@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for create_or_update_document_property operation.
- #
-class CreateOrUpdateDocumentPropertyRequest
+  #
+  # Request model for create_or_update_document_property operation.
+  #
+  class CreateOrUpdateDocumentPropertyRequest
 
         # The document name.
         attr_accessor :name
@@ -77,5 +77,5 @@ class CreateOrUpdateDocumentPropertyRequest
            self.revision_author = revision_author
            self.revision_date_time = revision_date_time
         end
-    end
+  end
 end

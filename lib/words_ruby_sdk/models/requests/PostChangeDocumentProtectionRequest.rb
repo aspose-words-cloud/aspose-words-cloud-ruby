@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for post_change_document_protection operation.
- #
-class PostChangeDocumentProtectionRequest
+  #
+  # Request model for post_change_document_protection operation.
+  #
+  class PostChangeDocumentProtectionRequest
 
         # The document name.
         attr_accessor :name
@@ -65,5 +65,5 @@ class PostChangeDocumentProtectionRequest
            self.password = password
            self.dest_file_name = dest_file_name
         end
-    end
+  end
 end

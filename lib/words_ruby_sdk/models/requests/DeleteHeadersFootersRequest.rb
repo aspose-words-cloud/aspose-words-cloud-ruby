@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for delete_headers_footers operation.
- #
-class DeleteHeadersFootersRequest
+  #
+  # Request model for delete_headers_footers operation.
+  #
+  class DeleteHeadersFootersRequest
 
         # The document name.
         attr_accessor :name
@@ -77,5 +77,5 @@ class DeleteHeadersFootersRequest
            self.section_path = section_path
            self.headers_footers_types = headers_footers_types
         end
-    end
+  end
 end

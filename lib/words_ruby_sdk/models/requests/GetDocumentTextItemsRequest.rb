@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for get_document_text_items operation.
- #
-class GetDocumentTextItemsRequest
+  #
+  # Request model for get_document_text_items operation.
+  #
+  class GetDocumentTextItemsRequest
 
         # The document name.
         attr_accessor :name
@@ -57,5 +57,5 @@ class GetDocumentTextItemsRequest
            self.load_encoding = load_encoding
            self.password = password
         end
-    end
+  end
 end

@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for get_document_hyperlink_by_index operation.
- #
-class GetDocumentHyperlinkByIndexRequest
+  #
+  # Request model for get_document_hyperlink_by_index operation.
+  #
+  class GetDocumentHyperlinkByIndexRequest
 
         # The document name.
         attr_accessor :name
@@ -61,5 +61,5 @@ class GetDocumentHyperlinkByIndexRequest
            self.load_encoding = load_encoding
            self.password = password
         end
-    end
+  end
 end

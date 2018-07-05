@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for get_document_paragraph_run_font operation.
- #
-class GetDocumentParagraphRunFontRequest
+  #
+  # Request model for get_document_paragraph_run_font operation.
+  #
+  class GetDocumentParagraphRunFontRequest
 
         # The document name.
         attr_accessor :name
@@ -65,5 +65,5 @@ class GetDocumentParagraphRunFontRequest
            self.load_encoding = load_encoding
            self.password = password
         end
-    end
+  end
 end

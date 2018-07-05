@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for render_paragraph operation.
- #
-class RenderParagraphRequest
+  #
+  # Request model for render_paragraph operation.
+  #
+  class RenderParagraphRequest
 
         # The file name.
         attr_accessor :name
@@ -73,5 +73,5 @@ class RenderParagraphRequest
            self.node_path = node_path
            self.fonts_location = fonts_location
         end
-    end
+  end
 end

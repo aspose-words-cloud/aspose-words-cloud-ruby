@@ -27,10 +27,10 @@
 
 module WordsRubySdk
 
- #
- # Request model for reset_cache operation.
- #
-class ResetCacheRequest
+  #
+  # Request model for reset_cache operation.
+  #
+  class ResetCacheRequest
 
-    end
+  end
 end
