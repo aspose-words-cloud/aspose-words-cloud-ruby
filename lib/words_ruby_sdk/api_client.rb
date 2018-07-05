@@ -53,7 +53,7 @@ module WordsRubySdk
       @default_headers = {
         'Content-Type' => "application/json",
         'x-aspose-client' => "ruby sdk",
-        'x-aspose-version' => "WordsRubySdk::VERSION.to_s
+        'x-aspose-version' => WordsRubySdk::VERSION.to_s
       }
     end
 
@@ -69,7 +69,7 @@ module WordsRubySdk
       response = build_request(http_method, path, opts)
       download_file response if opts[:return_type] == 'File'
       if @config.debugging
-        @config.logger.debug "HTTP response body ~BEGIN~\n#{response.body}\n~END~\n"
+        @config.logger.debug "'HTTP' response body '~BEGIN~'\n #{response.body}\n'~END~'\n"
       end
 
       unless response.success?
