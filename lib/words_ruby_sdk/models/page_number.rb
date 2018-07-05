@@ -14,10 +14,10 @@ module WordsRubySdk
  #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  #  copies of the Software, and to permit persons to whom the Software is
  #  furnished to do so, subject to the following conditions:
- # 
+ #
  #  The above copyright notice and this permission notice shall be included in all
  #  copies or substantial portions of the Software.
- # 
+ #
  #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -70,21 +70,21 @@ module WordsRubySdk
       return unless attributes.is_a?(Hash)
 
       # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
+      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'Format')
+      if attributes.key?(:'Format')
         self.format = attributes[:'Format']
       end
 
-      if attributes.has_key?(:'Alignment')
+      if attributes.key?(:'Alignment')
         self.alignment = attributes[:'Alignment']
       end
 
-      if attributes.has_key?(:'IsTop')
+      if attributes.key?(:'IsTop')
         self.is_top = attributes[:'IsTop']
       end
 
-      if attributes.has_key?(:'SetPageNumberOnFirstPage')
+      if attributes.key?(:'SetPageNumberOnFirstPage')
         self.set_page_number_on_first_page = attributes[:'SetPageNumberOnFirstPage']
       end
 
@@ -93,7 +93,7 @@ module WordsRubySdk
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properies with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
+      invalid_properties = []
       if @is_top.nil?
         invalid_properties.push("invalid value for 'is_top', is_top cannot be nil.")
       end
@@ -115,19 +115,19 @@ module WordsRubySdk
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
-    def ==(o)
-      return true if self.equal?(o)
-      self.class == o.class &&
-          format == o.format &&
-          alignment == o.alignment &&
-          is_top == o.is_top &&
-          set_page_number_on_first_page == o.set_page_number_on_first_page
+    def ==(other)
+      return true if self.equal?(other)
+      self.class == other.class &&
+          format == other.format &&
+          alignment == other.alignment &&
+          is_top == other.is_top &&
+          set_page_number_on_first_page == other.set_page_number_on_first_page
     end
 
     # @see the `==` method
     # @param [Object] Object to be compared
-    def eql?(o)
-      self == o
+    def eql?(other)
+      self == other
     end
 
     # Calculates hash code according to all attributes.
@@ -146,11 +146,12 @@ module WordsRubySdk
           # check to ensure the input is an array given that the the attribute
           # is documented as an array but the input is not
           if attributes[self.class.attribute_map[key]].is_a?(Array)
-            self.send("#{key}=", attributes[self.class.attribute_map[key]].map{ |v| _deserialize($1, v) } )
+            self.send("#{key}=", attributes[self.class.attribute_map[key]].map { |v| _deserialize($1, v) })
           end
         elsif !attributes[self.class.attribute_map[key]].nil?
           self.send("#{key}=", _deserialize(type, attributes[self.class.attribute_map[key]]))
-        end # or else data not found in attributes(hash), not an issue as the data can be optional
+        end
+		# or else data not found in attributes(hash), not an issue as the data can be optional
       end
 
       self
@@ -192,7 +193,8 @@ module WordsRubySdk
             hash[_deserialize(k_type, k)] = _deserialize(v_type, v)
           end
         end
-      else # model
+      else
+	  # model
         temp_model = WordsRubySdk.const_get(type).new
         temp_model.build_from_hash(value)
       end
@@ -228,7 +230,7 @@ module WordsRubySdk
     # @return [Hash] Returns the value in the form of hash
     def _to_hash(value)
       if value.is_a?(Array)
-        value.compact.map{ |v| _to_hash(v) }
+        value.compact.map { |v| _to_hash(v) }
       elsif value.is_a?(Hash)
         {}.tap do |hash|
           value.each { |k, v| hash[k] = _to_hash(v) }

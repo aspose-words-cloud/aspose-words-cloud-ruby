@@ -14,10 +14,10 @@ module WordsRubySdk
  #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  #  copies of the Software, and to permit persons to whom the Software is
  #  furnished to do so, subject to the following conditions:
- # 
+ #
  #  The above copyright notice and this permission notice shall be included in all
  #  copies or substantial portions of the Software.
- # 
+ #
  #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -235,153 +235,153 @@ module WordsRubySdk
       return unless attributes.is_a?(Hash)
 
       # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
+      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'ColorMode')
+      if attributes.key?(:'ColorMode')
         self.color_mode = attributes[:'ColorMode']
       end
 
-      if attributes.has_key?(:'SaveFormat')
+      if attributes.key?(:'SaveFormat')
         self.save_format = attributes[:'SaveFormat']
       end
 
-      if attributes.has_key?(:'FileName')
+      if attributes.key?(:'FileName')
         self.file_name = attributes[:'FileName']
       end
 
-      if attributes.has_key?(:'DmlRenderingMode')
+      if attributes.key?(:'DmlRenderingMode')
         self.dml_rendering_mode = attributes[:'DmlRenderingMode']
       end
 
-      if attributes.has_key?(:'DmlEffectsRenderingMode')
+      if attributes.key?(:'DmlEffectsRenderingMode')
         self.dml_effects_rendering_mode = attributes[:'DmlEffectsRenderingMode']
       end
 
-      if attributes.has_key?(:'ZipOutput')
+      if attributes.key?(:'ZipOutput')
         self.zip_output = attributes[:'ZipOutput']
       end
 
-      if attributes.has_key?(:'UpdateLastSavedTimeProperty')
+      if attributes.key?(:'UpdateLastSavedTimeProperty')
         self.update_last_saved_time_property = attributes[:'UpdateLastSavedTimeProperty']
       end
 
-      if attributes.has_key?(:'UpdateSdtContent')
+      if attributes.key?(:'UpdateSdtContent')
         self.update_sdt_content = attributes[:'UpdateSdtContent']
       end
 
-      if attributes.has_key?(:'UpdateFields')
+      if attributes.key?(:'UpdateFields')
         self.update_fields = attributes[:'UpdateFields']
       end
 
-      if attributes.has_key?(:'JpegQuality')
+      if attributes.key?(:'JpegQuality')
         self.jpeg_quality = attributes[:'JpegQuality']
       end
 
-      if attributes.has_key?(:'MetafileRenderingOptions')
+      if attributes.key?(:'MetafileRenderingOptions')
         self.metafile_rendering_options = attributes[:'MetafileRenderingOptions']
       end
 
-      if attributes.has_key?(:'NumeralFormat')
+      if attributes.key?(:'NumeralFormat')
         self.numeral_format = attributes[:'NumeralFormat']
       end
 
-      if attributes.has_key?(:'OptimizeOutput')
+      if attributes.key?(:'OptimizeOutput')
         self.optimize_output = attributes[:'OptimizeOutput']
       end
 
-      if attributes.has_key?(:'PageCount')
+      if attributes.key?(:'PageCount')
         self.page_count = attributes[:'PageCount']
       end
 
-      if attributes.has_key?(:'PageIndex')
+      if attributes.key?(:'PageIndex')
         self.page_index = attributes[:'PageIndex']
       end
 
-      if attributes.has_key?(:'Compliance')
+      if attributes.key?(:'Compliance')
         self.compliance = attributes[:'Compliance']
       end
 
-      if attributes.has_key?(:'CreateNoteHyperlinks')
+      if attributes.key?(:'CreateNoteHyperlinks')
         self.create_note_hyperlinks = attributes[:'CreateNoteHyperlinks']
       end
 
-      if attributes.has_key?(:'CustomPropertiesExport')
+      if attributes.key?(:'CustomPropertiesExport')
         self.custom_properties_export = attributes[:'CustomPropertiesExport']
       end
 
-      if attributes.has_key?(:'DigitalSignatureDetails')
+      if attributes.key?(:'DigitalSignatureDetails')
         self.digital_signature_details = attributes[:'DigitalSignatureDetails']
       end
 
-      if attributes.has_key?(:'DisplayDocTitle')
+      if attributes.key?(:'DisplayDocTitle')
         self.display_doc_title = attributes[:'DisplayDocTitle']
       end
 
-      if attributes.has_key?(:'DownsampleOptions')
+      if attributes.key?(:'DownsampleOptions')
         self.downsample_options = attributes[:'DownsampleOptions']
       end
 
-      if attributes.has_key?(:'EmbedFullFonts')
+      if attributes.key?(:'EmbedFullFonts')
         self.embed_full_fonts = attributes[:'EmbedFullFonts']
       end
 
-      if attributes.has_key?(:'EncryptionDetails')
+      if attributes.key?(:'EncryptionDetails')
         self.encryption_details = attributes[:'EncryptionDetails']
       end
 
-      if attributes.has_key?(:'ExportDocumentStructure')
+      if attributes.key?(:'ExportDocumentStructure')
         self.export_document_structure = attributes[:'ExportDocumentStructure']
       end
 
-      if attributes.has_key?(:'FontEmbeddingMode')
+      if attributes.key?(:'FontEmbeddingMode')
         self.font_embedding_mode = attributes[:'FontEmbeddingMode']
       end
 
-      if attributes.has_key?(:'ImageColorSpaceExportMode')
+      if attributes.key?(:'ImageColorSpaceExportMode')
         self.image_color_space_export_mode = attributes[:'ImageColorSpaceExportMode']
       end
 
-      if attributes.has_key?(:'ImageCompression')
+      if attributes.key?(:'ImageCompression')
         self.image_compression = attributes[:'ImageCompression']
       end
 
-      if attributes.has_key?(:'OpenHyperlinksInNewWindow')
+      if attributes.key?(:'OpenHyperlinksInNewWindow')
         self.open_hyperlinks_in_new_window = attributes[:'OpenHyperlinksInNewWindow']
       end
 
-      if attributes.has_key?(:'OutlineOptions')
+      if attributes.key?(:'OutlineOptions')
         self.outline_options = attributes[:'OutlineOptions']
       end
 
-      if attributes.has_key?(:'PageMode')
+      if attributes.key?(:'PageMode')
         self.page_mode = attributes[:'PageMode']
       end
 
-      if attributes.has_key?(:'PreblendImages')
+      if attributes.key?(:'PreblendImages')
         self.preblend_images = attributes[:'PreblendImages']
       end
 
-      if attributes.has_key?(:'PreserveFormFields')
+      if attributes.key?(:'PreserveFormFields')
         self.preserve_form_fields = attributes[:'PreserveFormFields']
       end
 
-      if attributes.has_key?(:'TextCompression')
+      if attributes.key?(:'TextCompression')
         self.text_compression = attributes[:'TextCompression']
       end
 
-      if attributes.has_key?(:'UseBookFoldPrintingSettings')
+      if attributes.key?(:'UseBookFoldPrintingSettings')
         self.use_book_fold_printing_settings = attributes[:'UseBookFoldPrintingSettings']
       end
 
-      if attributes.has_key?(:'UseCoreFonts')
+      if attributes.key?(:'UseCoreFonts')
         self.use_core_fonts = attributes[:'UseCoreFonts']
       end
 
-      if attributes.has_key?(:'ZoomBehavior')
+      if attributes.key?(:'ZoomBehavior')
         self.zoom_behavior = attributes[:'ZoomBehavior']
       end
 
-      if attributes.has_key?(:'ZoomFactor')
+      if attributes.key?(:'ZoomFactor')
         self.zoom_factor = attributes[:'ZoomFactor']
       end
 
@@ -390,7 +390,7 @@ module WordsRubySdk
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properies with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
+      invalid_properties = []
       return invalid_properties
     end
 
@@ -402,52 +402,52 @@ module WordsRubySdk
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
-    def ==(o)
-      return true if self.equal?(o)
-      self.class == o.class &&
-          color_mode == o.color_mode &&
-          save_format == o.save_format &&
-          file_name == o.file_name &&
-          dml_rendering_mode == o.dml_rendering_mode &&
-          dml_effects_rendering_mode == o.dml_effects_rendering_mode &&
-          zip_output == o.zip_output &&
-          update_last_saved_time_property == o.update_last_saved_time_property &&
-          update_sdt_content == o.update_sdt_content &&
-          update_fields == o.update_fields &&
-          jpeg_quality == o.jpeg_quality &&
-          metafile_rendering_options == o.metafile_rendering_options &&
-          numeral_format == o.numeral_format &&
-          optimize_output == o.optimize_output &&
-          page_count == o.page_count &&
-          page_index == o.page_index &&
-          compliance == o.compliance &&
-          create_note_hyperlinks == o.create_note_hyperlinks &&
-          custom_properties_export == o.custom_properties_export &&
-          digital_signature_details == o.digital_signature_details &&
-          display_doc_title == o.display_doc_title &&
-          downsample_options == o.downsample_options &&
-          embed_full_fonts == o.embed_full_fonts &&
-          encryption_details == o.encryption_details &&
-          export_document_structure == o.export_document_structure &&
-          font_embedding_mode == o.font_embedding_mode &&
-          image_color_space_export_mode == o.image_color_space_export_mode &&
-          image_compression == o.image_compression &&
-          open_hyperlinks_in_new_window == o.open_hyperlinks_in_new_window &&
-          outline_options == o.outline_options &&
-          page_mode == o.page_mode &&
-          preblend_images == o.preblend_images &&
-          preserve_form_fields == o.preserve_form_fields &&
-          text_compression == o.text_compression &&
-          use_book_fold_printing_settings == o.use_book_fold_printing_settings &&
-          use_core_fonts == o.use_core_fonts &&
-          zoom_behavior == o.zoom_behavior &&
-          zoom_factor == o.zoom_factor
+    def ==(other)
+      return true if self.equal?(other)
+      self.class == other.class &&
+          color_mode == other.color_mode &&
+          save_format == other.save_format &&
+          file_name == other.file_name &&
+          dml_rendering_mode == other.dml_rendering_mode &&
+          dml_effects_rendering_mode == other.dml_effects_rendering_mode &&
+          zip_output == other.zip_output &&
+          update_last_saved_time_property == other.update_last_saved_time_property &&
+          update_sdt_content == other.update_sdt_content &&
+          update_fields == other.update_fields &&
+          jpeg_quality == other.jpeg_quality &&
+          metafile_rendering_options == other.metafile_rendering_options &&
+          numeral_format == other.numeral_format &&
+          optimize_output == other.optimize_output &&
+          page_count == other.page_count &&
+          page_index == other.page_index &&
+          compliance == other.compliance &&
+          create_note_hyperlinks == other.create_note_hyperlinks &&
+          custom_properties_export == other.custom_properties_export &&
+          digital_signature_details == other.digital_signature_details &&
+          display_doc_title == other.display_doc_title &&
+          downsample_options == other.downsample_options &&
+          embed_full_fonts == other.embed_full_fonts &&
+          encryption_details == other.encryption_details &&
+          export_document_structure == other.export_document_structure &&
+          font_embedding_mode == other.font_embedding_mode &&
+          image_color_space_export_mode == other.image_color_space_export_mode &&
+          image_compression == other.image_compression &&
+          open_hyperlinks_in_new_window == other.open_hyperlinks_in_new_window &&
+          outline_options == other.outline_options &&
+          page_mode == other.page_mode &&
+          preblend_images == other.preblend_images &&
+          preserve_form_fields == other.preserve_form_fields &&
+          text_compression == other.text_compression &&
+          use_book_fold_printing_settings == other.use_book_fold_printing_settings &&
+          use_core_fonts == other.use_core_fonts &&
+          zoom_behavior == other.zoom_behavior &&
+          zoom_factor == other.zoom_factor
     end
 
     # @see the `==` method
     # @param [Object] Object to be compared
-    def eql?(o)
-      self == o
+    def eql?(other)
+      self == other
     end
 
     # Calculates hash code according to all attributes.
@@ -466,11 +466,12 @@ module WordsRubySdk
           # check to ensure the input is an array given that the the attribute
           # is documented as an array but the input is not
           if attributes[self.class.attribute_map[key]].is_a?(Array)
-            self.send("#{key}=", attributes[self.class.attribute_map[key]].map{ |v| _deserialize($1, v) } )
+            self.send("#{key}=", attributes[self.class.attribute_map[key]].map { |v| _deserialize($1, v) })
           end
         elsif !attributes[self.class.attribute_map[key]].nil?
           self.send("#{key}=", _deserialize(type, attributes[self.class.attribute_map[key]]))
-        end # or else data not found in attributes(hash), not an issue as the data can be optional
+        end
+		# or else data not found in attributes(hash), not an issue as the data can be optional
       end
 
       self
@@ -512,7 +513,8 @@ module WordsRubySdk
             hash[_deserialize(k_type, k)] = _deserialize(v_type, v)
           end
         end
-      else # model
+      else
+	  # model
         temp_model = WordsRubySdk.const_get(type).new
         temp_model.build_from_hash(value)
       end
@@ -548,7 +550,7 @@ module WordsRubySdk
     # @return [Hash] Returns the value in the form of hash
     def _to_hash(value)
       if value.is_a?(Array)
-        value.compact.map{ |v| _to_hash(v) }
+        value.compact.map { |v| _to_hash(v) }
       elsif value.is_a?(Hash)
         {}.tap do |hash|
           value.each { |k, v| hash[k] = _to_hash(v) }

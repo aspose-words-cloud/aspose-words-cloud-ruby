@@ -14,10 +14,10 @@ module WordsRubySdk
  #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  #  copies of the Software, and to permit persons to whom the Software is
  #  furnished to do so, subject to the following conditions:
- # 
+ #
  #  The above copyright notice and this permission notice shall be included in all
  #  copies or substantial portions of the Software.
- # 
+ #
  #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -221,125 +221,125 @@ module WordsRubySdk
       return unless attributes.is_a?(Hash)
 
       # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
+      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'link')
+      if attributes.key?(:'link')
         self.link = attributes[:'link']
       end
 
-      if attributes.has_key?(:'Bidi')
+      if attributes.key?(:'Bidi')
         self.bidi = attributes[:'Bidi']
       end
 
-      if attributes.has_key?(:'BorderAlwaysInFront')
+      if attributes.key?(:'BorderAlwaysInFront')
         self.border_always_in_front = attributes[:'BorderAlwaysInFront']
       end
 
-      if attributes.has_key?(:'BorderAppliesTo')
+      if attributes.key?(:'BorderAppliesTo')
         self.border_applies_to = attributes[:'BorderAppliesTo']
       end
 
-      if attributes.has_key?(:'BorderDistanceFrom')
+      if attributes.key?(:'BorderDistanceFrom')
         self.border_distance_from = attributes[:'BorderDistanceFrom']
       end
 
-      if attributes.has_key?(:'BottomMargin')
+      if attributes.key?(:'BottomMargin')
         self.bottom_margin = attributes[:'BottomMargin']
       end
 
-      if attributes.has_key?(:'DifferentFirstPageHeaderFooter')
+      if attributes.key?(:'DifferentFirstPageHeaderFooter')
         self.different_first_page_header_footer = attributes[:'DifferentFirstPageHeaderFooter']
       end
 
-      if attributes.has_key?(:'FirstPageTray')
+      if attributes.key?(:'FirstPageTray')
         self.first_page_tray = attributes[:'FirstPageTray']
       end
 
-      if attributes.has_key?(:'FooterDistance')
+      if attributes.key?(:'FooterDistance')
         self.footer_distance = attributes[:'FooterDistance']
       end
 
-      if attributes.has_key?(:'Gutter')
+      if attributes.key?(:'Gutter')
         self.gutter = attributes[:'Gutter']
       end
 
-      if attributes.has_key?(:'HeaderDistance')
+      if attributes.key?(:'HeaderDistance')
         self.header_distance = attributes[:'HeaderDistance']
       end
 
-      if attributes.has_key?(:'LeftMargin')
+      if attributes.key?(:'LeftMargin')
         self.left_margin = attributes[:'LeftMargin']
       end
 
-      if attributes.has_key?(:'LineNumberCountBy')
+      if attributes.key?(:'LineNumberCountBy')
         self.line_number_count_by = attributes[:'LineNumberCountBy']
       end
 
-      if attributes.has_key?(:'LineNumberDistanceFromText')
+      if attributes.key?(:'LineNumberDistanceFromText')
         self.line_number_distance_from_text = attributes[:'LineNumberDistanceFromText']
       end
 
-      if attributes.has_key?(:'LineNumberRestartMode')
+      if attributes.key?(:'LineNumberRestartMode')
         self.line_number_restart_mode = attributes[:'LineNumberRestartMode']
       end
 
-      if attributes.has_key?(:'LineStartingNumber')
+      if attributes.key?(:'LineStartingNumber')
         self.line_starting_number = attributes[:'LineStartingNumber']
       end
 
-      if attributes.has_key?(:'Orientation')
+      if attributes.key?(:'Orientation')
         self.orientation = attributes[:'Orientation']
       end
 
-      if attributes.has_key?(:'OtherPagesTray')
+      if attributes.key?(:'OtherPagesTray')
         self.other_pages_tray = attributes[:'OtherPagesTray']
       end
 
-      if attributes.has_key?(:'PageHeight')
+      if attributes.key?(:'PageHeight')
         self.page_height = attributes[:'PageHeight']
       end
 
-      if attributes.has_key?(:'PageNumberStyle')
+      if attributes.key?(:'PageNumberStyle')
         self.page_number_style = attributes[:'PageNumberStyle']
       end
 
-      if attributes.has_key?(:'PageStartingNumber')
+      if attributes.key?(:'PageStartingNumber')
         self.page_starting_number = attributes[:'PageStartingNumber']
       end
 
-      if attributes.has_key?(:'PageWidth')
+      if attributes.key?(:'PageWidth')
         self.page_width = attributes[:'PageWidth']
       end
 
-      if attributes.has_key?(:'PaperSize')
+      if attributes.key?(:'PaperSize')
         self.paper_size = attributes[:'PaperSize']
       end
 
-      if attributes.has_key?(:'RestartPageNumbering')
+      if attributes.key?(:'RestartPageNumbering')
         self.restart_page_numbering = attributes[:'RestartPageNumbering']
       end
 
-      if attributes.has_key?(:'RightMargin')
+      if attributes.key?(:'RightMargin')
         self.right_margin = attributes[:'RightMargin']
       end
 
-      if attributes.has_key?(:'RtlGutter')
+      if attributes.key?(:'RtlGutter')
         self.rtl_gutter = attributes[:'RtlGutter']
       end
 
-      if attributes.has_key?(:'SectionStart')
+      if attributes.key?(:'SectionStart')
         self.section_start = attributes[:'SectionStart']
       end
 
-      if attributes.has_key?(:'SuppressEndnotes')
+      if attributes.key?(:'SuppressEndnotes')
         self.suppress_endnotes = attributes[:'SuppressEndnotes']
       end
 
-      if attributes.has_key?(:'TopMargin')
+      if attributes.key?(:'TopMargin')
         self.top_margin = attributes[:'TopMargin']
       end
 
-      if attributes.has_key?(:'VerticalAlignment')
+      if attributes.key?(:'VerticalAlignment')
         self.vertical_alignment = attributes[:'VerticalAlignment']
       end
 
@@ -348,28 +348,28 @@ module WordsRubySdk
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properies with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
+      invalid_properties = []
       return invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      border_applies_to_validator = EnumAttributeValidator.new('String', ["AllPages", "FirstPage", "OtherPages"])
+      border_applies_to_validator = EnumAttributeValidator.new('String', %w("AllPages", "FirstPage", "OtherPages"))
       return false unless border_applies_to_validator.valid?(@border_applies_to)
-      border_distance_from_validator = EnumAttributeValidator.new('String', ["Text", "PageEdge"])
+      border_distance_from_validator = EnumAttributeValidator.new('String', %w("Text", "PageEdge"))
       return false unless border_distance_from_validator.valid?(@border_distance_from)
-      line_number_restart_mode_validator = EnumAttributeValidator.new('String', ["RestartPage", "RestartSection", "Continuous"])
+      line_number_restart_mode_validator = EnumAttributeValidator.new('String', %w("RestartPage", "RestartSection", "Continuous"))
       return false unless line_number_restart_mode_validator.valid?(@line_number_restart_mode)
-      orientation_validator = EnumAttributeValidator.new('String', ["Portrait", "Landscape"])
+      orientation_validator = EnumAttributeValidator.new('String', %w("Portrait", "Landscape"))
       return false unless orientation_validator.valid?(@orientation)
-      page_number_style_validator = EnumAttributeValidator.new('String', ["Arabic", "UppercaseRoman", "LowercaseRoman", "UppercaseLetter", "LowercaseLetter", "Ordinal", "Number", "OrdinalText", "Hex", "ChicagoManual", "Kanji", "KanjiDigit", "AiueoHalfWidth", "IrohaHalfWidth", "ArabicFullWidth", "ArabicHalfWidth", "KanjiTraditional", "KanjiTraditional2", "NumberInCircle", "DecimalFullWidth", "Aiueo", "Iroha", "LeadingZero", "Bullet", "Ganada", "Chosung", "GB1", "GB2", "GB3", "GB4", "Zodiac1", "Zodiac2", "Zodiac3", "TradChinNum1", "TradChinNum2", "TradChinNum3", "TradChinNum4", "SimpChinNum1", "SimpChinNum2", "SimpChinNum3", "SimpChinNum4", "HanjaRead", "HanjaReadDigit", "Hangul", "Hanja", "Hebrew1", "Arabic1", "Hebrew2", "Arabic2", "HindiLetter1", "HindiLetter2", "HindiArabic", "HindiCardinalText", "ThaiLetter", "ThaiArabic", "ThaiCardinalText", "VietCardinalText", "NumberInDash", "NumInDash", "LowercaseRussian", "UppercaseRussian", "None", "Custom"])
+      page_number_style_validator = EnumAttributeValidator.new('String', %w("Arabic", "UppercaseRoman", "LowercaseRoman", "UppercaseLetter", "LowercaseLetter", "Ordinal", "Number", "OrdinalText", "Hex", "ChicagoManual", "Kanji", "KanjiDigit", "AiueoHalfWidth", "IrohaHalfWidth", "ArabicFullWidth", "ArabicHalfWidth", "KanjiTraditional", "KanjiTraditional2", "NumberInCircle", "DecimalFullWidth", "Aiueo", "Iroha", "LeadingZero", "Bullet", "Ganada", "Chosung", "GB1", "GB2", "GB3", "GB4", "Zodiac1", "Zodiac2", "Zodiac3", "TradChinNum1", "TradChinNum2", "TradChinNum3", "TradChinNum4", "SimpChinNum1", "SimpChinNum2", "SimpChinNum3", "SimpChinNum4", "HanjaRead", "HanjaReadDigit", "Hangul", "Hanja", "Hebrew1", "Arabic1", "Hebrew2", "Arabic2", "HindiLetter1", "HindiLetter2", "HindiArabic", "HindiCardinalText", "ThaiLetter", "ThaiArabic", "ThaiCardinalText", "VietCardinalText", "NumberInDash", "NumInDash", "LowercaseRussian", "UppercaseRussian", "None", "Custom"))
       return false unless page_number_style_validator.valid?(@page_number_style)
-      paper_size_validator = EnumAttributeValidator.new('String', ["A3", "A4", "A5", "B4", "B5", "Executive", "Folio", "Ledger", "Legal", "Letter", "EnvelopeDL", "Quarto", "Statement", "Tabloid", "Paper10x14", "Paper11x17", "Custom"])
+      paper_size_validator = EnumAttributeValidator.new('String', %w("A3", "A4", "A5", "B4", "B5", "Executive", "Folio", "Ledger", "Legal", "Letter", "EnvelopeDL", "Quarto", "Statement", "Tabloid", "Paper10x14", "Paper11x17", "Custom"))
       return false unless paper_size_validator.valid?(@paper_size)
-      section_start_validator = EnumAttributeValidator.new('String', ["Continuous", "NewColumn", "NewPage", "EvenPage", "OddPage"])
+      section_start_validator = EnumAttributeValidator.new('String', %w("Continuous", "NewColumn", "NewPage", "EvenPage", "OddPage"))
       return false unless section_start_validator.valid?(@section_start)
-      vertical_alignment_validator = EnumAttributeValidator.new('String', ["Top", "Center", "Justify", "Bottom"])
+      vertical_alignment_validator = EnumAttributeValidator.new('String', %w("Top", "Center", "Justify", "Bottom"))
       return false unless vertical_alignment_validator.valid?(@vertical_alignment)
       return true
     end
@@ -377,7 +377,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] border_applies_to Object to be assigned
     def border_applies_to=(border_applies_to)
-      validator = EnumAttributeValidator.new('String', ["AllPages", "FirstPage", "OtherPages"])
+      validator = EnumAttributeValidator.new('String', %w("AllPages", "FirstPage", "OtherPages"))
       if border_applies_to.to_i == 0
         unless validator.valid?(border_applies_to)
           fail ArgumentError, "invalid value for 'border_applies_to', must be one of #{validator.allowable_values}."
@@ -391,7 +391,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] border_distance_from Object to be assigned
     def border_distance_from=(border_distance_from)
-      validator = EnumAttributeValidator.new('String', ["Text", "PageEdge"])
+      validator = EnumAttributeValidator.new('String', %w("Text", "PageEdge"))
       if border_distance_from.to_i == 0
         unless validator.valid?(border_distance_from)
           fail ArgumentError, "invalid value for 'border_distance_from', must be one of #{validator.allowable_values}."
@@ -405,7 +405,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] line_number_restart_mode Object to be assigned
     def line_number_restart_mode=(line_number_restart_mode)
-      validator = EnumAttributeValidator.new('String', ["RestartPage", "RestartSection", "Continuous"])
+      validator = EnumAttributeValidator.new('String', %w("RestartPage", "RestartSection", "Continuous"))
       if line_number_restart_mode.to_i == 0
         unless validator.valid?(line_number_restart_mode)
           fail ArgumentError, "invalid value for 'line_number_restart_mode', must be one of #{validator.allowable_values}."
@@ -419,7 +419,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] orientation Object to be assigned
     def orientation=(orientation)
-      validator = EnumAttributeValidator.new('String', ["Portrait", "Landscape"])
+      validator = EnumAttributeValidator.new('String', %w("Portrait", "Landscape"))
       if orientation.to_i == 0
         unless validator.valid?(orientation)
           fail ArgumentError, "invalid value for 'orientation', must be one of #{validator.allowable_values}."
@@ -433,7 +433,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] page_number_style Object to be assigned
     def page_number_style=(page_number_style)
-      validator = EnumAttributeValidator.new('String', ["Arabic", "UppercaseRoman", "LowercaseRoman", "UppercaseLetter", "LowercaseLetter", "Ordinal", "Number", "OrdinalText", "Hex", "ChicagoManual", "Kanji", "KanjiDigit", "AiueoHalfWidth", "IrohaHalfWidth", "ArabicFullWidth", "ArabicHalfWidth", "KanjiTraditional", "KanjiTraditional2", "NumberInCircle", "DecimalFullWidth", "Aiueo", "Iroha", "LeadingZero", "Bullet", "Ganada", "Chosung", "GB1", "GB2", "GB3", "GB4", "Zodiac1", "Zodiac2", "Zodiac3", "TradChinNum1", "TradChinNum2", "TradChinNum3", "TradChinNum4", "SimpChinNum1", "SimpChinNum2", "SimpChinNum3", "SimpChinNum4", "HanjaRead", "HanjaReadDigit", "Hangul", "Hanja", "Hebrew1", "Arabic1", "Hebrew2", "Arabic2", "HindiLetter1", "HindiLetter2", "HindiArabic", "HindiCardinalText", "ThaiLetter", "ThaiArabic", "ThaiCardinalText", "VietCardinalText", "NumberInDash", "NumInDash", "LowercaseRussian", "UppercaseRussian", "None", "Custom"])
+      validator = EnumAttributeValidator.new('String', %w("Arabic", "UppercaseRoman", "LowercaseRoman", "UppercaseLetter", "LowercaseLetter", "Ordinal", "Number", "OrdinalText", "Hex", "ChicagoManual", "Kanji", "KanjiDigit", "AiueoHalfWidth", "IrohaHalfWidth", "ArabicFullWidth", "ArabicHalfWidth", "KanjiTraditional", "KanjiTraditional2", "NumberInCircle", "DecimalFullWidth", "Aiueo", "Iroha", "LeadingZero", "Bullet", "Ganada", "Chosung", "GB1", "GB2", "GB3", "GB4", "Zodiac1", "Zodiac2", "Zodiac3", "TradChinNum1", "TradChinNum2", "TradChinNum3", "TradChinNum4", "SimpChinNum1", "SimpChinNum2", "SimpChinNum3", "SimpChinNum4", "HanjaRead", "HanjaReadDigit", "Hangul", "Hanja", "Hebrew1", "Arabic1", "Hebrew2", "Arabic2", "HindiLetter1", "HindiLetter2", "HindiArabic", "HindiCardinalText", "ThaiLetter", "ThaiArabic", "ThaiCardinalText", "VietCardinalText", "NumberInDash", "NumInDash", "LowercaseRussian", "UppercaseRussian", "None", "Custom"))
       if page_number_style.to_i == 0
         unless validator.valid?(page_number_style)
           fail ArgumentError, "invalid value for 'page_number_style', must be one of #{validator.allowable_values}."
@@ -447,7 +447,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] paper_size Object to be assigned
     def paper_size=(paper_size)
-      validator = EnumAttributeValidator.new('String', ["A3", "A4", "A5", "B4", "B5", "Executive", "Folio", "Ledger", "Legal", "Letter", "EnvelopeDL", "Quarto", "Statement", "Tabloid", "Paper10x14", "Paper11x17", "Custom"])
+      validator = EnumAttributeValidator.new('String', %w("A3", "A4", "A5", "B4", "B5", "Executive", "Folio", "Ledger", "Legal", "Letter", "EnvelopeDL", "Quarto", "Statement", "Tabloid", "Paper10x14", "Paper11x17", "Custom"))
       if paper_size.to_i == 0
         unless validator.valid?(paper_size)
           fail ArgumentError, "invalid value for 'paper_size', must be one of #{validator.allowable_values}."
@@ -461,7 +461,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] section_start Object to be assigned
     def section_start=(section_start)
-      validator = EnumAttributeValidator.new('String', ["Continuous", "NewColumn", "NewPage", "EvenPage", "OddPage"])
+      validator = EnumAttributeValidator.new('String', %w("Continuous", "NewColumn", "NewPage", "EvenPage", "OddPage"))
       if section_start.to_i == 0
         unless validator.valid?(section_start)
           fail ArgumentError, "invalid value for 'section_start', must be one of #{validator.allowable_values}."
@@ -475,7 +475,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] vertical_alignment Object to be assigned
     def vertical_alignment=(vertical_alignment)
-      validator = EnumAttributeValidator.new('String', ["Top", "Center", "Justify", "Bottom"])
+      validator = EnumAttributeValidator.new('String', %w("Top", "Center", "Justify", "Bottom"))
       if vertical_alignment.to_i == 0
         unless validator.valid?(vertical_alignment)
           fail ArgumentError, "invalid value for 'vertical_alignment', must be one of #{validator.allowable_values}."
@@ -488,45 +488,45 @@ module WordsRubySdk
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
-    def ==(o)
-      return true if self.equal?(o)
-      self.class == o.class &&
-          link == o.link &&
-          bidi == o.bidi &&
-          border_always_in_front == o.border_always_in_front &&
-          border_applies_to == o.border_applies_to &&
-          border_distance_from == o.border_distance_from &&
-          bottom_margin == o.bottom_margin &&
-          different_first_page_header_footer == o.different_first_page_header_footer &&
-          first_page_tray == o.first_page_tray &&
-          footer_distance == o.footer_distance &&
-          gutter == o.gutter &&
-          header_distance == o.header_distance &&
-          left_margin == o.left_margin &&
-          line_number_count_by == o.line_number_count_by &&
-          line_number_distance_from_text == o.line_number_distance_from_text &&
-          line_number_restart_mode == o.line_number_restart_mode &&
-          line_starting_number == o.line_starting_number &&
-          orientation == o.orientation &&
-          other_pages_tray == o.other_pages_tray &&
-          page_height == o.page_height &&
-          page_number_style == o.page_number_style &&
-          page_starting_number == o.page_starting_number &&
-          page_width == o.page_width &&
-          paper_size == o.paper_size &&
-          restart_page_numbering == o.restart_page_numbering &&
-          right_margin == o.right_margin &&
-          rtl_gutter == o.rtl_gutter &&
-          section_start == o.section_start &&
-          suppress_endnotes == o.suppress_endnotes &&
-          top_margin == o.top_margin &&
-          vertical_alignment == o.vertical_alignment
+    def ==(other)
+      return true if self.equal?(other)
+      self.class == other.class &&
+          link == other.link &&
+          bidi == other.bidi &&
+          border_always_in_front == other.border_always_in_front &&
+          border_applies_to == other.border_applies_to &&
+          border_distance_from == other.border_distance_from &&
+          bottom_margin == other.bottom_margin &&
+          different_first_page_header_footer == other.different_first_page_header_footer &&
+          first_page_tray == other.first_page_tray &&
+          footer_distance == other.footer_distance &&
+          gutter == other.gutter &&
+          header_distance == other.header_distance &&
+          left_margin == other.left_margin &&
+          line_number_count_by == other.line_number_count_by &&
+          line_number_distance_from_text == other.line_number_distance_from_text &&
+          line_number_restart_mode == other.line_number_restart_mode &&
+          line_starting_number == other.line_starting_number &&
+          orientation == other.orientation &&
+          other_pages_tray == other.other_pages_tray &&
+          page_height == other.page_height &&
+          page_number_style == other.page_number_style &&
+          page_starting_number == other.page_starting_number &&
+          page_width == other.page_width &&
+          paper_size == other.paper_size &&
+          restart_page_numbering == other.restart_page_numbering &&
+          right_margin == other.right_margin &&
+          rtl_gutter == other.rtl_gutter &&
+          section_start == other.section_start &&
+          suppress_endnotes == other.suppress_endnotes &&
+          top_margin == other.top_margin &&
+          vertical_alignment == other.vertical_alignment
     end
 
     # @see the `==` method
     # @param [Object] Object to be compared
-    def eql?(o)
-      self == o
+    def eql?(other)
+      self == other
     end
 
     # Calculates hash code according to all attributes.
@@ -545,11 +545,12 @@ module WordsRubySdk
           # check to ensure the input is an array given that the the attribute
           # is documented as an array but the input is not
           if attributes[self.class.attribute_map[key]].is_a?(Array)
-            self.send("#{key}=", attributes[self.class.attribute_map[key]].map{ |v| _deserialize($1, v) } )
+            self.send("#{key}=", attributes[self.class.attribute_map[key]].map { |v| _deserialize($1, v) })
           end
         elsif !attributes[self.class.attribute_map[key]].nil?
           self.send("#{key}=", _deserialize(type, attributes[self.class.attribute_map[key]]))
-        end # or else data not found in attributes(hash), not an issue as the data can be optional
+        end
+		# or else data not found in attributes(hash), not an issue as the data can be optional
       end
 
       self
@@ -591,7 +592,8 @@ module WordsRubySdk
             hash[_deserialize(k_type, k)] = _deserialize(v_type, v)
           end
         end
-      else # model
+      else
+	  # model
         temp_model = WordsRubySdk.const_get(type).new
         temp_model.build_from_hash(value)
       end
@@ -627,7 +629,7 @@ module WordsRubySdk
     # @return [Hash] Returns the value in the form of hash
     def _to_hash(value)
       if value.is_a?(Array)
-        value.compact.map{ |v| _to_hash(v) }
+        value.compact.map { |v| _to_hash(v) }
       elsif value.is_a?(Hash)
         {}.tap do |hash|
           value.each { |k, v| hash[k] = _to_hash(v) }

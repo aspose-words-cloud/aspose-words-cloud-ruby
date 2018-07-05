@@ -14,10 +14,10 @@ module WordsRubySdk
  #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  #  copies of the Software, and to permit persons to whom the Software is
  #  furnished to do so, subject to the following conditions:
- # 
+ #
  #  The above copyright notice and this permission notice shall be included in all
  #  copies or substantial portions of the Software.
- # 
+ #
  #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -276,169 +276,169 @@ module WordsRubySdk
       return unless attributes.is_a?(Hash)
 
       # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
+      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'link')
+      if attributes.key?(:'link')
         self.link = attributes[:'link']
       end
 
-      if attributes.has_key?(:'AllCaps')
+      if attributes.key?(:'AllCaps')
         self.all_caps = attributes[:'AllCaps']
       end
 
-      if attributes.has_key?(:'Bidi')
+      if attributes.key?(:'Bidi')
         self.bidi = attributes[:'Bidi']
       end
 
-      if attributes.has_key?(:'Bold')
+      if attributes.key?(:'Bold')
         self.bold = attributes[:'Bold']
       end
 
-      if attributes.has_key?(:'BoldBi')
+      if attributes.key?(:'BoldBi')
         self.bold_bi = attributes[:'BoldBi']
       end
 
-      if attributes.has_key?(:'Border')
+      if attributes.key?(:'Border')
         self.border = attributes[:'Border']
       end
 
-      if attributes.has_key?(:'Color')
+      if attributes.key?(:'Color')
         self.color = attributes[:'Color']
       end
 
-      if attributes.has_key?(:'ComplexScript')
+      if attributes.key?(:'ComplexScript')
         self.complex_script = attributes[:'ComplexScript']
       end
 
-      if attributes.has_key?(:'DoubleStrikeThrough')
+      if attributes.key?(:'DoubleStrikeThrough')
         self.double_strike_through = attributes[:'DoubleStrikeThrough']
       end
 
-      if attributes.has_key?(:'Emboss')
+      if attributes.key?(:'Emboss')
         self.emboss = attributes[:'Emboss']
       end
 
-      if attributes.has_key?(:'Engrave')
+      if attributes.key?(:'Engrave')
         self.engrave = attributes[:'Engrave']
       end
 
-      if attributes.has_key?(:'Hidden')
+      if attributes.key?(:'Hidden')
         self.hidden = attributes[:'Hidden']
       end
 
-      if attributes.has_key?(:'HighlightColor')
+      if attributes.key?(:'HighlightColor')
         self.highlight_color = attributes[:'HighlightColor']
       end
 
-      if attributes.has_key?(:'Italic')
+      if attributes.key?(:'Italic')
         self.italic = attributes[:'Italic']
       end
 
-      if attributes.has_key?(:'ItalicBi')
+      if attributes.key?(:'ItalicBi')
         self.italic_bi = attributes[:'ItalicBi']
       end
 
-      if attributes.has_key?(:'Kerning')
+      if attributes.key?(:'Kerning')
         self.kerning = attributes[:'Kerning']
       end
 
-      if attributes.has_key?(:'LocaleId')
+      if attributes.key?(:'LocaleId')
         self.locale_id = attributes[:'LocaleId']
       end
 
-      if attributes.has_key?(:'LocaleIdBi')
+      if attributes.key?(:'LocaleIdBi')
         self.locale_id_bi = attributes[:'LocaleIdBi']
       end
 
-      if attributes.has_key?(:'LocaleIdFarEast')
+      if attributes.key?(:'LocaleIdFarEast')
         self.locale_id_far_east = attributes[:'LocaleIdFarEast']
       end
 
-      if attributes.has_key?(:'Name')
+      if attributes.key?(:'Name')
         self.name = attributes[:'Name']
       end
 
-      if attributes.has_key?(:'NameAscii')
+      if attributes.key?(:'NameAscii')
         self.name_ascii = attributes[:'NameAscii']
       end
 
-      if attributes.has_key?(:'NameBi')
+      if attributes.key?(:'NameBi')
         self.name_bi = attributes[:'NameBi']
       end
 
-      if attributes.has_key?(:'NameFarEast')
+      if attributes.key?(:'NameFarEast')
         self.name_far_east = attributes[:'NameFarEast']
       end
 
-      if attributes.has_key?(:'NameOther')
+      if attributes.key?(:'NameOther')
         self.name_other = attributes[:'NameOther']
       end
 
-      if attributes.has_key?(:'NoProofing')
+      if attributes.key?(:'NoProofing')
         self.no_proofing = attributes[:'NoProofing']
       end
 
-      if attributes.has_key?(:'Outline')
+      if attributes.key?(:'Outline')
         self.outline = attributes[:'Outline']
       end
 
-      if attributes.has_key?(:'Position')
+      if attributes.key?(:'Position')
         self.position = attributes[:'Position']
       end
 
-      if attributes.has_key?(:'Scaling')
+      if attributes.key?(:'Scaling')
         self.scaling = attributes[:'Scaling']
       end
 
-      if attributes.has_key?(:'Shadow')
+      if attributes.key?(:'Shadow')
         self.shadow = attributes[:'Shadow']
       end
 
-      if attributes.has_key?(:'Size')
+      if attributes.key?(:'Size')
         self.size = attributes[:'Size']
       end
 
-      if attributes.has_key?(:'SizeBi')
+      if attributes.key?(:'SizeBi')
         self.size_bi = attributes[:'SizeBi']
       end
 
-      if attributes.has_key?(:'SmallCaps')
+      if attributes.key?(:'SmallCaps')
         self.small_caps = attributes[:'SmallCaps']
       end
 
-      if attributes.has_key?(:'Spacing')
+      if attributes.key?(:'Spacing')
         self.spacing = attributes[:'Spacing']
       end
 
-      if attributes.has_key?(:'StrikeThrough')
+      if attributes.key?(:'StrikeThrough')
         self.strike_through = attributes[:'StrikeThrough']
       end
 
-      if attributes.has_key?(:'StyleIdentifier')
+      if attributes.key?(:'StyleIdentifier')
         self.style_identifier = attributes[:'StyleIdentifier']
       end
 
-      if attributes.has_key?(:'StyleName')
+      if attributes.key?(:'StyleName')
         self.style_name = attributes[:'StyleName']
       end
 
-      if attributes.has_key?(:'Subscript')
+      if attributes.key?(:'Subscript')
         self.subscript = attributes[:'Subscript']
       end
 
-      if attributes.has_key?(:'Superscript')
+      if attributes.key?(:'Superscript')
         self.superscript = attributes[:'Superscript']
       end
 
-      if attributes.has_key?(:'TextEffect')
+      if attributes.key?(:'TextEffect')
         self.text_effect = attributes[:'TextEffect']
       end
 
-      if attributes.has_key?(:'Underline')
+      if attributes.key?(:'Underline')
         self.underline = attributes[:'Underline']
       end
 
-      if attributes.has_key?(:'UnderlineColor')
+      if attributes.key?(:'UnderlineColor')
         self.underline_color = attributes[:'UnderlineColor']
       end
 
@@ -447,18 +447,18 @@ module WordsRubySdk
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properies with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
+      invalid_properties = []
       return invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      style_identifier_validator = EnumAttributeValidator.new('String', ["Normal", "Heading1", "Heading2", "Heading3", "Heading4", "Heading5", "Heading6", "Heading7", "Heading8", "Heading9", "Index1", "Index2", "Index3", "Index4", "Index5", "Index6", "Index7", "Index8", "Index9", "Toc1", "Toc2", "Toc3", "Toc4", "Toc5", "Toc6", "Toc7", "Toc8", "Toc9", "NormalIndent", "FootnoteText", "CommentText", "Header", "Footer", "IndexHeading", "Caption", "TableOfFigures", "EnvelopeAddress", "EnvelopeReturn", "FootnoteReference", "CommentReference", "LineNumber", "PageNumber", "EndnoteReference", "EndnoteText", "TableOfAuthorities", "Macro", "ToaHeading", "List", "ListBullet", "ListNumber", "List2", "List3", "List4", "List5", "ListBullet2", "ListBullet3", "ListBullet4", "ListBullet5", "ListNumber2", "ListNumber3", "ListNumber4", "ListNumber5", "Title", "Closing", "Signature", "DefaultParagraphFont", "BodyText", "BodyTextInd", "ListContinue", "ListContinue2", "ListContinue3", "ListContinue4", "ListContinue5", "MessageHeader", "Subtitle", "Salutation", "Date", "BodyText1I", "BodyText1I2", "NoteHeading", "BodyText2", "BodyText3", "BodyTextInd2", "BodyTextInd3", "BlockText", "Hyperlink", "FollowedHyperlink", "Strong", "Emphasis", "DocumentMap", "PlainText", "EmailSignature", "HtmlTopOfForm", "HtmlBottomOfForm", "NormalWeb", "HtmlAcronym", "HtmlAddress", "HtmlCite", "HtmlCode", "HtmlDefinition", "HtmlKeyboard", "HtmlPreformatted", "HtmlSample", "HtmlTypewriter", "HtmlVariable", "TableNormal", "CommentSubject", "NoList", "OutlineList1", "OutlineList2", "OutlineList3", "TableSimple1", "TableSimple2", "TableSimple3", "TableClassic1", "TableClassic2", "TableClassic3", "TableClassic4", "TableColorful1", "TableColorful2", "TableColorful3", "TableColumns1", "TableColumns2", "TableColumns3", "TableColumns4", "TableColumns5", "TableGrid1", "TableGrid2", "TableGrid3", "TableGrid4", "TableGrid5", "TableGrid6", "TableGrid7", "TableGrid8", "TableList1", "TableList2", "TableList3", "TableList4", "TableList5", "TableList6", "TableList7", "TableList8", "Table3DEffects1", "Table3DEffects2", "Table3DEffects3", "TableContemporary", "TableElegant", "TableProfessional", "TableSubtle1", "TableSubtle2", "TableWeb1", "TableWeb2", "TableWeb3", "BalloonText", "TableGrid", "TableTheme", "PlaceholderText", "NoSpacing", "LightShading", "LightList", "LightGrid", "MediumShading1", "MediumShading2", "MediumList1", "MediumList2", "MediumGrid1", "MediumGrid2", "MediumGrid3", "DarkList", "ColorfulShading", "ColorfulList", "ColorfulGrid", "LightShadingAccent1", "LightListAccent1", "LightGridAccent1", "MediumShading1Accent1", "MediumShading2Accent1", "MediumList1Accent1", "Revision", "ListParagraph", "Quote", "IntenseQuote", "MediumList2Accent1", "MediumGrid1Accent1", "MediumGrid2Accent1", "MediumGrid3Accent1", "DarkListAccent1", "ColorfulShadingAccent1", "ColorfulListAccent1", "ColorfulGridAccent1", "LightShadingAccent2", "LightListAccent2", "LightGridAccent2", "MediumShading1Accent2", "MediumShading2Accent2", "MediumList1Accent2", "MediumList2Accent2", "MediumGrid1Accent2", "MediumGrid2Accent2", "MediumGrid3Accent2", "DarkListAccent2", "ColorfulShadingAccent2", "ColorfulListAccent2", "ColorfulGridAccent2", "LightShadingAccent3", "LightListAccent3", "LightGridAccent3", "MediumShading1Accent3", "MediumShading2Accent3", "MediumList1Accent3", "MediumList2Accent3", "MediumGrid1Accent3", "MediumGrid2Accent3", "MediumGrid3Accent3", "DarkListAccent3", "ColorfulShadingAccent3", "ColorfulListAccent3", "ColorfulGridAccent3", "LightShadingAccent4", "LightListAccent4", "LightGridAccent4", "MediumShading1Accent4", "MediumShading2Accent4", "MediumList1Accent4", "MediumList2Accent4", "MediumGrid1Accent4", "MediumGrid2Accent4", "MediumGrid3Accent4", "DarkListAccent4", "ColorfulShadingAccent4", "ColorfulListAccent4", "ColorfulGridAccent4", "LightShadingAccent5", "LightListAccent5", "LightGridAccent5", "MediumShading1Accent5", "MediumShading2Accent5", "MediumList1Accent5", "MediumList2Accent5", "MediumGrid1Accent5", "MediumGrid2Accent5", "MediumGrid3Accent5", "DarkListAccent5", "ColorfulShadingAccent5", "ColorfulListAccent5", "ColorfulGridAccent5", "LightShadingAccent6", "LightListAccent6", "LightGridAccent6", "MediumShading1Accent6", "MediumShading2Accent6", "MediumList1Accent6", "MediumList2Accent6", "MediumGrid1Accent6", "MediumGrid2Accent6", "MediumGrid3Accent6", "DarkListAccent6", "ColorfulShadingAccent6", "ColorfulListAccent6", "ColorfulGridAccent6", "SubtleEmphasis", "IntenseEmphasis", "SubtleReference", "IntenseReference", "BookTitle", "Bibliography", "TocHeading", "PlainTable1", "PlainTable2", "PlainTable3", "PlainTable4", "PlainTable5", "TableGridLight", "GridTable1Light", "GridTable2", "GridTable3", "GridTable4", "GridTable5Dark", "GridTable6Colorful", "GridTable7Colorful", "GridTable1LightAccent1", "GridTable2Accent1", "GridTable3Accent1", "GridTable4Accent1", "GridTable5DarkAccent1", "GridTable6ColorfulAccent1", "GridTable7ColorfulAccent1", "GridTable1LightAccent2", "GridTable2Accent2", "GridTable3Accent2", "GridTable4Accent2", "GridTable5DarkAccent2", "GridTable6ColorfulAccent2", "GridTable7ColorfulAccent2", "GridTable1LightAccent3", "GridTable2Accent3", "GridTable3Accent3", "GridTable4Accent3", "GridTable5DarkAccent3", "GridTable6ColorfulAccent3", "GridTable7ColorfulAccent3", "GridTable1LightAccent4", "GridTable2Accent4", "GridTable3Accent4", "GridTable4Accent4", "GridTable5DarkAccent4", "GridTable6ColorfulAccent4", "GridTable7ColorfulAccent4", "GridTable1LightAccent5", "GridTable2Accent5", "GridTable3Accent5", "GridTable4Accent5", "GridTable5DarkAccent5", "GridTable6ColorfulAccent5", "GridTable7ColorfulAccent5", "GridTable1LightAccent6", "GridTable2Accent6", "GridTable3Accent6", "GridTable4Accent6", "GridTable5DarkAccent6", "GridTable6ColorfulAccent6", "GridTable7ColorfulAccent6", "ListTable1Light", "ListTable2", "ListTable3", "ListTable4", "ListTable5Dark", "ListTable6Colorful", "ListTable7Colorful", "ListTable1LightAccent1", "ListTable2Accent1", "ListTable3Accent1", "ListTable4Accent1", "ListTable5DarkAccent1", "ListTable6ColorfulAccent1", "ListTable7ColorfulAccent1", "ListTable1LightAccent2", "ListTable2Accent2", "ListTable3Accent2", "ListTable4Accent2", "ListTable5DarkAccent2", "ListTable6ColorfulAccent2", "ListTable7ColorfulAccent2", "ListTable1LightAccent3", "ListTable2Accent3", "ListTable3Accent3", "ListTable4Accent3", "ListTable5DarkAccent3", "ListTable6ColorfulAccent3", "ListTable7ColorfulAccent3", "ListTable1LightAccent4", "ListTable2Accent4", "ListTable3Accent4", "ListTable4Accent4", "ListTable5DarkAccent4", "ListTable6ColorfulAccent4", "ListTable7ColorfulAccent4", "ListTable1LightAccent5", "ListTable2Accent5", "ListTable3Accent5", "ListTable4Accent5", "ListTable5DarkAccent5", "ListTable6ColorfulAccent5", "ListTable7ColorfulAccent5", "ListTable1LightAccent6", "ListTable2Accent6", "ListTable3Accent6", "ListTable4Accent6", "ListTable5DarkAccent6", "ListTable6ColorfulAccent6", "ListTable7ColorfulAccent6", "User", "Nil"])
+      style_identifier_validator = EnumAttributeValidator.new('String', %w("Normal", "Heading1", "Heading2", "Heading3", "Heading4", "Heading5", "Heading6", "Heading7", "Heading8", "Heading9", "Index1", "Index2", "Index3", "Index4", "Index5", "Index6", "Index7", "Index8", "Index9", "Toc1", "Toc2", "Toc3", "Toc4", "Toc5", "Toc6", "Toc7", "Toc8", "Toc9", "NormalIndent", "FootnoteText", "CommentText", "Header", "Footer", "IndexHeading", "Caption", "TableOfFigures", "EnvelopeAddress", "EnvelopeReturn", "FootnoteReference", "CommentReference", "LineNumber", "PageNumber", "EndnoteReference", "EndnoteText", "TableOfAuthorities", "Macro", "ToaHeading", "List", "ListBullet", "ListNumber", "List2", "List3", "List4", "List5", "ListBullet2", "ListBullet3", "ListBullet4", "ListBullet5", "ListNumber2", "ListNumber3", "ListNumber4", "ListNumber5", "Title", "Closing", "Signature", "DefaultParagraphFont", "BodyText", "BodyTextInd", "ListContinue", "ListContinue2", "ListContinue3", "ListContinue4", "ListContinue5", "MessageHeader", "Subtitle", "Salutation", "Date", "BodyText1I", "BodyText1I2", "NoteHeading", "BodyText2", "BodyText3", "BodyTextInd2", "BodyTextInd3", "BlockText", "Hyperlink", "FollowedHyperlink", "Strong", "Emphasis", "DocumentMap", "PlainText", "EmailSignature", "HtmlTopOfForm", "HtmlBottomOfForm", "NormalWeb", "HtmlAcronym", "HtmlAddress", "HtmlCite", "HtmlCode", "HtmlDefinition", "HtmlKeyboard", "HtmlPreformatted", "HtmlSample", "HtmlTypewriter", "HtmlVariable", "TableNormal", "CommentSubject", "NoList", "OutlineList1", "OutlineList2", "OutlineList3", "TableSimple1", "TableSimple2", "TableSimple3", "TableClassic1", "TableClassic2", "TableClassic3", "TableClassic4", "TableColorful1", "TableColorful2", "TableColorful3", "TableColumns1", "TableColumns2", "TableColumns3", "TableColumns4", "TableColumns5", "TableGrid1", "TableGrid2", "TableGrid3", "TableGrid4", "TableGrid5", "TableGrid6", "TableGrid7", "TableGrid8", "TableList1", "TableList2", "TableList3", "TableList4", "TableList5", "TableList6", "TableList7", "TableList8", "Table3DEffects1", "Table3DEffects2", "Table3DEffects3", "TableContemporary", "TableElegant", "TableProfessional", "TableSubtle1", "TableSubtle2", "TableWeb1", "TableWeb2", "TableWeb3", "BalloonText", "TableGrid", "TableTheme", "PlaceholderText", "NoSpacing", "LightShading", "LightList", "LightGrid", "MediumShading1", "MediumShading2", "MediumList1", "MediumList2", "MediumGrid1", "MediumGrid2", "MediumGrid3", "DarkList", "ColorfulShading", "ColorfulList", "ColorfulGrid", "LightShadingAccent1", "LightListAccent1", "LightGridAccent1", "MediumShading1Accent1", "MediumShading2Accent1", "MediumList1Accent1", "Revision", "ListParagraph", "Quote", "IntenseQuote", "MediumList2Accent1", "MediumGrid1Accent1", "MediumGrid2Accent1", "MediumGrid3Accent1", "DarkListAccent1", "ColorfulShadingAccent1", "ColorfulListAccent1", "ColorfulGridAccent1", "LightShadingAccent2", "LightListAccent2", "LightGridAccent2", "MediumShading1Accent2", "MediumShading2Accent2", "MediumList1Accent2", "MediumList2Accent2", "MediumGrid1Accent2", "MediumGrid2Accent2", "MediumGrid3Accent2", "DarkListAccent2", "ColorfulShadingAccent2", "ColorfulListAccent2", "ColorfulGridAccent2", "LightShadingAccent3", "LightListAccent3", "LightGridAccent3", "MediumShading1Accent3", "MediumShading2Accent3", "MediumList1Accent3", "MediumList2Accent3", "MediumGrid1Accent3", "MediumGrid2Accent3", "MediumGrid3Accent3", "DarkListAccent3", "ColorfulShadingAccent3", "ColorfulListAccent3", "ColorfulGridAccent3", "LightShadingAccent4", "LightListAccent4", "LightGridAccent4", "MediumShading1Accent4", "MediumShading2Accent4", "MediumList1Accent4", "MediumList2Accent4", "MediumGrid1Accent4", "MediumGrid2Accent4", "MediumGrid3Accent4", "DarkListAccent4", "ColorfulShadingAccent4", "ColorfulListAccent4", "ColorfulGridAccent4", "LightShadingAccent5", "LightListAccent5", "LightGridAccent5", "MediumShading1Accent5", "MediumShading2Accent5", "MediumList1Accent5", "MediumList2Accent5", "MediumGrid1Accent5", "MediumGrid2Accent5", "MediumGrid3Accent5", "DarkListAccent5", "ColorfulShadingAccent5", "ColorfulListAccent5", "ColorfulGridAccent5", "LightShadingAccent6", "LightListAccent6", "LightGridAccent6", "MediumShading1Accent6", "MediumShading2Accent6", "MediumList1Accent6", "MediumList2Accent6", "MediumGrid1Accent6", "MediumGrid2Accent6", "MediumGrid3Accent6", "DarkListAccent6", "ColorfulShadingAccent6", "ColorfulListAccent6", "ColorfulGridAccent6", "SubtleEmphasis", "IntenseEmphasis", "SubtleReference", "IntenseReference", "BookTitle", "Bibliography", "TocHeading", "PlainTable1", "PlainTable2", "PlainTable3", "PlainTable4", "PlainTable5", "TableGridLight", "GridTable1Light", "GridTable2", "GridTable3", "GridTable4", "GridTable5Dark", "GridTable6Colorful", "GridTable7Colorful", "GridTable1LightAccent1", "GridTable2Accent1", "GridTable3Accent1", "GridTable4Accent1", "GridTable5DarkAccent1", "GridTable6ColorfulAccent1", "GridTable7ColorfulAccent1", "GridTable1LightAccent2", "GridTable2Accent2", "GridTable3Accent2", "GridTable4Accent2", "GridTable5DarkAccent2", "GridTable6ColorfulAccent2", "GridTable7ColorfulAccent2", "GridTable1LightAccent3", "GridTable2Accent3", "GridTable3Accent3", "GridTable4Accent3", "GridTable5DarkAccent3", "GridTable6ColorfulAccent3", "GridTable7ColorfulAccent3", "GridTable1LightAccent4", "GridTable2Accent4", "GridTable3Accent4", "GridTable4Accent4", "GridTable5DarkAccent4", "GridTable6ColorfulAccent4", "GridTable7ColorfulAccent4", "GridTable1LightAccent5", "GridTable2Accent5", "GridTable3Accent5", "GridTable4Accent5", "GridTable5DarkAccent5", "GridTable6ColorfulAccent5", "GridTable7ColorfulAccent5", "GridTable1LightAccent6", "GridTable2Accent6", "GridTable3Accent6", "GridTable4Accent6", "GridTable5DarkAccent6", "GridTable6ColorfulAccent6", "GridTable7ColorfulAccent6", "ListTable1Light", "ListTable2", "ListTable3", "ListTable4", "ListTable5Dark", "ListTable6Colorful", "ListTable7Colorful", "ListTable1LightAccent1", "ListTable2Accent1", "ListTable3Accent1", "ListTable4Accent1", "ListTable5DarkAccent1", "ListTable6ColorfulAccent1", "ListTable7ColorfulAccent1", "ListTable1LightAccent2", "ListTable2Accent2", "ListTable3Accent2", "ListTable4Accent2", "ListTable5DarkAccent2", "ListTable6ColorfulAccent2", "ListTable7ColorfulAccent2", "ListTable1LightAccent3", "ListTable2Accent3", "ListTable3Accent3", "ListTable4Accent3", "ListTable5DarkAccent3", "ListTable6ColorfulAccent3", "ListTable7ColorfulAccent3", "ListTable1LightAccent4", "ListTable2Accent4", "ListTable3Accent4", "ListTable4Accent4", "ListTable5DarkAccent4", "ListTable6ColorfulAccent4", "ListTable7ColorfulAccent4", "ListTable1LightAccent5", "ListTable2Accent5", "ListTable3Accent5", "ListTable4Accent5", "ListTable5DarkAccent5", "ListTable6ColorfulAccent5", "ListTable7ColorfulAccent5", "ListTable1LightAccent6", "ListTable2Accent6", "ListTable3Accent6", "ListTable4Accent6", "ListTable5DarkAccent6", "ListTable6ColorfulAccent6", "ListTable7ColorfulAccent6", "User", "Nil"))
       return false unless style_identifier_validator.valid?(@style_identifier)
-      text_effect_validator = EnumAttributeValidator.new('String', ["None", "LasVegasLights", "BlinkingBackground", "SparkleText", "MarchingBlackAnts", "MarchingRedAnts", "Shimmer"])
+      text_effect_validator = EnumAttributeValidator.new('String', %w("None", "LasVegasLights", "BlinkingBackground", "SparkleText", "MarchingBlackAnts", "MarchingRedAnts", "Shimmer"))
       return false unless text_effect_validator.valid?(@text_effect)
-      underline_validator = EnumAttributeValidator.new('String', ["None", "Single", "Words", "Double", "Dotted", "Thick", "Dash", "DotDash", "DotDotDash", "Wavy", "DottedHeavy", "DashHeavy", "DotDashHeavy", "DotDotDashHeavy", "WavyHeavy", "DashLong", "WavyDouble", "DashLongHeavy"])
+      underline_validator = EnumAttributeValidator.new('String', %w("None", "Single", "Words", "Double", "Dotted", "Thick", "Dash", "DotDash", "DotDotDash", "Wavy", "DottedHeavy", "DashHeavy", "DotDashHeavy", "DotDotDashHeavy", "WavyHeavy", "DashLong", "WavyDouble", "DashLongHeavy"))
       return false unless underline_validator.valid?(@underline)
       return true
     end
@@ -466,7 +466,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] style_identifier Object to be assigned
     def style_identifier=(style_identifier)
-      validator = EnumAttributeValidator.new('String', ["Normal", "Heading1", "Heading2", "Heading3", "Heading4", "Heading5", "Heading6", "Heading7", "Heading8", "Heading9", "Index1", "Index2", "Index3", "Index4", "Index5", "Index6", "Index7", "Index8", "Index9", "Toc1", "Toc2", "Toc3", "Toc4", "Toc5", "Toc6", "Toc7", "Toc8", "Toc9", "NormalIndent", "FootnoteText", "CommentText", "Header", "Footer", "IndexHeading", "Caption", "TableOfFigures", "EnvelopeAddress", "EnvelopeReturn", "FootnoteReference", "CommentReference", "LineNumber", "PageNumber", "EndnoteReference", "EndnoteText", "TableOfAuthorities", "Macro", "ToaHeading", "List", "ListBullet", "ListNumber", "List2", "List3", "List4", "List5", "ListBullet2", "ListBullet3", "ListBullet4", "ListBullet5", "ListNumber2", "ListNumber3", "ListNumber4", "ListNumber5", "Title", "Closing", "Signature", "DefaultParagraphFont", "BodyText", "BodyTextInd", "ListContinue", "ListContinue2", "ListContinue3", "ListContinue4", "ListContinue5", "MessageHeader", "Subtitle", "Salutation", "Date", "BodyText1I", "BodyText1I2", "NoteHeading", "BodyText2", "BodyText3", "BodyTextInd2", "BodyTextInd3", "BlockText", "Hyperlink", "FollowedHyperlink", "Strong", "Emphasis", "DocumentMap", "PlainText", "EmailSignature", "HtmlTopOfForm", "HtmlBottomOfForm", "NormalWeb", "HtmlAcronym", "HtmlAddress", "HtmlCite", "HtmlCode", "HtmlDefinition", "HtmlKeyboard", "HtmlPreformatted", "HtmlSample", "HtmlTypewriter", "HtmlVariable", "TableNormal", "CommentSubject", "NoList", "OutlineList1", "OutlineList2", "OutlineList3", "TableSimple1", "TableSimple2", "TableSimple3", "TableClassic1", "TableClassic2", "TableClassic3", "TableClassic4", "TableColorful1", "TableColorful2", "TableColorful3", "TableColumns1", "TableColumns2", "TableColumns3", "TableColumns4", "TableColumns5", "TableGrid1", "TableGrid2", "TableGrid3", "TableGrid4", "TableGrid5", "TableGrid6", "TableGrid7", "TableGrid8", "TableList1", "TableList2", "TableList3", "TableList4", "TableList5", "TableList6", "TableList7", "TableList8", "Table3DEffects1", "Table3DEffects2", "Table3DEffects3", "TableContemporary", "TableElegant", "TableProfessional", "TableSubtle1", "TableSubtle2", "TableWeb1", "TableWeb2", "TableWeb3", "BalloonText", "TableGrid", "TableTheme", "PlaceholderText", "NoSpacing", "LightShading", "LightList", "LightGrid", "MediumShading1", "MediumShading2", "MediumList1", "MediumList2", "MediumGrid1", "MediumGrid2", "MediumGrid3", "DarkList", "ColorfulShading", "ColorfulList", "ColorfulGrid", "LightShadingAccent1", "LightListAccent1", "LightGridAccent1", "MediumShading1Accent1", "MediumShading2Accent1", "MediumList1Accent1", "Revision", "ListParagraph", "Quote", "IntenseQuote", "MediumList2Accent1", "MediumGrid1Accent1", "MediumGrid2Accent1", "MediumGrid3Accent1", "DarkListAccent1", "ColorfulShadingAccent1", "ColorfulListAccent1", "ColorfulGridAccent1", "LightShadingAccent2", "LightListAccent2", "LightGridAccent2", "MediumShading1Accent2", "MediumShading2Accent2", "MediumList1Accent2", "MediumList2Accent2", "MediumGrid1Accent2", "MediumGrid2Accent2", "MediumGrid3Accent2", "DarkListAccent2", "ColorfulShadingAccent2", "ColorfulListAccent2", "ColorfulGridAccent2", "LightShadingAccent3", "LightListAccent3", "LightGridAccent3", "MediumShading1Accent3", "MediumShading2Accent3", "MediumList1Accent3", "MediumList2Accent3", "MediumGrid1Accent3", "MediumGrid2Accent3", "MediumGrid3Accent3", "DarkListAccent3", "ColorfulShadingAccent3", "ColorfulListAccent3", "ColorfulGridAccent3", "LightShadingAccent4", "LightListAccent4", "LightGridAccent4", "MediumShading1Accent4", "MediumShading2Accent4", "MediumList1Accent4", "MediumList2Accent4", "MediumGrid1Accent4", "MediumGrid2Accent4", "MediumGrid3Accent4", "DarkListAccent4", "ColorfulShadingAccent4", "ColorfulListAccent4", "ColorfulGridAccent4", "LightShadingAccent5", "LightListAccent5", "LightGridAccent5", "MediumShading1Accent5", "MediumShading2Accent5", "MediumList1Accent5", "MediumList2Accent5", "MediumGrid1Accent5", "MediumGrid2Accent5", "MediumGrid3Accent5", "DarkListAccent5", "ColorfulShadingAccent5", "ColorfulListAccent5", "ColorfulGridAccent5", "LightShadingAccent6", "LightListAccent6", "LightGridAccent6", "MediumShading1Accent6", "MediumShading2Accent6", "MediumList1Accent6", "MediumList2Accent6", "MediumGrid1Accent6", "MediumGrid2Accent6", "MediumGrid3Accent6", "DarkListAccent6", "ColorfulShadingAccent6", "ColorfulListAccent6", "ColorfulGridAccent6", "SubtleEmphasis", "IntenseEmphasis", "SubtleReference", "IntenseReference", "BookTitle", "Bibliography", "TocHeading", "PlainTable1", "PlainTable2", "PlainTable3", "PlainTable4", "PlainTable5", "TableGridLight", "GridTable1Light", "GridTable2", "GridTable3", "GridTable4", "GridTable5Dark", "GridTable6Colorful", "GridTable7Colorful", "GridTable1LightAccent1", "GridTable2Accent1", "GridTable3Accent1", "GridTable4Accent1", "GridTable5DarkAccent1", "GridTable6ColorfulAccent1", "GridTable7ColorfulAccent1", "GridTable1LightAccent2", "GridTable2Accent2", "GridTable3Accent2", "GridTable4Accent2", "GridTable5DarkAccent2", "GridTable6ColorfulAccent2", "GridTable7ColorfulAccent2", "GridTable1LightAccent3", "GridTable2Accent3", "GridTable3Accent3", "GridTable4Accent3", "GridTable5DarkAccent3", "GridTable6ColorfulAccent3", "GridTable7ColorfulAccent3", "GridTable1LightAccent4", "GridTable2Accent4", "GridTable3Accent4", "GridTable4Accent4", "GridTable5DarkAccent4", "GridTable6ColorfulAccent4", "GridTable7ColorfulAccent4", "GridTable1LightAccent5", "GridTable2Accent5", "GridTable3Accent5", "GridTable4Accent5", "GridTable5DarkAccent5", "GridTable6ColorfulAccent5", "GridTable7ColorfulAccent5", "GridTable1LightAccent6", "GridTable2Accent6", "GridTable3Accent6", "GridTable4Accent6", "GridTable5DarkAccent6", "GridTable6ColorfulAccent6", "GridTable7ColorfulAccent6", "ListTable1Light", "ListTable2", "ListTable3", "ListTable4", "ListTable5Dark", "ListTable6Colorful", "ListTable7Colorful", "ListTable1LightAccent1", "ListTable2Accent1", "ListTable3Accent1", "ListTable4Accent1", "ListTable5DarkAccent1", "ListTable6ColorfulAccent1", "ListTable7ColorfulAccent1", "ListTable1LightAccent2", "ListTable2Accent2", "ListTable3Accent2", "ListTable4Accent2", "ListTable5DarkAccent2", "ListTable6ColorfulAccent2", "ListTable7ColorfulAccent2", "ListTable1LightAccent3", "ListTable2Accent3", "ListTable3Accent3", "ListTable4Accent3", "ListTable5DarkAccent3", "ListTable6ColorfulAccent3", "ListTable7ColorfulAccent3", "ListTable1LightAccent4", "ListTable2Accent4", "ListTable3Accent4", "ListTable4Accent4", "ListTable5DarkAccent4", "ListTable6ColorfulAccent4", "ListTable7ColorfulAccent4", "ListTable1LightAccent5", "ListTable2Accent5", "ListTable3Accent5", "ListTable4Accent5", "ListTable5DarkAccent5", "ListTable6ColorfulAccent5", "ListTable7ColorfulAccent5", "ListTable1LightAccent6", "ListTable2Accent6", "ListTable3Accent6", "ListTable4Accent6", "ListTable5DarkAccent6", "ListTable6ColorfulAccent6", "ListTable7ColorfulAccent6", "User", "Nil"])
+      validator = EnumAttributeValidator.new('String', %w("Normal", "Heading1", "Heading2", "Heading3", "Heading4", "Heading5", "Heading6", "Heading7", "Heading8", "Heading9", "Index1", "Index2", "Index3", "Index4", "Index5", "Index6", "Index7", "Index8", "Index9", "Toc1", "Toc2", "Toc3", "Toc4", "Toc5", "Toc6", "Toc7", "Toc8", "Toc9", "NormalIndent", "FootnoteText", "CommentText", "Header", "Footer", "IndexHeading", "Caption", "TableOfFigures", "EnvelopeAddress", "EnvelopeReturn", "FootnoteReference", "CommentReference", "LineNumber", "PageNumber", "EndnoteReference", "EndnoteText", "TableOfAuthorities", "Macro", "ToaHeading", "List", "ListBullet", "ListNumber", "List2", "List3", "List4", "List5", "ListBullet2", "ListBullet3", "ListBullet4", "ListBullet5", "ListNumber2", "ListNumber3", "ListNumber4", "ListNumber5", "Title", "Closing", "Signature", "DefaultParagraphFont", "BodyText", "BodyTextInd", "ListContinue", "ListContinue2", "ListContinue3", "ListContinue4", "ListContinue5", "MessageHeader", "Subtitle", "Salutation", "Date", "BodyText1I", "BodyText1I2", "NoteHeading", "BodyText2", "BodyText3", "BodyTextInd2", "BodyTextInd3", "BlockText", "Hyperlink", "FollowedHyperlink", "Strong", "Emphasis", "DocumentMap", "PlainText", "EmailSignature", "HtmlTopOfForm", "HtmlBottomOfForm", "NormalWeb", "HtmlAcronym", "HtmlAddress", "HtmlCite", "HtmlCode", "HtmlDefinition", "HtmlKeyboard", "HtmlPreformatted", "HtmlSample", "HtmlTypewriter", "HtmlVariable", "TableNormal", "CommentSubject", "NoList", "OutlineList1", "OutlineList2", "OutlineList3", "TableSimple1", "TableSimple2", "TableSimple3", "TableClassic1", "TableClassic2", "TableClassic3", "TableClassic4", "TableColorful1", "TableColorful2", "TableColorful3", "TableColumns1", "TableColumns2", "TableColumns3", "TableColumns4", "TableColumns5", "TableGrid1", "TableGrid2", "TableGrid3", "TableGrid4", "TableGrid5", "TableGrid6", "TableGrid7", "TableGrid8", "TableList1", "TableList2", "TableList3", "TableList4", "TableList5", "TableList6", "TableList7", "TableList8", "Table3DEffects1", "Table3DEffects2", "Table3DEffects3", "TableContemporary", "TableElegant", "TableProfessional", "TableSubtle1", "TableSubtle2", "TableWeb1", "TableWeb2", "TableWeb3", "BalloonText", "TableGrid", "TableTheme", "PlaceholderText", "NoSpacing", "LightShading", "LightList", "LightGrid", "MediumShading1", "MediumShading2", "MediumList1", "MediumList2", "MediumGrid1", "MediumGrid2", "MediumGrid3", "DarkList", "ColorfulShading", "ColorfulList", "ColorfulGrid", "LightShadingAccent1", "LightListAccent1", "LightGridAccent1", "MediumShading1Accent1", "MediumShading2Accent1", "MediumList1Accent1", "Revision", "ListParagraph", "Quote", "IntenseQuote", "MediumList2Accent1", "MediumGrid1Accent1", "MediumGrid2Accent1", "MediumGrid3Accent1", "DarkListAccent1", "ColorfulShadingAccent1", "ColorfulListAccent1", "ColorfulGridAccent1", "LightShadingAccent2", "LightListAccent2", "LightGridAccent2", "MediumShading1Accent2", "MediumShading2Accent2", "MediumList1Accent2", "MediumList2Accent2", "MediumGrid1Accent2", "MediumGrid2Accent2", "MediumGrid3Accent2", "DarkListAccent2", "ColorfulShadingAccent2", "ColorfulListAccent2", "ColorfulGridAccent2", "LightShadingAccent3", "LightListAccent3", "LightGridAccent3", "MediumShading1Accent3", "MediumShading2Accent3", "MediumList1Accent3", "MediumList2Accent3", "MediumGrid1Accent3", "MediumGrid2Accent3", "MediumGrid3Accent3", "DarkListAccent3", "ColorfulShadingAccent3", "ColorfulListAccent3", "ColorfulGridAccent3", "LightShadingAccent4", "LightListAccent4", "LightGridAccent4", "MediumShading1Accent4", "MediumShading2Accent4", "MediumList1Accent4", "MediumList2Accent4", "MediumGrid1Accent4", "MediumGrid2Accent4", "MediumGrid3Accent4", "DarkListAccent4", "ColorfulShadingAccent4", "ColorfulListAccent4", "ColorfulGridAccent4", "LightShadingAccent5", "LightListAccent5", "LightGridAccent5", "MediumShading1Accent5", "MediumShading2Accent5", "MediumList1Accent5", "MediumList2Accent5", "MediumGrid1Accent5", "MediumGrid2Accent5", "MediumGrid3Accent5", "DarkListAccent5", "ColorfulShadingAccent5", "ColorfulListAccent5", "ColorfulGridAccent5", "LightShadingAccent6", "LightListAccent6", "LightGridAccent6", "MediumShading1Accent6", "MediumShading2Accent6", "MediumList1Accent6", "MediumList2Accent6", "MediumGrid1Accent6", "MediumGrid2Accent6", "MediumGrid3Accent6", "DarkListAccent6", "ColorfulShadingAccent6", "ColorfulListAccent6", "ColorfulGridAccent6", "SubtleEmphasis", "IntenseEmphasis", "SubtleReference", "IntenseReference", "BookTitle", "Bibliography", "TocHeading", "PlainTable1", "PlainTable2", "PlainTable3", "PlainTable4", "PlainTable5", "TableGridLight", "GridTable1Light", "GridTable2", "GridTable3", "GridTable4", "GridTable5Dark", "GridTable6Colorful", "GridTable7Colorful", "GridTable1LightAccent1", "GridTable2Accent1", "GridTable3Accent1", "GridTable4Accent1", "GridTable5DarkAccent1", "GridTable6ColorfulAccent1", "GridTable7ColorfulAccent1", "GridTable1LightAccent2", "GridTable2Accent2", "GridTable3Accent2", "GridTable4Accent2", "GridTable5DarkAccent2", "GridTable6ColorfulAccent2", "GridTable7ColorfulAccent2", "GridTable1LightAccent3", "GridTable2Accent3", "GridTable3Accent3", "GridTable4Accent3", "GridTable5DarkAccent3", "GridTable6ColorfulAccent3", "GridTable7ColorfulAccent3", "GridTable1LightAccent4", "GridTable2Accent4", "GridTable3Accent4", "GridTable4Accent4", "GridTable5DarkAccent4", "GridTable6ColorfulAccent4", "GridTable7ColorfulAccent4", "GridTable1LightAccent5", "GridTable2Accent5", "GridTable3Accent5", "GridTable4Accent5", "GridTable5DarkAccent5", "GridTable6ColorfulAccent5", "GridTable7ColorfulAccent5", "GridTable1LightAccent6", "GridTable2Accent6", "GridTable3Accent6", "GridTable4Accent6", "GridTable5DarkAccent6", "GridTable6ColorfulAccent6", "GridTable7ColorfulAccent6", "ListTable1Light", "ListTable2", "ListTable3", "ListTable4", "ListTable5Dark", "ListTable6Colorful", "ListTable7Colorful", "ListTable1LightAccent1", "ListTable2Accent1", "ListTable3Accent1", "ListTable4Accent1", "ListTable5DarkAccent1", "ListTable6ColorfulAccent1", "ListTable7ColorfulAccent1", "ListTable1LightAccent2", "ListTable2Accent2", "ListTable3Accent2", "ListTable4Accent2", "ListTable5DarkAccent2", "ListTable6ColorfulAccent2", "ListTable7ColorfulAccent2", "ListTable1LightAccent3", "ListTable2Accent3", "ListTable3Accent3", "ListTable4Accent3", "ListTable5DarkAccent3", "ListTable6ColorfulAccent3", "ListTable7ColorfulAccent3", "ListTable1LightAccent4", "ListTable2Accent4", "ListTable3Accent4", "ListTable4Accent4", "ListTable5DarkAccent4", "ListTable6ColorfulAccent4", "ListTable7ColorfulAccent4", "ListTable1LightAccent5", "ListTable2Accent5", "ListTable3Accent5", "ListTable4Accent5", "ListTable5DarkAccent5", "ListTable6ColorfulAccent5", "ListTable7ColorfulAccent5", "ListTable1LightAccent6", "ListTable2Accent6", "ListTable3Accent6", "ListTable4Accent6", "ListTable5DarkAccent6", "ListTable6ColorfulAccent6", "ListTable7ColorfulAccent6", "User", "Nil"))
       if style_identifier.to_i == 0
         unless validator.valid?(style_identifier)
           fail ArgumentError, "invalid value for 'style_identifier', must be one of #{validator.allowable_values}."
@@ -480,7 +480,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] text_effect Object to be assigned
     def text_effect=(text_effect)
-      validator = EnumAttributeValidator.new('String', ["None", "LasVegasLights", "BlinkingBackground", "SparkleText", "MarchingBlackAnts", "MarchingRedAnts", "Shimmer"])
+      validator = EnumAttributeValidator.new('String', %w("None", "LasVegasLights", "BlinkingBackground", "SparkleText", "MarchingBlackAnts", "MarchingRedAnts", "Shimmer"))
       if text_effect.to_i == 0
         unless validator.valid?(text_effect)
           fail ArgumentError, "invalid value for 'text_effect', must be one of #{validator.allowable_values}."
@@ -494,7 +494,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] underline Object to be assigned
     def underline=(underline)
-      validator = EnumAttributeValidator.new('String', ["None", "Single", "Words", "Double", "Dotted", "Thick", "Dash", "DotDash", "DotDotDash", "Wavy", "DottedHeavy", "DashHeavy", "DotDashHeavy", "DotDotDashHeavy", "WavyHeavy", "DashLong", "WavyDouble", "DashLongHeavy"])
+      validator = EnumAttributeValidator.new('String', %w("None", "Single", "Words", "Double", "Dotted", "Thick", "Dash", "DotDash", "DotDotDash", "Wavy", "DottedHeavy", "DashHeavy", "DotDashHeavy", "DotDotDashHeavy", "WavyHeavy", "DashLong", "WavyDouble", "DashLongHeavy"))
       if underline.to_i == 0
         unless validator.valid?(underline)
           fail ArgumentError, "invalid value for 'underline', must be one of #{validator.allowable_values}."
@@ -507,56 +507,56 @@ module WordsRubySdk
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
-    def ==(o)
-      return true if self.equal?(o)
-      self.class == o.class &&
-          link == o.link &&
-          all_caps == o.all_caps &&
-          bidi == o.bidi &&
-          bold == o.bold &&
-          bold_bi == o.bold_bi &&
-          border == o.border &&
-          color == o.color &&
-          complex_script == o.complex_script &&
-          double_strike_through == o.double_strike_through &&
-          emboss == o.emboss &&
-          engrave == o.engrave &&
-          hidden == o.hidden &&
-          highlight_color == o.highlight_color &&
-          italic == o.italic &&
-          italic_bi == o.italic_bi &&
-          kerning == o.kerning &&
-          locale_id == o.locale_id &&
-          locale_id_bi == o.locale_id_bi &&
-          locale_id_far_east == o.locale_id_far_east &&
-          name == o.name &&
-          name_ascii == o.name_ascii &&
-          name_bi == o.name_bi &&
-          name_far_east == o.name_far_east &&
-          name_other == o.name_other &&
-          no_proofing == o.no_proofing &&
-          outline == o.outline &&
-          position == o.position &&
-          scaling == o.scaling &&
-          shadow == o.shadow &&
-          size == o.size &&
-          size_bi == o.size_bi &&
-          small_caps == o.small_caps &&
-          spacing == o.spacing &&
-          strike_through == o.strike_through &&
-          style_identifier == o.style_identifier &&
-          style_name == o.style_name &&
-          subscript == o.subscript &&
-          superscript == o.superscript &&
-          text_effect == o.text_effect &&
-          underline == o.underline &&
-          underline_color == o.underline_color
+    def ==(other)
+      return true if self.equal?(other)
+      self.class == other.class &&
+          link == other.link &&
+          all_caps == other.all_caps &&
+          bidi == other.bidi &&
+          bold == other.bold &&
+          bold_bi == other.bold_bi &&
+          border == other.border &&
+          color == other.color &&
+          complex_script == other.complex_script &&
+          double_strike_through == other.double_strike_through &&
+          emboss == other.emboss &&
+          engrave == other.engrave &&
+          hidden == other.hidden &&
+          highlight_color == other.highlight_color &&
+          italic == other.italic &&
+          italic_bi == other.italic_bi &&
+          kerning == other.kerning &&
+          locale_id == other.locale_id &&
+          locale_id_bi == other.locale_id_bi &&
+          locale_id_far_east == other.locale_id_far_east &&
+          name == other.name &&
+          name_ascii == other.name_ascii &&
+          name_bi == other.name_bi &&
+          name_far_east == other.name_far_east &&
+          name_other == other.name_other &&
+          no_proofing == other.no_proofing &&
+          outline == other.outline &&
+          position == other.position &&
+          scaling == other.scaling &&
+          shadow == other.shadow &&
+          size == other.size &&
+          size_bi == other.size_bi &&
+          small_caps == other.small_caps &&
+          spacing == other.spacing &&
+          strike_through == other.strike_through &&
+          style_identifier == other.style_identifier &&
+          style_name == other.style_name &&
+          subscript == other.subscript &&
+          superscript == other.superscript &&
+          text_effect == other.text_effect &&
+          underline == other.underline &&
+          underline_color == other.underline_color
     end
 
     # @see the `==` method
     # @param [Object] Object to be compared
-    def eql?(o)
-      self == o
+    def eql?(other)
+      self == other
     end
 
     # Calculates hash code according to all attributes.
@@ -575,11 +575,12 @@ module WordsRubySdk
           # check to ensure the input is an array given that the the attribute
           # is documented as an array but the input is not
           if attributes[self.class.attribute_map[key]].is_a?(Array)
-            self.send("#{key}=", attributes[self.class.attribute_map[key]].map{ |v| _deserialize($1, v) } )
+            self.send("#{key}=", attributes[self.class.attribute_map[key]].map { |v| _deserialize($1, v) })
           end
         elsif !attributes[self.class.attribute_map[key]].nil?
           self.send("#{key}=", _deserialize(type, attributes[self.class.attribute_map[key]]))
-        end # or else data not found in attributes(hash), not an issue as the data can be optional
+        end
+		# or else data not found in attributes(hash), not an issue as the data can be optional
       end
 
       self
@@ -621,7 +622,8 @@ module WordsRubySdk
             hash[_deserialize(k_type, k)] = _deserialize(v_type, v)
           end
         end
-      else # model
+      else
+	  # model
         temp_model = WordsRubySdk.const_get(type).new
         temp_model.build_from_hash(value)
       end
@@ -657,7 +659,7 @@ module WordsRubySdk
     # @return [Hash] Returns the value in the form of hash
     def _to_hash(value)
       if value.is_a?(Array)
-        value.compact.map{ |v| _to_hash(v) }
+        value.compact.map { |v| _to_hash(v) }
       elsif value.is_a?(Hash)
         {}.tap do |hash|
           value.each { |k, v| hash[k] = _to_hash(v) }

@@ -14,10 +14,10 @@ module WordsRubySdk
  #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  #  copies of the Software, and to permit persons to whom the Software is
  #  furnished to do so, subject to the following conditions:
- # 
+ #
  #  The above copyright notice and this permission notice shall be included in all
  #  copies or substantial portions of the Software.
- # 
+ #
  #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -115,59 +115,59 @@ module WordsRubySdk
       return unless attributes.is_a?(Hash)
 
       # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
+      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'link')
+      if attributes.key?(:'link')
         self.link = attributes[:'link']
       end
 
-      if attributes.has_key?(:'NodeId')
+      if attributes.key?(:'NodeId')
         self.node_id = attributes[:'NodeId']
       end
 
-      if attributes.has_key?(:'CalculateOnExit')
+      if attributes.key?(:'CalculateOnExit')
         self.calculate_on_exit = attributes[:'CalculateOnExit']
       end
 
-      if attributes.has_key?(:'Enabled')
+      if attributes.key?(:'Enabled')
         self.enabled = attributes[:'Enabled']
       end
 
-      if attributes.has_key?(:'EntryMacro')
+      if attributes.key?(:'EntryMacro')
         self.entry_macro = attributes[:'EntryMacro']
       end
 
-      if attributes.has_key?(:'ExitMacro')
+      if attributes.key?(:'ExitMacro')
         self.exit_macro = attributes[:'ExitMacro']
       end
 
-      if attributes.has_key?(:'HelpText')
+      if attributes.key?(:'HelpText')
         self.help_text = attributes[:'HelpText']
       end
 
-      if attributes.has_key?(:'Name')
+      if attributes.key?(:'Name')
         self.name = attributes[:'Name']
       end
 
-      if attributes.has_key?(:'OwnHelp')
+      if attributes.key?(:'OwnHelp')
         self.own_help = attributes[:'OwnHelp']
       end
 
-      if attributes.has_key?(:'OwnStatus')
+      if attributes.key?(:'OwnStatus')
         self.own_status = attributes[:'OwnStatus']
       end
 
-      if attributes.has_key?(:'StatusText')
+      if attributes.key?(:'StatusText')
         self.status_text = attributes[:'StatusText']
       end
 
-      if attributes.has_key?(:'DropDownItems')
+      if attributes.key?(:'DropDownItems')
         if (value = attributes[:'DropDownItems']).is_a?(Array)
           self.drop_down_items = value
         end
       end
 
-      if attributes.has_key?(:'DropDownSelectedIndex')
+      if attributes.key?(:'DropDownSelectedIndex')
         self.drop_down_selected_index = attributes[:'DropDownSelectedIndex']
       end
 
@@ -176,7 +176,7 @@ module WordsRubySdk
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properies with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
+      invalid_properties = []
       return invalid_properties
     end
 
@@ -188,28 +188,28 @@ module WordsRubySdk
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
-    def ==(o)
-      return true if self.equal?(o)
-      self.class == o.class &&
-          link == o.link &&
-          node_id == o.node_id &&
-          calculate_on_exit == o.calculate_on_exit &&
-          enabled == o.enabled &&
-          entry_macro == o.entry_macro &&
-          exit_macro == o.exit_macro &&
-          help_text == o.help_text &&
-          name == o.name &&
-          own_help == o.own_help &&
-          own_status == o.own_status &&
-          status_text == o.status_text &&
-          drop_down_items == o.drop_down_items &&
-          drop_down_selected_index == o.drop_down_selected_index
+    def ==(other)
+      return true if self.equal?(other)
+      self.class == other.class &&
+          link == other.link &&
+          node_id == other.node_id &&
+          calculate_on_exit == other.calculate_on_exit &&
+          enabled == other.enabled &&
+          entry_macro == other.entry_macro &&
+          exit_macro == other.exit_macro &&
+          help_text == other.help_text &&
+          name == other.name &&
+          own_help == other.own_help &&
+          own_status == other.own_status &&
+          status_text == other.status_text &&
+          drop_down_items == other.drop_down_items &&
+          drop_down_selected_index == other.drop_down_selected_index
     end
 
     # @see the `==` method
     # @param [Object] Object to be compared
-    def eql?(o)
-      self == o
+    def eql?(other)
+      self == other
     end
 
     # Calculates hash code according to all attributes.
@@ -228,11 +228,12 @@ module WordsRubySdk
           # check to ensure the input is an array given that the the attribute
           # is documented as an array but the input is not
           if attributes[self.class.attribute_map[key]].is_a?(Array)
-            self.send("#{key}=", attributes[self.class.attribute_map[key]].map{ |v| _deserialize($1, v) } )
+            self.send("#{key}=", attributes[self.class.attribute_map[key]].map { |v| _deserialize($1, v) })
           end
         elsif !attributes[self.class.attribute_map[key]].nil?
           self.send("#{key}=", _deserialize(type, attributes[self.class.attribute_map[key]]))
-        end # or else data not found in attributes(hash), not an issue as the data can be optional
+        end
+		# or else data not found in attributes(hash), not an issue as the data can be optional
       end
 
       self
@@ -274,7 +275,8 @@ module WordsRubySdk
             hash[_deserialize(k_type, k)] = _deserialize(v_type, v)
           end
         end
-      else # model
+      else
+	  # model
         temp_model = WordsRubySdk.const_get(type).new
         temp_model.build_from_hash(value)
       end
@@ -310,7 +312,7 @@ module WordsRubySdk
     # @return [Hash] Returns the value in the form of hash
     def _to_hash(value)
       if value.is_a?(Array)
-        value.compact.map{ |v| _to_hash(v) }
+        value.compact.map { |v| _to_hash(v) }
       elsif value.is_a?(Hash)
         {}.tap do |hash|
           value.each { |k, v| hash[k] = _to_hash(v) }

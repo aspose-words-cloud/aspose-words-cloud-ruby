@@ -14,10 +14,10 @@ module WordsRubySdk
  #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  #  copies of the Software, and to permit persons to whom the Software is
  #  furnished to do so, subject to the following conditions:
- # 
+ #
  #  The above copyright notice and this permission notice shall be included in all
  #  copies or substantial portions of the Software.
- # 
+ #
  #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -101,29 +101,29 @@ module WordsRubySdk
       return unless attributes.is_a?(Hash)
 
       # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
+      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'CompositingMode')
+      if attributes.key?(:'CompositingMode')
         self.compositing_mode = attributes[:'CompositingMode']
       end
 
-      if attributes.has_key?(:'CompositingQuality')
+      if attributes.key?(:'CompositingQuality')
         self.compositing_quality = attributes[:'CompositingQuality']
       end
 
-      if attributes.has_key?(:'InterpolationMode')
+      if attributes.key?(:'InterpolationMode')
         self.interpolation_mode = attributes[:'InterpolationMode']
       end
 
-      if attributes.has_key?(:'SmoothingMode')
+      if attributes.key?(:'SmoothingMode')
         self.smoothing_mode = attributes[:'SmoothingMode']
       end
 
-      if attributes.has_key?(:'StringFormat')
+      if attributes.key?(:'StringFormat')
         self.string_format = attributes[:'StringFormat']
       end
 
-      if attributes.has_key?(:'TextRenderingHint')
+      if attributes.key?(:'TextRenderingHint')
         self.text_rendering_hint = attributes[:'TextRenderingHint']
       end
 
@@ -132,22 +132,22 @@ module WordsRubySdk
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properies with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
+      invalid_properties = []
       return invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      compositing_mode_validator = EnumAttributeValidator.new('String', ["SourceOver", "SourceCopy"])
+      compositing_mode_validator = EnumAttributeValidator.new('String', %w("SourceOver", "SourceCopy"))
       return false unless compositing_mode_validator.valid?(@compositing_mode)
-      compositing_quality_validator = EnumAttributeValidator.new('String', ["Default", "HighSpeed", "HighQuality", "GammaCorrected", "AssumeLinear", "Invalid"])
+      compositing_quality_validator = EnumAttributeValidator.new('String', %w("Default", "HighSpeed", "HighQuality", "GammaCorrected", "AssumeLinear", "Invalid"))
       return false unless compositing_quality_validator.valid?(@compositing_quality)
-      interpolation_mode_validator = EnumAttributeValidator.new('String', ["Default", "Low", "High", "Bilinear", "Bicubic", "NearestNeighbor", "HighQualityBilinear", "HighQualityBicubic", "Invalid"])
+      interpolation_mode_validator = EnumAttributeValidator.new('String', %w("Default", "Low", "High", "Bilinear", "Bicubic", "NearestNeighbor", "HighQualityBilinear", "HighQualityBicubic", "Invalid"))
       return false unless interpolation_mode_validator.valid?(@interpolation_mode)
-      smoothing_mode_validator = EnumAttributeValidator.new('String', ["Default", "HighSpeed", "HighQuality", "None", "AntiAlias", "Invalid"])
+      smoothing_mode_validator = EnumAttributeValidator.new('String', %w("Default", "HighSpeed", "HighQuality", "None", "AntiAlias", "Invalid"))
       return false unless smoothing_mode_validator.valid?(@smoothing_mode)
-      text_rendering_hint_validator = EnumAttributeValidator.new('String', ["SystemDefault", "SingleBitPerPixelGridFit", "SingleBitPerPixel", "AntiAliasGridFit", "AntiAlias", "ClearTypeGridFit"])
+      text_rendering_hint_validator = EnumAttributeValidator.new('String', %w("SystemDefault", "SingleBitPerPixelGridFit", "SingleBitPerPixel", "AntiAliasGridFit", "AntiAlias", "ClearTypeGridFit"))
       return false unless text_rendering_hint_validator.valid?(@text_rendering_hint)
       return true
     end
@@ -155,7 +155,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] compositing_mode Object to be assigned
     def compositing_mode=(compositing_mode)
-      validator = EnumAttributeValidator.new('String', ["SourceOver", "SourceCopy"])
+      validator = EnumAttributeValidator.new('String', %w("SourceOver", "SourceCopy"))
       if compositing_mode.to_i == 0
         unless validator.valid?(compositing_mode)
           fail ArgumentError, "invalid value for 'compositing_mode', must be one of #{validator.allowable_values}."
@@ -169,7 +169,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] compositing_quality Object to be assigned
     def compositing_quality=(compositing_quality)
-      validator = EnumAttributeValidator.new('String', ["Default", "HighSpeed", "HighQuality", "GammaCorrected", "AssumeLinear", "Invalid"])
+      validator = EnumAttributeValidator.new('String', %w("Default", "HighSpeed", "HighQuality", "GammaCorrected", "AssumeLinear", "Invalid"))
       if compositing_quality.to_i == 0
         unless validator.valid?(compositing_quality)
           fail ArgumentError, "invalid value for 'compositing_quality', must be one of #{validator.allowable_values}."
@@ -183,7 +183,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] interpolation_mode Object to be assigned
     def interpolation_mode=(interpolation_mode)
-      validator = EnumAttributeValidator.new('String', ["Default", "Low", "High", "Bilinear", "Bicubic", "NearestNeighbor", "HighQualityBilinear", "HighQualityBicubic", "Invalid"])
+      validator = EnumAttributeValidator.new('String', %w("Default", "Low", "High", "Bilinear", "Bicubic", "NearestNeighbor", "HighQualityBilinear", "HighQualityBicubic", "Invalid"))
       if interpolation_mode.to_i == 0
         unless validator.valid?(interpolation_mode)
           fail ArgumentError, "invalid value for 'interpolation_mode', must be one of #{validator.allowable_values}."
@@ -197,7 +197,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] smoothing_mode Object to be assigned
     def smoothing_mode=(smoothing_mode)
-      validator = EnumAttributeValidator.new('String', ["Default", "HighSpeed", "HighQuality", "None", "AntiAlias", "Invalid"])
+      validator = EnumAttributeValidator.new('String', %w("Default", "HighSpeed", "HighQuality", "None", "AntiAlias", "Invalid"))
       if smoothing_mode.to_i == 0
         unless validator.valid?(smoothing_mode)
           fail ArgumentError, "invalid value for 'smoothing_mode', must be one of #{validator.allowable_values}."
@@ -211,7 +211,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] text_rendering_hint Object to be assigned
     def text_rendering_hint=(text_rendering_hint)
-      validator = EnumAttributeValidator.new('String', ["SystemDefault", "SingleBitPerPixelGridFit", "SingleBitPerPixel", "AntiAliasGridFit", "AntiAlias", "ClearTypeGridFit"])
+      validator = EnumAttributeValidator.new('String', %w("SystemDefault", "SingleBitPerPixelGridFit", "SingleBitPerPixel", "AntiAliasGridFit", "AntiAlias", "ClearTypeGridFit"))
       if text_rendering_hint.to_i == 0
         unless validator.valid?(text_rendering_hint)
           fail ArgumentError, "invalid value for 'text_rendering_hint', must be one of #{validator.allowable_values}."
@@ -224,21 +224,21 @@ module WordsRubySdk
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
-    def ==(o)
-      return true if self.equal?(o)
-      self.class == o.class &&
-          compositing_mode == o.compositing_mode &&
-          compositing_quality == o.compositing_quality &&
-          interpolation_mode == o.interpolation_mode &&
-          smoothing_mode == o.smoothing_mode &&
-          string_format == o.string_format &&
-          text_rendering_hint == o.text_rendering_hint
+    def ==(other)
+      return true if self.equal?(other)
+      self.class == other.class &&
+          compositing_mode == other.compositing_mode &&
+          compositing_quality == other.compositing_quality &&
+          interpolation_mode == other.interpolation_mode &&
+          smoothing_mode == other.smoothing_mode &&
+          string_format == other.string_format &&
+          text_rendering_hint == other.text_rendering_hint
     end
 
     # @see the `==` method
     # @param [Object] Object to be compared
-    def eql?(o)
-      self == o
+    def eql?(other)
+      self == other
     end
 
     # Calculates hash code according to all attributes.
@@ -257,11 +257,12 @@ module WordsRubySdk
           # check to ensure the input is an array given that the the attribute
           # is documented as an array but the input is not
           if attributes[self.class.attribute_map[key]].is_a?(Array)
-            self.send("#{key}=", attributes[self.class.attribute_map[key]].map{ |v| _deserialize($1, v) } )
+            self.send("#{key}=", attributes[self.class.attribute_map[key]].map { |v| _deserialize($1, v) })
           end
         elsif !attributes[self.class.attribute_map[key]].nil?
           self.send("#{key}=", _deserialize(type, attributes[self.class.attribute_map[key]]))
-        end # or else data not found in attributes(hash), not an issue as the data can be optional
+        end
+		# or else data not found in attributes(hash), not an issue as the data can be optional
       end
 
       self
@@ -303,7 +304,8 @@ module WordsRubySdk
             hash[_deserialize(k_type, k)] = _deserialize(v_type, v)
           end
         end
-      else # model
+      else
+	  # model
         temp_model = WordsRubySdk.const_get(type).new
         temp_model.build_from_hash(value)
       end
@@ -339,7 +341,7 @@ module WordsRubySdk
     # @return [Hash] Returns the value in the form of hash
     def _to_hash(value)
       if value.is_a?(Array)
-        value.compact.map{ |v| _to_hash(v) }
+        value.compact.map { |v| _to_hash(v) }
       elsif value.is_a?(Hash)
         {}.tap do |hash|
           value.each { |k, v| hash[k] = _to_hash(v) }

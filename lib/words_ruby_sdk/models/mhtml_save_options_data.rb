@@ -14,10 +14,10 @@ module WordsRubySdk
  #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  #  copies of the Software, and to permit persons to whom the Software is
  #  furnished to do so, subject to the following conditions:
- # 
+ #
  #  The above copyright notice and this permission notice shall be included in all
  #  copies or substantial portions of the Software.
- # 
+ #
  #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -306,193 +306,193 @@ module WordsRubySdk
       return unless attributes.is_a?(Hash)
 
       # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
+      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'ColorMode')
+      if attributes.key?(:'ColorMode')
         self.color_mode = attributes[:'ColorMode']
       end
 
-      if attributes.has_key?(:'SaveFormat')
+      if attributes.key?(:'SaveFormat')
         self.save_format = attributes[:'SaveFormat']
       end
 
-      if attributes.has_key?(:'FileName')
+      if attributes.key?(:'FileName')
         self.file_name = attributes[:'FileName']
       end
 
-      if attributes.has_key?(:'DmlRenderingMode')
+      if attributes.key?(:'DmlRenderingMode')
         self.dml_rendering_mode = attributes[:'DmlRenderingMode']
       end
 
-      if attributes.has_key?(:'DmlEffectsRenderingMode')
+      if attributes.key?(:'DmlEffectsRenderingMode')
         self.dml_effects_rendering_mode = attributes[:'DmlEffectsRenderingMode']
       end
 
-      if attributes.has_key?(:'ZipOutput')
+      if attributes.key?(:'ZipOutput')
         self.zip_output = attributes[:'ZipOutput']
       end
 
-      if attributes.has_key?(:'UpdateLastSavedTimeProperty')
+      if attributes.key?(:'UpdateLastSavedTimeProperty')
         self.update_last_saved_time_property = attributes[:'UpdateLastSavedTimeProperty']
       end
 
-      if attributes.has_key?(:'UpdateSdtContent')
+      if attributes.key?(:'UpdateSdtContent')
         self.update_sdt_content = attributes[:'UpdateSdtContent']
       end
 
-      if attributes.has_key?(:'UpdateFields')
+      if attributes.key?(:'UpdateFields')
         self.update_fields = attributes[:'UpdateFields']
       end
 
-      if attributes.has_key?(:'AllowNegativeIndent')
+      if attributes.key?(:'AllowNegativeIndent')
         self.allow_negative_indent = attributes[:'AllowNegativeIndent']
       end
 
-      if attributes.has_key?(:'CssClassNamePrefix')
+      if attributes.key?(:'CssClassNamePrefix')
         self.css_class_name_prefix = attributes[:'CssClassNamePrefix']
       end
 
-      if attributes.has_key?(:'CssStyleSheetFileName')
+      if attributes.key?(:'CssStyleSheetFileName')
         self.css_style_sheet_file_name = attributes[:'CssStyleSheetFileName']
       end
 
-      if attributes.has_key?(:'CssStyleSheetType')
+      if attributes.key?(:'CssStyleSheetType')
         self.css_style_sheet_type = attributes[:'CssStyleSheetType']
       end
 
-      if attributes.has_key?(:'DocumentSplitCriteria')
+      if attributes.key?(:'DocumentSplitCriteria')
         self.document_split_criteria = attributes[:'DocumentSplitCriteria']
       end
 
-      if attributes.has_key?(:'DocumentSplitHeadingLevel')
+      if attributes.key?(:'DocumentSplitHeadingLevel')
         self.document_split_heading_level = attributes[:'DocumentSplitHeadingLevel']
       end
 
-      if attributes.has_key?(:'Encoding')
+      if attributes.key?(:'Encoding')
         self.encoding = attributes[:'Encoding']
       end
 
-      if attributes.has_key?(:'ExportDocumentProperties')
+      if attributes.key?(:'ExportDocumentProperties')
         self.export_document_properties = attributes[:'ExportDocumentProperties']
       end
 
-      if attributes.has_key?(:'ExportDropDownFormFieldAsText')
+      if attributes.key?(:'ExportDropDownFormFieldAsText')
         self.export_drop_down_form_field_as_text = attributes[:'ExportDropDownFormFieldAsText']
       end
 
-      if attributes.has_key?(:'ExportFontResources')
+      if attributes.key?(:'ExportFontResources')
         self.export_font_resources = attributes[:'ExportFontResources']
       end
 
-      if attributes.has_key?(:'ExportFontsAsBase64')
+      if attributes.key?(:'ExportFontsAsBase64')
         self.export_fonts_as_base64 = attributes[:'ExportFontsAsBase64']
       end
 
-      if attributes.has_key?(:'ExportHeadersFootersMode')
+      if attributes.key?(:'ExportHeadersFootersMode')
         self.export_headers_footers_mode = attributes[:'ExportHeadersFootersMode']
       end
 
-      if attributes.has_key?(:'ExportImagesAsBase64')
+      if attributes.key?(:'ExportImagesAsBase64')
         self.export_images_as_base64 = attributes[:'ExportImagesAsBase64']
       end
 
-      if attributes.has_key?(:'ExportLanguageInformation')
+      if attributes.key?(:'ExportLanguageInformation')
         self.export_language_information = attributes[:'ExportLanguageInformation']
       end
 
-      if attributes.has_key?(:'ExportListLabels')
+      if attributes.key?(:'ExportListLabels')
         self.export_list_labels = attributes[:'ExportListLabels']
       end
 
-      if attributes.has_key?(:'ExportOriginalUrlForLinkedImages')
+      if attributes.key?(:'ExportOriginalUrlForLinkedImages')
         self.export_original_url_for_linked_images = attributes[:'ExportOriginalUrlForLinkedImages']
       end
 
-      if attributes.has_key?(:'ExportPageMargins')
+      if attributes.key?(:'ExportPageMargins')
         self.export_page_margins = attributes[:'ExportPageMargins']
       end
 
-      if attributes.has_key?(:'ExportPageSetup')
+      if attributes.key?(:'ExportPageSetup')
         self.export_page_setup = attributes[:'ExportPageSetup']
       end
 
-      if attributes.has_key?(:'ExportRelativeFontSize')
+      if attributes.key?(:'ExportRelativeFontSize')
         self.export_relative_font_size = attributes[:'ExportRelativeFontSize']
       end
 
-      if attributes.has_key?(:'ExportRoundtripInformation')
+      if attributes.key?(:'ExportRoundtripInformation')
         self.export_roundtrip_information = attributes[:'ExportRoundtripInformation']
       end
 
-      if attributes.has_key?(:'ExportTextBoxAsSvg')
+      if attributes.key?(:'ExportTextBoxAsSvg')
         self.export_text_box_as_svg = attributes[:'ExportTextBoxAsSvg']
       end
 
-      if attributes.has_key?(:'ExportTextInputFormFieldAsText')
+      if attributes.key?(:'ExportTextInputFormFieldAsText')
         self.export_text_input_form_field_as_text = attributes[:'ExportTextInputFormFieldAsText']
       end
 
-      if attributes.has_key?(:'ExportTocPageNumbers')
+      if attributes.key?(:'ExportTocPageNumbers')
         self.export_toc_page_numbers = attributes[:'ExportTocPageNumbers']
       end
 
-      if attributes.has_key?(:'ExportXhtmlTransitional')
+      if attributes.key?(:'ExportXhtmlTransitional')
         self.export_xhtml_transitional = attributes[:'ExportXhtmlTransitional']
       end
 
-      if attributes.has_key?(:'FontResourcesSubsettingSizeThreshold')
+      if attributes.key?(:'FontResourcesSubsettingSizeThreshold')
         self.font_resources_subsetting_size_threshold = attributes[:'FontResourcesSubsettingSizeThreshold']
       end
 
-      if attributes.has_key?(:'FontsFolder')
+      if attributes.key?(:'FontsFolder')
         self.fonts_folder = attributes[:'FontsFolder']
       end
 
-      if attributes.has_key?(:'FontsFolderAlias')
+      if attributes.key?(:'FontsFolderAlias')
         self.fonts_folder_alias = attributes[:'FontsFolderAlias']
       end
 
-      if attributes.has_key?(:'HtmlVersion')
+      if attributes.key?(:'HtmlVersion')
         self.html_version = attributes[:'HtmlVersion']
       end
 
-      if attributes.has_key?(:'ImageResolution')
+      if attributes.key?(:'ImageResolution')
         self.image_resolution = attributes[:'ImageResolution']
       end
 
-      if attributes.has_key?(:'ImagesFolder')
+      if attributes.key?(:'ImagesFolder')
         self.images_folder = attributes[:'ImagesFolder']
       end
 
-      if attributes.has_key?(:'ImagesFolderAlias')
+      if attributes.key?(:'ImagesFolderAlias')
         self.images_folder_alias = attributes[:'ImagesFolderAlias']
       end
 
-      if attributes.has_key?(:'MetafileFormat')
+      if attributes.key?(:'MetafileFormat')
         self.metafile_format = attributes[:'MetafileFormat']
       end
 
-      if attributes.has_key?(:'OfficeMathOutputMode')
+      if attributes.key?(:'OfficeMathOutputMode')
         self.office_math_output_mode = attributes[:'OfficeMathOutputMode']
       end
 
-      if attributes.has_key?(:'PrettyFormat')
+      if attributes.key?(:'PrettyFormat')
         self.pretty_format = attributes[:'PrettyFormat']
       end
 
-      if attributes.has_key?(:'ResourceFolder')
+      if attributes.key?(:'ResourceFolder')
         self.resource_folder = attributes[:'ResourceFolder']
       end
 
-      if attributes.has_key?(:'ResourceFolderAlias')
+      if attributes.key?(:'ResourceFolderAlias')
         self.resource_folder_alias = attributes[:'ResourceFolderAlias']
       end
 
-      if attributes.has_key?(:'ScaleImageToShapeSize')
+      if attributes.key?(:'ScaleImageToShapeSize')
         self.scale_image_to_shape_size = attributes[:'ScaleImageToShapeSize']
       end
 
-      if attributes.has_key?(:'TableWidthOutputMode')
+      if attributes.key?(:'TableWidthOutputMode')
         self.table_width_output_mode = attributes[:'TableWidthOutputMode']
       end
 
@@ -501,18 +501,18 @@ module WordsRubySdk
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properies with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
+      invalid_properties = []
       return invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      html_version_validator = EnumAttributeValidator.new('String', ["Xhtml", "Html5"])
+      html_version_validator = EnumAttributeValidator.new('String', %w("Xhtml", "Html5"))
       return false unless html_version_validator.valid?(@html_version)
-      metafile_format_validator = EnumAttributeValidator.new('String', ["Png", "Svg", "EmfOrWmf"])
+      metafile_format_validator = EnumAttributeValidator.new('String', %w("Png", "Svg", "EmfOrWmf"))
       return false unless metafile_format_validator.valid?(@metafile_format)
-      office_math_output_mode_validator = EnumAttributeValidator.new('String', ["Image", "MathML", "Text"])
+      office_math_output_mode_validator = EnumAttributeValidator.new('String', %w("Image", "MathML", "Text"))
       return false unless office_math_output_mode_validator.valid?(@office_math_output_mode)
       return true
     end
@@ -520,7 +520,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] html_version Object to be assigned
     def html_version=(html_version)
-      validator = EnumAttributeValidator.new('String', ["Xhtml", "Html5"])
+      validator = EnumAttributeValidator.new('String', %w("Xhtml", "Html5"))
       if html_version.to_i == 0
         unless validator.valid?(html_version)
           fail ArgumentError, "invalid value for 'html_version', must be one of #{validator.allowable_values}."
@@ -534,7 +534,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] metafile_format Object to be assigned
     def metafile_format=(metafile_format)
-      validator = EnumAttributeValidator.new('String', ["Png", "Svg", "EmfOrWmf"])
+      validator = EnumAttributeValidator.new('String', %w("Png", "Svg", "EmfOrWmf"))
       if metafile_format.to_i == 0
         unless validator.valid?(metafile_format)
           fail ArgumentError, "invalid value for 'metafile_format', must be one of #{validator.allowable_values}."
@@ -548,7 +548,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] office_math_output_mode Object to be assigned
     def office_math_output_mode=(office_math_output_mode)
-      validator = EnumAttributeValidator.new('String', ["Image", "MathML", "Text"])
+      validator = EnumAttributeValidator.new('String', %w("Image", "MathML", "Text"))
       if office_math_output_mode.to_i == 0
         unless validator.valid?(office_math_output_mode)
           fail ArgumentError, "invalid value for 'office_math_output_mode', must be one of #{validator.allowable_values}."
@@ -561,62 +561,62 @@ module WordsRubySdk
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
-    def ==(o)
-      return true if self.equal?(o)
-      self.class == o.class &&
-          color_mode == o.color_mode &&
-          save_format == o.save_format &&
-          file_name == o.file_name &&
-          dml_rendering_mode == o.dml_rendering_mode &&
-          dml_effects_rendering_mode == o.dml_effects_rendering_mode &&
-          zip_output == o.zip_output &&
-          update_last_saved_time_property == o.update_last_saved_time_property &&
-          update_sdt_content == o.update_sdt_content &&
-          update_fields == o.update_fields &&
-          allow_negative_indent == o.allow_negative_indent &&
-          css_class_name_prefix == o.css_class_name_prefix &&
-          css_style_sheet_file_name == o.css_style_sheet_file_name &&
-          css_style_sheet_type == o.css_style_sheet_type &&
-          document_split_criteria == o.document_split_criteria &&
-          document_split_heading_level == o.document_split_heading_level &&
-          encoding == o.encoding &&
-          export_document_properties == o.export_document_properties &&
-          export_drop_down_form_field_as_text == o.export_drop_down_form_field_as_text &&
-          export_font_resources == o.export_font_resources &&
-          export_fonts_as_base64 == o.export_fonts_as_base64 &&
-          export_headers_footers_mode == o.export_headers_footers_mode &&
-          export_images_as_base64 == o.export_images_as_base64 &&
-          export_language_information == o.export_language_information &&
-          export_list_labels == o.export_list_labels &&
-          export_original_url_for_linked_images == o.export_original_url_for_linked_images &&
-          export_page_margins == o.export_page_margins &&
-          export_page_setup == o.export_page_setup &&
-          export_relative_font_size == o.export_relative_font_size &&
-          export_roundtrip_information == o.export_roundtrip_information &&
-          export_text_box_as_svg == o.export_text_box_as_svg &&
-          export_text_input_form_field_as_text == o.export_text_input_form_field_as_text &&
-          export_toc_page_numbers == o.export_toc_page_numbers &&
-          export_xhtml_transitional == o.export_xhtml_transitional &&
-          font_resources_subsetting_size_threshold == o.font_resources_subsetting_size_threshold &&
-          fonts_folder == o.fonts_folder &&
-          fonts_folder_alias == o.fonts_folder_alias &&
-          html_version == o.html_version &&
-          image_resolution == o.image_resolution &&
-          images_folder == o.images_folder &&
-          images_folder_alias == o.images_folder_alias &&
-          metafile_format == o.metafile_format &&
-          office_math_output_mode == o.office_math_output_mode &&
-          pretty_format == o.pretty_format &&
-          resource_folder == o.resource_folder &&
-          resource_folder_alias == o.resource_folder_alias &&
-          scale_image_to_shape_size == o.scale_image_to_shape_size &&
-          table_width_output_mode == o.table_width_output_mode
+    def ==(other)
+      return true if self.equal?(other)
+      self.class == other.class &&
+          color_mode == other.color_mode &&
+          save_format == other.save_format &&
+          file_name == other.file_name &&
+          dml_rendering_mode == other.dml_rendering_mode &&
+          dml_effects_rendering_mode == other.dml_effects_rendering_mode &&
+          zip_output == other.zip_output &&
+          update_last_saved_time_property == other.update_last_saved_time_property &&
+          update_sdt_content == other.update_sdt_content &&
+          update_fields == other.update_fields &&
+          allow_negative_indent == other.allow_negative_indent &&
+          css_class_name_prefix == other.css_class_name_prefix &&
+          css_style_sheet_file_name == other.css_style_sheet_file_name &&
+          css_style_sheet_type == other.css_style_sheet_type &&
+          document_split_criteria == other.document_split_criteria &&
+          document_split_heading_level == other.document_split_heading_level &&
+          encoding == other.encoding &&
+          export_document_properties == other.export_document_properties &&
+          export_drop_down_form_field_as_text == other.export_drop_down_form_field_as_text &&
+          export_font_resources == other.export_font_resources &&
+          export_fonts_as_base64 == other.export_fonts_as_base64 &&
+          export_headers_footers_mode == other.export_headers_footers_mode &&
+          export_images_as_base64 == other.export_images_as_base64 &&
+          export_language_information == other.export_language_information &&
+          export_list_labels == other.export_list_labels &&
+          export_original_url_for_linked_images == other.export_original_url_for_linked_images &&
+          export_page_margins == other.export_page_margins &&
+          export_page_setup == other.export_page_setup &&
+          export_relative_font_size == other.export_relative_font_size &&
+          export_roundtrip_information == other.export_roundtrip_information &&
+          export_text_box_as_svg == other.export_text_box_as_svg &&
+          export_text_input_form_field_as_text == other.export_text_input_form_field_as_text &&
+          export_toc_page_numbers == other.export_toc_page_numbers &&
+          export_xhtml_transitional == other.export_xhtml_transitional &&
+          font_resources_subsetting_size_threshold == other.font_resources_subsetting_size_threshold &&
+          fonts_folder == other.fonts_folder &&
+          fonts_folder_alias == other.fonts_folder_alias &&
+          html_version == other.html_version &&
+          image_resolution == other.image_resolution &&
+          images_folder == other.images_folder &&
+          images_folder_alias == other.images_folder_alias &&
+          metafile_format == other.metafile_format &&
+          office_math_output_mode == other.office_math_output_mode &&
+          pretty_format == other.pretty_format &&
+          resource_folder == other.resource_folder &&
+          resource_folder_alias == other.resource_folder_alias &&
+          scale_image_to_shape_size == other.scale_image_to_shape_size &&
+          table_width_output_mode == other.table_width_output_mode
     end
 
     # @see the `==` method
     # @param [Object] Object to be compared
-    def eql?(o)
-      self == o
+    def eql?(other)
+      self == other
     end
 
     # Calculates hash code according to all attributes.
@@ -635,11 +635,12 @@ module WordsRubySdk
           # check to ensure the input is an array given that the the attribute
           # is documented as an array but the input is not
           if attributes[self.class.attribute_map[key]].is_a?(Array)
-            self.send("#{key}=", attributes[self.class.attribute_map[key]].map{ |v| _deserialize($1, v) } )
+            self.send("#{key}=", attributes[self.class.attribute_map[key]].map { |v| _deserialize($1, v) })
           end
         elsif !attributes[self.class.attribute_map[key]].nil?
           self.send("#{key}=", _deserialize(type, attributes[self.class.attribute_map[key]]))
-        end # or else data not found in attributes(hash), not an issue as the data can be optional
+        end
+		# or else data not found in attributes(hash), not an issue as the data can be optional
       end
 
       self
@@ -681,7 +682,8 @@ module WordsRubySdk
             hash[_deserialize(k_type, k)] = _deserialize(v_type, v)
           end
         end
-      else # model
+      else
+	  # model
         temp_model = WordsRubySdk.const_get(type).new
         temp_model.build_from_hash(value)
       end
@@ -717,7 +719,7 @@ module WordsRubySdk
     # @return [Hash] Returns the value in the form of hash
     def _to_hash(value)
       if value.is_a?(Array)
-        value.compact.map{ |v| _to_hash(v) }
+        value.compact.map { |v| _to_hash(v) }
       elsif value.is_a?(Hash)
         {}.tap do |hash|
           value.each { |k, v| hash[k] = _to_hash(v) }

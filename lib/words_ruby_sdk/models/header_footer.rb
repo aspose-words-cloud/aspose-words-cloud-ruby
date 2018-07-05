@@ -14,10 +14,10 @@ module WordsRubySdk
  #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  #  copies of the Software, and to permit persons to whom the Software is
  #  furnished to do so, subject to the following conditions:
- # 
+ #
  #  The above copyright notice and this permission notice shall be included in all
  #  copies or substantial portions of the Software.
- # 
+ #
  #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -91,21 +91,21 @@ module WordsRubySdk
       return unless attributes.is_a?(Hash)
 
       # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
+      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'link')
+      if attributes.key?(:'link')
         self.link = attributes[:'link']
       end
 
-      if attributes.has_key?(:'Type')
+      if attributes.key?(:'Type')
         self.type = attributes[:'Type']
       end
 
-      if attributes.has_key?(:'DrawingObjects')
+      if attributes.key?(:'DrawingObjects')
         self.drawing_objects = attributes[:'DrawingObjects']
       end
 
-      if attributes.has_key?(:'Paragraphs')
+      if attributes.key?(:'Paragraphs')
         self.paragraphs = attributes[:'Paragraphs']
       end
 
@@ -114,14 +114,14 @@ module WordsRubySdk
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properies with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
+      invalid_properties = []
       return invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      type_validator = EnumAttributeValidator.new('String', ["HeaderEven", "HeaderPrimary", "FooterEven", "FooterPrimary", "HeaderFirst", "FooterFirst"])
+      type_validator = EnumAttributeValidator.new('String', %w("HeaderEven", "HeaderPrimary", "FooterEven", "FooterPrimary", "HeaderFirst", "FooterFirst"))
       return false unless type_validator.valid?(@type)
       return true
     end
@@ -129,7 +129,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] type Object to be assigned
     def type=(type)
-      validator = EnumAttributeValidator.new('String', ["HeaderEven", "HeaderPrimary", "FooterEven", "FooterPrimary", "HeaderFirst", "FooterFirst"])
+      validator = EnumAttributeValidator.new('String', %w("HeaderEven", "HeaderPrimary", "FooterEven", "FooterPrimary", "HeaderFirst", "FooterFirst"))
       if type.to_i == 0
         unless validator.valid?(type)
           fail ArgumentError, "invalid value for 'type', must be one of #{validator.allowable_values}."
@@ -142,19 +142,19 @@ module WordsRubySdk
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
-    def ==(o)
-      return true if self.equal?(o)
-      self.class == o.class &&
-          link == o.link &&
-          type == o.type &&
-          drawing_objects == o.drawing_objects &&
-          paragraphs == o.paragraphs
+    def ==(other)
+      return true if self.equal?(other)
+      self.class == other.class &&
+          link == other.link &&
+          type == other.type &&
+          drawing_objects == other.drawing_objects &&
+          paragraphs == other.paragraphs
     end
 
     # @see the `==` method
     # @param [Object] Object to be compared
-    def eql?(o)
-      self == o
+    def eql?(other)
+      self == other
     end
 
     # Calculates hash code according to all attributes.
@@ -173,11 +173,12 @@ module WordsRubySdk
           # check to ensure the input is an array given that the the attribute
           # is documented as an array but the input is not
           if attributes[self.class.attribute_map[key]].is_a?(Array)
-            self.send("#{key}=", attributes[self.class.attribute_map[key]].map{ |v| _deserialize($1, v) } )
+            self.send("#{key}=", attributes[self.class.attribute_map[key]].map { |v| _deserialize($1, v) })
           end
         elsif !attributes[self.class.attribute_map[key]].nil?
           self.send("#{key}=", _deserialize(type, attributes[self.class.attribute_map[key]]))
-        end # or else data not found in attributes(hash), not an issue as the data can be optional
+        end
+		# or else data not found in attributes(hash), not an issue as the data can be optional
       end
 
       self
@@ -219,7 +220,8 @@ module WordsRubySdk
             hash[_deserialize(k_type, k)] = _deserialize(v_type, v)
           end
         end
-      else # model
+      else
+	  # model
         temp_model = WordsRubySdk.const_get(type).new
         temp_model.build_from_hash(value)
       end
@@ -255,7 +257,7 @@ module WordsRubySdk
     # @return [Hash] Returns the value in the form of hash
     def _to_hash(value)
       if value.is_a?(Array)
-        value.compact.map{ |v| _to_hash(v) }
+        value.compact.map { |v| _to_hash(v) }
       elsif value.is_a?(Hash)
         {}.tap do |hash|
           value.each { |k, v| hash[k] = _to_hash(v) }

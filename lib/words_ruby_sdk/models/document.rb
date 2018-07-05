@@ -14,10 +14,10 @@ module WordsRubySdk
  #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  #  copies of the Software, and to permit persons to whom the Software is
  #  furnished to do so, subject to the following conditions:
- # 
+ #
  #  The above copyright notice and this permission notice shall be included in all
  #  copies or substantial portions of the Software.
- # 
+ #
  #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -101,31 +101,31 @@ module WordsRubySdk
       return unless attributes.is_a?(Hash)
 
       # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
+      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'Links')
+      if attributes.key?(:'Links')
         if (value = attributes[:'Links']).is_a?(Array)
           self.links = value
         end
       end
 
-      if attributes.has_key?(:'FileName')
+      if attributes.key?(:'FileName')
         self.file_name = attributes[:'FileName']
       end
 
-      if attributes.has_key?(:'SourceFormat')
+      if attributes.key?(:'SourceFormat')
         self.source_format = attributes[:'SourceFormat']
       end
 
-      if attributes.has_key?(:'IsEncrypted')
+      if attributes.key?(:'IsEncrypted')
         self.is_encrypted = attributes[:'IsEncrypted']
       end
 
-      if attributes.has_key?(:'IsSigned')
+      if attributes.key?(:'IsSigned')
         self.is_signed = attributes[:'IsSigned']
       end
 
-      if attributes.has_key?(:'DocumentProperties')
+      if attributes.key?(:'DocumentProperties')
         self.document_properties = attributes[:'DocumentProperties']
       end
 
@@ -134,7 +134,7 @@ module WordsRubySdk
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properies with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
+      invalid_properties = []
       if @source_format.nil?
         invalid_properties.push("invalid value for 'source_format', source_format cannot be nil.")
       end
@@ -154,7 +154,7 @@ module WordsRubySdk
     # @return true if the model is valid
     def valid?
       return false if @source_format.nil?
-      source_format_validator = EnumAttributeValidator.new('String', ["Unknown", "Doc", "Dot", "DocPreWord60", "Docx", "Docm", "Dotx", "Dotm", "FlatOpc", "Rtf", "WordML", "Html", "Mhtml", "Epub", "Text", "Odt", "Ott", "Pdf", "Xps", "Tiff", "Svg"])
+      source_format_validator = EnumAttributeValidator.new('String', %w("Unknown", "Doc", "Dot", "DocPreWord60", "Docx", "Docm", "Dotx", "Dotm", "FlatOpc", "Rtf", "WordML", "Html", "Mhtml", "Epub", "Text", "Odt", "Ott", "Pdf", "Xps", "Tiff", "Svg"))
       return false unless source_format_validator.valid?(@source_format)
       return false if @is_encrypted.nil?
       return false if @is_signed.nil?
@@ -164,7 +164,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] source_format Object to be assigned
     def source_format=(source_format)
-      validator = EnumAttributeValidator.new('String', ["Unknown", "Doc", "Dot", "DocPreWord60", "Docx", "Docm", "Dotx", "Dotm", "FlatOpc", "Rtf", "WordML", "Html", "Mhtml", "Epub", "Text", "Odt", "Ott", "Pdf", "Xps", "Tiff", "Svg"])
+      validator = EnumAttributeValidator.new('String', %w("Unknown", "Doc", "Dot", "DocPreWord60", "Docx", "Docm", "Dotx", "Dotm", "FlatOpc", "Rtf", "WordML", "Html", "Mhtml", "Epub", "Text", "Odt", "Ott", "Pdf", "Xps", "Tiff", "Svg"))
       if source_format.to_i == 0
         unless validator.valid?(source_format)
           fail ArgumentError, "invalid value for 'source_format', must be one of #{validator.allowable_values}."
@@ -177,21 +177,21 @@ module WordsRubySdk
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
-    def ==(o)
-      return true if self.equal?(o)
-      self.class == o.class &&
-          links == o.links &&
-          file_name == o.file_name &&
-          source_format == o.source_format &&
-          is_encrypted == o.is_encrypted &&
-          is_signed == o.is_signed &&
-          document_properties == o.document_properties
+    def ==(other)
+      return true if self.equal?(other)
+      self.class == other.class &&
+          links == other.links &&
+          file_name == other.file_name &&
+          source_format == other.source_format &&
+          is_encrypted == other.is_encrypted &&
+          is_signed == other.is_signed &&
+          document_properties == other.document_properties
     end
 
     # @see the `==` method
     # @param [Object] Object to be compared
-    def eql?(o)
-      self == o
+    def eql?(other)
+      self == other
     end
 
     # Calculates hash code according to all attributes.
@@ -210,11 +210,12 @@ module WordsRubySdk
           # check to ensure the input is an array given that the the attribute
           # is documented as an array but the input is not
           if attributes[self.class.attribute_map[key]].is_a?(Array)
-            self.send("#{key}=", attributes[self.class.attribute_map[key]].map{ |v| _deserialize($1, v) } )
+            self.send("#{key}=", attributes[self.class.attribute_map[key]].map { |v| _deserialize($1, v) })
           end
         elsif !attributes[self.class.attribute_map[key]].nil?
           self.send("#{key}=", _deserialize(type, attributes[self.class.attribute_map[key]]))
-        end # or else data not found in attributes(hash), not an issue as the data can be optional
+        end
+		# or else data not found in attributes(hash), not an issue as the data can be optional
       end
 
       self
@@ -256,7 +257,8 @@ module WordsRubySdk
             hash[_deserialize(k_type, k)] = _deserialize(v_type, v)
           end
         end
-      else # model
+      else
+	  # model
         temp_model = WordsRubySdk.const_get(type).new
         temp_model.build_from_hash(value)
       end
@@ -292,7 +294,7 @@ module WordsRubySdk
     # @return [Hash] Returns the value in the form of hash
     def _to_hash(value)
       if value.is_a?(Array)
-        value.compact.map{ |v| _to_hash(v) }
+        value.compact.map { |v| _to_hash(v) }
       elsif value.is_a?(Hash)
         {}.tap do |hash|
           value.each { |k, v| hash[k] = _to_hash(v) }

@@ -14,10 +14,10 @@ module WordsRubySdk
  #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  #  copies of the Software, and to permit persons to whom the Software is
  #  furnished to do so, subject to the following conditions:
- # 
+ #
  #  The above copyright notice and this permission notice shall be included in all
  #  copies or substantial portions of the Software.
- # 
+ #
  #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -200,125 +200,125 @@ module WordsRubySdk
       return unless attributes.is_a?(Hash)
 
       # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
+      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'ColorMode')
+      if attributes.key?(:'ColorMode')
         self.color_mode = attributes[:'ColorMode']
       end
 
-      if attributes.has_key?(:'SaveFormat')
+      if attributes.key?(:'SaveFormat')
         self.save_format = attributes[:'SaveFormat']
       end
 
-      if attributes.has_key?(:'FileName')
+      if attributes.key?(:'FileName')
         self.file_name = attributes[:'FileName']
       end
 
-      if attributes.has_key?(:'DmlRenderingMode')
+      if attributes.key?(:'DmlRenderingMode')
         self.dml_rendering_mode = attributes[:'DmlRenderingMode']
       end
 
-      if attributes.has_key?(:'DmlEffectsRenderingMode')
+      if attributes.key?(:'DmlEffectsRenderingMode')
         self.dml_effects_rendering_mode = attributes[:'DmlEffectsRenderingMode']
       end
 
-      if attributes.has_key?(:'ZipOutput')
+      if attributes.key?(:'ZipOutput')
         self.zip_output = attributes[:'ZipOutput']
       end
 
-      if attributes.has_key?(:'UpdateLastSavedTimeProperty')
+      if attributes.key?(:'UpdateLastSavedTimeProperty')
         self.update_last_saved_time_property = attributes[:'UpdateLastSavedTimeProperty']
       end
 
-      if attributes.has_key?(:'UpdateSdtContent')
+      if attributes.key?(:'UpdateSdtContent')
         self.update_sdt_content = attributes[:'UpdateSdtContent']
       end
 
-      if attributes.has_key?(:'UpdateFields')
+      if attributes.key?(:'UpdateFields')
         self.update_fields = attributes[:'UpdateFields']
       end
 
-      if attributes.has_key?(:'JpegQuality')
+      if attributes.key?(:'JpegQuality')
         self.jpeg_quality = attributes[:'JpegQuality']
       end
 
-      if attributes.has_key?(:'MetafileRenderingOptions')
+      if attributes.key?(:'MetafileRenderingOptions')
         self.metafile_rendering_options = attributes[:'MetafileRenderingOptions']
       end
 
-      if attributes.has_key?(:'NumeralFormat')
+      if attributes.key?(:'NumeralFormat')
         self.numeral_format = attributes[:'NumeralFormat']
       end
 
-      if attributes.has_key?(:'OptimizeOutput')
+      if attributes.key?(:'OptimizeOutput')
         self.optimize_output = attributes[:'OptimizeOutput']
       end
 
-      if attributes.has_key?(:'PageCount')
+      if attributes.key?(:'PageCount')
         self.page_count = attributes[:'PageCount']
       end
 
-      if attributes.has_key?(:'PageIndex')
+      if attributes.key?(:'PageIndex')
         self.page_index = attributes[:'PageIndex']
       end
 
-      if attributes.has_key?(:'GraphicsQualityOptions')
+      if attributes.key?(:'GraphicsQualityOptions')
         self.graphics_quality_options = attributes[:'GraphicsQualityOptions']
       end
 
-      if attributes.has_key?(:'HorizontalResolution')
+      if attributes.key?(:'HorizontalResolution')
         self.horizontal_resolution = attributes[:'HorizontalResolution']
       end
 
-      if attributes.has_key?(:'ImageBrightness')
+      if attributes.key?(:'ImageBrightness')
         self.image_brightness = attributes[:'ImageBrightness']
       end
 
-      if attributes.has_key?(:'ImageColorMode')
+      if attributes.key?(:'ImageColorMode')
         self.image_color_mode = attributes[:'ImageColorMode']
       end
 
-      if attributes.has_key?(:'ImageContrast')
+      if attributes.key?(:'ImageContrast')
         self.image_contrast = attributes[:'ImageContrast']
       end
 
-      if attributes.has_key?(:'PaperColor')
+      if attributes.key?(:'PaperColor')
         self.paper_color = attributes[:'PaperColor']
       end
 
-      if attributes.has_key?(:'PixelFormat')
+      if attributes.key?(:'PixelFormat')
         self.pixel_format = attributes[:'PixelFormat']
       end
 
-      if attributes.has_key?(:'Resolution')
+      if attributes.key?(:'Resolution')
         self.resolution = attributes[:'Resolution']
       end
 
-      if attributes.has_key?(:'Scale')
+      if attributes.key?(:'Scale')
         self.scale = attributes[:'Scale']
       end
 
-      if attributes.has_key?(:'UseAntiAliasing')
+      if attributes.key?(:'UseAntiAliasing')
         self.use_anti_aliasing = attributes[:'UseAntiAliasing']
       end
 
-      if attributes.has_key?(:'UseGdiEmfRenderer')
+      if attributes.key?(:'UseGdiEmfRenderer')
         self.use_gdi_emf_renderer = attributes[:'UseGdiEmfRenderer']
       end
 
-      if attributes.has_key?(:'UseHighQualityRendering')
+      if attributes.key?(:'UseHighQualityRendering')
         self.use_high_quality_rendering = attributes[:'UseHighQualityRendering']
       end
 
-      if attributes.has_key?(:'VerticalResolution')
+      if attributes.key?(:'VerticalResolution')
         self.vertical_resolution = attributes[:'VerticalResolution']
       end
 
-      if attributes.has_key?(:'TiffBinarizationMethod')
+      if attributes.key?(:'TiffBinarizationMethod')
         self.tiff_binarization_method = attributes[:'TiffBinarizationMethod']
       end
 
-      if attributes.has_key?(:'TiffCompression')
+      if attributes.key?(:'TiffCompression')
         self.tiff_compression = attributes[:'TiffCompression']
       end
 
@@ -327,7 +327,7 @@ module WordsRubySdk
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properies with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
+      invalid_properties = []
       return invalid_properties
     end
 
@@ -339,45 +339,45 @@ module WordsRubySdk
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
-    def ==(o)
-      return true if self.equal?(o)
-      self.class == o.class &&
-          color_mode == o.color_mode &&
-          save_format == o.save_format &&
-          file_name == o.file_name &&
-          dml_rendering_mode == o.dml_rendering_mode &&
-          dml_effects_rendering_mode == o.dml_effects_rendering_mode &&
-          zip_output == o.zip_output &&
-          update_last_saved_time_property == o.update_last_saved_time_property &&
-          update_sdt_content == o.update_sdt_content &&
-          update_fields == o.update_fields &&
-          jpeg_quality == o.jpeg_quality &&
-          metafile_rendering_options == o.metafile_rendering_options &&
-          numeral_format == o.numeral_format &&
-          optimize_output == o.optimize_output &&
-          page_count == o.page_count &&
-          page_index == o.page_index &&
-          graphics_quality_options == o.graphics_quality_options &&
-          horizontal_resolution == o.horizontal_resolution &&
-          image_brightness == o.image_brightness &&
-          image_color_mode == o.image_color_mode &&
-          image_contrast == o.image_contrast &&
-          paper_color == o.paper_color &&
-          pixel_format == o.pixel_format &&
-          resolution == o.resolution &&
-          scale == o.scale &&
-          use_anti_aliasing == o.use_anti_aliasing &&
-          use_gdi_emf_renderer == o.use_gdi_emf_renderer &&
-          use_high_quality_rendering == o.use_high_quality_rendering &&
-          vertical_resolution == o.vertical_resolution &&
-          tiff_binarization_method == o.tiff_binarization_method &&
-          tiff_compression == o.tiff_compression
+    def ==(other)
+      return true if self.equal?(other)
+      self.class == other.class &&
+          color_mode == other.color_mode &&
+          save_format == other.save_format &&
+          file_name == other.file_name &&
+          dml_rendering_mode == other.dml_rendering_mode &&
+          dml_effects_rendering_mode == other.dml_effects_rendering_mode &&
+          zip_output == other.zip_output &&
+          update_last_saved_time_property == other.update_last_saved_time_property &&
+          update_sdt_content == other.update_sdt_content &&
+          update_fields == other.update_fields &&
+          jpeg_quality == other.jpeg_quality &&
+          metafile_rendering_options == other.metafile_rendering_options &&
+          numeral_format == other.numeral_format &&
+          optimize_output == other.optimize_output &&
+          page_count == other.page_count &&
+          page_index == other.page_index &&
+          graphics_quality_options == other.graphics_quality_options &&
+          horizontal_resolution == other.horizontal_resolution &&
+          image_brightness == other.image_brightness &&
+          image_color_mode == other.image_color_mode &&
+          image_contrast == other.image_contrast &&
+          paper_color == other.paper_color &&
+          pixel_format == other.pixel_format &&
+          resolution == other.resolution &&
+          scale == other.scale &&
+          use_anti_aliasing == other.use_anti_aliasing &&
+          use_gdi_emf_renderer == other.use_gdi_emf_renderer &&
+          use_high_quality_rendering == other.use_high_quality_rendering &&
+          vertical_resolution == other.vertical_resolution &&
+          tiff_binarization_method == other.tiff_binarization_method &&
+          tiff_compression == other.tiff_compression
     end
 
     # @see the `==` method
     # @param [Object] Object to be compared
-    def eql?(o)
-      self == o
+    def eql?(other)
+      self == other
     end
 
     # Calculates hash code according to all attributes.
@@ -396,11 +396,12 @@ module WordsRubySdk
           # check to ensure the input is an array given that the the attribute
           # is documented as an array but the input is not
           if attributes[self.class.attribute_map[key]].is_a?(Array)
-            self.send("#{key}=", attributes[self.class.attribute_map[key]].map{ |v| _deserialize($1, v) } )
+            self.send("#{key}=", attributes[self.class.attribute_map[key]].map { |v| _deserialize($1, v) })
           end
         elsif !attributes[self.class.attribute_map[key]].nil?
           self.send("#{key}=", _deserialize(type, attributes[self.class.attribute_map[key]]))
-        end # or else data not found in attributes(hash), not an issue as the data can be optional
+        end
+		# or else data not found in attributes(hash), not an issue as the data can be optional
       end
 
       self
@@ -442,7 +443,8 @@ module WordsRubySdk
             hash[_deserialize(k_type, k)] = _deserialize(v_type, v)
           end
         end
-      else # model
+      else
+	  # model
         temp_model = WordsRubySdk.const_get(type).new
         temp_model.build_from_hash(value)
       end
@@ -478,7 +480,7 @@ module WordsRubySdk
     # @return [Hash] Returns the value in the form of hash
     def _to_hash(value)
       if value.is_a?(Array)
-        value.compact.map{ |v| _to_hash(v) }
+        value.compact.map { |v| _to_hash(v) }
       elsif value.is_a?(Hash)
         {}.tap do |hash|
           value.each { |k, v| hash[k] = _to_hash(v) }

@@ -53,17 +53,11 @@ module WordsRubySdk
     # @return [Array<(RevisionsModificationResponse, Fixnum, Hash)>]
     # RevisionsModificationResponse data, response status code and response headers
     private def accept_all_revisions_with_http_info(request)
-      unless request.is_a? AcceptAllRevisionsRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? AcceptAllRevisionsRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.accept_all_revisions ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.accept_all_revisions ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.accept_all_revisions'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.accept_all_revisions' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
       local_var_path = '/words/{name}/revisions/acceptAll'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -110,12 +104,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'RevisionsModificationResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'RevisionsModificationResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#accept_all_revisions\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -138,17 +132,11 @@ module WordsRubySdk
     # @return [Array<(ClassificationResponse, Fixnum, Hash)>]
     # ClassificationResponse data, response status code and response headers
     private def classify_with_http_info(request)
-      unless request.is_a? ClassifyRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? ClassifyRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.classify ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.classify ...' if @api_client.config.debugging
       # verify the required parameter 'text' is set
-      if @api_client.config.client_side_validation && request.text.nil?
-        raise ArgumentError, 'Missing the required parameter text when calling WordsApi.classify'
-      end
+      raise ArgumentError, 'Missing the required parameter text when calling WordsApi.classify' if @api_client.config.client_side_validation && request.text.nil?
       # resource path
       local_var_path = '/words/classify'
 
@@ -174,12 +162,12 @@ module WordsRubySdk
       post_body = @api_client.object_to_http_body(request.text)
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'ClassificationResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'ClassificationResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#classify\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -202,17 +190,11 @@ module WordsRubySdk
     # @return [Array<(ClassificationResponse, Fixnum, Hash)>]
     # ClassificationResponse data, response status code and response headers
     private def classify_document_with_http_info(request)
-      unless request.is_a? ClassifyDocumentRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? ClassifyDocumentRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.classify_document ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.classify_document ...' if @api_client.config.debugging
       # verify the required parameter 'document_name' is set
-      if @api_client.config.client_side_validation && request.document_name.nil?
-        raise ArgumentError, 'Missing the required parameter document_name when calling WordsApi.classify_document'
-      end
+      raise ArgumentError, 'Missing the required parameter document_name when calling WordsApi.classify_document' if @api_client.config.client_side_validation && request.document_name.nil?
       # resource path
       local_var_path = '/words/{documentName}/classify'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('DocumentName') + '}', request.document_name.to_s)
@@ -259,12 +241,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'ClassificationResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'ClassificationResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#classify_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -287,25 +269,15 @@ module WordsRubySdk
     # @return [Array<(DocumentPropertyResponse, Fixnum, Hash)>]
     # DocumentPropertyResponse data, response status code and response headers
     private def create_or_update_document_property_with_http_info(request)
-      unless request.is_a? CreateOrUpdateDocumentPropertyRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? CreateOrUpdateDocumentPropertyRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.create_or_update_document_property ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.create_or_update_document_property ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.create_or_update_document_property'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.create_or_update_document_property' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'property_name' is set
-      if @api_client.config.client_side_validation && request.property_name.nil?
-        raise ArgumentError, 'Missing the required parameter property_name when calling WordsApi.create_or_update_document_property'
-      end
+      raise ArgumentError, 'Missing the required parameter property_name when calling WordsApi.create_or_update_document_property' if @api_client.config.client_side_validation && request.property_name.nil?
       # verify the required parameter 'property' is set
-      if @api_client.config.client_side_validation && request.property.nil?
-        raise ArgumentError, 'Missing the required parameter property when calling WordsApi.create_or_update_document_property'
-      end
+      raise ArgumentError, 'Missing the required parameter property when calling WordsApi.create_or_update_document_property' if @api_client.config.client_side_validation && request.property.nil?
       # resource path
       local_var_path = '/words/{name}/documentProperties/{propertyName}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -363,12 +335,12 @@ module WordsRubySdk
       post_body = @api_client.object_to_http_body(request.property)
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'DocumentPropertyResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DocumentPropertyResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#create_or_update_document_property\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -391,25 +363,15 @@ module WordsRubySdk
     # @return [Array<(BorderResponse, Fixnum, Hash)>]
     # BorderResponse data, response status code and response headers
     private def delete_border_with_http_info(request)
-      unless request.is_a? DeleteBorderRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteBorderRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.delete_border ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.delete_border ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_border'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_border' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'node_path' is set
-      if @api_client.config.client_side_validation && request.node_path.nil?
-        raise ArgumentError, 'Missing the required parameter node_path when calling WordsApi.delete_border'
-      end
+      raise ArgumentError, 'Missing the required parameter node_path when calling WordsApi.delete_border' if @api_client.config.client_side_validation && request.node_path.nil?
       # verify the required parameter 'index' is set
-      if @api_client.config.client_side_validation && request.index.nil?
-        raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_border'
-      end
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_border' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/borders/{index}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -468,12 +430,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'BorderResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'BorderResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#delete_border\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -496,21 +458,13 @@ module WordsRubySdk
     # @return [Array<(BordersResponse, Fixnum, Hash)>]
     # BordersResponse data, response status code and response headers
     private def delete_borders_with_http_info(request)
-      unless request.is_a? DeleteBordersRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteBordersRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.delete_borders ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.delete_borders ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_borders'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_borders' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'node_path' is set
-      if @api_client.config.client_side_validation && request.node_path.nil?
-        raise ArgumentError, 'Missing the required parameter node_path when calling WordsApi.delete_borders'
-      end
+      raise ArgumentError, 'Missing the required parameter node_path when calling WordsApi.delete_borders' if @api_client.config.client_side_validation && request.node_path.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/borders'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -568,12 +522,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'BordersResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'BordersResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#delete_borders\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -596,21 +550,13 @@ module WordsRubySdk
     # @return [Array<(AsposeResponse, Fixnum, Hash)>]
     # AsposeResponse data, response status code and response headers
     private def delete_comment_with_http_info(request)
-      unless request.is_a? DeleteCommentRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteCommentRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.delete_comment ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.delete_comment ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_comment'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_comment' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'comment_index' is set
-      if @api_client.config.client_side_validation && request.comment_index.nil?
-        raise ArgumentError, 'Missing the required parameter comment_index when calling WordsApi.delete_comment'
-      end
+      raise ArgumentError, 'Missing the required parameter comment_index when calling WordsApi.delete_comment' if @api_client.config.client_side_validation && request.comment_index.nil?
       # resource path
       local_var_path = '/words/{name}/comments/{commentIndex}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -668,12 +614,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'AsposeResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'AsposeResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#delete_comment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -696,17 +642,11 @@ module WordsRubySdk
     # @return [Array<(AsposeResponse, Fixnum, Hash)>]
     # AsposeResponse data, response status code and response headers
     private def delete_document_macros_with_http_info(request)
-      unless request.is_a? DeleteDocumentMacrosRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteDocumentMacrosRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.delete_document_macros ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.delete_document_macros ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_document_macros'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_document_macros' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
       local_var_path = '/words/{name}/macros'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -763,12 +703,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'AsposeResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'AsposeResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#delete_document_macros\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -791,21 +731,13 @@ module WordsRubySdk
     # @return [Array<(AsposeResponse, Fixnum, Hash)>]
     # AsposeResponse data, response status code and response headers
     private def delete_document_property_with_http_info(request)
-      unless request.is_a? DeleteDocumentPropertyRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteDocumentPropertyRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.delete_document_property ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.delete_document_property ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_document_property'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_document_property' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'property_name' is set
-      if @api_client.config.client_side_validation && request.property_name.nil?
-        raise ArgumentError, 'Missing the required parameter property_name when calling WordsApi.delete_document_property'
-      end
+      raise ArgumentError, 'Missing the required parameter property_name when calling WordsApi.delete_document_property' if @api_client.config.client_side_validation && request.property_name.nil?
       # resource path
       local_var_path = '/words/{name}/documentProperties/{propertyName}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -863,12 +795,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'AsposeResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'AsposeResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#delete_document_property\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -891,17 +823,11 @@ module WordsRubySdk
     # @return [Array<(DocumentResponse, Fixnum, Hash)>]
     # DocumentResponse data, response status code and response headers
     private def delete_document_watermark_with_http_info(request)
-      unless request.is_a? DeleteDocumentWatermarkRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteDocumentWatermarkRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.delete_document_watermark ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.delete_document_watermark ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_document_watermark'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_document_watermark' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
       local_var_path = '/words/{name}/watermark'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -958,12 +884,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'DocumentResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DocumentResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#delete_document_watermark\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -986,21 +912,13 @@ module WordsRubySdk
     # @return [Array<(AsposeResponse, Fixnum, Hash)>]
     # AsposeResponse data, response status code and response headers
     private def delete_drawing_object_with_http_info(request)
-      unless request.is_a? DeleteDrawingObjectRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteDrawingObjectRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.delete_drawing_object ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.delete_drawing_object ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_drawing_object'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_drawing_object' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'index' is set
-      if @api_client.config.client_side_validation && request.index.nil?
-        raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_drawing_object'
-      end
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_drawing_object' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/drawingObjects/{index}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -1063,12 +981,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'AsposeResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'AsposeResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#delete_drawing_object\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -1091,21 +1009,13 @@ module WordsRubySdk
     # @return [Array<(AsposeResponse, Fixnum, Hash)>]
     # AsposeResponse data, response status code and response headers
     private def delete_field_with_http_info(request)
-      unless request.is_a? DeleteFieldRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteFieldRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.delete_field ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.delete_field ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_field'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_field' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'index' is set
-      if @api_client.config.client_side_validation && request.index.nil?
-        raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_field'
-      end
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_field' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/fields/{index}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -1168,12 +1078,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'AsposeResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'AsposeResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#delete_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -1196,17 +1106,11 @@ module WordsRubySdk
     # @return [Array<(AsposeResponse, Fixnum, Hash)>]
     # AsposeResponse data, response status code and response headers
     private def delete_fields_with_http_info(request)
-      unless request.is_a? DeleteFieldsRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteFieldsRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.delete_fields ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.delete_fields ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_fields'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_fields' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/fields'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -1268,12 +1172,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'AsposeResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'AsposeResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#delete_fields\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -1296,21 +1200,13 @@ module WordsRubySdk
     # @return [Array<(AsposeResponse, Fixnum, Hash)>]
     # AsposeResponse data, response status code and response headers
     private def delete_footnote_with_http_info(request)
-      unless request.is_a? DeleteFootnoteRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteFootnoteRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.delete_footnote ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.delete_footnote ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_footnote'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_footnote' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'index' is set
-      if @api_client.config.client_side_validation && request.index.nil?
-        raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_footnote'
-      end
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_footnote' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/footnotes/{index}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -1373,12 +1269,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'AsposeResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'AsposeResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#delete_footnote\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -1401,21 +1297,13 @@ module WordsRubySdk
     # @return [Array<(AsposeResponse, Fixnum, Hash)>]
     # AsposeResponse data, response status code and response headers
     private def delete_form_field_with_http_info(request)
-      unless request.is_a? DeleteFormFieldRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteFormFieldRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.delete_form_field ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.delete_form_field ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_form_field'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_form_field' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'index' is set
-      if @api_client.config.client_side_validation && request.index.nil?
-        raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_form_field'
-      end
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_form_field' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/formfields/{index}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -1478,12 +1366,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'AsposeResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'AsposeResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#delete_form_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -1506,21 +1394,13 @@ module WordsRubySdk
     # @return [Array<(AsposeResponse, Fixnum, Hash)>]
     # AsposeResponse data, response status code and response headers
     private def delete_header_footer_with_http_info(request)
-      unless request.is_a? DeleteHeaderFooterRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteHeaderFooterRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.delete_header_footer ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.delete_header_footer ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_header_footer'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_header_footer' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'index' is set
-      if @api_client.config.client_side_validation && request.index.nil?
-        raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_header_footer'
-      end
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_header_footer' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
       local_var_path = '/words/{name}/{sectionPath}/headersfooters/{index}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -1583,12 +1463,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'AsposeResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'AsposeResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#delete_header_footer\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -1611,17 +1491,11 @@ module WordsRubySdk
     # @return [Array<(AsposeResponse, Fixnum, Hash)>]
     # AsposeResponse data, response status code and response headers
     private def delete_headers_footers_with_http_info(request)
-      unless request.is_a? DeleteHeadersFootersRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteHeadersFootersRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.delete_headers_footers ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.delete_headers_footers ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_headers_footers'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_headers_footers' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
       local_var_path = '/words/{name}/{sectionPath}/headersfooters'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -1688,12 +1562,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'AsposeResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'AsposeResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#delete_headers_footers\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -1716,21 +1590,13 @@ module WordsRubySdk
     # @return [Array<(AsposeResponse, Fixnum, Hash)>]
     # AsposeResponse data, response status code and response headers
     private def delete_office_math_object_with_http_info(request)
-      unless request.is_a? DeleteOfficeMathObjectRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteOfficeMathObjectRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.delete_office_math_object ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.delete_office_math_object ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_office_math_object'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_office_math_object' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'index' is set
-      if @api_client.config.client_side_validation && request.index.nil?
-        raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_office_math_object'
-      end
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_office_math_object' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/OfficeMathObjects/{index}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -1793,12 +1659,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'AsposeResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'AsposeResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#delete_office_math_object\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -1821,21 +1687,13 @@ module WordsRubySdk
     # @return [Array<(AsposeResponse, Fixnum, Hash)>]
     # AsposeResponse data, response status code and response headers
     private def delete_paragraph_with_http_info(request)
-      unless request.is_a? DeleteParagraphRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteParagraphRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.delete_paragraph ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.delete_paragraph ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_paragraph'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_paragraph' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'index' is set
-      if @api_client.config.client_side_validation && request.index.nil?
-        raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_paragraph'
-      end
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_paragraph' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/paragraphs/{index}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -1898,12 +1756,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'AsposeResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'AsposeResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#delete_paragraph\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -1926,25 +1784,15 @@ module WordsRubySdk
     # @return [Array<(AsposeResponse, Fixnum, Hash)>]
     # AsposeResponse data, response status code and response headers
     private def delete_run_with_http_info(request)
-      unless request.is_a? DeleteRunRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteRunRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.delete_run ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.delete_run ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_run'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_run' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'paragraph_path' is set
-      if @api_client.config.client_side_validation && request.paragraph_path.nil?
-        raise ArgumentError, 'Missing the required parameter paragraph_path when calling WordsApi.delete_run'
-      end
+      raise ArgumentError, 'Missing the required parameter paragraph_path when calling WordsApi.delete_run' if @api_client.config.client_side_validation && request.paragraph_path.nil?
       # verify the required parameter 'index' is set
-      if @api_client.config.client_side_validation && request.index.nil?
-        raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_run'
-      end
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_run' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
       local_var_path = '/words/{name}/{paragraphPath}/runs/{index}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -2003,12 +1851,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'AsposeResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'AsposeResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#delete_run\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -2031,21 +1879,13 @@ module WordsRubySdk
     # @return [Array<(AsposeResponse, Fixnum, Hash)>]
     # AsposeResponse data, response status code and response headers
     private def delete_table_with_http_info(request)
-      unless request.is_a? DeleteTableRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteTableRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.delete_table ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.delete_table ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_table'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_table' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'index' is set
-      if @api_client.config.client_side_validation && request.index.nil?
-        raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_table'
-      end
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_table' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/tables/{index}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -2108,12 +1948,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'AsposeResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'AsposeResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#delete_table\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -2136,25 +1976,15 @@ module WordsRubySdk
     # @return [Array<(AsposeResponse, Fixnum, Hash)>]
     # AsposeResponse data, response status code and response headers
     private def delete_table_cell_with_http_info(request)
-      unless request.is_a? DeleteTableCellRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteTableCellRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.delete_table_cell ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.delete_table_cell ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_table_cell'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_table_cell' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'table_row_path' is set
-      if @api_client.config.client_side_validation && request.table_row_path.nil?
-        raise ArgumentError, 'Missing the required parameter table_row_path when calling WordsApi.delete_table_cell'
-      end
+      raise ArgumentError, 'Missing the required parameter table_row_path when calling WordsApi.delete_table_cell' if @api_client.config.client_side_validation && request.table_row_path.nil?
       # verify the required parameter 'index' is set
-      if @api_client.config.client_side_validation && request.index.nil?
-        raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_table_cell'
-      end
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_table_cell' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
       local_var_path = '/words/{name}/{tableRowPath}/cells/{index}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -2213,12 +2043,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'AsposeResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'AsposeResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#delete_table_cell\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -2241,25 +2071,15 @@ module WordsRubySdk
     # @return [Array<(AsposeResponse, Fixnum, Hash)>]
     # AsposeResponse data, response status code and response headers
     private def delete_table_row_with_http_info(request)
-      unless request.is_a? DeleteTableRowRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteTableRowRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.delete_table_row ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.delete_table_row ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_table_row'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_table_row' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'table_path' is set
-      if @api_client.config.client_side_validation && request.table_path.nil?
-        raise ArgumentError, 'Missing the required parameter table_path when calling WordsApi.delete_table_row'
-      end
+      raise ArgumentError, 'Missing the required parameter table_path when calling WordsApi.delete_table_row' if @api_client.config.client_side_validation && request.table_path.nil?
       # verify the required parameter 'index' is set
-      if @api_client.config.client_side_validation && request.index.nil?
-        raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_table_row'
-      end
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_table_row' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
       local_var_path = '/words/{name}/{tablePath}/rows/{index}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -2318,12 +2138,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'AsposeResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'AsposeResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#delete_table_row\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -2346,21 +2166,13 @@ module WordsRubySdk
     # @return [Array<(ProtectionDataResponse, Fixnum, Hash)>]
     # ProtectionDataResponse data, response status code and response headers
     private def delete_unprotect_document_with_http_info(request)
-      unless request.is_a? DeleteUnprotectDocumentRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteUnprotectDocumentRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.delete_unprotect_document ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.delete_unprotect_document ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_unprotect_document'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_unprotect_document' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'protection_request' is set
-      if @api_client.config.client_side_validation && request.protection_request.nil?
-        raise ArgumentError, 'Missing the required parameter protection_request when calling WordsApi.delete_unprotect_document'
-      end
+      raise ArgumentError, 'Missing the required parameter protection_request when calling WordsApi.delete_unprotect_document' if @api_client.config.client_side_validation && request.protection_request.nil?
       # resource path
       local_var_path = '/words/{name}/protection'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -2407,12 +2219,12 @@ module WordsRubySdk
       post_body = @api_client.object_to_http_body(request.protection_request)
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'ProtectionDataResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'ProtectionDataResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#delete_unprotect_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -2435,25 +2247,15 @@ module WordsRubySdk
     # @return [Array<(BorderResponse, Fixnum, Hash)>]
     # BorderResponse data, response status code and response headers
     private def get_border_with_http_info(request)
-      unless request.is_a? GetBorderRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetBorderRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_border ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_border ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_border'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_border' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'node_path' is set
-      if @api_client.config.client_side_validation && request.node_path.nil?
-        raise ArgumentError, 'Missing the required parameter node_path when calling WordsApi.get_border'
-      end
+      raise ArgumentError, 'Missing the required parameter node_path when calling WordsApi.get_border' if @api_client.config.client_side_validation && request.node_path.nil?
       # verify the required parameter 'index' is set
-      if @api_client.config.client_side_validation && request.index.nil?
-        raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_border'
-      end
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_border' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/borders/{index}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -2497,12 +2299,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'BorderResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'BorderResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_border\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -2525,21 +2327,13 @@ module WordsRubySdk
     # @return [Array<(BordersResponse, Fixnum, Hash)>]
     # BordersResponse data, response status code and response headers
     private def get_borders_with_http_info(request)
-      unless request.is_a? GetBordersRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetBordersRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_borders ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_borders ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_borders'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_borders' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'node_path' is set
-      if @api_client.config.client_side_validation && request.node_path.nil?
-        raise ArgumentError, 'Missing the required parameter node_path when calling WordsApi.get_borders'
-      end
+      raise ArgumentError, 'Missing the required parameter node_path when calling WordsApi.get_borders' if @api_client.config.client_side_validation && request.node_path.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/borders'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -2582,12 +2376,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'BordersResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'BordersResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_borders\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -2610,21 +2404,13 @@ module WordsRubySdk
     # @return [Array<(CommentResponse, Fixnum, Hash)>]
     # CommentResponse data, response status code and response headers
     private def get_comment_with_http_info(request)
-      unless request.is_a? GetCommentRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetCommentRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_comment ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_comment ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_comment'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_comment' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'comment_index' is set
-      if @api_client.config.client_side_validation && request.comment_index.nil?
-        raise ArgumentError, 'Missing the required parameter comment_index when calling WordsApi.get_comment'
-      end
+      raise ArgumentError, 'Missing the required parameter comment_index when calling WordsApi.get_comment' if @api_client.config.client_side_validation && request.comment_index.nil?
       # resource path
       local_var_path = '/words/{name}/comments/{commentIndex}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -2667,12 +2453,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'CommentResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'CommentResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_comment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -2695,17 +2481,11 @@ module WordsRubySdk
     # @return [Array<(CommentsResponse, Fixnum, Hash)>]
     # CommentsResponse data, response status code and response headers
     private def get_comments_with_http_info(request)
-      unless request.is_a? GetCommentsRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetCommentsRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_comments ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_comments ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_comments'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_comments' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
       local_var_path = '/words/{name}/comments'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -2747,12 +2527,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'CommentsResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'CommentsResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_comments\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -2775,17 +2555,11 @@ module WordsRubySdk
     # @return [Array<(DocumentResponse, Fixnum, Hash)>]
     # DocumentResponse data, response status code and response headers
     private def get_document_with_http_info(request)
-      unless request.is_a? GetDocumentRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetDocumentRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_document ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_document ...' if @api_client.config.debugging
       # verify the required parameter 'document_name' is set
-      if @api_client.config.client_side_validation && request.document_name.nil?
-        raise ArgumentError, 'Missing the required parameter document_name when calling WordsApi.get_document'
-      end
+      raise ArgumentError, 'Missing the required parameter document_name when calling WordsApi.get_document' if @api_client.config.client_side_validation && request.document_name.nil?
       # resource path
       local_var_path = '/words/{documentName}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('DocumentName') + '}', request.document_name.to_s)
@@ -2827,12 +2601,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'DocumentResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DocumentResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -2855,21 +2629,13 @@ module WordsRubySdk
     # @return [Array<(BookmarkResponse, Fixnum, Hash)>]
     # BookmarkResponse data, response status code and response headers
     private def get_document_bookmark_by_name_with_http_info(request)
-      unless request.is_a? GetDocumentBookmarkByNameRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetDocumentBookmarkByNameRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_document_bookmark_by_name ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_document_bookmark_by_name ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_bookmark_by_name'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_bookmark_by_name' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'bookmark_name' is set
-      if @api_client.config.client_side_validation && request.bookmark_name.nil?
-        raise ArgumentError, 'Missing the required parameter bookmark_name when calling WordsApi.get_document_bookmark_by_name'
-      end
+      raise ArgumentError, 'Missing the required parameter bookmark_name when calling WordsApi.get_document_bookmark_by_name' if @api_client.config.client_side_validation && request.bookmark_name.nil?
       # resource path
       local_var_path = '/words/{name}/bookmarks/{bookmarkName}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -2912,12 +2678,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'BookmarkResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'BookmarkResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_document_bookmark_by_name\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -2940,17 +2706,11 @@ module WordsRubySdk
     # @return [Array<(BookmarksResponse, Fixnum, Hash)>]
     # BookmarksResponse data, response status code and response headers
     private def get_document_bookmarks_with_http_info(request)
-      unless request.is_a? GetDocumentBookmarksRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetDocumentBookmarksRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_document_bookmarks ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_document_bookmarks ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_bookmarks'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_bookmarks' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
       local_var_path = '/words/{name}/bookmarks'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -2992,12 +2752,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'BookmarksResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'BookmarksResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_document_bookmarks\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -3020,21 +2780,13 @@ module WordsRubySdk
     # @return [Array<(DrawingObjectResponse, Fixnum, Hash)>]
     # DrawingObjectResponse data, response status code and response headers
     private def get_document_drawing_object_by_index_with_http_info(request)
-      unless request.is_a? GetDocumentDrawingObjectByIndexRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetDocumentDrawingObjectByIndexRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_document_drawing_object_by_index ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_document_drawing_object_by_index ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_drawing_object_by_index'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_drawing_object_by_index' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'index' is set
-      if @api_client.config.client_side_validation && request.index.nil?
-        raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_document_drawing_object_by_index'
-      end
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_document_drawing_object_by_index' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/drawingObjects/{index}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -3082,12 +2834,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'DrawingObjectResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DrawingObjectResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_document_drawing_object_by_index\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -3110,21 +2862,13 @@ module WordsRubySdk
     # @return [Array<(File, Fixnum, Hash)>]
     # File data, response status code and response headers
     private def get_document_drawing_object_image_data_with_http_info(request)
-      unless request.is_a? GetDocumentDrawingObjectImageDataRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetDocumentDrawingObjectImageDataRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_document_drawing_object_image_data ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_document_drawing_object_image_data ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_drawing_object_image_data'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_drawing_object_image_data' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'index' is set
-      if @api_client.config.client_side_validation && request.index.nil?
-        raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_document_drawing_object_image_data'
-      end
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_document_drawing_object_image_data' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/drawingObjects/{index}/imageData'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -3172,12 +2916,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'File')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'File')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_document_drawing_object_image_data\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -3200,21 +2944,13 @@ module WordsRubySdk
     # @return [Array<(File, Fixnum, Hash)>]
     # File data, response status code and response headers
     private def get_document_drawing_object_ole_data_with_http_info(request)
-      unless request.is_a? GetDocumentDrawingObjectOleDataRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetDocumentDrawingObjectOleDataRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_document_drawing_object_ole_data ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_document_drawing_object_ole_data ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_drawing_object_ole_data'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_drawing_object_ole_data' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'index' is set
-      if @api_client.config.client_side_validation && request.index.nil?
-        raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_document_drawing_object_ole_data'
-      end
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_document_drawing_object_ole_data' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/drawingObjects/{index}/oleData'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -3262,12 +2998,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'File')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'File')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_document_drawing_object_ole_data\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -3290,17 +3026,11 @@ module WordsRubySdk
     # @return [Array<(DrawingObjectsResponse, Fixnum, Hash)>]
     # DrawingObjectsResponse data, response status code and response headers
     private def get_document_drawing_objects_with_http_info(request)
-      unless request.is_a? GetDocumentDrawingObjectsRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetDocumentDrawingObjectsRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_document_drawing_objects ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_document_drawing_objects ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_drawing_objects'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_drawing_objects' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/drawingObjects'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -3347,12 +3077,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'DrawingObjectsResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DrawingObjectsResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_document_drawing_objects\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -3375,17 +3105,11 @@ module WordsRubySdk
     # @return [Array<(FieldNamesResponse, Fixnum, Hash)>]
     # FieldNamesResponse data, response status code and response headers
     private def get_document_field_names_with_http_info(request)
-      unless request.is_a? GetDocumentFieldNamesRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetDocumentFieldNamesRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_document_field_names ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_document_field_names ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_field_names'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_field_names' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
       local_var_path = '/words/{name}/mailMergeFieldNames'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -3432,12 +3156,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'FieldNamesResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FieldNamesResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_document_field_names\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -3460,21 +3184,13 @@ module WordsRubySdk
     # @return [Array<(HyperlinkResponse, Fixnum, Hash)>]
     # HyperlinkResponse data, response status code and response headers
     private def get_document_hyperlink_by_index_with_http_info(request)
-      unless request.is_a? GetDocumentHyperlinkByIndexRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetDocumentHyperlinkByIndexRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_document_hyperlink_by_index ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_document_hyperlink_by_index ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_hyperlink_by_index'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_hyperlink_by_index' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'hyperlink_index' is set
-      if @api_client.config.client_side_validation && request.hyperlink_index.nil?
-        raise ArgumentError, 'Missing the required parameter hyperlink_index when calling WordsApi.get_document_hyperlink_by_index'
-      end
+      raise ArgumentError, 'Missing the required parameter hyperlink_index when calling WordsApi.get_document_hyperlink_by_index' if @api_client.config.client_side_validation && request.hyperlink_index.nil?
       # resource path
       local_var_path = '/words/{name}/hyperlinks/{hyperlinkIndex}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -3517,12 +3233,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'HyperlinkResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'HyperlinkResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_document_hyperlink_by_index\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -3545,17 +3261,11 @@ module WordsRubySdk
     # @return [Array<(HyperlinksResponse, Fixnum, Hash)>]
     # HyperlinksResponse data, response status code and response headers
     private def get_document_hyperlinks_with_http_info(request)
-      unless request.is_a? GetDocumentHyperlinksRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetDocumentHyperlinksRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_document_hyperlinks ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_document_hyperlinks ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_hyperlinks'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_hyperlinks' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
       local_var_path = '/words/{name}/hyperlinks'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -3597,12 +3307,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'HyperlinksResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'HyperlinksResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_document_hyperlinks\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -3625,21 +3335,13 @@ module WordsRubySdk
     # @return [Array<(ParagraphResponse, Fixnum, Hash)>]
     # ParagraphResponse data, response status code and response headers
     private def get_document_paragraph_with_http_info(request)
-      unless request.is_a? GetDocumentParagraphRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetDocumentParagraphRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_document_paragraph ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_document_paragraph ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_paragraph'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_paragraph' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'index' is set
-      if @api_client.config.client_side_validation && request.index.nil?
-        raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_document_paragraph'
-      end
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_document_paragraph' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/paragraphs/{index}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -3687,12 +3389,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'ParagraphResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'ParagraphResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_document_paragraph\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -3715,25 +3417,15 @@ module WordsRubySdk
     # @return [Array<(RunResponse, Fixnum, Hash)>]
     # RunResponse data, response status code and response headers
     private def get_document_paragraph_run_with_http_info(request)
-      unless request.is_a? GetDocumentParagraphRunRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetDocumentParagraphRunRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_document_paragraph_run ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_document_paragraph_run ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_paragraph_run'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_paragraph_run' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'paragraph_path' is set
-      if @api_client.config.client_side_validation && request.paragraph_path.nil?
-        raise ArgumentError, 'Missing the required parameter paragraph_path when calling WordsApi.get_document_paragraph_run'
-      end
+      raise ArgumentError, 'Missing the required parameter paragraph_path when calling WordsApi.get_document_paragraph_run' if @api_client.config.client_side_validation && request.paragraph_path.nil?
       # verify the required parameter 'index' is set
-      if @api_client.config.client_side_validation && request.index.nil?
-        raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_document_paragraph_run'
-      end
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_document_paragraph_run' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
       local_var_path = '/words/{name}/{paragraphPath}/runs/{index}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -3777,12 +3469,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'RunResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'RunResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_document_paragraph_run\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -3805,25 +3497,15 @@ module WordsRubySdk
     # @return [Array<(FontResponse, Fixnum, Hash)>]
     # FontResponse data, response status code and response headers
     private def get_document_paragraph_run_font_with_http_info(request)
-      unless request.is_a? GetDocumentParagraphRunFontRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetDocumentParagraphRunFontRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_document_paragraph_run_font ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_document_paragraph_run_font ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_paragraph_run_font'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_paragraph_run_font' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'paragraph_path' is set
-      if @api_client.config.client_side_validation && request.paragraph_path.nil?
-        raise ArgumentError, 'Missing the required parameter paragraph_path when calling WordsApi.get_document_paragraph_run_font'
-      end
+      raise ArgumentError, 'Missing the required parameter paragraph_path when calling WordsApi.get_document_paragraph_run_font' if @api_client.config.client_side_validation && request.paragraph_path.nil?
       # verify the required parameter 'index' is set
-      if @api_client.config.client_side_validation && request.index.nil?
-        raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_document_paragraph_run_font'
-      end
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_document_paragraph_run_font' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
       local_var_path = '/words/{name}/{paragraphPath}/runs/{index}/font'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -3867,12 +3549,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'FontResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FontResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_document_paragraph_run_font\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -3895,21 +3577,13 @@ module WordsRubySdk
     # @return [Array<(RunsResponse, Fixnum, Hash)>]
     # RunsResponse data, response status code and response headers
     private def get_document_paragraph_runs_with_http_info(request)
-      unless request.is_a? GetDocumentParagraphRunsRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetDocumentParagraphRunsRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_document_paragraph_runs ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_document_paragraph_runs ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_paragraph_runs'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_paragraph_runs' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'paragraph_path' is set
-      if @api_client.config.client_side_validation && request.paragraph_path.nil?
-        raise ArgumentError, 'Missing the required parameter paragraph_path when calling WordsApi.get_document_paragraph_runs'
-      end
+      raise ArgumentError, 'Missing the required parameter paragraph_path when calling WordsApi.get_document_paragraph_runs' if @api_client.config.client_side_validation && request.paragraph_path.nil?
       # resource path
       local_var_path = '/words/{name}/{paragraphPath}/runs'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -3952,12 +3626,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'RunsResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'RunsResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_document_paragraph_runs\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -3980,17 +3654,11 @@ module WordsRubySdk
     # @return [Array<(ParagraphLinkCollectionResponse, Fixnum, Hash)>]
     # ParagraphLinkCollectionResponse data, response status code and response headers
     private def get_document_paragraphs_with_http_info(request)
-      unless request.is_a? GetDocumentParagraphsRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetDocumentParagraphsRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_document_paragraphs ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_document_paragraphs ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_paragraphs'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_paragraphs' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/paragraphs'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -4037,12 +3705,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'ParagraphLinkCollectionResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'ParagraphLinkCollectionResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_document_paragraphs\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4065,17 +3733,11 @@ module WordsRubySdk
     # @return [Array<(DocumentPropertiesResponse, Fixnum, Hash)>]
     # DocumentPropertiesResponse data, response status code and response headers
     private def get_document_properties_with_http_info(request)
-      unless request.is_a? GetDocumentPropertiesRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetDocumentPropertiesRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_document_properties ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_document_properties ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_properties'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_properties' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
       local_var_path = '/words/{name}/documentProperties'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -4117,12 +3779,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'DocumentPropertiesResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DocumentPropertiesResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_document_properties\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4145,21 +3807,13 @@ module WordsRubySdk
     # @return [Array<(DocumentPropertyResponse, Fixnum, Hash)>]
     # DocumentPropertyResponse data, response status code and response headers
     private def get_document_property_with_http_info(request)
-      unless request.is_a? GetDocumentPropertyRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetDocumentPropertyRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_document_property ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_document_property ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_property'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_property' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'property_name' is set
-      if @api_client.config.client_side_validation && request.property_name.nil?
-        raise ArgumentError, 'Missing the required parameter property_name when calling WordsApi.get_document_property'
-      end
+      raise ArgumentError, 'Missing the required parameter property_name when calling WordsApi.get_document_property' if @api_client.config.client_side_validation && request.property_name.nil?
       # resource path
       local_var_path = '/words/{name}/documentProperties/{propertyName}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -4202,12 +3856,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'DocumentPropertyResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DocumentPropertyResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_document_property\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4230,17 +3884,11 @@ module WordsRubySdk
     # @return [Array<(ProtectionDataResponse, Fixnum, Hash)>]
     # ProtectionDataResponse data, response status code and response headers
     private def get_document_protection_with_http_info(request)
-      unless request.is_a? GetDocumentProtectionRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetDocumentProtectionRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_document_protection ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_document_protection ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_protection'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_protection' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
       local_var_path = '/words/{name}/protection'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -4282,12 +3930,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'ProtectionDataResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'ProtectionDataResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_document_protection\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4310,17 +3958,11 @@ module WordsRubySdk
     # @return [Array<(StatDataResponse, Fixnum, Hash)>]
     # StatDataResponse data, response status code and response headers
     private def get_document_statistics_with_http_info(request)
-      unless request.is_a? GetDocumentStatisticsRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetDocumentStatisticsRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_document_statistics ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_document_statistics ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_statistics'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_statistics' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
       local_var_path = '/words/{name}/statistics'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -4377,12 +4019,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'StatDataResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'StatDataResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_document_statistics\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4405,17 +4047,11 @@ module WordsRubySdk
     # @return [Array<(TextItemsResponse, Fixnum, Hash)>]
     # TextItemsResponse data, response status code and response headers
     private def get_document_text_items_with_http_info(request)
-      unless request.is_a? GetDocumentTextItemsRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetDocumentTextItemsRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_document_text_items ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_document_text_items ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_text_items'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_text_items' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
       local_var_path = '/words/{name}/textItems'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -4457,12 +4093,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'TextItemsResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'TextItemsResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_document_text_items\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4485,21 +4121,13 @@ module WordsRubySdk
     # @return [Array<(File, Fixnum, Hash)>]
     # File data, response status code and response headers
     private def get_document_with_format_with_http_info(request)
-      unless request.is_a? GetDocumentWithFormatRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetDocumentWithFormatRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_document_with_format ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_document_with_format ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_with_format'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_with_format' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'format' is set
-      if @api_client.config.client_side_validation && request.format.nil?
-        raise ArgumentError, 'Missing the required parameter format when calling WordsApi.get_document_with_format'
-      end
+      raise ArgumentError, 'Missing the required parameter format when calling WordsApi.get_document_with_format' if @api_client.config.client_side_validation && request.format.nil?
       # resource path
       local_var_path = '/words/{name}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -4553,12 +4181,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'File')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'File')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_document_with_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4581,21 +4209,13 @@ module WordsRubySdk
     # @return [Array<(FieldResponse, Fixnum, Hash)>]
     # FieldResponse data, response status code and response headers
     private def get_field_with_http_info(request)
-      unless request.is_a? GetFieldRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetFieldRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_field ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_field ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_field'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_field' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'index' is set
-      if @api_client.config.client_side_validation && request.index.nil?
-        raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_field'
-      end
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_field' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/fields/{index}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -4643,12 +4263,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'FieldResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FieldResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4671,17 +4291,11 @@ module WordsRubySdk
     # @return [Array<(FieldsResponse, Fixnum, Hash)>]
     # FieldsResponse data, response status code and response headers
     private def get_fields_with_http_info(request)
-      unless request.is_a? GetFieldsRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetFieldsRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_fields ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_fields ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_fields'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_fields' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/fields'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -4728,12 +4342,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'FieldsResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FieldsResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_fields\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4756,21 +4370,13 @@ module WordsRubySdk
     # @return [Array<(FootnoteResponse, Fixnum, Hash)>]
     # FootnoteResponse data, response status code and response headers
     private def get_footnote_with_http_info(request)
-      unless request.is_a? GetFootnoteRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetFootnoteRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_footnote ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_footnote ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_footnote'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_footnote' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'index' is set
-      if @api_client.config.client_side_validation && request.index.nil?
-        raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_footnote'
-      end
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_footnote' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/footnotes/{index}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -4818,12 +4424,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'FootnoteResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FootnoteResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_footnote\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4846,17 +4452,11 @@ module WordsRubySdk
     # @return [Array<(FootnotesResponse, Fixnum, Hash)>]
     # FootnotesResponse data, response status code and response headers
     private def get_footnotes_with_http_info(request)
-      unless request.is_a? GetFootnotesRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetFootnotesRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_footnotes ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_footnotes ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_footnotes'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_footnotes' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/footnotes'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -4903,12 +4503,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'FootnotesResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FootnotesResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_footnotes\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4931,21 +4531,13 @@ module WordsRubySdk
     # @return [Array<(FormFieldResponse, Fixnum, Hash)>]
     # FormFieldResponse data, response status code and response headers
     private def get_form_field_with_http_info(request)
-      unless request.is_a? GetFormFieldRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetFormFieldRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_form_field ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_form_field ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_form_field'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_form_field' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'index' is set
-      if @api_client.config.client_side_validation && request.index.nil?
-        raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_form_field'
-      end
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_form_field' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/formfields/{index}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -4993,12 +4585,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'FormFieldResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FormFieldResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_form_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5021,17 +4613,11 @@ module WordsRubySdk
     # @return [Array<(FormFieldsResponse, Fixnum, Hash)>]
     # FormFieldsResponse data, response status code and response headers
     private def get_form_fields_with_http_info(request)
-      unless request.is_a? GetFormFieldsRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetFormFieldsRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_form_fields ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_form_fields ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_form_fields'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_form_fields' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/formfields'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -5078,12 +4664,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'FormFieldsResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FormFieldsResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_form_fields\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5106,21 +4692,13 @@ module WordsRubySdk
     # @return [Array<(HeaderFooterResponse, Fixnum, Hash)>]
     # HeaderFooterResponse data, response status code and response headers
     private def get_header_footer_with_http_info(request)
-      unless request.is_a? GetHeaderFooterRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetHeaderFooterRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_header_footer ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_header_footer ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_header_footer'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_header_footer' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'header_footer_index' is set
-      if @api_client.config.client_side_validation && request.header_footer_index.nil?
-        raise ArgumentError, 'Missing the required parameter header_footer_index when calling WordsApi.get_header_footer'
-      end
+      raise ArgumentError, 'Missing the required parameter header_footer_index when calling WordsApi.get_header_footer' if @api_client.config.client_side_validation && request.header_footer_index.nil?
       # resource path
       local_var_path = '/words/{name}/headersfooters/{headerFooterIndex}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -5168,12 +4746,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'HeaderFooterResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'HeaderFooterResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_header_footer\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5196,25 +4774,15 @@ module WordsRubySdk
     # @return [Array<(HeaderFooterResponse, Fixnum, Hash)>]
     # HeaderFooterResponse data, response status code and response headers
     private def get_header_footer_of_section_with_http_info(request)
-      unless request.is_a? GetHeaderFooterOfSectionRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetHeaderFooterOfSectionRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_header_footer_of_section ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_header_footer_of_section ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_header_footer_of_section'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_header_footer_of_section' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'header_footer_index' is set
-      if @api_client.config.client_side_validation && request.header_footer_index.nil?
-        raise ArgumentError, 'Missing the required parameter header_footer_index when calling WordsApi.get_header_footer_of_section'
-      end
+      raise ArgumentError, 'Missing the required parameter header_footer_index when calling WordsApi.get_header_footer_of_section' if @api_client.config.client_side_validation && request.header_footer_index.nil?
       # verify the required parameter 'section_index' is set
-      if @api_client.config.client_side_validation && request.section_index.nil?
-        raise ArgumentError, 'Missing the required parameter section_index when calling WordsApi.get_header_footer_of_section'
-      end
+      raise ArgumentError, 'Missing the required parameter section_index when calling WordsApi.get_header_footer_of_section' if @api_client.config.client_side_validation && request.section_index.nil?
       # resource path
       local_var_path = '/words/{name}/sections/{sectionIndex}/headersfooters/{headerFooterIndex}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -5263,12 +4831,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'HeaderFooterResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'HeaderFooterResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_header_footer_of_section\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5291,17 +4859,11 @@ module WordsRubySdk
     # @return [Array<(HeaderFootersResponse, Fixnum, Hash)>]
     # HeaderFootersResponse data, response status code and response headers
     private def get_header_footers_with_http_info(request)
-      unless request.is_a? GetHeaderFootersRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetHeaderFootersRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_header_footers ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_header_footers ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_header_footers'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_header_footers' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
       local_var_path = '/words/{name}/{sectionPath}/headersfooters'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -5353,12 +4915,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'HeaderFootersResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'HeaderFootersResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_header_footers\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5381,21 +4943,13 @@ module WordsRubySdk
     # @return [Array<(OfficeMathObjectResponse, Fixnum, Hash)>]
     # OfficeMathObjectResponse data, response status code and response headers
     private def get_office_math_object_with_http_info(request)
-      unless request.is_a? GetOfficeMathObjectRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetOfficeMathObjectRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_office_math_object ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_office_math_object ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_office_math_object'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_office_math_object' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'index' is set
-      if @api_client.config.client_side_validation && request.index.nil?
-        raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_office_math_object'
-      end
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_office_math_object' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/OfficeMathObjects/{index}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -5443,12 +4997,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'OfficeMathObjectResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'OfficeMathObjectResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_office_math_object\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5471,17 +5025,11 @@ module WordsRubySdk
     # @return [Array<(OfficeMathObjectsResponse, Fixnum, Hash)>]
     # OfficeMathObjectsResponse data, response status code and response headers
     private def get_office_math_objects_with_http_info(request)
-      unless request.is_a? GetOfficeMathObjectsRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetOfficeMathObjectsRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_office_math_objects ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_office_math_objects ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_office_math_objects'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_office_math_objects' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/OfficeMathObjects'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -5528,12 +5076,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'OfficeMathObjectsResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'OfficeMathObjectsResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_office_math_objects\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5556,21 +5104,13 @@ module WordsRubySdk
     # @return [Array<(SectionResponse, Fixnum, Hash)>]
     # SectionResponse data, response status code and response headers
     private def get_section_with_http_info(request)
-      unless request.is_a? GetSectionRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetSectionRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_section ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_section ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_section'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_section' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'section_index' is set
-      if @api_client.config.client_side_validation && request.section_index.nil?
-        raise ArgumentError, 'Missing the required parameter section_index when calling WordsApi.get_section'
-      end
+      raise ArgumentError, 'Missing the required parameter section_index when calling WordsApi.get_section' if @api_client.config.client_side_validation && request.section_index.nil?
       # resource path
       local_var_path = '/words/{name}/sections/{sectionIndex}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -5613,12 +5153,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'SectionResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'SectionResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_section\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5641,21 +5181,13 @@ module WordsRubySdk
     # @return [Array<(SectionPageSetupResponse, Fixnum, Hash)>]
     # SectionPageSetupResponse data, response status code and response headers
     private def get_section_page_setup_with_http_info(request)
-      unless request.is_a? GetSectionPageSetupRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetSectionPageSetupRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_section_page_setup ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_section_page_setup ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_section_page_setup'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_section_page_setup' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'section_index' is set
-      if @api_client.config.client_side_validation && request.section_index.nil?
-        raise ArgumentError, 'Missing the required parameter section_index when calling WordsApi.get_section_page_setup'
-      end
+      raise ArgumentError, 'Missing the required parameter section_index when calling WordsApi.get_section_page_setup' if @api_client.config.client_side_validation && request.section_index.nil?
       # resource path
       local_var_path = '/words/{name}/sections/{sectionIndex}/pageSetup'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -5698,12 +5230,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'SectionPageSetupResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'SectionPageSetupResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_section_page_setup\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5726,17 +5258,11 @@ module WordsRubySdk
     # @return [Array<(SectionLinkCollectionResponse, Fixnum, Hash)>]
     # SectionLinkCollectionResponse data, response status code and response headers
     private def get_sections_with_http_info(request)
-      unless request.is_a? GetSectionsRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetSectionsRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_sections ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_sections ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_sections'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_sections' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
       local_var_path = '/words/{name}/sections'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -5778,12 +5304,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'SectionLinkCollectionResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'SectionLinkCollectionResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_sections\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5806,21 +5332,13 @@ module WordsRubySdk
     # @return [Array<(TableResponse, Fixnum, Hash)>]
     # TableResponse data, response status code and response headers
     private def get_table_with_http_info(request)
-      unless request.is_a? GetTableRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetTableRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_table ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_table ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_table'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_table' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'index' is set
-      if @api_client.config.client_side_validation && request.index.nil?
-        raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_table'
-      end
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_table' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/tables/{index}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -5868,12 +5386,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'TableResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'TableResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_table\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5896,25 +5414,15 @@ module WordsRubySdk
     # @return [Array<(TableCellResponse, Fixnum, Hash)>]
     # TableCellResponse data, response status code and response headers
     private def get_table_cell_with_http_info(request)
-      unless request.is_a? GetTableCellRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetTableCellRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_table_cell ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_table_cell ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_table_cell'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_table_cell' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'table_row_path' is set
-      if @api_client.config.client_side_validation && request.table_row_path.nil?
-        raise ArgumentError, 'Missing the required parameter table_row_path when calling WordsApi.get_table_cell'
-      end
+      raise ArgumentError, 'Missing the required parameter table_row_path when calling WordsApi.get_table_cell' if @api_client.config.client_side_validation && request.table_row_path.nil?
       # verify the required parameter 'index' is set
-      if @api_client.config.client_side_validation && request.index.nil?
-        raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_table_cell'
-      end
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_table_cell' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
       local_var_path = '/words/{name}/{tableRowPath}/cells/{index}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -5958,12 +5466,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'TableCellResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'TableCellResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_table_cell\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5986,25 +5494,15 @@ module WordsRubySdk
     # @return [Array<(TableCellFormatResponse, Fixnum, Hash)>]
     # TableCellFormatResponse data, response status code and response headers
     private def get_table_cell_format_with_http_info(request)
-      unless request.is_a? GetTableCellFormatRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetTableCellFormatRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_table_cell_format ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_table_cell_format ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_table_cell_format'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_table_cell_format' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'table_row_path' is set
-      if @api_client.config.client_side_validation && request.table_row_path.nil?
-        raise ArgumentError, 'Missing the required parameter table_row_path when calling WordsApi.get_table_cell_format'
-      end
+      raise ArgumentError, 'Missing the required parameter table_row_path when calling WordsApi.get_table_cell_format' if @api_client.config.client_side_validation && request.table_row_path.nil?
       # verify the required parameter 'index' is set
-      if @api_client.config.client_side_validation && request.index.nil?
-        raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_table_cell_format'
-      end
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_table_cell_format' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
       local_var_path = '/words/{name}/{tableRowPath}/cells/{index}/cellformat'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -6048,12 +5546,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'TableCellFormatResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'TableCellFormatResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_table_cell_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6076,21 +5574,13 @@ module WordsRubySdk
     # @return [Array<(TablePropertiesResponse, Fixnum, Hash)>]
     # TablePropertiesResponse data, response status code and response headers
     private def get_table_properties_with_http_info(request)
-      unless request.is_a? GetTablePropertiesRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetTablePropertiesRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_table_properties ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_table_properties ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_table_properties'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_table_properties' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'index' is set
-      if @api_client.config.client_side_validation && request.index.nil?
-        raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_table_properties'
-      end
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_table_properties' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/tables/{index}/properties'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -6138,12 +5628,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'TablePropertiesResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'TablePropertiesResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_table_properties\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6166,25 +5656,15 @@ module WordsRubySdk
     # @return [Array<(TableRowResponse, Fixnum, Hash)>]
     # TableRowResponse data, response status code and response headers
     private def get_table_row_with_http_info(request)
-      unless request.is_a? GetTableRowRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetTableRowRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_table_row ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_table_row ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_table_row'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_table_row' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'table_path' is set
-      if @api_client.config.client_side_validation && request.table_path.nil?
-        raise ArgumentError, 'Missing the required parameter table_path when calling WordsApi.get_table_row'
-      end
+      raise ArgumentError, 'Missing the required parameter table_path when calling WordsApi.get_table_row' if @api_client.config.client_side_validation && request.table_path.nil?
       # verify the required parameter 'index' is set
-      if @api_client.config.client_side_validation && request.index.nil?
-        raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_table_row'
-      end
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_table_row' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
       local_var_path = '/words/{name}/{tablePath}/rows/{index}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -6228,12 +5708,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'TableRowResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'TableRowResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_table_row\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6256,25 +5736,15 @@ module WordsRubySdk
     # @return [Array<(TableRowFormatResponse, Fixnum, Hash)>]
     # TableRowFormatResponse data, response status code and response headers
     private def get_table_row_format_with_http_info(request)
-      unless request.is_a? GetTableRowFormatRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetTableRowFormatRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_table_row_format ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_table_row_format ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_table_row_format'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_table_row_format' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'table_path' is set
-      if @api_client.config.client_side_validation && request.table_path.nil?
-        raise ArgumentError, 'Missing the required parameter table_path when calling WordsApi.get_table_row_format'
-      end
+      raise ArgumentError, 'Missing the required parameter table_path when calling WordsApi.get_table_row_format' if @api_client.config.client_side_validation && request.table_path.nil?
       # verify the required parameter 'index' is set
-      if @api_client.config.client_side_validation && request.index.nil?
-        raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_table_row_format'
-      end
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_table_row_format' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
       local_var_path = '/words/{name}/{tablePath}/rows/{index}/rowformat'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -6318,12 +5788,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'TableRowFormatResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'TableRowFormatResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_table_row_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6346,17 +5816,11 @@ module WordsRubySdk
     # @return [Array<(TableLinkCollectionResponse, Fixnum, Hash)>]
     # TableLinkCollectionResponse data, response status code and response headers
     private def get_tables_with_http_info(request)
-      unless request.is_a? GetTablesRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetTablesRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.get_tables ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_tables ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_tables'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_tables' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/tables'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -6403,12 +5867,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'TableLinkCollectionResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'TableLinkCollectionResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#get_tables\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6431,17 +5895,11 @@ module WordsRubySdk
     # @return [Array<(TableResponse, Fixnum, Hash)>]
     # TableResponse data, response status code and response headers
     private def insert_table_with_http_info(request)
-      unless request.is_a? InsertTableRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? InsertTableRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.insert_table ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.insert_table ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.insert_table'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.insert_table' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/tables'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -6503,12 +5961,12 @@ module WordsRubySdk
       post_body = @api_client.object_to_http_body(request.table)
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'TableResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'TableResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#insert_table\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6531,21 +5989,13 @@ module WordsRubySdk
     # @return [Array<(TableCellResponse, Fixnum, Hash)>]
     # TableCellResponse data, response status code and response headers
     private def insert_table_cell_with_http_info(request)
-      unless request.is_a? InsertTableCellRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? InsertTableCellRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.insert_table_cell ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.insert_table_cell ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.insert_table_cell'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.insert_table_cell' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'table_row_path' is set
-      if @api_client.config.client_side_validation && request.table_row_path.nil?
-        raise ArgumentError, 'Missing the required parameter table_row_path when calling WordsApi.insert_table_cell'
-      end
+      raise ArgumentError, 'Missing the required parameter table_row_path when calling WordsApi.insert_table_cell' if @api_client.config.client_side_validation && request.table_row_path.nil?
       # resource path
       local_var_path = '/words/{name}/{tableRowPath}/cells'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -6603,12 +6053,12 @@ module WordsRubySdk
       post_body = @api_client.object_to_http_body(request.cell)
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'TableCellResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'TableCellResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#insert_table_cell\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6631,21 +6081,13 @@ module WordsRubySdk
     # @return [Array<(TableRowResponse, Fixnum, Hash)>]
     # TableRowResponse data, response status code and response headers
     private def insert_table_row_with_http_info(request)
-      unless request.is_a? InsertTableRowRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? InsertTableRowRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.insert_table_row ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.insert_table_row ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.insert_table_row'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.insert_table_row' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'table_path' is set
-      if @api_client.config.client_side_validation && request.table_path.nil?
-        raise ArgumentError, 'Missing the required parameter table_path when calling WordsApi.insert_table_row'
-      end
+      raise ArgumentError, 'Missing the required parameter table_path when calling WordsApi.insert_table_row' if @api_client.config.client_side_validation && request.table_path.nil?
       # resource path
       local_var_path = '/words/{name}/{tablePath}/rows'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -6703,12 +6145,12 @@ module WordsRubySdk
       post_body = @api_client.object_to_http_body(request.row)
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'TableRowResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'TableRowResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#insert_table_row\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6731,21 +6173,13 @@ module WordsRubySdk
     # @return [Array<(DocumentResponse, Fixnum, Hash)>]
     # DocumentResponse data, response status code and response headers
     private def post_append_document_with_http_info(request)
-      unless request.is_a? PostAppendDocumentRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? PostAppendDocumentRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.post_append_document ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.post_append_document ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.post_append_document'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.post_append_document' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'document_list' is set
-      if @api_client.config.client_side_validation && request.document_list.nil?
-        raise ArgumentError, 'Missing the required parameter document_list when calling WordsApi.post_append_document'
-      end
+      raise ArgumentError, 'Missing the required parameter document_list when calling WordsApi.post_append_document' if @api_client.config.client_side_validation && request.document_list.nil?
       # resource path
       local_var_path = '/words/{name}/appendDocument'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -6802,12 +6236,12 @@ module WordsRubySdk
       post_body = @api_client.object_to_http_body(request.document_list)
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'DocumentResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DocumentResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#post_append_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6830,21 +6264,13 @@ module WordsRubySdk
     # @return [Array<(ProtectionDataResponse, Fixnum, Hash)>]
     # ProtectionDataResponse data, response status code and response headers
     private def post_change_document_protection_with_http_info(request)
-      unless request.is_a? PostChangeDocumentProtectionRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? PostChangeDocumentProtectionRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.post_change_document_protection ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.post_change_document_protection ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.post_change_document_protection'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.post_change_document_protection' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'protection_request' is set
-      if @api_client.config.client_side_validation && request.protection_request.nil?
-        raise ArgumentError, 'Missing the required parameter protection_request when calling WordsApi.post_change_document_protection'
-      end
+      raise ArgumentError, 'Missing the required parameter protection_request when calling WordsApi.post_change_document_protection' if @api_client.config.client_side_validation && request.protection_request.nil?
       # resource path
       local_var_path = '/words/{name}/protection'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -6891,12 +6317,12 @@ module WordsRubySdk
       post_body = @api_client.object_to_http_body(request.protection_request)
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'ProtectionDataResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'ProtectionDataResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#post_change_document_protection\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6919,25 +6345,15 @@ module WordsRubySdk
     # @return [Array<(CommentResponse, Fixnum, Hash)>]
     # CommentResponse data, response status code and response headers
     private def post_comment_with_http_info(request)
-      unless request.is_a? PostCommentRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? PostCommentRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.post_comment ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.post_comment ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.post_comment'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.post_comment' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'comment_index' is set
-      if @api_client.config.client_side_validation && request.comment_index.nil?
-        raise ArgumentError, 'Missing the required parameter comment_index when calling WordsApi.post_comment'
-      end
+      raise ArgumentError, 'Missing the required parameter comment_index when calling WordsApi.post_comment' if @api_client.config.client_side_validation && request.comment_index.nil?
       # verify the required parameter 'comment' is set
-      if @api_client.config.client_side_validation && request.comment.nil?
-        raise ArgumentError, 'Missing the required parameter comment when calling WordsApi.post_comment'
-      end
+      raise ArgumentError, 'Missing the required parameter comment when calling WordsApi.post_comment' if @api_client.config.client_side_validation && request.comment.nil?
       # resource path
       local_var_path = '/words/{name}/comments/{commentIndex}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -6995,12 +6411,12 @@ module WordsRubySdk
       post_body = @api_client.object_to_http_body(request.comment)
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'CommentResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'CommentResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#post_comment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7023,21 +6439,13 @@ module WordsRubySdk
     # @return [Array<(DocumentResponse, Fixnum, Hash)>]
     # DocumentResponse data, response status code and response headers
     private def post_compare_document_with_http_info(request)
-      unless request.is_a? PostCompareDocumentRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? PostCompareDocumentRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.post_compare_document ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.post_compare_document ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.post_compare_document'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.post_compare_document' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'compare_data' is set
-      if @api_client.config.client_side_validation && request.compare_data.nil?
-        raise ArgumentError, 'Missing the required parameter compare_data when calling WordsApi.post_compare_document'
-      end
+      raise ArgumentError, 'Missing the required parameter compare_data when calling WordsApi.post_compare_document' if @api_client.config.client_side_validation && request.compare_data.nil?
       # resource path
       local_var_path = '/words/{name}/compareDocument'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -7084,12 +6492,12 @@ module WordsRubySdk
       post_body = @api_client.object_to_http_body(request.compare_data)
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'DocumentResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DocumentResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#post_compare_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7112,17 +6520,11 @@ module WordsRubySdk
     # @return [Array<(DocumentResponse, Fixnum, Hash)>]
     # DocumentResponse data, response status code and response headers
     private def post_document_execute_mail_merge_with_http_info(request)
-      unless request.is_a? PostDocumentExecuteMailMergeRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? PostDocumentExecuteMailMergeRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.post_document_execute_mail_merge ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.post_document_execute_mail_merge ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.post_document_execute_mail_merge'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.post_document_execute_mail_merge' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
       local_var_path = '/words/{name}/executeMailMerge'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -7190,12 +6592,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'DocumentResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DocumentResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#post_document_execute_mail_merge\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7218,29 +6620,17 @@ module WordsRubySdk
     # @return [Array<(FontResponse, Fixnum, Hash)>]
     # FontResponse data, response status code and response headers
     private def post_document_paragraph_run_font_with_http_info(request)
-      unless request.is_a? PostDocumentParagraphRunFontRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? PostDocumentParagraphRunFontRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.post_document_paragraph_run_font ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.post_document_paragraph_run_font ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.post_document_paragraph_run_font'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.post_document_paragraph_run_font' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'font_dto' is set
-      if @api_client.config.client_side_validation && request.font_dto.nil?
-        raise ArgumentError, 'Missing the required parameter font_dto when calling WordsApi.post_document_paragraph_run_font'
-      end
+      raise ArgumentError, 'Missing the required parameter font_dto when calling WordsApi.post_document_paragraph_run_font' if @api_client.config.client_side_validation && request.font_dto.nil?
       # verify the required parameter 'paragraph_path' is set
-      if @api_client.config.client_side_validation && request.paragraph_path.nil?
-        raise ArgumentError, 'Missing the required parameter paragraph_path when calling WordsApi.post_document_paragraph_run_font'
-      end
+      raise ArgumentError, 'Missing the required parameter paragraph_path when calling WordsApi.post_document_paragraph_run_font' if @api_client.config.client_side_validation && request.paragraph_path.nil?
       # verify the required parameter 'index' is set
-      if @api_client.config.client_side_validation && request.index.nil?
-        raise ArgumentError, 'Missing the required parameter index when calling WordsApi.post_document_paragraph_run_font'
-      end
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.post_document_paragraph_run_font' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
       local_var_path = '/words/{name}/{paragraphPath}/runs/{index}/font'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -7299,12 +6689,12 @@ module WordsRubySdk
       post_body = @api_client.object_to_http_body(request.font_dto)
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'FontResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FontResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#post_document_paragraph_run_font\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7327,21 +6717,13 @@ module WordsRubySdk
     # @return [Array<(SaveResponse, Fixnum, Hash)>]
     # SaveResponse data, response status code and response headers
     private def post_document_save_as_with_http_info(request)
-      unless request.is_a? PostDocumentSaveAsRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? PostDocumentSaveAsRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.post_document_save_as ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.post_document_save_as ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.post_document_save_as'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.post_document_save_as' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'save_options_data' is set
-      if @api_client.config.client_side_validation && request.save_options_data.nil?
-        raise ArgumentError, 'Missing the required parameter save_options_data when calling WordsApi.post_document_save_as'
-      end
+      raise ArgumentError, 'Missing the required parameter save_options_data when calling WordsApi.post_document_save_as' if @api_client.config.client_side_validation && request.save_options_data.nil?
       # resource path
       local_var_path = '/words/{name}/saveAs'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -7393,12 +6775,12 @@ module WordsRubySdk
       post_body = @api_client.object_to_http_body(request.save_options_data)
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'SaveResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'SaveResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#post_document_save_as\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7421,29 +6803,17 @@ module WordsRubySdk
     # @return [Array<(DrawingObjectResponse, Fixnum, Hash)>]
     # DrawingObjectResponse data, response status code and response headers
     private def post_drawing_object_with_http_info(request)
-      unless request.is_a? PostDrawingObjectRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? PostDrawingObjectRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.post_drawing_object ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.post_drawing_object ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.post_drawing_object'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.post_drawing_object' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'drawing_object' is set
-      if @api_client.config.client_side_validation && request.drawing_object.nil?
-        raise ArgumentError, 'Missing the required parameter drawing_object when calling WordsApi.post_drawing_object'
-      end
+      raise ArgumentError, 'Missing the required parameter drawing_object when calling WordsApi.post_drawing_object' if @api_client.config.client_side_validation && request.drawing_object.nil?
       # verify the required parameter 'image_file' is set
-      if @api_client.config.client_side_validation && request.image_file.nil?
-        raise ArgumentError, 'Missing the required parameter image_file when calling WordsApi.post_drawing_object'
-      end
+      raise ArgumentError, 'Missing the required parameter image_file when calling WordsApi.post_drawing_object' if @api_client.config.client_side_validation && request.image_file.nil?
       # verify the required parameter 'index' is set
-      if @api_client.config.client_side_validation && request.index.nil?
-        raise ArgumentError, 'Missing the required parameter index when calling WordsApi.post_drawing_object'
-      end
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.post_drawing_object' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/drawingObjects/{index}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -7508,12 +6878,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'DrawingObjectResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DrawingObjectResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#post_drawing_object\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7536,21 +6906,13 @@ module WordsRubySdk
     # @return [Array<(DocumentResponse, Fixnum, Hash)>]
     # DocumentResponse data, response status code and response headers
     private def post_execute_template_with_http_info(request)
-      unless request.is_a? PostExecuteTemplateRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? PostExecuteTemplateRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.post_execute_template ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.post_execute_template ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.post_execute_template'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.post_execute_template' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'data' is set
-      if @api_client.config.client_side_validation && request.data.nil?
-        raise ArgumentError, 'Missing the required parameter data when calling WordsApi.post_execute_template'
-      end
+      raise ArgumentError, 'Missing the required parameter data when calling WordsApi.post_execute_template' if @api_client.config.client_side_validation && request.data.nil?
       # resource path
       local_var_path = '/words/{name}/executeTemplate'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -7613,12 +6975,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'DocumentResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DocumentResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#post_execute_template\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7641,25 +7003,15 @@ module WordsRubySdk
     # @return [Array<(FieldResponse, Fixnum, Hash)>]
     # FieldResponse data, response status code and response headers
     private def post_field_with_http_info(request)
-      unless request.is_a? PostFieldRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? PostFieldRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.post_field ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.post_field ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.post_field'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.post_field' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'field' is set
-      if @api_client.config.client_side_validation && request.field.nil?
-        raise ArgumentError, 'Missing the required parameter field when calling WordsApi.post_field'
-      end
+      raise ArgumentError, 'Missing the required parameter field when calling WordsApi.post_field' if @api_client.config.client_side_validation && request.field.nil?
       # verify the required parameter 'index' is set
-      if @api_client.config.client_side_validation && request.index.nil?
-        raise ArgumentError, 'Missing the required parameter index when calling WordsApi.post_field'
-      end
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.post_field' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/fields/{index}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -7722,12 +7074,12 @@ module WordsRubySdk
       post_body = @api_client.object_to_http_body(request.field)
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'FieldResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FieldResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#post_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7750,25 +7102,15 @@ module WordsRubySdk
     # @return [Array<(FootnoteResponse, Fixnum, Hash)>]
     # FootnoteResponse data, response status code and response headers
     private def post_footnote_with_http_info(request)
-      unless request.is_a? PostFootnoteRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? PostFootnoteRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.post_footnote ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.post_footnote ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.post_footnote'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.post_footnote' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'footnote_dto' is set
-      if @api_client.config.client_side_validation && request.footnote_dto.nil?
-        raise ArgumentError, 'Missing the required parameter footnote_dto when calling WordsApi.post_footnote'
-      end
+      raise ArgumentError, 'Missing the required parameter footnote_dto when calling WordsApi.post_footnote' if @api_client.config.client_side_validation && request.footnote_dto.nil?
       # verify the required parameter 'index' is set
-      if @api_client.config.client_side_validation && request.index.nil?
-        raise ArgumentError, 'Missing the required parameter index when calling WordsApi.post_footnote'
-      end
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.post_footnote' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/footnotes/{index}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -7831,12 +7173,12 @@ module WordsRubySdk
       post_body = @api_client.object_to_http_body(request.footnote_dto)
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'FootnoteResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FootnoteResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#post_footnote\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7859,25 +7201,15 @@ module WordsRubySdk
     # @return [Array<(FormFieldResponse, Fixnum, Hash)>]
     # FormFieldResponse data, response status code and response headers
     private def post_form_field_with_http_info(request)
-      unless request.is_a? PostFormFieldRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? PostFormFieldRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.post_form_field ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.post_form_field ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.post_form_field'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.post_form_field' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'form_field' is set
-      if @api_client.config.client_side_validation && request.form_field.nil?
-        raise ArgumentError, 'Missing the required parameter form_field when calling WordsApi.post_form_field'
-      end
+      raise ArgumentError, 'Missing the required parameter form_field when calling WordsApi.post_form_field' if @api_client.config.client_side_validation && request.form_field.nil?
       # verify the required parameter 'index' is set
-      if @api_client.config.client_side_validation && request.index.nil?
-        raise ArgumentError, 'Missing the required parameter index when calling WordsApi.post_form_field'
-      end
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.post_form_field' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/formfields/{index}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -7940,12 +7272,12 @@ module WordsRubySdk
       post_body = @api_client.object_to_http_body(request.form_field)
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'FormFieldResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FormFieldResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#post_form_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7968,17 +7300,11 @@ module WordsRubySdk
     # @return [Array<(DocumentResponse, Fixnum, Hash)>]
     # DocumentResponse data, response status code and response headers
     private def post_insert_document_watermark_image_with_http_info(request)
-      unless request.is_a? PostInsertDocumentWatermarkImageRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? PostInsertDocumentWatermarkImageRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.post_insert_document_watermark_image ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.post_insert_document_watermark_image ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.post_insert_document_watermark_image'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.post_insert_document_watermark_image' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
       local_var_path = '/words/{name}/watermark/insertImage'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -8046,12 +7372,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'DocumentResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DocumentResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#post_insert_document_watermark_image\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8074,21 +7400,13 @@ module WordsRubySdk
     # @return [Array<(DocumentResponse, Fixnum, Hash)>]
     # DocumentResponse data, response status code and response headers
     private def post_insert_document_watermark_text_with_http_info(request)
-      unless request.is_a? PostInsertDocumentWatermarkTextRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? PostInsertDocumentWatermarkTextRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.post_insert_document_watermark_text ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.post_insert_document_watermark_text ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.post_insert_document_watermark_text'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.post_insert_document_watermark_text' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'watermark_text' is set
-      if @api_client.config.client_side_validation && request.watermark_text.nil?
-        raise ArgumentError, 'Missing the required parameter watermark_text when calling WordsApi.post_insert_document_watermark_text'
-      end
+      raise ArgumentError, 'Missing the required parameter watermark_text when calling WordsApi.post_insert_document_watermark_text' if @api_client.config.client_side_validation && request.watermark_text.nil?
       # resource path
       local_var_path = '/words/{name}/watermark/insertText'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -8145,12 +7463,12 @@ module WordsRubySdk
       post_body = @api_client.object_to_http_body(request.watermark_text)
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'DocumentResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DocumentResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#post_insert_document_watermark_text\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8173,21 +7491,13 @@ module WordsRubySdk
     # @return [Array<(DocumentResponse, Fixnum, Hash)>]
     # DocumentResponse data, response status code and response headers
     private def post_insert_page_numbers_with_http_info(request)
-      unless request.is_a? PostInsertPageNumbersRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? PostInsertPageNumbersRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.post_insert_page_numbers ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.post_insert_page_numbers ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.post_insert_page_numbers'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.post_insert_page_numbers' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'page_number' is set
-      if @api_client.config.client_side_validation && request.page_number.nil?
-        raise ArgumentError, 'Missing the required parameter page_number when calling WordsApi.post_insert_page_numbers'
-      end
+      raise ArgumentError, 'Missing the required parameter page_number when calling WordsApi.post_insert_page_numbers' if @api_client.config.client_side_validation && request.page_number.nil?
       # resource path
       local_var_path = '/words/{name}/insertPageNumbers'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -8244,12 +7554,12 @@ module WordsRubySdk
       post_body = @api_client.object_to_http_body(request.page_number)
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'DocumentResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DocumentResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#post_insert_page_numbers\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8272,17 +7582,11 @@ module WordsRubySdk
     # @return [Array<(SaveResponse, Fixnum, Hash)>]
     # SaveResponse data, response status code and response headers
     private def post_load_web_document_with_http_info(request)
-      unless request.is_a? PostLoadWebDocumentRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? PostLoadWebDocumentRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.post_load_web_document ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.post_load_web_document ...' if @api_client.config.debugging
       # verify the required parameter 'data' is set
-      if @api_client.config.client_side_validation && request.data.nil?
-        raise ArgumentError, 'Missing the required parameter data when calling WordsApi.post_load_web_document'
-      end
+      raise ArgumentError, 'Missing the required parameter data when calling WordsApi.post_load_web_document' if @api_client.config.client_side_validation && request.data.nil?
       # resource path
       local_var_path = '/words/loadWebDocument'
 
@@ -8308,12 +7612,12 @@ module WordsRubySdk
       post_body = @api_client.object_to_http_body(request.data)
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'SaveResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'SaveResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#post_load_web_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8336,21 +7640,13 @@ module WordsRubySdk
     # @return [Array<(ReplaceTextResponse, Fixnum, Hash)>]
     # ReplaceTextResponse data, response status code and response headers
     private def post_replace_text_with_http_info(request)
-      unless request.is_a? PostReplaceTextRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? PostReplaceTextRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.post_replace_text ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.post_replace_text ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.post_replace_text'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.post_replace_text' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'replace_text' is set
-      if @api_client.config.client_side_validation && request.replace_text.nil?
-        raise ArgumentError, 'Missing the required parameter replace_text when calling WordsApi.post_replace_text'
-      end
+      raise ArgumentError, 'Missing the required parameter replace_text when calling WordsApi.post_replace_text' if @api_client.config.client_side_validation && request.replace_text.nil?
       # resource path
       local_var_path = '/words/{name}/replaceText'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -8407,12 +7703,12 @@ module WordsRubySdk
       post_body = @api_client.object_to_http_body(request.replace_text)
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'ReplaceTextResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'ReplaceTextResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#post_replace_text\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8435,29 +7731,17 @@ module WordsRubySdk
     # @return [Array<(RunResponse, Fixnum, Hash)>]
     # RunResponse data, response status code and response headers
     private def post_run_with_http_info(request)
-      unless request.is_a? PostRunRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? PostRunRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.post_run ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.post_run ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.post_run'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.post_run' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'run' is set
-      if @api_client.config.client_side_validation && request.run.nil?
-        raise ArgumentError, 'Missing the required parameter run when calling WordsApi.post_run'
-      end
+      raise ArgumentError, 'Missing the required parameter run when calling WordsApi.post_run' if @api_client.config.client_side_validation && request.run.nil?
       # verify the required parameter 'paragraph_path' is set
-      if @api_client.config.client_side_validation && request.paragraph_path.nil?
-        raise ArgumentError, 'Missing the required parameter paragraph_path when calling WordsApi.post_run'
-      end
+      raise ArgumentError, 'Missing the required parameter paragraph_path when calling WordsApi.post_run' if @api_client.config.client_side_validation && request.paragraph_path.nil?
       # verify the required parameter 'index' is set
-      if @api_client.config.client_side_validation && request.index.nil?
-        raise ArgumentError, 'Missing the required parameter index when calling WordsApi.post_run'
-      end
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.post_run' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
       local_var_path = '/words/{name}/{paragraphPath}/runs/{index}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -8516,12 +7800,12 @@ module WordsRubySdk
       post_body = @api_client.object_to_http_body(request.run)
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'RunResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'RunResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#post_run\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8544,17 +7828,11 @@ module WordsRubySdk
     # @return [Array<(SplitDocumentResponse, Fixnum, Hash)>]
     # SplitDocumentResponse data, response status code and response headers
     private def post_split_document_with_http_info(request)
-      unless request.is_a? PostSplitDocumentRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? PostSplitDocumentRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.post_split_document ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.post_split_document ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.post_split_document'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.post_split_document' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
       local_var_path = '/words/{name}/split'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -8626,12 +7904,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'SplitDocumentResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'SplitDocumentResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#post_split_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8654,25 +7932,15 @@ module WordsRubySdk
     # @return [Array<(BookmarkResponse, Fixnum, Hash)>]
     # BookmarkResponse data, response status code and response headers
     private def post_update_document_bookmark_with_http_info(request)
-      unless request.is_a? PostUpdateDocumentBookmarkRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? PostUpdateDocumentBookmarkRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.post_update_document_bookmark ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.post_update_document_bookmark ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.post_update_document_bookmark'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.post_update_document_bookmark' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'bookmark_data' is set
-      if @api_client.config.client_side_validation && request.bookmark_data.nil?
-        raise ArgumentError, 'Missing the required parameter bookmark_data when calling WordsApi.post_update_document_bookmark'
-      end
+      raise ArgumentError, 'Missing the required parameter bookmark_data when calling WordsApi.post_update_document_bookmark' if @api_client.config.client_side_validation && request.bookmark_data.nil?
       # verify the required parameter 'bookmark_name' is set
-      if @api_client.config.client_side_validation && request.bookmark_name.nil?
-        raise ArgumentError, 'Missing the required parameter bookmark_name when calling WordsApi.post_update_document_bookmark'
-      end
+      raise ArgumentError, 'Missing the required parameter bookmark_name when calling WordsApi.post_update_document_bookmark' if @api_client.config.client_side_validation && request.bookmark_name.nil?
       # resource path
       local_var_path = '/words/{name}/bookmarks/{bookmarkName}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -8730,12 +7998,12 @@ module WordsRubySdk
       post_body = @api_client.object_to_http_body(request.bookmark_data)
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'BookmarkResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'BookmarkResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#post_update_document_bookmark\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8758,17 +8026,11 @@ module WordsRubySdk
     # @return [Array<(DocumentResponse, Fixnum, Hash)>]
     # DocumentResponse data, response status code and response headers
     private def post_update_document_fields_with_http_info(request)
-      unless request.is_a? PostUpdateDocumentFieldsRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? PostUpdateDocumentFieldsRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.post_update_document_fields ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.post_update_document_fields ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.post_update_document_fields'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.post_update_document_fields' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
       local_var_path = '/words/{name}/updateFields'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -8815,12 +8077,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'DocumentResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DocumentResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#post_update_document_fields\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8843,21 +8105,13 @@ module WordsRubySdk
     # @return [Array<(CommentResponse, Fixnum, Hash)>]
     # CommentResponse data, response status code and response headers
     private def put_comment_with_http_info(request)
-      unless request.is_a? PutCommentRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? PutCommentRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.put_comment ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.put_comment ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.put_comment'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.put_comment' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'comment' is set
-      if @api_client.config.client_side_validation && request.comment.nil?
-        raise ArgumentError, 'Missing the required parameter comment when calling WordsApi.put_comment'
-      end
+      raise ArgumentError, 'Missing the required parameter comment when calling WordsApi.put_comment' if @api_client.config.client_side_validation && request.comment.nil?
       # resource path
       local_var_path = '/words/{name}/comments'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -8914,12 +8168,12 @@ module WordsRubySdk
       post_body = @api_client.object_to_http_body(request.comment)
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'CommentResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'CommentResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#put_comment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8942,21 +8196,13 @@ module WordsRubySdk
     # @return [Array<(File, Fixnum, Hash)>]
     # File data, response status code and response headers
     private def put_convert_document_with_http_info(request)
-      unless request.is_a? PutConvertDocumentRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? PutConvertDocumentRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.put_convert_document ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.put_convert_document ...' if @api_client.config.debugging
       # verify the required parameter 'document' is set
-      if @api_client.config.client_side_validation && request.document.nil?
-        raise ArgumentError, 'Missing the required parameter document when calling WordsApi.put_convert_document'
-      end
+      raise ArgumentError, 'Missing the required parameter document when calling WordsApi.put_convert_document' if @api_client.config.client_side_validation && request.document.nil?
       # verify the required parameter 'format' is set
-      if @api_client.config.client_side_validation && request.format.nil?
-        raise ArgumentError, 'Missing the required parameter format when calling WordsApi.put_convert_document'
-      end
+      raise ArgumentError, 'Missing the required parameter format when calling WordsApi.put_convert_document' if @api_client.config.client_side_validation && request.format.nil?
       # resource path
       local_var_path = '/words/convert'
 
@@ -9000,12 +8246,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'File')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'File')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#put_convert_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -9028,13 +8274,9 @@ module WordsRubySdk
     # @return [Array<(DocumentResponse, Fixnum, Hash)>]
     # DocumentResponse data, response status code and response headers
     private def put_create_document_with_http_info(request)
-      unless request.is_a? PutCreateDocumentRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? PutCreateDocumentRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.put_create_document ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.put_create_document ...' if @api_client.config.debugging
       # resource path
       local_var_path = '/words/create'
 
@@ -9070,12 +8312,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'DocumentResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DocumentResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#put_create_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -9098,17 +8340,11 @@ module WordsRubySdk
     # @return [Array<(FieldNamesResponse, Fixnum, Hash)>]
     # FieldNamesResponse data, response status code and response headers
     private def put_document_field_names_with_http_info(request)
-      unless request.is_a? PutDocumentFieldNamesRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? PutDocumentFieldNamesRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.put_document_field_names ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.put_document_field_names ...' if @api_client.config.debugging
       # verify the required parameter 'template' is set
-      if @api_client.config.client_side_validation && request.template.nil?
-        raise ArgumentError, 'Missing the required parameter template when calling WordsApi.put_document_field_names'
-      end
+      raise ArgumentError, 'Missing the required parameter template when calling WordsApi.put_document_field_names' if @api_client.config.client_side_validation && request.template.nil?
       # resource path
       local_var_path = '/words/mailMergeFieldNames'
 
@@ -9135,12 +8371,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'FieldNamesResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FieldNamesResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#put_document_field_names\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -9163,21 +8399,13 @@ module WordsRubySdk
     # @return [Array<(SaveResponse, Fixnum, Hash)>]
     # SaveResponse data, response status code and response headers
     private def put_document_save_as_tiff_with_http_info(request)
-      unless request.is_a? PutDocumentSaveAsTiffRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? PutDocumentSaveAsTiffRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.put_document_save_as_tiff ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.put_document_save_as_tiff ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.put_document_save_as_tiff'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.put_document_save_as_tiff' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'save_options' is set
-      if @api_client.config.client_side_validation && request.save_options.nil?
-        raise ArgumentError, 'Missing the required parameter save_options when calling WordsApi.put_document_save_as_tiff'
-      end
+      raise ArgumentError, 'Missing the required parameter save_options when calling WordsApi.put_document_save_as_tiff' if @api_client.config.client_side_validation && request.save_options.nil?
       # resource path
       local_var_path = '/words/{name}/saveAs/tiff'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -9319,12 +8547,12 @@ module WordsRubySdk
       post_body = @api_client.object_to_http_body(request.save_options)
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'SaveResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'SaveResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#put_document_save_as_tiff\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -9347,25 +8575,15 @@ module WordsRubySdk
     # @return [Array<(DrawingObjectResponse, Fixnum, Hash)>]
     # DrawingObjectResponse data, response status code and response headers
     private def put_drawing_object_with_http_info(request)
-      unless request.is_a? PutDrawingObjectRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? PutDrawingObjectRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.put_drawing_object ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.put_drawing_object ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.put_drawing_object'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.put_drawing_object' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'drawing_object' is set
-      if @api_client.config.client_side_validation && request.drawing_object.nil?
-        raise ArgumentError, 'Missing the required parameter drawing_object when calling WordsApi.put_drawing_object'
-      end
+      raise ArgumentError, 'Missing the required parameter drawing_object when calling WordsApi.put_drawing_object' if @api_client.config.client_side_validation && request.drawing_object.nil?
       # verify the required parameter 'image_file' is set
-      if @api_client.config.client_side_validation && request.image_file.nil?
-        raise ArgumentError, 'Missing the required parameter image_file when calling WordsApi.put_drawing_object'
-      end
+      raise ArgumentError, 'Missing the required parameter image_file when calling WordsApi.put_drawing_object' if @api_client.config.client_side_validation && request.image_file.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/drawingObjects'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -9429,12 +8647,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'DrawingObjectResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DrawingObjectResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#put_drawing_object\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -9457,21 +8675,13 @@ module WordsRubySdk
     # @return [Array<(File, Fixnum, Hash)>]
     # File data, response status code and response headers
     private def put_execute_mail_merge_online_with_http_info(request)
-      unless request.is_a? PutExecuteMailMergeOnlineRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? PutExecuteMailMergeOnlineRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.put_execute_mail_merge_online ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.put_execute_mail_merge_online ...' if @api_client.config.debugging
       # verify the required parameter 'template' is set
-      if @api_client.config.client_side_validation && request.template.nil?
-        raise ArgumentError, 'Missing the required parameter template when calling WordsApi.put_execute_mail_merge_online'
-      end
+      raise ArgumentError, 'Missing the required parameter template when calling WordsApi.put_execute_mail_merge_online' if @api_client.config.client_side_validation && request.template.nil?
       # verify the required parameter 'data' is set
-      if @api_client.config.client_side_validation && request.data.nil?
-        raise ArgumentError, 'Missing the required parameter data when calling WordsApi.put_execute_mail_merge_online'
-      end
+      raise ArgumentError, 'Missing the required parameter data when calling WordsApi.put_execute_mail_merge_online' if @api_client.config.client_side_validation && request.data.nil?
       # resource path
       local_var_path = '/words/executeMailMerge'
 
@@ -9509,12 +8719,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'File')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'File')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#put_execute_mail_merge_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -9537,21 +8747,13 @@ module WordsRubySdk
     # @return [Array<(File, Fixnum, Hash)>]
     # File data, response status code and response headers
     private def put_execute_template_online_with_http_info(request)
-      unless request.is_a? PutExecuteTemplateOnlineRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? PutExecuteTemplateOnlineRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.put_execute_template_online ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.put_execute_template_online ...' if @api_client.config.debugging
       # verify the required parameter 'template' is set
-      if @api_client.config.client_side_validation && request.template.nil?
-        raise ArgumentError, 'Missing the required parameter template when calling WordsApi.put_execute_template_online'
-      end
+      raise ArgumentError, 'Missing the required parameter template when calling WordsApi.put_execute_template_online' if @api_client.config.client_side_validation && request.template.nil?
       # verify the required parameter 'data' is set
-      if @api_client.config.client_side_validation && request.data.nil?
-        raise ArgumentError, 'Missing the required parameter data when calling WordsApi.put_execute_template_online'
-      end
+      raise ArgumentError, 'Missing the required parameter data when calling WordsApi.put_execute_template_online' if @api_client.config.client_side_validation && request.data.nil?
       # resource path
       local_var_path = '/words/executeTemplate'
 
@@ -9594,12 +8796,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'File')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'File')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#put_execute_template_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -9622,21 +8824,13 @@ module WordsRubySdk
     # @return [Array<(FieldResponse, Fixnum, Hash)>]
     # FieldResponse data, response status code and response headers
     private def put_field_with_http_info(request)
-      unless request.is_a? PutFieldRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? PutFieldRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.put_field ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.put_field ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.put_field'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.put_field' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'field' is set
-      if @api_client.config.client_side_validation && request.field.nil?
-        raise ArgumentError, 'Missing the required parameter field when calling WordsApi.put_field'
-      end
+      raise ArgumentError, 'Missing the required parameter field when calling WordsApi.put_field' if @api_client.config.client_side_validation && request.field.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/fields'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -9703,12 +8897,12 @@ module WordsRubySdk
       post_body = @api_client.object_to_http_body(request.field)
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'FieldResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FieldResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#put_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -9731,21 +8925,13 @@ module WordsRubySdk
     # @return [Array<(FootnoteResponse, Fixnum, Hash)>]
     # FootnoteResponse data, response status code and response headers
     private def put_footnote_with_http_info(request)
-      unless request.is_a? PutFootnoteRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? PutFootnoteRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.put_footnote ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.put_footnote ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.put_footnote'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.put_footnote' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'footnote_dto' is set
-      if @api_client.config.client_side_validation && request.footnote_dto.nil?
-        raise ArgumentError, 'Missing the required parameter footnote_dto when calling WordsApi.put_footnote'
-      end
+      raise ArgumentError, 'Missing the required parameter footnote_dto when calling WordsApi.put_footnote' if @api_client.config.client_side_validation && request.footnote_dto.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/footnotes'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -9807,12 +8993,12 @@ module WordsRubySdk
       post_body = @api_client.object_to_http_body(request.footnote_dto)
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'FootnoteResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FootnoteResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#put_footnote\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -9835,21 +9021,13 @@ module WordsRubySdk
     # @return [Array<(FormFieldResponse, Fixnum, Hash)>]
     # FormFieldResponse data, response status code and response headers
     private def put_form_field_with_http_info(request)
-      unless request.is_a? PutFormFieldRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? PutFormFieldRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.put_form_field ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.put_form_field ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.put_form_field'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.put_form_field' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'form_field' is set
-      if @api_client.config.client_side_validation && request.form_field.nil?
-        raise ArgumentError, 'Missing the required parameter form_field when calling WordsApi.put_form_field'
-      end
+      raise ArgumentError, 'Missing the required parameter form_field when calling WordsApi.put_form_field' if @api_client.config.client_side_validation && request.form_field.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/formfields'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -9916,12 +9094,12 @@ module WordsRubySdk
       post_body = @api_client.object_to_http_body(request.form_field)
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'FormFieldResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FormFieldResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#put_form_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -9944,21 +9122,13 @@ module WordsRubySdk
     # @return [Array<(HeaderFooterResponse, Fixnum, Hash)>]
     # HeaderFooterResponse data, response status code and response headers
     private def put_header_footer_with_http_info(request)
-      unless request.is_a? PutHeaderFooterRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? PutHeaderFooterRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.put_header_footer ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.put_header_footer ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.put_header_footer'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.put_header_footer' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'header_footer_type' is set
-      if @api_client.config.client_side_validation && request.header_footer_type.nil?
-        raise ArgumentError, 'Missing the required parameter header_footer_type when calling WordsApi.put_header_footer'
-      end
+      raise ArgumentError, 'Missing the required parameter header_footer_type when calling WordsApi.put_header_footer' if @api_client.config.client_side_validation && request.header_footer_type.nil?
       # resource path
       local_var_path = '/words/{name}/{sectionPath}/headersfooters'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -10020,12 +9190,12 @@ module WordsRubySdk
       post_body = @api_client.object_to_http_body(request.header_footer_type)
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'HeaderFooterResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'HeaderFooterResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#put_header_footer\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -10048,21 +9218,13 @@ module WordsRubySdk
     # @return [Array<(ParagraphResponse, Fixnum, Hash)>]
     # ParagraphResponse data, response status code and response headers
     private def put_paragraph_with_http_info(request)
-      unless request.is_a? PutParagraphRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? PutParagraphRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.put_paragraph ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.put_paragraph ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.put_paragraph'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.put_paragraph' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'paragraph' is set
-      if @api_client.config.client_side_validation && request.paragraph.nil?
-        raise ArgumentError, 'Missing the required parameter paragraph when calling WordsApi.put_paragraph'
-      end
+      raise ArgumentError, 'Missing the required parameter paragraph when calling WordsApi.put_paragraph' if @api_client.config.client_side_validation && request.paragraph.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/paragraphs'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -10129,12 +9291,12 @@ module WordsRubySdk
       post_body = @api_client.object_to_http_body(request.paragraph)
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'ParagraphResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'ParagraphResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#put_paragraph\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -10157,21 +9319,13 @@ module WordsRubySdk
     # @return [Array<(ProtectionDataResponse, Fixnum, Hash)>]
     # ProtectionDataResponse data, response status code and response headers
     private def put_protect_document_with_http_info(request)
-      unless request.is_a? PutProtectDocumentRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? PutProtectDocumentRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.put_protect_document ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.put_protect_document ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.put_protect_document'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.put_protect_document' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'protection_request' is set
-      if @api_client.config.client_side_validation && request.protection_request.nil?
-        raise ArgumentError, 'Missing the required parameter protection_request when calling WordsApi.put_protect_document'
-      end
+      raise ArgumentError, 'Missing the required parameter protection_request when calling WordsApi.put_protect_document' if @api_client.config.client_side_validation && request.protection_request.nil?
       # resource path
       local_var_path = '/words/{name}/protection'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -10218,12 +9372,12 @@ module WordsRubySdk
       post_body = @api_client.object_to_http_body(request.protection_request)
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'ProtectionDataResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'ProtectionDataResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#put_protect_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -10246,25 +9400,15 @@ module WordsRubySdk
     # @return [Array<(RunResponse, Fixnum, Hash)>]
     # RunResponse data, response status code and response headers
     private def put_run_with_http_info(request)
-      unless request.is_a? PutRunRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? PutRunRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.put_run ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.put_run ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.put_run'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.put_run' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'paragraph_path' is set
-      if @api_client.config.client_side_validation && request.paragraph_path.nil?
-        raise ArgumentError, 'Missing the required parameter paragraph_path when calling WordsApi.put_run'
-      end
+      raise ArgumentError, 'Missing the required parameter paragraph_path when calling WordsApi.put_run' if @api_client.config.client_side_validation && request.paragraph_path.nil?
       # verify the required parameter 'run' is set
-      if @api_client.config.client_side_validation && request.run.nil?
-        raise ArgumentError, 'Missing the required parameter run when calling WordsApi.put_run'
-      end
+      raise ArgumentError, 'Missing the required parameter run when calling WordsApi.put_run' if @api_client.config.client_side_validation && request.run.nil?
       # resource path
       local_var_path = '/words/{name}/{paragraphPath}/runs'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -10327,12 +9471,12 @@ module WordsRubySdk
       post_body = @api_client.object_to_http_body(request.run)
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'RunResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'RunResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#put_run\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -10355,17 +9499,11 @@ module WordsRubySdk
     # @return [Array<(RevisionsModificationResponse, Fixnum, Hash)>]
     # RevisionsModificationResponse data, response status code and response headers
     private def reject_all_revisions_with_http_info(request)
-      unless request.is_a? RejectAllRevisionsRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? RejectAllRevisionsRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.reject_all_revisions ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.reject_all_revisions ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.reject_all_revisions'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.reject_all_revisions' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
       local_var_path = '/words/{name}/revisions/rejectAll'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -10412,12 +9550,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'RevisionsModificationResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'RevisionsModificationResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#reject_all_revisions\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -10440,25 +9578,15 @@ module WordsRubySdk
     # @return [Array<(File, Fixnum, Hash)>]
     # File data, response status code and response headers
     private def render_drawing_object_with_http_info(request)
-      unless request.is_a? RenderDrawingObjectRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? RenderDrawingObjectRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.render_drawing_object ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.render_drawing_object ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.render_drawing_object'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.render_drawing_object' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'format' is set
-      if @api_client.config.client_side_validation && request.format.nil?
-        raise ArgumentError, 'Missing the required parameter format when calling WordsApi.render_drawing_object'
-      end
+      raise ArgumentError, 'Missing the required parameter format when calling WordsApi.render_drawing_object' if @api_client.config.client_side_validation && request.format.nil?
       # verify the required parameter 'index' is set
-      if @api_client.config.client_side_validation && request.index.nil?
-        raise ArgumentError, 'Missing the required parameter index when calling WordsApi.render_drawing_object'
-      end
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.render_drawing_object' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/drawingObjects/{index}/render'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -10513,12 +9641,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'File')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'File')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#render_drawing_object\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -10541,25 +9669,15 @@ module WordsRubySdk
     # @return [Array<(File, Fixnum, Hash)>]
     # File data, response status code and response headers
     private def render_math_object_with_http_info(request)
-      unless request.is_a? RenderMathObjectRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? RenderMathObjectRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.render_math_object ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.render_math_object ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.render_math_object'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.render_math_object' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'format' is set
-      if @api_client.config.client_side_validation && request.format.nil?
-        raise ArgumentError, 'Missing the required parameter format when calling WordsApi.render_math_object'
-      end
+      raise ArgumentError, 'Missing the required parameter format when calling WordsApi.render_math_object' if @api_client.config.client_side_validation && request.format.nil?
       # verify the required parameter 'index' is set
-      if @api_client.config.client_side_validation && request.index.nil?
-        raise ArgumentError, 'Missing the required parameter index when calling WordsApi.render_math_object'
-      end
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.render_math_object' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/OfficeMathObjects/{index}/render'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -10614,12 +9732,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'File')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'File')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#render_math_object\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -10642,25 +9760,15 @@ module WordsRubySdk
     # @return [Array<(File, Fixnum, Hash)>]
     # File data, response status code and response headers
     private def render_page_with_http_info(request)
-      unless request.is_a? RenderPageRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? RenderPageRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.render_page ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.render_page ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.render_page'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.render_page' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'page_index' is set
-      if @api_client.config.client_side_validation && request.page_index.nil?
-        raise ArgumentError, 'Missing the required parameter page_index when calling WordsApi.render_page'
-      end
+      raise ArgumentError, 'Missing the required parameter page_index when calling WordsApi.render_page' if @api_client.config.client_side_validation && request.page_index.nil?
       # verify the required parameter 'format' is set
-      if @api_client.config.client_side_validation && request.format.nil?
-        raise ArgumentError, 'Missing the required parameter format when calling WordsApi.render_page'
-      end
+      raise ArgumentError, 'Missing the required parameter format when calling WordsApi.render_page' if @api_client.config.client_side_validation && request.format.nil?
       # resource path
       local_var_path = '/words/{name}/pages/{pageIndex}/render'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -10710,12 +9818,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'File')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'File')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#render_page\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -10738,25 +9846,15 @@ module WordsRubySdk
     # @return [Array<(File, Fixnum, Hash)>]
     # File data, response status code and response headers
     private def render_paragraph_with_http_info(request)
-      unless request.is_a? RenderParagraphRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? RenderParagraphRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.render_paragraph ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.render_paragraph ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.render_paragraph'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.render_paragraph' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'format' is set
-      if @api_client.config.client_side_validation && request.format.nil?
-        raise ArgumentError, 'Missing the required parameter format when calling WordsApi.render_paragraph'
-      end
+      raise ArgumentError, 'Missing the required parameter format when calling WordsApi.render_paragraph' if @api_client.config.client_side_validation && request.format.nil?
       # verify the required parameter 'index' is set
-      if @api_client.config.client_side_validation && request.index.nil?
-        raise ArgumentError, 'Missing the required parameter index when calling WordsApi.render_paragraph'
-      end
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.render_paragraph' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/paragraphs/{index}/render'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -10811,12 +9909,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'File')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'File')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#render_paragraph\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -10839,25 +9937,15 @@ module WordsRubySdk
     # @return [Array<(File, Fixnum, Hash)>]
     # File data, response status code and response headers
     private def render_table_with_http_info(request)
-      unless request.is_a? RenderTableRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? RenderTableRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.render_table ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.render_table ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.render_table'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.render_table' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'format' is set
-      if @api_client.config.client_side_validation && request.format.nil?
-        raise ArgumentError, 'Missing the required parameter format when calling WordsApi.render_table'
-      end
+      raise ArgumentError, 'Missing the required parameter format when calling WordsApi.render_table' if @api_client.config.client_side_validation && request.format.nil?
       # verify the required parameter 'index' is set
-      if @api_client.config.client_side_validation && request.index.nil?
-        raise ArgumentError, 'Missing the required parameter index when calling WordsApi.render_table'
-      end
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.render_table' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/tables/{index}/render'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -10912,12 +10000,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'File')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'File')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#render_table\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -10940,13 +10028,9 @@ module WordsRubySdk
     # @return [Array<(AsposeResponse, Fixnum, Hash)>]
     # AsposeResponse data, response status code and response headers
     private def reset_cache_with_http_info(request)
-      unless request.is_a? ResetCacheRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? ResetCacheRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.reset_cache ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.reset_cache ...' if @api_client.config.debugging
       # resource path
       local_var_path = '/words/fonts/cache'
 
@@ -10967,12 +10051,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'AsposeResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'AsposeResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#reset_cache\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -10995,21 +10079,13 @@ module WordsRubySdk
     # @return [Array<(SearchResponse, Fixnum, Hash)>]
     # SearchResponse data, response status code and response headers
     private def search_with_http_info(request)
-      unless request.is_a? SearchRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? SearchRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.search ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.search ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.search'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.search' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'pattern' is set
-      if @api_client.config.client_side_validation && request.pattern.nil?
-        raise ArgumentError, 'Missing the required parameter pattern when calling WordsApi.search'
-      end
+      raise ArgumentError, 'Missing the required parameter pattern when calling WordsApi.search' if @api_client.config.client_side_validation && request.pattern.nil?
       # resource path
       local_var_path = '/words/{name}/search'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -11053,12 +10129,12 @@ module WordsRubySdk
       post_body = nil
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'SearchResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'SearchResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#search\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -11081,29 +10157,17 @@ module WordsRubySdk
     # @return [Array<(BorderResponse, Fixnum, Hash)>]
     # BorderResponse data, response status code and response headers
     private def update_border_with_http_info(request)
-      unless request.is_a? UpdateBorderRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? UpdateBorderRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.update_border ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.update_border ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.update_border'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.update_border' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'border_properties' is set
-      if @api_client.config.client_side_validation && request.border_properties.nil?
-        raise ArgumentError, 'Missing the required parameter border_properties when calling WordsApi.update_border'
-      end
+      raise ArgumentError, 'Missing the required parameter border_properties when calling WordsApi.update_border' if @api_client.config.client_side_validation && request.border_properties.nil?
       # verify the required parameter 'node_path' is set
-      if @api_client.config.client_side_validation && request.node_path.nil?
-        raise ArgumentError, 'Missing the required parameter node_path when calling WordsApi.update_border'
-      end
+      raise ArgumentError, 'Missing the required parameter node_path when calling WordsApi.update_border' if @api_client.config.client_side_validation && request.node_path.nil?
       # verify the required parameter 'index' is set
-      if @api_client.config.client_side_validation && request.index.nil?
-        raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_border'
-      end
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_border' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/borders/{index}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -11162,12 +10226,12 @@ module WordsRubySdk
       post_body = @api_client.object_to_http_body(request.border_properties)
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'BorderResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'BorderResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#update_border\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -11190,25 +10254,15 @@ module WordsRubySdk
     # @return [Array<(SectionPageSetupResponse, Fixnum, Hash)>]
     # SectionPageSetupResponse data, response status code and response headers
     private def update_section_page_setup_with_http_info(request)
-      unless request.is_a? UpdateSectionPageSetupRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? UpdateSectionPageSetupRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.update_section_page_setup ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.update_section_page_setup ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.update_section_page_setup'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.update_section_page_setup' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'section_index' is set
-      if @api_client.config.client_side_validation && request.section_index.nil?
-        raise ArgumentError, 'Missing the required parameter section_index when calling WordsApi.update_section_page_setup'
-      end
+      raise ArgumentError, 'Missing the required parameter section_index when calling WordsApi.update_section_page_setup' if @api_client.config.client_side_validation && request.section_index.nil?
       # verify the required parameter 'page_setup' is set
-      if @api_client.config.client_side_validation && request.page_setup.nil?
-        raise ArgumentError, 'Missing the required parameter page_setup when calling WordsApi.update_section_page_setup'
-      end
+      raise ArgumentError, 'Missing the required parameter page_setup when calling WordsApi.update_section_page_setup' if @api_client.config.client_side_validation && request.page_setup.nil?
       # resource path
       local_var_path = '/words/{name}/sections/{sectionIndex}/pageSetup'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -11266,12 +10320,12 @@ module WordsRubySdk
       post_body = @api_client.object_to_http_body(request.page_setup)
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'SectionPageSetupResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'SectionPageSetupResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#update_section_page_setup\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -11294,25 +10348,15 @@ module WordsRubySdk
     # @return [Array<(TableCellFormatResponse, Fixnum, Hash)>]
     # TableCellFormatResponse data, response status code and response headers
     private def update_table_cell_format_with_http_info(request)
-      unless request.is_a? UpdateTableCellFormatRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? UpdateTableCellFormatRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.update_table_cell_format ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.update_table_cell_format ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.update_table_cell_format'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.update_table_cell_format' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'table_row_path' is set
-      if @api_client.config.client_side_validation && request.table_row_path.nil?
-        raise ArgumentError, 'Missing the required parameter table_row_path when calling WordsApi.update_table_cell_format'
-      end
+      raise ArgumentError, 'Missing the required parameter table_row_path when calling WordsApi.update_table_cell_format' if @api_client.config.client_side_validation && request.table_row_path.nil?
       # verify the required parameter 'index' is set
-      if @api_client.config.client_side_validation && request.index.nil?
-        raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_table_cell_format'
-      end
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_table_cell_format' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
       local_var_path = '/words/{name}/{tableRowPath}/cells/{index}/cellformat'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -11371,12 +10415,12 @@ module WordsRubySdk
       post_body = @api_client.object_to_http_body(request.format)
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'TableCellFormatResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'TableCellFormatResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#update_table_cell_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -11399,21 +10443,13 @@ module WordsRubySdk
     # @return [Array<(TablePropertiesResponse, Fixnum, Hash)>]
     # TablePropertiesResponse data, response status code and response headers
     private def update_table_properties_with_http_info(request)
-      unless request.is_a? UpdateTablePropertiesRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? UpdateTablePropertiesRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.update_table_properties ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.update_table_properties ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.update_table_properties'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.update_table_properties' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'index' is set
-      if @api_client.config.client_side_validation && request.index.nil?
-        raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_table_properties'
-      end
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_table_properties' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
       local_var_path = '/words/{name}/{nodePath}/tables/{index}/properties'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -11476,12 +10512,12 @@ module WordsRubySdk
       post_body = @api_client.object_to_http_body(request.properties)
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'TablePropertiesResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'TablePropertiesResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#update_table_properties\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -11504,25 +10540,15 @@ module WordsRubySdk
     # @return [Array<(TableRowFormatResponse, Fixnum, Hash)>]
     # TableRowFormatResponse data, response status code and response headers
     private def update_table_row_format_with_http_info(request)
-      unless request.is_a? UpdateTableRowFormatRequest
-        raise ArgumentError, 'Incorrect request type'
-      end
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? UpdateTableRowFormatRequest
 
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WordsApi.update_table_row_format ...'
-      end
+      @api_client.config.logger.debug 'Calling API: WordsApi.update_table_row_format ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && request.name.nil?
-        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.update_table_row_format'
-      end
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.update_table_row_format' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'table_path' is set
-      if @api_client.config.client_side_validation && request.table_path.nil?
-        raise ArgumentError, 'Missing the required parameter table_path when calling WordsApi.update_table_row_format'
-      end
+      raise ArgumentError, 'Missing the required parameter table_path when calling WordsApi.update_table_row_format' if @api_client.config.client_side_validation && request.table_path.nil?
       # verify the required parameter 'index' is set
-      if @api_client.config.client_side_validation && request.index.nil?
-        raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_table_row_format'
-      end
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_table_row_format' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
       local_var_path = '/words/{name}/{tablePath}/rows/{index}/rowformat'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -11581,12 +10607,12 @@ module WordsRubySdk
       post_body = @api_client.object_to_http_body(request.format)
       auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        header_params: header_params,
-        query_params: query_params,
-        form_params: form_params,
-        body: post_body,
-        auth_names: auth_names,
-        return_type: 'TableRowFormatResponse')
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'TableRowFormatResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: 
         WordsApi#update_table_row_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"

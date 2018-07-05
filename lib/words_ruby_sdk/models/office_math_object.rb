@@ -14,10 +14,10 @@ module WordsRubySdk
  #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  #  copies of the Software, and to permit persons to whom the Software is
  #  furnished to do so, subject to the following conditions:
- # 
+ #
  #  The above copyright notice and this permission notice shall be included in all
  #  copies or substantial portions of the Software.
- # 
+ #
  #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -101,29 +101,29 @@ module WordsRubySdk
       return unless attributes.is_a?(Hash)
 
       # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
+      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'link')
+      if attributes.key?(:'link')
         self.link = attributes[:'link']
       end
 
-      if attributes.has_key?(:'NodeId')
+      if attributes.key?(:'NodeId')
         self.node_id = attributes[:'NodeId']
       end
 
-      if attributes.has_key?(:'Content')
+      if attributes.key?(:'Content')
         self.content = attributes[:'Content']
       end
 
-      if attributes.has_key?(:'DisplayType')
+      if attributes.key?(:'DisplayType')
         self.display_type = attributes[:'DisplayType']
       end
 
-      if attributes.has_key?(:'Justification')
+      if attributes.key?(:'Justification')
         self.justification = attributes[:'Justification']
       end
 
-      if attributes.has_key?(:'MathObjectType')
+      if attributes.key?(:'MathObjectType')
         self.math_object_type = attributes[:'MathObjectType']
       end
 
@@ -132,18 +132,18 @@ module WordsRubySdk
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properies with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
+      invalid_properties = []
       return invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      display_type_validator = EnumAttributeValidator.new('String', ["Display", "Inline"])
+      display_type_validator = EnumAttributeValidator.new('String', %w("Display", "Inline"))
       return false unless display_type_validator.valid?(@display_type)
-      justification_validator = EnumAttributeValidator.new('String', ["CenterGroup", "Default", "Center", "Left", "Right", "Inline"])
+      justification_validator = EnumAttributeValidator.new('String', %w("CenterGroup", "Default", "Center", "Left", "Right", "Inline"))
       return false unless justification_validator.valid?(@justification)
-      math_object_type_validator = EnumAttributeValidator.new('String', ["OMath", "OMathPara", "Accent", "Bar", "BorderBox", "Box", "Delimiter", "Degree", "Argument", "Array", "Fraction", "Denominator", "Numerator", "Function", "FunctionName", "GroupCharacter", "Limit", "LowerLimit", "UpperLimit", "Matrix", "MatrixRow", "NAry", "Phantom", "Radical", "SubscriptPart", "SuperscriptPart", "PreSubSuperscript", "Subscript", "SubSuperscript", "Supercript"])
+      math_object_type_validator = EnumAttributeValidator.new('String', %w("OMath", "OMathPara", "Accent", "Bar", "BorderBox", "Box", "Delimiter", "Degree", "Argument", "Array", "Fraction", "Denominator", "Numerator", "Function", "FunctionName", "GroupCharacter", "Limit", "LowerLimit", "UpperLimit", "Matrix", "MatrixRow", "NAry", "Phantom", "Radical", "SubscriptPart", "SuperscriptPart", "PreSubSuperscript", "Subscript", "SubSuperscript", "Supercript"))
       return false unless math_object_type_validator.valid?(@math_object_type)
       return true
     end
@@ -151,7 +151,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] display_type Object to be assigned
     def display_type=(display_type)
-      validator = EnumAttributeValidator.new('String', ["Display", "Inline"])
+      validator = EnumAttributeValidator.new('String', %w("Display", "Inline"))
       if display_type.to_i == 0
         unless validator.valid?(display_type)
           fail ArgumentError, "invalid value for 'display_type', must be one of #{validator.allowable_values}."
@@ -165,7 +165,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] justification Object to be assigned
     def justification=(justification)
-      validator = EnumAttributeValidator.new('String', ["CenterGroup", "Default", "Center", "Left", "Right", "Inline"])
+      validator = EnumAttributeValidator.new('String', %w("CenterGroup", "Default", "Center", "Left", "Right", "Inline"))
       if justification.to_i == 0
         unless validator.valid?(justification)
           fail ArgumentError, "invalid value for 'justification', must be one of #{validator.allowable_values}."
@@ -179,7 +179,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] math_object_type Object to be assigned
     def math_object_type=(math_object_type)
-      validator = EnumAttributeValidator.new('String', ["OMath", "OMathPara", "Accent", "Bar", "BorderBox", "Box", "Delimiter", "Degree", "Argument", "Array", "Fraction", "Denominator", "Numerator", "Function", "FunctionName", "GroupCharacter", "Limit", "LowerLimit", "UpperLimit", "Matrix", "MatrixRow", "NAry", "Phantom", "Radical", "SubscriptPart", "SuperscriptPart", "PreSubSuperscript", "Subscript", "SubSuperscript", "Supercript"])
+      validator = EnumAttributeValidator.new('String', %w("OMath", "OMathPara", "Accent", "Bar", "BorderBox", "Box", "Delimiter", "Degree", "Argument", "Array", "Fraction", "Denominator", "Numerator", "Function", "FunctionName", "GroupCharacter", "Limit", "LowerLimit", "UpperLimit", "Matrix", "MatrixRow", "NAry", "Phantom", "Radical", "SubscriptPart", "SuperscriptPart", "PreSubSuperscript", "Subscript", "SubSuperscript", "Supercript"))
       if math_object_type.to_i == 0
         unless validator.valid?(math_object_type)
           fail ArgumentError, "invalid value for 'math_object_type', must be one of #{validator.allowable_values}."
@@ -192,21 +192,21 @@ module WordsRubySdk
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
-    def ==(o)
-      return true if self.equal?(o)
-      self.class == o.class &&
-          link == o.link &&
-          node_id == o.node_id &&
-          content == o.content &&
-          display_type == o.display_type &&
-          justification == o.justification &&
-          math_object_type == o.math_object_type
+    def ==(other)
+      return true if self.equal?(other)
+      self.class == other.class &&
+          link == other.link &&
+          node_id == other.node_id &&
+          content == other.content &&
+          display_type == other.display_type &&
+          justification == other.justification &&
+          math_object_type == other.math_object_type
     end
 
     # @see the `==` method
     # @param [Object] Object to be compared
-    def eql?(o)
-      self == o
+    def eql?(other)
+      self == other
     end
 
     # Calculates hash code according to all attributes.
@@ -225,11 +225,12 @@ module WordsRubySdk
           # check to ensure the input is an array given that the the attribute
           # is documented as an array but the input is not
           if attributes[self.class.attribute_map[key]].is_a?(Array)
-            self.send("#{key}=", attributes[self.class.attribute_map[key]].map{ |v| _deserialize($1, v) } )
+            self.send("#{key}=", attributes[self.class.attribute_map[key]].map { |v| _deserialize($1, v) })
           end
         elsif !attributes[self.class.attribute_map[key]].nil?
           self.send("#{key}=", _deserialize(type, attributes[self.class.attribute_map[key]]))
-        end # or else data not found in attributes(hash), not an issue as the data can be optional
+        end
+		# or else data not found in attributes(hash), not an issue as the data can be optional
       end
 
       self
@@ -271,7 +272,8 @@ module WordsRubySdk
             hash[_deserialize(k_type, k)] = _deserialize(v_type, v)
           end
         end
-      else # model
+      else
+	  # model
         temp_model = WordsRubySdk.const_get(type).new
         temp_model.build_from_hash(value)
       end
@@ -307,7 +309,7 @@ module WordsRubySdk
     # @return [Hash] Returns the value in the form of hash
     def _to_hash(value)
       if value.is_a?(Array)
-        value.compact.map{ |v| _to_hash(v) }
+        value.compact.map { |v| _to_hash(v) }
       elsif value.is_a?(Hash)
         {}.tap do |hash|
           value.each { |k, v| hash[k] = _to_hash(v) }
