@@ -1,1 +1,1 @@
-rubocop -o testReports/codeStyleErrors.txt
+rubocop ./lib -o testReports/codeStyleErrors.txt

@@ -3,7 +3,7 @@
 
 # Common configuration.
 Metrics/LineLength:
-  Max: 600
+  Max: 7010
 Style/AccessModifierDeclarations:
   EnforcedStyle: inline
 Metrics/ClassLength:
@@ -50,5 +50,23 @@ Style/PerlBackrefs:
   Enabled: false
 Layout/MultilineOperationIndentation:
   Enabled: false
-Layout:
-  Enabled:false
+Metrics/ParameterLists:
+  Enabled: false
+Layout/EmptyLinesAroundModuleBody:
+  Enabled: false
+Layout/EmptyLinesAroundClassBody:
+  Enabled: false
+Layout/LeadingBlankLines:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Layout/EmptyLinesAroundMethodBody:
+  Enabled: false
+Layout/EmptyLines:
+  Enabled: false
+Style/TrailingCommaInHashLiteral:
+  Enabled: false
+Style/AsciiComments:
+  Enabled: false
+Layout/IndentationWidth:
+  Enabled: false
