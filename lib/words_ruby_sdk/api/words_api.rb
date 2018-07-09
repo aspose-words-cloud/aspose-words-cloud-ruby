@@ -2232,6 +2232,62 @@ module WordsRubySdk
       [data, status_code, headers]
     end
 
+    # Gets the list of fonts, available for document processing
+    # 
+    # @param request GetAvailableFontsRequest
+    # @return [AvailableFontsResponse]
+    def get_available_fonts(request)
+      data, _status_code, _headers = get_available_fonts_with_http_info(request)
+      data
+    end
+
+    # Gets the list of fonts, available for document processing
+    # 
+    # @param request GetAvailableFontsRequest
+    # @return [Array<(AvailableFontsResponse, Fixnum, Hash)>]
+    # AvailableFontsResponse data, response status code and response headers
+    private def get_available_fonts_with_http_info(request)
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetAvailableFontsRequest
+
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_available_fonts ...' if @api_client.config.debugging
+      # resource path
+      local_var_path = '/words/fonts/available'
+
+      # query parameters
+      query_params = {}
+      if local_var_path.include? downcase_first_letter('FontsLocation')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('FontsLocation') + '}', request.fonts_location.to_s)
+      else
+        query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
+      end
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/xml', 'application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'AvailableFontsResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#get_available_fonts\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
     # Return a border.
     # 'nodePath' should refer to node with cell or row
     # @param request GetBorderRequest
