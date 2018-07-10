@@ -100,6 +100,9 @@ module WordsRubySdk
     # Specifies the details for encrypting the output PDF document
     attr_accessor :encryption_details
 
+    # A flag specifying whether URI should be escaped before writing.             
+    attr_accessor :escape_uri
+
     # Determines whether or not to export document structure
     attr_accessor :export_document_structure
 
@@ -169,6 +172,7 @@ module WordsRubySdk
         :'downsample_options' => :'DownsampleOptions',
         :'embed_full_fonts' => :'EmbedFullFonts',
         :'encryption_details' => :'EncryptionDetails',
+        :'escape_uri' => :'EscapeUri',
         :'export_document_structure' => :'ExportDocumentStructure',
         :'font_embedding_mode' => :'FontEmbeddingMode',
         :'image_color_space_export_mode' => :'ImageColorSpaceExportMode',
@@ -212,6 +216,7 @@ module WordsRubySdk
         :'downsample_options' => :'DownsampleOptionsData',
         :'embed_full_fonts' => :'BOOLEAN',
         :'encryption_details' => :'PdfEncryptionDetailsData',
+        :'escape_uri' => :'BOOLEAN',
         :'export_document_structure' => :'BOOLEAN',
         :'font_embedding_mode' => :'String',
         :'image_color_space_export_mode' => :'String',
@@ -329,6 +334,10 @@ module WordsRubySdk
         self.encryption_details = attributes[:'EncryptionDetails']
       end
 
+      if attributes.key?(:'EscapeUri')
+        self.escape_uri = attributes[:'EscapeUri']
+      end
+
       if attributes.key?(:'ExportDocumentStructure')
         self.export_document_structure = attributes[:'ExportDocumentStructure']
       end
@@ -428,6 +437,7 @@ module WordsRubySdk
           downsample_options == other.downsample_options &&
           embed_full_fonts == other.embed_full_fonts &&
           encryption_details == other.encryption_details &&
+          escape_uri == other.escape_uri &&
           export_document_structure == other.export_document_structure &&
           font_embedding_mode == other.font_embedding_mode &&
           image_color_space_export_mode == other.image_color_space_export_mode &&
@@ -453,7 +463,7 @@ module WordsRubySdk
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [color_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, compliance, create_note_hyperlinks, custom_properties_export, digital_signature_details, display_doc_title, downsample_options, embed_full_fonts, encryption_details, export_document_structure, font_embedding_mode, image_color_space_export_mode, image_compression, open_hyperlinks_in_new_window, outline_options, page_mode, preblend_images, preserve_form_fields, text_compression, use_book_fold_printing_settings, use_core_fonts, zoom_behavior, zoom_factor].hash
+      [color_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, compliance, create_note_hyperlinks, custom_properties_export, digital_signature_details, display_doc_title, downsample_options, embed_full_fonts, encryption_details, escape_uri, export_document_structure, font_embedding_mode, image_color_space_export_mode, image_compression, open_hyperlinks_in_new_window, outline_options, page_mode, preblend_images, preserve_form_fields, text_compression, use_book_fold_printing_settings, use_core_fonts, zoom_behavior, zoom_factor].hash
     end
 
     # Builds the object from hash
