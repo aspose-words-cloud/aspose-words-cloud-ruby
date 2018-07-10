@@ -34,6 +34,9 @@ module WordsRubySdk
     # Determines how EMF+ Dual metafiles should be rendered
     attr_accessor :emf_plus_dual_rendering_mode
 
+    # Gets or sets a value determining whether or not the raster operations should be emulated.             
+    attr_accessor :emulate_raster_operations
+
     # Determines how metafile images should be rendered
     attr_accessor :rendering_mode
 
@@ -45,6 +48,7 @@ module WordsRubySdk
     def self.attribute_map
       {
         :'emf_plus_dual_rendering_mode' => :'EmfPlusDualRenderingMode',
+        :'emulate_raster_operations' => :'EmulateRasterOperations',
         :'rendering_mode' => :'RenderingMode',
         :'use_emf_embedded_to_wmf' => :'UseEmfEmbeddedToWmf'
       }
@@ -54,6 +58,7 @@ module WordsRubySdk
     def self.swagger_types
       {
         :'emf_plus_dual_rendering_mode' => :'String',
+        :'emulate_raster_operations' => :'BOOLEAN',
         :'rendering_mode' => :'String',
         :'use_emf_embedded_to_wmf' => :'BOOLEAN'
       }
@@ -69,6 +74,10 @@ module WordsRubySdk
 
       if attributes.key?(:'EmfPlusDualRenderingMode')
         self.emf_plus_dual_rendering_mode = attributes[:'EmfPlusDualRenderingMode']
+      end
+
+      if attributes.key?(:'EmulateRasterOperations')
+        self.emulate_raster_operations = attributes[:'EmulateRasterOperations']
       end
 
       if attributes.key?(:'RenderingMode')
@@ -100,6 +109,7 @@ module WordsRubySdk
       return true if self.equal?(other)
       self.class == other.class &&
           emf_plus_dual_rendering_mode == other.emf_plus_dual_rendering_mode &&
+          emulate_raster_operations == other.emulate_raster_operations &&
           rendering_mode == other.rendering_mode &&
           use_emf_embedded_to_wmf == other.use_emf_embedded_to_wmf
     end
@@ -113,7 +123,7 @@ module WordsRubySdk
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [emf_plus_dual_rendering_mode, rendering_mode, use_emf_embedded_to_wmf].hash
+      [emf_plus_dual_rendering_mode, emulate_raster_operations, rendering_mode, use_emf_embedded_to_wmf].hash
     end
 
     # Builds the object from hash
