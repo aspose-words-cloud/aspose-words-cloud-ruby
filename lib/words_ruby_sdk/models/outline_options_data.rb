@@ -37,6 +37,9 @@ module WordsRubySdk
     # Specifies the default level in the document outline at which to display Word bookmarks
     attr_accessor :default_bookmarks_outline_level
 
+    # Gets or sets a value determining whether or not to create missing outline levels     when the document is exported.     Default value for this property is false.
+    attr_accessor :create_missing_outline_levels
+
     # Specifies how many levels in the document outline to show expanded when the file is viewed
     attr_accessor :expanded_outline_levels
 
@@ -49,6 +52,7 @@ module WordsRubySdk
       {
         :'bookmarks_outline_levels' => :'BookmarksOutlineLevels',
         :'default_bookmarks_outline_level' => :'DefaultBookmarksOutlineLevel',
+        :'create_missing_outline_levels' => :'CreateMissingOutlineLevels',
         :'expanded_outline_levels' => :'ExpandedOutlineLevels',
         :'headings_outline_levels' => :'HeadingsOutlineLevels'
       }
@@ -59,6 +63,7 @@ module WordsRubySdk
       {
         :'bookmarks_outline_levels' => :'Array<BookmarksOutlineLevelData>',
         :'default_bookmarks_outline_level' => :'Integer',
+        :'create_missing_outline_levels' => :'BOOLEAN',
         :'expanded_outline_levels' => :'Integer',
         :'headings_outline_levels' => :'Integer'
       }
@@ -80,6 +85,10 @@ module WordsRubySdk
 
       if attributes.key?(:'DefaultBookmarksOutlineLevel')
         self.default_bookmarks_outline_level = attributes[:'DefaultBookmarksOutlineLevel']
+      end
+
+      if attributes.key?(:'CreateMissingOutlineLevels')
+        self.create_missing_outline_levels = attributes[:'CreateMissingOutlineLevels']
       end
 
       if attributes.key?(:'ExpandedOutlineLevels')
@@ -112,6 +121,7 @@ module WordsRubySdk
       self.class == other.class &&
           bookmarks_outline_levels == other.bookmarks_outline_levels &&
           default_bookmarks_outline_level == other.default_bookmarks_outline_level &&
+          create_missing_outline_levels == other.create_missing_outline_levels &&
           expanded_outline_levels == other.expanded_outline_levels &&
           headings_outline_levels == other.headings_outline_levels
     end
@@ -125,7 +135,7 @@ module WordsRubySdk
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [bookmarks_outline_levels, default_bookmarks_outline_level, expanded_outline_levels, headings_outline_levels].hash
+      [bookmarks_outline_levels, default_bookmarks_outline_level, create_missing_outline_levels, expanded_outline_levels, headings_outline_levels].hash
     end
 
     # Builds the object from hash
