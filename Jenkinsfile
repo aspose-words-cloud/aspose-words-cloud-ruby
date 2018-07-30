@@ -17,16 +17,15 @@ def runtests(dockerImageVersion)
             
             docker.image('ruby:' + dockerImageVersion).inside{
                 stage('build'){
-                  	sh "mkdir testReports"
-					try {
-						sh "rubocop ./lib -o testReports/codeStyleErrors.txt || exit 0"
-					} finally {
-						checkstyle pattern: 'testReports/codeStyleErrors'
-					}	
+				withEnv(['HOME=.']){
+						sh 'chmod -R 770 ./'
+						sh "mkdir testReports"
+						sh "gem install bundler && bundle install"
+					}
                 }
             
                 stage('tests'){   
-					sh "gem install bundler && bundle install && find ./tests -name "*_tests.rb" -maxdepth 4 -type f -exec ruby -W0 {} \;"
+					sh './test.sh'
                 }
             
                 stage('bdd-tests'){
@@ -39,7 +38,7 @@ def runtests(dockerImageVersion)
     }
 }
 
-node('billing-qa-ubuntu-16.04.4') {
-    runtests("2.7.15")
-	runtests("3.6")          
+node('billing-qa-ubuntu-16.04.4') {        
+    runtests("2.3")
+    runtests("latest")       
 }
