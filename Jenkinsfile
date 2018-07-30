@@ -26,7 +26,7 @@ def runtests(dockerImageVersion)
             
                 stage('tests'){   
 					try {
-						sh './test.sh'
+						sh 'rake'
 					} finally {
 						junit 'testReports/report.xml'
 					}
