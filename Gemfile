@@ -8,4 +8,5 @@ group :development do
   gem 'rubocop-checkstyle_formatter'
   gem 'aspose_storage_cloud', '~> 18.6', '>= 18.5'
   gem 'minitest', '~> 5.11', '>= 5.11.3'
+  gem 'minitest-junit'
 end

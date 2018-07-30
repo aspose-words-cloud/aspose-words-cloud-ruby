@@ -25,7 +25,11 @@ def runtests(dockerImageVersion)
                 }
             
                 stage('tests'){   
-					sh './test.sh'
+					try {
+						sh './test.sh'
+					} finally {
+						junit 'testReports/report.xml'
+					}
                 }
             
                 stage('bdd-tests'){
