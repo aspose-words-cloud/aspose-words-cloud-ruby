@@ -1,2 +1,2 @@
 #!/bin/bash
-testrbl tests/**/*_tests.rb
+testrbl --verbose tests/**/*_tests.rb

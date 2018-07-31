@@ -8,36 +8,28 @@ def runtests(dockerImageVersion)
     dir(dockerImageVersion){
         try {
             stage('checkout'){
-                checkout([$class: 'GitSCM', branches: [[name: '*/' + params.branch]], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', url: 'https://github.com/aspose-words-cloud/aspose-words-cloud-ruby.git/']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/' + params.branch]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'WipeWorkspace']], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', url: 'https://github.com/aspose-words-cloud/aspose-words-cloud-ruby.git/']]])
                 withCredentials([usernamePassword(credentialsId: '6839cbe8-39fa-40c0-86ce-90706f0bae5d', passwordVariable: 'AppKey', usernameVariable: 'AppSid')]) {
 					sh 'mkdir -p Settings'
                     sh 'echo "{\\"AppSid\\": \\"$AppSid\\",\\"AppKey\\": \\"$AppKey\\", \\"BaseUrl\\": \\"${testServerUrl}\\"}" > Settings/servercreds.json'
                 }
             }
             
-            docker.image('ruby:' + dockerImageVersion).inside{
+            docker.image('ruby:' + dockerImageVersion).inside('-u root'){
                 stage('build'){
-				withEnv(['HOME=.']){
-						sh 'chmod -R 770 ./'
 						sh "mkdir testReports"
 						sh "gem install bundler && bundle install"
-					}
                 }
             
                 stage('tests'){   
-					try {
-						sh './test.sh'
-					} finally {
-						junit 'testReports/report.xml'
-					}
+					sh './test.sh'
                 }
             
                 stage('bdd-tests'){
 					
                 }
             }        
-        } finally {                       
-            deleteDir()
+        } finally {
         }
     }
 }
