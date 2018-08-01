@@ -106,7 +106,7 @@ module WordsRubySdk
       header_params = @default_headers.merge(opts[:header_params] || {})
       query_params = opts[:query_params] || {}
       form_params = opts[:form_params] || {}
-      body = opts[:body] || {}
+      body = opts[:body] if opts[:body] || nil?
 
       update_params_for_auth! header_params, query_params, opts[:auth_names]
 
@@ -117,9 +117,13 @@ module WordsRubySdk
         :body => body
       }
 
-      if %i[:post, :patch, :put, :delete].include?(http_method)
+      if [:post, :patch, :put, :delete].include?(http_method)
         req_body = build_request_body(header_params, form_params, opts[:body])
         req_opts.update :body => req_body
+        if req_opts[:body] == {}
+          req_opts[:body] = nil
+        end
+
         if @config.debugging
           @config.logger.debug "HTTP request body param ~BEGIN~\n#{req_body}\n~END~\n"
         end

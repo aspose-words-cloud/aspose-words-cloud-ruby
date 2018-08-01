@@ -22,19 +22,36 @@ def runtests(dockerImageVersion)
                 }
             
                 stage('tests'){   
-					sh './test.sh'
+					sh 'rake test'
                 }
             
                 stage('bdd-tests'){
 					
                 }
+				
+				stage('clean-compiled'){
+					sh "rm -rf %s"
+				}
             }        
         } finally {
+			cleanWs()
         }
     }
 }
 
 node('billing-qa-ubuntu-16.04.4') {        
-    runtests("2.3")
-    runtests("latest")       
+    stage('oldruby'){
+		try {
+			runtests("2.3")
+		} finally {
+			cleanWs()
+		}
+	}
+	
+	stage('newruby'){
+		try {
+			runtests("2.5") 
+		} finally {
+			cleanWs()
+		}      
 }
