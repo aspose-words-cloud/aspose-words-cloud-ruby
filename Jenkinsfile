@@ -54,5 +54,5 @@ node('billing-qa-ubuntu-16.04.4') {
 		} finally {
 			cleanWs()
 		}      
-	}
+ }
 }
