@@ -108,7 +108,7 @@ module WordsRubySdk
     # @return true if the model is valid
     def valid?
       return false if @type.nil?
-      type_validator = EnumAttributeValidator.new('String', %w["Auto", "Percent", "Points"])
+      type_validator = EnumAttributeValidator.new('String', ["Auto", "Percent", "Points"])
       return false unless type_validator.valid?(@type)
       return true
     end
@@ -116,7 +116,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] type Object to be assigned
     def type=(type)
-      validator = EnumAttributeValidator.new('String', %w["Auto", "Percent", "Points"])
+      validator = EnumAttributeValidator.new('String', ["Auto", "Percent", "Points"])
       if type.to_i == 0
         unless validator.valid?(type)
           raise ArgumentError, "invalid value for 'type', must be one of #{validator.allowable_values}."

@@ -195,11 +195,11 @@ module WordsRubySdk
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      relative_horizontal_position_validator = EnumAttributeValidator.new('String', %w["Margin", "Page", "Column", "Default", "Character", "LeftMargin", "RightMargin", "InsideMargin", "OutsideMargin"])
+      relative_horizontal_position_validator = EnumAttributeValidator.new('String', ["Margin", "Page", "Column", "Default", "Character", "LeftMargin", "RightMargin", "InsideMargin", "OutsideMargin"])
       return false unless relative_horizontal_position_validator.valid?(@relative_horizontal_position)
-      relative_vertical_position_validator = EnumAttributeValidator.new('String', %w["Margin", "TableDefault", "Page", "Paragraph", "TextFrameDefault", "Line", "TopMargin", "BottomMargin", "InsideMargin", "OutsideMargin"])
+      relative_vertical_position_validator = EnumAttributeValidator.new('String', ["Margin", "TableDefault", "Page", "Paragraph", "TextFrameDefault", "Line", "TopMargin", "BottomMargin", "InsideMargin", "OutsideMargin"])
       return false unless relative_vertical_position_validator.valid?(@relative_vertical_position)
-      wrap_type_validator = EnumAttributeValidator.new('String', %w["Inline", "TopBottom", "Square", "None", "Tight", "Through"])
+      wrap_type_validator = EnumAttributeValidator.new('String', ["Inline", "TopBottom", "Square", "None", "Tight", "Through"])
       return false unless wrap_type_validator.valid?(@wrap_type)
       return true
     end
@@ -207,7 +207,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] relative_horizontal_position Object to be assigned
     def relative_horizontal_position=(relative_horizontal_position)
-      validator = EnumAttributeValidator.new('String', %w["Margin", "Page", "Column", "Default", "Character", "LeftMargin", "RightMargin", "InsideMargin", "OutsideMargin"])
+      validator = EnumAttributeValidator.new('String', ["Margin", "Page", "Column", "Default", "Character", "LeftMargin", "RightMargin", "InsideMargin", "OutsideMargin"])
       if relative_horizontal_position.to_i == 0
         unless validator.valid?(relative_horizontal_position)
           raise ArgumentError, "invalid value for 'relative_horizontal_position', must be one of #{validator.allowable_values}."
@@ -221,7 +221,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] relative_vertical_position Object to be assigned
     def relative_vertical_position=(relative_vertical_position)
-      validator = EnumAttributeValidator.new('String', %w["Margin", "TableDefault", "Page", "Paragraph", "TextFrameDefault", "Line", "TopMargin", "BottomMargin", "InsideMargin", "OutsideMargin"])
+      validator = EnumAttributeValidator.new('String', ["Margin", "TableDefault", "Page", "Paragraph", "TextFrameDefault", "Line", "TopMargin", "BottomMargin", "InsideMargin", "OutsideMargin"])
       if relative_vertical_position.to_i == 0
         unless validator.valid?(relative_vertical_position)
           raise ArgumentError, "invalid value for 'relative_vertical_position', must be one of #{validator.allowable_values}."
@@ -235,7 +235,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] wrap_type Object to be assigned
     def wrap_type=(wrap_type)
-      validator = EnumAttributeValidator.new('String', %w["Inline", "TopBottom", "Square", "None", "Tight", "Through"])
+      validator = EnumAttributeValidator.new('String', ["Inline", "TopBottom", "Square", "None", "Tight", "Through"])
       if wrap_type.to_i == 0
         unless validator.valid?(wrap_type)
           raise ArgumentError, "invalid value for 'wrap_type', must be one of #{validator.allowable_values}."

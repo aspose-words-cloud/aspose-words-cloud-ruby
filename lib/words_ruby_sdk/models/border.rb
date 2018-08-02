@@ -148,9 +148,9 @@ module WordsRubySdk
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      border_type_validator = EnumAttributeValidator.new('String', %w["Bottom", "Left", "Right", "Top", "Horizontal", "Vertical", "DiagonalDown", "DiagonalUp", "None"])
+      border_type_validator = EnumAttributeValidator.new('String', ["Bottom", "Left", "Right", "Top", "Horizontal", "Vertical", "DiagonalDown", "DiagonalUp", "None"])
       return false unless border_type_validator.valid?(@border_type)
-      line_style_validator = EnumAttributeValidator.new('String', %w["None", "Single", "Thick", "Double", "Hairline", "Dot", "DashLargeGap", "DotDash", "DotDotDash", "Triple", "ThinThickSmallGap", "ThickThinSmallGap", "ThinThickThinSmallGap", "ThinThickMediumGap", "ThickThinMediumGap", "ThinThickThinMediumGap", "ThinThickLargeGap", "ThickThinLargeGap", "ThinThickThinLargeGap", "Wave", "DoubleWave", "DashSmallGap", "DashDotStroker", "Emboss3D", "Engrave3D", "Outset", "Inset"])
+      line_style_validator = EnumAttributeValidator.new('String', ["None", "Single", "Thick", "Double", "Hairline", "Dot", "DashLargeGap", "DotDash", "DotDotDash", "Triple", "ThinThickSmallGap", "ThickThinSmallGap", "ThinThickThinSmallGap", "ThinThickMediumGap", "ThickThinMediumGap", "ThinThickThinMediumGap", "ThinThickLargeGap", "ThickThinLargeGap", "ThinThickThinLargeGap", "Wave", "DoubleWave", "DashSmallGap", "DashDotStroker", "Emboss3D", "Engrave3D", "Outset", "Inset"])
       return false unless line_style_validator.valid?(@line_style)
       return true
     end
@@ -158,7 +158,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] border_type Object to be assigned
     def border_type=(border_type)
-      validator = EnumAttributeValidator.new('String', %w["Bottom", "Left", "Right", "Top", "Horizontal", "Vertical", "DiagonalDown", "DiagonalUp", "None"])
+      validator = EnumAttributeValidator.new('String', ["Bottom", "Left", "Right", "Top", "Horizontal", "Vertical", "DiagonalDown", "DiagonalUp", "None"])
       if border_type.to_i == 0
         unless validator.valid?(border_type)
           raise ArgumentError, "invalid value for 'border_type', must be one of #{validator.allowable_values}."
@@ -172,7 +172,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] line_style Object to be assigned
     def line_style=(line_style)
-      validator = EnumAttributeValidator.new('String', %w["None", "Single", "Thick", "Double", "Hairline", "Dot", "DashLargeGap", "DotDash", "DotDotDash", "Triple", "ThinThickSmallGap", "ThickThinSmallGap", "ThinThickThinSmallGap", "ThinThickMediumGap", "ThickThinMediumGap", "ThinThickThinMediumGap", "ThinThickLargeGap", "ThickThinLargeGap", "ThinThickThinLargeGap", "Wave", "DoubleWave", "DashSmallGap", "DashDotStroker", "Emboss3D", "Engrave3D", "Outset", "Inset"])
+      validator = EnumAttributeValidator.new('String', ["None", "Single", "Thick", "Double", "Hairline", "Dot", "DashLargeGap", "DotDash", "DotDotDash", "Triple", "ThinThickSmallGap", "ThickThinSmallGap", "ThinThickThinSmallGap", "ThinThickMediumGap", "ThickThinMediumGap", "ThinThickThinMediumGap", "ThinThickLargeGap", "ThickThinLargeGap", "ThinThickThinLargeGap", "Wave", "DoubleWave", "DashSmallGap", "DashDotStroker", "Emboss3D", "Engrave3D", "Outset", "Inset"])
       if line_style.to_i == 0
         unless validator.valid?(line_style)
           raise ArgumentError, "invalid value for 'line_style', must be one of #{validator.allowable_values}."

@@ -130,7 +130,7 @@ module WordsRubySdk
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      height_rule_validator = EnumAttributeValidator.new('String', %w["AtLeast", "Exactly", "Auto"])
+      height_rule_validator = EnumAttributeValidator.new('String', ["AtLeast", "Exactly", "Auto"])
       return false unless height_rule_validator.valid?(@height_rule)
       return true
     end
@@ -138,7 +138,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] height_rule Object to be assigned
     def height_rule=(height_rule)
-      validator = EnumAttributeValidator.new('String', %w["AtLeast", "Exactly", "Auto"])
+      validator = EnumAttributeValidator.new('String', ["AtLeast", "Exactly", "Auto"])
       if height_rule.to_i == 0
         unless validator.valid?(height_rule)
           raise ArgumentError, "invalid value for 'height_rule', must be one of #{validator.allowable_values}."

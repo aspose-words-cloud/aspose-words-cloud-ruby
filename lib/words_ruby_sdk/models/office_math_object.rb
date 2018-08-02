@@ -139,11 +139,11 @@ module WordsRubySdk
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      display_type_validator = EnumAttributeValidator.new('String', %w["Display", "Inline"])
+      display_type_validator = EnumAttributeValidator.new('String', ["Display", "Inline"])
       return false unless display_type_validator.valid?(@display_type)
-      justification_validator = EnumAttributeValidator.new('String', %w["CenterGroup", "Default", "Center", "Left", "Right", "Inline"])
+      justification_validator = EnumAttributeValidator.new('String', ["CenterGroup", "Default", "Center", "Left", "Right", "Inline"])
       return false unless justification_validator.valid?(@justification)
-      math_object_type_validator = EnumAttributeValidator.new('String', %w["OMath", "OMathPara", "Accent", "Bar", "BorderBox", "Box", "Delimiter", "Degree", "Argument", "Array", "Fraction", "Denominator", "Numerator", "Function", "FunctionName", "GroupCharacter", "Limit", "LowerLimit", "UpperLimit", "Matrix", "MatrixRow", "NAry", "Phantom", "Radical", "SubscriptPart", "SuperscriptPart", "PreSubSuperscript", "Subscript", "SubSuperscript", "Supercript"])
+      math_object_type_validator = EnumAttributeValidator.new('String', ["OMath", "OMathPara", "Accent", "Bar", "BorderBox", "Box", "Delimiter", "Degree", "Argument", "Array", "Fraction", "Denominator", "Numerator", "Function", "FunctionName", "GroupCharacter", "Limit", "LowerLimit", "UpperLimit", "Matrix", "MatrixRow", "NAry", "Phantom", "Radical", "SubscriptPart", "SuperscriptPart", "PreSubSuperscript", "Subscript", "SubSuperscript", "Supercript"])
       return false unless math_object_type_validator.valid?(@math_object_type)
       return true
     end
@@ -151,7 +151,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] display_type Object to be assigned
     def display_type=(display_type)
-      validator = EnumAttributeValidator.new('String', %w["Display", "Inline"])
+      validator = EnumAttributeValidator.new('String', ["Display", "Inline"])
       if display_type.to_i == 0
         unless validator.valid?(display_type)
           raise ArgumentError, "invalid value for 'display_type', must be one of #{validator.allowable_values}."
@@ -165,7 +165,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] justification Object to be assigned
     def justification=(justification)
-      validator = EnumAttributeValidator.new('String', %w["CenterGroup", "Default", "Center", "Left", "Right", "Inline"])
+      validator = EnumAttributeValidator.new('String', ["CenterGroup", "Default", "Center", "Left", "Right", "Inline"])
       if justification.to_i == 0
         unless validator.valid?(justification)
           raise ArgumentError, "invalid value for 'justification', must be one of #{validator.allowable_values}."
@@ -179,7 +179,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] math_object_type Object to be assigned
     def math_object_type=(math_object_type)
-      validator = EnumAttributeValidator.new('String', %w["OMath", "OMathPara", "Accent", "Bar", "BorderBox", "Box", "Delimiter", "Degree", "Argument", "Array", "Fraction", "Denominator", "Numerator", "Function", "FunctionName", "GroupCharacter", "Limit", "LowerLimit", "UpperLimit", "Matrix", "MatrixRow", "NAry", "Phantom", "Radical", "SubscriptPart", "SuperscriptPart", "PreSubSuperscript", "Subscript", "SubSuperscript", "Supercript"])
+      validator = EnumAttributeValidator.new('String', ["OMath", "OMathPara", "Accent", "Bar", "BorderBox", "Box", "Delimiter", "Degree", "Argument", "Array", "Fraction", "Denominator", "Numerator", "Function", "FunctionName", "GroupCharacter", "Limit", "LowerLimit", "UpperLimit", "Matrix", "MatrixRow", "NAry", "Phantom", "Radical", "SubscriptPart", "SuperscriptPart", "PreSubSuperscript", "Subscript", "SubSuperscript", "Supercript"])
       if math_object_type.to_i == 0
         unless validator.valid?(math_object_type)
           raise ArgumentError, "invalid value for 'math_object_type', must be one of #{validator.allowable_values}."

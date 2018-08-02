@@ -154,7 +154,7 @@ module WordsRubySdk
     # @return true if the model is valid
     def valid?
       return false if @source_format.nil?
-      source_format_validator = EnumAttributeValidator.new('String', %w["Unknown", "Doc", "Dot", "DocPreWord60", "Docx", "Docm", "Dotx", "Dotm", "FlatOpc", "Rtf", "WordML", "Html", "Mhtml", "Epub", "Text", "Odt", "Ott", "Pdf", "Xps", "Tiff", "Svg"])
+      source_format_validator = EnumAttributeValidator.new('String', ["Unknown", "Doc", "Dot", "DocPreWord60", "Docx", "Docm", "Dotx", "Dotm", "FlatOpc", "Rtf", "WordML", "Html", "Mhtml", "Epub", "Text", "Odt", "Ott", "Pdf", "Xps", "Tiff", "Svg"])
       return false unless source_format_validator.valid?(@source_format)
       return false if @is_encrypted.nil?
       return false if @is_signed.nil?
@@ -164,7 +164,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] source_format Object to be assigned
     def source_format=(source_format)
-      validator = EnumAttributeValidator.new('String', %w["Unknown", "Doc", "Dot", "DocPreWord60", "Docx", "Docm", "Dotx", "Dotm", "FlatOpc", "Rtf", "WordML", "Html", "Mhtml", "Epub", "Text", "Odt", "Ott", "Pdf", "Xps", "Tiff", "Svg"])
+      validator = EnumAttributeValidator.new('String', ["Unknown", "Doc", "Dot", "DocPreWord60", "Docx", "Docm", "Dotx", "Dotm", "FlatOpc", "Rtf", "WordML", "Html", "Mhtml", "Epub", "Text", "Odt", "Ott", "Pdf", "Xps", "Tiff", "Svg"])
       if source_format.to_i == 0
         unless validator.valid?(source_format)
           raise ArgumentError, "invalid value for 'source_format', must be one of #{validator.allowable_values}."

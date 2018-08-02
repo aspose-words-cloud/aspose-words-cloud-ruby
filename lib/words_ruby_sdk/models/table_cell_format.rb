@@ -202,13 +202,13 @@ module WordsRubySdk
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      horizontal_merge_validator = EnumAttributeValidator.new('String', %w["None", "First", "Previous"])
+      horizontal_merge_validator = EnumAttributeValidator.new('String', ["None", "First", "Previous"])
       return false unless horizontal_merge_validator.valid?(@horizontal_merge)
-      orientation_validator = EnumAttributeValidator.new('String', %w["Horizontal", "Downward", "Upward", "HorizontalRotatedFarEast", "VerticalFarEast", "VerticalRotatedFarEast"])
+      orientation_validator = EnumAttributeValidator.new('String', ["Horizontal", "Downward", "Upward", "HorizontalRotatedFarEast", "VerticalFarEast", "VerticalRotatedFarEast"])
       return false unless orientation_validator.valid?(@orientation)
-      vertical_alignment_validator = EnumAttributeValidator.new('String', %w["Top", "Center", "Bottom"])
+      vertical_alignment_validator = EnumAttributeValidator.new('String', ["Top", "Center", "Bottom"])
       return false unless vertical_alignment_validator.valid?(@vertical_alignment)
-      vertical_merge_validator = EnumAttributeValidator.new('String', %w["None", "First", "Previous"])
+      vertical_merge_validator = EnumAttributeValidator.new('String', ["None", "First", "Previous"])
       return false unless vertical_merge_validator.valid?(@vertical_merge)
       return true
     end
@@ -216,7 +216,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] horizontal_merge Object to be assigned
     def horizontal_merge=(horizontal_merge)
-      validator = EnumAttributeValidator.new('String', %w["None", "First", "Previous"])
+      validator = EnumAttributeValidator.new('String', ["None", "First", "Previous"])
       if horizontal_merge.to_i == 0
         unless validator.valid?(horizontal_merge)
           raise ArgumentError, "invalid value for 'horizontal_merge', must be one of #{validator.allowable_values}."
@@ -230,7 +230,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] orientation Object to be assigned
     def orientation=(orientation)
-      validator = EnumAttributeValidator.new('String', %w["Horizontal", "Downward", "Upward", "HorizontalRotatedFarEast", "VerticalFarEast", "VerticalRotatedFarEast"])
+      validator = EnumAttributeValidator.new('String', ["Horizontal", "Downward", "Upward", "HorizontalRotatedFarEast", "VerticalFarEast", "VerticalRotatedFarEast"])
       if orientation.to_i == 0
         unless validator.valid?(orientation)
           raise ArgumentError, "invalid value for 'orientation', must be one of #{validator.allowable_values}."
@@ -244,7 +244,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] vertical_alignment Object to be assigned
     def vertical_alignment=(vertical_alignment)
-      validator = EnumAttributeValidator.new('String', %w["Top", "Center", "Bottom"])
+      validator = EnumAttributeValidator.new('String', ["Top", "Center", "Bottom"])
       if vertical_alignment.to_i == 0
         unless validator.valid?(vertical_alignment)
           raise ArgumentError, "invalid value for 'vertical_alignment', must be one of #{validator.allowable_values}."
@@ -258,7 +258,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] vertical_merge Object to be assigned
     def vertical_merge=(vertical_merge)
-      validator = EnumAttributeValidator.new('String', %w["None", "First", "Previous"])
+      validator = EnumAttributeValidator.new('String', ["None", "First", "Previous"])
       if vertical_merge.to_i == 0
         unless validator.valid?(vertical_merge)
           raise ArgumentError, "invalid value for 'vertical_merge', must be one of #{validator.allowable_values}."

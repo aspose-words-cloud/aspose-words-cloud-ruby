@@ -193,7 +193,7 @@ module WordsRubySdk
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      measure_unit_validator = EnumAttributeValidator.new('String', %w["Centimeters", "Inches"])
+      measure_unit_validator = EnumAttributeValidator.new('String', ["Centimeters", "Inches"])
       return false unless measure_unit_validator.valid?(@measure_unit)
       return true
     end
@@ -201,7 +201,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] measure_unit Object to be assigned
     def measure_unit=(measure_unit)
-      validator = EnumAttributeValidator.new('String', %w["Centimeters", "Inches"])
+      validator = EnumAttributeValidator.new('String', ["Centimeters", "Inches"])
       if measure_unit.to_i == 0
         unless validator.valid?(measure_unit)
           raise ArgumentError, "invalid value for 'measure_unit', must be one of #{validator.allowable_values}."

@@ -220,7 +220,7 @@ module WordsRubySdk
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      text_input_type_validator = EnumAttributeValidator.new('String', %w["Regular", "Number", "Date", "CurrentDate", "CurrentTime", "Calculated"])
+      text_input_type_validator = EnumAttributeValidator.new('String', ["Regular", "Number", "Date", "CurrentDate", "CurrentTime", "Calculated"])
       return false unless text_input_type_validator.valid?(@text_input_type)
       return true
     end
@@ -228,7 +228,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] text_input_type Object to be assigned
     def text_input_type=(text_input_type)
-      validator = EnumAttributeValidator.new('String', %w["Regular", "Number", "Date", "CurrentDate", "CurrentTime", "Calculated"])
+      validator = EnumAttributeValidator.new('String', ["Regular", "Number", "Date", "CurrentDate", "CurrentTime", "Calculated"])
       if text_input_type.to_i == 0
         unless validator.valid?(text_input_type)
           raise ArgumentError, "invalid value for 'text_input_type', must be one of #{validator.allowable_values}."

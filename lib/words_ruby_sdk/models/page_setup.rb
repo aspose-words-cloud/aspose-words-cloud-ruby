@@ -355,21 +355,21 @@ module WordsRubySdk
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      border_applies_to_validator = EnumAttributeValidator.new('String', %w["AllPages", "FirstPage", "OtherPages"])
+      border_applies_to_validator = EnumAttributeValidator.new('String', ["AllPages", "FirstPage", "OtherPages"])
       return false unless border_applies_to_validator.valid?(@border_applies_to)
-      border_distance_from_validator = EnumAttributeValidator.new('String', %w["Text", "PageEdge"])
+      border_distance_from_validator = EnumAttributeValidator.new('String', ["Text", "PageEdge"])
       return false unless border_distance_from_validator.valid?(@border_distance_from)
-      line_number_restart_mode_validator = EnumAttributeValidator.new('String', %w["RestartPage", "RestartSection", "Continuous"])
+      line_number_restart_mode_validator = EnumAttributeValidator.new('String', ["RestartPage", "RestartSection", "Continuous"])
       return false unless line_number_restart_mode_validator.valid?(@line_number_restart_mode)
-      orientation_validator = EnumAttributeValidator.new('String', %w["Portrait", "Landscape"])
+      orientation_validator = EnumAttributeValidator.new('String', ["Portrait", "Landscape"])
       return false unless orientation_validator.valid?(@orientation)
-      page_number_style_validator = EnumAttributeValidator.new('String', %w["Arabic", "UppercaseRoman", "LowercaseRoman", "UppercaseLetter", "LowercaseLetter", "Ordinal", "Number", "OrdinalText", "Hex", "ChicagoManual", "Kanji", "KanjiDigit", "AiueoHalfWidth", "IrohaHalfWidth", "ArabicFullWidth", "ArabicHalfWidth", "KanjiTraditional", "KanjiTraditional2", "NumberInCircle", "DecimalFullWidth", "Aiueo", "Iroha", "LeadingZero", "Bullet", "Ganada", "Chosung", "GB1", "GB2", "GB3", "GB4", "Zodiac1", "Zodiac2", "Zodiac3", "TradChinNum1", "TradChinNum2", "TradChinNum3", "TradChinNum4", "SimpChinNum1", "SimpChinNum2", "SimpChinNum3", "SimpChinNum4", "HanjaRead", "HanjaReadDigit", "Hangul", "Hanja", "Hebrew1", "Arabic1", "Hebrew2", "Arabic2", "HindiLetter1", "HindiLetter2", "HindiArabic", "HindiCardinalText", "ThaiLetter", "ThaiArabic", "ThaiCardinalText", "VietCardinalText", "NumberInDash", "NumInDash", "LowercaseRussian", "UppercaseRussian", "None", "Custom"])
+      page_number_style_validator = EnumAttributeValidator.new('String', ["Arabic", "UppercaseRoman", "LowercaseRoman", "UppercaseLetter", "LowercaseLetter", "Ordinal", "Number", "OrdinalText", "Hex", "ChicagoManual", "Kanji", "KanjiDigit", "AiueoHalfWidth", "IrohaHalfWidth", "ArabicFullWidth", "ArabicHalfWidth", "KanjiTraditional", "KanjiTraditional2", "NumberInCircle", "DecimalFullWidth", "Aiueo", "Iroha", "LeadingZero", "Bullet", "Ganada", "Chosung", "GB1", "GB2", "GB3", "GB4", "Zodiac1", "Zodiac2", "Zodiac3", "TradChinNum1", "TradChinNum2", "TradChinNum3", "TradChinNum4", "SimpChinNum1", "SimpChinNum2", "SimpChinNum3", "SimpChinNum4", "HanjaRead", "HanjaReadDigit", "Hangul", "Hanja", "Hebrew1", "Arabic1", "Hebrew2", "Arabic2", "HindiLetter1", "HindiLetter2", "HindiArabic", "HindiCardinalText", "ThaiLetter", "ThaiArabic", "ThaiCardinalText", "VietCardinalText", "NumberInDash", "NumInDash", "LowercaseRussian", "UppercaseRussian", "None", "Custom"])
       return false unless page_number_style_validator.valid?(@page_number_style)
-      paper_size_validator = EnumAttributeValidator.new('String', %w["A3", "A4", "A5", "B4", "B5", "Executive", "Folio", "Ledger", "Legal", "Letter", "EnvelopeDL", "Quarto", "Statement", "Tabloid", "Paper10x14", "Paper11x17", "Custom"])
+      paper_size_validator = EnumAttributeValidator.new('String', ["A3", "A4", "A5", "B4", "B5", "Executive", "Folio", "Ledger", "Legal", "Letter", "EnvelopeDL", "Quarto", "Statement", "Tabloid", "Paper10x14", "Paper11x17", "Custom"])
       return false unless paper_size_validator.valid?(@paper_size)
-      section_start_validator = EnumAttributeValidator.new('String', %w["Continuous", "NewColumn", "NewPage", "EvenPage", "OddPage"])
+      section_start_validator = EnumAttributeValidator.new('String', ["Continuous", "NewColumn", "NewPage", "EvenPage", "OddPage"])
       return false unless section_start_validator.valid?(@section_start)
-      vertical_alignment_validator = EnumAttributeValidator.new('String', %w["Top", "Center", "Justify", "Bottom"])
+      vertical_alignment_validator = EnumAttributeValidator.new('String', ["Top", "Center", "Justify", "Bottom"])
       return false unless vertical_alignment_validator.valid?(@vertical_alignment)
       return true
     end
@@ -377,7 +377,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] border_applies_to Object to be assigned
     def border_applies_to=(border_applies_to)
-      validator = EnumAttributeValidator.new('String', %w["AllPages", "FirstPage", "OtherPages"])
+      validator = EnumAttributeValidator.new('String', ["AllPages", "FirstPage", "OtherPages"])
       if border_applies_to.to_i == 0
         unless validator.valid?(border_applies_to)
           raise ArgumentError, "invalid value for 'border_applies_to', must be one of #{validator.allowable_values}."
@@ -391,7 +391,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] border_distance_from Object to be assigned
     def border_distance_from=(border_distance_from)
-      validator = EnumAttributeValidator.new('String', %w["Text", "PageEdge"])
+      validator = EnumAttributeValidator.new('String', ["Text", "PageEdge"])
       if border_distance_from.to_i == 0
         unless validator.valid?(border_distance_from)
           raise ArgumentError, "invalid value for 'border_distance_from', must be one of #{validator.allowable_values}."
@@ -405,7 +405,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] line_number_restart_mode Object to be assigned
     def line_number_restart_mode=(line_number_restart_mode)
-      validator = EnumAttributeValidator.new('String', %w["RestartPage", "RestartSection", "Continuous"])
+      validator = EnumAttributeValidator.new('String', ["RestartPage", "RestartSection", "Continuous"])
       if line_number_restart_mode.to_i == 0
         unless validator.valid?(line_number_restart_mode)
           raise ArgumentError, "invalid value for 'line_number_restart_mode', must be one of #{validator.allowable_values}."
@@ -419,7 +419,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] orientation Object to be assigned
     def orientation=(orientation)
-      validator = EnumAttributeValidator.new('String', %w["Portrait", "Landscape"])
+      validator = EnumAttributeValidator.new('String', ["Portrait", "Landscape"])
       if orientation.to_i == 0
         unless validator.valid?(orientation)
           raise ArgumentError, "invalid value for 'orientation', must be one of #{validator.allowable_values}."
@@ -433,7 +433,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] page_number_style Object to be assigned
     def page_number_style=(page_number_style)
-      validator = EnumAttributeValidator.new('String', %w["Arabic", "UppercaseRoman", "LowercaseRoman", "UppercaseLetter", "LowercaseLetter", "Ordinal", "Number", "OrdinalText", "Hex", "ChicagoManual", "Kanji", "KanjiDigit", "AiueoHalfWidth", "IrohaHalfWidth", "ArabicFullWidth", "ArabicHalfWidth", "KanjiTraditional", "KanjiTraditional2", "NumberInCircle", "DecimalFullWidth", "Aiueo", "Iroha", "LeadingZero", "Bullet", "Ganada", "Chosung", "GB1", "GB2", "GB3", "GB4", "Zodiac1", "Zodiac2", "Zodiac3", "TradChinNum1", "TradChinNum2", "TradChinNum3", "TradChinNum4", "SimpChinNum1", "SimpChinNum2", "SimpChinNum3", "SimpChinNum4", "HanjaRead", "HanjaReadDigit", "Hangul", "Hanja", "Hebrew1", "Arabic1", "Hebrew2", "Arabic2", "HindiLetter1", "HindiLetter2", "HindiArabic", "HindiCardinalText", "ThaiLetter", "ThaiArabic", "ThaiCardinalText", "VietCardinalText", "NumberInDash", "NumInDash", "LowercaseRussian", "UppercaseRussian", "None", "Custom"])
+      validator = EnumAttributeValidator.new('String', ["Arabic", "UppercaseRoman", "LowercaseRoman", "UppercaseLetter", "LowercaseLetter", "Ordinal", "Number", "OrdinalText", "Hex", "ChicagoManual", "Kanji", "KanjiDigit", "AiueoHalfWidth", "IrohaHalfWidth", "ArabicFullWidth", "ArabicHalfWidth", "KanjiTraditional", "KanjiTraditional2", "NumberInCircle", "DecimalFullWidth", "Aiueo", "Iroha", "LeadingZero", "Bullet", "Ganada", "Chosung", "GB1", "GB2", "GB3", "GB4", "Zodiac1", "Zodiac2", "Zodiac3", "TradChinNum1", "TradChinNum2", "TradChinNum3", "TradChinNum4", "SimpChinNum1", "SimpChinNum2", "SimpChinNum3", "SimpChinNum4", "HanjaRead", "HanjaReadDigit", "Hangul", "Hanja", "Hebrew1", "Arabic1", "Hebrew2", "Arabic2", "HindiLetter1", "HindiLetter2", "HindiArabic", "HindiCardinalText", "ThaiLetter", "ThaiArabic", "ThaiCardinalText", "VietCardinalText", "NumberInDash", "NumInDash", "LowercaseRussian", "UppercaseRussian", "None", "Custom"])
       if page_number_style.to_i == 0
         unless validator.valid?(page_number_style)
           raise ArgumentError, "invalid value for 'page_number_style', must be one of #{validator.allowable_values}."
@@ -447,7 +447,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] paper_size Object to be assigned
     def paper_size=(paper_size)
-      validator = EnumAttributeValidator.new('String', %w["A3", "A4", "A5", "B4", "B5", "Executive", "Folio", "Ledger", "Legal", "Letter", "EnvelopeDL", "Quarto", "Statement", "Tabloid", "Paper10x14", "Paper11x17", "Custom"])
+      validator = EnumAttributeValidator.new('String', ["A3", "A4", "A5", "B4", "B5", "Executive", "Folio", "Ledger", "Legal", "Letter", "EnvelopeDL", "Quarto", "Statement", "Tabloid", "Paper10x14", "Paper11x17", "Custom"])
       if paper_size.to_i == 0
         unless validator.valid?(paper_size)
           raise ArgumentError, "invalid value for 'paper_size', must be one of #{validator.allowable_values}."
@@ -461,7 +461,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] section_start Object to be assigned
     def section_start=(section_start)
-      validator = EnumAttributeValidator.new('String', %w["Continuous", "NewColumn", "NewPage", "EvenPage", "OddPage"])
+      validator = EnumAttributeValidator.new('String', ["Continuous", "NewColumn", "NewPage", "EvenPage", "OddPage"])
       if section_start.to_i == 0
         unless validator.valid?(section_start)
           raise ArgumentError, "invalid value for 'section_start', must be one of #{validator.allowable_values}."
@@ -475,7 +475,7 @@ module WordsRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] vertical_alignment Object to be assigned
     def vertical_alignment=(vertical_alignment)
-      validator = EnumAttributeValidator.new('String', %w["Top", "Center", "Justify", "Bottom"])
+      validator = EnumAttributeValidator.new('String', ["Top", "Center", "Justify", "Bottom"])
       if vertical_alignment.to_i == 0
         unless validator.valid?(vertical_alignment)
           raise ArgumentError, "invalid value for 'vertical_alignment', must be one of #{validator.allowable_values}."
