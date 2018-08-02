@@ -36,5 +36,14 @@ module WordsRubySdk
       result = @words_api.reset_cache request
       assert_equal 200, result.code
     end
+
+    #
+    # Test for getting available fonts
+    #
+    def test_get_available_fonts
+      request = GetAvailableFontsRequest.new
+      result = @words_api.get_available_fonts request
+      assert_equal 200, result.code
+    end
   end
 end
