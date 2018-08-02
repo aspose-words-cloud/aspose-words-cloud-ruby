@@ -22,7 +22,11 @@ def runtests(dockerImageVersion)
                 }
             
                 stage('tests'){   
-					sh 'rake test'
+					try{
+						sh 'rake test'
+					} finally{
+						junit 'testReports/report/*.xml'
+					}
                 }
             
                 stage('bdd-tests'){
