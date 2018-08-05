@@ -24,7 +24,7 @@
 # </summary>
 # --------------------------------------------------------------------------------------------------------------------
 #
-module WordsRubySdk
+module AsposeWordsCloud
   require_relative '../base_test_context'
   class FormFieldTests < BaseTestContext
     def test_folder

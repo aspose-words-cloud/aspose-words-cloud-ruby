@@ -5,7 +5,7 @@
 AllCops:
   TargetRubyVersion: 2.3
   Exclude:
-    - lib/words_ruby_sdk/api_client.rb
+    - lib/aspose_words_cloud/api_client.rb
 Metrics/LineLength:
   Max: 7010
 Style/AccessModifierDeclarations:

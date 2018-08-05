@@ -24,10 +24,10 @@
 # </summary>
 # --------------------------------------------------------------------------------------------------------------------
 #
-module WordsRubySdk
+module AsposeWordsCloud
   require "minitest/autorun"
   require "minitest/unit"
-  require_relative '../lib/words_ruby_sdk'
+  require_relative '../lib/aspose_words_cloud'
   require 'aspose_storage_cloud'
   class BaseTestContext < Minitest::Test
     include AsposeStorageCloud
@@ -38,7 +38,7 @@ module WordsRubySdk
         raise ArgumentError, 'Put your credentials into servercreds.json'
       end
       creds = JSON.parse(file)
-      WordsRubySdk.configure do |config|
+      AsposeWordsCloud.configure do |config|
         config.api_key['api_key'] = creds['AppKey']
         config.api_key['app_sid'] = creds['AppSid']
         config.host = creds['BaseUrl']

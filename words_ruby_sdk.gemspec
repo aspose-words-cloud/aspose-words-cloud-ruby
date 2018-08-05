@@ -1,8 +1,8 @@
-require './lib/words_ruby_sdk/version'
+require './lib/aspose_words_cloud/version'
 
 Gem::Specification.new do |s|
-  s.name        = 'words_ruby_sdk'
-  s.version     = WordsRubySdk::VERSION
+  s.name        = 'aspose_words_cloud'
+  s.version     = AsposeWordsCloud::VERSION
   s.platform    = Gem::Platform::RUBY
   s.author      = 'YaroslawEkimov'
   s.email       = 'yaroslaw.ekimov@aspose.com'
