@@ -1,0 +1,105 @@
+parameters {
+		string(name: 'version', defaultValue: '18.7', description: 'version of gem')
+		string(name: 'deployKey', defaultValue: 'xxx', description: 'key')		
+}
+node('billing-qa-ubuntu-16.04.4') {         
+    try {		
+	    stage('Merge master to testPackage'){		
+			checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', url: 'https://github.com/aspose-words-cloud/aspose-words-cloud-ruby.git/']]])
+			
+	    	sh "git checkout --merge testPackage"
+	    	sh "git reset --hard origin/testPackage"
+	    	sh "git merge --no-ff --allow-unrelated-histories origin/master"
+	    	sh "git diff --name-status"			
+	    	sh 'git commit -am "Merged master branch to testPackage" || exit 0'
+	    	
+	    	withCredentials([usernamePassword(credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', passwordVariable: 'gitPass', usernameVariable: 'gitUsername')]) {
+	    		sh "git push https://WordsCloud:$gitPass@github.com/aspose-words-cloud/aspose-words-cloud-ruby testPackage"
+	    	}
+	    }	   
+		    			                
+    } finally {                       
+        cleanWs()
+    }
+}
+
+stage('wait for publishing'){
+	timeout(time:1, unit:'DAYS') {
+		input message:'Ready for publishing to rubygems?'
+	}
+}
+
+
+def testGemLocally()
+{
+	try {	
+        stage('checkout again'){
+            checkout([$class: 'GitSCM', branches: [[name: '*/testPackage']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', url: 'https://github.com/aspose-words-cloud/aspose-words-cloud-ruby.git/']]])			
+        }              	
+		    
+	    stage('build gem and test'){	    	
+			docker.image('ruby:2.4').inside('-u root'){
+                stage('upload to rubygems'){
+					sh "gem build aspose_words_cloud.gemspec"
+					sh "gem install ./aspose_words_cloud-${version}.gem"
+				}
+				
+				stage('test gem locally'){
+					sh "mkdir testReports"
+					sh "gem install bundler && bundle install"
+					try{
+						sh 'rake test'
+					} finally{
+						junit 'testReports/report/*.xml'
+					}
+				}
+				
+				stage('clean-compiled'){
+					sh "rm -rf %s"
+				}
+            } 
+	    }     
+    } finally {                       
+        cleanWs()
+    }
+}
+
+def publishGem()
+{
+	try {	
+        stage('checkout again'){
+            checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', url: 'https://github.com/aspose-words-cloud/aspose-words-cloud-ruby.git/']]])			
+        }              	
+		    
+	    stage('build gem publish'){	    	
+			docker.image('ruby:2.4').inside('-u root'){
+                stage('upload to rubygems'){
+					sh "gem build aspose_words_cloud.gemspec"
+					sh "touch ~/.gem/credentials"
+					sh "echo ':rubygems_api_key: 94d91dbb241eb08b0ebd20780bf0cd56' > ~/.gem/credentials"
+					sh "gem push aspose_words_cloud-${version}.gem"
+				}
+				
+				stage('clean-compiled'){
+					sh "rm -rf %s"
+				}
+            } 
+	    }
+    } finally {                       
+        cleanWs()
+    }
+}
+
+node('billing-qa-ubuntu-16.04.4') {
+	try {
+		testGemLocally()
+	} finally {
+		cleanWs()
+	}
+	
+	try {
+		publishGem()
+	} finally {
+		cleanWs()
+	}
+}
