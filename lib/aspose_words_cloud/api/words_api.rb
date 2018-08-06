@@ -226,6 +226,11 @@ module AsposeWordsCloud
       else
         query_params[downcase_first_letter('BestClassesCount')] = request.best_classes_count unless request.best_classes_count.nil?
       end
+      if local_var_path.include? downcase_first_letter('Taxonomy')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Taxonomy') + '}', request.taxonomy.to_s)
+      else
+        query_params[downcase_first_letter('Taxonomy')] = request.taxonomy unless request.taxonomy.nil?
+      end
 
       # header parameters
       header_params = {}
