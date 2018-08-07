@@ -31,7 +31,7 @@ module AsposeWordsCloud
       'Common'
     end
     
-	  #
+    #
     # Test for raw text classification.
     #
     def test_classify
@@ -41,7 +41,7 @@ module AsposeWordsCloud
       assert_equal 200, result.code
     end
 	
-	  #
+    #
     # Test for document classification
     #
     def test_classify_document
@@ -50,8 +50,25 @@ module AsposeWordsCloud
       
       st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
       @storage_api.put_create st_request
-	    request = ClassifyDocumentRequest.new remote_name, remote_test_folder + test_folder
+	  
+	  request = ClassifyDocumentRequest.new remote_name, remote_test_folder + test_folder
       result = @words_api.classify_document request
+      assert_equal 200, result.code
+    end
+	
+    #
+    # Test for document classification with taxonomy "documents"
+    #
+    def test_classify_taxonomy_documents
+      filename = 'test_multi_pages.docx'
+      remote_name = 'Source.docx'
+      taxonomy = 'documents'
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
+	    
+      request = ClassifyDocumentRequest.new remote_name, remote_test_folder + test_folder, taxonomy: taxonomy
+      
+	  result = @words_api.classify_document request
       assert_equal 200, result.code
     end
   end
