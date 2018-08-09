@@ -76,7 +76,7 @@ def publishGem()
                 stage('upload to rubygems'){
 					sh "gem build aspose_words_cloud.gemspec"
 					sh "touch ~/.gem/credentials"
-					sh "echo ':rubygems_api_key: 94d91dbb241eb08b0ebd20780bf0cd56' > ~/.gem/credentials"
+					sh "echo ':rubygems_api_key: ${deployKey}' > ~/.gem/credentials"
 					sh "gem push aspose_words_cloud-${version}.gem"
 				}
 				
