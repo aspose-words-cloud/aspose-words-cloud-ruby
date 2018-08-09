@@ -45,7 +45,7 @@ module AsposeWordsCloud
         AsposeStorageCloud.configure do |st_conf|
           st_conf.api_key['api_key'] = config.api_key['api_key']
           st_conf.api_key['app_sid'] = config.api_key['app_sid']
-          st_conf.host = config.host
+          st_conf.host = creds['BaseUrl']
           st_conf.scheme = config.scheme
         end
       end

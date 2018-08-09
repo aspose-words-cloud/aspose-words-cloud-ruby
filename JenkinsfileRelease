@@ -1,7 +1,7 @@
 parameters {
 		string(name: 'version', defaultValue: '18.7', description: 'version of gem')
 		string(name: 'deployKey', defaultValue: 'xxx', description: 'key')
-		string(name: 'testServerUrl', defaultValue: 'https://api.aspose.com', description: 'server url')		
+		string(name: 'testServerUrl', defaultValue: 'https://api.aspose.cloud', description: 'server url')		
 }
 node('billing-qa-ubuntu-16.04.4') {         
     try {		
