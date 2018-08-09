@@ -83,6 +83,7 @@ def publishGem()
 					sh "mkdir ~/.gem"
 					sh "touch ~/.gem/credentials"
 					sh "echo ':rubygems_api_key: ${deployKey}' > ~/.gem/credentials"
+					sh "chmod 0600 ~/.gem/credentials"
 					sh "gem push aspose_words_cloud-${version}.gem"
 				}
 				
