@@ -80,6 +80,7 @@ def publishGem()
 			docker.image('ruby:2.4').inside('-u root'){
                 stage('upload to rubygems'){
 					sh "gem build aspose_words_cloud.gemspec"
+					sh "mkdir ~/.gem"
 					sh "touch ~/.gem/credentials"
 					sh "echo ':rubygems_api_key: ${deployKey}' > ~/.gem/credentials"
 					sh "gem push aspose_words_cloud-${version}.gem"
