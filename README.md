@@ -12,14 +12,22 @@ This repository contains Aspose.Words Cloud SDK for Ruby source code. This SDK a
 See [API Reference](https://apireference.aspose.cloud/words/) for full API specification.
 
 ## How to use the SDK?
-The complete source code is available in this repository folder. You can either directly use it in your project via source code or get [Packagist distribution](https://packagist.org/packages/aspose/words-sdk-php) (recommended). For more details, please visit our [documentation website](https://docs.aspose.cloud/display/wordscloud/Available+SDKs).
+The complete source code is available in this repository folder. You can either directly use it in your project via source code or get [RubyGem](https://rubygems.org/gems/aspose_words_cloud) (recommended). For more details, please visit our [documentation website](https://docs.aspose.cloud/display/wordscloud/Available+SDKs).
 
 ### Prerequisites
 
 To use Aspose Words for Cloud Ruby SDK you need to register an account with [Aspose Cloud](https://www.aspose.cloud/) and lookup/create App Key and SID at [Cloud Dashboard](https://dashboard.aspose.cloud/#/apps). There is free quota available. For more details, see [Aspose Cloud Pricing](https://purchase.aspose.cloud/pricing).
 
 ### Installation
-
+To install this package do the following:
+update your Gemfile
+```ruby
+gem 'aspose_words_cloud', '~> 18.7'
+```
+or install directly
+```bash
+gem install aspose_words_cloud
+```
 
 ### Sample usage
 ```ruby
@@ -38,7 +46,7 @@ result = @words_api.delete_document_watermark request
 Please put your credentials into [Configuration](lib/configuration.rb).
 
 ## Dependencies
-- Ruby 2.1 or later
+- Ruby 2.3 or later
 - referenced packages (see [here](Gemfile) for more details)
 
 ## Comparison with Old generation SDK
