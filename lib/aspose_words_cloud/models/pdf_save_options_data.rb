@@ -109,6 +109,9 @@ module AsposeWordsCloud
     # Specifies the font embedding mode
     attr_accessor :font_embedding_mode
 
+    # Determines how bookmarks in headers/footers are exported. The default value is Aspose.Words.Saving.HeaderFooterBookmarksExportMode.All.
+    attr_accessor :header_footer_bookmarks_export_mode
+
     # Specifies how the color space will be selected for the images in PDF document.
     attr_accessor :image_color_space_export_mode
 
@@ -145,6 +148,27 @@ module AsposeWordsCloud
     # Determines zoom factor (in percentages) for a document
     attr_accessor :zoom_factor
 
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -175,6 +199,7 @@ module AsposeWordsCloud
         :'escape_uri' => :'EscapeUri',
         :'export_document_structure' => :'ExportDocumentStructure',
         :'font_embedding_mode' => :'FontEmbeddingMode',
+        :'header_footer_bookmarks_export_mode' => :'HeaderFooterBookmarksExportMode',
         :'image_color_space_export_mode' => :'ImageColorSpaceExportMode',
         :'image_compression' => :'ImageCompression',
         :'open_hyperlinks_in_new_window' => :'OpenHyperlinksInNewWindow',
@@ -219,6 +244,7 @@ module AsposeWordsCloud
         :'escape_uri' => :'BOOLEAN',
         :'export_document_structure' => :'BOOLEAN',
         :'font_embedding_mode' => :'String',
+        :'header_footer_bookmarks_export_mode' => :'String',
         :'image_color_space_export_mode' => :'String',
         :'image_compression' => :'String',
         :'open_hyperlinks_in_new_window' => :'BOOLEAN',
@@ -346,6 +372,10 @@ module AsposeWordsCloud
         self.font_embedding_mode = attributes[:'FontEmbeddingMode']
       end
 
+      if attributes.key?(:'HeaderFooterBookmarksExportMode')
+        self.header_footer_bookmarks_export_mode = attributes[:'HeaderFooterBookmarksExportMode']
+      end
+
       if attributes.key?(:'ImageColorSpaceExportMode')
         self.image_color_space_export_mode = attributes[:'ImageColorSpaceExportMode']
       end
@@ -406,7 +436,23 @@ module AsposeWordsCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      header_footer_bookmarks_export_mode_validator = EnumAttributeValidator.new('String', ["None", "First", "All"])
+      return false unless header_footer_bookmarks_export_mode_validator.valid?(@header_footer_bookmarks_export_mode)
       return true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] header_footer_bookmarks_export_mode Object to be assigned
+    def header_footer_bookmarks_export_mode=(header_footer_bookmarks_export_mode)
+      validator = EnumAttributeValidator.new('String', ["None", "First", "All"])
+      if header_footer_bookmarks_export_mode.to_i == 0
+        unless validator.valid?(header_footer_bookmarks_export_mode)
+          raise ArgumentError, "invalid value for 'header_footer_bookmarks_export_mode', must be one of #{validator.allowable_values}."
+        end
+        @header_footer_bookmarks_export_mode = header_footer_bookmarks_export_mode
+      else
+        @header_footer_bookmarks_export_mode = validator.allowable_values[header_footer_bookmarks_export_mode.to_i]
+      end
     end
 
     # Checks equality by comparing each attribute.
@@ -440,6 +486,7 @@ module AsposeWordsCloud
           escape_uri == other.escape_uri &&
           export_document_structure == other.export_document_structure &&
           font_embedding_mode == other.font_embedding_mode &&
+          header_footer_bookmarks_export_mode == other.header_footer_bookmarks_export_mode &&
           image_color_space_export_mode == other.image_color_space_export_mode &&
           image_compression == other.image_compression &&
           open_hyperlinks_in_new_window == other.open_hyperlinks_in_new_window &&
@@ -463,7 +510,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [color_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, compliance, create_note_hyperlinks, custom_properties_export, digital_signature_details, display_doc_title, downsample_options, embed_full_fonts, encryption_details, escape_uri, export_document_structure, font_embedding_mode, image_color_space_export_mode, image_compression, open_hyperlinks_in_new_window, outline_options, page_mode, preblend_images, preserve_form_fields, text_compression, use_book_fold_printing_settings, use_core_fonts, zoom_behavior, zoom_factor].hash
+      [color_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, compliance, create_note_hyperlinks, custom_properties_export, digital_signature_details, display_doc_title, downsample_options, embed_full_fonts, encryption_details, escape_uri, export_document_structure, font_embedding_mode, header_footer_bookmarks_export_mode, image_color_space_export_mode, image_compression, open_hyperlinks_in_new_window, outline_options, page_mode, preblend_images, preserve_form_fields, text_compression, use_book_fold_printing_settings, use_core_fonts, zoom_behavior, zoom_factor].hash
     end
 
     # Builds the object from hash
