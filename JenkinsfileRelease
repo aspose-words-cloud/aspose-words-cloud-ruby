@@ -92,6 +92,17 @@ def publishGem()
 				}
             } 
 	    }
+		stage('add version tag'){
+            checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', url: 'https://github.com/aspose-words-cloud/aspose-words-cloud-ruby.git/']]])
+            		
+			sh "git config user.email \"jenkins.aspose@gmail.com\""
+			sh "git config user.name \"jenkins\""
+			sh "git tag -a ${version} -m 'version ${version}' | exit 0"
+			
+			withCredentials([usernamePassword(credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', passwordVariable: 'gitPass', usernameVariable: 'gitUsername')]) {
+	    		sh "git push https://WordsCloud:$gitPass@github.com/aspose-words-cloud/aspose-words-cloud-ruby ${version}"
+	    	}			
+        }           
     } finally {                       
         cleanWs()
     }
