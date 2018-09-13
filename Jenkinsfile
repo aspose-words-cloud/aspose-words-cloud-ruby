@@ -46,7 +46,7 @@ def runtests(dockerImageVersion)
 node('billing-qa-ubuntu-16.04.4') {        
     stage('oldruby'){
 		try {
-			runtests("2.3")
+			runtests("2.4")
 		} finally {
 			cleanWs()
 		}
