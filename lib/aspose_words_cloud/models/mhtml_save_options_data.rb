@@ -172,6 +172,9 @@ module AsposeWordsCloud
     # Controls how table, row and cell widths are exported
     attr_accessor :table_width_output_mode
 
+    # Specifies whether to use CID (Content-ID) URLs to reference resources (images, fonts, CSS) included in MHTML documents. Default value is false.             
+    attr_accessor :export_cid_urls_for_mhtml_resources
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -243,7 +246,8 @@ module AsposeWordsCloud
         :'resource_folder' => :'ResourceFolder',
         :'resource_folder_alias' => :'ResourceFolderAlias',
         :'scale_image_to_shape_size' => :'ScaleImageToShapeSize',
-        :'table_width_output_mode' => :'TableWidthOutputMode'
+        :'table_width_output_mode' => :'TableWidthOutputMode',
+        :'export_cid_urls_for_mhtml_resources' => :'ExportCidUrlsForMhtmlResources'
       }
     end
 
@@ -296,7 +300,8 @@ module AsposeWordsCloud
         :'resource_folder' => :'String',
         :'resource_folder_alias' => :'String',
         :'scale_image_to_shape_size' => :'BOOLEAN',
-        :'table_width_output_mode' => :'String'
+        :'table_width_output_mode' => :'String',
+        :'export_cid_urls_for_mhtml_resources' => :'BOOLEAN'
       }
     end
 
@@ -496,6 +501,10 @@ module AsposeWordsCloud
         self.table_width_output_mode = attributes[:'TableWidthOutputMode']
       end
 
+      if attributes.key?(:'ExportCidUrlsForMhtmlResources')
+        self.export_cid_urls_for_mhtml_resources = attributes[:'ExportCidUrlsForMhtmlResources']
+      end
+
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -610,7 +619,8 @@ module AsposeWordsCloud
           resource_folder == other.resource_folder &&
           resource_folder_alias == other.resource_folder_alias &&
           scale_image_to_shape_size == other.scale_image_to_shape_size &&
-          table_width_output_mode == other.table_width_output_mode
+          table_width_output_mode == other.table_width_output_mode &&
+          export_cid_urls_for_mhtml_resources == other.export_cid_urls_for_mhtml_resources
     end
 
     # @see the `==` method
@@ -622,7 +632,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [color_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, allow_negative_indent, css_class_name_prefix, css_style_sheet_file_name, css_style_sheet_type, document_split_criteria, document_split_heading_level, encoding, export_document_properties, export_drop_down_form_field_as_text, export_font_resources, export_fonts_as_base64, export_headers_footers_mode, export_images_as_base64, export_language_information, export_list_labels, export_original_url_for_linked_images, export_page_margins, export_page_setup, export_relative_font_size, export_roundtrip_information, export_text_box_as_svg, export_text_input_form_field_as_text, export_toc_page_numbers, export_xhtml_transitional, font_resources_subsetting_size_threshold, fonts_folder, fonts_folder_alias, html_version, image_resolution, images_folder, images_folder_alias, metafile_format, office_math_output_mode, pretty_format, resource_folder, resource_folder_alias, scale_image_to_shape_size, table_width_output_mode].hash
+      [color_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, allow_negative_indent, css_class_name_prefix, css_style_sheet_file_name, css_style_sheet_type, document_split_criteria, document_split_heading_level, encoding, export_document_properties, export_drop_down_form_field_as_text, export_font_resources, export_fonts_as_base64, export_headers_footers_mode, export_images_as_base64, export_language_information, export_list_labels, export_original_url_for_linked_images, export_page_margins, export_page_setup, export_relative_font_size, export_roundtrip_information, export_text_box_as_svg, export_text_input_form_field_as_text, export_toc_page_numbers, export_xhtml_transitional, font_resources_subsetting_size_threshold, fonts_folder, fonts_folder_alias, html_version, image_resolution, images_folder, images_folder_alias, metafile_format, office_math_output_mode, pretty_format, resource_folder, resource_folder_alias, scale_image_to_shape_size, table_width_output_mode, export_cid_urls_for_mhtml_resources].hash
     end
 
     # Builds the object from hash

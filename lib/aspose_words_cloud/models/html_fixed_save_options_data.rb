@@ -109,6 +109,9 @@ module AsposeWordsCloud
     # Specifies the name of the folder used to construct resource URIs
     attr_accessor :resources_folder_alias
 
+    # Flag indicates whether \"@font-face\" CSS rules should be placed into a separate file \"fontFaces.css\" when a document is being saved with external stylesheet (that is, when Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedCss is false). Default value is false, all CSS rules are written into single file \"styles.css\".
+    attr_accessor :save_font_face_css_separately
+
     # Specifies whether border around pages should be shown.
     attr_accessor :show_page_border
 
@@ -142,6 +145,7 @@ module AsposeWordsCloud
         :'page_margins' => :'PageMargins',
         :'resources_folder' => :'ResourcesFolder',
         :'resources_folder_alias' => :'ResourcesFolderAlias',
+        :'save_font_face_css_separately' => :'SaveFontFaceCssSeparately',
         :'show_page_border' => :'ShowPageBorder'
       }
     end
@@ -175,6 +179,7 @@ module AsposeWordsCloud
         :'page_margins' => :'Float',
         :'resources_folder' => :'String',
         :'resources_folder_alias' => :'String',
+        :'save_font_face_css_separately' => :'BOOLEAN',
         :'show_page_border' => :'BOOLEAN'
       }
     end
@@ -291,6 +296,10 @@ module AsposeWordsCloud
         self.resources_folder_alias = attributes[:'ResourcesFolderAlias']
       end
 
+      if attributes.key?(:'SaveFontFaceCssSeparately')
+        self.save_font_face_css_separately = attributes[:'SaveFontFaceCssSeparately']
+      end
+
       if attributes.key?(:'ShowPageBorder')
         self.show_page_border = attributes[:'ShowPageBorder']
       end
@@ -341,6 +350,7 @@ module AsposeWordsCloud
           page_margins == other.page_margins &&
           resources_folder == other.resources_folder &&
           resources_folder_alias == other.resources_folder_alias &&
+          save_font_face_css_separately == other.save_font_face_css_separately &&
           show_page_border == other.show_page_border
     end
 
@@ -353,7 +363,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [color_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, css_class_names_prefix, encoding, export_embedded_css, export_embedded_fonts, export_embedded_images, export_form_fields, font_format, page_horizontal_alignment, page_margins, resources_folder, resources_folder_alias, show_page_border].hash
+      [color_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, css_class_names_prefix, encoding, export_embedded_css, export_embedded_fonts, export_embedded_images, export_form_fields, font_format, page_horizontal_alignment, page_margins, resources_folder, resources_folder_alias, save_font_face_css_separately, show_page_border].hash
     end
 
     # Builds the object from hash
