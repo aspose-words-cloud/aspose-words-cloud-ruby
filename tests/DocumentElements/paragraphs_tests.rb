@@ -197,16 +197,16 @@ module AsposeWordsCloud
     #
     # Test for updating paragraph format
     #
-    def test_update_paragraph_format
+    def test_post_document_paragraph_format
       filename = 'test_multi_pages.docx'
-      remote_name = 'TestUpdateParagraphFormat.docx'
+      remote_name = 'PostDocumentParagraphFormat.docx'
       index = 0
       body = ParagraphFormat.new({:Alignment => 'Right'})
 
       st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
       @storage_api.put_create st_request
 
-      request = PostDocumentParagraphFormatRequest.new remote_name, index, body, remote_test_folder + test_folder
+      request = PostDocumentParagraphFormatRequest.new remote_name, body, '', index, remote_test_folder + test_folder
       result = @words_api.post_document_paragraph_format request
       assert_equal 200, result.code
     end
