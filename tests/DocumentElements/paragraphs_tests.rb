@@ -181,7 +181,7 @@ module AsposeWordsCloud
     #
     # Test for getting paragraph format
     #
-    def test_get_paragraph_format
+    def test_get_document_paragraph_format
       filename = 'test_multi_pages.docx'
       remote_name = 'TestGetParagraphFormat.docx'
       index = 0
