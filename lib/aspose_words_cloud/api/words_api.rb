@@ -44,6 +44,7 @@ module AsposeWordsCloud
     # @return [RevisionsModificationResponse]
     def accept_all_revisions(request)
       data, _status_code, _headers = accept_all_revisions_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -123,6 +124,7 @@ module AsposeWordsCloud
     # @return [ClassificationResponse]
     def classify(request)
       data, _status_code, _headers = classify_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -181,6 +183,7 @@ module AsposeWordsCloud
     # @return [ClassificationResponse]
     def classify_document(request)
       data, _status_code, _headers = classify_document_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -265,6 +268,7 @@ module AsposeWordsCloud
     # @return [DocumentPropertyResponse]
     def create_or_update_document_property(request)
       data, _status_code, _headers = create_or_update_document_property_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -359,6 +363,7 @@ module AsposeWordsCloud
     # @return [BorderResponse]
     def delete_border(request)
       data, _status_code, _headers = delete_border_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -454,6 +459,7 @@ module AsposeWordsCloud
     # @return [BordersResponse]
     def delete_borders(request)
       data, _status_code, _headers = delete_borders_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -546,6 +552,7 @@ module AsposeWordsCloud
     # @return [AsposeResponse]
     def delete_comment(request)
       data, _status_code, _headers = delete_comment_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -638,6 +645,7 @@ module AsposeWordsCloud
     # @return [AsposeResponse]
     def delete_document_macros(request)
       data, _status_code, _headers = delete_document_macros_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -727,6 +735,7 @@ module AsposeWordsCloud
     # @return [AsposeResponse]
     def delete_document_property(request)
       data, _status_code, _headers = delete_document_property_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -819,6 +828,7 @@ module AsposeWordsCloud
     # @return [DocumentResponse]
     def delete_document_watermark(request)
       data, _status_code, _headers = delete_document_watermark_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -908,6 +918,7 @@ module AsposeWordsCloud
     # @return [AsposeResponse]
     def delete_drawing_object(request)
       data, _status_code, _headers = delete_drawing_object_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -1005,6 +1016,7 @@ module AsposeWordsCloud
     # @return [AsposeResponse]
     def delete_field(request)
       data, _status_code, _headers = delete_field_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -1102,6 +1114,7 @@ module AsposeWordsCloud
     # @return [AsposeResponse]
     def delete_fields(request)
       data, _status_code, _headers = delete_fields_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -1196,6 +1209,7 @@ module AsposeWordsCloud
     # @return [AsposeResponse]
     def delete_footnote(request)
       data, _status_code, _headers = delete_footnote_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -1293,6 +1307,7 @@ module AsposeWordsCloud
     # @return [AsposeResponse]
     def delete_form_field(request)
       data, _status_code, _headers = delete_form_field_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -1390,6 +1405,7 @@ module AsposeWordsCloud
     # @return [AsposeResponse]
     def delete_header_footer(request)
       data, _status_code, _headers = delete_header_footer_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -1487,6 +1503,7 @@ module AsposeWordsCloud
     # @return [AsposeResponse]
     def delete_headers_footers(request)
       data, _status_code, _headers = delete_headers_footers_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -1586,6 +1603,7 @@ module AsposeWordsCloud
     # @return [AsposeResponse]
     def delete_office_math_object(request)
       data, _status_code, _headers = delete_office_math_object_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -1683,6 +1701,7 @@ module AsposeWordsCloud
     # @return [AsposeResponse]
     def delete_paragraph(request)
       data, _status_code, _headers = delete_paragraph_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -1780,6 +1799,7 @@ module AsposeWordsCloud
     # @return [AsposeResponse]
     def delete_run(request)
       data, _status_code, _headers = delete_run_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -1875,6 +1895,7 @@ module AsposeWordsCloud
     # @return [AsposeResponse]
     def delete_table(request)
       data, _status_code, _headers = delete_table_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -1972,6 +1993,7 @@ module AsposeWordsCloud
     # @return [AsposeResponse]
     def delete_table_cell(request)
       data, _status_code, _headers = delete_table_cell_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -2067,6 +2089,7 @@ module AsposeWordsCloud
     # @return [AsposeResponse]
     def delete_table_row(request)
       data, _status_code, _headers = delete_table_row_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -2162,6 +2185,7 @@ module AsposeWordsCloud
     # @return [ProtectionDataResponse]
     def delete_unprotect_document(request)
       data, _status_code, _headers = delete_unprotect_document_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -2243,6 +2267,7 @@ module AsposeWordsCloud
     # @return [AvailableFontsResponse]
     def get_available_fonts(request)
       data, _status_code, _headers = get_available_fonts_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -2299,6 +2324,7 @@ module AsposeWordsCloud
     # @return [BorderResponse]
     def get_border(request)
       data, _status_code, _headers = get_border_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -2379,6 +2405,7 @@ module AsposeWordsCloud
     # @return [BordersResponse]
     def get_borders(request)
       data, _status_code, _headers = get_borders_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -2456,6 +2483,7 @@ module AsposeWordsCloud
     # @return [CommentResponse]
     def get_comment(request)
       data, _status_code, _headers = get_comment_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -2533,6 +2561,7 @@ module AsposeWordsCloud
     # @return [CommentsResponse]
     def get_comments(request)
       data, _status_code, _headers = get_comments_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -2607,6 +2636,7 @@ module AsposeWordsCloud
     # @return [DocumentResponse]
     def get_document(request)
       data, _status_code, _headers = get_document_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -2681,6 +2711,7 @@ module AsposeWordsCloud
     # @return [BookmarkResponse]
     def get_document_bookmark_by_name(request)
       data, _status_code, _headers = get_document_bookmark_by_name_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -2758,6 +2789,7 @@ module AsposeWordsCloud
     # @return [BookmarksResponse]
     def get_document_bookmarks(request)
       data, _status_code, _headers = get_document_bookmarks_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -2832,6 +2864,7 @@ module AsposeWordsCloud
     # @return [DrawingObjectResponse]
     def get_document_drawing_object_by_index(request)
       data, _status_code, _headers = get_document_drawing_object_by_index_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -2914,6 +2947,7 @@ module AsposeWordsCloud
     # @return [File]
     def get_document_drawing_object_image_data(request)
       data, _status_code, _headers = get_document_drawing_object_image_data_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -2996,6 +3030,7 @@ module AsposeWordsCloud
     # @return [File]
     def get_document_drawing_object_ole_data(request)
       data, _status_code, _headers = get_document_drawing_object_ole_data_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -3078,6 +3113,7 @@ module AsposeWordsCloud
     # @return [DrawingObjectsResponse]
     def get_document_drawing_objects(request)
       data, _status_code, _headers = get_document_drawing_objects_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -3157,6 +3193,7 @@ module AsposeWordsCloud
     # @return [FieldNamesResponse]
     def get_document_field_names(request)
       data, _status_code, _headers = get_document_field_names_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -3236,6 +3273,7 @@ module AsposeWordsCloud
     # @return [HyperlinkResponse]
     def get_document_hyperlink_by_index(request)
       data, _status_code, _headers = get_document_hyperlink_by_index_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -3313,6 +3351,7 @@ module AsposeWordsCloud
     # @return [HyperlinksResponse]
     def get_document_hyperlinks(request)
       data, _status_code, _headers = get_document_hyperlinks_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -3387,6 +3426,7 @@ module AsposeWordsCloud
     # @return [ParagraphResponse]
     def get_document_paragraph(request)
       data, _status_code, _headers = get_document_paragraph_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -3463,12 +3503,96 @@ module AsposeWordsCloud
       [data, status_code, headers]
     end
 
+    # Represents all the formatting for a paragraph.
+    # 
+    # @param request GetDocumentParagraphFormatRequest
+    # @return [ParagraphFormatResponse]
+    def get_document_paragraph_format(request)
+      data, _status_code, _headers = get_document_paragraph_format_with_http_info(request)
+      request_token if _status_code == 401
+      data
+    end
+
+    # Represents all the formatting for a paragraph.
+    # 
+    # @param request GetDocumentParagraphFormatRequest
+    # @return [Array<(ParagraphFormatResponse, Fixnum, Hash)>]
+    # ParagraphFormatResponse data, response status code and response headers
+    private def get_document_paragraph_format_with_http_info(request)
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetDocumentParagraphFormatRequest
+
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_document_paragraph_format ...' if @api_client.config.debugging
+      # verify the required parameter 'name' is set
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_paragraph_format' if @api_client.config.client_side_validation && request.name.nil?
+      # verify the required parameter 'index' is set
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_document_paragraph_format' if @api_client.config.client_side_validation && request.index.nil?
+      # resource path
+      local_var_path = '/words/{name}/{nodePath}/paragraphs/{index}/format'
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+
+      # query parameters
+      query_params = {}
+      if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+      else
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+      else
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+      end
+      if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+      else
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+      else
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+      end
+      if local_var_path.include? downcase_first_letter('NodePath')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+      else
+        query_params[downcase_first_letter('NodePath')] = request.node_path unless request.node_path.nil?
+      end
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/xml', 'application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'ParagraphFormatResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#get_document_paragraph_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
     # This resource represents run of text contained in the document.
     # 
     # @param request GetDocumentParagraphRunRequest
     # @return [RunResponse]
     def get_document_paragraph_run(request)
       data, _status_code, _headers = get_document_paragraph_run_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -3549,6 +3673,7 @@ module AsposeWordsCloud
     # @return [FontResponse]
     def get_document_paragraph_run_font(request)
       data, _status_code, _headers = get_document_paragraph_run_font_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -3629,6 +3754,7 @@ module AsposeWordsCloud
     # @return [RunsResponse]
     def get_document_paragraph_runs(request)
       data, _status_code, _headers = get_document_paragraph_runs_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -3706,6 +3832,7 @@ module AsposeWordsCloud
     # @return [ParagraphLinkCollectionResponse]
     def get_document_paragraphs(request)
       data, _status_code, _headers = get_document_paragraphs_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -3785,6 +3912,7 @@ module AsposeWordsCloud
     # @return [DocumentPropertiesResponse]
     def get_document_properties(request)
       data, _status_code, _headers = get_document_properties_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -3859,6 +3987,7 @@ module AsposeWordsCloud
     # @return [DocumentPropertyResponse]
     def get_document_property(request)
       data, _status_code, _headers = get_document_property_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -3936,6 +4065,7 @@ module AsposeWordsCloud
     # @return [ProtectionDataResponse]
     def get_document_protection(request)
       data, _status_code, _headers = get_document_protection_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -4010,6 +4140,7 @@ module AsposeWordsCloud
     # @return [StatDataResponse]
     def get_document_statistics(request)
       data, _status_code, _headers = get_document_statistics_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -4099,6 +4230,7 @@ module AsposeWordsCloud
     # @return [TextItemsResponse]
     def get_document_text_items(request)
       data, _status_code, _headers = get_document_text_items_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -4173,6 +4305,7 @@ module AsposeWordsCloud
     # @return [File]
     def get_document_with_format(request)
       data, _status_code, _headers = get_document_with_format_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -4261,6 +4394,7 @@ module AsposeWordsCloud
     # @return [FieldResponse]
     def get_field(request)
       data, _status_code, _headers = get_field_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -4343,6 +4477,7 @@ module AsposeWordsCloud
     # @return [FieldsResponse]
     def get_fields(request)
       data, _status_code, _headers = get_fields_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -4422,6 +4557,7 @@ module AsposeWordsCloud
     # @return [FootnoteResponse]
     def get_footnote(request)
       data, _status_code, _headers = get_footnote_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -4504,6 +4640,7 @@ module AsposeWordsCloud
     # @return [FootnotesResponse]
     def get_footnotes(request)
       data, _status_code, _headers = get_footnotes_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -4583,6 +4720,7 @@ module AsposeWordsCloud
     # @return [FormFieldResponse]
     def get_form_field(request)
       data, _status_code, _headers = get_form_field_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -4665,6 +4803,7 @@ module AsposeWordsCloud
     # @return [FormFieldsResponse]
     def get_form_fields(request)
       data, _status_code, _headers = get_form_fields_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -4744,6 +4883,7 @@ module AsposeWordsCloud
     # @return [HeaderFooterResponse]
     def get_header_footer(request)
       data, _status_code, _headers = get_header_footer_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -4826,6 +4966,7 @@ module AsposeWordsCloud
     # @return [HeaderFooterResponse]
     def get_header_footer_of_section(request)
       data, _status_code, _headers = get_header_footer_of_section_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -4911,6 +5052,7 @@ module AsposeWordsCloud
     # @return [HeaderFootersResponse]
     def get_header_footers(request)
       data, _status_code, _headers = get_header_footers_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -4995,6 +5137,7 @@ module AsposeWordsCloud
     # @return [OfficeMathObjectResponse]
     def get_office_math_object(request)
       data, _status_code, _headers = get_office_math_object_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -5077,6 +5220,7 @@ module AsposeWordsCloud
     # @return [OfficeMathObjectsResponse]
     def get_office_math_objects(request)
       data, _status_code, _headers = get_office_math_objects_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -5156,6 +5300,7 @@ module AsposeWordsCloud
     # @return [SectionResponse]
     def get_section(request)
       data, _status_code, _headers = get_section_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -5233,6 +5378,7 @@ module AsposeWordsCloud
     # @return [SectionPageSetupResponse]
     def get_section_page_setup(request)
       data, _status_code, _headers = get_section_page_setup_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -5310,6 +5456,7 @@ module AsposeWordsCloud
     # @return [SectionLinkCollectionResponse]
     def get_sections(request)
       data, _status_code, _headers = get_sections_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -5384,6 +5531,7 @@ module AsposeWordsCloud
     # @return [TableResponse]
     def get_table(request)
       data, _status_code, _headers = get_table_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -5466,6 +5614,7 @@ module AsposeWordsCloud
     # @return [TableCellResponse]
     def get_table_cell(request)
       data, _status_code, _headers = get_table_cell_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -5546,6 +5695,7 @@ module AsposeWordsCloud
     # @return [TableCellFormatResponse]
     def get_table_cell_format(request)
       data, _status_code, _headers = get_table_cell_format_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -5626,6 +5776,7 @@ module AsposeWordsCloud
     # @return [TablePropertiesResponse]
     def get_table_properties(request)
       data, _status_code, _headers = get_table_properties_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -5708,6 +5859,7 @@ module AsposeWordsCloud
     # @return [TableRowResponse]
     def get_table_row(request)
       data, _status_code, _headers = get_table_row_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -5788,6 +5940,7 @@ module AsposeWordsCloud
     # @return [TableRowFormatResponse]
     def get_table_row_format(request)
       data, _status_code, _headers = get_table_row_format_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -5868,6 +6021,7 @@ module AsposeWordsCloud
     # @return [TableLinkCollectionResponse]
     def get_tables(request)
       data, _status_code, _headers = get_tables_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -5947,6 +6101,7 @@ module AsposeWordsCloud
     # @return [TableResponse]
     def insert_table(request)
       data, _status_code, _headers = insert_table_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -6041,6 +6196,7 @@ module AsposeWordsCloud
     # @return [TableCellResponse]
     def insert_table_cell(request)
       data, _status_code, _headers = insert_table_cell_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -6133,6 +6289,7 @@ module AsposeWordsCloud
     # @return [TableRowResponse]
     def insert_table_row(request)
       data, _status_code, _headers = insert_table_row_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -6225,6 +6382,7 @@ module AsposeWordsCloud
     # @return [DocumentResponse]
     def post_append_document(request)
       data, _status_code, _headers = post_append_document_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -6316,6 +6474,7 @@ module AsposeWordsCloud
     # @return [ProtectionDataResponse]
     def post_change_document_protection(request)
       data, _status_code, _headers = post_change_document_protection_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -6397,6 +6556,7 @@ module AsposeWordsCloud
     # @return [CommentResponse]
     def post_comment(request)
       data, _status_code, _headers = post_comment_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -6491,6 +6651,7 @@ module AsposeWordsCloud
     # @return [DocumentResponse]
     def post_compare_document(request)
       data, _status_code, _headers = post_compare_document_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -6572,6 +6733,7 @@ module AsposeWordsCloud
     # @return [DocumentResponse]
     def post_document_execute_mail_merge(request)
       data, _status_code, _headers = post_document_execute_mail_merge_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -6666,12 +6828,111 @@ module AsposeWordsCloud
       [data, status_code, headers]
     end
 
+    # Updates paragrpaph format properties, returns updated format properties.
+    # 
+    # @param request PostDocumentParagraphFormatRequest
+    # @return [ParagraphFormatResponse]
+    def post_document_paragraph_format(request)
+      data, _status_code, _headers = post_document_paragraph_format_with_http_info(request)
+      request_token if _status_code == 401
+      data
+    end
+
+    # Updates paragrpaph format properties, returns updated format properties.
+    # 
+    # @param request PostDocumentParagraphFormatRequest
+    # @return [Array<(ParagraphFormatResponse, Fixnum, Hash)>]
+    # ParagraphFormatResponse data, response status code and response headers
+    private def post_document_paragraph_format_with_http_info(request)
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? PostDocumentParagraphFormatRequest
+
+      @api_client.config.logger.debug 'Calling API: WordsApi.post_document_paragraph_format ...' if @api_client.config.debugging
+      # verify the required parameter 'name' is set
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.post_document_paragraph_format' if @api_client.config.client_side_validation && request.name.nil?
+      # verify the required parameter 'dto' is set
+      raise ArgumentError, 'Missing the required parameter dto when calling WordsApi.post_document_paragraph_format' if @api_client.config.client_side_validation && request.dto.nil?
+      # verify the required parameter 'node_path' is set
+      raise ArgumentError, 'Missing the required parameter node_path when calling WordsApi.post_document_paragraph_format' if @api_client.config.client_side_validation && request.node_path.nil?
+      # verify the required parameter 'index' is set
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.post_document_paragraph_format' if @api_client.config.client_side_validation && request.index.nil?
+      # resource path
+      local_var_path = '/words/{name}/{nodePath}/paragraphs/{index}/format'
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+
+      # query parameters
+      query_params = {}
+      if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+      else
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+      else
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+      end
+      if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+      else
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+      else
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+      end
+      if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+      else
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+      end
+      if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+      else
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+      end
+      if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+      else
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+      end
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/xml', 'application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(request.dto)
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'ParagraphFormatResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#post_document_paragraph_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
     # Updates font properties, returns updated font data.
     # 
     # @param request PostDocumentParagraphRunFontRequest
     # @return [FontResponse]
     def post_document_paragraph_run_font(request)
       data, _status_code, _headers = post_document_paragraph_run_font_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -6769,6 +7030,7 @@ module AsposeWordsCloud
     # @return [SaveResponse]
     def post_document_save_as(request)
       data, _status_code, _headers = post_document_save_as_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -6855,6 +7117,7 @@ module AsposeWordsCloud
     # @return [DrawingObjectResponse]
     def post_drawing_object(request)
       data, _status_code, _headers = post_drawing_object_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -6958,6 +7221,7 @@ module AsposeWordsCloud
     # @return [DocumentResponse]
     def post_execute_template(request)
       data, _status_code, _headers = post_execute_template_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -7055,6 +7319,7 @@ module AsposeWordsCloud
     # @return [FieldResponse]
     def post_field(request)
       data, _status_code, _headers = post_field_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -7154,6 +7419,7 @@ module AsposeWordsCloud
     # @return [FootnoteResponse]
     def post_footnote(request)
       data, _status_code, _headers = post_footnote_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -7253,6 +7519,7 @@ module AsposeWordsCloud
     # @return [FormFieldResponse]
     def post_form_field(request)
       data, _status_code, _headers = post_form_field_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -7352,6 +7619,7 @@ module AsposeWordsCloud
     # @return [DocumentResponse]
     def post_insert_document_watermark_image(request)
       data, _status_code, _headers = post_insert_document_watermark_image_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -7452,6 +7720,7 @@ module AsposeWordsCloud
     # @return [DocumentResponse]
     def post_insert_document_watermark_text(request)
       data, _status_code, _headers = post_insert_document_watermark_text_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -7543,6 +7812,7 @@ module AsposeWordsCloud
     # @return [DocumentResponse]
     def post_insert_page_numbers(request)
       data, _status_code, _headers = post_insert_page_numbers_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -7634,6 +7904,7 @@ module AsposeWordsCloud
     # @return [SaveResponse]
     def post_load_web_document(request)
       data, _status_code, _headers = post_load_web_document_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -7692,6 +7963,7 @@ module AsposeWordsCloud
     # @return [ReplaceTextResponse]
     def post_replace_text(request)
       data, _status_code, _headers = post_replace_text_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -7783,6 +8055,7 @@ module AsposeWordsCloud
     # @return [RunResponse]
     def post_run(request)
       data, _status_code, _headers = post_run_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -7880,6 +8153,7 @@ module AsposeWordsCloud
     # @return [SplitDocumentResponse]
     def post_split_document(request)
       data, _status_code, _headers = post_split_document_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -7984,6 +8258,7 @@ module AsposeWordsCloud
     # @return [BookmarkResponse]
     def post_update_document_bookmark(request)
       data, _status_code, _headers = post_update_document_bookmark_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -8078,6 +8353,7 @@ module AsposeWordsCloud
     # @return [DocumentResponse]
     def post_update_document_fields(request)
       data, _status_code, _headers = post_update_document_fields_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -8157,6 +8433,7 @@ module AsposeWordsCloud
     # @return [CommentResponse]
     def put_comment(request)
       data, _status_code, _headers = put_comment_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -8248,6 +8525,7 @@ module AsposeWordsCloud
     # @return [File]
     def put_convert_document(request)
       data, _status_code, _headers = put_convert_document_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -8326,6 +8604,7 @@ module AsposeWordsCloud
     # @return [DocumentResponse]
     def put_create_document(request)
       data, _status_code, _headers = put_create_document_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -8392,6 +8671,7 @@ module AsposeWordsCloud
     # @return [FieldNamesResponse]
     def put_document_field_names(request)
       data, _status_code, _headers = put_document_field_names_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -8451,6 +8731,7 @@ module AsposeWordsCloud
     # @return [SaveResponse]
     def put_document_save_as_tiff(request)
       data, _status_code, _headers = put_document_save_as_tiff_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -8627,6 +8908,7 @@ module AsposeWordsCloud
     # @return [DrawingObjectResponse]
     def put_drawing_object(request)
       data, _status_code, _headers = put_drawing_object_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -8727,6 +9009,7 @@ module AsposeWordsCloud
     # @return [File]
     def put_execute_mail_merge_online(request)
       data, _status_code, _headers = put_execute_mail_merge_online_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -8799,6 +9082,7 @@ module AsposeWordsCloud
     # @return [File]
     def put_execute_template_online(request)
       data, _status_code, _headers = put_execute_template_online_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -8876,6 +9160,7 @@ module AsposeWordsCloud
     # @return [FieldResponse]
     def put_field(request)
       data, _status_code, _headers = put_field_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -8977,6 +9262,7 @@ module AsposeWordsCloud
     # @return [FootnoteResponse]
     def put_footnote(request)
       data, _status_code, _headers = put_footnote_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -9073,6 +9359,7 @@ module AsposeWordsCloud
     # @return [FormFieldResponse]
     def put_form_field(request)
       data, _status_code, _headers = put_form_field_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -9174,6 +9461,7 @@ module AsposeWordsCloud
     # @return [HeaderFooterResponse]
     def put_header_footer(request)
       data, _status_code, _headers = put_header_footer_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -9270,6 +9558,7 @@ module AsposeWordsCloud
     # @return [ParagraphResponse]
     def put_paragraph(request)
       data, _status_code, _headers = put_paragraph_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -9371,6 +9660,7 @@ module AsposeWordsCloud
     # @return [ProtectionDataResponse]
     def put_protect_document(request)
       data, _status_code, _headers = put_protect_document_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -9452,6 +9742,7 @@ module AsposeWordsCloud
     # @return [RunResponse]
     def put_run(request)
       data, _status_code, _headers = put_run_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -9551,6 +9842,7 @@ module AsposeWordsCloud
     # @return [RevisionsModificationResponse]
     def reject_all_revisions(request)
       data, _status_code, _headers = reject_all_revisions_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -9630,6 +9922,7 @@ module AsposeWordsCloud
     # @return [File]
     def render_drawing_object(request)
       data, _status_code, _headers = render_drawing_object_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -9721,6 +10014,7 @@ module AsposeWordsCloud
     # @return [File]
     def render_math_object(request)
       data, _status_code, _headers = render_math_object_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -9812,6 +10106,7 @@ module AsposeWordsCloud
     # @return [File]
     def render_page(request)
       data, _status_code, _headers = render_page_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -9898,6 +10193,7 @@ module AsposeWordsCloud
     # @return [File]
     def render_paragraph(request)
       data, _status_code, _headers = render_paragraph_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -9989,6 +10285,7 @@ module AsposeWordsCloud
     # @return [File]
     def render_table(request)
       data, _status_code, _headers = render_table_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -10080,6 +10377,7 @@ module AsposeWordsCloud
     # @return [AsposeResponse]
     def reset_cache(request)
       data, _status_code, _headers = reset_cache_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -10131,6 +10429,7 @@ module AsposeWordsCloud
     # @return [SearchResponse]
     def search(request)
       data, _status_code, _headers = search_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -10209,6 +10508,7 @@ module AsposeWordsCloud
     # @return [BorderResponse]
     def update_border(request)
       data, _status_code, _headers = update_border_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -10306,6 +10606,7 @@ module AsposeWordsCloud
     # @return [SectionPageSetupResponse]
     def update_section_page_setup(request)
       data, _status_code, _headers = update_section_page_setup_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -10400,6 +10701,7 @@ module AsposeWordsCloud
     # @return [TableCellFormatResponse]
     def update_table_cell_format(request)
       data, _status_code, _headers = update_table_cell_format_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -10495,6 +10797,7 @@ module AsposeWordsCloud
     # @return [TablePropertiesResponse]
     def update_table_properties(request)
       data, _status_code, _headers = update_table_properties_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 
@@ -10592,6 +10895,7 @@ module AsposeWordsCloud
     # @return [TableRowFormatResponse]
     def update_table_row_format(request)
       data, _status_code, _headers = update_table_row_format_with_http_info(request)
+      request_token if _status_code == 401
       data
     end
 

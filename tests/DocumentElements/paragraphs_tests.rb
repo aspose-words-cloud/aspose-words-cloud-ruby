@@ -177,5 +177,38 @@ module AsposeWordsCloud
       result = @words_api.render_paragraph request
       assert result.length > 0, 'Error occurred while rendering'
     end
+
+    #
+    # Test for getting paragraph format
+    #
+    def test_get_document_paragraph_format
+      filename = 'test_multi_pages.docx'
+      remote_name = 'TestGetParagraphFormat.docx'
+      index = 0
+
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
+
+      request = GetDocumentParagraphFormatRequest.new remote_name, index, remote_test_folder + test_folder
+      result = @words_api.get_document_paragraph_format request
+      assert_equal 200, result.code
+    end
+
+    #
+    # Test for updating paragraph format
+    #
+    def test_post_document_paragraph_format
+      filename = 'test_multi_pages.docx'
+      remote_name = 'PostDocumentParagraphFormat.docx'
+      index = 0
+      body = ParagraphFormat.new({:Alignment => 'Right'})
+
+      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
+      @storage_api.put_create st_request
+
+      request = PostDocumentParagraphFormatRequest.new remote_name, body, '', index, remote_test_folder + test_folder
+      result = @words_api.post_document_paragraph_format request
+      assert_equal 200, result.code
+    end
   end
 end
