@@ -58,6 +58,9 @@ module AsposeWordsCloud
     # Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is true
     attr_accessor :update_fields
 
+    # Specifies whether to add bi-directional marks before each BiDi run when exporting in plain text format. The default value is true.
+    attr_accessor :add_bidi_marks
+
     # Specifies the encoding to use when exporting in plain text format
     attr_accessor :encoding
 
@@ -89,6 +92,7 @@ module AsposeWordsCloud
         :'update_last_saved_time_property' => :'UpdateLastSavedTimeProperty',
         :'update_sdt_content' => :'UpdateSdtContent',
         :'update_fields' => :'UpdateFields',
+        :'add_bidi_marks' => :'AddBidiMarks',
         :'encoding' => :'Encoding',
         :'export_headers_footers' => :'ExportHeadersFooters',
         :'force_page_breaks' => :'ForcePageBreaks',
@@ -110,6 +114,7 @@ module AsposeWordsCloud
         :'update_last_saved_time_property' => :'BOOLEAN',
         :'update_sdt_content' => :'BOOLEAN',
         :'update_fields' => :'BOOLEAN',
+        :'add_bidi_marks' => :'BOOLEAN',
         :'encoding' => :'String',
         :'export_headers_footers' => :'BOOLEAN',
         :'force_page_breaks' => :'BOOLEAN',
@@ -161,6 +166,10 @@ module AsposeWordsCloud
 
       if attributes.key?(:'UpdateFields')
         self.update_fields = attributes[:'UpdateFields']
+      end
+
+      if attributes.key?(:'AddBidiMarks')
+        self.add_bidi_marks = attributes[:'AddBidiMarks']
       end
 
       if attributes.key?(:'Encoding')
@@ -216,6 +225,7 @@ module AsposeWordsCloud
           update_last_saved_time_property == other.update_last_saved_time_property &&
           update_sdt_content == other.update_sdt_content &&
           update_fields == other.update_fields &&
+          add_bidi_marks == other.add_bidi_marks &&
           encoding == other.encoding &&
           export_headers_footers == other.export_headers_footers &&
           force_page_breaks == other.force_page_breaks &&
@@ -233,7 +243,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [color_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, encoding, export_headers_footers, force_page_breaks, paragraph_break, preserve_table_layout, simplify_list_labels].hash
+      [color_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, add_bidi_marks, encoding, export_headers_footers, force_page_breaks, paragraph_break, preserve_table_layout, simplify_list_labels].hash
     end
 
     # Builds the object from hash
