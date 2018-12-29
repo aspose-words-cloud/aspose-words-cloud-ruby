@@ -43,6 +43,9 @@ module AsposeWordsCloud
     # Determines how WMF metafiles with embedded EMF metafiles should be rendered
     attr_accessor :use_emf_embedded_to_wmf
 
+    # Gets or sets a value determining whether or not to scale fonts in WMF metafile according to metafile size on the page.
+    attr_accessor :scale_wmf_fonts_to_metafile_size
+
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -50,7 +53,8 @@ module AsposeWordsCloud
         :'emf_plus_dual_rendering_mode' => :'EmfPlusDualRenderingMode',
         :'emulate_raster_operations' => :'EmulateRasterOperations',
         :'rendering_mode' => :'RenderingMode',
-        :'use_emf_embedded_to_wmf' => :'UseEmfEmbeddedToWmf'
+        :'use_emf_embedded_to_wmf' => :'UseEmfEmbeddedToWmf',
+        :'scale_wmf_fonts_to_metafile_size' => :'ScaleWmfFontsToMetafileSize'
       }
     end
 
@@ -60,7 +64,8 @@ module AsposeWordsCloud
         :'emf_plus_dual_rendering_mode' => :'String',
         :'emulate_raster_operations' => :'BOOLEAN',
         :'rendering_mode' => :'String',
-        :'use_emf_embedded_to_wmf' => :'BOOLEAN'
+        :'use_emf_embedded_to_wmf' => :'BOOLEAN',
+        :'scale_wmf_fonts_to_metafile_size' => :'BOOLEAN'
       }
     end
 
@@ -88,6 +93,10 @@ module AsposeWordsCloud
         self.use_emf_embedded_to_wmf = attributes[:'UseEmfEmbeddedToWmf']
       end
 
+      if attributes.key?(:'ScaleWmfFontsToMetafileSize')
+        self.scale_wmf_fonts_to_metafile_size = attributes[:'ScaleWmfFontsToMetafileSize']
+      end
+
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -111,7 +120,8 @@ module AsposeWordsCloud
           emf_plus_dual_rendering_mode == other.emf_plus_dual_rendering_mode &&
           emulate_raster_operations == other.emulate_raster_operations &&
           rendering_mode == other.rendering_mode &&
-          use_emf_embedded_to_wmf == other.use_emf_embedded_to_wmf
+          use_emf_embedded_to_wmf == other.use_emf_embedded_to_wmf &&
+          scale_wmf_fonts_to_metafile_size == other.scale_wmf_fonts_to_metafile_size
     end
 
     # @see the `==` method
@@ -123,7 +133,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [emf_plus_dual_rendering_mode, emulate_raster_operations, rendering_mode, use_emf_embedded_to_wmf].hash
+      [emf_plus_dual_rendering_mode, emulate_raster_operations, rendering_mode, use_emf_embedded_to_wmf, scale_wmf_fonts_to_metafile_size].hash
     end
 
     # Builds the object from hash

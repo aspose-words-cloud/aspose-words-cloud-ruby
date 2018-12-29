@@ -160,6 +160,9 @@ module AsposeWordsCloud
     # Specifies whether or not use pretty formats output
     attr_accessor :pretty_format
 
+    # A new option HtmlSaveOptions.ResolveFontNames has been added that affects writing of font names to HTML-based formats. By default this option is set to false and, as before, Aspose.Words writes font names as specified in the source document, ignoring Document.FontSettings. If this option is set to true, Aspose.Words resolves all font names before writing them to HTML. That is, it checks availability of each font using Document.FontSettings and substitutes unavailable fonts if needed.
+    attr_accessor :resolve_font_names
+
     # Specifies a physical folder where all resources like images, fonts, and external CSS are saved when a document is exported to HTML. Default is an empty string.
     attr_accessor :resource_folder
 
@@ -243,6 +246,7 @@ module AsposeWordsCloud
         :'metafile_format' => :'MetafileFormat',
         :'office_math_output_mode' => :'OfficeMathOutputMode',
         :'pretty_format' => :'PrettyFormat',
+        :'resolve_font_names' => :'ResolveFontNames',
         :'resource_folder' => :'ResourceFolder',
         :'resource_folder_alias' => :'ResourceFolderAlias',
         :'scale_image_to_shape_size' => :'ScaleImageToShapeSize',
@@ -297,6 +301,7 @@ module AsposeWordsCloud
         :'metafile_format' => :'String',
         :'office_math_output_mode' => :'String',
         :'pretty_format' => :'BOOLEAN',
+        :'resolve_font_names' => :'BOOLEAN',
         :'resource_folder' => :'String',
         :'resource_folder_alias' => :'String',
         :'scale_image_to_shape_size' => :'BOOLEAN',
@@ -485,6 +490,10 @@ module AsposeWordsCloud
         self.pretty_format = attributes[:'PrettyFormat']
       end
 
+      if attributes.key?(:'ResolveFontNames')
+        self.resolve_font_names = attributes[:'ResolveFontNames']
+      end
+
       if attributes.key?(:'ResourceFolder')
         self.resource_folder = attributes[:'ResourceFolder']
       end
@@ -616,6 +625,7 @@ module AsposeWordsCloud
           metafile_format == other.metafile_format &&
           office_math_output_mode == other.office_math_output_mode &&
           pretty_format == other.pretty_format &&
+          resolve_font_names == other.resolve_font_names &&
           resource_folder == other.resource_folder &&
           resource_folder_alias == other.resource_folder_alias &&
           scale_image_to_shape_size == other.scale_image_to_shape_size &&
@@ -632,7 +642,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [color_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, allow_negative_indent, css_class_name_prefix, css_style_sheet_file_name, css_style_sheet_type, document_split_criteria, document_split_heading_level, encoding, export_document_properties, export_drop_down_form_field_as_text, export_font_resources, export_fonts_as_base64, export_headers_footers_mode, export_images_as_base64, export_language_information, export_list_labels, export_original_url_for_linked_images, export_page_margins, export_page_setup, export_relative_font_size, export_roundtrip_information, export_text_box_as_svg, export_text_input_form_field_as_text, export_toc_page_numbers, export_xhtml_transitional, font_resources_subsetting_size_threshold, fonts_folder, fonts_folder_alias, html_version, image_resolution, images_folder, images_folder_alias, metafile_format, office_math_output_mode, pretty_format, resource_folder, resource_folder_alias, scale_image_to_shape_size, table_width_output_mode, export_cid_urls_for_mhtml_resources].hash
+      [color_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, allow_negative_indent, css_class_name_prefix, css_style_sheet_file_name, css_style_sheet_type, document_split_criteria, document_split_heading_level, encoding, export_document_properties, export_drop_down_form_field_as_text, export_font_resources, export_fonts_as_base64, export_headers_footers_mode, export_images_as_base64, export_language_information, export_list_labels, export_original_url_for_linked_images, export_page_margins, export_page_setup, export_relative_font_size, export_roundtrip_information, export_text_box_as_svg, export_text_input_form_field_as_text, export_toc_page_numbers, export_xhtml_transitional, font_resources_subsetting_size_threshold, fonts_folder, fonts_folder_alias, html_version, image_resolution, images_folder, images_folder_alias, metafile_format, office_math_output_mode, pretty_format, resolve_font_names, resource_folder, resource_folder_alias, scale_image_to_shape_size, table_width_output_mode, export_cid_urls_for_mhtml_resources].hash
     end
 
     # Builds the object from hash
