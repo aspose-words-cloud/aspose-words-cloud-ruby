@@ -7,7 +7,7 @@ class Document
   include AsposeStorageCloud
 
   def initialize
-    #Get App key and App SID from https://dashboard.aspose.cloud/
+    # Get App key and App SID from https://dashboard.aspose.cloud/
     AsposeWordsCloud.configure do |config|
       config.api_key['api_key'] = ''
       config.api_key['app_sid'] = ''
