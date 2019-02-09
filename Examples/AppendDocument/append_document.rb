@@ -30,7 +30,7 @@ class Document
     response = @storage_api.put_create(request)
   end
 
-  # Read document bookmark data by its name.
+  # Append documents to original document.
   def append_document
     filename = 'test_doc.docx'
     document_to_append = 'test_multi_pages.docx'
