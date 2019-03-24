@@ -34,23 +34,20 @@ class Document
     response = @storage_api.put_create(request)
   end
 
-  # Split Document
-  def split_all_pages_to_new_pdfs
+  # Document classification with taxonomy "documents"
+  def classify_taxonomy_documents
     filename = 'test_multi_pages.docx'
-    format = 'pdf'
-    from = nil # Splitting starts from the first page of the document
-    to = nil # Splitting ends at the last page of the document
-    folder = nil # Input file exists at the root of the storage
-    dest_name = nil
+    taxonomy = 'documents'
+    folder = nil # File save at the root of the storage
 
     # Upload source document to Cloud Storage
     upload_file(filename)
-
-    request = PostSplitDocumentRequest.new filename, folder, nil, nil, nil, dest_name, format, from, to
-    result = @words_api.post_split_document request
+      
+    request = ClassifyDocumentRequest.new filename, folder, taxonomy: taxonomy
+    result = @words_api.classify_document request
   end
 
 end
 
 document = Document.new()
-puts document.split_all_pages_to_new_pdfs
+puts document.classify_taxonomy_documents

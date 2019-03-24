@@ -34,23 +34,20 @@ class Document
     response = @storage_api.put_create(request)
   end
 
-  # Split Document
-  def split_all_pages_to_new_pdfs
+  # Getting comment
+  def get_comment
     filename = 'test_multi_pages.docx'
-    format = 'pdf'
-    from = nil # Splitting starts from the first page of the document
-    to = nil # Splitting ends at the last page of the document
-    folder = nil # Input file exists at the root of the storage
-    dest_name = nil
+    remote_name = 'TestGetComment.docx'
+    comment_index = 0
 
     # Upload source document to Cloud Storage
     upload_file(filename)
 
-    request = PostSplitDocumentRequest.new filename, folder, nil, nil, nil, dest_name, format, from, to
-    result = @words_api.post_split_document request
+    request = GetCommentRequest.new filename, comment_index
+    result = @words_api.get_comment request
   end
 
 end
 
 document = Document.new()
-puts document.split_all_pages_to_new_pdfs
+puts document.get_comment

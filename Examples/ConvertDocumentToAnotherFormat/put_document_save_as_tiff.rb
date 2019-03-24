@@ -9,9 +9,9 @@ class Document
   # Get App key and App SID from https://dashboard.aspose.cloud/
   APP_KEY = ""
   APP_SID = ""
+  FILE_PATH = "../../TestData/DocumentActions/ConvertDocument/"
 
   def initialize
-    # Get App key and App SID from https://dashboard.aspose.cloud/
     AsposeWordsCloud.configure do |config|
       config.api_key['api_key'] = APP_KEY
       config.api_key['app_sid'] = APP_SID
@@ -26,7 +26,7 @@ class Document
   end
 
   def upload_file(file_name)
-    file = File.read("../../TestData/Common/" << file_name)
+    file = File.read(FILE_PATH << file_name)
     version_id = nil
     storage = nil
     request = PutCreateRequest.new(file_name, file, version_id, storage)
@@ -34,23 +34,21 @@ class Document
     response = @storage_api.put_create(request)
   end
 
-  # Split Document
-  def split_all_pages_to_new_pdfs
-    filename = 'test_multi_pages.docx'
-    format = 'pdf'
-    from = nil # Splitting starts from the first page of the document
-    to = nil # Splitting ends at the last page of the document
-    folder = nil # Input file exists at the root of the storage
-    dest_name = nil
+  # Saving document with specified format
+  def put_document_save_as_tiff
+    filename = '45.pdf'
+    dest_name = 'TestPostDocumentSaveAsTiff.tiff'
+    save_options = TiffSaveOptionsData.new({:SaveFormat => 'tiff', :FileName => dest_name})
+    folder = nil # File save at the root of the storage
 
     # Upload source document to Cloud Storage
     upload_file(filename)
 
-    request = PostSplitDocumentRequest.new filename, folder, nil, nil, nil, dest_name, format, from, to
-    result = @words_api.post_split_document request
+    request = PutDocumentSaveAsTiffRequest.new filename, save_options, folder, :dest_file_name => dest_name
+    result = @words_api.put_document_save_as_tiff request
   end
 
 end
 
 document = Document.new()
-puts document.split_all_pages_to_new_pdfs
+puts document.put_document_save_as_tiff

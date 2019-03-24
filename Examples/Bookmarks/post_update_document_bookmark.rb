@@ -34,23 +34,22 @@ class Document
     response = @storage_api.put_create(request)
   end
 
-  # Split Document
-  def split_all_pages_to_new_pdfs
+  # Updating document bookmark
+  def post_update_document_bookmark
     filename = 'test_multi_pages.docx'
-    format = 'pdf'
-    from = nil # Splitting starts from the first page of the document
-    to = nil # Splitting ends at the last page of the document
-    folder = nil # Input file exists at the root of the storage
-    dest_name = nil
+    dest_name = 'TestPostUpdateDocumentBookmark.docx'
+    bookmark_name = 'aspose'
+    body = BookmarkData.new({:Name => bookmark_name, :Text => 'This will be the text for Aspose'})
+    folder = nil # File save at the root of the storage
 
     # Upload source document to Cloud Storage
     upload_file(filename)
 
-    request = PostSplitDocumentRequest.new filename, folder, nil, nil, nil, dest_name, format, from, to
-    result = @words_api.post_split_document request
+    request = PostUpdateDocumentBookmarkRequest.new filename, body, bookmark_name, folder, :dest_file_name => dest_name
+    result = @words_api.post_update_document_bookmark request
   end
 
 end
 
 document = Document.new()
-puts document.split_all_pages_to_new_pdfs
+puts document.post_update_document_bookmark

@@ -34,23 +34,22 @@ class Document
     response = @storage_api.put_create(request)
   end
 
-  # Split Document
-  def split_all_pages_to_new_pdfs
+  # Updating comment
+  def post_comment
     filename = 'test_multi_pages.docx'
-    format = 'pdf'
-    from = nil # Splitting starts from the first page of the document
-    to = nil # Splitting ends at the last page of the document
-    folder = nil # Input file exists at the root of the storage
-    dest_name = nil
+    comment_index = 0
+    node_link = NodeLink.new({:NodeId => '0.0.3'})
+    document_position = DocumentPosition.new({:Node => node_link, :Offset => 0})
+    body = Comment.new({:RangeStart => document_position, :RangeEnd => document_position, :Initial => 'YE', :Author => 'Yaroslav Ekimov', :Text => 'A new comment'})
 
     # Upload source document to Cloud Storage
     upload_file(filename)
 
-    request = PostSplitDocumentRequest.new filename, folder, nil, nil, nil, dest_name, format, from, to
-    result = @words_api.post_split_document request
+    request = PostCommentRequest.new filename, comment_index, body
+    result = @words_api.post_comment request
   end
 
 end
 
 document = Document.new()
-puts document.split_all_pages_to_new_pdfs
+puts document.post_comment

@@ -6,17 +6,20 @@ class Document
   include AsposeWordsCloud
   include AsposeStorageCloud
 
+  # Get App key and App SID from https://dashboard.aspose.cloud/
+  APP_KEY = ""
+  APP_SID = ""
+
   def initialize
-    # Get App key and App SID from https://dashboard.aspose.cloud/
     AsposeWordsCloud.configure do |config|
-      config.api_key['api_key'] = ''
-      config.api_key['app_sid'] = ''
+      config.api_key['api_key'] = APP_KEY
+      config.api_key['app_sid'] = APP_SID
     end
     @words_api = WordsApi.new
     
     AsposeStorageCloud.configure do |config|
-      config.api_key['api_key'] = ''
-      config.api_key['app_sid'] = ''
+      config.api_key['api_key'] = APP_KEY
+      config.api_key['app_sid'] = APP_SID
     end
     @storage_api = StorageApi.new
   end

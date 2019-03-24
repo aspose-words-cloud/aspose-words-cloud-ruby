@@ -11,7 +11,6 @@ class Document
   APP_SID = ""
 
   def initialize
-    # Get App key and App SID from https://dashboard.aspose.cloud/
     AsposeWordsCloud.configure do |config|
       config.api_key['api_key'] = APP_KEY
       config.api_key['app_sid'] = APP_SID
@@ -34,23 +33,20 @@ class Document
     response = @storage_api.put_create(request)
   end
 
-  # Split Document
-  def split_all_pages_to_new_pdfs
+  # Updating page setup
+  def update_section_page_setup
     filename = 'test_multi_pages.docx'
-    format = 'pdf'
-    from = nil # Splitting starts from the first page of the document
-    to = nil # Splitting ends at the last page of the document
-    folder = nil # Input file exists at the root of the storage
-    dest_name = nil
+    index = 0
+    body = PageSetup.new({:RtlGutter => true, :LeftMargin => 10, :Orientation => 'Landscape', :PaperSize => 'A5'})
 
     # Upload source document to Cloud Storage
     upload_file(filename)
 
-    request = PostSplitDocumentRequest.new filename, folder, nil, nil, nil, dest_name, format, from, to
-    result = @words_api.post_split_document request
+    request = UpdateSectionPageSetupRequest.new filename, index, body
+    result = @words_api.update_section_page_setup request
   end
 
 end
 
 document = Document.new()
-puts document.split_all_pages_to_new_pdfs
+puts document.update_section_page_setup

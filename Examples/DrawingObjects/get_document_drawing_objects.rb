@@ -11,7 +11,6 @@ class Document
   APP_SID = ""
 
   def initialize
-    # Get App key and App SID from https://dashboard.aspose.cloud/
     AsposeWordsCloud.configure do |config|
       config.api_key['api_key'] = APP_KEY
       config.api_key['app_sid'] = APP_SID
@@ -26,7 +25,7 @@ class Document
   end
 
   def upload_file(file_name)
-    file = File.read("../../TestData/Common/" << file_name)
+    file = File.read("../../TestData/DocumentElements/DrawingObjects/" << file_name)
     version_id = nil
     storage = nil
     request = PutCreateRequest.new(file_name, file, version_id, storage)
@@ -34,23 +33,21 @@ class Document
     response = @storage_api.put_create(request)
   end
 
-  # Split Document
-  def split_all_pages_to_new_pdfs
-    filename = 'test_multi_pages.docx'
-    format = 'pdf'
-    from = nil # Splitting starts from the first page of the document
-    to = nil # Splitting ends at the last page of the document
-    folder = nil # Input file exists at the root of the storage
-    dest_name = nil
+  # Getting Drawing Objects
+  def get_document_drawing_objects
+    filename = 'sample_EmbeddedOLE.docx'
+    index = 0
+    # File is save at the root of the storage
+    folder = nil
 
     # Upload source document to Cloud Storage
     upload_file(filename)
 
-    request = PostSplitDocumentRequest.new filename, folder, nil, nil, nil, dest_name, format, from, to
-    result = @words_api.post_split_document request
+    request = GetDocumentDrawingObjectsRequest.new filename, folder, :node_path => 'sections/0'
+    result = @words_api.get_document_drawing_objects request
   end
 
 end
 
 document = Document.new()
-puts document.split_all_pages_to_new_pdfs
+puts document.get_document_drawing_objects

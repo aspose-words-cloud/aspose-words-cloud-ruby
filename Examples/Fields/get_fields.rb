@@ -9,9 +9,9 @@ class Document
   # Get App key and App SID from https://dashboard.aspose.cloud/
   APP_KEY = ""
   APP_SID = ""
+  FILE_PATH = "../../TestData/DocumentElements/Fields/"
 
   def initialize
-    # Get App key and App SID from https://dashboard.aspose.cloud/
     AsposeWordsCloud.configure do |config|
       config.api_key['api_key'] = APP_KEY
       config.api_key['app_sid'] = APP_SID
@@ -26,7 +26,7 @@ class Document
   end
 
   def upload_file(file_name)
-    file = File.read("../../TestData/Common/" << file_name)
+    file = File.read(FILE_PATH << file_name)
     version_id = nil
     storage = nil
     request = PutCreateRequest.new(file_name, file, version_id, storage)
@@ -34,23 +34,19 @@ class Document
     response = @storage_api.put_create(request)
   end
 
-  # Split Document
-  def split_all_pages_to_new_pdfs
-    filename = 'test_multi_pages.docx'
-    format = 'pdf'
-    from = nil # Splitting starts from the first page of the document
-    to = nil # Splitting ends at the last page of the document
-    folder = nil # Input file exists at the root of the storage
-    dest_name = nil
+  # Getting fields from document
+  def get_fields
+    filename = 'GetField.docx'
+    folder = nil
 
     # Upload source document to Cloud Storage
     upload_file(filename)
 
-    request = PostSplitDocumentRequest.new filename, folder, nil, nil, nil, dest_name, format, from, to
-    result = @words_api.post_split_document request
+    request = GetFieldsRequest.new filename, folder, :node_path => 'sections/0'
+    result = @words_api.get_fields request
   end
 
 end
 
 document = Document.new()
-puts document.split_all_pages_to_new_pdfs
+puts document.get_fields

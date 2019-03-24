@@ -11,7 +11,6 @@ class Document
   APP_SID = ""
 
   def initialize
-    # Get App key and App SID from https://dashboard.aspose.cloud/
     AsposeWordsCloud.configure do |config|
       config.api_key['api_key'] = APP_KEY
       config.api_key['app_sid'] = APP_SID
@@ -34,23 +33,24 @@ class Document
     response = @storage_api.put_create(request)
   end
 
-  # Split Document
-  def split_all_pages_to_new_pdfs
-    filename = 'test_multi_pages.docx'
-    format = 'pdf'
-    from = nil # Splitting starts from the first page of the document
-    to = nil # Splitting ends at the last page of the document
-    folder = nil # Input file exists at the root of the storage
-    dest_name = nil
-
-    # Upload source document to Cloud Storage
-    upload_file(filename)
-
-    request = PostSplitDocumentRequest.new filename, folder, nil, nil, nil, dest_name, format, from, to
-    result = @words_api.post_split_document request
+  # Loading web document
+  def post_load_web_document
+    save_options = SaveOptionsData.new(
+    {
+      :FileName => 'google.doc',
+      :SaveFormat => 'doc',
+      :ColorMode => "1",
+      :DmlEffectsRenderingMode => "1",
+      :DmlRenderingMode => "1",
+      :UpdateStdContents => false,
+      :ZipOutput => false
+    })
+    body = LoadWebDocumentData.new({ :LoadingDocumentUrl => "http://google.com", :SaveOptions => save_options })
+    request = PostLoadWebDocumentRequest.new body
+    result = @words_api.post_load_web_document request
   end
 
 end
 
 document = Document.new()
-puts document.split_all_pages_to_new_pdfs
+puts document.post_load_web_document
