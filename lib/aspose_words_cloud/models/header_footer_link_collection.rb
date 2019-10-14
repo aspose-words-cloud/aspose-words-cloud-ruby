@@ -29,12 +29,12 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # Collection of links to header/footers
+  # Collection of links to header/footers.
   class HeaderFooterLinkCollection
-    # Link to the document.
+    # Gets or sets link to the document.
     attr_accessor :link
 
-    # Collection of section's links
+    # Gets or sets collection of section's links.
     attr_accessor :list
 
 

@@ -31,10 +31,10 @@ module AsposeWordsCloud
 
   # Represents link for Drawing Object DTO.
   class DrawingObjectLink
-    # Link to the document.
+    # Gets or sets link to the document.
     attr_accessor :link
 
-    # Node id
+    # Gets or sets node id.
     attr_accessor :node_id
 
 

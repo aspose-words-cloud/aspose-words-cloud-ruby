@@ -29,33 +29,28 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # Response for Api error
+  # Response for Api error.
   class WordsApiErrorResponse
-    # Response status code.
-    attr_accessor :code
+    # Gets or sets request Id.
+    attr_accessor :request_id
 
-    # Response status.
-    attr_accessor :status
-
-    # Error message.
-    attr_accessor :message
+    # Gets or sets error.
+    attr_accessor :error
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'code' => :'Code',
-        :'status' => :'Status',
-        :'message' => :'Message'
+        :'request_id' => :'RequestId',
+        :'error' => :'Error'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'code' => :'Integer',
-        :'status' => :'String',
-        :'message' => :'String'
+        :'request_id' => :'String',
+        :'error' => :'ApiError'
       }
     end
 
@@ -67,16 +62,12 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'Code')
-        self.code = attributes[:'Code']
+      if attributes.key?(:'RequestId')
+        self.request_id = attributes[:'RequestId']
       end
 
-      if attributes.key?(:'Status')
-        self.status = attributes[:'Status']
-      end
-
-      if attributes.key?(:'Message')
-        self.message = attributes[:'Message']
+      if attributes.key?(:'Error')
+        self.error = attributes[:'Error']
       end
 
     end
@@ -85,17 +76,12 @@ module AsposeWordsCloud
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = []
-      if @code.nil?
-        invalid_properties.push("invalid value for 'code', code cannot be nil.")
-      end
-
       return invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @code.nil?
       return true
     end
 
@@ -104,9 +90,8 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          code == other.code &&
-          status == other.status &&
-          message == other.message
+          request_id == other.request_id &&
+          error == other.error
     end
 
     # @see the `==` method
@@ -118,7 +103,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [code, status, message].hash
+      [request_id, error].hash
     end
 
     # Builds the object from hash

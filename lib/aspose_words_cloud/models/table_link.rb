@@ -29,12 +29,12 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # Table link element
+  # Table link element.
   class TableLink
-    # Link to the document.
+    # Gets or sets link to the document.
     attr_accessor :link
 
-    # Node id
+    # Gets or sets node id.
     attr_accessor :node_id
 
 

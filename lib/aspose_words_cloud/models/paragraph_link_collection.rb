@@ -29,12 +29,12 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # Collection of links to paragraphs
+  # Collection of links to paragraphs.
   class ParagraphLinkCollection
-    # Link to the document.
+    # Gets or sets link to the document.
     attr_accessor :link
 
-    # Collection of paragraph's links
+    # Gets or sets collection of paragraph's links.
     attr_accessor :paragraph_link_list
 
 

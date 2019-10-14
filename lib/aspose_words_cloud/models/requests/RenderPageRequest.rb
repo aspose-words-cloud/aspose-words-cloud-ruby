@@ -1,4 +1,4 @@
- #
+
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="RenderPageRequest.rb">
  #   Copyright (c) 2018 Aspose.Words for Cloud
@@ -32,15 +32,15 @@ module AsposeWordsCloud
   #
   class RenderPageRequest
 
-        # The file name.
+        # The document name.
         attr_accessor :name
-        # Comment index
+        # Comment index.
         attr_accessor :page_index
         # The destination format.
         attr_accessor :format
         # Original document folder.
         attr_accessor :folder
-        # File storage, which have to be used.
+        # Original document storage.
         attr_accessor :storage
         # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         attr_accessor :load_encoding
@@ -51,11 +51,11 @@ module AsposeWordsCloud
 	
         #
         # Initializes a new instance.
-        # @param name The file name.
-        # @param page_index Comment index
+        # @param name The document name.
+        # @param page_index Comment index.
         # @param format The destination format.
         # @param folder Original document folder.
-        # @param storage File storage, which have to be used.
+        # @param storage Original document storage.
         # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         # @param password Password for opening an encrypted document.
         # @param fonts_location Folder in filestorage with custom fonts.
@@ -71,3 +71,4 @@ module AsposeWordsCloud
         end
   end
 end
+ #

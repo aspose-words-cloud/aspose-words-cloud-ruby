@@ -1,4 +1,4 @@
- #
+
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="GetDocumentStatisticsRequest.rb">
  #   Copyright (c) 2018 Aspose.Words for Cloud
@@ -36,29 +36,29 @@ module AsposeWordsCloud
         attr_accessor :name
         # Original document folder.
         attr_accessor :folder
-        # File storage, which have to be used.
+        # Original document storage.
         attr_accessor :storage
         # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         attr_accessor :load_encoding
         # Password for opening an encrypted document.
         attr_accessor :password
-        # Support including/excluding comments from the WordCount. Default value is \"true\".
+        # Support including/excluding comments from the WordCount. Default value is \"false\".
         attr_accessor :include_comments
         # Support including/excluding footnotes from the WordCount. Default value is \"false\".
         attr_accessor :include_footnotes
-        # Support including/excluding shape's text from the WordCount. Default value is \"false\"
+        # Support including/excluding shape's text from the WordCount. Default value is \"false\".
         attr_accessor :include_text_in_shapes
 	
         #
         # Initializes a new instance.
         # @param name The document name.
         # @param folder Original document folder.
-        # @param storage File storage, which have to be used.
+        # @param storage Original document storage.
         # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         # @param password Password for opening an encrypted document.
-        # @param include_comments Support including/excluding comments from the WordCount. Default value is \"true\".
+        # @param include_comments Support including/excluding comments from the WordCount. Default value is \"false\".
         # @param include_footnotes Support including/excluding footnotes from the WordCount. Default value is \"false\".
-        # @param include_text_in_shapes Support including/excluding shape's text from the WordCount. Default value is \"false\"
+        # @param include_text_in_shapes Support including/excluding shape's text from the WordCount. Default value is \"false\".
         def initialize(name, folder = nil, storage = nil, load_encoding = nil, password = nil, include_comments = nil, include_footnotes = nil, include_text_in_shapes = nil)
            self.name = name
            self.folder = folder
@@ -71,3 +71,4 @@ module AsposeWordsCloud
         end
   end
 end
+ #

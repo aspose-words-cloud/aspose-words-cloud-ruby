@@ -31,16 +31,16 @@ module AsposeWordsCloud
 
   # Table row element.
   class TableRow
-    # Link to the document.
+    # Gets or sets link to the document.
     attr_accessor :link
 
-    # Node id
+    # Gets or sets node id.
     attr_accessor :node_id
 
-    # Provides access to the formatting properties of the row.
+    # Gets or sets provides access to the formatting properties of the row.
     attr_accessor :row_format
 
-    # Collection of table's rows.
+    # Gets or sets collection of table's rows.
     attr_accessor :table_cell_list
 
 

@@ -29,15 +29,15 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # Paragraph link element
+  # Paragraph link element.
   class ParagraphLink
-    # Link to the document.
+    # Gets or sets link to the document.
     attr_accessor :link
 
-    # Node id
+    # Gets or sets node id.
     attr_accessor :node_id
 
-    # Paragraph's text
+    # Gets or sets paragraph's text.
     attr_accessor :text
 
 

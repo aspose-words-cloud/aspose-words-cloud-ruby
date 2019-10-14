@@ -29,9 +29,9 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # Section link element
+  # Section link element.
   class SectionLink
-    # Link to the document.
+    # Gets or sets link to the document.
     attr_accessor :link
 
 

@@ -31,10 +31,10 @@ module AsposeWordsCloud
 
   # Collection of .
   class Hyperlinks
-    # Link to the document.
+    # Gets or sets link to the document.
     attr_accessor :link
 
-    # Array of .
+    # Gets or sets array of .
     attr_accessor :hyperlink_list
 
 

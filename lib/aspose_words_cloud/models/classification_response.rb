@@ -29,29 +29,25 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # This response should be returned by the service when handling: PUT http://api.aspose.com/v1.1/words/classify
+  # This response should be returned by the service when handling: PUT http://api.aspose.com/v4.0/words/classify.
   class ClassificationResponse
-    # Response status code.
-    attr_accessor :code
+    # Gets or sets request Id.
+    attr_accessor :request_id
 
-    # Response status.
-    attr_accessor :status
-
-    # Best class name.        
+    # Gets or sets best class name.
     attr_accessor :best_class_name
 
-    # Best class probability.
+    # Gets or sets best class probability.
     attr_accessor :best_class_probability
 
-    # Array of best classes results.
+    # Gets or sets array of best classes results.
     attr_accessor :best_results
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'code' => :'Code',
-        :'status' => :'Status',
+        :'request_id' => :'RequestId',
         :'best_class_name' => :'BestClassName',
         :'best_class_probability' => :'BestClassProbability',
         :'best_results' => :'BestResults'
@@ -61,8 +57,7 @@ module AsposeWordsCloud
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'code' => :'Integer',
-        :'status' => :'String',
+        :'request_id' => :'String',
         :'best_class_name' => :'String',
         :'best_class_probability' => :'Float',
         :'best_results' => :'Array<ClassificationResult>'
@@ -77,12 +72,8 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'Code')
-        self.code = attributes[:'Code']
-      end
-
-      if attributes.key?(:'Status')
-        self.status = attributes[:'Status']
+      if attributes.key?(:'RequestId')
+        self.request_id = attributes[:'RequestId']
       end
 
       if attributes.key?(:'BestClassName')
@@ -105,17 +96,12 @@ module AsposeWordsCloud
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = []
-      if @code.nil?
-        invalid_properties.push("invalid value for 'code', code cannot be nil.")
-      end
-
       return invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @code.nil?
       return true
     end
 
@@ -124,8 +110,7 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          code == other.code &&
-          status == other.status &&
+          request_id == other.request_id &&
           best_class_name == other.best_class_name &&
           best_class_probability == other.best_class_probability &&
           best_results == other.best_results
@@ -140,7 +125,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [code, status, best_class_name, best_class_probability, best_results].hash
+      [request_id, best_class_name, best_class_probability, best_results].hash
     end
 
     # Builds the object from hash

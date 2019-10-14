@@ -31,7 +31,7 @@ module AsposeWordsCloud
 
   # Represents a border of an object.
   class Border
-    # Link to the document.
+    # Gets or sets link to the document.
     attr_accessor :link
 
     # Gets or sets the border type.             

@@ -31,22 +31,22 @@ module AsposeWordsCloud
 
   # Container class for xps save options.
   class XpsSaveOptionsData
-    # Gets or sets a value determining how colors are rendered. { Normal | Grayscale}
+    # Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.
     attr_accessor :color_mode
 
-    # format of save
+    # Gets or sets format of save.
     attr_accessor :save_format
 
-    # name of destination file
+    # Gets or sets name of destination file.
     attr_accessor :file_name
 
-    # Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }
+    # Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.
     attr_accessor :dml_rendering_mode
 
-    # Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }
+    # Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }.
     attr_accessor :dml_effects_rendering_mode
 
-    # Controls zip output or not. Default value is false.
+    # Gets or sets controls zip output or not. Default value is false.
     attr_accessor :zip_output
 
     # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
@@ -55,37 +55,37 @@ module AsposeWordsCloud
     # Gets or sets value determining whether content of  is updated before saving.
     attr_accessor :update_sdt_content
 
-    # Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is true
+    # Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true
     attr_accessor :update_fields
 
-    # Determines the quality of the JPEG images inside PDF document.
+    # Gets or sets determines the quality of the JPEG images inside PDF document.
     attr_accessor :jpeg_quality
 
-    # Allows to specify metafile rendering options.
+    # Gets or sets allows to specify metafile rendering options.
     attr_accessor :metafile_rendering_options
 
-    # Indicates the symbol set that is used to represent numbers while rendering to fixed page formats
+    # Gets or sets indicates the symbol set that is used to represent numbers while rendering to fixed page formats.
     attr_accessor :numeral_format
 
-    # Flag indicates whether it is required to optimize output of XPS.  If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated.  Note: The accuracy of the content display may be affected if this property is set to true.  Default is false.
+    # Gets or sets flag indicates whether it is required to optimize output of XPS. If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated. Note: The accuracy of the content display may be affected if this property is set to true.  Default is false.
     attr_accessor :optimize_output
 
-    # Determines number of pages to render
+    # Gets or sets determines number of pages to render.
     attr_accessor :page_count
 
-    # Determines 0-based index of the first page to render
+    # Gets or sets determines 0-based index of the first page to render.
     attr_accessor :page_index
 
-    # Specifies the level in the XPS document outline at which to display Word bookmarks.
+    # Gets or sets specifies the level in the XPS document outline at which to display Word bookmarks.
     attr_accessor :bookmarks_outline_level
 
-    # Specifies how many levels of headings (paragraphs formatted with the Heading styles) to include in the XPS document outline.
+    # Gets or sets specifies how many levels of headings (paragraphs formatted with the Heading styles) to include in the XPS document outline.
     attr_accessor :headings_outline_levels
 
-    # Allows to specify outline options
+    # Gets or sets allows to specify outline options.
     attr_accessor :outline_options
 
-    # Determines whether the document should be saved using a booklet printing layout
+    # Gets or sets determines whether the document should be saved using a booklet printing layout.
     attr_accessor :use_book_fold_printing_settings
 
 

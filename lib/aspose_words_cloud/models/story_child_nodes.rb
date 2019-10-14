@@ -29,9 +29,9 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # Child nodes of  or 
+  # Child nodes of  or .
   class StoryChildNodes
-    # Child nodes.
+    # Gets or sets child nodes.
     attr_accessor :child_nodes
 
 

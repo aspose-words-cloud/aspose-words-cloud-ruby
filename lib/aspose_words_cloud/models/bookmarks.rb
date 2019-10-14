@@ -31,10 +31,10 @@ module AsposeWordsCloud
 
   # Represents an array of bookmarks.
   class Bookmarks
-    # Link to the document.
+    # Gets or sets link to the document.
     attr_accessor :link
 
-    # Array of bookmarks.
+    # Gets or sets array of bookmarks.
     attr_accessor :bookmark_list
 
 

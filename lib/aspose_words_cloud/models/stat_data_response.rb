@@ -29,26 +29,22 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # Response for the request of the document's statistical data
+  # Response for the request of the document's statistical data.
   class StatDataResponse
-    # Response status code.
-    attr_accessor :code
+    # Gets or sets request Id.
+    attr_accessor :request_id
 
-    # Response status.
-    attr_accessor :status
-
-    # Link to the document
+    # Gets or sets link to the document.
     attr_accessor :document_link
 
-    # Statistical data of the document
+    # Gets or sets statistical data of the document.
     attr_accessor :stat_data
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'code' => :'Code',
-        :'status' => :'Status',
+        :'request_id' => :'RequestId',
         :'document_link' => :'DocumentLink',
         :'stat_data' => :'StatData'
       }
@@ -57,8 +53,7 @@ module AsposeWordsCloud
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'code' => :'Integer',
-        :'status' => :'String',
+        :'request_id' => :'String',
         :'document_link' => :'FileLink',
         :'stat_data' => :'DocumentStatData'
       }
@@ -72,12 +67,8 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'Code')
-        self.code = attributes[:'Code']
-      end
-
-      if attributes.key?(:'Status')
-        self.status = attributes[:'Status']
+      if attributes.key?(:'RequestId')
+        self.request_id = attributes[:'RequestId']
       end
 
       if attributes.key?(:'DocumentLink')
@@ -94,17 +85,12 @@ module AsposeWordsCloud
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = []
-      if @code.nil?
-        invalid_properties.push("invalid value for 'code', code cannot be nil.")
-      end
-
       return invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @code.nil?
       return true
     end
 
@@ -113,8 +99,7 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          code == other.code &&
-          status == other.status &&
+          request_id == other.request_id &&
           document_link == other.document_link &&
           stat_data == other.stat_data
     end
@@ -128,7 +113,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [code, status, document_link, stat_data].hash
+      [request_id, document_link, stat_data].hash
     end
 
     # Builds the object from hash

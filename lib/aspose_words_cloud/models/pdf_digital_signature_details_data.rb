@@ -29,21 +29,21 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # container class for details of digital signature
+  # container class for details of digital signature.
   class PdfDigitalSignatureDetailsData
-    # certificate's filename using for signing
+    # Gets or sets certificate's filename using for signing.
     attr_accessor :certificate_filename
 
-    # hash algorithm
+    # Gets or sets hash algorithm.
     attr_accessor :hash_algorithm
 
-    # location of the signing
+    # Gets or sets location of the signing.
     attr_accessor :location
 
-    # reason for the signing
+    # Gets or sets reason for the signing.
     attr_accessor :reason
 
-    # date of the signing
+    # Gets or sets date of the signing.
     attr_accessor :signature_date
 
 

@@ -31,10 +31,10 @@ module AsposeWordsCloud
 
   # Collection of borders.
   class BordersCollection
-    # Link to the document.
+    # Gets or sets link to the document.
     attr_accessor :link
 
-    # Collection of comments
+    # Gets or sets collection of comments.
     attr_accessor :list
 
 

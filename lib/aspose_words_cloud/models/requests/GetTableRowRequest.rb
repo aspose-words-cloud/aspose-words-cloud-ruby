@@ -1,4 +1,4 @@
- #
+
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="GetTableRowRequest.rb">
  #   Copyright (c) 2018 Aspose.Words for Cloud
@@ -36,11 +36,11 @@ module AsposeWordsCloud
         attr_accessor :name
         # Path to table.
         attr_accessor :table_path
-        # Object's index
+        # Object index.
         attr_accessor :index
         # Original document folder.
         attr_accessor :folder
-        # File storage, which have to be used.
+        # Original document storage.
         attr_accessor :storage
         # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         attr_accessor :load_encoding
@@ -51,9 +51,9 @@ module AsposeWordsCloud
         # Initializes a new instance.
         # @param name The document name.
         # @param table_path Path to table.
-        # @param index Object's index
+        # @param index Object index.
         # @param folder Original document folder.
-        # @param storage File storage, which have to be used.
+        # @param storage Original document storage.
         # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         # @param password Password for opening an encrypted document.
         def initialize(name, table_path, index, folder = nil, storage = nil, load_encoding = nil, password = nil)
@@ -67,3 +67,4 @@ module AsposeWordsCloud
         end
   end
 end
+ #

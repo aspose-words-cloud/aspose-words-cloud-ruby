@@ -29,21 +29,21 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # Field
+  # Field.
   class Field
-    # Link to the document.
+    # Gets or sets link to the document.
     attr_accessor :link
 
-    # Node id
+    # Gets or sets node id.
     attr_accessor :node_id
 
-    # Field code
+    # Gets or sets field code.
     attr_accessor :field_code
 
     # Gets or sets LCID of the field.
     attr_accessor :locale_id
 
-    # Field result
+    # Gets or sets field result.
     attr_accessor :result
 
 

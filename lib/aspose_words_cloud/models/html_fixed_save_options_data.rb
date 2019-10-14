@@ -29,24 +29,24 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # container class for fixed html save options
+  # container class for fixed html save options.
   class HtmlFixedSaveOptionsData
-    # Gets or sets a value determining how colors are rendered. { Normal | Grayscale}
+    # Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.
     attr_accessor :color_mode
 
-    # format of save
+    # Gets or sets format of save.
     attr_accessor :save_format
 
-    # name of destination file
+    # Gets or sets name of destination file.
     attr_accessor :file_name
 
-    # Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }
+    # Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.
     attr_accessor :dml_rendering_mode
 
-    # Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }
+    # Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }.
     attr_accessor :dml_effects_rendering_mode
 
-    # Controls zip output or not. Default value is false.
+    # Gets or sets controls zip output or not. Default value is false.
     attr_accessor :zip_output
 
     # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
@@ -55,64 +55,64 @@ module AsposeWordsCloud
     # Gets or sets value determining whether content of  is updated before saving.
     attr_accessor :update_sdt_content
 
-    # Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is true
+    # Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true
     attr_accessor :update_fields
 
-    # Determines the quality of the JPEG images inside PDF document.
+    # Gets or sets determines the quality of the JPEG images inside PDF document.
     attr_accessor :jpeg_quality
 
-    # Allows to specify metafile rendering options.
+    # Gets or sets allows to specify metafile rendering options.
     attr_accessor :metafile_rendering_options
 
-    # Indicates the symbol set that is used to represent numbers while rendering to fixed page formats
+    # Gets or sets indicates the symbol set that is used to represent numbers while rendering to fixed page formats.
     attr_accessor :numeral_format
 
-    # Flag indicates whether it is required to optimize output of XPS.  If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated.  Note: The accuracy of the content display may be affected if this property is set to true.  Default is false.
+    # Gets or sets flag indicates whether it is required to optimize output of XPS. If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated. Note: The accuracy of the content display may be affected if this property is set to true.  Default is false.
     attr_accessor :optimize_output
 
-    # Determines number of pages to render
+    # Gets or sets determines number of pages to render.
     attr_accessor :page_count
 
-    # Determines 0-based index of the first page to render
+    # Gets or sets determines 0-based index of the first page to render.
     attr_accessor :page_index
 
-    # Specifies prefix which is added to all class names in style.css file. Default value is \"aw\".
+    # Gets or sets specifies prefix which is added to all class names in style.css file. Default value is \"aw\".
     attr_accessor :css_class_names_prefix
 
-    # Encoding.
+    # Gets or sets encoding.
     attr_accessor :encoding
 
-    # Specifies whether the CSS (Cascading Style Sheet) should be embedded into Html document.
+    # Gets or sets specifies whether the CSS (Cascading Style Sheet) should be embedded into Html document.
     attr_accessor :export_embedded_css
 
-    # Specifies whether fonts should be embedded into Html document in Base64 format.
+    # Gets or sets specifies whether fonts should be embedded into Html document in Base64 format.
     attr_accessor :export_embedded_fonts
 
-    # Specifies whether images should be embedded into Html document in Base64 format.
+    # Gets or sets specifies whether images should be embedded into Html document in Base64 format.
     attr_accessor :export_embedded_images
 
     # Gets or sets indication of whether form fields are exported as interactive items (as 'input' tag) rather than converted to text or graphics.
     attr_accessor :export_form_fields
 
-    # Specifies export format of fonts
+    # Gets or sets specifies export format of fonts.
     attr_accessor :font_format
 
-    # Specifies the horizontal alignment of pages in an HTML document. Default value is HtmlFixedHorizontalPageAlignment.Center.
+    # Gets or sets specifies the horizontal alignment of pages in an HTML document. Default value is HtmlFixedHorizontalPageAlignment.Center.
     attr_accessor :page_horizontal_alignment
 
-    # Specifies the margins around pages in an HTML document. The margins value is measured in points and should be equal to or greater than 0. Default value is 10 points.
+    # Gets or sets specifies the margins around pages in an HTML document. The margins value is measured in points and should be equal to or greater than 0. Default value is 10 points.
     attr_accessor :page_margins
 
-    # Specifies the physical folder where resources are saved when exporting a document
+    # Gets or sets specifies the physical folder where resources are saved when exporting a document.
     attr_accessor :resources_folder
 
-    # Specifies the name of the folder used to construct resource URIs
+    # Gets or sets specifies the name of the folder used to construct resource URIs.
     attr_accessor :resources_folder_alias
 
-    # Flag indicates whether \"@font-face\" CSS rules should be placed into a separate file \"fontFaces.css\" when a document is being saved with external stylesheet (that is, when Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedCss is false). Default value is false, all CSS rules are written into single file \"styles.css\".
+    # Gets or sets flag indicates whether \"@font-face\" CSS rules should be placed into a separate file \"fontFaces.css\" when a document is being saved with external stylesheet (that is, when Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedCss is false). Default value is false, all CSS rules are written into single file \"styles.css\".
     attr_accessor :save_font_face_css_separately
 
-    # Specifies whether border around pages should be shown.
+    # Gets or sets specifies whether border around pages should be shown.
     attr_accessor :show_page_border
 
 

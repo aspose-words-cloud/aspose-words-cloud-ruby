@@ -31,10 +31,10 @@ module AsposeWordsCloud
 
   # Represents a document which will be appended to the original resource document.
   class DocumentEntry
-    # Path to document to append at the server.
+    # Gets or sets path to document to append at the server.
     attr_accessor :href
 
-    # Defines which formatting will be used: appended or destination document.Can be KeepSourceFormatting or UseDestinationStyles.
+    # Gets or sets defines which formatting will be used: appended or destination document.Can be KeepSourceFormatting or UseDestinationStyles.
     attr_accessor :import_format_mode
 
 

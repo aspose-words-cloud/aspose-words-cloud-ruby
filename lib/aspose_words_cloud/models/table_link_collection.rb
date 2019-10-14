@@ -29,12 +29,12 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # Collection of links to tables
+  # Collection of links to tables.
   class TableLinkCollection
-    # Link to the document.
+    # Gets or sets link to the document.
     attr_accessor :link
 
-    # Collection of table's links
+    # Gets or sets collection of table's links.
     attr_accessor :table_link_list
 
 

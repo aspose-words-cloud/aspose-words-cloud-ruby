@@ -1,4 +1,4 @@
- #
+
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="GetHeaderFooterOfSectionRequest.rb">
  #   Copyright (c) 2018 Aspose.Words for Cloud
@@ -40,7 +40,7 @@ module AsposeWordsCloud
         attr_accessor :section_index
         # Original document folder.
         attr_accessor :folder
-        # File storage, which have to be used.
+        # Original document storage.
         attr_accessor :storage
         # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         attr_accessor :load_encoding
@@ -55,7 +55,7 @@ module AsposeWordsCloud
         # @param header_footer_index Header/footer index.
         # @param section_index Section index.
         # @param folder Original document folder.
-        # @param storage File storage, which have to be used.
+        # @param storage Original document storage.
         # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         # @param password Password for opening an encrypted document.
         # @param filter_by_type List of types of headers and footers.
@@ -71,3 +71,4 @@ module AsposeWordsCloud
         end
   end
 end
+ #

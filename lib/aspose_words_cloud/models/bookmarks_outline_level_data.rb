@@ -29,12 +29,12 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # container class for individual bookmarks outline level
+  # container class for individual bookmarks outline level.
   class BookmarksOutlineLevelData
-    # Specify the bookmark's name
+    # Gets or sets specify the bookmark's name.
     attr_accessor :name
 
-    # Specify the bookmark's level
+    # Gets or sets specify the bookmark's level.
     attr_accessor :bookmarks_outline_level
 
 

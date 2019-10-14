@@ -29,12 +29,12 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # Contains data for load web document
+  # Contains data for load web document.
   class LoadWebDocumentData
-    # Web document url
+    # Gets or sets web document url.
     attr_accessor :loading_document_url
 
-    # Save options
+    # Gets or sets save options.
     attr_accessor :save_options
 
 

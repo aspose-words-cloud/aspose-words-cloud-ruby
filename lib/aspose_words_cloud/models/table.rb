@@ -29,18 +29,18 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # Table element
+  # Table element.
   class Table
-    # Link to the document.
+    # Gets or sets link to the document.
     attr_accessor :link
 
-    # Node id
+    # Gets or sets node id.
     attr_accessor :node_id
 
-    # Table properties.
+    # Gets or sets table properties.
     attr_accessor :table_properties
 
-    # Collection of table's rows.
+    # Gets or sets collection of table's rows.
     attr_accessor :table_row_list
 
 

@@ -31,16 +31,16 @@ module AsposeWordsCloud
 
   # Class is used for insert page number request building.
   class PageNumber
-    # Page number format, e.g. \"{PAGE} of {NUMPAGES}\".
+    # Gets or sets page number format, e.g. \"{PAGE} of {NUMPAGES}\".
     attr_accessor :format
 
-    # Text alignment, possible values are left, right, center or justify.
+    # Gets or sets text alignment, possible values are left, right, center or justify.
     attr_accessor :alignment
 
-    # If true the page number is added at the top of the page, else at the bottom.
+    # Gets or sets a value indicating whether if true the page number is added at the top of the page, else at the bottom.
     attr_accessor :is_top
 
-    # If true the page number is added on first page too.
+    # Gets or sets a value indicating whether if true the page number is added on first page too.
     attr_accessor :set_page_number_on_first_page
 
 

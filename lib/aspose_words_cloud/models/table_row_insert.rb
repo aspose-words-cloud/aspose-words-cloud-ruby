@@ -29,12 +29,12 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # Table row element
+  # Table row element.
   class TableRowInsert
-    # Table row will be inserted after row with specified 0-based index.
+    # Gets or sets table row will be inserted after row with specified 0-based index.
     attr_accessor :insert_after
 
-    # Count of columns. Default is 1.
+    # Gets or sets count of columns. Default is 1.
     attr_accessor :columns_count
 
 

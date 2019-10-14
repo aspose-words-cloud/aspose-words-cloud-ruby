@@ -29,9 +29,9 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # Paragraph format element             
+  # Paragraph format element.             
   class ParagraphFormat
-    # Link to the document.
+    # Gets or sets link to the document.
     attr_accessor :link
 
     # Gets or sets a flag indicating whether inter-character spacing is automatically adjusted between regions of Latin text and regions of East Asian text in the current paragraph.             
@@ -52,10 +52,10 @@ module AsposeWordsCloud
     # Gets or sets the value (in points) for a first line or hanging indent. Use a positive value to set a first-line indent, and use a negative value to set a hanging indent.             
     attr_accessor :first_line_indent
 
-    # True if all lines in the paragraph are to remain on the same page.             
+    # Gets or sets true if all lines in the paragraph are to remain on the same page.             
     attr_accessor :keep_together
 
-    # True if the paragraph is to remains on the same page as the paragraph that follows it.             
+    # Gets or sets true if the paragraph is to remains on the same page as the paragraph that follows it.             
     attr_accessor :keep_with_next
 
     # Gets or sets the value (in points) that represents the left indent for paragraph.             
@@ -70,13 +70,13 @@ module AsposeWordsCloud
     # Gets or sets the number of lines of the paragraph text used to calculate the drop cap height.             
     attr_accessor :lines_to_drop
 
-    # When true,  and  will be ignored between the paragraphs of the same style.             
+    # Gets or sets when true,  and  will be ignored between the paragraphs of the same style.             
     attr_accessor :no_space_between_paragraphs_of_same_style
 
-    # Specifies the outline level of the paragraph in the document.             
+    # Gets or sets specifies the outline level of the paragraph in the document.             
     attr_accessor :outline_level
 
-    # True if a page break is forced before the paragraph.             
+    # Gets or sets true if a page break is forced before the paragraph.             
     attr_accessor :page_break_before
 
     # Gets or sets the value (in points) that represents the right indent for paragraph.             
@@ -85,13 +85,13 @@ module AsposeWordsCloud
     # Gets or sets the amount of spacing (in points) after the paragraph.             
     attr_accessor :space_after
 
-    # True if the amount of spacing after the paragraph is set automatically.             
+    # Gets or sets true if the amount of spacing after the paragraph is set automatically.             
     attr_accessor :space_after_auto
 
     # Gets or sets the amount of spacing (in points) before the paragraph.             
     attr_accessor :space_before
 
-    # True if the amount of spacing before the paragraph is set automatically.             
+    # Gets or sets true if the amount of spacing before the paragraph is set automatically.             
     attr_accessor :space_before_auto
 
     # Gets or sets the locale independent style identifier of the paragraph style applied to this formatting.             
@@ -100,13 +100,13 @@ module AsposeWordsCloud
     # Gets or sets the name of the paragraph style applied to this formatting.             
     attr_accessor :style_name
 
-    # Specifies whether the current paragraph should be exempted from any hyphenation which is applied in the document settings.             
+    # Gets or sets specifies whether the current paragraph should be exempted from any hyphenation which is applied in the document settings.             
     attr_accessor :suppress_auto_hyphens
 
-    # Specifies whether the current paragraph's lines should be exempted from line numbering which is applied in the parent section.             
+    # Gets or sets specifies whether the current paragraph's lines should be exempted from line numbering which is applied in the parent section.             
     attr_accessor :suppress_line_numbers
 
-    # True if the first and last lines in the paragraph are to remain on the same page as the rest of the paragraph.             
+    # Gets or sets true if the first and last lines in the paragraph are to remain on the same page as the rest of the paragraph.             
     attr_accessor :widow_control
 
     class EnumAttributeValidator

@@ -1,4 +1,4 @@
- #
+
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="GetDocumentWithFormatRequest.rb">
  #   Copyright (c) 2018 Aspose.Words for Cloud
@@ -32,32 +32,32 @@ module AsposeWordsCloud
   #
   class GetDocumentWithFormatRequest
 
-        # The file name.
+        # The document name.
         attr_accessor :name
         # The destination format.
         attr_accessor :format
         # Original document folder.
         attr_accessor :folder
-        # File storage, which have to be used.
+        # Original document storage.
         attr_accessor :storage
         # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         attr_accessor :load_encoding
         # Password for opening an encrypted document.
         attr_accessor :password
-        # Path to save result
+        # Path to save the result.
         attr_accessor :out_path
         # Folder in filestorage with custom fonts.
         attr_accessor :fonts_location
 	
         #
         # Initializes a new instance.
-        # @param name The file name.
+        # @param name The document name.
         # @param format The destination format.
         # @param folder Original document folder.
-        # @param storage File storage, which have to be used.
+        # @param storage Original document storage.
         # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         # @param password Password for opening an encrypted document.
-        # @param out_path Path to save result
+        # @param out_path Path to save the result.
         # @param fonts_location Folder in filestorage with custom fonts.
         def initialize(name, format, folder = nil, storage = nil, load_encoding = nil, password = nil, out_path = nil, fonts_location = nil)
            self.name = name
@@ -71,3 +71,4 @@ module AsposeWordsCloud
         end
   end
 end
+ #

@@ -29,15 +29,15 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # Request on changing of protection
+  # Request on changing of protection.
   class ProtectionRequest
-    # Current password
+    # Gets or sets current password.
     attr_accessor :password
 
-    # New password
+    # Gets or sets new password.
     attr_accessor :new_password
 
-    # New type of protection
+    # Gets or sets new type of protection.
     attr_accessor :protection_type
 
 

@@ -31,13 +31,13 @@ module AsposeWordsCloud
 
   # Hyperlink element.
   class Hyperlink
-    # Link to the document.
+    # Gets or sets link to the document.
     attr_accessor :link
 
-    # Hypelink's display text
+    # Gets or sets hypelink's display text.
     attr_accessor :display_text
 
-    # Value
+    # Gets or sets value.
     attr_accessor :value
 
 

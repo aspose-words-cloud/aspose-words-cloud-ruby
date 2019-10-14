@@ -31,13 +31,13 @@ module AsposeWordsCloud
 
   # Result of saving.
   class SaveResult
-    # Link to source document.
+    # Gets or sets link to source document.
     attr_accessor :source_document
 
-    # Link to destination document.
+    # Gets or sets link to destination document.
     attr_accessor :dest_document
 
-    # Links to additional items (css, images etc).
+    # Gets or sets links to additional items (css, images etc).
     attr_accessor :additional_items
 
 

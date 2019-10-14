@@ -29,12 +29,12 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # Class for insert watermark text request building. 
+  # Class for insert watermark text request building.
   class WatermarkText
-    # The watermark text.
+    # Gets or sets the watermark text.
     attr_accessor :text
 
-    # The watermark rotation angle.
+    # Gets or sets the watermark rotation angle.
     attr_accessor :rotation_angle
 
 

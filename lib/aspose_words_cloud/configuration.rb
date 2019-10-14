@@ -176,26 +176,12 @@ module AsposeWordsCloud
     # Returns Auth Settings hash for api client.
     def auth_settings
       {
-        'appsid' =>
-          {
-            type: 'api_key',
-            in: 'query',
-            key: 'Appsid',
-            value: api_key_with_prefix('Appsid')
-          },
-        'oauth' =>
+        'JWT' =>
           {
             type: 'oauth2',
             in: 'header',
             key: 'Authorization',
             value: "Bearer #{access_token}"
-          },
-        'signature' =>
-          {
-            type: 'api_key',
-            in: 'query',
-            key: 'Signature',
-            value: api_key_with_prefix('Signature')
           },
       }
     end

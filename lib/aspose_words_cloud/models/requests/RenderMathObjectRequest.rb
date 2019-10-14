@@ -1,4 +1,4 @@
- #
+
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="RenderMathObjectRequest.rb">
  #   Copyright (c) 2018 Aspose.Words for Cloud
@@ -32,46 +32,47 @@ module AsposeWordsCloud
   #
   class RenderMathObjectRequest
 
-        # The file name.
+        # The document name.
         attr_accessor :name
         # The destination format.
         attr_accessor :format
-        # Object's index
+        # Path to the node, which contains office math objects.
+        attr_accessor :node_path
+        # Object index.
         attr_accessor :index
         # Original document folder.
         attr_accessor :folder
-        # File storage, which have to be used.
+        # Original document storage.
         attr_accessor :storage
         # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         attr_accessor :load_encoding
         # Password for opening an encrypted document.
         attr_accessor :password
-        # Path to node, which contains office math objects.
-        attr_accessor :node_path
         # Folder in filestorage with custom fonts.
         attr_accessor :fonts_location
 	
         #
         # Initializes a new instance.
-        # @param name The file name.
+        # @param name The document name.
         # @param format The destination format.
-        # @param index Object's index
+        # @param node_path Path to the node, which contains office math objects.
+        # @param index Object index.
         # @param folder Original document folder.
-        # @param storage File storage, which have to be used.
+        # @param storage Original document storage.
         # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         # @param password Password for opening an encrypted document.
-        # @param node_path Path to node, which contains office math objects.
         # @param fonts_location Folder in filestorage with custom fonts.
-        def initialize(name, format, index, folder = nil, storage = nil, load_encoding = nil, password = nil, node_path = nil, fonts_location = nil)
+        def initialize(name, format, node_path, index, folder = nil, storage = nil, load_encoding = nil, password = nil, fonts_location = nil)
            self.name = name
            self.format = format
+           self.node_path = node_path
            self.index = index
            self.folder = folder
            self.storage = storage
            self.load_encoding = load_encoding
            self.password = password
-           self.node_path = node_path
            self.fonts_location = fonts_location
         end
   end
 end
+ #

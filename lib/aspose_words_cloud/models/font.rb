@@ -29,51 +29,51 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # Font element             
+  # Font element.             
   class Font
-    # Link to the document.
+    # Gets or sets link to the document.
     attr_accessor :link
 
-    # True if the font is formatted as all capital letters.             
+    # Gets or sets true if the font is formatted as all capital letters.             
     attr_accessor :all_caps
 
-    # Specifies whether the contents of this run shall have right-to-left characteristics.             
+    # Gets or sets specifies whether the contents of this run shall have right-to-left characteristics.             
     attr_accessor :bidi
 
-    # True if the font is formatted as bold.             
+    # Gets or sets true if the font is formatted as bold.             
     attr_accessor :bold
 
-    # True if the right-to-left text is formatted as bold.             
+    # Gets or sets true if the right-to-left text is formatted as bold.             
     attr_accessor :bold_bi
 
-    # Border object that specifies border for the font.
+    # Gets or sets border object that specifies border for the font.
     attr_accessor :border
 
     # Gets or sets the color of the font.             
     attr_accessor :color
 
-    # Specifies whether the contents of this run shall be treated as complex script text regardless of their Unicode character values when determining the formatting for this run.             
+    # Gets or sets specifies whether the contents of this run shall be treated as complex script text regardless of their Unicode character values when determining the formatting for this run.             
     attr_accessor :complex_script
 
-    # True if the font is formatted as double strikethrough text.             
+    # Gets or sets true if the font is formatted as double strikethrough text.             
     attr_accessor :double_strike_through
 
-    # True if the font is formatted as embossed.             
+    # Gets or sets true if the font is formatted as embossed.             
     attr_accessor :emboss
 
-    # True if the font is formatted as engraved.             
+    # Gets or sets true if the font is formatted as engraved.             
     attr_accessor :engrave
 
-    # True if the font is formatted as hidden text.             
+    # Gets or sets true if the font is formatted as hidden text.             
     attr_accessor :hidden
 
     # Gets or sets the highlight (marker) color.             
     attr_accessor :highlight_color
 
-    # True if the font is formatted as italic.             
+    # Gets or sets true if the font is formatted as italic.             
     attr_accessor :italic
 
-    # True if the right-to-left text is formatted as italic.             
+    # Gets or sets true if the right-to-left text is formatted as italic.             
     attr_accessor :italic_bi
 
     # Gets or sets the font size at which kerning starts.             
@@ -88,25 +88,25 @@ module AsposeWordsCloud
     # Gets or sets the locale identifier (language) of the formatted Asian characters.             
     attr_accessor :locale_id_far_east
 
-    # Gets or sets the name of the font             
+    # Gets or sets the name of the font.             
     attr_accessor :name
 
-    # Returns or sets the font used for Latin text (characters with character codes from 0 (zero) through 127).             
+    # Gets or sets returns or sets the font used for Latin text (characters with character codes from 0 (zero) through 127).             
     attr_accessor :name_ascii
 
-    # Returns or sets the name of the font in a right-to-left language document.             
+    # Gets or sets returns or sets the name of the font in a right-to-left language document.             
     attr_accessor :name_bi
 
-    # Returns or sets an East Asian font name.             
+    # Gets or sets returns or sets an East Asian font name.             
     attr_accessor :name_far_east
 
-    # Returns or sets the font used for characters with character codes from 128 through 255.             
+    # Gets or sets returns or sets the font used for characters with character codes from 128 through 255.             
     attr_accessor :name_other
 
-    # True when the formatted characters are not to be spell checked.
+    # Gets or sets true when the formatted characters are not to be spell checked.
     attr_accessor :no_proofing
 
-    # True if the font is formatted as outline.             
+    # Gets or sets true if the font is formatted as outline.             
     attr_accessor :outline
 
     # Gets or sets the position of text (in points) relative to the base line. A positive number raises the text, and a negative number lowers it.             
@@ -115,7 +115,7 @@ module AsposeWordsCloud
     # Gets or sets character width scaling in percent.             
     attr_accessor :scaling
 
-    # True if the font is formatted as shadowed.             
+    # Gets or sets true if the font is formatted as shadowed.             
     attr_accessor :shadow
 
     # Gets or sets the font size in points.             
@@ -124,13 +124,13 @@ module AsposeWordsCloud
     # Gets or sets the font size in points used in a right-to-left document.             
     attr_accessor :size_bi
 
-    # True if the font is formatted as small capital letters.             
+    # Gets or sets true if the font is formatted as small capital letters.             
     attr_accessor :small_caps
 
-    # Returns or sets the spacing (in points) between characters.             
+    # Gets or sets returns or sets the spacing (in points) between characters.             
     attr_accessor :spacing
 
-    # True if the font is formatted as strikethrough text.             
+    # Gets or sets true if the font is formatted as strikethrough text.             
     attr_accessor :strike_through
 
     # Gets or sets the locale independent style identifier of the character style applied to this formatting.
@@ -139,10 +139,10 @@ module AsposeWordsCloud
     # Gets or sets the name of the character style applied to this formatting.             
     attr_accessor :style_name
 
-    # True if the font is formatted as subscript.             
+    # Gets or sets true if the font is formatted as subscript.             
     attr_accessor :subscript
 
-    # True if the font is formatted as superscript.             
+    # Gets or sets true if the font is formatted as superscript.             
     attr_accessor :superscript
 
     # Gets or sets the font animation effect.

@@ -29,9 +29,9 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # Paragraph element
+  # Paragraph element.
   class ParagraphInsert
-    # Paragraph's text
+    # Gets or sets paragraph's text.
     attr_accessor :text
 
 
