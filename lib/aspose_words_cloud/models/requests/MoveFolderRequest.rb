@@ -1,4 +1,4 @@
-
+ #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="MoveFolderRequest.rb">
  #   Copyright (c) 2018 Aspose.Words for Cloud
@@ -55,4 +55,3 @@ module AsposeWordsCloud
         end
   end
 end
- #

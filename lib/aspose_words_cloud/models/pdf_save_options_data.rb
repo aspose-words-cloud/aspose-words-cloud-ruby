@@ -88,7 +88,7 @@ module AsposeWordsCloud
     # Gets or sets specifies the details for signing the output PDF document.
     attr_accessor :digital_signature_details
 
-    # Gets or sets a flag specifying whether the window’s title bar should display the document title taken from the Title entry of the document information dictionary.
+    # Gets or sets a flag specifying whether the window???s title bar should display the document title taken from the Title entry of the document information dictionary.
     attr_accessor :display_doc_title
 
     # Gets or sets allows to specify downsample options.

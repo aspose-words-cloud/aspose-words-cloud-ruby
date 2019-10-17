@@ -103,7 +103,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -195,7 +195,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.document_list)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -254,7 +254,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.text)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -339,7 +339,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -421,7 +421,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.compare_data)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -500,7 +500,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -520,7 +520,7 @@ module AsposeWordsCloud
     # @param request CopyFileRequest
     # @return [nil]
     def copy_file(request)
-      copy_file_with_http_info(request)
+      data, _status_code, _headers = copy_file_with_http_info(request)
       request_token if _status_code == 401
       nil
     end
@@ -574,7 +574,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -593,7 +593,7 @@ module AsposeWordsCloud
     # @param request CopyFolderRequest
     # @return [nil]
     def copy_folder(request)
-      copy_folder_with_http_info(request)
+      data, _status_code, _headers = copy_folder_with_http_info(request)
       request_token if _status_code == 401
       nil
     end
@@ -642,7 +642,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -708,7 +708,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -728,7 +728,7 @@ module AsposeWordsCloud
     # @param request CreateFolderRequest
     # @return [nil]
     def create_folder(request)
-      create_folder_with_http_info(request)
+      data, _status_code, _headers = create_folder_with_http_info(request)
       request_token if _status_code == 401
       nil
     end
@@ -768,7 +768,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -862,7 +862,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.property)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -958,7 +958,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -1051,7 +1051,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -1071,7 +1071,7 @@ module AsposeWordsCloud
     # @param request DeleteCommentRequest
     # @return [nil]
     def delete_comment(request)
-      delete_comment_with_http_info(request)
+      data, _status_code, _headers = delete_comment_with_http_info(request)
       request_token if _status_code == 401
       nil
     end
@@ -1144,7 +1144,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -1163,7 +1163,7 @@ module AsposeWordsCloud
     # @param request DeleteDocumentPropertyRequest
     # @return [nil]
     def delete_document_property(request)
-      delete_document_property_with_http_info(request)
+      data, _status_code, _headers = delete_document_property_with_http_info(request)
       request_token if _status_code == 401
       nil
     end
@@ -1236,7 +1236,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -1255,7 +1255,7 @@ module AsposeWordsCloud
     # @param request DeleteDrawingObjectRequest
     # @return [nil]
     def delete_drawing_object(request)
-      delete_drawing_object_with_http_info(request)
+      data, _status_code, _headers = delete_drawing_object_with_http_info(request)
       request_token if _status_code == 401
       nil
     end
@@ -1331,7 +1331,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -1350,7 +1350,7 @@ module AsposeWordsCloud
     # @param request DeleteDrawingObjectWithoutNodePathRequest
     # @return [nil]
     def delete_drawing_object_without_node_path(request)
-      delete_drawing_object_without_node_path_with_http_info(request)
+      data, _status_code, _headers = delete_drawing_object_without_node_path_with_http_info(request)
       request_token if _status_code == 401
       nil
     end
@@ -1423,7 +1423,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -1442,7 +1442,7 @@ module AsposeWordsCloud
     # @param request DeleteFieldRequest
     # @return [nil]
     def delete_field(request)
-      delete_field_with_http_info(request)
+      data, _status_code, _headers = delete_field_with_http_info(request)
       request_token if _status_code == 401
       nil
     end
@@ -1518,7 +1518,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -1537,7 +1537,7 @@ module AsposeWordsCloud
     # @param request DeleteFieldWithoutNodePathRequest
     # @return [nil]
     def delete_field_without_node_path(request)
-      delete_field_without_node_path_with_http_info(request)
+      data, _status_code, _headers = delete_field_without_node_path_with_http_info(request)
       request_token if _status_code == 401
       nil
     end
@@ -1610,7 +1610,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -1629,7 +1629,7 @@ module AsposeWordsCloud
     # @param request DeleteFieldsRequest
     # @return [nil]
     def delete_fields(request)
-      delete_fields_with_http_info(request)
+      data, _status_code, _headers = delete_fields_with_http_info(request)
       request_token if _status_code == 401
       nil
     end
@@ -1702,7 +1702,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -1721,7 +1721,7 @@ module AsposeWordsCloud
     # @param request DeleteFieldsWithoutNodePathRequest
     # @return [nil]
     def delete_fields_without_node_path(request)
-      delete_fields_without_node_path_with_http_info(request)
+      data, _status_code, _headers = delete_fields_without_node_path_with_http_info(request)
       request_token if _status_code == 401
       nil
     end
@@ -1791,7 +1791,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -1810,7 +1810,7 @@ module AsposeWordsCloud
     # @param request DeleteFileRequest
     # @return [nil]
     def delete_file(request)
-      delete_file_with_http_info(request)
+      data, _status_code, _headers = delete_file_with_http_info(request)
       request_token if _status_code == 401
       nil
     end
@@ -1855,7 +1855,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -1874,7 +1874,7 @@ module AsposeWordsCloud
     # @param request DeleteFolderRequest
     # @return [nil]
     def delete_folder(request)
-      delete_folder_with_http_info(request)
+      data, _status_code, _headers = delete_folder_with_http_info(request)
       request_token if _status_code == 401
       nil
     end
@@ -1919,7 +1919,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -1938,7 +1938,7 @@ module AsposeWordsCloud
     # @param request DeleteFootnoteRequest
     # @return [nil]
     def delete_footnote(request)
-      delete_footnote_with_http_info(request)
+      data, _status_code, _headers = delete_footnote_with_http_info(request)
       request_token if _status_code == 401
       nil
     end
@@ -2014,7 +2014,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -2033,7 +2033,7 @@ module AsposeWordsCloud
     # @param request DeleteFootnoteWithoutNodePathRequest
     # @return [nil]
     def delete_footnote_without_node_path(request)
-      delete_footnote_without_node_path_with_http_info(request)
+      data, _status_code, _headers = delete_footnote_without_node_path_with_http_info(request)
       request_token if _status_code == 401
       nil
     end
@@ -2106,7 +2106,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -2125,7 +2125,7 @@ module AsposeWordsCloud
     # @param request DeleteFormFieldRequest
     # @return [nil]
     def delete_form_field(request)
-      delete_form_field_with_http_info(request)
+      data, _status_code, _headers = delete_form_field_with_http_info(request)
       request_token if _status_code == 401
       nil
     end
@@ -2201,7 +2201,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -2220,7 +2220,7 @@ module AsposeWordsCloud
     # @param request DeleteFormFieldWithoutNodePathRequest
     # @return [nil]
     def delete_form_field_without_node_path(request)
-      delete_form_field_without_node_path_with_http_info(request)
+      data, _status_code, _headers = delete_form_field_without_node_path_with_http_info(request)
       request_token if _status_code == 401
       nil
     end
@@ -2293,7 +2293,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -2312,7 +2312,7 @@ module AsposeWordsCloud
     # @param request DeleteHeaderFooterRequest
     # @return [nil]
     def delete_header_footer(request)
-      delete_header_footer_with_http_info(request)
+      data, _status_code, _headers = delete_header_footer_with_http_info(request)
       request_token if _status_code == 401
       nil
     end
@@ -2388,7 +2388,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -2407,7 +2407,7 @@ module AsposeWordsCloud
     # @param request DeleteHeadersFootersRequest
     # @return [nil]
     def delete_headers_footers(request)
-      delete_headers_footers_with_http_info(request)
+      data, _status_code, _headers = delete_headers_footers_with_http_info(request)
       request_token if _status_code == 401
       nil
     end
@@ -2485,7 +2485,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -2504,7 +2504,7 @@ module AsposeWordsCloud
     # @param request DeleteMacrosRequest
     # @return [nil]
     def delete_macros(request)
-      delete_macros_with_http_info(request)
+      data, _status_code, _headers = delete_macros_with_http_info(request)
       request_token if _status_code == 401
       nil
     end
@@ -2574,7 +2574,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -2593,7 +2593,7 @@ module AsposeWordsCloud
     # @param request DeleteOfficeMathObjectRequest
     # @return [nil]
     def delete_office_math_object(request)
-      delete_office_math_object_with_http_info(request)
+      data, _status_code, _headers = delete_office_math_object_with_http_info(request)
       request_token if _status_code == 401
       nil
     end
@@ -2669,7 +2669,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -2688,7 +2688,7 @@ module AsposeWordsCloud
     # @param request DeleteOfficeMathObjectWithoutNodePathRequest
     # @return [nil]
     def delete_office_math_object_without_node_path(request)
-      delete_office_math_object_without_node_path_with_http_info(request)
+      data, _status_code, _headers = delete_office_math_object_without_node_path_with_http_info(request)
       request_token if _status_code == 401
       nil
     end
@@ -2761,7 +2761,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -2780,7 +2780,7 @@ module AsposeWordsCloud
     # @param request DeleteParagraphRequest
     # @return [nil]
     def delete_paragraph(request)
-      delete_paragraph_with_http_info(request)
+      data, _status_code, _headers = delete_paragraph_with_http_info(request)
       request_token if _status_code == 401
       nil
     end
@@ -2856,7 +2856,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -2875,7 +2875,7 @@ module AsposeWordsCloud
     # @param request DeleteParagraphWithoutNodePathRequest
     # @return [nil]
     def delete_paragraph_without_node_path(request)
-      delete_paragraph_without_node_path_with_http_info(request)
+      data, _status_code, _headers = delete_paragraph_without_node_path_with_http_info(request)
       request_token if _status_code == 401
       nil
     end
@@ -2948,7 +2948,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -2967,7 +2967,7 @@ module AsposeWordsCloud
     # @param request DeleteRunRequest
     # @return [nil]
     def delete_run(request)
-      delete_run_with_http_info(request)
+      data, _status_code, _headers = delete_run_with_http_info(request)
       request_token if _status_code == 401
       nil
     end
@@ -3043,7 +3043,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -3062,7 +3062,7 @@ module AsposeWordsCloud
     # @param request DeleteTableRequest
     # @return [nil]
     def delete_table(request)
-      delete_table_with_http_info(request)
+      data, _status_code, _headers = delete_table_with_http_info(request)
       request_token if _status_code == 401
       nil
     end
@@ -3138,7 +3138,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -3157,7 +3157,7 @@ module AsposeWordsCloud
     # @param request DeleteTableCellRequest
     # @return [nil]
     def delete_table_cell(request)
-      delete_table_cell_with_http_info(request)
+      data, _status_code, _headers = delete_table_cell_with_http_info(request)
       request_token if _status_code == 401
       nil
     end
@@ -3233,7 +3233,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -3252,7 +3252,7 @@ module AsposeWordsCloud
     # @param request DeleteTableRowRequest
     # @return [nil]
     def delete_table_row(request)
-      delete_table_row_with_http_info(request)
+      data, _status_code, _headers = delete_table_row_with_http_info(request)
       request_token if _status_code == 401
       nil
     end
@@ -3328,7 +3328,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -3347,7 +3347,7 @@ module AsposeWordsCloud
     # @param request DeleteTableWithoutNodePathRequest
     # @return [nil]
     def delete_table_without_node_path(request)
-      delete_table_without_node_path_with_http_info(request)
+      data, _status_code, _headers = delete_table_without_node_path_with_http_info(request)
       request_token if _status_code == 401
       nil
     end
@@ -3420,7 +3420,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -3509,7 +3509,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -3574,7 +3574,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -3675,7 +3675,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -3748,7 +3748,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -3805,7 +3805,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -3883,7 +3883,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -3958,7 +3958,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -4039,7 +4039,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -4117,7 +4117,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -4195,7 +4195,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -4270,7 +4270,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -4345,7 +4345,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -4426,7 +4426,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -4504,7 +4504,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -4585,7 +4585,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -4663,7 +4663,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -4744,7 +4744,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -4822,7 +4822,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -4900,7 +4900,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -4975,7 +4975,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -5055,7 +5055,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -5115,7 +5115,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -5193,7 +5193,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -5268,7 +5268,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -5343,7 +5343,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -5421,7 +5421,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -5496,7 +5496,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -5586,7 +5586,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -5675,7 +5675,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -5756,7 +5756,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -5834,7 +5834,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -5912,7 +5912,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -5987,7 +5987,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -6047,7 +6047,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -6128,7 +6128,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -6206,7 +6206,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -6284,7 +6284,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -6359,7 +6359,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -6440,7 +6440,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -6518,7 +6518,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -6596,7 +6596,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -6671,7 +6671,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -6754,7 +6754,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -6840,7 +6840,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -6923,7 +6923,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -7004,7 +7004,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -7082,7 +7082,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -7160,7 +7160,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -7235,7 +7235,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -7316,7 +7316,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -7397,7 +7397,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -7475,7 +7475,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -7553,7 +7553,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -7631,7 +7631,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -7706,7 +7706,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -7787,7 +7787,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -7868,7 +7868,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -7949,7 +7949,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -8027,7 +8027,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -8105,7 +8105,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -8183,7 +8183,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -8258,7 +8258,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -8339,7 +8339,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -8420,7 +8420,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -8501,7 +8501,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -8582,7 +8582,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -8660,7 +8660,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -8741,7 +8741,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -8822,7 +8822,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -8900,7 +8900,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -8978,7 +8978,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -9053,7 +9053,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -9145,7 +9145,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.comment)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -9244,7 +9244,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -9340,7 +9340,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -9440,7 +9440,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.field)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -9537,7 +9537,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.field)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -9632,7 +9632,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.footnote_dto)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -9724,7 +9724,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.footnote_dto)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -9824,7 +9824,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.form_field)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -9921,7 +9921,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.form_field)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -10016,7 +10016,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.header_footer_type)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -10108,7 +10108,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.page_number)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -10208,7 +10208,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.paragraph)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -10308,7 +10308,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.run)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -10401,7 +10401,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.table)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -10494,7 +10494,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.cell)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -10587,7 +10587,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.row)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -10677,7 +10677,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.table)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -10778,7 +10778,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -10870,7 +10870,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.watermark_text)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -10929,7 +10929,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.data)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -10949,7 +10949,7 @@ module AsposeWordsCloud
     # @param request MoveFileRequest
     # @return [nil]
     def move_file(request)
-      move_file_with_http_info(request)
+      data, _status_code, _headers = move_file_with_http_info(request)
       request_token if _status_code == 401
       nil
     end
@@ -11003,7 +11003,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -11022,7 +11022,7 @@ module AsposeWordsCloud
     # @param request MoveFolderRequest
     # @return [nil]
     def move_folder(request)
-      move_folder_with_http_info(request)
+      data, _status_code, _headers = move_folder_with_http_info(request)
       request_token if _status_code == 401
       nil
     end
@@ -11071,7 +11071,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -11152,7 +11152,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.protection_request)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -11232,7 +11232,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -11318,7 +11318,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -11408,7 +11408,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -11495,7 +11495,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -11585,7 +11585,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -11672,7 +11672,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -11759,7 +11759,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -11849,7 +11849,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -11936,7 +11936,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -12026,7 +12026,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -12113,7 +12113,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -12205,7 +12205,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.replace_text)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -12293,7 +12293,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.range_text)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -12313,7 +12313,7 @@ module AsposeWordsCloud
     # @param request ResetCacheRequest
     # @return [nil]
     def reset_cache(request)
-      reset_cache_with_http_info(request)
+      data, _status_code, _headers = reset_cache_with_http_info(request)
       request_token if _status_code == 401
       nil
     end
@@ -12345,7 +12345,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -12426,7 +12426,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.save_options_data)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -12509,7 +12509,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.document_parameters)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -12676,7 +12676,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.save_options)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -12755,7 +12755,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -12860,7 +12860,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -12942,7 +12942,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.protection_request)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -13037,7 +13037,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.bookmark_data)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -13135,7 +13135,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.border_properties)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -13230,7 +13230,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.comment)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -13332,7 +13332,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -13431,7 +13431,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -13529,7 +13529,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.field)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -13609,7 +13609,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -13707,7 +13707,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.footnote_dto)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -13802,7 +13802,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.footnote_dto)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -13900,7 +13900,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.form_field)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -13995,7 +13995,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.form_field)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -14093,7 +14093,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.dto)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -14191,7 +14191,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.run)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -14289,7 +14289,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.font_dto)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -14384,7 +14384,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.page_setup)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -14480,7 +14480,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.format)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -14576,7 +14576,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.properties)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -14669,7 +14669,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.properties)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -14765,7 +14765,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.format)
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -14828,7 +14828,7 @@ module AsposeWordsCloud
 
       # http body (model)
       post_body = nil
-      auth_names = ['oauth']
+      auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -14856,14 +14856,10 @@ module AsposeWordsCloud
      #
     private def request_token
       config = @api_client.config
-      api_version = config.api_version
-      config.api_version = ''
-      request_url = "/oauth2/token"
+      request_url = "/connect/token"
       post_data = "grant_type=client_credentials" + "&client_id=" + config.api_key['app_sid'] + "&client_secret=" + config.api_key['api_key']
-      data, status_code, header = @api_client.call_api(:POST, request_url, :body => post_data, :return_type => 'Object')
+      data, status_code, header = @api_client.call_api(:POST, request_url, :body => post_data, :return_type => 'Object',  :header_params => {'Content-Type': 'application/x-www-form-urlencoded'})
       @api_client.config.access_token = data[:access_token]
-      @api_client.config.api_version = api_version
-      @api_client.config.refresh_token = data[:refresh_token]
     end
     
     # requires all files inside a directory from current dir
@@ -14875,4 +14871,3 @@ module AsposeWordsCloud
     end
   end
 end
- #

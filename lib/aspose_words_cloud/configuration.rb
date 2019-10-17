@@ -31,18 +31,9 @@ module AsposeWordsCloud
   #
   class Configuration
     
-    # Defines v1 api version
-    V1_API_VERSION = '/v1'.freeze
-    
-    # Defines v2 api version
-    V2_API_VERSION = '/v2'.freeze
-    
-    # Defines v3 api version
-    V3_API_VERSION = '/v3'.freeze
-    
-    # Defines v1.1 api version
-    V1_1_API_VERSION = '/v1.1'.freeze
-    
+    # Defines v4 api version
+    V4_API_VERSION = '/v4.0'.freeze
+
     # Defines url scheme
     attr_accessor :scheme
 
@@ -113,7 +104,7 @@ module AsposeWordsCloud
     def initialize
       @scheme = 'https'
       @host = "api.aspose.cloud"
-      @api_version = V1_API_VERSION
+      @api_version = V4_API_VERSION
       @api_key = {}
       @api_key_prefix = {}
       @client_side_validation = true
@@ -145,16 +136,9 @@ module AsposeWordsCloud
       @host = host.sub(/https?:\/\//, '').split('/').first
     end
 
-    # sets the api_version
-    def api_version=(api_version)
-      # Add leading and trailing slashes to api_version
-      @api_version = "/#{api_version}".gsub(/\/+/, '/')
-      @api_version = "" if @api_version == "/"
-    end
-
     # returns base url
     def base_url
-      url = "#{scheme}://#{[host, api_version].join('/').gsub(/\/+/, '/')}".sub(/\/+\z/, '')
+      url = "#{scheme}://#{[host, @api_version].join('/').gsub(/\/+/, '/')}".sub(/\/+\z/, '')
       URI.encode(url)
     end
 

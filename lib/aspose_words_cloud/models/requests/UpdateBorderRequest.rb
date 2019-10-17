@@ -1,4 +1,4 @@
-
+ #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="UpdateBorderRequest.rb">
  #   Copyright (c) 2018 Aspose.Words for Cloud
@@ -83,4 +83,3 @@ module AsposeWordsCloud
         end
   end
 end
- #

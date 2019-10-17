@@ -4,7 +4,7 @@ require 'date'
 module AsposeWordsCloud
  #
  # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose" file="ApiError.rb">
+ # <copyright company="Aspose" file="ResponseError.rb">
  #   Copyright (c) 2017 Aspose.Words for Cloud
  # </copyright>
  # <summary>
@@ -30,7 +30,7 @@ module AsposeWordsCloud
  #
 
   # Api error.
-  class ApiError
+  class ResponseError
     # Gets or sets api error code.
     attr_accessor :code
 
@@ -65,7 +65,7 @@ module AsposeWordsCloud
         :'message' => :'String',
         :'description' => :'String',
         :'date_time' => :'DateTime',
-        :'inner_error' => :'ApiError'
+        :'inner_error' => :'ResponseError'
       }
     end
 

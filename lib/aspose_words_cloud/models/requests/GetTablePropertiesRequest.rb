@@ -1,4 +1,4 @@
-
+ #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="GetTablePropertiesRequest.rb">
  #   Copyright (c) 2018 Aspose.Words for Cloud
@@ -67,4 +67,3 @@ module AsposeWordsCloud
         end
   end
 end
- #

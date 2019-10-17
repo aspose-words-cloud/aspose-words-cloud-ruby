@@ -276,7 +276,9 @@ module AsposeWordsCloud
     def build_request_url(path)
       # Add leading and trailing slashes to path
       path = "/#{path}".gsub(/\/+/, '/')
-      URI.encode(@config.base_url + path)
+      url = URI.encode(@config.base_url + path)
+      url = url.gsub(/v[0-9.]+\//, '') if url.include? 'connect/token'
+      url
     end
 
     # Builds the HTTP request body

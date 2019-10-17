@@ -50,7 +50,7 @@ module AsposeWordsCloud
     def self.swagger_types
       {
         :'request_id' => :'String',
-        :'error' => :'ApiError'
+        :'error' => :'ResponseError'
       }
     end
 
