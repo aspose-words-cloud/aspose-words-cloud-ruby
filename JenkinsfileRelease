@@ -1,25 +1,28 @@
 parameters {
-		string(name: 'version', defaultValue: '18.7', description: 'version of gem')
+		string(name: 'version', defaultValue: '19.9.0', description: 'version of gem')
 		string(name: 'deployKey', defaultValue: 'xxx', description: 'key')
-		string(name: 'testServerUrl', defaultValue: 'https://api.aspose.cloud', description: 'server url')
+		string(name: 'testServerUrl', defaultValue: 'https://api-qa.aspose.cloud', description: 'server url')
 		string(name: 'StartFromStage', defaultValue: '0', description: '0 based index of stage which will be started')		
 }
-node('billing-qa-ubuntu-16.04.4') {         
+node('words-linux') {         
     try {		
-		stage('0:Merge master to testPackage'){
-			if (params.StartFromStage.toInteger() < 1) {		
-				checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', url: 'https://github.com/aspose-words-cloud/aspose-words-cloud-ruby.git/']]])
-					
-				sh "git checkout --merge testPackage"
-				sh "git reset --hard origin/testPackage"
-				sh "git merge --no-ff --allow-unrelated-histories origin/master"
-				sh "git diff --name-status"			
-				sh 'git commit -am "Merged master branch to testPackage" || exit 0'
-				
-				withCredentials([usernamePassword(credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', passwordVariable: 'gitPass', usernameVariable: 'gitUsername')]) {
-					sh "git push https://WordsCloud:$gitPass@github.com/aspose-words-cloud/aspose-words-cloud-ruby testPackage"
-				}
+		stage('0:Merge master to testPackage'){	
+			checkout([$class: 'GitSCM', branches: [[name: '*/release']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'LocalBranch', localBranch: "**"]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '361885ba-9425-4230-950e-0af201d90547', url: 'https://git.auckland.dynabic.com/words-cloud/words-cloud-ruby.git']]])
+			sh "git config user.email 'jenkins.aspose@gmail.com'"
+			sh "git config user.name 'jenkins'"
+
+			sh "git checkout --merge testPackage"
+			sh "git reset --hard origin/testPackage"
+			sh "git merge --no-ff --allow-unrelated-histories origin/release"
+			sh "git diff --name-status"			
+			sh 'git commit -am "Merged release branch to testPackage" || exit 0'
+			
+			withCredentials([usernamePassword(credentialsId: '361885ba-9425-4230-950e-0af201d90547', passwordVariable: 'gitPass', usernameVariable: 'gitUsername')]) {
+				env.gitRepoUrl = "https://%gitUsername%:%gitPass%@git.auckland.dynabic.com/words-cloud/words-cloud-dotnet.git"
 			}
+
+			sh "git push %gitRepoUrl% testPackage"
+
 		}			                
     } finally {                       
         cleanWs()
@@ -40,7 +43,7 @@ def testGemLocally()
 	try {	
         stage('2:checkout again'){
 			if (params.StartFromStage.toInteger() < 3) {
-				checkout([$class: 'GitSCM', branches: [[name: '*/testPackage']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', url: 'https://github.com/aspose-words-cloud/aspose-words-cloud-ruby.git/']]])
+				checkout([$class: 'GitSCM', branches: [[name: '*/testPackage']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'LocalBranch', localBranch: "**"]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '361885ba-9425-4230-950e-0af201d90547', url: 'https://git.auckland.dynabic.com/words-cloud/words-cloud-ruby.git']]])
 				withCredentials([usernamePassword(credentialsId: '6839cbe8-39fa-40c0-86ce-90706f0bae5d', passwordVariable: 'AppKey', usernameVariable: 'AppSid')]) {
 					sh 'mkdir -p Settings'
                     sh 'echo "{\\"AppSid\\": \\"$AppSid\\",\\"AppKey\\": \\"$AppKey\\", \\"BaseUrl\\": \\"${testServerUrl}\\"}" > Settings/servercreds.json'
@@ -49,28 +52,26 @@ def testGemLocally()
         }
 		
 	    stage('3:build gem and test'){
-			if (params.StartFromStage.toInteger() < 4) {
-				docker.image('ruby:2.4').inside('-u root'){
-					stage('upload to rubygems'){
-						sh "gem build aspose_words_cloud.gemspec"
-						sh "gem install ./aspose_words_cloud-${version}.gem"
+			docker.image('ruby:2.4').inside('-u root'){
+				stage('upload to rubygems'){
+					sh "gem build aspose_words_cloud.gemspec"
+					sh "gem install ./aspose_words_cloud-${version}.gem"
+				}
+				
+				stage('test gem locally'){
+					sh "mkdir testReports"
+					sh "gem install bundler && bundle install"
+					try{
+						sh 'rake test'
+					} finally{
+						junit 'testReports/report/*.xml'
 					}
-					
-					stage('test gem locally'){
-						sh "mkdir testReports"
-						sh "gem install bundler && bundle install"
-						try{
-							sh 'rake test'
-						} finally{
-							junit 'testReports/report/*.xml'
-						}
-					}
-					
-					stage('clean-compiled'){
-						sh "rm -rf %s"
-					}
-				} 
-			}
+				}
+				
+				stage('clean-compiled'){
+					sh "rm -rf %s"
+				}
+			} 
 	    }     
     } finally {                       
         cleanWs()
@@ -82,7 +83,7 @@ def publishGem()
 	try {	
         stage('4:checkout again'){
 			if (params.StartFromStage.toInteger() < 5) {
-				checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', url: 'https://github.com/aspose-words-cloud/aspose-words-cloud-ruby.git/']]])			
+				checkout([$class: 'GitSCM', branches: [[name: '*/release']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'LocalBranch', localBranch: "**"]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '361885ba-9425-4230-950e-0af201d90547', url: 'https://git.auckland.dynabic.com/words-cloud/words-cloud-ruby.git']]])
 			}
 		}			
 		    
@@ -106,14 +107,14 @@ def publishGem()
 	    }
 		stage('6:add version tag'){
 			if (params.StartFromStage.toInteger() < 6) {    
-				checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', url: 'https://github.com/aspose-words-cloud/aspose-words-cloud-ruby.git/']]])
+				checkout([$class: 'GitSCM', branches: [[name: '*/release']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'LocalBranch', localBranch: "**"]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '361885ba-9425-4230-950e-0af201d90547', url: 'https://git.auckland.dynabic.com/words-cloud/words-cloud-ruby.git']]])
 						
 				sh "git config user.email \"jenkins.aspose@gmail.com\""
 				sh "git config user.name \"jenkins\""
 				sh "git tag -a ${version} -m 'version ${version}' | exit 0"
 				
-				withCredentials([usernamePassword(credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', passwordVariable: 'gitPass', usernameVariable: 'gitUsername')]) {
-					sh "git push https://WordsCloud:$gitPass@github.com/aspose-words-cloud/aspose-words-cloud-ruby ${version}"
+				withCredentials([usernamePassword(credentialsId: '361885ba-9425-4230-950e-0af201d90547', passwordVariable: 'gitPass', usernameVariable: 'gitUsername')]) {
+					sh "git push https://%gitUsername%:%gitPass%@git.auckland.dynabic.com/words-cloud/words-cloud-ruby.git ${version}"
 				}
 			}			
         }           
@@ -122,7 +123,7 @@ def publishGem()
     }
 }
 
-node('billing-qa-ubuntu-16.04.4') {
+node('words-linux') {
 	try {
 		testGemLocally()
 	} finally {
