@@ -1,7 +1,7 @@
 #
 # --------------------------------------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="pages_tests.rb">
-#   Copyright (c) 2018 Aspose.Words for Cloud
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -40,8 +40,7 @@ module AsposeWordsCloud
       page_number = 1
       format = 'png'
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
-      @storage_api.put_create st_request
+      upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
       request = RenderPageRequest.new remote_name, page_number, format, remote_test_folder + test_folder
       result = @words_api.render_page request
@@ -56,12 +55,11 @@ module AsposeWordsCloud
       remote_name = 'TestGetSectionPageSetup.docx'
       index = 0
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
-      @storage_api.put_create st_request
+      upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
       request = GetSectionPageSetupRequest.new remote_name, index, remote_test_folder + test_folder
       result = @words_api.get_section_page_setup request
-      assert_equal 200, result.code
+      assert_equal FALSE, result.nil?
     end
 
     #
@@ -73,12 +71,11 @@ module AsposeWordsCloud
       index = 0
       body = PageSetup.new({:RtlGutter => true, :LeftMargin => 10, :Orientation => 'Landscape', :PaperSize => 'A5'})
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
-      @storage_api.put_create st_request
+      upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
       request = UpdateSectionPageSetupRequest.new remote_name, index, body, remote_test_folder + test_folder
       result = @words_api.update_section_page_setup request
-      assert_equal 200, result.code
+      assert_equal FALSE, result.nil?
     end
   end
 end

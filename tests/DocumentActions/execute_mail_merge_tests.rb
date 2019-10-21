@@ -1,7 +1,7 @@
 #
 # --------------------------------------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="execute_mail_merge_tests.rb">
-#   Copyright (c) 2018 Aspose.Words for Cloud
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -34,29 +34,28 @@ module AsposeWordsCloud
     #
     # Test for mail merge execution
     #
-    def test_post_document_execute_mail_merge
+    def test_execute_mail_merge
       filename = 'SampleMailMergeTemplate.docx'
-      remote_name = 'TestPostDocumentExecuteMailMerge.docx'
+      remote_name = 'TestExecuteMailMerge.docx'
       dest_name = remote_test_out + remote_name
       data = File.read(local_test_folder + test_folder + '/SampleMailMergeTemplateData.txt')
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
-      @storage_api.put_create st_request
+      upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = PostDocumentExecuteMailMergeRequest.new remote_name, data, remote_test_folder + test_folder, :dest_file_name => dest_name
-      result = @words_api.post_document_execute_mail_merge request
-      assert_equal 200, result.code
+      request = ExecuteMailMergeRequest.new remote_name, data, remote_test_folder + test_folder, :dest_file_name => dest_name
+      result = @words_api.execute_mail_merge request
+      assert_equal FALSE, result.nil?
     end
 
     #
     # Test for executing mail merge online
     #
-    def test_put_execute_mail_merge_online
+    def test_execute_mail_merge_online
       filename = 'SampleMailMergeTemplate.docx'
-      file = File.open(local_test_folder + test_folder + '/' + filename, "r")
-      data = File.open(local_test_folder + test_folder + '/SampleMailMergeTemplateData.txt', 'r')
-      request = PutExecuteMailMergeOnlineRequest.new file, data
-      result = @words_api.put_execute_mail_merge_online request
+      file = File.open(local_test_folder + test_folder + '/' + filename, "rb")
+      data = File.open(local_test_folder + test_folder + '/SampleMailMergeTemplateData.txt', 'rb')
+      request = ExecuteMailMergeOnlineRequest.new file, data
+      result = @words_api.execute_mail_merge_online request
       assert result.length > 0, 'Error occurred while executing mail merge'
     end
   end

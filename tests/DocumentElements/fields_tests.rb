@@ -1,7 +1,7 @@
 #
 # --------------------------------------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="fields_tests.rb">
-#   Copyright (c) 2018 Aspose.Words for Cloud
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -38,12 +38,25 @@ module AsposeWordsCloud
       filename = 'GetField.docx'
       remote_name = 'TestGetFields.docx'
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
-      @storage_api.put_create st_request
+      upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = GetFieldsRequest.new remote_name, remote_test_folder + test_folder, :node_path => 'sections/0'
+      request = GetFieldsRequest.new remote_name, 'sections/0', remote_test_folder + test_folder
       result = @words_api.get_fields request
-      assert_equal 200, result.code
+      assert_equal FALSE, result.nil?
+    end
+
+    #
+    # Test for getting fields from document without node path
+    #
+    def test_get_fields_without_node_path
+      filename = 'GetField.docx'
+      remote_name = 'TestGetFieldsWithoutNodePath.docx'
+
+      upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
+
+      request = GetFieldsWithoutNodePathRequest.new remote_name, remote_test_folder + test_folder
+      result = @words_api.get_fields_without_node_path request
+      assert_equal FALSE, result.nil?
     end
 
     #
@@ -54,80 +67,105 @@ module AsposeWordsCloud
       remote_name = 'TestGetField.docx'
       index = 0
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
-      @storage_api.put_create st_request
+      upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = GetFieldRequest.new remote_name, index, remote_test_folder + test_folder, :node_path => 'sections/0/paragraphs/0'
+      request = GetFieldRequest.new remote_name, 'sections/0/paragraphs/0', index, remote_test_folder + test_folder
       result = @words_api.get_field request
-      assert_equal 200, result.code
+      assert_equal FALSE, result.nil?
+    end
+
+    #
+    # Test for getting field from document without node path
+    #
+    def test_get_field_without_node_path
+      filename = 'GetField.docx'
+      remote_name = 'TestGetFieldWithoutNodePath.docx'
+      index = 0
+
+      upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
+
+      request = GetFieldWithoutNodePathRequest.new remote_name, index, remote_test_folder + test_folder
+      result = @words_api.get_field_without_node_path request
+      assert_equal FALSE, result.nil?
     end
 
     #
     # Test for updating document field
     #
-    def test_post_field
+    def test_update_field
       filename = 'GetField.docx'
-      remote_name = 'TestPostField.docx'
+      remote_name = 'TestUpdateField.docx'
       dest_name = remote_test_out + remote_name
       index = 0
       body = Field.new({ :FieldCode => '{ NUMPAGES }', :NodeId => '0.0.3' })
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
-      @storage_api.put_create st_request
+      upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = PostFieldRequest.new remote_name, body, index, remote_test_folder + test_folder,
+      request = UpdateFieldRequest.new remote_name, body, "sections/0/paragraphs/0", index, remote_test_folder + test_folder,
                                      nil, nil, nil, dest_name, nil,
-                                     nil, "sections/0/paragraphs/0"
-      result = @words_api.post_field request
-      assert_equal 200, result.code
+                                     nil
+      result = @words_api.update_field request
+      assert_equal FALSE, result.nil?
     end
 
     #
     # Test for inserting document field
     #
-    def test_put_field
+    def test_insert_field
       filename = 'GetField.docx'
-      remote_name = 'TestPutField.docx'
+      remote_name = 'TestInsertField.docx'
       body = Field.new({:Result => 3, :FieldCode => '{ NUMPAGES }', :NodeId => '0.0.3'})
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
-      @storage_api.put_create st_request
+      upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = PutFieldRequest.new remote_name, body, remote_test_folder + test_folder, :node_path => 'sections/0/paragraphs/0'
-      result = @words_api.put_field request
-      assert_equal 200, result.code
+      request = InsertFieldRequest.new remote_name, body,'sections/0/paragraphs/0', remote_test_folder + test_folder
+      result = @words_api.insert_field request
+      assert_equal FALSE, result.nil?
+    end
+
+    #
+    # Test for inserting document field without node path
+    #
+    def test_insert_field_without_node_path
+      filename = 'GetField.docx'
+      remote_name = 'TestInsertFieldWithoutNodePath.docx'
+      body = Field.new({:Result => 3, :FieldCode => '{ NUMPAGES }', :NodeId => '0.0.3'})
+
+      upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
+
+      request = InsertFieldWithoutNodePathRequest.new remote_name, body, remote_test_folder + test_folder
+      result = @words_api.insert_field_without_node_path request
+      assert_equal FALSE, result.nil?
     end
 
     #
     # Test for reevaluating fields in document
     #
-    def test_post_update_document_fields
+    def test_update_fields
       filename = 'test_multi_pages.docx'
-      remote_name = 'TestPostUpdateDocumentFields.docx'
+      remote_name = 'TestUpdateFields.docx'
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
-      @storage_api.put_create st_request
+      upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = PostUpdateDocumentFieldsRequest.new remote_name, remote_test_folder + test_folder
-      result = @words_api.post_update_document_fields request
-      assert_equal 200, result.code
+      request = UpdateFieldsRequest.new remote_name, remote_test_folder + test_folder
+      result = @words_api.update_fields request
+      assert_equal FALSE, result.nil?
     end
 
     #
     # Test for inserting page numbers
     #
-    def test_post_insert_page_numbers
+    def test_insert_page_numbers
       filename = 'test_multi_pages.docx'
-      remote_name = 'TestPostInsertPageNumbers.docx'
+      remote_name = 'TestInsertPageNumbers.docx'
       dest_name = remote_test_out + remote_name
       body = PageNumber.new({:Alignment => 'center', :Format => '{PAGE} of { NUMPAGES }'})
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
-      @storage_api.put_create st_request
+      upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = PostInsertPageNumbersRequest.new remote_name, body, remote_test_folder + test_folder, :dest_file_name => dest_name
-      result = @words_api.post_insert_page_numbers request
-      assert_equal 200, result.code
+      request = InsertPageNumbersRequest.new remote_name, body, remote_test_folder + test_folder, :dest_file_name => dest_name
+      result = @words_api.insert_page_numbers request
+      assert_equal FALSE, result.nil?
     end
 
     #
@@ -138,12 +176,26 @@ module AsposeWordsCloud
       remote_name = 'TestDeleteField.docx'
       index = 0
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
-      @storage_api.put_create st_request
+      upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = DeleteFieldRequest.new remote_name, index, remote_test_folder + test_folder, :node_path => 'sections/0/paragraphs/0'
+      request = DeleteFieldRequest.new remote_name, 'sections/0/paragraphs/0', index, remote_test_folder + test_folder
       result = @words_api.delete_field request
-      assert_equal 200, result.code
+      assert_equal TRUE, result.nil?
+    end
+
+    #
+    # Test for removing field without node path
+    #
+    def test_delete_field_without_node_path
+      filename = 'GetField.docx'
+      remote_name = 'TestDeleteFieldWithoutNodePath.docx'
+      index = 0
+
+      upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
+
+      request = DeleteFieldWithoutNodePathRequest.new remote_name, index, remote_test_folder + test_folder
+      result = @words_api.delete_field_without_node_path request
+      assert_equal TRUE, result.nil?
     end
 
     #
@@ -153,12 +205,25 @@ module AsposeWordsCloud
       filename = 'test_multi_pages.docx'
       remote_name = 'TestDeleteFields.docx'
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
-      @storage_api.put_create st_request
+      upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = DeleteFieldsRequest.new remote_name, remote_test_folder + test_folder
+      request = DeleteFieldsRequest.new remote_name, '', remote_test_folder + test_folder
       result = @words_api.delete_fields request
-      assert_equal 200, result.code
+      assert_equal TRUE, result.nil?
+    end
+
+    #
+    # Test for removing field without node path
+    #
+    def test_delete_fields_without_node_path
+      filename = 'test_multi_pages.docx'
+      remote_name = 'TestDeleteFieldsWithoutNodePath.docx'
+
+      upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
+
+      request = DeleteFieldsWithoutNodePathRequest.new remote_name, remote_test_folder + test_folder
+      result = @words_api.delete_fields_without_node_path request
+      assert_equal TRUE, result.nil?
     end
   end
 end

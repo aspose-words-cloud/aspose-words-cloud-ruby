@@ -1,7 +1,7 @@
 #
 # --------------------------------------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="comments_tests.rb">
-#   Copyright (c) 2018 Aspose.Words for Cloud
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -39,12 +39,10 @@ module AsposeWordsCloud
       remote_name = 'TestDeleteComment.docx'
       comment_index = 0
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
-      @storage_api.put_create st_request
+      upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
       request = DeleteCommentRequest.new remote_name, comment_index, remote_test_folder + test_folder
       result = @words_api.delete_comment request
-      assert_equal 200, result.code
     end
 
     #
@@ -55,12 +53,11 @@ module AsposeWordsCloud
       remote_name = 'TestGetComment.docx'
       comment_index = 0
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
-      @storage_api.put_create st_request
+      upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
       request = GetCommentRequest.new remote_name, comment_index, remote_test_folder + test_folder
       result = @words_api.get_comment request
-      assert_equal 200, result.code
+      assert_equal FALSE, result.nil?
     end
 
     #
@@ -70,49 +67,46 @@ module AsposeWordsCloud
       filename = 'test_multi_pages.docx'
       remote_name = 'TestGetComments.docx'
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
-      @storage_api.put_create st_request
+      upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
       request = GetCommentsRequest.new remote_name, remote_test_folder + test_folder
       result = @words_api.get_comments request
-      assert_equal 200, result.code
+      assert_equal FALSE, result.nil?
     end
 
     #
     # Test for updating comment
     #
-    def test_post_comment
+    def test_update_comment
       filename = 'test_multi_pages.docx'
-      remote_name = 'TestPostComment.docx'
+      remote_name = 'TestUpdateComment.docx'
       comment_index = 0
-      node_link = NodeLink.new({:NodeId => '0.0.3'})
+      node_link = NodeLink.new({:NodeId => '0.3.0.3'})
       document_position = DocumentPosition.new({:Node => node_link, :Offset => 0})
       body = Comment.new({:RangeStart => document_position, :RangeEnd => document_position, :Initial => 'YE', :Author => 'Yaroslav Ekimov', :Text => 'A new comment'})
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
-      @storage_api.put_create st_request
+      upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = PostCommentRequest.new remote_name, comment_index, body, remote_test_folder + test_folder
-      result = @words_api.post_comment request
-      assert_equal 200, result.code
+      request = UpdateCommentRequest.new remote_name, comment_index, body, remote_test_folder + test_folder
+      result = @words_api.update_comment request
+      assert_equal FALSE, result.nil?
     end
 
     #
     # Test for adding comment
     #
-    def test_put_comment
+    def test_insert_comment
       filename = 'test_multi_pages.docx'
-      remote_name = 'TestPutComment.docx'
-      node_link = NodeLink.new({:NodeId => '0.0.3'})
+      remote_name = 'TestInsertComment.docx'
+      node_link = NodeLink.new({:NodeId => '0.3.0.3'})
       document_position = DocumentPosition.new({:Node => node_link, :Offset => 0})
       body = Comment.new({:RangeStart => document_position, :RangeEnd => document_position, :Initial => 'YE', :Author => 'Yaroslav Ekimov', :Text => 'A new comment'})
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
-      @storage_api.put_create st_request
+      upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = PutCommentRequest.new remote_name, body, remote_test_folder + test_folder
-      result = @words_api.put_comment request
-      assert_equal 200, result.code
+      request = InsertCommentRequest.new remote_name, body, remote_test_folder + test_folder
+      result = @words_api.insert_comment request
+      assert_equal FALSE, result.nil?
     end
   end
 end

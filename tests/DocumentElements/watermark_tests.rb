@@ -1,7 +1,7 @@
 #
 # --------------------------------------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="watermark_tests.rb">
-#   Copyright (c) 2018 Aspose.Words for Cloud
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -34,54 +34,51 @@ module AsposeWordsCloud
     #
     # Test for removing watermark
     #
-    def test_delete_document_watermark
+    def test_delete_watermark
       filename = 'test_doc.docx'
-      remote_name = 'TestDeleteDocumentWatermark.docx'
+      remote_name = 'TestDeleteWatermark.docx'
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
-      @storage_api.put_create st_request
+      upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = DeleteDocumentWatermarkRequest.new remote_name, remote_test_folder + test_folder
-      result = @words_api.delete_document_watermark request
-      assert_equal 200, result.code
+      request = DeleteWatermarkRequest.new remote_name, remote_test_folder + test_folder
+      result = @words_api.delete_watermark request
+      assert_equal FALSE, result.nil?
     end
 
     #
     # Test for inserting watermark image
     #
-    def test_post_insert_document_watermark_image
+    def test_insert_watermark_image
       filename = 'test_multi_pages.docx'
-      remote_name = 'TestPostInsertDocumentWatermarkImage.docx'
+      remote_name = 'TestInsertWatermarkImage.docx'
       dest_name = remote_test_out + remote_name
       rotation_angle = 0
-      image = File.open(local_common_folder + 'aspose-cloud.png', 'r')
+      image = File.open(local_common_folder + 'aspose-cloud.png', 'rb')
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
-      @storage_api.put_create st_request
+      upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = PostInsertDocumentWatermarkImageRequest.new remote_name, image, remote_test_folder + test_folder,
+      request = InsertWatermarkImageRequest.new remote_name, image, remote_test_folder + test_folder,
                                                             nil,nil,nil, dest_name,
                                                             nil,nil, rotation_angle
-      result = @words_api.post_insert_document_watermark_image request
-      assert_equal 200, result.code
+      result = @words_api.insert_watermark_image request
+      assert_equal FALSE, result.nil?
     end
 
     #
     # Test for inserting watermark text
     #
-    def test_post_insert_document_watermark_text
+    def test_insert_watermark_text
       filename = 'test_multi_pages.docx'
-      remote_name = 'TestPostInsertDocumentWatermarkText.docx'
+      remote_name = 'TestInsertWatermarkText.docx'
       dest_name = remote_test_out + remote_name
       body = WatermarkText.new({:Text => 'This is the text', :RotationAngle => 90})
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
-      @storage_api.put_create st_request
+      upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
       
-      request = PostInsertDocumentWatermarkTextRequest.new remote_name, body, remote_test_folder + test_folder,
+      request = InsertWatermarkTextRequest.new remote_name, body, remote_test_folder + test_folder,
                                                             nil,nil,nil, dest_name
-      result = @words_api.post_insert_document_watermark_text request
-      assert_equal 200, result.code
+      result = @words_api.insert_watermark_text request
+      assert_equal FALSE, result.nil?
     end
   end
 end

@@ -1,7 +1,7 @@
 #
 # --------------------------------------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="macros_tests.rb">
-#   Copyright (c) 2018 Aspose.Words for Cloud
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -34,16 +34,15 @@ module AsposeWordsCloud
     #
     # Test for removing document macros
     #
-    def test_delete_document_macros
+    def test_delete_macros
       filename = 'test_multi_pages.docx'
-      remote_name = 'TestDeleteDocumentMacros.docx'
+      remote_name = 'TestDeleteMacros.docx'
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
-      @storage_api.put_create st_request
+      upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = DeleteDocumentMacrosRequest.new remote_name, remote_test_folder + test_folder
-      result = @words_api.delete_document_macros request
-      assert_equal 200, result.code
+      request = DeleteMacrosRequest.new remote_name, remote_test_folder + test_folder
+      result = @words_api.delete_macros request
+      assert_equal TRUE, result.nil?
     end
   end
 end

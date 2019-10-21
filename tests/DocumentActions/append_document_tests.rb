@@ -1,7 +1,7 @@
 #
 # --------------------------------------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="append_document_tests.rb">
-#   Copyright (c) 2018 Aspose.Words for Cloud
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -35,19 +35,18 @@ module AsposeWordsCloud
     #
     # Test for appending document
     #
-    def test_post_append_document
+    def test_append_document
       filename = 'test_multi_pages.docx'
-      remote_name = 'TestPostAppendDocument.docx'
+      remote_name = 'TestAppendDocument.docx'
+      remote_path = File.join(remote_test_folder, test_folder, remote_name)
       dest_name = remote_test_out + remote_name
-      doc_entry = DocumentEntry.new({:Href => remote_test_folder + test_folder + '/' + remote_name, :ImportFormatMode => "KeepSourceFormatting"})
+      doc_entry = DocumentEntry.new({:Href => remote_path, :ImportFormatMode => "KeepSourceFormatting"})
       body = DocumentEntryList.new({:DocumentEntries => [doc_entry]})
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
-      @storage_api.put_create st_request
-
-      request = PostAppendDocumentRequest.new remote_name, body, remote_test_folder + test_folder, :dest_file_name => dest_name
-      result = @words_api.post_append_document request
-      assert_equal 200, result.code
+      upload_file File.join(local_common_folder, filename), remote_path
+      request = AppendDocumentRequest.new remote_name, body, remote_test_folder, :dest_file_name => dest_name
+      result = @words_api.append_document request
+      assert_equal false, result.document.nil?
     end
   end
 end

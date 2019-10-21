@@ -113,3 +113,5 @@ hs_err_pid*
 .idea/*
 vendor/*
 testReports/*
+Gemfile.lock
+servercreds.json

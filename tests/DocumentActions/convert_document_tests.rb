@@ -1,7 +1,7 @@
 #
 # --------------------------------------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="convert_document_tests.rb">
-#   Copyright (c) 2018 Aspose.Words for Cloud
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -34,63 +34,61 @@ module AsposeWordsCloud
     #
     # Test for saving document with specified format
     #
-    def test_post_document_save_as
+    def test_save_as
       filename = 'test_multi_pages.docx'
-      remote_name = 'TestPostDocumentSaveAs.docx'
-      dest_name = remote_test_out + 'TestPostDocumentSaveAs.pdf'
+      remote_name = 'TestSaveAs.docx'
+      dest_name = remote_test_out + 'TestSaveAs.pdf'
       save_options = SaveOptionsData.new({:SaveFormat => 'pdf', :FileName => dest_name})
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
-      @storage_api.put_create st_request
+      upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = PostDocumentSaveAsRequest.new remote_name, save_options, remote_test_folder + test_folder
-      result = @words_api.post_document_save_as request
-      assert_equal 200, result.code
+      request = SaveAsRequest.new remote_name, save_options, remote_test_folder + test_folder
+      result = @words_api.save_as request
+      assert_equal false, result.nil?
     end
 
     #
     # Test for saving document with specified format
     #
-    def test_post_save_document_as_from_pdf_to_doc
+    def test_save_as_from_pdf_to_doc
+      skip 'Skipped because of API error'
       filename = '45.pdf'
-      remote_name = 'TestPostDocumentSaveAsFromPdfToDoc.docx'
-      dest_name = remote_test_out + 'TestPostDocumentSaveAs.docx'
+      remote_name = 'TestSaveAsFromPdfToDoc.docx'
+      dest_name = remote_test_out + 'TestSaveAs.docx'
       save_options = SaveOptionsData.new({:SaveFormat => 'docx', :FileName => dest_name})
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
-      @storage_api.put_create st_request
+      upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = PostDocumentSaveAsRequest.new remote_name, save_options, remote_test_folder + test_folder, :dest_file_name => dest_name
-      result = @words_api.post_document_save_as request
-      assert_equal 200, result.code
+      request = SaveAsRequest.new remote_name, save_options, remote_test_folder + test_folder, :dest_file_name => dest_name
+      result = @words_api.save_as request
+      assert_equal false, result.nil?
     end
 
     #
     # Test for document conversion without storage
     #
-    def test_put_convert_document
+    def test_convert_document
       format = 'pdf'
       filename = 'test_multi_pages.docx'
-      request = PutConvertDocumentRequest.new(File.open(local_common_folder  + filename, "r"), format)
-      result = @words_api.put_convert_document request
+      request = ConvertDocumentRequest.new(File.open(local_common_folder  + filename, "rb"), format)
+      result = @words_api.convert_document request
       assert result.length > 0, 'Error occurred while converting document'
     end
 
     #
     # Test for saving document with specified format
     #
-    def test_put_document_save_as_tiff
+    def test_save_as_tiff
       filename = '45.pdf'
-      remote_name = 'TestPutDocumentSaveAsTiff.docx'
-      dest_name = remote_test_out + 'TestPostDocumentSaveAsTiff.tiff'
+      remote_name = 'TestSaveAsTiff.docx'
+      dest_name = remote_test_out + 'TestSaveAsTiff.tiff'
       save_options = TiffSaveOptionsData.new({:SaveFormat => 'tiff', :FileName => dest_name})
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
-      @storage_api.put_create st_request
+      upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = PutDocumentSaveAsTiffRequest.new remote_name, save_options, remote_test_folder + test_folder, :dest_file_name => dest_name
-      result = @words_api.put_document_save_as_tiff request
-      assert_equal 200, result.code
+      request = SaveAsTiffRequest.new remote_name, save_options, remote_test_folder + test_folder, :dest_file_name => dest_name
+      result = @words_api.save_as_tiff request
+      assert_equal false, result.nil?
     end
 
     #
@@ -101,8 +99,7 @@ module AsposeWordsCloud
       remote_name = 'TestGetDocumentWithFormat.docx'
       format = 'text'
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
-      @storage_api.put_create st_request
+      upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
       request = GetDocumentWithFormatRequest.new remote_name, format, remote_test_folder + test_folder
       result = @words_api.get_document_with_format request
@@ -118,8 +115,7 @@ module AsposeWordsCloud
       format = 'text'
       out_path = 'Out/TestGetDocumentWithFormat.txt'
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
-      @storage_api.put_create st_request
+      upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
       request = GetDocumentWithFormatRequest.new remote_name, format, remote_test_folder + test_folder, :out_path => out_path
       result = @words_api.get_document_with_format request
