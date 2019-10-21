@@ -1,7 +1,7 @@
 #
 # --------------------------------------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="document_tests.rb">
-#   Copyright (c) 2018 Aspose.Words for Cloud
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -37,28 +37,26 @@ module AsposeWordsCloud
     def test_get_document
       filename = 'test_multi_pages.docx'
       remote_name = 'TestGetDocument.docx'
+      remote_path = File.join(test_folder, remote_name)
+      upload_file File.join(local_common_folder, filename), remote_path
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
-      @storage_api.put_create st_request
-
-      request = GetDocumentRequest.new remote_name, remote_test_folder + test_folder
+      request = GetDocumentRequest.new remote_name, test_folder
       result = @words_api.get_document request
-      assert_equal 200, result.code
+      assert_equal false, result.document.nil?
     end
 
     #
     # Test for creating document
     #
-    def test_put_create_document
+    def test_create_document
       filename = 'test_multi_pages.docx'
-      remote_name = 'TestPutCreateDocument.docx'
+      remote_name = 'TestCreateDocument.docx'
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
-      @storage_api.put_create st_request
+      upload_file(local_common_folder + filename, remote_test_folder + test_folder + '/' + remote_name)
 
-      request = PutCreateDocumentRequest.new nil, remote_name, remote_test_folder + test_folder
-      result = @words_api.put_create_document request
-      assert_equal 200, result.code
+      request = CreateDocumentRequest.new nil, remote_name, remote_test_folder + test_folder
+      result = @words_api.create_document request
+      assert_equal false, result.document.nil?
     end
   end
 end

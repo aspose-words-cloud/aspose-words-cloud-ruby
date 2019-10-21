@@ -1,6 +1,6 @@
 #
 # --------------------------------------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="hyperlinks_tests.rb">
+# <copyright company="Aspose" file="missing_credentials_tests.rb">
 #   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -25,39 +25,29 @@
 # --------------------------------------------------------------------------------------------------------------------
 #
 module AsposeWordsCloud
-  require_relative '../base_test_context'
-  class HyperlinksTests < BaseTestContext
-    def test_folder
-      'DocumentElements/Hyperlinks'
-    end
+    require_relative '../base_test_context'
+    class MissingCredentialsTests < BaseTestContext
+        alias :super_setup :setup
+        def setup
+            File.rename('Settings/servercreds.json', 'Settings/servercreds1.json');
+        end
 
-    #
-    # Test for getting document hyperlink by index
-    #
-    def test_get_document_hyperlink_by_index
-      filename = 'test_doc.docx'
-      remote_name = 'TestGetDocumentHyperlinkByIndex.docx'
-      index = 0
+        def teardown
+            File.rename('Settings/servercreds1.json', 'Settings/servercreds.json');
+        end
 
-      upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
-
-      request = GetDocumentHyperlinkByIndexRequest.new remote_name, index, remote_test_folder + test_folder
-      result = @words_api.get_document_hyperlink_by_index request
-      assert_equal FALSE, result.nil?
-    end
-
-    #
-    # Test for getting document hyperlinks
-    #
-    def test_get_document_hyperlinks
-      filename = 'test_doc.docx'
-      remote_name = 'TestGetDocumentHyperlinks.docx'
-
-      upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
-
-      request = GetDocumentHyperlinksRequest.new remote_name, remote_test_folder + test_folder
-      result = @words_api.get_document_hyperlinks request
-      assert_equal FALSE, result.nil?
+        #
+        # Test for base class throwing exception if credentials file is missing
+        def test_missing_credentials
+            begin
+                super_setup()
+                assert_throws 'FAILED'
+            rescue ArgumentError => e
+                puts e.inspect
+            else 
+                assert_throws 'FAILED'
+            end
+        end
     end
   end
-end
+  

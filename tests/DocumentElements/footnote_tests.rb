@@ -1,7 +1,7 @@
 #
 # --------------------------------------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="footnote_tests.rb">
-#   Copyright (c) 2018 Aspose.Words for Cloud
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -39,12 +39,26 @@ module AsposeWordsCloud
       remote_name = 'TestGetFootnote.docx'
       index = 0
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
-      @storage_api.put_create st_request
+      upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = GetFootnoteRequest.new remote_name, index, remote_test_folder + test_folder
+      request = GetFootnoteRequest.new remote_name, '', index, remote_test_folder + test_folder
       result = @words_api.get_footnote request
-      assert_equal 200, result.code
+      assert_equal FALSE, result.nil?
+    end
+
+    #
+    # Test for getting footnote without node path
+    #
+    def test_get_footnote_without_node_path
+      filename = 'Footnote.doc'
+      remote_name = 'TestGetFootnoteWithoutNodePath.docx'
+      index = 0
+
+      upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
+
+      request = GetFootnoteWithoutNodePathRequest.new remote_name, index, remote_test_folder + test_folder
+      result = @words_api.get_footnote_without_node_path request
+      assert_equal FALSE, result.nil?
     end
 
     #
@@ -54,12 +68,25 @@ module AsposeWordsCloud
       filename = 'Footnote.doc'
       remote_name = 'TestGetFootnotes.docx'
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
-      @storage_api.put_create st_request
+      upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = GetFootnotesRequest.new remote_name, remote_test_folder + test_folder
+      request = GetFootnotesRequest.new remote_name, '', remote_test_folder + test_folder
       result = @words_api.get_footnotes request
-      assert_equal 200, result.code
+      assert_equal FALSE, result.nil?
+    end
+
+    #
+    # Test for getting footnotes without node path
+    #
+    def test_get_footnotes_without_node_path
+      filename = 'Footnote.doc'
+      remote_name = 'TestGetFootnotesWithoutNodePath.docx'
+
+      upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
+
+      request = GetFootnotesWithoutNodePathRequest.new remote_name, remote_test_folder + test_folder
+      result = @words_api.get_footnotes_without_node_path request
+      assert_equal FALSE, result.nil?
     end
 
     #
@@ -70,45 +97,88 @@ module AsposeWordsCloud
       remote_name = 'TestDeleteFootnote.docx'
       index = 0
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
-      @storage_api.put_create st_request
+      upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = DeleteFootnoteRequest.new remote_name, index, remote_test_folder + test_folder
+      request = DeleteFootnoteRequest.new remote_name, '', index, remote_test_folder + test_folder
       result = @words_api.delete_footnote request
-      assert_equal 200, result.code
+      assert_equal TRUE, result.nil?
+    end
+
+    #
+    # Test for removing footnote without node path
+    #
+    def test_delete_footnote_without_node_path
+      filename = 'Footnote.doc'
+      remote_name = 'TestDeleteFootnoteWithoutNodePath.docx'
+      index = 0
+
+      upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
+
+      request = DeleteFootnoteWithoutNodePathRequest.new remote_name, index, remote_test_folder + test_folder
+      result = @words_api.delete_footnote_without_node_path request
+      assert_equal TRUE, result.nil?
     end
 
     #
     # Test for updating footnote
     #
-    def test_post_footnote
+    def test_update_footnote
       filename = 'Footnote.doc'
-      remote_name = 'TestPostFootnote.docx'
+      remote_name = 'TestUpdateFootnote.docx'
       index = 0
       footnote = Footnote.new({:Text => 'new text is here'})
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
-      @storage_api.put_create st_request
+      upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = PostFootnoteRequest.new remote_name, footnote, index, remote_test_folder + test_folder
-      result = @words_api.post_footnote request
-      assert_equal 200, result.code
+      request = UpdateFootnoteRequest.new remote_name, footnote, '', index, remote_test_folder + test_folder
+      result = @words_api.update_footnote request
+      assert_equal FALSE, result.nil?
+    end
+
+    #
+    # Test for updating footnote without node path
+    #
+    def test_update_footnote_without_node_path
+      filename = 'Footnote.doc'
+      remote_name = 'TestUpdateFootnoteWithoutNodePath.docx'
+      index = 0
+      footnote = Footnote.new({:Text => 'new text is here'})
+
+      upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
+
+      request = UpdateFootnoteWithoutNodePathRequest.new remote_name, footnote, index, remote_test_folder + test_folder
+      result = @words_api.update_footnote_without_node_path request
+      assert_equal FALSE, result.nil?
     end
 
     #
     # Test for creating footnote
     #
-    def test_put_footnote
+    def test_insert_footnote
       filename = 'Footnote.doc'
-      remote_name = 'TestPutFootnote.docx'
+      remote_name = 'TestInsertFootnote.docx'
       footnote = Footnote.new({:Text => 'test endnote', :FootnoteType => 'Endnote'})
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
-      @storage_api.put_create st_request
+      upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = PutFootnoteRequest.new remote_name, footnote, remote_test_folder + test_folder
-      result = @words_api.put_footnote request
-      assert_equal 200, result.code
+      request = InsertFootnoteRequest.new remote_name, footnote,'', remote_test_folder + test_folder
+      result = @words_api.insert_footnote request
+      assert_equal FALSE, result.nil?
+    end
+
+    #
+    # Test for creating footnote without node path
+    #
+    def test_insert_footnote_without_node_path
+      filename = 'Footnote.doc'
+      remote_name = 'TestInsertFootnoteWithoutNodePath.docx'
+      footnote = Footnote.new({:Text => 'test endnote', :FootnoteType => 'Endnote'})
+
+      upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
+
+      request = InsertFootnoteWithoutNodePathRequest.new remote_name, footnote, remote_test_folder + test_folder
+      result = @words_api.insert_footnote_without_node_path request
+      assert_equal FALSE, result.nil?
     end
   end
 end

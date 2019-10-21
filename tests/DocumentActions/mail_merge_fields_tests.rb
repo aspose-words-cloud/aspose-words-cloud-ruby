@@ -1,7 +1,7 @@
 #
 # --------------------------------------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="mail_merge_fields_tests.rb">
-#   Copyright (c) 2018 Aspose.Words for Cloud
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -37,22 +37,22 @@ module AsposeWordsCloud
     def test_get_document_field_names
       filename = 'test_multi_pages.docx'
       remote_name = 'TestGetDocumentFieldNames.docx'
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
-      @storage_api.put_create st_request
+
+      upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
       request = GetDocumentFieldNamesRequest.new remote_name, remote_test_folder + test_folder
       result = @words_api.get_document_field_names request
-      assert_equal 200, result.code
+      assert_equal FALSE, result.nil?
     end
 
     #
     # Test for inserting document field names
     #
-    def test_put_document_field_names
-      file = File.open(local_test_folder + test_folder + '/SampleExecuteTemplate.docx', "r")
-      request = PutDocumentFieldNamesRequest.new file, true
-      result = @words_api.put_document_field_names request
-      assert_equal 200, result.code
+    def test_get_document_field_names_online
+      file = File.open(local_test_folder + test_folder + '/SampleExecuteTemplate.docx', "rb")
+      request = GetDocumentFieldNamesOnlineRequest.new file, true
+      result = @words_api.get_document_field_names_online request
+      assert_equal FALSE, result.nil?
     end
   end
 end

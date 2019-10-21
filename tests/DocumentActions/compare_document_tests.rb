@@ -1,7 +1,7 @@
 #
 # --------------------------------------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="compare_document_tests.rb">
-#   Copyright (c) 2018 Aspose.Words for Cloud
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -35,25 +35,23 @@ module AsposeWordsCloud
     #
     # Test for document comparison
     #
-    def test_post_compare_document
+    def test_compare_document
 
       local_name1 = "compareTestDoc1.doc"
       local_name2 = "compareTestDoc2.doc"
-      remote_name1 = "TestPostCompareDocument1.doc"
-      remote_name2 = "TestPostCompareDocument2.doc"
+      remote_name1 = "TestCompareDocument1.doc"
+      remote_name2 = "TestCompareDocument2.doc"
       dest_name = remote_test_out + 'TestCompareOut.doc'
       compare_data = CompareData.new({
                                          :Author => 'author',
-                                         :ComparingWithDocument => remote_test_folder + test_folder + '/' + remote_name2,
-                                         :DateTime => DateTime.new})
-      st_request1 = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name1, File.open(local_test_folder + test_folder + '/' + local_name1).read
-      @storage_api.put_create st_request1
-      st_request2 = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name2, File.open(local_test_folder + test_folder + '/' + local_name2).read
-      @storage_api.put_create st_request2
+                                         :ComparingWithDocument => remote_test_folder + '/' + test_folder + '/' + remote_name2,
+                                         :DateTime => DateTime.now})
+      upload_file File.join(local_test_folder, test_folder, local_name1), File.join(remote_test_folder + '/' + test_folder, remote_name1)
+      upload_file File.join(local_test_folder, test_folder, local_name2), File.join(remote_test_folder + '/' + test_folder, remote_name2)
 
-      request = PostCompareDocumentRequest.new remote_name1, compare_data, remote_test_folder + test_folder, :dest_file_name => dest_name
-      result = @words_api.post_compare_document request
-      assert_equal 200, result.code
+      request = CompareDocumentRequest.new remote_name1, compare_data, remote_test_folder + '/' + test_folder , :dest_file_name => dest_name
+      result = @words_api.compare_document request
+      assert_equal false, result.document.nil?
     end
   end
 end
