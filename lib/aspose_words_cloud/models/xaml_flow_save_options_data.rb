@@ -5,7 +5,7 @@ module AsposeWordsCloud
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose" file="XamlFlowSaveOptionsData.rb">
- #   Copyright (c) 2017 Aspose.Words for Cloud
+ #   Copyright (c) 2019 Aspose.Words for Cloud
  # </copyright>
  # <summary>
  #   Permission is hereby granted, free of charge, to any person obtaining a copy
