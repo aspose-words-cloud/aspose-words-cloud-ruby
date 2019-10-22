@@ -31,22 +31,22 @@ module AsposeWordsCloud
 
   # OfficeMath object.
   class OfficeMathObject
-    # Link to the document.
+    # Gets or sets link to the document.
     attr_accessor :link
 
-    # Node id
+    # Gets or sets node id.
     attr_accessor :node_id
 
-    # Content of footnote.
+    # Gets or sets content of footnote.
     attr_accessor :content
 
-    # Gets/sets Office Math display format type which represents whether an equation is displayed inline with the text or displayed on its own line.
+    # Gets or sets /sets Office Math display format type which represents whether an equation is displayed inline with the text or displayed on its own line.
     attr_accessor :display_type
 
-    # Gets/sets Office Math justification.
+    # Gets or sets /sets Office Math justification.
     attr_accessor :justification
 
-    # Gets type Aspose.Words.Math.OfficeMath.MathObjectType of this Office Math object.
+    # Gets or sets type Aspose.Words.Math.OfficeMath.MathObjectType of this Office Math object.
     attr_accessor :math_object_type
 
     class EnumAttributeValidator

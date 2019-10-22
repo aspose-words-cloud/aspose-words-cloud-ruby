@@ -29,48 +29,48 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # FormField text input element
+  # FormField text input element.
   class FormFieldTextInput
-    # Link to the document.
+    # Gets or sets link to the document.
     attr_accessor :link
 
-    # Node id
+    # Gets or sets node id.
     attr_accessor :node_id
 
-    # True if references to the specified form field are automatically updated whenever the field is exited.
+    # Gets or sets true if references to the specified form field are automatically updated whenever the field is exited.
     attr_accessor :calculate_on_exit
 
-    # True if a form field is enabled.
+    # Gets or sets true if a form field is enabled.
     attr_accessor :enabled
 
-    # Returns or sets an entry macro name for the form field.
+    # Gets or sets returns or sets an entry macro name for the form field.
     attr_accessor :entry_macro
 
-    # Returns or sets an exit macro name for the form field.
+    # Gets or sets returns or sets an exit macro name for the form field.
     attr_accessor :exit_macro
 
-    # Returns or sets the text that's displayed in a message box when the form field has the focus and the user presses F1.
+    # Gets or sets returns or sets the text that's displayed in a message box when the form field has the focus and the user presses F1.
     attr_accessor :help_text
 
     # Gets or sets the form field name.
     attr_accessor :name
 
-    # Specifies the source of the text that's displayed in a message box when a form field has the focus and the user presses F1.
+    # Gets or sets specifies the source of the text that's displayed in a message box when a form field has the focus and the user presses F1.
     attr_accessor :own_help
 
-    # Specifies the source of the text that's displayed in the status bar when a form field has the focus.
+    # Gets or sets specifies the source of the text that's displayed in the status bar when a form field has the focus.
     attr_accessor :own_status
 
-    # Returns or sets the text that's displayed in the status bar when a form field has the focus.
+    # Gets or sets returns or sets the text that's displayed in the status bar when a form field has the focus.
     attr_accessor :status_text
 
-    # Maximum length for the text field. Zero when the length is not limited.
+    # Gets or sets maximum length for the text field. Zero when the length is not limited.
     attr_accessor :max_length
 
-    # Gets or sets the default string or a calculation expression of a text form field. 
+    # Gets or sets the default string or a calculation expression of a text form field.
     attr_accessor :text_input_default
 
-    # Returns or sets the text formatting for a text form field.
+    # Gets or sets returns or sets the text formatting for a text form field.
     attr_accessor :text_input_format
 
     # Gets or sets the type of a text form field.

@@ -36,17 +36,17 @@ module AsposeWordsCloud
         attr_accessor :name
         # Path to table.
         attr_accessor :table_path
-        # Object's index
+        # Object index.
         attr_accessor :index
         # Original document folder.
         attr_accessor :folder
-        # File storage, which have to be used.
+        # Original document storage.
         attr_accessor :storage
         # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         attr_accessor :load_encoding
         # Password for opening an encrypted document.
         attr_accessor :password
-        # Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        # Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         attr_accessor :dest_file_name
         # Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         attr_accessor :revision_author
@@ -59,12 +59,12 @@ module AsposeWordsCloud
         # Initializes a new instance.
         # @param name The document name.
         # @param table_path Path to table.
-        # @param index Object's index
+        # @param index Object index.
         # @param folder Original document folder.
-        # @param storage File storage, which have to be used.
+        # @param storage Original document storage.
         # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         # @param password Password for opening an encrypted document.
-        # @param dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        # @param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         # @param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         # @param revision_date_time The date and time to use for revisions.
         # @param format Table row format.

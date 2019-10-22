@@ -1,7 +1,7 @@
 #
 # --------------------------------------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="document_properties_tests.rb">
-#   Copyright (c) 2018 Aspose.Words for Cloud
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,16 +36,15 @@ module AsposeWordsCloud
     #
     def test_create_or_update_document_property
       filename = 'test_doc.docx'
-      remote_name = 'TestPutUpdateDocumentProperty.docx'
+      remote_name = 'TestCreateOrUpdateDocumentProperty.docx'
       property_name = 'AsposeAuthor'
       property = DocumentProperty.new({:Name => 'Author', :Value => 'Yaroslav Ekimov'})
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
-      @storage_api.put_create st_request
+      upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
       request = CreateOrUpdateDocumentPropertyRequest.new remote_name, property_name, property, remote_test_folder + test_folder
       result = @words_api.create_or_update_document_property request
-      assert_equal 200, result.code
+      assert_equal FALSE, result.nil?
     end
 
     #
@@ -57,12 +56,10 @@ module AsposeWordsCloud
       dest_name = remote_test_out + remote_name
       property_name = 'testProp'
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
-      @storage_api.put_create st_request
+      upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
       request = DeleteDocumentPropertyRequest.new remote_name, property_name, remote_test_folder + test_folder, :dest_file_name => dest_name
       result = @words_api.delete_document_property request
-      assert_equal 200, result.code
     end
 
     #
@@ -72,12 +69,11 @@ module AsposeWordsCloud
       filename = 'test_multi_pages.docx'
       remote_name = 'TestGetDocumentProperties.docx'
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
-      @storage_api.put_create st_request
+      upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
       request = GetDocumentPropertiesRequest.new remote_name, remote_test_folder + test_folder
       result = @words_api.get_document_properties request
-      assert_equal 200, result.code
+      assert_equal FALSE, result.nil?
     end
 
     #
@@ -88,12 +84,11 @@ module AsposeWordsCloud
       remote_name = 'TestGetDocumentProperty.docx'
       property_name = 'Author'
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
-      @storage_api.put_create st_request
+      upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
       request = GetDocumentPropertyRequest.new remote_name, property_name, remote_test_folder + test_folder
       result = @words_api.get_document_property request
-      assert_equal 200, result.code
+      assert_equal FALSE, result.nil?
     end
   end
 end

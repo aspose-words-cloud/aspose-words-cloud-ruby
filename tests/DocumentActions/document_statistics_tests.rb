@@ -1,7 +1,7 @@
 #
 # --------------------------------------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="document_statistics_tests.rb">
-#   Copyright (c) 2018 Aspose.Words for Cloud
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -38,12 +38,11 @@ module AsposeWordsCloud
       filename = 'test_multi_pages.docx'
       remote_name = 'TestGetDocumentStatistics.docx'
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
-      @storage_api.put_create st_request
+      upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
       request = GetDocumentStatisticsRequest.new remote_name, remote_test_folder + test_folder
       result = @words_api.get_document_statistics request
-      assert_equal 200, result.code
+      assert_equal FALSE, result.nil?
     end
   end
 end

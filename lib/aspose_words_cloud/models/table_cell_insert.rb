@@ -29,9 +29,9 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # Table cell element
+  # Table cell element.
   class TableCellInsert
-    # Table cell will be inserted after cell with specified 0-based index.
+    # Gets or sets table cell will be inserted after cell with specified 0-based index.
     attr_accessor :insert_after
 
 

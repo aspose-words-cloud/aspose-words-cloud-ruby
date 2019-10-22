@@ -31,43 +31,43 @@ module AsposeWordsCloud
 
   # Represents the page setup properties of a section.             
   class PageSetup
-    # Link to the document.
+    # Gets or sets link to the document.
     attr_accessor :link
 
-    # Specifies that this section contains bidirectional (complex scripts) text.             
+    # Gets or sets specifies that this section contains bidirectional (complex scripts) text.             
     attr_accessor :bidi
 
-    # Specifies where the page border is positioned relative to intersecting texts and objects.             
+    # Gets or sets specifies where the page border is positioned relative to intersecting texts and objects.             
     attr_accessor :border_always_in_front
 
-    # Specifies which pages the page border is printed on.             
+    # Gets or sets specifies which pages the page border is printed on.             
     attr_accessor :border_applies_to
 
     # Gets or sets a value that indicates whether the specified page border is measured from the edge of the page or from the text it surrounds.             
     attr_accessor :border_distance_from
 
-    # Returns or sets the distance (in points) between the bottom edge of the page and the bottom boundary of the body text.             
+    # Gets or sets returns or sets the distance (in points) between the bottom edge of the page and the bottom boundary of the body text.             
     attr_accessor :bottom_margin
 
-    # True if a different header or footer is used on the first page.             
+    # Gets or sets true if a different header or footer is used on the first page.             
     attr_accessor :different_first_page_header_footer
 
     # Gets or sets the paper tray (bin) to use for the first page of a section. The value is implementation (printer) specific.             
     attr_accessor :first_page_tray
 
-    # Returns or sets the distance (in points) between the footer and the bottom of the page.             
+    # Gets or sets returns or sets the distance (in points) between the footer and the bottom of the page.             
     attr_accessor :footer_distance
 
     # Gets or sets the amount of extra space added to the margin for document binding.             
     attr_accessor :gutter
 
-    # Returns or sets the distance (in points) between the header and the top of the page.             
+    # Gets or sets returns or sets the distance (in points) between the header and the top of the page.             
     attr_accessor :header_distance
 
-    # Returns or sets the distance (in points) between the left edge of the page and the left boundary of the body text.             
+    # Gets or sets returns or sets the distance (in points) between the left edge of the page and the left boundary of the body text.             
     attr_accessor :left_margin
 
-    # Returns or sets the numeric increment for line numbers.             
+    # Gets or sets returns or sets the numeric increment for line numbers.             
     attr_accessor :line_number_count_by
 
     # Gets or sets distance between the right edge of line numbers and the left edge of the document.             
@@ -79,13 +79,13 @@ module AsposeWordsCloud
     # Gets or sets the starting line number.             
     attr_accessor :line_starting_number
 
-    # Returns or sets the orientation of the page.             
+    # Gets or sets returns or sets the orientation of the page.             
     attr_accessor :orientation
 
     # Gets or sets the paper tray (bin) to be used for all but the first page of a section. The value is implementation (printer) specific.             
     attr_accessor :other_pages_tray
 
-    # Returns or sets the height of the page in points.             
+    # Gets or sets returns or sets the height of the page in points.             
     attr_accessor :page_height
 
     # Gets or sets the page number format.             
@@ -94,31 +94,31 @@ module AsposeWordsCloud
     # Gets or sets the starting page number of the section.             
     attr_accessor :page_starting_number
 
-    # Returns or sets the width of the page in points.             
+    # Gets or sets returns or sets the width of the page in points.             
     attr_accessor :page_width
 
-    # Returns or sets the paper size.             
+    # Gets or sets returns or sets the paper size.             
     attr_accessor :paper_size
 
-    # True if page numbering restarts at the beginning of the section.             
+    # Gets or sets true if page numbering restarts at the beginning of the section.             
     attr_accessor :restart_page_numbering
 
-    # Returns or sets the distance (in points) between the right edge of the page and the right boundary of the body text.             
+    # Gets or sets returns or sets the distance (in points) between the right edge of the page and the right boundary of the body text.             
     attr_accessor :right_margin
 
     # Gets or sets whether Microsoft Word uses gutters for the section based on a right-to-left language or a left-to-right language.             
     attr_accessor :rtl_gutter
 
-    # Returns or sets the type of section break for the specified object.             
+    # Gets or sets returns or sets the type of section break for the specified object.             
     attr_accessor :section_start
 
-    # True if endnotes are printed at the end of the next section that doesn't suppress endnotes.                 Suppressed endnotes are printed before the endnotes in that section.             
+    # Gets or sets true if endnotes are printed at the end of the next section that doesn't suppress endnotes.                 Suppressed endnotes are printed before the endnotes in that section.             
     attr_accessor :suppress_endnotes
 
-    # Returns or sets the distance (in points) between the top edge of the page and the top boundary of the body text.             
+    # Gets or sets returns or sets the distance (in points) between the top edge of the page and the top boundary of the body text.             
     attr_accessor :top_margin
 
-    # Returns or sets the vertical alignment of text on each page in a document or section.             
+    # Gets or sets returns or sets the vertical alignment of text on each page in a document or section.             
     attr_accessor :vertical_alignment
 
     class EnumAttributeValidator

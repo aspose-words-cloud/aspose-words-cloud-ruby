@@ -31,10 +31,10 @@ module AsposeWordsCloud
 
   # Result of search operation.
   class SearchResult
-    # Link to result range start node.
+    # Gets or sets link to result range start node.
     attr_accessor :range_start
 
-    # Link to result range end node.
+    # Gets or sets link to result range end node.
     attr_accessor :range_end
 
 

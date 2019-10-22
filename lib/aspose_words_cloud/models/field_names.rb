@@ -29,12 +29,12 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # Represents a collection of merge fields within a document. 
+  # Represents a collection of merge fields within a document.
   class FieldNames
-    # Link to the document.
+    # Gets or sets link to the document.
     attr_accessor :link
 
-    # Collection of fields names.
+    # Gets or sets collection of fields names.
     attr_accessor :names
 
 

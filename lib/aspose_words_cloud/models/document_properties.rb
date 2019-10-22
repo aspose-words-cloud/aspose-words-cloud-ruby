@@ -31,10 +31,10 @@ module AsposeWordsCloud
 
   # Collection of document properties.
   class DocumentProperties
-    # Link to the document.
+    # Gets or sets link to the document.
     attr_accessor :link
 
-    # Collection of document properties.
+    # Gets or sets collection of document properties.
     attr_accessor :list
 
 

@@ -1,7 +1,7 @@
 #
 # --------------------------------------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="header_footers_tests.rb">
-#   Copyright (c) 2018 Aspose.Words for Cloud
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -34,17 +34,16 @@ module AsposeWordsCloud
     #
     # Test for inserting header or footer
     #
-    def test_put_header_footer
+    def test_insert_header_footer
       filename = 'HeadersFooters.doc'
-      remote_name = 'TestPutHeaderFooter.doc'
+      remote_name = 'TestInsertHeaderFooter.doc'
       footer_type = "FooterEven"
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
-      @storage_api.put_create st_request
+      upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = PutHeaderFooterRequest.new remote_name, footer_type, remote_test_folder + test_folder
-      result = @words_api.put_header_footer request
-      assert_equal 200, result.code
+      request = InsertHeaderFooterRequest.new remote_name, footer_type, '', remote_test_folder + test_folder
+      result = @words_api.insert_header_footer request
+      assert_equal FALSE, result.nil?
     end
 
     #
@@ -55,12 +54,11 @@ module AsposeWordsCloud
       remote_name = 'TestGetHeaderFooter.doc'
       index = 0
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
-      @storage_api.put_create st_request
+      upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
       request = GetHeaderFooterRequest.new remote_name, index, remote_test_folder + test_folder
       result = @words_api.get_header_footer request
-      assert_equal 200, result.code
+      assert_equal FALSE, result.nil?
     end
 
     #
@@ -70,12 +68,11 @@ module AsposeWordsCloud
       filename = 'HeadersFooters.doc'
       remote_name = 'TestGetHeaderFooters.doc'
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
-      @storage_api.put_create st_request
+      upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = GetHeaderFootersRequest.new remote_name, remote_test_folder + test_folder
+      request = GetHeaderFootersRequest.new remote_name, '', remote_test_folder + test_folder
       result = @words_api.get_header_footers request
-      assert_equal 200, result.code
+      assert_equal FALSE, result.nil?
     end
 
     #
@@ -87,12 +84,11 @@ module AsposeWordsCloud
       index = 0
       section_index = 0
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
-      @storage_api.put_create st_request
+      upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
       request = GetHeaderFooterOfSectionRequest.new remote_name, index, section_index, remote_test_folder + test_folder
       result = @words_api.get_header_footer_of_section request
-      assert_equal 200, result.code
+      assert_equal FALSE, result.nil?
     end
 
     #
@@ -103,12 +99,11 @@ module AsposeWordsCloud
       remote_name = 'TestDeleteHeaderFooter.doc'
       index = 0
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
-      @storage_api.put_create st_request
+      upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = DeleteHeaderFooterRequest.new remote_name, index, remote_test_folder + test_folder
+      request = DeleteHeaderFooterRequest.new remote_name, '', index, remote_test_folder + test_folder
       result = @words_api.delete_header_footer request
-      assert_equal 200, result.code
+      assert_equal TRUE, result.nil?
     end
 
     #
@@ -118,12 +113,11 @@ module AsposeWordsCloud
       filename = 'HeadersFooters.doc'
       remote_name = 'TestDeleteHeadersFooters.doc'
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
-      @storage_api.put_create st_request
+      upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = DeleteHeadersFootersRequest.new remote_name, remote_test_folder + test_folder
+      request = DeleteHeadersFootersRequest.new remote_name, '', remote_test_folder + test_folder
       result = @words_api.delete_headers_footers request
-      assert_equal 200, result.code
+      assert_equal TRUE, result.nil?
     end
   end
 end

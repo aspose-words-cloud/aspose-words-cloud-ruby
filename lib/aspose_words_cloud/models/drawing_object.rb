@@ -31,40 +31,40 @@ module AsposeWordsCloud
 
   # Represents Drawing Object DTO.
   class DrawingObject
-    # Link to the document.
+    # Gets or sets link to the document.
     attr_accessor :link
 
-    # Node id
+    # Gets or sets node id.
     attr_accessor :node_id
 
-    # Height of the drawing object in points.
+    # Gets or sets height of the drawing object in points.
     attr_accessor :height
 
-    # Link to image data. Can be null if shape does not have an image.
+    # Gets or sets link to image data. Can be null if shape does not have an image.
     attr_accessor :image_data_link
 
-    # Distance in points from the origin to the left side of the image.             
+    # Gets or sets distance in points from the origin to the left side of the image.             
     attr_accessor :left
 
-    # Link to ole object. Can be null if shape does not have ole data.
+    # Gets or sets link to ole object. Can be null if shape does not have ole data.
     attr_accessor :ole_data_link
 
-    # Specifies where the distance to the image is measured from.             
+    # Gets or sets specifies where the distance to the image is measured from.             
     attr_accessor :relative_horizontal_position
 
-    # Specifies where the distance to the image measured from.
+    # Gets or sets specifies where the distance to the image measured from.
     attr_accessor :relative_vertical_position
 
-    # A list of links that originate from this .
+    # Gets or sets a list of links that originate from this .
     attr_accessor :render_links
 
-    # Distance in points from the origin to the top side of the image.
+    # Gets or sets distance in points from the origin to the top side of the image.
     attr_accessor :top
 
-    # Width of the drawing objects in points.
+    # Gets or sets width of the drawing objects in points.
     attr_accessor :width
 
-    # Specifies how to wrap text around the image.
+    # Gets or sets specifies how to wrap text around the image.
     attr_accessor :wrap_type
 
     class EnumAttributeValidator

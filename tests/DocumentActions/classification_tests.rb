@@ -1,7 +1,7 @@
 #
 # --------------------------------------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="classification_tests.rb">
-#   Copyright (c) 2018 Aspose.Words for Cloud
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -38,7 +38,7 @@ module AsposeWordsCloud
       request = ClassifyRequest.new "Try text classification", "3"
       result = @words_api.classify request
       
-      assert_equal 200, result.code
+      assert_equal false, result.nil?
     end
 	
     #
@@ -47,13 +47,12 @@ module AsposeWordsCloud
     def test_classify_document
       filename = 'test_multi_pages.docx'
       remote_name = 'Source.docx'
-      
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
-      @storage_api.put_create st_request
+      remote_path = remote_test_folder + '/' + test_folder + '/' + remote_name
+      upload_file File.join(local_common_folder, filename), remote_path
 	  
-	  request = ClassifyDocumentRequest.new remote_name, remote_test_folder + test_folder
+	    request = ClassifyDocumentRequest.new remote_name, remote_test_folder + '/' + test_folder
       result = @words_api.classify_document request
-      assert_equal 200, result.code
+      assert_equal false, result.nil?
     end
 	
     #
@@ -62,14 +61,14 @@ module AsposeWordsCloud
     def test_classify_taxonomy_documents
       filename = 'test_multi_pages.docx'
       remote_name = 'Source.docx'
+      remote_path = remote_test_folder + '/' + test_folder + '/' + remote_name
       taxonomy = 'documents'
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
-      @storage_api.put_create st_request
+      upload_file File.join(local_common_folder, filename), remote_path
 	    
-      request = ClassifyDocumentRequest.new remote_name, remote_test_folder + test_folder, taxonomy: taxonomy
+      request = ClassifyDocumentRequest.new remote_name, remote_test_folder + '/' + test_folder, taxonomy: taxonomy
       
-	  result = @words_api.classify_document request
-      assert_equal 200, result.code
+	    result = @words_api.classify_document request
+      assert_equal false, result.nil?
     end
   end
 end

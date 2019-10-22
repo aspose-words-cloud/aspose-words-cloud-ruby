@@ -1,7 +1,7 @@
 #
 # --------------------------------------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="api_coverage_tests.rb">
-#   Copyright (c) 2018 Aspose.Words for Cloud
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -35,12 +35,14 @@ module AsposeWordsCloud
       require_all '../Common'
       require_all '../DocumentActions'
       require_all '../DocumentElements'
+      require_all '../Storage'
+      require_all '../Range'
       arr = [BookmarksTests, AppendDocumentTests, CommentsTests, CompareDocumentTests, ConvertDocumentTests,
               DocumentStatisticsTests, DocumentTests, LoadWebDocumentTests, RevisionsTests,
               SplitDocumentTests, DocumentPropertiesTests, DocumentProtectionTests, DrawingObjectsTests, FieldsTests,
               FormFieldTests, MailMergeFieldsTests, FootnoteTests, HeaderFootersTests, HyperlinksTests, MacrosTests,
-              ExecuteMailMergeTests, ExecuteTemplateTests, MathObjectsTests, PagesTests, ParagraphsTests, RunsTests,
-              SectionsTests, TablesTests, TextTests, WatermarkTests, FontCacheTests, ClassificationTests]
+              ExecuteMailMergeTests, MathObjectsTests, PagesTests, ParagraphsTests, RunsTests,
+              SectionsTests, TablesTests, TextTests, WatermarkTests, FontCacheTests, ClassificationTests, FileTests, FolderTests, RangeTests]
       test_methods = []
       arr.each {|el| (test_methods << el.instance_methods(false).select{ |m| /test_folder/ !~ m}).flatten! }
       methods = @words_api.public_methods(false).select {|m| /api_client/ !~ m }.map {|m| m.to_s}

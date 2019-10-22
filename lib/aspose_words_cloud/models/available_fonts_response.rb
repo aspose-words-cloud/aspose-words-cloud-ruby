@@ -29,29 +29,25 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # The list of fonts, available for document processing
+  # The list of fonts, available for document processing.
   class AvailableFontsResponse
-    # Response status code.
-    attr_accessor :code
+    # Gets or sets request Id.
+    attr_accessor :request_id
 
-    # Response status.
-    attr_accessor :status
-
-    # The list of addititional fonts, provided by aspose team
+    # Gets or sets the list of addititional fonts, provided by aspose team.
     attr_accessor :additional_fonts
 
-    # Custom user fonts (from user file storage). To use them, you should specify \"fontsLocation\" parameter in any request
+    # Gets or sets custom user fonts (from user file storage). To use them, you should specify \"fontsLocation\" parameter in any request.
     attr_accessor :custom_fonts
 
-    # The list of system fonts, availiable on the server
+    # Gets or sets the list of system fonts, availiable on the server.
     attr_accessor :system_fonts
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'code' => :'Code',
-        :'status' => :'Status',
+        :'request_id' => :'RequestId',
         :'additional_fonts' => :'AdditionalFonts',
         :'custom_fonts' => :'CustomFonts',
         :'system_fonts' => :'SystemFonts'
@@ -61,8 +57,7 @@ module AsposeWordsCloud
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'code' => :'Integer',
-        :'status' => :'String',
+        :'request_id' => :'String',
         :'additional_fonts' => :'Array<FontInfo>',
         :'custom_fonts' => :'Array<FontInfo>',
         :'system_fonts' => :'Array<FontInfo>'
@@ -77,12 +72,8 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'Code')
-        self.code = attributes[:'Code']
-      end
-
-      if attributes.key?(:'Status')
-        self.status = attributes[:'Status']
+      if attributes.key?(:'RequestId')
+        self.request_id = attributes[:'RequestId']
       end
 
       if attributes.key?(:'AdditionalFonts')
@@ -109,17 +100,12 @@ module AsposeWordsCloud
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = []
-      if @code.nil?
-        invalid_properties.push("invalid value for 'code', code cannot be nil.")
-      end
-
       return invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @code.nil?
       return true
     end
 
@@ -128,8 +114,7 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          code == other.code &&
-          status == other.status &&
+          request_id == other.request_id &&
           additional_fonts == other.additional_fonts &&
           custom_fonts == other.custom_fonts &&
           system_fonts == other.system_fonts
@@ -144,7 +129,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [code, status, additional_fonts, custom_fonts, system_fonts].hash
+      [request_id, additional_fonts, custom_fonts, system_fonts].hash
     end
 
     # Builds the object from hash

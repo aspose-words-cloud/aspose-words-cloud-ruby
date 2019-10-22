@@ -1,7 +1,7 @@
 #
 # --------------------------------------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="math_objects_tests.rb">
-#   Copyright (c) 2018 Aspose.Words for Cloud
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -39,12 +39,26 @@ module AsposeWordsCloud
       remote_name = 'TestDeleteOfficeMathObject.docx'
       index = 0
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
-      @storage_api.put_create st_request
+      upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = DeleteOfficeMathObjectRequest.new remote_name, index, remote_test_folder + test_folder
+      request = DeleteOfficeMathObjectRequest.new remote_name, '', index, remote_test_folder + test_folder
       result = @words_api.delete_office_math_object request
-      assert_equal 200, result.code
+      assert_equal TRUE, result.nil?
+    end
+
+    #
+    # Test for removing math object from document without node path
+    #
+    def test_delete_office_math_object_without_node_path
+      filename = 'MathObjects.docx'
+      remote_name = 'TestDeleteOfficeMathObjectWithoutNodePath.docx'
+      index = 0
+
+      upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
+
+      request = DeleteOfficeMathObjectWithoutNodePathRequest.new remote_name, index, remote_test_folder + test_folder
+      result = @words_api.delete_office_math_object_without_node_path request
+      assert_equal TRUE, result.nil?
     end
 
     #
@@ -55,12 +69,26 @@ module AsposeWordsCloud
       remote_name = 'TestGetOfficeMathObject.docx'
       index = 0
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
-      @storage_api.put_create st_request
+      upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = GetOfficeMathObjectRequest.new remote_name, index, remote_test_folder + test_folder
+      request = GetOfficeMathObjectRequest.new remote_name, '', index, remote_test_folder + test_folder
       result = @words_api.get_office_math_object request
-      assert_equal 200, result.code
+      assert_equal FALSE, result.nil?
+    end
+
+    #
+    # Test for getting math object from document without node path
+    #
+    def test_get_office_math_object_without_node_path
+      filename = 'MathObjects.docx'
+      remote_name = 'TestGetOfficeMathObjectWithoutNodePath.docx'
+      index = 0
+
+      upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
+
+      request = GetOfficeMathObjectWithoutNodePathRequest.new remote_name, index, remote_test_folder + test_folder
+      result = @words_api.get_office_math_object_without_node_path request
+      assert_equal FALSE, result.nil?
     end
 
     #
@@ -70,12 +98,25 @@ module AsposeWordsCloud
       filename = 'MathObjects.docx'
       remote_name = 'TestGetOfficeMathObjects.docx'
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
-      @storage_api.put_create st_request
+      upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = GetOfficeMathObjectsRequest.new remote_name, remote_test_folder + test_folder
+      request = GetOfficeMathObjectsRequest.new remote_name, '', remote_test_folder + test_folder
       result = @words_api.get_office_math_objects request
-      assert_equal 200, result.code
+      assert_equal FALSE, result.nil?
+    end
+
+    #
+    # Test for getting math object from document without node path
+    #
+    def test_get_office_math_objects_without_node_path
+      filename = 'MathObjects.docx'
+      remote_name = 'TestGetOfficeMathObjectsWithoutNodePath.docx'
+
+      upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
+
+      request = GetOfficeMathObjectsWithoutNodePathRequest.new remote_name, remote_test_folder + test_folder
+      result = @words_api.get_office_math_objects_without_node_path request
+      assert_equal FALSE, result.nil?
     end
 
     #
@@ -87,11 +128,26 @@ module AsposeWordsCloud
       index = 0
       format = 'png'
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
-      @storage_api.put_create st_request
+      upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = RenderMathObjectRequest.new remote_name, format, index, remote_test_folder + test_folder
+      request = RenderMathObjectRequest.new remote_name, format, '', index, remote_test_folder + test_folder
       result = @words_api.render_math_object request
+      assert result.length > 0, 'Error occurred while rendering'
+    end
+
+    #
+    # Test for getting math object from document
+    #
+    def test_render_math_object_without_node_path
+      filename = 'MathObjects.docx'
+      remote_name = 'TestRenderMathObjectWithoutNodePath.docx'
+      index = 0
+      format = 'png'
+
+      upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
+
+      request = RenderMathObjectWithoutNodePathRequest.new remote_name, format, index, remote_test_folder + test_folder
+      result = @words_api.render_math_object_without_node_path request
       assert result.length > 0, 'Error occurred while rendering'
     end
   end

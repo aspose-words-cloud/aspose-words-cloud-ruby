@@ -29,12 +29,12 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # Container for the footnotes statistical data
+  # Container for the footnotes statistical data.
   class FootnotesStatData
-    # Total count of words in footnotes
+    # Gets or sets total count of words in footnotes.
     attr_accessor :word_count
 
-    # Total count of paragraphs in footnotes
+    # Gets or sets total count of paragraphs in footnotes.
     attr_accessor :paragraph_count
 
 

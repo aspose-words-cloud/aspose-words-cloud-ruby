@@ -31,10 +31,10 @@ module AsposeWordsCloud
 
   # Represents DTO for collection of formfields.
   class FormFieldCollection
-    # Link to the document.
+    # Gets or sets link to the document.
     attr_accessor :link
 
-    # Collection of formfields
+    # Gets or sets collection of formfields.
     attr_accessor :list
 
 

@@ -1,7 +1,7 @@
 #
 # --------------------------------------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="error_handling_tests.rb">
-#   Copyright (c) 2018 Aspose.Words for Cloud
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -37,9 +37,10 @@ module AsposeWordsCloud
       begin
         @words_api.get_section request
         assert_throws 'FAILED'
+      rescue ApiError => e
+        assert_equal 404, e.code
+      rescue
       end
-    rescue ApiError => e
-      assert_equal 400, e.code
     end
   end
 end

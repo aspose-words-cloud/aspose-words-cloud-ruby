@@ -1,7 +1,7 @@
 #
 # --------------------------------------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="bookmarks_tests.rb">
-#   Copyright (c) 2018 Aspose.Words for Cloud
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -34,50 +34,47 @@ module AsposeWordsCloud
     #
     # Test for getting document bookmark by name
     #
-    def test_get_document_bookmark_by_name
+    def test_get_bookmark_by_name
       filename = 'test_multi_pages.docx'
-      remote_name = 'TestGetDocumentBookmarkByName.docx'
+      remote_name = 'TestGetBookmarkByName.docx'
       bookmark_name = 'aspose'
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
-      @storage_api.put_create st_request
+      upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = GetDocumentBookmarkByNameRequest.new remote_name, bookmark_name, remote_test_folder + test_folder
-      result = @words_api.get_document_bookmark_by_name request
-      assert_equal 200, result.code
+      request = GetBookmarkByNameRequest.new remote_name, bookmark_name, remote_test_folder + test_folder
+      result = @words_api.get_bookmark_by_name request
+      assert_equal FALSE, result.nil?
     end
 
     #
     # Test for getting all bookmarks from document
     #
-    def test_get_document_bookmarks
+    def test_get_bookmarks
       filename = 'test_multi_pages.docx'
-      remote_name = 'TestGetDocumentBookmarks.docx'
+      remote_name = 'TestGetBookmarks.docx'
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
-      @storage_api.put_create st_request
+      upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = GetDocumentBookmarksRequest.new remote_name, remote_test_folder + test_folder
-      result = @words_api.get_document_bookmarks request
-      assert_equal 200, result.code
+      request = GetBookmarksRequest.new remote_name, remote_test_folder + test_folder
+      result = @words_api.get_bookmarks request
+      assert_equal FALSE, result.nil?
     end
 
     #
     # Test for updating document bookmark
     #
-    def test_post_update_document_bookmark
+    def test_update_bookmark
       filename = 'test_multi_pages.docx'
-      remote_name = 'TestPostUpdateDocumentBookmark.docx'
+      remote_name = 'TestUpdateBookmark.docx'
       dest_name = remote_test_out + remote_name
       bookmark_name = 'aspose'
       body = BookmarkData.new({:Name => bookmark_name, :Text => 'This will be the text for Aspose'})
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
-      @storage_api.put_create st_request
+      upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = PostUpdateDocumentBookmarkRequest.new remote_name, body, bookmark_name, remote_test_folder + test_folder, :dest_file_name => dest_name
-      result = @words_api.post_update_document_bookmark request
-      assert_equal 200, result.code
+      request = UpdateBookmarkRequest.new remote_name, body, bookmark_name, remote_test_folder + test_folder, :dest_file_name => dest_name
+      result = @words_api.update_bookmark request
+      assert_equal FALSE, result.nil?
     end
   end
 end

@@ -31,10 +31,10 @@ module AsposeWordsCloud
 
   # Represents a position in the document tree.
   class DocumentPosition
-    # Link to  node.
+    # Gets or sets link to  node.
     attr_accessor :node
 
-    # Offset into the node.
+    # Gets or sets offset into the node.
     attr_accessor :offset
 
 

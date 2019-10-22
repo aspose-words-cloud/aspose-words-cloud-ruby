@@ -29,18 +29,18 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # Section element
+  # Section element.
   class HeaderFooter
-    # Link to the document.
+    # Gets or sets link to the document.
     attr_accessor :link
 
-    # Paragraph's text
+    # Gets or sets paragraph's text.
     attr_accessor :type
 
-    # Link to DrawingObjects resource
+    # Gets or sets link to DrawingObjects resource.
     attr_accessor :drawing_objects
 
-    # Link to Paragraphs resource
+    # Gets or sets link to Paragraphs resource.
     attr_accessor :paragraphs
 
     class EnumAttributeValidator

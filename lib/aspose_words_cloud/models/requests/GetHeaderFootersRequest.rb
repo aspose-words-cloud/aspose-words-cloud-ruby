@@ -34,35 +34,35 @@ module AsposeWordsCloud
 
         # The document name.
         attr_accessor :name
+        # Path to parent section.
+        attr_accessor :section_path
         # Original document folder.
         attr_accessor :folder
-        # File storage, which have to be used.
+        # Original document storage.
         attr_accessor :storage
         # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         attr_accessor :load_encoding
         # Password for opening an encrypted document.
         attr_accessor :password
-        # Path to parent section.
-        attr_accessor :section_path
         # List of types of headers and footers.
         attr_accessor :filter_by_type
 	
         #
         # Initializes a new instance.
         # @param name The document name.
+        # @param section_path Path to parent section.
         # @param folder Original document folder.
-        # @param storage File storage, which have to be used.
+        # @param storage Original document storage.
         # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         # @param password Password for opening an encrypted document.
-        # @param section_path Path to parent section.
         # @param filter_by_type List of types of headers and footers.
-        def initialize(name, folder = nil, storage = nil, load_encoding = nil, password = nil, section_path = nil, filter_by_type = nil)
+        def initialize(name, section_path, folder = nil, storage = nil, load_encoding = nil, password = nil, filter_by_type = nil)
            self.name = name
+           self.section_path = section_path
            self.folder = folder
            self.storage = storage
            self.load_encoding = load_encoding
            self.password = password
-           self.section_path = section_path
            self.filter_by_type = filter_by_type
         end
   end

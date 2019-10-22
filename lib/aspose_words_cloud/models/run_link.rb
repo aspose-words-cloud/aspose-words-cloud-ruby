@@ -29,15 +29,15 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # Run link element
+  # Run link element.
   class RunLink
-    # Link to the document.
+    # Gets or sets link to the document.
     attr_accessor :link
 
-    # Node id
+    # Gets or sets node id.
     attr_accessor :node_id
 
-    # Run's text
+    # Gets or sets run's text.
     attr_accessor :text
 
 

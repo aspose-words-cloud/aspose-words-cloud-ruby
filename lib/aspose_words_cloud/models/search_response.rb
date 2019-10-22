@@ -29,26 +29,22 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # This response should be returned by the service when handling: GET http://api.aspose.com/v1.1/words/Test.doc/search 
+  # This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/search.
   class SearchResponse
-    # Response status code.
-    attr_accessor :code
+    # Gets or sets request Id.
+    attr_accessor :request_id
 
-    # Response status.
-    attr_accessor :status
-
-    # A regular expression pattern used to find matches.
+    # Gets or sets a regular expression pattern used to find matches.
     attr_accessor :searching_pattern
 
-    # Collection of search results.
+    # Gets or sets collection of search results.
     attr_accessor :search_results
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'code' => :'Code',
-        :'status' => :'Status',
+        :'request_id' => :'RequestId',
         :'searching_pattern' => :'SearchingPattern',
         :'search_results' => :'SearchResults'
       }
@@ -57,8 +53,7 @@ module AsposeWordsCloud
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'code' => :'Integer',
-        :'status' => :'String',
+        :'request_id' => :'String',
         :'searching_pattern' => :'String',
         :'search_results' => :'SearchResultsCollection'
       }
@@ -72,12 +67,8 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'Code')
-        self.code = attributes[:'Code']
-      end
-
-      if attributes.key?(:'Status')
-        self.status = attributes[:'Status']
+      if attributes.key?(:'RequestId')
+        self.request_id = attributes[:'RequestId']
       end
 
       if attributes.key?(:'SearchingPattern')
@@ -94,17 +85,12 @@ module AsposeWordsCloud
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = []
-      if @code.nil?
-        invalid_properties.push("invalid value for 'code', code cannot be nil.")
-      end
-
       return invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @code.nil?
       return true
     end
 
@@ -113,8 +99,7 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          code == other.code &&
-          status == other.status &&
+          request_id == other.request_id &&
           searching_pattern == other.searching_pattern &&
           search_results == other.search_results
     end
@@ -128,7 +113,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [code, status, searching_pattern, search_results].hash
+      [request_id, searching_pattern, search_results].hash
     end
 
     # Builds the object from hash

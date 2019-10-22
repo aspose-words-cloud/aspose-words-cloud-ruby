@@ -29,22 +29,22 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # Table element
+  # Table element.
   class TableInsert
-    # Table will be inserted before specified position.
-    attr_accessor :postion
+    # Gets or sets table will be inserted before specified position.
+    attr_accessor :position
 
-    # Count of columns. Default is 2.
+    # Gets or sets count of columns. Default is 2.
     attr_accessor :columns_count
 
-    # Count of rows. Default is 2.
+    # Gets or sets count of rows. Default is 2.
     attr_accessor :rows_count
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'postion' => :'Postion',
+        :'position' => :'Position',
         :'columns_count' => :'ColumnsCount',
         :'rows_count' => :'RowsCount'
       }
@@ -53,7 +53,7 @@ module AsposeWordsCloud
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'postion' => :'DocumentPosition',
+        :'position' => :'DocumentPosition',
         :'columns_count' => :'Integer',
         :'rows_count' => :'Integer'
       }
@@ -67,8 +67,8 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'Postion')
-        self.postion = attributes[:'Postion']
+      if attributes.key?(:'Position')
+        self.position = attributes[:'Position']
       end
 
       if attributes.key?(:'ColumnsCount')
@@ -109,7 +109,7 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          postion == other.postion &&
+          position == other.position &&
           columns_count == other.columns_count &&
           rows_count == other.rows_count
     end
@@ -123,7 +123,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [postion, columns_count, rows_count].hash
+      [position, columns_count, rows_count].hash
     end
 
     # Builds the object from hash

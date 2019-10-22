@@ -31,22 +31,22 @@ module AsposeWordsCloud
 
   # Container class for text save options.
   class TextSaveOptionsData
-    # Gets or sets a value determining how colors are rendered. { Normal | Grayscale}
+    # Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.
     attr_accessor :color_mode
 
-    # format of save
+    # Gets or sets format of save.
     attr_accessor :save_format
 
-    # name of destination file
+    # Gets or sets name of destination file.
     attr_accessor :file_name
 
-    # Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }
+    # Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.
     attr_accessor :dml_rendering_mode
 
-    # Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }
+    # Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }.
     attr_accessor :dml_effects_rendering_mode
 
-    # Controls zip output or not. Default value is false.
+    # Gets or sets controls zip output or not. Default value is false.
     attr_accessor :zip_output
 
     # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
@@ -55,27 +55,51 @@ module AsposeWordsCloud
     # Gets or sets value determining whether content of  is updated before saving.
     attr_accessor :update_sdt_content
 
-    # Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is true
+    # Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true
     attr_accessor :update_fields
 
-    # Specifies the encoding to use when exporting in plain text format
+    # Gets or sets specifies whether to add bi-directional marks before each BiDi run when exporting in plain text format. The default value is true.
+    attr_accessor :add_bidi_marks
+
+    # Gets or sets specifies the encoding to use when exporting in plain text format.
     attr_accessor :encoding
 
-    # Specifies whether to output headers and footers when exporting in plain text format
-    attr_accessor :export_headers_footers
+    # Gets or sets specifies whether to output headers and footers when exporting in plain text format. default value is TxtExportHeadersFootersMode.PrimaryOnly.
+    attr_accessor :export_headers_footers_mode
 
-    # Allows to specify whether the page breaks should be preserved during export. The default value is false.
+    # Gets or sets allows to specify whether the page breaks should be preserved during export. The default value is false.
     attr_accessor :force_page_breaks
 
-    # Specifies the string to use as a paragraph break when exporting in plain text format
+    # Gets or sets specifies the string to use as a paragraph break when exporting in plain text format.
     attr_accessor :paragraph_break
 
-    # Specifies whether the program should attempt to preserve layout of tables when saving in the plain text format
+    # Gets or sets specifies whether the program should attempt to preserve layout of tables when saving in the plain text format.
     attr_accessor :preserve_table_layout
 
-    # Specifies whether the program should simplify list labels in case of complex label formatting not being adequately represented by plain text
+    # Gets or sets specifies whether the program should simplify list labels in case of complex label formatting not being adequately represented by plain text.
     attr_accessor :simplify_list_labels
 
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -89,8 +113,9 @@ module AsposeWordsCloud
         :'update_last_saved_time_property' => :'UpdateLastSavedTimeProperty',
         :'update_sdt_content' => :'UpdateSdtContent',
         :'update_fields' => :'UpdateFields',
+        :'add_bidi_marks' => :'AddBidiMarks',
         :'encoding' => :'Encoding',
-        :'export_headers_footers' => :'ExportHeadersFooters',
+        :'export_headers_footers_mode' => :'ExportHeadersFootersMode',
         :'force_page_breaks' => :'ForcePageBreaks',
         :'paragraph_break' => :'ParagraphBreak',
         :'preserve_table_layout' => :'PreserveTableLayout',
@@ -110,8 +135,9 @@ module AsposeWordsCloud
         :'update_last_saved_time_property' => :'BOOLEAN',
         :'update_sdt_content' => :'BOOLEAN',
         :'update_fields' => :'BOOLEAN',
+        :'add_bidi_marks' => :'BOOLEAN',
         :'encoding' => :'String',
-        :'export_headers_footers' => :'BOOLEAN',
+        :'export_headers_footers_mode' => :'String',
         :'force_page_breaks' => :'BOOLEAN',
         :'paragraph_break' => :'String',
         :'preserve_table_layout' => :'BOOLEAN',
@@ -163,12 +189,16 @@ module AsposeWordsCloud
         self.update_fields = attributes[:'UpdateFields']
       end
 
+      if attributes.key?(:'AddBidiMarks')
+        self.add_bidi_marks = attributes[:'AddBidiMarks']
+      end
+
       if attributes.key?(:'Encoding')
         self.encoding = attributes[:'Encoding']
       end
 
-      if attributes.key?(:'ExportHeadersFooters')
-        self.export_headers_footers = attributes[:'ExportHeadersFooters']
+      if attributes.key?(:'ExportHeadersFootersMode')
+        self.export_headers_footers_mode = attributes[:'ExportHeadersFootersMode']
       end
 
       if attributes.key?(:'ForcePageBreaks')
@@ -199,7 +229,23 @@ module AsposeWordsCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      export_headers_footers_mode_validator = EnumAttributeValidator.new('String', ["None", "PrimaryOnly", "AllAtEnd"])
+      return false unless export_headers_footers_mode_validator.valid?(@export_headers_footers_mode)
       return true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] export_headers_footers_mode Object to be assigned
+    def export_headers_footers_mode=(export_headers_footers_mode)
+      validator = EnumAttributeValidator.new('String', ["None", "PrimaryOnly", "AllAtEnd"])
+      if export_headers_footers_mode.to_i == 0
+        unless validator.valid?(export_headers_footers_mode)
+          raise ArgumentError, "invalid value for 'export_headers_footers_mode', must be one of #{validator.allowable_values}."
+        end
+        @export_headers_footers_mode = export_headers_footers_mode
+      else
+        @export_headers_footers_mode = validator.allowable_values[export_headers_footers_mode.to_i]
+      end
     end
 
     # Checks equality by comparing each attribute.
@@ -216,8 +262,9 @@ module AsposeWordsCloud
           update_last_saved_time_property == other.update_last_saved_time_property &&
           update_sdt_content == other.update_sdt_content &&
           update_fields == other.update_fields &&
+          add_bidi_marks == other.add_bidi_marks &&
           encoding == other.encoding &&
-          export_headers_footers == other.export_headers_footers &&
+          export_headers_footers_mode == other.export_headers_footers_mode &&
           force_page_breaks == other.force_page_breaks &&
           paragraph_break == other.paragraph_break &&
           preserve_table_layout == other.preserve_table_layout &&
@@ -233,7 +280,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [color_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, encoding, export_headers_footers, force_page_breaks, paragraph_break, preserve_table_layout, simplify_list_labels].hash
+      [color_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, add_bidi_marks, encoding, export_headers_footers_mode, force_page_breaks, paragraph_break, preserve_table_layout, simplify_list_labels].hash
     end
 
     # Builds the object from hash

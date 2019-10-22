@@ -1,7 +1,7 @@
 #
 # --------------------------------------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="text_tests.rb">
-#   Copyright (c) 2018 Aspose.Words for Cloud
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -32,35 +32,19 @@ module AsposeWordsCloud
     end
 
     #
-    # Test for getting text
-    #
-    def test_get_document_text_items
-      filename = 'test_multi_pages.docx'
-      remote_name = 'TestGetDocumentTextItems.docx'
-
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
-      @storage_api.put_create st_request
-
-      request = GetDocumentTextItemsRequest.new remote_name, remote_test_folder + test_folder
-      result = @words_api.get_document_text_items request
-      assert_equal 200, result.code
-    end
-
-    #
     # Test for replacing text
     #
-    def test_post_replace_text
+    def test_replace_text
       filename = 'test_multi_pages.docx'
-      remote_name = 'TestPostReplaceText.docx'
+      remote_name = 'TestReplaceText.docx'
       dest_name = remote_test_out + remote_name
-      body = ReplaceTextRequest.new({:OldValue => 'aspose', :NewValue => 'aspose new'})
+      body = ReplaceTextParameters.new({:OldValue => 'aspose', :NewValue => 'aspose new'})
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
-      @storage_api.put_create st_request
+      upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = PostReplaceTextRequest.new remote_name, body, remote_test_folder + test_folder, :dest_file_name => dest_name
-      result = @words_api.post_replace_text request
-      assert_equal 200, result.code
+      request = ReplaceTextRequest.new remote_name, body, remote_test_folder + test_folder, :dest_file_name => dest_name
+      result = @words_api.replace_text request
+      assert_equal FALSE, result.nil?
     end
 
     #
@@ -71,12 +55,11 @@ module AsposeWordsCloud
       remote_name = 'TestSearch.docx'
       pattern = 'aspose'
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
-      @storage_api.put_create st_request
+      upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
       request = SearchRequest.new remote_name, pattern, remote_test_folder + test_folder
       result = @words_api.search request
-      assert_equal 200, result.code
+      assert_equal FALSE, result.nil?
     end
   end
 end

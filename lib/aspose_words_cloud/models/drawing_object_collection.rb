@@ -31,10 +31,10 @@ module AsposeWordsCloud
 
   # Represents drawing objects collection DTO.
   class DrawingObjectCollection
-    # Link to the document.
+    # Gets or sets link to the document.
     attr_accessor :link
 
-    # Collection of DrawingObjects links 
+    # Gets or sets collection of DrawingObjects links.
     attr_accessor :list
 
 

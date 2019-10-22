@@ -1,7 +1,7 @@
 #
 # --------------------------------------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="document_protection_tests.rb">
-#   Copyright (c) 2018 Aspose.Words for Cloud
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -38,62 +38,58 @@ module AsposeWordsCloud
       filename = 'test_multi_pages.docx'
       remote_name = 'TestGetDocumentProtection.docx'
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
-      @storage_api.put_create st_request
+      upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
       request = GetDocumentProtectionRequest.new remote_name, remote_test_folder + test_folder
       result = @words_api.get_document_protection request
-      assert_equal 200, result.code
+      assert_equal false, result.nil?
     end
 
     #
     # Test for inserting document protection
     #
-    def test_put_protect_document
+    def test_protect_document
       filename = 'test_multi_pages.docx'
-      remote_name = 'TestPutProtectDocument.docx'
+      remote_name = 'TestProtectDocument.docx'
       dest_name = remote_test_out + remote_name
       body = ProtectionRequest.new({:NewPassword => '123'})
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
-      @storage_api.put_create st_request
+      upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = PutProtectDocumentRequest.new remote_name, body, remote_test_folder + test_folder, nil,
+      request = ProtectDocumentRequest.new remote_name, body, remote_test_folder + test_folder, nil,
                                               nil, nil, dest_name
-      result = @words_api.put_protect_document request
-      assert_equal 200, result.code
+      result = @words_api.protect_document request
+      assert_equal false, result.nil?
     end
 
     #
     # Test for updating document protection
     #
-    def test_post_change_document_protection
+    def test_change_document_protection
       filename = 'test_multi_pages.docx'
-      remote_name = 'TestPostChangeDocumentProtection.docx'
+      remote_name = 'TestChangeDocumentProtection.docx'
       body = ProtectionRequest.new({:NewPassword => ''})
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_common_folder + filename, "r").read
-      @storage_api.put_create st_request
+      upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = PostChangeDocumentProtectionRequest.new remote_name, body, remote_test_folder + test_folder
-      result = @words_api.post_change_document_protection request
-      assert_equal 200, result.code
+      request = ProtectDocumentRequest.new remote_name, body, remote_test_folder + test_folder
+      result = @words_api.protect_document request
+      assert_equal false, result.nil?
     end
 
     #
     # Test for removing document protection
     #
-    def test_delete_unprotect_document
+    def test_unprotect_document
       filename = 'SampleProtectedBlankWordDocument.docx'
-      remote_name = 'TestDeleteUnprotectDocument.docx'
+      remote_name = 'TestUnprotectDocument.docx'
       body = ProtectionRequest.new({:Password => 'aspose'})
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read
-      @storage_api.put_create st_request
+      upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = DeleteUnprotectDocumentRequest.new remote_name, body, remote_test_folder + test_folder
-      result = @words_api.delete_unprotect_document request
-      assert_equal 200, result.code
+      request = UnprotectDocumentRequest.new remote_name, body, remote_test_folder + test_folder
+      result = @words_api.unprotect_document request
+      assert_equal false, result.nil?
     end
   end
 end

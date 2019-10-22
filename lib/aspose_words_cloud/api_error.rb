@@ -46,6 +46,10 @@ module AsposeWordsCloud
         arg.each do |k, v|
           instance_variable_set "@#{k}", v
         end
+        
+        unless response_body.empty?
+          instance_variable_set "@response_error", ResponseError.new(JSON.parse(response_body))
+        end
       else
         super arg
       end

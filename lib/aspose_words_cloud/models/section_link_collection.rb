@@ -29,12 +29,12 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # Collection of links to sections
+  # Collection of links to sections.
   class SectionLinkCollection
-    # Link to the document.
+    # Gets or sets link to the document.
     attr_accessor :link
 
-    # Collection of section's links
+    # Gets or sets collection of section's links.
     attr_accessor :section_link_list
 
 

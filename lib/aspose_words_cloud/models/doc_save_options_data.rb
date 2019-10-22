@@ -29,24 +29,24 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # container class for doc/dot save options
+  # container class for doc/dot save options.
   class DocSaveOptionsData
-    # Gets or sets a value determining how colors are rendered. { Normal | Grayscale}
+    # Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.
     attr_accessor :color_mode
 
-    # format of save
+    # Gets or sets format of save.
     attr_accessor :save_format
 
-    # name of destination file
+    # Gets or sets name of destination file.
     attr_accessor :file_name
 
-    # Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }
+    # Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.
     attr_accessor :dml_rendering_mode
 
-    # Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }
+    # Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }.
     attr_accessor :dml_effects_rendering_mode
 
-    # Controls zip output or not. Default value is false.
+    # Gets or sets controls zip output or not. Default value is false.
     attr_accessor :zip_output
 
     # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
@@ -55,13 +55,16 @@ module AsposeWordsCloud
     # Gets or sets value determining whether content of  is updated before saving.
     attr_accessor :update_sdt_content
 
-    # Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is true
+    # Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true
     attr_accessor :update_fields
 
-    # Password
+    # Gets or sets password.
     attr_accessor :password
 
-    # Determine whether or not save RoutingSlip data saved to output document
+    # Gets or sets When false, PictureBullet data is not saved to output document. Default value is true.
+    attr_accessor :save_picture_bullet
+
+    # Gets or sets determine whether or not save RoutingSlip data saved to output document.
     attr_accessor :save_routing_slip
 
 
@@ -78,6 +81,7 @@ module AsposeWordsCloud
         :'update_sdt_content' => :'UpdateSdtContent',
         :'update_fields' => :'UpdateFields',
         :'password' => :'Password',
+        :'save_picture_bullet' => :'SavePictureBullet',
         :'save_routing_slip' => :'SaveRoutingSlip'
       }
     end
@@ -95,6 +99,7 @@ module AsposeWordsCloud
         :'update_sdt_content' => :'BOOLEAN',
         :'update_fields' => :'BOOLEAN',
         :'password' => :'String',
+        :'save_picture_bullet' => :'BOOLEAN',
         :'save_routing_slip' => :'BOOLEAN'
       }
     end
@@ -147,6 +152,10 @@ module AsposeWordsCloud
         self.password = attributes[:'Password']
       end
 
+      if attributes.key?(:'SavePictureBullet')
+        self.save_picture_bullet = attributes[:'SavePictureBullet']
+      end
+
       if attributes.key?(:'SaveRoutingSlip')
         self.save_routing_slip = attributes[:'SaveRoutingSlip']
       end
@@ -181,6 +190,7 @@ module AsposeWordsCloud
           update_sdt_content == other.update_sdt_content &&
           update_fields == other.update_fields &&
           password == other.password &&
+          save_picture_bullet == other.save_picture_bullet &&
           save_routing_slip == other.save_routing_slip
     end
 
@@ -193,7 +203,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [color_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, password, save_routing_slip].hash
+      [color_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, password, save_picture_bullet, save_routing_slip].hash
     end
 
     # Builds the object from hash

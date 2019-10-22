@@ -29,18 +29,18 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # Font info
+  # Font info.
   class FontInfo
-    # Family name of the font.
+    # Gets or sets family name of the font.
     attr_accessor :font_family_name
 
-    # Full name of the font.
+    # Gets or sets full name of the font.
     attr_accessor :full_font_name
 
-    # Version string of the font.
+    # Gets or sets version string of the font.
     attr_accessor :version
 
-    # Path to the font file if any.
+    # Gets or sets path to the font file if any.
     attr_accessor :file_path
 
 

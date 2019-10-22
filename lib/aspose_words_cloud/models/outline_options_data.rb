@@ -29,24 +29,24 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # container class for outline options
+  # container class for outline options.
   class OutlineOptionsData
-    # Allows to specify individual bookmarks outline level
+    # Gets or sets allows to specify individual bookmarks outline level.
     attr_accessor :bookmarks_outline_levels
 
-    # Specifies the default level in the document outline at which to display Word bookmarks
+    # Gets or sets specifies the default level in the document outline at which to display Word bookmarks.
     attr_accessor :default_bookmarks_outline_level
 
     # Gets or sets a value determining whether or not to create missing outline levels     when the document is exported.     Default value for this property is false.
     attr_accessor :create_missing_outline_levels
 
-    # Specifies whether or not to create outlines for headings (paragraphs formatted     with the Heading styles) inside tables.
+    # Gets or sets specifies whether or not to create outlines for headings (paragraphs formatted     with the Heading styles) inside tables.
     attr_accessor :create_outlines_for_headings_in_tables
 
-    # Specifies how many levels in the document outline to show expanded when the file is viewed
+    # Gets or sets specifies how many levels in the document outline to show expanded when the file is viewed.
     attr_accessor :expanded_outline_levels
 
-    # Specifies how many levels of headings (paragraphs formatted with the Heading styles) to include in the document outline
+    # Gets or sets specifies how many levels of headings (paragraphs formatted with the Heading styles) to include in the document outline.
     attr_accessor :headings_outline_levels
 
 

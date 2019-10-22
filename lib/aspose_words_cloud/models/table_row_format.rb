@@ -31,13 +31,13 @@ module AsposeWordsCloud
 
   # Represents all formatting for a table row.
   class TableRowFormat
-    # Link to the document.
+    # Gets or sets link to the document.
     attr_accessor :link
 
-    # True if the text in a table row is allowed to split across a page break.
+    # Gets or sets true if the text in a table row is allowed to split across a page break.
     attr_accessor :allow_break_across_pages
 
-    # True if the row is repeated as a table heading on every page when the table spans more than one page.
+    # Gets or sets true if the row is repeated as a table heading on every page when the table spans more than one page.
     attr_accessor :heading_format
 
     # Gets or sets the height of the table row in points.

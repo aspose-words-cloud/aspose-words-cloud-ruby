@@ -31,7 +31,7 @@ module AsposeWordsCloud
 
   # Preferred width.
   class PreferredWidth
-    # Gets the unit of measure used for this preferred width value.
+    # Gets or sets the unit of measure used for this preferred width value.
     attr_accessor :type
 
     # Gets or sets the preferred width value. The unit of measure is specified in the  property.

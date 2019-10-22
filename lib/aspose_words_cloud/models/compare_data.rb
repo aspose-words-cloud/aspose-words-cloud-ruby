@@ -29,15 +29,15 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # Container class for compare documents
+  # Container class for compare documents.
   class CompareData
-    # Path to document to compare at the server.
+    # Gets or sets path to document to compare at the server.
     attr_accessor :comparing_with_document
 
-    # Initials of the author to use for revisions.
+    # Gets or sets initials of the author to use for revisions.
     attr_accessor :author
 
-    # The date and time to use for revisions.             
+    # Gets or sets the date and time to use for revisions.             
     attr_accessor :date_time
 
 

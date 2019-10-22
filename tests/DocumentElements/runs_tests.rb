@@ -1,7 +1,7 @@
 #
 # --------------------------------------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="runs_tests.rb">
-#   Copyright (c) 2018 Aspose.Words for Cloud
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -39,45 +39,42 @@ module AsposeWordsCloud
       remote_name = 'TestDeleteRun.docx'
       index = 0
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
-      @storage_api.put_create st_request
+      upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
       request = DeleteRunRequest.new remote_name, 'paragraphs/1', index, remote_test_folder + test_folder
       result = @words_api.delete_run request
-      assert_equal 200, result.code
+      assert_equal TRUE, result.nil?
     end
 
     #
     # Test for updating run
     #
-    def test_post_run
+    def test_update_run
       filename = 'Run.doc'
-      remote_name = 'TestPostRun.docx'
+      remote_name = 'TestUpdateRun.docx'
       index = 0
       run = Run.new({:Text => 'Run with text'})
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
-      @storage_api.put_create st_request
+      upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = PostRunRequest.new remote_name, run, 'paragraphs/1', index, remote_test_folder + test_folder
-      result = @words_api.post_run request
-      assert_equal 200, result.code
+      request = UpdateRunRequest.new remote_name, run, 'paragraphs/1', index, remote_test_folder + test_folder
+      result = @words_api.update_run request
+      assert_equal FALSE, result.nil?
     end
 
     #
     # Test for updating run
     #
-    def test_put_run
+    def test_insert_run
       filename = 'Run.doc'
-      remote_name = 'TestPutRun.docx'
+      remote_name = 'TestInsertRun.docx'
       run = Run.new({:Text => 'Run with text'})
 
-      st_request = PutCreateRequest.new remote_test_folder + test_folder + '/' + remote_name, File.open(local_test_folder + test_folder + '/' + filename, "r").read       
-      @storage_api.put_create st_request
+      upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = PutRunRequest.new remote_name,  'paragraphs/1', run, remote_test_folder + test_folder
-      result = @words_api.put_run request
-      assert_equal 200, result.code
+      request = InsertRunRequest.new remote_name,  'paragraphs/1', run, remote_test_folder + test_folder
+      result = @words_api.insert_run request
+      assert_equal FALSE, result.nil?
     end
   end
 end

@@ -29,24 +29,24 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # container class for wml save options
+  # container class for wml save options.
   class WordMLSaveOptionsData
-    # Gets or sets a value determining how colors are rendered. { Normal | Grayscale}
+    # Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.
     attr_accessor :color_mode
 
-    # format of save
+    # Gets or sets format of save.
     attr_accessor :save_format
 
-    # name of destination file
+    # Gets or sets name of destination file.
     attr_accessor :file_name
 
-    # Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }
+    # Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.
     attr_accessor :dml_rendering_mode
 
-    # Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }
+    # Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }.
     attr_accessor :dml_effects_rendering_mode
 
-    # Controls zip output or not. Default value is false.
+    # Gets or sets controls zip output or not. Default value is false.
     attr_accessor :zip_output
 
     # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
@@ -55,10 +55,10 @@ module AsposeWordsCloud
     # Gets or sets value determining whether content of  is updated before saving.
     attr_accessor :update_sdt_content
 
-    # Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is true
+    # Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true
     attr_accessor :update_fields
 
-    # Specifies whether or not use pretty formats output
+    # Gets or sets specifies whether or not use pretty formats output.
     attr_accessor :pretty_format
 
 

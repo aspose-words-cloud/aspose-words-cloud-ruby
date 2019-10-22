@@ -29,21 +29,21 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # Container for the document's statistical data
+  # Container for the document's statistical data.
   class DocumentStatData
-    # Total count of words in the document
+    # Gets or sets total count of words in the document.
     attr_accessor :word_count
 
-    # Total count of paragraphs in the document
+    # Gets or sets total count of paragraphs in the document.
     attr_accessor :paragraph_count
 
-    # Total count of pages in the document
+    # Gets or sets total count of pages in the document.
     attr_accessor :page_count
 
-    # Detailed statistics of footnotes
+    # Gets or sets detailed statistics of footnotes.
     attr_accessor :footnotes_stat_data
 
-    # Detailed statistics of all pages
+    # Gets or sets detailed statistics of all pages.
     attr_accessor :page_stat_data
 
 

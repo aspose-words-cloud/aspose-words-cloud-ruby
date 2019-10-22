@@ -31,7 +31,7 @@ module AsposeWordsCloud
 
   # Reference to document.
   class LinkElement
-    # Link to the document.
+    # Gets or sets link to the document.
     attr_accessor :link
 
 

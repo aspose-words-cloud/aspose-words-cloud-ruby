@@ -31,7 +31,7 @@ module AsposeWordsCloud
 
   # Represents a list of documents which will be appended to the original resource document.
   class DocumentEntryList
-    # List of documents.
+    # Gets or sets list of documents.
     attr_accessor :document_entries
 
 
