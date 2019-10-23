@@ -37,21 +37,11 @@ def testGemLocally()
 {
 	try {	
         stage('2:checkout again'){
-<<<<<<< HEAD
 			checkout([$class: 'GitSCM', branches: [[name: '*/testPackage']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'LocalBranch', localBranch: "**"]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '361885ba-9425-4230-950e-0af201d90547', url: 'https://git.auckland.dynabic.com/words-cloud/words-cloud-ruby.git']]])
 			withCredentials([usernamePassword(credentialsId: '6839cbe8-39fa-40c0-86ce-90706f0bae5d', passwordVariable: 'AppKey', usernameVariable: 'AppSid')]) {
 				sh 'mkdir -p Settings'
 				sh 'echo "{\\"AppSid\\": \\"$AppSid\\",\\"AppKey\\": \\"$AppKey\\", \\"BaseUrl\\": \\"${testServerUrl}\\"}" > Settings/servercreds.json'
 			}
-=======
-			if (params.StartFromStage.toInteger() < 3) {
-				checkout([$class: 'GitSCM', branches: [[name: '*/testPackage']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'LocalBranch', localBranch: "**"]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '361885ba-9425-4230-950e-0af201d90547', url: 'https://git.auckland.dynabic.com/words-cloud/words-cloud-ruby.git']]])
-				withCredentials([usernamePassword(credentialsId: '6839cbe8-39fa-40c0-86ce-90706f0bae5d', passwordVariable: 'AppKey', usernameVariable: 'AppSid')]) {
-					sh 'mkdir -p Settings'
-                    sh 'echo "{\\"AppSid\\": \\"$AppSid\\",\\"AppKey\\": \\"$AppKey\\", \\"BaseUrl\\": \\"${testServerUrl}\\"}" > Settings/servercreds.json'
-                }
-			}				
->>>>>>> master
         }
 		
 	    stage('3:build gem and test'){
@@ -85,13 +75,7 @@ def publishGem()
 {
 	try {	
         stage('4:checkout again'){
-<<<<<<< HEAD
 			checkout([$class: 'GitSCM', branches: [[name: '*/release']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'LocalBranch', localBranch: "**"]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '361885ba-9425-4230-950e-0af201d90547', url: 'https://git.auckland.dynabic.com/words-cloud/words-cloud-ruby.git']]])
-=======
-			if (params.StartFromStage.toInteger() < 5) {
-				checkout([$class: 'GitSCM', branches: [[name: '*/release']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'LocalBranch', localBranch: "**"]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '361885ba-9425-4230-950e-0af201d90547', url: 'https://git.auckland.dynabic.com/words-cloud/words-cloud-ruby.git']]])
-			}
->>>>>>> master
 		}			
 		    
 	    stage('5:build gem publish'){	
@@ -100,7 +84,9 @@ def publishGem()
 					sh "gem build aspose_words_cloud.gemspec"
 					sh "mkdir ~/.gem"
 					sh "touch ~/.gem/credentials"
-					sh "echo ':rubygems_api_key: ${deployKey}' > ~/.gem/credentials"
+					withCredentials([string(credentialsId: 'bb609755-8dfb-4f45-819a-3dbfc85fc9fd', variable: 'deployKey')]) {
+						sh "echo ':rubygems_api_key: $deployKey' > ~/.gem/credentials"
+					}
 					sh "chmod 0600 ~/.gem/credentials"
 					sh "gem push aspose_words_cloud-${version}.gem"
 				}
@@ -111,12 +97,7 @@ def publishGem()
 			}
 	    }
 		stage('6:add version tag'){
-<<<<<<< HEAD
 			checkout([$class: 'GitSCM', branches: [[name: '*/release']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'LocalBranch', localBranch: "**"]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '361885ba-9425-4230-950e-0af201d90547', url: 'https://git.auckland.dynabic.com/words-cloud/words-cloud-ruby.git']]])
-=======
-			if (params.StartFromStage.toInteger() < 6) {    
-				checkout([$class: 'GitSCM', branches: [[name: '*/release']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'LocalBranch', localBranch: "**"]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '361885ba-9425-4230-950e-0af201d90547', url: 'https://git.auckland.dynabic.com/words-cloud/words-cloud-ruby.git']]])
->>>>>>> master
 						
 				sh "git config user.email \"jenkins.aspose@gmail.com\""
 				sh "git config user.name \"jenkins\""
