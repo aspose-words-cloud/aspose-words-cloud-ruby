@@ -104,7 +104,7 @@ def publishGem()
 				sh "git tag -a ${version} -m 'version ${version}' | exit 0"
 				
 				withCredentials([usernamePassword(credentialsId: '361885ba-9425-4230-950e-0af201d90547', passwordVariable: 'gitPass', usernameVariable: 'gitUsername')]) {
-					sh "git push https://%gitUsername%:%gitPass%@git.auckland.dynabic.com/words-cloud/words-cloud-ruby.git ${version}"
+					sh "git push https://$gitUsername:$gitPass@git.auckland.dynabic.com/words-cloud/words-cloud-ruby.git ${version}"
 				}
         }           
     } finally {                       
