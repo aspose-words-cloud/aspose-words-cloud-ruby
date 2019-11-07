@@ -878,7 +878,7 @@ module AsposeWordsCloud
     end
 
     # Resets border properties to default values.             
-    # 'nodePath' should refer to node with cell or row.
+    # 'nodePath' should refer to paragraph, cell or row.
     # @param request DeleteBorderRequest
     # @return [BorderResponse]
     def delete_border(request)
@@ -888,7 +888,7 @@ module AsposeWordsCloud
     end
 
     # Resets border properties to default values.             
-    # &#39;nodePath&#39; should refer to node with cell or row.
+    # &#39;nodePath&#39; should refer to paragraph, cell or row.
     # @param request DeleteBorderRequest
     # @return [Array<(BorderResponse, Fixnum, Hash)>]
     # BorderResponse data, response status code and response headers
@@ -974,7 +974,7 @@ module AsposeWordsCloud
     end
 
     # Resets borders properties to default values.             
-    # 'nodePath' should refer to node with cell or row.
+    # 'nodePath' should refer to paragraph, cell or row.
     # @param request DeleteBordersRequest
     # @return [BordersResponse]
     def delete_borders(request)
@@ -984,7 +984,7 @@ module AsposeWordsCloud
     end
 
     # Resets borders properties to default values.             
-    # &#39;nodePath&#39; should refer to node with cell or row.
+    # &#39;nodePath&#39; should refer to paragraph, cell or row.
     # @param request DeleteBordersRequest
     # @return [Array<(BordersResponse, Fixnum, Hash)>]
     # BordersResponse data, response status code and response headers
@@ -3057,6 +3057,98 @@ module AsposeWordsCloud
       [data, status_code, headers]
     end
 
+    # Removes section from document.
+    # 
+    # @param request DeleteSectionRequest
+    # @return [nil]
+    def delete_section(request)
+      data, _status_code, _headers = delete_section_with_http_info(request)
+      request_token if _status_code == 401
+      nil
+    end
+
+    # Removes section from document.
+    # 
+    # @param request DeleteSectionRequest
+    # @return [Array<(nil, Fixnum, Hash)>]
+    # nil, response status code and response headers
+    private def delete_section_with_http_info(request)
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteSectionRequest
+
+      @api_client.config.logger.debug 'Calling API: WordsApi.delete_section ...' if @api_client.config.debugging
+      # verify the required parameter 'name' is set
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_section' if @api_client.config.client_side_validation && request.name.nil?
+      # verify the required parameter 'section_index' is set
+      raise ArgumentError, 'Missing the required parameter section_index when calling WordsApi.delete_section' if @api_client.config.client_side_validation && request.section_index.nil?
+      # resource path
+      local_var_path = '/words/{name}/sections/{sectionIndex}'
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('SectionIndex') + '}', request.section_index.to_s)
+
+      # query parameters
+      query_params = {}
+      if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+      else
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+      else
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+      end
+      if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+      else
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+      else
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+      end
+      if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+      else
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+      end
+      if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+      else
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+      end
+      if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+      else
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+      end
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/xml', 'application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#delete_section\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
     # Deletes a table.
     # 
     # @param request DeleteTableRequest
@@ -3974,7 +4066,7 @@ module AsposeWordsCloud
     end
 
     # Returns a border.
-    # 'nodePath' should refer to node with cell or row.
+    # 'nodePath' should refer to paragraph, cell or row.
     # @param request GetBorderRequest
     # @return [BorderResponse]
     def get_border(request)
@@ -3984,7 +4076,7 @@ module AsposeWordsCloud
     end
 
     # Returns a border.
-    # &#39;nodePath&#39; should refer to node with cell or row.
+    # &#39;nodePath&#39; should refer to paragraph, cell or row.
     # @param request GetBorderRequest
     # @return [Array<(BorderResponse, Fixnum, Hash)>]
     # BorderResponse data, response status code and response headers
@@ -4055,7 +4147,7 @@ module AsposeWordsCloud
     end
 
     # Returns a collection of borders.
-    # 'nodePath' should refer to node with cell or row.
+    # 'nodePath' should refer to paragraph, cell or row.
     # @param request GetBordersRequest
     # @return [BordersResponse]
     def get_borders(request)
@@ -4065,7 +4157,7 @@ module AsposeWordsCloud
     end
 
     # Returns a collection of borders.
-    # &#39;nodePath&#39; should refer to node with cell or row.
+    # &#39;nodePath&#39; should refer to paragraph, cell or row.
     # @param request GetBordersRequest
     # @return [Array<(BordersResponse, Fixnum, Hash)>]
     # BordersResponse data, response status code and response headers
@@ -13053,7 +13145,7 @@ module AsposeWordsCloud
     end
 
     # Updates border properties.             
-    # 'nodePath' should refer to node with cell or row.
+    # 'nodePath' should refer to paragraph, cell or row.
     # @param request UpdateBorderRequest
     # @return [BorderResponse]
     def update_border(request)
@@ -13063,7 +13155,7 @@ module AsposeWordsCloud
     end
 
     # Updates border properties.             
-    # &#39;nodePath&#39; should refer to node with cell or row.
+    # &#39;nodePath&#39; should refer to paragraph, cell or row.
     # @param request UpdateBorderRequest
     # @return [Array<(BorderResponse, Fixnum, Hash)>]
     # BorderResponse data, response status code and response headers

@@ -34,7 +34,7 @@ module AsposeWordsCloud
 
         # The document name.
         attr_accessor :name
-        # Path to the node with border(node should be cell or row).
+        # Path to the node with border(node should be paragraph, cell or row).
         attr_accessor :node_path
         # Object index.
         attr_accessor :index
@@ -56,7 +56,7 @@ module AsposeWordsCloud
         #
         # Initializes a new instance.
         # @param name The document name.
-        # @param node_path Path to the node with border(node should be cell or row).
+        # @param node_path Path to the node with border(node should be paragraph, cell or row).
         # @param index Object index.
         # @param folder Original document folder.
         # @param storage Original document storage.

@@ -34,18 +34,44 @@ module AsposeWordsCloud
     # Gets or sets range's text.
     attr_accessor :text
 
+    # Gets or sets range's text type.
+    attr_accessor :text_type
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'text' => :'Text'
+        :'text' => :'Text',
+        :'text_type' => :'TextType'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'text' => :'String'
+        :'text' => :'String',
+        :'text_type' => :'String'
       }
     end
 
@@ -61,6 +87,10 @@ module AsposeWordsCloud
         self.text = attributes[:'Text']
       end
 
+      if attributes.key?(:'TextType')
+        self.text_type = attributes[:'TextType']
+      end
+
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -73,7 +103,23 @@ module AsposeWordsCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      text_type_validator = EnumAttributeValidator.new('String', ["Text", "Html"])
+      return false unless text_type_validator.valid?(@text_type)
       return true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] text_type Object to be assigned
+    def text_type=(text_type)
+      validator = EnumAttributeValidator.new('String', ["Text", "Html"])
+      if text_type.to_i == 0
+        unless validator.valid?(text_type)
+          raise ArgumentError, "invalid value for 'text_type', must be one of #{validator.allowable_values}."
+        end
+        @text_type = text_type
+      else
+        @text_type = validator.allowable_values[text_type.to_i]
+      end
     end
 
     # Checks equality by comparing each attribute.
@@ -81,7 +127,8 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          text == other.text
+          text == other.text &&
+          text_type == other.text_type
     end
 
     # @see the `==` method
@@ -93,7 +140,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [text].hash
+      [text, text_type].hash
     end
 
     # Builds the object from hash

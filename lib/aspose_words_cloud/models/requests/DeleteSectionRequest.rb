@@ -1,6 +1,6 @@
  #
  # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose" file="UpdateBorderRequest.rb">
+ # <copyright company="Aspose" file="DeleteSectionRequest.rb">
  #   Copyright (c) 2019 Aspose.Words for Cloud
  # </copyright>
  # <summary>
@@ -28,18 +28,14 @@
 module AsposeWordsCloud
 
   #
-  # Request model for update_border operation.
+  # Request model for delete_section operation.
   #
-  class UpdateBorderRequest
+  class DeleteSectionRequest
 
         # The document name.
         attr_accessor :name
-        # Border properties.
-        attr_accessor :border_properties
-        # Path to the node with border(node should be paragraph, cell or row).
-        attr_accessor :node_path
-        # Object index.
-        attr_accessor :index
+        # Section index.
+        attr_accessor :section_index
         # Original document folder.
         attr_accessor :folder
         # Original document storage.
@@ -58,9 +54,7 @@ module AsposeWordsCloud
         #
         # Initializes a new instance.
         # @param name The document name.
-        # @param border_properties Border properties.
-        # @param node_path Path to the node with border(node should be paragraph, cell or row).
-        # @param index Object index.
+        # @param section_index Section index.
         # @param folder Original document folder.
         # @param storage Original document storage.
         # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -68,11 +62,9 @@ module AsposeWordsCloud
         # @param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         # @param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         # @param revision_date_time The date and time to use for revisions.
-        def initialize(name, border_properties, node_path, index, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil, revision_author = nil, revision_date_time = nil)
+        def initialize(name, section_index, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil, revision_author = nil, revision_date_time = nil)
            self.name = name
-           self.border_properties = border_properties
-           self.node_path = node_path
-           self.index = index
+           self.section_index = section_index
            self.folder = folder
            self.storage = storage
            self.load_encoding = load_encoding

@@ -58,6 +58,9 @@ module AsposeWordsCloud
     # Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true
     attr_accessor :update_fields
 
+    # Gets or sets When false, small metafiles are not compressed for performance reason. Default value is true, all metafiles are compressed regardless of its size.
+    attr_accessor :always_compress_metafiles
+
     # Gets or sets password.
     attr_accessor :password
 
@@ -80,6 +83,7 @@ module AsposeWordsCloud
         :'update_last_saved_time_property' => :'UpdateLastSavedTimeProperty',
         :'update_sdt_content' => :'UpdateSdtContent',
         :'update_fields' => :'UpdateFields',
+        :'always_compress_metafiles' => :'AlwaysCompressMetafiles',
         :'password' => :'Password',
         :'save_picture_bullet' => :'SavePictureBullet',
         :'save_routing_slip' => :'SaveRoutingSlip'
@@ -98,6 +102,7 @@ module AsposeWordsCloud
         :'update_last_saved_time_property' => :'BOOLEAN',
         :'update_sdt_content' => :'BOOLEAN',
         :'update_fields' => :'BOOLEAN',
+        :'always_compress_metafiles' => :'BOOLEAN',
         :'password' => :'String',
         :'save_picture_bullet' => :'BOOLEAN',
         :'save_routing_slip' => :'BOOLEAN'
@@ -148,6 +153,10 @@ module AsposeWordsCloud
         self.update_fields = attributes[:'UpdateFields']
       end
 
+      if attributes.key?(:'AlwaysCompressMetafiles')
+        self.always_compress_metafiles = attributes[:'AlwaysCompressMetafiles']
+      end
+
       if attributes.key?(:'Password')
         self.password = attributes[:'Password']
       end
@@ -189,6 +198,7 @@ module AsposeWordsCloud
           update_last_saved_time_property == other.update_last_saved_time_property &&
           update_sdt_content == other.update_sdt_content &&
           update_fields == other.update_fields &&
+          always_compress_metafiles == other.always_compress_metafiles &&
           password == other.password &&
           save_picture_bullet == other.save_picture_bullet &&
           save_routing_slip == other.save_routing_slip
@@ -203,7 +213,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [color_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, password, save_picture_bullet, save_routing_slip].hash
+      [color_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, always_compress_metafiles, password, save_picture_bullet, save_routing_slip].hash
     end
 
     # Builds the object from hash

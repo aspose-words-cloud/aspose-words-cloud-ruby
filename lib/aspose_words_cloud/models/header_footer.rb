@@ -37,6 +37,9 @@ module AsposeWordsCloud
     # Gets or sets paragraph's text.
     attr_accessor :type
 
+    # Gets or sets child nodes.
+    attr_accessor :child_nodes
+
     # Gets or sets link to DrawingObjects resource.
     attr_accessor :drawing_objects
 
@@ -70,6 +73,7 @@ module AsposeWordsCloud
       {
         :'link' => :'link',
         :'type' => :'Type',
+        :'child_nodes' => :'ChildNodes',
         :'drawing_objects' => :'DrawingObjects',
         :'paragraphs' => :'Paragraphs'
       }
@@ -80,6 +84,7 @@ module AsposeWordsCloud
       {
         :'link' => :'WordsApiLink',
         :'type' => :'String',
+        :'child_nodes' => :'Array<NodeLink>',
         :'drawing_objects' => :'LinkElement',
         :'paragraphs' => :'LinkElement'
       }
@@ -99,6 +104,12 @@ module AsposeWordsCloud
 
       if attributes.key?(:'Type')
         self.type = attributes[:'Type']
+      end
+
+      if attributes.key?(:'ChildNodes')
+        if (value = attributes[:'ChildNodes']).is_a?(Array)
+          self.child_nodes = value
+        end
       end
 
       if attributes.key?(:'DrawingObjects')
@@ -147,6 +158,7 @@ module AsposeWordsCloud
       self.class == other.class &&
           link == other.link &&
           type == other.type &&
+          child_nodes == other.child_nodes &&
           drawing_objects == other.drawing_objects &&
           paragraphs == other.paragraphs
     end
@@ -160,7 +172,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, type, drawing_objects, paragraphs].hash
+      [link, type, child_nodes, drawing_objects, paragraphs].hash
     end
 
     # Builds the object from hash
