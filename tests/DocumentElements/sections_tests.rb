@@ -59,5 +59,18 @@ module AsposeWordsCloud
       result = @words_api.get_sections request
       assert_equal FALSE, result.nil?
     end
+
+    #
+    # Test for deleting sections
+    #
+    def test_delete_section
+      filename = 'test_multi_pages.docx'
+      remote_name = 'TestDeleteSection.docx'
+
+      upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
+
+      request = DeleteSectionRequest.new remote_name, 0, remote_test_folder + test_folder
+      result = @words_api.delete_section request
+    end
   end
 end
