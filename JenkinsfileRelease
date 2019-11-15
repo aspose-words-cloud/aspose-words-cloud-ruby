@@ -1,5 +1,5 @@
 parameters {
-		string(name: 'version', defaultValue: '19.9.0', description: 'version of gem')
+		string(name: 'version', defaultValue: '19.10.0', description: 'version of gem')
 		string(name: 'deployKey', defaultValue: 'xxx', description: 'key')
 		string(name: 'testServerUrl', defaultValue: 'https://api-qa.aspose.cloud', description: 'server url')
 		string(name: 'StartFromStage', defaultValue: '0', description: '0 based index of stage which will be started')		

@@ -52,6 +52,9 @@ module AsposeWordsCloud
     # Gets or sets the value (in points) for a first line or hanging indent. Use a positive value to set a first-line indent, and use a negative value to set a hanging indent.             
     attr_accessor :first_line_indent
 
+    # Gets or sets True when the paragraph is an item in a bulleted or numbered list.
+    attr_accessor :is_list_item
+
     # Gets or sets true if all lines in the paragraph are to remain on the same page.             
     attr_accessor :keep_together
 
@@ -141,6 +144,7 @@ module AsposeWordsCloud
         :'bidi' => :'Bidi',
         :'drop_cap_position' => :'DropCapPosition',
         :'first_line_indent' => :'FirstLineIndent',
+        :'is_list_item' => :'IsListItem',
         :'keep_together' => :'KeepTogether',
         :'keep_with_next' => :'KeepWithNext',
         :'left_indent' => :'LeftIndent',
@@ -173,6 +177,7 @@ module AsposeWordsCloud
         :'bidi' => :'BOOLEAN',
         :'drop_cap_position' => :'String',
         :'first_line_indent' => :'Float',
+        :'is_list_item' => :'BOOLEAN',
         :'keep_together' => :'BOOLEAN',
         :'keep_with_next' => :'BOOLEAN',
         :'left_indent' => :'Float',
@@ -229,6 +234,10 @@ module AsposeWordsCloud
 
       if attributes.key?(:'FirstLineIndent')
         self.first_line_indent = attributes[:'FirstLineIndent']
+      end
+
+      if attributes.key?(:'IsListItem')
+        self.is_list_item = attributes[:'IsListItem']
       end
 
       if attributes.key?(:'KeepTogether')
@@ -414,6 +423,7 @@ module AsposeWordsCloud
           bidi == other.bidi &&
           drop_cap_position == other.drop_cap_position &&
           first_line_indent == other.first_line_indent &&
+          is_list_item == other.is_list_item &&
           keep_together == other.keep_together &&
           keep_with_next == other.keep_with_next &&
           left_indent == other.left_indent &&
@@ -444,7 +454,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, add_space_between_far_east_and_alpha, add_space_between_far_east_and_digit, alignment, bidi, drop_cap_position, first_line_indent, keep_together, keep_with_next, left_indent, line_spacing, line_spacing_rule, lines_to_drop, no_space_between_paragraphs_of_same_style, outline_level, page_break_before, right_indent, space_after, space_after_auto, space_before, space_before_auto, style_identifier, style_name, suppress_auto_hyphens, suppress_line_numbers, widow_control].hash
+      [link, add_space_between_far_east_and_alpha, add_space_between_far_east_and_digit, alignment, bidi, drop_cap_position, first_line_indent, is_list_item, keep_together, keep_with_next, left_indent, line_spacing, line_spacing_rule, lines_to_drop, no_space_between_paragraphs_of_same_style, outline_level, page_break_before, right_indent, space_after, space_after_auto, space_before, space_before_auto, style_identifier, style_name, suppress_auto_hyphens, suppress_line_numbers, widow_control].hash
     end
 
     # Builds the object from hash

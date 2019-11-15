@@ -34,7 +34,7 @@ module AsposeWordsCloud
 
         # The document name.
         attr_accessor :name
-        # Path to the node with borders (node should be cell or row).
+        # Path to the node with borders (node should be paragraph, cell or row).
         attr_accessor :node_path
         # Original document folder.
         attr_accessor :folder
@@ -48,7 +48,7 @@ module AsposeWordsCloud
         #
         # Initializes a new instance.
         # @param name The document name.
-        # @param node_path Path to the node with borders (node should be cell or row).
+        # @param node_path Path to the node with borders (node should be paragraph, cell or row).
         # @param folder Original document folder.
         # @param storage Original document storage.
         # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
