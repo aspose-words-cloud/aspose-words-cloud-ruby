@@ -57,6 +57,6 @@ node('words-linux') {
 			runtests("2.5") 
 		} finally {
 			cleanWs()
-		}      
+		}
  	}
 }
