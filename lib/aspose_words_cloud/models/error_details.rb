@@ -31,18 +31,18 @@ module AsposeWordsCloud
 
   # The error details
   class ErrorDetails
-    # The request id.
+    # The request id
     attr_accessor :request_id
 
-    # Error datetime.
-    attr_accessor :error_date_time
+    # Date
+    attr_accessor :date
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'request_id' => :'RequestId',
-        :'error_date_time' => :'ErrorDateTime'
+        :'date' => :'Date'
       }
     end
 
@@ -50,7 +50,7 @@ module AsposeWordsCloud
     def self.swagger_types
       {
         :'request_id' => :'String',
-        :'error_date_time' => :'DateTime'
+        :'date' => :'DateTime'
       }
     end
 
@@ -66,8 +66,8 @@ module AsposeWordsCloud
         self.request_id = attributes[:'RequestId']
       end
 
-      if attributes.key?(:'ErrorDateTime')
-        self.error_date_time = attributes[:'ErrorDateTime']
+      if attributes.key?(:'Date')
+        self.date = attributes[:'Date']
       end
 
     end
@@ -76,8 +76,8 @@ module AsposeWordsCloud
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = []
-      if @error_date_time.nil?
-        invalid_properties.push("invalid value for 'error_date_time', error_date_time cannot be nil.")
+      if @date.nil?
+        invalid_properties.push("invalid value for 'date', date cannot be nil.")
       end
 
       return invalid_properties
@@ -86,7 +86,7 @@ module AsposeWordsCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @error_date_time.nil?
+      return false if @date.nil?
       return true
     end
 
@@ -96,7 +96,7 @@ module AsposeWordsCloud
       return true if self.equal?(other)
       self.class == other.class &&
           request_id == other.request_id &&
-          error_date_time == other.error_date_time
+          date == other.date
     end
 
     # @see the `==` method
@@ -108,7 +108,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [request_id, error_date_time].hash
+      [request_id, date].hash
     end
 
     # Builds the object from hash
