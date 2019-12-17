@@ -19,7 +19,7 @@ def runtests(dockerImageVersion)
             docker.image('ruby:' + dockerImageVersion).inside('-u root'){
                 stage('build'){
 						sh "mkdir testReports"
-						sh "gem install bundler && bundle install"
+						sh "gem install bundler -v 2.0.2 && bundle install"
                 }
             
                 stage('tests'){   
