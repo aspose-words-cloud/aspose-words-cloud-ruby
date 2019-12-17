@@ -39,6 +39,7 @@ module AsposeWordsCloud
       AsposeWordsCloud.configure do |config|
         config.api_key['api_key'] = creds['AppKey']
         config.api_key['app_sid'] = creds['AppSid']
+		config.debugging = creds['Debug']
         config.host = creds['BaseUrl']
       end
       @words_api = WordsApi.new
