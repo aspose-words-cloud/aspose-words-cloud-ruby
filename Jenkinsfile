@@ -1,7 +1,7 @@
 parameters {
         string(name: 'branch', defaultValue: 'master', description: 'branch to test')		
 		string(name: 'testServerUrl', defaultValue: 'https://api-qa.aspose.cloud', description: 'server url')		
-		boolean(name: 'debugMode', defaultValue: 'false', description: 'start tests in debug mode')		
+		booleanParam(name: 'debugMode', defaultValue: 'false', description: 'start tests in debug mode')		
 }
 
 def runtests(dockerImageVersion)
