@@ -900,13 +900,15 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_border' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'node_path' is set
       raise ArgumentError, 'Missing the required parameter node_path when calling WordsApi.delete_border' if @api_client.config.client_side_validation && request.node_path.nil?
-      # verify the required parameter 'index' is set
-      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_border' if @api_client.config.client_side_validation && request.index.nil?
+      # verify the required parameter 'border_type' is set
+      raise ArgumentError, 'Missing the required parameter border_type when calling WordsApi.delete_border' if @api_client.config.client_side_validation && request.border_type.nil?
+      # verify enum value
+      raise ArgumentError, 'invalid value for border_type, must be one of Bottom, Left, Right, Top, Horizontal, Vertical, DiagonalDown, DiagonalUp, None' if @api_client.config.client_side_validation && !['Bottom', 'Left', 'Right', 'Top', 'Horizontal', 'Vertical', 'DiagonalDown', 'DiagonalUp', 'None'].include?(request.border_type)
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/borders/{index}'
+      local_var_path = '/words/{name}/{nodePath}/borders/{borderType}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
-      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('BorderType') + '}', request.border_type.to_s)
 
       # query parameters
       query_params = {}
@@ -4088,13 +4090,15 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_border' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'node_path' is set
       raise ArgumentError, 'Missing the required parameter node_path when calling WordsApi.get_border' if @api_client.config.client_side_validation && request.node_path.nil?
-      # verify the required parameter 'index' is set
-      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_border' if @api_client.config.client_side_validation && request.index.nil?
+      # verify the required parameter 'border_type' is set
+      raise ArgumentError, 'Missing the required parameter border_type when calling WordsApi.get_border' if @api_client.config.client_side_validation && request.border_type.nil?
+      # verify enum value
+      raise ArgumentError, 'invalid value for border_type, must be one of Bottom, Left, Right, Top, Horizontal, Vertical, DiagonalDown, DiagonalUp, None' if @api_client.config.client_side_validation && !['Bottom', 'Left', 'Right', 'Top', 'Horizontal', 'Vertical', 'DiagonalDown', 'DiagonalUp', 'None'].include?(request.border_type)
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/borders/{index}'
+      local_var_path = '/words/{name}/{nodePath}/borders/{borderType}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
-      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('BorderType') + '}', request.border_type.to_s)
 
       # query parameters
       query_params = {}
@@ -13169,13 +13173,15 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter border_properties when calling WordsApi.update_border' if @api_client.config.client_side_validation && request.border_properties.nil?
       # verify the required parameter 'node_path' is set
       raise ArgumentError, 'Missing the required parameter node_path when calling WordsApi.update_border' if @api_client.config.client_side_validation && request.node_path.nil?
-      # verify the required parameter 'index' is set
-      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_border' if @api_client.config.client_side_validation && request.index.nil?
+      # verify the required parameter 'border_type' is set
+      raise ArgumentError, 'Missing the required parameter border_type when calling WordsApi.update_border' if @api_client.config.client_side_validation && request.border_type.nil?
+      # verify enum value
+      raise ArgumentError, 'invalid value for border_type, must be one of Bottom, Left, Right, Top, Horizontal, Vertical, DiagonalDown, DiagonalUp, None' if @api_client.config.client_side_validation && !['Bottom', 'Left', 'Right', 'Top', 'Horizontal', 'Vertical', 'DiagonalDown', 'DiagonalUp', 'None'].include?(request.border_type)
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/borders/{index}'
+      local_var_path = '/words/{name}/{nodePath}/borders/{borderType}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
-      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('BorderType') + '}', request.border_type.to_s)
 
       # query parameters
       query_params = {}
@@ -14891,8 +14897,8 @@ module AsposeWordsCloud
       raise ArgumentError, 'Incorrect request type' unless request.is_a? UploadFileRequest
 
       @api_client.config.logger.debug 'Calling API: WordsApi.upload_file ...' if @api_client.config.debugging
-      # verify the required parameter 'file' is set
-      raise ArgumentError, 'Missing the required parameter file when calling WordsApi.upload_file' if @api_client.config.client_side_validation && request.file.nil?
+      # verify the required parameter 'file_content' is set
+      raise ArgumentError, 'Missing the required parameter file_content when calling WordsApi.upload_file' if @api_client.config.client_side_validation && request.file_content.nil?
       # verify the required parameter 'path' is set
       raise ArgumentError, 'Missing the required parameter path when calling WordsApi.upload_file' if @api_client.config.client_side_validation && request.path.nil?
       # resource path
@@ -14916,7 +14922,7 @@ module AsposeWordsCloud
 
       # form parameters
       form_params = {}
-      form_params[downcase_first_letter('File')] = request.file
+      form_params[downcase_first_letter('FileContent')] = request.file_content
 
       # http body (model)
       post_body = nil
