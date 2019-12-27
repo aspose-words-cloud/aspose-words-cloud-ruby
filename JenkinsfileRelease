@@ -53,7 +53,7 @@ def testGemLocally()
 				
 				stage('test gem locally'){
 					sh "mkdir testReports"
-					sh "gem install bundler && bundle install"
+					sh "gem install bundler -v 2.0.2 && bundle install"
 					try{
 						sh 'rake test'
 					} finally{
