@@ -97,11 +97,11 @@ module AsposeWordsCloud
     def test_get_border
       filename = 'TablesGet.docx'
       remote_name = 'TestGetBorder.docx'
-      index = 0
+      borderType = "Left"
 
       upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = GetBorderRequest.new remote_name, 'sections/0/tables/2/rows/0', index, remote_test_folder + test_folder
+      request = GetBorderRequest.new remote_name, 'sections/0/tables/2/rows/0', borderType, remote_test_folder + test_folder
       result = @words_api.get_border request
       assert_equal FALSE, result.nil?
     end
@@ -439,11 +439,11 @@ module AsposeWordsCloud
       filename = 'TablesGet.docx'
       remote_name = 'TestDeleteBorder.docx'
       dest_name = remote_test_out + remote_name
-      index = 0
+      borderType = "Left"
 
       upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = DeleteBorderRequest.new remote_name, 'tables/1/rows/0/cells/0/', index, remote_test_folder + test_folder, :dest_file_name => dest_name
+      request = DeleteBorderRequest.new remote_name, 'tables/1/rows/0/cells/0/', borderType, remote_test_folder + test_folder, :dest_file_name => dest_name
       result = @words_api.delete_border request
       assert_equal FALSE, result.nil?
     end
@@ -468,14 +468,14 @@ module AsposeWordsCloud
     def test_update_border
       filename = 'TablesGet.docx'
       remote_name = 'TestUpdateBorder.docx'
-      index = 0
+      borderType = "Left"
       border = Border.new({:BorderType => 'Left', :Color => XmlColor.new({:Alpha => 2}),
                           :DistanceFromText => 6, :LineStyle => 'DashDotStroker',
                           :LineWith => 2, :Shadow => true})
 
       upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = UpdateBorderRequest.new remote_name, border, 'tables/1/rows/0/cells/0/', index, remote_test_folder + test_folder
+      request = UpdateBorderRequest.new remote_name, border, 'tables/1/rows/0/cells/0/', borderType, remote_test_folder + test_folder
       result = @words_api.update_border request
       assert_equal FALSE, result.nil?
     end
