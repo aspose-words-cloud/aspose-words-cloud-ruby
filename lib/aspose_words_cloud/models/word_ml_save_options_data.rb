@@ -52,7 +52,7 @@ module AsposeWordsCloud
     # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
     attr_accessor :update_last_saved_time_property
 
-    # Gets or sets value determining whether content of  is updated before saving.
+    # Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.
     attr_accessor :update_sdt_content
 
     # Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true
@@ -65,16 +65,16 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'color_mode' => :'ColorMode',
-        :'save_format' => :'SaveFormat',
-        :'file_name' => :'FileName',
-        :'dml_rendering_mode' => :'DmlRenderingMode',
-        :'dml_effects_rendering_mode' => :'DmlEffectsRenderingMode',
-        :'zip_output' => :'ZipOutput',
-        :'update_last_saved_time_property' => :'UpdateLastSavedTimeProperty',
-        :'update_sdt_content' => :'UpdateSdtContent',
-        :'update_fields' => :'UpdateFields',
-        :'pretty_format' => :'PrettyFormat'
+        :'color_mode' => :'colorMode',
+        :'save_format' => :'saveFormat',
+        :'file_name' => :'fileName',
+        :'dml_rendering_mode' => :'dmlRenderingMode',
+        :'dml_effects_rendering_mode' => :'dmlEffectsRenderingMode',
+        :'zip_output' => :'zipOutput',
+        :'update_last_saved_time_property' => :'updateLastSavedTimeProperty',
+        :'update_sdt_content' => :'updateSdtContent',
+        :'update_fields' => :'updateFields',
+        :'pretty_format' => :'prettyFormat'
       }
     end
 
@@ -102,44 +102,44 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'ColorMode')
-        self.color_mode = attributes[:'ColorMode']
+      if attributes.key?(:'colorMode')
+        self.color_mode = attributes[:'colorMode']
       end
 
-      if attributes.key?(:'SaveFormat')
-        self.save_format = attributes[:'SaveFormat']
+      if attributes.key?(:'saveFormat')
+        self.save_format = attributes[:'saveFormat']
       end
 
-      if attributes.key?(:'FileName')
-        self.file_name = attributes[:'FileName']
+      if attributes.key?(:'fileName')
+        self.file_name = attributes[:'fileName']
       end
 
-      if attributes.key?(:'DmlRenderingMode')
-        self.dml_rendering_mode = attributes[:'DmlRenderingMode']
+      if attributes.key?(:'dmlRenderingMode')
+        self.dml_rendering_mode = attributes[:'dmlRenderingMode']
       end
 
-      if attributes.key?(:'DmlEffectsRenderingMode')
-        self.dml_effects_rendering_mode = attributes[:'DmlEffectsRenderingMode']
+      if attributes.key?(:'dmlEffectsRenderingMode')
+        self.dml_effects_rendering_mode = attributes[:'dmlEffectsRenderingMode']
       end
 
-      if attributes.key?(:'ZipOutput')
-        self.zip_output = attributes[:'ZipOutput']
+      if attributes.key?(:'zipOutput')
+        self.zip_output = attributes[:'zipOutput']
       end
 
-      if attributes.key?(:'UpdateLastSavedTimeProperty')
-        self.update_last_saved_time_property = attributes[:'UpdateLastSavedTimeProperty']
+      if attributes.key?(:'updateLastSavedTimeProperty')
+        self.update_last_saved_time_property = attributes[:'updateLastSavedTimeProperty']
       end
 
-      if attributes.key?(:'UpdateSdtContent')
-        self.update_sdt_content = attributes[:'UpdateSdtContent']
+      if attributes.key?(:'updateSdtContent')
+        self.update_sdt_content = attributes[:'updateSdtContent']
       end
 
-      if attributes.key?(:'UpdateFields')
-        self.update_fields = attributes[:'UpdateFields']
+      if attributes.key?(:'updateFields')
+        self.update_fields = attributes[:'updateFields']
       end
 
-      if attributes.key?(:'PrettyFormat')
-        self.pretty_format = attributes[:'PrettyFormat']
+      if attributes.key?(:'prettyFormat')
+        self.pretty_format = attributes[:'prettyFormat']
       end
 
     end

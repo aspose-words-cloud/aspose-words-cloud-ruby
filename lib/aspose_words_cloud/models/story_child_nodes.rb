@@ -29,7 +29,7 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # Child nodes of  or .
+  # Child nodes of Story or InlineStory.
   class StoryChildNodes
     # Gets or sets child nodes.
     attr_accessor :child_nodes
@@ -38,7 +38,7 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'child_nodes' => :'ChildNodes'
+        :'child_nodes' => :'childNodes'
       }
     end
 
@@ -57,8 +57,8 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'ChildNodes')
-        if (value = attributes[:'ChildNodes']).is_a?(Array)
+      if attributes.key?(:'childNodes')
+        if (value = attributes[:'childNodes']).is_a?(Array)
           self.child_nodes = value
         end
       end

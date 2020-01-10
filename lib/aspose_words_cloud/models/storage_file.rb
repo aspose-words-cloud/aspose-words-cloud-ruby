@@ -37,7 +37,7 @@ module AsposeWordsCloud
     # True if it is a folder.
     attr_accessor :is_folder
 
-    # File or folder last modified .
+    # File or folder last modified DateTime.
     attr_accessor :modified_date
 
     # File or folder size.
@@ -50,11 +50,11 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'name' => :'Name',
-        :'is_folder' => :'IsFolder',
-        :'modified_date' => :'ModifiedDate',
-        :'size' => :'Size',
-        :'path' => :'Path'
+        :'name' => :'name',
+        :'is_folder' => :'isFolder',
+        :'modified_date' => :'modifiedDate',
+        :'size' => :'size',
+        :'path' => :'path'
       }
     end
 
@@ -77,24 +77,24 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'Name')
-        self.name = attributes[:'Name']
+      if attributes.key?(:'name')
+        self.name = attributes[:'name']
       end
 
-      if attributes.key?(:'IsFolder')
-        self.is_folder = attributes[:'IsFolder']
+      if attributes.key?(:'isFolder')
+        self.is_folder = attributes[:'isFolder']
       end
 
-      if attributes.key?(:'ModifiedDate')
-        self.modified_date = attributes[:'ModifiedDate']
+      if attributes.key?(:'modifiedDate')
+        self.modified_date = attributes[:'modifiedDate']
       end
 
-      if attributes.key?(:'Size')
-        self.size = attributes[:'Size']
+      if attributes.key?(:'size')
+        self.size = attributes[:'size']
       end
 
-      if attributes.key?(:'Path')
-        self.path = attributes[:'Path']
+      if attributes.key?(:'path')
+        self.path = attributes[:'path']
       end
 
     end

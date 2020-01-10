@@ -64,7 +64,7 @@ module AsposeWordsCloud
     # Gets or sets returns or sets the text that's displayed in the status bar when a form field has the focus.
     attr_accessor :status_text
 
-    # Gets or sets the size of the checkbox in points. Has effect only when  is true.
+    # Gets or sets the size of the checkbox in points. Has effect only when IsCheckBoxExactSize is true.
     attr_accessor :check_box_size
 
     # Gets or sets the checked status of the check box form field.
@@ -78,19 +78,19 @@ module AsposeWordsCloud
     def self.attribute_map
       {
         :'link' => :'link',
-        :'node_id' => :'NodeId',
-        :'calculate_on_exit' => :'CalculateOnExit',
-        :'enabled' => :'Enabled',
-        :'entry_macro' => :'EntryMacro',
-        :'exit_macro' => :'ExitMacro',
-        :'help_text' => :'HelpText',
-        :'name' => :'Name',
-        :'own_help' => :'OwnHelp',
-        :'own_status' => :'OwnStatus',
-        :'status_text' => :'StatusText',
-        :'check_box_size' => :'CheckBoxSize',
-        :'checked' => :'Checked',
-        :'is_check_box_exact_size' => :'IsCheckBoxExactSize'
+        :'node_id' => :'nodeId',
+        :'calculate_on_exit' => :'calculateOnExit',
+        :'enabled' => :'enabled',
+        :'entry_macro' => :'entryMacro',
+        :'exit_macro' => :'exitMacro',
+        :'help_text' => :'helpText',
+        :'name' => :'name',
+        :'own_help' => :'ownHelp',
+        :'own_status' => :'ownStatus',
+        :'status_text' => :'statusText',
+        :'check_box_size' => :'checkBoxSize',
+        :'checked' => :'checked',
+        :'is_check_box_exact_size' => :'isCheckBoxExactSize'
       }
     end
 
@@ -126,56 +126,56 @@ module AsposeWordsCloud
         self.link = attributes[:'link']
       end
 
-      if attributes.key?(:'NodeId')
-        self.node_id = attributes[:'NodeId']
+      if attributes.key?(:'nodeId')
+        self.node_id = attributes[:'nodeId']
       end
 
-      if attributes.key?(:'CalculateOnExit')
-        self.calculate_on_exit = attributes[:'CalculateOnExit']
+      if attributes.key?(:'calculateOnExit')
+        self.calculate_on_exit = attributes[:'calculateOnExit']
       end
 
-      if attributes.key?(:'Enabled')
-        self.enabled = attributes[:'Enabled']
+      if attributes.key?(:'enabled')
+        self.enabled = attributes[:'enabled']
       end
 
-      if attributes.key?(:'EntryMacro')
-        self.entry_macro = attributes[:'EntryMacro']
+      if attributes.key?(:'entryMacro')
+        self.entry_macro = attributes[:'entryMacro']
       end
 
-      if attributes.key?(:'ExitMacro')
-        self.exit_macro = attributes[:'ExitMacro']
+      if attributes.key?(:'exitMacro')
+        self.exit_macro = attributes[:'exitMacro']
       end
 
-      if attributes.key?(:'HelpText')
-        self.help_text = attributes[:'HelpText']
+      if attributes.key?(:'helpText')
+        self.help_text = attributes[:'helpText']
       end
 
-      if attributes.key?(:'Name')
-        self.name = attributes[:'Name']
+      if attributes.key?(:'name')
+        self.name = attributes[:'name']
       end
 
-      if attributes.key?(:'OwnHelp')
-        self.own_help = attributes[:'OwnHelp']
+      if attributes.key?(:'ownHelp')
+        self.own_help = attributes[:'ownHelp']
       end
 
-      if attributes.key?(:'OwnStatus')
-        self.own_status = attributes[:'OwnStatus']
+      if attributes.key?(:'ownStatus')
+        self.own_status = attributes[:'ownStatus']
       end
 
-      if attributes.key?(:'StatusText')
-        self.status_text = attributes[:'StatusText']
+      if attributes.key?(:'statusText')
+        self.status_text = attributes[:'statusText']
       end
 
-      if attributes.key?(:'CheckBoxSize')
-        self.check_box_size = attributes[:'CheckBoxSize']
+      if attributes.key?(:'checkBoxSize')
+        self.check_box_size = attributes[:'checkBoxSize']
       end
 
-      if attributes.key?(:'Checked')
-        self.checked = attributes[:'Checked']
+      if attributes.key?(:'checked')
+        self.checked = attributes[:'checked']
       end
 
-      if attributes.key?(:'IsCheckBoxExactSize')
-        self.is_check_box_exact_size = attributes[:'IsCheckBoxExactSize']
+      if attributes.key?(:'isCheckBoxExactSize')
+        self.is_check_box_exact_size = attributes[:'isCheckBoxExactSize']
       end
 
     end

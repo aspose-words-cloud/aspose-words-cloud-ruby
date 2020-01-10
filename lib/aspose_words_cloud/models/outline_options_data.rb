@@ -53,12 +53,12 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'bookmarks_outline_levels' => :'BookmarksOutlineLevels',
-        :'default_bookmarks_outline_level' => :'DefaultBookmarksOutlineLevel',
-        :'create_missing_outline_levels' => :'CreateMissingOutlineLevels',
-        :'create_outlines_for_headings_in_tables' => :'CreateOutlinesForHeadingsInTables',
-        :'expanded_outline_levels' => :'ExpandedOutlineLevels',
-        :'headings_outline_levels' => :'HeadingsOutlineLevels'
+        :'bookmarks_outline_levels' => :'bookmarksOutlineLevels',
+        :'default_bookmarks_outline_level' => :'defaultBookmarksOutlineLevel',
+        :'create_missing_outline_levels' => :'createMissingOutlineLevels',
+        :'create_outlines_for_headings_in_tables' => :'createOutlinesForHeadingsInTables',
+        :'expanded_outline_levels' => :'expandedOutlineLevels',
+        :'headings_outline_levels' => :'headingsOutlineLevels'
       }
     end
 
@@ -82,30 +82,30 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'BookmarksOutlineLevels')
-        if (value = attributes[:'BookmarksOutlineLevels']).is_a?(Array)
+      if attributes.key?(:'bookmarksOutlineLevels')
+        if (value = attributes[:'bookmarksOutlineLevels']).is_a?(Array)
           self.bookmarks_outline_levels = value
         end
       end
 
-      if attributes.key?(:'DefaultBookmarksOutlineLevel')
-        self.default_bookmarks_outline_level = attributes[:'DefaultBookmarksOutlineLevel']
+      if attributes.key?(:'defaultBookmarksOutlineLevel')
+        self.default_bookmarks_outline_level = attributes[:'defaultBookmarksOutlineLevel']
       end
 
-      if attributes.key?(:'CreateMissingOutlineLevels')
-        self.create_missing_outline_levels = attributes[:'CreateMissingOutlineLevels']
+      if attributes.key?(:'createMissingOutlineLevels')
+        self.create_missing_outline_levels = attributes[:'createMissingOutlineLevels']
       end
 
-      if attributes.key?(:'CreateOutlinesForHeadingsInTables')
-        self.create_outlines_for_headings_in_tables = attributes[:'CreateOutlinesForHeadingsInTables']
+      if attributes.key?(:'createOutlinesForHeadingsInTables')
+        self.create_outlines_for_headings_in_tables = attributes[:'createOutlinesForHeadingsInTables']
       end
 
-      if attributes.key?(:'ExpandedOutlineLevels')
-        self.expanded_outline_levels = attributes[:'ExpandedOutlineLevels']
+      if attributes.key?(:'expandedOutlineLevels')
+        self.expanded_outline_levels = attributes[:'expandedOutlineLevels']
       end
 
-      if attributes.key?(:'HeadingsOutlineLevels')
-        self.headings_outline_levels = attributes[:'HeadingsOutlineLevels']
+      if attributes.key?(:'headingsOutlineLevels')
+        self.headings_outline_levels = attributes[:'headingsOutlineLevels']
       end
 
     end

@@ -52,7 +52,7 @@ module AsposeWordsCloud
     # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
     attr_accessor :update_last_saved_time_property
 
-    # Gets or sets value determining whether content of  is updated before saving.
+    # Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.
     attr_accessor :update_sdt_content
 
     # Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true
@@ -119,34 +119,34 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'color_mode' => :'ColorMode',
-        :'save_format' => :'SaveFormat',
-        :'file_name' => :'FileName',
-        :'dml_rendering_mode' => :'DmlRenderingMode',
-        :'dml_effects_rendering_mode' => :'DmlEffectsRenderingMode',
-        :'zip_output' => :'ZipOutput',
-        :'update_last_saved_time_property' => :'UpdateLastSavedTimeProperty',
-        :'update_sdt_content' => :'UpdateSdtContent',
-        :'update_fields' => :'UpdateFields',
-        :'jpeg_quality' => :'JpegQuality',
-        :'metafile_rendering_options' => :'MetafileRenderingOptions',
-        :'numeral_format' => :'NumeralFormat',
-        :'optimize_output' => :'OptimizeOutput',
-        :'page_count' => :'PageCount',
-        :'page_index' => :'PageIndex',
-        :'css_class_names_prefix' => :'CssClassNamesPrefix',
-        :'encoding' => :'Encoding',
-        :'export_embedded_css' => :'ExportEmbeddedCss',
-        :'export_embedded_fonts' => :'ExportEmbeddedFonts',
-        :'export_embedded_images' => :'ExportEmbeddedImages',
-        :'export_form_fields' => :'ExportFormFields',
-        :'font_format' => :'FontFormat',
-        :'page_horizontal_alignment' => :'PageHorizontalAlignment',
-        :'page_margins' => :'PageMargins',
-        :'resources_folder' => :'ResourcesFolder',
-        :'resources_folder_alias' => :'ResourcesFolderAlias',
-        :'save_font_face_css_separately' => :'SaveFontFaceCssSeparately',
-        :'show_page_border' => :'ShowPageBorder'
+        :'color_mode' => :'colorMode',
+        :'save_format' => :'saveFormat',
+        :'file_name' => :'fileName',
+        :'dml_rendering_mode' => :'dmlRenderingMode',
+        :'dml_effects_rendering_mode' => :'dmlEffectsRenderingMode',
+        :'zip_output' => :'zipOutput',
+        :'update_last_saved_time_property' => :'updateLastSavedTimeProperty',
+        :'update_sdt_content' => :'updateSdtContent',
+        :'update_fields' => :'updateFields',
+        :'jpeg_quality' => :'jpegQuality',
+        :'metafile_rendering_options' => :'metafileRenderingOptions',
+        :'numeral_format' => :'numeralFormat',
+        :'optimize_output' => :'optimizeOutput',
+        :'page_count' => :'pageCount',
+        :'page_index' => :'pageIndex',
+        :'css_class_names_prefix' => :'cssClassNamesPrefix',
+        :'encoding' => :'encoding',
+        :'export_embedded_css' => :'exportEmbeddedCss',
+        :'export_embedded_fonts' => :'exportEmbeddedFonts',
+        :'export_embedded_images' => :'exportEmbeddedImages',
+        :'export_form_fields' => :'exportFormFields',
+        :'font_format' => :'fontFormat',
+        :'page_horizontal_alignment' => :'pageHorizontalAlignment',
+        :'page_margins' => :'pageMargins',
+        :'resources_folder' => :'resourcesFolder',
+        :'resources_folder_alias' => :'resourcesFolderAlias',
+        :'save_font_face_css_separately' => :'saveFontFaceCssSeparately',
+        :'show_page_border' => :'showPageBorder'
       }
     end
 
@@ -192,116 +192,116 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'ColorMode')
-        self.color_mode = attributes[:'ColorMode']
+      if attributes.key?(:'colorMode')
+        self.color_mode = attributes[:'colorMode']
       end
 
-      if attributes.key?(:'SaveFormat')
-        self.save_format = attributes[:'SaveFormat']
+      if attributes.key?(:'saveFormat')
+        self.save_format = attributes[:'saveFormat']
       end
 
-      if attributes.key?(:'FileName')
-        self.file_name = attributes[:'FileName']
+      if attributes.key?(:'fileName')
+        self.file_name = attributes[:'fileName']
       end
 
-      if attributes.key?(:'DmlRenderingMode')
-        self.dml_rendering_mode = attributes[:'DmlRenderingMode']
+      if attributes.key?(:'dmlRenderingMode')
+        self.dml_rendering_mode = attributes[:'dmlRenderingMode']
       end
 
-      if attributes.key?(:'DmlEffectsRenderingMode')
-        self.dml_effects_rendering_mode = attributes[:'DmlEffectsRenderingMode']
+      if attributes.key?(:'dmlEffectsRenderingMode')
+        self.dml_effects_rendering_mode = attributes[:'dmlEffectsRenderingMode']
       end
 
-      if attributes.key?(:'ZipOutput')
-        self.zip_output = attributes[:'ZipOutput']
+      if attributes.key?(:'zipOutput')
+        self.zip_output = attributes[:'zipOutput']
       end
 
-      if attributes.key?(:'UpdateLastSavedTimeProperty')
-        self.update_last_saved_time_property = attributes[:'UpdateLastSavedTimeProperty']
+      if attributes.key?(:'updateLastSavedTimeProperty')
+        self.update_last_saved_time_property = attributes[:'updateLastSavedTimeProperty']
       end
 
-      if attributes.key?(:'UpdateSdtContent')
-        self.update_sdt_content = attributes[:'UpdateSdtContent']
+      if attributes.key?(:'updateSdtContent')
+        self.update_sdt_content = attributes[:'updateSdtContent']
       end
 
-      if attributes.key?(:'UpdateFields')
-        self.update_fields = attributes[:'UpdateFields']
+      if attributes.key?(:'updateFields')
+        self.update_fields = attributes[:'updateFields']
       end
 
-      if attributes.key?(:'JpegQuality')
-        self.jpeg_quality = attributes[:'JpegQuality']
+      if attributes.key?(:'jpegQuality')
+        self.jpeg_quality = attributes[:'jpegQuality']
       end
 
-      if attributes.key?(:'MetafileRenderingOptions')
-        self.metafile_rendering_options = attributes[:'MetafileRenderingOptions']
+      if attributes.key?(:'metafileRenderingOptions')
+        self.metafile_rendering_options = attributes[:'metafileRenderingOptions']
       end
 
-      if attributes.key?(:'NumeralFormat')
-        self.numeral_format = attributes[:'NumeralFormat']
+      if attributes.key?(:'numeralFormat')
+        self.numeral_format = attributes[:'numeralFormat']
       end
 
-      if attributes.key?(:'OptimizeOutput')
-        self.optimize_output = attributes[:'OptimizeOutput']
+      if attributes.key?(:'optimizeOutput')
+        self.optimize_output = attributes[:'optimizeOutput']
       end
 
-      if attributes.key?(:'PageCount')
-        self.page_count = attributes[:'PageCount']
+      if attributes.key?(:'pageCount')
+        self.page_count = attributes[:'pageCount']
       end
 
-      if attributes.key?(:'PageIndex')
-        self.page_index = attributes[:'PageIndex']
+      if attributes.key?(:'pageIndex')
+        self.page_index = attributes[:'pageIndex']
       end
 
-      if attributes.key?(:'CssClassNamesPrefix')
-        self.css_class_names_prefix = attributes[:'CssClassNamesPrefix']
+      if attributes.key?(:'cssClassNamesPrefix')
+        self.css_class_names_prefix = attributes[:'cssClassNamesPrefix']
       end
 
-      if attributes.key?(:'Encoding')
-        self.encoding = attributes[:'Encoding']
+      if attributes.key?(:'encoding')
+        self.encoding = attributes[:'encoding']
       end
 
-      if attributes.key?(:'ExportEmbeddedCss')
-        self.export_embedded_css = attributes[:'ExportEmbeddedCss']
+      if attributes.key?(:'exportEmbeddedCss')
+        self.export_embedded_css = attributes[:'exportEmbeddedCss']
       end
 
-      if attributes.key?(:'ExportEmbeddedFonts')
-        self.export_embedded_fonts = attributes[:'ExportEmbeddedFonts']
+      if attributes.key?(:'exportEmbeddedFonts')
+        self.export_embedded_fonts = attributes[:'exportEmbeddedFonts']
       end
 
-      if attributes.key?(:'ExportEmbeddedImages')
-        self.export_embedded_images = attributes[:'ExportEmbeddedImages']
+      if attributes.key?(:'exportEmbeddedImages')
+        self.export_embedded_images = attributes[:'exportEmbeddedImages']
       end
 
-      if attributes.key?(:'ExportFormFields')
-        self.export_form_fields = attributes[:'ExportFormFields']
+      if attributes.key?(:'exportFormFields')
+        self.export_form_fields = attributes[:'exportFormFields']
       end
 
-      if attributes.key?(:'FontFormat')
-        self.font_format = attributes[:'FontFormat']
+      if attributes.key?(:'fontFormat')
+        self.font_format = attributes[:'fontFormat']
       end
 
-      if attributes.key?(:'PageHorizontalAlignment')
-        self.page_horizontal_alignment = attributes[:'PageHorizontalAlignment']
+      if attributes.key?(:'pageHorizontalAlignment')
+        self.page_horizontal_alignment = attributes[:'pageHorizontalAlignment']
       end
 
-      if attributes.key?(:'PageMargins')
-        self.page_margins = attributes[:'PageMargins']
+      if attributes.key?(:'pageMargins')
+        self.page_margins = attributes[:'pageMargins']
       end
 
-      if attributes.key?(:'ResourcesFolder')
-        self.resources_folder = attributes[:'ResourcesFolder']
+      if attributes.key?(:'resourcesFolder')
+        self.resources_folder = attributes[:'resourcesFolder']
       end
 
-      if attributes.key?(:'ResourcesFolderAlias')
-        self.resources_folder_alias = attributes[:'ResourcesFolderAlias']
+      if attributes.key?(:'resourcesFolderAlias')
+        self.resources_folder_alias = attributes[:'resourcesFolderAlias']
       end
 
-      if attributes.key?(:'SaveFontFaceCssSeparately')
-        self.save_font_face_css_separately = attributes[:'SaveFontFaceCssSeparately']
+      if attributes.key?(:'saveFontFaceCssSeparately')
+        self.save_font_face_css_separately = attributes[:'saveFontFaceCssSeparately']
       end
 
-      if attributes.key?(:'ShowPageBorder')
-        self.show_page_border = attributes[:'ShowPageBorder']
+      if attributes.key?(:'showPageBorder')
+        self.show_page_border = attributes[:'showPageBorder']
       end
 
     end

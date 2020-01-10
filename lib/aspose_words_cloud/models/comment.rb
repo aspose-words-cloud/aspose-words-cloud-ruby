@@ -60,13 +60,13 @@ module AsposeWordsCloud
     def self.attribute_map
       {
         :'link' => :'link',
-        :'author' => :'Author',
-        :'content' => :'Content',
-        :'date_time' => :'DateTime',
-        :'initial' => :'Initial',
-        :'range_end' => :'RangeEnd',
-        :'range_start' => :'RangeStart',
-        :'text' => :'Text'
+        :'author' => :'author',
+        :'content' => :'content',
+        :'date_time' => :'dateTime',
+        :'initial' => :'initial',
+        :'range_end' => :'rangeEnd',
+        :'range_start' => :'rangeStart',
+        :'text' => :'text'
       }
     end
 
@@ -96,32 +96,32 @@ module AsposeWordsCloud
         self.link = attributes[:'link']
       end
 
-      if attributes.key?(:'Author')
-        self.author = attributes[:'Author']
+      if attributes.key?(:'author')
+        self.author = attributes[:'author']
       end
 
-      if attributes.key?(:'Content')
-        self.content = attributes[:'Content']
+      if attributes.key?(:'content')
+        self.content = attributes[:'content']
       end
 
-      if attributes.key?(:'DateTime')
-        self.date_time = attributes[:'DateTime']
+      if attributes.key?(:'dateTime')
+        self.date_time = attributes[:'dateTime']
       end
 
-      if attributes.key?(:'Initial')
-        self.initial = attributes[:'Initial']
+      if attributes.key?(:'initial')
+        self.initial = attributes[:'initial']
       end
 
-      if attributes.key?(:'RangeEnd')
-        self.range_end = attributes[:'RangeEnd']
+      if attributes.key?(:'rangeEnd')
+        self.range_end = attributes[:'rangeEnd']
       end
 
-      if attributes.key?(:'RangeStart')
-        self.range_start = attributes[:'RangeStart']
+      if attributes.key?(:'rangeStart')
+        self.range_start = attributes[:'rangeStart']
       end
 
-      if attributes.key?(:'Text')
-        self.text = attributes[:'Text']
+      if attributes.key?(:'text')
+        self.text = attributes[:'text']
       end
 
     end

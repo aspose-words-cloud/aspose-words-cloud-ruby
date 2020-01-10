@@ -47,10 +47,10 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'code' => :'Code',
-        :'message' => :'Message',
-        :'description' => :'Description',
-        :'inner_error' => :'InnerError'
+        :'code' => :'code',
+        :'message' => :'message',
+        :'description' => :'description',
+        :'inner_error' => :'innerError'
       }
     end
 
@@ -72,20 +72,20 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'Code')
-        self.code = attributes[:'Code']
+      if attributes.key?(:'code')
+        self.code = attributes[:'code']
       end
 
-      if attributes.key?(:'Message')
-        self.message = attributes[:'Message']
+      if attributes.key?(:'message')
+        self.message = attributes[:'message']
       end
 
-      if attributes.key?(:'Description')
-        self.description = attributes[:'Description']
+      if attributes.key?(:'description')
+        self.description = attributes[:'description']
       end
 
-      if attributes.key?(:'InnerError')
-        self.inner_error = attributes[:'InnerError']
+      if attributes.key?(:'innerError')
+        self.inner_error = attributes[:'innerError']
       end
 
     end

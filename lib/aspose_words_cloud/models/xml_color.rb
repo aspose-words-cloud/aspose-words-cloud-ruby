@@ -29,7 +29,7 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # Utility class for  serialization.
+  # Utility class for Color serialization.
   class XmlColor
     # Gets or sets hTML string color representation.
     attr_accessor :web
@@ -41,8 +41,8 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'web' => :'Web',
-        :'alpha' => :'Alpha'
+        :'web' => :'web',
+        :'alpha' => :'alpha'
       }
     end
 
@@ -62,12 +62,12 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'Web')
-        self.web = attributes[:'Web']
+      if attributes.key?(:'web')
+        self.web = attributes[:'web']
       end
 
-      if attributes.key?(:'Alpha')
-        self.alpha = attributes[:'Alpha']
+      if attributes.key?(:'alpha')
+        self.alpha = attributes[:'alpha']
       end
 
     end

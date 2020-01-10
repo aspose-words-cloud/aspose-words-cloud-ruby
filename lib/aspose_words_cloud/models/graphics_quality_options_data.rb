@@ -74,12 +74,12 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'compositing_mode' => :'CompositingMode',
-        :'compositing_quality' => :'CompositingQuality',
-        :'interpolation_mode' => :'InterpolationMode',
-        :'smoothing_mode' => :'SmoothingMode',
-        :'string_format' => :'StringFormat',
-        :'text_rendering_hint' => :'TextRenderingHint'
+        :'compositing_mode' => :'compositingMode',
+        :'compositing_quality' => :'compositingQuality',
+        :'interpolation_mode' => :'interpolationMode',
+        :'smoothing_mode' => :'smoothingMode',
+        :'string_format' => :'stringFormat',
+        :'text_rendering_hint' => :'textRenderingHint'
       }
     end
 
@@ -103,28 +103,28 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'CompositingMode')
-        self.compositing_mode = attributes[:'CompositingMode']
+      if attributes.key?(:'compositingMode')
+        self.compositing_mode = attributes[:'compositingMode']
       end
 
-      if attributes.key?(:'CompositingQuality')
-        self.compositing_quality = attributes[:'CompositingQuality']
+      if attributes.key?(:'compositingQuality')
+        self.compositing_quality = attributes[:'compositingQuality']
       end
 
-      if attributes.key?(:'InterpolationMode')
-        self.interpolation_mode = attributes[:'InterpolationMode']
+      if attributes.key?(:'interpolationMode')
+        self.interpolation_mode = attributes[:'interpolationMode']
       end
 
-      if attributes.key?(:'SmoothingMode')
-        self.smoothing_mode = attributes[:'SmoothingMode']
+      if attributes.key?(:'smoothingMode')
+        self.smoothing_mode = attributes[:'smoothingMode']
       end
 
-      if attributes.key?(:'StringFormat')
-        self.string_format = attributes[:'StringFormat']
+      if attributes.key?(:'stringFormat')
+        self.string_format = attributes[:'stringFormat']
       end
 
-      if attributes.key?(:'TextRenderingHint')
-        self.text_rendering_hint = attributes[:'TextRenderingHint']
+      if attributes.key?(:'textRenderingHint')
+        self.text_rendering_hint = attributes[:'textRenderingHint']
       end
 
     end

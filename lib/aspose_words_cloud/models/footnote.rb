@@ -46,7 +46,7 @@ module AsposeWordsCloud
     # Gets or sets link to comment range start node.
     attr_accessor :position
 
-    # Gets or sets /sets custom reference mark to be used for this footnote. Default value is , meaning auto-numbered footnotes are used.
+    # Gets or sets /sets custom reference mark to be used for this footnote. Default value is Empty, meaning auto-numbered footnotes are used.
     attr_accessor :reference_mark
 
     # Gets or sets this is a convenience property that allows to easily get or set text of the footnote.
@@ -78,12 +78,12 @@ module AsposeWordsCloud
     def self.attribute_map
       {
         :'link' => :'link',
-        :'node_id' => :'NodeId',
-        :'content' => :'Content',
-        :'footnote_type' => :'FootnoteType',
-        :'position' => :'Position',
-        :'reference_mark' => :'ReferenceMark',
-        :'text' => :'Text'
+        :'node_id' => :'nodeId',
+        :'content' => :'content',
+        :'footnote_type' => :'footnoteType',
+        :'position' => :'position',
+        :'reference_mark' => :'referenceMark',
+        :'text' => :'text'
       }
     end
 
@@ -112,28 +112,28 @@ module AsposeWordsCloud
         self.link = attributes[:'link']
       end
 
-      if attributes.key?(:'NodeId')
-        self.node_id = attributes[:'NodeId']
+      if attributes.key?(:'nodeId')
+        self.node_id = attributes[:'nodeId']
       end
 
-      if attributes.key?(:'Content')
-        self.content = attributes[:'Content']
+      if attributes.key?(:'content')
+        self.content = attributes[:'content']
       end
 
-      if attributes.key?(:'FootnoteType')
-        self.footnote_type = attributes[:'FootnoteType']
+      if attributes.key?(:'footnoteType')
+        self.footnote_type = attributes[:'footnoteType']
       end
 
-      if attributes.key?(:'Position')
-        self.position = attributes[:'Position']
+      if attributes.key?(:'position')
+        self.position = attributes[:'position']
       end
 
-      if attributes.key?(:'ReferenceMark')
-        self.reference_mark = attributes[:'ReferenceMark']
+      if attributes.key?(:'referenceMark')
+        self.reference_mark = attributes[:'referenceMark']
       end
 
-      if attributes.key?(:'Text')
-        self.text = attributes[:'Text']
+      if attributes.key?(:'text')
+        self.text = attributes[:'text']
       end
 
     end

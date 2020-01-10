@@ -34,6 +34,8 @@ module AsposeWordsCloud
 
         # The document name.
         attr_accessor :name
+        # Table parameters/.
+        attr_accessor :table
         # Path to the node, which contains tables.
         attr_accessor :node_path
         # Original document folder.
@@ -50,12 +52,11 @@ module AsposeWordsCloud
         attr_accessor :revision_author
         # The date and time to use for revisions.
         attr_accessor :revision_date_time
-        # Table parameters/.
-        attr_accessor :table
 	
         #
         # Initializes a new instance.
         # @param name The document name.
+        # @param table Table parameters/.
         # @param node_path Path to the node, which contains tables.
         # @param folder Original document folder.
         # @param storage Original document storage.
@@ -64,9 +65,9 @@ module AsposeWordsCloud
         # @param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         # @param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         # @param revision_date_time The date and time to use for revisions.
-        # @param table Table parameters/.
-        def initialize(name, node_path, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil, revision_author = nil, revision_date_time = nil, table = nil)
+        def initialize(name, table, node_path, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil, revision_author = nil, revision_date_time = nil)
            self.name = name
+           self.table = table
            self.node_path = node_path
            self.folder = folder
            self.storage = storage
@@ -75,7 +76,6 @@ module AsposeWordsCloud
            self.dest_file_name = dest_file_name
            self.revision_author = revision_author
            self.revision_date_time = revision_date_time
-           self.table = table
         end
   end
 end

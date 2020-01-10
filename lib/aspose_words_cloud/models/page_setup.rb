@@ -112,7 +112,7 @@ module AsposeWordsCloud
     # Gets or sets returns or sets the type of section break for the specified object.             
     attr_accessor :section_start
 
-    # Gets or sets true if endnotes are printed at the end of the next section that doesn't suppress endnotes.                 Suppressed endnotes are printed before the endnotes in that section.             
+    # Gets or sets true if endnotes are printed at the end of the next section that doesn't suppress endnotes. Suppressed endnotes are printed before the endnotes in that section.             
     attr_accessor :suppress_endnotes
 
     # Gets or sets returns or sets the distance (in points) between the top edge of the page and the top boundary of the body text.             
@@ -147,35 +147,35 @@ module AsposeWordsCloud
     def self.attribute_map
       {
         :'link' => :'link',
-        :'bidi' => :'Bidi',
-        :'border_always_in_front' => :'BorderAlwaysInFront',
-        :'border_applies_to' => :'BorderAppliesTo',
-        :'border_distance_from' => :'BorderDistanceFrom',
-        :'bottom_margin' => :'BottomMargin',
-        :'different_first_page_header_footer' => :'DifferentFirstPageHeaderFooter',
-        :'first_page_tray' => :'FirstPageTray',
-        :'footer_distance' => :'FooterDistance',
-        :'gutter' => :'Gutter',
-        :'header_distance' => :'HeaderDistance',
-        :'left_margin' => :'LeftMargin',
-        :'line_number_count_by' => :'LineNumberCountBy',
-        :'line_number_distance_from_text' => :'LineNumberDistanceFromText',
-        :'line_number_restart_mode' => :'LineNumberRestartMode',
-        :'line_starting_number' => :'LineStartingNumber',
-        :'orientation' => :'Orientation',
-        :'other_pages_tray' => :'OtherPagesTray',
-        :'page_height' => :'PageHeight',
-        :'page_number_style' => :'PageNumberStyle',
-        :'page_starting_number' => :'PageStartingNumber',
-        :'page_width' => :'PageWidth',
-        :'paper_size' => :'PaperSize',
-        :'restart_page_numbering' => :'RestartPageNumbering',
-        :'right_margin' => :'RightMargin',
-        :'rtl_gutter' => :'RtlGutter',
-        :'section_start' => :'SectionStart',
-        :'suppress_endnotes' => :'SuppressEndnotes',
-        :'top_margin' => :'TopMargin',
-        :'vertical_alignment' => :'VerticalAlignment'
+        :'bidi' => :'bidi',
+        :'border_always_in_front' => :'borderAlwaysInFront',
+        :'border_applies_to' => :'borderAppliesTo',
+        :'border_distance_from' => :'borderDistanceFrom',
+        :'bottom_margin' => :'bottomMargin',
+        :'different_first_page_header_footer' => :'differentFirstPageHeaderFooter',
+        :'first_page_tray' => :'firstPageTray',
+        :'footer_distance' => :'footerDistance',
+        :'gutter' => :'gutter',
+        :'header_distance' => :'headerDistance',
+        :'left_margin' => :'leftMargin',
+        :'line_number_count_by' => :'lineNumberCountBy',
+        :'line_number_distance_from_text' => :'lineNumberDistanceFromText',
+        :'line_number_restart_mode' => :'lineNumberRestartMode',
+        :'line_starting_number' => :'lineStartingNumber',
+        :'orientation' => :'orientation',
+        :'other_pages_tray' => :'otherPagesTray',
+        :'page_height' => :'pageHeight',
+        :'page_number_style' => :'pageNumberStyle',
+        :'page_starting_number' => :'pageStartingNumber',
+        :'page_width' => :'pageWidth',
+        :'paper_size' => :'paperSize',
+        :'restart_page_numbering' => :'restartPageNumbering',
+        :'right_margin' => :'rightMargin',
+        :'rtl_gutter' => :'rtlGutter',
+        :'section_start' => :'sectionStart',
+        :'suppress_endnotes' => :'suppressEndnotes',
+        :'top_margin' => :'topMargin',
+        :'vertical_alignment' => :'verticalAlignment'
       }
     end
 
@@ -227,120 +227,120 @@ module AsposeWordsCloud
         self.link = attributes[:'link']
       end
 
-      if attributes.key?(:'Bidi')
-        self.bidi = attributes[:'Bidi']
+      if attributes.key?(:'bidi')
+        self.bidi = attributes[:'bidi']
       end
 
-      if attributes.key?(:'BorderAlwaysInFront')
-        self.border_always_in_front = attributes[:'BorderAlwaysInFront']
+      if attributes.key?(:'borderAlwaysInFront')
+        self.border_always_in_front = attributes[:'borderAlwaysInFront']
       end
 
-      if attributes.key?(:'BorderAppliesTo')
-        self.border_applies_to = attributes[:'BorderAppliesTo']
+      if attributes.key?(:'borderAppliesTo')
+        self.border_applies_to = attributes[:'borderAppliesTo']
       end
 
-      if attributes.key?(:'BorderDistanceFrom')
-        self.border_distance_from = attributes[:'BorderDistanceFrom']
+      if attributes.key?(:'borderDistanceFrom')
+        self.border_distance_from = attributes[:'borderDistanceFrom']
       end
 
-      if attributes.key?(:'BottomMargin')
-        self.bottom_margin = attributes[:'BottomMargin']
+      if attributes.key?(:'bottomMargin')
+        self.bottom_margin = attributes[:'bottomMargin']
       end
 
-      if attributes.key?(:'DifferentFirstPageHeaderFooter')
-        self.different_first_page_header_footer = attributes[:'DifferentFirstPageHeaderFooter']
+      if attributes.key?(:'differentFirstPageHeaderFooter')
+        self.different_first_page_header_footer = attributes[:'differentFirstPageHeaderFooter']
       end
 
-      if attributes.key?(:'FirstPageTray')
-        self.first_page_tray = attributes[:'FirstPageTray']
+      if attributes.key?(:'firstPageTray')
+        self.first_page_tray = attributes[:'firstPageTray']
       end
 
-      if attributes.key?(:'FooterDistance')
-        self.footer_distance = attributes[:'FooterDistance']
+      if attributes.key?(:'footerDistance')
+        self.footer_distance = attributes[:'footerDistance']
       end
 
-      if attributes.key?(:'Gutter')
-        self.gutter = attributes[:'Gutter']
+      if attributes.key?(:'gutter')
+        self.gutter = attributes[:'gutter']
       end
 
-      if attributes.key?(:'HeaderDistance')
-        self.header_distance = attributes[:'HeaderDistance']
+      if attributes.key?(:'headerDistance')
+        self.header_distance = attributes[:'headerDistance']
       end
 
-      if attributes.key?(:'LeftMargin')
-        self.left_margin = attributes[:'LeftMargin']
+      if attributes.key?(:'leftMargin')
+        self.left_margin = attributes[:'leftMargin']
       end
 
-      if attributes.key?(:'LineNumberCountBy')
-        self.line_number_count_by = attributes[:'LineNumberCountBy']
+      if attributes.key?(:'lineNumberCountBy')
+        self.line_number_count_by = attributes[:'lineNumberCountBy']
       end
 
-      if attributes.key?(:'LineNumberDistanceFromText')
-        self.line_number_distance_from_text = attributes[:'LineNumberDistanceFromText']
+      if attributes.key?(:'lineNumberDistanceFromText')
+        self.line_number_distance_from_text = attributes[:'lineNumberDistanceFromText']
       end
 
-      if attributes.key?(:'LineNumberRestartMode')
-        self.line_number_restart_mode = attributes[:'LineNumberRestartMode']
+      if attributes.key?(:'lineNumberRestartMode')
+        self.line_number_restart_mode = attributes[:'lineNumberRestartMode']
       end
 
-      if attributes.key?(:'LineStartingNumber')
-        self.line_starting_number = attributes[:'LineStartingNumber']
+      if attributes.key?(:'lineStartingNumber')
+        self.line_starting_number = attributes[:'lineStartingNumber']
       end
 
-      if attributes.key?(:'Orientation')
-        self.orientation = attributes[:'Orientation']
+      if attributes.key?(:'orientation')
+        self.orientation = attributes[:'orientation']
       end
 
-      if attributes.key?(:'OtherPagesTray')
-        self.other_pages_tray = attributes[:'OtherPagesTray']
+      if attributes.key?(:'otherPagesTray')
+        self.other_pages_tray = attributes[:'otherPagesTray']
       end
 
-      if attributes.key?(:'PageHeight')
-        self.page_height = attributes[:'PageHeight']
+      if attributes.key?(:'pageHeight')
+        self.page_height = attributes[:'pageHeight']
       end
 
-      if attributes.key?(:'PageNumberStyle')
-        self.page_number_style = attributes[:'PageNumberStyle']
+      if attributes.key?(:'pageNumberStyle')
+        self.page_number_style = attributes[:'pageNumberStyle']
       end
 
-      if attributes.key?(:'PageStartingNumber')
-        self.page_starting_number = attributes[:'PageStartingNumber']
+      if attributes.key?(:'pageStartingNumber')
+        self.page_starting_number = attributes[:'pageStartingNumber']
       end
 
-      if attributes.key?(:'PageWidth')
-        self.page_width = attributes[:'PageWidth']
+      if attributes.key?(:'pageWidth')
+        self.page_width = attributes[:'pageWidth']
       end
 
-      if attributes.key?(:'PaperSize')
-        self.paper_size = attributes[:'PaperSize']
+      if attributes.key?(:'paperSize')
+        self.paper_size = attributes[:'paperSize']
       end
 
-      if attributes.key?(:'RestartPageNumbering')
-        self.restart_page_numbering = attributes[:'RestartPageNumbering']
+      if attributes.key?(:'restartPageNumbering')
+        self.restart_page_numbering = attributes[:'restartPageNumbering']
       end
 
-      if attributes.key?(:'RightMargin')
-        self.right_margin = attributes[:'RightMargin']
+      if attributes.key?(:'rightMargin')
+        self.right_margin = attributes[:'rightMargin']
       end
 
-      if attributes.key?(:'RtlGutter')
-        self.rtl_gutter = attributes[:'RtlGutter']
+      if attributes.key?(:'rtlGutter')
+        self.rtl_gutter = attributes[:'rtlGutter']
       end
 
-      if attributes.key?(:'SectionStart')
-        self.section_start = attributes[:'SectionStart']
+      if attributes.key?(:'sectionStart')
+        self.section_start = attributes[:'sectionStart']
       end
 
-      if attributes.key?(:'SuppressEndnotes')
-        self.suppress_endnotes = attributes[:'SuppressEndnotes']
+      if attributes.key?(:'suppressEndnotes')
+        self.suppress_endnotes = attributes[:'suppressEndnotes']
       end
 
-      if attributes.key?(:'TopMargin')
-        self.top_margin = attributes[:'TopMargin']
+      if attributes.key?(:'topMargin')
+        self.top_margin = attributes[:'topMargin']
       end
 
-      if attributes.key?(:'VerticalAlignment')
-        self.vertical_alignment = attributes[:'VerticalAlignment']
+      if attributes.key?(:'verticalAlignment')
+        self.vertical_alignment = attributes[:'verticalAlignment']
       end
 
     end

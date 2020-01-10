@@ -55,7 +55,7 @@ module AsposeWordsCloud
     # Gets or sets specifies where the distance to the image measured from.
     attr_accessor :relative_vertical_position
 
-    # Gets or sets a list of links that originate from this .
+    # Gets or sets a list of links that originate from this DrawingObjectDto.
     attr_accessor :render_links
 
     # Gets or sets distance in points from the origin to the top side of the image.
@@ -93,17 +93,17 @@ module AsposeWordsCloud
     def self.attribute_map
       {
         :'link' => :'link',
-        :'node_id' => :'NodeId',
-        :'height' => :'Height',
-        :'image_data_link' => :'ImageDataLink',
-        :'left' => :'Left',
-        :'ole_data_link' => :'OleDataLink',
-        :'relative_horizontal_position' => :'RelativeHorizontalPosition',
-        :'relative_vertical_position' => :'RelativeVerticalPosition',
-        :'render_links' => :'RenderLinks',
-        :'top' => :'Top',
-        :'width' => :'Width',
-        :'wrap_type' => :'WrapType'
+        :'node_id' => :'nodeId',
+        :'height' => :'height',
+        :'image_data_link' => :'imageDataLink',
+        :'left' => :'left',
+        :'ole_data_link' => :'oleDataLink',
+        :'relative_horizontal_position' => :'relativeHorizontalPosition',
+        :'relative_vertical_position' => :'relativeVerticalPosition',
+        :'render_links' => :'renderLinks',
+        :'top' => :'top',
+        :'width' => :'width',
+        :'wrap_type' => :'wrapType'
       }
     end
 
@@ -137,50 +137,50 @@ module AsposeWordsCloud
         self.link = attributes[:'link']
       end
 
-      if attributes.key?(:'NodeId')
-        self.node_id = attributes[:'NodeId']
+      if attributes.key?(:'nodeId')
+        self.node_id = attributes[:'nodeId']
       end
 
-      if attributes.key?(:'Height')
-        self.height = attributes[:'Height']
+      if attributes.key?(:'height')
+        self.height = attributes[:'height']
       end
 
-      if attributes.key?(:'ImageDataLink')
-        self.image_data_link = attributes[:'ImageDataLink']
+      if attributes.key?(:'imageDataLink')
+        self.image_data_link = attributes[:'imageDataLink']
       end
 
-      if attributes.key?(:'Left')
-        self.left = attributes[:'Left']
+      if attributes.key?(:'left')
+        self.left = attributes[:'left']
       end
 
-      if attributes.key?(:'OleDataLink')
-        self.ole_data_link = attributes[:'OleDataLink']
+      if attributes.key?(:'oleDataLink')
+        self.ole_data_link = attributes[:'oleDataLink']
       end
 
-      if attributes.key?(:'RelativeHorizontalPosition')
-        self.relative_horizontal_position = attributes[:'RelativeHorizontalPosition']
+      if attributes.key?(:'relativeHorizontalPosition')
+        self.relative_horizontal_position = attributes[:'relativeHorizontalPosition']
       end
 
-      if attributes.key?(:'RelativeVerticalPosition')
-        self.relative_vertical_position = attributes[:'RelativeVerticalPosition']
+      if attributes.key?(:'relativeVerticalPosition')
+        self.relative_vertical_position = attributes[:'relativeVerticalPosition']
       end
 
-      if attributes.key?(:'RenderLinks')
-        if (value = attributes[:'RenderLinks']).is_a?(Array)
+      if attributes.key?(:'renderLinks')
+        if (value = attributes[:'renderLinks']).is_a?(Array)
           self.render_links = value
         end
       end
 
-      if attributes.key?(:'Top')
-        self.top = attributes[:'Top']
+      if attributes.key?(:'top')
+        self.top = attributes[:'top']
       end
 
-      if attributes.key?(:'Width')
-        self.width = attributes[:'Width']
+      if attributes.key?(:'width')
+        self.width = attributes[:'width']
       end
 
-      if attributes.key?(:'WrapType')
-        self.wrap_type = attributes[:'WrapType']
+      if attributes.key?(:'wrapType')
+        self.wrap_type = attributes[:'wrapType']
       end
 
     end

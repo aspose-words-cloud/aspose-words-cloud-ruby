@@ -31,14 +31,14 @@ module AsposeWordsCloud
 
   # Files list
   class FilesList
-    # Files and folders contained by folder .
+    # Files and folders contained by folder StorageFile.
     attr_accessor :value
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'value' => :'Value'
+        :'value' => :'value'
       }
     end
 
@@ -57,8 +57,8 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'Value')
-        if (value = attributes[:'Value']).is_a?(Array)
+      if attributes.key?(:'value')
+        if (value = attributes[:'value']).is_a?(Array)
           self.value = value
         end
       end

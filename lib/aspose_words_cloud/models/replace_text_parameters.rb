@@ -31,7 +31,7 @@ module AsposeWordsCloud
 
   # Class for document replace text request building.
   class ReplaceTextParameters
-    # Gets or sets old text value (or regex pattern ) to replace.
+    # Gets or sets old text value (or regex pattern IsOldValueRegex) to replace.
     attr_accessor :old_value
 
     # Gets or sets new text value to replace by.
@@ -43,18 +43,18 @@ module AsposeWordsCloud
     # Gets or sets a value indicating whether flag, means that only whole word matched are replaced.
     attr_accessor :is_match_whole_word
 
-    # Gets or sets a value indicating whether flag, means that  contains regex expression.
+    # Gets or sets a value indicating whether flag, means that OldValue contains regex expression.
     attr_accessor :is_old_value_regex
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'old_value' => :'OldValue',
-        :'new_value' => :'NewValue',
-        :'is_match_case' => :'IsMatchCase',
-        :'is_match_whole_word' => :'IsMatchWholeWord',
-        :'is_old_value_regex' => :'IsOldValueRegex'
+        :'old_value' => :'oldValue',
+        :'new_value' => :'newValue',
+        :'is_match_case' => :'isMatchCase',
+        :'is_match_whole_word' => :'isMatchWholeWord',
+        :'is_old_value_regex' => :'isOldValueRegex'
       }
     end
 
@@ -77,24 +77,24 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'OldValue')
-        self.old_value = attributes[:'OldValue']
+      if attributes.key?(:'oldValue')
+        self.old_value = attributes[:'oldValue']
       end
 
-      if attributes.key?(:'NewValue')
-        self.new_value = attributes[:'NewValue']
+      if attributes.key?(:'newValue')
+        self.new_value = attributes[:'newValue']
       end
 
-      if attributes.key?(:'IsMatchCase')
-        self.is_match_case = attributes[:'IsMatchCase']
+      if attributes.key?(:'isMatchCase')
+        self.is_match_case = attributes[:'isMatchCase']
       end
 
-      if attributes.key?(:'IsMatchWholeWord')
-        self.is_match_whole_word = attributes[:'IsMatchWholeWord']
+      if attributes.key?(:'isMatchWholeWord')
+        self.is_match_whole_word = attributes[:'isMatchWholeWord']
       end
 
-      if attributes.key?(:'IsOldValueRegex')
-        self.is_old_value_regex = attributes[:'IsOldValueRegex']
+      if attributes.key?(:'isOldValueRegex')
+        self.is_old_value_regex = attributes[:'isOldValueRegex']
       end
 
     end

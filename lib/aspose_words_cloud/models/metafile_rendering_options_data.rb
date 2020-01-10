@@ -50,11 +50,11 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'emf_plus_dual_rendering_mode' => :'EmfPlusDualRenderingMode',
-        :'emulate_raster_operations' => :'EmulateRasterOperations',
-        :'rendering_mode' => :'RenderingMode',
-        :'use_emf_embedded_to_wmf' => :'UseEmfEmbeddedToWmf',
-        :'scale_wmf_fonts_to_metafile_size' => :'ScaleWmfFontsToMetafileSize'
+        :'emf_plus_dual_rendering_mode' => :'emfPlusDualRenderingMode',
+        :'emulate_raster_operations' => :'emulateRasterOperations',
+        :'rendering_mode' => :'renderingMode',
+        :'use_emf_embedded_to_wmf' => :'useEmfEmbeddedToWmf',
+        :'scale_wmf_fonts_to_metafile_size' => :'scaleWmfFontsToMetafileSize'
       }
     end
 
@@ -77,24 +77,24 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'EmfPlusDualRenderingMode')
-        self.emf_plus_dual_rendering_mode = attributes[:'EmfPlusDualRenderingMode']
+      if attributes.key?(:'emfPlusDualRenderingMode')
+        self.emf_plus_dual_rendering_mode = attributes[:'emfPlusDualRenderingMode']
       end
 
-      if attributes.key?(:'EmulateRasterOperations')
-        self.emulate_raster_operations = attributes[:'EmulateRasterOperations']
+      if attributes.key?(:'emulateRasterOperations')
+        self.emulate_raster_operations = attributes[:'emulateRasterOperations']
       end
 
-      if attributes.key?(:'RenderingMode')
-        self.rendering_mode = attributes[:'RenderingMode']
+      if attributes.key?(:'renderingMode')
+        self.rendering_mode = attributes[:'renderingMode']
       end
 
-      if attributes.key?(:'UseEmfEmbeddedToWmf')
-        self.use_emf_embedded_to_wmf = attributes[:'UseEmfEmbeddedToWmf']
+      if attributes.key?(:'useEmfEmbeddedToWmf')
+        self.use_emf_embedded_to_wmf = attributes[:'useEmfEmbeddedToWmf']
       end
 
-      if attributes.key?(:'ScaleWmfFontsToMetafileSize')
-        self.scale_wmf_fonts_to_metafile_size = attributes[:'ScaleWmfFontsToMetafileSize']
+      if attributes.key?(:'scaleWmfFontsToMetafileSize')
+        self.scale_wmf_fonts_to_metafile_size = attributes[:'scaleWmfFontsToMetafileSize']
       end
 
     end

@@ -73,7 +73,7 @@ module AsposeWordsCloud
     # Gets or sets the number of lines of the paragraph text used to calculate the drop cap height.             
     attr_accessor :lines_to_drop
 
-    # Gets or sets when true,  and  will be ignored between the paragraphs of the same style.             
+    # Gets or sets when true, SpaceBefore and SpaceAfter will be ignored between the paragraphs of the same style.             
     attr_accessor :no_space_between_paragraphs_of_same_style
 
     # Gets or sets specifies the outline level of the paragraph in the document.             
@@ -138,32 +138,32 @@ module AsposeWordsCloud
     def self.attribute_map
       {
         :'link' => :'link',
-        :'add_space_between_far_east_and_alpha' => :'AddSpaceBetweenFarEastAndAlpha',
-        :'add_space_between_far_east_and_digit' => :'AddSpaceBetweenFarEastAndDigit',
-        :'alignment' => :'Alignment',
-        :'bidi' => :'Bidi',
-        :'drop_cap_position' => :'DropCapPosition',
-        :'first_line_indent' => :'FirstLineIndent',
-        :'is_list_item' => :'IsListItem',
-        :'keep_together' => :'KeepTogether',
-        :'keep_with_next' => :'KeepWithNext',
-        :'left_indent' => :'LeftIndent',
-        :'line_spacing' => :'LineSpacing',
-        :'line_spacing_rule' => :'LineSpacingRule',
-        :'lines_to_drop' => :'LinesToDrop',
-        :'no_space_between_paragraphs_of_same_style' => :'NoSpaceBetweenParagraphsOfSameStyle',
-        :'outline_level' => :'OutlineLevel',
-        :'page_break_before' => :'PageBreakBefore',
-        :'right_indent' => :'RightIndent',
-        :'space_after' => :'SpaceAfter',
-        :'space_after_auto' => :'SpaceAfterAuto',
-        :'space_before' => :'SpaceBefore',
-        :'space_before_auto' => :'SpaceBeforeAuto',
-        :'style_identifier' => :'StyleIdentifier',
-        :'style_name' => :'StyleName',
-        :'suppress_auto_hyphens' => :'SuppressAutoHyphens',
-        :'suppress_line_numbers' => :'SuppressLineNumbers',
-        :'widow_control' => :'WidowControl'
+        :'add_space_between_far_east_and_alpha' => :'addSpaceBetweenFarEastAndAlpha',
+        :'add_space_between_far_east_and_digit' => :'addSpaceBetweenFarEastAndDigit',
+        :'alignment' => :'alignment',
+        :'bidi' => :'bidi',
+        :'drop_cap_position' => :'dropCapPosition',
+        :'first_line_indent' => :'firstLineIndent',
+        :'is_list_item' => :'isListItem',
+        :'keep_together' => :'keepTogether',
+        :'keep_with_next' => :'keepWithNext',
+        :'left_indent' => :'leftIndent',
+        :'line_spacing' => :'lineSpacing',
+        :'line_spacing_rule' => :'lineSpacingRule',
+        :'lines_to_drop' => :'linesToDrop',
+        :'no_space_between_paragraphs_of_same_style' => :'noSpaceBetweenParagraphsOfSameStyle',
+        :'outline_level' => :'outlineLevel',
+        :'page_break_before' => :'pageBreakBefore',
+        :'right_indent' => :'rightIndent',
+        :'space_after' => :'spaceAfter',
+        :'space_after_auto' => :'spaceAfterAuto',
+        :'space_before' => :'spaceBefore',
+        :'space_before_auto' => :'spaceBeforeAuto',
+        :'style_identifier' => :'styleIdentifier',
+        :'style_name' => :'styleName',
+        :'suppress_auto_hyphens' => :'suppressAutoHyphens',
+        :'suppress_line_numbers' => :'suppressLineNumbers',
+        :'widow_control' => :'widowControl'
       }
     end
 
@@ -212,108 +212,108 @@ module AsposeWordsCloud
         self.link = attributes[:'link']
       end
 
-      if attributes.key?(:'AddSpaceBetweenFarEastAndAlpha')
-        self.add_space_between_far_east_and_alpha = attributes[:'AddSpaceBetweenFarEastAndAlpha']
+      if attributes.key?(:'addSpaceBetweenFarEastAndAlpha')
+        self.add_space_between_far_east_and_alpha = attributes[:'addSpaceBetweenFarEastAndAlpha']
       end
 
-      if attributes.key?(:'AddSpaceBetweenFarEastAndDigit')
-        self.add_space_between_far_east_and_digit = attributes[:'AddSpaceBetweenFarEastAndDigit']
+      if attributes.key?(:'addSpaceBetweenFarEastAndDigit')
+        self.add_space_between_far_east_and_digit = attributes[:'addSpaceBetweenFarEastAndDigit']
       end
 
-      if attributes.key?(:'Alignment')
-        self.alignment = attributes[:'Alignment']
+      if attributes.key?(:'alignment')
+        self.alignment = attributes[:'alignment']
       end
 
-      if attributes.key?(:'Bidi')
-        self.bidi = attributes[:'Bidi']
+      if attributes.key?(:'bidi')
+        self.bidi = attributes[:'bidi']
       end
 
-      if attributes.key?(:'DropCapPosition')
-        self.drop_cap_position = attributes[:'DropCapPosition']
+      if attributes.key?(:'dropCapPosition')
+        self.drop_cap_position = attributes[:'dropCapPosition']
       end
 
-      if attributes.key?(:'FirstLineIndent')
-        self.first_line_indent = attributes[:'FirstLineIndent']
+      if attributes.key?(:'firstLineIndent')
+        self.first_line_indent = attributes[:'firstLineIndent']
       end
 
-      if attributes.key?(:'IsListItem')
-        self.is_list_item = attributes[:'IsListItem']
+      if attributes.key?(:'isListItem')
+        self.is_list_item = attributes[:'isListItem']
       end
 
-      if attributes.key?(:'KeepTogether')
-        self.keep_together = attributes[:'KeepTogether']
+      if attributes.key?(:'keepTogether')
+        self.keep_together = attributes[:'keepTogether']
       end
 
-      if attributes.key?(:'KeepWithNext')
-        self.keep_with_next = attributes[:'KeepWithNext']
+      if attributes.key?(:'keepWithNext')
+        self.keep_with_next = attributes[:'keepWithNext']
       end
 
-      if attributes.key?(:'LeftIndent')
-        self.left_indent = attributes[:'LeftIndent']
+      if attributes.key?(:'leftIndent')
+        self.left_indent = attributes[:'leftIndent']
       end
 
-      if attributes.key?(:'LineSpacing')
-        self.line_spacing = attributes[:'LineSpacing']
+      if attributes.key?(:'lineSpacing')
+        self.line_spacing = attributes[:'lineSpacing']
       end
 
-      if attributes.key?(:'LineSpacingRule')
-        self.line_spacing_rule = attributes[:'LineSpacingRule']
+      if attributes.key?(:'lineSpacingRule')
+        self.line_spacing_rule = attributes[:'lineSpacingRule']
       end
 
-      if attributes.key?(:'LinesToDrop')
-        self.lines_to_drop = attributes[:'LinesToDrop']
+      if attributes.key?(:'linesToDrop')
+        self.lines_to_drop = attributes[:'linesToDrop']
       end
 
-      if attributes.key?(:'NoSpaceBetweenParagraphsOfSameStyle')
-        self.no_space_between_paragraphs_of_same_style = attributes[:'NoSpaceBetweenParagraphsOfSameStyle']
+      if attributes.key?(:'noSpaceBetweenParagraphsOfSameStyle')
+        self.no_space_between_paragraphs_of_same_style = attributes[:'noSpaceBetweenParagraphsOfSameStyle']
       end
 
-      if attributes.key?(:'OutlineLevel')
-        self.outline_level = attributes[:'OutlineLevel']
+      if attributes.key?(:'outlineLevel')
+        self.outline_level = attributes[:'outlineLevel']
       end
 
-      if attributes.key?(:'PageBreakBefore')
-        self.page_break_before = attributes[:'PageBreakBefore']
+      if attributes.key?(:'pageBreakBefore')
+        self.page_break_before = attributes[:'pageBreakBefore']
       end
 
-      if attributes.key?(:'RightIndent')
-        self.right_indent = attributes[:'RightIndent']
+      if attributes.key?(:'rightIndent')
+        self.right_indent = attributes[:'rightIndent']
       end
 
-      if attributes.key?(:'SpaceAfter')
-        self.space_after = attributes[:'SpaceAfter']
+      if attributes.key?(:'spaceAfter')
+        self.space_after = attributes[:'spaceAfter']
       end
 
-      if attributes.key?(:'SpaceAfterAuto')
-        self.space_after_auto = attributes[:'SpaceAfterAuto']
+      if attributes.key?(:'spaceAfterAuto')
+        self.space_after_auto = attributes[:'spaceAfterAuto']
       end
 
-      if attributes.key?(:'SpaceBefore')
-        self.space_before = attributes[:'SpaceBefore']
+      if attributes.key?(:'spaceBefore')
+        self.space_before = attributes[:'spaceBefore']
       end
 
-      if attributes.key?(:'SpaceBeforeAuto')
-        self.space_before_auto = attributes[:'SpaceBeforeAuto']
+      if attributes.key?(:'spaceBeforeAuto')
+        self.space_before_auto = attributes[:'spaceBeforeAuto']
       end
 
-      if attributes.key?(:'StyleIdentifier')
-        self.style_identifier = attributes[:'StyleIdentifier']
+      if attributes.key?(:'styleIdentifier')
+        self.style_identifier = attributes[:'styleIdentifier']
       end
 
-      if attributes.key?(:'StyleName')
-        self.style_name = attributes[:'StyleName']
+      if attributes.key?(:'styleName')
+        self.style_name = attributes[:'styleName']
       end
 
-      if attributes.key?(:'SuppressAutoHyphens')
-        self.suppress_auto_hyphens = attributes[:'SuppressAutoHyphens']
+      if attributes.key?(:'suppressAutoHyphens')
+        self.suppress_auto_hyphens = attributes[:'suppressAutoHyphens']
       end
 
-      if attributes.key?(:'SuppressLineNumbers')
-        self.suppress_line_numbers = attributes[:'SuppressLineNumbers']
+      if attributes.key?(:'suppressLineNumbers')
+        self.suppress_line_numbers = attributes[:'suppressLineNumbers']
       end
 
-      if attributes.key?(:'WidowControl')
-        self.widow_control = attributes[:'WidowControl']
+      if attributes.key?(:'widowControl')
+        self.widow_control = attributes[:'widowControl']
       end
 
     end

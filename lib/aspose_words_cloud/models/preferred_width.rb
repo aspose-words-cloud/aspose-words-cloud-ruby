@@ -34,7 +34,7 @@ module AsposeWordsCloud
     # Gets or sets the unit of measure used for this preferred width value.
     attr_accessor :type
 
-    # Gets or sets the preferred width value. The unit of measure is specified in the  property.
+    # Gets or sets the preferred width value. The unit of measure is specified in the Type property.
     attr_accessor :value
 
     class EnumAttributeValidator
@@ -62,8 +62,8 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'type' => :'Type',
-        :'value' => :'Value'
+        :'type' => :'type',
+        :'value' => :'value'
       }
     end
 
@@ -83,12 +83,12 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'Type')
-        self.type = attributes[:'Type']
+      if attributes.key?(:'type')
+        self.type = attributes[:'type']
       end
 
-      if attributes.key?(:'Value')
-        self.value = attributes[:'Value']
+      if attributes.key?(:'value')
+        self.value = attributes[:'value']
       end
 
     end

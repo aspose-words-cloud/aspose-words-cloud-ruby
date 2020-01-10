@@ -47,10 +47,10 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'font_family_name' => :'FontFamilyName',
-        :'full_font_name' => :'FullFontName',
-        :'version' => :'Version',
-        :'file_path' => :'FilePath'
+        :'font_family_name' => :'fontFamilyName',
+        :'full_font_name' => :'fullFontName',
+        :'version' => :'version',
+        :'file_path' => :'filePath'
       }
     end
 
@@ -72,20 +72,20 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'FontFamilyName')
-        self.font_family_name = attributes[:'FontFamilyName']
+      if attributes.key?(:'fontFamilyName')
+        self.font_family_name = attributes[:'fontFamilyName']
       end
 
-      if attributes.key?(:'FullFontName')
-        self.full_font_name = attributes[:'FullFontName']
+      if attributes.key?(:'fullFontName')
+        self.full_font_name = attributes[:'fullFontName']
       end
 
-      if attributes.key?(:'Version')
-        self.version = attributes[:'Version']
+      if attributes.key?(:'version')
+        self.version = attributes[:'version']
       end
 
-      if attributes.key?(:'FilePath')
-        self.file_path = attributes[:'FilePath']
+      if attributes.key?(:'filePath')
+        self.file_path = attributes[:'filePath']
       end
 
     end

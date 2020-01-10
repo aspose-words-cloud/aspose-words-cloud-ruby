@@ -54,11 +54,11 @@ module AsposeWordsCloud
     def self.attribute_map
       {
         :'link' => :'link',
-        :'child_nodes' => :'ChildNodes',
-        :'header_footers' => :'HeaderFooters',
-        :'page_setup' => :'PageSetup',
-        :'paragraphs' => :'Paragraphs',
-        :'tables' => :'Tables'
+        :'child_nodes' => :'childNodes',
+        :'header_footers' => :'headerFooters',
+        :'page_setup' => :'pageSetup',
+        :'paragraphs' => :'paragraphs',
+        :'tables' => :'tables'
       }
     end
 
@@ -86,26 +86,26 @@ module AsposeWordsCloud
         self.link = attributes[:'link']
       end
 
-      if attributes.key?(:'ChildNodes')
-        if (value = attributes[:'ChildNodes']).is_a?(Array)
+      if attributes.key?(:'childNodes')
+        if (value = attributes[:'childNodes']).is_a?(Array)
           self.child_nodes = value
         end
       end
 
-      if attributes.key?(:'HeaderFooters')
-        self.header_footers = attributes[:'HeaderFooters']
+      if attributes.key?(:'headerFooters')
+        self.header_footers = attributes[:'headerFooters']
       end
 
-      if attributes.key?(:'PageSetup')
-        self.page_setup = attributes[:'PageSetup']
+      if attributes.key?(:'pageSetup')
+        self.page_setup = attributes[:'pageSetup']
       end
 
-      if attributes.key?(:'Paragraphs')
-        self.paragraphs = attributes[:'Paragraphs']
+      if attributes.key?(:'paragraphs')
+        self.paragraphs = attributes[:'paragraphs']
       end
 
-      if attributes.key?(:'Tables')
-        self.tables = attributes[:'Tables']
+      if attributes.key?(:'tables')
+        self.tables = attributes[:'tables']
       end
 
     end

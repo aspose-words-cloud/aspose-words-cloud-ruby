@@ -75,11 +75,11 @@ module AsposeWordsCloud
     def self.attribute_map
       {
         :'link' => :'link',
-        :'node_id' => :'NodeId',
-        :'content' => :'Content',
-        :'display_type' => :'DisplayType',
-        :'justification' => :'Justification',
-        :'math_object_type' => :'MathObjectType'
+        :'node_id' => :'nodeId',
+        :'content' => :'content',
+        :'display_type' => :'displayType',
+        :'justification' => :'justification',
+        :'math_object_type' => :'mathObjectType'
       }
     end
 
@@ -107,24 +107,24 @@ module AsposeWordsCloud
         self.link = attributes[:'link']
       end
 
-      if attributes.key?(:'NodeId')
-        self.node_id = attributes[:'NodeId']
+      if attributes.key?(:'nodeId')
+        self.node_id = attributes[:'nodeId']
       end
 
-      if attributes.key?(:'Content')
-        self.content = attributes[:'Content']
+      if attributes.key?(:'content')
+        self.content = attributes[:'content']
       end
 
-      if attributes.key?(:'DisplayType')
-        self.display_type = attributes[:'DisplayType']
+      if attributes.key?(:'displayType')
+        self.display_type = attributes[:'displayType']
       end
 
-      if attributes.key?(:'Justification')
-        self.justification = attributes[:'Justification']
+      if attributes.key?(:'justification')
+        self.justification = attributes[:'justification']
       end
 
-      if attributes.key?(:'MathObjectType')
-        self.math_object_type = attributes[:'MathObjectType']
+      if attributes.key?(:'mathObjectType')
+        self.math_object_type = attributes[:'mathObjectType']
       end
 
     end

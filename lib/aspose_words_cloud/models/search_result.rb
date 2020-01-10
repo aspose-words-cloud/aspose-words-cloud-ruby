@@ -41,8 +41,8 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'range_start' => :'RangeStart',
-        :'range_end' => :'RangeEnd'
+        :'range_start' => :'rangeStart',
+        :'range_end' => :'rangeEnd'
       }
     end
 
@@ -62,12 +62,12 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'RangeStart')
-        self.range_start = attributes[:'RangeStart']
+      if attributes.key?(:'rangeStart')
+        self.range_start = attributes[:'rangeStart']
       end
 
-      if attributes.key?(:'RangeEnd')
-        self.range_end = attributes[:'RangeEnd']
+      if attributes.key?(:'rangeEnd')
+        self.range_end = attributes[:'rangeEnd']
       end
 
     end

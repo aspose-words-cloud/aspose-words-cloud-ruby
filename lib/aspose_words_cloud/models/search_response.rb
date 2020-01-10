@@ -44,9 +44,9 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'request_id' => :'RequestId',
-        :'searching_pattern' => :'SearchingPattern',
-        :'search_results' => :'SearchResults'
+        :'request_id' => :'requestId',
+        :'searching_pattern' => :'searchingPattern',
+        :'search_results' => :'searchResults'
       }
     end
 
@@ -67,16 +67,16 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'RequestId')
-        self.request_id = attributes[:'RequestId']
+      if attributes.key?(:'requestId')
+        self.request_id = attributes[:'requestId']
       end
 
-      if attributes.key?(:'SearchingPattern')
-        self.searching_pattern = attributes[:'SearchingPattern']
+      if attributes.key?(:'searchingPattern')
+        self.searching_pattern = attributes[:'searchingPattern']
       end
 
-      if attributes.key?(:'SearchResults')
-        self.search_results = attributes[:'SearchResults']
+      if attributes.key?(:'searchResults')
+        self.search_results = attributes[:'searchResults']
       end
 
     end

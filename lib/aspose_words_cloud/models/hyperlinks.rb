@@ -29,12 +29,12 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # Collection of .
+  # Collection of Hyperlink.
   class Hyperlinks
     # Gets or sets link to the document.
     attr_accessor :link
 
-    # Gets or sets array of .
+    # Gets or sets array of Hyperlink.
     attr_accessor :hyperlink_list
 
 
@@ -42,7 +42,7 @@ module AsposeWordsCloud
     def self.attribute_map
       {
         :'link' => :'link',
-        :'hyperlink_list' => :'HyperlinkList'
+        :'hyperlink_list' => :'hyperlinkList'
       }
     end
 
@@ -66,8 +66,8 @@ module AsposeWordsCloud
         self.link = attributes[:'link']
       end
 
-      if attributes.key?(:'HyperlinkList')
-        if (value = attributes[:'HyperlinkList']).is_a?(Array)
+      if attributes.key?(:'hyperlinkList')
+        if (value = attributes[:'hyperlinkList']).is_a?(Array)
           self.hyperlink_list = value
         end
       end

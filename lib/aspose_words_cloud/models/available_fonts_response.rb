@@ -47,10 +47,10 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'request_id' => :'RequestId',
-        :'additional_fonts' => :'AdditionalFonts',
-        :'custom_fonts' => :'CustomFonts',
-        :'system_fonts' => :'SystemFonts'
+        :'request_id' => :'requestId',
+        :'additional_fonts' => :'additionalFonts',
+        :'custom_fonts' => :'customFonts',
+        :'system_fonts' => :'systemFonts'
       }
     end
 
@@ -72,24 +72,24 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'RequestId')
-        self.request_id = attributes[:'RequestId']
+      if attributes.key?(:'requestId')
+        self.request_id = attributes[:'requestId']
       end
 
-      if attributes.key?(:'AdditionalFonts')
-        if (value = attributes[:'AdditionalFonts']).is_a?(Array)
+      if attributes.key?(:'additionalFonts')
+        if (value = attributes[:'additionalFonts']).is_a?(Array)
           self.additional_fonts = value
         end
       end
 
-      if attributes.key?(:'CustomFonts')
-        if (value = attributes[:'CustomFonts']).is_a?(Array)
+      if attributes.key?(:'customFonts')
+        if (value = attributes[:'customFonts']).is_a?(Array)
           self.custom_fonts = value
         end
       end
 
-      if attributes.key?(:'SystemFonts')
-        if (value = attributes[:'SystemFonts']).is_a?(Array)
+      if attributes.key?(:'systemFonts')
+        if (value = attributes[:'systemFonts']).is_a?(Array)
           self.system_fonts = value
         end
       end

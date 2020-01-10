@@ -50,11 +50,11 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'word_count' => :'WordCount',
-        :'paragraph_count' => :'ParagraphCount',
-        :'page_count' => :'PageCount',
-        :'footnotes_stat_data' => :'FootnotesStatData',
-        :'page_stat_data' => :'PageStatData'
+        :'word_count' => :'wordCount',
+        :'paragraph_count' => :'paragraphCount',
+        :'page_count' => :'pageCount',
+        :'footnotes_stat_data' => :'footnotesStatData',
+        :'page_stat_data' => :'pageStatData'
       }
     end
 
@@ -77,24 +77,24 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'WordCount')
-        self.word_count = attributes[:'WordCount']
+      if attributes.key?(:'wordCount')
+        self.word_count = attributes[:'wordCount']
       end
 
-      if attributes.key?(:'ParagraphCount')
-        self.paragraph_count = attributes[:'ParagraphCount']
+      if attributes.key?(:'paragraphCount')
+        self.paragraph_count = attributes[:'paragraphCount']
       end
 
-      if attributes.key?(:'PageCount')
-        self.page_count = attributes[:'PageCount']
+      if attributes.key?(:'pageCount')
+        self.page_count = attributes[:'pageCount']
       end
 
-      if attributes.key?(:'FootnotesStatData')
-        self.footnotes_stat_data = attributes[:'FootnotesStatData']
+      if attributes.key?(:'footnotesStatData')
+        self.footnotes_stat_data = attributes[:'footnotesStatData']
       end
 
-      if attributes.key?(:'PageStatData')
-        if (value = attributes[:'PageStatData']).is_a?(Array)
+      if attributes.key?(:'pageStatData')
+        if (value = attributes[:'pageStatData']).is_a?(Array)
           self.page_stat_data = value
         end
       end

@@ -52,7 +52,7 @@ module AsposeWordsCloud
     # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
     attr_accessor :update_last_saved_time_property
 
-    # Gets or sets value determining whether content of  is updated before saving.
+    # Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.
     attr_accessor :update_sdt_content
 
     # Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true
@@ -203,55 +203,55 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'color_mode' => :'ColorMode',
-        :'save_format' => :'SaveFormat',
-        :'file_name' => :'FileName',
-        :'dml_rendering_mode' => :'DmlRenderingMode',
-        :'dml_effects_rendering_mode' => :'DmlEffectsRenderingMode',
-        :'zip_output' => :'ZipOutput',
-        :'update_last_saved_time_property' => :'UpdateLastSavedTimeProperty',
-        :'update_sdt_content' => :'UpdateSdtContent',
-        :'update_fields' => :'UpdateFields',
-        :'allow_negative_indent' => :'AllowNegativeIndent',
-        :'css_class_name_prefix' => :'CssClassNamePrefix',
-        :'css_style_sheet_file_name' => :'CssStyleSheetFileName',
-        :'css_style_sheet_type' => :'CssStyleSheetType',
-        :'document_split_criteria' => :'DocumentSplitCriteria',
-        :'document_split_heading_level' => :'DocumentSplitHeadingLevel',
-        :'encoding' => :'Encoding',
-        :'export_document_properties' => :'ExportDocumentProperties',
-        :'export_drop_down_form_field_as_text' => :'ExportDropDownFormFieldAsText',
-        :'export_font_resources' => :'ExportFontResources',
-        :'export_fonts_as_base64' => :'ExportFontsAsBase64',
-        :'export_headers_footers_mode' => :'ExportHeadersFootersMode',
-        :'export_images_as_base64' => :'ExportImagesAsBase64',
-        :'export_language_information' => :'ExportLanguageInformation',
-        :'export_list_labels' => :'ExportListLabels',
-        :'export_original_url_for_linked_images' => :'ExportOriginalUrlForLinkedImages',
-        :'export_page_margins' => :'ExportPageMargins',
-        :'export_page_setup' => :'ExportPageSetup',
-        :'export_relative_font_size' => :'ExportRelativeFontSize',
-        :'export_roundtrip_information' => :'ExportRoundtripInformation',
-        :'export_text_box_as_svg' => :'ExportTextBoxAsSvg',
-        :'export_text_input_form_field_as_text' => :'ExportTextInputFormFieldAsText',
-        :'export_toc_page_numbers' => :'ExportTocPageNumbers',
-        :'export_xhtml_transitional' => :'ExportXhtmlTransitional',
-        :'font_resources_subsetting_size_threshold' => :'FontResourcesSubsettingSizeThreshold',
-        :'fonts_folder' => :'FontsFolder',
-        :'fonts_folder_alias' => :'FontsFolderAlias',
-        :'html_version' => :'HtmlVersion',
-        :'image_resolution' => :'ImageResolution',
-        :'images_folder' => :'ImagesFolder',
-        :'images_folder_alias' => :'ImagesFolderAlias',
-        :'metafile_format' => :'MetafileFormat',
-        :'office_math_output_mode' => :'OfficeMathOutputMode',
-        :'pretty_format' => :'PrettyFormat',
-        :'resolve_font_names' => :'ResolveFontNames',
-        :'resource_folder' => :'ResourceFolder',
-        :'resource_folder_alias' => :'ResourceFolderAlias',
-        :'scale_image_to_shape_size' => :'ScaleImageToShapeSize',
-        :'table_width_output_mode' => :'TableWidthOutputMode',
-        :'epub_navigation_map_level' => :'EpubNavigationMapLevel'
+        :'color_mode' => :'colorMode',
+        :'save_format' => :'saveFormat',
+        :'file_name' => :'fileName',
+        :'dml_rendering_mode' => :'dmlRenderingMode',
+        :'dml_effects_rendering_mode' => :'dmlEffectsRenderingMode',
+        :'zip_output' => :'zipOutput',
+        :'update_last_saved_time_property' => :'updateLastSavedTimeProperty',
+        :'update_sdt_content' => :'updateSdtContent',
+        :'update_fields' => :'updateFields',
+        :'allow_negative_indent' => :'allowNegativeIndent',
+        :'css_class_name_prefix' => :'cssClassNamePrefix',
+        :'css_style_sheet_file_name' => :'cssStyleSheetFileName',
+        :'css_style_sheet_type' => :'cssStyleSheetType',
+        :'document_split_criteria' => :'documentSplitCriteria',
+        :'document_split_heading_level' => :'documentSplitHeadingLevel',
+        :'encoding' => :'encoding',
+        :'export_document_properties' => :'exportDocumentProperties',
+        :'export_drop_down_form_field_as_text' => :'exportDropDownFormFieldAsText',
+        :'export_font_resources' => :'exportFontResources',
+        :'export_fonts_as_base64' => :'exportFontsAsBase64',
+        :'export_headers_footers_mode' => :'exportHeadersFootersMode',
+        :'export_images_as_base64' => :'exportImagesAsBase64',
+        :'export_language_information' => :'exportLanguageInformation',
+        :'export_list_labels' => :'exportListLabels',
+        :'export_original_url_for_linked_images' => :'exportOriginalUrlForLinkedImages',
+        :'export_page_margins' => :'exportPageMargins',
+        :'export_page_setup' => :'exportPageSetup',
+        :'export_relative_font_size' => :'exportRelativeFontSize',
+        :'export_roundtrip_information' => :'exportRoundtripInformation',
+        :'export_text_box_as_svg' => :'exportTextBoxAsSvg',
+        :'export_text_input_form_field_as_text' => :'exportTextInputFormFieldAsText',
+        :'export_toc_page_numbers' => :'exportTocPageNumbers',
+        :'export_xhtml_transitional' => :'exportXhtmlTransitional',
+        :'font_resources_subsetting_size_threshold' => :'fontResourcesSubsettingSizeThreshold',
+        :'fonts_folder' => :'fontsFolder',
+        :'fonts_folder_alias' => :'fontsFolderAlias',
+        :'html_version' => :'htmlVersion',
+        :'image_resolution' => :'imageResolution',
+        :'images_folder' => :'imagesFolder',
+        :'images_folder_alias' => :'imagesFolderAlias',
+        :'metafile_format' => :'metafileFormat',
+        :'office_math_output_mode' => :'officeMathOutputMode',
+        :'pretty_format' => :'prettyFormat',
+        :'resolve_font_names' => :'resolveFontNames',
+        :'resource_folder' => :'resourceFolder',
+        :'resource_folder_alias' => :'resourceFolderAlias',
+        :'scale_image_to_shape_size' => :'scaleImageToShapeSize',
+        :'table_width_output_mode' => :'tableWidthOutputMode',
+        :'epub_navigation_map_level' => :'epubNavigationMapLevel'
       }
     end
 
@@ -318,200 +318,200 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'ColorMode')
-        self.color_mode = attributes[:'ColorMode']
+      if attributes.key?(:'colorMode')
+        self.color_mode = attributes[:'colorMode']
       end
 
-      if attributes.key?(:'SaveFormat')
-        self.save_format = attributes[:'SaveFormat']
+      if attributes.key?(:'saveFormat')
+        self.save_format = attributes[:'saveFormat']
       end
 
-      if attributes.key?(:'FileName')
-        self.file_name = attributes[:'FileName']
+      if attributes.key?(:'fileName')
+        self.file_name = attributes[:'fileName']
       end
 
-      if attributes.key?(:'DmlRenderingMode')
-        self.dml_rendering_mode = attributes[:'DmlRenderingMode']
+      if attributes.key?(:'dmlRenderingMode')
+        self.dml_rendering_mode = attributes[:'dmlRenderingMode']
       end
 
-      if attributes.key?(:'DmlEffectsRenderingMode')
-        self.dml_effects_rendering_mode = attributes[:'DmlEffectsRenderingMode']
+      if attributes.key?(:'dmlEffectsRenderingMode')
+        self.dml_effects_rendering_mode = attributes[:'dmlEffectsRenderingMode']
       end
 
-      if attributes.key?(:'ZipOutput')
-        self.zip_output = attributes[:'ZipOutput']
+      if attributes.key?(:'zipOutput')
+        self.zip_output = attributes[:'zipOutput']
       end
 
-      if attributes.key?(:'UpdateLastSavedTimeProperty')
-        self.update_last_saved_time_property = attributes[:'UpdateLastSavedTimeProperty']
+      if attributes.key?(:'updateLastSavedTimeProperty')
+        self.update_last_saved_time_property = attributes[:'updateLastSavedTimeProperty']
       end
 
-      if attributes.key?(:'UpdateSdtContent')
-        self.update_sdt_content = attributes[:'UpdateSdtContent']
+      if attributes.key?(:'updateSdtContent')
+        self.update_sdt_content = attributes[:'updateSdtContent']
       end
 
-      if attributes.key?(:'UpdateFields')
-        self.update_fields = attributes[:'UpdateFields']
+      if attributes.key?(:'updateFields')
+        self.update_fields = attributes[:'updateFields']
       end
 
-      if attributes.key?(:'AllowNegativeIndent')
-        self.allow_negative_indent = attributes[:'AllowNegativeIndent']
+      if attributes.key?(:'allowNegativeIndent')
+        self.allow_negative_indent = attributes[:'allowNegativeIndent']
       end
 
-      if attributes.key?(:'CssClassNamePrefix')
-        self.css_class_name_prefix = attributes[:'CssClassNamePrefix']
+      if attributes.key?(:'cssClassNamePrefix')
+        self.css_class_name_prefix = attributes[:'cssClassNamePrefix']
       end
 
-      if attributes.key?(:'CssStyleSheetFileName')
-        self.css_style_sheet_file_name = attributes[:'CssStyleSheetFileName']
+      if attributes.key?(:'cssStyleSheetFileName')
+        self.css_style_sheet_file_name = attributes[:'cssStyleSheetFileName']
       end
 
-      if attributes.key?(:'CssStyleSheetType')
-        self.css_style_sheet_type = attributes[:'CssStyleSheetType']
+      if attributes.key?(:'cssStyleSheetType')
+        self.css_style_sheet_type = attributes[:'cssStyleSheetType']
       end
 
-      if attributes.key?(:'DocumentSplitCriteria')
-        self.document_split_criteria = attributes[:'DocumentSplitCriteria']
+      if attributes.key?(:'documentSplitCriteria')
+        self.document_split_criteria = attributes[:'documentSplitCriteria']
       end
 
-      if attributes.key?(:'DocumentSplitHeadingLevel')
-        self.document_split_heading_level = attributes[:'DocumentSplitHeadingLevel']
+      if attributes.key?(:'documentSplitHeadingLevel')
+        self.document_split_heading_level = attributes[:'documentSplitHeadingLevel']
       end
 
-      if attributes.key?(:'Encoding')
-        self.encoding = attributes[:'Encoding']
+      if attributes.key?(:'encoding')
+        self.encoding = attributes[:'encoding']
       end
 
-      if attributes.key?(:'ExportDocumentProperties')
-        self.export_document_properties = attributes[:'ExportDocumentProperties']
+      if attributes.key?(:'exportDocumentProperties')
+        self.export_document_properties = attributes[:'exportDocumentProperties']
       end
 
-      if attributes.key?(:'ExportDropDownFormFieldAsText')
-        self.export_drop_down_form_field_as_text = attributes[:'ExportDropDownFormFieldAsText']
+      if attributes.key?(:'exportDropDownFormFieldAsText')
+        self.export_drop_down_form_field_as_text = attributes[:'exportDropDownFormFieldAsText']
       end
 
-      if attributes.key?(:'ExportFontResources')
-        self.export_font_resources = attributes[:'ExportFontResources']
+      if attributes.key?(:'exportFontResources')
+        self.export_font_resources = attributes[:'exportFontResources']
       end
 
-      if attributes.key?(:'ExportFontsAsBase64')
-        self.export_fonts_as_base64 = attributes[:'ExportFontsAsBase64']
+      if attributes.key?(:'exportFontsAsBase64')
+        self.export_fonts_as_base64 = attributes[:'exportFontsAsBase64']
       end
 
-      if attributes.key?(:'ExportHeadersFootersMode')
-        self.export_headers_footers_mode = attributes[:'ExportHeadersFootersMode']
+      if attributes.key?(:'exportHeadersFootersMode')
+        self.export_headers_footers_mode = attributes[:'exportHeadersFootersMode']
       end
 
-      if attributes.key?(:'ExportImagesAsBase64')
-        self.export_images_as_base64 = attributes[:'ExportImagesAsBase64']
+      if attributes.key?(:'exportImagesAsBase64')
+        self.export_images_as_base64 = attributes[:'exportImagesAsBase64']
       end
 
-      if attributes.key?(:'ExportLanguageInformation')
-        self.export_language_information = attributes[:'ExportLanguageInformation']
+      if attributes.key?(:'exportLanguageInformation')
+        self.export_language_information = attributes[:'exportLanguageInformation']
       end
 
-      if attributes.key?(:'ExportListLabels')
-        self.export_list_labels = attributes[:'ExportListLabels']
+      if attributes.key?(:'exportListLabels')
+        self.export_list_labels = attributes[:'exportListLabels']
       end
 
-      if attributes.key?(:'ExportOriginalUrlForLinkedImages')
-        self.export_original_url_for_linked_images = attributes[:'ExportOriginalUrlForLinkedImages']
+      if attributes.key?(:'exportOriginalUrlForLinkedImages')
+        self.export_original_url_for_linked_images = attributes[:'exportOriginalUrlForLinkedImages']
       end
 
-      if attributes.key?(:'ExportPageMargins')
-        self.export_page_margins = attributes[:'ExportPageMargins']
+      if attributes.key?(:'exportPageMargins')
+        self.export_page_margins = attributes[:'exportPageMargins']
       end
 
-      if attributes.key?(:'ExportPageSetup')
-        self.export_page_setup = attributes[:'ExportPageSetup']
+      if attributes.key?(:'exportPageSetup')
+        self.export_page_setup = attributes[:'exportPageSetup']
       end
 
-      if attributes.key?(:'ExportRelativeFontSize')
-        self.export_relative_font_size = attributes[:'ExportRelativeFontSize']
+      if attributes.key?(:'exportRelativeFontSize')
+        self.export_relative_font_size = attributes[:'exportRelativeFontSize']
       end
 
-      if attributes.key?(:'ExportRoundtripInformation')
-        self.export_roundtrip_information = attributes[:'ExportRoundtripInformation']
+      if attributes.key?(:'exportRoundtripInformation')
+        self.export_roundtrip_information = attributes[:'exportRoundtripInformation']
       end
 
-      if attributes.key?(:'ExportTextBoxAsSvg')
-        self.export_text_box_as_svg = attributes[:'ExportTextBoxAsSvg']
+      if attributes.key?(:'exportTextBoxAsSvg')
+        self.export_text_box_as_svg = attributes[:'exportTextBoxAsSvg']
       end
 
-      if attributes.key?(:'ExportTextInputFormFieldAsText')
-        self.export_text_input_form_field_as_text = attributes[:'ExportTextInputFormFieldAsText']
+      if attributes.key?(:'exportTextInputFormFieldAsText')
+        self.export_text_input_form_field_as_text = attributes[:'exportTextInputFormFieldAsText']
       end
 
-      if attributes.key?(:'ExportTocPageNumbers')
-        self.export_toc_page_numbers = attributes[:'ExportTocPageNumbers']
+      if attributes.key?(:'exportTocPageNumbers')
+        self.export_toc_page_numbers = attributes[:'exportTocPageNumbers']
       end
 
-      if attributes.key?(:'ExportXhtmlTransitional')
-        self.export_xhtml_transitional = attributes[:'ExportXhtmlTransitional']
+      if attributes.key?(:'exportXhtmlTransitional')
+        self.export_xhtml_transitional = attributes[:'exportXhtmlTransitional']
       end
 
-      if attributes.key?(:'FontResourcesSubsettingSizeThreshold')
-        self.font_resources_subsetting_size_threshold = attributes[:'FontResourcesSubsettingSizeThreshold']
+      if attributes.key?(:'fontResourcesSubsettingSizeThreshold')
+        self.font_resources_subsetting_size_threshold = attributes[:'fontResourcesSubsettingSizeThreshold']
       end
 
-      if attributes.key?(:'FontsFolder')
-        self.fonts_folder = attributes[:'FontsFolder']
+      if attributes.key?(:'fontsFolder')
+        self.fonts_folder = attributes[:'fontsFolder']
       end
 
-      if attributes.key?(:'FontsFolderAlias')
-        self.fonts_folder_alias = attributes[:'FontsFolderAlias']
+      if attributes.key?(:'fontsFolderAlias')
+        self.fonts_folder_alias = attributes[:'fontsFolderAlias']
       end
 
-      if attributes.key?(:'HtmlVersion')
-        self.html_version = attributes[:'HtmlVersion']
+      if attributes.key?(:'htmlVersion')
+        self.html_version = attributes[:'htmlVersion']
       end
 
-      if attributes.key?(:'ImageResolution')
-        self.image_resolution = attributes[:'ImageResolution']
+      if attributes.key?(:'imageResolution')
+        self.image_resolution = attributes[:'imageResolution']
       end
 
-      if attributes.key?(:'ImagesFolder')
-        self.images_folder = attributes[:'ImagesFolder']
+      if attributes.key?(:'imagesFolder')
+        self.images_folder = attributes[:'imagesFolder']
       end
 
-      if attributes.key?(:'ImagesFolderAlias')
-        self.images_folder_alias = attributes[:'ImagesFolderAlias']
+      if attributes.key?(:'imagesFolderAlias')
+        self.images_folder_alias = attributes[:'imagesFolderAlias']
       end
 
-      if attributes.key?(:'MetafileFormat')
-        self.metafile_format = attributes[:'MetafileFormat']
+      if attributes.key?(:'metafileFormat')
+        self.metafile_format = attributes[:'metafileFormat']
       end
 
-      if attributes.key?(:'OfficeMathOutputMode')
-        self.office_math_output_mode = attributes[:'OfficeMathOutputMode']
+      if attributes.key?(:'officeMathOutputMode')
+        self.office_math_output_mode = attributes[:'officeMathOutputMode']
       end
 
-      if attributes.key?(:'PrettyFormat')
-        self.pretty_format = attributes[:'PrettyFormat']
+      if attributes.key?(:'prettyFormat')
+        self.pretty_format = attributes[:'prettyFormat']
       end
 
-      if attributes.key?(:'ResolveFontNames')
-        self.resolve_font_names = attributes[:'ResolveFontNames']
+      if attributes.key?(:'resolveFontNames')
+        self.resolve_font_names = attributes[:'resolveFontNames']
       end
 
-      if attributes.key?(:'ResourceFolder')
-        self.resource_folder = attributes[:'ResourceFolder']
+      if attributes.key?(:'resourceFolder')
+        self.resource_folder = attributes[:'resourceFolder']
       end
 
-      if attributes.key?(:'ResourceFolderAlias')
-        self.resource_folder_alias = attributes[:'ResourceFolderAlias']
+      if attributes.key?(:'resourceFolderAlias')
+        self.resource_folder_alias = attributes[:'resourceFolderAlias']
       end
 
-      if attributes.key?(:'ScaleImageToShapeSize')
-        self.scale_image_to_shape_size = attributes[:'ScaleImageToShapeSize']
+      if attributes.key?(:'scaleImageToShapeSize')
+        self.scale_image_to_shape_size = attributes[:'scaleImageToShapeSize']
       end
 
-      if attributes.key?(:'TableWidthOutputMode')
-        self.table_width_output_mode = attributes[:'TableWidthOutputMode']
+      if attributes.key?(:'tableWidthOutputMode')
+        self.table_width_output_mode = attributes[:'tableWidthOutputMode']
       end
 
-      if attributes.key?(:'EpubNavigationMapLevel')
-        self.epub_navigation_map_level = attributes[:'EpubNavigationMapLevel']
+      if attributes.key?(:'epubNavigationMapLevel')
+        self.epub_navigation_map_level = attributes[:'epubNavigationMapLevel']
       end
 
     end
