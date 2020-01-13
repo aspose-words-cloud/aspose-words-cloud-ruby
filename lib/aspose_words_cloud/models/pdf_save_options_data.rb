@@ -173,45 +173,45 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'color_mode' => :'colorMode',
-        :'save_format' => :'saveFormat',
-        :'file_name' => :'fileName',
-        :'dml_rendering_mode' => :'dmlRenderingMode',
-        :'dml_effects_rendering_mode' => :'dmlEffectsRenderingMode',
-        :'zip_output' => :'zipOutput',
-        :'update_last_saved_time_property' => :'updateLastSavedTimeProperty',
-        :'update_sdt_content' => :'updateSdtContent',
-        :'update_fields' => :'updateFields',
-        :'jpeg_quality' => :'jpegQuality',
-        :'metafile_rendering_options' => :'metafileRenderingOptions',
-        :'numeral_format' => :'numeralFormat',
-        :'optimize_output' => :'optimizeOutput',
-        :'page_count' => :'pageCount',
-        :'page_index' => :'pageIndex',
-        :'compliance' => :'compliance',
-        :'create_note_hyperlinks' => :'createNoteHyperlinks',
-        :'custom_properties_export' => :'customPropertiesExport',
-        :'digital_signature_details' => :'digitalSignatureDetails',
-        :'display_doc_title' => :'displayDocTitle',
-        :'downsample_options' => :'downsampleOptions',
-        :'embed_full_fonts' => :'embedFullFonts',
-        :'encryption_details' => :'encryptionDetails',
-        :'escape_uri' => :'escapeUri',
-        :'export_document_structure' => :'exportDocumentStructure',
-        :'font_embedding_mode' => :'fontEmbeddingMode',
-        :'header_footer_bookmarks_export_mode' => :'headerFooterBookmarksExportMode',
-        :'image_color_space_export_mode' => :'imageColorSpaceExportMode',
-        :'image_compression' => :'imageCompression',
-        :'open_hyperlinks_in_new_window' => :'openHyperlinksInNewWindow',
-        :'outline_options' => :'outlineOptions',
-        :'page_mode' => :'pageMode',
-        :'preblend_images' => :'preblendImages',
-        :'preserve_form_fields' => :'preserveFormFields',
-        :'text_compression' => :'textCompression',
-        :'use_book_fold_printing_settings' => :'useBookFoldPrintingSettings',
-        :'use_core_fonts' => :'useCoreFonts',
-        :'zoom_behavior' => :'zoomBehavior',
-        :'zoom_factor' => :'zoomFactor'
+        :'color_mode' => :'ColorMode',
+        :'save_format' => :'SaveFormat',
+        :'file_name' => :'FileName',
+        :'dml_rendering_mode' => :'DmlRenderingMode',
+        :'dml_effects_rendering_mode' => :'DmlEffectsRenderingMode',
+        :'zip_output' => :'ZipOutput',
+        :'update_last_saved_time_property' => :'UpdateLastSavedTimeProperty',
+        :'update_sdt_content' => :'UpdateSdtContent',
+        :'update_fields' => :'UpdateFields',
+        :'jpeg_quality' => :'JpegQuality',
+        :'metafile_rendering_options' => :'MetafileRenderingOptions',
+        :'numeral_format' => :'NumeralFormat',
+        :'optimize_output' => :'OptimizeOutput',
+        :'page_count' => :'PageCount',
+        :'page_index' => :'PageIndex',
+        :'compliance' => :'Compliance',
+        :'create_note_hyperlinks' => :'CreateNoteHyperlinks',
+        :'custom_properties_export' => :'CustomPropertiesExport',
+        :'digital_signature_details' => :'DigitalSignatureDetails',
+        :'display_doc_title' => :'DisplayDocTitle',
+        :'downsample_options' => :'DownsampleOptions',
+        :'embed_full_fonts' => :'EmbedFullFonts',
+        :'encryption_details' => :'EncryptionDetails',
+        :'escape_uri' => :'EscapeUri',
+        :'export_document_structure' => :'ExportDocumentStructure',
+        :'font_embedding_mode' => :'FontEmbeddingMode',
+        :'header_footer_bookmarks_export_mode' => :'HeaderFooterBookmarksExportMode',
+        :'image_color_space_export_mode' => :'ImageColorSpaceExportMode',
+        :'image_compression' => :'ImageCompression',
+        :'open_hyperlinks_in_new_window' => :'OpenHyperlinksInNewWindow',
+        :'outline_options' => :'OutlineOptions',
+        :'page_mode' => :'PageMode',
+        :'preblend_images' => :'PreblendImages',
+        :'preserve_form_fields' => :'PreserveFormFields',
+        :'text_compression' => :'TextCompression',
+        :'use_book_fold_printing_settings' => :'UseBookFoldPrintingSettings',
+        :'use_core_fonts' => :'UseCoreFonts',
+        :'zoom_behavior' => :'ZoomBehavior',
+        :'zoom_factor' => :'ZoomFactor'
       }
     end
 
@@ -268,160 +268,160 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'colorMode')
-        self.color_mode = attributes[:'colorMode']
+      if attributes.key?(:'ColorMode')
+        self.color_mode = attributes[:'ColorMode']
       end
 
-      if attributes.key?(:'saveFormat')
-        self.save_format = attributes[:'saveFormat']
+      if attributes.key?(:'SaveFormat')
+        self.save_format = attributes[:'SaveFormat']
       end
 
-      if attributes.key?(:'fileName')
-        self.file_name = attributes[:'fileName']
+      if attributes.key?(:'FileName')
+        self.file_name = attributes[:'FileName']
       end
 
-      if attributes.key?(:'dmlRenderingMode')
-        self.dml_rendering_mode = attributes[:'dmlRenderingMode']
+      if attributes.key?(:'DmlRenderingMode')
+        self.dml_rendering_mode = attributes[:'DmlRenderingMode']
       end
 
-      if attributes.key?(:'dmlEffectsRenderingMode')
-        self.dml_effects_rendering_mode = attributes[:'dmlEffectsRenderingMode']
+      if attributes.key?(:'DmlEffectsRenderingMode')
+        self.dml_effects_rendering_mode = attributes[:'DmlEffectsRenderingMode']
       end
 
-      if attributes.key?(:'zipOutput')
-        self.zip_output = attributes[:'zipOutput']
+      if attributes.key?(:'ZipOutput')
+        self.zip_output = attributes[:'ZipOutput']
       end
 
-      if attributes.key?(:'updateLastSavedTimeProperty')
-        self.update_last_saved_time_property = attributes[:'updateLastSavedTimeProperty']
+      if attributes.key?(:'UpdateLastSavedTimeProperty')
+        self.update_last_saved_time_property = attributes[:'UpdateLastSavedTimeProperty']
       end
 
-      if attributes.key?(:'updateSdtContent')
-        self.update_sdt_content = attributes[:'updateSdtContent']
+      if attributes.key?(:'UpdateSdtContent')
+        self.update_sdt_content = attributes[:'UpdateSdtContent']
       end
 
-      if attributes.key?(:'updateFields')
-        self.update_fields = attributes[:'updateFields']
+      if attributes.key?(:'UpdateFields')
+        self.update_fields = attributes[:'UpdateFields']
       end
 
-      if attributes.key?(:'jpegQuality')
-        self.jpeg_quality = attributes[:'jpegQuality']
+      if attributes.key?(:'JpegQuality')
+        self.jpeg_quality = attributes[:'JpegQuality']
       end
 
-      if attributes.key?(:'metafileRenderingOptions')
-        self.metafile_rendering_options = attributes[:'metafileRenderingOptions']
+      if attributes.key?(:'MetafileRenderingOptions')
+        self.metafile_rendering_options = attributes[:'MetafileRenderingOptions']
       end
 
-      if attributes.key?(:'numeralFormat')
-        self.numeral_format = attributes[:'numeralFormat']
+      if attributes.key?(:'NumeralFormat')
+        self.numeral_format = attributes[:'NumeralFormat']
       end
 
-      if attributes.key?(:'optimizeOutput')
-        self.optimize_output = attributes[:'optimizeOutput']
+      if attributes.key?(:'OptimizeOutput')
+        self.optimize_output = attributes[:'OptimizeOutput']
       end
 
-      if attributes.key?(:'pageCount')
-        self.page_count = attributes[:'pageCount']
+      if attributes.key?(:'PageCount')
+        self.page_count = attributes[:'PageCount']
       end
 
-      if attributes.key?(:'pageIndex')
-        self.page_index = attributes[:'pageIndex']
+      if attributes.key?(:'PageIndex')
+        self.page_index = attributes[:'PageIndex']
       end
 
-      if attributes.key?(:'compliance')
-        self.compliance = attributes[:'compliance']
+      if attributes.key?(:'Compliance')
+        self.compliance = attributes[:'Compliance']
       end
 
-      if attributes.key?(:'createNoteHyperlinks')
-        self.create_note_hyperlinks = attributes[:'createNoteHyperlinks']
+      if attributes.key?(:'CreateNoteHyperlinks')
+        self.create_note_hyperlinks = attributes[:'CreateNoteHyperlinks']
       end
 
-      if attributes.key?(:'customPropertiesExport')
-        self.custom_properties_export = attributes[:'customPropertiesExport']
+      if attributes.key?(:'CustomPropertiesExport')
+        self.custom_properties_export = attributes[:'CustomPropertiesExport']
       end
 
-      if attributes.key?(:'digitalSignatureDetails')
-        self.digital_signature_details = attributes[:'digitalSignatureDetails']
+      if attributes.key?(:'DigitalSignatureDetails')
+        self.digital_signature_details = attributes[:'DigitalSignatureDetails']
       end
 
-      if attributes.key?(:'displayDocTitle')
-        self.display_doc_title = attributes[:'displayDocTitle']
+      if attributes.key?(:'DisplayDocTitle')
+        self.display_doc_title = attributes[:'DisplayDocTitle']
       end
 
-      if attributes.key?(:'downsampleOptions')
-        self.downsample_options = attributes[:'downsampleOptions']
+      if attributes.key?(:'DownsampleOptions')
+        self.downsample_options = attributes[:'DownsampleOptions']
       end
 
-      if attributes.key?(:'embedFullFonts')
-        self.embed_full_fonts = attributes[:'embedFullFonts']
+      if attributes.key?(:'EmbedFullFonts')
+        self.embed_full_fonts = attributes[:'EmbedFullFonts']
       end
 
-      if attributes.key?(:'encryptionDetails')
-        self.encryption_details = attributes[:'encryptionDetails']
+      if attributes.key?(:'EncryptionDetails')
+        self.encryption_details = attributes[:'EncryptionDetails']
       end
 
-      if attributes.key?(:'escapeUri')
-        self.escape_uri = attributes[:'escapeUri']
+      if attributes.key?(:'EscapeUri')
+        self.escape_uri = attributes[:'EscapeUri']
       end
 
-      if attributes.key?(:'exportDocumentStructure')
-        self.export_document_structure = attributes[:'exportDocumentStructure']
+      if attributes.key?(:'ExportDocumentStructure')
+        self.export_document_structure = attributes[:'ExportDocumentStructure']
       end
 
-      if attributes.key?(:'fontEmbeddingMode')
-        self.font_embedding_mode = attributes[:'fontEmbeddingMode']
+      if attributes.key?(:'FontEmbeddingMode')
+        self.font_embedding_mode = attributes[:'FontEmbeddingMode']
       end
 
-      if attributes.key?(:'headerFooterBookmarksExportMode')
-        self.header_footer_bookmarks_export_mode = attributes[:'headerFooterBookmarksExportMode']
+      if attributes.key?(:'HeaderFooterBookmarksExportMode')
+        self.header_footer_bookmarks_export_mode = attributes[:'HeaderFooterBookmarksExportMode']
       end
 
-      if attributes.key?(:'imageColorSpaceExportMode')
-        self.image_color_space_export_mode = attributes[:'imageColorSpaceExportMode']
+      if attributes.key?(:'ImageColorSpaceExportMode')
+        self.image_color_space_export_mode = attributes[:'ImageColorSpaceExportMode']
       end
 
-      if attributes.key?(:'imageCompression')
-        self.image_compression = attributes[:'imageCompression']
+      if attributes.key?(:'ImageCompression')
+        self.image_compression = attributes[:'ImageCompression']
       end
 
-      if attributes.key?(:'openHyperlinksInNewWindow')
-        self.open_hyperlinks_in_new_window = attributes[:'openHyperlinksInNewWindow']
+      if attributes.key?(:'OpenHyperlinksInNewWindow')
+        self.open_hyperlinks_in_new_window = attributes[:'OpenHyperlinksInNewWindow']
       end
 
-      if attributes.key?(:'outlineOptions')
-        self.outline_options = attributes[:'outlineOptions']
+      if attributes.key?(:'OutlineOptions')
+        self.outline_options = attributes[:'OutlineOptions']
       end
 
-      if attributes.key?(:'pageMode')
-        self.page_mode = attributes[:'pageMode']
+      if attributes.key?(:'PageMode')
+        self.page_mode = attributes[:'PageMode']
       end
 
-      if attributes.key?(:'preblendImages')
-        self.preblend_images = attributes[:'preblendImages']
+      if attributes.key?(:'PreblendImages')
+        self.preblend_images = attributes[:'PreblendImages']
       end
 
-      if attributes.key?(:'preserveFormFields')
-        self.preserve_form_fields = attributes[:'preserveFormFields']
+      if attributes.key?(:'PreserveFormFields')
+        self.preserve_form_fields = attributes[:'PreserveFormFields']
       end
 
-      if attributes.key?(:'textCompression')
-        self.text_compression = attributes[:'textCompression']
+      if attributes.key?(:'TextCompression')
+        self.text_compression = attributes[:'TextCompression']
       end
 
-      if attributes.key?(:'useBookFoldPrintingSettings')
-        self.use_book_fold_printing_settings = attributes[:'useBookFoldPrintingSettings']
+      if attributes.key?(:'UseBookFoldPrintingSettings')
+        self.use_book_fold_printing_settings = attributes[:'UseBookFoldPrintingSettings']
       end
 
-      if attributes.key?(:'useCoreFonts')
-        self.use_core_fonts = attributes[:'useCoreFonts']
+      if attributes.key?(:'UseCoreFonts')
+        self.use_core_fonts = attributes[:'UseCoreFonts']
       end
 
-      if attributes.key?(:'zoomBehavior')
-        self.zoom_behavior = attributes[:'zoomBehavior']
+      if attributes.key?(:'ZoomBehavior')
+        self.zoom_behavior = attributes[:'ZoomBehavior']
       end
 
-      if attributes.key?(:'zoomFactor')
-        self.zoom_factor = attributes[:'zoomFactor']
+      if attributes.key?(:'ZoomFactor')
+        self.zoom_factor = attributes[:'ZoomFactor']
       end
 
     end

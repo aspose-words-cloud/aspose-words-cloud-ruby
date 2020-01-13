@@ -98,27 +98,27 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'color_mode' => :'colorMode',
-        :'save_format' => :'saveFormat',
-        :'file_name' => :'fileName',
-        :'dml_rendering_mode' => :'dmlRenderingMode',
-        :'dml_effects_rendering_mode' => :'dmlEffectsRenderingMode',
-        :'zip_output' => :'zipOutput',
-        :'update_last_saved_time_property' => :'updateLastSavedTimeProperty',
-        :'update_sdt_content' => :'updateSdtContent',
-        :'update_fields' => :'updateFields',
-        :'jpeg_quality' => :'jpegQuality',
-        :'metafile_rendering_options' => :'metafileRenderingOptions',
-        :'numeral_format' => :'numeralFormat',
-        :'optimize_output' => :'optimizeOutput',
-        :'page_count' => :'pageCount',
-        :'page_index' => :'pageIndex',
-        :'export_embedded_images' => :'exportEmbeddedImages',
-        :'fit_to_view_port' => :'fitToViewPort',
-        :'resources_folder' => :'resourcesFolder',
-        :'resources_folder_alias' => :'resourcesFolderAlias',
-        :'show_page_border' => :'showPageBorder',
-        :'text_output_mode' => :'textOutputMode'
+        :'color_mode' => :'ColorMode',
+        :'save_format' => :'SaveFormat',
+        :'file_name' => :'FileName',
+        :'dml_rendering_mode' => :'DmlRenderingMode',
+        :'dml_effects_rendering_mode' => :'DmlEffectsRenderingMode',
+        :'zip_output' => :'ZipOutput',
+        :'update_last_saved_time_property' => :'UpdateLastSavedTimeProperty',
+        :'update_sdt_content' => :'UpdateSdtContent',
+        :'update_fields' => :'UpdateFields',
+        :'jpeg_quality' => :'JpegQuality',
+        :'metafile_rendering_options' => :'MetafileRenderingOptions',
+        :'numeral_format' => :'NumeralFormat',
+        :'optimize_output' => :'OptimizeOutput',
+        :'page_count' => :'PageCount',
+        :'page_index' => :'PageIndex',
+        :'export_embedded_images' => :'ExportEmbeddedImages',
+        :'fit_to_view_port' => :'FitToViewPort',
+        :'resources_folder' => :'ResourcesFolder',
+        :'resources_folder_alias' => :'ResourcesFolderAlias',
+        :'show_page_border' => :'ShowPageBorder',
+        :'text_output_mode' => :'TextOutputMode'
       }
     end
 
@@ -157,88 +157,88 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'colorMode')
-        self.color_mode = attributes[:'colorMode']
+      if attributes.key?(:'ColorMode')
+        self.color_mode = attributes[:'ColorMode']
       end
 
-      if attributes.key?(:'saveFormat')
-        self.save_format = attributes[:'saveFormat']
+      if attributes.key?(:'SaveFormat')
+        self.save_format = attributes[:'SaveFormat']
       end
 
-      if attributes.key?(:'fileName')
-        self.file_name = attributes[:'fileName']
+      if attributes.key?(:'FileName')
+        self.file_name = attributes[:'FileName']
       end
 
-      if attributes.key?(:'dmlRenderingMode')
-        self.dml_rendering_mode = attributes[:'dmlRenderingMode']
+      if attributes.key?(:'DmlRenderingMode')
+        self.dml_rendering_mode = attributes[:'DmlRenderingMode']
       end
 
-      if attributes.key?(:'dmlEffectsRenderingMode')
-        self.dml_effects_rendering_mode = attributes[:'dmlEffectsRenderingMode']
+      if attributes.key?(:'DmlEffectsRenderingMode')
+        self.dml_effects_rendering_mode = attributes[:'DmlEffectsRenderingMode']
       end
 
-      if attributes.key?(:'zipOutput')
-        self.zip_output = attributes[:'zipOutput']
+      if attributes.key?(:'ZipOutput')
+        self.zip_output = attributes[:'ZipOutput']
       end
 
-      if attributes.key?(:'updateLastSavedTimeProperty')
-        self.update_last_saved_time_property = attributes[:'updateLastSavedTimeProperty']
+      if attributes.key?(:'UpdateLastSavedTimeProperty')
+        self.update_last_saved_time_property = attributes[:'UpdateLastSavedTimeProperty']
       end
 
-      if attributes.key?(:'updateSdtContent')
-        self.update_sdt_content = attributes[:'updateSdtContent']
+      if attributes.key?(:'UpdateSdtContent')
+        self.update_sdt_content = attributes[:'UpdateSdtContent']
       end
 
-      if attributes.key?(:'updateFields')
-        self.update_fields = attributes[:'updateFields']
+      if attributes.key?(:'UpdateFields')
+        self.update_fields = attributes[:'UpdateFields']
       end
 
-      if attributes.key?(:'jpegQuality')
-        self.jpeg_quality = attributes[:'jpegQuality']
+      if attributes.key?(:'JpegQuality')
+        self.jpeg_quality = attributes[:'JpegQuality']
       end
 
-      if attributes.key?(:'metafileRenderingOptions')
-        self.metafile_rendering_options = attributes[:'metafileRenderingOptions']
+      if attributes.key?(:'MetafileRenderingOptions')
+        self.metafile_rendering_options = attributes[:'MetafileRenderingOptions']
       end
 
-      if attributes.key?(:'numeralFormat')
-        self.numeral_format = attributes[:'numeralFormat']
+      if attributes.key?(:'NumeralFormat')
+        self.numeral_format = attributes[:'NumeralFormat']
       end
 
-      if attributes.key?(:'optimizeOutput')
-        self.optimize_output = attributes[:'optimizeOutput']
+      if attributes.key?(:'OptimizeOutput')
+        self.optimize_output = attributes[:'OptimizeOutput']
       end
 
-      if attributes.key?(:'pageCount')
-        self.page_count = attributes[:'pageCount']
+      if attributes.key?(:'PageCount')
+        self.page_count = attributes[:'PageCount']
       end
 
-      if attributes.key?(:'pageIndex')
-        self.page_index = attributes[:'pageIndex']
+      if attributes.key?(:'PageIndex')
+        self.page_index = attributes[:'PageIndex']
       end
 
-      if attributes.key?(:'exportEmbeddedImages')
-        self.export_embedded_images = attributes[:'exportEmbeddedImages']
+      if attributes.key?(:'ExportEmbeddedImages')
+        self.export_embedded_images = attributes[:'ExportEmbeddedImages']
       end
 
-      if attributes.key?(:'fitToViewPort')
-        self.fit_to_view_port = attributes[:'fitToViewPort']
+      if attributes.key?(:'FitToViewPort')
+        self.fit_to_view_port = attributes[:'FitToViewPort']
       end
 
-      if attributes.key?(:'resourcesFolder')
-        self.resources_folder = attributes[:'resourcesFolder']
+      if attributes.key?(:'ResourcesFolder')
+        self.resources_folder = attributes[:'ResourcesFolder']
       end
 
-      if attributes.key?(:'resourcesFolderAlias')
-        self.resources_folder_alias = attributes[:'resourcesFolderAlias']
+      if attributes.key?(:'ResourcesFolderAlias')
+        self.resources_folder_alias = attributes[:'ResourcesFolderAlias']
       end
 
-      if attributes.key?(:'showPageBorder')
-        self.show_page_border = attributes[:'showPageBorder']
+      if attributes.key?(:'ShowPageBorder')
+        self.show_page_border = attributes[:'ShowPageBorder']
       end
 
-      if attributes.key?(:'textOutputMode')
-        self.text_output_mode = attributes[:'textOutputMode']
+      if attributes.key?(:'TextOutputMode')
+        self.text_output_mode = attributes[:'TextOutputMode']
       end
 
     end

@@ -72,10 +72,10 @@ module AsposeWordsCloud
     def self.attribute_map
       {
         :'link' => :'link',
-        :'type' => :'type',
-        :'child_nodes' => :'childNodes',
-        :'drawing_objects' => :'drawingObjects',
-        :'paragraphs' => :'paragraphs'
+        :'type' => :'Type',
+        :'child_nodes' => :'ChildNodes',
+        :'drawing_objects' => :'DrawingObjects',
+        :'paragraphs' => :'Paragraphs'
       }
     end
 
@@ -102,22 +102,22 @@ module AsposeWordsCloud
         self.link = attributes[:'link']
       end
 
-      if attributes.key?(:'type')
-        self.type = attributes[:'type']
+      if attributes.key?(:'Type')
+        self.type = attributes[:'Type']
       end
 
-      if attributes.key?(:'childNodes')
-        if (value = attributes[:'childNodes']).is_a?(Array)
+      if attributes.key?(:'ChildNodes')
+        if (value = attributes[:'ChildNodes']).is_a?(Array)
           self.child_nodes = value
         end
       end
 
-      if attributes.key?(:'drawingObjects')
-        self.drawing_objects = attributes[:'drawingObjects']
+      if attributes.key?(:'DrawingObjects')
+        self.drawing_objects = attributes[:'DrawingObjects']
       end
 
-      if attributes.key?(:'paragraphs')
-        self.paragraphs = attributes[:'paragraphs']
+      if attributes.key?(:'Paragraphs')
+        self.paragraphs = attributes[:'Paragraphs']
       end
 
     end

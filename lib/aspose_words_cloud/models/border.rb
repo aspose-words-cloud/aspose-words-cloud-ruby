@@ -78,12 +78,12 @@ module AsposeWordsCloud
     def self.attribute_map
       {
         :'link' => :'link',
-        :'border_type' => :'borderType',
-        :'color' => :'color',
-        :'distance_from_text' => :'distanceFromText',
-        :'line_style' => :'lineStyle',
-        :'line_width' => :'lineWidth',
-        :'shadow' => :'shadow'
+        :'border_type' => :'BorderType',
+        :'color' => :'Color',
+        :'distance_from_text' => :'DistanceFromText',
+        :'line_style' => :'LineStyle',
+        :'line_width' => :'LineWidth',
+        :'shadow' => :'Shadow'
       }
     end
 
@@ -112,28 +112,28 @@ module AsposeWordsCloud
         self.link = attributes[:'link']
       end
 
-      if attributes.key?(:'borderType')
-        self.border_type = attributes[:'borderType']
+      if attributes.key?(:'BorderType')
+        self.border_type = attributes[:'BorderType']
       end
 
-      if attributes.key?(:'color')
-        self.color = attributes[:'color']
+      if attributes.key?(:'Color')
+        self.color = attributes[:'Color']
       end
 
-      if attributes.key?(:'distanceFromText')
-        self.distance_from_text = attributes[:'distanceFromText']
+      if attributes.key?(:'DistanceFromText')
+        self.distance_from_text = attributes[:'DistanceFromText']
       end
 
-      if attributes.key?(:'lineStyle')
-        self.line_style = attributes[:'lineStyle']
+      if attributes.key?(:'LineStyle')
+        self.line_style = attributes[:'LineStyle']
       end
 
-      if attributes.key?(:'lineWidth')
-        self.line_width = attributes[:'lineWidth']
+      if attributes.key?(:'LineWidth')
+        self.line_width = attributes[:'LineWidth']
       end
 
-      if attributes.key?(:'shadow')
-        self.shadow = attributes[:'shadow']
+      if attributes.key?(:'Shadow')
+        self.shadow = attributes[:'Shadow']
       end
 
     end

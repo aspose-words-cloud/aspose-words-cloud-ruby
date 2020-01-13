@@ -119,34 +119,34 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'color_mode' => :'colorMode',
-        :'save_format' => :'saveFormat',
-        :'file_name' => :'fileName',
-        :'dml_rendering_mode' => :'dmlRenderingMode',
-        :'dml_effects_rendering_mode' => :'dmlEffectsRenderingMode',
-        :'zip_output' => :'zipOutput',
-        :'update_last_saved_time_property' => :'updateLastSavedTimeProperty',
-        :'update_sdt_content' => :'updateSdtContent',
-        :'update_fields' => :'updateFields',
-        :'jpeg_quality' => :'jpegQuality',
-        :'metafile_rendering_options' => :'metafileRenderingOptions',
-        :'numeral_format' => :'numeralFormat',
-        :'optimize_output' => :'optimizeOutput',
-        :'page_count' => :'pageCount',
-        :'page_index' => :'pageIndex',
-        :'graphics_quality_options' => :'graphicsQualityOptions',
-        :'horizontal_resolution' => :'horizontalResolution',
-        :'image_brightness' => :'imageBrightness',
-        :'image_color_mode' => :'imageColorMode',
-        :'image_contrast' => :'imageContrast',
-        :'paper_color' => :'paperColor',
-        :'pixel_format' => :'pixelFormat',
-        :'resolution' => :'resolution',
-        :'scale' => :'scale',
-        :'use_anti_aliasing' => :'useAntiAliasing',
-        :'use_gdi_emf_renderer' => :'useGdiEmfRenderer',
-        :'use_high_quality_rendering' => :'useHighQualityRendering',
-        :'vertical_resolution' => :'verticalResolution'
+        :'color_mode' => :'ColorMode',
+        :'save_format' => :'SaveFormat',
+        :'file_name' => :'FileName',
+        :'dml_rendering_mode' => :'DmlRenderingMode',
+        :'dml_effects_rendering_mode' => :'DmlEffectsRenderingMode',
+        :'zip_output' => :'ZipOutput',
+        :'update_last_saved_time_property' => :'UpdateLastSavedTimeProperty',
+        :'update_sdt_content' => :'UpdateSdtContent',
+        :'update_fields' => :'UpdateFields',
+        :'jpeg_quality' => :'JpegQuality',
+        :'metafile_rendering_options' => :'MetafileRenderingOptions',
+        :'numeral_format' => :'NumeralFormat',
+        :'optimize_output' => :'OptimizeOutput',
+        :'page_count' => :'PageCount',
+        :'page_index' => :'PageIndex',
+        :'graphics_quality_options' => :'GraphicsQualityOptions',
+        :'horizontal_resolution' => :'HorizontalResolution',
+        :'image_brightness' => :'ImageBrightness',
+        :'image_color_mode' => :'ImageColorMode',
+        :'image_contrast' => :'ImageContrast',
+        :'paper_color' => :'PaperColor',
+        :'pixel_format' => :'PixelFormat',
+        :'resolution' => :'Resolution',
+        :'scale' => :'Scale',
+        :'use_anti_aliasing' => :'UseAntiAliasing',
+        :'use_gdi_emf_renderer' => :'UseGdiEmfRenderer',
+        :'use_high_quality_rendering' => :'UseHighQualityRendering',
+        :'vertical_resolution' => :'VerticalResolution'
       }
     end
 
@@ -192,116 +192,116 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'colorMode')
-        self.color_mode = attributes[:'colorMode']
+      if attributes.key?(:'ColorMode')
+        self.color_mode = attributes[:'ColorMode']
       end
 
-      if attributes.key?(:'saveFormat')
-        self.save_format = attributes[:'saveFormat']
+      if attributes.key?(:'SaveFormat')
+        self.save_format = attributes[:'SaveFormat']
       end
 
-      if attributes.key?(:'fileName')
-        self.file_name = attributes[:'fileName']
+      if attributes.key?(:'FileName')
+        self.file_name = attributes[:'FileName']
       end
 
-      if attributes.key?(:'dmlRenderingMode')
-        self.dml_rendering_mode = attributes[:'dmlRenderingMode']
+      if attributes.key?(:'DmlRenderingMode')
+        self.dml_rendering_mode = attributes[:'DmlRenderingMode']
       end
 
-      if attributes.key?(:'dmlEffectsRenderingMode')
-        self.dml_effects_rendering_mode = attributes[:'dmlEffectsRenderingMode']
+      if attributes.key?(:'DmlEffectsRenderingMode')
+        self.dml_effects_rendering_mode = attributes[:'DmlEffectsRenderingMode']
       end
 
-      if attributes.key?(:'zipOutput')
-        self.zip_output = attributes[:'zipOutput']
+      if attributes.key?(:'ZipOutput')
+        self.zip_output = attributes[:'ZipOutput']
       end
 
-      if attributes.key?(:'updateLastSavedTimeProperty')
-        self.update_last_saved_time_property = attributes[:'updateLastSavedTimeProperty']
+      if attributes.key?(:'UpdateLastSavedTimeProperty')
+        self.update_last_saved_time_property = attributes[:'UpdateLastSavedTimeProperty']
       end
 
-      if attributes.key?(:'updateSdtContent')
-        self.update_sdt_content = attributes[:'updateSdtContent']
+      if attributes.key?(:'UpdateSdtContent')
+        self.update_sdt_content = attributes[:'UpdateSdtContent']
       end
 
-      if attributes.key?(:'updateFields')
-        self.update_fields = attributes[:'updateFields']
+      if attributes.key?(:'UpdateFields')
+        self.update_fields = attributes[:'UpdateFields']
       end
 
-      if attributes.key?(:'jpegQuality')
-        self.jpeg_quality = attributes[:'jpegQuality']
+      if attributes.key?(:'JpegQuality')
+        self.jpeg_quality = attributes[:'JpegQuality']
       end
 
-      if attributes.key?(:'metafileRenderingOptions')
-        self.metafile_rendering_options = attributes[:'metafileRenderingOptions']
+      if attributes.key?(:'MetafileRenderingOptions')
+        self.metafile_rendering_options = attributes[:'MetafileRenderingOptions']
       end
 
-      if attributes.key?(:'numeralFormat')
-        self.numeral_format = attributes[:'numeralFormat']
+      if attributes.key?(:'NumeralFormat')
+        self.numeral_format = attributes[:'NumeralFormat']
       end
 
-      if attributes.key?(:'optimizeOutput')
-        self.optimize_output = attributes[:'optimizeOutput']
+      if attributes.key?(:'OptimizeOutput')
+        self.optimize_output = attributes[:'OptimizeOutput']
       end
 
-      if attributes.key?(:'pageCount')
-        self.page_count = attributes[:'pageCount']
+      if attributes.key?(:'PageCount')
+        self.page_count = attributes[:'PageCount']
       end
 
-      if attributes.key?(:'pageIndex')
-        self.page_index = attributes[:'pageIndex']
+      if attributes.key?(:'PageIndex')
+        self.page_index = attributes[:'PageIndex']
       end
 
-      if attributes.key?(:'graphicsQualityOptions')
-        self.graphics_quality_options = attributes[:'graphicsQualityOptions']
+      if attributes.key?(:'GraphicsQualityOptions')
+        self.graphics_quality_options = attributes[:'GraphicsQualityOptions']
       end
 
-      if attributes.key?(:'horizontalResolution')
-        self.horizontal_resolution = attributes[:'horizontalResolution']
+      if attributes.key?(:'HorizontalResolution')
+        self.horizontal_resolution = attributes[:'HorizontalResolution']
       end
 
-      if attributes.key?(:'imageBrightness')
-        self.image_brightness = attributes[:'imageBrightness']
+      if attributes.key?(:'ImageBrightness')
+        self.image_brightness = attributes[:'ImageBrightness']
       end
 
-      if attributes.key?(:'imageColorMode')
-        self.image_color_mode = attributes[:'imageColorMode']
+      if attributes.key?(:'ImageColorMode')
+        self.image_color_mode = attributes[:'ImageColorMode']
       end
 
-      if attributes.key?(:'imageContrast')
-        self.image_contrast = attributes[:'imageContrast']
+      if attributes.key?(:'ImageContrast')
+        self.image_contrast = attributes[:'ImageContrast']
       end
 
-      if attributes.key?(:'paperColor')
-        self.paper_color = attributes[:'paperColor']
+      if attributes.key?(:'PaperColor')
+        self.paper_color = attributes[:'PaperColor']
       end
 
-      if attributes.key?(:'pixelFormat')
-        self.pixel_format = attributes[:'pixelFormat']
+      if attributes.key?(:'PixelFormat')
+        self.pixel_format = attributes[:'PixelFormat']
       end
 
-      if attributes.key?(:'resolution')
-        self.resolution = attributes[:'resolution']
+      if attributes.key?(:'Resolution')
+        self.resolution = attributes[:'Resolution']
       end
 
-      if attributes.key?(:'scale')
-        self.scale = attributes[:'scale']
+      if attributes.key?(:'Scale')
+        self.scale = attributes[:'Scale']
       end
 
-      if attributes.key?(:'useAntiAliasing')
-        self.use_anti_aliasing = attributes[:'useAntiAliasing']
+      if attributes.key?(:'UseAntiAliasing')
+        self.use_anti_aliasing = attributes[:'UseAntiAliasing']
       end
 
-      if attributes.key?(:'useGdiEmfRenderer')
-        self.use_gdi_emf_renderer = attributes[:'useGdiEmfRenderer']
+      if attributes.key?(:'UseGdiEmfRenderer')
+        self.use_gdi_emf_renderer = attributes[:'UseGdiEmfRenderer']
       end
 
-      if attributes.key?(:'useHighQualityRendering')
-        self.use_high_quality_rendering = attributes[:'useHighQualityRendering']
+      if attributes.key?(:'UseHighQualityRendering')
+        self.use_high_quality_rendering = attributes[:'UseHighQualityRendering']
       end
 
-      if attributes.key?(:'verticalResolution')
-        self.vertical_resolution = attributes[:'verticalResolution']
+      if attributes.key?(:'VerticalResolution')
+        self.vertical_resolution = attributes[:'VerticalResolution']
       end
 
     end

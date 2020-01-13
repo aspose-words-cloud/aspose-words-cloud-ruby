@@ -47,10 +47,10 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'format' => :'format',
-        :'alignment' => :'alignment',
-        :'is_top' => :'isTop',
-        :'set_page_number_on_first_page' => :'setPageNumberOnFirstPage'
+        :'format' => :'Format',
+        :'alignment' => :'Alignment',
+        :'is_top' => :'IsTop',
+        :'set_page_number_on_first_page' => :'SetPageNumberOnFirstPage'
       }
     end
 
@@ -72,20 +72,20 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'format')
-        self.format = attributes[:'format']
+      if attributes.key?(:'Format')
+        self.format = attributes[:'Format']
       end
 
-      if attributes.key?(:'alignment')
-        self.alignment = attributes[:'alignment']
+      if attributes.key?(:'Alignment')
+        self.alignment = attributes[:'Alignment']
       end
 
-      if attributes.key?(:'isTop')
-        self.is_top = attributes[:'isTop']
+      if attributes.key?(:'IsTop')
+        self.is_top = attributes[:'IsTop']
       end
 
-      if attributes.key?(:'setPageNumberOnFirstPage')
-        self.set_page_number_on_first_page = attributes[:'setPageNumberOnFirstPage']
+      if attributes.key?(:'SetPageNumberOnFirstPage')
+        self.set_page_number_on_first_page = attributes[:'SetPageNumberOnFirstPage']
       end
 
     end

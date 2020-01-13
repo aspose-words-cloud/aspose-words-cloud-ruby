@@ -96,18 +96,18 @@ module AsposeWordsCloud
     def self.attribute_map
       {
         :'link' => :'link',
-        :'bottom_padding' => :'bottomPadding',
-        :'fit_text' => :'fitText',
-        :'horizontal_merge' => :'horizontalMerge',
-        :'left_padding' => :'leftPadding',
-        :'orientation' => :'orientation',
-        :'preferred_width' => :'preferredWidth',
-        :'right_padding' => :'rightPadding',
-        :'top_padding' => :'topPadding',
-        :'vertical_alignment' => :'verticalAlignment',
-        :'vertical_merge' => :'verticalMerge',
-        :'width' => :'width',
-        :'wrap_text' => :'wrapText'
+        :'bottom_padding' => :'BottomPadding',
+        :'fit_text' => :'FitText',
+        :'horizontal_merge' => :'HorizontalMerge',
+        :'left_padding' => :'LeftPadding',
+        :'orientation' => :'Orientation',
+        :'preferred_width' => :'PreferredWidth',
+        :'right_padding' => :'RightPadding',
+        :'top_padding' => :'TopPadding',
+        :'vertical_alignment' => :'VerticalAlignment',
+        :'vertical_merge' => :'VerticalMerge',
+        :'width' => :'Width',
+        :'wrap_text' => :'WrapText'
       }
     end
 
@@ -142,52 +142,52 @@ module AsposeWordsCloud
         self.link = attributes[:'link']
       end
 
-      if attributes.key?(:'bottomPadding')
-        self.bottom_padding = attributes[:'bottomPadding']
+      if attributes.key?(:'BottomPadding')
+        self.bottom_padding = attributes[:'BottomPadding']
       end
 
-      if attributes.key?(:'fitText')
-        self.fit_text = attributes[:'fitText']
+      if attributes.key?(:'FitText')
+        self.fit_text = attributes[:'FitText']
       end
 
-      if attributes.key?(:'horizontalMerge')
-        self.horizontal_merge = attributes[:'horizontalMerge']
+      if attributes.key?(:'HorizontalMerge')
+        self.horizontal_merge = attributes[:'HorizontalMerge']
       end
 
-      if attributes.key?(:'leftPadding')
-        self.left_padding = attributes[:'leftPadding']
+      if attributes.key?(:'LeftPadding')
+        self.left_padding = attributes[:'LeftPadding']
       end
 
-      if attributes.key?(:'orientation')
-        self.orientation = attributes[:'orientation']
+      if attributes.key?(:'Orientation')
+        self.orientation = attributes[:'Orientation']
       end
 
-      if attributes.key?(:'preferredWidth')
-        self.preferred_width = attributes[:'preferredWidth']
+      if attributes.key?(:'PreferredWidth')
+        self.preferred_width = attributes[:'PreferredWidth']
       end
 
-      if attributes.key?(:'rightPadding')
-        self.right_padding = attributes[:'rightPadding']
+      if attributes.key?(:'RightPadding')
+        self.right_padding = attributes[:'RightPadding']
       end
 
-      if attributes.key?(:'topPadding')
-        self.top_padding = attributes[:'topPadding']
+      if attributes.key?(:'TopPadding')
+        self.top_padding = attributes[:'TopPadding']
       end
 
-      if attributes.key?(:'verticalAlignment')
-        self.vertical_alignment = attributes[:'verticalAlignment']
+      if attributes.key?(:'VerticalAlignment')
+        self.vertical_alignment = attributes[:'VerticalAlignment']
       end
 
-      if attributes.key?(:'verticalMerge')
-        self.vertical_merge = attributes[:'verticalMerge']
+      if attributes.key?(:'VerticalMerge')
+        self.vertical_merge = attributes[:'VerticalMerge']
       end
 
-      if attributes.key?(:'width')
-        self.width = attributes[:'width']
+      if attributes.key?(:'Width')
+        self.width = attributes[:'Width']
       end
 
-      if attributes.key?(:'wrapText')
-        self.wrap_text = attributes[:'wrapText']
+      if attributes.key?(:'WrapText')
+        self.wrap_text = attributes[:'WrapText']
       end
 
     end

@@ -102,20 +102,20 @@ module AsposeWordsCloud
     def self.attribute_map
       {
         :'link' => :'link',
-        :'node_id' => :'nodeId',
-        :'calculate_on_exit' => :'calculateOnExit',
-        :'enabled' => :'enabled',
-        :'entry_macro' => :'entryMacro',
-        :'exit_macro' => :'exitMacro',
-        :'help_text' => :'helpText',
-        :'name' => :'name',
-        :'own_help' => :'ownHelp',
-        :'own_status' => :'ownStatus',
-        :'status_text' => :'statusText',
-        :'max_length' => :'maxLength',
-        :'text_input_default' => :'textInputDefault',
-        :'text_input_format' => :'textInputFormat',
-        :'text_input_type' => :'textInputType'
+        :'node_id' => :'NodeId',
+        :'calculate_on_exit' => :'CalculateOnExit',
+        :'enabled' => :'Enabled',
+        :'entry_macro' => :'EntryMacro',
+        :'exit_macro' => :'ExitMacro',
+        :'help_text' => :'HelpText',
+        :'name' => :'Name',
+        :'own_help' => :'OwnHelp',
+        :'own_status' => :'OwnStatus',
+        :'status_text' => :'StatusText',
+        :'max_length' => :'MaxLength',
+        :'text_input_default' => :'TextInputDefault',
+        :'text_input_format' => :'TextInputFormat',
+        :'text_input_type' => :'TextInputType'
       }
     end
 
@@ -152,60 +152,60 @@ module AsposeWordsCloud
         self.link = attributes[:'link']
       end
 
-      if attributes.key?(:'nodeId')
-        self.node_id = attributes[:'nodeId']
+      if attributes.key?(:'NodeId')
+        self.node_id = attributes[:'NodeId']
       end
 
-      if attributes.key?(:'calculateOnExit')
-        self.calculate_on_exit = attributes[:'calculateOnExit']
+      if attributes.key?(:'CalculateOnExit')
+        self.calculate_on_exit = attributes[:'CalculateOnExit']
       end
 
-      if attributes.key?(:'enabled')
-        self.enabled = attributes[:'enabled']
+      if attributes.key?(:'Enabled')
+        self.enabled = attributes[:'Enabled']
       end
 
-      if attributes.key?(:'entryMacro')
-        self.entry_macro = attributes[:'entryMacro']
+      if attributes.key?(:'EntryMacro')
+        self.entry_macro = attributes[:'EntryMacro']
       end
 
-      if attributes.key?(:'exitMacro')
-        self.exit_macro = attributes[:'exitMacro']
+      if attributes.key?(:'ExitMacro')
+        self.exit_macro = attributes[:'ExitMacro']
       end
 
-      if attributes.key?(:'helpText')
-        self.help_text = attributes[:'helpText']
+      if attributes.key?(:'HelpText')
+        self.help_text = attributes[:'HelpText']
       end
 
-      if attributes.key?(:'name')
-        self.name = attributes[:'name']
+      if attributes.key?(:'Name')
+        self.name = attributes[:'Name']
       end
 
-      if attributes.key?(:'ownHelp')
-        self.own_help = attributes[:'ownHelp']
+      if attributes.key?(:'OwnHelp')
+        self.own_help = attributes[:'OwnHelp']
       end
 
-      if attributes.key?(:'ownStatus')
-        self.own_status = attributes[:'ownStatus']
+      if attributes.key?(:'OwnStatus')
+        self.own_status = attributes[:'OwnStatus']
       end
 
-      if attributes.key?(:'statusText')
-        self.status_text = attributes[:'statusText']
+      if attributes.key?(:'StatusText')
+        self.status_text = attributes[:'StatusText']
       end
 
-      if attributes.key?(:'maxLength')
-        self.max_length = attributes[:'maxLength']
+      if attributes.key?(:'MaxLength')
+        self.max_length = attributes[:'MaxLength']
       end
 
-      if attributes.key?(:'textInputDefault')
-        self.text_input_default = attributes[:'textInputDefault']
+      if attributes.key?(:'TextInputDefault')
+        self.text_input_default = attributes[:'TextInputDefault']
       end
 
-      if attributes.key?(:'textInputFormat')
-        self.text_input_format = attributes[:'textInputFormat']
+      if attributes.key?(:'TextInputFormat')
+        self.text_input_format = attributes[:'TextInputFormat']
       end
 
-      if attributes.key?(:'textInputType')
-        self.text_input_type = attributes[:'textInputType']
+      if attributes.key?(:'TextInputType')
+        self.text_input_type = attributes[:'TextInputType']
       end
 
     end

@@ -47,10 +47,10 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'encryption_algorithm' => :'encryptionAlgorithm',
-        :'owner_password' => :'ownerPassword',
-        :'permissions' => :'permissions',
-        :'user_password' => :'userPassword'
+        :'encryption_algorithm' => :'EncryptionAlgorithm',
+        :'owner_password' => :'OwnerPassword',
+        :'permissions' => :'Permissions',
+        :'user_password' => :'UserPassword'
       }
     end
 
@@ -72,20 +72,20 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'encryptionAlgorithm')
-        self.encryption_algorithm = attributes[:'encryptionAlgorithm']
+      if attributes.key?(:'EncryptionAlgorithm')
+        self.encryption_algorithm = attributes[:'EncryptionAlgorithm']
       end
 
-      if attributes.key?(:'ownerPassword')
-        self.owner_password = attributes[:'ownerPassword']
+      if attributes.key?(:'OwnerPassword')
+        self.owner_password = attributes[:'OwnerPassword']
       end
 
-      if attributes.key?(:'permissions')
-        self.permissions = attributes[:'permissions']
+      if attributes.key?(:'Permissions')
+        self.permissions = attributes[:'Permissions']
       end
 
-      if attributes.key?(:'userPassword')
-        self.user_password = attributes[:'userPassword']
+      if attributes.key?(:'UserPassword')
+        self.user_password = attributes[:'UserPassword']
       end
 
     end

@@ -45,8 +45,8 @@ module AsposeWordsCloud
     def self.attribute_map
       {
         :'link' => :'link',
-        :'display_text' => :'displayText',
-        :'value' => :'value'
+        :'display_text' => :'DisplayText',
+        :'value' => :'Value'
       }
     end
 
@@ -71,12 +71,12 @@ module AsposeWordsCloud
         self.link = attributes[:'link']
       end
 
-      if attributes.key?(:'displayText')
-        self.display_text = attributes[:'displayText']
+      if attributes.key?(:'DisplayText')
+        self.display_text = attributes[:'DisplayText']
       end
 
-      if attributes.key?(:'value')
-        self.value = attributes[:'value']
+      if attributes.key?(:'Value')
+        self.value = attributes[:'Value']
       end
 
     end

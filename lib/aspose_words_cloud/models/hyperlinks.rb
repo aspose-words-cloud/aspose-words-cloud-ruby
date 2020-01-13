@@ -42,7 +42,7 @@ module AsposeWordsCloud
     def self.attribute_map
       {
         :'link' => :'link',
-        :'hyperlink_list' => :'hyperlinkList'
+        :'hyperlink_list' => :'HyperlinkList'
       }
     end
 
@@ -66,8 +66,8 @@ module AsposeWordsCloud
         self.link = attributes[:'link']
       end
 
-      if attributes.key?(:'hyperlinkList')
-        if (value = attributes[:'hyperlinkList']).is_a?(Array)
+      if attributes.key?(:'HyperlinkList')
+        if (value = attributes[:'HyperlinkList']).is_a?(Array)
           self.hyperlink_list = value
         end
       end

@@ -44,9 +44,9 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'downsample_images' => :'downsampleImages',
-        :'resolution' => :'resolution',
-        :'resolution_threshold' => :'resolutionThreshold'
+        :'downsample_images' => :'DownsampleImages',
+        :'resolution' => :'Resolution',
+        :'resolution_threshold' => :'ResolutionThreshold'
       }
     end
 
@@ -67,16 +67,16 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'downsampleImages')
-        self.downsample_images = attributes[:'downsampleImages']
+      if attributes.key?(:'DownsampleImages')
+        self.downsample_images = attributes[:'DownsampleImages']
       end
 
-      if attributes.key?(:'resolution')
-        self.resolution = attributes[:'resolution']
+      if attributes.key?(:'Resolution')
+        self.resolution = attributes[:'Resolution']
       end
 
-      if attributes.key?(:'resolutionThreshold')
-        self.resolution_threshold = attributes[:'resolutionThreshold']
+      if attributes.key?(:'ResolutionThreshold')
+        self.resolution_threshold = attributes[:'ResolutionThreshold']
       end
 
     end

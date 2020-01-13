@@ -50,11 +50,11 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'name' => :'name',
-        :'is_folder' => :'isFolder',
-        :'modified_date' => :'modifiedDate',
-        :'size' => :'size',
-        :'path' => :'path'
+        :'name' => :'Name',
+        :'is_folder' => :'IsFolder',
+        :'modified_date' => :'ModifiedDate',
+        :'size' => :'Size',
+        :'path' => :'Path'
       }
     end
 
@@ -77,24 +77,24 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'name')
-        self.name = attributes[:'name']
+      if attributes.key?(:'Name')
+        self.name = attributes[:'Name']
       end
 
-      if attributes.key?(:'isFolder')
-        self.is_folder = attributes[:'isFolder']
+      if attributes.key?(:'IsFolder')
+        self.is_folder = attributes[:'IsFolder']
       end
 
-      if attributes.key?(:'modifiedDate')
-        self.modified_date = attributes[:'modifiedDate']
+      if attributes.key?(:'ModifiedDate')
+        self.modified_date = attributes[:'ModifiedDate']
       end
 
-      if attributes.key?(:'size')
-        self.size = attributes[:'size']
+      if attributes.key?(:'Size')
+        self.size = attributes[:'Size']
       end
 
-      if attributes.key?(:'path')
-        self.path = attributes[:'path']
+      if attributes.key?(:'Path')
+        self.path = attributes[:'Path']
       end
 
     end

@@ -69,16 +69,16 @@ module AsposeWordsCloud
     def self.attribute_map
       {
         :'link' => :'link',
-        :'node_id' => :'nodeId',
-        :'calculate_on_exit' => :'calculateOnExit',
-        :'enabled' => :'enabled',
-        :'entry_macro' => :'entryMacro',
-        :'exit_macro' => :'exitMacro',
-        :'help_text' => :'helpText',
-        :'name' => :'name',
-        :'own_help' => :'ownHelp',
-        :'own_status' => :'ownStatus',
-        :'status_text' => :'statusText'
+        :'node_id' => :'NodeId',
+        :'calculate_on_exit' => :'CalculateOnExit',
+        :'enabled' => :'Enabled',
+        :'entry_macro' => :'EntryMacro',
+        :'exit_macro' => :'ExitMacro',
+        :'help_text' => :'HelpText',
+        :'name' => :'Name',
+        :'own_help' => :'OwnHelp',
+        :'own_status' => :'OwnStatus',
+        :'status_text' => :'StatusText'
       }
     end
 
@@ -111,44 +111,44 @@ module AsposeWordsCloud
         self.link = attributes[:'link']
       end
 
-      if attributes.key?(:'nodeId')
-        self.node_id = attributes[:'nodeId']
+      if attributes.key?(:'NodeId')
+        self.node_id = attributes[:'NodeId']
       end
 
-      if attributes.key?(:'calculateOnExit')
-        self.calculate_on_exit = attributes[:'calculateOnExit']
+      if attributes.key?(:'CalculateOnExit')
+        self.calculate_on_exit = attributes[:'CalculateOnExit']
       end
 
-      if attributes.key?(:'enabled')
-        self.enabled = attributes[:'enabled']
+      if attributes.key?(:'Enabled')
+        self.enabled = attributes[:'Enabled']
       end
 
-      if attributes.key?(:'entryMacro')
-        self.entry_macro = attributes[:'entryMacro']
+      if attributes.key?(:'EntryMacro')
+        self.entry_macro = attributes[:'EntryMacro']
       end
 
-      if attributes.key?(:'exitMacro')
-        self.exit_macro = attributes[:'exitMacro']
+      if attributes.key?(:'ExitMacro')
+        self.exit_macro = attributes[:'ExitMacro']
       end
 
-      if attributes.key?(:'helpText')
-        self.help_text = attributes[:'helpText']
+      if attributes.key?(:'HelpText')
+        self.help_text = attributes[:'HelpText']
       end
 
-      if attributes.key?(:'name')
-        self.name = attributes[:'name']
+      if attributes.key?(:'Name')
+        self.name = attributes[:'Name']
       end
 
-      if attributes.key?(:'ownHelp')
-        self.own_help = attributes[:'ownHelp']
+      if attributes.key?(:'OwnHelp')
+        self.own_help = attributes[:'OwnHelp']
       end
 
-      if attributes.key?(:'ownStatus')
-        self.own_status = attributes[:'ownStatus']
+      if attributes.key?(:'OwnStatus')
+        self.own_status = attributes[:'OwnStatus']
       end
 
-      if attributes.key?(:'statusText')
-        self.status_text = attributes[:'statusText']
+      if attributes.key?(:'StatusText')
+        self.status_text = attributes[:'StatusText']
       end
 
     end

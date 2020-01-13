@@ -147,35 +147,35 @@ module AsposeWordsCloud
     def self.attribute_map
       {
         :'link' => :'link',
-        :'bidi' => :'bidi',
-        :'border_always_in_front' => :'borderAlwaysInFront',
-        :'border_applies_to' => :'borderAppliesTo',
-        :'border_distance_from' => :'borderDistanceFrom',
-        :'bottom_margin' => :'bottomMargin',
-        :'different_first_page_header_footer' => :'differentFirstPageHeaderFooter',
-        :'first_page_tray' => :'firstPageTray',
-        :'footer_distance' => :'footerDistance',
-        :'gutter' => :'gutter',
-        :'header_distance' => :'headerDistance',
-        :'left_margin' => :'leftMargin',
-        :'line_number_count_by' => :'lineNumberCountBy',
-        :'line_number_distance_from_text' => :'lineNumberDistanceFromText',
-        :'line_number_restart_mode' => :'lineNumberRestartMode',
-        :'line_starting_number' => :'lineStartingNumber',
-        :'orientation' => :'orientation',
-        :'other_pages_tray' => :'otherPagesTray',
-        :'page_height' => :'pageHeight',
-        :'page_number_style' => :'pageNumberStyle',
-        :'page_starting_number' => :'pageStartingNumber',
-        :'page_width' => :'pageWidth',
-        :'paper_size' => :'paperSize',
-        :'restart_page_numbering' => :'restartPageNumbering',
-        :'right_margin' => :'rightMargin',
-        :'rtl_gutter' => :'rtlGutter',
-        :'section_start' => :'sectionStart',
-        :'suppress_endnotes' => :'suppressEndnotes',
-        :'top_margin' => :'topMargin',
-        :'vertical_alignment' => :'verticalAlignment'
+        :'bidi' => :'Bidi',
+        :'border_always_in_front' => :'BorderAlwaysInFront',
+        :'border_applies_to' => :'BorderAppliesTo',
+        :'border_distance_from' => :'BorderDistanceFrom',
+        :'bottom_margin' => :'BottomMargin',
+        :'different_first_page_header_footer' => :'DifferentFirstPageHeaderFooter',
+        :'first_page_tray' => :'FirstPageTray',
+        :'footer_distance' => :'FooterDistance',
+        :'gutter' => :'Gutter',
+        :'header_distance' => :'HeaderDistance',
+        :'left_margin' => :'LeftMargin',
+        :'line_number_count_by' => :'LineNumberCountBy',
+        :'line_number_distance_from_text' => :'LineNumberDistanceFromText',
+        :'line_number_restart_mode' => :'LineNumberRestartMode',
+        :'line_starting_number' => :'LineStartingNumber',
+        :'orientation' => :'Orientation',
+        :'other_pages_tray' => :'OtherPagesTray',
+        :'page_height' => :'PageHeight',
+        :'page_number_style' => :'PageNumberStyle',
+        :'page_starting_number' => :'PageStartingNumber',
+        :'page_width' => :'PageWidth',
+        :'paper_size' => :'PaperSize',
+        :'restart_page_numbering' => :'RestartPageNumbering',
+        :'right_margin' => :'RightMargin',
+        :'rtl_gutter' => :'RtlGutter',
+        :'section_start' => :'SectionStart',
+        :'suppress_endnotes' => :'SuppressEndnotes',
+        :'top_margin' => :'TopMargin',
+        :'vertical_alignment' => :'VerticalAlignment'
       }
     end
 
@@ -227,120 +227,120 @@ module AsposeWordsCloud
         self.link = attributes[:'link']
       end
 
-      if attributes.key?(:'bidi')
-        self.bidi = attributes[:'bidi']
+      if attributes.key?(:'Bidi')
+        self.bidi = attributes[:'Bidi']
       end
 
-      if attributes.key?(:'borderAlwaysInFront')
-        self.border_always_in_front = attributes[:'borderAlwaysInFront']
+      if attributes.key?(:'BorderAlwaysInFront')
+        self.border_always_in_front = attributes[:'BorderAlwaysInFront']
       end
 
-      if attributes.key?(:'borderAppliesTo')
-        self.border_applies_to = attributes[:'borderAppliesTo']
+      if attributes.key?(:'BorderAppliesTo')
+        self.border_applies_to = attributes[:'BorderAppliesTo']
       end
 
-      if attributes.key?(:'borderDistanceFrom')
-        self.border_distance_from = attributes[:'borderDistanceFrom']
+      if attributes.key?(:'BorderDistanceFrom')
+        self.border_distance_from = attributes[:'BorderDistanceFrom']
       end
 
-      if attributes.key?(:'bottomMargin')
-        self.bottom_margin = attributes[:'bottomMargin']
+      if attributes.key?(:'BottomMargin')
+        self.bottom_margin = attributes[:'BottomMargin']
       end
 
-      if attributes.key?(:'differentFirstPageHeaderFooter')
-        self.different_first_page_header_footer = attributes[:'differentFirstPageHeaderFooter']
+      if attributes.key?(:'DifferentFirstPageHeaderFooter')
+        self.different_first_page_header_footer = attributes[:'DifferentFirstPageHeaderFooter']
       end
 
-      if attributes.key?(:'firstPageTray')
-        self.first_page_tray = attributes[:'firstPageTray']
+      if attributes.key?(:'FirstPageTray')
+        self.first_page_tray = attributes[:'FirstPageTray']
       end
 
-      if attributes.key?(:'footerDistance')
-        self.footer_distance = attributes[:'footerDistance']
+      if attributes.key?(:'FooterDistance')
+        self.footer_distance = attributes[:'FooterDistance']
       end
 
-      if attributes.key?(:'gutter')
-        self.gutter = attributes[:'gutter']
+      if attributes.key?(:'Gutter')
+        self.gutter = attributes[:'Gutter']
       end
 
-      if attributes.key?(:'headerDistance')
-        self.header_distance = attributes[:'headerDistance']
+      if attributes.key?(:'HeaderDistance')
+        self.header_distance = attributes[:'HeaderDistance']
       end
 
-      if attributes.key?(:'leftMargin')
-        self.left_margin = attributes[:'leftMargin']
+      if attributes.key?(:'LeftMargin')
+        self.left_margin = attributes[:'LeftMargin']
       end
 
-      if attributes.key?(:'lineNumberCountBy')
-        self.line_number_count_by = attributes[:'lineNumberCountBy']
+      if attributes.key?(:'LineNumberCountBy')
+        self.line_number_count_by = attributes[:'LineNumberCountBy']
       end
 
-      if attributes.key?(:'lineNumberDistanceFromText')
-        self.line_number_distance_from_text = attributes[:'lineNumberDistanceFromText']
+      if attributes.key?(:'LineNumberDistanceFromText')
+        self.line_number_distance_from_text = attributes[:'LineNumberDistanceFromText']
       end
 
-      if attributes.key?(:'lineNumberRestartMode')
-        self.line_number_restart_mode = attributes[:'lineNumberRestartMode']
+      if attributes.key?(:'LineNumberRestartMode')
+        self.line_number_restart_mode = attributes[:'LineNumberRestartMode']
       end
 
-      if attributes.key?(:'lineStartingNumber')
-        self.line_starting_number = attributes[:'lineStartingNumber']
+      if attributes.key?(:'LineStartingNumber')
+        self.line_starting_number = attributes[:'LineStartingNumber']
       end
 
-      if attributes.key?(:'orientation')
-        self.orientation = attributes[:'orientation']
+      if attributes.key?(:'Orientation')
+        self.orientation = attributes[:'Orientation']
       end
 
-      if attributes.key?(:'otherPagesTray')
-        self.other_pages_tray = attributes[:'otherPagesTray']
+      if attributes.key?(:'OtherPagesTray')
+        self.other_pages_tray = attributes[:'OtherPagesTray']
       end
 
-      if attributes.key?(:'pageHeight')
-        self.page_height = attributes[:'pageHeight']
+      if attributes.key?(:'PageHeight')
+        self.page_height = attributes[:'PageHeight']
       end
 
-      if attributes.key?(:'pageNumberStyle')
-        self.page_number_style = attributes[:'pageNumberStyle']
+      if attributes.key?(:'PageNumberStyle')
+        self.page_number_style = attributes[:'PageNumberStyle']
       end
 
-      if attributes.key?(:'pageStartingNumber')
-        self.page_starting_number = attributes[:'pageStartingNumber']
+      if attributes.key?(:'PageStartingNumber')
+        self.page_starting_number = attributes[:'PageStartingNumber']
       end
 
-      if attributes.key?(:'pageWidth')
-        self.page_width = attributes[:'pageWidth']
+      if attributes.key?(:'PageWidth')
+        self.page_width = attributes[:'PageWidth']
       end
 
-      if attributes.key?(:'paperSize')
-        self.paper_size = attributes[:'paperSize']
+      if attributes.key?(:'PaperSize')
+        self.paper_size = attributes[:'PaperSize']
       end
 
-      if attributes.key?(:'restartPageNumbering')
-        self.restart_page_numbering = attributes[:'restartPageNumbering']
+      if attributes.key?(:'RestartPageNumbering')
+        self.restart_page_numbering = attributes[:'RestartPageNumbering']
       end
 
-      if attributes.key?(:'rightMargin')
-        self.right_margin = attributes[:'rightMargin']
+      if attributes.key?(:'RightMargin')
+        self.right_margin = attributes[:'RightMargin']
       end
 
-      if attributes.key?(:'rtlGutter')
-        self.rtl_gutter = attributes[:'rtlGutter']
+      if attributes.key?(:'RtlGutter')
+        self.rtl_gutter = attributes[:'RtlGutter']
       end
 
-      if attributes.key?(:'sectionStart')
-        self.section_start = attributes[:'sectionStart']
+      if attributes.key?(:'SectionStart')
+        self.section_start = attributes[:'SectionStart']
       end
 
-      if attributes.key?(:'suppressEndnotes')
-        self.suppress_endnotes = attributes[:'suppressEndnotes']
+      if attributes.key?(:'SuppressEndnotes')
+        self.suppress_endnotes = attributes[:'SuppressEndnotes']
       end
 
-      if attributes.key?(:'topMargin')
-        self.top_margin = attributes[:'topMargin']
+      if attributes.key?(:'TopMargin')
+        self.top_margin = attributes[:'TopMargin']
       end
 
-      if attributes.key?(:'verticalAlignment')
-        self.vertical_alignment = attributes[:'verticalAlignment']
+      if attributes.key?(:'VerticalAlignment')
+        self.vertical_alignment = attributes[:'VerticalAlignment']
       end
 
     end

@@ -104,22 +104,22 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'color_mode' => :'colorMode',
-        :'save_format' => :'saveFormat',
-        :'file_name' => :'fileName',
-        :'dml_rendering_mode' => :'dmlRenderingMode',
-        :'dml_effects_rendering_mode' => :'dmlEffectsRenderingMode',
-        :'zip_output' => :'zipOutput',
-        :'update_last_saved_time_property' => :'updateLastSavedTimeProperty',
-        :'update_sdt_content' => :'updateSdtContent',
-        :'update_fields' => :'updateFields',
-        :'add_bidi_marks' => :'addBidiMarks',
-        :'encoding' => :'encoding',
-        :'export_headers_footers_mode' => :'exportHeadersFootersMode',
-        :'force_page_breaks' => :'forcePageBreaks',
-        :'paragraph_break' => :'paragraphBreak',
-        :'preserve_table_layout' => :'preserveTableLayout',
-        :'simplify_list_labels' => :'simplifyListLabels'
+        :'color_mode' => :'ColorMode',
+        :'save_format' => :'SaveFormat',
+        :'file_name' => :'FileName',
+        :'dml_rendering_mode' => :'DmlRenderingMode',
+        :'dml_effects_rendering_mode' => :'DmlEffectsRenderingMode',
+        :'zip_output' => :'ZipOutput',
+        :'update_last_saved_time_property' => :'UpdateLastSavedTimeProperty',
+        :'update_sdt_content' => :'UpdateSdtContent',
+        :'update_fields' => :'UpdateFields',
+        :'add_bidi_marks' => :'AddBidiMarks',
+        :'encoding' => :'Encoding',
+        :'export_headers_footers_mode' => :'ExportHeadersFootersMode',
+        :'force_page_breaks' => :'ForcePageBreaks',
+        :'paragraph_break' => :'ParagraphBreak',
+        :'preserve_table_layout' => :'PreserveTableLayout',
+        :'simplify_list_labels' => :'SimplifyListLabels'
       }
     end
 
@@ -153,68 +153,68 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'colorMode')
-        self.color_mode = attributes[:'colorMode']
+      if attributes.key?(:'ColorMode')
+        self.color_mode = attributes[:'ColorMode']
       end
 
-      if attributes.key?(:'saveFormat')
-        self.save_format = attributes[:'saveFormat']
+      if attributes.key?(:'SaveFormat')
+        self.save_format = attributes[:'SaveFormat']
       end
 
-      if attributes.key?(:'fileName')
-        self.file_name = attributes[:'fileName']
+      if attributes.key?(:'FileName')
+        self.file_name = attributes[:'FileName']
       end
 
-      if attributes.key?(:'dmlRenderingMode')
-        self.dml_rendering_mode = attributes[:'dmlRenderingMode']
+      if attributes.key?(:'DmlRenderingMode')
+        self.dml_rendering_mode = attributes[:'DmlRenderingMode']
       end
 
-      if attributes.key?(:'dmlEffectsRenderingMode')
-        self.dml_effects_rendering_mode = attributes[:'dmlEffectsRenderingMode']
+      if attributes.key?(:'DmlEffectsRenderingMode')
+        self.dml_effects_rendering_mode = attributes[:'DmlEffectsRenderingMode']
       end
 
-      if attributes.key?(:'zipOutput')
-        self.zip_output = attributes[:'zipOutput']
+      if attributes.key?(:'ZipOutput')
+        self.zip_output = attributes[:'ZipOutput']
       end
 
-      if attributes.key?(:'updateLastSavedTimeProperty')
-        self.update_last_saved_time_property = attributes[:'updateLastSavedTimeProperty']
+      if attributes.key?(:'UpdateLastSavedTimeProperty')
+        self.update_last_saved_time_property = attributes[:'UpdateLastSavedTimeProperty']
       end
 
-      if attributes.key?(:'updateSdtContent')
-        self.update_sdt_content = attributes[:'updateSdtContent']
+      if attributes.key?(:'UpdateSdtContent')
+        self.update_sdt_content = attributes[:'UpdateSdtContent']
       end
 
-      if attributes.key?(:'updateFields')
-        self.update_fields = attributes[:'updateFields']
+      if attributes.key?(:'UpdateFields')
+        self.update_fields = attributes[:'UpdateFields']
       end
 
-      if attributes.key?(:'addBidiMarks')
-        self.add_bidi_marks = attributes[:'addBidiMarks']
+      if attributes.key?(:'AddBidiMarks')
+        self.add_bidi_marks = attributes[:'AddBidiMarks']
       end
 
-      if attributes.key?(:'encoding')
-        self.encoding = attributes[:'encoding']
+      if attributes.key?(:'Encoding')
+        self.encoding = attributes[:'Encoding']
       end
 
-      if attributes.key?(:'exportHeadersFootersMode')
-        self.export_headers_footers_mode = attributes[:'exportHeadersFootersMode']
+      if attributes.key?(:'ExportHeadersFootersMode')
+        self.export_headers_footers_mode = attributes[:'ExportHeadersFootersMode']
       end
 
-      if attributes.key?(:'forcePageBreaks')
-        self.force_page_breaks = attributes[:'forcePageBreaks']
+      if attributes.key?(:'ForcePageBreaks')
+        self.force_page_breaks = attributes[:'ForcePageBreaks']
       end
 
-      if attributes.key?(:'paragraphBreak')
-        self.paragraph_break = attributes[:'paragraphBreak']
+      if attributes.key?(:'ParagraphBreak')
+        self.paragraph_break = attributes[:'ParagraphBreak']
       end
 
-      if attributes.key?(:'preserveTableLayout')
-        self.preserve_table_layout = attributes[:'preserveTableLayout']
+      if attributes.key?(:'PreserveTableLayout')
+        self.preserve_table_layout = attributes[:'PreserveTableLayout']
       end
 
-      if attributes.key?(:'simplifyListLabels')
-        self.simplify_list_labels = attributes[:'simplifyListLabels']
+      if attributes.key?(:'SimplifyListLabels')
+        self.simplify_list_labels = attributes[:'SimplifyListLabels']
       end
 
     end

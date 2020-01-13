@@ -45,8 +45,8 @@ module AsposeWordsCloud
     def self.attribute_map
       {
         :'link' => :'link',
-        :'node_id' => :'nodeId',
-        :'field_code' => :'fieldCode'
+        :'node_id' => :'NodeId',
+        :'field_code' => :'FieldCode'
       }
     end
 
@@ -71,12 +71,12 @@ module AsposeWordsCloud
         self.link = attributes[:'link']
       end
 
-      if attributes.key?(:'nodeId')
-        self.node_id = attributes[:'nodeId']
+      if attributes.key?(:'NodeId')
+        self.node_id = attributes[:'NodeId']
       end
 
-      if attributes.key?(:'fieldCode')
-        self.field_code = attributes[:'fieldCode']
+      if attributes.key?(:'FieldCode')
+        self.field_code = attributes[:'FieldCode']
       end
 
     end

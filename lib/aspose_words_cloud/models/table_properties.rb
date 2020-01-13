@@ -102,20 +102,20 @@ module AsposeWordsCloud
     def self.attribute_map
       {
         :'link' => :'link',
-        :'alignment' => :'alignment',
-        :'allow_auto_fit' => :'allowAutoFit',
-        :'bidi' => :'bidi',
-        :'bottom_padding' => :'bottomPadding',
-        :'cell_spacing' => :'cellSpacing',
-        :'left_indent' => :'leftIndent',
-        :'left_padding' => :'leftPadding',
-        :'preferred_width' => :'preferredWidth',
-        :'right_padding' => :'rightPadding',
-        :'style_identifier' => :'styleIdentifier',
-        :'style_name' => :'styleName',
-        :'style_options' => :'styleOptions',
-        :'text_wrapping' => :'textWrapping',
-        :'top_padding' => :'topPadding'
+        :'alignment' => :'Alignment',
+        :'allow_auto_fit' => :'AllowAutoFit',
+        :'bidi' => :'Bidi',
+        :'bottom_padding' => :'BottomPadding',
+        :'cell_spacing' => :'CellSpacing',
+        :'left_indent' => :'LeftIndent',
+        :'left_padding' => :'LeftPadding',
+        :'preferred_width' => :'PreferredWidth',
+        :'right_padding' => :'RightPadding',
+        :'style_identifier' => :'StyleIdentifier',
+        :'style_name' => :'StyleName',
+        :'style_options' => :'StyleOptions',
+        :'text_wrapping' => :'TextWrapping',
+        :'top_padding' => :'TopPadding'
       }
     end
 
@@ -152,60 +152,60 @@ module AsposeWordsCloud
         self.link = attributes[:'link']
       end
 
-      if attributes.key?(:'alignment')
-        self.alignment = attributes[:'alignment']
+      if attributes.key?(:'Alignment')
+        self.alignment = attributes[:'Alignment']
       end
 
-      if attributes.key?(:'allowAutoFit')
-        self.allow_auto_fit = attributes[:'allowAutoFit']
+      if attributes.key?(:'AllowAutoFit')
+        self.allow_auto_fit = attributes[:'AllowAutoFit']
       end
 
-      if attributes.key?(:'bidi')
-        self.bidi = attributes[:'bidi']
+      if attributes.key?(:'Bidi')
+        self.bidi = attributes[:'Bidi']
       end
 
-      if attributes.key?(:'bottomPadding')
-        self.bottom_padding = attributes[:'bottomPadding']
+      if attributes.key?(:'BottomPadding')
+        self.bottom_padding = attributes[:'BottomPadding']
       end
 
-      if attributes.key?(:'cellSpacing')
-        self.cell_spacing = attributes[:'cellSpacing']
+      if attributes.key?(:'CellSpacing')
+        self.cell_spacing = attributes[:'CellSpacing']
       end
 
-      if attributes.key?(:'leftIndent')
-        self.left_indent = attributes[:'leftIndent']
+      if attributes.key?(:'LeftIndent')
+        self.left_indent = attributes[:'LeftIndent']
       end
 
-      if attributes.key?(:'leftPadding')
-        self.left_padding = attributes[:'leftPadding']
+      if attributes.key?(:'LeftPadding')
+        self.left_padding = attributes[:'LeftPadding']
       end
 
-      if attributes.key?(:'preferredWidth')
-        self.preferred_width = attributes[:'preferredWidth']
+      if attributes.key?(:'PreferredWidth')
+        self.preferred_width = attributes[:'PreferredWidth']
       end
 
-      if attributes.key?(:'rightPadding')
-        self.right_padding = attributes[:'rightPadding']
+      if attributes.key?(:'RightPadding')
+        self.right_padding = attributes[:'RightPadding']
       end
 
-      if attributes.key?(:'styleIdentifier')
-        self.style_identifier = attributes[:'styleIdentifier']
+      if attributes.key?(:'StyleIdentifier')
+        self.style_identifier = attributes[:'StyleIdentifier']
       end
 
-      if attributes.key?(:'styleName')
-        self.style_name = attributes[:'styleName']
+      if attributes.key?(:'StyleName')
+        self.style_name = attributes[:'StyleName']
       end
 
-      if attributes.key?(:'styleOptions')
-        self.style_options = attributes[:'styleOptions']
+      if attributes.key?(:'StyleOptions')
+        self.style_options = attributes[:'StyleOptions']
       end
 
-      if attributes.key?(:'textWrapping')
-        self.text_wrapping = attributes[:'textWrapping']
+      if attributes.key?(:'TextWrapping')
+        self.text_wrapping = attributes[:'TextWrapping']
       end
 
-      if attributes.key?(:'topPadding')
-        self.top_padding = attributes[:'topPadding']
+      if attributes.key?(:'TopPadding')
+        self.top_padding = attributes[:'TopPadding']
       end
 
     end

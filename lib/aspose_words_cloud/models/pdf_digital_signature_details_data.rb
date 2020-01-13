@@ -50,11 +50,11 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'certificate_filename' => :'certificateFilename',
-        :'hash_algorithm' => :'hashAlgorithm',
-        :'location' => :'location',
-        :'reason' => :'reason',
-        :'signature_date' => :'signatureDate'
+        :'certificate_filename' => :'CertificateFilename',
+        :'hash_algorithm' => :'HashAlgorithm',
+        :'location' => :'Location',
+        :'reason' => :'Reason',
+        :'signature_date' => :'SignatureDate'
       }
     end
 
@@ -77,24 +77,24 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'certificateFilename')
-        self.certificate_filename = attributes[:'certificateFilename']
+      if attributes.key?(:'CertificateFilename')
+        self.certificate_filename = attributes[:'CertificateFilename']
       end
 
-      if attributes.key?(:'hashAlgorithm')
-        self.hash_algorithm = attributes[:'hashAlgorithm']
+      if attributes.key?(:'HashAlgorithm')
+        self.hash_algorithm = attributes[:'HashAlgorithm']
       end
 
-      if attributes.key?(:'location')
-        self.location = attributes[:'location']
+      if attributes.key?(:'Location')
+        self.location = attributes[:'Location']
       end
 
-      if attributes.key?(:'reason')
-        self.reason = attributes[:'reason']
+      if attributes.key?(:'Reason')
+        self.reason = attributes[:'Reason']
       end
 
-      if attributes.key?(:'signatureDate')
-        self.signature_date = attributes[:'signatureDate']
+      if attributes.key?(:'SignatureDate')
+        self.signature_date = attributes[:'SignatureDate']
       end
 
     end

@@ -74,12 +74,12 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'links' => :'links',
-        :'file_name' => :'fileName',
-        :'source_format' => :'sourceFormat',
-        :'is_encrypted' => :'isEncrypted',
-        :'is_signed' => :'isSigned',
-        :'document_properties' => :'documentProperties'
+        :'links' => :'Links',
+        :'file_name' => :'FileName',
+        :'source_format' => :'SourceFormat',
+        :'is_encrypted' => :'IsEncrypted',
+        :'is_signed' => :'IsSigned',
+        :'document_properties' => :'DocumentProperties'
       }
     end
 
@@ -103,30 +103,30 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'links')
-        if (value = attributes[:'links']).is_a?(Array)
+      if attributes.key?(:'Links')
+        if (value = attributes[:'Links']).is_a?(Array)
           self.links = value
         end
       end
 
-      if attributes.key?(:'fileName')
-        self.file_name = attributes[:'fileName']
+      if attributes.key?(:'FileName')
+        self.file_name = attributes[:'FileName']
       end
 
-      if attributes.key?(:'sourceFormat')
-        self.source_format = attributes[:'sourceFormat']
+      if attributes.key?(:'SourceFormat')
+        self.source_format = attributes[:'SourceFormat']
       end
 
-      if attributes.key?(:'isEncrypted')
-        self.is_encrypted = attributes[:'isEncrypted']
+      if attributes.key?(:'IsEncrypted')
+        self.is_encrypted = attributes[:'IsEncrypted']
       end
 
-      if attributes.key?(:'isSigned')
-        self.is_signed = attributes[:'isSigned']
+      if attributes.key?(:'IsSigned')
+        self.is_signed = attributes[:'IsSigned']
       end
 
-      if attributes.key?(:'documentProperties')
-        self.document_properties = attributes[:'documentProperties']
+      if attributes.key?(:'DocumentProperties')
+        self.document_properties = attributes[:'DocumentProperties']
       end
 
     end

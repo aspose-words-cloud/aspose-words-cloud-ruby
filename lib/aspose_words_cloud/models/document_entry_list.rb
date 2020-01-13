@@ -38,7 +38,7 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'document_entries' => :'documentEntries'
+        :'document_entries' => :'DocumentEntries'
       }
     end
 
@@ -57,8 +57,8 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'documentEntries')
-        if (value = attributes[:'documentEntries']).is_a?(Array)
+      if attributes.key?(:'DocumentEntries')
+        if (value = attributes[:'DocumentEntries']).is_a?(Array)
           self.document_entries = value
         end
       end

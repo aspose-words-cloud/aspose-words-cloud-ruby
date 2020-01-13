@@ -93,17 +93,17 @@ module AsposeWordsCloud
     def self.attribute_map
       {
         :'link' => :'link',
-        :'node_id' => :'nodeId',
-        :'height' => :'height',
-        :'image_data_link' => :'imageDataLink',
-        :'left' => :'left',
-        :'ole_data_link' => :'oleDataLink',
-        :'relative_horizontal_position' => :'relativeHorizontalPosition',
-        :'relative_vertical_position' => :'relativeVerticalPosition',
-        :'render_links' => :'renderLinks',
-        :'top' => :'top',
-        :'width' => :'width',
-        :'wrap_type' => :'wrapType'
+        :'node_id' => :'NodeId',
+        :'height' => :'Height',
+        :'image_data_link' => :'ImageDataLink',
+        :'left' => :'Left',
+        :'ole_data_link' => :'OleDataLink',
+        :'relative_horizontal_position' => :'RelativeHorizontalPosition',
+        :'relative_vertical_position' => :'RelativeVerticalPosition',
+        :'render_links' => :'RenderLinks',
+        :'top' => :'Top',
+        :'width' => :'Width',
+        :'wrap_type' => :'WrapType'
       }
     end
 
@@ -137,50 +137,50 @@ module AsposeWordsCloud
         self.link = attributes[:'link']
       end
 
-      if attributes.key?(:'nodeId')
-        self.node_id = attributes[:'nodeId']
+      if attributes.key?(:'NodeId')
+        self.node_id = attributes[:'NodeId']
       end
 
-      if attributes.key?(:'height')
-        self.height = attributes[:'height']
+      if attributes.key?(:'Height')
+        self.height = attributes[:'Height']
       end
 
-      if attributes.key?(:'imageDataLink')
-        self.image_data_link = attributes[:'imageDataLink']
+      if attributes.key?(:'ImageDataLink')
+        self.image_data_link = attributes[:'ImageDataLink']
       end
 
-      if attributes.key?(:'left')
-        self.left = attributes[:'left']
+      if attributes.key?(:'Left')
+        self.left = attributes[:'Left']
       end
 
-      if attributes.key?(:'oleDataLink')
-        self.ole_data_link = attributes[:'oleDataLink']
+      if attributes.key?(:'OleDataLink')
+        self.ole_data_link = attributes[:'OleDataLink']
       end
 
-      if attributes.key?(:'relativeHorizontalPosition')
-        self.relative_horizontal_position = attributes[:'relativeHorizontalPosition']
+      if attributes.key?(:'RelativeHorizontalPosition')
+        self.relative_horizontal_position = attributes[:'RelativeHorizontalPosition']
       end
 
-      if attributes.key?(:'relativeVerticalPosition')
-        self.relative_vertical_position = attributes[:'relativeVerticalPosition']
+      if attributes.key?(:'RelativeVerticalPosition')
+        self.relative_vertical_position = attributes[:'RelativeVerticalPosition']
       end
 
-      if attributes.key?(:'renderLinks')
-        if (value = attributes[:'renderLinks']).is_a?(Array)
+      if attributes.key?(:'RenderLinks')
+        if (value = attributes[:'RenderLinks']).is_a?(Array)
           self.render_links = value
         end
       end
 
-      if attributes.key?(:'top')
-        self.top = attributes[:'top']
+      if attributes.key?(:'Top')
+        self.top = attributes[:'Top']
       end
 
-      if attributes.key?(:'width')
-        self.width = attributes[:'width']
+      if attributes.key?(:'Width')
+        self.width = attributes[:'Width']
       end
 
-      if attributes.key?(:'wrapType')
-        self.wrap_type = attributes[:'wrapType']
+      if attributes.key?(:'WrapType')
+        self.wrap_type = attributes[:'WrapType']
       end
 
     end

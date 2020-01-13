@@ -72,10 +72,10 @@ module AsposeWordsCloud
     def self.attribute_map
       {
         :'link' => :'link',
-        :'allow_break_across_pages' => :'allowBreakAcrossPages',
-        :'heading_format' => :'headingFormat',
-        :'height' => :'height',
-        :'height_rule' => :'heightRule'
+        :'allow_break_across_pages' => :'AllowBreakAcrossPages',
+        :'heading_format' => :'HeadingFormat',
+        :'height' => :'Height',
+        :'height_rule' => :'HeightRule'
       }
     end
 
@@ -102,20 +102,20 @@ module AsposeWordsCloud
         self.link = attributes[:'link']
       end
 
-      if attributes.key?(:'allowBreakAcrossPages')
-        self.allow_break_across_pages = attributes[:'allowBreakAcrossPages']
+      if attributes.key?(:'AllowBreakAcrossPages')
+        self.allow_break_across_pages = attributes[:'AllowBreakAcrossPages']
       end
 
-      if attributes.key?(:'headingFormat')
-        self.heading_format = attributes[:'headingFormat']
+      if attributes.key?(:'HeadingFormat')
+        self.heading_format = attributes[:'HeadingFormat']
       end
 
-      if attributes.key?(:'height')
-        self.height = attributes[:'height']
+      if attributes.key?(:'Height')
+        self.height = attributes[:'Height']
       end
 
-      if attributes.key?(:'heightRule')
-        self.height_rule = attributes[:'heightRule']
+      if attributes.key?(:'HeightRule')
+        self.height_rule = attributes[:'HeightRule']
       end
 
     end

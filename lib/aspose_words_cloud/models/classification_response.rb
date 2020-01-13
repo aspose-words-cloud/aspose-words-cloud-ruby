@@ -47,10 +47,10 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'request_id' => :'requestId',
-        :'best_class_name' => :'bestClassName',
-        :'best_class_probability' => :'bestClassProbability',
-        :'best_results' => :'bestResults'
+        :'request_id' => :'RequestId',
+        :'best_class_name' => :'BestClassName',
+        :'best_class_probability' => :'BestClassProbability',
+        :'best_results' => :'BestResults'
       }
     end
 
@@ -72,20 +72,20 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'requestId')
-        self.request_id = attributes[:'requestId']
+      if attributes.key?(:'RequestId')
+        self.request_id = attributes[:'RequestId']
       end
 
-      if attributes.key?(:'bestClassName')
-        self.best_class_name = attributes[:'bestClassName']
+      if attributes.key?(:'BestClassName')
+        self.best_class_name = attributes[:'BestClassName']
       end
 
-      if attributes.key?(:'bestClassProbability')
-        self.best_class_probability = attributes[:'bestClassProbability']
+      if attributes.key?(:'BestClassProbability')
+        self.best_class_probability = attributes[:'BestClassProbability']
       end
 
-      if attributes.key?(:'bestResults')
-        if (value = attributes[:'bestResults']).is_a?(Array)
+      if attributes.key?(:'BestResults')
+        if (value = attributes[:'BestResults']).is_a?(Array)
           self.best_results = value
         end
       end

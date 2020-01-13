@@ -78,12 +78,12 @@ module AsposeWordsCloud
     def self.attribute_map
       {
         :'link' => :'link',
-        :'node_id' => :'nodeId',
-        :'content' => :'content',
-        :'footnote_type' => :'footnoteType',
-        :'position' => :'position',
-        :'reference_mark' => :'referenceMark',
-        :'text' => :'text'
+        :'node_id' => :'NodeId',
+        :'content' => :'Content',
+        :'footnote_type' => :'FootnoteType',
+        :'position' => :'Position',
+        :'reference_mark' => :'ReferenceMark',
+        :'text' => :'Text'
       }
     end
 
@@ -112,28 +112,28 @@ module AsposeWordsCloud
         self.link = attributes[:'link']
       end
 
-      if attributes.key?(:'nodeId')
-        self.node_id = attributes[:'nodeId']
+      if attributes.key?(:'NodeId')
+        self.node_id = attributes[:'NodeId']
       end
 
-      if attributes.key?(:'content')
-        self.content = attributes[:'content']
+      if attributes.key?(:'Content')
+        self.content = attributes[:'Content']
       end
 
-      if attributes.key?(:'footnoteType')
-        self.footnote_type = attributes[:'footnoteType']
+      if attributes.key?(:'FootnoteType')
+        self.footnote_type = attributes[:'FootnoteType']
       end
 
-      if attributes.key?(:'position')
-        self.position = attributes[:'position']
+      if attributes.key?(:'Position')
+        self.position = attributes[:'Position']
       end
 
-      if attributes.key?(:'referenceMark')
-        self.reference_mark = attributes[:'referenceMark']
+      if attributes.key?(:'ReferenceMark')
+        self.reference_mark = attributes[:'ReferenceMark']
       end
 
-      if attributes.key?(:'text')
-        self.text = attributes[:'text']
+      if attributes.key?(:'Text')
+        self.text = attributes[:'Text']
       end
 
     end

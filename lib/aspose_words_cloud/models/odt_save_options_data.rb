@@ -92,18 +92,18 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'color_mode' => :'colorMode',
-        :'save_format' => :'saveFormat',
-        :'file_name' => :'fileName',
-        :'dml_rendering_mode' => :'dmlRenderingMode',
-        :'dml_effects_rendering_mode' => :'dmlEffectsRenderingMode',
-        :'zip_output' => :'zipOutput',
-        :'update_last_saved_time_property' => :'updateLastSavedTimeProperty',
-        :'update_sdt_content' => :'updateSdtContent',
-        :'update_fields' => :'updateFields',
-        :'is_strict_schema11' => :'isStrictSchema11',
-        :'measure_unit' => :'measureUnit',
-        :'pretty_format' => :'prettyFormat'
+        :'color_mode' => :'ColorMode',
+        :'save_format' => :'SaveFormat',
+        :'file_name' => :'FileName',
+        :'dml_rendering_mode' => :'DmlRenderingMode',
+        :'dml_effects_rendering_mode' => :'DmlEffectsRenderingMode',
+        :'zip_output' => :'ZipOutput',
+        :'update_last_saved_time_property' => :'UpdateLastSavedTimeProperty',
+        :'update_sdt_content' => :'UpdateSdtContent',
+        :'update_fields' => :'UpdateFields',
+        :'is_strict_schema11' => :'IsStrictSchema11',
+        :'measure_unit' => :'MeasureUnit',
+        :'pretty_format' => :'PrettyFormat'
       }
     end
 
@@ -133,52 +133,52 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'colorMode')
-        self.color_mode = attributes[:'colorMode']
+      if attributes.key?(:'ColorMode')
+        self.color_mode = attributes[:'ColorMode']
       end
 
-      if attributes.key?(:'saveFormat')
-        self.save_format = attributes[:'saveFormat']
+      if attributes.key?(:'SaveFormat')
+        self.save_format = attributes[:'SaveFormat']
       end
 
-      if attributes.key?(:'fileName')
-        self.file_name = attributes[:'fileName']
+      if attributes.key?(:'FileName')
+        self.file_name = attributes[:'FileName']
       end
 
-      if attributes.key?(:'dmlRenderingMode')
-        self.dml_rendering_mode = attributes[:'dmlRenderingMode']
+      if attributes.key?(:'DmlRenderingMode')
+        self.dml_rendering_mode = attributes[:'DmlRenderingMode']
       end
 
-      if attributes.key?(:'dmlEffectsRenderingMode')
-        self.dml_effects_rendering_mode = attributes[:'dmlEffectsRenderingMode']
+      if attributes.key?(:'DmlEffectsRenderingMode')
+        self.dml_effects_rendering_mode = attributes[:'DmlEffectsRenderingMode']
       end
 
-      if attributes.key?(:'zipOutput')
-        self.zip_output = attributes[:'zipOutput']
+      if attributes.key?(:'ZipOutput')
+        self.zip_output = attributes[:'ZipOutput']
       end
 
-      if attributes.key?(:'updateLastSavedTimeProperty')
-        self.update_last_saved_time_property = attributes[:'updateLastSavedTimeProperty']
+      if attributes.key?(:'UpdateLastSavedTimeProperty')
+        self.update_last_saved_time_property = attributes[:'UpdateLastSavedTimeProperty']
       end
 
-      if attributes.key?(:'updateSdtContent')
-        self.update_sdt_content = attributes[:'updateSdtContent']
+      if attributes.key?(:'UpdateSdtContent')
+        self.update_sdt_content = attributes[:'UpdateSdtContent']
       end
 
-      if attributes.key?(:'updateFields')
-        self.update_fields = attributes[:'updateFields']
+      if attributes.key?(:'UpdateFields')
+        self.update_fields = attributes[:'UpdateFields']
       end
 
-      if attributes.key?(:'isStrictSchema11')
-        self.is_strict_schema11 = attributes[:'isStrictSchema11']
+      if attributes.key?(:'IsStrictSchema11')
+        self.is_strict_schema11 = attributes[:'IsStrictSchema11']
       end
 
-      if attributes.key?(:'measureUnit')
-        self.measure_unit = attributes[:'measureUnit']
+      if attributes.key?(:'MeasureUnit')
+        self.measure_unit = attributes[:'MeasureUnit']
       end
 
-      if attributes.key?(:'prettyFormat')
-        self.pretty_format = attributes[:'prettyFormat']
+      if attributes.key?(:'PrettyFormat')
+        self.pretty_format = attributes[:'PrettyFormat']
       end
 
     end

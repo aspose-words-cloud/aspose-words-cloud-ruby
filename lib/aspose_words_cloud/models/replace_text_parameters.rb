@@ -50,11 +50,11 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'old_value' => :'oldValue',
-        :'new_value' => :'newValue',
-        :'is_match_case' => :'isMatchCase',
-        :'is_match_whole_word' => :'isMatchWholeWord',
-        :'is_old_value_regex' => :'isOldValueRegex'
+        :'old_value' => :'OldValue',
+        :'new_value' => :'NewValue',
+        :'is_match_case' => :'IsMatchCase',
+        :'is_match_whole_word' => :'IsMatchWholeWord',
+        :'is_old_value_regex' => :'IsOldValueRegex'
       }
     end
 
@@ -77,24 +77,24 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'oldValue')
-        self.old_value = attributes[:'oldValue']
+      if attributes.key?(:'OldValue')
+        self.old_value = attributes[:'OldValue']
       end
 
-      if attributes.key?(:'newValue')
-        self.new_value = attributes[:'newValue']
+      if attributes.key?(:'NewValue')
+        self.new_value = attributes[:'NewValue']
       end
 
-      if attributes.key?(:'isMatchCase')
-        self.is_match_case = attributes[:'isMatchCase']
+      if attributes.key?(:'IsMatchCase')
+        self.is_match_case = attributes[:'IsMatchCase']
       end
 
-      if attributes.key?(:'isMatchWholeWord')
-        self.is_match_whole_word = attributes[:'isMatchWholeWord']
+      if attributes.key?(:'IsMatchWholeWord')
+        self.is_match_whole_word = attributes[:'IsMatchWholeWord']
       end
 
-      if attributes.key?(:'isOldValueRegex')
-        self.is_old_value_regex = attributes[:'isOldValueRegex']
+      if attributes.key?(:'IsOldValueRegex')
+        self.is_old_value_regex = attributes[:'IsOldValueRegex']
       end
 
     end

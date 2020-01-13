@@ -180,46 +180,46 @@ module AsposeWordsCloud
     def self.attribute_map
       {
         :'link' => :'link',
-        :'all_caps' => :'allCaps',
-        :'bidi' => :'bidi',
-        :'bold' => :'bold',
-        :'bold_bi' => :'boldBi',
-        :'border' => :'border',
-        :'color' => :'color',
-        :'complex_script' => :'complexScript',
-        :'double_strike_through' => :'doubleStrikeThrough',
-        :'emboss' => :'emboss',
-        :'engrave' => :'engrave',
-        :'hidden' => :'hidden',
-        :'highlight_color' => :'highlightColor',
-        :'italic' => :'italic',
-        :'italic_bi' => :'italicBi',
-        :'kerning' => :'kerning',
-        :'locale_id' => :'localeId',
-        :'locale_id_bi' => :'localeIdBi',
-        :'locale_id_far_east' => :'localeIdFarEast',
-        :'name' => :'name',
-        :'name_ascii' => :'nameAscii',
-        :'name_bi' => :'nameBi',
-        :'name_far_east' => :'nameFarEast',
-        :'name_other' => :'nameOther',
-        :'no_proofing' => :'noProofing',
-        :'outline' => :'outline',
-        :'position' => :'position',
-        :'scaling' => :'scaling',
-        :'shadow' => :'shadow',
-        :'size' => :'size',
-        :'size_bi' => :'sizeBi',
-        :'small_caps' => :'smallCaps',
-        :'spacing' => :'spacing',
-        :'strike_through' => :'strikeThrough',
-        :'style_identifier' => :'styleIdentifier',
-        :'style_name' => :'styleName',
-        :'subscript' => :'subscript',
-        :'superscript' => :'superscript',
-        :'text_effect' => :'textEffect',
-        :'underline' => :'underline',
-        :'underline_color' => :'underlineColor'
+        :'all_caps' => :'AllCaps',
+        :'bidi' => :'Bidi',
+        :'bold' => :'Bold',
+        :'bold_bi' => :'BoldBi',
+        :'border' => :'Border',
+        :'color' => :'Color',
+        :'complex_script' => :'ComplexScript',
+        :'double_strike_through' => :'DoubleStrikeThrough',
+        :'emboss' => :'Emboss',
+        :'engrave' => :'Engrave',
+        :'hidden' => :'Hidden',
+        :'highlight_color' => :'HighlightColor',
+        :'italic' => :'Italic',
+        :'italic_bi' => :'ItalicBi',
+        :'kerning' => :'Kerning',
+        :'locale_id' => :'LocaleId',
+        :'locale_id_bi' => :'LocaleIdBi',
+        :'locale_id_far_east' => :'LocaleIdFarEast',
+        :'name' => :'Name',
+        :'name_ascii' => :'NameAscii',
+        :'name_bi' => :'NameBi',
+        :'name_far_east' => :'NameFarEast',
+        :'name_other' => :'NameOther',
+        :'no_proofing' => :'NoProofing',
+        :'outline' => :'Outline',
+        :'position' => :'Position',
+        :'scaling' => :'Scaling',
+        :'shadow' => :'Shadow',
+        :'size' => :'Size',
+        :'size_bi' => :'SizeBi',
+        :'small_caps' => :'SmallCaps',
+        :'spacing' => :'Spacing',
+        :'strike_through' => :'StrikeThrough',
+        :'style_identifier' => :'StyleIdentifier',
+        :'style_name' => :'StyleName',
+        :'subscript' => :'Subscript',
+        :'superscript' => :'Superscript',
+        :'text_effect' => :'TextEffect',
+        :'underline' => :'Underline',
+        :'underline_color' => :'UnderlineColor'
       }
     end
 
@@ -282,164 +282,164 @@ module AsposeWordsCloud
         self.link = attributes[:'link']
       end
 
-      if attributes.key?(:'allCaps')
-        self.all_caps = attributes[:'allCaps']
+      if attributes.key?(:'AllCaps')
+        self.all_caps = attributes[:'AllCaps']
       end
 
-      if attributes.key?(:'bidi')
-        self.bidi = attributes[:'bidi']
+      if attributes.key?(:'Bidi')
+        self.bidi = attributes[:'Bidi']
       end
 
-      if attributes.key?(:'bold')
-        self.bold = attributes[:'bold']
+      if attributes.key?(:'Bold')
+        self.bold = attributes[:'Bold']
       end
 
-      if attributes.key?(:'boldBi')
-        self.bold_bi = attributes[:'boldBi']
+      if attributes.key?(:'BoldBi')
+        self.bold_bi = attributes[:'BoldBi']
       end
 
-      if attributes.key?(:'border')
-        self.border = attributes[:'border']
+      if attributes.key?(:'Border')
+        self.border = attributes[:'Border']
       end
 
-      if attributes.key?(:'color')
-        self.color = attributes[:'color']
+      if attributes.key?(:'Color')
+        self.color = attributes[:'Color']
       end
 
-      if attributes.key?(:'complexScript')
-        self.complex_script = attributes[:'complexScript']
+      if attributes.key?(:'ComplexScript')
+        self.complex_script = attributes[:'ComplexScript']
       end
 
-      if attributes.key?(:'doubleStrikeThrough')
-        self.double_strike_through = attributes[:'doubleStrikeThrough']
+      if attributes.key?(:'DoubleStrikeThrough')
+        self.double_strike_through = attributes[:'DoubleStrikeThrough']
       end
 
-      if attributes.key?(:'emboss')
-        self.emboss = attributes[:'emboss']
+      if attributes.key?(:'Emboss')
+        self.emboss = attributes[:'Emboss']
       end
 
-      if attributes.key?(:'engrave')
-        self.engrave = attributes[:'engrave']
+      if attributes.key?(:'Engrave')
+        self.engrave = attributes[:'Engrave']
       end
 
-      if attributes.key?(:'hidden')
-        self.hidden = attributes[:'hidden']
+      if attributes.key?(:'Hidden')
+        self.hidden = attributes[:'Hidden']
       end
 
-      if attributes.key?(:'highlightColor')
-        self.highlight_color = attributes[:'highlightColor']
+      if attributes.key?(:'HighlightColor')
+        self.highlight_color = attributes[:'HighlightColor']
       end
 
-      if attributes.key?(:'italic')
-        self.italic = attributes[:'italic']
+      if attributes.key?(:'Italic')
+        self.italic = attributes[:'Italic']
       end
 
-      if attributes.key?(:'italicBi')
-        self.italic_bi = attributes[:'italicBi']
+      if attributes.key?(:'ItalicBi')
+        self.italic_bi = attributes[:'ItalicBi']
       end
 
-      if attributes.key?(:'kerning')
-        self.kerning = attributes[:'kerning']
+      if attributes.key?(:'Kerning')
+        self.kerning = attributes[:'Kerning']
       end
 
-      if attributes.key?(:'localeId')
-        self.locale_id = attributes[:'localeId']
+      if attributes.key?(:'LocaleId')
+        self.locale_id = attributes[:'LocaleId']
       end
 
-      if attributes.key?(:'localeIdBi')
-        self.locale_id_bi = attributes[:'localeIdBi']
+      if attributes.key?(:'LocaleIdBi')
+        self.locale_id_bi = attributes[:'LocaleIdBi']
       end
 
-      if attributes.key?(:'localeIdFarEast')
-        self.locale_id_far_east = attributes[:'localeIdFarEast']
+      if attributes.key?(:'LocaleIdFarEast')
+        self.locale_id_far_east = attributes[:'LocaleIdFarEast']
       end
 
-      if attributes.key?(:'name')
-        self.name = attributes[:'name']
+      if attributes.key?(:'Name')
+        self.name = attributes[:'Name']
       end
 
-      if attributes.key?(:'nameAscii')
-        self.name_ascii = attributes[:'nameAscii']
+      if attributes.key?(:'NameAscii')
+        self.name_ascii = attributes[:'NameAscii']
       end
 
-      if attributes.key?(:'nameBi')
-        self.name_bi = attributes[:'nameBi']
+      if attributes.key?(:'NameBi')
+        self.name_bi = attributes[:'NameBi']
       end
 
-      if attributes.key?(:'nameFarEast')
-        self.name_far_east = attributes[:'nameFarEast']
+      if attributes.key?(:'NameFarEast')
+        self.name_far_east = attributes[:'NameFarEast']
       end
 
-      if attributes.key?(:'nameOther')
-        self.name_other = attributes[:'nameOther']
+      if attributes.key?(:'NameOther')
+        self.name_other = attributes[:'NameOther']
       end
 
-      if attributes.key?(:'noProofing')
-        self.no_proofing = attributes[:'noProofing']
+      if attributes.key?(:'NoProofing')
+        self.no_proofing = attributes[:'NoProofing']
       end
 
-      if attributes.key?(:'outline')
-        self.outline = attributes[:'outline']
+      if attributes.key?(:'Outline')
+        self.outline = attributes[:'Outline']
       end
 
-      if attributes.key?(:'position')
-        self.position = attributes[:'position']
+      if attributes.key?(:'Position')
+        self.position = attributes[:'Position']
       end
 
-      if attributes.key?(:'scaling')
-        self.scaling = attributes[:'scaling']
+      if attributes.key?(:'Scaling')
+        self.scaling = attributes[:'Scaling']
       end
 
-      if attributes.key?(:'shadow')
-        self.shadow = attributes[:'shadow']
+      if attributes.key?(:'Shadow')
+        self.shadow = attributes[:'Shadow']
       end
 
-      if attributes.key?(:'size')
-        self.size = attributes[:'size']
+      if attributes.key?(:'Size')
+        self.size = attributes[:'Size']
       end
 
-      if attributes.key?(:'sizeBi')
-        self.size_bi = attributes[:'sizeBi']
+      if attributes.key?(:'SizeBi')
+        self.size_bi = attributes[:'SizeBi']
       end
 
-      if attributes.key?(:'smallCaps')
-        self.small_caps = attributes[:'smallCaps']
+      if attributes.key?(:'SmallCaps')
+        self.small_caps = attributes[:'SmallCaps']
       end
 
-      if attributes.key?(:'spacing')
-        self.spacing = attributes[:'spacing']
+      if attributes.key?(:'Spacing')
+        self.spacing = attributes[:'Spacing']
       end
 
-      if attributes.key?(:'strikeThrough')
-        self.strike_through = attributes[:'strikeThrough']
+      if attributes.key?(:'StrikeThrough')
+        self.strike_through = attributes[:'StrikeThrough']
       end
 
-      if attributes.key?(:'styleIdentifier')
-        self.style_identifier = attributes[:'styleIdentifier']
+      if attributes.key?(:'StyleIdentifier')
+        self.style_identifier = attributes[:'StyleIdentifier']
       end
 
-      if attributes.key?(:'styleName')
-        self.style_name = attributes[:'styleName']
+      if attributes.key?(:'StyleName')
+        self.style_name = attributes[:'StyleName']
       end
 
-      if attributes.key?(:'subscript')
-        self.subscript = attributes[:'subscript']
+      if attributes.key?(:'Subscript')
+        self.subscript = attributes[:'Subscript']
       end
 
-      if attributes.key?(:'superscript')
-        self.superscript = attributes[:'superscript']
+      if attributes.key?(:'Superscript')
+        self.superscript = attributes[:'Superscript']
       end
 
-      if attributes.key?(:'textEffect')
-        self.text_effect = attributes[:'textEffect']
+      if attributes.key?(:'TextEffect')
+        self.text_effect = attributes[:'TextEffect']
       end
 
-      if attributes.key?(:'underline')
-        self.underline = attributes[:'underline']
+      if attributes.key?(:'Underline')
+        self.underline = attributes[:'Underline']
       end
 
-      if attributes.key?(:'underlineColor')
-        self.underline_color = attributes[:'underlineColor']
+      if attributes.key?(:'UnderlineColor')
+        self.underline_color = attributes[:'UnderlineColor']
       end
 
     end

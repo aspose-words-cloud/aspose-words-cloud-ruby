@@ -71,11 +71,11 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'alignment' => :'alignment',
-        :'format_flags' => :'formatFlags',
-        :'hotkey_prefix' => :'hotkeyPrefix',
-        :'line_alignment' => :'lineAlignment',
-        :'trimming' => :'trimming'
+        :'alignment' => :'Alignment',
+        :'format_flags' => :'FormatFlags',
+        :'hotkey_prefix' => :'HotkeyPrefix',
+        :'line_alignment' => :'LineAlignment',
+        :'trimming' => :'Trimming'
       }
     end
 
@@ -98,24 +98,24 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'alignment')
-        self.alignment = attributes[:'alignment']
+      if attributes.key?(:'Alignment')
+        self.alignment = attributes[:'Alignment']
       end
 
-      if attributes.key?(:'formatFlags')
-        self.format_flags = attributes[:'formatFlags']
+      if attributes.key?(:'FormatFlags')
+        self.format_flags = attributes[:'FormatFlags']
       end
 
-      if attributes.key?(:'hotkeyPrefix')
-        self.hotkey_prefix = attributes[:'hotkeyPrefix']
+      if attributes.key?(:'HotkeyPrefix')
+        self.hotkey_prefix = attributes[:'HotkeyPrefix']
       end
 
-      if attributes.key?(:'lineAlignment')
-        self.line_alignment = attributes[:'lineAlignment']
+      if attributes.key?(:'LineAlignment')
+        self.line_alignment = attributes[:'LineAlignment']
       end
 
-      if attributes.key?(:'trimming')
-        self.trimming = attributes[:'trimming']
+      if attributes.key?(:'Trimming')
+        self.trimming = attributes[:'Trimming']
       end
 
     end
