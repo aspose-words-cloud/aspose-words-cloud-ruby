@@ -31,9 +31,6 @@ module AsposeWordsCloud
 
   # container class for docx/docm/dotx/dotm/flatopc save options.
   class OoxmlSaveOptionsData
-    # Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.
-    attr_accessor :color_mode
-
     # Gets or sets format of save.
     attr_accessor :save_format
 
@@ -71,7 +68,6 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'color_mode' => :'ColorMode',
         :'save_format' => :'SaveFormat',
         :'file_name' => :'FileName',
         :'dml_rendering_mode' => :'DmlRenderingMode',
@@ -89,7 +85,6 @@ module AsposeWordsCloud
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'color_mode' => :'String',
         :'save_format' => :'String',
         :'file_name' => :'String',
         :'dml_rendering_mode' => :'String',
@@ -111,10 +106,6 @@ module AsposeWordsCloud
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.key?(:'ColorMode')
-        self.color_mode = attributes[:'ColorMode']
-      end
 
       if attributes.key?(:'SaveFormat')
         self.save_format = attributes[:'SaveFormat']
@@ -180,7 +171,6 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          color_mode == other.color_mode &&
           save_format == other.save_format &&
           file_name == other.file_name &&
           dml_rendering_mode == other.dml_rendering_mode &&
@@ -203,7 +193,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [color_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, compliance, password, pretty_format].hash
+      [save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, compliance, password, pretty_format].hash
     end
 
     # Builds the object from hash
