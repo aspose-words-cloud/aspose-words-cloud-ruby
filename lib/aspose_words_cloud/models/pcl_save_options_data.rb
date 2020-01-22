@@ -31,9 +31,6 @@ module AsposeWordsCloud
 
   # Container class for pcl save options.
   class PclSaveOptionsData
-    # Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.
-    attr_accessor :color_mode
-
     # Gets or sets format of save.
     attr_accessor :save_format
 
@@ -57,6 +54,9 @@ module AsposeWordsCloud
 
     # Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true
     attr_accessor :update_fields
+
+    # Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.
+    attr_accessor :color_mode
 
     # Gets or sets determines the quality of the JPEG images inside PDF document.
     attr_accessor :jpeg_quality
@@ -86,7 +86,6 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'color_mode' => :'ColorMode',
         :'save_format' => :'SaveFormat',
         :'file_name' => :'FileName',
         :'dml_rendering_mode' => :'DmlRenderingMode',
@@ -95,6 +94,7 @@ module AsposeWordsCloud
         :'update_last_saved_time_property' => :'UpdateLastSavedTimeProperty',
         :'update_sdt_content' => :'UpdateSdtContent',
         :'update_fields' => :'UpdateFields',
+        :'color_mode' => :'ColorMode',
         :'jpeg_quality' => :'JpegQuality',
         :'metafile_rendering_options' => :'MetafileRenderingOptions',
         :'numeral_format' => :'NumeralFormat',
@@ -109,7 +109,6 @@ module AsposeWordsCloud
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'color_mode' => :'String',
         :'save_format' => :'String',
         :'file_name' => :'String',
         :'dml_rendering_mode' => :'String',
@@ -118,6 +117,7 @@ module AsposeWordsCloud
         :'update_last_saved_time_property' => :'BOOLEAN',
         :'update_sdt_content' => :'BOOLEAN',
         :'update_fields' => :'BOOLEAN',
+        :'color_mode' => :'String',
         :'jpeg_quality' => :'Integer',
         :'metafile_rendering_options' => :'MetafileRenderingOptionsData',
         :'numeral_format' => :'String',
@@ -136,10 +136,6 @@ module AsposeWordsCloud
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.key?(:'ColorMode')
-        self.color_mode = attributes[:'ColorMode']
-      end
 
       if attributes.key?(:'SaveFormat')
         self.save_format = attributes[:'SaveFormat']
@@ -171,6 +167,10 @@ module AsposeWordsCloud
 
       if attributes.key?(:'UpdateFields')
         self.update_fields = attributes[:'UpdateFields']
+      end
+
+      if attributes.key?(:'ColorMode')
+        self.color_mode = attributes[:'ColorMode']
       end
 
       if attributes.key?(:'JpegQuality')
@@ -225,7 +225,6 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          color_mode == other.color_mode &&
           save_format == other.save_format &&
           file_name == other.file_name &&
           dml_rendering_mode == other.dml_rendering_mode &&
@@ -234,6 +233,7 @@ module AsposeWordsCloud
           update_last_saved_time_property == other.update_last_saved_time_property &&
           update_sdt_content == other.update_sdt_content &&
           update_fields == other.update_fields &&
+          color_mode == other.color_mode &&
           jpeg_quality == other.jpeg_quality &&
           metafile_rendering_options == other.metafile_rendering_options &&
           numeral_format == other.numeral_format &&
@@ -253,7 +253,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [color_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, falllback_font_name, rasterize_transformed_elements].hash
+      [save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, falllback_font_name, rasterize_transformed_elements].hash
     end
 
     # Builds the object from hash
