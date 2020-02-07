@@ -40,8 +40,8 @@ gem install aspose_words_cloud
 @words_api = WordsApi.new @api_client
 AsposeApp.app_key_and_sid(@config.api_key['api_key'], @config.api_key['app_sid'])
 @storage_api = StorageApi.new
-request = DeleteDocumentWatermarkRequest.new remote_name, remote_test_folder + test_folder
-result = @words_api.delete_document_watermark request
+request = DeleteWatermarkRequest.new remote_name, remote_test_folder + test_folder
+result = @words_api.delete_watermark request
 ```
       
 [Tests](tests/) contain various examples of using the SDK.
