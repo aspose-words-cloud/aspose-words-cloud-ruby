@@ -121,7 +121,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'RevisionsModificationResponse')		  
+                                                        return_type: 'RevisionsModificationResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -225,7 +226,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'DocumentResponse')		  
+                                                        return_type: 'DocumentResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -296,7 +298,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'ClassificationResponse')		  
+                                                        return_type: 'ClassificationResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -393,7 +396,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'ClassificationResponse')		  
+                                                        return_type: 'ClassificationResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -487,7 +491,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'DocumentResponse')		  
+                                                        return_type: 'DocumentResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -578,7 +583,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'File')		  
+                                                        return_type: 'File')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -662,7 +668,8 @@ module AsposeWordsCloud
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
-                                                        auth_names: auth_names)		  
+                                                        auth_names: auth_names)
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -741,7 +748,8 @@ module AsposeWordsCloud
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
-                                                        auth_names: auth_names)		  
+                                                        auth_names: auth_names)
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -820,7 +828,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'DocumentResponse')		  
+                                                        return_type: 'DocumentResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -890,7 +899,8 @@ module AsposeWordsCloud
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
-                                                        auth_names: auth_names)		  
+                                                        auth_names: auth_names)
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -997,7 +1007,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'DocumentPropertyResponse')		  
+                                                        return_type: 'DocumentPropertyResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -1107,7 +1118,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'BorderResponse')		  
+                                                        return_type: 'BorderResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -1212,7 +1224,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'BordersResponse')		  
+                                                        return_type: 'BordersResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -1315,7 +1328,8 @@ module AsposeWordsCloud
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
-                                                        auth_names: auth_names)		  
+                                                        auth_names: auth_names)
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -1418,7 +1432,8 @@ module AsposeWordsCloud
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
-                                                        auth_names: auth_names)		  
+                                                        auth_names: auth_names)
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -1524,7 +1539,8 @@ module AsposeWordsCloud
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
-                                                        auth_names: auth_names)		  
+                                                        auth_names: auth_names)
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -1627,7 +1643,8 @@ module AsposeWordsCloud
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
-                                                        auth_names: auth_names)		  
+                                                        auth_names: auth_names)
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -1733,7 +1750,8 @@ module AsposeWordsCloud
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
-                                                        auth_names: auth_names)		  
+                                                        auth_names: auth_names)
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -1836,7 +1854,8 @@ module AsposeWordsCloud
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
-                                                        auth_names: auth_names)		  
+                                                        auth_names: auth_names)
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -1939,7 +1958,8 @@ module AsposeWordsCloud
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
-                                                        auth_names: auth_names)		  
+                                                        auth_names: auth_names)
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -2039,7 +2059,8 @@ module AsposeWordsCloud
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
-                                                        auth_names: auth_names)		  
+                                                        auth_names: auth_names)
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -2114,7 +2135,8 @@ module AsposeWordsCloud
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
-                                                        auth_names: auth_names)		  
+                                                        auth_names: auth_names)
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -2189,7 +2211,8 @@ module AsposeWordsCloud
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
-                                                        auth_names: auth_names)		  
+                                                        auth_names: auth_names)
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -2295,7 +2318,8 @@ module AsposeWordsCloud
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
-                                                        auth_names: auth_names)		  
+                                                        auth_names: auth_names)
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -2398,7 +2422,8 @@ module AsposeWordsCloud
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
-                                                        auth_names: auth_names)		  
+                                                        auth_names: auth_names)
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -2504,7 +2529,8 @@ module AsposeWordsCloud
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
-                                                        auth_names: auth_names)		  
+                                                        auth_names: auth_names)
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -2607,7 +2633,8 @@ module AsposeWordsCloud
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
-                                                        auth_names: auth_names)		  
+                                                        auth_names: auth_names)
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -2713,7 +2740,8 @@ module AsposeWordsCloud
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
-                                                        auth_names: auth_names)		  
+                                                        auth_names: auth_names)
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -2821,7 +2849,8 @@ module AsposeWordsCloud
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
-                                                        auth_names: auth_names)		  
+                                                        auth_names: auth_names)
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -2921,7 +2950,8 @@ module AsposeWordsCloud
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
-                                                        auth_names: auth_names)		  
+                                                        auth_names: auth_names)
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -3027,7 +3057,8 @@ module AsposeWordsCloud
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
-                                                        auth_names: auth_names)		  
+                                                        auth_names: auth_names)
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -3130,7 +3161,8 @@ module AsposeWordsCloud
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
-                                                        auth_names: auth_names)		  
+                                                        auth_names: auth_names)
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -3236,7 +3268,8 @@ module AsposeWordsCloud
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
-                                                        auth_names: auth_names)		  
+                                                        auth_names: auth_names)
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -3339,7 +3372,8 @@ module AsposeWordsCloud
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
-                                                        auth_names: auth_names)		  
+                                                        auth_names: auth_names)
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -3445,7 +3479,8 @@ module AsposeWordsCloud
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
-                                                        auth_names: auth_names)		  
+                                                        auth_names: auth_names)
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -3548,7 +3583,8 @@ module AsposeWordsCloud
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
-                                                        auth_names: auth_names)		  
+                                                        auth_names: auth_names)
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -3654,7 +3690,8 @@ module AsposeWordsCloud
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
-                                                        auth_names: auth_names)		  
+                                                        auth_names: auth_names)
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -3760,7 +3797,8 @@ module AsposeWordsCloud
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
-                                                        auth_names: auth_names)		  
+                                                        auth_names: auth_names)
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -3866,7 +3904,8 @@ module AsposeWordsCloud
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
-                                                        auth_names: auth_names)		  
+                                                        auth_names: auth_names)
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -3969,7 +4008,8 @@ module AsposeWordsCloud
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
-                                                        auth_names: auth_names)		  
+                                                        auth_names: auth_names)
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -4071,7 +4111,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'DocumentResponse')		  
+                                                        return_type: 'DocumentResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -4148,7 +4189,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'File')		  
+                                                        return_type: 'File')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -4261,7 +4303,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'DocumentResponse')		  
+                                                        return_type: 'DocumentResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -4346,7 +4389,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'File')		  
+                                                        return_type: 'File')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -4415,7 +4459,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'AvailableFontsResponse')		  
+                                                        return_type: 'AvailableFontsResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -4505,7 +4550,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'BookmarkResponse')		  
+                                                        return_type: 'BookmarkResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -4592,7 +4638,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'BookmarksResponse')		  
+                                                        return_type: 'BookmarksResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -4687,7 +4734,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'BorderResponse')		  
+                                                        return_type: 'BorderResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -4777,7 +4825,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'BordersResponse')		  
+                                                        return_type: 'BordersResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -4867,7 +4916,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'CommentResponse')		  
+                                                        return_type: 'CommentResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -4954,7 +5004,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'CommentsResponse')		  
+                                                        return_type: 'CommentsResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -5041,7 +5092,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'DocumentResponse')		  
+                                                        return_type: 'DocumentResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -5134,7 +5186,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'DrawingObjectResponse')		  
+                                                        return_type: 'DrawingObjectResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -5224,7 +5277,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'DrawingObjectResponse')		  
+                                                        return_type: 'DrawingObjectResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -5317,7 +5371,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'File')		  
+                                                        return_type: 'File')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -5407,7 +5462,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'File')		  
+                                                        return_type: 'File')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -5500,7 +5556,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'File')		  
+                                                        return_type: 'File')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -5590,7 +5647,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'File')		  
+                                                        return_type: 'File')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -5680,7 +5738,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'DrawingObjectsResponse')		  
+                                                        return_type: 'DrawingObjectsResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -5767,7 +5826,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'DrawingObjectsResponse')		  
+                                                        return_type: 'DrawingObjectsResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -5859,7 +5919,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'FieldNamesResponse')		  
+                                                        return_type: 'FieldNamesResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -5931,7 +5992,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'FieldNamesResponse')		  
+                                                        return_type: 'FieldNamesResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -6021,7 +6083,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'HyperlinkResponse')		  
+                                                        return_type: 'HyperlinkResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -6108,7 +6171,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'HyperlinksResponse')		  
+                                                        return_type: 'HyperlinksResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -6195,7 +6259,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'DocumentPropertiesResponse')		  
+                                                        return_type: 'DocumentPropertiesResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -6285,7 +6350,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'DocumentPropertyResponse')		  
+                                                        return_type: 'DocumentPropertyResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -6372,7 +6438,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'ProtectionDataResponse')		  
+                                                        return_type: 'ProtectionDataResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -6474,7 +6541,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'StatDataResponse')		  
+                                                        return_type: 'StatDataResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -6575,7 +6643,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'File')		  
+                                                        return_type: 'File')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -6668,7 +6737,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'FieldResponse')		  
+                                                        return_type: 'FieldResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -6758,7 +6828,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'FieldResponse')		  
+                                                        return_type: 'FieldResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -6848,7 +6919,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'FieldsResponse')		  
+                                                        return_type: 'FieldsResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -6935,7 +7007,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'FieldsResponse')		  
+                                                        return_type: 'FieldsResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -7007,7 +7080,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'FilesList')		  
+                                                        return_type: 'FilesList')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -7100,7 +7174,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'FootnoteResponse')		  
+                                                        return_type: 'FootnoteResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -7190,7 +7265,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'FootnoteResponse')		  
+                                                        return_type: 'FootnoteResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -7280,7 +7356,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'FootnotesResponse')		  
+                                                        return_type: 'FootnotesResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -7367,7 +7444,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'FootnotesResponse')		  
+                                                        return_type: 'FootnotesResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -7460,7 +7538,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'FormFieldResponse')		  
+                                                        return_type: 'FormFieldResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -7550,7 +7629,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'FormFieldResponse')		  
+                                                        return_type: 'FormFieldResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -7640,7 +7720,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'FormFieldsResponse')		  
+                                                        return_type: 'FormFieldsResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -7727,7 +7808,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'FormFieldsResponse')		  
+                                                        return_type: 'FormFieldsResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -7822,7 +7904,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'HeaderFooterResponse')		  
+                                                        return_type: 'HeaderFooterResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -7920,7 +8003,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'HeaderFooterResponse')		  
+                                                        return_type: 'HeaderFooterResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -8015,7 +8099,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'HeaderFootersResponse')		  
+                                                        return_type: 'HeaderFootersResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -8108,7 +8193,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'OfficeMathObjectResponse')		  
+                                                        return_type: 'OfficeMathObjectResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -8198,7 +8284,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'OfficeMathObjectResponse')		  
+                                                        return_type: 'OfficeMathObjectResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -8288,7 +8375,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'OfficeMathObjectsResponse')		  
+                                                        return_type: 'OfficeMathObjectsResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -8375,7 +8463,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'OfficeMathObjectsResponse')		  
+                                                        return_type: 'OfficeMathObjectsResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -8468,7 +8557,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'ParagraphResponse')		  
+                                                        return_type: 'ParagraphResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -8561,7 +8651,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'ParagraphFormatResponse')		  
+                                                        return_type: 'ParagraphFormatResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -8651,7 +8742,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'ParagraphFormatResponse')		  
+                                                        return_type: 'ParagraphFormatResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -8741,7 +8833,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'ParagraphResponse')		  
+                                                        return_type: 'ParagraphResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -8831,7 +8924,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'ParagraphLinkCollectionResponse')		  
+                                                        return_type: 'ParagraphLinkCollectionResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -8918,7 +9012,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'ParagraphLinkCollectionResponse')		  
+                                                        return_type: 'ParagraphLinkCollectionResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -9011,7 +9106,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'RangeTextResponse')		  
+                                                        return_type: 'RangeTextResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -9104,7 +9200,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'RunResponse')		  
+                                                        return_type: 'RunResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -9197,7 +9294,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'FontResponse')		  
+                                                        return_type: 'FontResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -9287,7 +9385,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'RunsResponse')		  
+                                                        return_type: 'RunsResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -9377,7 +9476,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'SectionResponse')		  
+                                                        return_type: 'SectionResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -9467,7 +9567,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'SectionPageSetupResponse')		  
+                                                        return_type: 'SectionPageSetupResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -9554,7 +9655,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'SectionLinkCollectionResponse')		  
+                                                        return_type: 'SectionLinkCollectionResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -9647,7 +9749,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'TableResponse')		  
+                                                        return_type: 'TableResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -9740,7 +9843,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'TableCellResponse')		  
+                                                        return_type: 'TableCellResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -9833,7 +9937,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'TableCellFormatResponse')		  
+                                                        return_type: 'TableCellFormatResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -9926,7 +10031,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'TablePropertiesResponse')		  
+                                                        return_type: 'TablePropertiesResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -10016,7 +10122,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'TablePropertiesResponse')		  
+                                                        return_type: 'TablePropertiesResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -10109,7 +10216,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'TableRowResponse')		  
+                                                        return_type: 'TableRowResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -10202,7 +10310,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'TableRowFormatResponse')		  
+                                                        return_type: 'TableRowFormatResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -10292,7 +10401,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'TableResponse')		  
+                                                        return_type: 'TableResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -10382,7 +10492,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'TableLinkCollectionResponse')		  
+                                                        return_type: 'TableLinkCollectionResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -10469,7 +10580,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'TableLinkCollectionResponse')		  
+                                                        return_type: 'TableLinkCollectionResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -10573,7 +10685,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'CommentResponse')		  
+                                                        return_type: 'CommentResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -10684,7 +10797,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'DrawingObjectResponse')		  
+                                                        return_type: 'DrawingObjectResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -10792,7 +10906,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'DrawingObjectResponse')		  
+                                                        return_type: 'DrawingObjectResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -10904,7 +11019,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'FieldResponse')		  
+                                                        return_type: 'FieldResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -11013,7 +11129,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'FieldResponse')		  
+                                                        return_type: 'FieldResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -11120,7 +11237,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'FootnoteResponse')		  
+                                                        return_type: 'FootnoteResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -11224,7 +11342,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'FootnoteResponse')		  
+                                                        return_type: 'FootnoteResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -11336,7 +11455,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'FormFieldResponse')		  
+                                                        return_type: 'FormFieldResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -11445,7 +11565,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'FormFieldResponse')		  
+                                                        return_type: 'FormFieldResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -11552,7 +11673,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'HeaderFooterResponse')		  
+                                                        return_type: 'HeaderFooterResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -11656,7 +11778,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'DocumentResponse')		  
+                                                        return_type: 'DocumentResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -11768,7 +11891,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'ParagraphResponse')		  
+                                                        return_type: 'ParagraphResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -11880,7 +12004,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'RunResponse')		  
+                                                        return_type: 'RunResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -11985,7 +12110,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'TableResponse')		  
+                                                        return_type: 'TableResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -12090,7 +12216,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'TableCellResponse')		  
+                                                        return_type: 'TableCellResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -12195,7 +12322,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'TableRowResponse')		  
+                                                        return_type: 'TableRowResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -12297,7 +12425,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'TableResponse')		  
+                                                        return_type: 'TableResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -12410,7 +12539,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'DocumentResponse')		  
+                                                        return_type: 'DocumentResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -12514,7 +12644,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'DocumentResponse')		  
+                                                        return_type: 'DocumentResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -12585,7 +12716,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'SaveResponse')		  
+                                                        return_type: 'SaveResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -12669,7 +12801,8 @@ module AsposeWordsCloud
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
-                                                        auth_names: auth_names)		  
+                                                        auth_names: auth_names)
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -12748,7 +12881,8 @@ module AsposeWordsCloud
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
-                                                        auth_names: auth_names)		  
+                                                        auth_names: auth_names)
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -12842,7 +12976,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'ProtectionDataResponse')		  
+                                                        return_type: 'ProtectionDataResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -12934,7 +13069,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'RevisionsModificationResponse')		  
+                                                        return_type: 'RevisionsModificationResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -13032,7 +13168,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'DocumentResponse')		  
+                                                        return_type: 'DocumentResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -13134,7 +13271,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'File')		  
+                                                        return_type: 'File')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -13233,7 +13371,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'File')		  
+                                                        return_type: 'File')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -13335,7 +13474,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'File')		  
+                                                        return_type: 'File')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -13434,7 +13574,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'File')		  
+                                                        return_type: 'File')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -13533,7 +13674,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'File')		  
+                                                        return_type: 'File')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -13635,7 +13777,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'File')		  
+                                                        return_type: 'File')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -13734,7 +13877,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'File')		  
+                                                        return_type: 'File')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -13836,7 +13980,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'File')		  
+                                                        return_type: 'File')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -13935,7 +14080,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'File')		  
+                                                        return_type: 'File')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -14039,7 +14185,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'ReplaceTextResponse')		  
+                                                        return_type: 'ReplaceTextResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -14139,7 +14286,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'DocumentResponse')		  
+                                                        return_type: 'DocumentResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -14201,7 +14349,8 @@ module AsposeWordsCloud
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
-                                                        auth_names: auth_names)		  
+                                                        auth_names: auth_names)
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -14295,7 +14444,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'SaveResponse')		  
+                                                        return_type: 'SaveResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -14390,7 +14540,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'DocumentResponse')		  
+                                                        return_type: 'DocumentResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -14569,7 +14720,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'SaveResponse')		  
+                                                        return_type: 'SaveResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -14660,7 +14812,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'SearchResponse')		  
+                                                        return_type: 'SearchResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -14777,7 +14930,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'SplitDocumentResponse')		  
+                                                        return_type: 'SplitDocumentResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -14871,7 +15025,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'ProtectionDataResponse')		  
+                                                        return_type: 'ProtectionDataResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -14978,7 +15133,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'BookmarkResponse')		  
+                                                        return_type: 'BookmarkResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -15090,7 +15246,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'BorderResponse')		  
+                                                        return_type: 'BorderResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -15197,7 +15354,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'CommentResponse')		  
+                                                        return_type: 'CommentResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -15311,7 +15469,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'DrawingObjectResponse')		  
+                                                        return_type: 'DrawingObjectResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -15422,7 +15581,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'DrawingObjectResponse')		  
+                                                        return_type: 'DrawingObjectResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -15532,7 +15692,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'FieldResponse')		  
+                                                        return_type: 'FieldResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -15624,7 +15785,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'DocumentResponse')		  
+                                                        return_type: 'DocumentResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -15734,7 +15896,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'FootnoteResponse')		  
+                                                        return_type: 'FootnoteResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -15841,7 +16004,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'FootnoteResponse')		  
+                                                        return_type: 'FootnoteResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -15951,7 +16115,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'FormFieldResponse')		  
+                                                        return_type: 'FormFieldResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -16058,7 +16223,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'FormFieldResponse')		  
+                                                        return_type: 'FormFieldResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -16168,7 +16334,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'ParagraphFormatResponse')		  
+                                                        return_type: 'ParagraphFormatResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -16278,7 +16445,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'RunResponse')		  
+                                                        return_type: 'RunResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -16388,7 +16556,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'FontResponse')		  
+                                                        return_type: 'FontResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -16495,7 +16664,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'SectionPageSetupResponse')		  
+                                                        return_type: 'SectionPageSetupResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -16603,7 +16773,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'TableCellFormatResponse')		  
+                                                        return_type: 'TableCellFormatResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -16711,7 +16882,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'TablePropertiesResponse')		  
+                                                        return_type: 'TablePropertiesResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -16816,7 +16988,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'TablePropertiesResponse')		  
+                                                        return_type: 'TablePropertiesResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -16924,7 +17097,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'TableRowFormatResponse')		  
+                                                        return_type: 'TableRowFormatResponse')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
@@ -16999,7 +17173,8 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'FilesUploadResult')		  
+                                                        return_type: 'FilesUploadResult')
+        end														
       end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
