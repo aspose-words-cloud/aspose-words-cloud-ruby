@@ -97,17 +97,12 @@ module AsposeWordsCloud
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = []
-      if @type.nil?
-        invalid_properties.push("invalid value for 'type', type cannot be nil.")
-      end
-
       return invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @type.nil?
       type_validator = EnumAttributeValidator.new('String', ["Auto", "Percent", "Points"])
       return false unless type_validator.valid?(@type)
       return true

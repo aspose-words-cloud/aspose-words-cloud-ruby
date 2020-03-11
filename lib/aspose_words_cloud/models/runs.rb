@@ -31,7 +31,6 @@ module AsposeWordsCloud
 
   # Represents DTO for collection of runs.
   class Runs
-    # Gets or sets link to the document.
     attr_accessor :link
 
     # Gets or sets collection of fields.

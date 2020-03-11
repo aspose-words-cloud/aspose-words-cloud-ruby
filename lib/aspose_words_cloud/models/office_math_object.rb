@@ -31,13 +31,11 @@ module AsposeWordsCloud
 
   # OfficeMath object.
   class OfficeMathObject
-    # Gets or sets link to the document.
     attr_accessor :link
 
     # Gets or sets node id.
     attr_accessor :node_id
 
-    # Gets or sets content of footnote.
     attr_accessor :content
 
     # Gets or sets /sets Office Math display format type which represents whether an equation is displayed inline with the text or displayed on its own line.

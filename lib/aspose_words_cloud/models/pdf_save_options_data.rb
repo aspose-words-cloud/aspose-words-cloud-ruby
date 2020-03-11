@@ -34,6 +34,23 @@ module AsposeWordsCloud
     # Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.
     attr_accessor :color_mode
 
+    # Gets or sets determines the quality of the JPEG images inside PDF document.
+    attr_accessor :jpeg_quality
+
+    attr_accessor :metafile_rendering_options
+
+    # Gets or sets indicates the symbol set that is used to represent numbers while rendering to fixed page formats.
+    attr_accessor :numeral_format
+
+    # Gets or sets flag indicates whether it is required to optimize output of XPS. If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated. Note: The accuracy of the content display may be affected if this property is set to true.  Default is false.
+    attr_accessor :optimize_output
+
+    # Gets or sets determines number of pages to render.
+    attr_accessor :page_count
+
+    # Gets or sets determines 0-based index of the first page to render.
+    attr_accessor :page_index
+
     # Gets or sets format of save.
     attr_accessor :save_format
 
@@ -58,24 +75,6 @@ module AsposeWordsCloud
     # Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true
     attr_accessor :update_fields
 
-    # Gets or sets determines the quality of the JPEG images inside PDF document.
-    attr_accessor :jpeg_quality
-
-    # Gets or sets allows to specify metafile rendering options.
-    attr_accessor :metafile_rendering_options
-
-    # Gets or sets indicates the symbol set that is used to represent numbers while rendering to fixed page formats.
-    attr_accessor :numeral_format
-
-    # Gets or sets flag indicates whether it is required to optimize output of XPS. If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated. Note: The accuracy of the content display may be affected if this property is set to true.  Default is false.
-    attr_accessor :optimize_output
-
-    # Gets or sets determines number of pages to render.
-    attr_accessor :page_count
-
-    # Gets or sets determines 0-based index of the first page to render.
-    attr_accessor :page_index
-
     # Gets or sets specifies the PDF standards compliance level for output documents.
     attr_accessor :compliance
 
@@ -85,19 +84,16 @@ module AsposeWordsCloud
     # Gets or sets a value determining the way CustomDocumentProperties are exported to PDF file. Default value is None.
     attr_accessor :custom_properties_export
 
-    # Gets or sets specifies the details for signing the output PDF document.
     attr_accessor :digital_signature_details
 
     # Gets or sets a flag specifying whether the window???s title bar should display the document title taken from the Title entry of the document information dictionary.
     attr_accessor :display_doc_title
 
-    # Gets or sets allows to specify downsample options.
     attr_accessor :downsample_options
 
     # Gets or sets controls how fonts are embedded into the resulting PDF documents.
     attr_accessor :embed_full_fonts
 
-    # Gets or sets specifies the details for encrypting the output PDF document.
     attr_accessor :encryption_details
 
     # Gets or sets a flag specifying whether URI should be escaped before writing.             
@@ -121,7 +117,6 @@ module AsposeWordsCloud
     # Gets or sets determines whether hyperlinks in the output Pdf document are forced to be opened in a new window (or tab) of a browser.
     attr_accessor :open_hyperlinks_in_new_window
 
-    # Gets or sets allows to specify outline options.
     attr_accessor :outline_options
 
     # Gets or sets specifies how the PDF document should be displayed when opened in the PDF reader.
@@ -174,6 +169,12 @@ module AsposeWordsCloud
     def self.attribute_map
       {
         :'color_mode' => :'ColorMode',
+        :'jpeg_quality' => :'JpegQuality',
+        :'metafile_rendering_options' => :'MetafileRenderingOptions',
+        :'numeral_format' => :'NumeralFormat',
+        :'optimize_output' => :'OptimizeOutput',
+        :'page_count' => :'PageCount',
+        :'page_index' => :'PageIndex',
         :'save_format' => :'SaveFormat',
         :'file_name' => :'FileName',
         :'dml_rendering_mode' => :'DmlRenderingMode',
@@ -182,12 +183,6 @@ module AsposeWordsCloud
         :'update_last_saved_time_property' => :'UpdateLastSavedTimeProperty',
         :'update_sdt_content' => :'UpdateSdtContent',
         :'update_fields' => :'UpdateFields',
-        :'jpeg_quality' => :'JpegQuality',
-        :'metafile_rendering_options' => :'MetafileRenderingOptions',
-        :'numeral_format' => :'NumeralFormat',
-        :'optimize_output' => :'OptimizeOutput',
-        :'page_count' => :'PageCount',
-        :'page_index' => :'PageIndex',
         :'compliance' => :'Compliance',
         :'create_note_hyperlinks' => :'CreateNoteHyperlinks',
         :'custom_properties_export' => :'CustomPropertiesExport',
@@ -219,6 +214,12 @@ module AsposeWordsCloud
     def self.swagger_types
       {
         :'color_mode' => :'String',
+        :'jpeg_quality' => :'Integer',
+        :'metafile_rendering_options' => :'MetafileRenderingOptionsData',
+        :'numeral_format' => :'String',
+        :'optimize_output' => :'BOOLEAN',
+        :'page_count' => :'Integer',
+        :'page_index' => :'Integer',
         :'save_format' => :'String',
         :'file_name' => :'String',
         :'dml_rendering_mode' => :'String',
@@ -227,12 +228,6 @@ module AsposeWordsCloud
         :'update_last_saved_time_property' => :'BOOLEAN',
         :'update_sdt_content' => :'BOOLEAN',
         :'update_fields' => :'BOOLEAN',
-        :'jpeg_quality' => :'Integer',
-        :'metafile_rendering_options' => :'MetafileRenderingOptionsData',
-        :'numeral_format' => :'String',
-        :'optimize_output' => :'BOOLEAN',
-        :'page_count' => :'Integer',
-        :'page_index' => :'Integer',
         :'compliance' => :'String',
         :'create_note_hyperlinks' => :'BOOLEAN',
         :'custom_properties_export' => :'String',
@@ -272,6 +267,30 @@ module AsposeWordsCloud
         self.color_mode = attributes[:'ColorMode']
       end
 
+      if attributes.key?(:'JpegQuality')
+        self.jpeg_quality = attributes[:'JpegQuality']
+      end
+
+      if attributes.key?(:'MetafileRenderingOptions')
+        self.metafile_rendering_options = attributes[:'MetafileRenderingOptions']
+      end
+
+      if attributes.key?(:'NumeralFormat')
+        self.numeral_format = attributes[:'NumeralFormat']
+      end
+
+      if attributes.key?(:'OptimizeOutput')
+        self.optimize_output = attributes[:'OptimizeOutput']
+      end
+
+      if attributes.key?(:'PageCount')
+        self.page_count = attributes[:'PageCount']
+      end
+
+      if attributes.key?(:'PageIndex')
+        self.page_index = attributes[:'PageIndex']
+      end
+
       if attributes.key?(:'SaveFormat')
         self.save_format = attributes[:'SaveFormat']
       end
@@ -302,30 +321,6 @@ module AsposeWordsCloud
 
       if attributes.key?(:'UpdateFields')
         self.update_fields = attributes[:'UpdateFields']
-      end
-
-      if attributes.key?(:'JpegQuality')
-        self.jpeg_quality = attributes[:'JpegQuality']
-      end
-
-      if attributes.key?(:'MetafileRenderingOptions')
-        self.metafile_rendering_options = attributes[:'MetafileRenderingOptions']
-      end
-
-      if attributes.key?(:'NumeralFormat')
-        self.numeral_format = attributes[:'NumeralFormat']
-      end
-
-      if attributes.key?(:'OptimizeOutput')
-        self.optimize_output = attributes[:'OptimizeOutput']
-      end
-
-      if attributes.key?(:'PageCount')
-        self.page_count = attributes[:'PageCount']
-      end
-
-      if attributes.key?(:'PageIndex')
-        self.page_index = attributes[:'PageIndex']
       end
 
       if attributes.key?(:'Compliance')
@@ -461,6 +456,12 @@ module AsposeWordsCloud
       return true if self.equal?(other)
       self.class == other.class &&
           color_mode == other.color_mode &&
+          jpeg_quality == other.jpeg_quality &&
+          metafile_rendering_options == other.metafile_rendering_options &&
+          numeral_format == other.numeral_format &&
+          optimize_output == other.optimize_output &&
+          page_count == other.page_count &&
+          page_index == other.page_index &&
           save_format == other.save_format &&
           file_name == other.file_name &&
           dml_rendering_mode == other.dml_rendering_mode &&
@@ -469,12 +470,6 @@ module AsposeWordsCloud
           update_last_saved_time_property == other.update_last_saved_time_property &&
           update_sdt_content == other.update_sdt_content &&
           update_fields == other.update_fields &&
-          jpeg_quality == other.jpeg_quality &&
-          metafile_rendering_options == other.metafile_rendering_options &&
-          numeral_format == other.numeral_format &&
-          optimize_output == other.optimize_output &&
-          page_count == other.page_count &&
-          page_index == other.page_index &&
           compliance == other.compliance &&
           create_note_hyperlinks == other.create_note_hyperlinks &&
           custom_properties_export == other.custom_properties_export &&
@@ -510,7 +505,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [color_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, compliance, create_note_hyperlinks, custom_properties_export, digital_signature_details, display_doc_title, downsample_options, embed_full_fonts, encryption_details, escape_uri, export_document_structure, font_embedding_mode, header_footer_bookmarks_export_mode, image_color_space_export_mode, image_compression, open_hyperlinks_in_new_window, outline_options, page_mode, preblend_images, preserve_form_fields, text_compression, use_book_fold_printing_settings, use_core_fonts, zoom_behavior, zoom_factor].hash
+      [color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, compliance, create_note_hyperlinks, custom_properties_export, digital_signature_details, display_doc_title, downsample_options, embed_full_fonts, encryption_details, escape_uri, export_document_structure, font_embedding_mode, header_footer_bookmarks_export_mode, image_color_space_export_mode, image_compression, open_hyperlinks_in_new_window, outline_options, page_mode, preblend_images, preserve_form_fields, text_compression, use_book_fold_printing_settings, use_core_fonts, zoom_behavior, zoom_factor].hash
     end
 
     # Builds the object from hash

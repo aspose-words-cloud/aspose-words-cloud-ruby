@@ -31,22 +31,17 @@ module AsposeWordsCloud
 
   # Section element.
   class Section
-    # Gets or sets link to the document.
     attr_accessor :link
 
     # Gets or sets child nodes.
     attr_accessor :child_nodes
 
-    # Gets or sets link to HeaderFooters resource.
     attr_accessor :header_footers
 
-    # Gets or sets link to PageSetup resource.
     attr_accessor :page_setup
 
-    # Gets or sets link to Paragraphs resource.
     attr_accessor :paragraphs
 
-    # Gets or sets link to Tables resource.
     attr_accessor :tables
 
 

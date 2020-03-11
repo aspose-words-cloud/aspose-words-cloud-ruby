@@ -31,7 +31,6 @@ module AsposeWordsCloud
 
   # Words document property DTO.
   class DocumentProperty
-    # Gets or sets link to the document.
     attr_accessor :link
 
     # Gets or sets a value indicating whether flag indicates whether the property is built-in or not. If true the property is built-in, if false the property is custom.

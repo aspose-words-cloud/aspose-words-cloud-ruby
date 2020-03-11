@@ -37,7 +37,6 @@ module AsposeWordsCloud
     # Gets or sets a regular expression pattern used to find matches.
     attr_accessor :searching_pattern
 
-    # Gets or sets collection of search results.
     attr_accessor :search_results
 
 

@@ -31,7 +31,6 @@ module AsposeWordsCloud
 
   # Table element.
   class TableInsert
-    # Gets or sets table will be inserted before specified position.
     attr_accessor :position
 
     # Gets or sets count of columns. Default is 2.
@@ -85,22 +84,12 @@ module AsposeWordsCloud
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = []
-      if @columns_count.nil?
-        invalid_properties.push("invalid value for 'columns_count', columns_count cannot be nil.")
-      end
-
-      if @rows_count.nil?
-        invalid_properties.push("invalid value for 'rows_count', rows_count cannot be nil.")
-      end
-
       return invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @columns_count.nil?
-      return false if @rows_count.nil?
       return true
     end
 

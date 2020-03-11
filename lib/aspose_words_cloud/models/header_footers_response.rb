@@ -34,7 +34,6 @@ module AsposeWordsCloud
     # Gets or sets request Id.
     attr_accessor :request_id
 
-    # Gets or sets collection of headers/footers.
     attr_accessor :header_footers
 
 

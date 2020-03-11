@@ -31,7 +31,6 @@ module AsposeWordsCloud
 
   # Paragraph format element.             
   class ParagraphFormat
-    # Gets or sets link to the document.
     attr_accessor :link
 
     # Gets or sets a flag indicating whether inter-character spacing is automatically adjusted between regions of Latin text and regions of East Asian text in the current paragraph.             

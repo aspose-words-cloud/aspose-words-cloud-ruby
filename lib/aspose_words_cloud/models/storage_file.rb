@@ -103,22 +103,12 @@ module AsposeWordsCloud
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = []
-      if @is_folder.nil?
-        invalid_properties.push("invalid value for 'is_folder', is_folder cannot be nil.")
-      end
-
-      if @size.nil?
-        invalid_properties.push("invalid value for 'size', size cannot be nil.")
-      end
-
       return invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @is_folder.nil?
-      return false if @size.nil?
       return true
     end
 

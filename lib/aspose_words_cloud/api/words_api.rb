@@ -7840,8 +7840,6 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_range_text' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'range_start_identifier' is set
       raise ArgumentError, 'Missing the required parameter range_start_identifier when calling WordsApi.get_range_text' if @api_client.config.client_side_validation && request.range_start_identifier.nil?
-      # verify the required parameter 'range_end_identifier' is set
-      raise ArgumentError, 'Missing the required parameter range_end_identifier when calling WordsApi.get_range_text' if @api_client.config.client_side_validation && request.range_end_identifier.nil?
       # resource path
       local_var_path = '/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -11374,8 +11372,6 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.remove_range' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'range_start_identifier' is set
       raise ArgumentError, 'Missing the required parameter range_start_identifier when calling WordsApi.remove_range' if @api_client.config.client_side_validation && request.range_start_identifier.nil?
-      # verify the required parameter 'range_end_identifier' is set
-      raise ArgumentError, 'Missing the required parameter range_end_identifier when calling WordsApi.remove_range' if @api_client.config.client_side_validation && request.range_end_identifier.nil?
       # resource path
       local_var_path = '/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -12349,8 +12345,6 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter range_start_identifier when calling WordsApi.replace_with_text' if @api_client.config.client_side_validation && request.range_start_identifier.nil?
       # verify the required parameter 'range_text' is set
       raise ArgumentError, 'Missing the required parameter range_text when calling WordsApi.replace_with_text' if @api_client.config.client_side_validation && request.range_text.nil?
-      # verify the required parameter 'range_end_identifier' is set
-      raise ArgumentError, 'Missing the required parameter range_end_identifier when calling WordsApi.replace_with_text' if @api_client.config.client_side_validation && request.range_end_identifier.nil?
       # resource path
       local_var_path = '/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -12570,8 +12564,6 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter range_start_identifier when calling WordsApi.save_as_range' if @api_client.config.client_side_validation && request.range_start_identifier.nil?
       # verify the required parameter 'document_parameters' is set
       raise ArgumentError, 'Missing the required parameter document_parameters when calling WordsApi.save_as_range' if @api_client.config.client_side_validation && request.document_parameters.nil?
-      # verify the required parameter 'range_end_identifier' is set
-      raise ArgumentError, 'Missing the required parameter range_end_identifier when calling WordsApi.save_as_range' if @api_client.config.client_side_validation && request.range_end_identifier.nil?
       # resource path
       local_var_path = '/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}/SaveAs'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)

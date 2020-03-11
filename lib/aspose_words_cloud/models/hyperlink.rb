@@ -31,7 +31,6 @@ module AsposeWordsCloud
 
   # Hyperlink element.
   class Hyperlink
-    # Gets or sets link to the document.
     attr_accessor :link
 
     # Gets or sets hypelink's display text.

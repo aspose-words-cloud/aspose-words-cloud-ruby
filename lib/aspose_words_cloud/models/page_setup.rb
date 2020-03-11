@@ -31,7 +31,6 @@ module AsposeWordsCloud
 
   # Represents the page setup properties of a section.             
   class PageSetup
-    # Gets or sets link to the document.
     attr_accessor :link
 
     # Gets or sets specifies that this section contains bidirectional (complex scripts) text.             

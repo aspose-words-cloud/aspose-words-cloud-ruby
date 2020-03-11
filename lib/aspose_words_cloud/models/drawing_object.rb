@@ -31,7 +31,6 @@ module AsposeWordsCloud
 
   # Represents Drawing Object DTO.
   class DrawingObject
-    # Gets or sets link to the document.
     attr_accessor :link
 
     # Gets or sets node id.
@@ -40,13 +39,11 @@ module AsposeWordsCloud
     # Gets or sets height of the drawing object in points.
     attr_accessor :height
 
-    # Gets or sets link to image data. Can be null if shape does not have an image.
     attr_accessor :image_data_link
 
     # Gets or sets distance in points from the origin to the left side of the image.             
     attr_accessor :left
 
-    # Gets or sets link to ole object. Can be null if shape does not have ole data.
     attr_accessor :ole_data_link
 
     # Gets or sets specifies where the distance to the image is measured from.             

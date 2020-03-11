@@ -31,7 +31,6 @@ module AsposeWordsCloud
 
   # Collection of links to paragraphs.
   class ParagraphLinkCollection
-    # Gets or sets link to the document.
     attr_accessor :link
 
     # Gets or sets collection of paragraph's links.

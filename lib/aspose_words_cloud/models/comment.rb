@@ -31,13 +31,11 @@ module AsposeWordsCloud
 
   # Comment.
   class Comment
-    # Gets or sets link to the document.
     attr_accessor :link
 
     # Gets or sets returns or sets the author name for a comment.
     attr_accessor :author
 
-    # Gets or sets content of comment.
     attr_accessor :content
 
     # Gets or sets the date and time that the comment was made.
@@ -46,10 +44,8 @@ module AsposeWordsCloud
     # Gets or sets returns or sets the initials of the user associated with a specific comment.
     attr_accessor :initial
 
-    # Gets or sets link to comment range end node.
     attr_accessor :range_end
 
-    # Gets or sets link to comment range start node.
     attr_accessor :range_start
 
     # Gets or sets this is a convenience property that allows to easily get or set text of the comment.

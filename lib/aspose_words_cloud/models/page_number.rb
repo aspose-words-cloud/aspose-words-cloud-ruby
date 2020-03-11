@@ -94,22 +94,12 @@ module AsposeWordsCloud
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = []
-      if @is_top.nil?
-        invalid_properties.push("invalid value for 'is_top', is_top cannot be nil.")
-      end
-
-      if @set_page_number_on_first_page.nil?
-        invalid_properties.push("invalid value for 'set_page_number_on_first_page', set_page_number_on_first_page cannot be nil.")
-      end
-
       return invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @is_top.nil?
-      return false if @set_page_number_on_first_page.nil?
       return true
     end
 

@@ -31,7 +31,6 @@ module AsposeWordsCloud
 
   # Collection of Hyperlink.
   class Hyperlinks
-    # Gets or sets link to the document.
     attr_accessor :link
 
     # Gets or sets array of Hyperlink.

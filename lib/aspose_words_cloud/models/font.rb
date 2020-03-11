@@ -31,7 +31,6 @@ module AsposeWordsCloud
 
   # Font element.             
   class Font
-    # Gets or sets link to the document.
     attr_accessor :link
 
     # Gets or sets true if the font is formatted as all capital letters.             
@@ -46,10 +45,8 @@ module AsposeWordsCloud
     # Gets or sets true if the right-to-left text is formatted as bold.             
     attr_accessor :bold_bi
 
-    # Gets or sets border object that specifies border for the font.
     attr_accessor :border
 
-    # Gets or sets the color of the font.             
     attr_accessor :color
 
     # Gets or sets specifies whether the contents of this run shall be treated as complex script text regardless of their Unicode character values when determining the formatting for this run.             
@@ -67,7 +64,6 @@ module AsposeWordsCloud
     # Gets or sets true if the font is formatted as hidden text.             
     attr_accessor :hidden
 
-    # Gets or sets the highlight (marker) color.             
     attr_accessor :highlight_color
 
     # Gets or sets true if the font is formatted as italic.             
@@ -151,7 +147,6 @@ module AsposeWordsCloud
     # Gets or sets the type of underline applied to the font.
     attr_accessor :underline
 
-    # Gets or sets the color of the underline applied to the font.
     attr_accessor :underline_color
 
     class EnumAttributeValidator

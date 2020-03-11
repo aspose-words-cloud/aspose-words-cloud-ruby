@@ -31,7 +31,6 @@ module AsposeWordsCloud
 
   # Collection of OfficeMath objects.
   class OfficeMathObjectsCollection
-    # Gets or sets link to the document.
     attr_accessor :link
 
     # Gets or sets collection of OfficeMath objects.

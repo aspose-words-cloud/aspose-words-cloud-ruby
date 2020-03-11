@@ -103,27 +103,12 @@ module AsposeWordsCloud
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = []
-      if @is_match_case.nil?
-        invalid_properties.push("invalid value for 'is_match_case', is_match_case cannot be nil.")
-      end
-
-      if @is_match_whole_word.nil?
-        invalid_properties.push("invalid value for 'is_match_whole_word', is_match_whole_word cannot be nil.")
-      end
-
-      if @is_old_value_regex.nil?
-        invalid_properties.push("invalid value for 'is_old_value_regex', is_old_value_regex cannot be nil.")
-      end
-
       return invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @is_match_case.nil?
-      return false if @is_match_whole_word.nil?
-      return false if @is_old_value_regex.nil?
       return true
     end
 

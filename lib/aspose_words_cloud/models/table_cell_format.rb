@@ -31,7 +31,6 @@ module AsposeWordsCloud
 
   # Represents all formatting for a table row.
   class TableCellFormat
-    # Gets or sets link to the document.
     attr_accessor :link
 
     # Gets or sets returns or sets the amount of space (in points) to add below the contents of cell.
@@ -49,7 +48,6 @@ module AsposeWordsCloud
     # Gets or sets returns or sets the orientation of text in a table cell.
     attr_accessor :orientation
 
-    # Gets or sets returns or sets the preferred width of the cell.
     attr_accessor :preferred_width
 
     # Gets or sets returns or sets the amount of space (in points) to add to the right of the contents of cell.

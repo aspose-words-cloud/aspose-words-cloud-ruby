@@ -31,10 +31,8 @@ module AsposeWordsCloud
 
   # result of the operation which modifies the original document and saves the result.
   class ModificationOperationResult
-    # Gets or sets link to the source document (source for the modification operation).
     attr_accessor :source
 
-    # Gets or sets link to the dest document (result of the modification operation).
     attr_accessor :dest
 
 

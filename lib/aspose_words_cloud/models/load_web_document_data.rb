@@ -34,7 +34,6 @@ module AsposeWordsCloud
     # Gets or sets web document url.
     attr_accessor :loading_document_url
 
-    # Gets or sets save options.
     attr_accessor :save_options
 
 

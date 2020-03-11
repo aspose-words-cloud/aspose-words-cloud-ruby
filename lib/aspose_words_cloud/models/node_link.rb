@@ -31,7 +31,6 @@ module AsposeWordsCloud
 
   # Reference to node.
   class NodeLink
-    # Gets or sets link to the document.
     attr_accessor :link
 
     # Gets or sets node id.
