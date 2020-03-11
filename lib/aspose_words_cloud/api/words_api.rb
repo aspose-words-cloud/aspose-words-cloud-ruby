@@ -44,7 +44,6 @@ module AsposeWordsCloud
     # @return [RevisionsModificationResponse]
     def accept_all_revisions(request)
       data, _status_code, _headers = accept_all_revisions_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -104,6 +103,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -111,6 +112,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'RevisionsModificationResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'RevisionsModificationResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#accept_all_revisions\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -124,7 +136,6 @@ module AsposeWordsCloud
     # @return [DocumentResponse]
     def append_document(request)
       data, _status_code, _headers = append_document_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -196,6 +207,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.document_list)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -203,6 +216,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DocumentResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#append_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -216,7 +240,6 @@ module AsposeWordsCloud
     # @return [ClassificationResponse]
     def classify(request)
       data, _status_code, _headers = classify_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -255,6 +278,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.text)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -262,6 +287,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'ClassificationResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'ClassificationResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#classify\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -275,7 +311,6 @@ module AsposeWordsCloud
     # @return [ClassificationResponse]
     def classify_document(request)
       data, _status_code, _headers = classify_document_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -340,6 +375,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -347,6 +384,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'ClassificationResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'ClassificationResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#classify_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -360,7 +408,6 @@ module AsposeWordsCloud
     # @return [DocumentResponse]
     def compare_document(request)
       data, _status_code, _headers = compare_document_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -422,6 +469,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.compare_data)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -429,6 +478,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DocumentResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#compare_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -442,7 +502,6 @@ module AsposeWordsCloud
     # @return [File]
     def convert_document(request)
       data, _status_code, _headers = convert_document_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -501,6 +560,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -508,6 +569,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'File')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#convert_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -521,7 +593,6 @@ module AsposeWordsCloud
     # @return [nil]
     def copy_file(request)
       data, _status_code, _headers = copy_file_with_http_info(request)
-      request_token if _status_code == 401
       nil
     end
 
@@ -575,12 +646,24 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names)		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#copy_file\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -594,7 +677,6 @@ module AsposeWordsCloud
     # @return [nil]
     def copy_folder(request)
       data, _status_code, _headers = copy_folder_with_http_info(request)
-      request_token if _status_code == 401
       nil
     end
 
@@ -643,12 +725,24 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names)		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#copy_folder\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -662,7 +756,6 @@ module AsposeWordsCloud
     # @return [DocumentResponse]
     def create_document(request)
       data, _status_code, _headers = create_document_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -709,6 +802,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -716,6 +811,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DocumentResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#create_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -729,7 +835,6 @@ module AsposeWordsCloud
     # @return [nil]
     def create_folder(request)
       data, _status_code, _headers = create_folder_with_http_info(request)
-      request_token if _status_code == 401
       nil
     end
 
@@ -769,12 +874,24 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names)		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#create_folder\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -788,7 +905,6 @@ module AsposeWordsCloud
     # @return [DocumentPropertyResponse]
     def create_or_update_document_property(request)
       data, _status_code, _headers = create_or_update_document_property_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -863,6 +979,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.property)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -870,6 +988,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentPropertyResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DocumentPropertyResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#create_or_update_document_property\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -883,7 +1012,6 @@ module AsposeWordsCloud
     # @return [BorderResponse]
     def delete_border(request)
       data, _status_code, _headers = delete_border_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -961,6 +1089,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -968,6 +1098,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'BorderResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'BorderResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_border\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -981,7 +1122,6 @@ module AsposeWordsCloud
     # @return [BordersResponse]
     def delete_borders(request)
       data, _status_code, _headers = delete_borders_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -1054,6 +1194,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -1061,6 +1203,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'BordersResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'BordersResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_borders\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -1074,7 +1227,6 @@ module AsposeWordsCloud
     # @return [nil]
     def delete_comment(request)
       data, _status_code, _headers = delete_comment_with_http_info(request)
-      request_token if _status_code == 401
       nil
     end
 
@@ -1147,12 +1299,24 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names)		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_comment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -1166,7 +1330,6 @@ module AsposeWordsCloud
     # @return [nil]
     def delete_document_property(request)
       data, _status_code, _headers = delete_document_property_with_http_info(request)
-      request_token if _status_code == 401
       nil
     end
 
@@ -1239,12 +1402,24 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names)		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_document_property\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -1258,7 +1433,6 @@ module AsposeWordsCloud
     # @return [nil]
     def delete_drawing_object(request)
       data, _status_code, _headers = delete_drawing_object_with_http_info(request)
-      request_token if _status_code == 401
       nil
     end
 
@@ -1334,12 +1508,24 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names)		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_drawing_object\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -1353,7 +1539,6 @@ module AsposeWordsCloud
     # @return [nil]
     def delete_drawing_object_without_node_path(request)
       data, _status_code, _headers = delete_drawing_object_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
       nil
     end
 
@@ -1426,12 +1611,24 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names)		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_drawing_object_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -1445,7 +1642,6 @@ module AsposeWordsCloud
     # @return [nil]
     def delete_field(request)
       data, _status_code, _headers = delete_field_with_http_info(request)
-      request_token if _status_code == 401
       nil
     end
 
@@ -1521,12 +1717,24 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names)		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -1540,7 +1748,6 @@ module AsposeWordsCloud
     # @return [nil]
     def delete_field_without_node_path(request)
       data, _status_code, _headers = delete_field_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
       nil
     end
 
@@ -1613,12 +1820,24 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names)		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_field_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -1632,7 +1851,6 @@ module AsposeWordsCloud
     # @return [nil]
     def delete_fields(request)
       data, _status_code, _headers = delete_fields_with_http_info(request)
-      request_token if _status_code == 401
       nil
     end
 
@@ -1705,12 +1923,24 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names)		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_fields\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -1724,7 +1954,6 @@ module AsposeWordsCloud
     # @return [nil]
     def delete_fields_without_node_path(request)
       data, _status_code, _headers = delete_fields_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
       nil
     end
 
@@ -1794,12 +2023,24 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names)		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_fields_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -1813,7 +2054,6 @@ module AsposeWordsCloud
     # @return [nil]
     def delete_file(request)
       data, _status_code, _headers = delete_file_with_http_info(request)
-      request_token if _status_code == 401
       nil
     end
 
@@ -1858,12 +2098,24 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names)		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_file\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -1877,7 +2129,6 @@ module AsposeWordsCloud
     # @return [nil]
     def delete_folder(request)
       data, _status_code, _headers = delete_folder_with_http_info(request)
-      request_token if _status_code == 401
       nil
     end
 
@@ -1922,12 +2173,24 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names)		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_folder\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -1941,7 +2204,6 @@ module AsposeWordsCloud
     # @return [nil]
     def delete_footnote(request)
       data, _status_code, _headers = delete_footnote_with_http_info(request)
-      request_token if _status_code == 401
       nil
     end
 
@@ -2017,12 +2279,24 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names)		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_footnote\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -2036,7 +2310,6 @@ module AsposeWordsCloud
     # @return [nil]
     def delete_footnote_without_node_path(request)
       data, _status_code, _headers = delete_footnote_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
       nil
     end
 
@@ -2109,12 +2382,24 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names)		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_footnote_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -2128,7 +2413,6 @@ module AsposeWordsCloud
     # @return [nil]
     def delete_form_field(request)
       data, _status_code, _headers = delete_form_field_with_http_info(request)
-      request_token if _status_code == 401
       nil
     end
 
@@ -2204,12 +2488,24 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names)		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_form_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -2223,7 +2519,6 @@ module AsposeWordsCloud
     # @return [nil]
     def delete_form_field_without_node_path(request)
       data, _status_code, _headers = delete_form_field_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
       nil
     end
 
@@ -2296,12 +2591,24 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names)		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_form_field_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -2315,7 +2622,6 @@ module AsposeWordsCloud
     # @return [nil]
     def delete_header_footer(request)
       data, _status_code, _headers = delete_header_footer_with_http_info(request)
-      request_token if _status_code == 401
       nil
     end
 
@@ -2391,12 +2697,24 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names)		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_header_footer\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -2410,7 +2728,6 @@ module AsposeWordsCloud
     # @return [nil]
     def delete_headers_footers(request)
       data, _status_code, _headers = delete_headers_footers_with_http_info(request)
-      request_token if _status_code == 401
       nil
     end
 
@@ -2488,12 +2805,24 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names)		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_headers_footers\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -2507,7 +2836,6 @@ module AsposeWordsCloud
     # @return [nil]
     def delete_macros(request)
       data, _status_code, _headers = delete_macros_with_http_info(request)
-      request_token if _status_code == 401
       nil
     end
 
@@ -2577,12 +2905,24 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names)		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_macros\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -2596,7 +2936,6 @@ module AsposeWordsCloud
     # @return [nil]
     def delete_office_math_object(request)
       data, _status_code, _headers = delete_office_math_object_with_http_info(request)
-      request_token if _status_code == 401
       nil
     end
 
@@ -2672,12 +3011,24 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names)		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_office_math_object\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -2691,7 +3042,6 @@ module AsposeWordsCloud
     # @return [nil]
     def delete_office_math_object_without_node_path(request)
       data, _status_code, _headers = delete_office_math_object_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
       nil
     end
 
@@ -2764,12 +3114,24 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names)		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_office_math_object_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -2783,7 +3145,6 @@ module AsposeWordsCloud
     # @return [nil]
     def delete_paragraph(request)
       data, _status_code, _headers = delete_paragraph_with_http_info(request)
-      request_token if _status_code == 401
       nil
     end
 
@@ -2859,12 +3220,24 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names)		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_paragraph\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -2878,7 +3251,6 @@ module AsposeWordsCloud
     # @return [nil]
     def delete_paragraph_without_node_path(request)
       data, _status_code, _headers = delete_paragraph_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
       nil
     end
 
@@ -2951,12 +3323,24 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names)		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_paragraph_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -2970,7 +3354,6 @@ module AsposeWordsCloud
     # @return [nil]
     def delete_run(request)
       data, _status_code, _headers = delete_run_with_http_info(request)
-      request_token if _status_code == 401
       nil
     end
 
@@ -3046,12 +3429,24 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names)		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_run\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -3065,7 +3460,6 @@ module AsposeWordsCloud
     # @return [nil]
     def delete_section(request)
       data, _status_code, _headers = delete_section_with_http_info(request)
-      request_token if _status_code == 401
       nil
     end
 
@@ -3138,12 +3532,24 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names)		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_section\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -3157,7 +3563,6 @@ module AsposeWordsCloud
     # @return [nil]
     def delete_table(request)
       data, _status_code, _headers = delete_table_with_http_info(request)
-      request_token if _status_code == 401
       nil
     end
 
@@ -3233,12 +3638,24 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names)		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_table\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -3252,7 +3669,6 @@ module AsposeWordsCloud
     # @return [nil]
     def delete_table_cell(request)
       data, _status_code, _headers = delete_table_cell_with_http_info(request)
-      request_token if _status_code == 401
       nil
     end
 
@@ -3328,12 +3744,24 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names)		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_table_cell\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -3347,7 +3775,6 @@ module AsposeWordsCloud
     # @return [nil]
     def delete_table_row(request)
       data, _status_code, _headers = delete_table_row_with_http_info(request)
-      request_token if _status_code == 401
       nil
     end
 
@@ -3423,12 +3850,24 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names)		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_table_row\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -3442,7 +3881,6 @@ module AsposeWordsCloud
     # @return [nil]
     def delete_table_without_node_path(request)
       data, _status_code, _headers = delete_table_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
       nil
     end
 
@@ -3515,12 +3953,24 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names)		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_table_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -3534,7 +3984,6 @@ module AsposeWordsCloud
     # @return [DocumentResponse]
     def delete_watermark(request)
       data, _status_code, _headers = delete_watermark_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -3604,6 +4053,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -3611,6 +4062,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DocumentResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_watermark\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -3624,7 +4086,6 @@ module AsposeWordsCloud
     # @return [File]
     def download_file(request)
       data, _status_code, _headers = download_file_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -3669,6 +4130,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -3676,6 +4139,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'File')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#download_file\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -3689,7 +4163,6 @@ module AsposeWordsCloud
     # @return [DocumentResponse]
     def execute_mail_merge(request)
       data, _status_code, _headers = execute_mail_merge_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -3770,6 +4243,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -3777,6 +4252,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DocumentResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#execute_mail_merge\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -3790,7 +4276,6 @@ module AsposeWordsCloud
     # @return [File]
     def execute_mail_merge_online(request)
       data, _status_code, _headers = execute_mail_merge_online_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -3843,6 +4328,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -3850,6 +4337,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'File')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#execute_mail_merge_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -3863,7 +4361,6 @@ module AsposeWordsCloud
     # @return [AvailableFontsResponse]
     def get_available_fonts(request)
       data, _status_code, _headers = get_available_fonts_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -3900,6 +4397,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -3907,6 +4406,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'AvailableFontsResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'AvailableFontsResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_available_fonts\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -3920,7 +4430,6 @@ module AsposeWordsCloud
     # @return [BookmarkResponse]
     def get_bookmark_by_name(request)
       data, _status_code, _headers = get_bookmark_by_name_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -3978,6 +4487,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -3985,6 +4496,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'BookmarkResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'BookmarkResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_bookmark_by_name\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -3998,7 +4520,6 @@ module AsposeWordsCloud
     # @return [BookmarksResponse]
     def get_bookmarks(request)
       data, _status_code, _headers = get_bookmarks_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -4053,6 +4574,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -4060,6 +4583,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'BookmarksResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'BookmarksResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_bookmarks\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4073,7 +4607,6 @@ module AsposeWordsCloud
     # @return [BorderResponse]
     def get_border(request)
       data, _status_code, _headers = get_border_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -4136,6 +4669,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -4143,6 +4678,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'BorderResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'BorderResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_border\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4156,7 +4702,6 @@ module AsposeWordsCloud
     # @return [BordersResponse]
     def get_borders(request)
       data, _status_code, _headers = get_borders_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -4214,6 +4759,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -4221,6 +4768,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'BordersResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'BordersResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_borders\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4234,7 +4792,6 @@ module AsposeWordsCloud
     # @return [CommentResponse]
     def get_comment(request)
       data, _status_code, _headers = get_comment_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -4292,6 +4849,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -4299,6 +4858,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'CommentResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'CommentResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_comment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4312,7 +4882,6 @@ module AsposeWordsCloud
     # @return [CommentsResponse]
     def get_comments(request)
       data, _status_code, _headers = get_comments_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -4367,6 +4936,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -4374,6 +4945,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'CommentsResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'CommentsResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_comments\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4387,7 +4969,6 @@ module AsposeWordsCloud
     # @return [DocumentResponse]
     def get_document(request)
       data, _status_code, _headers = get_document_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -4442,6 +5023,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -4449,6 +5032,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DocumentResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4462,7 +5056,6 @@ module AsposeWordsCloud
     # @return [DrawingObjectResponse]
     def get_document_drawing_object_by_index(request)
       data, _status_code, _headers = get_document_drawing_object_by_index_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -4523,6 +5116,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -4530,6 +5125,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DrawingObjectResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DrawingObjectResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_drawing_object_by_index\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4543,7 +5149,6 @@ module AsposeWordsCloud
     # @return [DrawingObjectResponse]
     def get_document_drawing_object_by_index_without_node_path(request)
       data, _status_code, _headers = get_document_drawing_object_by_index_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -4601,6 +5206,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -4608,6 +5215,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DrawingObjectResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DrawingObjectResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_drawing_object_by_index_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4621,7 +5239,6 @@ module AsposeWordsCloud
     # @return [File]
     def get_document_drawing_object_image_data(request)
       data, _status_code, _headers = get_document_drawing_object_image_data_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -4682,6 +5299,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -4689,6 +5308,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'File')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_drawing_object_image_data\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4702,7 +5332,6 @@ module AsposeWordsCloud
     # @return [File]
     def get_document_drawing_object_image_data_without_node_path(request)
       data, _status_code, _headers = get_document_drawing_object_image_data_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -4760,6 +5389,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -4767,6 +5398,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'File')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_drawing_object_image_data_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4780,7 +5422,6 @@ module AsposeWordsCloud
     # @return [File]
     def get_document_drawing_object_ole_data(request)
       data, _status_code, _headers = get_document_drawing_object_ole_data_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -4841,6 +5482,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -4848,6 +5491,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'File')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_drawing_object_ole_data\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4861,7 +5515,6 @@ module AsposeWordsCloud
     # @return [File]
     def get_document_drawing_object_ole_data_without_node_path(request)
       data, _status_code, _headers = get_document_drawing_object_ole_data_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -4919,6 +5572,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -4926,6 +5581,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'File')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_drawing_object_ole_data_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4939,7 +5605,6 @@ module AsposeWordsCloud
     # @return [DrawingObjectsResponse]
     def get_document_drawing_objects(request)
       data, _status_code, _headers = get_document_drawing_objects_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -4997,6 +5662,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -5004,6 +5671,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DrawingObjectsResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DrawingObjectsResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_drawing_objects\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5017,7 +5695,6 @@ module AsposeWordsCloud
     # @return [DrawingObjectsResponse]
     def get_document_drawing_objects_without_node_path(request)
       data, _status_code, _headers = get_document_drawing_objects_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -5072,6 +5749,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -5079,6 +5758,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DrawingObjectsResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DrawingObjectsResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_drawing_objects_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5092,7 +5782,6 @@ module AsposeWordsCloud
     # @return [FieldNamesResponse]
     def get_document_field_names(request)
       data, _status_code, _headers = get_document_field_names_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -5152,6 +5841,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -5159,6 +5850,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FieldNamesResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FieldNamesResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_field_names\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5172,7 +5874,6 @@ module AsposeWordsCloud
     # @return [FieldNamesResponse]
     def get_document_field_names_online(request)
       data, _status_code, _headers = get_document_field_names_online_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -5212,6 +5913,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -5219,6 +5922,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FieldNamesResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FieldNamesResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_field_names_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5232,7 +5946,6 @@ module AsposeWordsCloud
     # @return [HyperlinkResponse]
     def get_document_hyperlink_by_index(request)
       data, _status_code, _headers = get_document_hyperlink_by_index_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -5290,6 +6003,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -5297,6 +6012,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'HyperlinkResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'HyperlinkResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_hyperlink_by_index\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5310,7 +6036,6 @@ module AsposeWordsCloud
     # @return [HyperlinksResponse]
     def get_document_hyperlinks(request)
       data, _status_code, _headers = get_document_hyperlinks_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -5365,6 +6090,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -5372,6 +6099,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'HyperlinksResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'HyperlinksResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_hyperlinks\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5385,7 +6123,6 @@ module AsposeWordsCloud
     # @return [DocumentPropertiesResponse]
     def get_document_properties(request)
       data, _status_code, _headers = get_document_properties_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -5440,6 +6177,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -5447,6 +6186,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentPropertiesResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DocumentPropertiesResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_properties\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5460,7 +6210,6 @@ module AsposeWordsCloud
     # @return [DocumentPropertyResponse]
     def get_document_property(request)
       data, _status_code, _headers = get_document_property_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -5518,6 +6267,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -5525,6 +6276,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentPropertyResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DocumentPropertyResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_property\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5538,7 +6300,6 @@ module AsposeWordsCloud
     # @return [ProtectionDataResponse]
     def get_document_protection(request)
       data, _status_code, _headers = get_document_protection_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -5593,6 +6354,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -5600,6 +6363,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'ProtectionDataResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'ProtectionDataResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_protection\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5613,7 +6387,6 @@ module AsposeWordsCloud
     # @return [StatDataResponse]
     def get_document_statistics(request)
       data, _status_code, _headers = get_document_statistics_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -5683,6 +6456,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -5690,6 +6465,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'StatDataResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'StatDataResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_statistics\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5703,7 +6489,6 @@ module AsposeWordsCloud
     # @return [File]
     def get_document_with_format(request)
       data, _status_code, _headers = get_document_with_format_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -5772,6 +6557,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -5779,6 +6566,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'File')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_with_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5792,7 +6590,6 @@ module AsposeWordsCloud
     # @return [FieldResponse]
     def get_field(request)
       data, _status_code, _headers = get_field_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -5853,6 +6650,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -5860,6 +6659,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FieldResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FieldResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5873,7 +6683,6 @@ module AsposeWordsCloud
     # @return [FieldResponse]
     def get_field_without_node_path(request)
       data, _status_code, _headers = get_field_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -5931,6 +6740,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -5938,6 +6749,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FieldResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FieldResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_field_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5951,7 +6773,6 @@ module AsposeWordsCloud
     # @return [FieldsResponse]
     def get_fields(request)
       data, _status_code, _headers = get_fields_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -6009,6 +6830,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -6016,6 +6839,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FieldsResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FieldsResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_fields\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6029,7 +6863,6 @@ module AsposeWordsCloud
     # @return [FieldsResponse]
     def get_fields_without_node_path(request)
       data, _status_code, _headers = get_fields_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -6084,6 +6917,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -6091,6 +6926,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FieldsResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FieldsResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_fields_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6104,7 +6950,6 @@ module AsposeWordsCloud
     # @return [FilesList]
     def get_files_list(request)
       data, _status_code, _headers = get_files_list_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -6144,6 +6989,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -6151,6 +6998,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FilesList')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FilesList')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_files_list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6164,7 +7022,6 @@ module AsposeWordsCloud
     # @return [FootnoteResponse]
     def get_footnote(request)
       data, _status_code, _headers = get_footnote_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -6225,6 +7082,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -6232,6 +7091,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FootnoteResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FootnoteResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_footnote\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6245,7 +7115,6 @@ module AsposeWordsCloud
     # @return [FootnoteResponse]
     def get_footnote_without_node_path(request)
       data, _status_code, _headers = get_footnote_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -6303,6 +7172,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -6310,6 +7181,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FootnoteResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FootnoteResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_footnote_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6323,7 +7205,6 @@ module AsposeWordsCloud
     # @return [FootnotesResponse]
     def get_footnotes(request)
       data, _status_code, _headers = get_footnotes_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -6381,6 +7262,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -6388,6 +7271,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FootnotesResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FootnotesResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_footnotes\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6401,7 +7295,6 @@ module AsposeWordsCloud
     # @return [FootnotesResponse]
     def get_footnotes_without_node_path(request)
       data, _status_code, _headers = get_footnotes_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -6456,6 +7349,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -6463,6 +7358,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FootnotesResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FootnotesResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_footnotes_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6476,7 +7382,6 @@ module AsposeWordsCloud
     # @return [FormFieldResponse]
     def get_form_field(request)
       data, _status_code, _headers = get_form_field_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -6537,6 +7442,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -6544,6 +7451,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FormFieldResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FormFieldResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_form_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6557,7 +7475,6 @@ module AsposeWordsCloud
     # @return [FormFieldResponse]
     def get_form_field_without_node_path(request)
       data, _status_code, _headers = get_form_field_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -6615,6 +7532,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -6622,6 +7541,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FormFieldResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FormFieldResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_form_field_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6635,7 +7565,6 @@ module AsposeWordsCloud
     # @return [FormFieldsResponse]
     def get_form_fields(request)
       data, _status_code, _headers = get_form_fields_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -6693,6 +7622,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -6700,6 +7631,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FormFieldsResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FormFieldsResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_form_fields\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6713,7 +7655,6 @@ module AsposeWordsCloud
     # @return [FormFieldsResponse]
     def get_form_fields_without_node_path(request)
       data, _status_code, _headers = get_form_fields_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -6768,6 +7709,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -6775,6 +7718,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FormFieldsResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FormFieldsResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_form_fields_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6788,7 +7742,6 @@ module AsposeWordsCloud
     # @return [HeaderFooterResponse]
     def get_header_footer(request)
       data, _status_code, _headers = get_header_footer_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -6851,6 +7804,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -6858,6 +7813,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'HeaderFooterResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'HeaderFooterResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_header_footer\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6871,7 +7837,6 @@ module AsposeWordsCloud
     # @return [HeaderFooterResponse]
     def get_header_footer_of_section(request)
       data, _status_code, _headers = get_header_footer_of_section_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -6937,6 +7902,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -6944,6 +7911,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'HeaderFooterResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'HeaderFooterResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_header_footer_of_section\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6957,7 +7935,6 @@ module AsposeWordsCloud
     # @return [HeaderFootersResponse]
     def get_header_footers(request)
       data, _status_code, _headers = get_header_footers_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -7020,6 +7997,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -7027,6 +8006,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'HeaderFootersResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'HeaderFootersResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_header_footers\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7040,7 +8030,6 @@ module AsposeWordsCloud
     # @return [OfficeMathObjectResponse]
     def get_office_math_object(request)
       data, _status_code, _headers = get_office_math_object_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -7101,6 +8090,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -7108,6 +8099,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'OfficeMathObjectResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'OfficeMathObjectResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_office_math_object\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7121,7 +8123,6 @@ module AsposeWordsCloud
     # @return [OfficeMathObjectResponse]
     def get_office_math_object_without_node_path(request)
       data, _status_code, _headers = get_office_math_object_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -7179,6 +8180,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -7186,6 +8189,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'OfficeMathObjectResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'OfficeMathObjectResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_office_math_object_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7199,7 +8213,6 @@ module AsposeWordsCloud
     # @return [OfficeMathObjectsResponse]
     def get_office_math_objects(request)
       data, _status_code, _headers = get_office_math_objects_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -7257,6 +8270,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -7264,6 +8279,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'OfficeMathObjectsResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'OfficeMathObjectsResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_office_math_objects\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7277,7 +8303,6 @@ module AsposeWordsCloud
     # @return [OfficeMathObjectsResponse]
     def get_office_math_objects_without_node_path(request)
       data, _status_code, _headers = get_office_math_objects_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -7332,6 +8357,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -7339,6 +8366,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'OfficeMathObjectsResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'OfficeMathObjectsResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_office_math_objects_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7352,7 +8390,6 @@ module AsposeWordsCloud
     # @return [ParagraphResponse]
     def get_paragraph(request)
       data, _status_code, _headers = get_paragraph_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -7413,6 +8450,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -7420,6 +8459,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'ParagraphResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'ParagraphResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_paragraph\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7433,7 +8483,6 @@ module AsposeWordsCloud
     # @return [ParagraphFormatResponse]
     def get_paragraph_format(request)
       data, _status_code, _headers = get_paragraph_format_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -7494,6 +8543,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -7501,6 +8552,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'ParagraphFormatResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'ParagraphFormatResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_paragraph_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7514,7 +8576,6 @@ module AsposeWordsCloud
     # @return [ParagraphFormatResponse]
     def get_paragraph_format_without_node_path(request)
       data, _status_code, _headers = get_paragraph_format_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -7572,6 +8633,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -7579,6 +8642,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'ParagraphFormatResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'ParagraphFormatResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_paragraph_format_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7592,7 +8666,6 @@ module AsposeWordsCloud
     # @return [ParagraphResponse]
     def get_paragraph_without_node_path(request)
       data, _status_code, _headers = get_paragraph_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -7650,6 +8723,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -7657,6 +8732,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'ParagraphResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'ParagraphResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_paragraph_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7670,7 +8756,6 @@ module AsposeWordsCloud
     # @return [ParagraphLinkCollectionResponse]
     def get_paragraphs(request)
       data, _status_code, _headers = get_paragraphs_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -7728,6 +8813,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -7735,6 +8822,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'ParagraphLinkCollectionResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'ParagraphLinkCollectionResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_paragraphs\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7748,7 +8846,6 @@ module AsposeWordsCloud
     # @return [ParagraphLinkCollectionResponse]
     def get_paragraphs_without_node_path(request)
       data, _status_code, _headers = get_paragraphs_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -7803,6 +8900,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -7810,6 +8909,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'ParagraphLinkCollectionResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'ParagraphLinkCollectionResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_paragraphs_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7823,7 +8933,6 @@ module AsposeWordsCloud
     # @return [RangeTextResponse]
     def get_range_text(request)
       data, _status_code, _headers = get_range_text_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -7884,6 +8993,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -7891,6 +9002,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'RangeTextResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'RangeTextResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_range_text\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7904,7 +9026,6 @@ module AsposeWordsCloud
     # @return [RunResponse]
     def get_run(request)
       data, _status_code, _headers = get_run_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -7965,6 +9086,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -7972,6 +9095,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'RunResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'RunResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_run\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7985,7 +9119,6 @@ module AsposeWordsCloud
     # @return [FontResponse]
     def get_run_font(request)
       data, _status_code, _headers = get_run_font_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -8046,6 +9179,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -8053,6 +9188,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FontResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FontResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_run_font\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8066,7 +9212,6 @@ module AsposeWordsCloud
     # @return [RunsResponse]
     def get_runs(request)
       data, _status_code, _headers = get_runs_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -8124,6 +9269,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -8131,6 +9278,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'RunsResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'RunsResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_runs\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8144,7 +9302,6 @@ module AsposeWordsCloud
     # @return [SectionResponse]
     def get_section(request)
       data, _status_code, _headers = get_section_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -8202,6 +9359,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -8209,6 +9368,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'SectionResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'SectionResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_section\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8222,7 +9392,6 @@ module AsposeWordsCloud
     # @return [SectionPageSetupResponse]
     def get_section_page_setup(request)
       data, _status_code, _headers = get_section_page_setup_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -8280,6 +9449,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -8287,6 +9458,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'SectionPageSetupResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'SectionPageSetupResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_section_page_setup\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8300,7 +9482,6 @@ module AsposeWordsCloud
     # @return [SectionLinkCollectionResponse]
     def get_sections(request)
       data, _status_code, _headers = get_sections_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -8355,6 +9536,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -8362,6 +9545,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'SectionLinkCollectionResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'SectionLinkCollectionResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_sections\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8375,7 +9569,6 @@ module AsposeWordsCloud
     # @return [TableResponse]
     def get_table(request)
       data, _status_code, _headers = get_table_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -8436,6 +9629,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -8443,6 +9638,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TableResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'TableResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_table\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8456,7 +9662,6 @@ module AsposeWordsCloud
     # @return [TableCellResponse]
     def get_table_cell(request)
       data, _status_code, _headers = get_table_cell_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -8517,6 +9722,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -8524,6 +9731,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TableCellResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'TableCellResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_table_cell\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8537,7 +9755,6 @@ module AsposeWordsCloud
     # @return [TableCellFormatResponse]
     def get_table_cell_format(request)
       data, _status_code, _headers = get_table_cell_format_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -8598,6 +9815,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -8605,6 +9824,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TableCellFormatResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'TableCellFormatResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_table_cell_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8618,7 +9848,6 @@ module AsposeWordsCloud
     # @return [TablePropertiesResponse]
     def get_table_properties(request)
       data, _status_code, _headers = get_table_properties_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -8679,6 +9908,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -8686,6 +9917,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TablePropertiesResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'TablePropertiesResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_table_properties\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8699,7 +9941,6 @@ module AsposeWordsCloud
     # @return [TablePropertiesResponse]
     def get_table_properties_without_node_path(request)
       data, _status_code, _headers = get_table_properties_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -8757,6 +9998,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -8764,6 +10007,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TablePropertiesResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'TablePropertiesResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_table_properties_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8777,7 +10031,6 @@ module AsposeWordsCloud
     # @return [TableRowResponse]
     def get_table_row(request)
       data, _status_code, _headers = get_table_row_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -8838,6 +10091,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -8845,6 +10100,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TableRowResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'TableRowResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_table_row\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8858,7 +10124,6 @@ module AsposeWordsCloud
     # @return [TableRowFormatResponse]
     def get_table_row_format(request)
       data, _status_code, _headers = get_table_row_format_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -8919,6 +10184,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -8926,6 +10193,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TableRowFormatResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'TableRowFormatResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_table_row_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8939,7 +10217,6 @@ module AsposeWordsCloud
     # @return [TableResponse]
     def get_table_without_node_path(request)
       data, _status_code, _headers = get_table_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -8997,6 +10274,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -9004,6 +10283,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TableResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'TableResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_table_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -9017,7 +10307,6 @@ module AsposeWordsCloud
     # @return [TableLinkCollectionResponse]
     def get_tables(request)
       data, _status_code, _headers = get_tables_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -9075,6 +10364,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -9082,6 +10373,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TableLinkCollectionResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'TableLinkCollectionResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_tables\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -9095,7 +10397,6 @@ module AsposeWordsCloud
     # @return [TableLinkCollectionResponse]
     def get_tables_without_node_path(request)
       data, _status_code, _headers = get_tables_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -9150,6 +10451,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -9157,6 +10460,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TableLinkCollectionResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'TableLinkCollectionResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_tables_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -9170,7 +10484,6 @@ module AsposeWordsCloud
     # @return [CommentResponse]
     def insert_comment(request)
       data, _status_code, _headers = insert_comment_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -9242,6 +10555,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.comment)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -9249,6 +10564,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'CommentResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'CommentResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_comment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -9262,7 +10588,6 @@ module AsposeWordsCloud
     # @return [DrawingObjectResponse]
     def insert_drawing_object(request)
       data, _status_code, _headers = insert_drawing_object_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -9341,6 +10666,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -9348,6 +10675,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DrawingObjectResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DrawingObjectResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_drawing_object\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -9361,7 +10699,6 @@ module AsposeWordsCloud
     # @return [DrawingObjectResponse]
     def insert_drawing_object_without_node_path(request)
       data, _status_code, _headers = insert_drawing_object_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -9437,6 +10774,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -9444,6 +10783,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DrawingObjectResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DrawingObjectResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_drawing_object_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -9457,7 +10807,6 @@ module AsposeWordsCloud
     # @return [FieldResponse]
     def insert_field(request)
       data, _status_code, _headers = insert_field_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -9537,6 +10886,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.field)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -9544,6 +10895,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FieldResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FieldResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -9557,7 +10919,6 @@ module AsposeWordsCloud
     # @return [FieldResponse]
     def insert_field_without_node_path(request)
       data, _status_code, _headers = insert_field_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -9634,6 +10995,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.field)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -9641,6 +11004,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FieldResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FieldResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_field_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -9654,7 +11028,6 @@ module AsposeWordsCloud
     # @return [FootnoteResponse]
     def insert_footnote(request)
       data, _status_code, _headers = insert_footnote_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -9729,6 +11102,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.footnote_dto)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -9736,6 +11111,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FootnoteResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FootnoteResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_footnote\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -9749,7 +11135,6 @@ module AsposeWordsCloud
     # @return [FootnoteResponse]
     def insert_footnote_without_node_path(request)
       data, _status_code, _headers = insert_footnote_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -9821,6 +11206,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.footnote_dto)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -9828,6 +11215,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FootnoteResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FootnoteResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_footnote_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -9841,7 +11239,6 @@ module AsposeWordsCloud
     # @return [FormFieldResponse]
     def insert_form_field(request)
       data, _status_code, _headers = insert_form_field_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -9921,6 +11318,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.form_field)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -9928,6 +11327,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FormFieldResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FormFieldResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_form_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -9941,7 +11351,6 @@ module AsposeWordsCloud
     # @return [FormFieldResponse]
     def insert_form_field_without_node_path(request)
       data, _status_code, _headers = insert_form_field_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -10018,6 +11427,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.form_field)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -10025,6 +11436,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FormFieldResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FormFieldResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_form_field_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -10038,7 +11460,6 @@ module AsposeWordsCloud
     # @return [HeaderFooterResponse]
     def insert_header_footer(request)
       data, _status_code, _headers = insert_header_footer_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -10113,6 +11534,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.header_footer_type)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -10120,6 +11543,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'HeaderFooterResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'HeaderFooterResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_header_footer\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -10133,7 +11567,6 @@ module AsposeWordsCloud
     # @return [DocumentResponse]
     def insert_page_numbers(request)
       data, _status_code, _headers = insert_page_numbers_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -10205,6 +11638,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.page_number)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -10212,6 +11647,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DocumentResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_page_numbers\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -10225,7 +11671,6 @@ module AsposeWordsCloud
     # @return [ParagraphResponse]
     def insert_paragraph(request)
       data, _status_code, _headers = insert_paragraph_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -10305,6 +11750,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.paragraph)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -10312,6 +11759,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'ParagraphResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'ParagraphResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_paragraph\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -10325,7 +11783,6 @@ module AsposeWordsCloud
     # @return [RunResponse]
     def insert_run(request)
       data, _status_code, _headers = insert_run_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -10405,6 +11862,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.run)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -10412,6 +11871,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'RunResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'RunResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_run\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -10425,7 +11895,6 @@ module AsposeWordsCloud
     # @return [TableResponse]
     def insert_table(request)
       data, _status_code, _headers = insert_table_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -10498,6 +11967,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.table)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -10505,6 +11976,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TableResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'TableResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_table\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -10518,7 +12000,6 @@ module AsposeWordsCloud
     # @return [TableCellResponse]
     def insert_table_cell(request)
       data, _status_code, _headers = insert_table_cell_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -10591,6 +12072,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.cell)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -10598,6 +12081,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TableCellResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'TableCellResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_table_cell\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -10611,7 +12105,6 @@ module AsposeWordsCloud
     # @return [TableRowResponse]
     def insert_table_row(request)
       data, _status_code, _headers = insert_table_row_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -10684,6 +12177,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.row)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -10691,6 +12186,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TableRowResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'TableRowResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_table_row\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -10704,7 +12210,6 @@ module AsposeWordsCloud
     # @return [TableResponse]
     def insert_table_without_node_path(request)
       data, _status_code, _headers = insert_table_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -10774,6 +12279,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.table)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -10781,6 +12288,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TableResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'TableResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_table_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -10794,7 +12312,6 @@ module AsposeWordsCloud
     # @return [DocumentResponse]
     def insert_watermark_image(request)
       data, _status_code, _headers = insert_watermark_image_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -10875,6 +12392,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -10882,6 +12401,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DocumentResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_watermark_image\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -10895,7 +12425,6 @@ module AsposeWordsCloud
     # @return [DocumentResponse]
     def insert_watermark_text(request)
       data, _status_code, _headers = insert_watermark_text_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -10967,6 +12496,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.watermark_text)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -10974,6 +12505,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DocumentResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_watermark_text\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -10987,7 +12529,6 @@ module AsposeWordsCloud
     # @return [SaveResponse]
     def load_web_document(request)
       data, _status_code, _headers = load_web_document_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -11026,6 +12567,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.data)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -11033,6 +12576,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'SaveResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'SaveResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#load_web_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -11046,7 +12600,6 @@ module AsposeWordsCloud
     # @return [nil]
     def move_file(request)
       data, _status_code, _headers = move_file_with_http_info(request)
-      request_token if _status_code == 401
       nil
     end
 
@@ -11100,12 +12653,24 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names)		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#move_file\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -11119,7 +12684,6 @@ module AsposeWordsCloud
     # @return [nil]
     def move_folder(request)
       data, _status_code, _headers = move_folder_with_http_info(request)
-      request_token if _status_code == 401
       nil
     end
 
@@ -11168,12 +12732,24 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names)		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#move_folder\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -11187,7 +12763,6 @@ module AsposeWordsCloud
     # @return [ProtectionDataResponse]
     def protect_document(request)
       data, _status_code, _headers = protect_document_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -11249,6 +12824,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.protection_request)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -11256,6 +12833,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'ProtectionDataResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'ProtectionDataResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#protect_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -11269,7 +12857,6 @@ module AsposeWordsCloud
     # @return [RevisionsModificationResponse]
     def reject_all_revisions(request)
       data, _status_code, _headers = reject_all_revisions_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -11329,6 +12916,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -11336,6 +12925,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'RevisionsModificationResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'RevisionsModificationResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#reject_all_revisions\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -11349,7 +12949,6 @@ module AsposeWordsCloud
     # @return [DocumentResponse]
     def remove_range(request)
       data, _status_code, _headers = remove_range_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -11415,6 +13014,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -11422,6 +13023,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DocumentResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#remove_range\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -11435,7 +13047,6 @@ module AsposeWordsCloud
     # @return [File]
     def render_drawing_object(request)
       data, _status_code, _headers = render_drawing_object_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -11505,6 +13116,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -11512,6 +13125,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'File')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#render_drawing_object\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -11525,7 +13149,6 @@ module AsposeWordsCloud
     # @return [File]
     def render_drawing_object_without_node_path(request)
       data, _status_code, _headers = render_drawing_object_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -11592,6 +13215,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -11599,6 +13224,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'File')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#render_drawing_object_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -11612,7 +13248,6 @@ module AsposeWordsCloud
     # @return [File]
     def render_math_object(request)
       data, _status_code, _headers = render_math_object_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -11682,6 +13317,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -11689,6 +13326,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'File')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#render_math_object\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -11702,7 +13350,6 @@ module AsposeWordsCloud
     # @return [File]
     def render_math_object_without_node_path(request)
       data, _status_code, _headers = render_math_object_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -11769,6 +13416,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -11776,6 +13425,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'File')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#render_math_object_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -11789,7 +13449,6 @@ module AsposeWordsCloud
     # @return [File]
     def render_page(request)
       data, _status_code, _headers = render_page_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -11856,6 +13515,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -11863,6 +13524,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'File')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#render_page\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -11876,7 +13548,6 @@ module AsposeWordsCloud
     # @return [File]
     def render_paragraph(request)
       data, _status_code, _headers = render_paragraph_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -11946,6 +13617,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -11953,6 +13626,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'File')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#render_paragraph\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -11966,7 +13650,6 @@ module AsposeWordsCloud
     # @return [File]
     def render_paragraph_without_node_path(request)
       data, _status_code, _headers = render_paragraph_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -12033,6 +13716,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -12040,6 +13725,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'File')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#render_paragraph_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -12053,7 +13749,6 @@ module AsposeWordsCloud
     # @return [File]
     def render_table(request)
       data, _status_code, _headers = render_table_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -12123,6 +13818,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -12130,6 +13827,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'File')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#render_table\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -12143,7 +13851,6 @@ module AsposeWordsCloud
     # @return [File]
     def render_table_without_node_path(request)
       data, _status_code, _headers = render_table_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -12210,6 +13917,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -12217,6 +13926,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'File')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#render_table_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -12230,7 +13950,6 @@ module AsposeWordsCloud
     # @return [ReplaceTextResponse]
     def replace_text(request)
       data, _status_code, _headers = replace_text_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -12302,6 +14021,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.replace_text)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -12309,6 +14030,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'ReplaceTextResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'ReplaceTextResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#replace_text\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -12322,7 +14054,6 @@ module AsposeWordsCloud
     # @return [DocumentResponse]
     def replace_with_text(request)
       data, _status_code, _headers = replace_with_text_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -12390,6 +14121,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.range_text)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -12397,6 +14130,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DocumentResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#replace_with_text\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -12410,7 +14154,6 @@ module AsposeWordsCloud
     # @return [nil]
     def reset_cache(request)
       data, _status_code, _headers = reset_cache_with_http_info(request)
-      request_token if _status_code == 401
       nil
     end
 
@@ -12442,12 +14185,24 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names)		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#reset_cache\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -12461,7 +14216,6 @@ module AsposeWordsCloud
     # @return [SaveResponse]
     def save_as(request)
       data, _status_code, _headers = save_as_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -12523,6 +14277,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.save_options_data)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -12530,6 +14286,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'SaveResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'SaveResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#save_as\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -12543,7 +14310,6 @@ module AsposeWordsCloud
     # @return [DocumentResponse]
     def save_as_range(request)
       data, _status_code, _headers = save_as_range_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -12606,6 +14372,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.document_parameters)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -12613,6 +14381,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DocumentResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#save_as_range\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -12626,7 +14405,6 @@ module AsposeWordsCloud
     # @return [SaveResponse]
     def save_as_tiff(request)
       data, _status_code, _headers = save_as_tiff_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -12773,6 +14551,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.save_options)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -12780,6 +14560,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'SaveResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'SaveResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#save_as_tiff\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -12793,7 +14584,6 @@ module AsposeWordsCloud
     # @return [SearchResponse]
     def search(request)
       data, _status_code, _headers = search_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -12852,6 +14642,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -12859,6 +14651,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'SearchResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'SearchResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#search\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -12872,7 +14675,6 @@ module AsposeWordsCloud
     # @return [SplitDocumentResponse]
     def split_document(request)
       data, _status_code, _headers = split_document_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -12957,6 +14759,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -12964,6 +14768,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'SplitDocumentResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'SplitDocumentResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#split_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -12977,7 +14792,6 @@ module AsposeWordsCloud
     # @return [ProtectionDataResponse]
     def unprotect_document(request)
       data, _status_code, _headers = unprotect_document_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -13039,6 +14853,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.protection_request)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -13046,6 +14862,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'ProtectionDataResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'ProtectionDataResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#unprotect_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -13059,7 +14886,6 @@ module AsposeWordsCloud
     # @return [BookmarkResponse]
     def update_bookmark(request)
       data, _status_code, _headers = update_bookmark_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -13134,6 +14960,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.bookmark_data)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -13141,6 +14969,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'BookmarkResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'BookmarkResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_bookmark\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -13154,7 +14993,6 @@ module AsposeWordsCloud
     # @return [BorderResponse]
     def update_border(request)
       data, _status_code, _headers = update_border_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -13234,6 +15072,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.border_properties)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -13241,6 +15081,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'BorderResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'BorderResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_border\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -13254,7 +15105,6 @@ module AsposeWordsCloud
     # @return [CommentResponse]
     def update_comment(request)
       data, _status_code, _headers = update_comment_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -13329,6 +15179,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.comment)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -13336,6 +15188,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'CommentResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'CommentResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_comment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -13349,7 +15212,6 @@ module AsposeWordsCloud
     # @return [DrawingObjectResponse]
     def update_drawing_object(request)
       data, _status_code, _headers = update_drawing_object_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -13431,6 +15293,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -13438,6 +15302,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DrawingObjectResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DrawingObjectResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_drawing_object\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -13451,7 +15326,6 @@ module AsposeWordsCloud
     # @return [DrawingObjectResponse]
     def update_drawing_object_without_node_path(request)
       data, _status_code, _headers = update_drawing_object_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -13530,6 +15404,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -13537,6 +15413,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DrawingObjectResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DrawingObjectResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_drawing_object_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -13550,7 +15437,6 @@ module AsposeWordsCloud
     # @return [FieldResponse]
     def update_field(request)
       data, _status_code, _headers = update_field_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -13628,6 +15514,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.field)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -13635,6 +15523,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FieldResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FieldResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -13648,7 +15547,6 @@ module AsposeWordsCloud
     # @return [DocumentResponse]
     def update_fields(request)
       data, _status_code, _headers = update_fields_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -13708,6 +15606,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -13715,6 +15615,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DocumentResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_fields\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -13728,7 +15639,6 @@ module AsposeWordsCloud
     # @return [FootnoteResponse]
     def update_footnote(request)
       data, _status_code, _headers = update_footnote_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -13806,6 +15716,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.footnote_dto)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -13813,6 +15725,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FootnoteResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FootnoteResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_footnote\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -13826,7 +15749,6 @@ module AsposeWordsCloud
     # @return [FootnoteResponse]
     def update_footnote_without_node_path(request)
       data, _status_code, _headers = update_footnote_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -13901,6 +15823,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.footnote_dto)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -13908,6 +15832,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FootnoteResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FootnoteResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_footnote_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -13921,7 +15856,6 @@ module AsposeWordsCloud
     # @return [FormFieldResponse]
     def update_form_field(request)
       data, _status_code, _headers = update_form_field_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -13999,6 +15933,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.form_field)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -14006,6 +15942,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FormFieldResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FormFieldResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_form_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -14019,7 +15966,6 @@ module AsposeWordsCloud
     # @return [FormFieldResponse]
     def update_form_field_without_node_path(request)
       data, _status_code, _headers = update_form_field_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -14094,6 +16040,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.form_field)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -14101,6 +16049,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FormFieldResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FormFieldResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_form_field_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -14114,7 +16073,6 @@ module AsposeWordsCloud
     # @return [ParagraphFormatResponse]
     def update_paragraph_format(request)
       data, _status_code, _headers = update_paragraph_format_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -14192,6 +16150,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.dto)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -14199,6 +16159,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'ParagraphFormatResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'ParagraphFormatResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_paragraph_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -14212,7 +16183,6 @@ module AsposeWordsCloud
     # @return [RunResponse]
     def update_run(request)
       data, _status_code, _headers = update_run_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -14290,6 +16260,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.run)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -14297,6 +16269,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'RunResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'RunResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_run\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -14310,7 +16293,6 @@ module AsposeWordsCloud
     # @return [FontResponse]
     def update_run_font(request)
       data, _status_code, _headers = update_run_font_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -14388,6 +16370,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.font_dto)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -14395,6 +16379,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FontResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FontResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_run_font\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -14408,7 +16403,6 @@ module AsposeWordsCloud
     # @return [SectionPageSetupResponse]
     def update_section_page_setup(request)
       data, _status_code, _headers = update_section_page_setup_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -14483,6 +16477,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.page_setup)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -14490,6 +16486,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'SectionPageSetupResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'SectionPageSetupResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_section_page_setup\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -14503,7 +16510,6 @@ module AsposeWordsCloud
     # @return [TableCellFormatResponse]
     def update_table_cell_format(request)
       data, _status_code, _headers = update_table_cell_format_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -14579,6 +16585,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.format)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -14586,6 +16594,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TableCellFormatResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'TableCellFormatResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_table_cell_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -14599,7 +16618,6 @@ module AsposeWordsCloud
     # @return [TablePropertiesResponse]
     def update_table_properties(request)
       data, _status_code, _headers = update_table_properties_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -14675,6 +16693,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.properties)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -14682,6 +16702,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TablePropertiesResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'TablePropertiesResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_table_properties\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -14695,7 +16726,6 @@ module AsposeWordsCloud
     # @return [TablePropertiesResponse]
     def update_table_properties_without_node_path(request)
       data, _status_code, _headers = update_table_properties_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -14768,6 +16798,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.properties)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -14775,6 +16807,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TablePropertiesResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'TablePropertiesResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_table_properties_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -14788,7 +16831,6 @@ module AsposeWordsCloud
     # @return [TableRowFormatResponse]
     def update_table_row_format(request)
       data, _status_code, _headers = update_table_row_format_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -14864,6 +16906,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.format)
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -14871,6 +16915,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TableRowFormatResponse')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'TableRowFormatResponse')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_table_row_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -14884,7 +16939,6 @@ module AsposeWordsCloud
     # @return [FilesUploadResult]
     def upload_file(request)
       data, _status_code, _headers = upload_file_with_http_info(request)
-      request_token if _status_code == 401
       data
     end
 
@@ -14927,6 +16981,8 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
+      begin
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -14934,6 +16990,17 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FilesUploadResult')
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FilesUploadResult')		  
+      end
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#upload_file\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
