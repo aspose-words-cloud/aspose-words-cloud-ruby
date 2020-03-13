@@ -49,6 +49,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = accept_all_revisions_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -137,6 +139,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = append_document_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -237,6 +241,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = classify_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -304,6 +310,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = classify_document_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -397,6 +405,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = compare_document_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -487,6 +497,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = convert_document_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -574,6 +586,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = copy_file_with_http_info(request)
+          else
+            raise
           end
       end			
       nil
@@ -655,6 +669,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = copy_folder_with_http_info(request)
+          else
+            raise
           end
       end			
       nil
@@ -731,6 +747,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = create_document_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -806,6 +824,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = create_folder_with_http_info(request)
+          else
+            raise
           end
       end			
       nil
@@ -873,6 +893,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = create_or_update_document_property_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -976,6 +998,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = delete_border_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -1082,6 +1106,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = delete_borders_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -1183,6 +1209,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = delete_comment_with_http_info(request)
+          else
+            raise
           end
       end			
       nil
@@ -1283,6 +1311,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = delete_document_property_with_http_info(request)
+          else
+            raise
           end
       end			
       nil
@@ -1383,6 +1413,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = delete_drawing_object_with_http_info(request)
+          else
+            raise
           end
       end			
       nil
@@ -1486,6 +1518,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = delete_drawing_object_without_node_path_with_http_info(request)
+          else
+            raise
           end
       end			
       nil
@@ -1586,6 +1620,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = delete_field_with_http_info(request)
+          else
+            raise
           end
       end			
       nil
@@ -1689,6 +1725,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = delete_field_without_node_path_with_http_info(request)
+          else
+            raise
           end
       end			
       nil
@@ -1789,6 +1827,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = delete_fields_with_http_info(request)
+          else
+            raise
           end
       end			
       nil
@@ -1889,6 +1929,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = delete_fields_without_node_path_with_http_info(request)
+          else
+            raise
           end
       end			
       nil
@@ -1986,6 +2028,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = delete_file_with_http_info(request)
+          else
+            raise
           end
       end			
       nil
@@ -2058,6 +2102,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = delete_folder_with_http_info(request)
+          else
+            raise
           end
       end			
       nil
@@ -2130,6 +2176,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = delete_footnote_with_http_info(request)
+          else
+            raise
           end
       end			
       nil
@@ -2233,6 +2281,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = delete_footnote_without_node_path_with_http_info(request)
+          else
+            raise
           end
       end			
       nil
@@ -2333,6 +2383,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = delete_form_field_with_http_info(request)
+          else
+            raise
           end
       end			
       nil
@@ -2436,6 +2488,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = delete_form_field_without_node_path_with_http_info(request)
+          else
+            raise
           end
       end			
       nil
@@ -2536,6 +2590,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = delete_header_footer_with_http_info(request)
+          else
+            raise
           end
       end			
       nil
@@ -2639,6 +2695,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = delete_headers_footers_with_http_info(request)
+          else
+            raise
           end
       end			
       nil
@@ -2744,6 +2802,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = delete_macros_with_http_info(request)
+          else
+            raise
           end
       end			
       nil
@@ -2841,6 +2901,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = delete_office_math_object_with_http_info(request)
+          else
+            raise
           end
       end			
       nil
@@ -2944,6 +3006,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = delete_office_math_object_without_node_path_with_http_info(request)
+          else
+            raise
           end
       end			
       nil
@@ -3044,6 +3108,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = delete_paragraph_with_http_info(request)
+          else
+            raise
           end
       end			
       nil
@@ -3147,6 +3213,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = delete_paragraph_without_node_path_with_http_info(request)
+          else
+            raise
           end
       end			
       nil
@@ -3247,6 +3315,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = delete_run_with_http_info(request)
+          else
+            raise
           end
       end			
       nil
@@ -3350,6 +3420,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = delete_section_with_http_info(request)
+          else
+            raise
           end
       end			
       nil
@@ -3450,6 +3522,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = delete_table_with_http_info(request)
+          else
+            raise
           end
       end			
       nil
@@ -3553,6 +3627,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = delete_table_cell_with_http_info(request)
+          else
+            raise
           end
       end			
       nil
@@ -3656,6 +3732,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = delete_table_row_with_http_info(request)
+          else
+            raise
           end
       end			
       nil
@@ -3759,6 +3837,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = delete_table_without_node_path_with_http_info(request)
+          else
+            raise
           end
       end			
       nil
@@ -3859,6 +3939,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = delete_watermark_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -3957,6 +4039,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = download_file_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -4030,6 +4114,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = execute_mail_merge_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -4139,6 +4225,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = execute_mail_merge_online_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -4220,6 +4308,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_available_fonts_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -4285,6 +4375,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_bookmark_by_name_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -4371,6 +4463,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_bookmarks_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -4454,6 +4548,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_border_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -4545,6 +4641,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_borders_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -4631,6 +4729,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_comment_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -4717,6 +4817,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_comments_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -4800,6 +4902,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_document_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -4883,6 +4987,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_document_drawing_object_by_index_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -4972,6 +5078,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_document_drawing_object_by_index_without_node_path_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -5058,6 +5166,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_document_drawing_object_image_data_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -5147,6 +5257,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_document_drawing_object_image_data_without_node_path_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -5233,6 +5345,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_document_drawing_object_ole_data_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -5322,6 +5436,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_document_drawing_object_ole_data_without_node_path_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -5408,6 +5524,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_document_drawing_objects_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -5494,6 +5612,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_document_drawing_objects_without_node_path_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -5577,6 +5697,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_document_field_names_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -5665,6 +5787,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_document_field_names_online_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -5733,6 +5857,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_document_hyperlink_by_index_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -5819,6 +5945,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_document_hyperlinks_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -5902,6 +6030,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_document_properties_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -5985,6 +6115,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_document_property_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -6071,6 +6203,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_document_protection_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -6154,6 +6288,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_document_statistics_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -6252,6 +6388,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_document_with_format_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -6349,6 +6487,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_field_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -6438,6 +6578,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_field_without_node_path_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -6524,6 +6666,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_fields_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -6610,6 +6754,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_fields_without_node_path_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -6693,6 +6839,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_files_list_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -6761,6 +6909,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_footnote_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -6850,6 +7000,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_footnote_without_node_path_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -6936,6 +7088,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_footnotes_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -7022,6 +7176,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_footnotes_without_node_path_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -7105,6 +7261,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_form_field_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -7194,6 +7352,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_form_field_without_node_path_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -7280,6 +7440,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_form_fields_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -7366,6 +7528,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_form_fields_without_node_path_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -7449,6 +7613,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_header_footer_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -7540,6 +7706,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_header_footer_of_section_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -7634,6 +7802,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_header_footers_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -7725,6 +7895,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_office_math_object_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -7814,6 +7986,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_office_math_object_without_node_path_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -7900,6 +8074,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_office_math_objects_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -7986,6 +8162,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_office_math_objects_without_node_path_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -8069,6 +8247,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_paragraph_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -8158,6 +8338,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_paragraph_format_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -8247,6 +8429,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_paragraph_format_without_node_path_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -8333,6 +8517,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_paragraph_without_node_path_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -8419,6 +8605,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_paragraphs_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -8505,6 +8693,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_paragraphs_without_node_path_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -8588,6 +8778,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_range_text_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -8677,6 +8869,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_run_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -8766,6 +8960,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_run_font_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -8855,6 +9051,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_runs_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -8941,6 +9139,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_section_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -9027,6 +9227,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_section_page_setup_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -9113,6 +9315,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_sections_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -9196,6 +9400,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_table_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -9285,6 +9491,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_table_cell_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -9374,6 +9582,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_table_cell_format_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -9463,6 +9673,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_table_properties_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -9552,6 +9764,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_table_properties_without_node_path_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -9638,6 +9852,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_table_row_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -9727,6 +9943,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_table_row_format_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -9816,6 +10034,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_table_without_node_path_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -9902,6 +10122,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_tables_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -9988,6 +10210,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = get_tables_without_node_path_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -10071,6 +10295,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = insert_comment_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -10171,6 +10397,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = insert_drawing_object_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -10278,6 +10506,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = insert_drawing_object_without_node_path_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -10382,6 +10612,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = insert_field_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -10490,6 +10722,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = insert_field_without_node_path_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -10595,6 +10829,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = insert_footnote_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -10698,6 +10934,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = insert_footnote_without_node_path_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -10798,6 +11036,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = insert_form_field_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -10906,6 +11146,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = insert_form_field_without_node_path_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -11011,6 +11253,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = insert_header_footer_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -11114,6 +11358,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = insert_page_numbers_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -11214,6 +11460,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = insert_paragraph_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -11322,6 +11570,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = insert_run_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -11430,6 +11680,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = insert_table_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -11531,6 +11783,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = insert_table_cell_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -11632,6 +11886,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = insert_table_row_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -11733,6 +11989,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = insert_table_without_node_path_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -11831,6 +12089,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = insert_watermark_image_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -11940,6 +12200,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = insert_watermark_text_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -12040,6 +12302,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = load_web_document_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -12107,6 +12371,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = move_file_with_http_info(request)
+          else
+            raise
           end
       end			
       nil
@@ -12188,6 +12454,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = move_folder_with_http_info(request)
+          else
+            raise
           end
       end			
       nil
@@ -12264,6 +12532,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = protect_document_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -12354,6 +12624,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = reject_all_revisions_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -12442,6 +12714,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = remove_range_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -12536,6 +12810,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = render_drawing_object_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -12634,6 +12910,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = render_drawing_object_without_node_path_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -12729,6 +13007,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = render_math_object_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -12827,6 +13107,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = render_math_object_without_node_path_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -12922,6 +13204,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = render_page_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -13017,6 +13301,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = render_paragraph_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -13115,6 +13401,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = render_paragraph_without_node_path_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -13210,6 +13498,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = render_table_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -13308,6 +13598,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = render_table_without_node_path_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -13403,6 +13695,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = replace_text_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -13503,6 +13797,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = replace_with_text_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -13599,6 +13895,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = reset_cache_with_http_info(request)
+          else
+            raise
           end
       end			
       nil
@@ -13658,6 +13956,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = save_as_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -13748,6 +14048,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = save_as_range_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -13839,6 +14141,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = save_as_tiff_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -14014,6 +14318,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = search_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -14101,6 +14407,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = split_document_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -14214,6 +14522,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = unprotect_document_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -14304,6 +14614,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = update_bookmark_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -14407,6 +14719,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = update_border_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -14515,6 +14829,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = update_comment_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -14618,6 +14934,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = update_drawing_object_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -14728,6 +15046,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = update_drawing_object_without_node_path_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -14835,6 +15155,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = update_field_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -14941,6 +15263,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = update_fields_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -15029,6 +15353,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = update_footnote_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -15135,6 +15461,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = update_footnote_without_node_path_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -15238,6 +15566,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = update_form_field_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -15344,6 +15674,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = update_form_field_without_node_path_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -15447,6 +15779,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = update_paragraph_format_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -15553,6 +15887,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = update_run_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -15659,6 +15995,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = update_run_font_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -15765,6 +16103,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = update_section_page_setup_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -15868,6 +16208,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = update_table_cell_format_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -15972,6 +16314,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = update_table_properties_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -16076,6 +16420,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = update_table_properties_without_node_path_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -16177,6 +16523,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = update_table_row_format_with_http_info(request)
+          else
+            raise
           end
       end			
       data
@@ -16281,6 +16629,8 @@ module AsposeWordsCloud
           if e.code == 401
             request_token
             data, _status_code, _headers = upload_file_with_http_info(request)
+          else
+            raise
           end
       end			
       data
