@@ -64,6 +64,9 @@ module AsposeWordsCloud
     # Gets or sets specifies whether or not use pretty formats output.
     attr_accessor :pretty_format
 
+    # Gets or sets a value indicating whether when true all images will be saved as WMF. This option might help to avoid WordPad warning messages.
+    attr_accessor :save_images_as_wmf
+
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -78,7 +81,8 @@ module AsposeWordsCloud
         :'update_fields' => :'UpdateFields',
         :'export_compact_size' => :'ExportCompactSize',
         :'export_images_for_old_readers' => :'ExportImagesForOldReaders',
-        :'pretty_format' => :'PrettyFormat'
+        :'pretty_format' => :'PrettyFormat',
+        :'save_images_as_wmf' => :'SaveImagesAsWmf'
       }
     end
 
@@ -95,7 +99,8 @@ module AsposeWordsCloud
         :'update_fields' => :'BOOLEAN',
         :'export_compact_size' => :'BOOLEAN',
         :'export_images_for_old_readers' => :'BOOLEAN',
-        :'pretty_format' => :'BOOLEAN'
+        :'pretty_format' => :'BOOLEAN',
+        :'save_images_as_wmf' => :'BOOLEAN'
       }
     end
 
@@ -151,6 +156,10 @@ module AsposeWordsCloud
         self.pretty_format = attributes[:'PrettyFormat']
       end
 
+      if attributes.key?(:'SaveImagesAsWmf')
+        self.save_images_as_wmf = attributes[:'SaveImagesAsWmf']
+      end
+
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -181,7 +190,8 @@ module AsposeWordsCloud
           update_fields == other.update_fields &&
           export_compact_size == other.export_compact_size &&
           export_images_for_old_readers == other.export_images_for_old_readers &&
-          pretty_format == other.pretty_format
+          pretty_format == other.pretty_format &&
+          save_images_as_wmf == other.save_images_as_wmf
     end
 
     # @see the `==` method
@@ -193,7 +203,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, export_compact_size, export_images_for_old_readers, pretty_format].hash
+      [save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, export_compact_size, export_images_for_old_readers, pretty_format, save_images_as_wmf].hash
     end
 
     # Builds the object from hash
