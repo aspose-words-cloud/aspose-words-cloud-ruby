@@ -35,11 +35,9 @@ module AsposeWordsCloud
       remote_name = 'noFileWithThisName.docx'
       request = GetSectionRequest.new remote_name, ''
       begin
-        @words_api.get_section request
-        assert_throws 'FAILED'
+        response = @words_api.get_section request
       rescue ApiError => e
         assert_equal 404, e.code
-      rescue
       end
     end
   end
