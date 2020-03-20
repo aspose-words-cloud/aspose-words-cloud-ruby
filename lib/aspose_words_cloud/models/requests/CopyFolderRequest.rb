@@ -33,25 +33,25 @@ module AsposeWordsCloud
   class CopyFolderRequest
 
         # Destination folder path e.g. '/dst'
-        attr_accessor :
+        attr_accessor :dest_path
         # Source folder path e.g. /Folder1
-        attr_accessor :
+        attr_accessor :src_path
         # Source storage name
-        attr_accessor :
+        attr_accessor :src_storage_name
         # Destination storage name
-        attr_accessor :
+        attr_accessor :dest_storage_name
 	
         #
         # Initializes a new instance.
-        # @param  Destination folder path e.g. '/dst'
-        # @param  Source folder path e.g. /Folder1
-        # @param  Source storage name
-        # @param  Destination storage name
-        def initialize( = nil = nil)
-           self. = 
-           self. = 
-           self. = 
-           self. = 
+        # @param dest_path Destination folder path e.g. '/dst'
+        # @param src_path Source folder path e.g. /Folder1
+        # @param src_storage_name Source storage name
+        # @param dest_storage_name Destination storage name
+        def initialize(dest_path, src_path, src_storage_name = nil, dest_storage_name = nil)
+           self.dest_path = dest_path
+           self.src_path = src_path
+           self.src_storage_name = src_storage_name
+           self.dest_storage_name = dest_storage_name
         end
   end
 end

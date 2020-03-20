@@ -34,6 +34,8 @@ module AsposeWordsCloud
     # Gets or sets node id.
     attr_accessor :node_id
 
+    attr_accessor :link
+
     attr_accessor :row_format
 
     # Gets or sets collection of table's rows.
@@ -44,6 +46,7 @@ module AsposeWordsCloud
     def self.attribute_map
       {
         :'node_id' => :'NodeId',
+        :'link' => :'link',
         :'row_format' => :'RowFormat',
         :'table_cell_list' => :'TableCellList'
       }
@@ -53,6 +56,7 @@ module AsposeWordsCloud
     def self.swagger_types
       {
         :'node_id' => :'String',
+        :'link' => :'WordsApiLink',
         :'row_format' => :'TableRowFormat',
         :'table_cell_list' => :'Array<TableCell>'
       }
@@ -68,6 +72,10 @@ module AsposeWordsCloud
 
       if attributes.key?(:'NodeId')
         self.node_id = attributes[:'NodeId']
+      end
+
+      if attributes.key?(:'link')
+        self.link = attributes[:'link']
       end
 
       if attributes.key?(:'RowFormat')
@@ -101,6 +109,7 @@ module AsposeWordsCloud
       return true if self.equal?(other)
       self.class == other.class &&
           node_id == other.node_id &&
+          link == other.link &&
           row_format == other.row_format &&
           table_cell_list == other.table_cell_list
     end
@@ -114,7 +123,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [node_id, row_format, table_cell_list].hash
+      [node_id, link, row_format, table_cell_list].hash
     end
 
     # Builds the object from hash

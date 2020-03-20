@@ -33,17 +33,17 @@ module AsposeWordsCloud
   class ClassifyRequest
 
         # Text to classify.
-        attr_accessor :
+        attr_accessor :text
         # Number of the best classes to return.
-        attr_accessor :
+        attr_accessor :best_classes_count
 	
         #
         # Initializes a new instance.
-        # @param  Text to classify.
-        # @param  Number of the best classes to return.
-        def initialize( = nil)
-           self. = 
-           self. = 
+        # @param text Text to classify.
+        # @param best_classes_count Number of the best classes to return.
+        def initialize(text, best_classes_count = nil)
+           self.text = text
+           self.best_classes_count = best_classes_count
         end
   end
 end

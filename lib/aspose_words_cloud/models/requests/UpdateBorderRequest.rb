@@ -33,53 +33,53 @@ module AsposeWordsCloud
   class UpdateBorderRequest
 
         # The document name.
-        attr_accessor :
+        attr_accessor :name
         # Border properties.
-        attr_accessor :
+        attr_accessor :border_properties
         # Path to the node with border(node should be paragraph, cell or row).
-        attr_accessor :
+        attr_accessor :node_path
         # Border type.
-        attr_accessor :
+        attr_accessor :border_type
         # Original document folder.
-        attr_accessor :
+        attr_accessor :folder
         # Original document storage.
-        attr_accessor :
+        attr_accessor :storage
         # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        attr_accessor :
+        attr_accessor :load_encoding
         # Password for opening an encrypted document.
-        attr_accessor :
+        attr_accessor :password
         # Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        attr_accessor :
+        attr_accessor :dest_file_name
         # Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        attr_accessor :
+        attr_accessor :revision_author
         # The date and time to use for revisions.
-        attr_accessor :
+        attr_accessor :revision_date_time
 	
         #
         # Initializes a new instance.
-        # @param  The document name.
-        # @param  Border properties.
-        # @param  Path to the node with border(node should be paragraph, cell or row).
-        # @param  Border type.
-        # @param  Original document folder.
-        # @param  Original document storage.
-        # @param  Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        # @param  Password for opening an encrypted document.
-        # @param  Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        # @param  Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        # @param  The date and time to use for revisions.
-        def initialize( = nil = nil = nil = nil = nil = nil = nil)
-           self. = 
-           self. = 
-           self. = 
-           self. = 
-           self. = 
-           self. = 
-           self. = 
-           self. = 
-           self. = 
-           self. = 
-           self. = 
+        # @param name The document name.
+        # @param border_properties Border properties.
+        # @param node_path Path to the node with border(node should be paragraph, cell or row).
+        # @param border_type Border type.
+        # @param folder Original document folder.
+        # @param storage Original document storage.
+        # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        # @param password Password for opening an encrypted document.
+        # @param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        # @param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        # @param revision_date_time The date and time to use for revisions.
+        def initialize(name, border_properties, node_path, border_type, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil, revision_author = nil, revision_date_time = nil)
+           self.name = name
+           self.border_properties = border_properties
+           self.node_path = node_path
+           self.border_type = border_type
+           self.folder = folder
+           self.storage = storage
+           self.load_encoding = load_encoding
+           self.password = password
+           self.dest_file_name = dest_file_name
+           self.revision_author = revision_author
+           self.revision_date_time = revision_date_time
         end
   end
 end

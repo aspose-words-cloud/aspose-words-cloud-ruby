@@ -33,49 +33,49 @@ module AsposeWordsCloud
   class DeleteHeadersFootersRequest
 
         # The document name.
-        attr_accessor :
+        attr_accessor :name
         # Path to parent section.
-        attr_accessor :
+        attr_accessor :section_path
         # Original document folder.
-        attr_accessor :
+        attr_accessor :folder
         # Original document storage.
-        attr_accessor :
+        attr_accessor :storage
         # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        attr_accessor :
+        attr_accessor :load_encoding
         # Password for opening an encrypted document.
-        attr_accessor :
+        attr_accessor :password
         # Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        attr_accessor :
+        attr_accessor :dest_file_name
         # Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        attr_accessor :
+        attr_accessor :revision_author
         # The date and time to use for revisions.
-        attr_accessor :
+        attr_accessor :revision_date_time
         # List of types of headers and footers.
-        attr_accessor :
+        attr_accessor :headers_footers_types
 	
         #
         # Initializes a new instance.
-        # @param  The document name.
-        # @param  Path to parent section.
-        # @param  Original document folder.
-        # @param  Original document storage.
-        # @param  Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        # @param  Password for opening an encrypted document.
-        # @param  Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        # @param  Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        # @param  The date and time to use for revisions.
-        # @param  List of types of headers and footers.
-        def initialize( = nil = nil = nil = nil = nil = nil = nil = nil)
-           self. = 
-           self. = 
-           self. = 
-           self. = 
-           self. = 
-           self. = 
-           self. = 
-           self. = 
-           self. = 
-           self. = 
+        # @param name The document name.
+        # @param section_path Path to parent section.
+        # @param folder Original document folder.
+        # @param storage Original document storage.
+        # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        # @param password Password for opening an encrypted document.
+        # @param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        # @param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        # @param revision_date_time The date and time to use for revisions.
+        # @param headers_footers_types List of types of headers and footers.
+        def initialize(name, section_path, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil, revision_author = nil, revision_date_time = nil, headers_footers_types = nil)
+           self.name = name
+           self.section_path = section_path
+           self.folder = folder
+           self.storage = storage
+           self.load_encoding = load_encoding
+           self.password = password
+           self.dest_file_name = dest_file_name
+           self.revision_author = revision_author
+           self.revision_date_time = revision_date_time
+           self.headers_footers_types = headers_footers_types
         end
   end
 end

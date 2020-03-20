@@ -34,6 +34,11 @@ module AsposeWordsCloud
     # Gets or sets field code.
     attr_accessor :field_code
 
+    attr_accessor :link
+
+    # Gets or sets node id.
+    attr_accessor :node_id
+
     # Gets or sets LCID of the field.
     attr_accessor :locale_id
 
@@ -45,6 +50,8 @@ module AsposeWordsCloud
     def self.attribute_map
       {
         :'field_code' => :'FieldCode',
+        :'link' => :'link',
+        :'node_id' => :'NodeId',
         :'locale_id' => :'LocaleId',
         :'result' => :'Result'
       }
@@ -54,6 +61,8 @@ module AsposeWordsCloud
     def self.swagger_types
       {
         :'field_code' => :'String',
+        :'link' => :'WordsApiLink',
+        :'node_id' => :'String',
         :'locale_id' => :'String',
         :'result' => :'String'
       }
@@ -69,6 +78,14 @@ module AsposeWordsCloud
 
       if attributes.key?(:'FieldCode')
         self.field_code = attributes[:'FieldCode']
+      end
+
+      if attributes.key?(:'link')
+        self.link = attributes[:'link']
+      end
+
+      if attributes.key?(:'NodeId')
+        self.node_id = attributes[:'NodeId']
       end
 
       if attributes.key?(:'LocaleId')
@@ -100,6 +117,8 @@ module AsposeWordsCloud
       return true if self.equal?(other)
       self.class == other.class &&
           field_code == other.field_code &&
+          link == other.link &&
+          node_id == other.node_id &&
           locale_id == other.locale_id &&
           result == other.result
     end
@@ -113,7 +132,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [field_code, locale_id, result].hash
+      [field_code, link, node_id, locale_id, result].hash
     end
 
     # Builds the object from hash

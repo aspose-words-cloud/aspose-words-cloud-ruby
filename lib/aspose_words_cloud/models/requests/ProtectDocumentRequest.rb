@@ -33,37 +33,37 @@ module AsposeWordsCloud
   class ProtectDocumentRequest
 
         # The document name.
-        attr_accessor :
+        attr_accessor :name
         # ProtectionRequest with protection settings.
-        attr_accessor :
+        attr_accessor :protection_request
         # Original document folder.
-        attr_accessor :
+        attr_accessor :folder
         # Original document storage.
-        attr_accessor :
+        attr_accessor :storage
         # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        attr_accessor :
+        attr_accessor :load_encoding
         # Password for opening an encrypted document.
-        attr_accessor :
+        attr_accessor :password
         # Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        attr_accessor :
+        attr_accessor :dest_file_name
 	
         #
         # Initializes a new instance.
-        # @param  The document name.
-        # @param  ProtectionRequest with protection settings.
-        # @param  Original document folder.
-        # @param  Original document storage.
-        # @param  Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        # @param  Password for opening an encrypted document.
-        # @param  Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        def initialize( = nil = nil = nil = nil = nil)
-           self. = 
-           self. = 
-           self. = 
-           self. = 
-           self. = 
-           self. = 
-           self. = 
+        # @param name The document name.
+        # @param protection_request ProtectionRequest with protection settings.
+        # @param folder Original document folder.
+        # @param storage Original document storage.
+        # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        # @param password Password for opening an encrypted document.
+        # @param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        def initialize(name, protection_request, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil)
+           self.name = name
+           self.protection_request = protection_request
+           self.folder = folder
+           self.storage = storage
+           self.load_encoding = load_encoding
+           self.password = password
+           self.dest_file_name = dest_file_name
         end
   end
 end

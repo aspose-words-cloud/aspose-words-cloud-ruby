@@ -33,29 +33,29 @@ module AsposeWordsCloud
   class MoveFileRequest
 
         # Destination file path e.g. '/dest.ext'
-        attr_accessor :
+        attr_accessor :dest_path
         # Source file's path e.g. '/Folder 1/file.ext' or '/Bucket/Folder 1/file.ext'
-        attr_accessor :
+        attr_accessor :src_path
         # Source storage name
-        attr_accessor :
+        attr_accessor :src_storage_name
         # Destination storage name
-        attr_accessor :
+        attr_accessor :dest_storage_name
         # File version ID to move
-        attr_accessor :
+        attr_accessor :version_id
 	
         #
         # Initializes a new instance.
-        # @param  Destination file path e.g. '/dest.ext'
-        # @param  Source file's path e.g. '/Folder 1/file.ext' or '/Bucket/Folder 1/file.ext'
-        # @param  Source storage name
-        # @param  Destination storage name
-        # @param  File version ID to move
-        def initialize( = nil = nil = nil)
-           self. = 
-           self. = 
-           self. = 
-           self. = 
-           self. = 
+        # @param dest_path Destination file path e.g. '/dest.ext'
+        # @param src_path Source file's path e.g. '/Folder 1/file.ext' or '/Bucket/Folder 1/file.ext'
+        # @param src_storage_name Source storage name
+        # @param dest_storage_name Destination storage name
+        # @param version_id File version ID to move
+        def initialize(dest_path, src_path, src_storage_name = nil, dest_storage_name = nil, version_id = nil)
+           self.dest_path = dest_path
+           self.src_path = src_path
+           self.src_storage_name = src_storage_name
+           self.dest_storage_name = dest_storage_name
+           self.version_id = version_id
         end
   end
 end

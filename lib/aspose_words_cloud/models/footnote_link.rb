@@ -34,18 +34,22 @@ module AsposeWordsCloud
     # Gets or sets node id.
     attr_accessor :node_id
 
+    attr_accessor :link
+
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'node_id' => :'NodeId'
+        :'node_id' => :'NodeId',
+        :'link' => :'link'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'node_id' => :'String'
+        :'node_id' => :'String',
+        :'link' => :'WordsApiLink'
       }
     end
 
@@ -59,6 +63,10 @@ module AsposeWordsCloud
 
       if attributes.key?(:'NodeId')
         self.node_id = attributes[:'NodeId']
+      end
+
+      if attributes.key?(:'link')
+        self.link = attributes[:'link']
       end
 
     end
@@ -81,7 +89,8 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          node_id == other.node_id
+          node_id == other.node_id &&
+          link == other.link
     end
 
     # @see the `==` method
@@ -93,7 +102,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [node_id].hash
+      [node_id, link].hash
     end
 
     # Builds the object from hash

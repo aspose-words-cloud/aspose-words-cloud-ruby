@@ -34,6 +34,8 @@ module AsposeWordsCloud
     # Gets or sets node id.
     attr_accessor :node_id
 
+    attr_accessor :link
+
     # Gets or sets true if references to the specified form field are automatically updated whenever the field is exited.
     attr_accessor :calculate_on_exit
 
@@ -66,6 +68,7 @@ module AsposeWordsCloud
     def self.attribute_map
       {
         :'node_id' => :'NodeId',
+        :'link' => :'link',
         :'calculate_on_exit' => :'CalculateOnExit',
         :'enabled' => :'Enabled',
         :'entry_macro' => :'EntryMacro',
@@ -82,6 +85,7 @@ module AsposeWordsCloud
     def self.swagger_types
       {
         :'node_id' => :'String',
+        :'link' => :'WordsApiLink',
         :'calculate_on_exit' => :'BOOLEAN',
         :'enabled' => :'BOOLEAN',
         :'entry_macro' => :'String',
@@ -104,6 +108,10 @@ module AsposeWordsCloud
 
       if attributes.key?(:'NodeId')
         self.node_id = attributes[:'NodeId']
+      end
+
+      if attributes.key?(:'link')
+        self.link = attributes[:'link']
       end
 
       if attributes.key?(:'CalculateOnExit')
@@ -163,6 +171,7 @@ module AsposeWordsCloud
       return true if self.equal?(other)
       self.class == other.class &&
           node_id == other.node_id &&
+          link == other.link &&
           calculate_on_exit == other.calculate_on_exit &&
           enabled == other.enabled &&
           entry_macro == other.entry_macro &&
@@ -183,7 +192,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [node_id, calculate_on_exit, enabled, entry_macro, exit_macro, help_text, name, own_help, own_status, status_text].hash
+      [node_id, link, calculate_on_exit, enabled, entry_macro, exit_macro, help_text, name, own_help, own_status, status_text].hash
     end
 
     # Builds the object from hash

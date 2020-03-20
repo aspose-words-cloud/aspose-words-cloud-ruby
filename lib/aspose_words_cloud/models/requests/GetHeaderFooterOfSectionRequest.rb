@@ -33,41 +33,41 @@ module AsposeWordsCloud
   class GetHeaderFooterOfSectionRequest
 
         # The document name.
-        attr_accessor :
+        attr_accessor :name
         # Header/footer index.
-        attr_accessor :
+        attr_accessor :header_footer_index
         # Section index.
-        attr_accessor :
+        attr_accessor :section_index
         # Original document folder.
-        attr_accessor :
+        attr_accessor :folder
         # Original document storage.
-        attr_accessor :
+        attr_accessor :storage
         # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        attr_accessor :
+        attr_accessor :load_encoding
         # Password for opening an encrypted document.
-        attr_accessor :
+        attr_accessor :password
         # List of types of headers and footers.
-        attr_accessor :
+        attr_accessor :filter_by_type
 	
         #
         # Initializes a new instance.
-        # @param  The document name.
-        # @param  Header/footer index.
-        # @param  Section index.
-        # @param  Original document folder.
-        # @param  Original document storage.
-        # @param  Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        # @param  Password for opening an encrypted document.
-        # @param  List of types of headers and footers.
-        def initialize( = nil = nil = nil = nil = nil)
-           self. = 
-           self. = 
-           self. = 
-           self. = 
-           self. = 
-           self. = 
-           self. = 
-           self. = 
+        # @param name The document name.
+        # @param header_footer_index Header/footer index.
+        # @param section_index Section index.
+        # @param folder Original document folder.
+        # @param storage Original document storage.
+        # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        # @param password Password for opening an encrypted document.
+        # @param filter_by_type List of types of headers and footers.
+        def initialize(name, header_footer_index, section_index, folder = nil, storage = nil, load_encoding = nil, password = nil, filter_by_type = nil)
+           self.name = name
+           self.header_footer_index = header_footer_index
+           self.section_index = section_index
+           self.folder = folder
+           self.storage = storage
+           self.load_encoding = load_encoding
+           self.password = password
+           self.filter_by_type = filter_by_type
         end
   end
 end

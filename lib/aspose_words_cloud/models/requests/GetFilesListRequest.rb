@@ -33,17 +33,17 @@ module AsposeWordsCloud
   class GetFilesListRequest
 
         # Folder path e.g. /Folder1
-        attr_accessor :
+        attr_accessor :path
         # Storage name
-        attr_accessor :
+        attr_accessor :storage_name
 	
         #
         # Initializes a new instance.
-        # @param  Folder path e.g. /Folder1
-        # @param  Storage name
-        def initialize( = nil)
-           self. = 
-           self. = 
+        # @param path Folder path e.g. /Folder1
+        # @param storage_name Storage name
+        def initialize(path, storage_name = nil)
+           self.path = path
+           self.storage_name = storage_name
         end
   end
 end

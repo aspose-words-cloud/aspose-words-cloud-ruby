@@ -33,33 +33,33 @@ module AsposeWordsCloud
   class GetDocumentPropertyRequest
 
         # The document name.
-        attr_accessor :
+        attr_accessor :name
         # The property name.
-        attr_accessor :
+        attr_accessor :property_name
         # Original document folder.
-        attr_accessor :
+        attr_accessor :folder
         # Original document storage.
-        attr_accessor :
+        attr_accessor :storage
         # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        attr_accessor :
+        attr_accessor :load_encoding
         # Password for opening an encrypted document.
-        attr_accessor :
+        attr_accessor :password
 	
         #
         # Initializes a new instance.
-        # @param  The document name.
-        # @param  The property name.
-        # @param  Original document folder.
-        # @param  Original document storage.
-        # @param  Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        # @param  Password for opening an encrypted document.
-        def initialize( = nil = nil = nil = nil)
-           self. = 
-           self. = 
-           self. = 
-           self. = 
-           self. = 
-           self. = 
+        # @param name The document name.
+        # @param property_name The property name.
+        # @param folder Original document folder.
+        # @param storage Original document storage.
+        # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        # @param password Password for opening an encrypted document.
+        def initialize(name, property_name, folder = nil, storage = nil, load_encoding = nil, password = nil)
+           self.name = name
+           self.property_name = property_name
+           self.folder = folder
+           self.storage = storage
+           self.load_encoding = load_encoding
+           self.password = password
         end
   end
 end

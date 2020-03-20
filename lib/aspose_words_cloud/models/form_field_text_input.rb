@@ -58,6 +58,11 @@ module AsposeWordsCloud
     # Gets or sets returns or sets the text that's displayed in the status bar when a form field has the focus.
     attr_accessor :status_text
 
+    attr_accessor :link
+
+    # Gets or sets node id.
+    attr_accessor :node_id
+
     # Gets or sets maximum length for the text field. Zero when the length is not limited.
     attr_accessor :max_length
 
@@ -104,6 +109,8 @@ module AsposeWordsCloud
         :'own_help' => :'OwnHelp',
         :'own_status' => :'OwnStatus',
         :'status_text' => :'StatusText',
+        :'link' => :'link',
+        :'node_id' => :'NodeId',
         :'max_length' => :'MaxLength',
         :'text_input_default' => :'TextInputDefault',
         :'text_input_format' => :'TextInputFormat',
@@ -123,6 +130,8 @@ module AsposeWordsCloud
         :'own_help' => :'BOOLEAN',
         :'own_status' => :'BOOLEAN',
         :'status_text' => :'String',
+        :'link' => :'WordsApiLink',
+        :'node_id' => :'String',
         :'max_length' => :'Integer',
         :'text_input_default' => :'String',
         :'text_input_format' => :'String',
@@ -172,6 +181,14 @@ module AsposeWordsCloud
 
       if attributes.key?(:'StatusText')
         self.status_text = attributes[:'StatusText']
+      end
+
+      if attributes.key?(:'link')
+        self.link = attributes[:'link']
+      end
+
+      if attributes.key?(:'NodeId')
+        self.node_id = attributes[:'NodeId']
       end
 
       if attributes.key?(:'MaxLength')
@@ -235,6 +252,8 @@ module AsposeWordsCloud
           own_help == other.own_help &&
           own_status == other.own_status &&
           status_text == other.status_text &&
+          link == other.link &&
+          node_id == other.node_id &&
           max_length == other.max_length &&
           text_input_default == other.text_input_default &&
           text_input_format == other.text_input_format &&
@@ -250,7 +269,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [calculate_on_exit, enabled, entry_macro, exit_macro, help_text, name, own_help, own_status, status_text, max_length, text_input_default, text_input_format, text_input_type].hash
+      [calculate_on_exit, enabled, entry_macro, exit_macro, help_text, name, own_help, own_status, status_text, link, node_id, max_length, text_input_default, text_input_format, text_input_type].hash
     end
 
     # Builds the object from hash

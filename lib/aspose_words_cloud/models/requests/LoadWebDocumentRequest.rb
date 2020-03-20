@@ -33,17 +33,17 @@ module AsposeWordsCloud
   class LoadWebDocumentRequest
 
         # Parameters of loading.
-        attr_accessor :
+        attr_accessor :data
         # Original document storage.
-        attr_accessor :
+        attr_accessor :storage
 	
         #
         # Initializes a new instance.
-        # @param  Parameters of loading.
-        # @param  Original document storage.
-        def initialize( = nil)
-           self. = 
-           self. = 
+        # @param data Parameters of loading.
+        # @param storage Original document storage.
+        def initialize(data, storage = nil)
+           self.data = data
+           self.storage = storage
         end
   end
 end

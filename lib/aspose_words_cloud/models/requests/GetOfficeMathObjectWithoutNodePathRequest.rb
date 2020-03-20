@@ -33,33 +33,33 @@ module AsposeWordsCloud
   class GetOfficeMathObjectWithoutNodePathRequest
 
         # The document name.
-        attr_accessor :
+        attr_accessor :name
         # Object index.
-        attr_accessor :
+        attr_accessor :index
         # Original document folder.
-        attr_accessor :
+        attr_accessor :folder
         # Original document storage.
-        attr_accessor :
+        attr_accessor :storage
         # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        attr_accessor :
+        attr_accessor :load_encoding
         # Password for opening an encrypted document.
-        attr_accessor :
+        attr_accessor :password
 	
         #
         # Initializes a new instance.
-        # @param  The document name.
-        # @param  Object index.
-        # @param  Original document folder.
-        # @param  Original document storage.
-        # @param  Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        # @param  Password for opening an encrypted document.
-        def initialize( = nil = nil = nil = nil)
-           self. = 
-           self. = 
-           self. = 
-           self. = 
-           self. = 
-           self. = 
+        # @param name The document name.
+        # @param index Object index.
+        # @param folder Original document folder.
+        # @param storage Original document storage.
+        # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        # @param password Password for opening an encrypted document.
+        def initialize(name, index, folder = nil, storage = nil, load_encoding = nil, password = nil)
+           self.name = name
+           self.index = index
+           self.folder = folder
+           self.storage = storage
+           self.load_encoding = load_encoding
+           self.password = password
         end
   end
 end

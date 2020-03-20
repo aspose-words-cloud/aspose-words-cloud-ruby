@@ -33,21 +33,21 @@ module AsposeWordsCloud
   class DeleteFileRequest
 
         # Path of the file including file name and extension e.g. /Folder1/file.ext
-        attr_accessor :
+        attr_accessor :path
         # Storage name
-        attr_accessor :
+        attr_accessor :storage_name
         # File version ID to delete
-        attr_accessor :
+        attr_accessor :version_id
 	
         #
         # Initializes a new instance.
-        # @param  Path of the file including file name and extension e.g. /Folder1/file.ext
-        # @param  Storage name
-        # @param  File version ID to delete
-        def initialize( = nil = nil)
-           self. = 
-           self. = 
-           self. = 
+        # @param path Path of the file including file name and extension e.g. /Folder1/file.ext
+        # @param storage_name Storage name
+        # @param version_id File version ID to delete
+        def initialize(path, storage_name = nil, version_id = nil)
+           self.path = path
+           self.storage_name = storage_name
+           self.version_id = version_id
         end
   end
 end

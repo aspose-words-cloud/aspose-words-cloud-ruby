@@ -33,21 +33,21 @@ module AsposeWordsCloud
   class UploadFileRequest
 
         # File to upload
-        attr_accessor :
+        attr_accessor :file_content
         # Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.
-        attr_accessor :
+        attr_accessor :path
         # Storage name
-        attr_accessor :
+        attr_accessor :storage_name
 	
         #
         # Initializes a new instance.
-        # @param  File to upload
-        # @param  Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.
-        # @param  Storage name
-        def initialize( = nil)
-           self. = 
-           self. = 
-           self. = 
+        # @param file_content File to upload
+        # @param path Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.
+        # @param storage_name Storage name
+        def initialize(file_content, path, storage_name = nil)
+           self.file_content = file_content
+           self.path = path
+           self.storage_name = storage_name
         end
   end
 end
