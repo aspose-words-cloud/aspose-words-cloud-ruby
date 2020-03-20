@@ -58,11 +58,6 @@ module AsposeWordsCloud
     # Gets or sets returns or sets the text that's displayed in the status bar when a form field has the focus.
     attr_accessor :status_text
 
-    attr_accessor :link
-
-    # Gets or sets node id.
-    attr_accessor :node_id
-
     # Gets or sets the size of the checkbox in points. Has effect only when IsCheckBoxExactSize is true.
     attr_accessor :check_box_size
 
@@ -85,8 +80,6 @@ module AsposeWordsCloud
         :'own_help' => :'OwnHelp',
         :'own_status' => :'OwnStatus',
         :'status_text' => :'StatusText',
-        :'link' => :'link',
-        :'node_id' => :'NodeId',
         :'check_box_size' => :'CheckBoxSize',
         :'checked' => :'Checked',
         :'is_check_box_exact_size' => :'IsCheckBoxExactSize'
@@ -105,8 +98,6 @@ module AsposeWordsCloud
         :'own_help' => :'BOOLEAN',
         :'own_status' => :'BOOLEAN',
         :'status_text' => :'String',
-        :'link' => :'WordsApiLink',
-        :'node_id' => :'String',
         :'check_box_size' => :'Float',
         :'checked' => :'BOOLEAN',
         :'is_check_box_exact_size' => :'BOOLEAN'
@@ -157,14 +148,6 @@ module AsposeWordsCloud
         self.status_text = attributes[:'StatusText']
       end
 
-      if attributes.key?(:'link')
-        self.link = attributes[:'link']
-      end
-
-      if attributes.key?(:'NodeId')
-        self.node_id = attributes[:'NodeId']
-      end
-
       if attributes.key?(:'CheckBoxSize')
         self.check_box_size = attributes[:'CheckBoxSize']
       end
@@ -206,8 +189,6 @@ module AsposeWordsCloud
           own_help == other.own_help &&
           own_status == other.own_status &&
           status_text == other.status_text &&
-          link == other.link &&
-          node_id == other.node_id &&
           check_box_size == other.check_box_size &&
           checked == other.checked &&
           is_check_box_exact_size == other.is_check_box_exact_size
@@ -222,7 +203,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [calculate_on_exit, enabled, entry_macro, exit_macro, help_text, name, own_help, own_status, status_text, link, node_id, check_box_size, checked, is_check_box_exact_size].hash
+      [calculate_on_exit, enabled, entry_macro, exit_macro, help_text, name, own_help, own_status, status_text, check_box_size, checked, is_check_box_exact_size].hash
     end
 
     # Builds the object from hash

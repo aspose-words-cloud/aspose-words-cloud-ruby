@@ -33,29 +33,29 @@ module AsposeWordsCloud
   class ExecuteMailMergeOnlineRequest
 
         # File with template
-        attr_accessor :template
+        attr_accessor :
         # File with mailmerge data
-        attr_accessor :data
+        attr_accessor :
         # With regions flag.
-        attr_accessor :with_regions
+        attr_accessor :
         # Clean up options.
-        attr_accessor :cleanup
+        attr_accessor :
         # This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, "template" will be used instead. 
-        attr_accessor :document_file_name
+        attr_accessor :
 	
         #
         # Initializes a new instance.
-        # @param template File with template
-        # @param data File with mailmerge data
-        # @param with_regions With regions flag.
-        # @param cleanup Clean up options.
-        # @param document_file_name This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, "template" will be used instead. 
-        def initialize(template, data, with_regions = nil, cleanup = nil, document_file_name = nil)
-           self.template = template
-           self.data = data
-           self.with_regions = with_regions
-           self.cleanup = cleanup
-           self.document_file_name = document_file_name
+        # @param  File with template
+        # @param  File with mailmerge data
+        # @param  With regions flag.
+        # @param  Clean up options.
+        # @param  This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, "template" will be used instead. 
+        def initialize( = nil = nil = nil)
+           self. = 
+           self. = 
+           self. = 
+           self. = 
+           self. = 
         end
   end
 end

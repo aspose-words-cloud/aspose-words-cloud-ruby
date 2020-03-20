@@ -33,21 +33,21 @@ module AsposeWordsCloud
   class DeleteFolderRequest
 
         # Folder path e.g. /Folder1s
-        attr_accessor :path
+        attr_accessor :
         # Storage name
-        attr_accessor :storage_name
+        attr_accessor :
         # Enable to delete folders, subfolders and files
-        attr_accessor :recursive
+        attr_accessor :
 	
         #
         # Initializes a new instance.
-        # @param path Folder path e.g. /Folder1s
-        # @param storage_name Storage name
-        # @param recursive Enable to delete folders, subfolders and files
-        def initialize(path, storage_name = nil, recursive = nil)
-           self.path = path
-           self.storage_name = storage_name
-           self.recursive = recursive
+        # @param  Folder path e.g. /Folder1s
+        # @param  Storage name
+        # @param  Enable to delete folders, subfolders and files
+        def initialize( = nil = nil)
+           self. = 
+           self. = 
+           self. = 
         end
   end
 end

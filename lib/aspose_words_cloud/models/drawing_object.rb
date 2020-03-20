@@ -31,11 +31,6 @@ module AsposeWordsCloud
 
   # Represents Drawing Object DTO.
   class DrawingObject
-    attr_accessor :link
-
-    # Gets or sets node id.
-    attr_accessor :node_id
-
     # Gets or sets height of the drawing object in points.
     attr_accessor :height
 
@@ -89,8 +84,6 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'link' => :'link',
-        :'node_id' => :'NodeId',
         :'height' => :'Height',
         :'image_data_link' => :'ImageDataLink',
         :'left' => :'Left',
@@ -107,8 +100,6 @@ module AsposeWordsCloud
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'link' => :'WordsApiLink',
-        :'node_id' => :'String',
         :'height' => :'Float',
         :'image_data_link' => :'WordsApiLink',
         :'left' => :'Float',
@@ -129,14 +120,6 @@ module AsposeWordsCloud
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.key?(:'link')
-        self.link = attributes[:'link']
-      end
-
-      if attributes.key?(:'NodeId')
-        self.node_id = attributes[:'NodeId']
-      end
 
       if attributes.key?(:'Height')
         self.height = attributes[:'Height']
@@ -248,8 +231,6 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          link == other.link &&
-          node_id == other.node_id &&
           height == other.height &&
           image_data_link == other.image_data_link &&
           left == other.left &&
@@ -271,7 +252,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, node_id, height, image_data_link, left, ole_data_link, relative_horizontal_position, relative_vertical_position, render_links, top, width, wrap_type].hash
+      [height, image_data_link, left, ole_data_link, relative_horizontal_position, relative_vertical_position, render_links, top, width, wrap_type].hash
     end
 
     # Builds the object from hash

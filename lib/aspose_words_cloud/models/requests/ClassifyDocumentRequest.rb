@@ -33,37 +33,37 @@ module AsposeWordsCloud
   class ClassifyDocumentRequest
 
         # The document name.
-        attr_accessor :document_name
+        attr_accessor :
         # Original document folder.
-        attr_accessor :folder
+        attr_accessor :
         # Original document storage.
-        attr_accessor :storage
+        attr_accessor :
         # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        attr_accessor :load_encoding
+        attr_accessor :
         # Password for opening an encrypted document.
-        attr_accessor :password
+        attr_accessor :
         # Count of the best classes to return.
-        attr_accessor :best_classes_count
+        attr_accessor :
         # Taxonomy to use for classification return.
-        attr_accessor :taxonomy
+        attr_accessor :
 	
         #
         # Initializes a new instance.
-        # @param document_name The document name.
-        # @param folder Original document folder.
-        # @param storage Original document storage.
-        # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        # @param password Password for opening an encrypted document.
-        # @param best_classes_count Count of the best classes to return.
-        # @param taxonomy Taxonomy to use for classification return.
-        def initialize(document_name, folder = nil, storage = nil, load_encoding = nil, password = nil, best_classes_count = nil, taxonomy = nil)
-           self.document_name = document_name
-           self.folder = folder
-           self.storage = storage
-           self.load_encoding = load_encoding
-           self.password = password
-           self.best_classes_count = best_classes_count
-           self.taxonomy = taxonomy
+        # @param  The document name.
+        # @param  Original document folder.
+        # @param  Original document storage.
+        # @param  Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        # @param  Password for opening an encrypted document.
+        # @param  Count of the best classes to return.
+        # @param  Taxonomy to use for classification return.
+        def initialize( = nil = nil = nil = nil = nil = nil)
+           self. = 
+           self. = 
+           self. = 
+           self. = 
+           self. = 
+           self. = 
+           self. = 
         end
   end
 end

@@ -33,37 +33,37 @@ module AsposeWordsCloud
   class SaveAsRequest
 
         # The document name.
-        attr_accessor :name
+        attr_accessor :
         # Save options.
-        attr_accessor :save_options_data
+        attr_accessor :
         # Original document folder.
-        attr_accessor :folder
+        attr_accessor :
         # Original document storage.
-        attr_accessor :storage
+        attr_accessor :
         # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        attr_accessor :load_encoding
+        attr_accessor :
         # Password for opening an encrypted document.
-        attr_accessor :password
+        attr_accessor :
         # Folder in filestorage with custom fonts.
-        attr_accessor :fonts_location
+        attr_accessor :
 	
         #
         # Initializes a new instance.
-        # @param name The document name.
-        # @param save_options_data Save options.
-        # @param folder Original document folder.
-        # @param storage Original document storage.
-        # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        # @param password Password for opening an encrypted document.
-        # @param fonts_location Folder in filestorage with custom fonts.
-        def initialize(name, save_options_data, folder = nil, storage = nil, load_encoding = nil, password = nil, fonts_location = nil)
-           self.name = name
-           self.save_options_data = save_options_data
-           self.folder = folder
-           self.storage = storage
-           self.load_encoding = load_encoding
-           self.password = password
-           self.fonts_location = fonts_location
+        # @param  The document name.
+        # @param  Save options.
+        # @param  Original document folder.
+        # @param  Original document storage.
+        # @param  Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        # @param  Password for opening an encrypted document.
+        # @param  Folder in filestorage with custom fonts.
+        def initialize( = nil = nil = nil = nil = nil)
+           self. = 
+           self. = 
+           self. = 
+           self. = 
+           self. = 
+           self. = 
+           self. = 
         end
   end
 end

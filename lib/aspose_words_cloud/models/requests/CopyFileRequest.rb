@@ -33,29 +33,29 @@ module AsposeWordsCloud
   class CopyFileRequest
 
         # Destination file path
-        attr_accessor :dest_path
+        attr_accessor :
         # Source file's path e.g. '/Folder 1/file.ext' or '/Bucket/Folder 1/file.ext'
-        attr_accessor :src_path
+        attr_accessor :
         # Source storage name
-        attr_accessor :src_storage_name
+        attr_accessor :
         # Destination storage name
-        attr_accessor :dest_storage_name
+        attr_accessor :
         # File version ID to copy
-        attr_accessor :version_id
+        attr_accessor :
 	
         #
         # Initializes a new instance.
-        # @param dest_path Destination file path
-        # @param src_path Source file's path e.g. '/Folder 1/file.ext' or '/Bucket/Folder 1/file.ext'
-        # @param src_storage_name Source storage name
-        # @param dest_storage_name Destination storage name
-        # @param version_id File version ID to copy
-        def initialize(dest_path, src_path, src_storage_name = nil, dest_storage_name = nil, version_id = nil)
-           self.dest_path = dest_path
-           self.src_path = src_path
-           self.src_storage_name = src_storage_name
-           self.dest_storage_name = dest_storage_name
-           self.version_id = version_id
+        # @param  Destination file path
+        # @param  Source file's path e.g. '/Folder 1/file.ext' or '/Bucket/Folder 1/file.ext'
+        # @param  Source storage name
+        # @param  Destination storage name
+        # @param  File version ID to copy
+        def initialize( = nil = nil = nil)
+           self. = 
+           self. = 
+           self. = 
+           self. = 
+           self. = 
         end
   end
 end

@@ -33,41 +33,41 @@ module AsposeWordsCloud
   class GetDocumentStatisticsRequest
 
         # The document name.
-        attr_accessor :name
+        attr_accessor :
         # Original document folder.
-        attr_accessor :folder
+        attr_accessor :
         # Original document storage.
-        attr_accessor :storage
+        attr_accessor :
         # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        attr_accessor :load_encoding
+        attr_accessor :
         # Password for opening an encrypted document.
-        attr_accessor :password
+        attr_accessor :
         # Support including/excluding comments from the WordCount. Default value is "false".
-        attr_accessor :include_comments
+        attr_accessor :
         # Support including/excluding footnotes from the WordCount. Default value is "false".
-        attr_accessor :include_footnotes
+        attr_accessor :
         # Support including/excluding shape's text from the WordCount. Default value is "false".
-        attr_accessor :include_text_in_shapes
+        attr_accessor :
 	
         #
         # Initializes a new instance.
-        # @param name The document name.
-        # @param folder Original document folder.
-        # @param storage Original document storage.
-        # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        # @param password Password for opening an encrypted document.
-        # @param include_comments Support including/excluding comments from the WordCount. Default value is "false".
-        # @param include_footnotes Support including/excluding footnotes from the WordCount. Default value is "false".
-        # @param include_text_in_shapes Support including/excluding shape's text from the WordCount. Default value is "false".
-        def initialize(name, folder = nil, storage = nil, load_encoding = nil, password = nil, include_comments = nil, include_footnotes = nil, include_text_in_shapes = nil)
-           self.name = name
-           self.folder = folder
-           self.storage = storage
-           self.load_encoding = load_encoding
-           self.password = password
-           self.include_comments = include_comments
-           self.include_footnotes = include_footnotes
-           self.include_text_in_shapes = include_text_in_shapes
+        # @param  The document name.
+        # @param  Original document folder.
+        # @param  Original document storage.
+        # @param  Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        # @param  Password for opening an encrypted document.
+        # @param  Support including/excluding comments from the WordCount. Default value is "false".
+        # @param  Support including/excluding footnotes from the WordCount. Default value is "false".
+        # @param  Support including/excluding shape's text from the WordCount. Default value is "false".
+        def initialize( = nil = nil = nil = nil = nil = nil = nil)
+           self. = 
+           self. = 
+           self. = 
+           self. = 
+           self. = 
+           self. = 
+           self. = 
+           self. = 
         end
   end
 end

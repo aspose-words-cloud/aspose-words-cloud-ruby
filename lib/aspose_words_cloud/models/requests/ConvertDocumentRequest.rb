@@ -33,33 +33,33 @@ module AsposeWordsCloud
   class ConvertDocumentRequest
 
         # Converting document
-        attr_accessor :document
+        attr_accessor :
         # Format to convert.
-        attr_accessor :format
+        attr_accessor :
         # Original document storage.
-        attr_accessor :storage
+        attr_accessor :
         # Path for saving operation result to the local storage.
-        attr_accessor :out_path
+        attr_accessor :
         # This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "sourceFilename" will be used instead. 
-        attr_accessor :file_name_field_value
+        attr_accessor :
         # Folder in filestorage with custom fonts.
-        attr_accessor :fonts_location
+        attr_accessor :
 	
         #
         # Initializes a new instance.
-        # @param document Converting document
-        # @param format Format to convert.
-        # @param storage Original document storage.
-        # @param out_path Path for saving operation result to the local storage.
-        # @param file_name_field_value This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "sourceFilename" will be used instead. 
-        # @param fonts_location Folder in filestorage with custom fonts.
-        def initialize(document, format, storage = nil, out_path = nil, file_name_field_value = nil, fonts_location = nil)
-           self.document = document
-           self.format = format
-           self.storage = storage
-           self.out_path = out_path
-           self.file_name_field_value = file_name_field_value
-           self.fonts_location = fonts_location
+        # @param  Converting document
+        # @param  Format to convert.
+        # @param  Original document storage.
+        # @param  Path for saving operation result to the local storage.
+        # @param  This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "sourceFilename" will be used instead. 
+        # @param  Folder in filestorage with custom fonts.
+        def initialize( = nil = nil = nil = nil)
+           self. = 
+           self. = 
+           self. = 
+           self. = 
+           self. = 
+           self. = 
         end
   end
 end

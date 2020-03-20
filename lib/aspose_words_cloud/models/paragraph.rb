@@ -34,8 +34,6 @@ module AsposeWordsCloud
     # Gets or sets node id.
     attr_accessor :node_id
 
-    attr_accessor :link
-
     # Gets or sets child nodes.
     attr_accessor :child_nodes
 
@@ -44,7 +42,6 @@ module AsposeWordsCloud
     def self.attribute_map
       {
         :'node_id' => :'NodeId',
-        :'link' => :'link',
         :'child_nodes' => :'ChildNodes'
       }
     end
@@ -53,7 +50,6 @@ module AsposeWordsCloud
     def self.swagger_types
       {
         :'node_id' => :'String',
-        :'link' => :'WordsApiLink',
         :'child_nodes' => :'Array<NodeLink>'
       }
     end
@@ -68,10 +64,6 @@ module AsposeWordsCloud
 
       if attributes.key?(:'NodeId')
         self.node_id = attributes[:'NodeId']
-      end
-
-      if attributes.key?(:'link')
-        self.link = attributes[:'link']
       end
 
       if attributes.key?(:'ChildNodes')
@@ -101,7 +93,6 @@ module AsposeWordsCloud
       return true if self.equal?(other)
       self.class == other.class &&
           node_id == other.node_id &&
-          link == other.link &&
           child_nodes == other.child_nodes
     end
 
@@ -114,7 +105,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [node_id, link, child_nodes].hash
+      [node_id, child_nodes].hash
     end
 
     # Builds the object from hash

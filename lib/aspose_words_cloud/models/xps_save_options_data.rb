@@ -51,30 +51,6 @@ module AsposeWordsCloud
     # Gets or sets determines 0-based index of the first page to render.
     attr_accessor :page_index
 
-    # Gets or sets format of save.
-    attr_accessor :save_format
-
-    # Gets or sets name of destination file.
-    attr_accessor :file_name
-
-    # Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.
-    attr_accessor :dml_rendering_mode
-
-    # Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }.
-    attr_accessor :dml_effects_rendering_mode
-
-    # Gets or sets controls zip output or not. Default value is false.
-    attr_accessor :zip_output
-
-    # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
-    attr_accessor :update_last_saved_time_property
-
-    # Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.
-    attr_accessor :update_sdt_content
-
-    # Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true
-    attr_accessor :update_fields
-
     # Gets or sets specifies the level in the XPS document outline at which to display Word bookmarks.
     attr_accessor :bookmarks_outline_level
 
@@ -97,14 +73,6 @@ module AsposeWordsCloud
         :'optimize_output' => :'OptimizeOutput',
         :'page_count' => :'PageCount',
         :'page_index' => :'PageIndex',
-        :'save_format' => :'SaveFormat',
-        :'file_name' => :'FileName',
-        :'dml_rendering_mode' => :'DmlRenderingMode',
-        :'dml_effects_rendering_mode' => :'DmlEffectsRenderingMode',
-        :'zip_output' => :'ZipOutput',
-        :'update_last_saved_time_property' => :'UpdateLastSavedTimeProperty',
-        :'update_sdt_content' => :'UpdateSdtContent',
-        :'update_fields' => :'UpdateFields',
         :'bookmarks_outline_level' => :'BookmarksOutlineLevel',
         :'headings_outline_levels' => :'HeadingsOutlineLevels',
         :'outline_options' => :'OutlineOptions',
@@ -122,14 +90,6 @@ module AsposeWordsCloud
         :'optimize_output' => :'BOOLEAN',
         :'page_count' => :'Integer',
         :'page_index' => :'Integer',
-        :'save_format' => :'String',
-        :'file_name' => :'String',
-        :'dml_rendering_mode' => :'String',
-        :'dml_effects_rendering_mode' => :'String',
-        :'zip_output' => :'BOOLEAN',
-        :'update_last_saved_time_property' => :'BOOLEAN',
-        :'update_sdt_content' => :'BOOLEAN',
-        :'update_fields' => :'BOOLEAN',
         :'bookmarks_outline_level' => :'Integer',
         :'headings_outline_levels' => :'Integer',
         :'outline_options' => :'OutlineOptionsData',
@@ -171,38 +131,6 @@ module AsposeWordsCloud
 
       if attributes.key?(:'PageIndex')
         self.page_index = attributes[:'PageIndex']
-      end
-
-      if attributes.key?(:'SaveFormat')
-        self.save_format = attributes[:'SaveFormat']
-      end
-
-      if attributes.key?(:'FileName')
-        self.file_name = attributes[:'FileName']
-      end
-
-      if attributes.key?(:'DmlRenderingMode')
-        self.dml_rendering_mode = attributes[:'DmlRenderingMode']
-      end
-
-      if attributes.key?(:'DmlEffectsRenderingMode')
-        self.dml_effects_rendering_mode = attributes[:'DmlEffectsRenderingMode']
-      end
-
-      if attributes.key?(:'ZipOutput')
-        self.zip_output = attributes[:'ZipOutput']
-      end
-
-      if attributes.key?(:'UpdateLastSavedTimeProperty')
-        self.update_last_saved_time_property = attributes[:'UpdateLastSavedTimeProperty']
-      end
-
-      if attributes.key?(:'UpdateSdtContent')
-        self.update_sdt_content = attributes[:'UpdateSdtContent']
-      end
-
-      if attributes.key?(:'UpdateFields')
-        self.update_fields = attributes[:'UpdateFields']
       end
 
       if attributes.key?(:'BookmarksOutlineLevel')
@@ -248,14 +176,6 @@ module AsposeWordsCloud
           optimize_output == other.optimize_output &&
           page_count == other.page_count &&
           page_index == other.page_index &&
-          save_format == other.save_format &&
-          file_name == other.file_name &&
-          dml_rendering_mode == other.dml_rendering_mode &&
-          dml_effects_rendering_mode == other.dml_effects_rendering_mode &&
-          zip_output == other.zip_output &&
-          update_last_saved_time_property == other.update_last_saved_time_property &&
-          update_sdt_content == other.update_sdt_content &&
-          update_fields == other.update_fields &&
           bookmarks_outline_level == other.bookmarks_outline_level &&
           headings_outline_levels == other.headings_outline_levels &&
           outline_options == other.outline_options &&
@@ -271,7 +191,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, bookmarks_outline_level, headings_outline_levels, outline_options, use_book_fold_printing_settings].hash
+      [color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, bookmarks_outline_level, headings_outline_levels, outline_options, use_book_fold_printing_settings].hash
     end
 
     # Builds the object from hash

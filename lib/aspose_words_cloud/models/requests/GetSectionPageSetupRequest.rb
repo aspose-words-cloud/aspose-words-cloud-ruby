@@ -33,33 +33,33 @@ module AsposeWordsCloud
   class GetSectionPageSetupRequest
 
         # The document name.
-        attr_accessor :name
+        attr_accessor :
         # Section index.
-        attr_accessor :section_index
+        attr_accessor :
         # Original document folder.
-        attr_accessor :folder
+        attr_accessor :
         # Original document storage.
-        attr_accessor :storage
+        attr_accessor :
         # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        attr_accessor :load_encoding
+        attr_accessor :
         # Password for opening an encrypted document.
-        attr_accessor :password
+        attr_accessor :
 	
         #
         # Initializes a new instance.
-        # @param name The document name.
-        # @param section_index Section index.
-        # @param folder Original document folder.
-        # @param storage Original document storage.
-        # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        # @param password Password for opening an encrypted document.
-        def initialize(name, section_index, folder = nil, storage = nil, load_encoding = nil, password = nil)
-           self.name = name
-           self.section_index = section_index
-           self.folder = folder
-           self.storage = storage
-           self.load_encoding = load_encoding
-           self.password = password
+        # @param  The document name.
+        # @param  Section index.
+        # @param  Original document folder.
+        # @param  Original document storage.
+        # @param  Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        # @param  Password for opening an encrypted document.
+        def initialize( = nil = nil = nil = nil)
+           self. = 
+           self. = 
+           self. = 
+           self. = 
+           self. = 
+           self. = 
         end
   end
 end

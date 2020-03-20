@@ -31,8 +31,6 @@ module AsposeWordsCloud
 
   # Comment.
   class Comment
-    attr_accessor :link
-
     # Gets or sets returns or sets the author name for a comment.
     attr_accessor :author
 
@@ -55,7 +53,6 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'link' => :'link',
         :'author' => :'Author',
         :'content' => :'Content',
         :'date_time' => :'DateTime',
@@ -69,7 +66,6 @@ module AsposeWordsCloud
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'link' => :'WordsApiLink',
         :'author' => :'String',
         :'content' => :'StoryChildNodes',
         :'date_time' => :'DateTime',
@@ -87,10 +83,6 @@ module AsposeWordsCloud
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.key?(:'link')
-        self.link = attributes[:'link']
-      end
 
       if attributes.key?(:'Author')
         self.author = attributes[:'Author']
@@ -140,7 +132,6 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          link == other.link &&
           author == other.author &&
           content == other.content &&
           date_time == other.date_time &&
@@ -159,7 +150,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, author, content, date_time, initial, range_end, range_start, text].hash
+      [author, content, date_time, initial, range_end, range_start, text].hash
     end
 
     # Builds the object from hash

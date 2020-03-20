@@ -33,17 +33,17 @@ module AsposeWordsCloud
   class CreateFolderRequest
 
         # Target folder's path e.g. Folder1/Folder2/. The folders will be created recursively
-        attr_accessor :path
+        attr_accessor :
         # Storage name
-        attr_accessor :storage_name
+        attr_accessor :
 	
         #
         # Initializes a new instance.
-        # @param path Target folder's path e.g. Folder1/Folder2/. The folders will be created recursively
-        # @param storage_name Storage name
-        def initialize(path, storage_name = nil)
-           self.path = path
-           self.storage_name = storage_name
+        # @param  Target folder's path e.g. Folder1/Folder2/. The folders will be created recursively
+        # @param  Storage name
+        def initialize( = nil)
+           self. = 
+           self. = 
         end
   end
 end

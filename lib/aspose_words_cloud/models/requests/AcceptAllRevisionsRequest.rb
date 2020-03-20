@@ -33,33 +33,33 @@ module AsposeWordsCloud
   class AcceptAllRevisionsRequest
 
         # The document name.
-        attr_accessor :name
+        attr_accessor :
         # Original document folder.
-        attr_accessor :folder
+        attr_accessor :
         # Original document storage.
-        attr_accessor :storage
+        attr_accessor :
         # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        attr_accessor :load_encoding
+        attr_accessor :
         # Password for opening an encrypted document.
-        attr_accessor :password
+        attr_accessor :
         # Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        attr_accessor :dest_file_name
+        attr_accessor :
 	
         #
         # Initializes a new instance.
-        # @param name The document name.
-        # @param folder Original document folder.
-        # @param storage Original document storage.
-        # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        # @param password Password for opening an encrypted document.
-        # @param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        def initialize(name, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil)
-           self.name = name
-           self.folder = folder
-           self.storage = storage
-           self.load_encoding = load_encoding
-           self.password = password
-           self.dest_file_name = dest_file_name
+        # @param  The document name.
+        # @param  Original document folder.
+        # @param  Original document storage.
+        # @param  Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        # @param  Password for opening an encrypted document.
+        # @param  Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        def initialize( = nil = nil = nil = nil = nil)
+           self. = 
+           self. = 
+           self. = 
+           self. = 
+           self. = 
+           self. = 
         end
   end
 end
