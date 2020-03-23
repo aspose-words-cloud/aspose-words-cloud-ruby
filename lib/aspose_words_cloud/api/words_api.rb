@@ -43,8 +43,16 @@ module AsposeWordsCloud
     # @param request AcceptAllRevisionsRequest
     # @return [RevisionsModificationResponse]
     def accept_all_revisions(request)
-      data, _status_code, _headers = accept_all_revisions_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = accept_all_revisions_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = accept_all_revisions_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -104,6 +112,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -123,8 +132,16 @@ module AsposeWordsCloud
     # @param request AppendDocumentRequest
     # @return [DocumentResponse]
     def append_document(request)
-      data, _status_code, _headers = append_document_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = append_document_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = append_document_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -196,6 +213,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.document_list)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -215,8 +233,16 @@ module AsposeWordsCloud
     # @param request ClassifyRequest
     # @return [ClassificationResponse]
     def classify(request)
-      data, _status_code, _headers = classify_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = classify_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = classify_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -255,6 +281,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.text)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -274,8 +301,16 @@ module AsposeWordsCloud
     # @param request ClassifyDocumentRequest
     # @return [ClassificationResponse]
     def classify_document(request)
-      data, _status_code, _headers = classify_document_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = classify_document_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = classify_document_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -340,6 +375,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -359,8 +395,16 @@ module AsposeWordsCloud
     # @param request CompareDocumentRequest
     # @return [DocumentResponse]
     def compare_document(request)
-      data, _status_code, _headers = compare_document_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = compare_document_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = compare_document_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -422,6 +466,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.compare_data)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -441,8 +486,16 @@ module AsposeWordsCloud
     # @param request ConvertDocumentRequest
     # @return [File]
     def convert_document(request)
-      data, _status_code, _headers = convert_document_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = convert_document_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = convert_document_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -501,6 +554,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -520,8 +574,16 @@ module AsposeWordsCloud
     # @param request CopyFileRequest
     # @return [nil]
     def copy_file(request)
-      data, _status_code, _headers = copy_file_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = copy_file_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = copy_file_with_http_info(request)
+          else
+            raise
+          end
+      end			
       nil
     end
 
@@ -575,6 +637,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -593,8 +656,16 @@ module AsposeWordsCloud
     # @param request CopyFolderRequest
     # @return [nil]
     def copy_folder(request)
-      data, _status_code, _headers = copy_folder_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = copy_folder_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = copy_folder_with_http_info(request)
+          else
+            raise
+          end
+      end			
       nil
     end
 
@@ -643,6 +714,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -661,8 +733,16 @@ module AsposeWordsCloud
     # @param request CreateDocumentRequest
     # @return [DocumentResponse]
     def create_document(request)
-      data, _status_code, _headers = create_document_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = create_document_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = create_document_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -709,6 +789,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -728,8 +809,16 @@ module AsposeWordsCloud
     # @param request CreateFolderRequest
     # @return [nil]
     def create_folder(request)
-      data, _status_code, _headers = create_folder_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = create_folder_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = create_folder_with_http_info(request)
+          else
+            raise
+          end
+      end			
       nil
     end
 
@@ -769,6 +858,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -787,8 +877,16 @@ module AsposeWordsCloud
     # @param request CreateOrUpdateDocumentPropertyRequest
     # @return [DocumentPropertyResponse]
     def create_or_update_document_property(request)
-      data, _status_code, _headers = create_or_update_document_property_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = create_or_update_document_property_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = create_or_update_document_property_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -863,6 +961,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.property)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -882,8 +981,16 @@ module AsposeWordsCloud
     # @param request DeleteBorderRequest
     # @return [BorderResponse]
     def delete_border(request)
-      data, _status_code, _headers = delete_border_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = delete_border_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_border_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -961,6 +1068,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -980,8 +1088,16 @@ module AsposeWordsCloud
     # @param request DeleteBordersRequest
     # @return [BordersResponse]
     def delete_borders(request)
-      data, _status_code, _headers = delete_borders_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = delete_borders_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_borders_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -1054,6 +1170,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -1073,8 +1190,16 @@ module AsposeWordsCloud
     # @param request DeleteCommentRequest
     # @return [nil]
     def delete_comment(request)
-      data, _status_code, _headers = delete_comment_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = delete_comment_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_comment_with_http_info(request)
+          else
+            raise
+          end
+      end			
       nil
     end
 
@@ -1147,6 +1272,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -1165,8 +1291,16 @@ module AsposeWordsCloud
     # @param request DeleteDocumentPropertyRequest
     # @return [nil]
     def delete_document_property(request)
-      data, _status_code, _headers = delete_document_property_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = delete_document_property_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_document_property_with_http_info(request)
+          else
+            raise
+          end
+      end			
       nil
     end
 
@@ -1239,6 +1373,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -1257,8 +1392,16 @@ module AsposeWordsCloud
     # @param request DeleteDrawingObjectRequest
     # @return [nil]
     def delete_drawing_object(request)
-      data, _status_code, _headers = delete_drawing_object_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = delete_drawing_object_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_drawing_object_with_http_info(request)
+          else
+            raise
+          end
+      end			
       nil
     end
 
@@ -1334,6 +1477,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -1352,8 +1496,16 @@ module AsposeWordsCloud
     # @param request DeleteDrawingObjectWithoutNodePathRequest
     # @return [nil]
     def delete_drawing_object_without_node_path(request)
-      data, _status_code, _headers = delete_drawing_object_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = delete_drawing_object_without_node_path_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_drawing_object_without_node_path_with_http_info(request)
+          else
+            raise
+          end
+      end			
       nil
     end
 
@@ -1426,6 +1578,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -1444,8 +1597,16 @@ module AsposeWordsCloud
     # @param request DeleteFieldRequest
     # @return [nil]
     def delete_field(request)
-      data, _status_code, _headers = delete_field_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = delete_field_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_field_with_http_info(request)
+          else
+            raise
+          end
+      end			
       nil
     end
 
@@ -1521,6 +1682,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -1539,8 +1701,16 @@ module AsposeWordsCloud
     # @param request DeleteFieldWithoutNodePathRequest
     # @return [nil]
     def delete_field_without_node_path(request)
-      data, _status_code, _headers = delete_field_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = delete_field_without_node_path_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_field_without_node_path_with_http_info(request)
+          else
+            raise
+          end
+      end			
       nil
     end
 
@@ -1613,6 +1783,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -1631,8 +1802,16 @@ module AsposeWordsCloud
     # @param request DeleteFieldsRequest
     # @return [nil]
     def delete_fields(request)
-      data, _status_code, _headers = delete_fields_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = delete_fields_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_fields_with_http_info(request)
+          else
+            raise
+          end
+      end			
       nil
     end
 
@@ -1705,6 +1884,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -1723,8 +1903,16 @@ module AsposeWordsCloud
     # @param request DeleteFieldsWithoutNodePathRequest
     # @return [nil]
     def delete_fields_without_node_path(request)
-      data, _status_code, _headers = delete_fields_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = delete_fields_without_node_path_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_fields_without_node_path_with_http_info(request)
+          else
+            raise
+          end
+      end			
       nil
     end
 
@@ -1794,6 +1982,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -1812,8 +2001,16 @@ module AsposeWordsCloud
     # @param request DeleteFileRequest
     # @return [nil]
     def delete_file(request)
-      data, _status_code, _headers = delete_file_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = delete_file_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_file_with_http_info(request)
+          else
+            raise
+          end
+      end			
       nil
     end
 
@@ -1858,6 +2055,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -1876,8 +2074,16 @@ module AsposeWordsCloud
     # @param request DeleteFolderRequest
     # @return [nil]
     def delete_folder(request)
-      data, _status_code, _headers = delete_folder_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = delete_folder_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_folder_with_http_info(request)
+          else
+            raise
+          end
+      end			
       nil
     end
 
@@ -1922,6 +2128,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -1940,8 +2147,16 @@ module AsposeWordsCloud
     # @param request DeleteFootnoteRequest
     # @return [nil]
     def delete_footnote(request)
-      data, _status_code, _headers = delete_footnote_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = delete_footnote_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_footnote_with_http_info(request)
+          else
+            raise
+          end
+      end			
       nil
     end
 
@@ -2017,6 +2232,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -2035,8 +2251,16 @@ module AsposeWordsCloud
     # @param request DeleteFootnoteWithoutNodePathRequest
     # @return [nil]
     def delete_footnote_without_node_path(request)
-      data, _status_code, _headers = delete_footnote_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = delete_footnote_without_node_path_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_footnote_without_node_path_with_http_info(request)
+          else
+            raise
+          end
+      end			
       nil
     end
 
@@ -2109,6 +2333,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -2127,8 +2352,16 @@ module AsposeWordsCloud
     # @param request DeleteFormFieldRequest
     # @return [nil]
     def delete_form_field(request)
-      data, _status_code, _headers = delete_form_field_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = delete_form_field_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_form_field_with_http_info(request)
+          else
+            raise
+          end
+      end			
       nil
     end
 
@@ -2204,6 +2437,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -2222,8 +2456,16 @@ module AsposeWordsCloud
     # @param request DeleteFormFieldWithoutNodePathRequest
     # @return [nil]
     def delete_form_field_without_node_path(request)
-      data, _status_code, _headers = delete_form_field_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = delete_form_field_without_node_path_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_form_field_without_node_path_with_http_info(request)
+          else
+            raise
+          end
+      end			
       nil
     end
 
@@ -2296,6 +2538,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -2314,8 +2557,16 @@ module AsposeWordsCloud
     # @param request DeleteHeaderFooterRequest
     # @return [nil]
     def delete_header_footer(request)
-      data, _status_code, _headers = delete_header_footer_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = delete_header_footer_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_header_footer_with_http_info(request)
+          else
+            raise
+          end
+      end			
       nil
     end
 
@@ -2391,6 +2642,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -2409,8 +2661,16 @@ module AsposeWordsCloud
     # @param request DeleteHeadersFootersRequest
     # @return [nil]
     def delete_headers_footers(request)
-      data, _status_code, _headers = delete_headers_footers_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = delete_headers_footers_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_headers_footers_with_http_info(request)
+          else
+            raise
+          end
+      end			
       nil
     end
 
@@ -2488,6 +2748,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -2506,8 +2767,16 @@ module AsposeWordsCloud
     # @param request DeleteMacrosRequest
     # @return [nil]
     def delete_macros(request)
-      data, _status_code, _headers = delete_macros_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = delete_macros_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_macros_with_http_info(request)
+          else
+            raise
+          end
+      end			
       nil
     end
 
@@ -2577,6 +2846,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -2595,8 +2865,16 @@ module AsposeWordsCloud
     # @param request DeleteOfficeMathObjectRequest
     # @return [nil]
     def delete_office_math_object(request)
-      data, _status_code, _headers = delete_office_math_object_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = delete_office_math_object_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_office_math_object_with_http_info(request)
+          else
+            raise
+          end
+      end			
       nil
     end
 
@@ -2672,6 +2950,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -2690,8 +2969,16 @@ module AsposeWordsCloud
     # @param request DeleteOfficeMathObjectWithoutNodePathRequest
     # @return [nil]
     def delete_office_math_object_without_node_path(request)
-      data, _status_code, _headers = delete_office_math_object_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = delete_office_math_object_without_node_path_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_office_math_object_without_node_path_with_http_info(request)
+          else
+            raise
+          end
+      end			
       nil
     end
 
@@ -2764,6 +3051,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -2782,8 +3070,16 @@ module AsposeWordsCloud
     # @param request DeleteParagraphRequest
     # @return [nil]
     def delete_paragraph(request)
-      data, _status_code, _headers = delete_paragraph_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = delete_paragraph_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_paragraph_with_http_info(request)
+          else
+            raise
+          end
+      end			
       nil
     end
 
@@ -2859,6 +3155,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -2877,8 +3174,16 @@ module AsposeWordsCloud
     # @param request DeleteParagraphWithoutNodePathRequest
     # @return [nil]
     def delete_paragraph_without_node_path(request)
-      data, _status_code, _headers = delete_paragraph_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = delete_paragraph_without_node_path_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_paragraph_without_node_path_with_http_info(request)
+          else
+            raise
+          end
+      end			
       nil
     end
 
@@ -2951,6 +3256,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -2969,8 +3275,16 @@ module AsposeWordsCloud
     # @param request DeleteRunRequest
     # @return [nil]
     def delete_run(request)
-      data, _status_code, _headers = delete_run_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = delete_run_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_run_with_http_info(request)
+          else
+            raise
+          end
+      end			
       nil
     end
 
@@ -3046,6 +3360,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -3064,8 +3379,16 @@ module AsposeWordsCloud
     # @param request DeleteSectionRequest
     # @return [nil]
     def delete_section(request)
-      data, _status_code, _headers = delete_section_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = delete_section_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_section_with_http_info(request)
+          else
+            raise
+          end
+      end			
       nil
     end
 
@@ -3138,6 +3461,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -3156,8 +3480,16 @@ module AsposeWordsCloud
     # @param request DeleteTableRequest
     # @return [nil]
     def delete_table(request)
-      data, _status_code, _headers = delete_table_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = delete_table_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_table_with_http_info(request)
+          else
+            raise
+          end
+      end			
       nil
     end
 
@@ -3233,6 +3565,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -3251,8 +3584,16 @@ module AsposeWordsCloud
     # @param request DeleteTableCellRequest
     # @return [nil]
     def delete_table_cell(request)
-      data, _status_code, _headers = delete_table_cell_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = delete_table_cell_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_table_cell_with_http_info(request)
+          else
+            raise
+          end
+      end			
       nil
     end
 
@@ -3328,6 +3669,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -3346,8 +3688,16 @@ module AsposeWordsCloud
     # @param request DeleteTableRowRequest
     # @return [nil]
     def delete_table_row(request)
-      data, _status_code, _headers = delete_table_row_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = delete_table_row_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_table_row_with_http_info(request)
+          else
+            raise
+          end
+      end			
       nil
     end
 
@@ -3423,6 +3773,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -3441,8 +3792,16 @@ module AsposeWordsCloud
     # @param request DeleteTableWithoutNodePathRequest
     # @return [nil]
     def delete_table_without_node_path(request)
-      data, _status_code, _headers = delete_table_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = delete_table_without_node_path_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_table_without_node_path_with_http_info(request)
+          else
+            raise
+          end
+      end			
       nil
     end
 
@@ -3515,6 +3874,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -3533,8 +3893,16 @@ module AsposeWordsCloud
     # @param request DeleteWatermarkRequest
     # @return [DocumentResponse]
     def delete_watermark(request)
-      data, _status_code, _headers = delete_watermark_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = delete_watermark_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_watermark_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -3604,6 +3972,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -3623,8 +3992,16 @@ module AsposeWordsCloud
     # @param request DownloadFileRequest
     # @return [File]
     def download_file(request)
-      data, _status_code, _headers = download_file_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = download_file_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = download_file_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -3669,6 +4046,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -3688,8 +4066,16 @@ module AsposeWordsCloud
     # @param request ExecuteMailMergeRequest
     # @return [DocumentResponse]
     def execute_mail_merge(request)
-      data, _status_code, _headers = execute_mail_merge_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = execute_mail_merge_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = execute_mail_merge_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -3770,6 +4156,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -3789,8 +4176,16 @@ module AsposeWordsCloud
     # @param request ExecuteMailMergeOnlineRequest
     # @return [File]
     def execute_mail_merge_online(request)
-      data, _status_code, _headers = execute_mail_merge_online_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = execute_mail_merge_online_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = execute_mail_merge_online_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -3843,6 +4238,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -3862,8 +4258,16 @@ module AsposeWordsCloud
     # @param request GetAvailableFontsRequest
     # @return [AvailableFontsResponse]
     def get_available_fonts(request)
-      data, _status_code, _headers = get_available_fonts_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_available_fonts_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_available_fonts_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -3900,6 +4304,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -3919,8 +4324,16 @@ module AsposeWordsCloud
     # @param request GetBookmarkByNameRequest
     # @return [BookmarkResponse]
     def get_bookmark_by_name(request)
-      data, _status_code, _headers = get_bookmark_by_name_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_bookmark_by_name_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_bookmark_by_name_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -3978,6 +4391,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -3997,8 +4411,16 @@ module AsposeWordsCloud
     # @param request GetBookmarksRequest
     # @return [BookmarksResponse]
     def get_bookmarks(request)
-      data, _status_code, _headers = get_bookmarks_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_bookmarks_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_bookmarks_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -4053,6 +4475,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -4072,8 +4495,16 @@ module AsposeWordsCloud
     # @param request GetBorderRequest
     # @return [BorderResponse]
     def get_border(request)
-      data, _status_code, _headers = get_border_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_border_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_border_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -4136,6 +4567,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -4155,8 +4587,16 @@ module AsposeWordsCloud
     # @param request GetBordersRequest
     # @return [BordersResponse]
     def get_borders(request)
-      data, _status_code, _headers = get_borders_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_borders_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_borders_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -4214,6 +4654,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -4233,8 +4674,16 @@ module AsposeWordsCloud
     # @param request GetCommentRequest
     # @return [CommentResponse]
     def get_comment(request)
-      data, _status_code, _headers = get_comment_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_comment_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_comment_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -4292,6 +4741,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -4311,8 +4761,16 @@ module AsposeWordsCloud
     # @param request GetCommentsRequest
     # @return [CommentsResponse]
     def get_comments(request)
-      data, _status_code, _headers = get_comments_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_comments_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_comments_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -4367,6 +4825,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -4386,8 +4845,16 @@ module AsposeWordsCloud
     # @param request GetDocumentRequest
     # @return [DocumentResponse]
     def get_document(request)
-      data, _status_code, _headers = get_document_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_document_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_document_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -4442,6 +4909,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -4461,8 +4929,16 @@ module AsposeWordsCloud
     # @param request GetDocumentDrawingObjectByIndexRequest
     # @return [DrawingObjectResponse]
     def get_document_drawing_object_by_index(request)
-      data, _status_code, _headers = get_document_drawing_object_by_index_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_document_drawing_object_by_index_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_document_drawing_object_by_index_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -4523,6 +4999,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -4542,8 +5019,16 @@ module AsposeWordsCloud
     # @param request GetDocumentDrawingObjectByIndexWithoutNodePathRequest
     # @return [DrawingObjectResponse]
     def get_document_drawing_object_by_index_without_node_path(request)
-      data, _status_code, _headers = get_document_drawing_object_by_index_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_document_drawing_object_by_index_without_node_path_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_document_drawing_object_by_index_without_node_path_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -4601,6 +5086,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -4620,8 +5106,16 @@ module AsposeWordsCloud
     # @param request GetDocumentDrawingObjectImageDataRequest
     # @return [File]
     def get_document_drawing_object_image_data(request)
-      data, _status_code, _headers = get_document_drawing_object_image_data_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_document_drawing_object_image_data_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_document_drawing_object_image_data_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -4682,6 +5176,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -4701,8 +5196,16 @@ module AsposeWordsCloud
     # @param request GetDocumentDrawingObjectImageDataWithoutNodePathRequest
     # @return [File]
     def get_document_drawing_object_image_data_without_node_path(request)
-      data, _status_code, _headers = get_document_drawing_object_image_data_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_document_drawing_object_image_data_without_node_path_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_document_drawing_object_image_data_without_node_path_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -4760,6 +5263,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -4779,8 +5283,16 @@ module AsposeWordsCloud
     # @param request GetDocumentDrawingObjectOleDataRequest
     # @return [File]
     def get_document_drawing_object_ole_data(request)
-      data, _status_code, _headers = get_document_drawing_object_ole_data_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_document_drawing_object_ole_data_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_document_drawing_object_ole_data_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -4841,6 +5353,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -4860,8 +5373,16 @@ module AsposeWordsCloud
     # @param request GetDocumentDrawingObjectOleDataWithoutNodePathRequest
     # @return [File]
     def get_document_drawing_object_ole_data_without_node_path(request)
-      data, _status_code, _headers = get_document_drawing_object_ole_data_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_document_drawing_object_ole_data_without_node_path_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_document_drawing_object_ole_data_without_node_path_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -4919,6 +5440,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -4938,8 +5460,16 @@ module AsposeWordsCloud
     # @param request GetDocumentDrawingObjectsRequest
     # @return [DrawingObjectsResponse]
     def get_document_drawing_objects(request)
-      data, _status_code, _headers = get_document_drawing_objects_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_document_drawing_objects_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_document_drawing_objects_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -4997,6 +5527,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -5016,8 +5547,16 @@ module AsposeWordsCloud
     # @param request GetDocumentDrawingObjectsWithoutNodePathRequest
     # @return [DrawingObjectsResponse]
     def get_document_drawing_objects_without_node_path(request)
-      data, _status_code, _headers = get_document_drawing_objects_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_document_drawing_objects_without_node_path_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_document_drawing_objects_without_node_path_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -5072,6 +5611,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -5091,8 +5631,16 @@ module AsposeWordsCloud
     # @param request GetDocumentFieldNamesRequest
     # @return [FieldNamesResponse]
     def get_document_field_names(request)
-      data, _status_code, _headers = get_document_field_names_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_document_field_names_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_document_field_names_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -5152,6 +5700,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -5171,8 +5720,16 @@ module AsposeWordsCloud
     # @param request GetDocumentFieldNamesOnlineRequest
     # @return [FieldNamesResponse]
     def get_document_field_names_online(request)
-      data, _status_code, _headers = get_document_field_names_online_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_document_field_names_online_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_document_field_names_online_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -5212,6 +5769,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -5231,8 +5789,16 @@ module AsposeWordsCloud
     # @param request GetDocumentHyperlinkByIndexRequest
     # @return [HyperlinkResponse]
     def get_document_hyperlink_by_index(request)
-      data, _status_code, _headers = get_document_hyperlink_by_index_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_document_hyperlink_by_index_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_document_hyperlink_by_index_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -5290,6 +5856,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -5309,8 +5876,16 @@ module AsposeWordsCloud
     # @param request GetDocumentHyperlinksRequest
     # @return [HyperlinksResponse]
     def get_document_hyperlinks(request)
-      data, _status_code, _headers = get_document_hyperlinks_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_document_hyperlinks_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_document_hyperlinks_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -5365,6 +5940,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -5384,8 +5960,16 @@ module AsposeWordsCloud
     # @param request GetDocumentPropertiesRequest
     # @return [DocumentPropertiesResponse]
     def get_document_properties(request)
-      data, _status_code, _headers = get_document_properties_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_document_properties_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_document_properties_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -5440,6 +6024,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -5459,8 +6044,16 @@ module AsposeWordsCloud
     # @param request GetDocumentPropertyRequest
     # @return [DocumentPropertyResponse]
     def get_document_property(request)
-      data, _status_code, _headers = get_document_property_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_document_property_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_document_property_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -5518,6 +6111,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -5537,8 +6131,16 @@ module AsposeWordsCloud
     # @param request GetDocumentProtectionRequest
     # @return [ProtectionDataResponse]
     def get_document_protection(request)
-      data, _status_code, _headers = get_document_protection_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_document_protection_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_document_protection_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -5593,6 +6195,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -5612,8 +6215,16 @@ module AsposeWordsCloud
     # @param request GetDocumentStatisticsRequest
     # @return [StatDataResponse]
     def get_document_statistics(request)
-      data, _status_code, _headers = get_document_statistics_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_document_statistics_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_document_statistics_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -5683,6 +6294,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -5702,8 +6314,16 @@ module AsposeWordsCloud
     # @param request GetDocumentWithFormatRequest
     # @return [File]
     def get_document_with_format(request)
-      data, _status_code, _headers = get_document_with_format_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_document_with_format_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_document_with_format_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -5772,6 +6392,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -5791,8 +6412,16 @@ module AsposeWordsCloud
     # @param request GetFieldRequest
     # @return [FieldResponse]
     def get_field(request)
-      data, _status_code, _headers = get_field_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_field_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_field_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -5853,6 +6482,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -5872,8 +6502,16 @@ module AsposeWordsCloud
     # @param request GetFieldWithoutNodePathRequest
     # @return [FieldResponse]
     def get_field_without_node_path(request)
-      data, _status_code, _headers = get_field_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_field_without_node_path_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_field_without_node_path_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -5931,6 +6569,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -5950,8 +6589,16 @@ module AsposeWordsCloud
     # @param request GetFieldsRequest
     # @return [FieldsResponse]
     def get_fields(request)
-      data, _status_code, _headers = get_fields_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_fields_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_fields_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -6009,6 +6656,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -6028,8 +6676,16 @@ module AsposeWordsCloud
     # @param request GetFieldsWithoutNodePathRequest
     # @return [FieldsResponse]
     def get_fields_without_node_path(request)
-      data, _status_code, _headers = get_fields_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_fields_without_node_path_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_fields_without_node_path_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -6084,6 +6740,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -6103,8 +6760,16 @@ module AsposeWordsCloud
     # @param request GetFilesListRequest
     # @return [FilesList]
     def get_files_list(request)
-      data, _status_code, _headers = get_files_list_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_files_list_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_files_list_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -6144,6 +6809,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -6163,8 +6829,16 @@ module AsposeWordsCloud
     # @param request GetFootnoteRequest
     # @return [FootnoteResponse]
     def get_footnote(request)
-      data, _status_code, _headers = get_footnote_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_footnote_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_footnote_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -6225,6 +6899,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -6244,8 +6919,16 @@ module AsposeWordsCloud
     # @param request GetFootnoteWithoutNodePathRequest
     # @return [FootnoteResponse]
     def get_footnote_without_node_path(request)
-      data, _status_code, _headers = get_footnote_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_footnote_without_node_path_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_footnote_without_node_path_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -6303,6 +6986,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -6322,8 +7006,16 @@ module AsposeWordsCloud
     # @param request GetFootnotesRequest
     # @return [FootnotesResponse]
     def get_footnotes(request)
-      data, _status_code, _headers = get_footnotes_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_footnotes_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_footnotes_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -6381,6 +7073,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -6400,8 +7093,16 @@ module AsposeWordsCloud
     # @param request GetFootnotesWithoutNodePathRequest
     # @return [FootnotesResponse]
     def get_footnotes_without_node_path(request)
-      data, _status_code, _headers = get_footnotes_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_footnotes_without_node_path_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_footnotes_without_node_path_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -6456,6 +7157,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -6475,8 +7177,16 @@ module AsposeWordsCloud
     # @param request GetFormFieldRequest
     # @return [FormFieldResponse]
     def get_form_field(request)
-      data, _status_code, _headers = get_form_field_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_form_field_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_form_field_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -6537,6 +7247,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -6556,8 +7267,16 @@ module AsposeWordsCloud
     # @param request GetFormFieldWithoutNodePathRequest
     # @return [FormFieldResponse]
     def get_form_field_without_node_path(request)
-      data, _status_code, _headers = get_form_field_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_form_field_without_node_path_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_form_field_without_node_path_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -6615,6 +7334,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -6634,8 +7354,16 @@ module AsposeWordsCloud
     # @param request GetFormFieldsRequest
     # @return [FormFieldsResponse]
     def get_form_fields(request)
-      data, _status_code, _headers = get_form_fields_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_form_fields_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_form_fields_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -6693,6 +7421,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -6712,8 +7441,16 @@ module AsposeWordsCloud
     # @param request GetFormFieldsWithoutNodePathRequest
     # @return [FormFieldsResponse]
     def get_form_fields_without_node_path(request)
-      data, _status_code, _headers = get_form_fields_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_form_fields_without_node_path_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_form_fields_without_node_path_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -6768,6 +7505,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -6787,8 +7525,16 @@ module AsposeWordsCloud
     # @param request GetHeaderFooterRequest
     # @return [HeaderFooterResponse]
     def get_header_footer(request)
-      data, _status_code, _headers = get_header_footer_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_header_footer_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_header_footer_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -6851,6 +7597,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -6870,8 +7617,16 @@ module AsposeWordsCloud
     # @param request GetHeaderFooterOfSectionRequest
     # @return [HeaderFooterResponse]
     def get_header_footer_of_section(request)
-      data, _status_code, _headers = get_header_footer_of_section_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_header_footer_of_section_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_header_footer_of_section_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -6937,6 +7692,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -6956,8 +7712,16 @@ module AsposeWordsCloud
     # @param request GetHeaderFootersRequest
     # @return [HeaderFootersResponse]
     def get_header_footers(request)
-      data, _status_code, _headers = get_header_footers_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_header_footers_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_header_footers_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -7020,6 +7784,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -7039,8 +7804,16 @@ module AsposeWordsCloud
     # @param request GetOfficeMathObjectRequest
     # @return [OfficeMathObjectResponse]
     def get_office_math_object(request)
-      data, _status_code, _headers = get_office_math_object_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_office_math_object_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_office_math_object_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -7101,6 +7874,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -7120,8 +7894,16 @@ module AsposeWordsCloud
     # @param request GetOfficeMathObjectWithoutNodePathRequest
     # @return [OfficeMathObjectResponse]
     def get_office_math_object_without_node_path(request)
-      data, _status_code, _headers = get_office_math_object_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_office_math_object_without_node_path_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_office_math_object_without_node_path_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -7179,6 +7961,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -7198,8 +7981,16 @@ module AsposeWordsCloud
     # @param request GetOfficeMathObjectsRequest
     # @return [OfficeMathObjectsResponse]
     def get_office_math_objects(request)
-      data, _status_code, _headers = get_office_math_objects_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_office_math_objects_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_office_math_objects_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -7257,6 +8048,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -7276,8 +8068,16 @@ module AsposeWordsCloud
     # @param request GetOfficeMathObjectsWithoutNodePathRequest
     # @return [OfficeMathObjectsResponse]
     def get_office_math_objects_without_node_path(request)
-      data, _status_code, _headers = get_office_math_objects_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_office_math_objects_without_node_path_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_office_math_objects_without_node_path_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -7332,6 +8132,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -7351,8 +8152,16 @@ module AsposeWordsCloud
     # @param request GetParagraphRequest
     # @return [ParagraphResponse]
     def get_paragraph(request)
-      data, _status_code, _headers = get_paragraph_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_paragraph_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_paragraph_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -7413,6 +8222,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -7432,8 +8242,16 @@ module AsposeWordsCloud
     # @param request GetParagraphFormatRequest
     # @return [ParagraphFormatResponse]
     def get_paragraph_format(request)
-      data, _status_code, _headers = get_paragraph_format_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_paragraph_format_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_paragraph_format_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -7494,6 +8312,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -7513,8 +8332,16 @@ module AsposeWordsCloud
     # @param request GetParagraphFormatWithoutNodePathRequest
     # @return [ParagraphFormatResponse]
     def get_paragraph_format_without_node_path(request)
-      data, _status_code, _headers = get_paragraph_format_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_paragraph_format_without_node_path_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_paragraph_format_without_node_path_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -7572,6 +8399,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -7591,8 +8419,16 @@ module AsposeWordsCloud
     # @param request GetParagraphWithoutNodePathRequest
     # @return [ParagraphResponse]
     def get_paragraph_without_node_path(request)
-      data, _status_code, _headers = get_paragraph_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_paragraph_without_node_path_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_paragraph_without_node_path_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -7650,6 +8486,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -7669,8 +8506,16 @@ module AsposeWordsCloud
     # @param request GetParagraphsRequest
     # @return [ParagraphLinkCollectionResponse]
     def get_paragraphs(request)
-      data, _status_code, _headers = get_paragraphs_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_paragraphs_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_paragraphs_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -7728,6 +8573,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -7747,8 +8593,16 @@ module AsposeWordsCloud
     # @param request GetParagraphsWithoutNodePathRequest
     # @return [ParagraphLinkCollectionResponse]
     def get_paragraphs_without_node_path(request)
-      data, _status_code, _headers = get_paragraphs_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_paragraphs_without_node_path_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_paragraphs_without_node_path_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -7803,6 +8657,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -7822,8 +8677,16 @@ module AsposeWordsCloud
     # @param request GetRangeTextRequest
     # @return [RangeTextResponse]
     def get_range_text(request)
-      data, _status_code, _headers = get_range_text_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_range_text_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_range_text_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -7882,6 +8745,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -7901,8 +8765,16 @@ module AsposeWordsCloud
     # @param request GetRunRequest
     # @return [RunResponse]
     def get_run(request)
-      data, _status_code, _headers = get_run_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_run_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_run_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -7963,6 +8835,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -7982,8 +8855,16 @@ module AsposeWordsCloud
     # @param request GetRunFontRequest
     # @return [FontResponse]
     def get_run_font(request)
-      data, _status_code, _headers = get_run_font_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_run_font_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_run_font_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -8044,6 +8925,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -8063,8 +8945,16 @@ module AsposeWordsCloud
     # @param request GetRunsRequest
     # @return [RunsResponse]
     def get_runs(request)
-      data, _status_code, _headers = get_runs_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_runs_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_runs_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -8122,6 +9012,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -8141,8 +9032,16 @@ module AsposeWordsCloud
     # @param request GetSectionRequest
     # @return [SectionResponse]
     def get_section(request)
-      data, _status_code, _headers = get_section_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_section_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_section_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -8200,6 +9099,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -8219,8 +9119,16 @@ module AsposeWordsCloud
     # @param request GetSectionPageSetupRequest
     # @return [SectionPageSetupResponse]
     def get_section_page_setup(request)
-      data, _status_code, _headers = get_section_page_setup_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_section_page_setup_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_section_page_setup_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -8278,6 +9186,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -8297,8 +9206,16 @@ module AsposeWordsCloud
     # @param request GetSectionsRequest
     # @return [SectionLinkCollectionResponse]
     def get_sections(request)
-      data, _status_code, _headers = get_sections_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_sections_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_sections_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -8353,6 +9270,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -8372,8 +9290,16 @@ module AsposeWordsCloud
     # @param request GetTableRequest
     # @return [TableResponse]
     def get_table(request)
-      data, _status_code, _headers = get_table_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_table_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_table_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -8434,6 +9360,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -8453,8 +9380,16 @@ module AsposeWordsCloud
     # @param request GetTableCellRequest
     # @return [TableCellResponse]
     def get_table_cell(request)
-      data, _status_code, _headers = get_table_cell_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_table_cell_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_table_cell_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -8515,6 +9450,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -8534,8 +9470,16 @@ module AsposeWordsCloud
     # @param request GetTableCellFormatRequest
     # @return [TableCellFormatResponse]
     def get_table_cell_format(request)
-      data, _status_code, _headers = get_table_cell_format_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_table_cell_format_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_table_cell_format_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -8596,6 +9540,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -8615,8 +9560,16 @@ module AsposeWordsCloud
     # @param request GetTablePropertiesRequest
     # @return [TablePropertiesResponse]
     def get_table_properties(request)
-      data, _status_code, _headers = get_table_properties_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_table_properties_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_table_properties_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -8677,6 +9630,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -8696,8 +9650,16 @@ module AsposeWordsCloud
     # @param request GetTablePropertiesWithoutNodePathRequest
     # @return [TablePropertiesResponse]
     def get_table_properties_without_node_path(request)
-      data, _status_code, _headers = get_table_properties_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_table_properties_without_node_path_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_table_properties_without_node_path_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -8755,6 +9717,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -8774,8 +9737,16 @@ module AsposeWordsCloud
     # @param request GetTableRowRequest
     # @return [TableRowResponse]
     def get_table_row(request)
-      data, _status_code, _headers = get_table_row_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_table_row_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_table_row_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -8836,6 +9807,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -8855,8 +9827,16 @@ module AsposeWordsCloud
     # @param request GetTableRowFormatRequest
     # @return [TableRowFormatResponse]
     def get_table_row_format(request)
-      data, _status_code, _headers = get_table_row_format_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_table_row_format_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_table_row_format_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -8917,6 +9897,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -8936,8 +9917,16 @@ module AsposeWordsCloud
     # @param request GetTableWithoutNodePathRequest
     # @return [TableResponse]
     def get_table_without_node_path(request)
-      data, _status_code, _headers = get_table_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_table_without_node_path_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_table_without_node_path_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -8995,6 +9984,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -9014,8 +10004,16 @@ module AsposeWordsCloud
     # @param request GetTablesRequest
     # @return [TableLinkCollectionResponse]
     def get_tables(request)
-      data, _status_code, _headers = get_tables_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_tables_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_tables_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -9073,6 +10071,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -9092,8 +10091,16 @@ module AsposeWordsCloud
     # @param request GetTablesWithoutNodePathRequest
     # @return [TableLinkCollectionResponse]
     def get_tables_without_node_path(request)
-      data, _status_code, _headers = get_tables_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = get_tables_without_node_path_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_tables_without_node_path_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -9148,6 +10155,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -9167,8 +10175,16 @@ module AsposeWordsCloud
     # @param request InsertCommentRequest
     # @return [CommentResponse]
     def insert_comment(request)
-      data, _status_code, _headers = insert_comment_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = insert_comment_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = insert_comment_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -9240,6 +10256,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.comment)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -9259,8 +10276,16 @@ module AsposeWordsCloud
     # @param request InsertDrawingObjectRequest
     # @return [DrawingObjectResponse]
     def insert_drawing_object(request)
-      data, _status_code, _headers = insert_drawing_object_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = insert_drawing_object_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = insert_drawing_object_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -9339,6 +10364,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -9358,8 +10384,16 @@ module AsposeWordsCloud
     # @param request InsertDrawingObjectWithoutNodePathRequest
     # @return [DrawingObjectResponse]
     def insert_drawing_object_without_node_path(request)
-      data, _status_code, _headers = insert_drawing_object_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = insert_drawing_object_without_node_path_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = insert_drawing_object_without_node_path_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -9435,6 +10469,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -9454,8 +10489,16 @@ module AsposeWordsCloud
     # @param request InsertFieldRequest
     # @return [FieldResponse]
     def insert_field(request)
-      data, _status_code, _headers = insert_field_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = insert_field_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = insert_field_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -9535,6 +10578,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.field)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -9554,8 +10598,16 @@ module AsposeWordsCloud
     # @param request InsertFieldWithoutNodePathRequest
     # @return [FieldResponse]
     def insert_field_without_node_path(request)
-      data, _status_code, _headers = insert_field_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = insert_field_without_node_path_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = insert_field_without_node_path_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -9632,6 +10684,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.field)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -9651,8 +10704,16 @@ module AsposeWordsCloud
     # @param request InsertFootnoteRequest
     # @return [FootnoteResponse]
     def insert_footnote(request)
-      data, _status_code, _headers = insert_footnote_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = insert_footnote_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = insert_footnote_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -9727,6 +10788,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.footnote_dto)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -9746,8 +10808,16 @@ module AsposeWordsCloud
     # @param request InsertFootnoteWithoutNodePathRequest
     # @return [FootnoteResponse]
     def insert_footnote_without_node_path(request)
-      data, _status_code, _headers = insert_footnote_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = insert_footnote_without_node_path_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = insert_footnote_without_node_path_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -9819,6 +10889,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.footnote_dto)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -9838,8 +10909,16 @@ module AsposeWordsCloud
     # @param request InsertFormFieldRequest
     # @return [FormFieldResponse]
     def insert_form_field(request)
-      data, _status_code, _headers = insert_form_field_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = insert_form_field_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = insert_form_field_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -9919,6 +10998,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.form_field)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -9938,8 +11018,16 @@ module AsposeWordsCloud
     # @param request InsertFormFieldWithoutNodePathRequest
     # @return [FormFieldResponse]
     def insert_form_field_without_node_path(request)
-      data, _status_code, _headers = insert_form_field_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = insert_form_field_without_node_path_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = insert_form_field_without_node_path_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -10016,6 +11104,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.form_field)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -10035,8 +11124,16 @@ module AsposeWordsCloud
     # @param request InsertHeaderFooterRequest
     # @return [HeaderFooterResponse]
     def insert_header_footer(request)
-      data, _status_code, _headers = insert_header_footer_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = insert_header_footer_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = insert_header_footer_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -10111,6 +11208,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.header_footer_type)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -10130,8 +11228,16 @@ module AsposeWordsCloud
     # @param request InsertPageNumbersRequest
     # @return [DocumentResponse]
     def insert_page_numbers(request)
-      data, _status_code, _headers = insert_page_numbers_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = insert_page_numbers_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = insert_page_numbers_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -10203,6 +11309,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.page_number)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -10222,8 +11329,16 @@ module AsposeWordsCloud
     # @param request InsertParagraphRequest
     # @return [ParagraphResponse]
     def insert_paragraph(request)
-      data, _status_code, _headers = insert_paragraph_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = insert_paragraph_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = insert_paragraph_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -10303,6 +11418,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.paragraph)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -10322,8 +11438,16 @@ module AsposeWordsCloud
     # @param request InsertRunRequest
     # @return [RunResponse]
     def insert_run(request)
-      data, _status_code, _headers = insert_run_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = insert_run_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = insert_run_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -10403,6 +11527,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.run)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -10422,8 +11547,16 @@ module AsposeWordsCloud
     # @param request InsertTableRequest
     # @return [TableResponse]
     def insert_table(request)
-      data, _status_code, _headers = insert_table_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = insert_table_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = insert_table_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -10498,6 +11631,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.table)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -10517,8 +11651,16 @@ module AsposeWordsCloud
     # @param request InsertTableCellRequest
     # @return [TableCellResponse]
     def insert_table_cell(request)
-      data, _status_code, _headers = insert_table_cell_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = insert_table_cell_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = insert_table_cell_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -10593,6 +11735,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.cell)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -10612,8 +11755,16 @@ module AsposeWordsCloud
     # @param request InsertTableRowRequest
     # @return [TableRowResponse]
     def insert_table_row(request)
-      data, _status_code, _headers = insert_table_row_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = insert_table_row_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = insert_table_row_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -10688,6 +11839,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.row)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -10707,8 +11859,16 @@ module AsposeWordsCloud
     # @param request InsertTableWithoutNodePathRequest
     # @return [TableResponse]
     def insert_table_without_node_path(request)
-      data, _status_code, _headers = insert_table_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = insert_table_without_node_path_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = insert_table_without_node_path_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -10780,6 +11940,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.table)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -10799,8 +11960,16 @@ module AsposeWordsCloud
     # @param request InsertWatermarkImageRequest
     # @return [DocumentResponse]
     def insert_watermark_image(request)
-      data, _status_code, _headers = insert_watermark_image_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = insert_watermark_image_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = insert_watermark_image_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -10881,6 +12050,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -10900,8 +12070,16 @@ module AsposeWordsCloud
     # @param request InsertWatermarkTextRequest
     # @return [DocumentResponse]
     def insert_watermark_text(request)
-      data, _status_code, _headers = insert_watermark_text_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = insert_watermark_text_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = insert_watermark_text_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -10973,6 +12151,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.watermark_text)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -10992,8 +12171,16 @@ module AsposeWordsCloud
     # @param request LoadWebDocumentRequest
     # @return [SaveResponse]
     def load_web_document(request)
-      data, _status_code, _headers = load_web_document_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = load_web_document_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = load_web_document_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -11032,6 +12219,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.data)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -11051,8 +12239,16 @@ module AsposeWordsCloud
     # @param request MoveFileRequest
     # @return [nil]
     def move_file(request)
-      data, _status_code, _headers = move_file_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = move_file_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = move_file_with_http_info(request)
+          else
+            raise
+          end
+      end			
       nil
     end
 
@@ -11106,6 +12302,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -11124,8 +12321,16 @@ module AsposeWordsCloud
     # @param request MoveFolderRequest
     # @return [nil]
     def move_folder(request)
-      data, _status_code, _headers = move_folder_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = move_folder_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = move_folder_with_http_info(request)
+          else
+            raise
+          end
+      end			
       nil
     end
 
@@ -11174,6 +12379,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -11192,8 +12398,16 @@ module AsposeWordsCloud
     # @param request ProtectDocumentRequest
     # @return [ProtectionDataResponse]
     def protect_document(request)
-      data, _status_code, _headers = protect_document_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = protect_document_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = protect_document_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -11255,6 +12469,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.protection_request)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -11274,8 +12489,16 @@ module AsposeWordsCloud
     # @param request RejectAllRevisionsRequest
     # @return [RevisionsModificationResponse]
     def reject_all_revisions(request)
-      data, _status_code, _headers = reject_all_revisions_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = reject_all_revisions_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = reject_all_revisions_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -11335,6 +12558,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -11354,8 +12578,16 @@ module AsposeWordsCloud
     # @param request RemoveRangeRequest
     # @return [DocumentResponse]
     def remove_range(request)
-      data, _status_code, _headers = remove_range_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = remove_range_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = remove_range_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -11419,6 +12651,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -11438,8 +12671,16 @@ module AsposeWordsCloud
     # @param request RenderDrawingObjectRequest
     # @return [File]
     def render_drawing_object(request)
-      data, _status_code, _headers = render_drawing_object_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = render_drawing_object_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = render_drawing_object_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -11509,6 +12750,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -11528,8 +12770,16 @@ module AsposeWordsCloud
     # @param request RenderDrawingObjectWithoutNodePathRequest
     # @return [File]
     def render_drawing_object_without_node_path(request)
-      data, _status_code, _headers = render_drawing_object_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = render_drawing_object_without_node_path_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = render_drawing_object_without_node_path_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -11596,6 +12846,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -11615,8 +12866,16 @@ module AsposeWordsCloud
     # @param request RenderMathObjectRequest
     # @return [File]
     def render_math_object(request)
-      data, _status_code, _headers = render_math_object_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = render_math_object_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = render_math_object_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -11686,6 +12945,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -11705,8 +12965,16 @@ module AsposeWordsCloud
     # @param request RenderMathObjectWithoutNodePathRequest
     # @return [File]
     def render_math_object_without_node_path(request)
-      data, _status_code, _headers = render_math_object_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = render_math_object_without_node_path_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = render_math_object_without_node_path_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -11773,6 +13041,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -11792,8 +13061,16 @@ module AsposeWordsCloud
     # @param request RenderPageRequest
     # @return [File]
     def render_page(request)
-      data, _status_code, _headers = render_page_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = render_page_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = render_page_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -11860,6 +13137,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -11879,8 +13157,16 @@ module AsposeWordsCloud
     # @param request RenderParagraphRequest
     # @return [File]
     def render_paragraph(request)
-      data, _status_code, _headers = render_paragraph_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = render_paragraph_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = render_paragraph_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -11950,6 +13236,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -11969,8 +13256,16 @@ module AsposeWordsCloud
     # @param request RenderParagraphWithoutNodePathRequest
     # @return [File]
     def render_paragraph_without_node_path(request)
-      data, _status_code, _headers = render_paragraph_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = render_paragraph_without_node_path_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = render_paragraph_without_node_path_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -12037,6 +13332,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -12056,8 +13352,16 @@ module AsposeWordsCloud
     # @param request RenderTableRequest
     # @return [File]
     def render_table(request)
-      data, _status_code, _headers = render_table_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = render_table_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = render_table_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -12127,6 +13431,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -12146,8 +13451,16 @@ module AsposeWordsCloud
     # @param request RenderTableWithoutNodePathRequest
     # @return [File]
     def render_table_without_node_path(request)
-      data, _status_code, _headers = render_table_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = render_table_without_node_path_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = render_table_without_node_path_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -12214,6 +13527,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -12233,8 +13547,16 @@ module AsposeWordsCloud
     # @param request ReplaceTextRequest
     # @return [ReplaceTextResponse]
     def replace_text(request)
-      data, _status_code, _headers = replace_text_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = replace_text_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = replace_text_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -12306,6 +13628,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.replace_text)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -12325,8 +13648,16 @@ module AsposeWordsCloud
     # @param request ReplaceWithTextRequest
     # @return [DocumentResponse]
     def replace_with_text(request)
-      data, _status_code, _headers = replace_with_text_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = replace_with_text_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = replace_with_text_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -12392,6 +13723,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.range_text)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -12411,8 +13743,16 @@ module AsposeWordsCloud
     # @param request ResetCacheRequest
     # @return [nil]
     def reset_cache(request)
-      data, _status_code, _headers = reset_cache_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = reset_cache_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = reset_cache_with_http_info(request)
+          else
+            raise
+          end
+      end			
       nil
     end
 
@@ -12444,6 +13784,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -12462,8 +13803,16 @@ module AsposeWordsCloud
     # @param request SaveAsRequest
     # @return [SaveResponse]
     def save_as(request)
-      data, _status_code, _headers = save_as_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = save_as_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = save_as_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -12525,6 +13874,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.save_options_data)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -12544,8 +13894,16 @@ module AsposeWordsCloud
     # @param request SaveAsRangeRequest
     # @return [DocumentResponse]
     def save_as_range(request)
-      data, _status_code, _headers = save_as_range_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = save_as_range_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = save_as_range_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -12606,6 +13964,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.document_parameters)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -12625,8 +13984,16 @@ module AsposeWordsCloud
     # @param request SaveAsTiffRequest
     # @return [SaveResponse]
     def save_as_tiff(request)
-      data, _status_code, _headers = save_as_tiff_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = save_as_tiff_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = save_as_tiff_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -12773,6 +14140,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.save_options)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -12792,8 +14160,16 @@ module AsposeWordsCloud
     # @param request SearchRequest
     # @return [SearchResponse]
     def search(request)
-      data, _status_code, _headers = search_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = search_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = search_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -12852,6 +14228,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -12871,8 +14248,16 @@ module AsposeWordsCloud
     # @param request SplitDocumentRequest
     # @return [SplitDocumentResponse]
     def split_document(request)
-      data, _status_code, _headers = split_document_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = split_document_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = split_document_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -12957,6 +14342,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -12976,8 +14362,16 @@ module AsposeWordsCloud
     # @param request UnprotectDocumentRequest
     # @return [ProtectionDataResponse]
     def unprotect_document(request)
-      data, _status_code, _headers = unprotect_document_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = unprotect_document_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = unprotect_document_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -13039,6 +14433,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.protection_request)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -13058,8 +14453,16 @@ module AsposeWordsCloud
     # @param request UpdateBookmarkRequest
     # @return [BookmarkResponse]
     def update_bookmark(request)
-      data, _status_code, _headers = update_bookmark_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = update_bookmark_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = update_bookmark_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -13134,6 +14537,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.bookmark_data)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -13153,8 +14557,16 @@ module AsposeWordsCloud
     # @param request UpdateBorderRequest
     # @return [BorderResponse]
     def update_border(request)
-      data, _status_code, _headers = update_border_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = update_border_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = update_border_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -13234,6 +14646,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.border_properties)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -13253,8 +14666,16 @@ module AsposeWordsCloud
     # @param request UpdateCommentRequest
     # @return [CommentResponse]
     def update_comment(request)
-      data, _status_code, _headers = update_comment_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = update_comment_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = update_comment_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -13329,6 +14750,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.comment)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -13348,8 +14770,16 @@ module AsposeWordsCloud
     # @param request UpdateDrawingObjectRequest
     # @return [DrawingObjectResponse]
     def update_drawing_object(request)
-      data, _status_code, _headers = update_drawing_object_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = update_drawing_object_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = update_drawing_object_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -13431,6 +14861,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -13450,8 +14881,16 @@ module AsposeWordsCloud
     # @param request UpdateDrawingObjectWithoutNodePathRequest
     # @return [DrawingObjectResponse]
     def update_drawing_object_without_node_path(request)
-      data, _status_code, _headers = update_drawing_object_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = update_drawing_object_without_node_path_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = update_drawing_object_without_node_path_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -13530,6 +14969,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -13549,8 +14989,16 @@ module AsposeWordsCloud
     # @param request UpdateFieldRequest
     # @return [FieldResponse]
     def update_field(request)
-      data, _status_code, _headers = update_field_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = update_field_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = update_field_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -13628,6 +15076,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.field)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -13647,8 +15096,16 @@ module AsposeWordsCloud
     # @param request UpdateFieldsRequest
     # @return [DocumentResponse]
     def update_fields(request)
-      data, _status_code, _headers = update_fields_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = update_fields_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = update_fields_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -13708,6 +15165,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -13727,8 +15185,16 @@ module AsposeWordsCloud
     # @param request UpdateFootnoteRequest
     # @return [FootnoteResponse]
     def update_footnote(request)
-      data, _status_code, _headers = update_footnote_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = update_footnote_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = update_footnote_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -13806,6 +15272,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.footnote_dto)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -13825,8 +15292,16 @@ module AsposeWordsCloud
     # @param request UpdateFootnoteWithoutNodePathRequest
     # @return [FootnoteResponse]
     def update_footnote_without_node_path(request)
-      data, _status_code, _headers = update_footnote_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = update_footnote_without_node_path_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = update_footnote_without_node_path_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -13901,6 +15376,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.footnote_dto)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -13920,8 +15396,16 @@ module AsposeWordsCloud
     # @param request UpdateFormFieldRequest
     # @return [FormFieldResponse]
     def update_form_field(request)
-      data, _status_code, _headers = update_form_field_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = update_form_field_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = update_form_field_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -13999,6 +15483,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.form_field)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -14018,8 +15503,16 @@ module AsposeWordsCloud
     # @param request UpdateFormFieldWithoutNodePathRequest
     # @return [FormFieldResponse]
     def update_form_field_without_node_path(request)
-      data, _status_code, _headers = update_form_field_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = update_form_field_without_node_path_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = update_form_field_without_node_path_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -14094,6 +15587,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.form_field)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -14113,8 +15607,16 @@ module AsposeWordsCloud
     # @param request UpdateParagraphFormatRequest
     # @return [ParagraphFormatResponse]
     def update_paragraph_format(request)
-      data, _status_code, _headers = update_paragraph_format_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = update_paragraph_format_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = update_paragraph_format_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -14192,6 +15694,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.dto)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -14211,8 +15714,16 @@ module AsposeWordsCloud
     # @param request UpdateRunRequest
     # @return [RunResponse]
     def update_run(request)
-      data, _status_code, _headers = update_run_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = update_run_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = update_run_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -14290,6 +15801,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.run)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -14309,8 +15821,16 @@ module AsposeWordsCloud
     # @param request UpdateRunFontRequest
     # @return [FontResponse]
     def update_run_font(request)
-      data, _status_code, _headers = update_run_font_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = update_run_font_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = update_run_font_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -14388,6 +15908,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.font_dto)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -14407,8 +15928,16 @@ module AsposeWordsCloud
     # @param request UpdateSectionPageSetupRequest
     # @return [SectionPageSetupResponse]
     def update_section_page_setup(request)
-      data, _status_code, _headers = update_section_page_setup_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = update_section_page_setup_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = update_section_page_setup_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -14483,6 +16012,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.page_setup)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -14502,8 +16032,16 @@ module AsposeWordsCloud
     # @param request UpdateTableCellFormatRequest
     # @return [TableCellFormatResponse]
     def update_table_cell_format(request)
-      data, _status_code, _headers = update_table_cell_format_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = update_table_cell_format_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = update_table_cell_format_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -14581,6 +16119,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.format)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -14600,8 +16139,16 @@ module AsposeWordsCloud
     # @param request UpdateTablePropertiesRequest
     # @return [TablePropertiesResponse]
     def update_table_properties(request)
-      data, _status_code, _headers = update_table_properties_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = update_table_properties_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = update_table_properties_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -14679,6 +16226,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.properties)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -14698,8 +16246,16 @@ module AsposeWordsCloud
     # @param request UpdateTablePropertiesWithoutNodePathRequest
     # @return [TablePropertiesResponse]
     def update_table_properties_without_node_path(request)
-      data, _status_code, _headers = update_table_properties_without_node_path_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = update_table_properties_without_node_path_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = update_table_properties_without_node_path_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -14774,6 +16330,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.properties)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -14793,8 +16350,16 @@ module AsposeWordsCloud
     # @param request UpdateTableRowFormatRequest
     # @return [TableRowFormatResponse]
     def update_table_row_format(request)
-      data, _status_code, _headers = update_table_row_format_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = update_table_row_format_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = update_table_row_format_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -14872,6 +16437,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = @api_client.object_to_http_body(request.format)
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
@@ -14891,8 +16457,16 @@ module AsposeWordsCloud
     # @param request UploadFileRequest
     # @return [FilesUploadResult]
     def upload_file(request)
-      data, _status_code, _headers = upload_file_with_http_info(request)
-      request_token if _status_code == 401
+      begin
+        data, _status_code, _headers = upload_file_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = upload_file_with_http_info(request)
+          else
+            raise
+          end
+      end			
       data
     end
 
@@ -14935,6 +16509,7 @@ module AsposeWordsCloud
       # http body (model)
       post_body = nil
       auth_names = ['JWT']
+	  
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
