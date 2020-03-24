@@ -70,7 +70,7 @@ module AsposeWordsCloud
         raise "AppSid could not be an empty string."
       end
       
-      if @config.api_key['app_key'].nil? || @config.api_key['app_key'] == ''
+      if @config.api_key['api_key'].nil? || @config.api_key['api_key'] == ''
         raise "AppKey could not be an empty string."
       end
       
