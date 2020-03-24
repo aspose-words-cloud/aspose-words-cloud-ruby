@@ -31,7 +31,6 @@ module AsposeWordsCloud
 
   # Represents the page setup properties of a section.             
   class PageSetup
-    # Gets or sets link to the document.
     attr_accessor :link
 
     # Gets or sets specifies that this section contains bidirectional (complex scripts) text.             
@@ -112,7 +111,7 @@ module AsposeWordsCloud
     # Gets or sets returns or sets the type of section break for the specified object.             
     attr_accessor :section_start
 
-    # Gets or sets true if endnotes are printed at the end of the next section that doesn't suppress endnotes.                 Suppressed endnotes are printed before the endnotes in that section.             
+    # Gets or sets true if endnotes are printed at the end of the next section that doesn't suppress endnotes. Suppressed endnotes are printed before the endnotes in that section.             
     attr_accessor :suppress_endnotes
 
     # Gets or sets returns or sets the distance (in points) between the top edge of the page and the top boundary of the body text.             

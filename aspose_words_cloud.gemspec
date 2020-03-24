@@ -8,8 +8,7 @@ Gem::Specification.new do |s|
   s.email       = 'yaroslaw.ekimov@aspose.com'
   s.homepage    = 'https://github.com/aspose-words-cloud/aspose-words-cloud-ruby'
   s.summary     = 'Ruby library for communicating with the Aspose.Words Cloud API'
-  s.description = 'This SDK allows you to work with Aspose.Words Cloud REST APIs
-                  in your Ruby applications quickly and easily, with zero initial cost'
+  s.description = 'This SDK allows you to work with Aspose.Words Cloud REST APIs in your Ruby applications quickly and easily, with zero initial cost'
   s.license     = 'MIT'
 
   s.add_runtime_dependency 'faraday', '~> 0.14.0'

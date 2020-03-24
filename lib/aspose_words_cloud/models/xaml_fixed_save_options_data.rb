@@ -31,6 +31,26 @@ module AsposeWordsCloud
 
   # container class for xaml fixed save options.
   class XamlFixedSaveOptionsData
+    # Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.
+    attr_accessor :color_mode
+
+    # Gets or sets determines the quality of the JPEG images inside PDF document.
+    attr_accessor :jpeg_quality
+
+    attr_accessor :metafile_rendering_options
+
+    # Gets or sets indicates the symbol set that is used to represent numbers while rendering to fixed page formats.
+    attr_accessor :numeral_format
+
+    # Gets or sets flag indicates whether it is required to optimize output of XPS. If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated. Note: The accuracy of the content display may be affected if this property is set to true.  Default is false.
+    attr_accessor :optimize_output
+
+    # Gets or sets determines number of pages to render.
+    attr_accessor :page_count
+
+    # Gets or sets determines 0-based index of the first page to render.
+    attr_accessor :page_index
+
     # Gets or sets format of save.
     attr_accessor :save_format
 
@@ -49,32 +69,11 @@ module AsposeWordsCloud
     # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
     attr_accessor :update_last_saved_time_property
 
-    # Gets or sets value determining whether content of  is updated before saving.
+    # Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.
     attr_accessor :update_sdt_content
 
     # Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true
     attr_accessor :update_fields
-
-    # Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.
-    attr_accessor :color_mode
-
-    # Gets or sets determines the quality of the JPEG images inside PDF document.
-    attr_accessor :jpeg_quality
-
-    # Gets or sets allows to specify metafile rendering options.
-    attr_accessor :metafile_rendering_options
-
-    # Gets or sets indicates the symbol set that is used to represent numbers while rendering to fixed page formats.
-    attr_accessor :numeral_format
-
-    # Gets or sets flag indicates whether it is required to optimize output of XPS. If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated. Note: The accuracy of the content display may be affected if this property is set to true.  Default is false.
-    attr_accessor :optimize_output
-
-    # Gets or sets determines number of pages to render.
-    attr_accessor :page_count
-
-    # Gets or sets determines 0-based index of the first page to render.
-    attr_accessor :page_index
 
     # Gets or sets specifies the physical folder where resources (images and fonts) are saved when exporting a document to fixed page Xaml format. Default is null.
     attr_accessor :resources_folder
@@ -86,6 +85,13 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'color_mode' => :'ColorMode',
+        :'jpeg_quality' => :'JpegQuality',
+        :'metafile_rendering_options' => :'MetafileRenderingOptions',
+        :'numeral_format' => :'NumeralFormat',
+        :'optimize_output' => :'OptimizeOutput',
+        :'page_count' => :'PageCount',
+        :'page_index' => :'PageIndex',
         :'save_format' => :'SaveFormat',
         :'file_name' => :'FileName',
         :'dml_rendering_mode' => :'DmlRenderingMode',
@@ -94,13 +100,6 @@ module AsposeWordsCloud
         :'update_last_saved_time_property' => :'UpdateLastSavedTimeProperty',
         :'update_sdt_content' => :'UpdateSdtContent',
         :'update_fields' => :'UpdateFields',
-        :'color_mode' => :'ColorMode',
-        :'jpeg_quality' => :'JpegQuality',
-        :'metafile_rendering_options' => :'MetafileRenderingOptions',
-        :'numeral_format' => :'NumeralFormat',
-        :'optimize_output' => :'OptimizeOutput',
-        :'page_count' => :'PageCount',
-        :'page_index' => :'PageIndex',
         :'resources_folder' => :'ResourcesFolder',
         :'resources_folder_alias' => :'ResourcesFolderAlias'
       }
@@ -109,6 +108,13 @@ module AsposeWordsCloud
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'color_mode' => :'String',
+        :'jpeg_quality' => :'Integer',
+        :'metafile_rendering_options' => :'MetafileRenderingOptionsData',
+        :'numeral_format' => :'String',
+        :'optimize_output' => :'BOOLEAN',
+        :'page_count' => :'Integer',
+        :'page_index' => :'Integer',
         :'save_format' => :'String',
         :'file_name' => :'String',
         :'dml_rendering_mode' => :'String',
@@ -117,13 +123,6 @@ module AsposeWordsCloud
         :'update_last_saved_time_property' => :'BOOLEAN',
         :'update_sdt_content' => :'BOOLEAN',
         :'update_fields' => :'BOOLEAN',
-        :'color_mode' => :'String',
-        :'jpeg_quality' => :'Integer',
-        :'metafile_rendering_options' => :'MetafileRenderingOptionsData',
-        :'numeral_format' => :'String',
-        :'optimize_output' => :'BOOLEAN',
-        :'page_count' => :'Integer',
-        :'page_index' => :'Integer',
         :'resources_folder' => :'String',
         :'resources_folder_alias' => :'String'
       }
@@ -136,6 +135,34 @@ module AsposeWordsCloud
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.key?(:'ColorMode')
+        self.color_mode = attributes[:'ColorMode']
+      end
+
+      if attributes.key?(:'JpegQuality')
+        self.jpeg_quality = attributes[:'JpegQuality']
+      end
+
+      if attributes.key?(:'MetafileRenderingOptions')
+        self.metafile_rendering_options = attributes[:'MetafileRenderingOptions']
+      end
+
+      if attributes.key?(:'NumeralFormat')
+        self.numeral_format = attributes[:'NumeralFormat']
+      end
+
+      if attributes.key?(:'OptimizeOutput')
+        self.optimize_output = attributes[:'OptimizeOutput']
+      end
+
+      if attributes.key?(:'PageCount')
+        self.page_count = attributes[:'PageCount']
+      end
+
+      if attributes.key?(:'PageIndex')
+        self.page_index = attributes[:'PageIndex']
+      end
 
       if attributes.key?(:'SaveFormat')
         self.save_format = attributes[:'SaveFormat']
@@ -169,34 +196,6 @@ module AsposeWordsCloud
         self.update_fields = attributes[:'UpdateFields']
       end
 
-      if attributes.key?(:'ColorMode')
-        self.color_mode = attributes[:'ColorMode']
-      end
-
-      if attributes.key?(:'JpegQuality')
-        self.jpeg_quality = attributes[:'JpegQuality']
-      end
-
-      if attributes.key?(:'MetafileRenderingOptions')
-        self.metafile_rendering_options = attributes[:'MetafileRenderingOptions']
-      end
-
-      if attributes.key?(:'NumeralFormat')
-        self.numeral_format = attributes[:'NumeralFormat']
-      end
-
-      if attributes.key?(:'OptimizeOutput')
-        self.optimize_output = attributes[:'OptimizeOutput']
-      end
-
-      if attributes.key?(:'PageCount')
-        self.page_count = attributes[:'PageCount']
-      end
-
-      if attributes.key?(:'PageIndex')
-        self.page_index = attributes[:'PageIndex']
-      end
-
       if attributes.key?(:'ResourcesFolder')
         self.resources_folder = attributes[:'ResourcesFolder']
       end
@@ -225,6 +224,13 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
+          color_mode == other.color_mode &&
+          jpeg_quality == other.jpeg_quality &&
+          metafile_rendering_options == other.metafile_rendering_options &&
+          numeral_format == other.numeral_format &&
+          optimize_output == other.optimize_output &&
+          page_count == other.page_count &&
+          page_index == other.page_index &&
           save_format == other.save_format &&
           file_name == other.file_name &&
           dml_rendering_mode == other.dml_rendering_mode &&
@@ -233,13 +239,6 @@ module AsposeWordsCloud
           update_last_saved_time_property == other.update_last_saved_time_property &&
           update_sdt_content == other.update_sdt_content &&
           update_fields == other.update_fields &&
-          color_mode == other.color_mode &&
-          jpeg_quality == other.jpeg_quality &&
-          metafile_rendering_options == other.metafile_rendering_options &&
-          numeral_format == other.numeral_format &&
-          optimize_output == other.optimize_output &&
-          page_count == other.page_count &&
-          page_index == other.page_index &&
           resources_folder == other.resources_folder &&
           resources_folder_alias == other.resources_folder_alias
     end
@@ -253,7 +252,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, resources_folder, resources_folder_alias].hash
+      [color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, resources_folder, resources_folder_alias].hash
     end
 
     # Builds the object from hash

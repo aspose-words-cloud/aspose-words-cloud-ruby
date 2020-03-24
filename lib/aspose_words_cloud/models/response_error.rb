@@ -43,7 +43,6 @@ module AsposeWordsCloud
     # Gets or sets server datetime.
     attr_accessor :date_time
 
-    # Gets or sets inner error.
     attr_accessor :inner_error
 
 

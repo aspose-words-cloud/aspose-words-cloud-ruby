@@ -31,19 +31,16 @@ module AsposeWordsCloud
 
   # Section element.
   class HeaderFooter
-    # Gets or sets link to the document.
-    attr_accessor :link
-
     # Gets or sets paragraph's text.
     attr_accessor :type
+
+    attr_accessor :link
 
     # Gets or sets child nodes.
     attr_accessor :child_nodes
 
-    # Gets or sets link to DrawingObjects resource.
     attr_accessor :drawing_objects
 
-    # Gets or sets link to Paragraphs resource.
     attr_accessor :paragraphs
 
     class EnumAttributeValidator
@@ -71,8 +68,8 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'link' => :'link',
         :'type' => :'Type',
+        :'link' => :'link',
         :'child_nodes' => :'ChildNodes',
         :'drawing_objects' => :'DrawingObjects',
         :'paragraphs' => :'Paragraphs'
@@ -82,8 +79,8 @@ module AsposeWordsCloud
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'link' => :'WordsApiLink',
         :'type' => :'String',
+        :'link' => :'WordsApiLink',
         :'child_nodes' => :'Array<NodeLink>',
         :'drawing_objects' => :'LinkElement',
         :'paragraphs' => :'LinkElement'
@@ -98,12 +95,12 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'link')
-        self.link = attributes[:'link']
-      end
-
       if attributes.key?(:'Type')
         self.type = attributes[:'Type']
+      end
+
+      if attributes.key?(:'link')
+        self.link = attributes[:'link']
       end
 
       if attributes.key?(:'ChildNodes')
@@ -156,8 +153,8 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          link == other.link &&
           type == other.type &&
+          link == other.link &&
           child_nodes == other.child_nodes &&
           drawing_objects == other.drawing_objects &&
           paragraphs == other.paragraphs
@@ -172,7 +169,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, type, child_nodes, drawing_objects, paragraphs].hash
+      [type, link, child_nodes, drawing_objects, paragraphs].hash
     end
 
     # Builds the object from hash

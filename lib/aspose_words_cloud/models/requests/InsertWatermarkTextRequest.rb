@@ -34,7 +34,7 @@ module AsposeWordsCloud
 
         # The document name.
         attr_accessor :name
-        # with the watermark data.            
+        # WatermarkText with the watermark data.             
         attr_accessor :watermark_text
         # Original document folder.
         attr_accessor :folder
@@ -54,7 +54,7 @@ module AsposeWordsCloud
         #
         # Initializes a new instance.
         # @param name The document name.
-        # @param watermark_text with the watermark data.            
+        # @param watermark_text WatermarkText with the watermark data.             
         # @param folder Original document folder.
         # @param storage Original document storage.
         # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

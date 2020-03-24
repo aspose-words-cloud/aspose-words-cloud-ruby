@@ -31,7 +31,6 @@ module AsposeWordsCloud
 
   # Represents the table properties.             
   class TableProperties
-    # Gets or sets link to the document.
     attr_accessor :link
 
     # Gets or sets specifies how an inline table is aligned in the document.
@@ -55,7 +54,6 @@ module AsposeWordsCloud
     # Gets or sets the amount of space (in points) to add to the left of the contents of cells.
     attr_accessor :left_padding
 
-    # Gets or sets the table preferred width. Preferred width can be specified as a percentage, number of points or a special \"auto\" value.
     attr_accessor :preferred_width
 
     # Gets or sets the amount of space (in points) to add to the right of the contents of cells.
@@ -70,7 +68,7 @@ module AsposeWordsCloud
     # Gets or sets bit flags that specify how a table style is applied to this table.
     attr_accessor :style_options
 
-    # Gets or sets get or sets TextWrapping  for table.
+    # Gets or sets get or sets TextWrapping for table.
     attr_accessor :text_wrapping
 
     # Gets or sets the amount of space (in points) to add above the contents of cells.

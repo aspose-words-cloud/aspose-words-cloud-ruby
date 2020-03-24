@@ -34,7 +34,7 @@ module AsposeWordsCloud
 
         # The document name.
         attr_accessor :name
-        # with new bookmark data.            
+        # BookmarkData with new bookmark data.
         attr_accessor :bookmark_data
         # The bookmark name.
         attr_accessor :bookmark_name
@@ -56,7 +56,7 @@ module AsposeWordsCloud
         #
         # Initializes a new instance.
         # @param name The document name.
-        # @param bookmark_data with new bookmark data.            
+        # @param bookmark_data BookmarkData with new bookmark data.
         # @param bookmark_name The bookmark name.
         # @param folder Original document folder.
         # @param storage Original document storage.

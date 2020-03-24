@@ -34,7 +34,7 @@ module AsposeWordsCloud
 
         # Original document name.
         attr_accessor :name
-        # with a list of documents to append.            
+        # DocumentEntryList with a list of documents to append.
         attr_accessor :document_list
         # Original document folder.
         attr_accessor :folder
@@ -54,7 +54,7 @@ module AsposeWordsCloud
         #
         # Initializes a new instance.
         # @param name Original document name.
-        # @param document_list with a list of documents to append.            
+        # @param document_list DocumentEntryList with a list of documents to append.
         # @param folder Original document folder.
         # @param storage Original document storage.
         # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

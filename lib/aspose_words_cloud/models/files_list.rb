@@ -31,7 +31,7 @@ module AsposeWordsCloud
 
   # Files list
   class FilesList
-    # Files and folders contained by folder .
+    # Files and folders contained by folder StorageFile.
     attr_accessor :value
 
 

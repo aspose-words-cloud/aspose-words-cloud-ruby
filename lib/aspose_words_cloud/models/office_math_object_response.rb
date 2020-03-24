@@ -29,12 +29,11 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/officeMathObjects/0.
+  # This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/officeMathObjects/0.
   class OfficeMathObjectResponse
     # Gets or sets request Id.
     attr_accessor :request_id
 
-    # Gets or sets officeMathObject information.
     attr_accessor :office_math_object
 
 

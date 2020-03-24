@@ -29,12 +29,11 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/sections.
+  # This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/sections.
   class SectionLinkCollectionResponse
     # Gets or sets request Id.
     attr_accessor :request_id
 
-    # Gets or sets collection of sections.
     attr_accessor :sections
 
 

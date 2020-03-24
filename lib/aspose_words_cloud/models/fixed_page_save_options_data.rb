@@ -49,7 +49,7 @@ module AsposeWordsCloud
     # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
     attr_accessor :update_last_saved_time_property
 
-    # Gets or sets value determining whether content of  is updated before saving.
+    # Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.
     attr_accessor :update_sdt_content
 
     # Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true
@@ -61,7 +61,6 @@ module AsposeWordsCloud
     # Gets or sets determines the quality of the JPEG images inside PDF document.
     attr_accessor :jpeg_quality
 
-    # Gets or sets allows to specify metafile rendering options.
     attr_accessor :metafile_rendering_options
 
     # Gets or sets indicates the symbol set that is used to represent numbers while rendering to fixed page formats.

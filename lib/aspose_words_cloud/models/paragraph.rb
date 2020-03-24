@@ -31,11 +31,10 @@ module AsposeWordsCloud
 
   # Paragraph element.
   class Paragraph
-    # Gets or sets link to the document.
-    attr_accessor :link
-
     # Gets or sets node id.
     attr_accessor :node_id
+
+    attr_accessor :link
 
     # Gets or sets child nodes.
     attr_accessor :child_nodes
@@ -44,8 +43,8 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'link' => :'link',
         :'node_id' => :'NodeId',
+        :'link' => :'link',
         :'child_nodes' => :'ChildNodes'
       }
     end
@@ -53,8 +52,8 @@ module AsposeWordsCloud
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'link' => :'WordsApiLink',
         :'node_id' => :'String',
+        :'link' => :'WordsApiLink',
         :'child_nodes' => :'Array<NodeLink>'
       }
     end
@@ -67,12 +66,12 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'link')
-        self.link = attributes[:'link']
-      end
-
       if attributes.key?(:'NodeId')
         self.node_id = attributes[:'NodeId']
+      end
+
+      if attributes.key?(:'link')
+        self.link = attributes[:'link']
       end
 
       if attributes.key?(:'ChildNodes')
@@ -101,8 +100,8 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          link == other.link &&
           node_id == other.node_id &&
+          link == other.link &&
           child_nodes == other.child_nodes
     end
 
@@ -115,7 +114,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, node_id, child_nodes].hash
+      [node_id, link, child_nodes].hash
     end
 
     # Builds the object from hash

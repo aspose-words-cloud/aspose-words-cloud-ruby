@@ -31,7 +31,6 @@ module AsposeWordsCloud
 
   # Represents all formatting for a table row.
   class TableRowFormat
-    # Gets or sets link to the document.
     attr_accessor :link
 
     # Gets or sets true if the text in a table row is allowed to split across a page break.

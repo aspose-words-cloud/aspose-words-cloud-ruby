@@ -120,7 +120,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'RevisionsModificationResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#accept_all_revisions\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -222,7 +221,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#append_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -291,7 +289,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'ClassificationResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#classify\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -386,7 +383,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'ClassificationResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#classify_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -478,7 +474,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#compare_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -567,7 +562,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#convert_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -650,7 +644,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#copy_file\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -728,7 +721,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#copy_folder\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -805,7 +797,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#create_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -874,7 +865,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#create_folder\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -979,7 +969,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentPropertyResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#create_or_update_document_property\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -1087,7 +1076,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'BorderResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_border\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -1190,7 +1178,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'BordersResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_borders\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -1292,7 +1279,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_comment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -1394,7 +1380,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_document_property\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -1499,7 +1484,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_drawing_object\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -1601,7 +1585,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_drawing_object_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -1706,7 +1689,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -1808,7 +1790,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_field_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -1910,7 +1891,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_fields\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -2009,7 +1989,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_fields_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -2083,7 +2062,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_file\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -2157,7 +2135,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_folder\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -2262,7 +2239,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_footnote\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -2364,7 +2340,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_footnote_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -2469,7 +2444,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_form_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -2571,7 +2545,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_form_field_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -2676,7 +2649,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_header_footer\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -2783,7 +2755,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_headers_footers\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -2882,7 +2853,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_macros\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -2987,7 +2957,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_office_math_object\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -3089,7 +3058,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_office_math_object_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -3194,7 +3162,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_paragraph\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -3296,7 +3263,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_paragraph_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -3401,7 +3367,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_run\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -3503,7 +3468,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_section\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -3608,7 +3572,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_table\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -3713,7 +3676,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_table_cell\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -3818,7 +3780,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_table_row\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -3920,7 +3881,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_table_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4020,7 +3980,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_watermark\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4095,7 +4054,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#download_file\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4206,7 +4164,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#execute_mail_merge\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4289,7 +4246,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#execute_mail_merge_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4356,7 +4312,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'AvailableFontsResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_available_fonts\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4444,7 +4399,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'BookmarkResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_bookmark_by_name\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4529,7 +4483,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'BookmarksResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_bookmarks\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4622,7 +4575,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'BorderResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_border\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4710,7 +4662,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'BordersResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_borders\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4798,7 +4749,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'CommentResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_comment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4883,7 +4833,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'CommentsResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_comments\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4968,7 +4917,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5059,7 +5007,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DrawingObjectResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_drawing_object_by_index\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5147,7 +5094,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DrawingObjectResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_drawing_object_by_index_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5238,7 +5184,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_drawing_object_image_data\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5326,7 +5271,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_drawing_object_image_data_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5417,7 +5361,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_drawing_object_ole_data\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5505,7 +5448,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_drawing_object_ole_data_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5593,7 +5535,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DrawingObjectsResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_drawing_objects\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5678,7 +5619,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DrawingObjectsResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_drawing_objects_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5768,7 +5708,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FieldNamesResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_field_names\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5838,7 +5777,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FieldNamesResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_field_names_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5926,7 +5864,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'HyperlinkResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_hyperlink_by_index\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6011,7 +5948,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'HyperlinksResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_hyperlinks\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6096,7 +6032,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentPropertiesResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_properties\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6184,7 +6119,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentPropertyResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_property\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6269,7 +6203,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'ProtectionDataResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_protection\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6369,7 +6302,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'StatDataResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_statistics\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6468,7 +6400,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_with_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6559,7 +6490,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FieldResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6647,7 +6577,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FieldResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_field_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6735,7 +6664,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FieldsResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_fields\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6820,7 +6748,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FieldsResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_fields_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6890,7 +6817,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FilesList')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_files_list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6981,7 +6907,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FootnoteResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_footnote\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7069,7 +6994,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FootnoteResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_footnote_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7157,7 +7081,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FootnotesResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_footnotes\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7242,7 +7165,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FootnotesResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_footnotes_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7333,7 +7255,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FormFieldResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_form_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7421,7 +7342,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FormFieldResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_form_field_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7509,7 +7429,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FormFieldsResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_form_fields\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7594,7 +7513,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FormFieldsResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_form_fields_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7687,7 +7605,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'HeaderFooterResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_header_footer\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7783,7 +7700,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'HeaderFooterResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_header_footer_of_section\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7876,7 +7792,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'HeaderFootersResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_header_footers\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7967,7 +7882,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'OfficeMathObjectResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_office_math_object\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8055,7 +7969,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'OfficeMathObjectResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_office_math_object_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8143,7 +8056,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'OfficeMathObjectsResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_office_math_objects\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8228,7 +8140,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'OfficeMathObjectsResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_office_math_objects_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8319,7 +8230,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'ParagraphResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_paragraph\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8410,7 +8320,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'ParagraphFormatResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_paragraph_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8498,7 +8407,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'ParagraphFormatResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_paragraph_format_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8586,7 +8494,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'ParagraphResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_paragraph_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8674,7 +8581,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'ParagraphLinkCollectionResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_paragraphs\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8759,7 +8665,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'ParagraphLinkCollectionResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_paragraphs_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8798,8 +8703,6 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_range_text' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'range_start_identifier' is set
       raise ArgumentError, 'Missing the required parameter range_start_identifier when calling WordsApi.get_range_text' if @api_client.config.client_side_validation && request.range_start_identifier.nil?
-      # verify the required parameter 'range_end_identifier' is set
-      raise ArgumentError, 'Missing the required parameter range_end_identifier when calling WordsApi.get_range_text' if @api_client.config.client_side_validation && request.range_end_identifier.nil?
       # resource path
       local_var_path = '/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -8850,7 +8753,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'RangeTextResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_range_text\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8941,7 +8843,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'RunResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_run\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -9032,7 +8933,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FontResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_run_font\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -9120,7 +9020,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'RunsResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_runs\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -9208,7 +9107,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'SectionResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_section\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -9296,7 +9194,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'SectionPageSetupResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_section_page_setup\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -9381,7 +9278,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'SectionLinkCollectionResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_sections\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -9472,7 +9368,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TableResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_table\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -9563,7 +9458,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TableCellResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_table_cell\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -9654,7 +9548,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TableCellFormatResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_table_cell_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -9745,7 +9638,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TablePropertiesResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_table_properties\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -9833,7 +9725,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TablePropertiesResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_table_properties_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -9924,7 +9815,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TableRowResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_table_row\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -10015,7 +9905,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TableRowFormatResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_table_row_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -10103,7 +9992,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TableResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_table_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -10191,7 +10079,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TableLinkCollectionResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_tables\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -10276,7 +10163,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TableLinkCollectionResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_tables_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -10378,7 +10264,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'CommentResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_comment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -10487,7 +10372,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DrawingObjectResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_drawing_object\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -10593,7 +10477,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DrawingObjectResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_drawing_object_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -10703,7 +10586,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FieldResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -10810,7 +10692,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FieldResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_field_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -10915,7 +10796,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FootnoteResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_footnote\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -11017,7 +10897,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FootnoteResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_footnote_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -11127,7 +11006,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FormFieldResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_form_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -11234,7 +11112,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FormFieldResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_form_field_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -11339,7 +11216,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'HeaderFooterResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_header_footer\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -11441,7 +11317,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_page_numbers\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -11551,7 +11426,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'ParagraphResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_paragraph\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -11661,7 +11535,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'RunResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_run\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -11698,6 +11571,8 @@ module AsposeWordsCloud
       @api_client.config.logger.debug 'Calling API: WordsApi.insert_table ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.insert_table' if @api_client.config.client_side_validation && request.name.nil?
+      # verify the required parameter 'table' is set
+      raise ArgumentError, 'Missing the required parameter table when calling WordsApi.insert_table' if @api_client.config.client_side_validation && request.table.nil?
       # verify the required parameter 'node_path' is set
       raise ArgumentError, 'Missing the required parameter node_path when calling WordsApi.insert_table' if @api_client.config.client_side_validation && request.node_path.nil?
       # resource path
@@ -11764,7 +11639,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TableResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_table\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -11801,6 +11675,8 @@ module AsposeWordsCloud
       @api_client.config.logger.debug 'Calling API: WordsApi.insert_table_cell ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.insert_table_cell' if @api_client.config.client_side_validation && request.name.nil?
+      # verify the required parameter 'cell' is set
+      raise ArgumentError, 'Missing the required parameter cell when calling WordsApi.insert_table_cell' if @api_client.config.client_side_validation && request.cell.nil?
       # verify the required parameter 'table_row_path' is set
       raise ArgumentError, 'Missing the required parameter table_row_path when calling WordsApi.insert_table_cell' if @api_client.config.client_side_validation && request.table_row_path.nil?
       # resource path
@@ -11867,7 +11743,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TableCellResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_table_cell\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -11904,6 +11779,8 @@ module AsposeWordsCloud
       @api_client.config.logger.debug 'Calling API: WordsApi.insert_table_row ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.insert_table_row' if @api_client.config.client_side_validation && request.name.nil?
+      # verify the required parameter 'row' is set
+      raise ArgumentError, 'Missing the required parameter row when calling WordsApi.insert_table_row' if @api_client.config.client_side_validation && request.row.nil?
       # verify the required parameter 'table_path' is set
       raise ArgumentError, 'Missing the required parameter table_path when calling WordsApi.insert_table_row' if @api_client.config.client_side_validation && request.table_path.nil?
       # resource path
@@ -11970,7 +11847,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TableRowResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_table_row\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -12007,6 +11883,8 @@ module AsposeWordsCloud
       @api_client.config.logger.debug 'Calling API: WordsApi.insert_table_without_node_path ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.insert_table_without_node_path' if @api_client.config.client_side_validation && request.name.nil?
+      # verify the required parameter 'table' is set
+      raise ArgumentError, 'Missing the required parameter table when calling WordsApi.insert_table_without_node_path' if @api_client.config.client_side_validation && request.table.nil?
       # resource path
       local_var_path = '/words/{name}/tables'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -12070,7 +11948,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TableResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_table_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -12181,7 +12058,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_watermark_image\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -12283,7 +12159,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_watermark_text\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -12352,7 +12227,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'SaveResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#load_web_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -12435,7 +12309,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#move_file\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -12513,7 +12386,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#move_folder\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -12605,7 +12477,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'ProtectionDataResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#protect_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -12695,7 +12566,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'RevisionsModificationResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#reject_all_revisions\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -12734,8 +12604,6 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.remove_range' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'range_start_identifier' is set
       raise ArgumentError, 'Missing the required parameter range_start_identifier when calling WordsApi.remove_range' if @api_client.config.client_side_validation && request.range_start_identifier.nil?
-      # verify the required parameter 'range_end_identifier' is set
-      raise ArgumentError, 'Missing the required parameter range_end_identifier when calling WordsApi.remove_range' if @api_client.config.client_side_validation && request.range_end_identifier.nil?
       # resource path
       local_var_path = '/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -12791,7 +12659,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#remove_range\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -12891,7 +12758,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#render_drawing_object\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -12988,7 +12854,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#render_drawing_object_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -13088,7 +12953,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#render_math_object\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -13185,7 +13049,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#render_math_object_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -13282,7 +13145,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#render_page\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -13382,7 +13244,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#render_paragraph\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -13479,7 +13340,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#render_paragraph_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -13579,7 +13439,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#render_table\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -13676,7 +13535,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#render_table_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -13778,7 +13636,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'ReplaceTextResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#replace_text\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -13819,8 +13676,6 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter range_start_identifier when calling WordsApi.replace_with_text' if @api_client.config.client_side_validation && request.range_start_identifier.nil?
       # verify the required parameter 'range_text' is set
       raise ArgumentError, 'Missing the required parameter range_text when calling WordsApi.replace_with_text' if @api_client.config.client_side_validation && request.range_text.nil?
-      # verify the required parameter 'range_end_identifier' is set
-      raise ArgumentError, 'Missing the required parameter range_end_identifier when calling WordsApi.replace_with_text' if @api_client.config.client_side_validation && request.range_end_identifier.nil?
       # resource path
       local_var_path = '/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -13876,7 +13731,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#replace_with_text\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -13937,7 +13791,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#reset_cache\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -14029,7 +13882,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'SaveResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#save_as\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -14070,8 +13922,6 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter range_start_identifier when calling WordsApi.save_as_range' if @api_client.config.client_side_validation && request.range_start_identifier.nil?
       # verify the required parameter 'document_parameters' is set
       raise ArgumentError, 'Missing the required parameter document_parameters when calling WordsApi.save_as_range' if @api_client.config.client_side_validation && request.document_parameters.nil?
-      # verify the required parameter 'range_end_identifier' is set
-      raise ArgumentError, 'Missing the required parameter range_end_identifier when calling WordsApi.save_as_range' if @api_client.config.client_side_validation && request.range_end_identifier.nil?
       # resource path
       local_var_path = '/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}/SaveAs'
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -14122,7 +13972,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#save_as_range\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -14299,7 +14148,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'SaveResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#save_as_tiff\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -14388,7 +14236,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'SearchResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#search\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -14503,7 +14350,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'SplitDocumentResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#split_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -14595,7 +14441,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'ProtectionDataResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#unprotect_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -14700,7 +14545,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'BookmarkResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_bookmark\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -14810,7 +14654,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'BorderResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_border\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -14915,7 +14758,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'CommentResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_comment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -15027,7 +14869,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DrawingObjectResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_drawing_object\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -15136,7 +14977,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DrawingObjectResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_drawing_object_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -15244,7 +15084,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FieldResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -15334,7 +15173,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_fields\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -15442,7 +15280,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FootnoteResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_footnote\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -15547,7 +15384,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FootnoteResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_footnote_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -15655,7 +15491,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FormFieldResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_form_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -15760,7 +15595,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FormFieldResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_form_field_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -15868,7 +15702,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'ParagraphFormatResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_paragraph_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -15976,7 +15809,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'RunResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_run\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -16084,7 +15916,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FontResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_run_font\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -16189,7 +16020,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'SectionPageSetupResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_section_page_setup\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -16226,6 +16056,8 @@ module AsposeWordsCloud
       @api_client.config.logger.debug 'Calling API: WordsApi.update_table_cell_format ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.update_table_cell_format' if @api_client.config.client_side_validation && request.name.nil?
+      # verify the required parameter 'format' is set
+      raise ArgumentError, 'Missing the required parameter format when calling WordsApi.update_table_cell_format' if @api_client.config.client_side_validation && request.format.nil?
       # verify the required parameter 'table_row_path' is set
       raise ArgumentError, 'Missing the required parameter table_row_path when calling WordsApi.update_table_cell_format' if @api_client.config.client_side_validation && request.table_row_path.nil?
       # verify the required parameter 'index' is set
@@ -16295,7 +16127,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TableCellFormatResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_table_cell_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -16332,6 +16163,8 @@ module AsposeWordsCloud
       @api_client.config.logger.debug 'Calling API: WordsApi.update_table_properties ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.update_table_properties' if @api_client.config.client_side_validation && request.name.nil?
+      # verify the required parameter 'properties' is set
+      raise ArgumentError, 'Missing the required parameter properties when calling WordsApi.update_table_properties' if @api_client.config.client_side_validation && request.properties.nil?
       # verify the required parameter 'node_path' is set
       raise ArgumentError, 'Missing the required parameter node_path when calling WordsApi.update_table_properties' if @api_client.config.client_side_validation && request.node_path.nil?
       # verify the required parameter 'index' is set
@@ -16401,7 +16234,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TablePropertiesResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_table_properties\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -16438,6 +16270,8 @@ module AsposeWordsCloud
       @api_client.config.logger.debug 'Calling API: WordsApi.update_table_properties_without_node_path ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.update_table_properties_without_node_path' if @api_client.config.client_side_validation && request.name.nil?
+      # verify the required parameter 'properties' is set
+      raise ArgumentError, 'Missing the required parameter properties when calling WordsApi.update_table_properties_without_node_path' if @api_client.config.client_side_validation && request.properties.nil?
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_table_properties_without_node_path' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
@@ -16504,7 +16338,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TablePropertiesResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_table_properties_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -16541,6 +16374,8 @@ module AsposeWordsCloud
       @api_client.config.logger.debug 'Calling API: WordsApi.update_table_row_format ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.update_table_row_format' if @api_client.config.client_side_validation && request.name.nil?
+      # verify the required parameter 'format' is set
+      raise ArgumentError, 'Missing the required parameter format when calling WordsApi.update_table_row_format' if @api_client.config.client_side_validation && request.format.nil?
       # verify the required parameter 'table_path' is set
       raise ArgumentError, 'Missing the required parameter table_path when calling WordsApi.update_table_row_format' if @api_client.config.client_side_validation && request.table_path.nil?
       # verify the required parameter 'index' is set
@@ -16610,7 +16445,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TableRowFormatResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_table_row_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -16683,7 +16517,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FilesUploadResult')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#upload_file\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"

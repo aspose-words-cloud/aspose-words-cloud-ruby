@@ -29,12 +29,11 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/paragraphs/{0}/runs/{1}/font.
+  # This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/paragraphs/{0}/runs/{1}/font.
   class FontResponse
     # Gets or sets request Id.
     attr_accessor :request_id
 
-    # Gets or sets font.
     attr_accessor :font
 
 

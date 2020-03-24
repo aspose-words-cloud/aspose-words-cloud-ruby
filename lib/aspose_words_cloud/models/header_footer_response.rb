@@ -29,12 +29,11 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/headersfooters/{0}.
+  # This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/headersfooters/{0}.
   class HeaderFooterResponse
     # Gets or sets request Id.
     attr_accessor :request_id
 
-    # Gets or sets headerFooter.
     attr_accessor :header_footer
 
 

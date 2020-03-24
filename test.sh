@@ -1,2 +1,2 @@
 #!/bin/bash
-testrbl --verbose tests/**/*_tests.rb
+gem install bundler -v 2.0.2 && bundle install && rake test

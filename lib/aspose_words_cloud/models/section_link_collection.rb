@@ -31,7 +31,6 @@ module AsposeWordsCloud
 
   # Collection of links to sections.
   class SectionLinkCollection
-    # Gets or sets link to the document.
     attr_accessor :link
 
     # Gets or sets collection of section's links.

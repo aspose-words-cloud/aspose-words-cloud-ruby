@@ -29,7 +29,7 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # Utility class for  serialization.
+  # Utility class for Color serialization.
   class XmlColor
     # Gets or sets hTML string color representation.
     attr_accessor :web

@@ -248,8 +248,8 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = InsertTableRequest.new remote_name, '', remote_test_folder + test_folder, nil,nil,
-                                       nil,nil,nil,nil, table_dto
+      request = InsertTableRequest.new remote_name, table_dto, '', remote_test_folder + test_folder, nil,nil,
+                                       nil,nil,nil,nil
       result = @words_api.insert_table request
       assert_equal FALSE, result.nil?
     end
@@ -264,8 +264,8 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = InsertTableWithoutNodePathRequest.new remote_name, remote_test_folder + test_folder, nil,nil,
-                                       nil,nil,nil,nil, table_dto
+      request = InsertTableWithoutNodePathRequest.new remote_name, table_dto, remote_test_folder + test_folder, nil,nil,
+                                       nil,nil,nil,nil
       result = @words_api.insert_table_without_node_path request
       assert_equal FALSE, result.nil?
     end
@@ -280,9 +280,9 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = InsertTableCellRequest.new remote_name, 'sections/0/tables/2/rows/0', remote_test_folder + test_folder,
+      request = InsertTableCellRequest.new remote_name, cell, 'sections/0/tables/2/rows/0', remote_test_folder + test_folder,
                                            nil,nil, nil,nil,
-                                           nil,nil, cell
+                                           nil,nil
       result = @words_api.insert_table_cell request
       assert_equal FALSE, result.nil?
     end
@@ -297,9 +297,8 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = InsertTableRowRequest.new remote_name, 'sections/0/tables/2', remote_test_folder + test_folder,nil,
-                                          nil,nil,nil,nil,nil,
-                                          row
+      request = InsertTableRowRequest.new remote_name, row, 'sections/0/tables/2', remote_test_folder + test_folder,nil,
+                                          nil,nil,nil,nil,nil
       result = @words_api.insert_table_row request
       assert_equal FALSE, result.nil?
     end
@@ -347,9 +346,8 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = UpdateTableCellFormatRequest.new remote_name, 'sections/0/tables/2/rows/0', index, remote_test_folder + test_folder, nil,
-                                                 nil,nil,nil,nil,nil,
-                                                 format
+      request = UpdateTableCellFormatRequest.new remote_name, format, 'sections/0/tables/2/rows/0', index, remote_test_folder + test_folder, nil,
+                                                 nil,nil,nil,nil,nil
       result = @words_api.update_table_cell_format request
       assert_equal FALSE, result.nil?
     end
@@ -397,7 +395,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = UpdateTablePropertiesRequest.new remote_name, '', index, remote_test_folder + test_folder, :properties => props
+      request = UpdateTablePropertiesRequest.new remote_name, props, '', index, remote_test_folder + test_folder
       result = @words_api.update_table_properties request
       assert_equal FALSE, result.nil?
     end
@@ -411,7 +409,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = UpdateTablePropertiesWithoutNodePathRequest.new remote_name, 1, remote_test_folder + test_folder, :properties => props
+      request = UpdateTablePropertiesWithoutNodePathRequest.new remote_name, props, 1, remote_test_folder + test_folder
       result = @words_api.update_table_properties_without_node_path request
       assert_equal FALSE, result.nil?
     end
@@ -427,7 +425,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = UpdateTableRowFormatRequest.new remote_name, 'sections/0/tables/2', index, remote_test_folder + test_folder, :format => format
+      request = UpdateTableRowFormatRequest.new remote_name, format, 'sections/0/tables/2', index, remote_test_folder + test_folder
       result = @words_api.update_table_row_format request
       assert_equal FALSE, result.nil?
     end
