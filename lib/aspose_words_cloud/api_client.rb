@@ -68,9 +68,11 @@ module AsposeWordsCloud
     def call_api(http_method, path, opts = {})
       if @config.api_key['app_sid'].nil? || @config.api_key['app_sid'] == ''
         raise "AppSid could not be an empty string."
+      end
       
       if @config.api_key['app_key'].nil? || @config.api_key['app_key'] == ''
         raise "AppKey could not be an empty string."
+      end
       
       response = build_request(http_method, path, opts)
       download_file response if opts[:return_type] == 'File'
