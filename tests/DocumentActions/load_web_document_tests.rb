@@ -39,7 +39,6 @@ module AsposeWordsCloud
           {
               :FileName => 'google.doc',
               :SaveFormat => 'doc',
-              :ColorMode => "1",
               :DmlEffectsRenderingMode => "1",
               :DmlRenderingMode => "1",
               :UpdateStdContents => false,

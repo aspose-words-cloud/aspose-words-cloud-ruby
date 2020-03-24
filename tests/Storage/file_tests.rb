@@ -78,8 +78,8 @@ module AsposeWordsCloud
         request = DownloadFileRequest.new remote_path_src
         begin 
           @words_api.download_file request
-          flunk "Source file should be deleted after move"
         rescue ApiError => ex
+          assert(ex.code == 404)
         end
       end
 
