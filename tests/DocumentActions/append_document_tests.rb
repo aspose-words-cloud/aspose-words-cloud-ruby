@@ -38,13 +38,13 @@ module AsposeWordsCloud
     def test_append_document
       filename = 'test_multi_pages.docx'
       remote_name = 'TestAppendDocument.docx'
-      remote_path = File.join(remote_test_folder, test_folder, remote_name)
-      dest_name = remote_test_out + remote_name
+      remote_folder = File.join(remote_test_folder, test_folder)
+      remote_path = File.join(remote_folder, remote_name)
       doc_entry = DocumentEntry.new({:Href => remote_path, :ImportFormatMode => "KeepSourceFormatting"})
       body = DocumentEntryList.new({:DocumentEntries => [doc_entry]})
 
       upload_file File.join(local_common_folder, filename), remote_path
-      request = AppendDocumentRequest.new remote_name, body, remote_test_folder, :dest_file_name => dest_name
+      request = AppendDocumentRequest.new remote_name, body, remote_folder
       result = @words_api.append_document request
       assert_equal false, result.document.nil?
     end
