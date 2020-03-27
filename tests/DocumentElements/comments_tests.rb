@@ -83,7 +83,7 @@ module AsposeWordsCloud
       comment_index = 0
       node_link = NodeLink.new({:NodeId => '0.3.0.3'})
       document_position = DocumentPosition.new({:Node => node_link, :Offset => 0})
-      body = Comment.new({:RangeStart => document_position, :RangeEnd => document_position, :Initial => 'YE', :Author => 'Yaroslav Ekimov', :Text => 'A new comment'})
+      body = CommentUpdate.new({:RangeStart => document_position, :RangeEnd => document_position, :Initial => 'YE', :Author => 'Yaroslav Ekimov', :Text => 'A new comment'})
 
       upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
@@ -100,7 +100,7 @@ module AsposeWordsCloud
       remote_name = 'TestInsertComment.docx'
       node_link = NodeLink.new({:NodeId => '0.3.0.3'})
       document_position = DocumentPosition.new({:Node => node_link, :Offset => 0})
-      body = Comment.new({:RangeStart => document_position, :RangeEnd => document_position, :Initial => 'YE', :Author => 'Yaroslav Ekimov', :Text => 'A new comment'})
+      body = CommentInsert.new({:RangeStart => document_position, :RangeEnd => document_position, :Initial => 'YE', :Author => 'Yaroslav Ekimov', :Text => 'A new comment'})
 
       upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
