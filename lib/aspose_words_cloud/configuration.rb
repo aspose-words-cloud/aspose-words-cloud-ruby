@@ -32,10 +32,16 @@ module AsposeWordsCloud
   class Configuration
     
     # Defines v4 api version
-    V4_API_VERSION = '/v4.0/'.freeze
+    V4_API_VERSION = '/v4.0'.freeze
 
-    # Defines base url
-    attr_accessor :baseUrl
+    # Defines url scheme
+    attr_accessor :scheme
+
+    # Defines url host
+    attr_accessor :host
+
+    # Defines url api version
+    attr_accessor :api_version
 
     # Defines API keys used with API Key authentications.
     #
@@ -96,7 +102,8 @@ module AsposeWordsCloud
 
 	
     def initialize
-      @baseUrl = "https://api.aspose.cloud"
+      @scheme = 'https'
+      @host = "api.aspose.cloud"
       @api_version = V4_API_VERSION
       @api_key = {}
       @api_key_prefix = {}
@@ -117,13 +124,22 @@ module AsposeWordsCloud
       yield(self) if block_given?
     end
 
+    # sets the scheme
+    def scheme=(scheme)
+      # remove :// from scheme
+      @scheme = scheme.sub(/:\/\//, '')
+    end
+
+    # sets the host
+    def host=(host)
+      # remove http(s):// and anything after a slash
+      @host = host.sub(/https?:\/\//, '').split('/').first
+    end
+
     # returns base url
-    def getFullUrl(path, withoutVersion)
-      if withoutVersion
-        return URI.join(baseUrl, path).to_s
-      end
-      
-      return  URI.join(baseUrl, V4_API_VERSION, path).to_s
+    def base_url
+      url = "#{scheme}://#{[host, @api_version].join('/').gsub(/\/+/, '/')}".sub(/\/+\z/, '')
+      URI.encode(url)
     end
 
     # Gets API key (with prefix if set).
