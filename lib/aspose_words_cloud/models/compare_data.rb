@@ -40,13 +40,16 @@ module AsposeWordsCloud
     # Gets or sets the date and time to use for revisions.             
     attr_accessor :date_time
 
+    attr_accessor :compare_options
+
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'comparing_with_document' => :'ComparingWithDocument',
         :'author' => :'Author',
-        :'date_time' => :'DateTime'
+        :'date_time' => :'DateTime',
+        :'compare_options' => :'CompareOptions'
       }
     end
 
@@ -55,7 +58,8 @@ module AsposeWordsCloud
       {
         :'comparing_with_document' => :'String',
         :'author' => :'String',
-        :'date_time' => :'DateTime'
+        :'date_time' => :'DateTime',
+        :'compare_options' => :'CompareOptions'
       }
     end
 
@@ -77,6 +81,10 @@ module AsposeWordsCloud
 
       if attributes.key?(:'DateTime')
         self.date_time = attributes[:'DateTime']
+      end
+
+      if attributes.key?(:'CompareOptions')
+        self.compare_options = attributes[:'CompareOptions']
       end
 
     end
@@ -101,7 +109,8 @@ module AsposeWordsCloud
       self.class == other.class &&
           comparing_with_document == other.comparing_with_document &&
           author == other.author &&
-          date_time == other.date_time
+          date_time == other.date_time &&
+          compare_options == other.compare_options
     end
 
     # @see the `==` method
@@ -113,7 +122,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [comparing_with_document, author, date_time].hash
+      [comparing_with_document, author, date_time, compare_options].hash
     end
 
     # Builds the object from hash
