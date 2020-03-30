@@ -53,7 +53,7 @@ module AsposeWordsCloud
       filename = 'Run.doc'
       remote_name = 'TestUpdateRun.docx'
       index = 0
-      run = Run.new({:Text => 'Run with text'})
+      run = RunUpdate.new({:Text => 'Run with text'})
 
       upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
@@ -63,12 +63,12 @@ module AsposeWordsCloud
     end
 
     #
-    # Test for updating run
+    # Test for inserting run
     #
     def test_insert_run
       filename = 'Run.doc'
       remote_name = 'TestInsertRun.docx'
-      run = Run.new({:Text => 'Run with text'})
+      run = RunInsert.new({:Text => 'Run with text'})
 
       upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
