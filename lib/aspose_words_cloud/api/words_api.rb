@@ -481,7 +481,7 @@ module AsposeWordsCloud
       [data, status_code, headers]
     end
 
-    # Converts document from the request's content to the specified format .
+    # Converts document from the request's content to the specified format.
     # 
     # @param request ConvertDocumentRequest
     # @return [File]
@@ -499,7 +499,7 @@ module AsposeWordsCloud
       data
     end
 
-    # Converts document from the request&#39;s content to the specified format .
+    # Converts document from the request&#39;s content to the specified format.
     # 
     # @param request ConvertDocumentRequest
     # @return [Array<(File, Fixnum, Hash)>]
@@ -14272,12 +14272,16 @@ module AsposeWordsCloud
       @api_client.config.logger.debug 'Calling API: WordsApi.split_document ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.split_document' if @api_client.config.client_side_validation && request.name.nil?
+      # verify the required parameter 'format' is set
+      raise ArgumentError, 'Missing the required parameter format when calling WordsApi.split_document' if @api_client.config.client_side_validation && request.format.nil?
       # resource path
       local_var_path = '/words/{name}/split'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
+      query_params[downcase_first_letter('Format')] = request.format
+
       if local_var_path.include? downcase_first_letter('Folder')
         local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
       else
@@ -14302,11 +14306,6 @@ module AsposeWordsCloud
         local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
       else
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      end
-      if local_var_path.include? downcase_first_letter('Format')
-        local_var_path = local_var_path.sub('{' + downcase_first_letter('Format') + '}', request.format.to_s)
-      else
-        query_params[downcase_first_letter('Format')] = request.format unless request.format.nil?
       end
       if local_var_path.include? downcase_first_letter('From')
         local_var_path = local_var_path.sub('{' + downcase_first_letter('From') + '}', request.from.to_s)
