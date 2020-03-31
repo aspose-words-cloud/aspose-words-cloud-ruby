@@ -4,7 +4,14 @@ require 'date'
 module AsposeWordsCloud
 
   class ReportBuildOptions
-    NONE = "None".freeze    ALLOWMISSINGMEMBERS = "AllowMissingMembers".freeze    REMOVEEMPTYPARAGRAPHS = "RemoveEmptyParagraphs".freeze    INLINEERRORMESSAGES = "InlineErrorMessages".freeze
+    
+    NONE = "None".freeze
+    
+    ALLOWMISSINGMEMBERS = "AllowMissingMembers".freeze
+    
+    REMOVEEMPTYPARAGRAPHS = "RemoveEmptyParagraphs".freeze
+    
+    INLINEERRORMESSAGES = "InlineErrorMessages".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string
