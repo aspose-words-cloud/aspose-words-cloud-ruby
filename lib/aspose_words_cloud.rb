@@ -42,6 +42,8 @@ require_relative 'aspose_words_cloud/models/bmp_save_options_data'
 
 
 
+
+
 require_relative 'aspose_words_cloud/models/bookmark'
 require_relative 'aspose_words_cloud/models/bookmark_data'
 require_relative 'aspose_words_cloud/models/bookmark_response'
@@ -64,6 +66,7 @@ require_relative 'aspose_words_cloud/models/comments_collection'
 require_relative 'aspose_words_cloud/models/comments_response'
 require_relative 'aspose_words_cloud/models/compare_data'
 require_relative 'aspose_words_cloud/models/compare_options'
+require_relative 'aspose_words_cloud/models/csv_data_load_options'
 require_relative 'aspose_words_cloud/models/doc_save_options_data'
 require_relative 'aspose_words_cloud/models/document'
 require_relative 'aspose_words_cloud/models/document_entry'
@@ -176,6 +179,8 @@ require_relative 'aspose_words_cloud/models/range_text_response'
 require_relative 'aspose_words_cloud/models/replace_range'
 require_relative 'aspose_words_cloud/models/replace_text_parameters'
 require_relative 'aspose_words_cloud/models/replace_text_response'
+require_relative 'aspose_words_cloud/models/report_build_options'
+require_relative 'aspose_words_cloud/models/report_engine_settings'
 require_relative 'aspose_words_cloud/models/response_error'
 require_relative 'aspose_words_cloud/models/revisions_modification_response'
 require_relative 'aspose_words_cloud/models/rtf_save_options_data'

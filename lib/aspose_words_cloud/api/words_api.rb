@@ -228,6 +228,176 @@ module AsposeWordsCloud
       [data, status_code, headers]
     end
 
+    # Executes document \"build report\" operation.
+    # 
+    # @param request BuildReportRequest
+    # @return [DocumentResponse]
+    def build_report(request)
+      begin
+        data, _status_code, _headers = build_report_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = build_report_with_http_info(request)
+          else
+            raise
+          end
+      end			
+      data
+    end
+
+    # Executes document \&quot;build report\&quot; operation.
+    # 
+    # @param request BuildReportRequest
+    # @return [Array<(DocumentResponse, Fixnum, Hash)>]
+    # DocumentResponse data, response status code and response headers
+    private def build_report_with_http_info(request)
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? BuildReportRequest
+
+      @api_client.config.logger.debug 'Calling API: WordsApi.build_report ...' if @api_client.config.debugging
+      # verify the required parameter 'name' is set
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.build_report' if @api_client.config.client_side_validation && request.name.nil?
+      # verify the required parameter 'data' is set
+      raise ArgumentError, 'Missing the required parameter data when calling WordsApi.build_report' if @api_client.config.client_side_validation && request.data.nil?
+      # verify the required parameter 'report_engine_settings' is set
+      raise ArgumentError, 'Missing the required parameter report_engine_settings when calling WordsApi.build_report' if @api_client.config.client_side_validation && request.report_engine_settings.nil?
+      # resource path
+      local_var_path = '/words/{name}/buildReport'[1..-1]
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+
+      # query parameters
+      query_params = {}
+      if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+      else
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+      else
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+      end
+      if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+      else
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+      else
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+      end
+      if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+      else
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+      end
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+
+      # form parameters
+      form_params = {}
+      form_params[downcase_first_letter('Data')] = request.data
+      form_params[downcase_first_letter('ReportEngineSettings')] = request.report_engine_settings
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['JWT']
+	  
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DocumentResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#build_report\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
+    # Executes document \"build report\" online operation.
+    # 
+    # @param request BuildReportOnlineRequest
+    # @return [File]
+    def build_report_online(request)
+      begin
+        data, _status_code, _headers = build_report_online_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = build_report_online_with_http_info(request)
+          else
+            raise
+          end
+      end			
+      data
+    end
+
+    # Executes document \&quot;build report\&quot; online operation.
+    # 
+    # @param request BuildReportOnlineRequest
+    # @return [Array<(File, Fixnum, Hash)>]
+    # File data, response status code and response headers
+    private def build_report_online_with_http_info(request)
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? BuildReportOnlineRequest
+
+      @api_client.config.logger.debug 'Calling API: WordsApi.build_report_online ...' if @api_client.config.debugging
+      # verify the required parameter 'template' is set
+      raise ArgumentError, 'Missing the required parameter template when calling WordsApi.build_report_online' if @api_client.config.client_side_validation && request.template.nil?
+      # verify the required parameter 'data' is set
+      raise ArgumentError, 'Missing the required parameter data when calling WordsApi.build_report_online' if @api_client.config.client_side_validation && request.data.nil?
+      # verify the required parameter 'report_engine_settings' is set
+      raise ArgumentError, 'Missing the required parameter report_engine_settings when calling WordsApi.build_report_online' if @api_client.config.client_side_validation && request.report_engine_settings.nil?
+      # resource path
+      local_var_path = '/words/buildReport'[1..-1]
+
+      # query parameters
+      query_params = {}
+      if local_var_path.include? downcase_first_letter('DocumentFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DocumentFileName') + '}', request.document_file_name.to_s)
+      else
+        query_params[downcase_first_letter('DocumentFileName')] = request.document_file_name unless request.document_file_name.nil?
+      end
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+
+      # form parameters
+      form_params = {}
+      form_params[downcase_first_letter('Template')] = request.template
+      form_params[downcase_first_letter('Data')] = request.data
+      form_params[downcase_first_letter('ReportEngineSettings')] = request.report_engine_settings
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['JWT']
+	  
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'File')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#build_report_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
     # Classifies raw text.
     # 
     # @param request ClassifyRequest
