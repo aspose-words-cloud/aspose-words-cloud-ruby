@@ -55,11 +55,20 @@ module AsposeWordsCloud
     # Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true
     attr_accessor :update_fields
 
+    # Gets or sets a value determining how 3D effects are rendered.
+    attr_accessor :dml3_d_effects_rendering_mode
+
+    # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.
+    attr_accessor :update_last_printed_property
+
     # Gets or sets specifies whether export should correspond to ODT specification 1.1 strictly.
     attr_accessor :is_strict_schema11
 
     # Gets or sets allows to specify units of measure to apply to document content. The default value is Aspose.Words.Saving.OdtSaveMeasureUnit.Centimeters.  Open Office uses centimeters when specifying lengths, widths and other measurable formatting and content properties in documents whereas MS Office uses inches.
     attr_accessor :measure_unit
+
+    # Gets or sets a password to encrypt document.
+    attr_accessor :password
 
     # Gets or sets specifies whether or not use pretty formats output.
     attr_accessor :pretty_format
@@ -97,8 +106,11 @@ module AsposeWordsCloud
         :'update_last_saved_time_property' => :'UpdateLastSavedTimeProperty',
         :'update_sdt_content' => :'UpdateSdtContent',
         :'update_fields' => :'UpdateFields',
+        :'dml3_d_effects_rendering_mode' => :'Dml3DEffectsRenderingMode',
+        :'update_last_printed_property' => :'UpdateLastPrintedProperty',
         :'is_strict_schema11' => :'IsStrictSchema11',
         :'measure_unit' => :'MeasureUnit',
+        :'password' => :'Password',
         :'pretty_format' => :'PrettyFormat'
       }
     end
@@ -114,8 +126,11 @@ module AsposeWordsCloud
         :'update_last_saved_time_property' => :'BOOLEAN',
         :'update_sdt_content' => :'BOOLEAN',
         :'update_fields' => :'BOOLEAN',
+        :'dml3_d_effects_rendering_mode' => :'String',
+        :'update_last_printed_property' => :'BOOLEAN',
         :'is_strict_schema11' => :'BOOLEAN',
         :'measure_unit' => :'String',
+        :'password' => :'String',
         :'pretty_format' => :'BOOLEAN'
       }
     end
@@ -160,12 +175,24 @@ module AsposeWordsCloud
         self.update_fields = attributes[:'UpdateFields']
       end
 
+      if attributes.key?(:'Dml3DEffectsRenderingMode')
+        self.dml3_d_effects_rendering_mode = attributes[:'Dml3DEffectsRenderingMode']
+      end
+
+      if attributes.key?(:'UpdateLastPrintedProperty')
+        self.update_last_printed_property = attributes[:'UpdateLastPrintedProperty']
+      end
+
       if attributes.key?(:'IsStrictSchema11')
         self.is_strict_schema11 = attributes[:'IsStrictSchema11']
       end
 
       if attributes.key?(:'MeasureUnit')
         self.measure_unit = attributes[:'MeasureUnit']
+      end
+
+      if attributes.key?(:'Password')
+        self.password = attributes[:'Password']
       end
 
       if attributes.key?(:'PrettyFormat')
@@ -184,9 +211,25 @@ module AsposeWordsCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      dml3_d_effects_rendering_mode_validator = EnumAttributeValidator.new('String', ["Basic", "Advanced"])
+      return false unless dml3_d_effects_rendering_mode_validator.valid?(@dml3_d_effects_rendering_mode)
       measure_unit_validator = EnumAttributeValidator.new('String', ["Centimeters", "Inches"])
       return false unless measure_unit_validator.valid?(@measure_unit)
       return true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] dml3_d_effects_rendering_mode Object to be assigned
+    def dml3_d_effects_rendering_mode=(dml3_d_effects_rendering_mode)
+      validator = EnumAttributeValidator.new('String', ["Basic", "Advanced"])
+      if dml3_d_effects_rendering_mode.to_i == 0
+        unless validator.valid?(dml3_d_effects_rendering_mode)
+          raise ArgumentError, "invalid value for 'dml3_d_effects_rendering_mode', must be one of #{validator.allowable_values}."
+        end
+        @dml3_d_effects_rendering_mode = dml3_d_effects_rendering_mode
+      else
+        @dml3_d_effects_rendering_mode = validator.allowable_values[dml3_d_effects_rendering_mode.to_i]
+      end
     end
 
     # Custom attribute writer method checking allowed values (enum).
@@ -216,8 +259,11 @@ module AsposeWordsCloud
           update_last_saved_time_property == other.update_last_saved_time_property &&
           update_sdt_content == other.update_sdt_content &&
           update_fields == other.update_fields &&
+          dml3_d_effects_rendering_mode == other.dml3_d_effects_rendering_mode &&
+          update_last_printed_property == other.update_last_printed_property &&
           is_strict_schema11 == other.is_strict_schema11 &&
           measure_unit == other.measure_unit &&
+          password == other.password &&
           pretty_format == other.pretty_format
     end
 
@@ -230,7 +276,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, is_strict_schema11, measure_unit, pretty_format].hash
+      [save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, dml3_d_effects_rendering_mode, update_last_printed_property, is_strict_schema11, measure_unit, password, pretty_format].hash
     end
 
     # Builds the object from hash
