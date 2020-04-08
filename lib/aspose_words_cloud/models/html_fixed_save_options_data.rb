@@ -75,12 +75,6 @@ module AsposeWordsCloud
     # Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true
     attr_accessor :update_fields
 
-    # Gets or sets a value determining how 3D effects are rendered.
-    attr_accessor :dml3_d_effects_rendering_mode
-
-    # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.
-    attr_accessor :update_last_printed_property
-
     # Gets or sets specifies prefix which is added to all class names in style.css file. Default value is \"aw\".
     attr_accessor :css_class_names_prefix
 
@@ -120,30 +114,6 @@ module AsposeWordsCloud
     # Gets or sets specifies whether border around pages should be shown.
     attr_accessor :show_page_border
 
-    # Gets or sets flag indicates whether fonts from target machine must be used to display the document. If this flag is set to true, Aspose.Words.Saving.HtmlFixedSaveOptions.FontFormat and Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedFonts properties do not have effect, also Aspose.Words.Saving.HtmlFixedSaveOptions.ResourceSavingCallback is not fired for fonts. Default is false.
-    attr_accessor :use_target_machine_fonts
-
-    class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
-
-      def initialize(datatype, allowable_values)
-        @allowable_values = allowable_values.map do |value|
-          case datatype.to_s
-          when /Integer/i
-            value.to_i
-          when /Float/i
-            value.to_f
-          else
-            value
-          end
-        end
-      end
-
-      def valid?(value)
-        !value || allowable_values.include?(value)
-      end
-    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -163,8 +133,6 @@ module AsposeWordsCloud
         :'update_last_saved_time_property' => :'UpdateLastSavedTimeProperty',
         :'update_sdt_content' => :'UpdateSdtContent',
         :'update_fields' => :'UpdateFields',
-        :'dml3_d_effects_rendering_mode' => :'Dml3DEffectsRenderingMode',
-        :'update_last_printed_property' => :'UpdateLastPrintedProperty',
         :'css_class_names_prefix' => :'CssClassNamesPrefix',
         :'encoding' => :'Encoding',
         :'export_embedded_css' => :'ExportEmbeddedCss',
@@ -177,8 +145,7 @@ module AsposeWordsCloud
         :'resources_folder' => :'ResourcesFolder',
         :'resources_folder_alias' => :'ResourcesFolderAlias',
         :'save_font_face_css_separately' => :'SaveFontFaceCssSeparately',
-        :'show_page_border' => :'ShowPageBorder',
-        :'use_target_machine_fonts' => :'UseTargetMachineFonts'
+        :'show_page_border' => :'ShowPageBorder'
       }
     end
 
@@ -200,8 +167,6 @@ module AsposeWordsCloud
         :'update_last_saved_time_property' => :'BOOLEAN',
         :'update_sdt_content' => :'BOOLEAN',
         :'update_fields' => :'BOOLEAN',
-        :'dml3_d_effects_rendering_mode' => :'String',
-        :'update_last_printed_property' => :'BOOLEAN',
         :'css_class_names_prefix' => :'String',
         :'encoding' => :'String',
         :'export_embedded_css' => :'BOOLEAN',
@@ -214,8 +179,7 @@ module AsposeWordsCloud
         :'resources_folder' => :'String',
         :'resources_folder_alias' => :'String',
         :'save_font_face_css_separately' => :'BOOLEAN',
-        :'show_page_border' => :'BOOLEAN',
-        :'use_target_machine_fonts' => :'BOOLEAN'
+        :'show_page_border' => :'BOOLEAN'
       }
     end
 
@@ -287,14 +251,6 @@ module AsposeWordsCloud
         self.update_fields = attributes[:'UpdateFields']
       end
 
-      if attributes.key?(:'Dml3DEffectsRenderingMode')
-        self.dml3_d_effects_rendering_mode = attributes[:'Dml3DEffectsRenderingMode']
-      end
-
-      if attributes.key?(:'UpdateLastPrintedProperty')
-        self.update_last_printed_property = attributes[:'UpdateLastPrintedProperty']
-      end
-
       if attributes.key?(:'CssClassNamesPrefix')
         self.css_class_names_prefix = attributes[:'CssClassNamesPrefix']
       end
@@ -347,10 +303,6 @@ module AsposeWordsCloud
         self.show_page_border = attributes[:'ShowPageBorder']
       end
 
-      if attributes.key?(:'UseTargetMachineFonts')
-        self.use_target_machine_fonts = attributes[:'UseTargetMachineFonts']
-      end
-
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -363,23 +315,7 @@ module AsposeWordsCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      dml3_d_effects_rendering_mode_validator = EnumAttributeValidator.new('String', ["Basic", "Advanced"])
-      return false unless dml3_d_effects_rendering_mode_validator.valid?(@dml3_d_effects_rendering_mode)
       return true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] dml3_d_effects_rendering_mode Object to be assigned
-    def dml3_d_effects_rendering_mode=(dml3_d_effects_rendering_mode)
-      validator = EnumAttributeValidator.new('String', ["Basic", "Advanced"])
-      if dml3_d_effects_rendering_mode.to_i == 0
-        unless validator.valid?(dml3_d_effects_rendering_mode)
-          raise ArgumentError, "invalid value for 'dml3_d_effects_rendering_mode', must be one of #{validator.allowable_values}."
-        end
-        @dml3_d_effects_rendering_mode = dml3_d_effects_rendering_mode
-      else
-        @dml3_d_effects_rendering_mode = validator.allowable_values[dml3_d_effects_rendering_mode.to_i]
-      end
     end
 
     # Checks equality by comparing each attribute.
@@ -402,8 +338,6 @@ module AsposeWordsCloud
           update_last_saved_time_property == other.update_last_saved_time_property &&
           update_sdt_content == other.update_sdt_content &&
           update_fields == other.update_fields &&
-          dml3_d_effects_rendering_mode == other.dml3_d_effects_rendering_mode &&
-          update_last_printed_property == other.update_last_printed_property &&
           css_class_names_prefix == other.css_class_names_prefix &&
           encoding == other.encoding &&
           export_embedded_css == other.export_embedded_css &&
@@ -416,8 +350,7 @@ module AsposeWordsCloud
           resources_folder == other.resources_folder &&
           resources_folder_alias == other.resources_folder_alias &&
           save_font_face_css_separately == other.save_font_face_css_separately &&
-          show_page_border == other.show_page_border &&
-          use_target_machine_fonts == other.use_target_machine_fonts
+          show_page_border == other.show_page_border
     end
 
     # @see the `==` method
@@ -429,7 +362,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, dml3_d_effects_rendering_mode, update_last_printed_property, css_class_names_prefix, encoding, export_embedded_css, export_embedded_fonts, export_embedded_images, export_form_fields, font_format, page_horizontal_alignment, page_margins, resources_folder, resources_folder_alias, save_font_face_css_separately, show_page_border, use_target_machine_fonts].hash
+      [color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, css_class_names_prefix, encoding, export_embedded_css, export_embedded_fonts, export_embedded_images, export_form_fields, font_format, page_horizontal_alignment, page_margins, resources_folder, resources_folder_alias, save_font_face_css_separately, show_page_border].hash
     end
 
     # Builds the object from hash

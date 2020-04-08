@@ -75,12 +75,6 @@ module AsposeWordsCloud
     # Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true
     attr_accessor :update_fields
 
-    # Gets or sets a value determining how 3D effects are rendered.
-    attr_accessor :dml3_d_effects_rendering_mode
-
-    # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.
-    attr_accessor :update_last_printed_property
-
     # Gets or sets specifies the PDF standards compliance level for output documents.
     attr_accessor :compliance
 
@@ -119,9 +113,6 @@ module AsposeWordsCloud
 
     # Gets or sets specifies compression type to be used for all images in the document.
     attr_accessor :image_compression
-
-    # Gets or sets a flag indicating whether image interpolation shall be performed by a conforming reader. When false is specified, the flag is not written to the output document and the default behaviour of reader is used instead.
-    attr_accessor :interpolate_images
 
     # Gets or sets determines whether hyperlinks in the output Pdf document are forced to be opened in a new window (or tab) of a browser.
     attr_accessor :open_hyperlinks_in_new_window
@@ -192,8 +183,6 @@ module AsposeWordsCloud
         :'update_last_saved_time_property' => :'UpdateLastSavedTimeProperty',
         :'update_sdt_content' => :'UpdateSdtContent',
         :'update_fields' => :'UpdateFields',
-        :'dml3_d_effects_rendering_mode' => :'Dml3DEffectsRenderingMode',
-        :'update_last_printed_property' => :'UpdateLastPrintedProperty',
         :'compliance' => :'Compliance',
         :'create_note_hyperlinks' => :'CreateNoteHyperlinks',
         :'custom_properties_export' => :'CustomPropertiesExport',
@@ -208,7 +197,6 @@ module AsposeWordsCloud
         :'header_footer_bookmarks_export_mode' => :'HeaderFooterBookmarksExportMode',
         :'image_color_space_export_mode' => :'ImageColorSpaceExportMode',
         :'image_compression' => :'ImageCompression',
-        :'interpolate_images' => :'InterpolateImages',
         :'open_hyperlinks_in_new_window' => :'OpenHyperlinksInNewWindow',
         :'outline_options' => :'OutlineOptions',
         :'page_mode' => :'PageMode',
@@ -240,8 +228,6 @@ module AsposeWordsCloud
         :'update_last_saved_time_property' => :'BOOLEAN',
         :'update_sdt_content' => :'BOOLEAN',
         :'update_fields' => :'BOOLEAN',
-        :'dml3_d_effects_rendering_mode' => :'String',
-        :'update_last_printed_property' => :'BOOLEAN',
         :'compliance' => :'String',
         :'create_note_hyperlinks' => :'BOOLEAN',
         :'custom_properties_export' => :'String',
@@ -256,7 +242,6 @@ module AsposeWordsCloud
         :'header_footer_bookmarks_export_mode' => :'String',
         :'image_color_space_export_mode' => :'String',
         :'image_compression' => :'String',
-        :'interpolate_images' => :'BOOLEAN',
         :'open_hyperlinks_in_new_window' => :'BOOLEAN',
         :'outline_options' => :'OutlineOptionsData',
         :'page_mode' => :'String',
@@ -338,14 +323,6 @@ module AsposeWordsCloud
         self.update_fields = attributes[:'UpdateFields']
       end
 
-      if attributes.key?(:'Dml3DEffectsRenderingMode')
-        self.dml3_d_effects_rendering_mode = attributes[:'Dml3DEffectsRenderingMode']
-      end
-
-      if attributes.key?(:'UpdateLastPrintedProperty')
-        self.update_last_printed_property = attributes[:'UpdateLastPrintedProperty']
-      end
-
       if attributes.key?(:'Compliance')
         self.compliance = attributes[:'Compliance']
       end
@@ -402,10 +379,6 @@ module AsposeWordsCloud
         self.image_compression = attributes[:'ImageCompression']
       end
 
-      if attributes.key?(:'InterpolateImages')
-        self.interpolate_images = attributes[:'InterpolateImages']
-      end
-
       if attributes.key?(:'OpenHyperlinksInNewWindow')
         self.open_hyperlinks_in_new_window = attributes[:'OpenHyperlinksInNewWindow']
       end
@@ -458,25 +431,9 @@ module AsposeWordsCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      dml3_d_effects_rendering_mode_validator = EnumAttributeValidator.new('String', ["Basic", "Advanced"])
-      return false unless dml3_d_effects_rendering_mode_validator.valid?(@dml3_d_effects_rendering_mode)
       header_footer_bookmarks_export_mode_validator = EnumAttributeValidator.new('String', ["None", "First", "All"])
       return false unless header_footer_bookmarks_export_mode_validator.valid?(@header_footer_bookmarks_export_mode)
       return true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] dml3_d_effects_rendering_mode Object to be assigned
-    def dml3_d_effects_rendering_mode=(dml3_d_effects_rendering_mode)
-      validator = EnumAttributeValidator.new('String', ["Basic", "Advanced"])
-      if dml3_d_effects_rendering_mode.to_i == 0
-        unless validator.valid?(dml3_d_effects_rendering_mode)
-          raise ArgumentError, "invalid value for 'dml3_d_effects_rendering_mode', must be one of #{validator.allowable_values}."
-        end
-        @dml3_d_effects_rendering_mode = dml3_d_effects_rendering_mode
-      else
-        @dml3_d_effects_rendering_mode = validator.allowable_values[dml3_d_effects_rendering_mode.to_i]
-      end
     end
 
     # Custom attribute writer method checking allowed values (enum).
@@ -513,8 +470,6 @@ module AsposeWordsCloud
           update_last_saved_time_property == other.update_last_saved_time_property &&
           update_sdt_content == other.update_sdt_content &&
           update_fields == other.update_fields &&
-          dml3_d_effects_rendering_mode == other.dml3_d_effects_rendering_mode &&
-          update_last_printed_property == other.update_last_printed_property &&
           compliance == other.compliance &&
           create_note_hyperlinks == other.create_note_hyperlinks &&
           custom_properties_export == other.custom_properties_export &&
@@ -529,7 +484,6 @@ module AsposeWordsCloud
           header_footer_bookmarks_export_mode == other.header_footer_bookmarks_export_mode &&
           image_color_space_export_mode == other.image_color_space_export_mode &&
           image_compression == other.image_compression &&
-          interpolate_images == other.interpolate_images &&
           open_hyperlinks_in_new_window == other.open_hyperlinks_in_new_window &&
           outline_options == other.outline_options &&
           page_mode == other.page_mode &&
@@ -551,7 +505,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, dml3_d_effects_rendering_mode, update_last_printed_property, compliance, create_note_hyperlinks, custom_properties_export, digital_signature_details, display_doc_title, downsample_options, embed_full_fonts, encryption_details, escape_uri, export_document_structure, font_embedding_mode, header_footer_bookmarks_export_mode, image_color_space_export_mode, image_compression, interpolate_images, open_hyperlinks_in_new_window, outline_options, page_mode, preblend_images, preserve_form_fields, text_compression, use_book_fold_printing_settings, use_core_fonts, zoom_behavior, zoom_factor].hash
+      [color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, compliance, create_note_hyperlinks, custom_properties_export, digital_signature_details, display_doc_title, downsample_options, embed_full_fonts, encryption_details, escape_uri, export_document_structure, font_embedding_mode, header_footer_bookmarks_export_mode, image_color_space_export_mode, image_compression, open_hyperlinks_in_new_window, outline_options, page_mode, preblend_images, preserve_form_fields, text_compression, use_book_fold_printing_settings, use_core_fonts, zoom_behavior, zoom_factor].hash
     end
 
     # Builds the object from hash

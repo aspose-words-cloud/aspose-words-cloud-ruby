@@ -55,12 +55,6 @@ module AsposeWordsCloud
     # Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true
     attr_accessor :update_fields
 
-    # Gets or sets a value determining how 3D effects are rendered.
-    attr_accessor :dml3_d_effects_rendering_mode
-
-    # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.
-    attr_accessor :update_last_printed_property
-
     # Gets or sets allows to make output RTF documents smaller in size, but if they contain RTL (right-to-left) text, it will not be displayed correctly.
     attr_accessor :export_compact_size
 
@@ -73,27 +67,6 @@ module AsposeWordsCloud
     # Gets or sets a value indicating whether when true all images will be saved as WMF. This option might help to avoid WordPad warning messages.
     attr_accessor :save_images_as_wmf
 
-    class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
-
-      def initialize(datatype, allowable_values)
-        @allowable_values = allowable_values.map do |value|
-          case datatype.to_s
-          when /Integer/i
-            value.to_i
-          when /Float/i
-            value.to_f
-          else
-            value
-          end
-        end
-      end
-
-      def valid?(value)
-        !value || allowable_values.include?(value)
-      end
-    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -106,8 +79,6 @@ module AsposeWordsCloud
         :'update_last_saved_time_property' => :'UpdateLastSavedTimeProperty',
         :'update_sdt_content' => :'UpdateSdtContent',
         :'update_fields' => :'UpdateFields',
-        :'dml3_d_effects_rendering_mode' => :'Dml3DEffectsRenderingMode',
-        :'update_last_printed_property' => :'UpdateLastPrintedProperty',
         :'export_compact_size' => :'ExportCompactSize',
         :'export_images_for_old_readers' => :'ExportImagesForOldReaders',
         :'pretty_format' => :'PrettyFormat',
@@ -126,8 +97,6 @@ module AsposeWordsCloud
         :'update_last_saved_time_property' => :'BOOLEAN',
         :'update_sdt_content' => :'BOOLEAN',
         :'update_fields' => :'BOOLEAN',
-        :'dml3_d_effects_rendering_mode' => :'String',
-        :'update_last_printed_property' => :'BOOLEAN',
         :'export_compact_size' => :'BOOLEAN',
         :'export_images_for_old_readers' => :'BOOLEAN',
         :'pretty_format' => :'BOOLEAN',
@@ -175,14 +144,6 @@ module AsposeWordsCloud
         self.update_fields = attributes[:'UpdateFields']
       end
 
-      if attributes.key?(:'Dml3DEffectsRenderingMode')
-        self.dml3_d_effects_rendering_mode = attributes[:'Dml3DEffectsRenderingMode']
-      end
-
-      if attributes.key?(:'UpdateLastPrintedProperty')
-        self.update_last_printed_property = attributes[:'UpdateLastPrintedProperty']
-      end
-
       if attributes.key?(:'ExportCompactSize')
         self.export_compact_size = attributes[:'ExportCompactSize']
       end
@@ -211,23 +172,7 @@ module AsposeWordsCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      dml3_d_effects_rendering_mode_validator = EnumAttributeValidator.new('String', ["Basic", "Advanced"])
-      return false unless dml3_d_effects_rendering_mode_validator.valid?(@dml3_d_effects_rendering_mode)
       return true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] dml3_d_effects_rendering_mode Object to be assigned
-    def dml3_d_effects_rendering_mode=(dml3_d_effects_rendering_mode)
-      validator = EnumAttributeValidator.new('String', ["Basic", "Advanced"])
-      if dml3_d_effects_rendering_mode.to_i == 0
-        unless validator.valid?(dml3_d_effects_rendering_mode)
-          raise ArgumentError, "invalid value for 'dml3_d_effects_rendering_mode', must be one of #{validator.allowable_values}."
-        end
-        @dml3_d_effects_rendering_mode = dml3_d_effects_rendering_mode
-      else
-        @dml3_d_effects_rendering_mode = validator.allowable_values[dml3_d_effects_rendering_mode.to_i]
-      end
     end
 
     # Checks equality by comparing each attribute.
@@ -243,8 +188,6 @@ module AsposeWordsCloud
           update_last_saved_time_property == other.update_last_saved_time_property &&
           update_sdt_content == other.update_sdt_content &&
           update_fields == other.update_fields &&
-          dml3_d_effects_rendering_mode == other.dml3_d_effects_rendering_mode &&
-          update_last_printed_property == other.update_last_printed_property &&
           export_compact_size == other.export_compact_size &&
           export_images_for_old_readers == other.export_images_for_old_readers &&
           pretty_format == other.pretty_format &&
@@ -260,7 +203,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, dml3_d_effects_rendering_mode, update_last_printed_property, export_compact_size, export_images_for_old_readers, pretty_format, save_images_as_wmf].hash
+      [save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, export_compact_size, export_images_for_old_readers, pretty_format, save_images_as_wmf].hash
     end
 
     # Builds the object from hash
