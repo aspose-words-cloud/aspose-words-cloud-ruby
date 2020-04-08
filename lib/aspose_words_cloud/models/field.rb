@@ -31,14 +31,13 @@ module AsposeWordsCloud
 
   # Field.
   class Field
-    # Gets or sets link to the document.
+    # Gets or sets field code.
+    attr_accessor :field_code
+
     attr_accessor :link
 
     # Gets or sets node id.
     attr_accessor :node_id
-
-    # Gets or sets field code.
-    attr_accessor :field_code
 
     # Gets or sets LCID of the field.
     attr_accessor :locale_id
@@ -50,9 +49,9 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'field_code' => :'FieldCode',
         :'link' => :'link',
         :'node_id' => :'NodeId',
-        :'field_code' => :'FieldCode',
         :'locale_id' => :'LocaleId',
         :'result' => :'Result'
       }
@@ -61,9 +60,9 @@ module AsposeWordsCloud
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'field_code' => :'String',
         :'link' => :'WordsApiLink',
         :'node_id' => :'String',
-        :'field_code' => :'String',
         :'locale_id' => :'String',
         :'result' => :'String'
       }
@@ -77,16 +76,16 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.key?(:'FieldCode')
+        self.field_code = attributes[:'FieldCode']
+      end
+
       if attributes.key?(:'link')
         self.link = attributes[:'link']
       end
 
       if attributes.key?(:'NodeId')
         self.node_id = attributes[:'NodeId']
-      end
-
-      if attributes.key?(:'FieldCode')
-        self.field_code = attributes[:'FieldCode']
       end
 
       if attributes.key?(:'LocaleId')
@@ -117,9 +116,9 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
+          field_code == other.field_code &&
           link == other.link &&
           node_id == other.node_id &&
-          field_code == other.field_code &&
           locale_id == other.locale_id &&
           result == other.result
     end
@@ -133,7 +132,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, node_id, field_code, locale_id, result].hash
+      [field_code, link, node_id, locale_id, result].hash
     end
 
     # Builds the object from hash

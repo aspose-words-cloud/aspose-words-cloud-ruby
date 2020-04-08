@@ -50,7 +50,7 @@ module AsposeWordsCloud
         attr_accessor :revision_author
         # The date and time to use for revisions.
         attr_accessor :revision_date_time
-        # Field will be inserted before node with id=\"nodeId\".
+        # Field will be inserted before node with id="nodeId".
         attr_accessor :insert_before_node
 	
         #
@@ -64,7 +64,7 @@ module AsposeWordsCloud
         # @param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         # @param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         # @param revision_date_time The date and time to use for revisions.
-        # @param insert_before_node Field will be inserted before node with id=\"nodeId\".
+        # @param insert_before_node Field will be inserted before node with id="nodeId".
         def initialize(name, field, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil, revision_author = nil, revision_date_time = nil, insert_before_node = nil)
            self.name = name
            self.field = field

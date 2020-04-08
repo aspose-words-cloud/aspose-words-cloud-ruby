@@ -97,7 +97,7 @@ module AsposeWordsCloud
       remote_name = 'TestUpdateField.docx'
       dest_name = remote_test_out + remote_name
       index = 0
-      body = Field.new({ :FieldCode => '{ NUMPAGES }', :NodeId => '0.0.3' })
+      body = FieldUpdate.new({ :FieldCode => '{ NUMPAGES }' })
 
       upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
@@ -114,7 +114,7 @@ module AsposeWordsCloud
     def test_insert_field
       filename = 'GetField.docx'
       remote_name = 'TestInsertField.docx'
-      body = Field.new({:Result => 3, :FieldCode => '{ NUMPAGES }', :NodeId => '0.0.3'})
+      body = FieldInsert.new({:FieldCode => '{ NUMPAGES }'})
 
       upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
@@ -129,7 +129,7 @@ module AsposeWordsCloud
     def test_insert_field_without_node_path
       filename = 'GetField.docx'
       remote_name = 'TestInsertFieldWithoutNodePath.docx'
-      body = Field.new({:Result => 3, :FieldCode => '{ NUMPAGES }', :NodeId => '0.0.3'})
+      body = FieldInsert.new({:FieldCode => '{ NUMPAGES }'})
 
       upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 

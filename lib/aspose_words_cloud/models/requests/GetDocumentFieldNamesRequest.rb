@@ -42,7 +42,7 @@ module AsposeWordsCloud
         attr_accessor :load_encoding
         # Password for opening an encrypted document.
         attr_accessor :password
-        # If true, result includes \"mustache\" field names.
+        # If true, result includes "mustache" field names.
         attr_accessor :use_non_merge_fields
 	
         #
@@ -52,7 +52,7 @@ module AsposeWordsCloud
         # @param storage Original document storage.
         # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         # @param password Password for opening an encrypted document.
-        # @param use_non_merge_fields If true, result includes \"mustache\" field names.
+        # @param use_non_merge_fields If true, result includes "mustache" field names.
         def initialize(name, folder = nil, storage = nil, load_encoding = nil, password = nil, use_non_merge_fields = nil)
            self.name = name
            self.folder = folder

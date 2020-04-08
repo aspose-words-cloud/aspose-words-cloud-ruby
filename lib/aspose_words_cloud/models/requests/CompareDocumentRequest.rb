@@ -34,7 +34,7 @@ module AsposeWordsCloud
 
         # Original document name.
         attr_accessor :name
-        # with a document to compare.            
+        # CompareData with a document to compare.
         attr_accessor :compare_data
         # Original document folder.
         attr_accessor :folder
@@ -50,7 +50,7 @@ module AsposeWordsCloud
         #
         # Initializes a new instance.
         # @param name Original document name.
-        # @param compare_data with a document to compare.            
+        # @param compare_data CompareData with a document to compare.
         # @param folder Original document folder.
         # @param storage Original document storage.
         # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

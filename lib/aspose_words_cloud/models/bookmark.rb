@@ -31,7 +31,6 @@ module AsposeWordsCloud
 
   # Represents a single bookmark.
   class Bookmark
-    # Gets or sets link to the document.
     attr_accessor :link
 
     # Gets or sets the name of the bookmark.

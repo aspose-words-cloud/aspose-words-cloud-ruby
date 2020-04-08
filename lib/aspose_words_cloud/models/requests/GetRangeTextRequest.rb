@@ -34,7 +34,7 @@ module AsposeWordsCloud
 
         # The document.
         attr_accessor :name
-        # The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table.
+        # The range start identifier. Identifier is the value of the "nodeId" field, which every document node has, extended with the prefix "id". It looks like "id0.0.7". Also values like "image5" and "table3" can be used as an identifier for images and tables, where the number is an index of the image/table.
         attr_accessor :range_start_identifier
         # The range end identifier.
         attr_accessor :range_end_identifier
@@ -50,13 +50,13 @@ module AsposeWordsCloud
         #
         # Initializes a new instance.
         # @param name The document.
-        # @param range_start_identifier The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table.
+        # @param range_start_identifier The range start identifier. Identifier is the value of the "nodeId" field, which every document node has, extended with the prefix "id". It looks like "id0.0.7". Also values like "image5" and "table3" can be used as an identifier for images and tables, where the number is an index of the image/table.
         # @param range_end_identifier The range end identifier.
         # @param folder Original document folder.
         # @param storage Original document storage.
         # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         # @param password Password for opening an encrypted document.
-        def initialize(name, range_start_identifier, range_end_identifier, folder = nil, storage = nil, load_encoding = nil, password = nil)
+        def initialize(name, range_start_identifier, range_end_identifier = nil, folder = nil, storage = nil, load_encoding = nil, password = nil)
            self.name = name
            self.range_start_identifier = range_start_identifier
            self.range_end_identifier = range_end_identifier

@@ -66,6 +66,14 @@ module AsposeWordsCloud
     # @return [Array<(Object, Fixnum, Hash)>] an array of 3 elements:
     #   the data deserialized from response body (could be nil), response status code and response headers.
     def call_api(http_method, path, opts = {})
+      if @config.api_key['app_sid'].nil? || @config.api_key['app_sid'] == ''
+        raise "AppSid could not be an empty string."
+      end
+      
+      if @config.api_key['api_key'].nil? || @config.api_key['api_key'] == ''
+        raise "AppKey could not be an empty string."
+      end
+      
       response = build_request(http_method, path, opts)
       download_file response if opts[:return_type] == 'File'
       if @config.debugging
@@ -274,11 +282,9 @@ module AsposeWordsCloud
     end
 
     def build_request_url(path)
-      # Add leading and trailing slashes to path
-      path = "/#{path}".gsub(/\/+/, '/')
-      url = URI.encode(@config.base_url + path)
-      url = url.gsub(/v[0-9.]+\//, '') if url.include? 'connect/token'
-      url
+      # remove empty path parameter artifacts
+      path = path.gsub(/\/+/, '/')
+      return @config.getFullUrl(path, path == "/connect/token")
     end
 
     # Builds the HTTP request body

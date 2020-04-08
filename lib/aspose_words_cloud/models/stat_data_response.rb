@@ -34,10 +34,8 @@ module AsposeWordsCloud
     # Gets or sets request Id.
     attr_accessor :request_id
 
-    # Gets or sets link to the document.
     attr_accessor :document_link
 
-    # Gets or sets statistical data of the document.
     attr_accessor :stat_data
 
 

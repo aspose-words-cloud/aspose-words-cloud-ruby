@@ -31,7 +31,6 @@ module AsposeWordsCloud
 
   # Collection of document properties.
   class DocumentProperties
-    # Gets or sets link to the document.
     attr_accessor :link
 
     # Gets or sets collection of document properties.

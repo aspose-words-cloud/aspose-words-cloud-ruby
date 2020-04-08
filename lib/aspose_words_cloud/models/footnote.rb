@@ -31,22 +31,19 @@ module AsposeWordsCloud
 
   # Footnote.
   class Footnote
-    # Gets or sets link to the document.
     attr_accessor :link
 
     # Gets or sets node id.
     attr_accessor :node_id
 
-    # Gets or sets content of footnote.
     attr_accessor :content
 
     # Gets or sets returns a value that specifies whether this is a footnote or endnote.
     attr_accessor :footnote_type
 
-    # Gets or sets link to comment range start node.
     attr_accessor :position
 
-    # Gets or sets /sets custom reference mark to be used for this footnote. Default value is , meaning auto-numbered footnotes are used.
+    # Gets or sets /sets custom reference mark to be used for this footnote. Default value is Empty, meaning auto-numbered footnotes are used.
     attr_accessor :reference_mark
 
     # Gets or sets this is a convenience property that allows to easily get or set text of the footnote.

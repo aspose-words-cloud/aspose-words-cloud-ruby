@@ -38,7 +38,7 @@ module AsposeWordsCloud
       filename = 'test_doc.docx'
       remote_name = 'TestCreateOrUpdateDocumentProperty.docx'
       property_name = 'AsposeAuthor'
-      property = DocumentProperty.new({:Name => 'Author', :Value => 'Yaroslav Ekimov'})
+      property = DocumentPropertyCreateOrUpdate.new({:Value => 'Yaroslav Ekimov'})
 
       upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 

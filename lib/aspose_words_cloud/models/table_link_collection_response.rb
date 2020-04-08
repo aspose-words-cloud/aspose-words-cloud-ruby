@@ -34,7 +34,6 @@ module AsposeWordsCloud
     # Gets or sets request Id.
     attr_accessor :request_id
 
-    # Gets or sets collection of tables.
     attr_accessor :tables
 
 

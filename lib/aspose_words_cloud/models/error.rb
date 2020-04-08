@@ -40,7 +40,6 @@ module AsposeWordsCloud
     # Description             
     attr_accessor :description
 
-    # Inner Error             
     attr_accessor :inner_error
 
 

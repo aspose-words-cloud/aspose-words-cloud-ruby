@@ -31,7 +31,6 @@ module AsposeWordsCloud
 
   # Collection of footnotes.
   class FootnoteCollection
-    # Gets or sets link to the document.
     attr_accessor :link
 
     # Gets or sets collection of foonotes links.

@@ -34,7 +34,6 @@ module AsposeWordsCloud
     # Gets or sets request Id.
     attr_accessor :request_id
 
-    # Gets or sets resylt of splitting document.
     attr_accessor :split_result
 
 

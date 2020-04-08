@@ -126,7 +126,7 @@ module AsposeWordsCloud
       filename = 'Footnote.doc'
       remote_name = 'TestUpdateFootnote.docx'
       index = 0
-      footnote = Footnote.new({:Text => 'new text is here'})
+      footnote = FootnoteUpdate.new({:Text => 'new text is here'})
 
       upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
@@ -142,7 +142,7 @@ module AsposeWordsCloud
       filename = 'Footnote.doc'
       remote_name = 'TestUpdateFootnoteWithoutNodePath.docx'
       index = 0
-      footnote = Footnote.new({:Text => 'new text is here'})
+      footnote = FootnoteUpdate.new({:Text => 'new text is here'})
 
       upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
@@ -157,7 +157,7 @@ module AsposeWordsCloud
     def test_insert_footnote
       filename = 'Footnote.doc'
       remote_name = 'TestInsertFootnote.docx'
-      footnote = Footnote.new({:Text => 'test endnote', :FootnoteType => 'Endnote'})
+      footnote = FootnoteInsert.new({:Text => 'test endnote', :FootnoteType => 'Endnote'})
 
       upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
@@ -172,7 +172,7 @@ module AsposeWordsCloud
     def test_insert_footnote_without_node_path
       filename = 'Footnote.doc'
       remote_name = 'TestInsertFootnoteWithoutNodePath.docx'
-      footnote = Footnote.new({:Text => 'test endnote', :FootnoteType => 'Endnote'})
+      footnote = FootnoteInsert.new({:Text => 'test endnote', :FootnoteType => 'Endnote'})
 
       upload_file File.join(local_test_folder, test_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 

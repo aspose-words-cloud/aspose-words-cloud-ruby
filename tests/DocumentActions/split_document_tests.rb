@@ -44,7 +44,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
 
-      request = SplitDocumentRequest.new remote_name, remote_test_folder + test_folder, nil, nil, nil, dest_name, format, from, to
+      request = SplitDocumentRequest.new remote_name, format, remote_test_folder + test_folder, nil, nil, nil, dest_name, from, to
       result = @words_api.split_document request
       assert_equal FALSE, result.nil?
     end
