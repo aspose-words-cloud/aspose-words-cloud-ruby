@@ -41,7 +41,7 @@ module AsposeWordsCloud
         def test_get_lists
             remote_name = 'TestGetLists.doc'
             upload_file File.join(test_folder, local_name), File.join(remote_test_folder + test_folder, remote_name)
-            request = GetListsRequest.new remote_name
+            request = GetListsRequest.new remote_name, remote_test_folder + test_folder
             @words_api.get_lists request
         end
 
@@ -51,7 +51,7 @@ module AsposeWordsCloud
         def test_get_list
             remote_name = 'TestGetList.doc'
             upload_file File.join(test_folder, local_name), File.join(remote_test_folder + test_folder, remote_name)
-            request = GetListRequest.new remote_name, 1
+            request = GetListRequest.new remote_name, 1, remote_test_folder + test_folder
             @words_api.get_list request
         end
 
@@ -62,7 +62,7 @@ module AsposeWordsCloud
             remote_name = 'TestUpdateList.doc'
             upload_file File.join(test_folder, local_name), File.join(remote_test_folder + test_folder, remote_name)
             data = ListUpdate.new true
-            request = UpdateListRequest.new remote_name, data,1
+            request = UpdateListRequest.new remote_name, data,1, remote_test_folder + test_folder
             @words_api.update_list request
         end
 
@@ -73,7 +73,7 @@ module AsposeWordsCloud
             remote_name = 'TestUpdateListLevel.doc'
             upload_file File.join(test_folder, local_name), File.join(remote_test_folder + test_folder, remote_name)
             data = ListLevelUpdate.new alignment='Right'
-            request = UpdateListLevelRequest.new remote_name, data,1, 1
+            request = UpdateListLevelRequest.new remote_name, data,1, 1, remote_test_folder + test_folder
             @words_api.update_list_level request
         end
 
@@ -84,7 +84,7 @@ module AsposeWordsCloud
             remote_name = 'TestInsertList.doc'
             upload_file File.join(test_folder, local_name), File.join(remote_test_folder + test_folder, remote_name)
             data = ListInsert.new 'OutlineLegal'
-            request = InsertListRequest.new remote_name, data
+            request = InsertListRequest.new remote_name, data, remote_test_folder + test_folder
             @words_api.insert_list request
         end
     end
