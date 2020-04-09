@@ -34,6 +34,8 @@ module AsposeWordsCloud
 
         # Original document name.
         attr_accessor :name
+        # Format to split.
+        attr_accessor :format
         # Original document folder.
         attr_accessor :folder
         # Original document storage.
@@ -44,8 +46,6 @@ module AsposeWordsCloud
         attr_accessor :password
         # Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         attr_accessor :dest_file_name
-        # Format to split.
-        attr_accessor :format
         # Start page.
         attr_accessor :from
         # End page.
@@ -58,24 +58,24 @@ module AsposeWordsCloud
         #
         # Initializes a new instance.
         # @param name Original document name.
+        # @param format Format to split.
         # @param folder Original document folder.
         # @param storage Original document storage.
         # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         # @param password Password for opening an encrypted document.
         # @param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        # @param format Format to split.
         # @param from Start page.
         # @param to End page.
         # @param zip_output ZipOutput or not.
         # @param fonts_location Folder in filestorage with custom fonts.
-        def initialize(name, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil, format = nil, from = nil, to = nil, zip_output = nil, fonts_location = nil)
+        def initialize(name, format, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil, from = nil, to = nil, zip_output = nil, fonts_location = nil)
            self.name = name
+           self.format = format
            self.folder = folder
            self.storage = storage
            self.load_encoding = load_encoding
            self.password = password
            self.dest_file_name = dest_file_name
-           self.format = format
            self.from = from
            self.to = to
            self.zip_output = zip_output

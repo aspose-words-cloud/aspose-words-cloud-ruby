@@ -46,7 +46,6 @@ module AsposeWordsCloud
     # Gets or sets a value indicating whether returns true if the document contains a digital signature. This property merely informs that a digital signature is present on a document, but it does not specify whether the signature is valid or not.
     attr_accessor :is_signed
 
-    # Gets or sets returns document properties.
     attr_accessor :document_properties
 
     class EnumAttributeValidator
@@ -135,29 +134,14 @@ module AsposeWordsCloud
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = []
-      if @source_format.nil?
-        invalid_properties.push("invalid value for 'source_format', source_format cannot be nil.")
-      end
-
-      if @is_encrypted.nil?
-        invalid_properties.push("invalid value for 'is_encrypted', is_encrypted cannot be nil.")
-      end
-
-      if @is_signed.nil?
-        invalid_properties.push("invalid value for 'is_signed', is_signed cannot be nil.")
-      end
-
       return invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @source_format.nil?
       source_format_validator = EnumAttributeValidator.new('String', ["Unknown", "Doc", "Dot", "DocPreWord60", "Docx", "Docm", "Dotx", "Dotm", "FlatOpc", "Rtf", "WordML", "Html", "Mhtml", "Epub", "Text", "Odt", "Ott", "Pdf", "Xps", "Tiff", "Svg"])
       return false unless source_format_validator.valid?(@source_format)
-      return false if @is_encrypted.nil?
-      return false if @is_signed.nil?
       return true
     end
 

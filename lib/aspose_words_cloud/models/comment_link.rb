@@ -31,7 +31,6 @@ module AsposeWordsCloud
 
   # Comment link.
   class CommentLink
-    # Gets or sets link to the document.
     attr_accessor :link
 
 

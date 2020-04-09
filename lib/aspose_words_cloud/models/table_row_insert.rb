@@ -76,17 +76,12 @@ module AsposeWordsCloud
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = []
-      if @columns_count.nil?
-        invalid_properties.push("invalid value for 'columns_count', columns_count cannot be nil.")
-      end
-
       return invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @columns_count.nil?
       return true
     end
 

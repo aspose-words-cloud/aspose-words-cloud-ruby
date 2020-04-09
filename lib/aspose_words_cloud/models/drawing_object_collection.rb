@@ -31,7 +31,6 @@ module AsposeWordsCloud
 
   # Represents drawing objects collection DTO.
   class DrawingObjectCollection
-    # Gets or sets link to the document.
     attr_accessor :link
 
     # Gets or sets collection of DrawingObjects links.

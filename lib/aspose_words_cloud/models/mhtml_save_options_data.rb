@@ -31,30 +31,6 @@ module AsposeWordsCloud
 
   # Container class for mhtml save options.
   class MhtmlSaveOptionsData
-    # Gets or sets format of save.
-    attr_accessor :save_format
-
-    # Gets or sets name of destination file.
-    attr_accessor :file_name
-
-    # Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.
-    attr_accessor :dml_rendering_mode
-
-    # Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }.
-    attr_accessor :dml_effects_rendering_mode
-
-    # Gets or sets controls zip output or not. Default value is false.
-    attr_accessor :zip_output
-
-    # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
-    attr_accessor :update_last_saved_time_property
-
-    # Gets or sets value determining whether content of  is updated before saving.
-    attr_accessor :update_sdt_content
-
-    # Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true
-    attr_accessor :update_fields
-
     # Gets or sets specifies whether negative left and right indents of paragraphs are allowed (not normalized).
     attr_accessor :allow_negative_indent
 
@@ -172,6 +148,30 @@ module AsposeWordsCloud
     # Gets or sets controls how table, row and cell widths are exported.
     attr_accessor :table_width_output_mode
 
+    # Gets or sets format of save.
+    attr_accessor :save_format
+
+    # Gets or sets name of destination file.
+    attr_accessor :file_name
+
+    # Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.
+    attr_accessor :dml_rendering_mode
+
+    # Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }.
+    attr_accessor :dml_effects_rendering_mode
+
+    # Gets or sets controls zip output or not. Default value is false.
+    attr_accessor :zip_output
+
+    # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
+    attr_accessor :update_last_saved_time_property
+
+    # Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.
+    attr_accessor :update_sdt_content
+
+    # Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true
+    attr_accessor :update_fields
+
     # Gets or sets specifies whether to use CID (Content-ID) URLs to reference resources (images, fonts, CSS) included in MHTML documents. Default value is false.             
     attr_accessor :export_cid_urls_for_mhtml_resources
 
@@ -200,14 +200,6 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'save_format' => :'SaveFormat',
-        :'file_name' => :'FileName',
-        :'dml_rendering_mode' => :'DmlRenderingMode',
-        :'dml_effects_rendering_mode' => :'DmlEffectsRenderingMode',
-        :'zip_output' => :'ZipOutput',
-        :'update_last_saved_time_property' => :'UpdateLastSavedTimeProperty',
-        :'update_sdt_content' => :'UpdateSdtContent',
-        :'update_fields' => :'UpdateFields',
         :'allow_negative_indent' => :'AllowNegativeIndent',
         :'css_class_name_prefix' => :'CssClassNamePrefix',
         :'css_style_sheet_file_name' => :'CssStyleSheetFileName',
@@ -247,6 +239,14 @@ module AsposeWordsCloud
         :'resource_folder_alias' => :'ResourceFolderAlias',
         :'scale_image_to_shape_size' => :'ScaleImageToShapeSize',
         :'table_width_output_mode' => :'TableWidthOutputMode',
+        :'save_format' => :'SaveFormat',
+        :'file_name' => :'FileName',
+        :'dml_rendering_mode' => :'DmlRenderingMode',
+        :'dml_effects_rendering_mode' => :'DmlEffectsRenderingMode',
+        :'zip_output' => :'ZipOutput',
+        :'update_last_saved_time_property' => :'UpdateLastSavedTimeProperty',
+        :'update_sdt_content' => :'UpdateSdtContent',
+        :'update_fields' => :'UpdateFields',
         :'export_cid_urls_for_mhtml_resources' => :'ExportCidUrlsForMhtmlResources'
       }
     end
@@ -254,14 +254,6 @@ module AsposeWordsCloud
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'save_format' => :'String',
-        :'file_name' => :'String',
-        :'dml_rendering_mode' => :'String',
-        :'dml_effects_rendering_mode' => :'String',
-        :'zip_output' => :'BOOLEAN',
-        :'update_last_saved_time_property' => :'BOOLEAN',
-        :'update_sdt_content' => :'BOOLEAN',
-        :'update_fields' => :'BOOLEAN',
         :'allow_negative_indent' => :'BOOLEAN',
         :'css_class_name_prefix' => :'String',
         :'css_style_sheet_file_name' => :'String',
@@ -301,6 +293,14 @@ module AsposeWordsCloud
         :'resource_folder_alias' => :'String',
         :'scale_image_to_shape_size' => :'BOOLEAN',
         :'table_width_output_mode' => :'String',
+        :'save_format' => :'String',
+        :'file_name' => :'String',
+        :'dml_rendering_mode' => :'String',
+        :'dml_effects_rendering_mode' => :'String',
+        :'zip_output' => :'BOOLEAN',
+        :'update_last_saved_time_property' => :'BOOLEAN',
+        :'update_sdt_content' => :'BOOLEAN',
+        :'update_fields' => :'BOOLEAN',
         :'export_cid_urls_for_mhtml_resources' => :'BOOLEAN'
       }
     end
@@ -312,38 +312,6 @@ module AsposeWordsCloud
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.key?(:'SaveFormat')
-        self.save_format = attributes[:'SaveFormat']
-      end
-
-      if attributes.key?(:'FileName')
-        self.file_name = attributes[:'FileName']
-      end
-
-      if attributes.key?(:'DmlRenderingMode')
-        self.dml_rendering_mode = attributes[:'DmlRenderingMode']
-      end
-
-      if attributes.key?(:'DmlEffectsRenderingMode')
-        self.dml_effects_rendering_mode = attributes[:'DmlEffectsRenderingMode']
-      end
-
-      if attributes.key?(:'ZipOutput')
-        self.zip_output = attributes[:'ZipOutput']
-      end
-
-      if attributes.key?(:'UpdateLastSavedTimeProperty')
-        self.update_last_saved_time_property = attributes[:'UpdateLastSavedTimeProperty']
-      end
-
-      if attributes.key?(:'UpdateSdtContent')
-        self.update_sdt_content = attributes[:'UpdateSdtContent']
-      end
-
-      if attributes.key?(:'UpdateFields')
-        self.update_fields = attributes[:'UpdateFields']
-      end
 
       if attributes.key?(:'AllowNegativeIndent')
         self.allow_negative_indent = attributes[:'AllowNegativeIndent']
@@ -501,6 +469,38 @@ module AsposeWordsCloud
         self.table_width_output_mode = attributes[:'TableWidthOutputMode']
       end
 
+      if attributes.key?(:'SaveFormat')
+        self.save_format = attributes[:'SaveFormat']
+      end
+
+      if attributes.key?(:'FileName')
+        self.file_name = attributes[:'FileName']
+      end
+
+      if attributes.key?(:'DmlRenderingMode')
+        self.dml_rendering_mode = attributes[:'DmlRenderingMode']
+      end
+
+      if attributes.key?(:'DmlEffectsRenderingMode')
+        self.dml_effects_rendering_mode = attributes[:'DmlEffectsRenderingMode']
+      end
+
+      if attributes.key?(:'ZipOutput')
+        self.zip_output = attributes[:'ZipOutput']
+      end
+
+      if attributes.key?(:'UpdateLastSavedTimeProperty')
+        self.update_last_saved_time_property = attributes[:'UpdateLastSavedTimeProperty']
+      end
+
+      if attributes.key?(:'UpdateSdtContent')
+        self.update_sdt_content = attributes[:'UpdateSdtContent']
+      end
+
+      if attributes.key?(:'UpdateFields')
+        self.update_fields = attributes[:'UpdateFields']
+      end
+
       if attributes.key?(:'ExportCidUrlsForMhtmlResources')
         self.export_cid_urls_for_mhtml_resources = attributes[:'ExportCidUrlsForMhtmlResources']
       end
@@ -573,14 +573,6 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          save_format == other.save_format &&
-          file_name == other.file_name &&
-          dml_rendering_mode == other.dml_rendering_mode &&
-          dml_effects_rendering_mode == other.dml_effects_rendering_mode &&
-          zip_output == other.zip_output &&
-          update_last_saved_time_property == other.update_last_saved_time_property &&
-          update_sdt_content == other.update_sdt_content &&
-          update_fields == other.update_fields &&
           allow_negative_indent == other.allow_negative_indent &&
           css_class_name_prefix == other.css_class_name_prefix &&
           css_style_sheet_file_name == other.css_style_sheet_file_name &&
@@ -620,6 +612,14 @@ module AsposeWordsCloud
           resource_folder_alias == other.resource_folder_alias &&
           scale_image_to_shape_size == other.scale_image_to_shape_size &&
           table_width_output_mode == other.table_width_output_mode &&
+          save_format == other.save_format &&
+          file_name == other.file_name &&
+          dml_rendering_mode == other.dml_rendering_mode &&
+          dml_effects_rendering_mode == other.dml_effects_rendering_mode &&
+          zip_output == other.zip_output &&
+          update_last_saved_time_property == other.update_last_saved_time_property &&
+          update_sdt_content == other.update_sdt_content &&
+          update_fields == other.update_fields &&
           export_cid_urls_for_mhtml_resources == other.export_cid_urls_for_mhtml_resources
     end
 
@@ -632,7 +632,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, allow_negative_indent, css_class_name_prefix, css_style_sheet_file_name, css_style_sheet_type, document_split_criteria, document_split_heading_level, encoding, export_document_properties, export_drop_down_form_field_as_text, export_font_resources, export_fonts_as_base64, export_headers_footers_mode, export_images_as_base64, export_language_information, export_list_labels, export_original_url_for_linked_images, export_page_margins, export_page_setup, export_relative_font_size, export_roundtrip_information, export_text_box_as_svg, export_text_input_form_field_as_text, export_toc_page_numbers, export_xhtml_transitional, font_resources_subsetting_size_threshold, fonts_folder, fonts_folder_alias, html_version, image_resolution, images_folder, images_folder_alias, metafile_format, office_math_output_mode, pretty_format, resolve_font_names, resource_folder, resource_folder_alias, scale_image_to_shape_size, table_width_output_mode, export_cid_urls_for_mhtml_resources].hash
+      [allow_negative_indent, css_class_name_prefix, css_style_sheet_file_name, css_style_sheet_type, document_split_criteria, document_split_heading_level, encoding, export_document_properties, export_drop_down_form_field_as_text, export_font_resources, export_fonts_as_base64, export_headers_footers_mode, export_images_as_base64, export_language_information, export_list_labels, export_original_url_for_linked_images, export_page_margins, export_page_setup, export_relative_font_size, export_roundtrip_information, export_text_box_as_svg, export_text_input_form_field_as_text, export_toc_page_numbers, export_xhtml_transitional, font_resources_subsetting_size_threshold, fonts_folder, fonts_folder_alias, html_version, image_resolution, images_folder, images_folder_alias, metafile_format, office_math_output_mode, pretty_format, resolve_font_names, resource_folder, resource_folder_alias, scale_image_to_shape_size, table_width_output_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, export_cid_urls_for_mhtml_resources].hash
     end
 
     # Builds the object from hash

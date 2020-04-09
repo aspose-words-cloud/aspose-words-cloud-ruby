@@ -34,7 +34,7 @@ module AsposeWordsCloud
 
         # The document name.
         attr_accessor :name
-        # with protection settings.            
+        # ProtectionRequest with protection settings.
         attr_accessor :protection_request
         # Original document folder.
         attr_accessor :folder
@@ -50,7 +50,7 @@ module AsposeWordsCloud
         #
         # Initializes a new instance.
         # @param name The document name.
-        # @param protection_request with protection settings.            
+        # @param protection_request ProtectionRequest with protection settings.
         # @param folder Original document folder.
         # @param storage Original document storage.
         # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

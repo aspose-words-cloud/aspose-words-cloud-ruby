@@ -31,7 +31,6 @@ module AsposeWordsCloud
 
   # Represents DTO for collection of fields.
   class FieldCollection
-    # Gets or sets link to the document.
     attr_accessor :link
 
     # Gets or sets collection of fields.

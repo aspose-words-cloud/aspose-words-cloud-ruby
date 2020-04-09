@@ -68,7 +68,7 @@ module AsposeWordsCloud
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.accept_all_revisions' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
-      local_var_path = '/words/{name}/revisions/acceptAll'
+      local_var_path = '/words/{name}/revisions/acceptAll'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
@@ -120,7 +120,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'RevisionsModificationResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#accept_all_revisions\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -160,7 +159,7 @@ module AsposeWordsCloud
       # verify the required parameter 'document_list' is set
       raise ArgumentError, 'Missing the required parameter document_list when calling WordsApi.append_document' if @api_client.config.client_side_validation && request.document_list.nil?
       # resource path
-      local_var_path = '/words/{name}/appendDocument'
+      local_var_path = '/words/{name}/appendDocument'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
@@ -222,7 +221,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#append_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -260,7 +258,7 @@ module AsposeWordsCloud
       # verify the required parameter 'text' is set
       raise ArgumentError, 'Missing the required parameter text when calling WordsApi.classify' if @api_client.config.client_side_validation && request.text.nil?
       # resource path
-      local_var_path = '/words/classify'
+      local_var_path = '/words/classify'[1..-1]
 
       # query parameters
       query_params = {}
@@ -291,7 +289,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'ClassificationResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#classify\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -329,7 +326,7 @@ module AsposeWordsCloud
       # verify the required parameter 'document_name' is set
       raise ArgumentError, 'Missing the required parameter document_name when calling WordsApi.classify_document' if @api_client.config.client_side_validation && request.document_name.nil?
       # resource path
-      local_var_path = '/words/{documentName}/classify'
+      local_var_path = '/words/{documentName}/classify'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('DocumentName') + '}', request.document_name.to_s)
 
       # query parameters
@@ -386,7 +383,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'ClassificationResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#classify_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -426,7 +422,7 @@ module AsposeWordsCloud
       # verify the required parameter 'compare_data' is set
       raise ArgumentError, 'Missing the required parameter compare_data when calling WordsApi.compare_document' if @api_client.config.client_side_validation && request.compare_data.nil?
       # resource path
-      local_var_path = '/words/{name}/compareDocument'
+      local_var_path = '/words/{name}/compareDocument'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
@@ -478,7 +474,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#compare_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -486,7 +481,7 @@ module AsposeWordsCloud
       [data, status_code, headers]
     end
 
-    # Converts document from the request's content to the specified format .
+    # Converts document from the request's content to the specified format.
     # 
     # @param request ConvertDocumentRequest
     # @return [File]
@@ -504,7 +499,7 @@ module AsposeWordsCloud
       data
     end
 
-    # Converts document from the request&#39;s content to the specified format .
+    # Converts document from the request&#39;s content to the specified format.
     # 
     # @param request ConvertDocumentRequest
     # @return [Array<(File, Fixnum, Hash)>]
@@ -518,7 +513,7 @@ module AsposeWordsCloud
       # verify the required parameter 'format' is set
       raise ArgumentError, 'Missing the required parameter format when calling WordsApi.convert_document' if @api_client.config.client_side_validation && request.format.nil?
       # resource path
-      local_var_path = '/words/convert'
+      local_var_path = '/words/convert'[1..-1]
 
       # query parameters
       query_params = {}
@@ -567,7 +562,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#convert_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -607,7 +601,7 @@ module AsposeWordsCloud
       # verify the required parameter 'src_path' is set
       raise ArgumentError, 'Missing the required parameter src_path when calling WordsApi.copy_file' if @api_client.config.client_side_validation && request.src_path.nil?
       # resource path
-      local_var_path = '/words/storage/file/copy/{srcPath}'
+      local_var_path = '/words/storage/file/copy/{srcPath}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('SrcPath') + '}', request.src_path.to_s)
 
       # query parameters
@@ -650,7 +644,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#copy_file\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -690,7 +683,7 @@ module AsposeWordsCloud
       # verify the required parameter 'src_path' is set
       raise ArgumentError, 'Missing the required parameter src_path when calling WordsApi.copy_folder' if @api_client.config.client_side_validation && request.src_path.nil?
       # resource path
-      local_var_path = '/words/storage/folder/copy/{srcPath}'
+      local_var_path = '/words/storage/folder/copy/{srcPath}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('SrcPath') + '}', request.src_path.to_s)
 
       # query parameters
@@ -728,7 +721,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#copy_folder\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -764,7 +756,7 @@ module AsposeWordsCloud
 
       @api_client.config.logger.debug 'Calling API: WordsApi.create_document ...' if @api_client.config.debugging
       # resource path
-      local_var_path = '/words/create'
+      local_var_path = '/words/create'[1..-1]
 
       # query parameters
       query_params = {}
@@ -805,7 +797,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#create_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -843,7 +834,7 @@ module AsposeWordsCloud
       # verify the required parameter 'path' is set
       raise ArgumentError, 'Missing the required parameter path when calling WordsApi.create_folder' if @api_client.config.client_side_validation && request.path.nil?
       # resource path
-      local_var_path = '/words/storage/folder/{path}'
+      local_var_path = '/words/storage/folder/{path}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Path') + '}', request.path.to_s)
 
       # query parameters
@@ -874,7 +865,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#create_folder\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -916,7 +906,7 @@ module AsposeWordsCloud
       # verify the required parameter 'property' is set
       raise ArgumentError, 'Missing the required parameter property when calling WordsApi.create_or_update_document_property' if @api_client.config.client_side_validation && request.property.nil?
       # resource path
-      local_var_path = '/words/{name}/documentProperties/{propertyName}'
+      local_var_path = '/words/{name}/documentProperties/{propertyName}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('PropertyName') + '}', request.property_name.to_s)
 
@@ -979,7 +969,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentPropertyResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#create_or_update_document_property\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -1023,7 +1012,7 @@ module AsposeWordsCloud
       # verify enum value
       raise ArgumentError, 'invalid value for border_type, must be one of Bottom, Left, Right, Top, Horizontal, Vertical, DiagonalDown, DiagonalUp, None' if @api_client.config.client_side_validation && !['Bottom', 'Left', 'Right', 'Top', 'Horizontal', 'Vertical', 'DiagonalDown', 'DiagonalUp', 'None'].include?(request.border_type)
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/borders/{borderType}'
+      local_var_path = '/words/{name}/{nodePath}/borders/{borderType}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('BorderType') + '}', request.border_type.to_s)
@@ -1087,7 +1076,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'BorderResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_border\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -1127,7 +1115,7 @@ module AsposeWordsCloud
       # verify the required parameter 'node_path' is set
       raise ArgumentError, 'Missing the required parameter node_path when calling WordsApi.delete_borders' if @api_client.config.client_side_validation && request.node_path.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/borders'
+      local_var_path = '/words/{name}/{nodePath}/borders'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
 
@@ -1190,7 +1178,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'BordersResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_borders\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -1230,7 +1217,7 @@ module AsposeWordsCloud
       # verify the required parameter 'comment_index' is set
       raise ArgumentError, 'Missing the required parameter comment_index when calling WordsApi.delete_comment' if @api_client.config.client_side_validation && request.comment_index.nil?
       # resource path
-      local_var_path = '/words/{name}/comments/{commentIndex}'
+      local_var_path = '/words/{name}/comments/{commentIndex}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('CommentIndex') + '}', request.comment_index.to_s)
 
@@ -1292,7 +1279,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_comment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -1332,7 +1318,7 @@ module AsposeWordsCloud
       # verify the required parameter 'property_name' is set
       raise ArgumentError, 'Missing the required parameter property_name when calling WordsApi.delete_document_property' if @api_client.config.client_side_validation && request.property_name.nil?
       # resource path
-      local_var_path = '/words/{name}/documentProperties/{propertyName}'
+      local_var_path = '/words/{name}/documentProperties/{propertyName}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('PropertyName') + '}', request.property_name.to_s)
 
@@ -1394,7 +1380,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_document_property\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -1436,7 +1421,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_drawing_object' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/drawingObjects/{index}'
+      local_var_path = '/words/{name}/{nodePath}/drawingObjects/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
@@ -1499,7 +1484,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_drawing_object\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -1539,7 +1523,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_drawing_object_without_node_path' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/drawingObjects/{index}'
+      local_var_path = '/words/{name}/drawingObjects/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
@@ -1601,7 +1585,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_drawing_object_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -1643,7 +1626,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_field' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/fields/{index}'
+      local_var_path = '/words/{name}/{nodePath}/fields/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
@@ -1706,7 +1689,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -1746,7 +1728,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_field_without_node_path' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/fields/{index}'
+      local_var_path = '/words/{name}/fields/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
@@ -1808,7 +1790,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_field_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -1848,7 +1829,7 @@ module AsposeWordsCloud
       # verify the required parameter 'node_path' is set
       raise ArgumentError, 'Missing the required parameter node_path when calling WordsApi.delete_fields' if @api_client.config.client_side_validation && request.node_path.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/fields'
+      local_var_path = '/words/{name}/{nodePath}/fields'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
 
@@ -1910,7 +1891,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_fields\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -1948,7 +1928,7 @@ module AsposeWordsCloud
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_fields_without_node_path' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
-      local_var_path = '/words/{name}/fields'
+      local_var_path = '/words/{name}/fields'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
@@ -2009,7 +1989,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_fields_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -2047,7 +2026,7 @@ module AsposeWordsCloud
       # verify the required parameter 'path' is set
       raise ArgumentError, 'Missing the required parameter path when calling WordsApi.delete_file' if @api_client.config.client_side_validation && request.path.nil?
       # resource path
-      local_var_path = '/words/storage/file/{path}'
+      local_var_path = '/words/storage/file/{path}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Path') + '}', request.path.to_s)
 
       # query parameters
@@ -2083,7 +2062,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_file\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -2121,7 +2099,7 @@ module AsposeWordsCloud
       # verify the required parameter 'path' is set
       raise ArgumentError, 'Missing the required parameter path when calling WordsApi.delete_folder' if @api_client.config.client_side_validation && request.path.nil?
       # resource path
-      local_var_path = '/words/storage/folder/{path}'
+      local_var_path = '/words/storage/folder/{path}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Path') + '}', request.path.to_s)
 
       # query parameters
@@ -2157,7 +2135,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_folder\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -2199,7 +2176,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_footnote' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/footnotes/{index}'
+      local_var_path = '/words/{name}/{nodePath}/footnotes/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
@@ -2262,7 +2239,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_footnote\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -2302,7 +2278,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_footnote_without_node_path' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/footnotes/{index}'
+      local_var_path = '/words/{name}/footnotes/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
@@ -2364,7 +2340,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_footnote_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -2406,7 +2381,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_form_field' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/formfields/{index}'
+      local_var_path = '/words/{name}/{nodePath}/formfields/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
@@ -2469,7 +2444,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_form_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -2509,7 +2483,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_form_field_without_node_path' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/formfields/{index}'
+      local_var_path = '/words/{name}/formfields/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
@@ -2571,7 +2545,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_form_field_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -2613,7 +2586,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_header_footer' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/{sectionPath}/headersfooters/{index}'
+      local_var_path = '/words/{name}/{sectionPath}/headersfooters/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('SectionPath') + '}', request.section_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
@@ -2676,7 +2649,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_header_footer\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -2716,7 +2688,7 @@ module AsposeWordsCloud
       # verify the required parameter 'section_path' is set
       raise ArgumentError, 'Missing the required parameter section_path when calling WordsApi.delete_headers_footers' if @api_client.config.client_side_validation && request.section_path.nil?
       # resource path
-      local_var_path = '/words/{name}/{sectionPath}/headersfooters'
+      local_var_path = '/words/{name}/{sectionPath}/headersfooters'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('SectionPath') + '}', request.section_path.to_s)
 
@@ -2783,7 +2755,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_headers_footers\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -2821,7 +2792,7 @@ module AsposeWordsCloud
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_macros' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
-      local_var_path = '/words/{name}/macros'
+      local_var_path = '/words/{name}/macros'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
@@ -2882,7 +2853,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_macros\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -2924,7 +2894,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_office_math_object' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/OfficeMathObjects/{index}'
+      local_var_path = '/words/{name}/{nodePath}/OfficeMathObjects/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
@@ -2987,7 +2957,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_office_math_object\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -3027,7 +2996,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_office_math_object_without_node_path' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/OfficeMathObjects/{index}'
+      local_var_path = '/words/{name}/OfficeMathObjects/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
@@ -3089,7 +3058,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_office_math_object_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -3131,7 +3099,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_paragraph' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/paragraphs/{index}'
+      local_var_path = '/words/{name}/{nodePath}/paragraphs/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
@@ -3194,7 +3162,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_paragraph\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -3234,7 +3201,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_paragraph_without_node_path' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/paragraphs/{index}'
+      local_var_path = '/words/{name}/paragraphs/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
@@ -3296,7 +3263,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_paragraph_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -3338,7 +3304,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_run' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/{paragraphPath}/runs/{index}'
+      local_var_path = '/words/{name}/{paragraphPath}/runs/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('ParagraphPath') + '}', request.paragraph_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
@@ -3401,7 +3367,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_run\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -3441,7 +3406,7 @@ module AsposeWordsCloud
       # verify the required parameter 'section_index' is set
       raise ArgumentError, 'Missing the required parameter section_index when calling WordsApi.delete_section' if @api_client.config.client_side_validation && request.section_index.nil?
       # resource path
-      local_var_path = '/words/{name}/sections/{sectionIndex}'
+      local_var_path = '/words/{name}/sections/{sectionIndex}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('SectionIndex') + '}', request.section_index.to_s)
 
@@ -3503,7 +3468,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_section\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -3545,7 +3509,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_table' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/tables/{index}'
+      local_var_path = '/words/{name}/{nodePath}/tables/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
@@ -3608,7 +3572,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_table\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -3650,7 +3613,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_table_cell' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/{tableRowPath}/cells/{index}'
+      local_var_path = '/words/{name}/{tableRowPath}/cells/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('TableRowPath') + '}', request.table_row_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
@@ -3713,7 +3676,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_table_cell\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -3755,7 +3717,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_table_row' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/{tablePath}/rows/{index}'
+      local_var_path = '/words/{name}/{tablePath}/rows/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('TablePath') + '}', request.table_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
@@ -3818,7 +3780,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_table_row\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -3858,7 +3819,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_table_without_node_path' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/tables/{index}'
+      local_var_path = '/words/{name}/tables/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
@@ -3920,7 +3881,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_table_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -3958,7 +3918,7 @@ module AsposeWordsCloud
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_watermark' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
-      local_var_path = '/words/{name}/watermarks/deleteLast'
+      local_var_path = '/words/{name}/watermarks/deleteLast'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
@@ -4020,7 +3980,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_watermark\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4058,7 +4017,7 @@ module AsposeWordsCloud
       # verify the required parameter 'path' is set
       raise ArgumentError, 'Missing the required parameter path when calling WordsApi.download_file' if @api_client.config.client_side_validation && request.path.nil?
       # resource path
-      local_var_path = '/words/storage/file/{path}'
+      local_var_path = '/words/storage/file/{path}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Path') + '}', request.path.to_s)
 
       # query parameters
@@ -4095,7 +4054,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#download_file\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4133,7 +4091,7 @@ module AsposeWordsCloud
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.execute_mail_merge' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
-      local_var_path = '/words/{name}/MailMerge'
+      local_var_path = '/words/{name}/MailMerge'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
@@ -4206,7 +4164,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#execute_mail_merge\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4246,7 +4203,7 @@ module AsposeWordsCloud
       # verify the required parameter 'data' is set
       raise ArgumentError, 'Missing the required parameter data when calling WordsApi.execute_mail_merge_online' if @api_client.config.client_side_validation && request.data.nil?
       # resource path
-      local_var_path = '/words/MailMerge'
+      local_var_path = '/words/MailMerge'[1..-1]
 
       # query parameters
       query_params = {}
@@ -4289,7 +4246,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#execute_mail_merge_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4325,7 +4281,7 @@ module AsposeWordsCloud
 
       @api_client.config.logger.debug 'Calling API: WordsApi.get_available_fonts ...' if @api_client.config.debugging
       # resource path
-      local_var_path = '/words/fonts/available'
+      local_var_path = '/words/fonts/available'[1..-1]
 
       # query parameters
       query_params = {}
@@ -4356,7 +4312,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'AvailableFontsResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_available_fonts\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4396,7 +4351,7 @@ module AsposeWordsCloud
       # verify the required parameter 'bookmark_name' is set
       raise ArgumentError, 'Missing the required parameter bookmark_name when calling WordsApi.get_bookmark_by_name' if @api_client.config.client_side_validation && request.bookmark_name.nil?
       # resource path
-      local_var_path = '/words/{name}/bookmarks/{bookmarkName}'
+      local_var_path = '/words/{name}/bookmarks/{bookmarkName}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('BookmarkName') + '}', request.bookmark_name.to_s)
 
@@ -4444,7 +4399,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'BookmarkResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_bookmark_by_name\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4482,7 +4436,7 @@ module AsposeWordsCloud
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_bookmarks' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
-      local_var_path = '/words/{name}/bookmarks'
+      local_var_path = '/words/{name}/bookmarks'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
@@ -4529,7 +4483,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'BookmarksResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_bookmarks\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4573,7 +4526,7 @@ module AsposeWordsCloud
       # verify enum value
       raise ArgumentError, 'invalid value for border_type, must be one of Bottom, Left, Right, Top, Horizontal, Vertical, DiagonalDown, DiagonalUp, None' if @api_client.config.client_side_validation && !['Bottom', 'Left', 'Right', 'Top', 'Horizontal', 'Vertical', 'DiagonalDown', 'DiagonalUp', 'None'].include?(request.border_type)
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/borders/{borderType}'
+      local_var_path = '/words/{name}/{nodePath}/borders/{borderType}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('BorderType') + '}', request.border_type.to_s)
@@ -4622,7 +4575,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'BorderResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_border\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4662,7 +4614,7 @@ module AsposeWordsCloud
       # verify the required parameter 'node_path' is set
       raise ArgumentError, 'Missing the required parameter node_path when calling WordsApi.get_borders' if @api_client.config.client_side_validation && request.node_path.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/borders'
+      local_var_path = '/words/{name}/{nodePath}/borders'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
 
@@ -4710,7 +4662,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'BordersResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_borders\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4750,7 +4701,7 @@ module AsposeWordsCloud
       # verify the required parameter 'comment_index' is set
       raise ArgumentError, 'Missing the required parameter comment_index when calling WordsApi.get_comment' if @api_client.config.client_side_validation && request.comment_index.nil?
       # resource path
-      local_var_path = '/words/{name}/comments/{commentIndex}'
+      local_var_path = '/words/{name}/comments/{commentIndex}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('CommentIndex') + '}', request.comment_index.to_s)
 
@@ -4798,7 +4749,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'CommentResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_comment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4836,7 +4786,7 @@ module AsposeWordsCloud
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_comments' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
-      local_var_path = '/words/{name}/comments'
+      local_var_path = '/words/{name}/comments'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
@@ -4883,7 +4833,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'CommentsResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_comments\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -4921,7 +4870,7 @@ module AsposeWordsCloud
       # verify the required parameter 'document_name' is set
       raise ArgumentError, 'Missing the required parameter document_name when calling WordsApi.get_document' if @api_client.config.client_side_validation && request.document_name.nil?
       # resource path
-      local_var_path = '/words/{documentName}'
+      local_var_path = '/words/{documentName}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('DocumentName') + '}', request.document_name.to_s)
 
       # query parameters
@@ -4968,7 +4917,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5010,7 +4958,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_document_drawing_object_by_index' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/drawingObjects/{index}'
+      local_var_path = '/words/{name}/{nodePath}/drawingObjects/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
@@ -5059,7 +5007,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DrawingObjectResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_drawing_object_by_index\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5099,7 +5046,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_document_drawing_object_by_index_without_node_path' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/drawingObjects/{index}'
+      local_var_path = '/words/{name}/drawingObjects/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
@@ -5147,7 +5094,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DrawingObjectResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_drawing_object_by_index_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5189,7 +5135,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_document_drawing_object_image_data' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/drawingObjects/{index}/imageData'
+      local_var_path = '/words/{name}/{nodePath}/drawingObjects/{index}/imageData'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
@@ -5238,7 +5184,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_drawing_object_image_data\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5278,7 +5223,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_document_drawing_object_image_data_without_node_path' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/drawingObjects/{index}/imageData'
+      local_var_path = '/words/{name}/drawingObjects/{index}/imageData'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
@@ -5326,7 +5271,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_drawing_object_image_data_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5368,7 +5312,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_document_drawing_object_ole_data' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/drawingObjects/{index}/oleData'
+      local_var_path = '/words/{name}/{nodePath}/drawingObjects/{index}/oleData'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
@@ -5417,7 +5361,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_drawing_object_ole_data\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5457,7 +5400,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_document_drawing_object_ole_data_without_node_path' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/drawingObjects/{index}/oleData'
+      local_var_path = '/words/{name}/drawingObjects/{index}/oleData'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
@@ -5505,7 +5448,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_drawing_object_ole_data_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5545,7 +5487,7 @@ module AsposeWordsCloud
       # verify the required parameter 'node_path' is set
       raise ArgumentError, 'Missing the required parameter node_path when calling WordsApi.get_document_drawing_objects' if @api_client.config.client_side_validation && request.node_path.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/drawingObjects'
+      local_var_path = '/words/{name}/{nodePath}/drawingObjects'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
 
@@ -5593,7 +5535,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DrawingObjectsResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_drawing_objects\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5631,7 +5572,7 @@ module AsposeWordsCloud
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_drawing_objects_without_node_path' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
-      local_var_path = '/words/{name}/drawingObjects'
+      local_var_path = '/words/{name}/drawingObjects'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
@@ -5678,7 +5619,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DrawingObjectsResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_drawing_objects_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5716,7 +5656,7 @@ module AsposeWordsCloud
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_field_names' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
-      local_var_path = '/words/{name}/mailMerge/FieldNames'
+      local_var_path = '/words/{name}/mailMerge/FieldNames'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
@@ -5768,7 +5708,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FieldNamesResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_field_names\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5806,7 +5745,7 @@ module AsposeWordsCloud
       # verify the required parameter 'template' is set
       raise ArgumentError, 'Missing the required parameter template when calling WordsApi.get_document_field_names_online' if @api_client.config.client_side_validation && request.template.nil?
       # resource path
-      local_var_path = '/words/mailMerge/FieldNames'
+      local_var_path = '/words/mailMerge/FieldNames'[1..-1]
 
       # query parameters
       query_params = {}
@@ -5838,7 +5777,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FieldNamesResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_field_names_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5878,7 +5816,7 @@ module AsposeWordsCloud
       # verify the required parameter 'hyperlink_index' is set
       raise ArgumentError, 'Missing the required parameter hyperlink_index when calling WordsApi.get_document_hyperlink_by_index' if @api_client.config.client_side_validation && request.hyperlink_index.nil?
       # resource path
-      local_var_path = '/words/{name}/hyperlinks/{hyperlinkIndex}'
+      local_var_path = '/words/{name}/hyperlinks/{hyperlinkIndex}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('HyperlinkIndex') + '}', request.hyperlink_index.to_s)
 
@@ -5926,7 +5864,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'HyperlinkResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_hyperlink_by_index\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -5964,7 +5901,7 @@ module AsposeWordsCloud
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_hyperlinks' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
-      local_var_path = '/words/{name}/hyperlinks'
+      local_var_path = '/words/{name}/hyperlinks'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
@@ -6011,7 +5948,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'HyperlinksResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_hyperlinks\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6049,7 +5985,7 @@ module AsposeWordsCloud
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_properties' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
-      local_var_path = '/words/{name}/documentProperties'
+      local_var_path = '/words/{name}/documentProperties'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
@@ -6096,7 +6032,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentPropertiesResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_properties\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6136,7 +6071,7 @@ module AsposeWordsCloud
       # verify the required parameter 'property_name' is set
       raise ArgumentError, 'Missing the required parameter property_name when calling WordsApi.get_document_property' if @api_client.config.client_side_validation && request.property_name.nil?
       # resource path
-      local_var_path = '/words/{name}/documentProperties/{propertyName}'
+      local_var_path = '/words/{name}/documentProperties/{propertyName}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('PropertyName') + '}', request.property_name.to_s)
 
@@ -6184,7 +6119,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentPropertyResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_property\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6222,7 +6156,7 @@ module AsposeWordsCloud
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_protection' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
-      local_var_path = '/words/{name}/protection'
+      local_var_path = '/words/{name}/protection'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
@@ -6269,7 +6203,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'ProtectionDataResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_protection\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6307,7 +6240,7 @@ module AsposeWordsCloud
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_document_statistics' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
-      local_var_path = '/words/{name}/statistics'
+      local_var_path = '/words/{name}/statistics'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
@@ -6369,7 +6302,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'StatDataResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_statistics\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6409,7 +6341,7 @@ module AsposeWordsCloud
       # verify the required parameter 'format' is set
       raise ArgumentError, 'Missing the required parameter format when calling WordsApi.get_document_with_format' if @api_client.config.client_side_validation && request.format.nil?
       # resource path
-      local_var_path = '/words/{name}'
+      local_var_path = '/words/{name}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
@@ -6468,7 +6400,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_with_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6510,7 +6441,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_field' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/fields/{index}'
+      local_var_path = '/words/{name}/{nodePath}/fields/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
@@ -6559,7 +6490,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FieldResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6599,7 +6529,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_field_without_node_path' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/fields/{index}'
+      local_var_path = '/words/{name}/fields/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
@@ -6647,7 +6577,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FieldResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_field_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6687,7 +6616,7 @@ module AsposeWordsCloud
       # verify the required parameter 'node_path' is set
       raise ArgumentError, 'Missing the required parameter node_path when calling WordsApi.get_fields' if @api_client.config.client_side_validation && request.node_path.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/fields'
+      local_var_path = '/words/{name}/{nodePath}/fields'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
 
@@ -6735,7 +6664,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FieldsResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_fields\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6773,7 +6701,7 @@ module AsposeWordsCloud
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_fields_without_node_path' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
-      local_var_path = '/words/{name}/fields'
+      local_var_path = '/words/{name}/fields'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
@@ -6820,7 +6748,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FieldsResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_fields_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6858,7 +6785,7 @@ module AsposeWordsCloud
       # verify the required parameter 'path' is set
       raise ArgumentError, 'Missing the required parameter path when calling WordsApi.get_files_list' if @api_client.config.client_side_validation && request.path.nil?
       # resource path
-      local_var_path = '/words/storage/folder/{path}'
+      local_var_path = '/words/storage/folder/{path}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Path') + '}', request.path.to_s)
 
       # query parameters
@@ -6890,7 +6817,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FilesList')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_files_list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -6932,7 +6858,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_footnote' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/footnotes/{index}'
+      local_var_path = '/words/{name}/{nodePath}/footnotes/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
@@ -6981,7 +6907,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FootnoteResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_footnote\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7021,7 +6946,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_footnote_without_node_path' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/footnotes/{index}'
+      local_var_path = '/words/{name}/footnotes/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
@@ -7069,7 +6994,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FootnoteResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_footnote_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7109,7 +7033,7 @@ module AsposeWordsCloud
       # verify the required parameter 'node_path' is set
       raise ArgumentError, 'Missing the required parameter node_path when calling WordsApi.get_footnotes' if @api_client.config.client_side_validation && request.node_path.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/footnotes'
+      local_var_path = '/words/{name}/{nodePath}/footnotes'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
 
@@ -7157,7 +7081,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FootnotesResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_footnotes\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7195,7 +7118,7 @@ module AsposeWordsCloud
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_footnotes_without_node_path' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
-      local_var_path = '/words/{name}/footnotes'
+      local_var_path = '/words/{name}/footnotes'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
@@ -7242,7 +7165,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FootnotesResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_footnotes_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7284,7 +7206,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_form_field' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/formfields/{index}'
+      local_var_path = '/words/{name}/{nodePath}/formfields/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
@@ -7333,7 +7255,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FormFieldResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_form_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7373,7 +7294,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_form_field_without_node_path' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/formfields/{index}'
+      local_var_path = '/words/{name}/formfields/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
@@ -7421,7 +7342,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FormFieldResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_form_field_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7461,7 +7381,7 @@ module AsposeWordsCloud
       # verify the required parameter 'node_path' is set
       raise ArgumentError, 'Missing the required parameter node_path when calling WordsApi.get_form_fields' if @api_client.config.client_side_validation && request.node_path.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/formfields'
+      local_var_path = '/words/{name}/{nodePath}/formfields'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
 
@@ -7509,7 +7429,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FormFieldsResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_form_fields\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7547,7 +7466,7 @@ module AsposeWordsCloud
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_form_fields_without_node_path' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
-      local_var_path = '/words/{name}/formfields'
+      local_var_path = '/words/{name}/formfields'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
@@ -7594,7 +7513,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FormFieldsResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_form_fields_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7634,7 +7552,7 @@ module AsposeWordsCloud
       # verify the required parameter 'header_footer_index' is set
       raise ArgumentError, 'Missing the required parameter header_footer_index when calling WordsApi.get_header_footer' if @api_client.config.client_side_validation && request.header_footer_index.nil?
       # resource path
-      local_var_path = '/words/{name}/headersfooters/{headerFooterIndex}'
+      local_var_path = '/words/{name}/headersfooters/{headerFooterIndex}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('HeaderFooterIndex') + '}', request.header_footer_index.to_s)
 
@@ -7687,7 +7605,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'HeaderFooterResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_header_footer\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7729,7 +7646,7 @@ module AsposeWordsCloud
       # verify the required parameter 'section_index' is set
       raise ArgumentError, 'Missing the required parameter section_index when calling WordsApi.get_header_footer_of_section' if @api_client.config.client_side_validation && request.section_index.nil?
       # resource path
-      local_var_path = '/words/{name}/sections/{sectionIndex}/headersfooters/{headerFooterIndex}'
+      local_var_path = '/words/{name}/sections/{sectionIndex}/headersfooters/{headerFooterIndex}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('HeaderFooterIndex') + '}', request.header_footer_index.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('SectionIndex') + '}', request.section_index.to_s)
@@ -7783,7 +7700,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'HeaderFooterResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_header_footer_of_section\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7823,7 +7739,7 @@ module AsposeWordsCloud
       # verify the required parameter 'section_path' is set
       raise ArgumentError, 'Missing the required parameter section_path when calling WordsApi.get_header_footers' if @api_client.config.client_side_validation && request.section_path.nil?
       # resource path
-      local_var_path = '/words/{name}/{sectionPath}/headersfooters'
+      local_var_path = '/words/{name}/{sectionPath}/headersfooters'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('SectionPath') + '}', request.section_path.to_s)
 
@@ -7876,7 +7792,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'HeaderFootersResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_header_footers\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -7918,7 +7833,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_office_math_object' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/OfficeMathObjects/{index}'
+      local_var_path = '/words/{name}/{nodePath}/OfficeMathObjects/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
@@ -7967,7 +7882,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'OfficeMathObjectResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_office_math_object\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8007,7 +7921,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_office_math_object_without_node_path' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/OfficeMathObjects/{index}'
+      local_var_path = '/words/{name}/OfficeMathObjects/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
@@ -8055,7 +7969,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'OfficeMathObjectResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_office_math_object_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8095,7 +8008,7 @@ module AsposeWordsCloud
       # verify the required parameter 'node_path' is set
       raise ArgumentError, 'Missing the required parameter node_path when calling WordsApi.get_office_math_objects' if @api_client.config.client_side_validation && request.node_path.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/OfficeMathObjects'
+      local_var_path = '/words/{name}/{nodePath}/OfficeMathObjects'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
 
@@ -8143,7 +8056,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'OfficeMathObjectsResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_office_math_objects\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8181,7 +8093,7 @@ module AsposeWordsCloud
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_office_math_objects_without_node_path' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
-      local_var_path = '/words/{name}/OfficeMathObjects'
+      local_var_path = '/words/{name}/OfficeMathObjects'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
@@ -8228,7 +8140,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'OfficeMathObjectsResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_office_math_objects_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8270,7 +8181,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_paragraph' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/paragraphs/{index}'
+      local_var_path = '/words/{name}/{nodePath}/paragraphs/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
@@ -8319,7 +8230,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'ParagraphResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_paragraph\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8361,7 +8271,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_paragraph_format' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/paragraphs/{index}/format'
+      local_var_path = '/words/{name}/{nodePath}/paragraphs/{index}/format'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
@@ -8410,7 +8320,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'ParagraphFormatResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_paragraph_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8450,7 +8359,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_paragraph_format_without_node_path' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/paragraphs/{index}/format'
+      local_var_path = '/words/{name}/paragraphs/{index}/format'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
@@ -8498,7 +8407,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'ParagraphFormatResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_paragraph_format_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8538,7 +8446,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_paragraph_without_node_path' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/paragraphs/{index}'
+      local_var_path = '/words/{name}/paragraphs/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
@@ -8586,7 +8494,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'ParagraphResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_paragraph_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8626,7 +8533,7 @@ module AsposeWordsCloud
       # verify the required parameter 'node_path' is set
       raise ArgumentError, 'Missing the required parameter node_path when calling WordsApi.get_paragraphs' if @api_client.config.client_side_validation && request.node_path.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/paragraphs'
+      local_var_path = '/words/{name}/{nodePath}/paragraphs'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
 
@@ -8674,7 +8581,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'ParagraphLinkCollectionResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_paragraphs\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8712,7 +8618,7 @@ module AsposeWordsCloud
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_paragraphs_without_node_path' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
-      local_var_path = '/words/{name}/paragraphs'
+      local_var_path = '/words/{name}/paragraphs'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
@@ -8759,7 +8665,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'ParagraphLinkCollectionResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_paragraphs_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8798,10 +8703,8 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_range_text' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'range_start_identifier' is set
       raise ArgumentError, 'Missing the required parameter range_start_identifier when calling WordsApi.get_range_text' if @api_client.config.client_side_validation && request.range_start_identifier.nil?
-      # verify the required parameter 'range_end_identifier' is set
-      raise ArgumentError, 'Missing the required parameter range_end_identifier when calling WordsApi.get_range_text' if @api_client.config.client_side_validation && request.range_end_identifier.nil?
       # resource path
-      local_var_path = '/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}'
+      local_var_path = '/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('RangeStartIdentifier') + '}', request.range_start_identifier.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('RangeEndIdentifier') + '}', request.range_end_identifier.to_s)
@@ -8850,7 +8753,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'RangeTextResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_range_text\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8892,7 +8794,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_run' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/{paragraphPath}/runs/{index}'
+      local_var_path = '/words/{name}/{paragraphPath}/runs/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('ParagraphPath') + '}', request.paragraph_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
@@ -8941,7 +8843,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'RunResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_run\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -8983,7 +8884,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_run_font' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/{paragraphPath}/runs/{index}/font'
+      local_var_path = '/words/{name}/{paragraphPath}/runs/{index}/font'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('ParagraphPath') + '}', request.paragraph_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
@@ -9032,7 +8933,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FontResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_run_font\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -9072,7 +8972,7 @@ module AsposeWordsCloud
       # verify the required parameter 'paragraph_path' is set
       raise ArgumentError, 'Missing the required parameter paragraph_path when calling WordsApi.get_runs' if @api_client.config.client_side_validation && request.paragraph_path.nil?
       # resource path
-      local_var_path = '/words/{name}/{paragraphPath}/runs'
+      local_var_path = '/words/{name}/{paragraphPath}/runs'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('ParagraphPath') + '}', request.paragraph_path.to_s)
 
@@ -9120,7 +9020,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'RunsResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_runs\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -9160,7 +9059,7 @@ module AsposeWordsCloud
       # verify the required parameter 'section_index' is set
       raise ArgumentError, 'Missing the required parameter section_index when calling WordsApi.get_section' if @api_client.config.client_side_validation && request.section_index.nil?
       # resource path
-      local_var_path = '/words/{name}/sections/{sectionIndex}'
+      local_var_path = '/words/{name}/sections/{sectionIndex}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('SectionIndex') + '}', request.section_index.to_s)
 
@@ -9208,7 +9107,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'SectionResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_section\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -9248,7 +9146,7 @@ module AsposeWordsCloud
       # verify the required parameter 'section_index' is set
       raise ArgumentError, 'Missing the required parameter section_index when calling WordsApi.get_section_page_setup' if @api_client.config.client_side_validation && request.section_index.nil?
       # resource path
-      local_var_path = '/words/{name}/sections/{sectionIndex}/pageSetup'
+      local_var_path = '/words/{name}/sections/{sectionIndex}/pageSetup'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('SectionIndex') + '}', request.section_index.to_s)
 
@@ -9296,7 +9194,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'SectionPageSetupResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_section_page_setup\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -9334,7 +9231,7 @@ module AsposeWordsCloud
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_sections' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
-      local_var_path = '/words/{name}/sections'
+      local_var_path = '/words/{name}/sections'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
@@ -9381,7 +9278,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'SectionLinkCollectionResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_sections\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -9423,7 +9319,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_table' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/tables/{index}'
+      local_var_path = '/words/{name}/{nodePath}/tables/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
@@ -9472,7 +9368,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TableResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_table\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -9514,7 +9409,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_table_cell' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/{tableRowPath}/cells/{index}'
+      local_var_path = '/words/{name}/{tableRowPath}/cells/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('TableRowPath') + '}', request.table_row_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
@@ -9563,7 +9458,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TableCellResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_table_cell\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -9605,7 +9499,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_table_cell_format' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/{tableRowPath}/cells/{index}/cellformat'
+      local_var_path = '/words/{name}/{tableRowPath}/cells/{index}/cellformat'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('TableRowPath') + '}', request.table_row_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
@@ -9654,7 +9548,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TableCellFormatResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_table_cell_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -9696,7 +9589,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_table_properties' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/tables/{index}/properties'
+      local_var_path = '/words/{name}/{nodePath}/tables/{index}/properties'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
@@ -9745,7 +9638,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TablePropertiesResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_table_properties\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -9785,7 +9677,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_table_properties_without_node_path' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/tables/{index}/properties'
+      local_var_path = '/words/{name}/tables/{index}/properties'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
@@ -9833,7 +9725,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TablePropertiesResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_table_properties_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -9875,7 +9766,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_table_row' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/{tablePath}/rows/{index}'
+      local_var_path = '/words/{name}/{tablePath}/rows/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('TablePath') + '}', request.table_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
@@ -9924,7 +9815,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TableRowResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_table_row\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -9966,7 +9856,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_table_row_format' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/{tablePath}/rows/{index}/rowformat'
+      local_var_path = '/words/{name}/{tablePath}/rows/{index}/rowformat'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('TablePath') + '}', request.table_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
@@ -10015,7 +9905,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TableRowFormatResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_table_row_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -10055,7 +9944,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_table_without_node_path' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/tables/{index}'
+      local_var_path = '/words/{name}/tables/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
@@ -10103,7 +9992,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TableResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_table_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -10143,7 +10031,7 @@ module AsposeWordsCloud
       # verify the required parameter 'node_path' is set
       raise ArgumentError, 'Missing the required parameter node_path when calling WordsApi.get_tables' if @api_client.config.client_side_validation && request.node_path.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/tables'
+      local_var_path = '/words/{name}/{nodePath}/tables'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
 
@@ -10191,7 +10079,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TableLinkCollectionResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_tables\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -10229,7 +10116,7 @@ module AsposeWordsCloud
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_tables_without_node_path' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
-      local_var_path = '/words/{name}/tables'
+      local_var_path = '/words/{name}/tables'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
@@ -10276,7 +10163,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TableLinkCollectionResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_tables_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -10316,7 +10202,7 @@ module AsposeWordsCloud
       # verify the required parameter 'comment' is set
       raise ArgumentError, 'Missing the required parameter comment when calling WordsApi.insert_comment' if @api_client.config.client_side_validation && request.comment.nil?
       # resource path
-      local_var_path = '/words/{name}/comments'
+      local_var_path = '/words/{name}/comments'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
@@ -10378,7 +10264,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'CommentResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_comment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -10422,7 +10307,7 @@ module AsposeWordsCloud
       # verify the required parameter 'node_path' is set
       raise ArgumentError, 'Missing the required parameter node_path when calling WordsApi.insert_drawing_object' if @api_client.config.client_side_validation && request.node_path.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/drawingObjects'
+      local_var_path = '/words/{name}/{nodePath}/drawingObjects'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
 
@@ -10487,7 +10372,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DrawingObjectResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_drawing_object\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -10529,7 +10413,7 @@ module AsposeWordsCloud
       # verify the required parameter 'image_file' is set
       raise ArgumentError, 'Missing the required parameter image_file when calling WordsApi.insert_drawing_object_without_node_path' if @api_client.config.client_side_validation && request.image_file.nil?
       # resource path
-      local_var_path = '/words/{name}/drawingObjects'
+      local_var_path = '/words/{name}/drawingObjects'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
@@ -10593,7 +10477,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DrawingObjectResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_drawing_object_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -10635,7 +10518,7 @@ module AsposeWordsCloud
       # verify the required parameter 'node_path' is set
       raise ArgumentError, 'Missing the required parameter node_path when calling WordsApi.insert_field' if @api_client.config.client_side_validation && request.node_path.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/fields'
+      local_var_path = '/words/{name}/{nodePath}/fields'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
 
@@ -10703,7 +10586,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FieldResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -10743,7 +10625,7 @@ module AsposeWordsCloud
       # verify the required parameter 'field' is set
       raise ArgumentError, 'Missing the required parameter field when calling WordsApi.insert_field_without_node_path' if @api_client.config.client_side_validation && request.field.nil?
       # resource path
-      local_var_path = '/words/{name}/fields'
+      local_var_path = '/words/{name}/fields'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
@@ -10810,7 +10692,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FieldResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_field_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -10852,7 +10733,7 @@ module AsposeWordsCloud
       # verify the required parameter 'node_path' is set
       raise ArgumentError, 'Missing the required parameter node_path when calling WordsApi.insert_footnote' if @api_client.config.client_side_validation && request.node_path.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/footnotes'
+      local_var_path = '/words/{name}/{nodePath}/footnotes'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
 
@@ -10915,7 +10796,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FootnoteResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_footnote\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -10955,7 +10835,7 @@ module AsposeWordsCloud
       # verify the required parameter 'footnote_dto' is set
       raise ArgumentError, 'Missing the required parameter footnote_dto when calling WordsApi.insert_footnote_without_node_path' if @api_client.config.client_side_validation && request.footnote_dto.nil?
       # resource path
-      local_var_path = '/words/{name}/footnotes'
+      local_var_path = '/words/{name}/footnotes'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
@@ -11017,7 +10897,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FootnoteResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_footnote_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -11059,7 +10938,7 @@ module AsposeWordsCloud
       # verify the required parameter 'node_path' is set
       raise ArgumentError, 'Missing the required parameter node_path when calling WordsApi.insert_form_field' if @api_client.config.client_side_validation && request.node_path.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/formfields'
+      local_var_path = '/words/{name}/{nodePath}/formfields'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
 
@@ -11127,7 +11006,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FormFieldResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_form_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -11167,7 +11045,7 @@ module AsposeWordsCloud
       # verify the required parameter 'form_field' is set
       raise ArgumentError, 'Missing the required parameter form_field when calling WordsApi.insert_form_field_without_node_path' if @api_client.config.client_side_validation && request.form_field.nil?
       # resource path
-      local_var_path = '/words/{name}/formfields'
+      local_var_path = '/words/{name}/formfields'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
@@ -11234,7 +11112,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FormFieldResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_form_field_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -11276,7 +11153,7 @@ module AsposeWordsCloud
       # verify the required parameter 'section_path' is set
       raise ArgumentError, 'Missing the required parameter section_path when calling WordsApi.insert_header_footer' if @api_client.config.client_side_validation && request.section_path.nil?
       # resource path
-      local_var_path = '/words/{name}/{sectionPath}/headersfooters'
+      local_var_path = '/words/{name}/{sectionPath}/headersfooters'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('SectionPath') + '}', request.section_path.to_s)
 
@@ -11339,7 +11216,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'HeaderFooterResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_header_footer\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -11379,7 +11255,7 @@ module AsposeWordsCloud
       # verify the required parameter 'page_number' is set
       raise ArgumentError, 'Missing the required parameter page_number when calling WordsApi.insert_page_numbers' if @api_client.config.client_side_validation && request.page_number.nil?
       # resource path
-      local_var_path = '/words/{name}/PageNumbers'
+      local_var_path = '/words/{name}/PageNumbers'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
@@ -11441,7 +11317,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_page_numbers\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -11483,7 +11358,7 @@ module AsposeWordsCloud
       # verify the required parameter 'node_path' is set
       raise ArgumentError, 'Missing the required parameter node_path when calling WordsApi.insert_paragraph' if @api_client.config.client_side_validation && request.node_path.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/paragraphs'
+      local_var_path = '/words/{name}/{nodePath}/paragraphs'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
 
@@ -11551,7 +11426,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'ParagraphResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_paragraph\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -11593,7 +11467,7 @@ module AsposeWordsCloud
       # verify the required parameter 'run' is set
       raise ArgumentError, 'Missing the required parameter run when calling WordsApi.insert_run' if @api_client.config.client_side_validation && request.run.nil?
       # resource path
-      local_var_path = '/words/{name}/{paragraphPath}/runs'
+      local_var_path = '/words/{name}/{paragraphPath}/runs'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('ParagraphPath') + '}', request.paragraph_path.to_s)
 
@@ -11661,7 +11535,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'RunResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_run\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -11698,10 +11571,12 @@ module AsposeWordsCloud
       @api_client.config.logger.debug 'Calling API: WordsApi.insert_table ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.insert_table' if @api_client.config.client_side_validation && request.name.nil?
+      # verify the required parameter 'table' is set
+      raise ArgumentError, 'Missing the required parameter table when calling WordsApi.insert_table' if @api_client.config.client_side_validation && request.table.nil?
       # verify the required parameter 'node_path' is set
       raise ArgumentError, 'Missing the required parameter node_path when calling WordsApi.insert_table' if @api_client.config.client_side_validation && request.node_path.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/tables'
+      local_var_path = '/words/{name}/{nodePath}/tables'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
 
@@ -11764,7 +11639,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TableResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_table\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -11801,10 +11675,12 @@ module AsposeWordsCloud
       @api_client.config.logger.debug 'Calling API: WordsApi.insert_table_cell ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.insert_table_cell' if @api_client.config.client_side_validation && request.name.nil?
+      # verify the required parameter 'cell' is set
+      raise ArgumentError, 'Missing the required parameter cell when calling WordsApi.insert_table_cell' if @api_client.config.client_side_validation && request.cell.nil?
       # verify the required parameter 'table_row_path' is set
       raise ArgumentError, 'Missing the required parameter table_row_path when calling WordsApi.insert_table_cell' if @api_client.config.client_side_validation && request.table_row_path.nil?
       # resource path
-      local_var_path = '/words/{name}/{tableRowPath}/cells'
+      local_var_path = '/words/{name}/{tableRowPath}/cells'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('TableRowPath') + '}', request.table_row_path.to_s)
 
@@ -11867,7 +11743,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TableCellResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_table_cell\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -11904,10 +11779,12 @@ module AsposeWordsCloud
       @api_client.config.logger.debug 'Calling API: WordsApi.insert_table_row ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.insert_table_row' if @api_client.config.client_side_validation && request.name.nil?
+      # verify the required parameter 'row' is set
+      raise ArgumentError, 'Missing the required parameter row when calling WordsApi.insert_table_row' if @api_client.config.client_side_validation && request.row.nil?
       # verify the required parameter 'table_path' is set
       raise ArgumentError, 'Missing the required parameter table_path when calling WordsApi.insert_table_row' if @api_client.config.client_side_validation && request.table_path.nil?
       # resource path
-      local_var_path = '/words/{name}/{tablePath}/rows'
+      local_var_path = '/words/{name}/{tablePath}/rows'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('TablePath') + '}', request.table_path.to_s)
 
@@ -11970,7 +11847,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TableRowResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_table_row\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -12007,8 +11883,10 @@ module AsposeWordsCloud
       @api_client.config.logger.debug 'Calling API: WordsApi.insert_table_without_node_path ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.insert_table_without_node_path' if @api_client.config.client_side_validation && request.name.nil?
+      # verify the required parameter 'table' is set
+      raise ArgumentError, 'Missing the required parameter table when calling WordsApi.insert_table_without_node_path' if @api_client.config.client_side_validation && request.table.nil?
       # resource path
-      local_var_path = '/words/{name}/tables'
+      local_var_path = '/words/{name}/tables'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
@@ -12070,7 +11948,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TableResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_table_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -12108,7 +11985,7 @@ module AsposeWordsCloud
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.insert_watermark_image' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
-      local_var_path = '/words/{name}/watermarks/images'
+      local_var_path = '/words/{name}/watermarks/images'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
@@ -12181,7 +12058,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_watermark_image\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -12221,7 +12097,7 @@ module AsposeWordsCloud
       # verify the required parameter 'watermark_text' is set
       raise ArgumentError, 'Missing the required parameter watermark_text when calling WordsApi.insert_watermark_text' if @api_client.config.client_side_validation && request.watermark_text.nil?
       # resource path
-      local_var_path = '/words/{name}/watermarks/texts'
+      local_var_path = '/words/{name}/watermarks/texts'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
@@ -12283,7 +12159,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_watermark_text\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -12321,7 +12196,7 @@ module AsposeWordsCloud
       # verify the required parameter 'data' is set
       raise ArgumentError, 'Missing the required parameter data when calling WordsApi.load_web_document' if @api_client.config.client_side_validation && request.data.nil?
       # resource path
-      local_var_path = '/words/loadWebDocument'
+      local_var_path = '/words/loadWebDocument'[1..-1]
 
       # query parameters
       query_params = {}
@@ -12352,7 +12227,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'SaveResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#load_web_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -12392,7 +12266,7 @@ module AsposeWordsCloud
       # verify the required parameter 'src_path' is set
       raise ArgumentError, 'Missing the required parameter src_path when calling WordsApi.move_file' if @api_client.config.client_side_validation && request.src_path.nil?
       # resource path
-      local_var_path = '/words/storage/file/move/{srcPath}'
+      local_var_path = '/words/storage/file/move/{srcPath}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('SrcPath') + '}', request.src_path.to_s)
 
       # query parameters
@@ -12435,7 +12309,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#move_file\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -12475,7 +12348,7 @@ module AsposeWordsCloud
       # verify the required parameter 'src_path' is set
       raise ArgumentError, 'Missing the required parameter src_path when calling WordsApi.move_folder' if @api_client.config.client_side_validation && request.src_path.nil?
       # resource path
-      local_var_path = '/words/storage/folder/move/{srcPath}'
+      local_var_path = '/words/storage/folder/move/{srcPath}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('SrcPath') + '}', request.src_path.to_s)
 
       # query parameters
@@ -12513,7 +12386,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#move_folder\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -12553,7 +12425,7 @@ module AsposeWordsCloud
       # verify the required parameter 'protection_request' is set
       raise ArgumentError, 'Missing the required parameter protection_request when calling WordsApi.protect_document' if @api_client.config.client_side_validation && request.protection_request.nil?
       # resource path
-      local_var_path = '/words/{name}/protection'
+      local_var_path = '/words/{name}/protection'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
@@ -12605,7 +12477,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'ProtectionDataResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#protect_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -12643,7 +12514,7 @@ module AsposeWordsCloud
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.reject_all_revisions' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
-      local_var_path = '/words/{name}/revisions/rejectAll'
+      local_var_path = '/words/{name}/revisions/rejectAll'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
@@ -12695,7 +12566,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'RevisionsModificationResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#reject_all_revisions\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -12734,10 +12604,8 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.remove_range' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'range_start_identifier' is set
       raise ArgumentError, 'Missing the required parameter range_start_identifier when calling WordsApi.remove_range' if @api_client.config.client_side_validation && request.range_start_identifier.nil?
-      # verify the required parameter 'range_end_identifier' is set
-      raise ArgumentError, 'Missing the required parameter range_end_identifier when calling WordsApi.remove_range' if @api_client.config.client_side_validation && request.range_end_identifier.nil?
       # resource path
-      local_var_path = '/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}'
+      local_var_path = '/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('RangeStartIdentifier') + '}', request.range_start_identifier.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('RangeEndIdentifier') + '}', request.range_end_identifier.to_s)
@@ -12791,7 +12659,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#remove_range\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -12835,7 +12702,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.render_drawing_object' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/drawingObjects/{index}/render'
+      local_var_path = '/words/{name}/{nodePath}/drawingObjects/{index}/render'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
@@ -12891,7 +12758,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#render_drawing_object\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -12933,7 +12799,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.render_drawing_object_without_node_path' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/drawingObjects/{index}/render'
+      local_var_path = '/words/{name}/drawingObjects/{index}/render'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
@@ -12988,7 +12854,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#render_drawing_object_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -13032,7 +12897,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.render_math_object' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/OfficeMathObjects/{index}/render'
+      local_var_path = '/words/{name}/{nodePath}/OfficeMathObjects/{index}/render'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
@@ -13088,7 +12953,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#render_math_object\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -13130,7 +12994,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.render_math_object_without_node_path' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/OfficeMathObjects/{index}/render'
+      local_var_path = '/words/{name}/OfficeMathObjects/{index}/render'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
@@ -13185,7 +13049,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#render_math_object_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -13227,7 +13090,7 @@ module AsposeWordsCloud
       # verify the required parameter 'format' is set
       raise ArgumentError, 'Missing the required parameter format when calling WordsApi.render_page' if @api_client.config.client_side_validation && request.format.nil?
       # resource path
-      local_var_path = '/words/{name}/pages/{pageIndex}/render'
+      local_var_path = '/words/{name}/pages/{pageIndex}/render'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('PageIndex') + '}', request.page_index.to_s)
 
@@ -13282,7 +13145,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#render_page\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -13326,7 +13188,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.render_paragraph' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/paragraphs/{index}/render'
+      local_var_path = '/words/{name}/{nodePath}/paragraphs/{index}/render'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
@@ -13382,7 +13244,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#render_paragraph\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -13424,7 +13285,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.render_paragraph_without_node_path' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/paragraphs/{index}/render'
+      local_var_path = '/words/{name}/paragraphs/{index}/render'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
@@ -13479,7 +13340,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#render_paragraph_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -13523,7 +13383,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.render_table' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/tables/{index}/render'
+      local_var_path = '/words/{name}/{nodePath}/tables/{index}/render'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
@@ -13579,7 +13439,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#render_table\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -13621,7 +13480,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.render_table_without_node_path' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/tables/{index}/render'
+      local_var_path = '/words/{name}/tables/{index}/render'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
@@ -13676,7 +13535,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'File')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#render_table_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -13716,7 +13574,7 @@ module AsposeWordsCloud
       # verify the required parameter 'replace_text' is set
       raise ArgumentError, 'Missing the required parameter replace_text when calling WordsApi.replace_text' if @api_client.config.client_side_validation && request.replace_text.nil?
       # resource path
-      local_var_path = '/words/{name}/replaceText'
+      local_var_path = '/words/{name}/replaceText'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
@@ -13778,7 +13636,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'ReplaceTextResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#replace_text\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -13819,10 +13676,8 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter range_start_identifier when calling WordsApi.replace_with_text' if @api_client.config.client_side_validation && request.range_start_identifier.nil?
       # verify the required parameter 'range_text' is set
       raise ArgumentError, 'Missing the required parameter range_text when calling WordsApi.replace_with_text' if @api_client.config.client_side_validation && request.range_text.nil?
-      # verify the required parameter 'range_end_identifier' is set
-      raise ArgumentError, 'Missing the required parameter range_end_identifier when calling WordsApi.replace_with_text' if @api_client.config.client_side_validation && request.range_end_identifier.nil?
       # resource path
-      local_var_path = '/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}'
+      local_var_path = '/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('RangeStartIdentifier') + '}', request.range_start_identifier.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('RangeEndIdentifier') + '}', request.range_end_identifier.to_s)
@@ -13876,7 +13731,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#replace_with_text\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -13912,7 +13766,7 @@ module AsposeWordsCloud
 
       @api_client.config.logger.debug 'Calling API: WordsApi.reset_cache ...' if @api_client.config.debugging
       # resource path
-      local_var_path = '/words/fonts/cache'
+      local_var_path = '/words/fonts/cache'[1..-1]
 
       # query parameters
       query_params = {}
@@ -13937,7 +13791,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names)
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#reset_cache\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -13977,7 +13830,7 @@ module AsposeWordsCloud
       # verify the required parameter 'save_options_data' is set
       raise ArgumentError, 'Missing the required parameter save_options_data when calling WordsApi.save_as' if @api_client.config.client_side_validation && request.save_options_data.nil?
       # resource path
-      local_var_path = '/words/{name}/saveAs'
+      local_var_path = '/words/{name}/saveAs'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
@@ -14029,7 +13882,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'SaveResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#save_as\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -14070,10 +13922,8 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter range_start_identifier when calling WordsApi.save_as_range' if @api_client.config.client_side_validation && request.range_start_identifier.nil?
       # verify the required parameter 'document_parameters' is set
       raise ArgumentError, 'Missing the required parameter document_parameters when calling WordsApi.save_as_range' if @api_client.config.client_side_validation && request.document_parameters.nil?
-      # verify the required parameter 'range_end_identifier' is set
-      raise ArgumentError, 'Missing the required parameter range_end_identifier when calling WordsApi.save_as_range' if @api_client.config.client_side_validation && request.range_end_identifier.nil?
       # resource path
-      local_var_path = '/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}/SaveAs'
+      local_var_path = '/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}/SaveAs'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('RangeStartIdentifier') + '}', request.range_start_identifier.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('RangeEndIdentifier') + '}', request.range_end_identifier.to_s)
@@ -14122,7 +13972,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#save_as_range\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -14162,7 +14011,7 @@ module AsposeWordsCloud
       # verify the required parameter 'save_options' is set
       raise ArgumentError, 'Missing the required parameter save_options when calling WordsApi.save_as_tiff' if @api_client.config.client_side_validation && request.save_options.nil?
       # resource path
-      local_var_path = '/words/{name}/saveAs/tiff'
+      local_var_path = '/words/{name}/saveAs/tiff'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
@@ -14299,7 +14148,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'SaveResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#save_as_tiff\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -14339,7 +14187,7 @@ module AsposeWordsCloud
       # verify the required parameter 'pattern' is set
       raise ArgumentError, 'Missing the required parameter pattern when calling WordsApi.search' if @api_client.config.client_side_validation && request.pattern.nil?
       # resource path
-      local_var_path = '/words/{name}/search'
+      local_var_path = '/words/{name}/search'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
@@ -14388,7 +14236,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'SearchResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#search\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -14425,12 +14272,16 @@ module AsposeWordsCloud
       @api_client.config.logger.debug 'Calling API: WordsApi.split_document ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.split_document' if @api_client.config.client_side_validation && request.name.nil?
+      # verify the required parameter 'format' is set
+      raise ArgumentError, 'Missing the required parameter format when calling WordsApi.split_document' if @api_client.config.client_side_validation && request.format.nil?
       # resource path
-      local_var_path = '/words/{name}/split'
+      local_var_path = '/words/{name}/split'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
       query_params = {}
+      query_params[downcase_first_letter('Format')] = request.format
+
       if local_var_path.include? downcase_first_letter('Folder')
         local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
       else
@@ -14455,11 +14306,6 @@ module AsposeWordsCloud
         local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
       else
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-      end
-      if local_var_path.include? downcase_first_letter('Format')
-        local_var_path = local_var_path.sub('{' + downcase_first_letter('Format') + '}', request.format.to_s)
-      else
-        query_params[downcase_first_letter('Format')] = request.format unless request.format.nil?
       end
       if local_var_path.include? downcase_first_letter('From')
         local_var_path = local_var_path.sub('{' + downcase_first_letter('From') + '}', request.from.to_s)
@@ -14503,7 +14349,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'SplitDocumentResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#split_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -14543,7 +14388,7 @@ module AsposeWordsCloud
       # verify the required parameter 'protection_request' is set
       raise ArgumentError, 'Missing the required parameter protection_request when calling WordsApi.unprotect_document' if @api_client.config.client_side_validation && request.protection_request.nil?
       # resource path
-      local_var_path = '/words/{name}/protection'
+      local_var_path = '/words/{name}/protection'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
@@ -14595,7 +14440,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'ProtectionDataResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#unprotect_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -14637,7 +14481,7 @@ module AsposeWordsCloud
       # verify the required parameter 'bookmark_name' is set
       raise ArgumentError, 'Missing the required parameter bookmark_name when calling WordsApi.update_bookmark' if @api_client.config.client_side_validation && request.bookmark_name.nil?
       # resource path
-      local_var_path = '/words/{name}/bookmarks/{bookmarkName}'
+      local_var_path = '/words/{name}/bookmarks/{bookmarkName}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('BookmarkName') + '}', request.bookmark_name.to_s)
 
@@ -14700,7 +14544,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'BookmarkResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_bookmark\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -14746,7 +14589,7 @@ module AsposeWordsCloud
       # verify enum value
       raise ArgumentError, 'invalid value for border_type, must be one of Bottom, Left, Right, Top, Horizontal, Vertical, DiagonalDown, DiagonalUp, None' if @api_client.config.client_side_validation && !['Bottom', 'Left', 'Right', 'Top', 'Horizontal', 'Vertical', 'DiagonalDown', 'DiagonalUp', 'None'].include?(request.border_type)
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/borders/{borderType}'
+      local_var_path = '/words/{name}/{nodePath}/borders/{borderType}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('BorderType') + '}', request.border_type.to_s)
@@ -14810,7 +14653,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'BorderResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_border\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -14852,7 +14694,7 @@ module AsposeWordsCloud
       # verify the required parameter 'comment' is set
       raise ArgumentError, 'Missing the required parameter comment when calling WordsApi.update_comment' if @api_client.config.client_side_validation && request.comment.nil?
       # resource path
-      local_var_path = '/words/{name}/comments/{commentIndex}'
+      local_var_path = '/words/{name}/comments/{commentIndex}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('CommentIndex') + '}', request.comment_index.to_s)
 
@@ -14915,7 +14757,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'CommentResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_comment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -14961,7 +14802,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_drawing_object' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/drawingObjects/{index}'
+      local_var_path = '/words/{name}/{nodePath}/drawingObjects/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
@@ -15027,7 +14868,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DrawingObjectResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_drawing_object\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -15071,7 +14911,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_drawing_object_without_node_path' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/drawingObjects/{index}'
+      local_var_path = '/words/{name}/drawingObjects/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
@@ -15136,7 +14976,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DrawingObjectResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_drawing_object_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -15180,7 +15019,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_field' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/fields/{index}'
+      local_var_path = '/words/{name}/{nodePath}/fields/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
@@ -15244,7 +15083,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FieldResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -15282,7 +15120,7 @@ module AsposeWordsCloud
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.update_fields' if @api_client.config.client_side_validation && request.name.nil?
       # resource path
-      local_var_path = '/words/{name}/updateFields'
+      local_var_path = '/words/{name}/updateFields'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
 
       # query parameters
@@ -15334,7 +15172,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'DocumentResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_fields\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -15378,7 +15215,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_footnote' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/footnotes/{index}'
+      local_var_path = '/words/{name}/{nodePath}/footnotes/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
@@ -15442,7 +15279,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FootnoteResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_footnote\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -15484,7 +15320,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_footnote_without_node_path' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/footnotes/{index}'
+      local_var_path = '/words/{name}/footnotes/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
@@ -15547,7 +15383,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FootnoteResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_footnote_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -15591,7 +15426,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_form_field' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/formfields/{index}'
+      local_var_path = '/words/{name}/{nodePath}/formfields/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
@@ -15655,7 +15490,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FormFieldResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_form_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -15697,7 +15531,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_form_field_without_node_path' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/formfields/{index}'
+      local_var_path = '/words/{name}/formfields/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
@@ -15760,7 +15594,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FormFieldResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_form_field_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -15804,7 +15637,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_paragraph_format' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/paragraphs/{index}/format'
+      local_var_path = '/words/{name}/{nodePath}/paragraphs/{index}/format'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
@@ -15868,7 +15701,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'ParagraphFormatResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_paragraph_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -15912,7 +15744,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_run' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/{paragraphPath}/runs/{index}'
+      local_var_path = '/words/{name}/{paragraphPath}/runs/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('ParagraphPath') + '}', request.paragraph_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
@@ -15976,7 +15808,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'RunResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_run\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -16020,7 +15851,7 @@ module AsposeWordsCloud
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_run_font' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/{paragraphPath}/runs/{index}/font'
+      local_var_path = '/words/{name}/{paragraphPath}/runs/{index}/font'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('ParagraphPath') + '}', request.paragraph_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
@@ -16084,7 +15915,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FontResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_run_font\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -16126,7 +15956,7 @@ module AsposeWordsCloud
       # verify the required parameter 'page_setup' is set
       raise ArgumentError, 'Missing the required parameter page_setup when calling WordsApi.update_section_page_setup' if @api_client.config.client_side_validation && request.page_setup.nil?
       # resource path
-      local_var_path = '/words/{name}/sections/{sectionIndex}/pageSetup'
+      local_var_path = '/words/{name}/sections/{sectionIndex}/pageSetup'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('SectionIndex') + '}', request.section_index.to_s)
 
@@ -16189,7 +16019,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'SectionPageSetupResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_section_page_setup\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -16226,12 +16055,14 @@ module AsposeWordsCloud
       @api_client.config.logger.debug 'Calling API: WordsApi.update_table_cell_format ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.update_table_cell_format' if @api_client.config.client_side_validation && request.name.nil?
+      # verify the required parameter 'format' is set
+      raise ArgumentError, 'Missing the required parameter format when calling WordsApi.update_table_cell_format' if @api_client.config.client_side_validation && request.format.nil?
       # verify the required parameter 'table_row_path' is set
       raise ArgumentError, 'Missing the required parameter table_row_path when calling WordsApi.update_table_cell_format' if @api_client.config.client_side_validation && request.table_row_path.nil?
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_table_cell_format' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/{tableRowPath}/cells/{index}/cellformat'
+      local_var_path = '/words/{name}/{tableRowPath}/cells/{index}/cellformat'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('TableRowPath') + '}', request.table_row_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
@@ -16295,7 +16126,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TableCellFormatResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_table_cell_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -16332,12 +16162,14 @@ module AsposeWordsCloud
       @api_client.config.logger.debug 'Calling API: WordsApi.update_table_properties ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.update_table_properties' if @api_client.config.client_side_validation && request.name.nil?
+      # verify the required parameter 'properties' is set
+      raise ArgumentError, 'Missing the required parameter properties when calling WordsApi.update_table_properties' if @api_client.config.client_side_validation && request.properties.nil?
       # verify the required parameter 'node_path' is set
       raise ArgumentError, 'Missing the required parameter node_path when calling WordsApi.update_table_properties' if @api_client.config.client_side_validation && request.node_path.nil?
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_table_properties' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/{nodePath}/tables/{index}/properties'
+      local_var_path = '/words/{name}/{nodePath}/tables/{index}/properties'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
@@ -16401,7 +16233,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TablePropertiesResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_table_properties\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -16438,10 +16269,12 @@ module AsposeWordsCloud
       @api_client.config.logger.debug 'Calling API: WordsApi.update_table_properties_without_node_path ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.update_table_properties_without_node_path' if @api_client.config.client_side_validation && request.name.nil?
+      # verify the required parameter 'properties' is set
+      raise ArgumentError, 'Missing the required parameter properties when calling WordsApi.update_table_properties_without_node_path' if @api_client.config.client_side_validation && request.properties.nil?
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_table_properties_without_node_path' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/tables/{index}/properties'
+      local_var_path = '/words/{name}/tables/{index}/properties'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
 
@@ -16504,7 +16337,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TablePropertiesResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_table_properties_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -16541,12 +16373,14 @@ module AsposeWordsCloud
       @api_client.config.logger.debug 'Calling API: WordsApi.update_table_row_format ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.update_table_row_format' if @api_client.config.client_side_validation && request.name.nil?
+      # verify the required parameter 'format' is set
+      raise ArgumentError, 'Missing the required parameter format when calling WordsApi.update_table_row_format' if @api_client.config.client_side_validation && request.format.nil?
       # verify the required parameter 'table_path' is set
       raise ArgumentError, 'Missing the required parameter table_path when calling WordsApi.update_table_row_format' if @api_client.config.client_side_validation && request.table_path.nil?
       # verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_table_row_format' if @api_client.config.client_side_validation && request.index.nil?
       # resource path
-      local_var_path = '/words/{name}/{tablePath}/rows/{index}/rowformat'
+      local_var_path = '/words/{name}/{tablePath}/rows/{index}/rowformat'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('TablePath') + '}', request.table_path.to_s)
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
@@ -16610,7 +16444,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'TableRowFormatResponse')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_table_row_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -16650,7 +16483,7 @@ module AsposeWordsCloud
       # verify the required parameter 'path' is set
       raise ArgumentError, 'Missing the required parameter path when calling WordsApi.upload_file' if @api_client.config.client_side_validation && request.path.nil?
       # resource path
-      local_var_path = '/words/storage/file/{path}'
+      local_var_path = '/words/storage/file/{path}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Path') + '}', request.path.to_s)
 
       # query parameters
@@ -16683,7 +16516,6 @@ module AsposeWordsCloud
                                                         body: post_body,
                                                         auth_names: auth_names,
                                                         return_type: 'FilesUploadResult')
-
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#upload_file\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"

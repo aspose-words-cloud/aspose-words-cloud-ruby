@@ -34,6 +34,8 @@ module AsposeWordsCloud
 
         # The document name.
         attr_accessor :name
+        # Table cell parameters/.
+        attr_accessor :cell
         # Path to table row.
         attr_accessor :table_row_path
         # Original document folder.
@@ -50,12 +52,11 @@ module AsposeWordsCloud
         attr_accessor :revision_author
         # The date and time to use for revisions.
         attr_accessor :revision_date_time
-        # Table cell parameters/.
-        attr_accessor :cell
 	
         #
         # Initializes a new instance.
         # @param name The document name.
+        # @param cell Table cell parameters/.
         # @param table_row_path Path to table row.
         # @param folder Original document folder.
         # @param storage Original document storage.
@@ -64,9 +65,9 @@ module AsposeWordsCloud
         # @param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         # @param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         # @param revision_date_time The date and time to use for revisions.
-        # @param cell Table cell parameters/.
-        def initialize(name, table_row_path, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil, revision_author = nil, revision_date_time = nil, cell = nil)
+        def initialize(name, cell, table_row_path, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil, revision_author = nil, revision_date_time = nil)
            self.name = name
+           self.cell = cell
            self.table_row_path = table_row_path
            self.folder = folder
            self.storage = storage
@@ -75,7 +76,6 @@ module AsposeWordsCloud
            self.dest_file_name = dest_file_name
            self.revision_author = revision_author
            self.revision_date_time = revision_date_time
-           self.cell = cell
         end
   end
 end

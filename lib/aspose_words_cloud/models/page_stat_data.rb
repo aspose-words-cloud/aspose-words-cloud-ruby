@@ -40,7 +40,6 @@ module AsposeWordsCloud
     # Gets or sets total count of paragraphs in the page.
     attr_accessor :paragraph_count
 
-    # Gets or sets detailed statistics of footnotes.
     attr_accessor :footnotes_stat_data
 
 
@@ -94,27 +93,12 @@ module AsposeWordsCloud
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = []
-      if @page_number.nil?
-        invalid_properties.push("invalid value for 'page_number', page_number cannot be nil.")
-      end
-
-      if @word_count.nil?
-        invalid_properties.push("invalid value for 'word_count', word_count cannot be nil.")
-      end
-
-      if @paragraph_count.nil?
-        invalid_properties.push("invalid value for 'paragraph_count', paragraph_count cannot be nil.")
-      end
-
       return invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @page_number.nil?
-      return false if @word_count.nil?
-      return false if @paragraph_count.nil?
       return true
     end
 

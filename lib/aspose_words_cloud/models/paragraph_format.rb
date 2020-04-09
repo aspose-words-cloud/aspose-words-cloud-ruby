@@ -31,7 +31,6 @@ module AsposeWordsCloud
 
   # Paragraph format element.             
   class ParagraphFormat
-    # Gets or sets link to the document.
     attr_accessor :link
 
     # Gets or sets a flag indicating whether inter-character spacing is automatically adjusted between regions of Latin text and regions of East Asian text in the current paragraph.             
@@ -73,7 +72,7 @@ module AsposeWordsCloud
     # Gets or sets the number of lines of the paragraph text used to calculate the drop cap height.             
     attr_accessor :lines_to_drop
 
-    # Gets or sets when true,  and  will be ignored between the paragraphs of the same style.             
+    # Gets or sets when true, SpaceBefore and SpaceAfter will be ignored between the paragraphs of the same style.             
     attr_accessor :no_space_between_paragraphs_of_same_style
 
     # Gets or sets specifies the outline level of the paragraph in the document.             

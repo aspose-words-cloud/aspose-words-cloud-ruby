@@ -31,13 +31,11 @@ module AsposeWordsCloud
 
   # Table row element.
   class TableRow
-    # Gets or sets link to the document.
-    attr_accessor :link
-
     # Gets or sets node id.
     attr_accessor :node_id
 
-    # Gets or sets provides access to the formatting properties of the row.
+    attr_accessor :link
+
     attr_accessor :row_format
 
     # Gets or sets collection of table's rows.
@@ -47,8 +45,8 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'link' => :'link',
         :'node_id' => :'NodeId',
+        :'link' => :'link',
         :'row_format' => :'RowFormat',
         :'table_cell_list' => :'TableCellList'
       }
@@ -57,8 +55,8 @@ module AsposeWordsCloud
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'link' => :'WordsApiLink',
         :'node_id' => :'String',
+        :'link' => :'WordsApiLink',
         :'row_format' => :'TableRowFormat',
         :'table_cell_list' => :'Array<TableCell>'
       }
@@ -72,12 +70,12 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'link')
-        self.link = attributes[:'link']
-      end
-
       if attributes.key?(:'NodeId')
         self.node_id = attributes[:'NodeId']
+      end
+
+      if attributes.key?(:'link')
+        self.link = attributes[:'link']
       end
 
       if attributes.key?(:'RowFormat')
@@ -110,8 +108,8 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          link == other.link &&
           node_id == other.node_id &&
+          link == other.link &&
           row_format == other.row_format &&
           table_cell_list == other.table_cell_list
     end
@@ -125,7 +123,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, node_id, row_format, table_cell_list].hash
+      [node_id, link, row_format, table_cell_list].hash
     end
 
     # Builds the object from hash
