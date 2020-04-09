@@ -80,7 +80,7 @@ module AsposeWordsCloud
         #
         # Test for inserting list
         #
-        def test_update_list
+        def test_insert_list
             remote_name = 'TestInsertList.doc'
             upload_file File.join(test_folder, local_name), File.join(remote_test_folder + test_folder, remote_name)
             data = ListInsert.new 'OutlineLegal'

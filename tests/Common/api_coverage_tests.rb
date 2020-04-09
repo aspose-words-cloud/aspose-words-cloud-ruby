@@ -37,6 +37,7 @@ module AsposeWordsCloud
       require_all '../DocumentElements'
       require_all '../Storage'
       require_all '../Range'
+      require_all '../Lists'
       arr = [BookmarksTests, AppendDocumentTests, CommentsTests, CompareDocumentTests, ConvertDocumentTests,
               DocumentStatisticsTests, DocumentTests, LoadWebDocumentTests, RevisionsTests,
               SplitDocumentTests, DocumentPropertiesTests, DocumentProtectionTests, DrawingObjectsTests, FieldsTests,
