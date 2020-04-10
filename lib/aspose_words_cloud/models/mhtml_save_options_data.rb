@@ -172,6 +172,12 @@ module AsposeWordsCloud
     # Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true
     attr_accessor :update_fields
 
+    # Gets or sets a value determining how 3D effects are rendered.
+    attr_accessor :dml3_d_effects_rendering_mode
+
+    # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.
+    attr_accessor :update_last_printed_property
+
     # Gets or sets specifies whether to use CID (Content-ID) URLs to reference resources (images, fonts, CSS) included in MHTML documents. Default value is false.             
     attr_accessor :export_cid_urls_for_mhtml_resources
 
@@ -247,6 +253,8 @@ module AsposeWordsCloud
         :'update_last_saved_time_property' => :'UpdateLastSavedTimeProperty',
         :'update_sdt_content' => :'UpdateSdtContent',
         :'update_fields' => :'UpdateFields',
+        :'dml3_d_effects_rendering_mode' => :'Dml3DEffectsRenderingMode',
+        :'update_last_printed_property' => :'UpdateLastPrintedProperty',
         :'export_cid_urls_for_mhtml_resources' => :'ExportCidUrlsForMhtmlResources'
       }
     end
@@ -301,6 +309,8 @@ module AsposeWordsCloud
         :'update_last_saved_time_property' => :'BOOLEAN',
         :'update_sdt_content' => :'BOOLEAN',
         :'update_fields' => :'BOOLEAN',
+        :'dml3_d_effects_rendering_mode' => :'String',
+        :'update_last_printed_property' => :'BOOLEAN',
         :'export_cid_urls_for_mhtml_resources' => :'BOOLEAN'
       }
     end
@@ -501,6 +511,14 @@ module AsposeWordsCloud
         self.update_fields = attributes[:'UpdateFields']
       end
 
+      if attributes.key?(:'Dml3DEffectsRenderingMode')
+        self.dml3_d_effects_rendering_mode = attributes[:'Dml3DEffectsRenderingMode']
+      end
+
+      if attributes.key?(:'UpdateLastPrintedProperty')
+        self.update_last_printed_property = attributes[:'UpdateLastPrintedProperty']
+      end
+
       if attributes.key?(:'ExportCidUrlsForMhtmlResources')
         self.export_cid_urls_for_mhtml_resources = attributes[:'ExportCidUrlsForMhtmlResources']
       end
@@ -523,6 +541,8 @@ module AsposeWordsCloud
       return false unless metafile_format_validator.valid?(@metafile_format)
       office_math_output_mode_validator = EnumAttributeValidator.new('String', ["Image", "MathML", "Text"])
       return false unless office_math_output_mode_validator.valid?(@office_math_output_mode)
+      dml3_d_effects_rendering_mode_validator = EnumAttributeValidator.new('String', ["Basic", "Advanced"])
+      return false unless dml3_d_effects_rendering_mode_validator.valid?(@dml3_d_effects_rendering_mode)
       return true
     end
 
@@ -565,6 +585,20 @@ module AsposeWordsCloud
         @office_math_output_mode = office_math_output_mode
       else
         @office_math_output_mode = validator.allowable_values[office_math_output_mode.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] dml3_d_effects_rendering_mode Object to be assigned
+    def dml3_d_effects_rendering_mode=(dml3_d_effects_rendering_mode)
+      validator = EnumAttributeValidator.new('String', ["Basic", "Advanced"])
+      if dml3_d_effects_rendering_mode.to_i == 0
+        unless validator.valid?(dml3_d_effects_rendering_mode)
+          raise ArgumentError, "invalid value for 'dml3_d_effects_rendering_mode', must be one of #{validator.allowable_values}."
+        end
+        @dml3_d_effects_rendering_mode = dml3_d_effects_rendering_mode
+      else
+        @dml3_d_effects_rendering_mode = validator.allowable_values[dml3_d_effects_rendering_mode.to_i]
       end
     end
 
@@ -620,6 +654,8 @@ module AsposeWordsCloud
           update_last_saved_time_property == other.update_last_saved_time_property &&
           update_sdt_content == other.update_sdt_content &&
           update_fields == other.update_fields &&
+          dml3_d_effects_rendering_mode == other.dml3_d_effects_rendering_mode &&
+          update_last_printed_property == other.update_last_printed_property &&
           export_cid_urls_for_mhtml_resources == other.export_cid_urls_for_mhtml_resources
     end
 
@@ -632,7 +668,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_negative_indent, css_class_name_prefix, css_style_sheet_file_name, css_style_sheet_type, document_split_criteria, document_split_heading_level, encoding, export_document_properties, export_drop_down_form_field_as_text, export_font_resources, export_fonts_as_base64, export_headers_footers_mode, export_images_as_base64, export_language_information, export_list_labels, export_original_url_for_linked_images, export_page_margins, export_page_setup, export_relative_font_size, export_roundtrip_information, export_text_box_as_svg, export_text_input_form_field_as_text, export_toc_page_numbers, export_xhtml_transitional, font_resources_subsetting_size_threshold, fonts_folder, fonts_folder_alias, html_version, image_resolution, images_folder, images_folder_alias, metafile_format, office_math_output_mode, pretty_format, resolve_font_names, resource_folder, resource_folder_alias, scale_image_to_shape_size, table_width_output_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, export_cid_urls_for_mhtml_resources].hash
+      [allow_negative_indent, css_class_name_prefix, css_style_sheet_file_name, css_style_sheet_type, document_split_criteria, document_split_heading_level, encoding, export_document_properties, export_drop_down_form_field_as_text, export_font_resources, export_fonts_as_base64, export_headers_footers_mode, export_images_as_base64, export_language_information, export_list_labels, export_original_url_for_linked_images, export_page_margins, export_page_setup, export_relative_font_size, export_roundtrip_information, export_text_box_as_svg, export_text_input_form_field_as_text, export_toc_page_numbers, export_xhtml_transitional, font_resources_subsetting_size_threshold, fonts_folder, fonts_folder_alias, html_version, image_resolution, images_folder, images_folder_alias, metafile_format, office_math_output_mode, pretty_format, resolve_font_names, resource_folder, resource_folder_alias, scale_image_to_shape_size, table_width_output_mode, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, dml3_d_effects_rendering_mode, update_last_printed_property, export_cid_urls_for_mhtml_resources].hash
     end
 
     # Builds the object from hash
