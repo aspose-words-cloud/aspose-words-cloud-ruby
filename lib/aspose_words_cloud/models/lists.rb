@@ -32,20 +32,20 @@ module AsposeWordsCloud
   # Represents an array of document lists.
   class Lists
     # Gets or sets array of document lists.
-    attr_accessor :list_collection
+    attr_accessor :list_info
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'list_collection' => :'ListCollection'
+        :'list_info' => :'ListInfo'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'list_collection' => :'Array<ListInfo>'
+        :'list_info' => :'Array<ListInfo>'
       }
     end
 
@@ -57,9 +57,9 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'ListCollection')
-        if (value = attributes[:'ListCollection']).is_a?(Array)
-          self.list_collection = value
+      if attributes.key?(:'ListInfo')
+        if (value = attributes[:'ListInfo']).is_a?(Array)
+          self.list_info = value
         end
       end
 
@@ -83,7 +83,7 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          list_collection == other.list_collection
+          list_info == other.list_info
     end
 
     # @see the `==` method
@@ -95,7 +95,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [list_collection].hash
+      [list_info].hash
     end
 
     # Builds the object from hash
