@@ -55,7 +55,7 @@ module AsposeWordsCloud
 
       settings = '{DataSourceType: "Json", ReportBuildOptions: ["AllowMissingMembers", "RemoveEmptyParagraphs"]}'
 
-      request = BuildReportRequest.new remote_name, data, settings
+      request = BuildReportRequest.new remote_name, data, settings, File.join(remote_test_folder, test_folder)
       @words_api.build_report request
     end
   end
