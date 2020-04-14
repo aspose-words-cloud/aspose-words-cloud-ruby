@@ -31,6 +31,10 @@ module AsposeWordsCloud
       'DocumentElements/Paragraphs'
     end
 
+    def test_list_folder
+      'DocumentElements/ParagraphListFormat'
+    end
+
     #
     # Test for removing paragraph
     #
@@ -272,6 +276,64 @@ module AsposeWordsCloud
 
       request = UpdateParagraphFormatRequest.new remote_name, body, '', index, remote_test_folder + test_folder
       result = @words_api.update_paragraph_format request
+      assert_equal FALSE, result.nil?
+    end
+
+    #
+    # Test for getting paragraph list format
+    #
+    def test_get_paragraph_list_format
+      filename = 'ParagraphGetListFormat.doc'
+      index = 0
+
+      upload_file File.join(local_test_folder, [test_list_folder, filename]), File.join(remote_test_folder, test_list_folder, filename)
+
+      request = GetParagraphListFormatRequest.new filename, '', index, remote_test_folder + test_list_folder
+      result = @words_api.get_paragraph_list_format request
+      assert_equal FALSE, result.nil?
+    end
+
+    #
+    # Test for getting paragraph list format without node path
+    #
+    def test_get_paragraph_list_format_without_node_path
+      filename = 'ParagraphGetListFormat.doc'
+      index = 0
+
+      upload_file File.join(local_test_folder, [test_list_folder, filename]), File.join(remote_test_folder, test_list_folder, filename)
+
+      request = GetParagraphListFormatWithoutNodePathRequest.new filename, index, remote_test_folder + test_list_folder
+      result = @words_api.get_paragraph_list_format_without_node_path request
+      assert_equal FALSE, result.nil?
+    end
+
+    #
+    # Test for updating paragraph list format
+    #
+    def test_update_paragraph_list_format
+      filename = 'ParagraphUpdateListFormat.doc'
+      index = 0
+
+      upload_file File.join(local_test_folder, [test_list_folder, filename]), File.join(remote_test_folder, test_list_folder, filename)
+
+      dto = ListFormatUpdate.new
+      dto.list_id = 2
+      request = UpdateParagraphListFormatRequest.new filename, dto, '', index, remote_test_folder + test_list_folder
+      result = @words_api.update_paragraph_list_format request
+      assert_equal FALSE, result.nil?
+    end
+
+    #
+    # Test for delete paragraph list format
+    #
+    def test_delete_paragraph_list_format
+      filename = 'ParagraphDeleteListFormat.doc'
+      index = 0
+
+      upload_file File.join(local_test_folder, [test_list_folder, filename]), File.join(remote_test_folder, test_list_folder, filename)
+
+      request = DeleteParagraphListFormatRequest.new filename, '', index, remote_test_folder + test_list_folder
+      result = @words_api.delete_paragraph_list_format request
       assert_equal FALSE, result.nil?
     end
   end
