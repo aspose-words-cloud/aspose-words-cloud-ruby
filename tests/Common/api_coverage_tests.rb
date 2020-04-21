@@ -42,7 +42,8 @@ module AsposeWordsCloud
               SplitDocumentTests, DocumentPropertiesTests, DocumentProtectionTests, DrawingObjectsTests, FieldsTests,
               FormFieldTests, MailMergeFieldsTests, FootnoteTests, HeaderFootersTests, HyperlinksTests, MacrosTests,
               ExecuteMailMergeTests, MathObjectsTests, PagesTests, ParagraphsTests, RunsTests,
-              SectionsTests, TablesTests, TextTests, WatermarkTests, FontCacheTests, ClassificationTests, FileTests, FolderTests, RangeTests, ReportingTests, ListsTests]
+              SectionsTests, TablesTests, TextTests, WatermarkTests, FontCacheTests, ClassificationTests,
+              FileTests, FolderTests, RangeTests, ReportingTests, ListsTests, StylesTests]
       test_methods = []
       arr.each {|el| (test_methods << el.instance_methods(false).select{ |m| /test_folder/ !~ m}).flatten! }
       methods = @words_api.public_methods(false).select {|m| /api_client/ !~ m }.map {|m| m.to_s}
