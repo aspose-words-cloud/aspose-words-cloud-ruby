@@ -230,15 +230,15 @@ module AsposeWordsCloud
 
     # Apply style to document node.
     # 
-    # @param request ApplyStyleToDocmentElementRequest
+    # @param request ApplyStyleToDocumentElementRequest
     # @return [WordsResponse]
-    def apply_style_to_docment_element(request)
+    def apply_style_to_document_element(request)
       begin
-        data, _status_code, _headers = apply_style_to_docment_element_with_http_info(request)
+        data, _status_code, _headers = apply_style_to_document_element_with_http_info(request)
         rescue ApiError => e
           if e.code == 401
             request_token
-            data, _status_code, _headers = apply_style_to_docment_element_with_http_info(request)
+            data, _status_code, _headers = apply_style_to_document_element_with_http_info(request)
           else
             raise
           end
@@ -248,19 +248,19 @@ module AsposeWordsCloud
 
     # Apply style to document node.
     # 
-    # @param request ApplyStyleToDocmentElementRequest
+    # @param request ApplyStyleToDocumentElementRequest
     # @return [Array<(WordsResponse, Fixnum, Hash)>]
     # WordsResponse data, response status code and response headers
-    private def apply_style_to_docment_element_with_http_info(request)
-      raise ArgumentError, 'Incorrect request type' unless request.is_a? ApplyStyleToDocmentElementRequest
+    private def apply_style_to_document_element_with_http_info(request)
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? ApplyStyleToDocumentElementRequest
 
-      @api_client.config.logger.debug 'Calling API: WordsApi.apply_style_to_docment_element ...' if @api_client.config.debugging
+      @api_client.config.logger.debug 'Calling API: WordsApi.apply_style_to_document_element ...' if @api_client.config.debugging
       # verify the required parameter 'name' is set
-      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.apply_style_to_docment_element' if @api_client.config.client_side_validation && request.name.nil?
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.apply_style_to_document_element' if @api_client.config.client_side_validation && request.name.nil?
       # verify the required parameter 'style_apply' is set
-      raise ArgumentError, 'Missing the required parameter style_apply when calling WordsApi.apply_style_to_docment_element' if @api_client.config.client_side_validation && request.style_apply.nil?
+      raise ArgumentError, 'Missing the required parameter style_apply when calling WordsApi.apply_style_to_document_element' if @api_client.config.client_side_validation && request.style_apply.nil?
       # verify the required parameter 'styled_node_path' is set
-      raise ArgumentError, 'Missing the required parameter styled_node_path when calling WordsApi.apply_style_to_docment_element' if @api_client.config.client_side_validation && request.styled_node_path.nil?
+      raise ArgumentError, 'Missing the required parameter styled_node_path when calling WordsApi.apply_style_to_document_element' if @api_client.config.client_side_validation && request.styled_node_path.nil?
       # resource path
       local_var_path = '/words/{name}/{styledNodePath}/style'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
@@ -327,7 +327,7 @@ module AsposeWordsCloud
                                                         return_type: 'WordsResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
-        WordsApi#apply_style_to_docment_element\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        WordsApi#apply_style_to_document_element\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
     end

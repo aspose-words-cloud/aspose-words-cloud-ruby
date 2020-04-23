@@ -1,6 +1,6 @@
  #
  # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose" file="ApplyStyleToDocmentElementRequest.rb">
+ # <copyright company="Aspose" file="ApplyStyleToDocumentElementRequest.rb">
  #   Copyright (c) 2019 Aspose.Words for Cloud
  # </copyright>
  # <summary>
@@ -28,9 +28,9 @@
 module AsposeWordsCloud
 
   #
-  # Request model for apply_style_to_docment_element operation.
+  # Request model for apply_style_to_document_element operation.
   #
-  class ApplyStyleToDocmentElementRequest
+  class ApplyStyleToDocumentElementRequest
 
         # The document name.
         attr_accessor :name

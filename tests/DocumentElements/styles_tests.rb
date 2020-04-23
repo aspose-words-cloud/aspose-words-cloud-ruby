@@ -110,8 +110,8 @@ module AsposeWordsCloud
             upload_file File.join(test_folder, local_name), File.join(remote_test_folder + test_folder, remote_name)
             data = StyleApply.new
             data.style_name = 'Heading 1'
-            request = ApplyStyleToDocmentElementRequest.new remote_name, data, 'paragraphs/1/paragraphFormat', remote_test_folder + test_folder
-            @words_api.apply_style_to_docment_element request
+            request = ApplyStyleToDocumentElementRequest.new remote_name, data, 'paragraphs/1/paragraphFormat', remote_test_folder + test_folder
+            @words_api.apply_style_to_document_element request
         end
     end
 end
