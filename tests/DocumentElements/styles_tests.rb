@@ -95,7 +95,7 @@ module AsposeWordsCloud
         #
         # Test for getting style from document element
         #
-        def test_get_style_from_document_request
+        def test_get_style_from_document_element
             remote_name = 'TestGetStyleFromDocumentElement.docx'
             upload_file File.join(test_folder, local_name), File.join(remote_test_folder + test_folder, remote_name)
             request = GetStyleFromDocumentElementRequest.new remote_name, 'paragraphs/1/paragraphFormat', remote_test_folder + test_folder
