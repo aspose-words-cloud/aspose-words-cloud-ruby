@@ -31,14 +31,7 @@ module AsposeWordsCloud
 
   # Represents a single document list.
   class ListInfo
-    # Gets or sets the unique identifier of the list.
-    attr_accessor :list_id
-
-    # Gets or sets a value indicating whether returns true when the list contains 9 levels; false when 1 level.
-    attr_accessor :is_multi_level
-
-    # Gets or sets a value indicating whether specifies whether list should be restarted at each section. Default value is false.
-    attr_accessor :is_restart_at_each_section
+    attr_accessor :link
 
     # Gets or sets a value indicating whether returns true if this list is a definition of a list style.
     attr_accessor :is_list_style_definition
@@ -46,34 +39,45 @@ module AsposeWordsCloud
     # Gets or sets a value indicating whether returns true if this list is a reference to a list style.
     attr_accessor :is_list_style_reference
 
-    attr_accessor :style
+    # Gets or sets a value indicating whether returns true when the list contains 9 levels; false when 1 level.
+    attr_accessor :is_multi_level
+
+    # Gets or sets a value indicating whether specifies whether list should be restarted at each section. Default value is false.
+    attr_accessor :is_restart_at_each_section
+
+    # Gets or sets the unique identifier of the list.
+    attr_accessor :list_id
 
     attr_accessor :list_levels
+
+    attr_accessor :style
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'list_id' => :'ListId',
-        :'is_multi_level' => :'IsMultiLevel',
-        :'is_restart_at_each_section' => :'IsRestartAtEachSection',
+        :'link' => :'link',
         :'is_list_style_definition' => :'IsListStyleDefinition',
         :'is_list_style_reference' => :'IsListStyleReference',
-        :'style' => :'Style',
-        :'list_levels' => :'ListLevels'
+        :'is_multi_level' => :'IsMultiLevel',
+        :'is_restart_at_each_section' => :'IsRestartAtEachSection',
+        :'list_id' => :'ListId',
+        :'list_levels' => :'ListLevels',
+        :'style' => :'Style'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'list_id' => :'Integer',
-        :'is_multi_level' => :'BOOLEAN',
-        :'is_restart_at_each_section' => :'BOOLEAN',
+        :'link' => :'WordsApiLink',
         :'is_list_style_definition' => :'BOOLEAN',
         :'is_list_style_reference' => :'BOOLEAN',
-        :'style' => :'Style',
-        :'list_levels' => :'ListLevels'
+        :'is_multi_level' => :'BOOLEAN',
+        :'is_restart_at_each_section' => :'BOOLEAN',
+        :'list_id' => :'Integer',
+        :'list_levels' => :'ListLevels',
+        :'style' => :'Style'
       }
     end
 
@@ -85,16 +89,8 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'ListId')
-        self.list_id = attributes[:'ListId']
-      end
-
-      if attributes.key?(:'IsMultiLevel')
-        self.is_multi_level = attributes[:'IsMultiLevel']
-      end
-
-      if attributes.key?(:'IsRestartAtEachSection')
-        self.is_restart_at_each_section = attributes[:'IsRestartAtEachSection']
+      if attributes.key?(:'link')
+        self.link = attributes[:'link']
       end
 
       if attributes.key?(:'IsListStyleDefinition')
@@ -105,12 +101,24 @@ module AsposeWordsCloud
         self.is_list_style_reference = attributes[:'IsListStyleReference']
       end
 
-      if attributes.key?(:'Style')
-        self.style = attributes[:'Style']
+      if attributes.key?(:'IsMultiLevel')
+        self.is_multi_level = attributes[:'IsMultiLevel']
+      end
+
+      if attributes.key?(:'IsRestartAtEachSection')
+        self.is_restart_at_each_section = attributes[:'IsRestartAtEachSection']
+      end
+
+      if attributes.key?(:'ListId')
+        self.list_id = attributes[:'ListId']
       end
 
       if attributes.key?(:'ListLevels')
         self.list_levels = attributes[:'ListLevels']
+      end
+
+      if attributes.key?(:'Style')
+        self.style = attributes[:'Style']
       end
 
     end
@@ -133,13 +141,14 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          list_id == other.list_id &&
-          is_multi_level == other.is_multi_level &&
-          is_restart_at_each_section == other.is_restart_at_each_section &&
+          link == other.link &&
           is_list_style_definition == other.is_list_style_definition &&
           is_list_style_reference == other.is_list_style_reference &&
-          style == other.style &&
-          list_levels == other.list_levels
+          is_multi_level == other.is_multi_level &&
+          is_restart_at_each_section == other.is_restart_at_each_section &&
+          list_id == other.list_id &&
+          list_levels == other.list_levels &&
+          style == other.style
     end
 
     # @see the `==` method
@@ -151,7 +160,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [list_id, is_multi_level, is_restart_at_each_section, is_list_style_definition, is_list_style_reference, style, list_levels].hash
+      [link, is_list_style_definition, is_list_style_reference, is_multi_level, is_restart_at_each_section, list_id, list_levels, style].hash
     end
 
     # Builds the object from hash
