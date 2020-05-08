@@ -228,7 +228,7 @@ module AsposeWordsCloud
       [data, status_code, headers]
     end
 
-    # Apply style to document node.
+    # Apply a style to the document node.
     # 
     # @param request ApplyStyleToDocumentElementRequest
     # @return [WordsResponse]
@@ -246,7 +246,7 @@ module AsposeWordsCloud
       data
     end
 
-    # Apply style to document node.
+    # Apply a style to the document node.
     # 
     # @param request ApplyStyleToDocumentElementRequest
     # @return [Array<(WordsResponse, Fixnum, Hash)>]
@@ -1002,7 +1002,7 @@ module AsposeWordsCloud
       [data, status_code, headers]
     end
 
-    # Copy and insert new style to document, returns copied style.
+    # Copy and insert a new style to the document, returns an copied style.
     # 
     # @param request CopyStyleRequest
     # @return [StyleResponse]
@@ -1020,7 +1020,7 @@ module AsposeWordsCloud
       data
     end
 
-    # Copy and insert new style to document, returns copied style.
+    # Copy and insert a new style to the document, returns an copied style.
     # 
     # @param request CopyStyleRequest
     # @return [Array<(StyleResponse, Fixnum, Hash)>]
@@ -10200,7 +10200,7 @@ module AsposeWordsCloud
       [data, status_code, headers]
     end
 
-    # Gets style from document node.
+    # Gets a style from the document node.
     # 
     # @param request GetStyleFromDocumentElementRequest
     # @return [StyleResponse]
@@ -10218,7 +10218,7 @@ module AsposeWordsCloud
       data
     end
 
-    # Gets style from document node.
+    # Gets a style from the document node.
     # 
     # @param request GetStyleFromDocumentElementRequest
     # @return [Array<(StyleResponse, Fixnum, Hash)>]
@@ -10287,7 +10287,7 @@ module AsposeWordsCloud
       [data, status_code, headers]
     end
 
-    # Returns a list of styles that are contained in the document.
+    # Returns a list of styles contained in the document.
     # 
     # @param request GetStylesRequest
     # @return [StylesResponse]
@@ -10305,7 +10305,7 @@ module AsposeWordsCloud
       data
     end
 
-    # Returns a list of styles that are contained in the document.
+    # Returns a list of styles contained in the document.
     # 
     # @param request GetStylesRequest
     # @return [Array<(StylesResponse, Fixnum, Hash)>]
@@ -12729,7 +12729,7 @@ module AsposeWordsCloud
       [data, status_code, headers]
     end
 
-    # Adds style to document, returns added style.
+    # Adds a style to the document, returns an added style.
     # 
     # @param request InsertStyleRequest
     # @return [StyleResponse]
@@ -12747,7 +12747,7 @@ module AsposeWordsCloud
       data
     end
 
-    # Adds style to document, returns added style.
+    # Adds a style to the document, returns an added style.
     # 
     # @param request InsertStyleRequest
     # @return [Array<(StyleResponse, Fixnum, Hash)>]
@@ -17632,7 +17632,7 @@ module AsposeWordsCloud
       [data, status_code, headers]
     end
 
-    # Updates style properties, returns updated style.
+    # Updates a style properties, returns an updated style.
     # 
     # @param request UpdateStyleRequest
     # @return [StyleResponse]
@@ -17650,7 +17650,7 @@ module AsposeWordsCloud
       data
     end
 
-    # Updates style properties, returns updated style.
+    # Updates a style properties, returns an updated style.
     # 
     # @param request UpdateStyleRequest
     # @return [Array<(StyleResponse, Fixnum, Hash)>]

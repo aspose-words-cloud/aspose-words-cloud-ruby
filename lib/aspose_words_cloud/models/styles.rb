@@ -34,14 +34,14 @@ module AsposeWordsCloud
     attr_accessor :link
 
     # Gets or sets array of document styles.
-    attr_accessor :style
+    attr_accessor :style_list
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'link' => :'link',
-        :'style' => :'Style'
+        :'style_list' => :'StyleList'
       }
     end
 
@@ -49,7 +49,7 @@ module AsposeWordsCloud
     def self.swagger_types
       {
         :'link' => :'WordsApiLink',
-        :'style' => :'Array<Style>'
+        :'style_list' => :'Array<Style>'
       }
     end
 
@@ -65,9 +65,9 @@ module AsposeWordsCloud
         self.link = attributes[:'link']
       end
 
-      if attributes.key?(:'Style')
-        if (value = attributes[:'Style']).is_a?(Array)
-          self.style = value
+      if attributes.key?(:'StyleList')
+        if (value = attributes[:'StyleList']).is_a?(Array)
+          self.style_list = value
         end
       end
 
@@ -92,7 +92,7 @@ module AsposeWordsCloud
       return true if self.equal?(other)
       self.class == other.class &&
           link == other.link &&
-          style == other.style
+          style_list == other.style_list
     end
 
     # @see the `==` method
@@ -104,7 +104,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, style].hash
+      [link, style_list].hash
     end
 
     # Builds the object from hash
