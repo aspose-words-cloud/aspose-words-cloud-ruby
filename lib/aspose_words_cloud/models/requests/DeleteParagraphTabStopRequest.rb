@@ -1,6 +1,6 @@
  #
  # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose" file="DeleteTabStopRequest.rb">
+ # <copyright company="Aspose" file="DeleteParagraphTabStopRequest.rb">
  #   Copyright (c) 2019 Aspose.Words for Cloud
  # </copyright>
  # <summary>
@@ -28,9 +28,9 @@
 module AsposeWordsCloud
 
   #
-  # Request model for delete_tab_stop operation.
+  # Request model for delete_paragraph_tab_stop operation.
   #
-  class DeleteTabStopRequest
+  class DeleteParagraphTabStopRequest
 
         # The document name.
         attr_accessor :name
