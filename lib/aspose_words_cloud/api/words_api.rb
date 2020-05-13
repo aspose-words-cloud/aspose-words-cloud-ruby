@@ -228,7 +228,7 @@ module AsposeWordsCloud
       [data, status_code, headers]
     end
 
-    # Apply a style to the document node. Supported node types: ParagraphFormat, List, ListLevel, Table.
+    # Apply a style to the document node.
     # 
     # @param request ApplyStyleToDocumentElementRequest
     # @return [WordsResponse]
@@ -246,7 +246,7 @@ module AsposeWordsCloud
       data
     end
 
-    # Apply a style to the document node. Supported node types: ParagraphFormat, List, ListLevel, Table.
+    # Apply a style to the document node.
     # 
     # @param request ApplyStyleToDocumentElementRequest
     # @return [Array<(WordsResponse, Fixnum, Hash)>]
@@ -1002,7 +1002,7 @@ module AsposeWordsCloud
       [data, status_code, headers]
     end
 
-    # Copy and insert a new style to the document, returns an copied style.
+    # Copy and insert a new style to the document, returns a copied style.
     # 
     # @param request CopyStyleRequest
     # @return [StyleResponse]
@@ -1020,7 +1020,7 @@ module AsposeWordsCloud
       data
     end
 
-    # Copy and insert a new style to the document, returns an copied style.
+    # Copy and insert a new style to the document, returns a copied style.
     # 
     # @param request CopyStyleRequest
     # @return [Array<(StyleResponse, Fixnum, Hash)>]
@@ -10484,7 +10484,7 @@ module AsposeWordsCloud
       [data, status_code, headers]
     end
 
-    # Gets a style from the document node. Supported node types: ParagraphFormat, List, ListLevel, Table.
+    # Gets a style from the document node.
     # 
     # @param request GetStyleFromDocumentElementRequest
     # @return [StyleResponse]
@@ -10502,7 +10502,7 @@ module AsposeWordsCloud
       data
     end
 
-    # Gets a style from the document node. Supported node types: ParagraphFormat, List, ListLevel, Table.
+    # Gets a style from the document node.
     # 
     # @param request GetStyleFromDocumentElementRequest
     # @return [Array<(StyleResponse, Fixnum, Hash)>]
@@ -18013,7 +18013,7 @@ module AsposeWordsCloud
       [data, status_code, headers]
     end
 
-    # Updates a style properties, returns an updated style.
+    # Updates style properties, returns an updated style.
     # 
     # @param request UpdateStyleRequest
     # @return [StyleResponse]
@@ -18031,7 +18031,7 @@ module AsposeWordsCloud
       data
     end
 
-    # Updates a style properties, returns an updated style.
+    # Updates style properties, returns an updated style.
     # 
     # @param request UpdateStyleRequest
     # @return [Array<(StyleResponse, Fixnum, Hash)>]
