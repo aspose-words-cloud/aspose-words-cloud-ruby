@@ -34,7 +34,7 @@ module AsposeWordsCloud
 
         # The document name.
         attr_accessor :name
-        # The path to the node that supports a style. Supported node types: ParagraphFormat, List, ListLevel, Table.
+        # Path to the node of IStyledDocumentElement.
         attr_accessor :styled_node_path
         # Original document folder.
         attr_accessor :folder
@@ -48,7 +48,7 @@ module AsposeWordsCloud
         #
         # Initializes a new instance.
         # @param name The document name.
-        # @param styled_node_path The path to the node that supports a style. Supported node types: ParagraphFormat, List, ListLevel, Table.
+        # @param styled_node_path Path to the node of IStyledDocumentElement.
         # @param folder Original document folder.
         # @param storage Original document storage.
         # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
