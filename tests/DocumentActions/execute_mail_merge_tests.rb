@@ -53,7 +53,7 @@ module AsposeWordsCloud
     def test_execute_mail_merge_online
       filename = 'SampleMailMergeTemplate.docx'
       file = File.open(local_test_folder + test_folder + '/' + filename, "rb")
-      data = File.open(local_test_folder + test_folder + '/SampleMailMergeTemplateData.txt', 'rb')
+      data = File.read(File.open(local_test_folder + test_folder + '/SampleMailMergeTemplateData.txt', 'rb'))
       request = ExecuteMailMergeOnlineRequest.new file, data
       result = @words_api.execute_mail_merge_online request
       assert result.length > 0, 'Error occurred while executing mail merge'

@@ -228,6 +228,280 @@ module AsposeWordsCloud
       [data, status_code, headers]
     end
 
+    # Apply a style to the document node. Supported node types: ParagraphFormat, List, ListLevel, Table.
+    # 
+    # @param request ApplyStyleToDocumentElementRequest
+    # @return [WordsResponse]
+    def apply_style_to_document_element(request)
+      begin
+        data, _status_code, _headers = apply_style_to_document_element_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = apply_style_to_document_element_with_http_info(request)
+          else
+            raise
+          end
+      end			
+      data
+    end
+
+    # Apply a style to the document node. Supported node types: ParagraphFormat, List, ListLevel, Table.
+    # 
+    # @param request ApplyStyleToDocumentElementRequest
+    # @return [Array<(WordsResponse, Fixnum, Hash)>]
+    # WordsResponse data, response status code and response headers
+    private def apply_style_to_document_element_with_http_info(request)
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? ApplyStyleToDocumentElementRequest
+
+      @api_client.config.logger.debug 'Calling API: WordsApi.apply_style_to_document_element ...' if @api_client.config.debugging
+      # verify the required parameter 'name' is set
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.apply_style_to_document_element' if @api_client.config.client_side_validation && request.name.nil?
+      # verify the required parameter 'style_apply' is set
+      raise ArgumentError, 'Missing the required parameter style_apply when calling WordsApi.apply_style_to_document_element' if @api_client.config.client_side_validation && request.style_apply.nil?
+      # verify the required parameter 'styled_node_path' is set
+      raise ArgumentError, 'Missing the required parameter styled_node_path when calling WordsApi.apply_style_to_document_element' if @api_client.config.client_side_validation && request.styled_node_path.nil?
+      # resource path
+      local_var_path = '/words/{name}/{styledNodePath}/style'[1..-1]
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('StyledNodePath') + '}', request.styled_node_path.to_s)
+
+      # query parameters
+      query_params = {}
+      if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+      else
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+      else
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+      end
+      if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+      else
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+      else
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+      end
+      if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+      else
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+      end
+      if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+      else
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+      end
+      if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+      else
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+      end
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/xml', 'application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(request.style_apply)
+      auth_names = ['JWT']
+	  
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'WordsResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#apply_style_to_document_element\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
+    # Executes document \"build report\" operation.
+    # 
+    # @param request BuildReportRequest
+    # @return [DocumentResponse]
+    def build_report(request)
+      begin
+        data, _status_code, _headers = build_report_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = build_report_with_http_info(request)
+          else
+            raise
+          end
+      end			
+      data
+    end
+
+    # Executes document \&quot;build report\&quot; operation.
+    # 
+    # @param request BuildReportRequest
+    # @return [Array<(DocumentResponse, Fixnum, Hash)>]
+    # DocumentResponse data, response status code and response headers
+    private def build_report_with_http_info(request)
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? BuildReportRequest
+
+      @api_client.config.logger.debug 'Calling API: WordsApi.build_report ...' if @api_client.config.debugging
+      # verify the required parameter 'name' is set
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.build_report' if @api_client.config.client_side_validation && request.name.nil?
+      # verify the required parameter 'data' is set
+      raise ArgumentError, 'Missing the required parameter data when calling WordsApi.build_report' if @api_client.config.client_side_validation && request.data.nil?
+      # verify the required parameter 'report_engine_settings' is set
+      raise ArgumentError, 'Missing the required parameter report_engine_settings when calling WordsApi.build_report' if @api_client.config.client_side_validation && request.report_engine_settings.nil?
+      # resource path
+      local_var_path = '/words/{name}/buildReport'[1..-1]
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+
+      # query parameters
+      query_params = {}
+      if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+      else
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+      else
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+      end
+      if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+      else
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+      else
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+      end
+      if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+      else
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+      end
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+
+      # form parameters
+      form_params = {}
+      form_params[downcase_first_letter('Data')] = request.data
+      form_params[downcase_first_letter('ReportEngineSettings')] = request.report_engine_settings
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['JWT']
+	  
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'DocumentResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#build_report\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
+    # Executes document \"build report\" online operation.
+    # 
+    # @param request BuildReportOnlineRequest
+    # @return [File]
+    def build_report_online(request)
+      begin
+        data, _status_code, _headers = build_report_online_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = build_report_online_with_http_info(request)
+          else
+            raise
+          end
+      end			
+      data
+    end
+
+    # Executes document \&quot;build report\&quot; online operation.
+    # 
+    # @param request BuildReportOnlineRequest
+    # @return [Array<(File, Fixnum, Hash)>]
+    # File data, response status code and response headers
+    private def build_report_online_with_http_info(request)
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? BuildReportOnlineRequest
+
+      @api_client.config.logger.debug 'Calling API: WordsApi.build_report_online ...' if @api_client.config.debugging
+      # verify the required parameter 'template' is set
+      raise ArgumentError, 'Missing the required parameter template when calling WordsApi.build_report_online' if @api_client.config.client_side_validation && request.template.nil?
+      # verify the required parameter 'data' is set
+      raise ArgumentError, 'Missing the required parameter data when calling WordsApi.build_report_online' if @api_client.config.client_side_validation && request.data.nil?
+      # verify the required parameter 'report_engine_settings' is set
+      raise ArgumentError, 'Missing the required parameter report_engine_settings when calling WordsApi.build_report_online' if @api_client.config.client_side_validation && request.report_engine_settings.nil?
+      # resource path
+      local_var_path = '/words/buildReport'[1..-1]
+
+      # query parameters
+      query_params = {}
+      if local_var_path.include? downcase_first_letter('DocumentFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DocumentFileName') + '}', request.document_file_name.to_s)
+      else
+        query_params[downcase_first_letter('DocumentFileName')] = request.document_file_name unless request.document_file_name.nil?
+      end
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+
+      # form parameters
+      form_params = {}
+      form_params[downcase_first_letter('Template')] = request.template
+      form_params[downcase_first_letter('Data')] = request.data
+      form_params[downcase_first_letter('ReportEngineSettings')] = request.report_engine_settings
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['JWT']
+	  
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'File')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#build_report_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
     # Classifies raw text.
     # 
     # @param request ClassifyRequest
@@ -728,6 +1002,107 @@ module AsposeWordsCloud
       [data, status_code, headers]
     end
 
+    # Copy and insert a new style to the document, returns an copied style.
+    # 
+    # @param request CopyStyleRequest
+    # @return [StyleResponse]
+    def copy_style(request)
+      begin
+        data, _status_code, _headers = copy_style_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = copy_style_with_http_info(request)
+          else
+            raise
+          end
+      end			
+      data
+    end
+
+    # Copy and insert a new style to the document, returns an copied style.
+    # 
+    # @param request CopyStyleRequest
+    # @return [Array<(StyleResponse, Fixnum, Hash)>]
+    # StyleResponse data, response status code and response headers
+    private def copy_style_with_http_info(request)
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? CopyStyleRequest
+
+      @api_client.config.logger.debug 'Calling API: WordsApi.copy_style ...' if @api_client.config.debugging
+      # verify the required parameter 'name' is set
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.copy_style' if @api_client.config.client_side_validation && request.name.nil?
+      # verify the required parameter 'style_copy' is set
+      raise ArgumentError, 'Missing the required parameter style_copy when calling WordsApi.copy_style' if @api_client.config.client_side_validation && request.style_copy.nil?
+      # resource path
+      local_var_path = '/words/{name}/styles/copy'[1..-1]
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+
+      # query parameters
+      query_params = {}
+      if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+      else
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+      else
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+      end
+      if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+      else
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+      else
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+      end
+      if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+      else
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+      end
+      if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+      else
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+      end
+      if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+      else
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+      end
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/xml', 'application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(request.style_copy)
+      auth_names = ['JWT']
+	  
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'StyleResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#copy_style\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
     # Creates new document. Document is created with format which is recognized from file extensions. Supported extensions: \".doc\", \".docx\", \".docm\", \".dot\", \".dotm\", \".dotx\", \".flatopc\", \".fopc\", \".flatopc_macro\", \".fopc_macro\", \".flatopc_template\", \".fopc_template\", \".flatopc_template_macro\", \".fopc_template_macro\", \".wordml\", \".wml\", \".rtf\".
     # 
     # @param request CreateDocumentRequest
@@ -972,6 +1347,101 @@ module AsposeWordsCloud
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#create_or_update_document_property\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
+    # Remove all tab stops.
+    # 
+    # @param request DeleteAllParagraphTabStopsRequest
+    # @return [TabStopsResponse]
+    def delete_all_paragraph_tab_stops(request)
+      begin
+        data, _status_code, _headers = delete_all_paragraph_tab_stops_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_all_paragraph_tab_stops_with_http_info(request)
+          else
+            raise
+          end
+      end			
+      data
+    end
+
+    # Remove all tab stops.
+    # 
+    # @param request DeleteAllParagraphTabStopsRequest
+    # @return [Array<(TabStopsResponse, Fixnum, Hash)>]
+    # TabStopsResponse data, response status code and response headers
+    private def delete_all_paragraph_tab_stops_with_http_info(request)
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteAllParagraphTabStopsRequest
+
+      @api_client.config.logger.debug 'Calling API: WordsApi.delete_all_paragraph_tab_stops ...' if @api_client.config.debugging
+      # verify the required parameter 'name' is set
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_all_paragraph_tab_stops' if @api_client.config.client_side_validation && request.name.nil?
+      # verify the required parameter 'node_path' is set
+      raise ArgumentError, 'Missing the required parameter node_path when calling WordsApi.delete_all_paragraph_tab_stops' if @api_client.config.client_side_validation && request.node_path.nil?
+      # verify the required parameter 'index' is set
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_all_paragraph_tab_stops' if @api_client.config.client_side_validation && request.index.nil?
+      # resource path
+      local_var_path = '/words/{name}/{nodePath}/paragraphs/{index}/tabstops'[1..-1]
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+
+      # query parameters
+      query_params = {}
+      if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+      else
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+      else
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+      end
+      if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+      else
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+      else
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+      end
+      if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+      else
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+      end
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/xml', 'application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['JWT']
+	  
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'TabStopsResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#delete_all_paragraph_tab_stops\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
     end
@@ -3165,6 +3635,210 @@ module AsposeWordsCloud
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_paragraph\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
+    # Delete paragraph list format, returns updated list format properties.
+    # 
+    # @param request DeleteParagraphListFormatRequest
+    # @return [ParagraphListFormatResponse]
+    def delete_paragraph_list_format(request)
+      begin
+        data, _status_code, _headers = delete_paragraph_list_format_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_paragraph_list_format_with_http_info(request)
+          else
+            raise
+          end
+      end			
+      data
+    end
+
+    # Delete paragraph list format, returns updated list format properties.
+    # 
+    # @param request DeleteParagraphListFormatRequest
+    # @return [Array<(ParagraphListFormatResponse, Fixnum, Hash)>]
+    # ParagraphListFormatResponse data, response status code and response headers
+    private def delete_paragraph_list_format_with_http_info(request)
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteParagraphListFormatRequest
+
+      @api_client.config.logger.debug 'Calling API: WordsApi.delete_paragraph_list_format ...' if @api_client.config.debugging
+      # verify the required parameter 'name' is set
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_paragraph_list_format' if @api_client.config.client_side_validation && request.name.nil?
+      # verify the required parameter 'node_path' is set
+      raise ArgumentError, 'Missing the required parameter node_path when calling WordsApi.delete_paragraph_list_format' if @api_client.config.client_side_validation && request.node_path.nil?
+      # verify the required parameter 'index' is set
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_paragraph_list_format' if @api_client.config.client_side_validation && request.index.nil?
+      # resource path
+      local_var_path = '/words/{name}/{nodePath}/paragraphs/{index}/listFormat'[1..-1]
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+
+      # query parameters
+      query_params = {}
+      if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+      else
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+      else
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+      end
+      if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+      else
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+      else
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+      end
+      if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+      else
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+      end
+      if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+      else
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+      end
+      if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+      else
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+      end
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/xml', 'application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['JWT']
+	  
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'ParagraphListFormatResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#delete_paragraph_list_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
+    # Remove the i-th tab stop.
+    # 
+    # @param request DeleteParagraphTabStopRequest
+    # @return [TabStopsResponse]
+    def delete_paragraph_tab_stop(request)
+      begin
+        data, _status_code, _headers = delete_paragraph_tab_stop_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_paragraph_tab_stop_with_http_info(request)
+          else
+            raise
+          end
+      end			
+      data
+    end
+
+    # Remove the i-th tab stop.
+    # 
+    # @param request DeleteParagraphTabStopRequest
+    # @return [Array<(TabStopsResponse, Fixnum, Hash)>]
+    # TabStopsResponse data, response status code and response headers
+    private def delete_paragraph_tab_stop_with_http_info(request)
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteParagraphTabStopRequest
+
+      @api_client.config.logger.debug 'Calling API: WordsApi.delete_paragraph_tab_stop ...' if @api_client.config.debugging
+      # verify the required parameter 'name' is set
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_paragraph_tab_stop' if @api_client.config.client_side_validation && request.name.nil?
+      # verify the required parameter 'node_path' is set
+      raise ArgumentError, 'Missing the required parameter node_path when calling WordsApi.delete_paragraph_tab_stop' if @api_client.config.client_side_validation && request.node_path.nil?
+      # verify the required parameter 'position' is set
+      raise ArgumentError, 'Missing the required parameter position when calling WordsApi.delete_paragraph_tab_stop' if @api_client.config.client_side_validation && request.position.nil?
+      # verify the required parameter 'index' is set
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.delete_paragraph_tab_stop' if @api_client.config.client_side_validation && request.index.nil?
+      # resource path
+      local_var_path = '/words/{name}/{nodePath}/paragraphs/{index}/tabstop'[1..-1]
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[downcase_first_letter('Position')] = request.position
+
+      if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+      else
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+      else
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+      end
+      if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+      else
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+      else
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+      end
+      if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+      else
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+      end
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/xml', 'application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['JWT']
+	  
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'TabStopsResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#delete_paragraph_tab_stop\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
     end
@@ -7799,6 +8473,177 @@ module AsposeWordsCloud
       [data, status_code, headers]
     end
 
+    # This resource represents one of the lists contained in the document.
+    # 
+    # @param request GetListRequest
+    # @return [ListResponse]
+    def get_list(request)
+      begin
+        data, _status_code, _headers = get_list_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_list_with_http_info(request)
+          else
+            raise
+          end
+      end			
+      data
+    end
+
+    # This resource represents one of the lists contained in the document.
+    # 
+    # @param request GetListRequest
+    # @return [Array<(ListResponse, Fixnum, Hash)>]
+    # ListResponse data, response status code and response headers
+    private def get_list_with_http_info(request)
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetListRequest
+
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_list ...' if @api_client.config.debugging
+      # verify the required parameter 'name' is set
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_list' if @api_client.config.client_side_validation && request.name.nil?
+      # verify the required parameter 'list_id' is set
+      raise ArgumentError, 'Missing the required parameter list_id when calling WordsApi.get_list' if @api_client.config.client_side_validation && request.list_id.nil?
+      # resource path
+      local_var_path = '/words/{name}/lists/{listId}'[1..-1]
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('ListId') + '}', request.list_id.to_s)
+
+      # query parameters
+      query_params = {}
+      if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+      else
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+      else
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+      end
+      if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+      else
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+      else
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+      end
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/xml', 'application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['JWT']
+	  
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'ListResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#get_list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
+    # Returns a list of lists that are contained in the document.
+    # 
+    # @param request GetListsRequest
+    # @return [ListsResponse]
+    def get_lists(request)
+      begin
+        data, _status_code, _headers = get_lists_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_lists_with_http_info(request)
+          else
+            raise
+          end
+      end			
+      data
+    end
+
+    # Returns a list of lists that are contained in the document.
+    # 
+    # @param request GetListsRequest
+    # @return [Array<(ListsResponse, Fixnum, Hash)>]
+    # ListsResponse data, response status code and response headers
+    private def get_lists_with_http_info(request)
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetListsRequest
+
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_lists ...' if @api_client.config.debugging
+      # verify the required parameter 'name' is set
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_lists' if @api_client.config.client_side_validation && request.name.nil?
+      # resource path
+      local_var_path = '/words/{name}/lists'[1..-1]
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+
+      # query parameters
+      query_params = {}
+      if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+      else
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+      else
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+      end
+      if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+      else
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+      else
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+      end
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/xml', 'application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['JWT']
+	  
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'ListsResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#get_lists\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
     # Reads OfficeMath object by index.
     # 
     # @param request GetOfficeMathObjectRequest
@@ -8410,6 +9255,273 @@ module AsposeWordsCloud
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_paragraph_format_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
+    # Represents list format for a paragraph.
+    # 
+    # @param request GetParagraphListFormatRequest
+    # @return [ParagraphListFormatResponse]
+    def get_paragraph_list_format(request)
+      begin
+        data, _status_code, _headers = get_paragraph_list_format_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_paragraph_list_format_with_http_info(request)
+          else
+            raise
+          end
+      end			
+      data
+    end
+
+    # Represents list format for a paragraph.
+    # 
+    # @param request GetParagraphListFormatRequest
+    # @return [Array<(ParagraphListFormatResponse, Fixnum, Hash)>]
+    # ParagraphListFormatResponse data, response status code and response headers
+    private def get_paragraph_list_format_with_http_info(request)
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetParagraphListFormatRequest
+
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_paragraph_list_format ...' if @api_client.config.debugging
+      # verify the required parameter 'name' is set
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_paragraph_list_format' if @api_client.config.client_side_validation && request.name.nil?
+      # verify the required parameter 'node_path' is set
+      raise ArgumentError, 'Missing the required parameter node_path when calling WordsApi.get_paragraph_list_format' if @api_client.config.client_side_validation && request.node_path.nil?
+      # verify the required parameter 'index' is set
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_paragraph_list_format' if @api_client.config.client_side_validation && request.index.nil?
+      # resource path
+      local_var_path = '/words/{name}/{nodePath}/paragraphs/{index}/listFormat'[1..-1]
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+
+      # query parameters
+      query_params = {}
+      if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+      else
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+      else
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+      end
+      if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+      else
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+      else
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+      end
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/xml', 'application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['JWT']
+	  
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'ParagraphListFormatResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#get_paragraph_list_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
+    # Represents list format for a paragraph.
+    # 
+    # @param request GetParagraphListFormatWithoutNodePathRequest
+    # @return [ParagraphListFormatResponse]
+    def get_paragraph_list_format_without_node_path(request)
+      begin
+        data, _status_code, _headers = get_paragraph_list_format_without_node_path_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_paragraph_list_format_without_node_path_with_http_info(request)
+          else
+            raise
+          end
+      end			
+      data
+    end
+
+    # Represents list format for a paragraph.
+    # 
+    # @param request GetParagraphListFormatWithoutNodePathRequest
+    # @return [Array<(ParagraphListFormatResponse, Fixnum, Hash)>]
+    # ParagraphListFormatResponse data, response status code and response headers
+    private def get_paragraph_list_format_without_node_path_with_http_info(request)
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetParagraphListFormatWithoutNodePathRequest
+
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_paragraph_list_format_without_node_path ...' if @api_client.config.debugging
+      # verify the required parameter 'name' is set
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_paragraph_list_format_without_node_path' if @api_client.config.client_side_validation && request.name.nil?
+      # verify the required parameter 'index' is set
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_paragraph_list_format_without_node_path' if @api_client.config.client_side_validation && request.index.nil?
+      # resource path
+      local_var_path = '/words/{name}/paragraphs/{index}/listFormat'[1..-1]
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+
+      # query parameters
+      query_params = {}
+      if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+      else
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+      else
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+      end
+      if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+      else
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+      else
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+      end
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/xml', 'application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['JWT']
+	  
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'ParagraphListFormatResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#get_paragraph_list_format_without_node_path\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
+    # Get all tab stops for the paragraph.
+    # 
+    # @param request GetParagraphTabStopsRequest
+    # @return [TabStopsResponse]
+    def get_paragraph_tab_stops(request)
+      begin
+        data, _status_code, _headers = get_paragraph_tab_stops_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_paragraph_tab_stops_with_http_info(request)
+          else
+            raise
+          end
+      end			
+      data
+    end
+
+    # Get all tab stops for the paragraph.
+    # 
+    # @param request GetParagraphTabStopsRequest
+    # @return [Array<(TabStopsResponse, Fixnum, Hash)>]
+    # TabStopsResponse data, response status code and response headers
+    private def get_paragraph_tab_stops_with_http_info(request)
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetParagraphTabStopsRequest
+
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_paragraph_tab_stops ...' if @api_client.config.debugging
+      # verify the required parameter 'name' is set
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_paragraph_tab_stops' if @api_client.config.client_side_validation && request.name.nil?
+      # verify the required parameter 'node_path' is set
+      raise ArgumentError, 'Missing the required parameter node_path when calling WordsApi.get_paragraph_tab_stops' if @api_client.config.client_side_validation && request.node_path.nil?
+      # verify the required parameter 'index' is set
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.get_paragraph_tab_stops' if @api_client.config.client_side_validation && request.index.nil?
+      # resource path
+      local_var_path = '/words/{name}/{nodePath}/paragraphs/{index}/tabstops'[1..-1]
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+
+      # query parameters
+      query_params = {}
+      if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+      else
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+      else
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+      end
+      if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+      else
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+      else
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+      end
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/xml', 'application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['JWT']
+	  
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'TabStopsResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#get_paragraph_tab_stops\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
     end
@@ -9281,6 +10393,264 @@ module AsposeWordsCloud
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_sections\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
+    # This resource represents one of the styles contained in the document.
+    # 
+    # @param request GetStyleRequest
+    # @return [StyleResponse]
+    def get_style(request)
+      begin
+        data, _status_code, _headers = get_style_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_style_with_http_info(request)
+          else
+            raise
+          end
+      end			
+      data
+    end
+
+    # This resource represents one of the styles contained in the document.
+    # 
+    # @param request GetStyleRequest
+    # @return [Array<(StyleResponse, Fixnum, Hash)>]
+    # StyleResponse data, response status code and response headers
+    private def get_style_with_http_info(request)
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetStyleRequest
+
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_style ...' if @api_client.config.debugging
+      # verify the required parameter 'name' is set
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_style' if @api_client.config.client_side_validation && request.name.nil?
+      # verify the required parameter 'style_name' is set
+      raise ArgumentError, 'Missing the required parameter style_name when calling WordsApi.get_style' if @api_client.config.client_side_validation && request.style_name.nil?
+      # resource path
+      local_var_path = '/words/{name}/styles/{styleName}'[1..-1]
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('StyleName') + '}', request.style_name.to_s)
+
+      # query parameters
+      query_params = {}
+      if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+      else
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+      else
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+      end
+      if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+      else
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+      else
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+      end
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/xml', 'application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['JWT']
+	  
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'StyleResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#get_style\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
+    # Gets a style from the document node. Supported node types: ParagraphFormat, List, ListLevel, Table.
+    # 
+    # @param request GetStyleFromDocumentElementRequest
+    # @return [StyleResponse]
+    def get_style_from_document_element(request)
+      begin
+        data, _status_code, _headers = get_style_from_document_element_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_style_from_document_element_with_http_info(request)
+          else
+            raise
+          end
+      end			
+      data
+    end
+
+    # Gets a style from the document node. Supported node types: ParagraphFormat, List, ListLevel, Table.
+    # 
+    # @param request GetStyleFromDocumentElementRequest
+    # @return [Array<(StyleResponse, Fixnum, Hash)>]
+    # StyleResponse data, response status code and response headers
+    private def get_style_from_document_element_with_http_info(request)
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetStyleFromDocumentElementRequest
+
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_style_from_document_element ...' if @api_client.config.debugging
+      # verify the required parameter 'name' is set
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_style_from_document_element' if @api_client.config.client_side_validation && request.name.nil?
+      # verify the required parameter 'styled_node_path' is set
+      raise ArgumentError, 'Missing the required parameter styled_node_path when calling WordsApi.get_style_from_document_element' if @api_client.config.client_side_validation && request.styled_node_path.nil?
+      # resource path
+      local_var_path = '/words/{name}/{styledNodePath}/style'[1..-1]
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('StyledNodePath') + '}', request.styled_node_path.to_s)
+
+      # query parameters
+      query_params = {}
+      if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+      else
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+      else
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+      end
+      if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+      else
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+      else
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+      end
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/xml', 'application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['JWT']
+	  
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'StyleResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#get_style_from_document_element\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
+    # Returns a list of styles contained in the document.
+    # 
+    # @param request GetStylesRequest
+    # @return [StylesResponse]
+    def get_styles(request)
+      begin
+        data, _status_code, _headers = get_styles_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = get_styles_with_http_info(request)
+          else
+            raise
+          end
+      end			
+      data
+    end
+
+    # Returns a list of styles contained in the document.
+    # 
+    # @param request GetStylesRequest
+    # @return [Array<(StylesResponse, Fixnum, Hash)>]
+    # StylesResponse data, response status code and response headers
+    private def get_styles_with_http_info(request)
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? GetStylesRequest
+
+      @api_client.config.logger.debug 'Calling API: WordsApi.get_styles ...' if @api_client.config.debugging
+      # verify the required parameter 'name' is set
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_styles' if @api_client.config.client_side_validation && request.name.nil?
+      # resource path
+      local_var_path = '/words/{name}/styles'[1..-1]
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+
+      # query parameters
+      query_params = {}
+      if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+      else
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+      else
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+      end
+      if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+      else
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+      else
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+      end
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/xml', 'application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['JWT']
+	  
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'StylesResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#get_styles\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
     end
@@ -11223,6 +12593,204 @@ module AsposeWordsCloud
       [data, status_code, headers]
     end
 
+    # Adds list to document, returns added list's data.
+    # 
+    # @param request InsertListRequest
+    # @return [ListResponse]
+    def insert_list(request)
+      begin
+        data, _status_code, _headers = insert_list_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = insert_list_with_http_info(request)
+          else
+            raise
+          end
+      end			
+      data
+    end
+
+    # Adds list to document, returns added list&#39;s data.
+    # 
+    # @param request InsertListRequest
+    # @return [Array<(ListResponse, Fixnum, Hash)>]
+    # ListResponse data, response status code and response headers
+    private def insert_list_with_http_info(request)
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? InsertListRequest
+
+      @api_client.config.logger.debug 'Calling API: WordsApi.insert_list ...' if @api_client.config.debugging
+      # verify the required parameter 'name' is set
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.insert_list' if @api_client.config.client_side_validation && request.name.nil?
+      # verify the required parameter 'list_insert' is set
+      raise ArgumentError, 'Missing the required parameter list_insert when calling WordsApi.insert_list' if @api_client.config.client_side_validation && request.list_insert.nil?
+      # resource path
+      local_var_path = '/words/{name}/lists'[1..-1]
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+
+      # query parameters
+      query_params = {}
+      if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+      else
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+      else
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+      end
+      if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+      else
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+      else
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+      end
+      if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+      else
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+      end
+      if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+      else
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+      end
+      if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+      else
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+      end
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/xml', 'application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(request.list_insert)
+      auth_names = ['JWT']
+	  
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'ListResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#insert_list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
+    # Insert or resplace tab stop if a tab stop with the position exists.
+    # 
+    # @param request InsertOrUpdateParagraphTabStopRequest
+    # @return [TabStopsResponse]
+    def insert_or_update_paragraph_tab_stop(request)
+      begin
+        data, _status_code, _headers = insert_or_update_paragraph_tab_stop_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = insert_or_update_paragraph_tab_stop_with_http_info(request)
+          else
+            raise
+          end
+      end			
+      data
+    end
+
+    # Insert or resplace tab stop if a tab stop with the position exists.
+    # 
+    # @param request InsertOrUpdateParagraphTabStopRequest
+    # @return [Array<(TabStopsResponse, Fixnum, Hash)>]
+    # TabStopsResponse data, response status code and response headers
+    private def insert_or_update_paragraph_tab_stop_with_http_info(request)
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? InsertOrUpdateParagraphTabStopRequest
+
+      @api_client.config.logger.debug 'Calling API: WordsApi.insert_or_update_paragraph_tab_stop ...' if @api_client.config.debugging
+      # verify the required parameter 'name' is set
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.insert_or_update_paragraph_tab_stop' if @api_client.config.client_side_validation && request.name.nil?
+      # verify the required parameter 'node_path' is set
+      raise ArgumentError, 'Missing the required parameter node_path when calling WordsApi.insert_or_update_paragraph_tab_stop' if @api_client.config.client_side_validation && request.node_path.nil?
+      # verify the required parameter 'dto' is set
+      raise ArgumentError, 'Missing the required parameter dto when calling WordsApi.insert_or_update_paragraph_tab_stop' if @api_client.config.client_side_validation && request.dto.nil?
+      # verify the required parameter 'index' is set
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.insert_or_update_paragraph_tab_stop' if @api_client.config.client_side_validation && request.index.nil?
+      # resource path
+      local_var_path = '/words/{name}/{nodePath}/paragraphs/{index}/tabstops'[1..-1]
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+
+      # query parameters
+      query_params = {}
+      if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+      else
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+      else
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+      end
+      if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+      else
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+      else
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+      end
+      if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+      else
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+      end
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/xml', 'application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(request.dto)
+      auth_names = ['JWT']
+	  
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'TabStopsResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#insert_or_update_paragraph_tab_stop\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
     # Inserts document page numbers.
     # 
     # @param request InsertPageNumbersRequest
@@ -11538,6 +13106,107 @@ module AsposeWordsCloud
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_run\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
+    # Adds a style to the document, returns an added style.
+    # 
+    # @param request InsertStyleRequest
+    # @return [StyleResponse]
+    def insert_style(request)
+      begin
+        data, _status_code, _headers = insert_style_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = insert_style_with_http_info(request)
+          else
+            raise
+          end
+      end			
+      data
+    end
+
+    # Adds a style to the document, returns an added style.
+    # 
+    # @param request InsertStyleRequest
+    # @return [Array<(StyleResponse, Fixnum, Hash)>]
+    # StyleResponse data, response status code and response headers
+    private def insert_style_with_http_info(request)
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? InsertStyleRequest
+
+      @api_client.config.logger.debug 'Calling API: WordsApi.insert_style ...' if @api_client.config.debugging
+      # verify the required parameter 'name' is set
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.insert_style' if @api_client.config.client_side_validation && request.name.nil?
+      # verify the required parameter 'style_insert' is set
+      raise ArgumentError, 'Missing the required parameter style_insert when calling WordsApi.insert_style' if @api_client.config.client_side_validation && request.style_insert.nil?
+      # resource path
+      local_var_path = '/words/{name}/styles/insert'[1..-1]
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+
+      # query parameters
+      query_params = {}
+      if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+      else
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+      else
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+      end
+      if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+      else
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+      else
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+      end
+      if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+      else
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+      end
+      if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+      else
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+      end
+      if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+      else
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+      end
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/xml', 'application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(request.style_insert)
+      auth_names = ['JWT']
+	  
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'StyleResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#insert_style\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
     end
@@ -15601,6 +17270,217 @@ module AsposeWordsCloud
       [data, status_code, headers]
     end
 
+    # Updates list properties, returns updated list.
+    # 
+    # @param request UpdateListRequest
+    # @return [ListResponse]
+    def update_list(request)
+      begin
+        data, _status_code, _headers = update_list_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = update_list_with_http_info(request)
+          else
+            raise
+          end
+      end			
+      data
+    end
+
+    # Updates list properties, returns updated list.
+    # 
+    # @param request UpdateListRequest
+    # @return [Array<(ListResponse, Fixnum, Hash)>]
+    # ListResponse data, response status code and response headers
+    private def update_list_with_http_info(request)
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? UpdateListRequest
+
+      @api_client.config.logger.debug 'Calling API: WordsApi.update_list ...' if @api_client.config.debugging
+      # verify the required parameter 'name' is set
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.update_list' if @api_client.config.client_side_validation && request.name.nil?
+      # verify the required parameter 'list_update' is set
+      raise ArgumentError, 'Missing the required parameter list_update when calling WordsApi.update_list' if @api_client.config.client_side_validation && request.list_update.nil?
+      # verify the required parameter 'list_id' is set
+      raise ArgumentError, 'Missing the required parameter list_id when calling WordsApi.update_list' if @api_client.config.client_side_validation && request.list_id.nil?
+      # resource path
+      local_var_path = '/words/{name}/lists/{listId}'[1..-1]
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('ListId') + '}', request.list_id.to_s)
+
+      # query parameters
+      query_params = {}
+      if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+      else
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+      else
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+      end
+      if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+      else
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+      else
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+      end
+      if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+      else
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+      end
+      if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+      else
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+      end
+      if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+      else
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+      end
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/xml', 'application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(request.list_update)
+      auth_names = ['JWT']
+	  
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'ListResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#update_list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
+    # Updates list level in document list, returns updated list.
+    # 
+    # @param request UpdateListLevelRequest
+    # @return [ListResponse]
+    def update_list_level(request)
+      begin
+        data, _status_code, _headers = update_list_level_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = update_list_level_with_http_info(request)
+          else
+            raise
+          end
+      end			
+      data
+    end
+
+    # Updates list level in document list, returns updated list.
+    # 
+    # @param request UpdateListLevelRequest
+    # @return [Array<(ListResponse, Fixnum, Hash)>]
+    # ListResponse data, response status code and response headers
+    private def update_list_level_with_http_info(request)
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? UpdateListLevelRequest
+
+      @api_client.config.logger.debug 'Calling API: WordsApi.update_list_level ...' if @api_client.config.debugging
+      # verify the required parameter 'name' is set
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.update_list_level' if @api_client.config.client_side_validation && request.name.nil?
+      # verify the required parameter 'list_update' is set
+      raise ArgumentError, 'Missing the required parameter list_update when calling WordsApi.update_list_level' if @api_client.config.client_side_validation && request.list_update.nil?
+      # verify the required parameter 'list_id' is set
+      raise ArgumentError, 'Missing the required parameter list_id when calling WordsApi.update_list_level' if @api_client.config.client_side_validation && request.list_id.nil?
+      # verify the required parameter 'list_level' is set
+      raise ArgumentError, 'Missing the required parameter list_level when calling WordsApi.update_list_level' if @api_client.config.client_side_validation && request.list_level.nil?
+      # resource path
+      local_var_path = '/words/{name}/lists/{listId}/listLevels/{listLevel}'[1..-1]
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('ListId') + '}', request.list_id.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('ListLevel') + '}', request.list_level.to_s)
+
+      # query parameters
+      query_params = {}
+      if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+      else
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+      else
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+      end
+      if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+      else
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+      else
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+      end
+      if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+      else
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+      end
+      if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+      else
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+      end
+      if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+      else
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+      end
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/xml', 'application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(request.list_update)
+      auth_names = ['JWT']
+	  
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'ListResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#update_list_level\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
     # Updates paragraph format properties, returns updated format properties.
     # 
     # @param request UpdateParagraphFormatRequest
@@ -15704,6 +17584,113 @@ module AsposeWordsCloud
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_paragraph_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
+    # Updates paragraph list format properties, returns updated list format properties.
+    # 
+    # @param request UpdateParagraphListFormatRequest
+    # @return [ParagraphListFormatResponse]
+    def update_paragraph_list_format(request)
+      begin
+        data, _status_code, _headers = update_paragraph_list_format_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = update_paragraph_list_format_with_http_info(request)
+          else
+            raise
+          end
+      end			
+      data
+    end
+
+    # Updates paragraph list format properties, returns updated list format properties.
+    # 
+    # @param request UpdateParagraphListFormatRequest
+    # @return [Array<(ParagraphListFormatResponse, Fixnum, Hash)>]
+    # ParagraphListFormatResponse data, response status code and response headers
+    private def update_paragraph_list_format_with_http_info(request)
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? UpdateParagraphListFormatRequest
+
+      @api_client.config.logger.debug 'Calling API: WordsApi.update_paragraph_list_format ...' if @api_client.config.debugging
+      # verify the required parameter 'name' is set
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.update_paragraph_list_format' if @api_client.config.client_side_validation && request.name.nil?
+      # verify the required parameter 'dto' is set
+      raise ArgumentError, 'Missing the required parameter dto when calling WordsApi.update_paragraph_list_format' if @api_client.config.client_side_validation && request.dto.nil?
+      # verify the required parameter 'node_path' is set
+      raise ArgumentError, 'Missing the required parameter node_path when calling WordsApi.update_paragraph_list_format' if @api_client.config.client_side_validation && request.node_path.nil?
+      # verify the required parameter 'index' is set
+      raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_paragraph_list_format' if @api_client.config.client_side_validation && request.index.nil?
+      # resource path
+      local_var_path = '/words/{name}/{nodePath}/paragraphs/{index}/listFormat'[1..-1]
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', request.node_path.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Index') + '}', request.index.to_s)
+
+      # query parameters
+      query_params = {}
+      if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+      else
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+      else
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+      end
+      if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+      else
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+      else
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+      end
+      if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+      else
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+      end
+      if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+      else
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+      end
+      if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+      else
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+      end
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/xml', 'application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(request.dto)
+      auth_names = ['JWT']
+	  
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'ParagraphListFormatResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#update_paragraph_list_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
     end
@@ -16022,6 +18009,110 @@ module AsposeWordsCloud
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_section_page_setup\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
+    # Updates a style properties, returns an updated style.
+    # 
+    # @param request UpdateStyleRequest
+    # @return [StyleResponse]
+    def update_style(request)
+      begin
+        data, _status_code, _headers = update_style_with_http_info(request)
+        rescue ApiError => e
+          if e.code == 401
+            request_token
+            data, _status_code, _headers = update_style_with_http_info(request)
+          else
+            raise
+          end
+      end			
+      data
+    end
+
+    # Updates a style properties, returns an updated style.
+    # 
+    # @param request UpdateStyleRequest
+    # @return [Array<(StyleResponse, Fixnum, Hash)>]
+    # StyleResponse data, response status code and response headers
+    private def update_style_with_http_info(request)
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? UpdateStyleRequest
+
+      @api_client.config.logger.debug 'Calling API: WordsApi.update_style ...' if @api_client.config.debugging
+      # verify the required parameter 'name' is set
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.update_style' if @api_client.config.client_side_validation && request.name.nil?
+      # verify the required parameter 'style_update' is set
+      raise ArgumentError, 'Missing the required parameter style_update when calling WordsApi.update_style' if @api_client.config.client_side_validation && request.style_update.nil?
+      # verify the required parameter 'style_name' is set
+      raise ArgumentError, 'Missing the required parameter style_name when calling WordsApi.update_style' if @api_client.config.client_side_validation && request.style_name.nil?
+      # resource path
+      local_var_path = '/words/{name}/styles/{styleName}/update'[1..-1]
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('StyleName') + '}', request.style_name.to_s)
+
+      # query parameters
+      query_params = {}
+      if local_var_path.include? downcase_first_letter('Folder')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
+      else
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Storage')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
+      else
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+      end
+      if local_var_path.include? downcase_first_letter('LoadEncoding')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
+      else
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+      end
+      if local_var_path.include? downcase_first_letter('Password')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
+      else
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+      end
+      if local_var_path.include? downcase_first_letter('DestFileName')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
+      else
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+      end
+      if local_var_path.include? downcase_first_letter('RevisionAuthor')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
+      else
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+      end
+      if local_var_path.include? downcase_first_letter('RevisionDateTime')
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
+      else
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+      end
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/xml', 'application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(request.style_update)
+      auth_names = ['JWT']
+	  
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'StyleResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#update_style\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
     end
