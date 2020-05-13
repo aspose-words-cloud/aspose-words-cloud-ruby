@@ -32,7 +32,7 @@ module AsposeWordsCloud
   #
   class ExecuteMailMergeRequest
 
-        # The document name.
+        # The template name.
         attr_accessor :name
         # Mail merge data
         attr_accessor :data
@@ -57,7 +57,7 @@ module AsposeWordsCloud
 	
         #
         # Initializes a new instance.
-        # @param name The document name.
+        # @param name The template name.
         # @param data Mail merge data
         # @param folder Original document folder.
         # @param storage Original document storage.
