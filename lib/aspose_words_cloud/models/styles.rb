@@ -4,7 +4,7 @@ require 'date'
 module AsposeWordsCloud
  #
  # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose" file="StylesResponse.rb">
+ # <copyright company="Aspose" file="Styles.rb">
  #   Copyright (c) 2019 Aspose.Words for Cloud
  # </copyright>
  # <summary>
@@ -29,27 +29,27 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/styles.
-  class StylesResponse
-    # Gets or sets request Id.
-    attr_accessor :request_id
+  # Represents an array of styles list.
+  class Styles
+    attr_accessor :link
 
-    attr_accessor :styles
+    # Gets or sets array of document styles.
+    attr_accessor :style_list
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'request_id' => :'RequestId',
-        :'styles' => :'Styles'
+        :'link' => :'link',
+        :'style_list' => :'StyleList'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'request_id' => :'String',
-        :'styles' => :'Styles'
+        :'link' => :'WordsApiLink',
+        :'style_list' => :'Array<Style>'
       }
     end
 
@@ -61,12 +61,14 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'RequestId')
-        self.request_id = attributes[:'RequestId']
+      if attributes.key?(:'link')
+        self.link = attributes[:'link']
       end
 
-      if attributes.key?(:'Styles')
-        self.styles = attributes[:'Styles']
+      if attributes.key?(:'StyleList')
+        if (value = attributes[:'StyleList']).is_a?(Array)
+          self.style_list = value
+        end
       end
 
     end
@@ -89,8 +91,8 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          request_id == other.request_id &&
-          styles == other.styles
+          link == other.link &&
+          style_list == other.style_list
     end
 
     # @see the `==` method
@@ -102,7 +104,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [request_id, styles].hash
+      [link, style_list].hash
     end
 
     # Builds the object from hash
