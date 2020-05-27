@@ -1,6 +1,6 @@
  #
  # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose" file="DeleteParagraphTabStopRequest.rb">
+ # <copyright company="Aspose" file="DeleteAllParagraphTabStopsWithoutNodePathRequest.rb">
  #   Copyright (c) 2019 Aspose.Words for Cloud
  # </copyright>
  # <summary>
@@ -28,16 +28,12 @@
 module AsposeWordsCloud
 
   #
-  # Request model for delete_paragraph_tab_stop operation.
+  # Request model for delete_all_paragraph_tab_stops_without_node_path operation.
   #
-  class DeleteParagraphTabStopRequest
+  class DeleteAllParagraphTabStopsWithoutNodePathRequest
 
         # The document name.
         attr_accessor :name
-        # a tab stop position to remove.
-        attr_accessor :position
-        # Path to the node which contains paragraph.
-        attr_accessor :node_path
         # Object index.
         attr_accessor :index
         # Original document folder.
@@ -54,18 +50,14 @@ module AsposeWordsCloud
         #
         # Initializes a new instance.
         # @param name The document name.
-        # @param position a tab stop position to remove.
-        # @param node_path Path to the node which contains paragraph.
         # @param index Object index.
         # @param folder Original document folder.
         # @param storage Original document storage.
         # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         # @param password Password for opening an encrypted document.
         # @param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        def initialize(name, position, node_path, index, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil)
+        def initialize(name, index, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil)
            self.name = name
-           self.position = position
-           self.node_path = node_path
            self.index = index
            self.folder = folder
            self.storage = storage
