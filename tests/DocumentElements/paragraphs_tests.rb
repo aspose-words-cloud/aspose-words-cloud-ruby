@@ -328,6 +328,22 @@ module AsposeWordsCloud
     end
 
     #
+    # Test for updating paragraph list format
+    #
+    def test_update_paragraph_list_format_without_node_path
+      filename = 'ParagraphUpdateListFormat.doc'
+      index = 0
+
+      upload_file File.join(local_test_folder, [test_list_folder, filename]), File.join(remote_test_folder, test_list_folder, filename)
+
+      dto = ListFormatUpdate.new
+      dto.list_id = 2
+      request = UpdateParagraphListFormatWithoutNodePathRequest.new filename, dto, index, remote_test_folder + test_list_folder
+      result = @words_api.update_paragraph_list_format_without_node_path request
+      assert_equal FALSE, result.nil?
+    end
+
+    #
     # Test for delete paragraph list format
     #
     def test_delete_paragraph_list_format
@@ -338,6 +354,20 @@ module AsposeWordsCloud
 
       request = DeleteParagraphListFormatRequest.new filename, '', index, remote_test_folder + test_list_folder
       result = @words_api.delete_paragraph_list_format request
+      assert_equal FALSE, result.nil?
+    end
+
+    #
+    # Test for delete paragraph list format
+    #
+    def test_delete_paragraph_list_format_without_node_path
+      filename = 'ParagraphDeleteListFormat.doc'
+      index = 0
+
+      upload_file File.join(local_test_folder, [test_list_folder, filename]), File.join(remote_test_folder, test_list_folder, filename)
+
+      request = DeleteParagraphListFormatWithoutNodePathRequest.new filename, index, remote_test_folder + test_list_folder
+      result = @words_api.delete_paragraph_list_format_without_node_path request
       assert_equal FALSE, result.nil?
     end
 
@@ -356,6 +386,20 @@ module AsposeWordsCloud
     end
 
     #
+    # Test for getting paragraph tab nodes
+    #
+    def test_get_paragraph_tab_stops_without_node_path
+      filename = 'ParagraphTabStops.docx'
+      index = 0
+
+      upload_file File.join(local_test_folder, [test_tab_stop_folder, filename]), File.join(remote_test_folder, test_tab_stop_folder, filename)
+
+      request = GetParagraphTabStopsWithoutNodePathRequest.new filename, index, remote_test_folder + test_tab_stop_folder
+      result = @words_api.get_paragraph_tab_stops_without_node_path request
+      assert_equal FALSE, result.nil?
+    end
+
+    #
     # Test for inserting paragraph tab stops
     #
     def test_insert_or_update_paragraph_tab_stop
@@ -369,8 +413,27 @@ module AsposeWordsCloud
       dto.leader = "None"
       dto.position = 72
 
-      request = InsertOrUpdateParagraphTabStopRequest.new filename, '', dto, index, remote_test_folder + test_tab_stop_folder
+      request = InsertOrUpdateParagraphTabStopRequest.new filename, dto, '', index, remote_test_folder + test_tab_stop_folder
       result = @words_api.insert_or_update_paragraph_tab_stop request
+      assert_equal FALSE, result.nil?
+    end
+
+    #
+    # Test for inserting paragraph tab stops
+    #
+    def test_insert_or_update_paragraph_tab_stop_without_node_path
+      filename = 'ParagraphTabStops.docx'
+      index = 0
+
+      upload_file File.join(local_test_folder, [test_tab_stop_folder, filename]), File.join(remote_test_folder, test_tab_stop_folder, filename)
+
+      dto = TabStopInsert.new
+      dto.alignment = "Left"
+      dto.leader = "None"
+      dto.position = 72
+
+      request = InsertOrUpdateParagraphTabStopWithoutNodePathRequest.new filename, dto, index, remote_test_folder + test_tab_stop_folder
+      result = @words_api.insert_or_update_paragraph_tab_stop_without_node_path request
       assert_equal FALSE, result.nil?
     end
 
@@ -389,6 +452,20 @@ module AsposeWordsCloud
     end
 
     #
+    # Test for deleting paragraph tab stops
+    #
+    def test_delete_all_paragraph_tab_stops_without_node_path
+      filename = 'ParagraphTabStops.docx'
+      index = 0
+
+      upload_file File.join(local_test_folder, [test_tab_stop_folder, filename]), File.join(remote_test_folder, test_tab_stop_folder, filename)
+
+      request = DeleteAllParagraphTabStopsWithoutNodePathRequest.new filename, index, remote_test_folder + test_tab_stop_folder
+      result = @words_api.delete_all_paragraph_tab_stops_without_node_path request
+      assert_equal FALSE, result.nil?
+    end
+
+    #
     # Test for deleting a paragraph tab stop
     #
     def test_delete_paragraph_tab_stop
@@ -397,8 +474,22 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, [test_tab_stop_folder, filename]), File.join(remote_test_folder, test_tab_stop_folder, filename)
 
-      request = DeleteParagraphTabStopRequest.new filename, '', 72, index, remote_test_folder + test_tab_stop_folder
+      request = DeleteParagraphTabStopRequest.new filename, 72, '', index, remote_test_folder + test_tab_stop_folder
       result = @words_api.delete_paragraph_tab_stop request
+      assert_equal FALSE, result.nil?
+    end
+
+    #
+    # Test for deleting a paragraph tab stop
+    #
+    def test_delete_paragraph_tab_stop_without_node_path
+      filename = 'ParagraphTabStops.docx'
+      index = 0
+
+      upload_file File.join(local_test_folder, [test_tab_stop_folder, filename]), File.join(remote_test_folder, test_tab_stop_folder, filename)
+
+      request = DeleteParagraphTabStopWithoutNodePathRequest.new filename, 72, index, remote_test_folder + test_tab_stop_folder
+      result = @words_api.delete_paragraph_tab_stop_without_node_path request
       assert_equal FALSE, result.nil?
     end
   end
