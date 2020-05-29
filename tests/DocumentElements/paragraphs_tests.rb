@@ -206,6 +206,23 @@ module AsposeWordsCloud
     end
 
     #
+    # Test for inserting paragraph
+    #
+    def test_insert_paragraph_without_node_path
+      filename = 'test_multi_pages.docx'
+      remote_name = 'TestInsertParagraph.docx'
+      paragraph = ParagraphInsert.new({:Text => 'This is a new paragraph for your document'})
+
+      upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
+
+      request = InsertParagraphWithoutNodePathRequest.new remote_name, paragraph, remote_test_folder + test_folder, nil,
+                                           nil,nil,nil,nil,
+                                           nil
+      result = @words_api.insert_paragraph_without_node_path request
+      assert_equal FALSE, result.nil?
+    end
+
+    #
     # Test for paragraph rendering
     #
     def test_render_paragraph
@@ -280,6 +297,22 @@ module AsposeWordsCloud
 
       request = UpdateParagraphFormatRequest.new remote_name, body, '', index, remote_test_folder + test_folder
       result = @words_api.update_paragraph_format request
+      assert_equal FALSE, result.nil?
+    end
+
+    #
+    # Test for updating paragraph format
+    #
+    def test_update_paragraph_format_without_node_path
+      filename = 'test_multi_pages.docx'
+      remote_name = 'TestUpdateParagraphFormat.docx'
+      index = 0
+      body = ParagraphFormat.new({:Alignment => 'Right'})
+
+      upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
+
+      request = UpdateParagraphFormatWithoutNodePathRequest.new remote_name, body, index, remote_test_folder + test_folder
+      result = @words_api.update_paragraph_format_without_node_path request
       assert_equal FALSE, result.nil?
     end
 
