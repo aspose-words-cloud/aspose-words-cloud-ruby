@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="configuration.rb">
-#  Copyright (c) 2019 Aspose.Words for Cloud
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -9,10 +9,10 @@
 #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 #  copies of the Software, and to permit persons to whom the Software is
 #  furnished to do so, subject to the following conditions:
-# 
+#
 #  The above copyright notice and this permission notice shall be included in all
 #  copies or substantial portions of the Software.
-# 
+#
 #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -30,10 +30,6 @@ module AsposeWordsCloud
   # Class for storing API configuration info
   #
   class Configuration
-    
-    # Defines v4 api version
-    V4_API_VERSION = '/v4.0/'.freeze
-
     # Defines base url
     attr_accessor :baseUrl
 
@@ -65,7 +61,7 @@ module AsposeWordsCloud
 
     # Defines the access token (Bearer) used with OAuth2.
     attr_accessor :access_token
-	
+
 	# Defines the refresh token (Bearer) used with OAuth2.
     attr_accessor :refresh_token
 
@@ -94,10 +90,10 @@ module AsposeWordsCloud
     # @return [true, false]
     attr_accessor :client_side_validation
 
-	
+
     def initialize
       @baseUrl = "https://api.aspose.cloud"
-      @api_version = V4_API_VERSION
+      @api_version = "/v4.0/"
       @api_key = {}
       @api_key_prefix = {}
       @client_side_validation = true
@@ -111,7 +107,7 @@ module AsposeWordsCloud
     def self.default
       @@default ||= Configuration.new
     end
-    
+
     # yield self
     def configure
       yield(self) if block_given?
@@ -122,8 +118,8 @@ module AsposeWordsCloud
       if withoutVersion
         return URI.join(baseUrl, path).to_s
       end
-      
-      return  URI.join(baseUrl, V4_API_VERSION, path).to_s
+
+      return  URI.join(baseUrl, "/v4.0/", path).to_s
     end
 
     # Gets API key (with prefix if set).

@@ -1,70 +1,67 @@
+# ------------------------------------------------------------------------------------
+# <copyright company="Aspose" file="document_stat_data.rb">
+#   Copyright (c) 2020 Aspose.Words for Cloud
+# </copyright>
+# <summary>
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
+#  of this software and associated documentation files (the "Software"), to deal
+#  in the Software without restriction, including without limitation the rights
+#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#  copies of the Software, and to permit persons to whom the Software is
+#  furnished to do so, subject to the following conditions:
+#
+#  The above copyright notice and this permission notice shall be included in all
+#  copies or substantial portions of the Software.
+#
+#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+#  SOFTWARE.
+# </summary>
+# ------------------------------------------------------------------------------------
 
 require 'date'
 
 module AsposeWordsCloud
- #
- # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose" file="DocumentStatData.rb">
- #   Copyright (c) 2019 Aspose.Words for Cloud
- # </copyright>
- # <summary>
- #   Permission is hereby granted, free of charge, to any person obtaining a copy
- #  of this software and associated documentation files (the "Software"), to deal
- #  in the Software without restriction, including without limitation the rights
- #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- #  copies of the Software, and to permit persons to whom the Software is
- #  furnished to do so, subject to the following conditions:
- #
- #  The above copyright notice and this permission notice shall be included in all
- #  copies or substantial portions of the Software.
- #
- #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- #  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- #  SOFTWARE.
- # </summary>
- # --------------------------------------------------------------------------------------------------------------------
- #
 
   # Container for the document's statistical data.
   class DocumentStatData
-    # Gets or sets total count of words in the document.
-    attr_accessor :word_count
-
-    # Gets or sets total count of paragraphs in the document.
-    attr_accessor :paragraph_count
+    # Gets or sets detailed statistics of footnotes.
+    attr_accessor :footnotes_stat_data
 
     # Gets or sets total count of pages in the document.
     attr_accessor :page_count
 
-    attr_accessor :footnotes_stat_data
-
     # Gets or sets detailed statistics of all pages.
     attr_accessor :page_stat_data
 
+    # Gets or sets total count of paragraphs in the document.
+    attr_accessor :paragraph_count
 
+    # Gets or sets total count of words in the document.
+    attr_accessor :word_count
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'word_count' => :'WordCount',
-        :'paragraph_count' => :'ParagraphCount',
-        :'page_count' => :'PageCount',
         :'footnotes_stat_data' => :'FootnotesStatData',
-        :'page_stat_data' => :'PageStatData'
+        :'page_count' => :'PageCount',
+        :'page_stat_data' => :'PageStatData',
+        :'paragraph_count' => :'ParagraphCount',
+        :'word_count' => :'WordCount'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'word_count' => :'Integer',
-        :'paragraph_count' => :'Integer',
-        :'page_count' => :'Integer',
         :'footnotes_stat_data' => :'FootnotesStatData',
-        :'page_stat_data' => :'Array<PageStatData>'
+        :'page_count' => :'Integer',
+        :'page_stat_data' => :'Array<PageStatData>',
+        :'paragraph_count' => :'Integer',
+        :'word_count' => :'Integer'
       }
     end
 
@@ -76,20 +73,12 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'WordCount')
-        self.word_count = attributes[:'WordCount']
-      end
-
-      if attributes.key?(:'ParagraphCount')
-        self.paragraph_count = attributes[:'ParagraphCount']
+      if attributes.key?(:'FootnotesStatData')
+        self.footnotes_stat_data = attributes[:'FootnotesStatData']
       end
 
       if attributes.key?(:'PageCount')
         self.page_count = attributes[:'PageCount']
-      end
-
-      if attributes.key?(:'FootnotesStatData')
-        self.footnotes_stat_data = attributes[:'FootnotesStatData']
       end
 
       if attributes.key?(:'PageStatData')
@@ -98,6 +87,13 @@ module AsposeWordsCloud
         end
       end
 
+      if attributes.key?(:'ParagraphCount')
+        self.paragraph_count = attributes[:'ParagraphCount']
+      end
+
+      if attributes.key?(:'WordCount')
+        self.word_count = attributes[:'WordCount']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -118,11 +114,11 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          word_count == other.word_count &&
-          paragraph_count == other.paragraph_count &&
-          page_count == other.page_count &&
           footnotes_stat_data == other.footnotes_stat_data &&
-          page_stat_data == other.page_stat_data
+          page_count == other.page_count &&
+          page_stat_data == other.page_stat_data &&
+          paragraph_count == other.paragraph_count &&
+          word_count == other.word_count
     end
 
     # @see the `==` method
@@ -134,7 +130,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [word_count, paragraph_count, page_count, footnotes_stat_data, page_stat_data].hash
+      [footnotes_stat_data, page_count, page_stat_data, paragraph_count, word_count].hash
     end
 
     # Builds the object from hash
@@ -244,5 +240,4 @@ module AsposeWordsCloud
     end
 
   end
-
 end

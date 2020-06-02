@@ -1,36 +1,35 @@
+# ------------------------------------------------------------------------------------
+# <copyright company="Aspose" file="table_properties.rb">
+#   Copyright (c) 2020 Aspose.Words for Cloud
+# </copyright>
+# <summary>
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
+#  of this software and associated documentation files (the "Software"), to deal
+#  in the Software without restriction, including without limitation the rights
+#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#  copies of the Software, and to permit persons to whom the Software is
+#  furnished to do so, subject to the following conditions:
+#
+#  The above copyright notice and this permission notice shall be included in all
+#  copies or substantial portions of the Software.
+#
+#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+#  SOFTWARE.
+# </summary>
+# ------------------------------------------------------------------------------------
 
 require 'date'
 
 module AsposeWordsCloud
- #
- # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose" file="TableProperties.rb">
- #   Copyright (c) 2019 Aspose.Words for Cloud
- # </copyright>
- # <summary>
- #   Permission is hereby granted, free of charge, to any person obtaining a copy
- #  of this software and associated documentation files (the "Software"), to deal
- #  in the Software without restriction, including without limitation the rights
- #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- #  copies of the Software, and to permit persons to whom the Software is
- #  furnished to do so, subject to the following conditions:
- #
- #  The above copyright notice and this permission notice shall be included in all
- #  copies or substantial portions of the Software.
- #
- #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- #  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- #  SOFTWARE.
- # </summary>
- # --------------------------------------------------------------------------------------------------------------------
- #
 
-  # Represents the table properties.             
+  # Represents the table properties.
   class TableProperties
+    # Gets or sets link to the document.
     attr_accessor :link
 
     # Gets or sets specifies how an inline table is aligned in the document.
@@ -54,6 +53,8 @@ module AsposeWordsCloud
     # Gets or sets the amount of space (in points) to add to the left of the contents of cells.
     attr_accessor :left_padding
 
+    # Gets or sets the table preferred width.
+    # Preferred width can be specified as a percentage, number of points or a special "auto" value.
     attr_accessor :preferred_width
 
     # Gets or sets the amount of space (in points) to add to the right of the contents of cells.
@@ -99,7 +100,7 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'link' => :'link',
+        :'link' => :'Link',
         :'alignment' => :'Alignment',
         :'allow_auto_fit' => :'AllowAutoFit',
         :'bidi' => :'Bidi',
@@ -146,8 +147,8 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'link')
-        self.link = attributes[:'link']
+      if attributes.key?(:'Link')
+        self.link = attributes[:'Link']
       end
 
       if attributes.key?(:'Alignment')
@@ -205,7 +206,6 @@ module AsposeWordsCloud
       if attributes.key?(:'TopPadding')
         self.top_padding = attributes[:'TopPadding']
       end
-
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -226,6 +226,7 @@ module AsposeWordsCloud
       return false unless style_options_validator.valid?(@style_options)
       text_wrapping_validator = EnumAttributeValidator.new('String', ["Default", "None", "Around"])
       return false unless text_wrapping_validator.valid?(@text_wrapping)
+
       return true
     end
 
@@ -284,6 +285,7 @@ module AsposeWordsCloud
         @text_wrapping = validator.allowable_values[text_wrapping.to_i]
       end
     end
+
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
@@ -426,5 +428,4 @@ module AsposeWordsCloud
     end
 
   end
-
 end

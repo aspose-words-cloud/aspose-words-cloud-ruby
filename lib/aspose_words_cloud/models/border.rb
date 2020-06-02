@@ -1,41 +1,41 @@
+# ------------------------------------------------------------------------------------
+# <copyright company="Aspose" file="border.rb">
+#   Copyright (c) 2020 Aspose.Words for Cloud
+# </copyright>
+# <summary>
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
+#  of this software and associated documentation files (the "Software"), to deal
+#  in the Software without restriction, including without limitation the rights
+#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#  copies of the Software, and to permit persons to whom the Software is
+#  furnished to do so, subject to the following conditions:
+#
+#  The above copyright notice and this permission notice shall be included in all
+#  copies or substantial portions of the Software.
+#
+#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+#  SOFTWARE.
+# </summary>
+# ------------------------------------------------------------------------------------
 
 require 'date'
 
 module AsposeWordsCloud
- #
- # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose" file="Border.rb">
- #   Copyright (c) 2019 Aspose.Words for Cloud
- # </copyright>
- # <summary>
- #   Permission is hereby granted, free of charge, to any person obtaining a copy
- #  of this software and associated documentation files (the "Software"), to deal
- #  in the Software without restriction, including without limitation the rights
- #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- #  copies of the Software, and to permit persons to whom the Software is
- #  furnished to do so, subject to the following conditions:
- #
- #  The above copyright notice and this permission notice shall be included in all
- #  copies or substantial portions of the Software.
- #
- #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- #  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- #  SOFTWARE.
- # </summary>
- # --------------------------------------------------------------------------------------------------------------------
- #
 
   # Represents a border of an object.
   class Border
+    # Gets or sets link to the document.
     attr_accessor :link
 
-    # Gets or sets the border type.             
+    # Gets or sets the border type.
     attr_accessor :border_type
 
+    # Gets or sets the border color.
     attr_accessor :color
 
     # Gets or sets distance of the border from text or from the page edge in points.
@@ -75,7 +75,7 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'link' => :'link',
+        :'link' => :'Link',
         :'border_type' => :'BorderType',
         :'color' => :'Color',
         :'distance_from_text' => :'DistanceFromText',
@@ -106,8 +106,8 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'link')
-        self.link = attributes[:'link']
+      if attributes.key?(:'Link')
+        self.link = attributes[:'Link']
       end
 
       if attributes.key?(:'BorderType')
@@ -133,7 +133,6 @@ module AsposeWordsCloud
       if attributes.key?(:'Shadow')
         self.shadow = attributes[:'Shadow']
       end
-
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -150,6 +149,7 @@ module AsposeWordsCloud
       return false unless border_type_validator.valid?(@border_type)
       line_style_validator = EnumAttributeValidator.new('String', ["None", "Single", "Thick", "Double", "Hairline", "Dot", "DashLargeGap", "DotDash", "DotDotDash", "Triple", "ThinThickSmallGap", "ThickThinSmallGap", "ThinThickThinSmallGap", "ThinThickMediumGap", "ThickThinMediumGap", "ThinThickThinMediumGap", "ThinThickLargeGap", "ThickThinLargeGap", "ThinThickThinLargeGap", "Wave", "DoubleWave", "DashSmallGap", "DashDotStroker", "Emboss3D", "Engrave3D", "Outset", "Inset"])
       return false unless line_style_validator.valid?(@line_style)
+
       return true
     end
 
@@ -180,6 +180,7 @@ module AsposeWordsCloud
         @line_style = validator.allowable_values[line_style.to_i]
       end
     end
+
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
@@ -314,5 +315,4 @@ module AsposeWordsCloud
     end
 
   end
-
 end

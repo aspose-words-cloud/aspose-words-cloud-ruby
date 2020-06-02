@@ -1,66 +1,62 @@
+# ------------------------------------------------------------------------------------
+# <copyright company="Aspose" file="csv_data_load_options.rb">
+#   Copyright (c) 2020 Aspose.Words for Cloud
+# </copyright>
+# <summary>
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
+#  of this software and associated documentation files (the "Software"), to deal
+#  in the Software without restriction, including without limitation the rights
+#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#  copies of the Software, and to permit persons to whom the Software is
+#  furnished to do so, subject to the following conditions:
+#
+#  The above copyright notice and this permission notice shall be included in all
+#  copies or substantial portions of the Software.
+#
+#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+#  SOFTWARE.
+# </summary>
+# ------------------------------------------------------------------------------------
 
 require 'date'
 
 module AsposeWordsCloud
- #
- # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose" file="CsvDataLoadOptions.rb">
- #   Copyright (c) 2019 Aspose.Words for Cloud
- # </copyright>
- # <summary>
- #   Permission is hereby granted, free of charge, to any person obtaining a copy
- #  of this software and associated documentation files (the "Software"), to deal
- #  in the Software without restriction, including without limitation the rights
- #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- #  copies of the Software, and to permit persons to whom the Software is
- #  furnished to do so, subject to the following conditions:
- #
- #  The above copyright notice and this permission notice shall be included in all
- #  copies or substantial portions of the Software.
- #
- #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- #  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- #  SOFTWARE.
- # </summary>
- # --------------------------------------------------------------------------------------------------------------------
- #
 
   # Represents options for parsing CSV data.
   class CsvDataLoadOptions
-    # Gets or sets a value indicating whether the first record of CSV data contains column names.
-    attr_accessor :has_headers
+    # Gets or sets the character that is used to comment lines of CSV data.
+    attr_accessor :comment_char
 
     # Gets or sets the character to be used as a column delimiter.
     attr_accessor :delimiter
 
+    # Gets or sets a value indicating whether the first record of CSV data contains column names.
+    attr_accessor :has_headers
+
     # Gets or sets the character that is used to quote field values.
     attr_accessor :quote_char
-
-    # Gets or sets the character that is used to comment lines of CSV data.
-    attr_accessor :comment_char
-
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'has_headers' => :'HasHeaders',
+        :'comment_char' => :'CommentChar',
         :'delimiter' => :'Delimiter',
-        :'quote_char' => :'QuoteChar',
-        :'comment_char' => :'CommentChar'
+        :'has_headers' => :'HasHeaders',
+        :'quote_char' => :'QuoteChar'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'has_headers' => :'BOOLEAN',
+        :'comment_char' => :'String',
         :'delimiter' => :'String',
-        :'quote_char' => :'String',
-        :'comment_char' => :'String'
+        :'has_headers' => :'BOOLEAN',
+        :'quote_char' => :'String'
       }
     end
 
@@ -72,22 +68,21 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'HasHeaders')
-        self.has_headers = attributes[:'HasHeaders']
+      if attributes.key?(:'CommentChar')
+        self.comment_char = attributes[:'CommentChar']
       end
 
       if attributes.key?(:'Delimiter')
         self.delimiter = attributes[:'Delimiter']
       end
 
+      if attributes.key?(:'HasHeaders')
+        self.has_headers = attributes[:'HasHeaders']
+      end
+
       if attributes.key?(:'QuoteChar')
         self.quote_char = attributes[:'QuoteChar']
       end
-
-      if attributes.key?(:'CommentChar')
-        self.comment_char = attributes[:'CommentChar']
-      end
-
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -108,10 +103,10 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          has_headers == other.has_headers &&
+          comment_char == other.comment_char &&
           delimiter == other.delimiter &&
-          quote_char == other.quote_char &&
-          comment_char == other.comment_char
+          has_headers == other.has_headers &&
+          quote_char == other.quote_char
     end
 
     # @see the `==` method
@@ -123,7 +118,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [has_headers, delimiter, quote_char, comment_char].hash
+      [comment_char, delimiter, has_headers, quote_char].hash
     end
 
     # Builds the object from hash
@@ -233,5 +228,4 @@ module AsposeWordsCloud
     end
 
   end
-
 end

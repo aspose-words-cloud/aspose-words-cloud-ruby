@@ -1,38 +1,38 @@
+# ------------------------------------------------------------------------------------
+# <copyright company="Aspose" file="shading.rb">
+#   Copyright (c) 2020 Aspose.Words for Cloud
+# </copyright>
+# <summary>
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
+#  of this software and associated documentation files (the "Software"), to deal
+#  in the Software without restriction, including without limitation the rights
+#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#  copies of the Software, and to permit persons to whom the Software is
+#  furnished to do so, subject to the following conditions:
+#
+#  The above copyright notice and this permission notice shall be included in all
+#  copies or substantial portions of the Software.
+#
+#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+#  SOFTWARE.
+# </summary>
+# ------------------------------------------------------------------------------------
 
 require 'date'
 
 module AsposeWordsCloud
- #
- # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose" file="Shading.rb">
- #   Copyright (c) 2019 Aspose.Words for Cloud
- # </copyright>
- # <summary>
- #   Permission is hereby granted, free of charge, to any person obtaining a copy
- #  of this software and associated documentation files (the "Software"), to deal
- #  in the Software without restriction, including without limitation the rights
- #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- #  copies of the Software, and to permit persons to whom the Software is
- #  furnished to do so, subject to the following conditions:
- #
- #  The above copyright notice and this permission notice shall be included in all
- #  copies or substantial portions of the Software.
- #
- #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- #  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- #  SOFTWARE.
- # </summary>
- # --------------------------------------------------------------------------------------------------------------------
- #
 
-  # Paragraph format shading element.             
+  # Paragraph format shading element.
   class Shading
+    # Gets or sets the color that's applied to the background of the Shading object.
     attr_accessor :background_pattern_color
 
+    # Gets or sets the color that's applied to the foreground of the Shading object.
     attr_accessor :foreground_pattern_color
 
     # Gets or sets the shading texture.
@@ -97,7 +97,6 @@ module AsposeWordsCloud
       if attributes.key?(:'Texture')
         self.texture = attributes[:'Texture']
       end
-
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -112,6 +111,7 @@ module AsposeWordsCloud
     def valid?
       texture_validator = EnumAttributeValidator.new('String', ["TextureNone", "TextureSolid", "Texture5Percent", "Texture10Percent", "Texture20Percent", "Texture25Percent", "Texture30Percent", "Texture40Percent", "Texture50Percent", "Texture60Percent", "Texture70Percent", "Texture75Percent", "Texture80Percent", "Texture90Percent", "TextureDarkHorizontal", "TextureDarkVertical", "TextureDarkDiagonalDown", "TextureDarkDiagonalUp", "TextureDarkCross", "TextureDarkDiagonalCross", "TextureHorizontal", "TextureVertical", "TextureDiagonalDown", "TextureDiagonalUp", "TextureCross", "TextureDiagonalCross", "Texture2Pt5Percent", "Texture7Pt5Percent", "Texture12Pt5Percent", "Texture15Percent", "Texture17Pt5Percent", "Texture22Pt5Percent", "Texture27Pt5Percent", "Texture32Pt5Percent", "Texture35Percent", "Texture37Pt5Percent", "Texture42Pt5Percent", "Texture45Percent", "Texture47Pt5Percent", "Texture52Pt5Percent", "Texture55Percent", "Texture57Pt5Percent", "Texture62Pt5Percent", "Texture65Percent", "Texture67Pt5Percent", "Texture72Pt5Percent", "Texture77Pt5Percent", "Texture82Pt5Percent", "Texture85Percent", "Texture87Pt5Percent", "Texture92Pt5Percent", "Texture95Percent", "Texture97Pt5Percent", "TextureNil"])
       return false unless texture_validator.valid?(@texture)
+
       return true
     end
 
@@ -128,6 +128,7 @@ module AsposeWordsCloud
         @texture = validator.allowable_values[texture.to_i]
       end
     end
+
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
@@ -258,5 +259,4 @@ module AsposeWordsCloud
     end
 
   end
-
 end

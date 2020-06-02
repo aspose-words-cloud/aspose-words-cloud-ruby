@@ -1,56 +1,52 @@
+# ------------------------------------------------------------------------------------
+# <copyright company="Aspose" file="list_format_update.rb">
+#   Copyright (c) 2020 Aspose.Words for Cloud
+# </copyright>
+# <summary>
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
+#  of this software and associated documentation files (the "Software"), to deal
+#  in the Software without restriction, including without limitation the rights
+#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#  copies of the Software, and to permit persons to whom the Software is
+#  furnished to do so, subject to the following conditions:
+#
+#  The above copyright notice and this permission notice shall be included in all
+#  copies or substantial portions of the Software.
+#
+#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+#  SOFTWARE.
+# </summary>
+# ------------------------------------------------------------------------------------
 
 require 'date'
 
 module AsposeWordsCloud
- #
- # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose" file="ListFormatUpdate.rb">
- #   Copyright (c) 2019 Aspose.Words for Cloud
- # </copyright>
- # <summary>
- #   Permission is hereby granted, free of charge, to any person obtaining a copy
- #  of this software and associated documentation files (the "Software"), to deal
- #  in the Software without restriction, including without limitation the rights
- #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- #  copies of the Software, and to permit persons to whom the Software is
- #  furnished to do so, subject to the following conditions:
- #
- #  The above copyright notice and this permission notice shall be included in all
- #  copies or substantial portions of the Software.
- #
- #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- #  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- #  SOFTWARE.
- # </summary>
- # --------------------------------------------------------------------------------------------------------------------
- #
 
-  # Paragraph list format element for update.             
+  # Paragraph list format element for update.
   class ListFormatUpdate
-    # Gets or sets the list level number (0 to 8) for the paragraph.
-    attr_accessor :list_level_number
-
     # Gets or sets the list id of this paragraph.
     attr_accessor :list_id
 
-
+    # Gets or sets the list level number (0 to 8) for the paragraph.
+    attr_accessor :list_level_number
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'list_level_number' => :'ListLevelNumber',
-        :'list_id' => :'ListId'
+        :'list_id' => :'ListId',
+        :'list_level_number' => :'ListLevelNumber'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'list_level_number' => :'Integer',
-        :'list_id' => :'Integer'
+        :'list_id' => :'Integer',
+        :'list_level_number' => :'Integer'
       }
     end
 
@@ -62,14 +58,13 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'ListLevelNumber')
-        self.list_level_number = attributes[:'ListLevelNumber']
-      end
-
       if attributes.key?(:'ListId')
         self.list_id = attributes[:'ListId']
       end
 
+      if attributes.key?(:'ListLevelNumber')
+        self.list_level_number = attributes[:'ListLevelNumber']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -90,8 +85,8 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          list_level_number == other.list_level_number &&
-          list_id == other.list_id
+          list_id == other.list_id &&
+          list_level_number == other.list_level_number
     end
 
     # @see the `==` method
@@ -103,7 +98,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [list_level_number, list_id].hash
+      [list_id, list_level_number].hash
     end
 
     # Builds the object from hash
@@ -213,5 +208,4 @@ module AsposeWordsCloud
     end
 
   end
-
 end
