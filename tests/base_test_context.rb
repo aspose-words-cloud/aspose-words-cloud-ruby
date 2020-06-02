@@ -32,17 +32,23 @@ module AsposeWordsCloud
   class BaseTestContext < Minitest::Test
     include MiniTest::Assertions
     def setup
+      creds = get_config()
+      AsposeWordsCloud.configure do |config|
+        config.api_key['api_key'] = creds['AppKey']
+        config.api_key['app_sid'] = creds['AppSid']
+		    config.debugging = creds['Debug']
+        config.baseUrl = creds['BaseUrl']
+      end
+      @words_api = WordsApi.new
+    end
+
+    def get_config()
       creds_file = 'Settings/servercreds.json'
       raise ArgumentError, 'Put your credentials into servercreds.json' unless File.exist? creds_file
       file = File.read(creds_file)
       creds = JSON.parse(file)
-      AsposeWordsCloud.configure do |config|
-        config.api_key['api_key'] = creds['AppKey']
-        config.api_key['app_sid'] = creds['AppSid']
-		config.debugging = creds['Debug']
-        config.baseUrl = creds['BaseUrl']
-      end
-      @words_api = WordsApi.new
+
+      return creds
     end
 
     def upload_file(file_path, remote_path)
