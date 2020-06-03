@@ -32,11 +32,11 @@ module AsposeWordsCloud
     # The document name.
     attr_accessor :name
 
-    # Path to the node which contains paragraph.
-    attr_accessor :node_path
-
     # a tab stop position to remove.
     attr_accessor :position
+
+    # Path to the node which contains paragraph.
+    attr_accessor :node_path
 
     # Object index.
     attr_accessor :index
@@ -59,8 +59,8 @@ module AsposeWordsCloud
     #
     # Initializes a new instance.
     # @param name The document name.
-    # @param node_path Path to the node which contains paragraph.
     # @param position a tab stop position to remove.
+    # @param node_path Path to the node which contains paragraph.
     # @param index Object index.
     # @param folder Original document folder.
     # @param storage Original document storage.
@@ -68,10 +68,10 @@ module AsposeWordsCloud
     # @param password Password for opening an encrypted document.
     # @param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
 
-    def initialize(name, node_path, position, index, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil)
+    def initialize(name, position, node_path, index, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil)
       self.name = name
-      self.node_path = node_path
       self.position = position
+      self.node_path = node_path
       self.index = index
       self.folder = folder
       self.storage = storage

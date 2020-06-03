@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="insert_or_update_paragraph_tab_stop_request.rb">
+# <copyright company="Aspose" file="update_paragraph_list_format_without_node_path_request.rb">
 #   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -26,17 +26,14 @@
 module AsposeWordsCloud
 
   #
-  # Request model for insert_or_update_paragraph_tab_stop operation.
+  # Request model for update_paragraph_list_format_without_node_path operation.
   #
-  class InsertOrUpdateParagraphTabStopRequest
+  class UpdateParagraphListFormatWithoutNodePathRequest
     # The document name.
     attr_accessor :name
 
-    # Paragraph tab stop.
+    # Paragraph format object.
     attr_accessor :dto
-
-    # Path to the node which contains paragraph.
-    attr_accessor :node_path
 
     # Object index.
     attr_accessor :index
@@ -56,28 +53,36 @@ module AsposeWordsCloud
     # Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
     attr_accessor :dest_file_name
 
+    # Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+    attr_accessor :revision_author
+
+    # The date and time to use for revisions.
+    attr_accessor :revision_date_time
+
     #
     # Initializes a new instance.
     # @param name The document name.
-    # @param dto Paragraph tab stop.
-    # @param node_path Path to the node which contains paragraph.
+    # @param dto Paragraph format object.
     # @param index Object index.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     # @param password Password for opening an encrypted document.
     # @param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+    # @param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+    # @param revision_date_time The date and time to use for revisions.
 
-    def initialize(name, dto, node_path, index, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil)
+    def initialize(name, dto, index, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil, revision_author = nil, revision_date_time = nil)
       self.name = name
       self.dto = dto
-      self.node_path = node_path
       self.index = index
       self.folder = folder
       self.storage = storage
       self.load_encoding = load_encoding
       self.password = password
       self.dest_file_name = dest_file_name
+      self.revision_author = revision_author
+      self.revision_date_time = revision_date_time
     end
   end
 end

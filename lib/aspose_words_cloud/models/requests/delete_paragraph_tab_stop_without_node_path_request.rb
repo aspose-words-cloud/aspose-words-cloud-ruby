@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="insert_or_update_paragraph_tab_stop_request.rb">
+# <copyright company="Aspose" file="delete_paragraph_tab_stop_without_node_path_request.rb">
 #   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -26,17 +26,14 @@
 module AsposeWordsCloud
 
   #
-  # Request model for insert_or_update_paragraph_tab_stop operation.
+  # Request model for delete_paragraph_tab_stop_without_node_path operation.
   #
-  class InsertOrUpdateParagraphTabStopRequest
+  class DeleteParagraphTabStopWithoutNodePathRequest
     # The document name.
     attr_accessor :name
 
-    # Paragraph tab stop.
-    attr_accessor :dto
-
-    # Path to the node which contains paragraph.
-    attr_accessor :node_path
+    # a tab stop position to remove.
+    attr_accessor :position
 
     # Object index.
     attr_accessor :index
@@ -59,8 +56,7 @@ module AsposeWordsCloud
     #
     # Initializes a new instance.
     # @param name The document name.
-    # @param dto Paragraph tab stop.
-    # @param node_path Path to the node which contains paragraph.
+    # @param position a tab stop position to remove.
     # @param index Object index.
     # @param folder Original document folder.
     # @param storage Original document storage.
@@ -68,10 +64,9 @@ module AsposeWordsCloud
     # @param password Password for opening an encrypted document.
     # @param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
 
-    def initialize(name, dto, node_path, index, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil)
+    def initialize(name, position, index, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil)
       self.name = name
-      self.dto = dto
-      self.node_path = node_path
+      self.position = position
       self.index = index
       self.folder = folder
       self.storage = storage
