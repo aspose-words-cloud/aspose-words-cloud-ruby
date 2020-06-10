@@ -1,39 +1,99 @@
+# ------------------------------------------------------------------------------------
+# <copyright company="Aspose" file="tiff_save_options_data.rb">
+#   Copyright (c) 2020 Aspose.Words for Cloud
+# </copyright>
+# <summary>
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
+#  of this software and associated documentation files (the "Software"), to deal
+#  in the Software without restriction, including without limitation the rights
+#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#  copies of the Software, and to permit persons to whom the Software is
+#  furnished to do so, subject to the following conditions:
+#
+#  The above copyright notice and this permission notice shall be included in all
+#  copies or substantial portions of the Software.
+#
+#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+#  SOFTWARE.
+# </summary>
+# ------------------------------------------------------------------------------------
 
 require 'date'
 
 module AsposeWordsCloud
- #
- # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose" file="TiffSaveOptionsData.rb">
- #   Copyright (c) 2019 Aspose.Words for Cloud
- # </copyright>
- # <summary>
- #   Permission is hereby granted, free of charge, to any person obtaining a copy
- #  of this software and associated documentation files (the "Software"), to deal
- #  in the Software without restriction, including without limitation the rights
- #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- #  copies of the Software, and to permit persons to whom the Software is
- #  furnished to do so, subject to the following conditions:
- #
- #  The above copyright notice and this permission notice shall be included in all
- #  copies or substantial portions of the Software.
- #
- #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- #  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- #  SOFTWARE.
- # </summary>
- # --------------------------------------------------------------------------------------------------------------------
- #
 
   # Container class for tiff save options.
   class TiffSaveOptionsData
+    # Gets or sets a value determining how 3D effects are rendered.
+    attr_accessor :dml3_d_effects_rendering_mode
+
+    # Gets or sets a value determining how DrawingML effects are rendered.
+    # { Simplified | None | Fine }.
+    attr_accessor :dml_effects_rendering_mode
+
+    # Gets or sets a value determining how DrawingML shapes are rendered.
+    # { Fallback | DrawingML }.
+    attr_accessor :dml_rendering_mode
+
+    # Gets or sets name of destination file.
+    attr_accessor :file_name
+
+    # Gets or sets format of save.
+    attr_accessor :save_format
+
+    # Gets or sets a value determining if fields should be updated before saving the document to a fixed page format.
+    # Default value for this property is. true.
+    attr_accessor :update_fields
+
+    # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted
+    # property is updated before saving.
+    attr_accessor :update_last_printed_property
+
+    # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
+    attr_accessor :update_last_saved_time_property
+
+    # Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.
+    attr_accessor :update_sdt_content
+
+    # Gets or sets controls zip output or not.
+    # Default value is false.
+    attr_accessor :zip_output
+
+    # Gets or sets a value determining how colors are rendered.
+    # { Normal | Grayscale}.
+    attr_accessor :color_mode
+
+    # Gets or sets determines the quality of the JPEG images inside PDF document.
+    attr_accessor :jpeg_quality
+
+    # Gets or sets allows to specify metafile rendering options.
+    attr_accessor :metafile_rendering_options
+
+    # Gets or sets indicates the symbol set that is used to represent numbers while rendering to fixed page formats.
+    attr_accessor :numeral_format
+
+    # Gets or sets flag indicates whether it is required to optimize output of XPS.
+    # If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated.
+    # Note: The accuracy of the content display may be affected if this property is set to true.  Default is false.
+    attr_accessor :optimize_output
+
+    # Gets or sets determines number of pages to render.
+    attr_accessor :page_count
+
+    # Gets or sets determines 0-based index of the first page to render.
+    attr_accessor :page_index
+
+    # Gets or sets allows to specify additional System.Drawing.Graphics quality options.
     attr_accessor :graphics_quality_options
 
-    # Gets or sets the horizontal resolution for the generated images, in dots per inch.  This property has effect only when saving to raster image formats. The default value is 96.
+    # Gets or sets the horizontal resolution for the generated images, in dots per inch.
+    # This property has effect only when saving to raster image formats.
+    # The default value is 96.
     attr_accessor :horizontal_resolution
 
     # Gets or sets brightness of image.
@@ -51,7 +111,9 @@ module AsposeWordsCloud
     # Gets or sets pixel format of image.
     attr_accessor :pixel_format
 
-    # Gets or sets both horizontal and vertical resolution for the generated images, in dots per inch.  This property has effect only when saving to raster image formats. The default value is 96.
+    # Gets or sets both horizontal and vertical resolution for the generated images, in dots per inch.
+    # This property has effect only when saving to raster image formats.
+    # The default value is 96.
     attr_accessor :resolution
 
     # Gets or sets zoom factor of image.
@@ -66,60 +128,13 @@ module AsposeWordsCloud
     # Gets or sets determine whether or not to use high quality (i.e. slow) rendering algorithms.
     attr_accessor :use_high_quality_rendering
 
-    # Gets or sets the vertical resolution for the generated images, in dots per inch.  This property has effect only when saving to raster image formats. The default value is 96.
+    # Gets or sets the vertical resolution for the generated images, in dots per inch.
+    # This property has effect only when saving to raster image formats.
+    # The default value is 96.
     attr_accessor :vertical_resolution
 
-    # Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.
-    attr_accessor :color_mode
-
-    # Gets or sets determines the quality of the JPEG images inside PDF document.
-    attr_accessor :jpeg_quality
-
-    attr_accessor :metafile_rendering_options
-
-    # Gets or sets indicates the symbol set that is used to represent numbers while rendering to fixed page formats.
-    attr_accessor :numeral_format
-
-    # Gets or sets flag indicates whether it is required to optimize output of XPS. If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated. Note: The accuracy of the content display may be affected if this property is set to true.  Default is false.
-    attr_accessor :optimize_output
-
-    # Gets or sets determines number of pages to render.
-    attr_accessor :page_count
-
-    # Gets or sets determines 0-based index of the first page to render.
-    attr_accessor :page_index
-
-    # Gets or sets format of save.
-    attr_accessor :save_format
-
-    # Gets or sets name of destination file.
-    attr_accessor :file_name
-
-    # Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.
-    attr_accessor :dml_rendering_mode
-
-    # Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }.
-    attr_accessor :dml_effects_rendering_mode
-
-    # Gets or sets controls zip output or not. Default value is false.
-    attr_accessor :zip_output
-
-    # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
-    attr_accessor :update_last_saved_time_property
-
-    # Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.
-    attr_accessor :update_sdt_content
-
-    # Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true
-    attr_accessor :update_fields
-
-    # Gets or sets a value determining how 3D effects are rendered.
-    attr_accessor :dml3_d_effects_rendering_mode
-
-    # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.
-    attr_accessor :update_last_printed_property
-
-    # Gets or sets the threshold that determines the value of the binarization error in the Floyd-Steinberg method. when ImageBinarizationMethod is ImageBinarizationMethod.FloydSteinbergDithering. Default value is 128.
+    # Gets or sets the threshold that determines the value of the binarization error in the Floyd-Steinberg method. when ImageBinarizationMethod is ImageBinarizationMethod.FloydSteinbergDithering.
+    # Default value is 128.
     attr_accessor :threshold_for_floyd_steinberg_dithering
 
     # Gets or sets specifies method used while converting images to 1 bpp format.
@@ -153,6 +168,23 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'dml3_d_effects_rendering_mode' => :'Dml3DEffectsRenderingMode',
+        :'dml_effects_rendering_mode' => :'DmlEffectsRenderingMode',
+        :'dml_rendering_mode' => :'DmlRenderingMode',
+        :'file_name' => :'FileName',
+        :'save_format' => :'SaveFormat',
+        :'update_fields' => :'UpdateFields',
+        :'update_last_printed_property' => :'UpdateLastPrintedProperty',
+        :'update_last_saved_time_property' => :'UpdateLastSavedTimeProperty',
+        :'update_sdt_content' => :'UpdateSdtContent',
+        :'zip_output' => :'ZipOutput',
+        :'color_mode' => :'ColorMode',
+        :'jpeg_quality' => :'JpegQuality',
+        :'metafile_rendering_options' => :'MetafileRenderingOptions',
+        :'numeral_format' => :'NumeralFormat',
+        :'optimize_output' => :'OptimizeOutput',
+        :'page_count' => :'PageCount',
+        :'page_index' => :'PageIndex',
         :'graphics_quality_options' => :'GraphicsQualityOptions',
         :'horizontal_resolution' => :'HorizontalResolution',
         :'image_brightness' => :'ImageBrightness',
@@ -166,23 +198,6 @@ module AsposeWordsCloud
         :'use_gdi_emf_renderer' => :'UseGdiEmfRenderer',
         :'use_high_quality_rendering' => :'UseHighQualityRendering',
         :'vertical_resolution' => :'VerticalResolution',
-        :'color_mode' => :'ColorMode',
-        :'jpeg_quality' => :'JpegQuality',
-        :'metafile_rendering_options' => :'MetafileRenderingOptions',
-        :'numeral_format' => :'NumeralFormat',
-        :'optimize_output' => :'OptimizeOutput',
-        :'page_count' => :'PageCount',
-        :'page_index' => :'PageIndex',
-        :'save_format' => :'SaveFormat',
-        :'file_name' => :'FileName',
-        :'dml_rendering_mode' => :'DmlRenderingMode',
-        :'dml_effects_rendering_mode' => :'DmlEffectsRenderingMode',
-        :'zip_output' => :'ZipOutput',
-        :'update_last_saved_time_property' => :'UpdateLastSavedTimeProperty',
-        :'update_sdt_content' => :'UpdateSdtContent',
-        :'update_fields' => :'UpdateFields',
-        :'dml3_d_effects_rendering_mode' => :'Dml3DEffectsRenderingMode',
-        :'update_last_printed_property' => :'UpdateLastPrintedProperty',
         :'threshold_for_floyd_steinberg_dithering' => :'ThresholdForFloydSteinbergDithering',
         :'tiff_binarization_method' => :'TiffBinarizationMethod',
         :'tiff_compression' => :'TiffCompression'
@@ -192,6 +207,23 @@ module AsposeWordsCloud
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'dml3_d_effects_rendering_mode' => :'String',
+        :'dml_effects_rendering_mode' => :'String',
+        :'dml_rendering_mode' => :'String',
+        :'file_name' => :'String',
+        :'save_format' => :'String',
+        :'update_fields' => :'BOOLEAN',
+        :'update_last_printed_property' => :'BOOLEAN',
+        :'update_last_saved_time_property' => :'BOOLEAN',
+        :'update_sdt_content' => :'BOOLEAN',
+        :'zip_output' => :'BOOLEAN',
+        :'color_mode' => :'String',
+        :'jpeg_quality' => :'Integer',
+        :'metafile_rendering_options' => :'MetafileRenderingOptionsData',
+        :'numeral_format' => :'String',
+        :'optimize_output' => :'BOOLEAN',
+        :'page_count' => :'Integer',
+        :'page_index' => :'Integer',
         :'graphics_quality_options' => :'GraphicsQualityOptionsData',
         :'horizontal_resolution' => :'Float',
         :'image_brightness' => :'Float',
@@ -205,23 +237,6 @@ module AsposeWordsCloud
         :'use_gdi_emf_renderer' => :'BOOLEAN',
         :'use_high_quality_rendering' => :'BOOLEAN',
         :'vertical_resolution' => :'Float',
-        :'color_mode' => :'String',
-        :'jpeg_quality' => :'Integer',
-        :'metafile_rendering_options' => :'MetafileRenderingOptionsData',
-        :'numeral_format' => :'String',
-        :'optimize_output' => :'BOOLEAN',
-        :'page_count' => :'Integer',
-        :'page_index' => :'Integer',
-        :'save_format' => :'String',
-        :'file_name' => :'String',
-        :'dml_rendering_mode' => :'String',
-        :'dml_effects_rendering_mode' => :'String',
-        :'zip_output' => :'BOOLEAN',
-        :'update_last_saved_time_property' => :'BOOLEAN',
-        :'update_sdt_content' => :'BOOLEAN',
-        :'update_fields' => :'BOOLEAN',
-        :'dml3_d_effects_rendering_mode' => :'String',
-        :'update_last_printed_property' => :'BOOLEAN',
         :'threshold_for_floyd_steinberg_dithering' => :'Integer',
         :'tiff_binarization_method' => :'String',
         :'tiff_compression' => :'String'
@@ -235,6 +250,74 @@ module AsposeWordsCloud
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.key?(:'Dml3DEffectsRenderingMode')
+        self.dml3_d_effects_rendering_mode = attributes[:'Dml3DEffectsRenderingMode']
+      end
+
+      if attributes.key?(:'DmlEffectsRenderingMode')
+        self.dml_effects_rendering_mode = attributes[:'DmlEffectsRenderingMode']
+      end
+
+      if attributes.key?(:'DmlRenderingMode')
+        self.dml_rendering_mode = attributes[:'DmlRenderingMode']
+      end
+
+      if attributes.key?(:'FileName')
+        self.file_name = attributes[:'FileName']
+      end
+
+      if attributes.key?(:'SaveFormat')
+        self.save_format = attributes[:'SaveFormat']
+      end
+
+      if attributes.key?(:'UpdateFields')
+        self.update_fields = attributes[:'UpdateFields']
+      end
+
+      if attributes.key?(:'UpdateLastPrintedProperty')
+        self.update_last_printed_property = attributes[:'UpdateLastPrintedProperty']
+      end
+
+      if attributes.key?(:'UpdateLastSavedTimeProperty')
+        self.update_last_saved_time_property = attributes[:'UpdateLastSavedTimeProperty']
+      end
+
+      if attributes.key?(:'UpdateSdtContent')
+        self.update_sdt_content = attributes[:'UpdateSdtContent']
+      end
+
+      if attributes.key?(:'ZipOutput')
+        self.zip_output = attributes[:'ZipOutput']
+      end
+
+      if attributes.key?(:'ColorMode')
+        self.color_mode = attributes[:'ColorMode']
+      end
+
+      if attributes.key?(:'JpegQuality')
+        self.jpeg_quality = attributes[:'JpegQuality']
+      end
+
+      if attributes.key?(:'MetafileRenderingOptions')
+        self.metafile_rendering_options = attributes[:'MetafileRenderingOptions']
+      end
+
+      if attributes.key?(:'NumeralFormat')
+        self.numeral_format = attributes[:'NumeralFormat']
+      end
+
+      if attributes.key?(:'OptimizeOutput')
+        self.optimize_output = attributes[:'OptimizeOutput']
+      end
+
+      if attributes.key?(:'PageCount')
+        self.page_count = attributes[:'PageCount']
+      end
+
+      if attributes.key?(:'PageIndex')
+        self.page_index = attributes[:'PageIndex']
+      end
 
       if attributes.key?(:'GraphicsQualityOptions')
         self.graphics_quality_options = attributes[:'GraphicsQualityOptions']
@@ -288,74 +371,6 @@ module AsposeWordsCloud
         self.vertical_resolution = attributes[:'VerticalResolution']
       end
 
-      if attributes.key?(:'ColorMode')
-        self.color_mode = attributes[:'ColorMode']
-      end
-
-      if attributes.key?(:'JpegQuality')
-        self.jpeg_quality = attributes[:'JpegQuality']
-      end
-
-      if attributes.key?(:'MetafileRenderingOptions')
-        self.metafile_rendering_options = attributes[:'MetafileRenderingOptions']
-      end
-
-      if attributes.key?(:'NumeralFormat')
-        self.numeral_format = attributes[:'NumeralFormat']
-      end
-
-      if attributes.key?(:'OptimizeOutput')
-        self.optimize_output = attributes[:'OptimizeOutput']
-      end
-
-      if attributes.key?(:'PageCount')
-        self.page_count = attributes[:'PageCount']
-      end
-
-      if attributes.key?(:'PageIndex')
-        self.page_index = attributes[:'PageIndex']
-      end
-
-      if attributes.key?(:'SaveFormat')
-        self.save_format = attributes[:'SaveFormat']
-      end
-
-      if attributes.key?(:'FileName')
-        self.file_name = attributes[:'FileName']
-      end
-
-      if attributes.key?(:'DmlRenderingMode')
-        self.dml_rendering_mode = attributes[:'DmlRenderingMode']
-      end
-
-      if attributes.key?(:'DmlEffectsRenderingMode')
-        self.dml_effects_rendering_mode = attributes[:'DmlEffectsRenderingMode']
-      end
-
-      if attributes.key?(:'ZipOutput')
-        self.zip_output = attributes[:'ZipOutput']
-      end
-
-      if attributes.key?(:'UpdateLastSavedTimeProperty')
-        self.update_last_saved_time_property = attributes[:'UpdateLastSavedTimeProperty']
-      end
-
-      if attributes.key?(:'UpdateSdtContent')
-        self.update_sdt_content = attributes[:'UpdateSdtContent']
-      end
-
-      if attributes.key?(:'UpdateFields')
-        self.update_fields = attributes[:'UpdateFields']
-      end
-
-      if attributes.key?(:'Dml3DEffectsRenderingMode')
-        self.dml3_d_effects_rendering_mode = attributes[:'Dml3DEffectsRenderingMode']
-      end
-
-      if attributes.key?(:'UpdateLastPrintedProperty')
-        self.update_last_printed_property = attributes[:'UpdateLastPrintedProperty']
-      end
-
       if attributes.key?(:'ThresholdForFloydSteinbergDithering')
         self.threshold_for_floyd_steinberg_dithering = attributes[:'ThresholdForFloydSteinbergDithering']
       end
@@ -367,7 +382,6 @@ module AsposeWordsCloud
       if attributes.key?(:'TiffCompression')
         self.tiff_compression = attributes[:'TiffCompression']
       end
-
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -382,6 +396,7 @@ module AsposeWordsCloud
     def valid?
       dml3_d_effects_rendering_mode_validator = EnumAttributeValidator.new('String', ["Basic", "Advanced"])
       return false unless dml3_d_effects_rendering_mode_validator.valid?(@dml3_d_effects_rendering_mode)
+
       return true
     end
 
@@ -399,11 +414,29 @@ module AsposeWordsCloud
       end
     end
 
+
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
+          dml3_d_effects_rendering_mode == other.dml3_d_effects_rendering_mode &&
+          dml_effects_rendering_mode == other.dml_effects_rendering_mode &&
+          dml_rendering_mode == other.dml_rendering_mode &&
+          file_name == other.file_name &&
+          save_format == other.save_format &&
+          update_fields == other.update_fields &&
+          update_last_printed_property == other.update_last_printed_property &&
+          update_last_saved_time_property == other.update_last_saved_time_property &&
+          update_sdt_content == other.update_sdt_content &&
+          zip_output == other.zip_output &&
+          color_mode == other.color_mode &&
+          jpeg_quality == other.jpeg_quality &&
+          metafile_rendering_options == other.metafile_rendering_options &&
+          numeral_format == other.numeral_format &&
+          optimize_output == other.optimize_output &&
+          page_count == other.page_count &&
+          page_index == other.page_index &&
           graphics_quality_options == other.graphics_quality_options &&
           horizontal_resolution == other.horizontal_resolution &&
           image_brightness == other.image_brightness &&
@@ -417,23 +450,6 @@ module AsposeWordsCloud
           use_gdi_emf_renderer == other.use_gdi_emf_renderer &&
           use_high_quality_rendering == other.use_high_quality_rendering &&
           vertical_resolution == other.vertical_resolution &&
-          color_mode == other.color_mode &&
-          jpeg_quality == other.jpeg_quality &&
-          metafile_rendering_options == other.metafile_rendering_options &&
-          numeral_format == other.numeral_format &&
-          optimize_output == other.optimize_output &&
-          page_count == other.page_count &&
-          page_index == other.page_index &&
-          save_format == other.save_format &&
-          file_name == other.file_name &&
-          dml_rendering_mode == other.dml_rendering_mode &&
-          dml_effects_rendering_mode == other.dml_effects_rendering_mode &&
-          zip_output == other.zip_output &&
-          update_last_saved_time_property == other.update_last_saved_time_property &&
-          update_sdt_content == other.update_sdt_content &&
-          update_fields == other.update_fields &&
-          dml3_d_effects_rendering_mode == other.dml3_d_effects_rendering_mode &&
-          update_last_printed_property == other.update_last_printed_property &&
           threshold_for_floyd_steinberg_dithering == other.threshold_for_floyd_steinberg_dithering &&
           tiff_binarization_method == other.tiff_binarization_method &&
           tiff_compression == other.tiff_compression
@@ -448,7 +464,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [graphics_quality_options, horizontal_resolution, image_brightness, image_color_mode, image_contrast, paper_color, pixel_format, resolution, scale, use_anti_aliasing, use_gdi_emf_renderer, use_high_quality_rendering, vertical_resolution, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, dml3_d_effects_rendering_mode, update_last_printed_property, threshold_for_floyd_steinberg_dithering, tiff_binarization_method, tiff_compression].hash
+      [dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, save_format, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, graphics_quality_options, horizontal_resolution, image_brightness, image_color_mode, image_contrast, paper_color, pixel_format, resolution, scale, use_anti_aliasing, use_gdi_emf_renderer, use_high_quality_rendering, vertical_resolution, threshold_for_floyd_steinberg_dithering, tiff_binarization_method, tiff_compression].hash
     end
 
     # Builds the object from hash
@@ -558,5 +574,4 @@ module AsposeWordsCloud
     end
 
   end
-
 end

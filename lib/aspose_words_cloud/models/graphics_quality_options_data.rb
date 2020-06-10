@@ -1,33 +1,31 @@
+# ------------------------------------------------------------------------------------
+# <copyright company="Aspose" file="graphics_quality_options_data.rb">
+#   Copyright (c) 2020 Aspose.Words for Cloud
+# </copyright>
+# <summary>
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
+#  of this software and associated documentation files (the "Software"), to deal
+#  in the Software without restriction, including without limitation the rights
+#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#  copies of the Software, and to permit persons to whom the Software is
+#  furnished to do so, subject to the following conditions:
+#
+#  The above copyright notice and this permission notice shall be included in all
+#  copies or substantial portions of the Software.
+#
+#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+#  SOFTWARE.
+# </summary>
+# ------------------------------------------------------------------------------------
 
 require 'date'
 
 module AsposeWordsCloud
- #
- # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose" file="GraphicsQualityOptionsData.rb">
- #   Copyright (c) 2019 Aspose.Words for Cloud
- # </copyright>
- # <summary>
- #   Permission is hereby granted, free of charge, to any person obtaining a copy
- #  of this software and associated documentation files (the "Software"), to deal
- #  in the Software without restriction, including without limitation the rights
- #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- #  copies of the Software, and to permit persons to whom the Software is
- #  furnished to do so, subject to the following conditions:
- #
- #  The above copyright notice and this permission notice shall be included in all
- #  copies or substantial portions of the Software.
- #
- #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- #  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- #  SOFTWARE.
- # </summary>
- # --------------------------------------------------------------------------------------------------------------------
- #
 
   # Allows to specify additional System.Drawing.Graphics quality options.
   class GraphicsQualityOptionsData
@@ -43,6 +41,7 @@ module AsposeWordsCloud
     # Gets or sets the rendering quality for this Graphics.
     attr_accessor :smoothing_mode
 
+    # Gets or sets text layout information (such as alignment, orientation and tab stops) display manipulations (such as ellipsis insertion and national digit substitution) and OpenType features.
     attr_accessor :string_format
 
     # Gets or sets the rendering mode for text associated with this Graphics.
@@ -125,7 +124,6 @@ module AsposeWordsCloud
       if attributes.key?(:'TextRenderingHint')
         self.text_rendering_hint = attributes[:'TextRenderingHint']
       end
-
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -148,6 +146,7 @@ module AsposeWordsCloud
       return false unless smoothing_mode_validator.valid?(@smoothing_mode)
       text_rendering_hint_validator = EnumAttributeValidator.new('String', ["SystemDefault", "SingleBitPerPixelGridFit", "SingleBitPerPixel", "AntiAliasGridFit", "AntiAlias", "ClearTypeGridFit"])
       return false unless text_rendering_hint_validator.valid?(@text_rendering_hint)
+
       return true
     end
 
@@ -220,6 +219,7 @@ module AsposeWordsCloud
         @text_rendering_hint = validator.allowable_values[text_rendering_hint.to_i]
       end
     end
+
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
@@ -353,5 +353,4 @@ module AsposeWordsCloud
     end
 
   end
-
 end

@@ -1,71 +1,67 @@
+# ------------------------------------------------------------------------------------
+# <copyright company="Aspose" file="storage_file.rb">
+#   Copyright (c) 2020 Aspose.Words for Cloud
+# </copyright>
+# <summary>
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
+#  of this software and associated documentation files (the "Software"), to deal
+#  in the Software without restriction, including without limitation the rights
+#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#  copies of the Software, and to permit persons to whom the Software is
+#  furnished to do so, subject to the following conditions:
+#
+#  The above copyright notice and this permission notice shall be included in all
+#  copies or substantial portions of the Software.
+#
+#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+#  SOFTWARE.
+# </summary>
+# ------------------------------------------------------------------------------------
 
 require 'date'
 
 module AsposeWordsCloud
- #
- # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose" file="StorageFile.rb">
- #   Copyright (c) 2019 Aspose.Words for Cloud
- # </copyright>
- # <summary>
- #   Permission is hereby granted, free of charge, to any person obtaining a copy
- #  of this software and associated documentation files (the "Software"), to deal
- #  in the Software without restriction, including without limitation the rights
- #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- #  copies of the Software, and to permit persons to whom the Software is
- #  furnished to do so, subject to the following conditions:
- #
- #  The above copyright notice and this permission notice shall be included in all
- #  copies or substantial portions of the Software.
- #
- #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- #  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- #  SOFTWARE.
- # </summary>
- # --------------------------------------------------------------------------------------------------------------------
- #
 
-  # File or folder information
+  # File or folder information.
   class StorageFile
-    # File or folder name.
-    attr_accessor :name
-
     # True if it is a folder.
     attr_accessor :is_folder
 
     # File or folder last modified DateTime.
     attr_accessor :modified_date
 
-    # File or folder size.
-    attr_accessor :size
+    # File or folder name.
+    attr_accessor :name
 
     # File or folder path.
     attr_accessor :path
 
-
+    # File or folder size.
+    attr_accessor :size
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'name' => :'Name',
         :'is_folder' => :'IsFolder',
         :'modified_date' => :'ModifiedDate',
-        :'size' => :'Size',
-        :'path' => :'Path'
+        :'name' => :'Name',
+        :'path' => :'Path',
+        :'size' => :'Size'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'name' => :'String',
         :'is_folder' => :'BOOLEAN',
         :'modified_date' => :'DateTime',
-        :'size' => :'Integer',
-        :'path' => :'String'
+        :'name' => :'String',
+        :'path' => :'String',
+        :'size' => :'Integer'
       }
     end
 
@@ -77,10 +73,6 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'Name')
-        self.name = attributes[:'Name']
-      end
-
       if attributes.key?(:'IsFolder')
         self.is_folder = attributes[:'IsFolder']
       end
@@ -89,14 +81,17 @@ module AsposeWordsCloud
         self.modified_date = attributes[:'ModifiedDate']
       end
 
-      if attributes.key?(:'Size')
-        self.size = attributes[:'Size']
+      if attributes.key?(:'Name')
+        self.name = attributes[:'Name']
       end
 
       if attributes.key?(:'Path')
         self.path = attributes[:'Path']
       end
 
+      if attributes.key?(:'Size')
+        self.size = attributes[:'Size']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -117,11 +112,11 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          name == other.name &&
           is_folder == other.is_folder &&
           modified_date == other.modified_date &&
-          size == other.size &&
-          path == other.path
+          name == other.name &&
+          path == other.path &&
+          size == other.size
     end
 
     # @see the `==` method
@@ -133,7 +128,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [name, is_folder, modified_date, size, path].hash
+      [is_folder, modified_date, name, path, size].hash
     end
 
     # Builds the object from hash
@@ -243,5 +238,4 @@ module AsposeWordsCloud
     end
 
   end
-
 end

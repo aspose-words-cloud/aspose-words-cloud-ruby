@@ -1,144 +1,148 @@
+# ------------------------------------------------------------------------------------
+# <copyright company="Aspose" file="font.rb">
+#   Copyright (c) 2020 Aspose.Words for Cloud
+# </copyright>
+# <summary>
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
+#  of this software and associated documentation files (the "Software"), to deal
+#  in the Software without restriction, including without limitation the rights
+#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#  copies of the Software, and to permit persons to whom the Software is
+#  furnished to do so, subject to the following conditions:
+#
+#  The above copyright notice and this permission notice shall be included in all
+#  copies or substantial portions of the Software.
+#
+#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+#  SOFTWARE.
+# </summary>
+# ------------------------------------------------------------------------------------
 
 require 'date'
 
 module AsposeWordsCloud
- #
- # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose" file="Font.rb">
- #   Copyright (c) 2019 Aspose.Words for Cloud
- # </copyright>
- # <summary>
- #   Permission is hereby granted, free of charge, to any person obtaining a copy
- #  of this software and associated documentation files (the "Software"), to deal
- #  in the Software without restriction, including without limitation the rights
- #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- #  copies of the Software, and to permit persons to whom the Software is
- #  furnished to do so, subject to the following conditions:
- #
- #  The above copyright notice and this permission notice shall be included in all
- #  copies or substantial portions of the Software.
- #
- #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- #  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- #  SOFTWARE.
- # </summary>
- # --------------------------------------------------------------------------------------------------------------------
- #
 
-  # Font element.             
+  # Font element.
   class Font
+    # Gets or sets link to the document.
     attr_accessor :link
 
-    # Gets or sets true if the font is formatted as all capital letters.             
+    # Gets or sets true if the font is formatted as all capital letters.
     attr_accessor :all_caps
 
-    # Gets or sets specifies whether the contents of this run shall have right-to-left characteristics.             
+    # Gets or sets specifies whether the contents of this run shall have right-to-left characteristics.
     attr_accessor :bidi
 
-    # Gets or sets true if the font is formatted as bold.             
+    # Gets or sets true if the font is formatted as bold.
     attr_accessor :bold
 
-    # Gets or sets true if the right-to-left text is formatted as bold.             
+    # Gets or sets true if the right-to-left text is formatted as bold.
     attr_accessor :bold_bi
 
+    # Gets or sets border object that specifies border for the font.
     attr_accessor :border
 
+    # Gets or sets the color of the font.
     attr_accessor :color
 
-    # Gets or sets specifies whether the contents of this run shall be treated as complex script text regardless of their Unicode character values when determining the formatting for this run.             
+    # Gets or sets specifies whether the contents of this run shall be treated as complex script text regardless
+    # of their Unicode character values when determining the formatting for this run.
     attr_accessor :complex_script
 
-    # Gets or sets true if the font is formatted as double strikethrough text.             
+    # Gets or sets true if the font is formatted as double strikethrough text.
     attr_accessor :double_strike_through
 
-    # Gets or sets true if the font is formatted as embossed.             
+    # Gets or sets true if the font is formatted as embossed.
     attr_accessor :emboss
 
-    # Gets or sets true if the font is formatted as engraved.             
+    # Gets or sets true if the font is formatted as engraved.
     attr_accessor :engrave
 
-    # Gets or sets true if the font is formatted as hidden text.             
+    # Gets or sets true if the font is formatted as hidden text.
     attr_accessor :hidden
 
+    # Gets or sets the highlight (marker) color.
     attr_accessor :highlight_color
 
-    # Gets or sets true if the font is formatted as italic.             
+    # Gets or sets true if the font is formatted as italic.
     attr_accessor :italic
 
-    # Gets or sets true if the right-to-left text is formatted as italic.             
+    # Gets or sets true if the right-to-left text is formatted as italic.
     attr_accessor :italic_bi
 
-    # Gets or sets the font size at which kerning starts.             
+    # Gets or sets the font size at which kerning starts.
     attr_accessor :kerning
 
-    # Gets or sets the locale identifier (language) of the formatted characters.             
+    # Gets or sets the locale identifier (language) of the formatted characters.
     attr_accessor :locale_id
 
-    # Gets or sets the locale identifier (language) of the formatted right-to-left characters.             
+    # Gets or sets the locale identifier (language) of the formatted right-to-left characters.
     attr_accessor :locale_id_bi
 
-    # Gets or sets the locale identifier (language) of the formatted Asian characters.             
+    # Gets or sets the locale identifier (language) of the formatted Asian characters.
     attr_accessor :locale_id_far_east
 
-    # Gets or sets the name of the font.             
+    # Gets or sets the name of the font.
     attr_accessor :name
 
-    # Gets or sets returns or sets the font used for Latin text (characters with character codes from 0 (zero) through 127).             
+    # Gets or sets returns or sets the font used for Latin text (characters with character codes from 0 (zero) through 127).
     attr_accessor :name_ascii
 
-    # Gets or sets returns or sets the name of the font in a right-to-left language document.             
+    # Gets or sets returns or sets the name of the font in a right-to-left language document.
     attr_accessor :name_bi
 
-    # Gets or sets returns or sets an East Asian font name.             
+    # Gets or sets returns or sets an East Asian font name.
     attr_accessor :name_far_east
 
-    # Gets or sets returns or sets the font used for characters with character codes from 128 through 255.             
+    # Gets or sets returns or sets the font used for characters with character codes from 128 through 255.
     attr_accessor :name_other
 
     # Gets or sets true when the formatted characters are not to be spell checked.
     attr_accessor :no_proofing
 
-    # Gets or sets true if the font is formatted as outline.             
+    # Gets or sets true if the font is formatted as outline.
     attr_accessor :outline
 
-    # Gets or sets the position of text (in points) relative to the base line. A positive number raises the text, and a negative number lowers it.             
+    # Gets or sets the position of text (in points) relative to the base line.
+    # A positive number raises the text, and a negative number lowers it.
     attr_accessor :position
 
-    # Gets or sets character width scaling in percent.             
+    # Gets or sets character width scaling in percent.
     attr_accessor :scaling
 
-    # Gets or sets true if the font is formatted as shadowed.             
+    # Gets or sets true if the font is formatted as shadowed.
     attr_accessor :shadow
 
-    # Gets or sets the font size in points.             
+    # Gets or sets the font size in points.
     attr_accessor :size
 
-    # Gets or sets the font size in points used in a right-to-left document.             
+    # Gets or sets the font size in points used in a right-to-left document.
     attr_accessor :size_bi
 
-    # Gets or sets true if the font is formatted as small capital letters.             
+    # Gets or sets true if the font is formatted as small capital letters.
     attr_accessor :small_caps
 
-    # Gets or sets returns or sets the spacing (in points) between characters.             
+    # Gets or sets returns or sets the spacing (in points) between characters.
     attr_accessor :spacing
 
-    # Gets or sets true if the font is formatted as strikethrough text.             
+    # Gets or sets true if the font is formatted as strikethrough text.
     attr_accessor :strike_through
 
     # Gets or sets the locale independent style identifier of the character style applied to this formatting.
     attr_accessor :style_identifier
 
-    # Gets or sets the name of the character style applied to this formatting.             
+    # Gets or sets the name of the character style applied to this formatting.
     attr_accessor :style_name
 
-    # Gets or sets true if the font is formatted as subscript.             
+    # Gets or sets true if the font is formatted as subscript.
     attr_accessor :subscript
 
-    # Gets or sets true if the font is formatted as superscript.             
+    # Gets or sets true if the font is formatted as superscript.
     attr_accessor :superscript
 
     # Gets or sets the font animation effect.
@@ -147,6 +151,7 @@ module AsposeWordsCloud
     # Gets or sets the type of underline applied to the font.
     attr_accessor :underline
 
+    # Gets or sets the color of the underline applied to the font.
     attr_accessor :underline_color
 
     class EnumAttributeValidator
@@ -174,7 +179,7 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'link' => :'link',
+        :'link' => :'Link',
         :'all_caps' => :'AllCaps',
         :'bidi' => :'Bidi',
         :'bold' => :'Bold',
@@ -273,8 +278,8 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'link')
-        self.link = attributes[:'link']
+      if attributes.key?(:'Link')
+        self.link = attributes[:'Link']
       end
 
       if attributes.key?(:'AllCaps')
@@ -436,7 +441,6 @@ module AsposeWordsCloud
       if attributes.key?(:'UnderlineColor')
         self.underline_color = attributes[:'UnderlineColor']
       end
-
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -455,6 +459,7 @@ module AsposeWordsCloud
       return false unless text_effect_validator.valid?(@text_effect)
       underline_validator = EnumAttributeValidator.new('String', ["None", "Single", "Words", "Double", "Dotted", "Thick", "Dash", "DotDash", "DotDotDash", "Wavy", "DottedHeavy", "DashHeavy", "DotDashHeavy", "DotDotDashHeavy", "WavyHeavy", "DashLong", "WavyDouble", "DashLongHeavy"])
       return false unless underline_validator.valid?(@underline)
+
       return true
     end
 
@@ -499,6 +504,7 @@ module AsposeWordsCloud
         @underline = validator.allowable_values[underline.to_i]
       end
     end
+
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
@@ -667,5 +673,4 @@ module AsposeWordsCloud
     end
 
   end
-
 end

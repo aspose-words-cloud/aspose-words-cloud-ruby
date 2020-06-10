@@ -1,46 +1,45 @@
+# ------------------------------------------------------------------------------------
+# <copyright company="Aspose" file="report_engine_settings.rb">
+#   Copyright (c) 2020 Aspose.Words for Cloud
+# </copyright>
+# <summary>
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
+#  of this software and associated documentation files (the "Software"), to deal
+#  in the Software without restriction, including without limitation the rights
+#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#  copies of the Software, and to permit persons to whom the Software is
+#  furnished to do so, subject to the following conditions:
+#
+#  The above copyright notice and this permission notice shall be included in all
+#  copies or substantial portions of the Software.
+#
+#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+#  SOFTWARE.
+# </summary>
+# ------------------------------------------------------------------------------------
 
 require 'date'
 
 module AsposeWordsCloud
- #
- # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose" file="ReportEngineSettings.rb">
- #   Copyright (c) 2019 Aspose.Words for Cloud
- # </copyright>
- # <summary>
- #   Permission is hereby granted, free of charge, to any person obtaining a copy
- #  of this software and associated documentation files (the "Software"), to deal
- #  in the Software without restriction, including without limitation the rights
- #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- #  copies of the Software, and to permit persons to whom the Software is
- #  furnished to do so, subject to the following conditions:
- #
- #  The above copyright notice and this permission notice shall be included in all
- #  copies or substantial portions of the Software.
- #
- #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- #  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- #  SOFTWARE.
- # </summary>
- # --------------------------------------------------------------------------------------------------------------------
- #
 
   # Report engine settings.
   class ReportEngineSettings
+    # Gets or sets options for parsing CSV data.
+    attr_accessor :csv_data_load_options
+
+    # Gets or sets a name to reference the data source object in the template.
+    attr_accessor :data_source_name
+
     # Gets or sets type of datasource.
     attr_accessor :data_source_type
 
     # Gets or sets type of options to build report.
     attr_accessor :report_build_options
-
-    # Gets or sets a name to reference the data source object in the template.
-    attr_accessor :data_source_name
-
-    attr_accessor :csv_data_load_options
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -67,20 +66,20 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'data_source_type' => :'DataSourceType',
-        :'report_build_options' => :'ReportBuildOptions',
+        :'csv_data_load_options' => :'CsvDataLoadOptions',
         :'data_source_name' => :'DataSourceName',
-        :'csv_data_load_options' => :'CsvDataLoadOptions'
+        :'data_source_type' => :'DataSourceType',
+        :'report_build_options' => :'ReportBuildOptions'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'data_source_type' => :'String',
-        :'report_build_options' => :'Array<ReportBuildOptions>',
+        :'csv_data_load_options' => :'CsvDataLoadOptions',
         :'data_source_name' => :'String',
-        :'csv_data_load_options' => :'CsvDataLoadOptions'
+        :'data_source_type' => :'String',
+        :'report_build_options' => :'Array<String>'
       }
     end
 
@@ -92,6 +91,14 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.key?(:'CsvDataLoadOptions')
+        self.csv_data_load_options = attributes[:'CsvDataLoadOptions']
+      end
+
+      if attributes.key?(:'DataSourceName')
+        self.data_source_name = attributes[:'DataSourceName']
+      end
+
       if attributes.key?(:'DataSourceType')
         self.data_source_type = attributes[:'DataSourceType']
       end
@@ -101,15 +108,6 @@ module AsposeWordsCloud
           self.report_build_options = value
         end
       end
-
-      if attributes.key?(:'DataSourceName')
-        self.data_source_name = attributes[:'DataSourceName']
-      end
-
-      if attributes.key?(:'CsvDataLoadOptions')
-        self.csv_data_load_options = attributes[:'CsvDataLoadOptions']
-      end
-
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -124,6 +122,7 @@ module AsposeWordsCloud
     def valid?
       data_source_type_validator = EnumAttributeValidator.new('String', ["Xml", "Json", "Csv"])
       return false unless data_source_type_validator.valid?(@data_source_type)
+
       return true
     end
 
@@ -141,15 +140,16 @@ module AsposeWordsCloud
       end
     end
 
+
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          data_source_type == other.data_source_type &&
-          report_build_options == other.report_build_options &&
+          csv_data_load_options == other.csv_data_load_options &&
           data_source_name == other.data_source_name &&
-          csv_data_load_options == other.csv_data_load_options
+          data_source_type == other.data_source_type &&
+          report_build_options == other.report_build_options
     end
 
     # @see the `==` method
@@ -161,7 +161,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [data_source_type, report_build_options, data_source_name, csv_data_load_options].hash
+      [csv_data_load_options, data_source_name, data_source_type, report_build_options].hash
     end
 
     # Builds the object from hash
@@ -271,5 +271,4 @@ module AsposeWordsCloud
     end
 
   end
-
 end

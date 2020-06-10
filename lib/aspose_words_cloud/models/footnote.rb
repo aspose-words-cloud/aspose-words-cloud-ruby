@@ -1,49 +1,51 @@
+# ------------------------------------------------------------------------------------
+# <copyright company="Aspose" file="footnote.rb">
+#   Copyright (c) 2020 Aspose.Words for Cloud
+# </copyright>
+# <summary>
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
+#  of this software and associated documentation files (the "Software"), to deal
+#  in the Software without restriction, including without limitation the rights
+#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#  copies of the Software, and to permit persons to whom the Software is
+#  furnished to do so, subject to the following conditions:
+#
+#  The above copyright notice and this permission notice shall be included in all
+#  copies or substantial portions of the Software.
+#
+#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+#  SOFTWARE.
+# </summary>
+# ------------------------------------------------------------------------------------
 
 require 'date'
 
 module AsposeWordsCloud
- #
- # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose" file="Footnote.rb">
- #   Copyright (c) 2019 Aspose.Words for Cloud
- # </copyright>
- # <summary>
- #   Permission is hereby granted, free of charge, to any person obtaining a copy
- #  of this software and associated documentation files (the "Software"), to deal
- #  in the Software without restriction, including without limitation the rights
- #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- #  copies of the Software, and to permit persons to whom the Software is
- #  furnished to do so, subject to the following conditions:
- #
- #  The above copyright notice and this permission notice shall be included in all
- #  copies or substantial portions of the Software.
- #
- #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- #  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- #  SOFTWARE.
- # </summary>
- # --------------------------------------------------------------------------------------------------------------------
- #
 
   # Footnote.
   class Footnote
+    # Gets or sets link to the document.
     attr_accessor :link
 
     # Gets or sets node id.
     attr_accessor :node_id
 
+    # Gets or sets content of footnote.
     attr_accessor :content
 
     # Gets or sets returns a value that specifies whether this is a footnote or endnote.
     attr_accessor :footnote_type
 
+    # Gets or sets link to comment range start node.
     attr_accessor :position
 
-    # Gets or sets /sets custom reference mark to be used for this footnote. Default value is Empty, meaning auto-numbered footnotes are used.
+    # Gets or sets /sets custom reference mark to be used for this footnote.
+    # Default value is Empty, meaning auto-numbered footnotes are used.
     attr_accessor :reference_mark
 
     # Gets or sets this is a convenience property that allows to easily get or set text of the footnote.
@@ -74,7 +76,7 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'link' => :'link',
+        :'link' => :'Link',
         :'node_id' => :'NodeId',
         :'content' => :'Content',
         :'footnote_type' => :'FootnoteType',
@@ -105,8 +107,8 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'link')
-        self.link = attributes[:'link']
+      if attributes.key?(:'Link')
+        self.link = attributes[:'Link']
       end
 
       if attributes.key?(:'NodeId')
@@ -132,7 +134,6 @@ module AsposeWordsCloud
       if attributes.key?(:'Text')
         self.text = attributes[:'Text']
       end
-
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -147,6 +148,7 @@ module AsposeWordsCloud
     def valid?
       footnote_type_validator = EnumAttributeValidator.new('String', ["Footnote", "Endnote"])
       return false unless footnote_type_validator.valid?(@footnote_type)
+
       return true
     end
 
@@ -163,6 +165,7 @@ module AsposeWordsCloud
         @footnote_type = validator.allowable_values[footnote_type.to_i]
       end
     end
+
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
@@ -297,5 +300,4 @@ module AsposeWordsCloud
     end
 
   end
-
 end

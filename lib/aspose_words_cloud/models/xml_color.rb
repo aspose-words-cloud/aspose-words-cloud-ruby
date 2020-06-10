@@ -1,56 +1,52 @@
+# ------------------------------------------------------------------------------------
+# <copyright company="Aspose" file="xml_color.rb">
+#   Copyright (c) 2020 Aspose.Words for Cloud
+# </copyright>
+# <summary>
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
+#  of this software and associated documentation files (the "Software"), to deal
+#  in the Software without restriction, including without limitation the rights
+#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#  copies of the Software, and to permit persons to whom the Software is
+#  furnished to do so, subject to the following conditions:
+#
+#  The above copyright notice and this permission notice shall be included in all
+#  copies or substantial portions of the Software.
+#
+#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+#  SOFTWARE.
+# </summary>
+# ------------------------------------------------------------------------------------
 
 require 'date'
 
 module AsposeWordsCloud
- #
- # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose" file="XmlColor.rb">
- #   Copyright (c) 2019 Aspose.Words for Cloud
- # </copyright>
- # <summary>
- #   Permission is hereby granted, free of charge, to any person obtaining a copy
- #  of this software and associated documentation files (the "Software"), to deal
- #  in the Software without restriction, including without limitation the rights
- #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- #  copies of the Software, and to permit persons to whom the Software is
- #  furnished to do so, subject to the following conditions:
- #
- #  The above copyright notice and this permission notice shall be included in all
- #  copies or substantial portions of the Software.
- #
- #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- #  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- #  SOFTWARE.
- # </summary>
- # --------------------------------------------------------------------------------------------------------------------
- #
 
   # Utility class for Color serialization.
   class XmlColor
-    # Gets or sets hTML string color representation.
-    attr_accessor :web
-
     # Gets or sets alpha component of color structure.
     attr_accessor :alpha
 
-
+    # Gets or sets hTML string color representation.
+    attr_accessor :web
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'web' => :'Web',
-        :'alpha' => :'Alpha'
+        :'alpha' => :'Alpha',
+        :'web' => :'Web'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'web' => :'String',
-        :'alpha' => :'Integer'
+        :'alpha' => :'Integer',
+        :'web' => :'String'
       }
     end
 
@@ -62,14 +58,13 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'Web')
-        self.web = attributes[:'Web']
-      end
-
       if attributes.key?(:'Alpha')
         self.alpha = attributes[:'Alpha']
       end
 
+      if attributes.key?(:'Web')
+        self.web = attributes[:'Web']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -90,8 +85,8 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          web == other.web &&
-          alpha == other.alpha
+          alpha == other.alpha &&
+          web == other.web
     end
 
     # @see the `==` method
@@ -103,7 +98,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [web, alpha].hash
+      [alpha, web].hash
     end
 
     # Builds the object from hash
@@ -213,5 +208,4 @@ module AsposeWordsCloud
     end
 
   end
-
 end

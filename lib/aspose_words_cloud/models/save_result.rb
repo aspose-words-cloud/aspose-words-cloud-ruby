@@ -1,59 +1,57 @@
+# ------------------------------------------------------------------------------------
+# <copyright company="Aspose" file="save_result.rb">
+#   Copyright (c) 2020 Aspose.Words for Cloud
+# </copyright>
+# <summary>
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
+#  of this software and associated documentation files (the "Software"), to deal
+#  in the Software without restriction, including without limitation the rights
+#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#  copies of the Software, and to permit persons to whom the Software is
+#  furnished to do so, subject to the following conditions:
+#
+#  The above copyright notice and this permission notice shall be included in all
+#  copies or substantial portions of the Software.
+#
+#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+#  SOFTWARE.
+# </summary>
+# ------------------------------------------------------------------------------------
 
 require 'date'
 
 module AsposeWordsCloud
- #
- # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose" file="SaveResult.rb">
- #   Copyright (c) 2019 Aspose.Words for Cloud
- # </copyright>
- # <summary>
- #   Permission is hereby granted, free of charge, to any person obtaining a copy
- #  of this software and associated documentation files (the "Software"), to deal
- #  in the Software without restriction, including without limitation the rights
- #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- #  copies of the Software, and to permit persons to whom the Software is
- #  furnished to do so, subject to the following conditions:
- #
- #  The above copyright notice and this permission notice shall be included in all
- #  copies or substantial portions of the Software.
- #
- #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- #  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- #  SOFTWARE.
- # </summary>
- # --------------------------------------------------------------------------------------------------------------------
- #
 
   # Result of saving.
   class SaveResult
-    attr_accessor :source_document
-
-    attr_accessor :dest_document
-
     # Gets or sets links to additional items (css, images etc).
     attr_accessor :additional_items
 
+    # Gets or sets link to destination document.
+    attr_accessor :dest_document
 
+    # Gets or sets link to source document.
+    attr_accessor :source_document
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'source_document' => :'SourceDocument',
+        :'additional_items' => :'AdditionalItems',
         :'dest_document' => :'DestDocument',
-        :'additional_items' => :'AdditionalItems'
+        :'source_document' => :'SourceDocument'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'source_document' => :'FileLink',
+        :'additional_items' => :'Array<FileLink>',
         :'dest_document' => :'FileLink',
-        :'additional_items' => :'Array<FileLink>'
+        :'source_document' => :'FileLink'
       }
     end
 
@@ -65,20 +63,19 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'SourceDocument')
-        self.source_document = attributes[:'SourceDocument']
-      end
-
-      if attributes.key?(:'DestDocument')
-        self.dest_document = attributes[:'DestDocument']
-      end
-
       if attributes.key?(:'AdditionalItems')
         if (value = attributes[:'AdditionalItems']).is_a?(Array)
           self.additional_items = value
         end
       end
 
+      if attributes.key?(:'DestDocument')
+        self.dest_document = attributes[:'DestDocument']
+      end
+
+      if attributes.key?(:'SourceDocument')
+        self.source_document = attributes[:'SourceDocument']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -99,9 +96,9 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          source_document == other.source_document &&
+          additional_items == other.additional_items &&
           dest_document == other.dest_document &&
-          additional_items == other.additional_items
+          source_document == other.source_document
     end
 
     # @see the `==` method
@@ -113,7 +110,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [source_document, dest_document, additional_items].hash
+      [additional_items, dest_document, source_document].hash
     end
 
     # Builds the object from hash
@@ -223,5 +220,4 @@ module AsposeWordsCloud
     end
 
   end
-
 end

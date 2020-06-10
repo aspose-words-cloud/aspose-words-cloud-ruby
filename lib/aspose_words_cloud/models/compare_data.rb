@@ -1,65 +1,62 @@
+# ------------------------------------------------------------------------------------
+# <copyright company="Aspose" file="compare_data.rb">
+#   Copyright (c) 2020 Aspose.Words for Cloud
+# </copyright>
+# <summary>
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
+#  of this software and associated documentation files (the "Software"), to deal
+#  in the Software without restriction, including without limitation the rights
+#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#  copies of the Software, and to permit persons to whom the Software is
+#  furnished to do so, subject to the following conditions:
+#
+#  The above copyright notice and this permission notice shall be included in all
+#  copies or substantial portions of the Software.
+#
+#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+#  SOFTWARE.
+# </summary>
+# ------------------------------------------------------------------------------------
 
 require 'date'
 
 module AsposeWordsCloud
- #
- # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose" file="CompareData.rb">
- #   Copyright (c) 2019 Aspose.Words for Cloud
- # </copyright>
- # <summary>
- #   Permission is hereby granted, free of charge, to any person obtaining a copy
- #  of this software and associated documentation files (the "Software"), to deal
- #  in the Software without restriction, including without limitation the rights
- #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- #  copies of the Software, and to permit persons to whom the Software is
- #  furnished to do so, subject to the following conditions:
- #
- #  The above copyright notice and this permission notice shall be included in all
- #  copies or substantial portions of the Software.
- #
- #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- #  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- #  SOFTWARE.
- # </summary>
- # --------------------------------------------------------------------------------------------------------------------
- #
 
   # Container class for compare documents.
   class CompareData
-    # Gets or sets path to document to compare at the server.
-    attr_accessor :comparing_with_document
-
     # Gets or sets initials of the author to use for revisions.
     attr_accessor :author
 
-    # Gets or sets the date and time to use for revisions.             
-    attr_accessor :date_time
-
+    # Gets or sets the compare options.
     attr_accessor :compare_options
 
+    # Gets or sets path to document to compare at the server.
+    attr_accessor :comparing_with_document
 
+    # Gets or sets the date and time to use for revisions.
+    attr_accessor :date_time
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'comparing_with_document' => :'ComparingWithDocument',
         :'author' => :'Author',
-        :'date_time' => :'DateTime',
-        :'compare_options' => :'CompareOptions'
+        :'compare_options' => :'CompareOptions',
+        :'comparing_with_document' => :'ComparingWithDocument',
+        :'date_time' => :'DateTime'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'comparing_with_document' => :'String',
         :'author' => :'String',
-        :'date_time' => :'DateTime',
-        :'compare_options' => :'CompareOptions'
+        :'compare_options' => :'CompareOptions',
+        :'comparing_with_document' => :'String',
+        :'date_time' => :'DateTime'
       }
     end
 
@@ -71,22 +68,21 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'ComparingWithDocument')
-        self.comparing_with_document = attributes[:'ComparingWithDocument']
-      end
-
       if attributes.key?(:'Author')
         self.author = attributes[:'Author']
-      end
-
-      if attributes.key?(:'DateTime')
-        self.date_time = attributes[:'DateTime']
       end
 
       if attributes.key?(:'CompareOptions')
         self.compare_options = attributes[:'CompareOptions']
       end
 
+      if attributes.key?(:'ComparingWithDocument')
+        self.comparing_with_document = attributes[:'ComparingWithDocument']
+      end
+
+      if attributes.key?(:'DateTime')
+        self.date_time = attributes[:'DateTime']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -107,10 +103,10 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          comparing_with_document == other.comparing_with_document &&
           author == other.author &&
-          date_time == other.date_time &&
-          compare_options == other.compare_options
+          compare_options == other.compare_options &&
+          comparing_with_document == other.comparing_with_document &&
+          date_time == other.date_time
     end
 
     # @see the `==` method
@@ -122,7 +118,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [comparing_with_document, author, date_time, compare_options].hash
+      [author, compare_options, comparing_with_document, date_time].hash
     end
 
     # Builds the object from hash
@@ -232,5 +228,4 @@ module AsposeWordsCloud
     end
 
   end
-
 end
