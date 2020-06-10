@@ -4,7 +4,7 @@ require 'date'
 module AsposeWordsCloud
  #
  # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose" file="Styles.rb">
+ # <copyright company="Aspose" file="DrawingObjectUpdate.rb">
  #   Copyright (c) 2019 Aspose.Words for Cloud
  # </copyright>
  # <summary>
@@ -29,27 +29,74 @@ module AsposeWordsCloud
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-  # Represents an array of styles list.
-  class Styles
-    attr_accessor :link
+  # Drawing object element for update.
+  class DrawingObjectUpdate
+    # Gets or sets specifies where the distance to the image is measured from.             
+    attr_accessor :relative_horizontal_position
 
-    # Gets or sets array of document styles.
-    attr_accessor :style_list
+    # Gets or sets distance in points from the origin to the left side of the image.             
+    attr_accessor :left
 
+    # Gets or sets specifies where the distance to the image measured from.
+    attr_accessor :relative_vertical_position
+
+    # Gets or sets distance in points from the origin to the top side of the image.
+    attr_accessor :top
+
+    # Gets or sets width of the drawing objects in points.
+    attr_accessor :width
+
+    # Gets or sets height of the drawing object in points.
+    attr_accessor :height
+
+    # Gets or sets specifies how to wrap text around the image.
+    attr_accessor :wrap_type
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'link' => :'link',
-        :'style_list' => :'StyleList'
+        :'relative_horizontal_position' => :'RelativeHorizontalPosition',
+        :'left' => :'Left',
+        :'relative_vertical_position' => :'RelativeVerticalPosition',
+        :'top' => :'Top',
+        :'width' => :'Width',
+        :'height' => :'Height',
+        :'wrap_type' => :'WrapType'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'link' => :'WordsApiLink',
-        :'style_list' => :'Array<Style>'
+        :'relative_horizontal_position' => :'String',
+        :'left' => :'Float',
+        :'relative_vertical_position' => :'String',
+        :'top' => :'Float',
+        :'width' => :'Float',
+        :'height' => :'Float',
+        :'wrap_type' => :'String'
       }
     end
 
@@ -61,14 +108,32 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'link')
-        self.link = attributes[:'link']
+      if attributes.key?(:'RelativeHorizontalPosition')
+        self.relative_horizontal_position = attributes[:'RelativeHorizontalPosition']
       end
 
-      if attributes.key?(:'StyleList')
-        if (value = attributes[:'StyleList']).is_a?(Array)
-          self.style_list = value
-        end
+      if attributes.key?(:'Left')
+        self.left = attributes[:'Left']
+      end
+
+      if attributes.key?(:'RelativeVerticalPosition')
+        self.relative_vertical_position = attributes[:'RelativeVerticalPosition']
+      end
+
+      if attributes.key?(:'Top')
+        self.top = attributes[:'Top']
+      end
+
+      if attributes.key?(:'Width')
+        self.width = attributes[:'Width']
+      end
+
+      if attributes.key?(:'Height')
+        self.height = attributes[:'Height']
+      end
+
+      if attributes.key?(:'WrapType')
+        self.wrap_type = attributes[:'WrapType']
       end
 
     end
@@ -83,7 +148,55 @@ module AsposeWordsCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      relative_horizontal_position_validator = EnumAttributeValidator.new('String', ["Margin", "Page", "Column", "Default", "Character", "LeftMargin", "RightMargin", "InsideMargin", "OutsideMargin"])
+      return false unless relative_horizontal_position_validator.valid?(@relative_horizontal_position)
+      relative_vertical_position_validator = EnumAttributeValidator.new('String', ["Margin", "TableDefault", "Page", "Paragraph", "TextFrameDefault", "Line", "TopMargin", "BottomMargin", "InsideMargin", "OutsideMargin"])
+      return false unless relative_vertical_position_validator.valid?(@relative_vertical_position)
+      wrap_type_validator = EnumAttributeValidator.new('String', ["Inline", "TopBottom", "Square", "None", "Tight", "Through"])
+      return false unless wrap_type_validator.valid?(@wrap_type)
       return true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] relative_horizontal_position Object to be assigned
+    def relative_horizontal_position=(relative_horizontal_position)
+      validator = EnumAttributeValidator.new('String', ["Margin", "Page", "Column", "Default", "Character", "LeftMargin", "RightMargin", "InsideMargin", "OutsideMargin"])
+      if relative_horizontal_position.to_i == 0
+        unless validator.valid?(relative_horizontal_position)
+          raise ArgumentError, "invalid value for 'relative_horizontal_position', must be one of #{validator.allowable_values}."
+        end
+        @relative_horizontal_position = relative_horizontal_position
+      else
+        @relative_horizontal_position = validator.allowable_values[relative_horizontal_position.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] relative_vertical_position Object to be assigned
+    def relative_vertical_position=(relative_vertical_position)
+      validator = EnumAttributeValidator.new('String', ["Margin", "TableDefault", "Page", "Paragraph", "TextFrameDefault", "Line", "TopMargin", "BottomMargin", "InsideMargin", "OutsideMargin"])
+      if relative_vertical_position.to_i == 0
+        unless validator.valid?(relative_vertical_position)
+          raise ArgumentError, "invalid value for 'relative_vertical_position', must be one of #{validator.allowable_values}."
+        end
+        @relative_vertical_position = relative_vertical_position
+      else
+        @relative_vertical_position = validator.allowable_values[relative_vertical_position.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] wrap_type Object to be assigned
+    def wrap_type=(wrap_type)
+      validator = EnumAttributeValidator.new('String', ["Inline", "TopBottom", "Square", "None", "Tight", "Through"])
+      if wrap_type.to_i == 0
+        unless validator.valid?(wrap_type)
+          raise ArgumentError, "invalid value for 'wrap_type', must be one of #{validator.allowable_values}."
+        end
+        @wrap_type = wrap_type
+      else
+        @wrap_type = validator.allowable_values[wrap_type.to_i]
+      end
     end
 
     # Checks equality by comparing each attribute.
@@ -91,8 +204,13 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          link == other.link &&
-          style_list == other.style_list
+          relative_horizontal_position == other.relative_horizontal_position &&
+          left == other.left &&
+          relative_vertical_position == other.relative_vertical_position &&
+          top == other.top &&
+          width == other.width &&
+          height == other.height &&
+          wrap_type == other.wrap_type
     end
 
     # @see the `==` method
@@ -104,7 +222,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, style_list].hash
+      [relative_horizontal_position, left, relative_vertical_position, top, width, height, wrap_type].hash
     end
 
     # Builds the object from hash

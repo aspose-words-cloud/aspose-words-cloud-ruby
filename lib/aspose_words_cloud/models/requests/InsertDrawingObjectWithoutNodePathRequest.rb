@@ -34,7 +34,7 @@ module AsposeWordsCloud
 
         # The document name.
         attr_accessor :name
-        # Drawing object parameters
+        # Drawing object parameters.
         attr_accessor :drawing_object
         # File with image
         attr_accessor :image_file
@@ -56,7 +56,7 @@ module AsposeWordsCloud
         #
         # Initializes a new instance.
         # @param name The document name.
-        # @param drawing_object Drawing object parameters
+        # @param drawing_object Drawing object parameters.
         # @param image_file File with image
         # @param folder Original document folder.
         # @param storage Original document storage.

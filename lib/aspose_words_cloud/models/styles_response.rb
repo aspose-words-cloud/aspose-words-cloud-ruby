@@ -34,6 +34,7 @@ module AsposeWordsCloud
     # Gets or sets request Id.
     attr_accessor :request_id
 
+    # Gets or sets styles which are contained in document.
     attr_accessor :styles
 
 
@@ -49,7 +50,7 @@ module AsposeWordsCloud
     def self.swagger_types
       {
         :'request_id' => :'String',
-        :'styles' => :'Styles'
+        :'styles' => :'Array<Style>'
       }
     end
 
@@ -66,7 +67,9 @@ module AsposeWordsCloud
       end
 
       if attributes.key?(:'Styles')
-        self.styles = attributes[:'Styles']
+        if (value = attributes[:'Styles']).is_a?(Array)
+          self.styles = value
+        end
       end
 
     end
