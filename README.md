@@ -1,7 +1,7 @@
 # Aspose.Words Cloud SDK for Ruby  
 This repository contains Aspose.Words Cloud SDK for Ruby source code. This SDK allows you to work with Aspose.Words Cloud REST APIs in your Ruby applications quickly and easily, with zero initial cost.
 
-[Aspose.Words Cloud](https://products.aspose.cloud/words/family "Aspose.Words Cloud")  
+[Aspose.Words Cloud](https://products.aspose.cloud/words/family "Aspose.Words for Cloud")  
 [API Reference](https://apireference.aspose.cloud/words/)  
 
 ## Key Features
@@ -24,7 +24,7 @@ To use Aspose Words for Cloud Ruby SDK you need to register an account with [Asp
 To install this package do the following:
 update your Gemfile
 ```ruby
-gem 'aspose_words_cloud', '~> 20.3'
+gem 'aspose_words_cloud', '~> 20.7'
 ```
 or install directly
 ```bash
@@ -33,25 +33,14 @@ gem install aspose_words_cloud
 
 ### Sample usage
 ```ruby
-        # Start README example
-
-        AsposeWordsCloud.configure do |config|
-          config.api_key['api_key'] = appKey
-          config.api_key['app_sid'] = appSid
-          config.baseUrl = baseUrl
-        end
-
-        api = WordsApi.new
-
-        uploadRequest = UploadFileRequest.new File.new(File.join(local_common_folder, filename), 'rb'), File.join(remote_folder, remote_name)
-        #api.upload_file uploadRequest
-  
-        request = DeleteWatermarkRequest.new remote_name, remote_folder
-        #result = api.delete_watermark request
-
-        # End README example
+AsposeWordsCloud.configure do |config|
+        config.api_key['api_key'] = AppKey
+        config.api_key['app_sid'] = AppSid
+        config.host = host
+request = DeleteWatermarkRequest.new remote_name, remote_test_folder + test_folder
+result = @words_api.delete_watermark request
 ```
-      
+
 [Tests](tests/) contain various examples of using the SDK.
 
 ## Dependencies
@@ -59,21 +48,21 @@ gem install aspose_words_cloud
 - referenced packages (see [here](Gemfile) for more details)
 
 ## Licensing
- 
+
 All Aspose.Words Cloud SDKs, helper scripts and templates are licensed under [MIT License](https://github.com/aspose-words-cloud/aspose-words-cloud-ruby/blob/master/LICENSE). 
 
 ## Contact Us
 Your feedback is very important to us. Please feel free to contact us using our [Support Forums](https://forum.aspose.cloud/c/words).
 
 ## Resources
- 
+
 [Website](https://www.aspose.cloud/)  
 [Product Home](https://products.aspose.cloud/words/family)  
 [API Reference](https://apireference.aspose.cloud/words/)  
 [Documentation](https://docs.aspose.cloud/display/wordscloud/Home)  
 [Blog](https://blog.aspose.cloud/category/words/)  
- 
+
 ## Other languages
 We generate our SDKs in different languages so you may check if yours is available in our [list](https://github.com/aspose-words-cloud).
- 
+
 If you don't find your language in the list, feel free to request it from us, or use raw REST API requests as you can find it [here](https://products.aspose.cloud/words/curl).
