@@ -64,6 +64,9 @@ module AsposeWordsCloud
     # Gets or sets specifies the OOXML version for the output document.
     attr_accessor :compliance
 
+    # Gets or sets compression level.
+    attr_accessor :compression_level
+
     # Gets or sets specifies a password to encrypt document using ECMA376 Standard encryption algorithm.
     attr_accessor :password
 
@@ -106,6 +109,7 @@ module AsposeWordsCloud
         :'dml3_d_effects_rendering_mode' => :'Dml3DEffectsRenderingMode',
         :'update_last_printed_property' => :'UpdateLastPrintedProperty',
         :'compliance' => :'Compliance',
+        :'compression_level' => :'CompressionLevel',
         :'password' => :'Password',
         :'pretty_format' => :'PrettyFormat'
       }
@@ -125,6 +129,7 @@ module AsposeWordsCloud
         :'dml3_d_effects_rendering_mode' => :'String',
         :'update_last_printed_property' => :'BOOLEAN',
         :'compliance' => :'String',
+        :'compression_level' => :'String',
         :'password' => :'String',
         :'pretty_format' => :'BOOLEAN'
       }
@@ -182,6 +187,10 @@ module AsposeWordsCloud
         self.compliance = attributes[:'Compliance']
       end
 
+      if attributes.key?(:'CompressionLevel')
+        self.compression_level = attributes[:'CompressionLevel']
+      end
+
       if attributes.key?(:'Password')
         self.password = attributes[:'Password']
       end
@@ -204,6 +213,8 @@ module AsposeWordsCloud
     def valid?
       dml3_d_effects_rendering_mode_validator = EnumAttributeValidator.new('String', ["Basic", "Advanced"])
       return false unless dml3_d_effects_rendering_mode_validator.valid?(@dml3_d_effects_rendering_mode)
+      compression_level_validator = EnumAttributeValidator.new('String', ["Normal", "Maximum", "Fast", "SuperFast"])
+      return false unless compression_level_validator.valid?(@compression_level)
       return true
     end
 
@@ -218,6 +229,20 @@ module AsposeWordsCloud
         @dml3_d_effects_rendering_mode = dml3_d_effects_rendering_mode
       else
         @dml3_d_effects_rendering_mode = validator.allowable_values[dml3_d_effects_rendering_mode.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] compression_level Object to be assigned
+    def compression_level=(compression_level)
+      validator = EnumAttributeValidator.new('String', ["Normal", "Maximum", "Fast", "SuperFast"])
+      if compression_level.to_i == 0
+        unless validator.valid?(compression_level)
+          raise ArgumentError, "invalid value for 'compression_level', must be one of #{validator.allowable_values}."
+        end
+        @compression_level = compression_level
+      else
+        @compression_level = validator.allowable_values[compression_level.to_i]
       end
     end
 
@@ -237,6 +262,7 @@ module AsposeWordsCloud
           dml3_d_effects_rendering_mode == other.dml3_d_effects_rendering_mode &&
           update_last_printed_property == other.update_last_printed_property &&
           compliance == other.compliance &&
+          compression_level == other.compression_level &&
           password == other.password &&
           pretty_format == other.pretty_format
     end
@@ -250,7 +276,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, dml3_d_effects_rendering_mode, update_last_printed_property, compliance, password, pretty_format].hash
+      [save_format, file_name, dml_rendering_mode, dml_effects_rendering_mode, zip_output, update_last_saved_time_property, update_sdt_content, update_fields, dml3_d_effects_rendering_mode, update_last_printed_property, compliance, compression_level, password, pretty_format].hash
     end
 
     # Builds the object from hash
