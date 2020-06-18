@@ -64,10 +64,6 @@ module AsposeWordsCloud
     # Default value is false.
     attr_accessor :zip_output
 
-    # Gets or sets specifies whether to add bi-directional marks before each BiDi run when exporting in plain text format.
-    # The default value is true.
-    attr_accessor :add_bidi_marks
-
     # Gets or sets specifies the encoding to use when exporting in plain text format.
     attr_accessor :encoding
 
@@ -81,6 +77,10 @@ module AsposeWordsCloud
 
     # Gets or sets specifies the string to use as a paragraph break when exporting in plain text format.
     attr_accessor :paragraph_break
+
+    # Gets or sets specifies whether to add bi-directional marks before each BiDi run when exporting in plain text format.
+    # The default value is true.
+    attr_accessor :add_bidi_marks
 
     # Gets or sets specifies whether the program should attempt to preserve layout of tables when saving in the plain text format.
     attr_accessor :preserve_table_layout
@@ -123,11 +123,11 @@ module AsposeWordsCloud
         :'update_last_saved_time_property' => :'UpdateLastSavedTimeProperty',
         :'update_sdt_content' => :'UpdateSdtContent',
         :'zip_output' => :'ZipOutput',
-        :'add_bidi_marks' => :'AddBidiMarks',
         :'encoding' => :'Encoding',
         :'export_headers_footers_mode' => :'ExportHeadersFootersMode',
         :'force_page_breaks' => :'ForcePageBreaks',
         :'paragraph_break' => :'ParagraphBreak',
+        :'add_bidi_marks' => :'AddBidiMarks',
         :'preserve_table_layout' => :'PreserveTableLayout',
         :'simplify_list_labels' => :'SimplifyListLabels'
       }
@@ -146,11 +146,11 @@ module AsposeWordsCloud
         :'update_last_saved_time_property' => :'BOOLEAN',
         :'update_sdt_content' => :'BOOLEAN',
         :'zip_output' => :'BOOLEAN',
-        :'add_bidi_marks' => :'BOOLEAN',
         :'encoding' => :'String',
         :'export_headers_footers_mode' => :'String',
         :'force_page_breaks' => :'BOOLEAN',
         :'paragraph_break' => :'String',
+        :'add_bidi_marks' => :'BOOLEAN',
         :'preserve_table_layout' => :'BOOLEAN',
         :'simplify_list_labels' => :'BOOLEAN'
       }
@@ -204,10 +204,6 @@ module AsposeWordsCloud
         self.zip_output = attributes[:'ZipOutput']
       end
 
-      if attributes.key?(:'AddBidiMarks')
-        self.add_bidi_marks = attributes[:'AddBidiMarks']
-      end
-
       if attributes.key?(:'Encoding')
         self.encoding = attributes[:'Encoding']
       end
@@ -222,6 +218,10 @@ module AsposeWordsCloud
 
       if attributes.key?(:'ParagraphBreak')
         self.paragraph_break = attributes[:'ParagraphBreak']
+      end
+
+      if attributes.key?(:'AddBidiMarks')
+        self.add_bidi_marks = attributes[:'AddBidiMarks']
       end
 
       if attributes.key?(:'PreserveTableLayout')
@@ -295,11 +295,11 @@ module AsposeWordsCloud
           update_last_saved_time_property == other.update_last_saved_time_property &&
           update_sdt_content == other.update_sdt_content &&
           zip_output == other.zip_output &&
-          add_bidi_marks == other.add_bidi_marks &&
           encoding == other.encoding &&
           export_headers_footers_mode == other.export_headers_footers_mode &&
           force_page_breaks == other.force_page_breaks &&
           paragraph_break == other.paragraph_break &&
+          add_bidi_marks == other.add_bidi_marks &&
           preserve_table_layout == other.preserve_table_layout &&
           simplify_list_labels == other.simplify_list_labels
     end
@@ -313,7 +313,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, save_format, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, add_bidi_marks, encoding, export_headers_footers_mode, force_page_breaks, paragraph_break, preserve_table_layout, simplify_list_labels].hash
+      [dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, save_format, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, encoding, export_headers_footers_mode, force_page_breaks, paragraph_break, add_bidi_marks, preserve_table_layout, simplify_list_labels].hash
     end
 
     # Builds the object from hash
