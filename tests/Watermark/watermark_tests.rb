@@ -41,20 +41,6 @@ module AsposeWordsCloud
     #
     # Test for adding watermark image.
     #
-    def test_insert_document_watermark_image
-      remote_file_name = 'TestInsertWatermarkImage.docx'
-
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
-
-      request = InsertWatermarkImageRequest.new(remote_file_name, File.open(File.join(local_test_folder, 'Common/aspose-cloud.png')), remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil, nil, nil)
-
-      result = @words_api.insert_watermark_image(request)
-      assert_equal false, result.nil?
-    end
-
-    #
-    # Test for adding watermark image.
-    #
     def test_insert_watermark_image
       remote_file_name = 'TestInsertWatermarkImage.docx'
       remote_image_path = remote_data_folder + '/TestInsertWatermarkImage.png'

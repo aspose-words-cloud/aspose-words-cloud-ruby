@@ -61,19 +61,5 @@ module AsposeWordsCloud
       result = @words_api.classify_document(request)
       assert_equal false, result.nil?
     end
-
-    #
-    # Test for document classification with taxonomy documents.
-    #
-    def test_classify_taxonomy_documents
-      remote_file_name = 'TestClassifyTaxonomyDocuments.docx'
-
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
-
-      request = ClassifyDocumentRequest.new(remote_file_name, remote_data_folder, nil, nil, nil, '3', 'documents')
-
-      result = @words_api.classify_document(request)
-      assert_equal false, result.nil?
-    end
   end
 end
