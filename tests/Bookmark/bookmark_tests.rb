@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="Document_tests.rb">
+# <copyright company="Aspose" file="Bookmark_tests.rb">
 #   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -26,11 +26,11 @@ module AsposeWordsCloud
   require_relative '../base_test_context'
 
   #
-  # Example of how to get document.
+  # Example of how to get all bookmarks from document.
   #
-  class DocumentTests < BaseTestContext
+  class BookmarkTests < BaseTestContext
     def remote_data_folder
-      remote_test_folder + '/DocumentActions/Document'
+      remote_test_folder + '/DocumentElements/Bookmarks'
     end
 
     def local_file
@@ -39,28 +39,46 @@ module AsposeWordsCloud
 
 
     #
-    # Test for getting document.
+    # Test for getting bookmarks from document.
     #
-    def test_get_document
-      remote_file_name = 'TestGetDocument.docx'
+    def test_get_bookmarks
+      remote_file_name = 'TestGetDocumentBookmarks.docx'
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetDocumentRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
+      request = GetBookmarksRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
 
-      result = @words_api.get_document(request)
+      result = @words_api.get_bookmarks(request)
       assert_equal false, result.nil?
     end
 
     #
-    # Test for creating word document.
+    # Test for getting bookmark by specified name.
     #
-    def test_create_document
-      remote_file_name = 'TestCreateDocument.doc'
+    def test_get_bookmark_by_name
+      remote_file_name = 'TestGetDocumentBookmarkByName.docx'
 
-      request = CreateDocumentRequest.new(nil, remote_file_name, remote_data_folder)
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      result = @words_api.create_document(request)
+      request = GetBookmarkByNameRequest.new(remote_file_name, 'aspose', remote_data_folder, nil, nil, nil)
+
+      result = @words_api.get_bookmark_by_name(request)
+      assert_equal false, result.nil?
+    end
+
+    #
+    # Test for updating existed bookmark.
+    #
+    def test_update_bookmark
+      remote_file_name = 'TestUpdateDocumentBookmark.docx'
+      bookmark_name = 'aspose'
+
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+
+      request_bookmark_data = BookmarkData.new({:Name => bookmark_name, :Text => 'This will be the text for Aspose'})
+      request = UpdateBookmarkRequest.new(remote_file_name, request_bookmark_data, bookmark_name, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
+
+      result = @words_api.update_bookmark(request)
       assert_equal false, result.nil?
     end
   end

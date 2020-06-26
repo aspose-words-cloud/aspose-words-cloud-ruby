@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="Document_tests.rb">
+# <copyright company="Aspose" file="Classification_tests.rb">
 #   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -26,11 +26,11 @@ module AsposeWordsCloud
   require_relative '../base_test_context'
 
   #
-  # Example of how to get document.
+  # Example of how to classify text.
   #
-  class DocumentTests < BaseTestContext
+  class ClassificationTests < BaseTestContext
     def remote_data_folder
-      remote_test_folder + '/DocumentActions/Document'
+      remote_test_folder + '/Common'
     end
 
     def local_file
@@ -39,28 +39,40 @@ module AsposeWordsCloud
 
 
     #
-    # Test for getting document.
+    # Test for raw text classification.
     #
-    def test_get_document
-      remote_file_name = 'TestGetDocument.docx'
+    def test_classify
+      request = ClassifyRequest.new('Try text classification', '3')
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
-
-      request = GetDocumentRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
-
-      result = @words_api.get_document(request)
+      result = @words_api.classify(request)
       assert_equal false, result.nil?
     end
 
     #
-    # Test for creating word document.
+    # Test for document classification.
     #
-    def test_create_document
-      remote_file_name = 'TestCreateDocument.doc'
+    def test_classify_document
+      remote_file_name = 'Source.docx'
 
-      request = CreateDocumentRequest.new(nil, remote_file_name, remote_data_folder)
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      result = @words_api.create_document(request)
+      request = ClassifyDocumentRequest.new(remote_file_name, remote_data_folder, nil, nil, nil, '3', nil)
+
+      result = @words_api.classify_document(request)
+      assert_equal false, result.nil?
+    end
+
+    #
+    # Test for document classification with taxonomy documents.
+    #
+    def test_classify_taxonomy_documents
+      remote_file_name = 'Source.docx'
+
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+
+      request = ClassifyDocumentRequest.new(remote_file_name, remote_data_folder, nil, nil, nil, '3', 'documents')
+
+      result = @words_api.classify_document(request)
       assert_equal false, result.nil?
     end
   end

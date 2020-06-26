@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="Document_tests.rb">
+# <copyright company="Aspose" file="DocumentStatistics_tests.rb">
 #   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -26,11 +26,11 @@ module AsposeWordsCloud
   require_relative '../base_test_context'
 
   #
-  # Example of how to get document.
+  # Example of how to get document statistics.
   #
-  class DocumentTests < BaseTestContext
+  class DocumentStatisticsTests < BaseTestContext
     def remote_data_folder
-      remote_test_folder + '/DocumentActions/Document'
+      remote_test_folder + '/DocumentActions/Statistics'
     end
 
     def local_file
@@ -39,28 +39,16 @@ module AsposeWordsCloud
 
 
     #
-    # Test for getting document.
+    # Test for document classification.
     #
-    def test_get_document
-      remote_file_name = 'TestGetDocument.docx'
+    def test_get_document_statistics
+      remote_file_name = 'TestGetDocumentStatistics.docx'
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetDocumentRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
+      request = GetDocumentStatisticsRequest.new(remote_file_name, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
-      result = @words_api.get_document(request)
-      assert_equal false, result.nil?
-    end
-
-    #
-    # Test for creating word document.
-    #
-    def test_create_document
-      remote_file_name = 'TestCreateDocument.doc'
-
-      request = CreateDocumentRequest.new(nil, remote_file_name, remote_data_folder)
-
-      result = @words_api.create_document(request)
+      result = @words_api.get_document_statistics(request)
       assert_equal false, result.nil?
     end
   end

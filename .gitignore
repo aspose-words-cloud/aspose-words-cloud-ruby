@@ -114,6 +114,7 @@ vendor/*
 testReports/*
 Gemfile.lock
 servercreds.json
+test/*
 
 # VS files
 .vscode

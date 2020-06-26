@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="Document_tests.rb">
+# <copyright company="Aspose" file="Revisions_tests.rb">
 #   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -26,11 +26,11 @@ module AsposeWordsCloud
   require_relative '../base_test_context'
 
   #
-  # Example of how to get document.
+  # Example of how to accept all revisions in document.
   #
-  class DocumentTests < BaseTestContext
+  class RevisionsTests < BaseTestContext
     def remote_data_folder
-      remote_test_folder + '/DocumentActions/Document'
+      remote_test_folder + '/DocumentActions/Revisions'
     end
 
     def local_file
@@ -39,28 +39,30 @@ module AsposeWordsCloud
 
 
     #
-    # Test for getting document.
+    # Test for accepting revisions in document.
     #
-    def test_get_document
-      remote_file_name = 'TestGetDocument.docx'
+    def test_accept_all_revisions
+      remote_file_name = 'TestAcceptAllRevisions.docx'
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetDocumentRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
+      request = AcceptAllRevisionsRequest.new(remote_file_name, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name)
 
-      result = @words_api.get_document(request)
+      result = @words_api.accept_all_revisions(request)
       assert_equal false, result.nil?
     end
 
     #
-    # Test for creating word document.
+    # Test for rejecting revisions in document.
     #
-    def test_create_document
-      remote_file_name = 'TestCreateDocument.doc'
+    def test_reject_all_revisions
+      remote_file_name = 'TestRejectAllRevisions.docx'
 
-      request = CreateDocumentRequest.new(nil, remote_file_name, remote_data_folder)
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      result = @words_api.create_document(request)
+      request = RejectAllRevisionsRequest.new(remote_file_name, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name)
+
+      result = @words_api.reject_all_revisions(request)
       assert_equal false, result.nil?
     end
   end

@@ -1,10 +1,9 @@
-#
-# --------------------------------------------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="base_test_context.rb">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
-#   Permission is hereby granted, free of charge, to any person obtaining a copy
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
 #  in the Software without restriction, including without limitation the rights
 #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
@@ -22,8 +21,8 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #  SOFTWARE.
 # </summary>
-# --------------------------------------------------------------------------------------------------------------------
-#
+# ------------------------------------------------------------------------------------
+
 module AsposeWordsCloud
   require "minitest/autorun"
   require "minitest/unit"
@@ -36,7 +35,7 @@ module AsposeWordsCloud
       AsposeWordsCloud.configure do |config|
         config.api_key['api_key'] = creds['AppKey']
         config.api_key['app_sid'] = creds['AppSid']
-		    config.debugging = creds['Debug']
+          config.debugging = creds['Debug']
         config.baseUrl = creds['BaseUrl']
       end
       @words_api = WordsApi.new
@@ -65,19 +64,19 @@ module AsposeWordsCloud
     end
 
     def local_test_folder
-      'TestData/'
+      'TestData'
     end
 
     def remote_test_folder
-      'Temp/SdkTests/ruby/'
+      'Temp/SdkTests/ruby'
     end
 
     def remote_test_out
-      'Temp/SdkTests/ruby/TestOut/'
+      'Temp/SdkTests/ruby/TestOut'
     end
 
     def local_common_folder
-      'TestData/Common/'
+      'TestData/Common'
     end
 
     def exists?(folder, name)

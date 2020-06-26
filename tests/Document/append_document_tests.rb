@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="Document_tests.rb">
+# <copyright company="Aspose" file="AppendDocument_tests.rb">
 #   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -26,11 +26,11 @@ module AsposeWordsCloud
   require_relative '../base_test_context'
 
   #
-  # Example of how to get document.
+  # Example of how to append document.
   #
-  class DocumentTests < BaseTestContext
+  class AppendDocumentTests < BaseTestContext
     def remote_data_folder
-      remote_test_folder + '/DocumentActions/Document'
+      remote_test_folder + '/DocumentActions/AppendDocument'
     end
 
     def local_file
@@ -39,28 +39,19 @@ module AsposeWordsCloud
 
 
     #
-    # Test for getting document.
+    # Test for appending document.
     #
-    def test_get_document
-      remote_file_name = 'TestGetDocument.docx'
+    def test_append_document
+      remote_file_name = 'TestAppendDocument.docx'
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetDocumentRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
+      request_document_list_document_entries0 = DocumentEntry.new({:Href => remote_data_folder + '/' + remote_file_name, :ImportFormatMode => 'KeepSourceFormatting'})
+      request_document_list_document_entries = [request_document_list_document_entries0]
+      request_document_list = DocumentEntryList.new({:DocumentEntries => request_document_list_document_entries})
+      request = AppendDocumentRequest.new(remote_file_name, request_document_list, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
 
-      result = @words_api.get_document(request)
-      assert_equal false, result.nil?
-    end
-
-    #
-    # Test for creating word document.
-    #
-    def test_create_document
-      remote_file_name = 'TestCreateDocument.doc'
-
-      request = CreateDocumentRequest.new(nil, remote_file_name, remote_data_folder)
-
-      result = @words_api.create_document(request)
+      result = @words_api.append_document(request)
       assert_equal false, result.nil?
     end
   end

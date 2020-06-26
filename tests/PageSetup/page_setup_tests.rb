@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="Document_tests.rb">
+# <copyright company="Aspose" file="PageSetup_tests.rb">
 #   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -26,41 +26,62 @@ module AsposeWordsCloud
   require_relative '../base_test_context'
 
   #
-  # Example of how to get document.
+  # Example of how to work with macros.
   #
-  class DocumentTests < BaseTestContext
+  class PageSetupTests < BaseTestContext
     def remote_data_folder
-      remote_test_folder + '/DocumentActions/Document'
+      remote_test_folder + '/DocumentElements/PageSetup'
     end
 
     def local_file
       'Common/test_multi_pages.docx'
     end
 
+    def local_text_file
+      'DocumentElements/Text/SampleWordDocument.docx'
+    end
+
 
     #
-    # Test for getting document.
+    # Test for getting page settings.
     #
-    def test_get_document
-      remote_file_name = 'TestGetDocument.docx'
+    def test_get_section_page_setup
+      remote_file_name = 'TestGetSectionPageSetup.docx'
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetDocumentRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
+      request = GetSectionPageSetupRequest.new(remote_file_name, 0, remote_data_folder, nil, nil, nil)
 
-      result = @words_api.get_document(request)
+      result = @words_api.get_section_page_setup(request)
       assert_equal false, result.nil?
     end
 
     #
-    # Test for creating word document.
+    # Test for updating page settings.
     #
-    def test_create_document
-      remote_file_name = 'TestCreateDocument.doc'
+    def test_update_section_page_setup
+      remote_file_name = 'TestUpdateSectionPageSetup.docx'
 
-      request = CreateDocumentRequest.new(nil, remote_file_name, remote_data_folder)
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      result = @words_api.create_document(request)
+      request_page_setup = PageSetup.new({:RtlGutter => true, :LeftMargin => 10, :Orientation => 'Landscape', :PaperSize => 'A5'})
+      request = UpdateSectionPageSetupRequest.new(remote_file_name, 0, request_page_setup, remote_data_folder, nil, nil, nil, nil, nil, nil)
+
+      result = @words_api.update_section_page_setup(request)
+      assert_equal false, result.nil?
+    end
+
+    #
+    # Test for page rendering.
+    #
+    def test_get_render_page
+      remote_file_name = 'TestGetRenderPage.docx'
+
+      upload_file File.join(local_test_folder, local_text_file), remote_data_folder + '/' + remote_file_name
+
+      request = RenderPageRequest.new(remote_file_name, 1, 'bmp', remote_data_folder, nil, nil, nil, nil)
+
+      result = @words_api.render_page(request)
       assert_equal false, result.nil?
     end
   end

@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="Document_tests.rb">
+# <copyright company="Aspose" file="Hyperlink_tests.rb">
 #   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -26,41 +26,43 @@ module AsposeWordsCloud
   require_relative '../base_test_context'
 
   #
-  # Example of how to get document.
+  # Example of how to work with hyperlinks.
   #
-  class DocumentTests < BaseTestContext
+  class HyperlinkTests < BaseTestContext
     def remote_data_folder
-      remote_test_folder + '/DocumentActions/Document'
+      remote_test_folder + '/DocumentElements/Hyperlink'
     end
 
     def local_file
-      'Common/test_multi_pages.docx'
+      'Common/test_doc.docx'
     end
 
 
     #
-    # Test for getting document.
+    # Test for getting hyperlink by specified index.
     #
-    def test_get_document
-      remote_file_name = 'TestGetDocument.docx'
+    def test_get_document_hyperlink_by_index
+      remote_file_name = 'TestGetDocumentHyperlinkByIndex.docx'
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetDocumentRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
+      request = GetDocumentHyperlinkByIndexRequest.new(remote_file_name, 0, remote_data_folder, nil, nil, nil)
 
-      result = @words_api.get_document(request)
+      result = @words_api.get_document_hyperlink_by_index(request)
       assert_equal false, result.nil?
     end
 
     #
-    # Test for creating word document.
+    # Test for getting hyperlinks.
     #
-    def test_create_document
-      remote_file_name = 'TestCreateDocument.doc'
+    def test_get_document_hyperlinks
+      remote_file_name = 'TestGetDocumentHyperlinks.docx'
 
-      request = CreateDocumentRequest.new(nil, remote_file_name, remote_data_folder)
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      result = @words_api.create_document(request)
+      request = GetDocumentHyperlinksRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
+
+      result = @words_api.get_document_hyperlinks(request)
       assert_equal false, result.nil?
     end
   end

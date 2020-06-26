@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="Document_tests.rb">
+# <copyright company="Aspose" file="ExecuteTemplate_tests.rb">
 #   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -26,41 +26,44 @@ module AsposeWordsCloud
   require_relative '../base_test_context'
 
   #
-  # Example of how to get document.
+  # Example of how to perform template execution.
   #
-  class DocumentTests < BaseTestContext
+  class ExecuteTemplateTests < BaseTestContext
     def remote_data_folder
-      remote_test_folder + '/DocumentActions/Document'
+      remote_test_folder + '/DocumentActions/MailMerge'
     end
 
-    def local_file
-      'Common/test_multi_pages.docx'
+    def mail_merge_folder
+      'DocumentActions/MailMerge'
     end
 
 
     #
-    # Test for getting document.
+    # Test for posting execute template.
     #
-    def test_get_document
-      remote_file_name = 'TestGetDocument.docx'
+    def test_execute_template
+      local_document_file = 'TestExecuteTemplate.doc'
+      remote_file_name = 'TestExecuteTemplate.docx'
+      local_data_file = File.read(File.join(local_test_folder, mail_merge_folder + '/TestExecuteTemplateData.txt'))
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, mail_merge_folder + '/' + local_document_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetDocumentRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
+      request = ExecuteMailMergeRequest.new(remote_file_name, local_data_file, remote_data_folder, nil, nil, nil, nil, nil, nil, nil, remote_test_out + '/' + remote_file_name)
 
-      result = @words_api.get_document(request)
+      result = @words_api.execute_mail_merge(request)
       assert_equal false, result.nil?
     end
 
     #
-    # Test for creating word document.
+    # Test for execute template online.
     #
-    def test_create_document
-      remote_file_name = 'TestCreateDocument.doc'
+    def test_execute_template_online
+      local_document_file = 'SampleMailMergeTemplate.docx'
+      local_data_file = 'SampleExecuteTemplateData.txt'
 
-      request = CreateDocumentRequest.new(nil, remote_file_name, remote_data_folder)
+      request = ExecuteMailMergeOnlineRequest.new(File.open(File.join(local_test_folder, mail_merge_folder + '/' + local_document_file)), File.open(File.join(local_test_folder, mail_merge_folder + '/' + local_data_file)), nil, nil, nil)
 
-      result = @words_api.create_document(request)
+      result = @words_api.execute_mail_merge_online(request)
       assert_equal false, result.nil?
     end
   end

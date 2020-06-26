@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="Document_tests.rb">
+# <copyright company="Aspose" file="CompareDocument_tests.rb">
 #   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -26,41 +26,34 @@ module AsposeWordsCloud
   require_relative '../base_test_context'
 
   #
-  # Example of how to get document.
+  # Example of document comparison.
   #
-  class DocumentTests < BaseTestContext
-    def remote_data_folder
-      remote_test_folder + '/DocumentActions/Document'
+  class CompareDocumentTests < BaseTestContext
+    def remote_folder
+      remote_test_folder + '/DocumentActions/CompareDocument'
     end
 
-    def local_file
-      'Common/test_multi_pages.docx'
+    def local_folder
+      'DocumentActions/CompareDocument'
     end
 
 
     #
-    # Test for getting document.
+    # Test for document comparison.
     #
-    def test_get_document
-      remote_file_name = 'TestGetDocument.docx'
+    def test_compare_document
+      local_name1 = 'compareTestDoc1.doc'
+      local_name2 = 'compareTestDoc2.doc'
+      remote_name1 = 'TestCompareDocument1.doc'
+      remote_name2 = 'TestCompareDocument2.doc'
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_folder + '/' + local_name1), remote_folder + '/' + remote_name1
+      upload_file File.join(local_test_folder, local_folder + '/' + local_name2), remote_folder + '/' + remote_name2
 
-      request = GetDocumentRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
+      request_compare_data = CompareData.new({:Author => 'author', :ComparingWithDocument => remote_folder + '/' + remote_name2, :DateTime => Date.iso8601('2015-10-26T00:00:00.0000000Z')})
+      request = CompareDocumentRequest.new(remote_name1, request_compare_data, remote_folder, nil, nil, nil, remote_test_out + '/TestCompareDocumentOut.doc')
 
-      result = @words_api.get_document(request)
-      assert_equal false, result.nil?
-    end
-
-    #
-    # Test for creating word document.
-    #
-    def test_create_document
-      remote_file_name = 'TestCreateDocument.doc'
-
-      request = CreateDocumentRequest.new(nil, remote_file_name, remote_data_folder)
-
-      result = @words_api.create_document(request)
+      result = @words_api.compare_document(request)
       assert_equal false, result.nil?
     end
   end

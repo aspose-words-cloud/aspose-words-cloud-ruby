@@ -1,10 +1,9 @@
-#
-# --------------------------------------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="bookmarks_tests.rb">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# ------------------------------------------------------------------------------------
+# <copyright company="Aspose" file="readme_test.rb">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
-#   Permission is hereby granted, free of charge, to any person obtaining a copy
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
 #  in the Software without restriction, including without limitation the rights
 #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
@@ -22,12 +21,12 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #  SOFTWARE.
 # </summary>
-# --------------------------------------------------------------------------------------------------------------------
-#
+# ------------------------------------------------------------------------------------
+
 module AsposeWordsCloud
   require_relative 'base_test_context'
   class ReadmeTests < BaseTestContext
-    
+
     #
     # Test for getting document bookmark by name
     #
@@ -54,7 +53,7 @@ module AsposeWordsCloud
 
         uploadRequest = UploadFileRequest.new File.new(File.join(local_common_folder, filename), 'rb'), File.join(remote_folder, remote_name)
         api.upload_file uploadRequest
-  
+
         request = DeleteWatermarkRequest.new remote_name, remote_folder
         result = api.delete_watermark request
 
@@ -77,7 +76,7 @@ module AsposeWordsCloud
 
         # extract readme code
         readmeCode = Array.new
-        skipMode = TRUE
+        skipMode = true
         for line in codeLines do
           if skipMode
             skipMode = /#{startPattern}/.match(line).nil?
@@ -96,7 +95,7 @@ module AsposeWordsCloud
 
         # replace readme code
         newReadmeLines = Array.new
-        codeMode = FALSE
+        codeMode = false
         for line in readmeLines do
           if not codeMode
             codeMode = not(/#{startPattern}/.match(line).nil?)

@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="Document_tests.rb">
+# <copyright company="Aspose" file="SplitDocumentToFormat_tests.rb">
 #   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -26,11 +26,11 @@ module AsposeWordsCloud
   require_relative '../base_test_context'
 
   #
-  # Example of how to get document.
+  # Example of how to split document and return result with specified format and page range.
   #
-  class DocumentTests < BaseTestContext
+  class SplitDocumentToFormatTests < BaseTestContext
     def remote_data_folder
-      remote_test_folder + '/DocumentActions/Document'
+      remote_test_folder + '/DocumentActions/SplitDocument'
     end
 
     def local_file
@@ -39,28 +39,16 @@ module AsposeWordsCloud
 
 
     #
-    # Test for getting document.
+    # Test for document splitting.
     #
-    def test_get_document
-      remote_file_name = 'TestGetDocument.docx'
+    def test_split_document
+      remote_file_name = 'TestSplitDocument.docx'
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetDocumentRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
+      request = SplitDocumentRequest.new(remote_file_name, 'text', remote_data_folder, nil, nil, nil, remote_test_out + '/TestSplitDocument.text', 1, 2, nil, nil)
 
-      result = @words_api.get_document(request)
-      assert_equal false, result.nil?
-    end
-
-    #
-    # Test for creating word document.
-    #
-    def test_create_document
-      remote_file_name = 'TestCreateDocument.doc'
-
-      request = CreateDocumentRequest.new(nil, remote_file_name, remote_data_folder)
-
-      result = @words_api.create_document(request)
+      result = @words_api.split_document(request)
       assert_equal false, result.nil?
     end
   end

@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="Document_tests.rb">
+# <copyright company="Aspose" file="Font_tests.rb">
 #   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -26,41 +26,25 @@ module AsposeWordsCloud
   require_relative '../base_test_context'
 
   #
-  # Example of how to get document.
+  # Example of how to work with font.
   #
-  class DocumentTests < BaseTestContext
-    def remote_data_folder
-      remote_test_folder + '/DocumentActions/Document'
-    end
-
-    def local_file
-      'Common/test_multi_pages.docx'
-    end
-
-
+  class FontTests < BaseTestContext
     #
-    # Test for getting document.
+    # Test for reseting cache.
     #
-    def test_get_document
-      remote_file_name = 'TestGetDocument.docx'
+    def test_reset_cache
+      request = ResetCacheRequest.new()
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
-
-      request = GetDocumentRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
-
-      result = @words_api.get_document(request)
-      assert_equal false, result.nil?
+      @words_api.reset_cache(request)
     end
 
     #
-    # Test for creating word document.
+    # Test for GetAvailableFonts resource.
     #
-    def test_create_document
-      remote_file_name = 'TestCreateDocument.doc'
+    def test_get_available_fonts
+      request = GetAvailableFontsRequest.new(nil)
 
-      request = CreateDocumentRequest.new(nil, remote_file_name, remote_data_folder)
-
-      result = @words_api.create_document(request)
+      result = @words_api.get_available_fonts(request)
       assert_equal false, result.nil?
     end
   end

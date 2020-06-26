@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="Document_tests.rb">
+# <copyright company="Aspose" file="Run_tests.rb">
 #   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -26,42 +26,59 @@ module AsposeWordsCloud
   require_relative '../base_test_context'
 
   #
-  # Example of how to get document.
+  # Example of how to work with runs.
   #
-  class DocumentTests < BaseTestContext
+  class RunTests < BaseTestContext
     def remote_data_folder
-      remote_test_folder + '/DocumentActions/Document'
+      remote_test_folder + '/DocumentElements/Runs'
     end
 
     def local_file
-      'Common/test_multi_pages.docx'
+      'DocumentElements/Runs/Run.doc'
     end
 
 
     #
-    # Test for getting document.
+    # Test for updating run.
     #
-    def test_get_document
-      remote_file_name = 'TestGetDocument.docx'
+    def test_update_run
+      remote_file_name = 'TestUpdateRun.docx'
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetDocumentRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
+      request_run = RunUpdate.new({:Text => 'run with text'})
+      request = UpdateRunRequest.new(remote_file_name, request_run, 'paragraphs/1', 0, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
-      result = @words_api.get_document(request)
+      result = @words_api.update_run(request)
       assert_equal false, result.nil?
     end
 
     #
-    # Test for creating word document.
+    # Test for adding run.
     #
-    def test_create_document
-      remote_file_name = 'TestCreateDocument.doc'
+    def test_insert_run
+      remote_file_name = 'TestInsertRun.docx'
 
-      request = CreateDocumentRequest.new(nil, remote_file_name, remote_data_folder)
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      result = @words_api.create_document(request)
+      request_run = RunInsert.new({:Text => 'run with text'})
+      request = InsertRunRequest.new(remote_file_name, 'paragraphs/1', request_run, remote_data_folder, nil, nil, nil, nil, nil, nil, nil)
+
+      result = @words_api.insert_run(request)
       assert_equal false, result.nil?
+    end
+
+    #
+    # Test for deleting run.
+    #
+    def test_delete_run
+      remote_file_name = 'TestDeleteRun.docx'
+
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+
+      request = DeleteRunRequest.new(remote_file_name, 'paragraphs/1', 0, remote_data_folder, nil, nil, nil, nil, nil, nil)
+
+      @words_api.delete_run(request)
     end
   end
 end

@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="Document_tests.rb">
+# <copyright company="Aspose" file="Section_tests.rb">
 #   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -26,11 +26,11 @@ module AsposeWordsCloud
   require_relative '../base_test_context'
 
   #
-  # Example of how to get document.
+  # Example of how to work with sections.
   #
-  class DocumentTests < BaseTestContext
+  class SectionTests < BaseTestContext
     def remote_data_folder
-      remote_test_folder + '/DocumentActions/Document'
+      remote_test_folder + '/DocumentElements/Section'
     end
 
     def local_file
@@ -39,29 +39,44 @@ module AsposeWordsCloud
 
 
     #
-    # Test for getting document.
+    # Test for getting section by index.
     #
-    def test_get_document
-      remote_file_name = 'TestGetDocument.docx'
+    def test_get_section
+      remote_file_name = 'TestGetSection.docx'
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetDocumentRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
+      request = GetSectionRequest.new(remote_file_name, 0, remote_data_folder, nil, nil, nil)
 
-      result = @words_api.get_document(request)
+      result = @words_api.get_section(request)
       assert_equal false, result.nil?
     end
 
     #
-    # Test for creating word document.
+    # Test for getting sections.
     #
-    def test_create_document
-      remote_file_name = 'TestCreateDocument.doc'
+    def test_get_sections
+      remote_file_name = 'TestGetSections.docx'
 
-      request = CreateDocumentRequest.new(nil, remote_file_name, remote_data_folder)
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      result = @words_api.create_document(request)
+      request = GetSectionsRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
+
+      result = @words_api.get_sections(request)
       assert_equal false, result.nil?
+    end
+
+    #
+    # Test for delete a section.
+    #
+    def test_delete_section
+      remote_file_name = 'TestDeleteSection.docx'
+
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+
+      request = DeleteSectionRequest.new(remote_file_name, 0, remote_data_folder, nil, nil, nil, nil, nil, nil)
+
+      @words_api.delete_section(request)
     end
   end
 end

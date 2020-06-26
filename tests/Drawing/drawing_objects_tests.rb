@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="Document_tests.rb">
+# <copyright company="Aspose" file="DrawingObjects_tests.rb">
 #   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -26,42 +26,46 @@ module AsposeWordsCloud
   require_relative '../base_test_context'
 
   #
-  # Example of how to get document.
+  # Example of how to get drawing objects.
   #
-  class DocumentTests < BaseTestContext
+  class DrawingObjectsTests < BaseTestContext
     def remote_data_folder
-      remote_test_folder + '/DocumentActions/Document'
+      remote_test_folder + '/DocumentElements/DrawingObjectss'
     end
 
     def local_file
       'Common/test_multi_pages.docx'
     end
 
+    def local_drawing_file
+      'DocumentElements/DrawingObjects/sample_EmbeddedOLE.docx'
+    end
 
     #
-    # Test for getting document.
+    # Test for deleting drawing object.
     #
-    def test_get_document
-      remote_file_name = 'TestGetDocument.docx'
+    def test_delete_drawing_object
+      remote_file_name = 'TestDeleteDrawingObject.docx'
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetDocumentRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
+      request = DeleteDrawingObjectRequest.new(remote_file_name, '', 0, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
-      result = @words_api.get_document(request)
-      assert_equal false, result.nil?
+      @words_api.delete_drawing_object(request)
     end
 
     #
-    # Test for creating word document.
+    # Test for deleting drawing object without node path.
     #
-    def test_create_document
-      remote_file_name = 'TestCreateDocument.doc'
+    def test_delete_drawing_object_without_node_path
+      remote_file_name = 'TestDeleteDrawingObjectWithoutNodePath.docx'
 
-      request = CreateDocumentRequest.new(nil, remote_file_name, remote_data_folder)
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      result = @words_api.create_document(request)
-      assert_equal false, result.nil?
+      request = DeleteDrawingObjectWithoutNodePathRequest.new(remote_file_name, 0, remote_data_folder, nil, nil, nil, nil, nil, nil)
+
+      @words_api.delete_drawing_object_without_node_path(request)
     end
+
   end
 end
