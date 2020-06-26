@@ -52,7 +52,7 @@ module AsposeWordsCloud
     # Test for document classification.
     #
     def test_classify_document
-      remote_file_name = 'Source.docx'
+      remote_file_name = 'TestClassifyDocument.docx'
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
@@ -66,7 +66,7 @@ module AsposeWordsCloud
     # Test for document classification with taxonomy documents.
     #
     def test_classify_taxonomy_documents
-      remote_file_name = 'Source.docx'
+      remote_file_name = 'TestClassifyTaxonomyDocuments.docx'
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
