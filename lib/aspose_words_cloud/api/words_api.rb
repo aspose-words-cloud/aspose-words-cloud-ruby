@@ -24,6 +24,7 @@
 # ------------------------------------------------------------------------------------
 
 require 'uri'
+require 'json'
 
 module AsposeWordsCloud
   #
@@ -72,36 +73,11 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
         # header parameters
         header_params = {}
@@ -167,48 +143,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -277,48 +218,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -386,36 +292,11 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
         # header parameters
         header_params = {}
@@ -427,9 +308,7 @@ module AsposeWordsCloud
         # form parameters
         form_params = {}
         form_params[downcase_first_letter('Data')] = request.data
-
-        form_params[downcase_first_letter('ReportEngineSettings')] = request.report_engine_settings
-
+        form_params[downcase_first_letter('ReportEngineSettings')] = request.report_engine_settings.to_body.to_json
 
         # http body (model)
         post_body = nil
@@ -486,12 +365,7 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('DocumentFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DocumentFileName') + '}', request.document_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DocumentFileName')] = request.document_file_name unless request.document_file_name.nil?
-        end
-
+        query_params[downcase_first_letter('DocumentFileName')] = request.document_file_name unless request.document_file_name.nil?
 
         # header parameters
         header_params = {}
@@ -503,11 +377,8 @@ module AsposeWordsCloud
         # form parameters
         form_params = {}
         form_params[downcase_first_letter('Template')] = request.template
-
         form_params[downcase_first_letter('Data')] = request.data
-
-        form_params[downcase_first_letter('ReportEngineSettings')] = request.report_engine_settings
-
+        form_params[downcase_first_letter('ReportEngineSettings')] = request.report_engine_settings.to_body.to_json
 
         # http body (model)
         post_body = nil
@@ -560,12 +431,7 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('BestClassesCount')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('BestClassesCount') + '}', request.best_classes_count.to_s)
-        else
-            query_params[downcase_first_letter('BestClassesCount')] = request.best_classes_count unless request.best_classes_count.nil?
-        end
-
+        query_params[downcase_first_letter('BestClassesCount')] = request.best_classes_count unless request.best_classes_count.nil?
 
         # header parameters
         header_params = {}
@@ -629,42 +495,12 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('BestClassesCount')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('BestClassesCount') + '}', request.best_classes_count.to_s)
-        else
-            query_params[downcase_first_letter('BestClassesCount')] = request.best_classes_count unless request.best_classes_count.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Taxonomy')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Taxonomy') + '}', request.taxonomy.to_s)
-        else
-            query_params[downcase_first_letter('Taxonomy')] = request.taxonomy unless request.taxonomy.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('BestClassesCount')] = request.best_classes_count unless request.best_classes_count.nil?
+        query_params[downcase_first_letter('Taxonomy')] = request.taxonomy unless request.taxonomy.nil?
 
         # header parameters
         header_params = {}
@@ -730,36 +566,11 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
         # header parameters
         header_params = {}
@@ -825,31 +636,10 @@ module AsposeWordsCloud
         # query parameters
         query_params = {}
         query_params[downcase_first_letter('Format')] = request.format
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('OutPath')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('OutPath') + '}', request.out_path.to_s)
-        else
-            query_params[downcase_first_letter('OutPath')] = request.out_path unless request.out_path.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('FileNameFieldValue')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('FileNameFieldValue') + '}', request.file_name_field_value.to_s)
-        else
-            query_params[downcase_first_letter('FileNameFieldValue')] = request.file_name_field_value unless request.file_name_field_value.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('FontsLocation')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('FontsLocation') + '}', request.fonts_location.to_s)
-        else
-            query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
-        end
-
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('OutPath')] = request.out_path unless request.out_path.nil?
+        query_params[downcase_first_letter('FileNameFieldValue')] = request.file_name_field_value unless request.file_name_field_value.nil?
+        query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
 
         # header parameters
         header_params = {}
@@ -861,7 +651,6 @@ module AsposeWordsCloud
         # form parameters
         form_params = {}
         form_params[downcase_first_letter('Document')] = request.document
-
 
         # http body (model)
         post_body = nil
@@ -918,25 +707,9 @@ module AsposeWordsCloud
         # query parameters
         query_params = {}
         query_params[downcase_first_letter('DestPath')] = request.dest_path
-
-        if local_var_path.include? downcase_first_letter('SrcStorageName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('SrcStorageName') + '}', request.src_storage_name.to_s)
-        else
-            query_params[downcase_first_letter('SrcStorageName')] = request.src_storage_name unless request.src_storage_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestStorageName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestStorageName') + '}', request.dest_storage_name.to_s)
-        else
-            query_params[downcase_first_letter('DestStorageName')] = request.dest_storage_name unless request.dest_storage_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('VersionId')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('VersionId') + '}', request.version_id.to_s)
-        else
-            query_params[downcase_first_letter('VersionId')] = request.version_id unless request.version_id.nil?
-        end
-
+        query_params[downcase_first_letter('SrcStorageName')] = request.src_storage_name unless request.src_storage_name.nil?
+        query_params[downcase_first_letter('DestStorageName')] = request.dest_storage_name unless request.dest_storage_name.nil?
+        query_params[downcase_first_letter('VersionId')] = request.version_id unless request.version_id.nil?
 
         # header parameters
         header_params = {}
@@ -1002,19 +775,8 @@ module AsposeWordsCloud
         # query parameters
         query_params = {}
         query_params[downcase_first_letter('DestPath')] = request.dest_path
-
-        if local_var_path.include? downcase_first_letter('SrcStorageName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('SrcStorageName') + '}', request.src_storage_name.to_s)
-        else
-            query_params[downcase_first_letter('SrcStorageName')] = request.src_storage_name unless request.src_storage_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestStorageName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestStorageName') + '}', request.dest_storage_name.to_s)
-        else
-            query_params[downcase_first_letter('DestStorageName')] = request.dest_storage_name unless request.dest_storage_name.nil?
-        end
-
+        query_params[downcase_first_letter('SrcStorageName')] = request.src_storage_name unless request.src_storage_name.nil?
+        query_params[downcase_first_letter('DestStorageName')] = request.dest_storage_name unless request.dest_storage_name.nil?
 
         # header parameters
         header_params = {}
@@ -1079,48 +841,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -1184,24 +911,9 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('FileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('FileName') + '}', request.file_name.to_s)
-        else
-            query_params[downcase_first_letter('FileName')] = request.file_name unless request.file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('FileName')] = request.file_name unless request.file_name.nil?
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
 
         # header parameters
         header_params = {}
@@ -1265,12 +977,7 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('StorageName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('StorageName') + '}', request.storage_name.to_s)
-        else
-            query_params[downcase_first_letter('StorageName')] = request.storage_name unless request.storage_name.nil?
-        end
-
+        query_params[downcase_first_letter('StorageName')] = request.storage_name unless request.storage_name.nil?
 
         # header parameters
         header_params = {}
@@ -1338,48 +1045,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -1449,36 +1121,11 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
         # header parameters
         header_params = {}
@@ -1545,36 +1192,11 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
         # header parameters
         header_params = {}
@@ -1644,48 +1266,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -1752,48 +1339,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -1860,48 +1412,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -1967,48 +1484,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -2077,48 +1559,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -2184,48 +1631,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -2294,48 +1706,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -2401,48 +1778,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -2505,48 +1847,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -2612,48 +1919,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -2716,18 +1988,8 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('StorageName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('StorageName') + '}', request.storage_name.to_s)
-        else
-            query_params[downcase_first_letter('StorageName')] = request.storage_name unless request.storage_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('VersionId')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('VersionId') + '}', request.version_id.to_s)
-        else
-            query_params[downcase_first_letter('VersionId')] = request.version_id unless request.version_id.nil?
-        end
-
+        query_params[downcase_first_letter('StorageName')] = request.storage_name unless request.storage_name.nil?
+        query_params[downcase_first_letter('VersionId')] = request.version_id unless request.version_id.nil?
 
         # header parameters
         header_params = {}
@@ -2790,18 +2052,8 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('StorageName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('StorageName') + '}', request.storage_name.to_s)
-        else
-            query_params[downcase_first_letter('StorageName')] = request.storage_name unless request.storage_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Recursive')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Recursive') + '}', request.recursive.to_s)
-        else
-            query_params[downcase_first_letter('Recursive')] = request.recursive unless request.recursive.nil?
-        end
-
+        query_params[downcase_first_letter('StorageName')] = request.storage_name unless request.storage_name.nil?
+        query_params[downcase_first_letter('Recursive')] = request.recursive unless request.recursive.nil?
 
         # header parameters
         header_params = {}
@@ -2870,48 +2122,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -2977,48 +2194,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -3087,48 +2269,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -3194,48 +2341,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -3304,48 +2416,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -3411,54 +2488,14 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('HeadersFootersTypes')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('HeadersFootersTypes') + '}', request.headers_footers_types.to_s)
-        else
-            query_params[downcase_first_letter('HeadersFootersTypes')] = request.headers_footers_types unless request.headers_footers_types.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+        query_params[downcase_first_letter('HeadersFootersTypes')] = request.headers_footers_types unless request.headers_footers_types.nil?
 
         # header parameters
         header_params = {}
@@ -3521,48 +2558,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -3631,48 +2633,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -3738,48 +2705,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -3848,48 +2780,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -3958,48 +2855,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -4066,48 +2928,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -4180,37 +3007,11 @@ module AsposeWordsCloud
         # query parameters
         query_params = {}
         query_params[downcase_first_letter('Position')] = request.position
-
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
         # header parameters
         header_params = {}
@@ -4280,37 +3081,11 @@ module AsposeWordsCloud
         # query parameters
         query_params = {}
         query_params[downcase_first_letter('Position')] = request.position
-
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
         # header parameters
         header_params = {}
@@ -4377,48 +3152,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -4487,48 +3227,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -4594,48 +3299,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -4704,48 +3374,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -4814,48 +3449,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -4924,48 +3524,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -5031,48 +3596,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -5135,48 +3665,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -5240,18 +3735,8 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('StorageName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('StorageName') + '}', request.storage_name.to_s)
-        else
-            query_params[downcase_first_letter('StorageName')] = request.storage_name unless request.storage_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('VersionId')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('VersionId') + '}', request.version_id.to_s)
-        else
-            query_params[downcase_first_letter('VersionId')] = request.version_id unless request.version_id.nil?
-        end
-
+        query_params[downcase_first_letter('StorageName')] = request.storage_name unless request.storage_name.nil?
+        query_params[downcase_first_letter('VersionId')] = request.version_id unless request.version_id.nil?
 
         # header parameters
         header_params = {}
@@ -5315,60 +3800,15 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('WithRegions')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('WithRegions') + '}', request.with_regions.to_s)
-        else
-            query_params[downcase_first_letter('WithRegions')] = request.with_regions unless request.with_regions.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('MailMergeDataFile')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('MailMergeDataFile') + '}', request.mail_merge_data_file.to_s)
-        else
-            query_params[downcase_first_letter('MailMergeDataFile')] = request.mail_merge_data_file unless request.mail_merge_data_file.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Cleanup')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Cleanup') + '}', request.cleanup.to_s)
-        else
-            query_params[downcase_first_letter('Cleanup')] = request.cleanup unless request.cleanup.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('UseWholeParagraphAsRegion')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('UseWholeParagraphAsRegion') + '}', request.use_whole_paragraph_as_region.to_s)
-        else
-            query_params[downcase_first_letter('UseWholeParagraphAsRegion')] = request.use_whole_paragraph_as_region unless request.use_whole_paragraph_as_region.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('WithRegions')] = request.with_regions unless request.with_regions.nil?
+        query_params[downcase_first_letter('MailMergeDataFile')] = request.mail_merge_data_file unless request.mail_merge_data_file.nil?
+        query_params[downcase_first_letter('Cleanup')] = request.cleanup unless request.cleanup.nil?
+        query_params[downcase_first_letter('UseWholeParagraphAsRegion')] = request.use_whole_paragraph_as_region unless request.use_whole_paragraph_as_region.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
         # header parameters
         header_params = {}
@@ -5379,8 +3819,7 @@ module AsposeWordsCloud
 
         # form parameters
         form_params = {}
-        form_params[downcase_first_letter('Data')] = request.data unless request.data.nil?
-
+        form_params[downcase_first_letter('Data')] = request.data
 
         # http body (model)
         post_body = nil
@@ -5435,24 +3874,9 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('WithRegions')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('WithRegions') + '}', request.with_regions.to_s)
-        else
-            query_params[downcase_first_letter('WithRegions')] = request.with_regions unless request.with_regions.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Cleanup')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Cleanup') + '}', request.cleanup.to_s)
-        else
-            query_params[downcase_first_letter('Cleanup')] = request.cleanup unless request.cleanup.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DocumentFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DocumentFileName') + '}', request.document_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DocumentFileName')] = request.document_file_name unless request.document_file_name.nil?
-        end
-
+        query_params[downcase_first_letter('WithRegions')] = request.with_regions unless request.with_regions.nil?
+        query_params[downcase_first_letter('Cleanup')] = request.cleanup unless request.cleanup.nil?
+        query_params[downcase_first_letter('DocumentFileName')] = request.document_file_name unless request.document_file_name.nil?
 
         # header parameters
         header_params = {}
@@ -5464,9 +3888,7 @@ module AsposeWordsCloud
         # form parameters
         form_params = {}
         form_params[downcase_first_letter('Template')] = request.template
-
         form_params[downcase_first_letter('Data')] = request.data
-
 
         # http body (model)
         post_body = nil
@@ -5516,12 +3938,7 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('FontsLocation')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('FontsLocation') + '}', request.fonts_location.to_s)
-        else
-            query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
-        end
-
+        query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
 
         # header parameters
         header_params = {}
@@ -5588,30 +4005,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -5675,30 +4072,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -5768,30 +4145,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -5858,30 +4215,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -5948,30 +4285,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -6035,30 +4352,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -6122,30 +4419,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -6215,30 +4492,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -6305,30 +4562,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -6398,30 +4635,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -6488,30 +4705,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -6581,30 +4778,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -6671,30 +4848,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -6761,30 +4918,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -6848,30 +4985,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -6935,36 +5052,11 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('UseNonMergeFields')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('UseNonMergeFields') + '}', request.use_non_merge_fields.to_s)
-        else
-            query_params[downcase_first_letter('UseNonMergeFields')] = request.use_non_merge_fields unless request.use_non_merge_fields.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('UseNonMergeFields')] = request.use_non_merge_fields unless request.use_non_merge_fields.nil?
 
         # header parameters
         header_params = {}
@@ -7027,12 +5119,7 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('UseNonMergeFields')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('UseNonMergeFields') + '}', request.use_non_merge_fields.to_s)
-        else
-            query_params[downcase_first_letter('UseNonMergeFields')] = request.use_non_merge_fields unless request.use_non_merge_fields.nil?
-        end
-
+        query_params[downcase_first_letter('UseNonMergeFields')] = request.use_non_merge_fields unless request.use_non_merge_fields.nil?
 
         # header parameters
         header_params = {}
@@ -7044,7 +5131,6 @@ module AsposeWordsCloud
         # form parameters
         form_params = {}
         form_params[downcase_first_letter('Template')] = request.template
-
 
         # http body (model)
         post_body = nil
@@ -7101,30 +5187,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -7188,30 +5254,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -7275,30 +5321,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -7365,30 +5391,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -7452,30 +5458,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -7539,48 +5525,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('IncludeComments')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('IncludeComments') + '}', request.include_comments.to_s)
-        else
-            query_params[downcase_first_letter('IncludeComments')] = request.include_comments unless request.include_comments.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('IncludeFootnotes')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('IncludeFootnotes') + '}', request.include_footnotes.to_s)
-        else
-            query_params[downcase_first_letter('IncludeFootnotes')] = request.include_footnotes unless request.include_footnotes.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('IncludeTextInShapes')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('IncludeTextInShapes') + '}', request.include_text_in_shapes.to_s)
-        else
-            query_params[downcase_first_letter('IncludeTextInShapes')] = request.include_text_in_shapes unless request.include_text_in_shapes.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('IncludeComments')] = request.include_comments unless request.include_comments.nil?
+        query_params[downcase_first_letter('IncludeFootnotes')] = request.include_footnotes unless request.include_footnotes.nil?
+        query_params[downcase_first_letter('IncludeTextInShapes')] = request.include_text_in_shapes unless request.include_text_in_shapes.nil?
 
         # header parameters
         header_params = {}
@@ -7647,43 +5598,12 @@ module AsposeWordsCloud
         # query parameters
         query_params = {}
         query_params[downcase_first_letter('Format')] = request.format
-
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('OutPath')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('OutPath') + '}', request.out_path.to_s)
-        else
-            query_params[downcase_first_letter('OutPath')] = request.out_path unless request.out_path.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('FontsLocation')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('FontsLocation') + '}', request.fonts_location.to_s)
-        else
-            query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('OutPath')] = request.out_path unless request.out_path.nil?
+        query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
 
         # header parameters
         header_params = {}
@@ -7753,30 +5673,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -7843,30 +5743,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -7930,30 +5810,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -8020,30 +5880,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -8107,12 +5947,7 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('StorageName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('StorageName') + '}', request.storage_name.to_s)
-        else
-            query_params[downcase_first_letter('StorageName')] = request.storage_name unless request.storage_name.nil?
-        end
-
+        query_params[downcase_first_letter('StorageName')] = request.storage_name unless request.storage_name.nil?
 
         # header parameters
         header_params = {}
@@ -8182,30 +6017,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -8272,30 +6087,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -8359,30 +6154,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -8449,30 +6224,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -8542,30 +6297,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -8632,30 +6367,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -8719,30 +6434,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -8809,30 +6504,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -8899,36 +6574,11 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('FilterByType')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('FilterByType') + '}', request.filter_by_type.to_s)
-        else
-            query_params[downcase_first_letter('FilterByType')] = request.filter_by_type unless request.filter_by_type.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('FilterByType')] = request.filter_by_type unless request.filter_by_type.nil?
 
         # header parameters
         header_params = {}
@@ -8998,36 +6648,11 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('FilterByType')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('FilterByType') + '}', request.filter_by_type.to_s)
-        else
-            query_params[downcase_first_letter('FilterByType')] = request.filter_by_type unless request.filter_by_type.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('FilterByType')] = request.filter_by_type unless request.filter_by_type.nil?
 
         # header parameters
         header_params = {}
@@ -9094,36 +6719,11 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('FilterByType')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('FilterByType') + '}', request.filter_by_type.to_s)
-        else
-            query_params[downcase_first_letter('FilterByType')] = request.filter_by_type unless request.filter_by_type.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('FilterByType')] = request.filter_by_type unless request.filter_by_type.nil?
 
         # header parameters
         header_params = {}
@@ -9190,30 +6790,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -9277,30 +6857,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -9370,30 +6930,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -9460,30 +7000,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -9547,30 +7067,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -9637,30 +7137,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -9730,30 +7210,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -9823,30 +7283,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -9913,30 +7353,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -10006,30 +7426,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -10096,30 +7496,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -10186,30 +7566,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -10273,30 +7633,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -10366,30 +7706,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -10456,30 +7776,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -10546,30 +7846,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -10637,30 +7917,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -10730,30 +7990,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -10823,30 +8063,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -10913,30 +8133,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -11003,30 +8203,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -11093,30 +8273,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -11180,30 +8340,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -11270,30 +8410,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -11360,30 +8480,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -11447,30 +8547,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -11540,30 +8620,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -11633,30 +8693,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -11726,30 +8766,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -11819,30 +8839,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -11909,30 +8909,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -12002,30 +8982,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -12095,30 +9055,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -12185,30 +9125,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -12272,30 +9192,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -12362,30 +9262,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -12451,48 +9331,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -12563,48 +9408,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -12615,10 +9425,8 @@ module AsposeWordsCloud
 
         # form parameters
         form_params = {}
-        form_params[downcase_first_letter('DrawingObject')] = request.drawing_object
-
+        form_params[downcase_first_letter('DrawingObject')] = request.drawing_object.to_body.to_json
         form_params[downcase_first_letter('ImageFile')] = request.image_file
-
 
         # http body (model)
         post_body = nil
@@ -12676,48 +9484,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -12728,10 +9501,8 @@ module AsposeWordsCloud
 
         # form parameters
         form_params = {}
-        form_params[downcase_first_letter('DrawingObject')] = request.drawing_object
-
+        form_params[downcase_first_letter('DrawingObject')] = request.drawing_object.to_body.to_json
         form_params[downcase_first_letter('ImageFile')] = request.image_file
-
 
         # http body (model)
         post_body = nil
@@ -12790,54 +9561,14 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('InsertBeforeNode')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('InsertBeforeNode') + '}', request.insert_before_node.to_s)
-        else
-            query_params[downcase_first_letter('InsertBeforeNode')] = request.insert_before_node unless request.insert_before_node.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+        query_params[downcase_first_letter('InsertBeforeNode')] = request.insert_before_node unless request.insert_before_node.nil?
 
         # header parameters
         header_params = {}
@@ -12903,54 +9634,14 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('InsertBeforeNode')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('InsertBeforeNode') + '}', request.insert_before_node.to_s)
-        else
-            query_params[downcase_first_letter('InsertBeforeNode')] = request.insert_before_node unless request.insert_before_node.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+        query_params[downcase_first_letter('InsertBeforeNode')] = request.insert_before_node unless request.insert_before_node.nil?
 
         # header parameters
         header_params = {}
@@ -13019,48 +9710,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -13126,48 +9782,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -13236,54 +9857,14 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('InsertBeforeNode')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('InsertBeforeNode') + '}', request.insert_before_node.to_s)
-        else
-            query_params[downcase_first_letter('InsertBeforeNode')] = request.insert_before_node unless request.insert_before_node.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+        query_params[downcase_first_letter('InsertBeforeNode')] = request.insert_before_node unless request.insert_before_node.nil?
 
         # header parameters
         header_params = {}
@@ -13349,54 +9930,14 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('InsertBeforeNode')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('InsertBeforeNode') + '}', request.insert_before_node.to_s)
-        else
-            query_params[downcase_first_letter('InsertBeforeNode')] = request.insert_before_node unless request.insert_before_node.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+        query_params[downcase_first_letter('InsertBeforeNode')] = request.insert_before_node unless request.insert_before_node.nil?
 
         # header parameters
         header_params = {}
@@ -13465,48 +10006,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -13572,48 +10078,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -13685,36 +10156,11 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
         # header parameters
         header_params = {}
@@ -13783,36 +10229,11 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
         # header parameters
         header_params = {}
@@ -13878,48 +10299,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -13988,54 +10374,14 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('InsertBeforeNode')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('InsertBeforeNode') + '}', request.insert_before_node.to_s)
-        else
-            query_params[downcase_first_letter('InsertBeforeNode')] = request.insert_before_node unless request.insert_before_node.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+        query_params[downcase_first_letter('InsertBeforeNode')] = request.insert_before_node unless request.insert_before_node.nil?
 
         # header parameters
         header_params = {}
@@ -14101,54 +10447,14 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('InsertBeforeNode')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('InsertBeforeNode') + '}', request.insert_before_node.to_s)
-        else
-            query_params[downcase_first_letter('InsertBeforeNode')] = request.insert_before_node unless request.insert_before_node.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+        query_params[downcase_first_letter('InsertBeforeNode')] = request.insert_before_node unless request.insert_before_node.nil?
 
         # header parameters
         header_params = {}
@@ -14217,54 +10523,14 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('InsertBeforeNode')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('InsertBeforeNode') + '}', request.insert_before_node.to_s)
-        else
-            query_params[downcase_first_letter('InsertBeforeNode')] = request.insert_before_node unless request.insert_before_node.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+        query_params[downcase_first_letter('InsertBeforeNode')] = request.insert_before_node unless request.insert_before_node.nil?
 
         # header parameters
         header_params = {}
@@ -14330,48 +10596,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -14440,48 +10671,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -14550,48 +10746,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -14660,48 +10821,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -14767,48 +10893,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -14872,60 +10963,15 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RotationAngle')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RotationAngle') + '}', request.rotation_angle.to_s)
-        else
-            query_params[downcase_first_letter('RotationAngle')] = request.rotation_angle unless request.rotation_angle.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Image')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Image') + '}', request.image.to_s)
-        else
-            query_params[downcase_first_letter('Image')] = request.image unless request.image.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+        query_params[downcase_first_letter('RotationAngle')] = request.rotation_angle unless request.rotation_angle.nil?
+        query_params[downcase_first_letter('Image')] = request.image unless request.image.nil?
 
         # header parameters
         header_params = {}
@@ -14936,8 +10982,7 @@ module AsposeWordsCloud
 
         # form parameters
         form_params = {}
-        form_params[downcase_first_letter('ImageFile')] = request.image_file unless request.image_file.nil?
-
+        form_params[downcase_first_letter('ImageFile')] = request.image_file
 
         # http body (model)
         post_body = nil
@@ -14993,48 +11038,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -15097,12 +11107,7 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
 
         # header parameters
         header_params = {}
@@ -15169,25 +11174,9 @@ module AsposeWordsCloud
         # query parameters
         query_params = {}
         query_params[downcase_first_letter('DestPath')] = request.dest_path
-
-        if local_var_path.include? downcase_first_letter('SrcStorageName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('SrcStorageName') + '}', request.src_storage_name.to_s)
-        else
-            query_params[downcase_first_letter('SrcStorageName')] = request.src_storage_name unless request.src_storage_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestStorageName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestStorageName') + '}', request.dest_storage_name.to_s)
-        else
-            query_params[downcase_first_letter('DestStorageName')] = request.dest_storage_name unless request.dest_storage_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('VersionId')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('VersionId') + '}', request.version_id.to_s)
-        else
-            query_params[downcase_first_letter('VersionId')] = request.version_id unless request.version_id.nil?
-        end
-
+        query_params[downcase_first_letter('SrcStorageName')] = request.src_storage_name unless request.src_storage_name.nil?
+        query_params[downcase_first_letter('DestStorageName')] = request.dest_storage_name unless request.dest_storage_name.nil?
+        query_params[downcase_first_letter('VersionId')] = request.version_id unless request.version_id.nil?
 
         # header parameters
         header_params = {}
@@ -15253,19 +11242,8 @@ module AsposeWordsCloud
         # query parameters
         query_params = {}
         query_params[downcase_first_letter('DestPath')] = request.dest_path
-
-        if local_var_path.include? downcase_first_letter('SrcStorageName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('SrcStorageName') + '}', request.src_storage_name.to_s)
-        else
-            query_params[downcase_first_letter('SrcStorageName')] = request.src_storage_name unless request.src_storage_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestStorageName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestStorageName') + '}', request.dest_storage_name.to_s)
-        else
-            query_params[downcase_first_letter('DestStorageName')] = request.dest_storage_name unless request.dest_storage_name.nil?
-        end
-
+        query_params[downcase_first_letter('SrcStorageName')] = request.src_storage_name unless request.src_storage_name.nil?
+        query_params[downcase_first_letter('DestStorageName')] = request.dest_storage_name unless request.dest_storage_name.nil?
 
         # header parameters
         header_params = {}
@@ -15330,36 +11308,11 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
         # header parameters
         header_params = {}
@@ -15423,36 +11376,11 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
         # header parameters
         header_params = {}
@@ -15520,36 +11448,11 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
         # header parameters
         header_params = {}
@@ -15622,37 +11525,11 @@ module AsposeWordsCloud
         # query parameters
         query_params = {}
         query_params[downcase_first_letter('Format')] = request.format
-
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('FontsLocation')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('FontsLocation') + '}', request.fonts_location.to_s)
-        else
-            query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
 
         # header parameters
         header_params = {}
@@ -15722,37 +11599,11 @@ module AsposeWordsCloud
         # query parameters
         query_params = {}
         query_params[downcase_first_letter('Format')] = request.format
-
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('FontsLocation')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('FontsLocation') + '}', request.fonts_location.to_s)
-        else
-            query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
 
         # header parameters
         header_params = {}
@@ -15825,37 +11676,11 @@ module AsposeWordsCloud
         # query parameters
         query_params = {}
         query_params[downcase_first_letter('Format')] = request.format
-
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('FontsLocation')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('FontsLocation') + '}', request.fonts_location.to_s)
-        else
-            query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
 
         # header parameters
         header_params = {}
@@ -15925,37 +11750,11 @@ module AsposeWordsCloud
         # query parameters
         query_params = {}
         query_params[downcase_first_letter('Format')] = request.format
-
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('FontsLocation')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('FontsLocation') + '}', request.fonts_location.to_s)
-        else
-            query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
 
         # header parameters
         header_params = {}
@@ -16025,37 +11824,11 @@ module AsposeWordsCloud
         # query parameters
         query_params = {}
         query_params[downcase_first_letter('Format')] = request.format
-
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('FontsLocation')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('FontsLocation') + '}', request.fonts_location.to_s)
-        else
-            query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
 
         # header parameters
         header_params = {}
@@ -16128,37 +11901,11 @@ module AsposeWordsCloud
         # query parameters
         query_params = {}
         query_params[downcase_first_letter('Format')] = request.format
-
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('FontsLocation')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('FontsLocation') + '}', request.fonts_location.to_s)
-        else
-            query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
 
         # header parameters
         header_params = {}
@@ -16228,37 +11975,11 @@ module AsposeWordsCloud
         # query parameters
         query_params = {}
         query_params[downcase_first_letter('Format')] = request.format
-
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('FontsLocation')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('FontsLocation') + '}', request.fonts_location.to_s)
-        else
-            query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
 
         # header parameters
         header_params = {}
@@ -16331,37 +12052,11 @@ module AsposeWordsCloud
         # query parameters
         query_params = {}
         query_params[downcase_first_letter('Format')] = request.format
-
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('FontsLocation')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('FontsLocation') + '}', request.fonts_location.to_s)
-        else
-            query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
 
         # header parameters
         header_params = {}
@@ -16431,37 +12126,11 @@ module AsposeWordsCloud
         # query parameters
         query_params = {}
         query_params[downcase_first_letter('Format')] = request.format
-
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('FontsLocation')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('FontsLocation') + '}', request.fonts_location.to_s)
-        else
-            query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
 
         # header parameters
         header_params = {}
@@ -16527,48 +12196,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -16638,36 +12272,11 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
         # header parameters
         header_params = {}
@@ -16791,36 +12400,11 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('FontsLocation')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('FontsLocation') + '}', request.fonts_location.to_s)
-        else
-            query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
 
         # header parameters
         header_params = {}
@@ -16890,30 +12474,10 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -16979,138 +12543,28 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('UseAntiAliasing')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('UseAntiAliasing') + '}', request.use_anti_aliasing.to_s)
-        else
-            query_params[downcase_first_letter('UseAntiAliasing')] = request.use_anti_aliasing unless request.use_anti_aliasing.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('UseHighQualityRendering')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('UseHighQualityRendering') + '}', request.use_high_quality_rendering.to_s)
-        else
-            query_params[downcase_first_letter('UseHighQualityRendering')] = request.use_high_quality_rendering unless request.use_high_quality_rendering.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('ImageBrightness')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('ImageBrightness') + '}', request.image_brightness.to_s)
-        else
-            query_params[downcase_first_letter('ImageBrightness')] = request.image_brightness unless request.image_brightness.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('ImageColorMode')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('ImageColorMode') + '}', request.image_color_mode.to_s)
-        else
-            query_params[downcase_first_letter('ImageColorMode')] = request.image_color_mode unless request.image_color_mode.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('ImageContrast')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('ImageContrast') + '}', request.image_contrast.to_s)
-        else
-            query_params[downcase_first_letter('ImageContrast')] = request.image_contrast unless request.image_contrast.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('NumeralFormat')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('NumeralFormat') + '}', request.numeral_format.to_s)
-        else
-            query_params[downcase_first_letter('NumeralFormat')] = request.numeral_format unless request.numeral_format.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('PageCount')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('PageCount') + '}', request.page_count.to_s)
-        else
-            query_params[downcase_first_letter('PageCount')] = request.page_count unless request.page_count.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('PageIndex')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('PageIndex') + '}', request.page_index.to_s)
-        else
-            query_params[downcase_first_letter('PageIndex')] = request.page_index unless request.page_index.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('PaperColor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('PaperColor') + '}', request.paper_color.to_s)
-        else
-            query_params[downcase_first_letter('PaperColor')] = request.paper_color unless request.paper_color.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('PixelFormat')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('PixelFormat') + '}', request.pixel_format.to_s)
-        else
-            query_params[downcase_first_letter('PixelFormat')] = request.pixel_format unless request.pixel_format.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Resolution')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Resolution') + '}', request.resolution.to_s)
-        else
-            query_params[downcase_first_letter('Resolution')] = request.resolution unless request.resolution.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Scale')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Scale') + '}', request.scale.to_s)
-        else
-            query_params[downcase_first_letter('Scale')] = request.scale unless request.scale.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('TiffCompression')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('TiffCompression') + '}', request.tiff_compression.to_s)
-        else
-            query_params[downcase_first_letter('TiffCompression')] = request.tiff_compression unless request.tiff_compression.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DmlRenderingMode')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DmlRenderingMode') + '}', request.dml_rendering_mode.to_s)
-        else
-            query_params[downcase_first_letter('DmlRenderingMode')] = request.dml_rendering_mode unless request.dml_rendering_mode.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DmlEffectsRenderingMode')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DmlEffectsRenderingMode') + '}', request.dml_effects_rendering_mode.to_s)
-        else
-            query_params[downcase_first_letter('DmlEffectsRenderingMode')] = request.dml_effects_rendering_mode unless request.dml_effects_rendering_mode.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('TiffBinarizationMethod')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('TiffBinarizationMethod') + '}', request.tiff_binarization_method.to_s)
-        else
-            query_params[downcase_first_letter('TiffBinarizationMethod')] = request.tiff_binarization_method unless request.tiff_binarization_method.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('ZipOutput')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('ZipOutput') + '}', request.zip_output.to_s)
-        else
-            query_params[downcase_first_letter('ZipOutput')] = request.zip_output unless request.zip_output.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('FontsLocation')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('FontsLocation') + '}', request.fonts_location.to_s)
-        else
-            query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('UseAntiAliasing')] = request.use_anti_aliasing unless request.use_anti_aliasing.nil?
+        query_params[downcase_first_letter('UseHighQualityRendering')] = request.use_high_quality_rendering unless request.use_high_quality_rendering.nil?
+        query_params[downcase_first_letter('ImageBrightness')] = request.image_brightness unless request.image_brightness.nil?
+        query_params[downcase_first_letter('ImageColorMode')] = request.image_color_mode unless request.image_color_mode.nil?
+        query_params[downcase_first_letter('ImageContrast')] = request.image_contrast unless request.image_contrast.nil?
+        query_params[downcase_first_letter('NumeralFormat')] = request.numeral_format unless request.numeral_format.nil?
+        query_params[downcase_first_letter('PageCount')] = request.page_count unless request.page_count.nil?
+        query_params[downcase_first_letter('PageIndex')] = request.page_index unless request.page_index.nil?
+        query_params[downcase_first_letter('PaperColor')] = request.paper_color unless request.paper_color.nil?
+        query_params[downcase_first_letter('PixelFormat')] = request.pixel_format unless request.pixel_format.nil?
+        query_params[downcase_first_letter('Resolution')] = request.resolution unless request.resolution.nil?
+        query_params[downcase_first_letter('Scale')] = request.scale unless request.scale.nil?
+        query_params[downcase_first_letter('TiffCompression')] = request.tiff_compression unless request.tiff_compression.nil?
+        query_params[downcase_first_letter('DmlRenderingMode')] = request.dml_rendering_mode unless request.dml_rendering_mode.nil?
+        query_params[downcase_first_letter('DmlEffectsRenderingMode')] = request.dml_effects_rendering_mode unless request.dml_effects_rendering_mode.nil?
+        query_params[downcase_first_letter('TiffBinarizationMethod')] = request.tiff_binarization_method unless request.tiff_binarization_method.nil?
+        query_params[downcase_first_letter('ZipOutput')] = request.zip_output unless request.zip_output.nil?
+        query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
 
         # header parameters
         header_params = {}
@@ -17177,31 +12631,10 @@ module AsposeWordsCloud
         # query parameters
         query_params = {}
         query_params[downcase_first_letter('Pattern')] = request.pattern
-
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
         # header parameters
         header_params = {}
@@ -17268,61 +12701,15 @@ module AsposeWordsCloud
         # query parameters
         query_params = {}
         query_params[downcase_first_letter('Format')] = request.format
-
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('From')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('From') + '}', request.from.to_s)
-        else
-            query_params[downcase_first_letter('From')] = request.from unless request.from.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('To')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('To') + '}', request.to.to_s)
-        else
-            query_params[downcase_first_letter('To')] = request.to unless request.to.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('ZipOutput')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('ZipOutput') + '}', request.zip_output.to_s)
-        else
-            query_params[downcase_first_letter('ZipOutput')] = request.zip_output unless request.zip_output.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('FontsLocation')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('FontsLocation') + '}', request.fonts_location.to_s)
-        else
-            query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('From')] = request.from unless request.from.nil?
+        query_params[downcase_first_letter('To')] = request.to unless request.to.nil?
+        query_params[downcase_first_letter('ZipOutput')] = request.zip_output unless request.zip_output.nil?
+        query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
 
         # header parameters
         header_params = {}
@@ -17388,36 +12775,11 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
         # header parameters
         header_params = {}
@@ -17486,48 +12848,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -17599,48 +12926,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -17709,48 +13001,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -17824,48 +13081,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -17876,10 +13098,8 @@ module AsposeWordsCloud
 
         # form parameters
         form_params = {}
-        form_params[downcase_first_letter('DrawingObject')] = request.drawing_object
-
+        form_params[downcase_first_letter('DrawingObject')] = request.drawing_object.to_body.to_json
         form_params[downcase_first_letter('ImageFile')] = request.image_file
-
 
         # http body (model)
         post_body = nil
@@ -17940,48 +13160,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -17992,10 +13177,8 @@ module AsposeWordsCloud
 
         # form parameters
         form_params = {}
-        form_params[downcase_first_letter('DrawingObject')] = request.drawing_object
-
+        form_params[downcase_first_letter('DrawingObject')] = request.drawing_object.to_body.to_json
         form_params[downcase_first_letter('ImageFile')] = request.image_file
-
 
         # http body (model)
         post_body = nil
@@ -18057,48 +13240,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -18162,36 +13310,11 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
         # header parameters
         header_params = {}
@@ -18263,48 +13386,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -18373,48 +13461,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -18486,48 +13539,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -18596,48 +13614,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -18706,48 +13689,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -18819,48 +13767,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -18932,48 +13845,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -19045,48 +13923,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -19155,48 +13998,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -19268,48 +14076,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -19381,48 +14154,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -19491,48 +14229,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -19601,48 +14304,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -19714,48 +14382,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -19827,48 +14460,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -19937,48 +14535,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -20050,48 +14613,13 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('Folder')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Folder') + '}', request.folder.to_s)
-        else
-            query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Storage')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Storage') + '}', request.storage.to_s)
-        else
-            query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('LoadEncoding')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('LoadEncoding') + '}', request.load_encoding.to_s)
-        else
-            query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('Password')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('Password') + '}', request.password.to_s)
-        else
-            query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('DestFileName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('DestFileName') + '}', request.dest_file_name.to_s)
-        else
-            query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionAuthor')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionAuthor') + '}', request.revision_author.to_s)
-        else
-            query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
-        end
-
-        if local_var_path.include? downcase_first_letter('RevisionDateTime')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('RevisionDateTime') + '}', request.revision_date_time.to_s)
-        else
-            query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
-        end
-
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
         # header parameters
         header_params = {}
@@ -20157,12 +14685,7 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
-        if local_var_path.include? downcase_first_letter('StorageName')
-            local_var_path = local_var_path.sub('{' + downcase_first_letter('StorageName') + '}', request.storage_name.to_s)
-        else
-            query_params[downcase_first_letter('StorageName')] = request.storage_name unless request.storage_name.nil?
-        end
-
+        query_params[downcase_first_letter('StorageName')] = request.storage_name unless request.storage_name.nil?
 
         # header parameters
         header_params = {}
@@ -20174,7 +14697,6 @@ module AsposeWordsCloud
         # form parameters
         form_params = {}
         form_params[downcase_first_letter('FileContent')] = request.file_content
-
 
         # http body (model)
         post_body = nil
