@@ -37,10 +37,6 @@ module AsposeWordsCloud
       'Common/test_multi_pages.docx'
     end
 
-    def field_folder
-      'DocumentElements/Fields'
-    end
-
     def list_folder
       'DocumentElements/ParagraphListFormat'
     end
