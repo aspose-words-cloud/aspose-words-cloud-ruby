@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="Range_tests.rb">
+# <copyright company="Aspose" file="DocumentProperties_tests.rb">
 #   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -26,73 +26,71 @@ module AsposeWordsCloud
   require_relative '../base_test_context'
 
   #
-  # Example of how to work with ranges.
+  # Example of how to get document properties.
   #
-  class RangeTests < BaseTestContext
+  class DocumentPropertiesTests < BaseTestContext
     def remote_data_folder
-      remote_test_folder + '/DocumentElements/Range'
+      remote_test_folder + '/DocumentElements/DocumentProperties'
     end
 
     def local_file
-      'DocumentElements/Range/RangeGet.doc'
+      'Common/test_multi_pages.docx'
     end
 
 
     #
-    # Test for getting the text from range.
+    # Test for getting document properties.
     #
-    def test_get_range_text
-      remote_file_name = 'TestGetRangeText.docx'
+    def test_get_document_properties
+      remote_file_name = 'TestGetDocumentProperties.docx'
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetRangeTextRequest.new(remote_file_name, 'id0.0.0', 'id0.0.1', remote_data_folder, nil, nil, nil)
+      request = GetDocumentPropertiesRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
 
-      result = @words_api.get_range_text(request)
+      result = @words_api.get_document_properties(request)
       assert_equal false, result.nil?
     end
 
     #
-    # Test for removing the text for range.
+    # A test for GetDocumentProperty.
     #
-    def test_remove_range
-      remote_file_name = 'TestRemoveRange.docx'
+    def test_get_document_property
+      remote_file_name = 'TestGetDocumentProperty.docx'
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = RemoveRangeRequest.new(remote_file_name, 'id0.0.0', 'id0.0.1', remote_data_folder, nil, nil, nil, nil)
+      request = GetDocumentPropertyRequest.new(remote_file_name, 'Author', remote_data_folder, nil, nil, nil)
 
-      result = @words_api.remove_range(request)
+      result = @words_api.get_document_property(request)
       assert_equal false, result.nil?
     end
 
     #
-    # Test for saving a range as a new document.
+    # Test for deleting document property.
     #
-    def test_save_as_range
-      remote_file_name = 'TestSaveAsRange.docx'
+    def test_delete_document_property
+      remote_file_name = 'TestDeleteDocumentProperty.docx'
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request_document_parameters = RangeDocument.new({:DocumentName => remote_data_folder + '/NewDoc.docx'})
-      request = SaveAsRangeRequest.new(remote_file_name, 'id0.0.0', request_document_parameters, 'id0.0.1', remote_data_folder, nil, nil, nil)
+      request = DeleteDocumentPropertyRequest.new(remote_file_name, 'testProp', remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
 
-      result = @words_api.save_as_range(request)
-      assert_equal false, result.nil?
+      @words_api.delete_document_property(request)
     end
 
     #
-    # Test for replacing text in range.
+    # Test for updating document property.
     #
-    def test_replace_with_text
-      remote_file_name = 'TestReplaceWithText.docx'
+    def test_update_document_property
+      remote_file_name = 'TestUpdateDocumentProperty.docx'
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request_range_text = ReplaceRange.new({:Text => 'Replaced header'})
-      request = ReplaceWithTextRequest.new(remote_file_name, 'id0.0.0', request_range_text, 'id0.0.1', remote_data_folder, nil, nil, nil, nil)
+      request_property = DocumentPropertyCreateOrUpdate.new({:Value => 'Imran Anwar'})
+      request = CreateOrUpdateDocumentPropertyRequest.new(remote_file_name, 'AsposeAuthor', request_property, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
 
-      result = @words_api.replace_with_text(request)
+      result = @words_api.create_or_update_document_property(request)
       assert_equal false, result.nil?
     end
   end

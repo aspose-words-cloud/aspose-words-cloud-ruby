@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="Range_tests.rb">
+# <copyright company="Aspose" file="DocumentProtection_tests.rb">
 #   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -26,73 +26,75 @@ module AsposeWordsCloud
   require_relative '../base_test_context'
 
   #
-  # Example of how to work with ranges.
+  # Example of how to set document protection.
   #
-  class RangeTests < BaseTestContext
+  class DocumentProtectionTests < BaseTestContext
     def remote_data_folder
-      remote_test_folder + '/DocumentElements/Range'
+      remote_test_folder + '/DocumentElements/DocumentProtection'
     end
 
     def local_file
-      'DocumentElements/Range/RangeGet.doc'
+      'Common/test_multi_pages.docx'
     end
 
 
     #
-    # Test for getting the text from range.
+    # Test for setting document protection.
     #
-    def test_get_range_text
-      remote_file_name = 'TestGetRangeText.docx'
+    def test_protect_document
+      remote_file_name = 'TestProtectDocument.docx'
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetRangeTextRequest.new(remote_file_name, 'id0.0.0', 'id0.0.1', remote_data_folder, nil, nil, nil)
+      request_protection_request = ProtectionRequest.new({:NewPassword => '123'})
+      request = ProtectDocumentRequest.new(remote_file_name, request_protection_request, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name)
 
-      result = @words_api.get_range_text(request)
+      result = @words_api.protect_document(request)
       assert_equal false, result.nil?
     end
 
     #
-    # Test for removing the text for range.
+    # Test for getting document protection.
     #
-    def test_remove_range
-      remote_file_name = 'TestRemoveRange.docx'
+    def test_get_document_protection
+      remote_file_name = 'TestGetDocumentProtection.docx'
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = RemoveRangeRequest.new(remote_file_name, 'id0.0.0', 'id0.0.1', remote_data_folder, nil, nil, nil, nil)
+      request = GetDocumentProtectionRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
 
-      result = @words_api.remove_range(request)
+      result = @words_api.get_document_protection(request)
       assert_equal false, result.nil?
     end
 
     #
-    # Test for saving a range as a new document.
+    # Test for changing document protection.
     #
-    def test_save_as_range
-      remote_file_name = 'TestSaveAsRange.docx'
+    def test_change_document_protection
+      remote_file_name = 'TestChangeDocumentProtection.docx'
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request_document_parameters = RangeDocument.new({:DocumentName => remote_data_folder + '/NewDoc.docx'})
-      request = SaveAsRangeRequest.new(remote_file_name, 'id0.0.0', request_document_parameters, 'id0.0.1', remote_data_folder, nil, nil, nil)
+      request_protection_request = ProtectionRequest.new({:NewPassword => '321'})
+      request = ProtectDocumentRequest.new(remote_file_name, request_protection_request, remote_data_folder, nil, nil, nil, nil)
 
-      result = @words_api.save_as_range(request)
+      result = @words_api.protect_document(request)
       assert_equal false, result.nil?
     end
 
     #
-    # Test for replacing text in range.
+    # Test for deleting unprotect document.
     #
-    def test_replace_with_text
-      remote_file_name = 'TestReplaceWithText.docx'
+    def test_delete_unprotect_document
+      local_file_path = 'DocumentActions/DocumentProtection/SampleProtectedBlankWordDocument.docx'
+      remote_file_name = 'TestDeleteUnprotectDocument.docx'
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file_path), remote_data_folder + '/' + remote_file_name
 
-      request_range_text = ReplaceRange.new({:Text => 'Replaced header'})
-      request = ReplaceWithTextRequest.new(remote_file_name, 'id0.0.0', request_range_text, 'id0.0.1', remote_data_folder, nil, nil, nil, nil)
+      request_protection_request = ProtectionRequest.new({:Password => 'aspose'})
+      request = UnprotectDocumentRequest.new(remote_file_name, request_protection_request, remote_data_folder, nil, nil, nil, nil)
 
-      result = @words_api.replace_with_text(request)
+      result = @words_api.unprotect_document(request)
       assert_equal false, result.nil?
     end
   end

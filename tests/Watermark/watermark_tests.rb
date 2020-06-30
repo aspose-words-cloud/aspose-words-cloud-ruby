@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="Range_tests.rb">
+# <copyright company="Aspose" file="Watermark_tests.rb">
 #   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -26,73 +26,60 @@ module AsposeWordsCloud
   require_relative '../base_test_context'
 
   #
-  # Example of how to work with ranges.
+  # Example of how to work with watermarks.
   #
-  class RangeTests < BaseTestContext
+  class WatermarkTests < BaseTestContext
     def remote_data_folder
-      remote_test_folder + '/DocumentElements/Range'
+      remote_test_folder + '/DocumentActions/Watermark'
     end
 
     def local_file
-      'DocumentElements/Range/RangeGet.doc'
+      'Common/test_multi_pages.docx'
     end
 
 
     #
-    # Test for getting the text from range.
+    # Test for adding watermark image.
     #
-    def test_get_range_text
-      remote_file_name = 'TestGetRangeText.docx'
+    def test_insert_watermark_image
+      remote_file_name = 'TestInsertWatermarkImage.docx'
+      remote_image_path = remote_data_folder + '/TestInsertWatermarkImage.png'
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, 'Common/aspose-cloud.png'), remote_image_path
 
-      request = GetRangeTextRequest.new(remote_file_name, 'id0.0.0', 'id0.0.1', remote_data_folder, nil, nil, nil)
+      request = InsertWatermarkImageRequest.new(remote_file_name, nil, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil, nil, remote_image_path)
 
-      result = @words_api.get_range_text(request)
+      result = @words_api.insert_watermark_image(request)
       assert_equal false, result.nil?
     end
 
     #
-    # Test for removing the text for range.
+    # Test for adding watermark text.
     #
-    def test_remove_range
-      remote_file_name = 'TestRemoveRange.docx'
+    def test_insert_watermark_text
+      remote_file_name = 'TestInsertWatermarkText.docx'
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = RemoveRangeRequest.new(remote_file_name, 'id0.0.0', 'id0.0.1', remote_data_folder, nil, nil, nil, nil)
+      request_watermark_text = WatermarkText.new({:Text => 'This is the text', :RotationAngle => 90})
+      request = InsertWatermarkTextRequest.new(remote_file_name, request_watermark_text, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
 
-      result = @words_api.remove_range(request)
+      result = @words_api.insert_watermark_text(request)
       assert_equal false, result.nil?
     end
 
     #
-    # Test for saving a range as a new document.
+    # Test for deleting watermark.
     #
-    def test_save_as_range
-      remote_file_name = 'TestSaveAsRange.docx'
+    def test_delete_watermark
+      remote_file_name = 'TestDeleteWatermark.docx'
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request_document_parameters = RangeDocument.new({:DocumentName => remote_data_folder + '/NewDoc.docx'})
-      request = SaveAsRangeRequest.new(remote_file_name, 'id0.0.0', request_document_parameters, 'id0.0.1', remote_data_folder, nil, nil, nil)
+      request = DeleteWatermarkRequest.new(remote_file_name, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
 
-      result = @words_api.save_as_range(request)
-      assert_equal false, result.nil?
-    end
-
-    #
-    # Test for replacing text in range.
-    #
-    def test_replace_with_text
-      remote_file_name = 'TestReplaceWithText.docx'
-
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
-
-      request_range_text = ReplaceRange.new({:Text => 'Replaced header'})
-      request = ReplaceWithTextRequest.new(remote_file_name, 'id0.0.0', request_range_text, 'id0.0.1', remote_data_folder, nil, nil, nil, nil)
-
-      result = @words_api.replace_with_text(request)
+      result = @words_api.delete_watermark(request)
       assert_equal false, result.nil?
     end
   end
