@@ -119,7 +119,7 @@ module AsposeWordsCloud
         return URI.join(baseUrl, path).to_s
       end
 
-      return  URI.join(baseUrl, "/v4.0/", path).to_s
+      return URI.join(baseUrl, "/v4.0/", URI.encode(path)).to_s
     end
 
     # Gets API key (with prefix if set).
