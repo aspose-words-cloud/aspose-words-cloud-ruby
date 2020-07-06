@@ -1,10 +1,9 @@
-#
-# --------------------------------------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="range_tests.rb">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# ------------------------------------------------------------------------------------
+# <copyright company="Aspose" file="Range_tests.rb">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
-#   Permission is hereby granted, free of charge, to any person obtaining a copy
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
 #  in the Software without restriction, including without limitation the rights
 #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
@@ -22,89 +21,79 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #  SOFTWARE.
 # </summary>
-# --------------------------------------------------------------------------------------------------------------------
-#
+# ------------------------------------------------------------------------------------
 module AsposeWordsCloud
-    require_relative '../base_test_context'
-    class RangeTests < BaseTestContext
-        def test_folder
-            'TestData/DocumentElements/Range'
-        end
-  
-        #
-        # Test for getting range text from document
-        #
-        def test_get_range_text
-            range_start = 'id0.0.0'
-            range_end = 'id0.0.1'
-            expected_text = 'This is HEADER '
+  require_relative '../base_test_context'
 
-            local_name = 'RangeGet.doc'
-            remote_name = 'TestGetRangeText.doc'
-
-            upload_file File.join(test_folder, local_name), File.join(remote_test_folder + test_folder, remote_name)
-
-            request = GetRangeTextRequest.new remote_name, range_start, range_end, remote_test_folder + test_folder
-            result = @words_api.get_range_text request
-            assert_equal expected_text, result.text
-        end
-
-        #
-        # Test for removing range text from document
-        #
-        def test_remove_range
-            range_start = 'id0.0.0'
-            range_end = 'id0.0.1'
-
-            local_name = 'RangeGet.doc'
-            remote_name = 'TestRemoveRange.doc'
-
-            upload_file File.join(test_folder, local_name), File.join(remote_test_folder + test_folder, remote_name)
-
-            request = RemoveRangeRequest.new remote_name, range_start, range_end, remote_test_folder + test_folder
-            result = @words_api.remove_range request
-            assert_equal FALSE, result.nil?
-        end
-
-        #
-        # Test for saving as range
-        #
-        def test_save_as_range
-            range_start = 'id0.0.0'
-            range_end = 'id0.0.1'
-            new_doc_name = File.join remote_test_folder + test_folder, "NewDoc.docx"
-            range_doc = RangeDocument.new :DocumentName => new_doc_name
-            debug range_doc.document_name
-            local_name = 'RangeGet.doc'
-            remote_name = 'TestSaveAsRange.doc'
-
-            upload_file File.join(test_folder, local_name), File.join(remote_test_folder + test_folder + test_folder, remote_name)
-
-            request = SaveAsRangeRequest.new remote_name, range_start, range_doc, range_end, remote_test_folder + test_folder + test_folder
-            result = @words_api.save_as_range request
-
-            result = @words_api.download_file DownloadFileRequest.new(new_doc_name)
-            assert_equal FALSE, result.nil?
-        end
-
-        #
-        # Test for replacing range with text
-        #
-        def test_replace_with_text
-            range_start = 'id0.0.0'
-            range_end = 'id0.0.1'
-            new_text = 'Replace header'
-            replacement = ReplaceRange.new :Text => new_text
-
-            local_name = 'RangeGet.doc'
-            remote_name = 'TestRemoveRange.doc'
-
-            upload_file File.join(test_folder, local_name), File.join(remote_test_folder + test_folder + test_folder, remote_name)
-
-            request = ReplaceWithTextRequest.new remote_name, range_start, replacement, range_end, remote_test_folder + test_folder + test_folder
-            result = @words_api.replace_with_text request
-            assert_equal FALSE, result.nil?
-        end
+  #
+  # Example of how to work with ranges.
+  #
+  class RangeTests < BaseTestContext
+    def remote_data_folder
+      remote_test_folder + '/DocumentElements/Range'
     end
+
+    def local_file
+      'DocumentElements/Range/RangeGet.doc'
+    end
+
+
+    #
+    # Test for getting the text from range.
+    #
+    def test_get_range_text
+      remote_file_name = 'TestGetRangeText.docx'
+
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+
+      request = GetRangeTextRequest.new(remote_file_name, 'id0.0.0', 'id0.0.1', remote_data_folder, nil, nil, nil)
+
+      result = @words_api.get_range_text(request)
+      assert_equal false, result.nil?
+    end
+
+    #
+    # Test for removing the text for range.
+    #
+    def test_remove_range
+      remote_file_name = 'TestRemoveRange.docx'
+
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+
+      request = RemoveRangeRequest.new(remote_file_name, 'id0.0.0', 'id0.0.1', remote_data_folder, nil, nil, nil, nil)
+
+      result = @words_api.remove_range(request)
+      assert_equal false, result.nil?
+    end
+
+    #
+    # Test for saving a range as a new document.
+    #
+    def test_save_as_range
+      remote_file_name = 'TestSaveAsRange.docx'
+
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+
+      request_document_parameters = RangeDocument.new({:DocumentName => remote_data_folder + '/NewDoc.docx'})
+      request = SaveAsRangeRequest.new(remote_file_name, 'id0.0.0', request_document_parameters, 'id0.0.1', remote_data_folder, nil, nil, nil)
+
+      result = @words_api.save_as_range(request)
+      assert_equal false, result.nil?
+    end
+
+    #
+    # Test for replacing text in range.
+    #
+    def test_replace_with_text
+      remote_file_name = 'TestReplaceWithText.docx'
+
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+
+      request_range_text = ReplaceRange.new({:Text => 'Replaced header'})
+      request = ReplaceWithTextRequest.new(remote_file_name, 'id0.0.0', request_range_text, 'id0.0.1', remote_data_folder, nil, nil, nil, nil)
+
+      result = @words_api.replace_with_text(request)
+      assert_equal false, result.nil?
+    end
+  end
 end
-  

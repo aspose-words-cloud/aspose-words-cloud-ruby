@@ -1,9 +1,9 @@
-# -----------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="api_client.rb">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
-#   Permission is hereby granted, free of charge, to any person obtaining a copy
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
 #  in the Software without restriction, including without limitation the rights
 #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
@@ -21,7 +21,7 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #  SOFTWARE.
 # </summary>
-# -----------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------
 
 require 'date'
 require 'json'
@@ -69,11 +69,11 @@ module AsposeWordsCloud
       if @config.api_key['app_sid'].nil? || @config.api_key['app_sid'] == ''
         raise "AppSid could not be an empty string."
       end
-      
+
       if @config.api_key['api_key'].nil? || @config.api_key['api_key'] == ''
         raise "AppKey could not be an empty string."
       end
-      
+
       response = build_request(http_method, path, opts)
       download_file response if opts[:return_type] == 'File'
       if @config.debugging
@@ -93,7 +93,7 @@ module AsposeWordsCloud
         end
       end
 
-      
+
       data = deserialize(response, opts[:return_type]) if opts[:return_type]
       [data, response.status, response.headers]
     end

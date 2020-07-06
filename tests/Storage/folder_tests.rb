@@ -1,10 +1,9 @@
-#
-# --------------------------------------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="folder_tests.rb">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# ------------------------------------------------------------------------------------
+# <copyright company="Aspose" file="Folder_tests.rb">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
-#   Permission is hereby granted, free of charge, to any person obtaining a copy
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
 #  in the Software without restriction, including without limitation the rights
 #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
@@ -22,76 +21,79 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #  SOFTWARE.
 # </summary>
-# --------------------------------------------------------------------------------------------------------------------
-#
+# ------------------------------------------------------------------------------------
 module AsposeWordsCloud
-    require_relative '../base_test_context'
-    class FolderTests < BaseTestContext
-      def test_folder
-        'Temp/SdkTests/TestData'
-      end
-  
-      #
-      # Test for uploading file
-      #
-      def test_create_folder
-        folder_uuid = generate_uuid
-        folder_path = "#{test_folder}/TestCreateFolder#{folder_uuid}" 
-  
-        request = CreateFolderRequest.new folder_path
-        result = @words_api.create_folder request
-      end
+  require_relative '../base_test_context'
 
-      def test_delete_folder
-        folder_uuid = generate_uuid
-        folder_name = "TestCreateFolder#{folder_uuid}"
-        folder_path = "#{test_folder}/#{folder_name}" 
-        
-        request = CreateFolderRequest.new folder_path
-        @words_api.create_folder request
+  #
+  # Example of how to work with folders.
+  #
+  class FolderTests < BaseTestContext
+    def remote_data_folder
+      remote_test_folder + '/Storage'
+    end
 
-        request = DeleteFolderRequest.new folder_path
-        @words_api.delete_folder request
-        
-        assert(!exists?(test_folder, folder_name), "Folder has not been deleted")
-      end
+    def local_file
+      'Common/test_multi_pages.docx'
+    end
 
-      def test_get_files_list
-        request = GetFilesListRequest.new test_folder
-        response = @words_api.get_files_list request
-        assert_equal true, response.value.size > 0
-      end
 
-      def test_copy_folder
-        folder_uuid = generate_uuid
-        folder_src_name = "TestCopyFolderSrc#{folder_uuid}"
-        folder_dst_name = "TestCopyFolderDst#{folder_uuid}"
-        folder_path_src = "#{test_folder}/#{folder_src_name}"
-        folder_path_dst = "#{test_folder}/#{folder_dst_name}"
-        @words_api.create_folder CreateFolderRequest.new(folder_path_src)
+    #
+    # Test for create folder.
+    #
+    def test_create_folder
+      request = CreateFolderRequest.new(remote_data_folder + '/TestCreateFolder', nil)
 
-        request = CopyFolderRequest.new folder_path_dst, folder_path_src
-        response = @words_api.copy_folder request
+      @words_api.create_folder(request)
+    end
 
-        assert(exists?(test_folder, folder_dst_name), "Dest file is missing")
-        assert(exists?(test_folder, folder_src_name), "Source file is missing")
-      end
+    #
+    # Test for delete folder.
+    #
+    def test_delete_folder
+      test_delete_folder = remote_data_folder + '/TestDeleteFolder'
 
-      def test_move_folder
-        folder_uuid = generate_uuid
-        folder_src_name = "TestMoveFolderSrc#{folder_uuid}"
-        folder_dst_name = "TestMoveFolderDst#{folder_uuid}"
-        folder_path_src = "#{test_folder}/#{folder_src_name}"
-        folder_path_dst = "#{test_folder}/#{folder_dst_name}"
-        @words_api.create_folder CreateFolderRequest.new(folder_path_src)
+      upload_file File.join(local_test_folder, local_file), test_delete_folder + '/TestDeleteFolder.docx'
 
-        request = MoveFolderRequest.new folder_path_dst, folder_path_src
-        response = @words_api.move_folder request
+      request = DeleteFolderRequest.new(test_delete_folder, nil, nil)
 
-        assert(!exists?(test_folder, folder_src_name), "Source file has not been deleted")
-        assert(exists?(test_folder, folder_dst_name), "Dest file is missing")
-      end
+      @words_api.delete_folder(request)
+    end
 
+    #
+    # Test for get file list of folder.
+    #
+    def test_get_files_list
+      request = GetFilesListRequest.new(remote_data_folder, nil)
+
+      result = @words_api.get_files_list(request)
+      assert_equal false, result.nil?
+    end
+
+    #
+    # Test for copy folder.
+    #
+    def test_copy_folder
+      folder_to_copy = remote_data_folder + '/TestCopyFolder'
+
+      upload_file File.join(local_test_folder, local_file), folder_to_copy + 'Src/TestCopyFolderSrc.docx'
+
+      request = CopyFolderRequest.new(folder_to_copy + 'Dest', folder_to_copy + 'Src', nil, nil)
+
+      @words_api.copy_folder(request)
+    end
+
+    #
+    # Test for move folder.
+    #
+    def test_move_folder
+      folder_to_move = remote_data_folder + '/TestMoveFolder'
+
+      upload_file File.join(local_test_folder, local_file), folder_to_move + 'Src/TestMoveFolderSrc.docx'
+
+      request = MoveFolderRequest.new(folder_to_move + 'Dest', folder_to_move + 'Src', nil, nil)
+
+      @words_api.move_folder(request)
     end
   end
-  
+end

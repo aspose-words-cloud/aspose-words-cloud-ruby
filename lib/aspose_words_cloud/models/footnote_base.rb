@@ -1,42 +1,42 @@
+# ------------------------------------------------------------------------------------
+# <copyright company="Aspose" file="footnote_base.rb">
+#   Copyright (c) 2020 Aspose.Words for Cloud
+# </copyright>
+# <summary>
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
+#  of this software and associated documentation files (the "Software"), to deal
+#  in the Software without restriction, including without limitation the rights
+#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#  copies of the Software, and to permit persons to whom the Software is
+#  furnished to do so, subject to the following conditions:
+#
+#  The above copyright notice and this permission notice shall be included in all
+#  copies or substantial portions of the Software.
+#
+#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+#  SOFTWARE.
+# </summary>
+# ------------------------------------------------------------------------------------
 
 require 'date'
 
 module AsposeWordsCloud
- #
- # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose" file="FootnoteBase.rb">
- #   Copyright (c) 2019 Aspose.Words for Cloud
- # </copyright>
- # <summary>
- #   Permission is hereby granted, free of charge, to any person obtaining a copy
- #  of this software and associated documentation files (the "Software"), to deal
- #  in the Software without restriction, including without limitation the rights
- #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- #  copies of the Software, and to permit persons to whom the Software is
- #  furnished to do so, subject to the following conditions:
- #
- #  The above copyright notice and this permission notice shall be included in all
- #  copies or substantial portions of the Software.
- #
- #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- #  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- #  SOFTWARE.
- # </summary>
- # --------------------------------------------------------------------------------------------------------------------
- #
 
   # Footnote base class.
   class FootnoteBase
-    attr_accessor :position
-
     # Gets or sets returns a value that specifies whether this is a footnote or endnote.
     attr_accessor :footnote_type
 
-    # Gets or sets /sets custom reference mark to be used for this footnote. Default value is Empty, meaning auto-numbered footnotes are used.
+    # Gets or sets link to comment range start node.
+    attr_accessor :position
+
+    # Gets or sets /sets custom reference mark to be used for this footnote.
+    # Default value is Empty, meaning auto-numbered footnotes are used.
     attr_accessor :reference_mark
 
     # Gets or sets this is a convenience property that allows to easily get or set text of the footnote.
@@ -67,8 +67,8 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'position' => :'Position',
         :'footnote_type' => :'FootnoteType',
+        :'position' => :'Position',
         :'reference_mark' => :'ReferenceMark',
         :'text' => :'Text'
       }
@@ -77,8 +77,8 @@ module AsposeWordsCloud
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'position' => :'DocumentPosition',
         :'footnote_type' => :'String',
+        :'position' => :'DocumentPosition',
         :'reference_mark' => :'String',
         :'text' => :'String'
       }
@@ -92,12 +92,12 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'Position')
-        self.position = attributes[:'Position']
-      end
-
       if attributes.key?(:'FootnoteType')
         self.footnote_type = attributes[:'FootnoteType']
+      end
+
+      if attributes.key?(:'Position')
+        self.position = attributes[:'Position']
       end
 
       if attributes.key?(:'ReferenceMark')
@@ -107,7 +107,6 @@ module AsposeWordsCloud
       if attributes.key?(:'Text')
         self.text = attributes[:'Text']
       end
-
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -122,6 +121,7 @@ module AsposeWordsCloud
     def valid?
       footnote_type_validator = EnumAttributeValidator.new('String', ["Footnote", "Endnote"])
       return false unless footnote_type_validator.valid?(@footnote_type)
+
       return true
     end
 
@@ -139,13 +139,14 @@ module AsposeWordsCloud
       end
     end
 
+
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          position == other.position &&
           footnote_type == other.footnote_type &&
+          position == other.position &&
           reference_mark == other.reference_mark &&
           text == other.text
     end
@@ -159,7 +160,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [position, footnote_type, reference_mark, text].hash
+      [footnote_type, position, reference_mark, text].hash
     end
 
     # Builds the object from hash
@@ -269,5 +270,4 @@ module AsposeWordsCloud
     end
 
   end
-
 end

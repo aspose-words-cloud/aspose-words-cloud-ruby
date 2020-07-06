@@ -1,10 +1,9 @@
-#
-# --------------------------------------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="file_tests.rb">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# ------------------------------------------------------------------------------------
+# <copyright company="Aspose" file="File_tests.rb">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
-#   Permission is hereby granted, free of charge, to any person obtaining a copy
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
 #  in the Software without restriction, including without limitation the rights
 #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
@@ -22,92 +21,86 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #  SOFTWARE.
 # </summary>
-# --------------------------------------------------------------------------------------------------------------------
-#
+# ------------------------------------------------------------------------------------
 module AsposeWordsCloud
-    require_relative '../base_test_context'
-    class FileTests < BaseTestContext
-      def test_folder
-        'Temp/SdkTests/TestData'
-      end
-  
-      #
-      # Test for uploading file
-      #
-      def test_upload_file
-        filename = 'test_multi_pages.docx'
-        remote_name = 'TestUploadFile.docx'
-  
-        request = UploadFileRequest.new File.new(File.join(local_common_folder, filename), 'rb'), File.join(test_folder, remote_name)
-        result = @words_api.upload_file request
-        assert_equal 1, result.uploaded.size
-      end
+  require_relative '../base_test_context'
 
-      #
-      # Test for copy file
-      #
-      def test_copy_file
-        filename = 'test_multi_pages.docx'
-        remote_name = 'TestCopyFileSrc.docx'
-        remote_name_dst = "TestCopyFileDst#{generate_uuid}.docx"
-        remote_path_src = File.join test_folder, remote_name
-        remote_path_dst = File.join test_folder, remote_name_dst
-      
-        upload_file File.join(local_common_folder, filename), remote_path_src
-        request = CopyFileRequest.new remote_path_dst, remote_path_src
-        response = @words_api.copy_file request
+  #
+  # Example of how to work with files.
+  #
+  class FileTests < BaseTestContext
+    def remote_data_folder
+      remote_test_folder + '/Storage'
+    end
 
-        assert(exists?(test_folder, remote_name), "Source file is missing")
-        assert(exists?(test_folder, remote_name_dst), "Dest file is missing")
-      end
+    def local_file
+      'Common/test_multi_pages.docx'
+    end
 
-      #
-      # Test for move file
-      #
-      def test_move_file
-        filename = 'test_multi_pages.docx'
-        remote_name = 'TestMoveFileSrc.docx'
-        remote_name_dst = "TestMoveFileDst#{generate_uuid}.docx"
-        remote_path_src = File.join test_folder, remote_name
-        remote_path_dst = File.join test_folder, remote_name_dst
-      
-        upload_file File.join(local_common_folder, filename), remote_path_src
-        request = MoveFileRequest.new remote_path_dst, remote_path_src
-        response = @words_api.move_file request
 
-        request = DownloadFileRequest.new remote_path_src
-        begin 
-          @words_api.download_file request
-        rescue ApiError => ex
-          assert(ex.code == 404)
-        end
-      end
+    #
+    # Test for uploading file.
+    #
+    def test_upload_file
+      remote_file_name = 'TestUploadFile.docx'
 
-      #
-      # Test for delete file
-      #
-      def test_delete_file
-        filename = 'test_multi_pages.docx'
-        remote_name = 'TestDeleteFile.docx'
-        path = File.join test_folder, remote_name
-        
-        upload_file File.join(local_common_folder, filename), path
-        request = DeleteFileRequest.new path
-        @words_api.delete_file request
-      end
+      request = UploadFileRequest.new(File.open(File.join(local_test_folder, local_file)), remote_data_folder + '/' + remote_file_name, nil)
 
-      #
-      # Test for download file
-      #
-      def test_download_file
-        filename = 'test_multi_pages.docx'
-        remote_name = 'TestDownloadFile.docx'
-        path = File.join test_folder, remote_name
-        
-        upload_file File.join(local_common_folder, filename), path
-        request = DownloadFileRequest.new path
-        assert_equal TRUE, @words_api.download_file(request).size > 0
-      end
+      result = @words_api.upload_file(request)
+      assert_equal false, result.nil?
+    end
+
+    #
+    # Test for copy file.
+    #
+    def test_copy_file
+      remote_file_name = 'TestCopyFileSrc.docx'
+
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+
+      request = CopyFileRequest.new(remote_data_folder + '/TestCopyFileDest.docx', remote_data_folder + '/' + remote_file_name, nil, nil, nil)
+
+      @words_api.copy_file(request)
+    end
+
+    #
+    # Test for move file.
+    #
+    def test_move_file
+      remote_file_name = 'TestMoveFileSrc.docx'
+
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+
+      request = MoveFileRequest.new(remote_data_folder + '/TestMoveFileDest.docx', remote_data_folder + '/' + remote_file_name, nil, nil, nil)
+
+      @words_api.move_file(request)
+    end
+
+    #
+    # Test for delete file.
+    #
+    def test_delete_file
+      remote_file_name = 'TestDeleteFile.docx'
+
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+
+      request = DeleteFileRequest.new(remote_data_folder + '/' + remote_file_name, nil, nil)
+
+      @words_api.delete_file(request)
+    end
+
+    #
+    # Test for download file.
+    #
+    def test_download_file
+      remote_file_name = 'TestDownloadFile.docx'
+
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+
+      request = DownloadFileRequest.new(remote_data_folder + '/' + remote_file_name, nil, nil)
+
+      result = @words_api.download_file(request)
+      assert_equal false, result.nil?
     end
   end
-  
+end

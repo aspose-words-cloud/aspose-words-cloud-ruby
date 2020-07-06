@@ -1,42 +1,34 @@
+# ------------------------------------------------------------------------------------
+# <copyright company="Aspose" file="replace_text_parameters.rb">
+#   Copyright (c) 2020 Aspose.Words for Cloud
+# </copyright>
+# <summary>
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
+#  of this software and associated documentation files (the "Software"), to deal
+#  in the Software without restriction, including without limitation the rights
+#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#  copies of the Software, and to permit persons to whom the Software is
+#  furnished to do so, subject to the following conditions:
+#
+#  The above copyright notice and this permission notice shall be included in all
+#  copies or substantial portions of the Software.
+#
+#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+#  SOFTWARE.
+# </summary>
+# ------------------------------------------------------------------------------------
 
 require 'date'
 
 module AsposeWordsCloud
- #
- # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose" file="ReplaceTextParameters.rb">
- #   Copyright (c) 2019 Aspose.Words for Cloud
- # </copyright>
- # <summary>
- #   Permission is hereby granted, free of charge, to any person obtaining a copy
- #  of this software and associated documentation files (the "Software"), to deal
- #  in the Software without restriction, including without limitation the rights
- #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- #  copies of the Software, and to permit persons to whom the Software is
- #  furnished to do so, subject to the following conditions:
- #
- #  The above copyright notice and this permission notice shall be included in all
- #  copies or substantial portions of the Software.
- #
- #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- #  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- #  SOFTWARE.
- # </summary>
- # --------------------------------------------------------------------------------------------------------------------
- #
 
   # Class for document replace text request building.
   class ReplaceTextParameters
-    # Gets or sets old text value (or regex pattern IsOldValueRegex) to replace.
-    attr_accessor :old_value
-
-    # Gets or sets new text value to replace by.
-    attr_accessor :new_value
-
     # Gets or sets a value indicating whether flag, true means the search is case-sensitive; false means the search is not case-sensitive.
     attr_accessor :is_match_case
 
@@ -46,26 +38,30 @@ module AsposeWordsCloud
     # Gets or sets a value indicating whether flag, means that OldValue contains regex expression.
     attr_accessor :is_old_value_regex
 
+    # Gets or sets new text value to replace by.
+    attr_accessor :new_value
 
+    # Gets or sets old text value (or regex pattern IsOldValueRegex) to replace.
+    attr_accessor :old_value
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'old_value' => :'OldValue',
-        :'new_value' => :'NewValue',
         :'is_match_case' => :'IsMatchCase',
         :'is_match_whole_word' => :'IsMatchWholeWord',
-        :'is_old_value_regex' => :'IsOldValueRegex'
+        :'is_old_value_regex' => :'IsOldValueRegex',
+        :'new_value' => :'NewValue',
+        :'old_value' => :'OldValue'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'old_value' => :'String',
-        :'new_value' => :'String',
         :'is_match_case' => :'BOOLEAN',
         :'is_match_whole_word' => :'BOOLEAN',
-        :'is_old_value_regex' => :'BOOLEAN'
+        :'is_old_value_regex' => :'BOOLEAN',
+        :'new_value' => :'String',
+        :'old_value' => :'String'
       }
     end
 
@@ -76,14 +72,6 @@ module AsposeWordsCloud
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.key?(:'OldValue')
-        self.old_value = attributes[:'OldValue']
-      end
-
-      if attributes.key?(:'NewValue')
-        self.new_value = attributes[:'NewValue']
-      end
 
       if attributes.key?(:'IsMatchCase')
         self.is_match_case = attributes[:'IsMatchCase']
@@ -97,6 +85,13 @@ module AsposeWordsCloud
         self.is_old_value_regex = attributes[:'IsOldValueRegex']
       end
 
+      if attributes.key?(:'NewValue')
+        self.new_value = attributes[:'NewValue']
+      end
+
+      if attributes.key?(:'OldValue')
+        self.old_value = attributes[:'OldValue']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -117,11 +112,11 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          old_value == other.old_value &&
-          new_value == other.new_value &&
           is_match_case == other.is_match_case &&
           is_match_whole_word == other.is_match_whole_word &&
-          is_old_value_regex == other.is_old_value_regex
+          is_old_value_regex == other.is_old_value_regex &&
+          new_value == other.new_value &&
+          old_value == other.old_value
     end
 
     # @see the `==` method
@@ -133,7 +128,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [old_value, new_value, is_match_case, is_match_whole_word, is_old_value_regex].hash
+      [is_match_case, is_match_whole_word, is_old_value_regex, new_value, old_value].hash
     end
 
     # Builds the object from hash
@@ -243,5 +238,4 @@ module AsposeWordsCloud
     end
 
   end
-
 end

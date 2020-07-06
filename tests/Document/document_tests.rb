@@ -1,10 +1,9 @@
-#
-# --------------------------------------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="document_tests.rb">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# ------------------------------------------------------------------------------------
+# <copyright company="Aspose" file="Document_tests.rb">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
-#   Permission is hereby granted, free of charge, to any person obtaining a copy
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
 #  in the Software without restriction, including without limitation the rights
 #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
@@ -22,41 +21,47 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #  SOFTWARE.
 # </summary>
-# --------------------------------------------------------------------------------------------------------------------
-#
+# ------------------------------------------------------------------------------------
 module AsposeWordsCloud
   require_relative '../base_test_context'
+
+  #
+  # Example of how to get document.
+  #
   class DocumentTests < BaseTestContext
-    def test_folder
-      'document'
+    def remote_data_folder
+      remote_test_folder + '/DocumentActions/Document'
     end
 
+    def local_file
+      'Common/test_multi_pages.docx'
+    end
+
+
     #
-    # Test for getting document
+    # Test for getting document.
     #
     def test_get_document
-      filename = 'test_multi_pages.docx'
-      remote_name = 'TestGetDocument.docx'
-      remote_path = File.join(test_folder, remote_name)
-      upload_file File.join(local_common_folder, filename), remote_path
+      remote_file_name = 'TestGetDocument.docx'
 
-      request = GetDocumentRequest.new remote_name, test_folder
-      result = @words_api.get_document request
-      assert_equal false, result.document.nil?
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+
+      request = GetDocumentRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
+
+      result = @words_api.get_document(request)
+      assert_equal false, result.nil?
     end
 
     #
-    # Test for creating document
+    # Test for creating word document.
     #
     def test_create_document
-      filename = 'test_multi_pages.docx'
-      remote_name = 'TestCreateDocument.docx'
+      remote_file_name = 'TestCreateDocument.doc'
 
-      upload_file(local_common_folder + filename, remote_test_folder + test_folder + '/' + remote_name)
+      request = CreateDocumentRequest.new(nil, remote_file_name, remote_data_folder)
 
-      request = CreateDocumentRequest.new nil, remote_name, remote_test_folder + test_folder
-      result = @words_api.create_document request
-      assert_equal false, result.document.nil?
+      result = @words_api.create_document(request)
+      assert_equal false, result.nil?
     end
   end
 end

@@ -1,54 +1,50 @@
+# ------------------------------------------------------------------------------------
+# <copyright company="Aspose" file="page_number.rb">
+#   Copyright (c) 2020 Aspose.Words for Cloud
+# </copyright>
+# <summary>
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
+#  of this software and associated documentation files (the "Software"), to deal
+#  in the Software without restriction, including without limitation the rights
+#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#  copies of the Software, and to permit persons to whom the Software is
+#  furnished to do so, subject to the following conditions:
+#
+#  The above copyright notice and this permission notice shall be included in all
+#  copies or substantial portions of the Software.
+#
+#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+#  SOFTWARE.
+# </summary>
+# ------------------------------------------------------------------------------------
 
 require 'date'
 
 module AsposeWordsCloud
- #
- # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose" file="PageNumber.rb">
- #   Copyright (c) 2019 Aspose.Words for Cloud
- # </copyright>
- # <summary>
- #   Permission is hereby granted, free of charge, to any person obtaining a copy
- #  of this software and associated documentation files (the "Software"), to deal
- #  in the Software without restriction, including without limitation the rights
- #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- #  copies of the Software, and to permit persons to whom the Software is
- #  furnished to do so, subject to the following conditions:
- #
- #  The above copyright notice and this permission notice shall be included in all
- #  copies or substantial portions of the Software.
- #
- #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- #  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- #  SOFTWARE.
- # </summary>
- # --------------------------------------------------------------------------------------------------------------------
- #
 
   # Class is used for insert page number request building.
   class PageNumber
-    # Gets or sets page number format, e.g. \"{PAGE} of {NUMPAGES}\".
-    attr_accessor :format
-
     # Gets or sets text alignment, possible values are left, right, center or justify.
     attr_accessor :alignment
+
+    # Gets or sets page number format, e.g. "{PAGE} of {NUMPAGES}".
+    attr_accessor :format
 
     # Gets or sets a value indicating whether if true the page number is added at the top of the page, else at the bottom.
     attr_accessor :is_top
 
     # Gets or sets a value indicating whether if true the page number is added on first page too.
     attr_accessor :set_page_number_on_first_page
-
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'format' => :'Format',
         :'alignment' => :'Alignment',
+        :'format' => :'Format',
         :'is_top' => :'IsTop',
         :'set_page_number_on_first_page' => :'SetPageNumberOnFirstPage'
       }
@@ -57,8 +53,8 @@ module AsposeWordsCloud
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'format' => :'String',
         :'alignment' => :'String',
+        :'format' => :'String',
         :'is_top' => :'BOOLEAN',
         :'set_page_number_on_first_page' => :'BOOLEAN'
       }
@@ -72,12 +68,12 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'Format')
-        self.format = attributes[:'Format']
-      end
-
       if attributes.key?(:'Alignment')
         self.alignment = attributes[:'Alignment']
+      end
+
+      if attributes.key?(:'Format')
+        self.format = attributes[:'Format']
       end
 
       if attributes.key?(:'IsTop')
@@ -87,7 +83,6 @@ module AsposeWordsCloud
       if attributes.key?(:'SetPageNumberOnFirstPage')
         self.set_page_number_on_first_page = attributes[:'SetPageNumberOnFirstPage']
       end
-
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -108,8 +103,8 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          format == other.format &&
           alignment == other.alignment &&
+          format == other.format &&
           is_top == other.is_top &&
           set_page_number_on_first_page == other.set_page_number_on_first_page
     end
@@ -123,7 +118,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [format, alignment, is_top, set_page_number_on_first_page].hash
+      [alignment, format, is_top, set_page_number_on_first_page].hash
     end
 
     # Builds the object from hash
@@ -233,5 +228,4 @@ module AsposeWordsCloud
     end
 
   end
-
 end
