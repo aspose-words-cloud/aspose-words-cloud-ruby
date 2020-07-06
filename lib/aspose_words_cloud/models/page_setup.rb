@@ -1,123 +1,130 @@
+# ------------------------------------------------------------------------------------
+# <copyright company="Aspose" file="page_setup.rb">
+#   Copyright (c) 2020 Aspose.Words for Cloud
+# </copyright>
+# <summary>
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
+#  of this software and associated documentation files (the "Software"), to deal
+#  in the Software without restriction, including without limitation the rights
+#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#  copies of the Software, and to permit persons to whom the Software is
+#  furnished to do so, subject to the following conditions:
+#
+#  The above copyright notice and this permission notice shall be included in all
+#  copies or substantial portions of the Software.
+#
+#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+#  SOFTWARE.
+# </summary>
+# ------------------------------------------------------------------------------------
 
 require 'date'
 
 module AsposeWordsCloud
- #
- # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose" file="PageSetup.rb">
- #   Copyright (c) 2019 Aspose.Words for Cloud
- # </copyright>
- # <summary>
- #   Permission is hereby granted, free of charge, to any person obtaining a copy
- #  of this software and associated documentation files (the "Software"), to deal
- #  in the Software without restriction, including without limitation the rights
- #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- #  copies of the Software, and to permit persons to whom the Software is
- #  furnished to do so, subject to the following conditions:
- #
- #  The above copyright notice and this permission notice shall be included in all
- #  copies or substantial portions of the Software.
- #
- #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- #  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- #  SOFTWARE.
- # </summary>
- # --------------------------------------------------------------------------------------------------------------------
- #
 
-  # Represents the page setup properties of a section.             
+  # Represents the page setup properties of a section.
   class PageSetup
+    # Gets or sets link to the document.
     attr_accessor :link
 
-    # Gets or sets specifies that this section contains bidirectional (complex scripts) text.             
+    # Gets or sets specifies that this section contains bidirectional (complex scripts) text.
     attr_accessor :bidi
 
-    # Gets or sets specifies where the page border is positioned relative to intersecting texts and objects.             
+    # Gets or sets specifies where the page border is positioned relative to intersecting texts and objects.
     attr_accessor :border_always_in_front
 
-    # Gets or sets specifies which pages the page border is printed on.             
+    # Gets or sets specifies which pages the page border is printed on.
     attr_accessor :border_applies_to
 
-    # Gets or sets a value that indicates whether the specified page border is measured from the edge of the page or from the text it surrounds.             
+    # Gets or sets a value that indicates whether the specified page border is measured from the edge of the page or from
+    # the text it surrounds.
     attr_accessor :border_distance_from
 
-    # Gets or sets returns or sets the distance (in points) between the bottom edge of the page and the bottom boundary of the body text.             
+    # Gets or sets returns or sets the distance (in points) between the bottom edge of the page and the bottom boundary of the body
+    # text.
     attr_accessor :bottom_margin
 
-    # Gets or sets true if a different header or footer is used on the first page.             
+    # Gets or sets true if a different header or footer is used on the first page.
     attr_accessor :different_first_page_header_footer
 
-    # Gets or sets the paper tray (bin) to use for the first page of a section. The value is implementation (printer) specific.             
+    # Gets or sets the paper tray (bin) to use for the first page of a section.
+    # The value is implementation (printer) specific.
     attr_accessor :first_page_tray
 
-    # Gets or sets returns or sets the distance (in points) between the footer and the bottom of the page.             
+    # Gets or sets returns or sets the distance (in points) between the footer and the bottom of the page.
     attr_accessor :footer_distance
 
-    # Gets or sets the amount of extra space added to the margin for document binding.             
+    # Gets or sets the amount of extra space added to the margin for document binding.
     attr_accessor :gutter
 
-    # Gets or sets returns or sets the distance (in points) between the header and the top of the page.             
+    # Gets or sets returns or sets the distance (in points) between the header and the top of the page.
     attr_accessor :header_distance
 
-    # Gets or sets returns or sets the distance (in points) between the left edge of the page and the left boundary of the body text.             
+    # Gets or sets returns or sets the distance (in points) between the left edge of the page and the left boundary of the body text.
     attr_accessor :left_margin
 
-    # Gets or sets returns or sets the numeric increment for line numbers.             
+    # Gets or sets returns or sets the numeric increment for line numbers.
     attr_accessor :line_number_count_by
 
-    # Gets or sets distance between the right edge of line numbers and the left edge of the document.             
+    # Gets or sets distance between the right edge of line numbers and the left edge of the document.
     attr_accessor :line_number_distance_from_text
 
-    # Gets or sets the way line numbering runs  that is, whether it starts over at the beginning of a new page or section or runs continuously.             
+    # Gets or sets the way line numbering runs  that is, whether it starts over at the beginning of a new
+    # page or section or runs continuously.
     attr_accessor :line_number_restart_mode
 
-    # Gets or sets the starting line number.             
+    # Gets or sets the starting line number.
     attr_accessor :line_starting_number
 
-    # Gets or sets returns or sets the orientation of the page.             
+    # Gets or sets returns or sets the orientation of the page.
     attr_accessor :orientation
 
-    # Gets or sets the paper tray (bin) to be used for all but the first page of a section. The value is implementation (printer) specific.             
+    # Gets or sets the paper tray (bin) to be used for all but the first page of a section.
+    # The value is implementation (printer) specific.
     attr_accessor :other_pages_tray
 
-    # Gets or sets returns or sets the height of the page in points.             
+    # Gets or sets returns or sets the height of the page in points.
     attr_accessor :page_height
 
-    # Gets or sets the page number format.             
+    # Gets or sets the page number format.
     attr_accessor :page_number_style
 
-    # Gets or sets the starting page number of the section.             
+    # Gets or sets the starting page number of the section.
     attr_accessor :page_starting_number
 
-    # Gets or sets returns or sets the width of the page in points.             
+    # Gets or sets returns or sets the width of the page in points.
     attr_accessor :page_width
 
-    # Gets or sets returns or sets the paper size.             
+    # Gets or sets returns or sets the paper size.
     attr_accessor :paper_size
 
-    # Gets or sets true if page numbering restarts at the beginning of the section.             
+    # Gets or sets true if page numbering restarts at the beginning of the section.
     attr_accessor :restart_page_numbering
 
-    # Gets or sets returns or sets the distance (in points) between the right edge of the page and the right boundary of the body text.             
+    # Gets or sets returns or sets the distance (in points) between the right edge of the page and the right boundary of the body
+    # text.
     attr_accessor :right_margin
 
-    # Gets or sets whether Microsoft Word uses gutters for the section based on a right-to-left language or a left-to-right language.             
+    # Gets or sets whether Microsoft Word uses gutters for the section based on a right-to-left language or a
+    # left-to-right language.
     attr_accessor :rtl_gutter
 
-    # Gets or sets returns or sets the type of section break for the specified object.             
+    # Gets or sets returns or sets the type of section break for the specified object.
     attr_accessor :section_start
 
-    # Gets or sets true if endnotes are printed at the end of the next section that doesn't suppress endnotes. Suppressed endnotes are printed before the endnotes in that section.             
+    # Gets or sets true if endnotes are printed at the end of the next section that doesn't suppress endnotes.
+    # Suppressed endnotes are printed before the endnotes in that section.
     attr_accessor :suppress_endnotes
 
-    # Gets or sets returns or sets the distance (in points) between the top edge of the page and the top boundary of the body text.             
+    # Gets or sets returns or sets the distance (in points) between the top edge of the page and the top boundary of the body text.
     attr_accessor :top_margin
 
-    # Gets or sets returns or sets the vertical alignment of text on each page in a document or section.             
+    # Gets or sets returns or sets the vertical alignment of text on each page in a document or section.
     attr_accessor :vertical_alignment
 
     class EnumAttributeValidator
@@ -145,7 +152,7 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'link' => :'link',
+        :'link' => :'Link',
         :'bidi' => :'Bidi',
         :'border_always_in_front' => :'BorderAlwaysInFront',
         :'border_applies_to' => :'BorderAppliesTo',
@@ -222,8 +229,8 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'link')
-        self.link = attributes[:'link']
+      if attributes.key?(:'Link')
+        self.link = attributes[:'Link']
       end
 
       if attributes.key?(:'Bidi')
@@ -341,7 +348,6 @@ module AsposeWordsCloud
       if attributes.key?(:'VerticalAlignment')
         self.vertical_alignment = attributes[:'VerticalAlignment']
       end
-
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -370,6 +376,7 @@ module AsposeWordsCloud
       return false unless section_start_validator.valid?(@section_start)
       vertical_alignment_validator = EnumAttributeValidator.new('String', ["Top", "Center", "Justify", "Bottom"])
       return false unless vertical_alignment_validator.valid?(@vertical_alignment)
+
       return true
     end
 
@@ -484,6 +491,7 @@ module AsposeWordsCloud
         @vertical_alignment = validator.allowable_values[vertical_alignment.to_i]
       end
     end
+
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
@@ -641,5 +649,4 @@ module AsposeWordsCloud
     end
 
   end
-
 end

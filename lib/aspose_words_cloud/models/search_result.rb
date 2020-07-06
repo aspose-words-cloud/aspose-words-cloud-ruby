@@ -1,54 +1,52 @@
+# ------------------------------------------------------------------------------------
+# <copyright company="Aspose" file="search_result.rb">
+#   Copyright (c) 2020 Aspose.Words for Cloud
+# </copyright>
+# <summary>
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
+#  of this software and associated documentation files (the "Software"), to deal
+#  in the Software without restriction, including without limitation the rights
+#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#  copies of the Software, and to permit persons to whom the Software is
+#  furnished to do so, subject to the following conditions:
+#
+#  The above copyright notice and this permission notice shall be included in all
+#  copies or substantial portions of the Software.
+#
+#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+#  SOFTWARE.
+# </summary>
+# ------------------------------------------------------------------------------------
 
 require 'date'
 
 module AsposeWordsCloud
- #
- # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose" file="SearchResult.rb">
- #   Copyright (c) 2019 Aspose.Words for Cloud
- # </copyright>
- # <summary>
- #   Permission is hereby granted, free of charge, to any person obtaining a copy
- #  of this software and associated documentation files (the "Software"), to deal
- #  in the Software without restriction, including without limitation the rights
- #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- #  copies of the Software, and to permit persons to whom the Software is
- #  furnished to do so, subject to the following conditions:
- #
- #  The above copyright notice and this permission notice shall be included in all
- #  copies or substantial portions of the Software.
- #
- #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- #  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- #  SOFTWARE.
- # </summary>
- # --------------------------------------------------------------------------------------------------------------------
- #
 
   # Result of search operation.
   class SearchResult
-    attr_accessor :range_start
-
+    # Gets or sets link to result range end node.
     attr_accessor :range_end
 
-
+    # Gets or sets link to result range start node.
+    attr_accessor :range_start
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'range_start' => :'RangeStart',
-        :'range_end' => :'RangeEnd'
+        :'range_end' => :'RangeEnd',
+        :'range_start' => :'RangeStart'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'range_start' => :'DocumentPosition',
-        :'range_end' => :'DocumentPosition'
+        :'range_end' => :'DocumentPosition',
+        :'range_start' => :'DocumentPosition'
       }
     end
 
@@ -60,14 +58,13 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'RangeStart')
-        self.range_start = attributes[:'RangeStart']
-      end
-
       if attributes.key?(:'RangeEnd')
         self.range_end = attributes[:'RangeEnd']
       end
 
+      if attributes.key?(:'RangeStart')
+        self.range_start = attributes[:'RangeStart']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -88,8 +85,8 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          range_start == other.range_start &&
-          range_end == other.range_end
+          range_end == other.range_end &&
+          range_start == other.range_start
     end
 
     # @see the `==` method
@@ -101,7 +98,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [range_start, range_end].hash
+      [range_end, range_start].hash
     end
 
     # Builds the object from hash
@@ -211,5 +208,4 @@ module AsposeWordsCloud
     end
 
   end
-
 end

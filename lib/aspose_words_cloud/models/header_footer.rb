@@ -1,46 +1,47 @@
+# ------------------------------------------------------------------------------------
+# <copyright company="Aspose" file="header_footer.rb">
+#   Copyright (c) 2020 Aspose.Words for Cloud
+# </copyright>
+# <summary>
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
+#  of this software and associated documentation files (the "Software"), to deal
+#  in the Software without restriction, including without limitation the rights
+#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#  copies of the Software, and to permit persons to whom the Software is
+#  furnished to do so, subject to the following conditions:
+#
+#  The above copyright notice and this permission notice shall be included in all
+#  copies or substantial portions of the Software.
+#
+#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+#  SOFTWARE.
+# </summary>
+# ------------------------------------------------------------------------------------
 
 require 'date'
 
 module AsposeWordsCloud
- #
- # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose" file="HeaderFooter.rb">
- #   Copyright (c) 2019 Aspose.Words for Cloud
- # </copyright>
- # <summary>
- #   Permission is hereby granted, free of charge, to any person obtaining a copy
- #  of this software and associated documentation files (the "Software"), to deal
- #  in the Software without restriction, including without limitation the rights
- #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- #  copies of the Software, and to permit persons to whom the Software is
- #  furnished to do so, subject to the following conditions:
- #
- #  The above copyright notice and this permission notice shall be included in all
- #  copies or substantial portions of the Software.
- #
- #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- #  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- #  SOFTWARE.
- # </summary>
- # --------------------------------------------------------------------------------------------------------------------
- #
 
   # Section element.
   class HeaderFooter
+    # Gets or sets link to the document.
+    attr_accessor :link
+
     # Gets or sets paragraph's text.
     attr_accessor :type
-
-    attr_accessor :link
 
     # Gets or sets child nodes.
     attr_accessor :child_nodes
 
+    # Gets or sets link to DrawingObjects resource.
     attr_accessor :drawing_objects
 
+    # Gets or sets link to Paragraphs resource.
     attr_accessor :paragraphs
 
     class EnumAttributeValidator
@@ -68,8 +69,8 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'link' => :'Link',
         :'type' => :'Type',
-        :'link' => :'link',
         :'child_nodes' => :'ChildNodes',
         :'drawing_objects' => :'DrawingObjects',
         :'paragraphs' => :'Paragraphs'
@@ -79,8 +80,8 @@ module AsposeWordsCloud
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'type' => :'String',
         :'link' => :'WordsApiLink',
+        :'type' => :'String',
         :'child_nodes' => :'Array<NodeLink>',
         :'drawing_objects' => :'LinkElement',
         :'paragraphs' => :'LinkElement'
@@ -95,12 +96,12 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'Type')
-        self.type = attributes[:'Type']
+      if attributes.key?(:'Link')
+        self.link = attributes[:'Link']
       end
 
-      if attributes.key?(:'link')
-        self.link = attributes[:'link']
+      if attributes.key?(:'Type')
+        self.type = attributes[:'Type']
       end
 
       if attributes.key?(:'ChildNodes')
@@ -116,7 +117,6 @@ module AsposeWordsCloud
       if attributes.key?(:'Paragraphs')
         self.paragraphs = attributes[:'Paragraphs']
       end
-
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -131,6 +131,7 @@ module AsposeWordsCloud
     def valid?
       type_validator = EnumAttributeValidator.new('String', ["HeaderEven", "HeaderPrimary", "FooterEven", "FooterPrimary", "HeaderFirst", "FooterFirst"])
       return false unless type_validator.valid?(@type)
+
       return true
     end
 
@@ -148,13 +149,14 @@ module AsposeWordsCloud
       end
     end
 
+
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          type == other.type &&
           link == other.link &&
+          type == other.type &&
           child_nodes == other.child_nodes &&
           drawing_objects == other.drawing_objects &&
           paragraphs == other.paragraphs
@@ -169,7 +171,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, link, child_nodes, drawing_objects, paragraphs].hash
+      [link, type, child_nodes, drawing_objects, paragraphs].hash
     end
 
     # Builds the object from hash
@@ -279,5 +281,4 @@ module AsposeWordsCloud
     end
 
   end
-
 end

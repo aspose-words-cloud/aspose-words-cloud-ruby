@@ -1,36 +1,40 @@
+# ------------------------------------------------------------------------------------
+# <copyright company="Aspose" file="form_field_text_input.rb">
+#   Copyright (c) 2020 Aspose.Words for Cloud
+# </copyright>
+# <summary>
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
+#  of this software and associated documentation files (the "Software"), to deal
+#  in the Software without restriction, including without limitation the rights
+#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#  copies of the Software, and to permit persons to whom the Software is
+#  furnished to do so, subject to the following conditions:
+#
+#  The above copyright notice and this permission notice shall be included in all
+#  copies or substantial portions of the Software.
+#
+#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+#  SOFTWARE.
+# </summary>
+# ------------------------------------------------------------------------------------
 
 require 'date'
 
 module AsposeWordsCloud
- #
- # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose" file="FormFieldTextInput.rb">
- #   Copyright (c) 2019 Aspose.Words for Cloud
- # </copyright>
- # <summary>
- #   Permission is hereby granted, free of charge, to any person obtaining a copy
- #  of this software and associated documentation files (the "Software"), to deal
- #  in the Software without restriction, including without limitation the rights
- #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- #  copies of the Software, and to permit persons to whom the Software is
- #  furnished to do so, subject to the following conditions:
- #
- #  The above copyright notice and this permission notice shall be included in all
- #  copies or substantial portions of the Software.
- #
- #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- #  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- #  SOFTWARE.
- # </summary>
- # --------------------------------------------------------------------------------------------------------------------
- #
 
   # FormField text input element.
   class FormFieldTextInput
+    # Gets or sets link to the document.
+    attr_accessor :link
+
+    # Gets or sets node id.
+    attr_accessor :node_id
+
     # Gets or sets true if references to the specified form field are automatically updated whenever the field is exited.
     attr_accessor :calculate_on_exit
 
@@ -57,11 +61,6 @@ module AsposeWordsCloud
 
     # Gets or sets returns or sets the text that's displayed in the status bar when a form field has the focus.
     attr_accessor :status_text
-
-    attr_accessor :link
-
-    # Gets or sets node id.
-    attr_accessor :node_id
 
     # Gets or sets maximum length for the text field. Zero when the length is not limited.
     attr_accessor :max_length
@@ -100,6 +99,8 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'link' => :'Link',
+        :'node_id' => :'NodeId',
         :'calculate_on_exit' => :'CalculateOnExit',
         :'enabled' => :'Enabled',
         :'entry_macro' => :'EntryMacro',
@@ -109,8 +110,6 @@ module AsposeWordsCloud
         :'own_help' => :'OwnHelp',
         :'own_status' => :'OwnStatus',
         :'status_text' => :'StatusText',
-        :'link' => :'link',
-        :'node_id' => :'NodeId',
         :'max_length' => :'MaxLength',
         :'text_input_default' => :'TextInputDefault',
         :'text_input_format' => :'TextInputFormat',
@@ -121,6 +120,8 @@ module AsposeWordsCloud
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'link' => :'WordsApiLink',
+        :'node_id' => :'String',
         :'calculate_on_exit' => :'BOOLEAN',
         :'enabled' => :'BOOLEAN',
         :'entry_macro' => :'String',
@@ -130,8 +131,6 @@ module AsposeWordsCloud
         :'own_help' => :'BOOLEAN',
         :'own_status' => :'BOOLEAN',
         :'status_text' => :'String',
-        :'link' => :'WordsApiLink',
-        :'node_id' => :'String',
         :'max_length' => :'Integer',
         :'text_input_default' => :'String',
         :'text_input_format' => :'String',
@@ -146,6 +145,14 @@ module AsposeWordsCloud
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.key?(:'Link')
+        self.link = attributes[:'Link']
+      end
+
+      if attributes.key?(:'NodeId')
+        self.node_id = attributes[:'NodeId']
+      end
 
       if attributes.key?(:'CalculateOnExit')
         self.calculate_on_exit = attributes[:'CalculateOnExit']
@@ -183,14 +190,6 @@ module AsposeWordsCloud
         self.status_text = attributes[:'StatusText']
       end
 
-      if attributes.key?(:'link')
-        self.link = attributes[:'link']
-      end
-
-      if attributes.key?(:'NodeId')
-        self.node_id = attributes[:'NodeId']
-      end
-
       if attributes.key?(:'MaxLength')
         self.max_length = attributes[:'MaxLength']
       end
@@ -206,7 +205,6 @@ module AsposeWordsCloud
       if attributes.key?(:'TextInputType')
         self.text_input_type = attributes[:'TextInputType']
       end
-
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -221,6 +219,7 @@ module AsposeWordsCloud
     def valid?
       text_input_type_validator = EnumAttributeValidator.new('String', ["Regular", "Number", "Date", "CurrentDate", "CurrentTime", "Calculated"])
       return false unless text_input_type_validator.valid?(@text_input_type)
+
       return true
     end
 
@@ -238,11 +237,14 @@ module AsposeWordsCloud
       end
     end
 
+
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
+          link == other.link &&
+          node_id == other.node_id &&
           calculate_on_exit == other.calculate_on_exit &&
           enabled == other.enabled &&
           entry_macro == other.entry_macro &&
@@ -252,8 +254,6 @@ module AsposeWordsCloud
           own_help == other.own_help &&
           own_status == other.own_status &&
           status_text == other.status_text &&
-          link == other.link &&
-          node_id == other.node_id &&
           max_length == other.max_length &&
           text_input_default == other.text_input_default &&
           text_input_format == other.text_input_format &&
@@ -269,7 +269,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [calculate_on_exit, enabled, entry_macro, exit_macro, help_text, name, own_help, own_status, status_text, link, node_id, max_length, text_input_default, text_input_format, text_input_type].hash
+      [link, node_id, calculate_on_exit, enabled, entry_macro, exit_macro, help_text, name, own_help, own_status, status_text, max_length, text_input_default, text_input_format, text_input_type].hash
     end
 
     # Builds the object from hash
@@ -379,5 +379,4 @@ module AsposeWordsCloud
     end
 
   end
-
 end

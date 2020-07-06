@@ -1,33 +1,31 @@
+# ------------------------------------------------------------------------------------
+# <copyright company="Aspose" file="list_insert.rb">
+#   Copyright (c) 2020 Aspose.Words for Cloud
+# </copyright>
+# <summary>
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
+#  of this software and associated documentation files (the "Software"), to deal
+#  in the Software without restriction, including without limitation the rights
+#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#  copies of the Software, and to permit persons to whom the Software is
+#  furnished to do so, subject to the following conditions:
+#
+#  The above copyright notice and this permission notice shall be included in all
+#  copies or substantial portions of the Software.
+#
+#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+#  SOFTWARE.
+# </summary>
+# ------------------------------------------------------------------------------------
 
 require 'date'
 
 module AsposeWordsCloud
- #
- # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose" file="ListInsert.rb">
- #   Copyright (c) 2019 Aspose.Words for Cloud
- # </copyright>
- # <summary>
- #   Permission is hereby granted, free of charge, to any person obtaining a copy
- #  of this software and associated documentation files (the "Software"), to deal
- #  in the Software without restriction, including without limitation the rights
- #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- #  copies of the Software, and to permit persons to whom the Software is
- #  furnished to do so, subject to the following conditions:
- #
- #  The above copyright notice and this permission notice shall be included in all
- #  copies or substantial portions of the Software.
- #
- #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- #  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- #  SOFTWARE.
- # </summary>
- # --------------------------------------------------------------------------------------------------------------------
- #
 
   # Insert document to document list.
   class ListInsert
@@ -81,7 +79,6 @@ module AsposeWordsCloud
       if attributes.key?(:'Template')
         self.template = attributes[:'Template']
       end
-
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -96,6 +93,7 @@ module AsposeWordsCloud
     def valid?
       template_validator = EnumAttributeValidator.new('String', ["BulletDefault", "BulletDisk", "BulletCircle", "BulletSquare", "BulletDiamonds", "BulletArrowHead", "BulletTick", "NumberDefault", "NumberArabicDot", "NumberArabicParenthesis", "NumberUppercaseRomanDot", "NumberUppercaseLetterDot", "NumberLowercaseLetterParenthesis", "NumberLowercaseLetterDot", "NumberLowercaseRomanDot", "OutlineNumbers", "OutlineLegal", "OutlineBullets", "OutlineHeadingsArticleSection", "OutlineHeadingsLegal", "OutlineHeadingsNumbers", "OutlineHeadingsChapter"])
       return false unless template_validator.valid?(@template)
+
       return true
     end
 
@@ -112,6 +110,7 @@ module AsposeWordsCloud
         @template = validator.allowable_values[template.to_i]
       end
     end
+
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
@@ -240,5 +239,4 @@ module AsposeWordsCloud
     end
 
   end
-
 end

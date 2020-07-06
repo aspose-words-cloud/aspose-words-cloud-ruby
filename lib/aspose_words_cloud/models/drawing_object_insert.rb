@@ -1,43 +1,45 @@
+# ------------------------------------------------------------------------------------
+# <copyright company="Aspose" file="drawing_object_insert.rb">
+#   Copyright (c) 2020 Aspose.Words for Cloud
+# </copyright>
+# <summary>
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
+#  of this software and associated documentation files (the "Software"), to deal
+#  in the Software without restriction, including without limitation the rights
+#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#  copies of the Software, and to permit persons to whom the Software is
+#  furnished to do so, subject to the following conditions:
+#
+#  The above copyright notice and this permission notice shall be included in all
+#  copies or substantial portions of the Software.
+#
+#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+#  SOFTWARE.
+# </summary>
+# ------------------------------------------------------------------------------------
 
 require 'date'
 
 module AsposeWordsCloud
- #
- # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose" file="DrawingObjectInsert.rb">
- #   Copyright (c) 2019 Aspose.Words for Cloud
- # </copyright>
- # <summary>
- #   Permission is hereby granted, free of charge, to any person obtaining a copy
- #  of this software and associated documentation files (the "Software"), to deal
- #  in the Software without restriction, including without limitation the rights
- #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- #  copies of the Software, and to permit persons to whom the Software is
- #  furnished to do so, subject to the following conditions:
- #
- #  The above copyright notice and this permission notice shall be included in all
- #  copies or substantial portions of the Software.
- #
- #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- #  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- #  SOFTWARE.
- # </summary>
- # --------------------------------------------------------------------------------------------------------------------
- #
 
   # Drawing object element for insert.
   class DrawingObjectInsert
+    # Gets or sets height of the drawing object in points.
+    attr_accessor :height
+
+    # Gets or sets distance in points from the origin to the left side of the image.
+    attr_accessor :left
+
+    # Gets or sets drawing object will be inserted before specified position.
     attr_accessor :position
 
-    # Gets or sets specifies where the distance to the image is measured from.             
+    # Gets or sets specifies where the distance to the image is measured from.
     attr_accessor :relative_horizontal_position
-
-    # Gets or sets distance in points from the origin to the left side of the image.             
-    attr_accessor :left
 
     # Gets or sets specifies where the distance to the image measured from.
     attr_accessor :relative_vertical_position
@@ -47,9 +49,6 @@ module AsposeWordsCloud
 
     # Gets or sets width of the drawing objects in points.
     attr_accessor :width
-
-    # Gets or sets height of the drawing object in points.
-    attr_accessor :height
 
     # Gets or sets specifies how to wrap text around the image.
     attr_accessor :wrap_type
@@ -79,13 +78,13 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'height' => :'Height',
+        :'left' => :'Left',
         :'position' => :'Position',
         :'relative_horizontal_position' => :'RelativeHorizontalPosition',
-        :'left' => :'Left',
         :'relative_vertical_position' => :'RelativeVerticalPosition',
         :'top' => :'Top',
         :'width' => :'Width',
-        :'height' => :'Height',
         :'wrap_type' => :'WrapType'
       }
     end
@@ -93,13 +92,13 @@ module AsposeWordsCloud
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'height' => :'Float',
+        :'left' => :'Float',
         :'position' => :'DocumentPosition',
         :'relative_horizontal_position' => :'String',
-        :'left' => :'Float',
         :'relative_vertical_position' => :'String',
         :'top' => :'Float',
         :'width' => :'Float',
-        :'height' => :'Float',
         :'wrap_type' => :'String'
       }
     end
@@ -112,16 +111,20 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.key?(:'Height')
+        self.height = attributes[:'Height']
+      end
+
+      if attributes.key?(:'Left')
+        self.left = attributes[:'Left']
+      end
+
       if attributes.key?(:'Position')
         self.position = attributes[:'Position']
       end
 
       if attributes.key?(:'RelativeHorizontalPosition')
         self.relative_horizontal_position = attributes[:'RelativeHorizontalPosition']
-      end
-
-      if attributes.key?(:'Left')
-        self.left = attributes[:'Left']
       end
 
       if attributes.key?(:'RelativeVerticalPosition')
@@ -136,14 +139,9 @@ module AsposeWordsCloud
         self.width = attributes[:'Width']
       end
 
-      if attributes.key?(:'Height')
-        self.height = attributes[:'Height']
-      end
-
       if attributes.key?(:'WrapType')
         self.wrap_type = attributes[:'WrapType']
       end
-
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -162,6 +160,7 @@ module AsposeWordsCloud
       return false unless relative_vertical_position_validator.valid?(@relative_vertical_position)
       wrap_type_validator = EnumAttributeValidator.new('String', ["Inline", "TopBottom", "Square", "None", "Tight", "Through"])
       return false unless wrap_type_validator.valid?(@wrap_type)
+
       return true
     end
 
@@ -207,18 +206,19 @@ module AsposeWordsCloud
       end
     end
 
+
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
+          height == other.height &&
+          left == other.left &&
           position == other.position &&
           relative_horizontal_position == other.relative_horizontal_position &&
-          left == other.left &&
           relative_vertical_position == other.relative_vertical_position &&
           top == other.top &&
           width == other.width &&
-          height == other.height &&
           wrap_type == other.wrap_type
     end
 
@@ -231,7 +231,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [position, relative_horizontal_position, left, relative_vertical_position, top, width, height, wrap_type].hash
+      [height, left, position, relative_horizontal_position, relative_vertical_position, top, width, wrap_type].hash
     end
 
     # Builds the object from hash
@@ -341,5 +341,4 @@ module AsposeWordsCloud
     end
 
   end
-
 end

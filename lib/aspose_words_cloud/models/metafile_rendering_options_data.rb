@@ -1,60 +1,57 @@
+# ------------------------------------------------------------------------------------
+# <copyright company="Aspose" file="metafile_rendering_options_data.rb">
+#   Copyright (c) 2020 Aspose.Words for Cloud
+# </copyright>
+# <summary>
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
+#  of this software and associated documentation files (the "Software"), to deal
+#  in the Software without restriction, including without limitation the rights
+#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#  copies of the Software, and to permit persons to whom the Software is
+#  furnished to do so, subject to the following conditions:
+#
+#  The above copyright notice and this permission notice shall be included in all
+#  copies or substantial portions of the Software.
+#
+#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+#  SOFTWARE.
+# </summary>
+# ------------------------------------------------------------------------------------
 
 require 'date'
 
 module AsposeWordsCloud
- #
- # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose" file="MetafileRenderingOptionsData.rb">
- #   Copyright (c) 2019 Aspose.Words for Cloud
- # </copyright>
- # <summary>
- #   Permission is hereby granted, free of charge, to any person obtaining a copy
- #  of this software and associated documentation files (the "Software"), to deal
- #  in the Software without restriction, including without limitation the rights
- #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- #  copies of the Software, and to permit persons to whom the Software is
- #  furnished to do so, subject to the following conditions:
- #
- #  The above copyright notice and this permission notice shall be included in all
- #  copies or substantial portions of the Software.
- #
- #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- #  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- #  SOFTWARE.
- # </summary>
- # --------------------------------------------------------------------------------------------------------------------
- #
 
   # container class for options of metafile rendering.
   class MetafileRenderingOptionsData
     # Gets or sets determines how EMF+ Dual metafiles should be rendered.
     attr_accessor :emf_plus_dual_rendering_mode
 
-    # Gets or sets a value determining whether or not the raster operations should be emulated.             
+    # Gets or sets a value determining whether or not the raster operations should be emulated.
     attr_accessor :emulate_raster_operations
 
     # Gets or sets determines how metafile images should be rendered.
     attr_accessor :rendering_mode
 
-    # Gets or sets determines how WMF metafiles with embedded EMF metafiles should be rendered.
-    attr_accessor :use_emf_embedded_to_wmf
-
-    # Gets or sets a value determining whether or not to scale fonts in WMF metafile according to metafile size on the page. The default value is true.
+    # Gets or sets a value determining whether or not to scale fonts in WMF metafile according to metafile size on the page.
+    # The default value is true.
     attr_accessor :scale_wmf_fonts_to_metafile_size
 
-
+    # Gets or sets determines how WMF metafiles with embedded EMF metafiles should be rendered.
+    attr_accessor :use_emf_embedded_to_wmf
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'emf_plus_dual_rendering_mode' => :'EmfPlusDualRenderingMode',
         :'emulate_raster_operations' => :'EmulateRasterOperations',
         :'rendering_mode' => :'RenderingMode',
-        :'use_emf_embedded_to_wmf' => :'UseEmfEmbeddedToWmf',
-        :'scale_wmf_fonts_to_metafile_size' => :'ScaleWmfFontsToMetafileSize'
+        :'scale_wmf_fonts_to_metafile_size' => :'ScaleWmfFontsToMetafileSize',
+        :'use_emf_embedded_to_wmf' => :'UseEmfEmbeddedToWmf'
       }
     end
 
@@ -64,8 +61,8 @@ module AsposeWordsCloud
         :'emf_plus_dual_rendering_mode' => :'String',
         :'emulate_raster_operations' => :'BOOLEAN',
         :'rendering_mode' => :'String',
-        :'use_emf_embedded_to_wmf' => :'BOOLEAN',
-        :'scale_wmf_fonts_to_metafile_size' => :'BOOLEAN'
+        :'scale_wmf_fonts_to_metafile_size' => :'BOOLEAN',
+        :'use_emf_embedded_to_wmf' => :'BOOLEAN'
       }
     end
 
@@ -89,14 +86,13 @@ module AsposeWordsCloud
         self.rendering_mode = attributes[:'RenderingMode']
       end
 
-      if attributes.key?(:'UseEmfEmbeddedToWmf')
-        self.use_emf_embedded_to_wmf = attributes[:'UseEmfEmbeddedToWmf']
-      end
-
       if attributes.key?(:'ScaleWmfFontsToMetafileSize')
         self.scale_wmf_fonts_to_metafile_size = attributes[:'ScaleWmfFontsToMetafileSize']
       end
 
+      if attributes.key?(:'UseEmfEmbeddedToWmf')
+        self.use_emf_embedded_to_wmf = attributes[:'UseEmfEmbeddedToWmf']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -120,8 +116,8 @@ module AsposeWordsCloud
           emf_plus_dual_rendering_mode == other.emf_plus_dual_rendering_mode &&
           emulate_raster_operations == other.emulate_raster_operations &&
           rendering_mode == other.rendering_mode &&
-          use_emf_embedded_to_wmf == other.use_emf_embedded_to_wmf &&
-          scale_wmf_fonts_to_metafile_size == other.scale_wmf_fonts_to_metafile_size
+          scale_wmf_fonts_to_metafile_size == other.scale_wmf_fonts_to_metafile_size &&
+          use_emf_embedded_to_wmf == other.use_emf_embedded_to_wmf
     end
 
     # @see the `==` method
@@ -133,7 +129,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [emf_plus_dual_rendering_mode, emulate_raster_operations, rendering_mode, use_emf_embedded_to_wmf, scale_wmf_fonts_to_metafile_size].hash
+      [emf_plus_dual_rendering_mode, emulate_raster_operations, rendering_mode, scale_wmf_fonts_to_metafile_size, use_emf_embedded_to_wmf].hash
     end
 
     # Builds the object from hash
@@ -243,5 +239,4 @@ module AsposeWordsCloud
     end
 
   end
-
 end

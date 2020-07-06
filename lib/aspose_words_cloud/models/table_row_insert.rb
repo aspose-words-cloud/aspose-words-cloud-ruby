@@ -1,56 +1,52 @@
+# ------------------------------------------------------------------------------------
+# <copyright company="Aspose" file="table_row_insert.rb">
+#   Copyright (c) 2020 Aspose.Words for Cloud
+# </copyright>
+# <summary>
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
+#  of this software and associated documentation files (the "Software"), to deal
+#  in the Software without restriction, including without limitation the rights
+#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#  copies of the Software, and to permit persons to whom the Software is
+#  furnished to do so, subject to the following conditions:
+#
+#  The above copyright notice and this permission notice shall be included in all
+#  copies or substantial portions of the Software.
+#
+#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+#  SOFTWARE.
+# </summary>
+# ------------------------------------------------------------------------------------
 
 require 'date'
 
 module AsposeWordsCloud
- #
- # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose" file="TableRowInsert.rb">
- #   Copyright (c) 2019 Aspose.Words for Cloud
- # </copyright>
- # <summary>
- #   Permission is hereby granted, free of charge, to any person obtaining a copy
- #  of this software and associated documentation files (the "Software"), to deal
- #  in the Software without restriction, including without limitation the rights
- #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- #  copies of the Software, and to permit persons to whom the Software is
- #  furnished to do so, subject to the following conditions:
- #
- #  The above copyright notice and this permission notice shall be included in all
- #  copies or substantial portions of the Software.
- #
- #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- #  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- #  SOFTWARE.
- # </summary>
- # --------------------------------------------------------------------------------------------------------------------
- #
 
   # Table row element.
   class TableRowInsert
-    # Gets or sets table row will be inserted after row with specified 0-based index.
-    attr_accessor :insert_after
-
     # Gets or sets count of columns. Default is 1.
     attr_accessor :columns_count
 
-
+    # Gets or sets table row will be inserted after row with specified 0-based index.
+    attr_accessor :insert_after
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'insert_after' => :'InsertAfter',
-        :'columns_count' => :'ColumnsCount'
+        :'columns_count' => :'ColumnsCount',
+        :'insert_after' => :'InsertAfter'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'insert_after' => :'Integer',
-        :'columns_count' => :'Integer'
+        :'columns_count' => :'Integer',
+        :'insert_after' => :'Integer'
       }
     end
 
@@ -62,14 +58,13 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'InsertAfter')
-        self.insert_after = attributes[:'InsertAfter']
-      end
-
       if attributes.key?(:'ColumnsCount')
         self.columns_count = attributes[:'ColumnsCount']
       end
 
+      if attributes.key?(:'InsertAfter')
+        self.insert_after = attributes[:'InsertAfter']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -90,8 +85,8 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          insert_after == other.insert_after &&
-          columns_count == other.columns_count
+          columns_count == other.columns_count &&
+          insert_after == other.insert_after
     end
 
     # @see the `==` method
@@ -103,7 +98,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [insert_after, columns_count].hash
+      [columns_count, insert_after].hash
     end
 
     # Builds the object from hash
@@ -213,5 +208,4 @@ module AsposeWordsCloud
     end
 
   end
-
 end

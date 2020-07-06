@@ -1,59 +1,56 @@
+# ------------------------------------------------------------------------------------
+# <copyright company="Aspose" file="response_error.rb">
+#   Copyright (c) 2020 Aspose.Words for Cloud
+# </copyright>
+# <summary>
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
+#  of this software and associated documentation files (the "Software"), to deal
+#  in the Software without restriction, including without limitation the rights
+#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#  copies of the Software, and to permit persons to whom the Software is
+#  furnished to do so, subject to the following conditions:
+#
+#  The above copyright notice and this permission notice shall be included in all
+#  copies or substantial portions of the Software.
+#
+#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+#  SOFTWARE.
+# </summary>
+# ------------------------------------------------------------------------------------
 
 require 'date'
 
 module AsposeWordsCloud
- #
- # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose" file="ResponseError.rb">
- #   Copyright (c) 2019 Aspose.Words for Cloud
- # </copyright>
- # <summary>
- #   Permission is hereby granted, free of charge, to any person obtaining a copy
- #  of this software and associated documentation files (the "Software"), to deal
- #  in the Software without restriction, including without limitation the rights
- #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- #  copies of the Software, and to permit persons to whom the Software is
- #  furnished to do so, subject to the following conditions:
- #
- #  The above copyright notice and this permission notice shall be included in all
- #  copies or substantial portions of the Software.
- #
- #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- #  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- #  SOFTWARE.
- # </summary>
- # --------------------------------------------------------------------------------------------------------------------
- #
 
   # Api error.
   class ResponseError
     # Gets or sets api error code.
     attr_accessor :code
 
-    # Gets or sets error message.
-    attr_accessor :message
+    # Gets or sets server datetime.
+    attr_accessor :date_time
 
     # Gets or sets error description.
     attr_accessor :description
 
-    # Gets or sets server datetime.
-    attr_accessor :date_time
-
+    # Gets or sets inner error.
     attr_accessor :inner_error
 
-
+    # Gets or sets error message.
+    attr_accessor :message
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'code' => :'Code',
-        :'message' => :'Message',
-        :'description' => :'Description',
         :'date_time' => :'DateTime',
-        :'inner_error' => :'InnerError'
+        :'description' => :'Description',
+        :'inner_error' => :'InnerError',
+        :'message' => :'Message'
       }
     end
 
@@ -61,10 +58,10 @@ module AsposeWordsCloud
     def self.swagger_types
       {
         :'code' => :'String',
-        :'message' => :'String',
-        :'description' => :'String',
         :'date_time' => :'DateTime',
-        :'inner_error' => :'ResponseError'
+        :'description' => :'String',
+        :'inner_error' => :'ApiError',
+        :'message' => :'String'
       }
     end
 
@@ -80,22 +77,21 @@ module AsposeWordsCloud
         self.code = attributes[:'Code']
       end
 
-      if attributes.key?(:'Message')
-        self.message = attributes[:'Message']
+      if attributes.key?(:'DateTime')
+        self.date_time = attributes[:'DateTime']
       end
 
       if attributes.key?(:'Description')
         self.description = attributes[:'Description']
       end
 
-      if attributes.key?(:'DateTime')
-        self.date_time = attributes[:'DateTime']
-      end
-
       if attributes.key?(:'InnerError')
         self.inner_error = attributes[:'InnerError']
       end
 
+      if attributes.key?(:'Message')
+        self.message = attributes[:'Message']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -117,10 +113,10 @@ module AsposeWordsCloud
       return true if self.equal?(other)
       self.class == other.class &&
           code == other.code &&
-          message == other.message &&
-          description == other.description &&
           date_time == other.date_time &&
-          inner_error == other.inner_error
+          description == other.description &&
+          inner_error == other.inner_error &&
+          message == other.message
     end
 
     # @see the `==` method
@@ -132,7 +128,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [code, message, description, date_time, inner_error].hash
+      [code, date_time, description, inner_error, message].hash
     end
 
     # Builds the object from hash
@@ -242,5 +238,4 @@ module AsposeWordsCloud
     end
 
   end
-
 end

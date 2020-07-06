@@ -1,52 +1,52 @@
+# ------------------------------------------------------------------------------------
+# <copyright company="Aspose" file="document.rb">
+#   Copyright (c) 2020 Aspose.Words for Cloud
+# </copyright>
+# <summary>
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
+#  of this software and associated documentation files (the "Software"), to deal
+#  in the Software without restriction, including without limitation the rights
+#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#  copies of the Software, and to permit persons to whom the Software is
+#  furnished to do so, subject to the following conditions:
+#
+#  The above copyright notice and this permission notice shall be included in all
+#  copies or substantial portions of the Software.
+#
+#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+#  SOFTWARE.
+# </summary>
+# ------------------------------------------------------------------------------------
 
 require 'date'
 
 module AsposeWordsCloud
- #
- # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose" file="Document.rb">
- #   Copyright (c) 2019 Aspose.Words for Cloud
- # </copyright>
- # <summary>
- #   Permission is hereby granted, free of charge, to any person obtaining a copy
- #  of this software and associated documentation files (the "Software"), to deal
- #  in the Software without restriction, including without limitation the rights
- #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- #  copies of the Software, and to permit persons to whom the Software is
- #  furnished to do so, subject to the following conditions:
- #
- #  The above copyright notice and this permission notice shall be included in all
- #  copies or substantial portions of the Software.
- #
- #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- #  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- #  SOFTWARE.
- # </summary>
- # --------------------------------------------------------------------------------------------------------------------
- #
 
   # Represents Words document DTO.
   class Document
-    # Gets or sets a list of links that originate from this document.
-    attr_accessor :links
+    # Gets or sets returns document properties.
+    attr_accessor :document_properties
 
     # Gets or sets the name of the file.
     attr_accessor :file_name
 
-    # Gets or sets the original format of the document.
-    attr_accessor :source_format
-
     # Gets or sets a value indicating whether returns true if the document is encrypted and requires a password to open.
     attr_accessor :is_encrypted
 
-    # Gets or sets a value indicating whether returns true if the document contains a digital signature. This property merely informs that a digital signature is present on a document, but it does not specify whether the signature is valid or not.
+    # Gets or sets a value indicating whether returns true if the document contains a digital signature. This property merely informs that a
+    # digital signature is present on a document, but it does not specify whether the signature is valid or not.
     attr_accessor :is_signed
 
-    attr_accessor :document_properties
+    # Gets or sets a list of links that originate from this document.
+    attr_accessor :links
+
+    # Gets or sets the original format of the document.
+    attr_accessor :source_format
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -73,24 +73,24 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'links' => :'Links',
+        :'document_properties' => :'DocumentProperties',
         :'file_name' => :'FileName',
-        :'source_format' => :'SourceFormat',
         :'is_encrypted' => :'IsEncrypted',
         :'is_signed' => :'IsSigned',
-        :'document_properties' => :'DocumentProperties'
+        :'links' => :'Links',
+        :'source_format' => :'SourceFormat'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'links' => :'Array<Link>',
+        :'document_properties' => :'DocumentProperties',
         :'file_name' => :'String',
-        :'source_format' => :'String',
         :'is_encrypted' => :'BOOLEAN',
         :'is_signed' => :'BOOLEAN',
-        :'document_properties' => :'DocumentProperties'
+        :'links' => :'Array<Link>',
+        :'source_format' => :'String'
       }
     end
 
@@ -102,18 +102,12 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'Links')
-        if (value = attributes[:'Links']).is_a?(Array)
-          self.links = value
-        end
+      if attributes.key?(:'DocumentProperties')
+        self.document_properties = attributes[:'DocumentProperties']
       end
 
       if attributes.key?(:'FileName')
         self.file_name = attributes[:'FileName']
-      end
-
-      if attributes.key?(:'SourceFormat')
-        self.source_format = attributes[:'SourceFormat']
       end
 
       if attributes.key?(:'IsEncrypted')
@@ -124,10 +118,15 @@ module AsposeWordsCloud
         self.is_signed = attributes[:'IsSigned']
       end
 
-      if attributes.key?(:'DocumentProperties')
-        self.document_properties = attributes[:'DocumentProperties']
+      if attributes.key?(:'Links')
+        if (value = attributes[:'Links']).is_a?(Array)
+          self.links = value
+        end
       end
 
+      if attributes.key?(:'SourceFormat')
+        self.source_format = attributes[:'SourceFormat']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -142,6 +141,7 @@ module AsposeWordsCloud
     def valid?
       source_format_validator = EnumAttributeValidator.new('String', ["Unknown", "Doc", "Dot", "DocPreWord60", "Docx", "Docm", "Dotx", "Dotm", "FlatOpc", "Rtf", "WordML", "Html", "Mhtml", "Epub", "Text", "Odt", "Ott", "Pdf", "Xps", "Tiff", "Svg"])
       return false unless source_format_validator.valid?(@source_format)
+
       return true
     end
 
@@ -159,17 +159,18 @@ module AsposeWordsCloud
       end
     end
 
+
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          links == other.links &&
+          document_properties == other.document_properties &&
           file_name == other.file_name &&
-          source_format == other.source_format &&
           is_encrypted == other.is_encrypted &&
           is_signed == other.is_signed &&
-          document_properties == other.document_properties
+          links == other.links &&
+          source_format == other.source_format
     end
 
     # @see the `==` method
@@ -181,7 +182,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [links, file_name, source_format, is_encrypted, is_signed, document_properties].hash
+      [document_properties, file_name, is_encrypted, is_signed, links, source_format].hash
     end
 
     # Builds the object from hash
@@ -291,5 +292,4 @@ module AsposeWordsCloud
     end
 
   end
-
 end

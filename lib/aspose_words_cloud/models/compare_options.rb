@@ -1,61 +1,66 @@
+# ------------------------------------------------------------------------------------
+# <copyright company="Aspose" file="compare_options.rb">
+#   Copyright (c) 2020 Aspose.Words for Cloud
+# </copyright>
+# <summary>
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
+#  of this software and associated documentation files (the "Software"), to deal
+#  in the Software without restriction, including without limitation the rights
+#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#  copies of the Software, and to permit persons to whom the Software is
+#  furnished to do so, subject to the following conditions:
+#
+#  The above copyright notice and this permission notice shall be included in all
+#  copies or substantial portions of the Software.
+#
+#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+#  SOFTWARE.
+# </summary>
+# ------------------------------------------------------------------------------------
 
 require 'date'
 
 module AsposeWordsCloud
- #
- # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose" file="CompareOptions.rb">
- #   Copyright (c) 2019 Aspose.Words for Cloud
- # </copyright>
- # <summary>
- #   Permission is hereby granted, free of charge, to any person obtaining a copy
- #  of this software and associated documentation files (the "Software"), to deal
- #  in the Software without restriction, including without limitation the rights
- #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- #  copies of the Software, and to permit persons to whom the Software is
- #  furnished to do so, subject to the following conditions:
- #
- #  The above copyright notice and this permission notice shall be included in all
- #  copies or substantial portions of the Software.
- #
- #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- #  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- #  SOFTWARE.
- # </summary>
- # --------------------------------------------------------------------------------------------------------------------
- #
 
   # Container class for compare documents options.
   class CompareOptions
-    # Gets or sets a value indicating whether true indicates that documents comparison is case insensitive. By default comparison is case sensitive.             
+    # Gets or sets a value indicating whether true indicates that documents comparison is case insensitive. By default comparison is case sensitive.
     attr_accessor :ignore_case_changes
 
-    # Gets or sets a value indicating whether specifies whether to compare the differences in data contained in tables. By default tables are not ignored.             
-    attr_accessor :ignore_tables
-
-    # Gets or sets a value indicating whether specifies whether to compare differences in fields. By default fields are not ignored.             
-    attr_accessor :ignore_fields
-
-    # Gets or sets a value indicating whether specifies whether to compare differences in footnotes and endnotes. By default footnotes are not ignored.             
-    attr_accessor :ignore_footnotes
-
-    # Gets or sets a value indicating whether specifies whether to compare differences in comments. By default comments are not ignored.             
+    # Gets or sets a value indicating whether specifies whether to compare differences in comments. By default comments are
+    # not ignored.
     attr_accessor :ignore_comments
 
-    # Gets or sets a value indicating whether specifies whether to compare differences in the data contained within text boxes. By default textboxes are not ignored.             
-    attr_accessor :ignore_textboxes
+    # Gets or sets a value indicating whether specifies whether to compare differences in fields. By default fields are not
+    # ignored.
+    attr_accessor :ignore_fields
 
-    # Gets or sets a value indicating whether true indicates that formatting is ignored. By default document formatting is not ignored.             
+    # Gets or sets a value indicating whether specifies whether to compare differences in footnotes and endnotes. By default
+    # footnotes are not ignored.
+    attr_accessor :ignore_footnotes
+
+    # Gets or sets a value indicating whether true indicates that formatting is ignored. By default document formatting is
+    # not ignored.
     attr_accessor :ignore_formatting
 
-    # Gets or sets a value indicating whether true indicates that headers and footers content is ignored. By default headers and footers are not ignored.             
+    # Gets or sets a value indicating whether true indicates that headers and footers content is ignored. By default headers
+    # and footers are not ignored.
     attr_accessor :ignore_headers_and_footers
 
-    # Gets or sets specifies which document shall be used as a target during comparison.             
+    # Gets or sets a value indicating whether specifies whether to compare the differences in data contained in tables. By
+    # default tables are not ignored.
+    attr_accessor :ignore_tables
+
+    # Gets or sets a value indicating whether specifies whether to compare differences in the data contained within text boxes.
+    # By default textboxes are not ignored.
+    attr_accessor :ignore_textboxes
+
+    # Gets or sets specifies which document shall be used as a target during comparison.
     attr_accessor :target
 
     class EnumAttributeValidator
@@ -84,13 +89,13 @@ module AsposeWordsCloud
     def self.attribute_map
       {
         :'ignore_case_changes' => :'IgnoreCaseChanges',
-        :'ignore_tables' => :'IgnoreTables',
+        :'ignore_comments' => :'IgnoreComments',
         :'ignore_fields' => :'IgnoreFields',
         :'ignore_footnotes' => :'IgnoreFootnotes',
-        :'ignore_comments' => :'IgnoreComments',
-        :'ignore_textboxes' => :'IgnoreTextboxes',
         :'ignore_formatting' => :'IgnoreFormatting',
         :'ignore_headers_and_footers' => :'IgnoreHeadersAndFooters',
+        :'ignore_tables' => :'IgnoreTables',
+        :'ignore_textboxes' => :'IgnoreTextboxes',
         :'target' => :'Target'
       }
     end
@@ -99,13 +104,13 @@ module AsposeWordsCloud
     def self.swagger_types
       {
         :'ignore_case_changes' => :'BOOLEAN',
-        :'ignore_tables' => :'BOOLEAN',
+        :'ignore_comments' => :'BOOLEAN',
         :'ignore_fields' => :'BOOLEAN',
         :'ignore_footnotes' => :'BOOLEAN',
-        :'ignore_comments' => :'BOOLEAN',
-        :'ignore_textboxes' => :'BOOLEAN',
         :'ignore_formatting' => :'BOOLEAN',
         :'ignore_headers_and_footers' => :'BOOLEAN',
+        :'ignore_tables' => :'BOOLEAN',
+        :'ignore_textboxes' => :'BOOLEAN',
         :'target' => :'String'
       }
     end
@@ -122,8 +127,8 @@ module AsposeWordsCloud
         self.ignore_case_changes = attributes[:'IgnoreCaseChanges']
       end
 
-      if attributes.key?(:'IgnoreTables')
-        self.ignore_tables = attributes[:'IgnoreTables']
+      if attributes.key?(:'IgnoreComments')
+        self.ignore_comments = attributes[:'IgnoreComments']
       end
 
       if attributes.key?(:'IgnoreFields')
@@ -134,14 +139,6 @@ module AsposeWordsCloud
         self.ignore_footnotes = attributes[:'IgnoreFootnotes']
       end
 
-      if attributes.key?(:'IgnoreComments')
-        self.ignore_comments = attributes[:'IgnoreComments']
-      end
-
-      if attributes.key?(:'IgnoreTextboxes')
-        self.ignore_textboxes = attributes[:'IgnoreTextboxes']
-      end
-
       if attributes.key?(:'IgnoreFormatting')
         self.ignore_formatting = attributes[:'IgnoreFormatting']
       end
@@ -150,10 +147,17 @@ module AsposeWordsCloud
         self.ignore_headers_and_footers = attributes[:'IgnoreHeadersAndFooters']
       end
 
+      if attributes.key?(:'IgnoreTables')
+        self.ignore_tables = attributes[:'IgnoreTables']
+      end
+
+      if attributes.key?(:'IgnoreTextboxes')
+        self.ignore_textboxes = attributes[:'IgnoreTextboxes']
+      end
+
       if attributes.key?(:'Target')
         self.target = attributes[:'Target']
       end
-
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -168,6 +172,7 @@ module AsposeWordsCloud
     def valid?
       target_validator = EnumAttributeValidator.new('String', ["Current", "New"])
       return false unless target_validator.valid?(@target)
+
       return true
     end
 
@@ -185,19 +190,20 @@ module AsposeWordsCloud
       end
     end
 
+
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
           ignore_case_changes == other.ignore_case_changes &&
-          ignore_tables == other.ignore_tables &&
+          ignore_comments == other.ignore_comments &&
           ignore_fields == other.ignore_fields &&
           ignore_footnotes == other.ignore_footnotes &&
-          ignore_comments == other.ignore_comments &&
-          ignore_textboxes == other.ignore_textboxes &&
           ignore_formatting == other.ignore_formatting &&
           ignore_headers_and_footers == other.ignore_headers_and_footers &&
+          ignore_tables == other.ignore_tables &&
+          ignore_textboxes == other.ignore_textboxes &&
           target == other.target
     end
 
@@ -210,7 +216,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [ignore_case_changes, ignore_tables, ignore_fields, ignore_footnotes, ignore_comments, ignore_textboxes, ignore_formatting, ignore_headers_and_footers, target].hash
+      [ignore_case_changes, ignore_comments, ignore_fields, ignore_footnotes, ignore_formatting, ignore_headers_and_footers, ignore_tables, ignore_textboxes, target].hash
     end
 
     # Builds the object from hash
@@ -320,5 +326,4 @@ module AsposeWordsCloud
     end
 
   end
-
 end
