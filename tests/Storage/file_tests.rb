@@ -71,7 +71,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = MoveFileRequest.new(remote_data_folder + '/TestMoveFileDest.docx', remote_data_folder + '/' + remote_file_name, nil, nil, nil)
+      request = MoveFileRequest.new(remote_test_out + '/TestMoveFileDest.docx', remote_data_folder + '/' + remote_file_name, nil, nil, nil)
 
       @words_api.move_file(request)
     end

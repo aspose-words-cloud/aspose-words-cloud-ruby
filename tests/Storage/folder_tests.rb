@@ -87,11 +87,9 @@ module AsposeWordsCloud
     # Test for move folder.
     #
     def test_move_folder
-      folder_to_move = remote_data_folder + '/TestMoveFolder'
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/TestMoveFolderSrc/TestMoveFolderSrc.docx'
 
-      upload_file File.join(local_test_folder, local_file), folder_to_move + 'Src/TestMoveFolderSrc.docx'
-
-      request = MoveFolderRequest.new(folder_to_move + 'Dest', folder_to_move + 'Src', nil, nil)
+      request = MoveFolderRequest.new(remote_test_out + '/TestMoveFolderDest', remote_data_folder + '/TestMoveFolderSrc', nil, nil)
 
       @words_api.move_folder(request)
     end
