@@ -282,6 +282,8 @@ module AsposeWordsCloud
     end
 
     def build_request_url(path)
+      # remove empty path parameter artifacts
+      path = path.gsub(/\/+/, '/')
       return @config.getFullUrl(path, path == "/connect/token")
     end
 
