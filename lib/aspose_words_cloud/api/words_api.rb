@@ -11272,6 +11272,77 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
+    # Allows to optimize the document contents as well as default Aspose.Words behavior to a particular versions of MS Word.
+    # @param request OptimizeDocumentRequest
+    # @return [nil]
+    def optimize_document(request)
+        begin
+        data, _status_code, _headers = optimize_document_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = optimize_document_with_http_info(request)
+            else
+            raise
+            end
+        end
+        nil
+    end
+
+    # Allows to optimize the document contents as well as default Aspose.Words behavior to a particular versions of MS Word.
+    # @param request OptimizeDocumentRequest
+    # @return [Array<(nil, Fixnum, Hash)>]
+    # nil, response status code and response headers
+    private def optimize_document_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? OptimizeDocumentRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.optimize_document ...' if @api_client.config.debugging
+        # verify the required parameter 'name' is set
+        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.optimize_document' if @api_client.config.client_side_validation && request.name.nil?
+        # verify the required parameter 'options' is set
+        raise ArgumentError, 'Missing the required parameter options when calling WordsApi.optimize_document' if @api_client.config.client_side_validation && request.options.nil?
+
+        # resource path
+        local_var_path = '/words/{name}/compatibility/optimize'[1..-1]
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.to_s)
+
+        # query parameters
+        query_params = {}
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        # header parameters
+        header_params = {}
+        # HTTP header 'Accept' (if needed)
+        header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+        # HTTP header 'Content-Type'
+        header_params['Content-Type'] = @api_client.select_header_content_type(['application/xml', 'application/json'])
+
+        # form parameters
+        form_params = {}
+
+        # http body (model)
+        post_body = @api_client.object_to_http_body(request.options)
+        auth_names = ['JWT']
+
+        data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names)
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#optimize_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+        [data, status_code, headers]
+    end
+
     # Protects document.
     # @param request ProtectDocumentRequest
     # @return [ProtectionDataResponse]
