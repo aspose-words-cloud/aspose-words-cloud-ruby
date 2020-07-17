@@ -13,6 +13,59 @@ This repository contains Aspose.Words Cloud SDK for Ruby source code. This SDK a
 * Watermarks and protection
 * Full read & write access to Document Object Model, including sections, paragraphs, text, images, tables, headers/footers and many others
 
+## Enhancements in Version 20.7
+
+- Added 'Markdown' save format
+- Added endpoint to update paragraph format without node path (PUT '/words/{name}/paragraphs/{index}/format')
+
+
+## Enhancements in Version 20.6
+
+- Added new methods:
+  - DeleteAllParagraphTabStopsWithoutNodePath
+  - DeleteParagraphTabStopWithoutNodePath
+  - GetParagraphTabStopsWithoutNodePath
+  - InsertOrUpdateParagraphTabStopWithoutNodePath
+  - InsertParagraphWithoutNodePath
+  - UpdateParagraphFormatWithoutNodePath
+  - UpdateParagraphListFormatWithoutNodePath
+  - DeleteParagraphListFormatWithoutNodePath
+- DrawingObject related methods have been changed body content. Special request classes are introduced instead of strings.
+- InsertOrUpdateParagraphTabStop, DeleteParagraphTabStop methods have been changed parameter order
+- OoxmlSaveOptionsData.CompressionLevel property has been added
+
+
+## Enhancements in Version 20.5
+
+- Added methods to work with Word document lists
+  - GetLists
+  - GetList
+  - InsertList
+  - UpdateList
+  - UpdateListLevel
+- Added methods to work with styles
+  - GetStyles
+  - UpdateStyle
+  - InsertStyle
+  - CopyStyle
+  - GetStyleFromDocumentElement
+  - ApplyStyleToDocumentElement
+- Added methods to work with paragraph list format
+  - GetParagraphListFormat
+  - GetParagraphListFormatWithoutNodePath
+  - UpdateParagraphListFormat
+  - DeleteParagraphListFormat
+- Added methods to work with paragraph tab stops
+  - GetParagraphTabStops
+  - InsertOrUpdateParagraphTabStop
+  - DeleteAllParagraphTabStops
+  - DeleteParagraphTabStop
+- Added methods to build reports
+  - BuildReport
+  - BuildReportOnline
+- Added Shading property to ParagraphFormat
+
+
 ## How to use the SDK?
 The complete source code is available in this repository folder. You can either directly use it in your project via source code or get [RubyGem](https://rubygems.org/gems/aspose_words_cloud) (recommended). For more details, please visit our [documentation website](https://docs.aspose.cloud/display/wordscloud/Available+SDKs).
 
@@ -33,12 +86,14 @@ gem install aspose_words_cloud
 
 ### Sample usage
 ```ruby
-AsposeWordsCloud.configure do |config|
-        config.api_key['api_key'] = AppKey
-        config.api_key['app_sid'] = AppSid
-        config.host = host
-request = DeleteWatermarkRequest.new remote_name, remote_test_folder + test_folder
-result = @words_api.delete_watermark request
+    # Start README example
+    AsposeWordsCloud.configure do |config|
+            config.api_key['api_key'] = AppKey
+            config.api_key['app_sid'] = AppSid
+            config.host = host
+    request = DeleteWatermarkRequest.new remote_name, remote_test_folder + test_folder
+    result = @words_api.delete_watermark request
+    # End README example
 ```
 
 [Tests](tests/) contain various examples of using the SDK.

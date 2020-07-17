@@ -29,11 +29,15 @@ module AsposeWordsCloud
 
   # Represents a list of documents which will be appended to the original resource document.
   class DocumentEntryList
+    # Gets or sets parameter that indicates to apply headers and footers from base document to appending documents. Default is true.
+    attr_accessor :apply_base_document_headers_and_footers_to_appending_documents
+
     # Gets or sets list of documents.
     attr_accessor :document_entries
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'apply_base_document_headers_and_footers_to_appending_documents' => :'ApplyBaseDocumentHeadersAndFootersToAppendingDocuments',
         :'document_entries' => :'DocumentEntries'
       }
     end
@@ -41,6 +45,7 @@ module AsposeWordsCloud
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'apply_base_document_headers_and_footers_to_appending_documents' => :'BOOLEAN',
         :'document_entries' => :'Array<DocumentEntry>'
       }
     end
@@ -52,6 +57,10 @@ module AsposeWordsCloud
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.key?(:'ApplyBaseDocumentHeadersAndFootersToAppendingDocuments')
+        self.apply_base_document_headers_and_footers_to_appending_documents = attributes[:'ApplyBaseDocumentHeadersAndFootersToAppendingDocuments']
+      end
 
       if attributes.key?(:'DocumentEntries')
         if (value = attributes[:'DocumentEntries']).is_a?(Array)
@@ -78,6 +87,7 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
+          apply_base_document_headers_and_footers_to_appending_documents == other.apply_base_document_headers_and_footers_to_appending_documents &&
           document_entries == other.document_entries
     end
 
@@ -90,7 +100,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [document_entries].hash
+      [apply_base_document_headers_and_footers_to_appending_documents, document_entries].hash
     end
 
     # Builds the object from hash
