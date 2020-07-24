@@ -35,11 +35,11 @@ module AsposeWordsCloud
     # The destination format.
     attr_accessor :format
 
-    # Path to the node, which contains tables.
-    attr_accessor :node_path
-
     # Object index.
     attr_accessor :index
+
+    # Path to the node, which contains tables.
+    attr_accessor :node_path
 
     # Original document folder.
     attr_accessor :folder
@@ -60,19 +60,19 @@ module AsposeWordsCloud
     # Initializes a new instance.
     # @param name The document name.
     # @param format The destination format.
-    # @param node_path Path to the node, which contains tables.
     # @param index Object index.
+    # @param node_path Path to the node, which contains tables.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     # @param password Password for opening an encrypted document.
     # @param fonts_location Folder in filestorage with custom fonts.
 
-    def initialize(name, format, node_path, index, folder = nil, storage = nil, load_encoding = nil, password = nil, fonts_location = nil)
+    def initialize(name, format, index, node_path = nil, folder = nil, storage = nil, load_encoding = nil, password = nil, fonts_location = nil)
       self.name = name
       self.format = format
-      self.node_path = node_path
       self.index = index
+      self.node_path = node_path
       self.folder = folder
       self.storage = storage
       self.load_encoding = load_encoding

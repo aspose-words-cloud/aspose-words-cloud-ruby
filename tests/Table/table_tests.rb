@@ -60,9 +60,9 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetTablesWithoutNodePathRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
+      request = GetTablesRequest.new(remote_file_name, nil, remote_data_folder, nil, nil, nil)
 
-      result = @words_api.get_tables_without_node_path(request)
+      result = @words_api.get_tables(request)
       assert_equal false, result.nil?
     end
 
@@ -74,7 +74,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetTableRequest.new(remote_file_name, '', 1, remote_data_folder, nil, nil, nil)
+      request = GetTableRequest.new(remote_file_name, 1, '', remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_table(request)
       assert_equal false, result.nil?
@@ -88,9 +88,9 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetTableWithoutNodePathRequest.new(remote_file_name, 1, remote_data_folder, nil, nil, nil)
+      request = GetTableRequest.new(remote_file_name, 1, nil, remote_data_folder, nil, nil, nil)
 
-      result = @words_api.get_table_without_node_path(request)
+      result = @words_api.get_table(request)
       assert_equal false, result.nil?
     end
 
@@ -102,7 +102,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = DeleteTableRequest.new(remote_file_name, '', 1, remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request = DeleteTableRequest.new(remote_file_name, 1, '', remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       @words_api.delete_table(request)
     end
@@ -115,9 +115,9 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = DeleteTableWithoutNodePathRequest.new(remote_file_name, 1, remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request = DeleteTableRequest.new(remote_file_name, 1, nil, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
-      @words_api.delete_table_without_node_path(request)
+      @words_api.delete_table(request)
     end
 
     #
@@ -144,9 +144,9 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
       request_table = TableInsert.new({:ColumnsCount => 5, :RowsCount => 4})
-      request = InsertTableWithoutNodePathRequest.new(remote_file_name, request_table, remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request = InsertTableRequest.new(remote_file_name, request_table, nil, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
-      result = @words_api.insert_table_without_node_path(request)
+      result = @words_api.insert_table(request)
       assert_equal false, result.nil?
     end
 
@@ -158,7 +158,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetTablePropertiesRequest.new(remote_file_name, '', 1, remote_data_folder, nil, nil, nil)
+      request = GetTablePropertiesRequest.new(remote_file_name, 1, '', remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_table_properties(request)
       assert_equal false, result.nil?
@@ -172,9 +172,9 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetTablePropertiesWithoutNodePathRequest.new(remote_file_name, 1, remote_data_folder, nil, nil, nil)
+      request = GetTablePropertiesRequest.new(remote_file_name, 1, nil, remote_data_folder, nil, nil, nil)
 
-      result = @words_api.get_table_properties_without_node_path(request)
+      result = @words_api.get_table_properties(request)
       assert_equal false, result.nil?
     end
 
@@ -187,7 +187,7 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
       request_properties = TableProperties.new({:Alignment => 'Right', :AllowAutoFit => false, :Bidi => true, :BottomPadding => 1, :CellSpacing => 2, :StyleOptions => 'ColumnBands'})
-      request = UpdateTablePropertiesRequest.new(remote_file_name, request_properties, '', 1, remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request = UpdateTablePropertiesRequest.new(remote_file_name, request_properties, 1, '', remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_table_properties(request)
       assert_equal false, result.nil?
@@ -202,9 +202,9 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
       request_properties = TableProperties.new({:Alignment => 'Right', :AllowAutoFit => false, :Bidi => true, :BottomPadding => 1, :CellSpacing => 2, :StyleOptions => 'ColumnBands'})
-      request = UpdateTablePropertiesWithoutNodePathRequest.new(remote_file_name, request_properties, 1, remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request = UpdateTablePropertiesRequest.new(remote_file_name, request_properties, 1, nil, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
-      result = @words_api.update_table_properties_without_node_path(request)
+      result = @words_api.update_table_properties(request)
       assert_equal false, result.nil?
     end
 
@@ -358,7 +358,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = RenderTableRequest.new(remote_file_name, 'png', '', 0, remote_data_folder, nil, nil, nil, nil)
+      request = RenderTableRequest.new(remote_file_name, 'png', 0, '', remote_data_folder, nil, nil, nil, nil)
 
       result = @words_api.render_table(request)
       assert_equal false, result.nil?
@@ -372,9 +372,9 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = RenderTableWithoutNodePathRequest.new(remote_file_name, 'png', 0, remote_data_folder, nil, nil, nil, nil)
+      request = RenderTableRequest.new(remote_file_name, 'png', 0, nil, remote_data_folder, nil, nil, nil, nil)
 
-      result = @words_api.render_table_without_node_path(request)
+      result = @words_api.render_table(request)
       assert_equal false, result.nil?
     end
   end

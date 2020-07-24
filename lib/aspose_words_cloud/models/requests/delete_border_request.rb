@@ -32,11 +32,11 @@ module AsposeWordsCloud
     # The document name.
     attr_accessor :name
 
-    # Path to the node with border(node should be paragraph, cell or row).
-    attr_accessor :node_path
-
     # Border type.
     attr_accessor :border_type
+
+    # Path to the node with border(node should be paragraph, cell or row).
+    attr_accessor :node_path
 
     # Original document folder.
     attr_accessor :folder
@@ -62,8 +62,8 @@ module AsposeWordsCloud
     #
     # Initializes a new instance.
     # @param name The document name.
-    # @param node_path Path to the node with border(node should be paragraph, cell or row).
     # @param border_type Border type.
+    # @param node_path Path to the node with border(node should be paragraph, cell or row).
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -72,10 +72,10 @@ module AsposeWordsCloud
     # @param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
     # @param revision_date_time The date and time to use for revisions.
 
-    def initialize(name, node_path, border_type, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil, revision_author = nil, revision_date_time = nil)
+    def initialize(name, border_type, node_path = nil, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil, revision_author = nil, revision_date_time = nil)
       self.name = name
-      self.node_path = node_path
       self.border_type = border_type
+      self.node_path = node_path
       self.folder = folder
       self.storage = storage
       self.load_encoding = load_encoding
