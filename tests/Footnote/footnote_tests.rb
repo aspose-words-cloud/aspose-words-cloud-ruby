@@ -62,9 +62,9 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, footnote_folder + '/Footnote.doc'), remote_data_folder + '/' + remote_file_name
 
       request_footnote_dto = FootnoteInsert.new({:FootnoteType => 'Endnote', :Text => 'test endnote'})
-      request = InsertFootnoteWithoutNodePathRequest.new(remote_file_name, request_footnote_dto, remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request = InsertFootnoteRequest.new(remote_file_name, request_footnote_dto, nil, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
-      result = @words_api.insert_footnote_without_node_path(request)
+      result = @words_api.insert_footnote(request)
       assert_equal false, result.nil?
     end
 
@@ -76,7 +76,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, footnote_folder + '/Footnote.doc'), remote_data_folder + '/' + remote_file_name
 
-      request = DeleteFootnoteRequest.new(remote_file_name, '', 0, remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request = DeleteFootnoteRequest.new(remote_file_name, 0, '', remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       @words_api.delete_footnote(request)
     end
@@ -89,9 +89,9 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, footnote_folder + '/Footnote.doc'), remote_data_folder + '/' + remote_file_name
 
-      request = DeleteFootnoteWithoutNodePathRequest.new(remote_file_name, 0, remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request = DeleteFootnoteRequest.new(remote_file_name, 0, nil, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
-      @words_api.delete_footnote_without_node_path(request)
+      @words_api.delete_footnote(request)
     end
 
     #
@@ -116,9 +116,9 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, footnote_folder + '/Footnote.doc'), remote_data_folder + '/' + remote_file_name
 
-      request = GetFootnotesWithoutNodePathRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
+      request = GetFootnotesRequest.new(remote_file_name, nil, remote_data_folder, nil, nil, nil)
 
-      result = @words_api.get_footnotes_without_node_path(request)
+      result = @words_api.get_footnotes(request)
       assert_equal false, result.nil?
     end
 
@@ -130,7 +130,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, footnote_folder + '/Footnote.doc'), remote_data_folder + '/' + remote_file_name
 
-      request = GetFootnoteRequest.new(remote_file_name, '', 0, remote_data_folder, nil, nil, nil)
+      request = GetFootnoteRequest.new(remote_file_name, 0, '', remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_footnote(request)
       assert_equal false, result.nil?
@@ -144,9 +144,9 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, footnote_folder + '/Footnote.doc'), remote_data_folder + '/' + remote_file_name
 
-      request = GetFootnoteWithoutNodePathRequest.new(remote_file_name, 0, remote_data_folder, nil, nil, nil)
+      request = GetFootnoteRequest.new(remote_file_name, 0, nil, remote_data_folder, nil, nil, nil)
 
-      result = @words_api.get_footnote_without_node_path(request)
+      result = @words_api.get_footnote(request)
       assert_equal false, result.nil?
     end
 
@@ -159,7 +159,7 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, footnote_folder + '/Footnote.doc'), remote_data_folder + '/' + remote_file_name
 
       request_footnote_dto = FootnoteUpdate.new({:Text => 'new text is here'})
-      request = UpdateFootnoteRequest.new(remote_file_name, request_footnote_dto, '', 0, remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request = UpdateFootnoteRequest.new(remote_file_name, request_footnote_dto, 0, '', remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_footnote(request)
       assert_equal false, result.nil?
@@ -174,9 +174,9 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, footnote_folder + '/Footnote.doc'), remote_data_folder + '/' + remote_file_name
 
       request_footnote_dto = FootnoteUpdate.new({:Text => 'new text is here'})
-      request = UpdateFootnoteWithoutNodePathRequest.new(remote_file_name, request_footnote_dto, 0, remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request = UpdateFootnoteRequest.new(remote_file_name, request_footnote_dto, 0, nil, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
-      result = @words_api.update_footnote_without_node_path(request)
+      result = @words_api.update_footnote(request)
       assert_equal false, result.nil?
     end
   end

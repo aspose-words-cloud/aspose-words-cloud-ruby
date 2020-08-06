@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="render_drawing_object_without_node_path_request.rb">
+# <copyright company="Aspose" file="optimize_document_request.rb">
 #   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -26,17 +26,14 @@
 module AsposeWordsCloud
 
   #
-  # Request model for render_drawing_object_without_node_path operation.
+  # Request model for optimize_document operation.
   #
-  class RenderDrawingObjectWithoutNodePathRequest
+  class OptimizeDocumentRequest
     # The document name.
     attr_accessor :name
 
-    # The destination format.
-    attr_accessor :format
-
-    # Object index.
-    attr_accessor :index
+    # The document optimization options.
+    attr_accessor :options
 
     # Original document folder.
     attr_accessor :folder
@@ -50,29 +47,37 @@ module AsposeWordsCloud
     # Password for opening an encrypted document.
     attr_accessor :password
 
-    # Folder in filestorage with custom fonts.
-    attr_accessor :fonts_location
+    # Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+    attr_accessor :dest_file_name
+
+    # Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+    attr_accessor :revision_author
+
+    # The date and time to use for revisions.
+    attr_accessor :revision_date_time
 
     #
     # Initializes a new instance.
     # @param name The document name.
-    # @param format The destination format.
-    # @param index Object index.
+    # @param options The document optimization options.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     # @param password Password for opening an encrypted document.
-    # @param fonts_location Folder in filestorage with custom fonts.
+    # @param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+    # @param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+    # @param revision_date_time The date and time to use for revisions.
 
-    def initialize(name, format, index, folder = nil, storage = nil, load_encoding = nil, password = nil, fonts_location = nil)
+    def initialize(name, options, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil, revision_author = nil, revision_date_time = nil)
       self.name = name
-      self.format = format
-      self.index = index
+      self.options = options
       self.folder = folder
       self.storage = storage
       self.load_encoding = load_encoding
       self.password = password
-      self.fonts_location = fonts_location
+      self.dest_file_name = dest_file_name
+      self.revision_author = revision_author
+      self.revision_date_time = revision_date_time
     end
   end
 end

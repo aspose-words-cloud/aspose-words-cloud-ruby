@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="get_field_without_node_path_request.rb">
+# <copyright company="Aspose" file="url_encode_test.rb">
 #   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -24,45 +24,27 @@
 # ------------------------------------------------------------------------------------
 
 module AsposeWordsCloud
+  require_relative 'base_test_context'
+  class UrlEncodeTests < BaseTestContext
 
-  #
-  # Request model for get_field_without_node_path operation.
-  #
-  class GetFieldWithoutNodePathRequest
-    # The document name.
-    attr_accessor :name
-
-    # Object index.
-    attr_accessor :index
-
-    # Original document folder.
-    attr_accessor :folder
-
-    # Original document storage.
-    attr_accessor :storage
-
-    # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    attr_accessor :load_encoding
-
-    # Password for opening an encrypted document.
-    attr_accessor :password
+    def test_folder
+      'DocumentElements/Bookmarks'
+    end
 
     #
-    # Initializes a new instance.
-    # @param name The document name.
-    # @param index Object index.
-    # @param folder Original document folder.
-    # @param storage Original document storage.
-    # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @param password Password for opening an encrypted document.
+    # Test for url encoding of document name
+    #
+    def test_ur_encode
+      filename = 'test_multi_pages.docx'
+      remote_name = '[“Test_Two,_Inc.”]-_83(b)Election([“Bill_Gates”]).docx'
+      bookmark_name = 'aspose'
 
-    def initialize(name, index, folder = nil, storage = nil, load_encoding = nil, password = nil)
-      self.name = name
-      self.index = index
-      self.folder = folder
-      self.storage = storage
-      self.load_encoding = load_encoding
-      self.password = password
+      upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
+
+      request = GetBookmarkByNameRequest.new remote_name, bookmark_name, remote_test_folder + test_folder
+      result = @words_api.get_bookmark_by_name request
+      assert_equal FALSE, result.nil?
     end
+
   end
 end

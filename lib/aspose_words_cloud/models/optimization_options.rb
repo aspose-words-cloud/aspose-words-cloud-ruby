@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="document_entry_list.rb">
+# <copyright company="Aspose" file="optimization_options.rb">
 #   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -27,26 +27,44 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Represents a list of documents which will be appended to the original resource document.
-  class DocumentEntryList
-    # Gets or sets parameter that indicates to apply headers and footers from base document to appending documents. Default is true.
-    attr_accessor :apply_base_document_headers_and_footers_to_appending_documents
+  # Container class for the document optimization options.
+  class OptimizationOptions
+    # Gets or sets specific MSWord version.
+    attr_accessor :ms_word_version
 
-    # Gets or sets list of documents.
-    attr_accessor :document_entries
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'apply_base_document_headers_and_footers_to_appending_documents' => :'ApplyBaseDocumentHeadersAndFootersToAppendingDocuments',
-        :'document_entries' => :'DocumentEntries'
+        :'ms_word_version' => :'MsWordVersion'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'apply_base_document_headers_and_footers_to_appending_documents' => :'BOOLEAN',
-        :'document_entries' => :'Array<DocumentEntry>'
+        :'ms_word_version' => :'String'
       }
     end
 
@@ -58,14 +76,8 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'ApplyBaseDocumentHeadersAndFootersToAppendingDocuments')
-        self.apply_base_document_headers_and_footers_to_appending_documents = attributes[:'ApplyBaseDocumentHeadersAndFootersToAppendingDocuments']
-      end
-
-      if attributes.key?(:'DocumentEntries')
-        if (value = attributes[:'DocumentEntries']).is_a?(Array)
-          self.document_entries = value
-        end
+      if attributes.key?(:'MsWordVersion')
+        self.ms_word_version = attributes[:'MsWordVersion']
       end
     end
 
@@ -79,16 +91,33 @@ module AsposeWordsCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      ms_word_version_validator = EnumAttributeValidator.new('String', ["Word2000", "Word2002", "Word2003", "Word2007", "Word2010", "Word2013", "Word2016", "Word2019"])
+      return false unless ms_word_version_validator.valid?(@ms_word_version)
+
       return true
     end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] ms_word_version Object to be assigned
+    def ms_word_version=(ms_word_version)
+      validator = EnumAttributeValidator.new('String', ["Word2000", "Word2002", "Word2003", "Word2007", "Word2010", "Word2013", "Word2016", "Word2019"])
+      if ms_word_version.to_i == 0
+        unless validator.valid?(ms_word_version)
+          raise ArgumentError, "invalid value for 'ms_word_version', must be one of #{validator.allowable_values}."
+        end
+        @ms_word_version = ms_word_version
+      else
+        @ms_word_version = validator.allowable_values[ms_word_version.to_i]
+      end
+    end
+
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          apply_base_document_headers_and_footers_to_appending_documents == other.apply_base_document_headers_and_footers_to_appending_documents &&
-          document_entries == other.document_entries
+          ms_word_version == other.ms_word_version
     end
 
     # @see the `==` method
@@ -100,7 +129,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [apply_base_document_headers_and_footers_to_appending_documents, document_entries].hash
+      [ms_word_version].hash
     end
 
     # Builds the object from hash
