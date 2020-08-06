@@ -66,9 +66,9 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, field_folder + '/' + local_file_name), remote_data_folder + '/' + remote_file_name
 
-      request = GetFieldsWithoutNodePathRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
+      request = GetFieldsRequest.new(remote_file_name, nil, remote_data_folder, nil, nil, nil)
 
-      result = @words_api.get_fields_without_node_path(request)
+      result = @words_api.get_fields(request)
       assert_equal false, result.nil?
     end
 
@@ -81,7 +81,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, field_folder + '/' + local_file_name), remote_data_folder + '/' + remote_file_name
 
-      request = GetFieldRequest.new(remote_file_name, 'sections/0/paragraphs/0', 0, remote_data_folder, nil, nil, nil)
+      request = GetFieldRequest.new(remote_file_name, 0, 'sections/0/paragraphs/0', remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_field(request)
       assert_equal false, result.nil?
@@ -96,9 +96,9 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, field_folder + '/' + local_file_name), remote_data_folder + '/' + remote_file_name
 
-      request = GetFieldWithoutNodePathRequest.new(remote_file_name, 0, remote_data_folder, nil, nil, nil)
+      request = GetFieldRequest.new(remote_file_name, 0, nil, remote_data_folder, nil, nil, nil)
 
-      result = @words_api.get_field_without_node_path(request)
+      result = @words_api.get_field(request)
       assert_equal false, result.nil?
     end
 
@@ -128,9 +128,9 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, text_folder + '/' + local_file_name), remote_data_folder + '/' + remote_file_name
 
       request_field = FieldInsert.new({:FieldCode => '{ NUMPAGES }'})
-      request = InsertFieldWithoutNodePathRequest.new(remote_file_name, request_field, remote_data_folder, nil, nil, nil, nil, nil, nil, nil)
+      request = InsertFieldRequest.new(remote_file_name, request_field, nil, remote_data_folder, nil, nil, nil, nil, nil, nil, nil)
 
-      result = @words_api.insert_field_without_node_path(request)
+      result = @words_api.insert_field(request)
       assert_equal false, result.nil?
     end
 
@@ -144,7 +144,7 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, field_folder + '/' + local_file_name), remote_data_folder + '/' + remote_file_name
 
       request_field = FieldUpdate.new({:FieldCode => '{ NUMPAGES }'})
-      request = UpdateFieldRequest.new(remote_file_name, request_field, 'sections/0/paragraphs/0', 0, remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request = UpdateFieldRequest.new(remote_file_name, request_field, 0, 'sections/0/paragraphs/0', remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_field(request)
       assert_equal false, result.nil?
@@ -175,7 +175,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, field_folder + '/' + local_file_name), remote_data_folder + '/' + remote_file_name
 
-      request = DeleteFieldRequest.new(remote_file_name, 'sections/0/paragraphs/0', 0, remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request = DeleteFieldRequest.new(remote_file_name, 0, 'sections/0/paragraphs/0', remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       @words_api.delete_field(request)
     end
@@ -189,9 +189,9 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, field_folder + '/' + local_file_name), remote_data_folder + '/' + remote_file_name
 
-      request = DeleteFieldWithoutNodePathRequest.new(remote_file_name, 0, remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request = DeleteFieldRequest.new(remote_file_name, 0, nil, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
-      @words_api.delete_field_without_node_path(request)
+      @words_api.delete_field(request)
     end
 
     #
@@ -217,9 +217,9 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, 'Common/' + local_file_name), remote_data_folder + '/' + remote_file_name
 
-      request = DeleteFieldsWithoutNodePathRequest.new(remote_file_name, remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request = DeleteFieldsRequest.new(remote_file_name, nil, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
-      @words_api.delete_fields_without_node_path(request)
+      @words_api.delete_fields(request)
     end
 
     #
@@ -245,9 +245,9 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, 'Common/' + local_file_name), remote_data_folder + '/' + remote_file_name
 
-      request = DeleteFieldsWithoutNodePathRequest.new(remote_file_name, remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request = DeleteFieldsRequest.new(remote_file_name, nil, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
-      @words_api.delete_fields_without_node_path(request)
+      @words_api.delete_fields(request)
     end
 
     #

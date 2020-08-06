@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="get_table_properties_without_node_path_request.rb">
+# <copyright company="Aspose" file="Compatibility_tests.rb">
 #   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -22,47 +22,34 @@
 #  SOFTWARE.
 # </summary>
 # ------------------------------------------------------------------------------------
-
 module AsposeWordsCloud
+  require_relative '../base_test_context'
 
   #
-  # Request model for get_table_properties_without_node_path operation.
+  # Example of how to work with compatibility options.
   #
-  class GetTablePropertiesWithoutNodePathRequest
-    # The document name.
-    attr_accessor :name
+  class CompatibilityTests < BaseTestContext
+    def remote_data_folder
+      remote_test_folder + '/Compatibility'
+    end
 
-    # Object index.
-    attr_accessor :index
+    def local_file
+      'Common/test_multi_pages.docx'
+    end
 
-    # Original document folder.
-    attr_accessor :folder
-
-    # Original document storage.
-    attr_accessor :storage
-
-    # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    attr_accessor :load_encoding
-
-    # Password for opening an encrypted document.
-    attr_accessor :password
 
     #
-    # Initializes a new instance.
-    # @param name The document name.
-    # @param index Object index.
-    # @param folder Original document folder.
-    # @param storage Original document storage.
-    # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @param password Password for opening an encrypted document.
+    # Test for optimize document to specific MS Word version.
+    #
+    def test_optimize_document
+      remote_file_name = 'TestOptimizeDocument.docx'
 
-    def initialize(name, index, folder = nil, storage = nil, load_encoding = nil, password = nil)
-      self.name = name
-      self.index = index
-      self.folder = folder
-      self.storage = storage
-      self.load_encoding = load_encoding
-      self.password = password
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+
+      request_options = OptimizationOptions.new({:MsWordVersion => 'Word2002'})
+      request = OptimizeDocumentRequest.new(remote_file_name, request_options, remote_data_folder, nil, nil, nil, nil, nil, nil)
+
+      @words_api.optimize_document(request)
     end
   end
 end
