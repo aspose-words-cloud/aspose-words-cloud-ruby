@@ -50,7 +50,7 @@ module AsposeWordsCloud
       request = InsertFootnoteRequest.new(remote_file_name, request_footnote_dto, '', remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_footnote(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -65,7 +65,7 @@ module AsposeWordsCloud
       request = InsertFootnoteRequest.new(remote_file_name, request_footnote_dto, nil, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_footnote(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -105,7 +105,7 @@ module AsposeWordsCloud
       request = GetFootnotesRequest.new(remote_file_name, '', remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_footnotes(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -119,7 +119,7 @@ module AsposeWordsCloud
       request = GetFootnotesRequest.new(remote_file_name, nil, remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_footnotes(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -133,7 +133,7 @@ module AsposeWordsCloud
       request = GetFootnoteRequest.new(remote_file_name, 0, '', remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_footnote(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -147,7 +147,7 @@ module AsposeWordsCloud
       request = GetFootnoteRequest.new(remote_file_name, 0, nil, remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_footnote(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -162,7 +162,7 @@ module AsposeWordsCloud
       request = UpdateFootnoteRequest.new(remote_file_name, request_footnote_dto, 0, '', remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_footnote(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -177,7 +177,7 @@ module AsposeWordsCloud
       request = UpdateFootnoteRequest.new(remote_file_name, request_footnote_dto, 0, nil, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_footnote(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
   end
 end

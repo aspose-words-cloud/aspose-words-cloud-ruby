@@ -49,7 +49,7 @@ module AsposeWordsCloud
       request = GetTablesRequest.new(remote_file_name, '', remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_tables(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -63,7 +63,7 @@ module AsposeWordsCloud
       request = GetTablesRequest.new(remote_file_name, nil, remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_tables(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -77,7 +77,7 @@ module AsposeWordsCloud
       request = GetTableRequest.new(remote_file_name, 1, '', remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_table(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -91,7 +91,7 @@ module AsposeWordsCloud
       request = GetTableRequest.new(remote_file_name, 1, nil, remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_table(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -132,7 +132,7 @@ module AsposeWordsCloud
       request = InsertTableRequest.new(remote_file_name, request_table, '', remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_table(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -147,7 +147,7 @@ module AsposeWordsCloud
       request = InsertTableRequest.new(remote_file_name, request_table, nil, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_table(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -161,7 +161,7 @@ module AsposeWordsCloud
       request = GetTablePropertiesRequest.new(remote_file_name, 1, '', remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_table_properties(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -175,7 +175,7 @@ module AsposeWordsCloud
       request = GetTablePropertiesRequest.new(remote_file_name, 1, nil, remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_table_properties(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -190,7 +190,7 @@ module AsposeWordsCloud
       request = UpdateTablePropertiesRequest.new(remote_file_name, request_properties, 1, '', remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_table_properties(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -205,7 +205,7 @@ module AsposeWordsCloud
       request = UpdateTablePropertiesRequest.new(remote_file_name, request_properties, 1, nil, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_table_properties(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -219,7 +219,7 @@ module AsposeWordsCloud
       request = GetTableRowRequest.new(remote_file_name, 'tables/1', 0, remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_table_row(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -247,7 +247,7 @@ module AsposeWordsCloud
       request = InsertTableRowRequest.new(remote_file_name, request_row, 'sections/0/tables/2', remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_table_row(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -261,7 +261,7 @@ module AsposeWordsCloud
       request = GetTableRowFormatRequest.new(remote_file_name, 'sections/0/tables/2', 0, remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_table_row_format(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -276,7 +276,7 @@ module AsposeWordsCloud
       request = UpdateTableRowFormatRequest.new(remote_file_name, request_format, 'sections/0/tables/2', 0, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_table_row_format(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -290,7 +290,7 @@ module AsposeWordsCloud
       request = GetTableCellRequest.new(remote_file_name, 'sections/0/tables/2/rows/0', 0, remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_table_cell(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -318,7 +318,7 @@ module AsposeWordsCloud
       request = InsertTableCellRequest.new(remote_file_name, request_cell, 'sections/0/tables/2/rows/0', remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_table_cell(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -332,7 +332,7 @@ module AsposeWordsCloud
       request = GetTableCellFormatRequest.new(remote_file_name, 'sections/0/tables/2/rows/0', 0, remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_table_cell_format(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -347,7 +347,7 @@ module AsposeWordsCloud
       request = UpdateTableCellFormatRequest.new(remote_file_name, request_format, 'sections/0/tables/2/rows/0', 0, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_table_cell_format(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -361,7 +361,7 @@ module AsposeWordsCloud
       request = RenderTableRequest.new(remote_file_name, 'png', 0, '', remote_data_folder, nil, nil, nil, nil)
 
       result = @words_api.render_table(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -375,7 +375,7 @@ module AsposeWordsCloud
       request = RenderTableRequest.new(remote_file_name, 'png', 0, nil, remote_data_folder, nil, nil, nil, nil)
 
       result = @words_api.render_table(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
   end
 end

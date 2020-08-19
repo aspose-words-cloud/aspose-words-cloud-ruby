@@ -54,7 +54,7 @@ module AsposeWordsCloud
       request = GetFieldsRequest.new(remote_file_name, 'sections/0', remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_fields(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -69,7 +69,7 @@ module AsposeWordsCloud
       request = GetFieldsRequest.new(remote_file_name, nil, remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_fields(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -84,7 +84,7 @@ module AsposeWordsCloud
       request = GetFieldRequest.new(remote_file_name, 0, 'sections/0/paragraphs/0', remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_field(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -99,7 +99,7 @@ module AsposeWordsCloud
       request = GetFieldRequest.new(remote_file_name, 0, nil, remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_field(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -115,7 +115,7 @@ module AsposeWordsCloud
       request = InsertFieldRequest.new(remote_file_name, request_field, 'sections/0/paragraphs/0', remote_data_folder, nil, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_field(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -131,7 +131,7 @@ module AsposeWordsCloud
       request = InsertFieldRequest.new(remote_file_name, request_field, nil, remote_data_folder, nil, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_field(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -147,7 +147,7 @@ module AsposeWordsCloud
       request = UpdateFieldRequest.new(remote_file_name, request_field, 0, 'sections/0/paragraphs/0', remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_field(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -163,7 +163,7 @@ module AsposeWordsCloud
       request = InsertPageNumbersRequest.new(remote_file_name, request_page_number, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
 
       result = @words_api.insert_page_numbers(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -290,7 +290,7 @@ module AsposeWordsCloud
       request = UpdateFieldsRequest.new(remote_file_name, remote_data_folder, nil, nil, nil, nil)
 
       result = @words_api.update_fields(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
   end
 end

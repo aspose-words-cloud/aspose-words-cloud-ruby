@@ -51,7 +51,7 @@ module AsposeWordsCloud
       request = InsertWatermarkImageRequest.new(remote_file_name, nil, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil, nil, remote_image_path)
 
       result = @words_api.insert_watermark_image(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -66,7 +66,7 @@ module AsposeWordsCloud
       request = InsertWatermarkTextRequest.new(remote_file_name, request_watermark_text, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
 
       result = @words_api.insert_watermark_text(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -80,7 +80,7 @@ module AsposeWordsCloud
       request = DeleteWatermarkRequest.new(remote_file_name, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
 
       result = @words_api.delete_watermark(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
   end
 end

@@ -47,7 +47,7 @@ module AsposeWordsCloud
       request = ReplaceTextRequest.new(remote_file_name, request_replace_text, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
 
       result = @words_api.replace_text(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -62,7 +62,7 @@ module AsposeWordsCloud
       request = SearchRequest.new(remote_file_name, 'aspose', remote_data_folder, nil, nil, nil)
 
       result = @words_api.search(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
   end
 end

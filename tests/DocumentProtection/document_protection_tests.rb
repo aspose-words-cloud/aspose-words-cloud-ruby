@@ -50,7 +50,7 @@ module AsposeWordsCloud
       request = ProtectDocumentRequest.new(remote_file_name, request_protection_request, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name)
 
       result = @words_api.protect_document(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -64,7 +64,7 @@ module AsposeWordsCloud
       request = GetDocumentProtectionRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_document_protection(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -79,7 +79,7 @@ module AsposeWordsCloud
       request = ProtectDocumentRequest.new(remote_file_name, request_protection_request, remote_data_folder, nil, nil, nil, nil)
 
       result = @words_api.protect_document(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -95,7 +95,7 @@ module AsposeWordsCloud
       request = UnprotectDocumentRequest.new(remote_file_name, request_protection_request, remote_data_folder, nil, nil, nil, nil)
 
       result = @words_api.unprotect_document(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
   end
 end

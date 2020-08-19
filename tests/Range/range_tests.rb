@@ -49,7 +49,7 @@ module AsposeWordsCloud
       request = GetRangeTextRequest.new(remote_file_name, 'id0.0.0', 'id0.0.1', remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_range_text(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -63,7 +63,7 @@ module AsposeWordsCloud
       request = RemoveRangeRequest.new(remote_file_name, 'id0.0.0', 'id0.0.1', remote_data_folder, nil, nil, nil, nil)
 
       result = @words_api.remove_range(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -78,7 +78,7 @@ module AsposeWordsCloud
       request = SaveAsRangeRequest.new(remote_file_name, 'id0.0.0', request_document_parameters, 'id0.0.1', remote_data_folder, nil, nil, nil)
 
       result = @words_api.save_as_range(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -93,7 +93,7 @@ module AsposeWordsCloud
       request = ReplaceWithTextRequest.new(remote_file_name, 'id0.0.0', request_range_text, 'id0.0.1', remote_data_folder, nil, nil, nil, nil)
 
       result = @words_api.replace_with_text(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
   end
 end

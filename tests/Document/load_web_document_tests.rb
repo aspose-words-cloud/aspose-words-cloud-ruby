@@ -38,7 +38,7 @@ module AsposeWordsCloud
       request = LoadWebDocumentRequest.new(request_data, nil)
 
       result = @words_api.load_web_document(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
   end
 end

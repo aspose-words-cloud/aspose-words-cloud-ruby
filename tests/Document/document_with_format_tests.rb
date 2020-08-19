@@ -49,7 +49,7 @@ module AsposeWordsCloud
       request = GetDocumentWithFormatRequest.new(remote_file_name, 'text', remote_data_folder, nil, nil, nil, nil, nil)
 
       result = @words_api.get_document_with_format(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -63,7 +63,7 @@ module AsposeWordsCloud
       request = GetDocumentWithFormatRequest.new(remote_file_name, 'text', remote_data_folder, nil, nil, nil, remote_test_out + '/TestGetDocumentWithFormatAndOutPath.text', nil)
 
       result = @words_api.get_document_with_format(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
   end
 end

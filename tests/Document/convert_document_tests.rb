@@ -51,7 +51,7 @@ module AsposeWordsCloud
       request = SaveAsRequest.new(remote_name, request_save_options_data, remote_folder, nil, nil, nil, nil)
 
       result = @words_api.save_as(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -67,7 +67,7 @@ module AsposeWordsCloud
       request = SaveAsRequest.new(remote_name, request_save_options_data, remote_folder, nil, nil, nil, nil)
 
       result = @words_api.save_as(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -83,7 +83,7 @@ module AsposeWordsCloud
       request = SaveAsTiffRequest.new(remote_name, request_save_options, remote_folder, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.save_as_tiff(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -93,7 +93,7 @@ module AsposeWordsCloud
       request = ConvertDocumentRequest.new(File.open(File.join(local_test_folder, local_folder + '/test_uploadfile.docx')), 'pdf', nil, nil, nil, nil)
 
       result = @words_api.convert_document(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
   end
 end

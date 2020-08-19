@@ -45,7 +45,7 @@ module AsposeWordsCloud
       request = ClassifyRequest.new('Try text classification', '3')
 
       result = @words_api.classify(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -59,7 +59,7 @@ module AsposeWordsCloud
       request = ClassifyDocumentRequest.new(remote_file_name, remote_data_folder, nil, nil, nil, '3', nil)
 
       result = @words_api.classify_document(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
   end
 end

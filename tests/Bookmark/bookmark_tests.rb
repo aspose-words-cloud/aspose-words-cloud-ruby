@@ -49,7 +49,7 @@ module AsposeWordsCloud
       request = GetBookmarksRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_bookmarks(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
       assert_not_nil result.bookmarks
       assert_equal 3, result.bookmarks.bookmark_list.length
       assert_equal "aspose", result.bookmarks.bookmark_list[1].name
@@ -66,7 +66,7 @@ module AsposeWordsCloud
       request = GetBookmarkByNameRequest.new(remote_file_name, 'aspose', remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_bookmark_by_name(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -82,7 +82,7 @@ module AsposeWordsCloud
       request = UpdateBookmarkRequest.new(remote_file_name, request_bookmark_data, bookmark_name, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
 
       result = @words_api.update_bookmark(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
   end
 end

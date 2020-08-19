@@ -49,7 +49,7 @@ module AsposeWordsCloud
       request = AcceptAllRevisionsRequest.new(remote_file_name, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name)
 
       result = @words_api.accept_all_revisions(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -63,7 +63,7 @@ module AsposeWordsCloud
       request = RejectAllRevisionsRequest.new(remote_file_name, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name)
 
       result = @words_api.reject_all_revisions(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
   end
 end

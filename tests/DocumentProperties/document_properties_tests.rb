@@ -49,7 +49,7 @@ module AsposeWordsCloud
       request = GetDocumentPropertiesRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_document_properties(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -63,7 +63,7 @@ module AsposeWordsCloud
       request = GetDocumentPropertyRequest.new(remote_file_name, 'Author', remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_document_property(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
 
     #
@@ -91,7 +91,7 @@ module AsposeWordsCloud
       request = CreateOrUpdateDocumentPropertyRequest.new(remote_file_name, 'AsposeAuthor', request_property, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
 
       result = @words_api.create_or_update_document_property(request)
-      assert_equal false, result.nil?
+      assert_not_nil result
     end
   end
 end
