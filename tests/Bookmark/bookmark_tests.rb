@@ -50,6 +50,9 @@ module AsposeWordsCloud
 
       result = @words_api.get_bookmarks(request)
       assert_equal false, result.nil?
+      assert_not_nil result.bookmarks
+      assert_equal 3, result.bookmarks.bookmark_list.length
+      assert_equal "aspose", result.bookmarks.bookmark_list[1].name
     end
 
     #
