@@ -47,7 +47,7 @@ module AsposeWordsCloud
       request = UploadFileRequest.new(File.open(File.join(local_test_folder, local_file)), remote_data_folder + '/' + remote_file_name, nil)
 
       result = @words_api.upload_file(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #
@@ -100,7 +100,7 @@ module AsposeWordsCloud
       request = DownloadFileRequest.new(remote_data_folder + '/' + remote_file_name, nil, nil)
 
       result = @words_api.download_file(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
   end
 end

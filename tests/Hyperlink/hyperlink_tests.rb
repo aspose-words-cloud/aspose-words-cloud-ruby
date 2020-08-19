@@ -49,7 +49,7 @@ module AsposeWordsCloud
       request = GetDocumentHyperlinkByIndexRequest.new(remote_file_name, 0, remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_document_hyperlink_by_index(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #
@@ -63,7 +63,7 @@ module AsposeWordsCloud
       request = GetDocumentHyperlinksRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_document_hyperlinks(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
   end
 end

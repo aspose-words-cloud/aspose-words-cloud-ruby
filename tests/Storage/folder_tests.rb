@@ -67,7 +67,7 @@ module AsposeWordsCloud
       request = GetFilesListRequest.new(remote_data_folder, nil)
 
       result = @words_api.get_files_list(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #

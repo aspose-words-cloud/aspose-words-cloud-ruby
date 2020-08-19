@@ -49,7 +49,7 @@ module AsposeWordsCloud
       request = GetStylesRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_styles(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #
@@ -63,7 +63,7 @@ module AsposeWordsCloud
       request = GetStyleRequest.new(remote_file_name, 'Heading 1', remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_style(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #
@@ -78,7 +78,7 @@ module AsposeWordsCloud
       request = UpdateStyleRequest.new(remote_file_name, request_style_update, 'Heading 1', remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_style(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #
@@ -93,7 +93,7 @@ module AsposeWordsCloud
       request = InsertStyleRequest.new(remote_file_name, request_style_insert, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_style(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #
@@ -108,7 +108,7 @@ module AsposeWordsCloud
       request = CopyStyleRequest.new(remote_file_name, request_style_copy, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.copy_style(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #
@@ -122,7 +122,7 @@ module AsposeWordsCloud
       request = GetStyleFromDocumentElementRequest.new(remote_file_name, 'paragraphs/1/paragraphFormat', remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_style_from_document_element(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #
@@ -137,7 +137,7 @@ module AsposeWordsCloud
       request = ApplyStyleToDocumentElementRequest.new(remote_file_name, request_style_apply, 'paragraphs/1/paragraphFormat', remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.apply_style_to_document_element(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
   end
 end

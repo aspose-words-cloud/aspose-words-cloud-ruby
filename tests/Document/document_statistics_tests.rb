@@ -49,7 +49,7 @@ module AsposeWordsCloud
       request = GetDocumentStatisticsRequest.new(remote_file_name, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.get_document_statistics(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
   end
 end

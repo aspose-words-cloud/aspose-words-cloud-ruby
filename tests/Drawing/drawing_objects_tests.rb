@@ -53,7 +53,7 @@ module AsposeWordsCloud
       request = GetDocumentDrawingObjectsRequest.new(remote_file_name, 'sections/0', remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_document_drawing_objects(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #
@@ -67,7 +67,7 @@ module AsposeWordsCloud
       request = GetDocumentDrawingObjectsRequest.new(remote_file_name, nil, remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_document_drawing_objects(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #
@@ -81,7 +81,7 @@ module AsposeWordsCloud
       request = GetDocumentDrawingObjectByIndexRequest.new(remote_file_name, 0, 'sections/0', remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_document_drawing_object_by_index(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #
@@ -95,7 +95,7 @@ module AsposeWordsCloud
       request = GetDocumentDrawingObjectByIndexRequest.new(remote_file_name, 0, nil, remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_document_drawing_object_by_index(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #
@@ -109,7 +109,7 @@ module AsposeWordsCloud
       request = RenderDrawingObjectRequest.new(remote_file_name, 'png', 0, 'sections/0', remote_data_folder, nil, nil, nil, nil)
 
       result = @words_api.render_drawing_object(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #
@@ -123,7 +123,7 @@ module AsposeWordsCloud
       request = RenderDrawingObjectRequest.new(remote_file_name, 'png', 0, nil, remote_data_folder, nil, nil, nil, nil)
 
       result = @words_api.render_drawing_object(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #
@@ -137,7 +137,7 @@ module AsposeWordsCloud
       request = GetDocumentDrawingObjectImageDataRequest.new(remote_file_name, 0, 'sections/0', remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_document_drawing_object_image_data(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #
@@ -151,7 +151,7 @@ module AsposeWordsCloud
       request = GetDocumentDrawingObjectImageDataRequest.new(remote_file_name, 0, nil, remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_document_drawing_object_image_data(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #
@@ -165,7 +165,7 @@ module AsposeWordsCloud
       request = GetDocumentDrawingObjectOleDataRequest.new(remote_file_name, 0, 'sections/0', remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_document_drawing_object_ole_data(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #
@@ -179,7 +179,7 @@ module AsposeWordsCloud
       request = GetDocumentDrawingObjectOleDataRequest.new(remote_file_name, 0, nil, remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_document_drawing_object_ole_data(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #
@@ -194,7 +194,7 @@ module AsposeWordsCloud
       request = InsertDrawingObjectRequest.new(remote_file_name, request_drawing_object, File.open(File.join(local_test_folder, 'Common/aspose-cloud.png')), '', remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_drawing_object(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #
@@ -209,7 +209,7 @@ module AsposeWordsCloud
       request = InsertDrawingObjectRequest.new(remote_file_name, request_drawing_object, File.open(File.join(local_test_folder, 'Common/aspose-cloud.png')), nil, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_drawing_object(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #
@@ -250,7 +250,7 @@ module AsposeWordsCloud
       request = UpdateDrawingObjectRequest.new(remote_file_name, request_drawing_object, File.open(File.join(local_test_folder, 'Common/aspose-cloud.png')), 0, '', remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_drawing_object(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #
@@ -265,7 +265,7 @@ module AsposeWordsCloud
       request = UpdateDrawingObjectRequest.new(remote_file_name, request_drawing_object, File.open(File.join(local_test_folder, 'Common/aspose-cloud.png')), 0, nil, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_drawing_object(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
   end
 end

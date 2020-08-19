@@ -53,7 +53,7 @@ module AsposeWordsCloud
       request = GetSectionPageSetupRequest.new(remote_file_name, 0, remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_section_page_setup(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #
@@ -68,7 +68,7 @@ module AsposeWordsCloud
       request = UpdateSectionPageSetupRequest.new(remote_file_name, 0, request_page_setup, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_section_page_setup(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #
@@ -82,7 +82,7 @@ module AsposeWordsCloud
       request = RenderPageRequest.new(remote_file_name, 1, 'bmp', remote_data_folder, nil, nil, nil, nil)
 
       result = @words_api.render_page(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
   end
 end

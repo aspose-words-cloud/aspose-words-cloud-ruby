@@ -49,7 +49,7 @@ module AsposeWordsCloud
       request = GetListsRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_lists(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #
@@ -63,7 +63,7 @@ module AsposeWordsCloud
       request = GetListRequest.new(remote_file_name, 1, remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_list(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #
@@ -78,7 +78,7 @@ module AsposeWordsCloud
       request = UpdateListRequest.new(remote_file_name, request_list_update, 1, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_list(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #
@@ -93,7 +93,7 @@ module AsposeWordsCloud
       request = UpdateListLevelRequest.new(remote_file_name, request_list_update, 1, 1, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_list_level(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #
@@ -108,7 +108,7 @@ module AsposeWordsCloud
       request = InsertListRequest.new(remote_file_name, request_list_insert, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_list(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
   end
 end

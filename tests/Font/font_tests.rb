@@ -45,7 +45,7 @@ module AsposeWordsCloud
       request = GetAvailableFontsRequest.new(nil)
 
       result = @words_api.get_available_fonts(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
   end
 end

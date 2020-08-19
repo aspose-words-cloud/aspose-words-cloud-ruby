@@ -49,7 +49,7 @@ module AsposeWordsCloud
       request = BuildReportOnlineRequest.new(File.open(File.join(local_test_folder, reporting_folder + '/' + local_document_file)), local_data_file, request_report_engine_settings, nil)
 
       result = @words_api.build_report_online(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #
@@ -67,7 +67,7 @@ module AsposeWordsCloud
       request = BuildReportRequest.new(remote_file_name, local_data_file, request_report_engine_settings, remote_data_folder, nil, nil, nil, nil)
 
       result = @words_api.build_report(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
   end
 end

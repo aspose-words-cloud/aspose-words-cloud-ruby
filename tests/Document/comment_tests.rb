@@ -49,7 +49,7 @@ module AsposeWordsCloud
       request = GetCommentRequest.new(remote_file_name, 0, remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_comment(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #
@@ -63,7 +63,7 @@ module AsposeWordsCloud
       request = GetCommentsRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_comments(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #
@@ -82,7 +82,7 @@ module AsposeWordsCloud
       request = InsertCommentRequest.new(remote_file_name, request_comment, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_comment(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #
@@ -101,7 +101,7 @@ module AsposeWordsCloud
       request = UpdateCommentRequest.new(remote_file_name, 0, request_comment, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_comment(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #

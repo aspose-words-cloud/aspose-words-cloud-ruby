@@ -52,7 +52,7 @@ module AsposeWordsCloud
       request = AppendDocumentRequest.new(remote_file_name, request_document_list, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
 
       result = @words_api.append_document(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
   end
 end

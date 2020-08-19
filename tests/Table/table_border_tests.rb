@@ -49,7 +49,7 @@ module AsposeWordsCloud
       request = GetBordersRequest.new(remote_file_name, 'tables/1/rows/0/cells/0', remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_borders(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #
@@ -63,7 +63,7 @@ module AsposeWordsCloud
       request = GetBorderRequest.new(remote_file_name, 'left', 'tables/1/rows/0/cells/0', remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_border(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #
@@ -77,7 +77,7 @@ module AsposeWordsCloud
       request = DeleteBordersRequest.new(remote_file_name, 'tables/1/rows/0/cells/0', remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.delete_borders(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #
@@ -91,7 +91,7 @@ module AsposeWordsCloud
       request = DeleteBorderRequest.new(remote_file_name, 'left', 'tables/1/rows/0/cells/0', remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.delete_border(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #
@@ -107,7 +107,7 @@ module AsposeWordsCloud
       request = UpdateBorderRequest.new(remote_file_name, request_border_properties, 'left', 'tables/1/rows/0/cells/0', remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_border(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
   end
 end

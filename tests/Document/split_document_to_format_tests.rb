@@ -49,7 +49,7 @@ module AsposeWordsCloud
       request = SplitDocumentRequest.new(remote_file_name, 'text', remote_data_folder, nil, nil, nil, remote_test_out + '/TestSplitDocument.text', 1, 2, nil, nil)
 
       result = @words_api.split_document(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
   end
 end

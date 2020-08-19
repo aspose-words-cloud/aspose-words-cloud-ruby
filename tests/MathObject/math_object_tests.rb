@@ -49,7 +49,7 @@ module AsposeWordsCloud
       request = GetOfficeMathObjectsRequest.new(remote_file_name, '', remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_office_math_objects(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #
@@ -63,7 +63,7 @@ module AsposeWordsCloud
       request = GetOfficeMathObjectsRequest.new(remote_file_name, nil, remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_office_math_objects(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #
@@ -77,7 +77,7 @@ module AsposeWordsCloud
       request = GetOfficeMathObjectRequest.new(remote_file_name, 0, '', remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_office_math_object(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #
@@ -91,7 +91,7 @@ module AsposeWordsCloud
       request = GetOfficeMathObjectRequest.new(remote_file_name, 0, nil, remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_office_math_object(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #
@@ -105,7 +105,7 @@ module AsposeWordsCloud
       request = RenderMathObjectRequest.new(remote_file_name, 'png', 0, '', remote_data_folder, nil, nil, nil, nil)
 
       result = @words_api.render_math_object(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #
@@ -119,7 +119,7 @@ module AsposeWordsCloud
       request = RenderMathObjectRequest.new(remote_file_name, 'png', 0, nil, remote_data_folder, nil, nil, nil, nil)
 
       result = @words_api.render_math_object(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #

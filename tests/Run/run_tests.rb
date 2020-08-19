@@ -50,7 +50,7 @@ module AsposeWordsCloud
       request = UpdateRunRequest.new(remote_file_name, request_run, 'paragraphs/1', 0, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_run(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #
@@ -65,7 +65,7 @@ module AsposeWordsCloud
       request = InsertRunRequest.new(remote_file_name, 'paragraphs/1', request_run, remote_data_folder, nil, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_run(request)
-      assert_not_nil result
+      assert_equal false, result.nil?
     end
 
     #
