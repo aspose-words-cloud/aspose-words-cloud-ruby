@@ -52,7 +52,7 @@ module AsposeWordsCloud
       assert_equal false, result.nil?
       assert_equal false, result.bookmarks.nil?
       assert_equal 3, result.bookmarks.bookmark_list.length
-      assert_equal "aspose", result.bookmarks.bookmark_list[1].name
+      assert_equal 'aspose', result.bookmarks.bookmark_list[1].name
     end
 
     #
@@ -60,13 +60,16 @@ module AsposeWordsCloud
     #
     def test_get_bookmark_by_name
       remote_file_name = 'TestGetDocumentBookmarkByName.docx'
+      bookmark_name = 'aspose'
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetBookmarkByNameRequest.new(remote_file_name, 'aspose', remote_data_folder, nil, nil, nil)
+      request = GetBookmarkByNameRequest.new(remote_file_name, bookmark_name, remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_bookmark_by_name(request)
       assert_equal false, result.nil?
+      assert_equal false, result.bookmark.nil?
+      assert_equal bookmark_name, result.bookmark.name
     end
 
     #
@@ -75,14 +78,18 @@ module AsposeWordsCloud
     def test_update_bookmark
       remote_file_name = 'TestUpdateDocumentBookmark.docx'
       bookmark_name = 'aspose'
+      bookmark_text = 'This will be the text for Aspose'
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request_bookmark_data = BookmarkData.new({:Name => bookmark_name, :Text => 'This will be the text for Aspose'})
+      request_bookmark_data = BookmarkData.new({:Name => bookmark_name, :Text => bookmark_text})
       request = UpdateBookmarkRequest.new(remote_file_name, request_bookmark_data, bookmark_name, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
 
       result = @words_api.update_bookmark(request)
       assert_equal false, result.nil?
+      assert_equal false, result.bookmark.nil?
+      assert_equal bookmark_name, result.bookmark.name
+      assert_equal bookmark_text, result.bookmark.text
     end
   end
 end
