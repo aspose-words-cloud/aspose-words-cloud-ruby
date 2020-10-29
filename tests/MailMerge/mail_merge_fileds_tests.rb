@@ -48,6 +48,10 @@ module AsposeWordsCloud
 
       result = @words_api.get_document_field_names_online(request)
       assert_equal false, result.nil?
+      assert_equal false, result.field_names.nil?
+      assert_equal false, result.field_names.names.nil?
+      assert_equal 15, result.field_names.names.length
+      assert_equal 'TableStart:Order', result.field_names.names[0]
     end
 
     #
@@ -62,6 +66,9 @@ module AsposeWordsCloud
 
       result = @words_api.get_document_field_names(request)
       assert_equal false, result.nil?
+      assert_equal false, result.field_names.nil?
+      assert_equal false, result.field_names.names.nil?
+      assert_equal 0, result.field_names.names.length
     end
   end
 end

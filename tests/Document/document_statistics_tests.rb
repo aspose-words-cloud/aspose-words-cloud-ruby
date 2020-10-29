@@ -50,6 +50,8 @@ module AsposeWordsCloud
 
       result = @words_api.get_document_statistics(request)
       assert_equal false, result.nil?
+      assert_equal false, result.stat_data.nil?
+      assert_equal 10, result.stat_data.word_count
     end
   end
 end

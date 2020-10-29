@@ -50,6 +50,11 @@ module AsposeWordsCloud
 
       result = @words_api.get_borders(request)
       assert_equal false, result.nil?
+      assert_equal false, result.borders.nil?
+      assert_equal false, result.borders.list.nil?
+      assert_equal 6, result.borders.list.length
+      assert_equal false, result.borders.list[0].color.nil?
+      assert_equal '#000000', result.borders.list[0].color.web
     end
 
     #
@@ -64,6 +69,9 @@ module AsposeWordsCloud
 
       result = @words_api.get_border(request)
       assert_equal false, result.nil?
+      assert_equal false, result.border.nil?
+      assert_equal false, result.border.color.nil?
+      assert_equal '#000000', result.border.color.web
     end
 
     #
@@ -78,6 +86,11 @@ module AsposeWordsCloud
 
       result = @words_api.delete_borders(request)
       assert_equal false, result.nil?
+      assert_equal false, result.borders.nil?
+      assert_equal false, result.borders.list.nil?
+      assert_equal 6, result.borders.list.length
+      assert_equal false, result.borders.list[0].color.nil?
+      assert_equal '', result.borders.list[0].color.web
     end
 
     #
@@ -92,6 +105,9 @@ module AsposeWordsCloud
 
       result = @words_api.delete_border(request)
       assert_equal false, result.nil?
+      assert_equal false, result.border.nil?
+      assert_equal false, result.border.color.nil?
+      assert_equal '', result.border.color.web
     end
 
     #
@@ -108,6 +124,12 @@ module AsposeWordsCloud
 
       result = @words_api.update_border(request)
       assert_equal false, result.nil?
+      assert_equal false, result.border.nil?
+      assert_equal false, result.border.color.nil?
+      assert_equal '#000002', result.border.color.web
+      assert_equal 6, result.border.distance_from_text
+      assert_equal 2, result.border.line_width
+      assert_equal true, result.border.shadow
     end
   end
 end

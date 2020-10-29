@@ -43,11 +43,12 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request_replace_text = ReplaceTextParameters.new({:OldValue => 'aspose', :NewValue => 'aspose new'})
+      request_replace_text = ReplaceTextParameters.new({:OldValue => 'Testing', :NewValue => 'Aspose testing'})
       request = ReplaceTextRequest.new(remote_file_name, request_replace_text, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
 
       result = @words_api.replace_text(request)
       assert_equal false, result.nil?
+      assert_equal 3, result.matches
     end
 
     #
@@ -63,6 +64,11 @@ module AsposeWordsCloud
 
       result = @words_api.search(request)
       assert_equal false, result.nil?
+      assert_equal false, result.search_results.nil?
+      assert_equal false, result.search_results.results_list.nil?
+      assert_equal 23, result.search_results.results_list.length
+      assert_equal false, result.search_results.results_list[0].range_start.nil?
+      assert_equal 65, result.search_results.results_list[0].range_start.offset
     end
   end
 end

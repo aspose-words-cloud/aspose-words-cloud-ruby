@@ -50,6 +50,10 @@ module AsposeWordsCloud
 
       result = @words_api.get_lists(request)
       assert_equal false, result.nil?
+      assert_equal false, result.lists.nil?
+      assert_equal false, result.lists.list_info.nil?
+      assert_equal 2, result.lists.list_info.length
+      assert_equal 1, result.lists.list_info[0].list_id
     end
 
     #
@@ -64,6 +68,8 @@ module AsposeWordsCloud
 
       result = @words_api.get_list(request)
       assert_equal false, result.nil?
+      assert_equal false, result.list.nil?
+      assert_equal 1, result.list.list_id
     end
 
     #
@@ -79,6 +85,9 @@ module AsposeWordsCloud
 
       result = @words_api.update_list(request)
       assert_equal false, result.nil?
+      assert_equal false, result.list.nil?
+      assert_equal 1, result.list.list_id
+      assert_equal true, result.list.is_restart_at_each_section
     end
 
     #
@@ -94,6 +103,11 @@ module AsposeWordsCloud
 
       result = @words_api.update_list_level(request)
       assert_equal false, result.nil?
+      assert_equal false, result.list.nil?
+      assert_equal false, result.list.list_levels.nil?
+      assert_equal false, result.list.list_levels.list_level.nil?
+      assert_equal 9, result.list.list_levels.list_level.length
+
     end
 
     #
@@ -109,6 +123,8 @@ module AsposeWordsCloud
 
       result = @words_api.insert_list(request)
       assert_equal false, result.nil?
+      assert_equal false, result.list.nil?
+      assert_equal 3, result.list.list_id
     end
   end
 end

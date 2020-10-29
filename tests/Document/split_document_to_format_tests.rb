@@ -50,6 +50,10 @@ module AsposeWordsCloud
 
       result = @words_api.split_document(request)
       assert_equal false, result.nil?
+      assert_equal false, result.split_result.nil?
+      assert_equal false, result.split_result.pages.nil?
+      assert_equal 2, result.split_result.pages.length
+      assert_equal 'TestOut/NET/TestSplitDocument_page1.text', result.split_result.pages[0].href
     end
   end
 end

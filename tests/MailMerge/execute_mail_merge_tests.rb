@@ -65,6 +65,8 @@ module AsposeWordsCloud
 
       result = @words_api.execute_mail_merge(request)
       assert_equal false, result.nil?
+      assert_equal false, result.document.nil?
+      assert_equal 'TestExecuteMailMerge.docx', result.document.file_name
     end
   end
 end

@@ -68,6 +68,7 @@ module AsposeWordsCloud
 
       result = @words_api.get_files_list(request)
       assert_equal false, result.nil?
+      assert_equal false, result.value.nil?
     end
 
     #

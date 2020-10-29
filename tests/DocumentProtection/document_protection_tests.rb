@@ -46,40 +46,30 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request_protection_request = ProtectionRequest.new({:NewPassword => '123'})
+      request_protection_request = ProtectionRequest.new({:Password => '123', :ProtectionType => 'ReadOnly'})
       request = ProtectDocumentRequest.new(remote_file_name, request_protection_request, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name)
 
       result = @words_api.protect_document(request)
       assert_equal false, result.nil?
+      assert_equal false, result.protection_data.nil?
+      assert_equal 'ReadOnly', result.protection_data.protection_type
     end
 
     #
     # Test for getting document protection.
     #
     def test_get_document_protection
+      local_file_path = 'DocumentActions/DocumentProtection/SampleProtectedBlankWordDocument.docx'
       remote_file_name = 'TestGetDocumentProtection.docx'
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file_path), remote_data_folder + '/' + remote_file_name
 
       request = GetDocumentProtectionRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_document_protection(request)
       assert_equal false, result.nil?
-    end
-
-    #
-    # Test for changing document protection.
-    #
-    def test_change_document_protection
-      remote_file_name = 'TestChangeDocumentProtection.docx'
-
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
-
-      request_protection_request = ProtectionRequest.new({:NewPassword => '321'})
-      request = ProtectDocumentRequest.new(remote_file_name, request_protection_request, remote_data_folder, nil, nil, nil, nil)
-
-      result = @words_api.protect_document(request)
-      assert_equal false, result.nil?
+      assert_equal false, result.protection_data.nil?
+      assert_equal 'ReadOnly', result.protection_data.protection_type
     end
 
     #
@@ -96,6 +86,8 @@ module AsposeWordsCloud
 
       result = @words_api.unprotect_document(request)
       assert_equal false, result.nil?
+      assert_equal false, result.protection_data.nil?
+      assert_equal 'NoProtection', result.protection_data.protection_type
     end
   end
 end

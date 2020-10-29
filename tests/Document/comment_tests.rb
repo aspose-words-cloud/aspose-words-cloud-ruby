@@ -50,6 +50,8 @@ module AsposeWordsCloud
 
       result = @words_api.get_comment(request)
       assert_equal false, result.nil?
+      assert_equal false, result.comment.nil?
+      assert_equal 'Comment 1\r\n\r\n', result.comment.text
     end
 
     #
@@ -64,6 +66,10 @@ module AsposeWordsCloud
 
       result = @words_api.get_comments(request)
       assert_equal false, result.nil?
+      assert_equal false, result.comments.nil?
+      assert_equal false, result.comments.comment_list.nil?
+      assert_equal 1, result.comments.comment_list.length
+      assert_equal 'Comment 1\r\n\r\n', result.comments.comment_list[0].text
     end
 
     #
@@ -83,6 +89,11 @@ module AsposeWordsCloud
 
       result = @words_api.insert_comment(request)
       assert_equal false, result.nil?
+      assert_equal false, result.comment.nil?
+      assert_equal 'A new Comment\r\n', result.comment.text
+      assert_equal false, result.comment.range_start.nil?
+      assert_equal false, result.comment.range_start.node.nil?
+      assert_equal '0.3.0.4', result.comment.range_start.node.node_id
     end
 
     #
@@ -102,6 +113,11 @@ module AsposeWordsCloud
 
       result = @words_api.update_comment(request)
       assert_equal false, result.nil?
+      assert_equal false, result.comment.nil?
+      assert_equal 'A new Comment\r\n', result.comment.text
+      assert_equal false, result.comment.range_start.nil?
+      assert_equal false, result.comment.range_start.node.nil?
+      assert_equal '0.3.0.1', result.comment.range_start.node.node_id
     end
 
     #

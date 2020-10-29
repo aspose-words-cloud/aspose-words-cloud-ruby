@@ -54,6 +54,8 @@ module AsposeWordsCloud
 
       result = @words_api.get_section_page_setup(request)
       assert_equal false, result.nil?
+      assert_equal false, result.page_setup.nil?
+      assert_equal 1, result.page_setup.line_starting_number
     end
 
     #
@@ -69,6 +71,10 @@ module AsposeWordsCloud
 
       result = @words_api.update_section_page_setup(request)
       assert_equal false, result.nil?
+      assert_equal false, result.page_setup.nil?
+      assert_equal true, result.page_setup.rtl_gutter
+
+
     end
 
     #

@@ -55,6 +55,8 @@ module AsposeWordsCloud
 
       result = @words_api.compare_document(request)
       assert_equal false, result.nil?
+      assert_equal false, result.document.nil?
+      assert_equal 'TestCompareDocumentOut.doc', result.document.file_name
     end
   end
 end

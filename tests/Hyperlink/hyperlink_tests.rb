@@ -50,6 +50,8 @@ module AsposeWordsCloud
 
       result = @words_api.get_document_hyperlink_by_index(request)
       assert_equal false, result.nil?
+      assert_equal false, result.hyperlink.nil?
+      assert_equal 'Aspose', result.hyperlink.display_text
     end
 
     #
@@ -64,6 +66,10 @@ module AsposeWordsCloud
 
       result = @words_api.get_document_hyperlinks(request)
       assert_equal false, result.nil?
+      assert_equal false, result.hyperlinks.nil?
+      assert_equal false, result.hyperlinks.hyperlink_list.nil?
+      assert_equal 2, result.hyperlinks.hyperlink_list.length
+      assert_equal 'Aspose', result.hyperlinks.hyperlink_list[0].display_text
     end
   end
 end
