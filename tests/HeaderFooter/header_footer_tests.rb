@@ -70,7 +70,7 @@ module AsposeWordsCloud
       assert_equal false, result.header_footer.nil?
       assert_equal false, result.header_footer.child_nodes.nil?
       assert_equal 1, result.header_footer.child_nodes.length
-      assert_equal '0.0.0', result.header_footer.child_nodes[0].node_id
+      assert_equal 0, result.header_footer.child_nodes[0].node_id.index('0.0.0')
     end
 
     #
@@ -88,7 +88,7 @@ module AsposeWordsCloud
       assert_equal false, result.header_footer.nil?
       assert_equal false, result.header_footer.child_nodes.nil?
       assert_equal 1, result.header_footer.child_nodes.length
-      assert_equal '0.0.0', result.header_footer.child_nodes[0].node_id
+      assert_equal 0, result.header_footer.child_nodes[0].node_id.index('0.0.0')
     end
 
     #
@@ -132,7 +132,7 @@ module AsposeWordsCloud
       assert_equal false, result.header_footer.nil?
       assert_equal false, result.header_footer.child_nodes.nil?
       assert_equal 1, result.header_footer.child_nodes.length
-      assert_equal '0.2.0', result.header_footer.child_nodes[0].node_id
+      assert_equal 0, result.header_footer.child_nodes[0].node_id.index('0.2.0')
     end
   end
 end

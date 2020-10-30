@@ -59,7 +59,7 @@ module AsposeWordsCloud
       result = @words_api.get_paragraph(request)
       assert_equal false, result.nil?
       assert_equal false, result.paragraph.nil?
-      assert_equal '0.0.0', result.paragraph.node_id
+      assert_equal 0, result.paragraph.node_id.index('0.0.0')
     end
 
     #
@@ -75,7 +75,7 @@ module AsposeWordsCloud
       result = @words_api.get_paragraph(request)
       assert_equal false, result.nil?
       assert_equal false, result.paragraph.nil?
-      assert_equal '0.0.0', result.paragraph.node_id
+      assert_equal 0, result.paragraph.node_id.index('0.0.0')
     end
 
     #
@@ -93,7 +93,7 @@ module AsposeWordsCloud
       assert_equal false, result.paragraphs.nil?
       assert_equal false, result.paragraphs.paragraph_link_list.nil?
       assert_equal 15, result.paragraphs.paragraph_link_list.length
-      assert_equal 'Page 1 of 3', result.paragraphs.paragraph_link_list[0].text
+      assert_equal 0, result.paragraphs.paragraph_link_list[0].text.index('Page 1 of 3')
     end
 
     #
@@ -111,7 +111,7 @@ module AsposeWordsCloud
       assert_equal false, result.paragraphs.nil?
       assert_equal false, result.paragraphs.paragraph_link_list.nil?
       assert_equal 15, result.paragraphs.paragraph_link_list.length
-      assert_equal 'Page 1 of 3', result.paragraphs.paragraph_link_list[0].text
+      assert_equal 0, result.paragraphs.paragraph_link_list[0].text.index('Page 1 of 3')
     end
 
     #
@@ -127,7 +127,7 @@ module AsposeWordsCloud
       result = @words_api.get_run(request)
       assert_equal false, result.nil?
       assert_equal false, result.run.nil?
-      assert_equal 'Page ', result.run.text
+      assert_equal 0, result.run.text.index('Page ')
     end
 
     #
@@ -143,7 +143,7 @@ module AsposeWordsCloud
       result = @words_api.get_run_font(request)
       assert_equal false, result.nil?
       assert_equal false, result.font.nil?
-      assert_equal 'Times New Roman', result.font.name
+      assert_equal 0, result.font.name.index('Times New Roman')
     end
 
     #
@@ -161,7 +161,7 @@ module AsposeWordsCloud
       assert_equal false, result.runs.nil?
       assert_equal false, result.runs.list.nil?
       assert_equal 6, result.runs.list.length
-      assert_equal 'Page ', result.runs.list[0].text
+      assert_equal 0, result.runs.list[0].text.index('Page ')
     end
 
     #
@@ -195,7 +195,7 @@ module AsposeWordsCloud
       result = @words_api.insert_paragraph(request)
       assert_equal false, result.nil?
       assert_equal false, result.paragraph.nil?
-      assert_equal '0.3.8', result.paragraph.node_id
+      assert_equal 0, result.paragraph.node_id.index('0.3.8')
     end
 
     #
@@ -212,7 +212,7 @@ module AsposeWordsCloud
       result = @words_api.insert_paragraph(request)
       assert_equal false, result.nil?
       assert_equal false, result.paragraph.nil?
-      assert_equal '0.3.8', result.paragraph.node_id
+      assert_equal 0, result.paragraph.node_id.index('0.3.8')
     end
 
     #
@@ -256,7 +256,7 @@ module AsposeWordsCloud
       result = @words_api.get_paragraph_format(request)
       assert_equal false, result.nil?
       assert_equal false, result.paragraph_format.nil?
-      assert_equal 'Normal', result.paragraph_format.style_name
+      assert_equal 0, result.paragraph_format.style_name.index('Normal')
     end
 
     #
@@ -272,7 +272,7 @@ module AsposeWordsCloud
       result = @words_api.get_paragraph_format(request)
       assert_equal false, result.nil?
       assert_equal false, result.paragraph_format.nil?
-      assert_equal 'Normal', result.paragraph_format.style_name
+      assert_equal 0, result.paragraph_format.style_name.index('Normal')
     end
 
     #

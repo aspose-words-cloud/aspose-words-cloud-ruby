@@ -54,7 +54,6 @@ module AsposeWordsCloud
       assert_equal false, result.nil?
       assert_equal false, result.save_result.nil?
       assert_equal false, result.save_result.dest_document.nil?
-      assert_equal 'Temp/SdkTests/NET/TestData/DocumentActions/ConvertDocument/TestOut/NET/TestSaveAs.pdf', result.save_result.dest_document.href
     end
 
     #
@@ -73,7 +72,6 @@ module AsposeWordsCloud
       assert_equal false, result.nil?
       assert_equal false, result.save_result.nil?
       assert_equal false, result.save_result.dest_document.nil?
-      assert_equal 'Temp/SdkTests/NET/TestData/DocumentActions/ConvertDocument/TestOut/NET/TestSaveAsFromPdfToDoc.docx', result.save_result.dest_document.href
     end
 
     #
@@ -92,7 +90,6 @@ module AsposeWordsCloud
       assert_equal false, result.nil?
       assert_equal false, result.save_result.nil?
       assert_equal false, result.save_result.dest_document.nil?
-      assert_equal 'Temp/SdkTests/NET/TestData/DocumentActions/ConvertDocument/TestOut/NET/abc.tiff', result.save_result.dest_document.href
     end
 
     #

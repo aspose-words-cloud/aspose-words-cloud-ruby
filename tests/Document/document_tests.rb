@@ -51,7 +51,7 @@ module AsposeWordsCloud
       result = @words_api.get_document(request)
       assert_equal false, result.nil?
       assert_equal false, result.document.nil?
-      assert_equal 'TestGetDocument.docx', result.document.file_name
+      assert_equal 0, result.document.file_name.index('TestGetDocument.docx')
     end
 
     #
@@ -65,7 +65,7 @@ module AsposeWordsCloud
       result = @words_api.create_document(request)
       assert_equal false, result.nil?
       assert_equal false, result.document.nil?
-      assert_equal 'TestCreateDocument.doc', result.document.file_name
+      assert_equal 0, result.document.file_name.index('TestCreateDocument.doc')
     end
   end
 end

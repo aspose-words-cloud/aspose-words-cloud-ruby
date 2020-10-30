@@ -50,7 +50,7 @@ module AsposeWordsCloud
       assert_equal false, result.nil?
       assert_equal false, result.uploaded.nil?
       assert_equal 1, result.uploaded.length
-      assert_equal 'TestUploadFile.docx', result.uploaded[0]
+      assert_equal 0, result.uploaded[0].index('TestUploadFile.docx')
     end
 
     #

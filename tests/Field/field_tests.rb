@@ -58,7 +58,7 @@ module AsposeWordsCloud
       assert_equal false, result.fields.nil?
       assert_equal false, result.fields.list.nil?
       assert_equal 1, result.fields.list.length
-      assert_equal '1', result.fields.list[0].result
+      assert_equal 0, result.fields.list[0].result.index('1')
     end
 
     #
@@ -77,7 +77,7 @@ module AsposeWordsCloud
       assert_equal false, result.fields.nil?
       assert_equal false, result.fields.list.nil?
       assert_equal 1, result.fields.list.length
-      assert_equal '1', result.fields.list[0].result
+      assert_equal 0, result.fields.list[0].result.index('1')
     end
 
     #
@@ -94,7 +94,7 @@ module AsposeWordsCloud
       result = @words_api.get_field(request)
       assert_equal false, result.nil?
       assert_equal false, result.field.nil?
-      assert_equal '1', result.field.result
+      assert_equal 0, result.field.result.index('1')
     end
 
     #
@@ -111,7 +111,7 @@ module AsposeWordsCloud
       result = @words_api.get_field(request)
       assert_equal false, result.nil?
       assert_equal false, result.field.nil?
-      assert_equal '1', result.field.result
+      assert_equal 0, result.field.result.index('1')
     end
 
     #
@@ -129,8 +129,8 @@ module AsposeWordsCloud
       result = @words_api.insert_field(request)
       assert_equal false, result.nil?
       assert_equal false, result.field.nil?
-      assert_equal '{ NUMPAGES }', result.field.field_code
-      assert_equal '0.0.0.1', result.field.node_id
+      assert_equal 0, result.field.field_code.index('{ NUMPAGES }')
+      assert_equal 0, result.field.node_id.index('0.0.0.1')
     end
 
     #
@@ -148,8 +148,8 @@ module AsposeWordsCloud
       result = @words_api.insert_field(request)
       assert_equal false, result.nil?
       assert_equal false, result.field.nil?
-      assert_equal '{ NUMPAGES }', result.field.field_code
-      assert_equal '5.0.22.0', result.field.node_id
+      assert_equal 0, result.field.field_code.index('{ NUMPAGES }')
+      assert_equal 0, result.field.node_id.index('5.0.22.0')
     end
 
     #
@@ -167,8 +167,8 @@ module AsposeWordsCloud
       result = @words_api.update_field(request)
       assert_equal false, result.nil?
       assert_equal false, result.field.nil?
-      assert_equal '{ NUMPAGES }', result.field.field_code
-      assert_equal '0.0.0.0', result.field.node_id
+      assert_equal 0, result.field.field_code.index('{ NUMPAGES }')
+      assert_equal 0, result.field.node_id.index('0.0.0.0')
     end
 
     #
@@ -186,7 +186,7 @@ module AsposeWordsCloud
       result = @words_api.insert_page_numbers(request)
       assert_equal false, result.nil?
       assert_equal false, result.document.nil?
-      assert_equal 'TestInsertPageNumbers.docx', result.document.file_name
+      assert_equal 0, result.document.file_name.index('TestInsertPageNumbers.docx')
     end
 
     #
@@ -315,7 +315,7 @@ module AsposeWordsCloud
       result = @words_api.update_fields(request)
       assert_equal false, result.nil?
       assert_equal false, result.document.nil?
-      assert_equal 'TestUpdateDocumentFields.docx', result.document.file_name
+      assert_equal 0, result.document.file_name.index('TestUpdateDocumentFields.docx')
     end
   end
 end

@@ -206,7 +206,7 @@ module AsposeWordsCloud
       result = @words_api.insert_drawing_object(request)
       assert_equal false, result.nil?
       assert_equal false, result.drawing_object.nil?
-      assert_equal '0.3.7.1', result.drawing_object.node_id
+      assert_equal 0, result.drawing_object.node_id.index('0.3.7.1')
     end
 
     #
@@ -223,7 +223,7 @@ module AsposeWordsCloud
       result = @words_api.insert_drawing_object(request)
       assert_equal false, result.nil?
       assert_equal false, result.drawing_object.nil?
-      assert_equal '0.3.7.1', result.drawing_object.node_id
+      assert_equal 0, result.drawing_object.node_id.index('0.3.7.1')
     end
 
     #

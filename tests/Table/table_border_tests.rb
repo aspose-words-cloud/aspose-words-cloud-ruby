@@ -54,7 +54,7 @@ module AsposeWordsCloud
       assert_equal false, result.borders.list.nil?
       assert_equal 6, result.borders.list.length
       assert_equal false, result.borders.list[0].color.nil?
-      assert_equal '#000000', result.borders.list[0].color.web
+      assert_equal 0, result.borders.list[0].color.web.index('#000000')
     end
 
     #
@@ -71,7 +71,7 @@ module AsposeWordsCloud
       assert_equal false, result.nil?
       assert_equal false, result.border.nil?
       assert_equal false, result.border.color.nil?
-      assert_equal '#000000', result.border.color.web
+      assert_equal 0, result.border.color.web.index('#000000')
     end
 
     #
@@ -90,7 +90,7 @@ module AsposeWordsCloud
       assert_equal false, result.borders.list.nil?
       assert_equal 6, result.borders.list.length
       assert_equal false, result.borders.list[0].color.nil?
-      assert_equal '', result.borders.list[0].color.web
+      assert_equal 0, result.borders.list[0].color.web.index('')
     end
 
     #
@@ -107,7 +107,7 @@ module AsposeWordsCloud
       assert_equal false, result.nil?
       assert_equal false, result.border.nil?
       assert_equal false, result.border.color.nil?
-      assert_equal '', result.border.color.web
+      assert_equal 0, result.border.color.web.index('')
     end
 
     #
@@ -126,7 +126,7 @@ module AsposeWordsCloud
       assert_equal false, result.nil?
       assert_equal false, result.border.nil?
       assert_equal false, result.border.color.nil?
-      assert_equal '#000002', result.border.color.web
+      assert_equal 0, result.border.color.web.index('#000002')
       assert_equal 6, result.border.distance_from_text
       assert_equal 2, result.border.line_width
       assert_equal true, result.border.shadow

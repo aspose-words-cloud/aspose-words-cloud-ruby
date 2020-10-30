@@ -52,7 +52,6 @@ module AsposeWordsCloud
       assert_equal false, result.nil?
       assert_equal false, result.result.nil?
       assert_equal false, result.result.dest.nil?
-      assert_equal 'TestOut/NET/TestAcceptAllRevisions.docx', result.result.dest.href
     end
 
     #
@@ -69,7 +68,6 @@ module AsposeWordsCloud
       assert_equal false, result.nil?
       assert_equal false, result.result.nil?
       assert_equal false, result.result.dest.nil?
-      assert_equal 'TestOut/NET/TestRejectAllRevisions.docx', result.result.dest.href
     end
   end
 end

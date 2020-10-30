@@ -41,7 +41,7 @@ module AsposeWordsCloud
       assert_equal false, result.nil?
       assert_equal false, result.save_result.nil?
       assert_equal false, result.save_result.dest_document.nil?
-      assert_equal 'google.doc', result.save_result.dest_document.href
+      assert_equal 0, result.save_result.dest_document.href.index('google.doc')
     end
   end
 end

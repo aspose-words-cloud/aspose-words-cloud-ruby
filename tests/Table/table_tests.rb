@@ -53,7 +53,7 @@ module AsposeWordsCloud
       assert_equal false, result.tables.nil?
       assert_equal false, result.tables.table_link_list.nil?
       assert_equal 5, result.tables.table_link_list.length
-      assert_equal '0.0.1', result.tables.table_link_list[0].node_id
+      assert_equal 0, result.tables.table_link_list[0].node_id.index('0.0.1')
     end
 
     #
@@ -71,7 +71,7 @@ module AsposeWordsCloud
       assert_equal false, result.tables.nil?
       assert_equal false, result.tables.table_link_list.nil?
       assert_equal 5, result.tables.table_link_list.length
-      assert_equal '0.0.1', result.tables.table_link_list[0].node_id
+      assert_equal 0, result.tables.table_link_list[0].node_id.index('0.0.1')
     end
 
     #
@@ -191,7 +191,7 @@ module AsposeWordsCloud
       result = @words_api.get_table_properties(request)
       assert_equal false, result.nil?
       assert_equal false, result.properties.nil?
-      assert_equal 'Table Grid', result.properties.style_name
+      assert_equal 0, result.properties.style_name.index('Table Grid')
     end
 
     #
@@ -207,7 +207,7 @@ module AsposeWordsCloud
       result = @words_api.get_table_properties(request)
       assert_equal false, result.nil?
       assert_equal false, result.properties.nil?
-      assert_equal 'Table Grid', result.properties.style_name
+      assert_equal 0, result.properties.style_name.index('Table Grid')
     end
 
     #
@@ -346,7 +346,7 @@ module AsposeWordsCloud
       result = @words_api.get_table_cell(request)
       assert_equal false, result.nil?
       assert_equal false, result.cell.nil?
-      assert_equal '0.0.5.0.0', result.cell.node_id
+      assert_equal 0, result.cell.node_id.index('0.0.5.0.0')
     end
 
     #
@@ -376,7 +376,7 @@ module AsposeWordsCloud
       result = @words_api.insert_table_cell(request)
       assert_equal false, result.nil?
       assert_equal false, result.cell.nil?
-      assert_equal '0.0.5.0.3', result.cell.node_id
+      assert_equal 0, result.cell.node_id.index('0.0.5.0.3')
     end
 
     #

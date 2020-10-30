@@ -54,8 +54,8 @@ module AsposeWordsCloud
       assert_equal false, result.document_properties.list.nil?
       assert_equal 24, result.document_properties.list.length
       assert_equal false, result.document_properties.list[0].nil?
-      assert_equal 'Author', result.document_properties.list[0].name
-      assert_equal '', result.document_properties.list[0].value
+      assert_equal 0, result.document_properties.list[0].name.index('Author')
+      assert_equal 0, result.document_properties.list[0].value.index('')
     end
 
     #
@@ -71,8 +71,8 @@ module AsposeWordsCloud
       result = @words_api.get_document_property(request)
       assert_equal false, result.nil?
       assert_equal false, result.document_property.nil?
-      assert_equal 'Author', result.document_property.name
-      assert_equal '', result.document_property.value
+      assert_equal 0, result.document_property.name.index('Author')
+      assert_equal 0, result.document_property.value.index('')
     end
 
     #
@@ -102,8 +102,8 @@ module AsposeWordsCloud
       result = @words_api.create_or_update_document_property(request)
       assert_equal false, result.nil?
       assert_equal false, result.document_property.nil?
-      assert_equal 'AsposeAuthor', result.document_property.name
-      assert_equal 'Imran Anwar', result.document_property.value
+      assert_equal 0, result.document_property.name.index('AsposeAuthor')
+      assert_equal 0, result.document_property.value.index('Imran Anwar')
     end
   end
 end
