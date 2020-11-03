@@ -52,7 +52,7 @@ module AsposeWordsCloud
       assert_equal false, result.nil?
       assert_equal false, result.bookmarks.nil?
       assert_equal 3, result.bookmarks.bookmark_list.length
-      assert_equal 0, result.bookmarks.bookmark_list[1].name.index('aspose')
+      assert_equal 'aspose', result.bookmarks.bookmark_list[1].name
     end
 
     #
@@ -69,7 +69,7 @@ module AsposeWordsCloud
       result = @words_api.get_bookmark_by_name(request)
       assert_equal false, result.nil?
       assert_equal false, result.bookmark.nil?
-      assert_equal 0, result.bookmark.name.index(bookmark_name)
+      assert_equal bookmark_name, result.bookmark.name
     end
 
     #
@@ -88,8 +88,8 @@ module AsposeWordsCloud
       result = @words_api.update_bookmark(request)
       assert_equal false, result.nil?
       assert_equal false, result.bookmark.nil?
-      assert_equal 0, result.bookmark.name.index(bookmark_name)
-      assert_equal 0, result.bookmark.text.index(bookmark_text)
+      assert_equal bookmark_name, result.bookmark.name
+      assert_equal bookmark_text, result.bookmark.text
     end
   end
 end

@@ -52,8 +52,8 @@ module AsposeWordsCloud
       result = @words_api.insert_footnote(request)
       assert_equal false, result.nil?
       assert_equal false, result.footnote.nil?
-      assert_equal 0, result.footnote.node_id.index('0.1.7.1')
-      assert_equal 0, result.footnote.text.index(' test endnote')
+      assert_equal '0.1.7.1', result.footnote.node_id
+      assert_equal ' test endnote' + '\r\n', result.footnote.text
     end
 
     #
@@ -70,8 +70,8 @@ module AsposeWordsCloud
       result = @words_api.insert_footnote(request)
       assert_equal false, result.nil?
       assert_equal false, result.footnote.nil?
-      assert_equal 0, result.footnote.node_id.index('0.1.7.1')
-      assert_equal 0, result.footnote.text.index(' test endnote')
+      assert_equal '0.1.7.1', result.footnote.node_id
+      assert_equal ' test endnote' + '\r\n', result.footnote.text
     end
 
     #
@@ -115,7 +115,7 @@ module AsposeWordsCloud
       assert_equal false, result.footnotes.nil?
       assert_equal false, result.footnotes.list.nil?
       assert_equal 6, result.footnotes.list.length
-      assert_equal 0, result.footnotes.list[0].text.index(' Footnote 1.')
+      assert_equal ' Footnote 1.' + '\r\n', result.footnotes.list[0].text
     end
 
     #
@@ -133,7 +133,7 @@ module AsposeWordsCloud
       assert_equal false, result.footnotes.nil?
       assert_equal false, result.footnotes.list.nil?
       assert_equal 6, result.footnotes.list.length
-      assert_equal 0, result.footnotes.list[0].text.index(' Footnote 1.')
+      assert_equal ' Footnote 1.' + '\r\n', result.footnotes.list[0].text
     end
 
     #
@@ -149,7 +149,7 @@ module AsposeWordsCloud
       result = @words_api.get_footnote(request)
       assert_equal false, result.nil?
       assert_equal false, result.footnote.nil?
-      assert_equal 0, result.footnote.text.index(' Footnote 1.')
+      assert_equal ' Footnote 1.' + '\r\n', result.footnote.text
     end
 
     #
@@ -165,7 +165,7 @@ module AsposeWordsCloud
       result = @words_api.get_footnote(request)
       assert_equal false, result.nil?
       assert_equal false, result.footnote.nil?
-      assert_equal 0, result.footnote.text.index(' Footnote 1.')
+      assert_equal ' Footnote 1.' + '\r\n', result.footnote.text
     end
 
     #
@@ -182,7 +182,7 @@ module AsposeWordsCloud
       result = @words_api.update_footnote(request)
       assert_equal false, result.nil?
       assert_equal false, result.footnote.nil?
-      assert_equal 0, result.footnote.text.index(' new text is here')
+      assert_equal ' new text is here' + '\r\n', result.footnote.text
     end
 
     #
@@ -199,7 +199,7 @@ module AsposeWordsCloud
       result = @words_api.update_footnote(request)
       assert_equal false, result.nil?
       assert_equal false, result.footnote.nil?
-      assert_equal 0, result.footnote.text.index(' new text is here')
+      assert_equal ' new text is here' + '\r\n', result.footnote.text
     end
   end
 end

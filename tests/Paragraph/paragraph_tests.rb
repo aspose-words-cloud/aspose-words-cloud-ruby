@@ -59,7 +59,7 @@ module AsposeWordsCloud
       result = @words_api.get_paragraph(request)
       assert_equal false, result.nil?
       assert_equal false, result.paragraph.nil?
-      assert_equal 0, result.paragraph.node_id.index('0.0.0')
+      assert_equal '0.0.0', result.paragraph.node_id
     end
 
     #
@@ -75,7 +75,7 @@ module AsposeWordsCloud
       result = @words_api.get_paragraph(request)
       assert_equal false, result.nil?
       assert_equal false, result.paragraph.nil?
-      assert_equal 0, result.paragraph.node_id.index('0.0.0')
+      assert_equal '0.0.0', result.paragraph.node_id
     end
 
     #
@@ -93,7 +93,7 @@ module AsposeWordsCloud
       assert_equal false, result.paragraphs.nil?
       assert_equal false, result.paragraphs.paragraph_link_list.nil?
       assert_equal 15, result.paragraphs.paragraph_link_list.length
-      assert_equal 0, result.paragraphs.paragraph_link_list[0].text.index('Page 1 of 3')
+      assert_equal 'Page 1 of 3', result.paragraphs.paragraph_link_list[0].text
     end
 
     #
@@ -111,7 +111,7 @@ module AsposeWordsCloud
       assert_equal false, result.paragraphs.nil?
       assert_equal false, result.paragraphs.paragraph_link_list.nil?
       assert_equal 15, result.paragraphs.paragraph_link_list.length
-      assert_equal 0, result.paragraphs.paragraph_link_list[0].text.index('Page 1 of 3')
+      assert_equal 'Page 1 of 3', result.paragraphs.paragraph_link_list[0].text
     end
 
     #
@@ -127,7 +127,7 @@ module AsposeWordsCloud
       result = @words_api.get_run(request)
       assert_equal false, result.nil?
       assert_equal false, result.run.nil?
-      assert_equal 0, result.run.text.index('Page ')
+      assert_equal 'Page ', result.run.text
     end
 
     #
@@ -143,7 +143,7 @@ module AsposeWordsCloud
       result = @words_api.get_run_font(request)
       assert_equal false, result.nil?
       assert_equal false, result.font.nil?
-      assert_equal 0, result.font.name.index('Times New Roman')
+      assert_equal 'Times New Roman', result.font.name
     end
 
     #
@@ -161,7 +161,7 @@ module AsposeWordsCloud
       assert_equal false, result.runs.nil?
       assert_equal false, result.runs.list.nil?
       assert_equal 6, result.runs.list.length
-      assert_equal 0, result.runs.list[0].text.index('Page ')
+      assert_equal 'Page ', result.runs.list[0].text
     end
 
     #
@@ -195,7 +195,7 @@ module AsposeWordsCloud
       result = @words_api.insert_paragraph(request)
       assert_equal false, result.nil?
       assert_equal false, result.paragraph.nil?
-      assert_equal 0, result.paragraph.node_id.index('0.3.8')
+      assert_equal '0.3.8', result.paragraph.node_id
     end
 
     #
@@ -212,7 +212,7 @@ module AsposeWordsCloud
       result = @words_api.insert_paragraph(request)
       assert_equal false, result.nil?
       assert_equal false, result.paragraph.nil?
-      assert_equal 0, result.paragraph.node_id.index('0.3.8')
+      assert_equal '0.3.8', result.paragraph.node_id
     end
 
     #
@@ -256,7 +256,7 @@ module AsposeWordsCloud
       result = @words_api.get_paragraph_format(request)
       assert_equal false, result.nil?
       assert_equal false, result.paragraph_format.nil?
-      assert_equal 0, result.paragraph_format.style_name.index('Normal')
+      assert_equal 'Normal', result.paragraph_format.style_name
     end
 
     #
@@ -272,7 +272,7 @@ module AsposeWordsCloud
       result = @words_api.get_paragraph_format(request)
       assert_equal false, result.nil?
       assert_equal false, result.paragraph_format.nil?
-      assert_equal 0, result.paragraph_format.style_name.index('Normal')
+      assert_equal 'Normal', result.paragraph_format.style_name
     end
 
     #
@@ -426,7 +426,7 @@ module AsposeWordsCloud
       assert_equal false, result.nil?
       assert_equal false, result.tab_stops.nil?
       assert_equal 2, result.tab_stops.length
-      assert_equal 72, result.tab_stops[0].position
+      assert_equal 72.0, result.tab_stops[0].position
     end
 
     #
@@ -443,7 +443,7 @@ module AsposeWordsCloud
       assert_equal false, result.nil?
       assert_equal false, result.tab_stops.nil?
       assert_equal 2, result.tab_stops.length
-      assert_equal 72, result.tab_stops[0].position
+      assert_equal 72.0, result.tab_stops[0].position
     end
 
     #
@@ -454,14 +454,14 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, tab_stop_folder + '/ParagraphTabStops.docx'), remote_data_folder + '/' + remote_file_name
 
-      request_dto = TabStopInsert.new({:Alignment => 'Left', :Leader => 'None', :Position => 100})
+      request_dto = TabStopInsert.new({:Alignment => 'Left', :Leader => 'None', :Position => 100.0})
       request = InsertOrUpdateParagraphTabStopRequest.new(remote_file_name, request_dto, 0, '', remote_data_folder, nil, nil, nil, nil)
 
       result = @words_api.insert_or_update_paragraph_tab_stop(request)
       assert_equal false, result.nil?
       assert_equal false, result.tab_stops.nil?
       assert_equal 3, result.tab_stops.length
-      assert_equal 100, result.tab_stops[1].position
+      assert_equal 100.0, result.tab_stops[1].position
 
 
     end
@@ -474,14 +474,14 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, tab_stop_folder + '/ParagraphTabStops.docx'), remote_data_folder + '/' + remote_file_name
 
-      request_dto = TabStopInsert.new({:Alignment => 'Left', :Leader => 'None', :Position => 100})
+      request_dto = TabStopInsert.new({:Alignment => 'Left', :Leader => 'None', :Position => 100.0})
       request = InsertOrUpdateParagraphTabStopRequest.new(remote_file_name, request_dto, 0, nil, remote_data_folder, nil, nil, nil, nil)
 
       result = @words_api.insert_or_update_paragraph_tab_stop(request)
       assert_equal false, result.nil?
       assert_equal false, result.tab_stops.nil?
       assert_equal 3, result.tab_stops.length
-      assert_equal 100, result.tab_stops[1].position
+      assert_equal 100.0, result.tab_stops[1].position
 
 
     end
@@ -526,7 +526,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, tab_stop_folder + '/ParagraphTabStops.docx'), remote_data_folder + '/' + remote_file_name
 
-      request = DeleteParagraphTabStopRequest.new(remote_file_name, 72, 0, '', remote_data_folder, nil, nil, nil, nil)
+      request = DeleteParagraphTabStopRequest.new(remote_file_name, 72.0, 0, '', remote_data_folder, nil, nil, nil, nil)
 
       result = @words_api.delete_paragraph_tab_stop(request)
       assert_equal false, result.nil?
@@ -542,7 +542,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, tab_stop_folder + '/ParagraphTabStops.docx'), remote_data_folder + '/' + remote_file_name
 
-      request = DeleteParagraphTabStopRequest.new(remote_file_name, 72, 0, nil, remote_data_folder, nil, nil, nil, nil)
+      request = DeleteParagraphTabStopRequest.new(remote_file_name, 72.0, 0, nil, remote_data_folder, nil, nil, nil, nil)
 
       result = @words_api.delete_paragraph_tab_stop(request)
       assert_equal false, result.nil?

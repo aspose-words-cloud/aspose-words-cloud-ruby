@@ -51,7 +51,7 @@ module AsposeWordsCloud
       assert_equal false, result.field_names.nil?
       assert_equal false, result.field_names.names.nil?
       assert_equal 15, result.field_names.names.length
-      assert_equal 0, result.field_names.names[0].index('TableStart:Order')
+      assert_equal 'TableStart:Order', result.field_names.names[0]
     end
 
     #

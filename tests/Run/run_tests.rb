@@ -52,7 +52,7 @@ module AsposeWordsCloud
       result = @words_api.update_run(request)
       assert_equal false, result.nil?
       assert_equal false, result.run.nil?
-      assert_equal 0, result.run.text.index('run with text')
+      assert_equal 'run with text', result.run.text
     end
 
     #
@@ -69,8 +69,8 @@ module AsposeWordsCloud
       result = @words_api.insert_run(request)
       assert_equal false, result.nil?
       assert_equal false, result.run.nil?
-      assert_equal 0, result.run.text.index('run with text')
-      assert_equal 0, result.run.node_id.index('0.0.1.3')
+      assert_equal 'run with text', result.run.text
+      assert_equal '0.0.1.3', result.run.node_id
     end
 
     #

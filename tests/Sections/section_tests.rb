@@ -53,7 +53,7 @@ module AsposeWordsCloud
       assert_equal false, result.section.nil?
       assert_equal false, result.section.child_nodes.nil?
       assert_equal 13, result.section.child_nodes.length
-      assert_equal 0, result.section.child_nodes[0].node_id.index('0.3.0')
+      assert_equal '0.3.0', result.section.child_nodes[0].node_id
     end
 
     #
@@ -71,7 +71,7 @@ module AsposeWordsCloud
       assert_equal false, result.sections.nil?
       assert_equal false, result.sections.section_link_list.nil?
       assert_equal 1, result.sections.section_link_list.length
-      assert_equal 0, result.sections.section_link_list[0].node_id.index('0')
+      assert_equal '0', result.sections.section_link_list[0].node_id
     end
 
     #

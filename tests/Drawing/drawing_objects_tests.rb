@@ -89,7 +89,7 @@ module AsposeWordsCloud
       result = @words_api.get_document_drawing_object_by_index(request)
       assert_equal false, result.nil?
       assert_equal false, result.drawing_object.nil?
-      assert_equal 300, result.drawing_object.height
+      assert_equal 300.0, result.drawing_object.height
     end
 
     #
@@ -105,7 +105,7 @@ module AsposeWordsCloud
       result = @words_api.get_document_drawing_object_by_index(request)
       assert_equal false, result.nil?
       assert_equal false, result.drawing_object.nil?
-      assert_equal 300, result.drawing_object.height
+      assert_equal 300.0, result.drawing_object.height
     end
 
     #
@@ -200,13 +200,13 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request_drawing_object = DrawingObjectInsert.new({:Height => 0, :Left => 0, :Top => 0, :Width => 0, :RelativeHorizontalPosition => 'Margin', :RelativeVerticalPosition => 'Margin', :WrapType => 'Inline'})
+      request_drawing_object = DrawingObjectInsert.new({:Height => 0.0, :Left => 0.0, :Top => 0.0, :Width => 0.0, :RelativeHorizontalPosition => 'Margin', :RelativeVerticalPosition => 'Margin', :WrapType => 'Inline'})
       request = InsertDrawingObjectRequest.new(remote_file_name, request_drawing_object, File.open(File.join(local_test_folder, 'Common/aspose-cloud.png')), '', remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_drawing_object(request)
       assert_equal false, result.nil?
       assert_equal false, result.drawing_object.nil?
-      assert_equal 0, result.drawing_object.node_id.index('0.3.7.1')
+      assert_equal '0.3.7.1', result.drawing_object.node_id
     end
 
     #
@@ -217,13 +217,13 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request_drawing_object = DrawingObjectInsert.new({:Height => 0, :Left => 0, :Top => 0, :Width => 0, :RelativeHorizontalPosition => 'Margin', :RelativeVerticalPosition => 'Margin', :WrapType => 'Inline'})
+      request_drawing_object = DrawingObjectInsert.new({:Height => 0.0, :Left => 0.0, :Top => 0.0, :Width => 0.0, :RelativeHorizontalPosition => 'Margin', :RelativeVerticalPosition => 'Margin', :WrapType => 'Inline'})
       request = InsertDrawingObjectRequest.new(remote_file_name, request_drawing_object, File.open(File.join(local_test_folder, 'Common/aspose-cloud.png')), nil, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_drawing_object(request)
       assert_equal false, result.nil?
       assert_equal false, result.drawing_object.nil?
-      assert_equal 0, result.drawing_object.node_id.index('0.3.7.1')
+      assert_equal '0.3.7.1', result.drawing_object.node_id
     end
 
     #
@@ -260,13 +260,13 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request_drawing_object = DrawingObjectUpdate.new({:Left => 1})
+      request_drawing_object = DrawingObjectUpdate.new({:Left => 1.0})
       request = UpdateDrawingObjectRequest.new(remote_file_name, request_drawing_object, File.open(File.join(local_test_folder, 'Common/aspose-cloud.png')), 0, '', remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_drawing_object(request)
       assert_equal false, result.nil?
       assert_equal false, result.drawing_object.nil?
-      assert_equal 1, result.drawing_object.left
+      assert_equal 1.0, result.drawing_object.left
     end
 
     #
@@ -277,13 +277,13 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request_drawing_object = DrawingObjectUpdate.new({:Left => 1})
+      request_drawing_object = DrawingObjectUpdate.new({:Left => 1.0})
       request = UpdateDrawingObjectRequest.new(remote_file_name, request_drawing_object, File.open(File.join(local_test_folder, 'Common/aspose-cloud.png')), 0, nil, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_drawing_object(request)
       assert_equal false, result.nil?
       assert_equal false, result.drawing_object.nil?
-      assert_equal 1, result.drawing_object.left
+      assert_equal 1.0, result.drawing_object.left
     end
   end
 end

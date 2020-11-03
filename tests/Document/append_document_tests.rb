@@ -54,7 +54,7 @@ module AsposeWordsCloud
       result = @words_api.append_document(request)
       assert_equal false, result.nil?
       assert_equal false, result.document.nil?
-      assert_equal 0, result.document.file_name.index('TestAppendDocument.docx')
+      assert_equal 'TestAppendDocument.docx', result.document.file_name
     end
   end
 end

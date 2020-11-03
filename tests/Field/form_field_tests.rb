@@ -52,8 +52,8 @@ module AsposeWordsCloud
       result = @words_api.update_form_field(request)
       assert_equal false, result.nil?
       assert_equal false, result.form_field.nil?
-      assert_equal 0, result.form_field.name.index('FullName')
-      assert_equal 0, result.form_field.status_text.index('')
+      assert_equal 'FullName', result.form_field.name
+      assert_equal '', result.form_field.status_text
     end
 
     #
@@ -70,8 +70,8 @@ module AsposeWordsCloud
       result = @words_api.update_form_field(request)
       assert_equal false, result.nil?
       assert_equal false, result.form_field.nil?
-      assert_equal 0, result.form_field.name.index('FullName')
-      assert_equal 0, result.form_field.status_text.index('')
+      assert_equal 'FullName', result.form_field.name
+      assert_equal '', result.form_field.status_text
     end
 
     #
@@ -87,7 +87,7 @@ module AsposeWordsCloud
       result = @words_api.get_form_field(request)
       assert_equal false, result.nil?
       assert_equal false, result.form_field.nil?
-      assert_equal 0, result.form_field.name.index('FullName')
+      assert_equal 'FullName', result.form_field.name
     end
 
     #
@@ -103,7 +103,7 @@ module AsposeWordsCloud
       result = @words_api.get_form_field(request)
       assert_equal false, result.nil?
       assert_equal false, result.form_field.nil?
-      assert_equal 0, result.form_field.name.index('FullName')
+      assert_equal 'FullName', result.form_field.name
     end
 
     #
@@ -121,7 +121,7 @@ module AsposeWordsCloud
       assert_equal false, result.form_fields.nil?
       assert_equal false, result.form_fields.list.nil?
       assert_equal 5, result.form_fields.list.length
-      assert_equal 0, result.form_fields.list[0].name.index('FullName')
+      assert_equal 'FullName', result.form_fields.list[0].name
     end
 
     #
@@ -139,7 +139,7 @@ module AsposeWordsCloud
       assert_equal false, result.form_fields.nil?
       assert_equal false, result.form_fields.list.nil?
       assert_equal 5, result.form_fields.list.length
-      assert_equal 0, result.form_fields.list[0].name.index('FullName')
+      assert_equal 'FullName', result.form_fields.list[0].name
     end
 
     #
@@ -156,8 +156,8 @@ module AsposeWordsCloud
       result = @words_api.insert_form_field(request)
       assert_equal false, result.nil?
       assert_equal false, result.form_field.nil?
-      assert_equal 0, result.form_field.name.index('FullName')
-      assert_equal 0, result.form_field.status_text.index('')
+      assert_equal 'FullName', result.form_field.name
+      assert_equal '', result.form_field.status_text
     end
 
     #
@@ -174,8 +174,8 @@ module AsposeWordsCloud
       result = @words_api.insert_form_field(request)
       assert_equal false, result.nil?
       assert_equal false, result.form_field.nil?
-      assert_equal 0, result.form_field.name.index('FullName')
-      assert_equal 0, result.form_field.status_text.index('')
+      assert_equal 'FullName', result.form_field.name
+      assert_equal '', result.form_field.status_text
     end
 
     #

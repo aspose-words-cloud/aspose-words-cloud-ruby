@@ -53,7 +53,7 @@ module AsposeWordsCloud
       result = @words_api.insert_watermark_image(request)
       assert_equal false, result.nil?
       assert_equal false, result.document.nil?
-      assert_equal 0, result.document.file_name.index('TestInsertWatermarkImage.docx')
+      assert_equal 'TestInsertWatermarkImage.docx', result.document.file_name
     end
 
     #
@@ -64,13 +64,13 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request_watermark_text = WatermarkText.new({:Text => 'This is the text', :RotationAngle => 90})
+      request_watermark_text = WatermarkText.new({:Text => 'This is the text', :RotationAngle => 90.0})
       request = InsertWatermarkTextRequest.new(remote_file_name, request_watermark_text, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
 
       result = @words_api.insert_watermark_text(request)
       assert_equal false, result.nil?
       assert_equal false, result.document.nil?
-      assert_equal 0, result.document.file_name.index('TestInsertWatermarkText.docx')
+      assert_equal 'TestInsertWatermarkText.docx', result.document.file_name
     end
 
     #
@@ -86,7 +86,7 @@ module AsposeWordsCloud
       result = @words_api.delete_watermark(request)
       assert_equal false, result.nil?
       assert_equal false, result.document.nil?
-      assert_equal 0, result.document.file_name.index('TestDeleteWatermark.docx')
+      assert_equal 'TestDeleteWatermark.docx', result.document.file_name
     end
   end
 end
