@@ -30,11 +30,11 @@ module AsposeWordsCloud
   #
   class MathObjectTests < BaseTestContext
     def remote_data_folder
-      remote_test_folder + '/DocumentElements/MathObjects'
+      remote_test_folder + "/DocumentElements/MathObjects"
     end
 
     def local_file
-      'DocumentElements/MathObjects/MathObjects.docx'
+      "DocumentElements/MathObjects/MathObjects.docx"
     end
 
 
@@ -42,27 +42,27 @@ module AsposeWordsCloud
     # Test for getting mathObjects.
     #
     def test_get_office_math_objects
-      remote_file_name = 'TestGetOfficeMathObjects.docx'
+      remote_file_name = "TestGetOfficeMathObjects.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
-      request = GetOfficeMathObjectsRequest.new(remote_file_name, '', remote_data_folder, nil, nil, nil)
+      request = GetOfficeMathObjectsRequest.new(remote_file_name, "", remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_office_math_objects(request)
       assert_equal false, result.nil?
       assert_equal false, result.office_math_objects.nil?
       assert_equal false, result.office_math_objects.list.nil?
       assert_equal 16, result.office_math_objects.list.length
-      assert_equal '0.0.0.0', result.office_math_objects.list[0].node_id
+      assert_equal "0.0.0.0", result.office_math_objects.list[0].node_id
     end
 
     #
     # Test for getting mathObjects without node path.
     #
     def test_get_office_math_objects_without_node_path
-      remote_file_name = 'TestGetOfficeMathObjectsWithoutNodePath.docx'
+      remote_file_name = "TestGetOfficeMathObjectsWithoutNodePath.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
       request = GetOfficeMathObjectsRequest.new(remote_file_name, nil, remote_data_folder, nil, nil, nil)
 
@@ -71,50 +71,50 @@ module AsposeWordsCloud
       assert_equal false, result.office_math_objects.nil?
       assert_equal false, result.office_math_objects.list.nil?
       assert_equal 16, result.office_math_objects.list.length
-      assert_equal '0.0.0.0', result.office_math_objects.list[0].node_id
+      assert_equal "0.0.0.0", result.office_math_objects.list[0].node_id
     end
 
     #
     # Test for getting mathObject.
     #
     def test_get_office_math_object
-      remote_file_name = 'TestGetOfficeMathObject.docx'
+      remote_file_name = "TestGetOfficeMathObject.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
-      request = GetOfficeMathObjectRequest.new(remote_file_name, 0, '', remote_data_folder, nil, nil, nil)
+      request = GetOfficeMathObjectRequest.new(remote_file_name, 0, "", remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_office_math_object(request)
       assert_equal false, result.nil?
       assert_equal false, result.office_math_object.nil?
-      assert_equal '0.0.0.0', result.office_math_object.node_id
+      assert_equal "0.0.0.0", result.office_math_object.node_id
     end
 
     #
     # Test for getting mathObject without node path.
     #
     def test_get_office_math_object_without_node_path
-      remote_file_name = 'TestGetOfficeMathObjectWithoutNodePath.docx'
+      remote_file_name = "TestGetOfficeMathObjectWithoutNodePath.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
       request = GetOfficeMathObjectRequest.new(remote_file_name, 0, nil, remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_office_math_object(request)
       assert_equal false, result.nil?
       assert_equal false, result.office_math_object.nil?
-      assert_equal '0.0.0.0', result.office_math_object.node_id
+      assert_equal "0.0.0.0", result.office_math_object.node_id
     end
 
     #
     # Test for rendering mathObject.
     #
     def test_render_math_object
-      remote_file_name = 'TestRenderMathObject.docx'
+      remote_file_name = "TestRenderMathObject.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
-      request = RenderMathObjectRequest.new(remote_file_name, 'png', 0, '', remote_data_folder, nil, nil, nil, nil)
+      request = RenderMathObjectRequest.new(remote_file_name, "png", 0, "", remote_data_folder, nil, nil, nil, nil)
 
       result = @words_api.render_math_object(request)
       assert_equal false, result.nil?
@@ -124,11 +124,11 @@ module AsposeWordsCloud
     # Test for rendering mathObject without node path.
     #
     def test_render_math_object_without_node_path
-      remote_file_name = 'TestRenderMathObjectWithoutNodePath.docx'
+      remote_file_name = "TestRenderMathObjectWithoutNodePath.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
-      request = RenderMathObjectRequest.new(remote_file_name, 'png', 0, nil, remote_data_folder, nil, nil, nil, nil)
+      request = RenderMathObjectRequest.new(remote_file_name, "png", 0, nil, remote_data_folder, nil, nil, nil, nil)
 
       result = @words_api.render_math_object(request)
       assert_equal false, result.nil?
@@ -138,11 +138,11 @@ module AsposeWordsCloud
     # Test for deleting mathObject.
     #
     def test_delete_office_math_object
-      remote_file_name = 'TestDeleteOfficeMathObject.docx'
+      remote_file_name = "TestDeleteOfficeMathObject.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
-      request = DeleteOfficeMathObjectRequest.new(remote_file_name, 0, '', remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request = DeleteOfficeMathObjectRequest.new(remote_file_name, 0, "", remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       @words_api.delete_office_math_object(request)
     end
@@ -151,9 +151,9 @@ module AsposeWordsCloud
     # Test for deleting mathObject without node path.
     #
     def test_delete_office_math_object_without_node_path
-      remote_file_name = 'TestDeleteOfficeMathObjectWithoutNodePath.docx'
+      remote_file_name = "TestDeleteOfficeMathObjectWithoutNodePath.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
       request = DeleteOfficeMathObjectRequest.new(remote_file_name, 0, nil, remote_data_folder, nil, nil, nil, nil, nil, nil)
 

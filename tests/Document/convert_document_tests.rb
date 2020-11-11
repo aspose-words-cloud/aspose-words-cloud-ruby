@@ -30,11 +30,11 @@ module AsposeWordsCloud
   #
   class ConvertDocumentTests < BaseTestContext
     def remote_folder
-      remote_test_folder + '/DocumentActions/ConvertDocument'
+      remote_test_folder + "/DocumentActions/ConvertDocument"
     end
 
     def local_folder
-      'DocumentActions/ConvertDocument'
+      "DocumentActions/ConvertDocument"
     end
 
 
@@ -42,12 +42,12 @@ module AsposeWordsCloud
     # Test for converting document to one of the available formats.
     #
     def test_save_as
-      local_name = 'test_multi_pages.docx'
-      remote_name = 'TestSaveAs.docx'
+      local_name = "test_multi_pages.docx"
+      remote_name = "TestSaveAs.docx"
 
-      upload_file File.join(local_test_folder, 'Common/' + local_name), remote_folder + '/' + remote_name
+      upload_file File.join(local_test_folder, "Common/" + local_name), remote_folder + "/" + remote_name
 
-      request_save_options_data = SaveOptionsData.new({:SaveFormat => 'pdf', :FileName => remote_test_out + '/TestSaveAs.pdf'})
+      request_save_options_data = SaveOptionsData.new({:SaveFormat => "pdf", :FileName => remote_test_out + "/TestSaveAs.pdf"})
       request = SaveAsRequest.new(remote_name, request_save_options_data, remote_folder, nil, nil, nil, nil)
 
       result = @words_api.save_as(request)
@@ -60,12 +60,12 @@ module AsposeWordsCloud
     # Test for converting document to one of the available formats.
     #
     def test_save_as_docx
-      local_name = '45.pdf'
-      remote_name = 'TestSaveAsFromPdfToDoc.pdf'
+      local_name = "45.pdf"
+      remote_name = "TestSaveAsFromPdfToDoc.pdf"
 
-      upload_file File.join(local_test_folder, local_folder + '/' + local_name), remote_folder + '/' + remote_name
+      upload_file File.join(local_test_folder, local_folder + "/" + local_name), remote_folder + "/" + remote_name
 
-      request_save_options_data = SaveOptionsData.new({:SaveFormat => 'docx', :FileName => remote_test_out + '/TestSaveAsFromPdfToDoc.docx'})
+      request_save_options_data = SaveOptionsData.new({:SaveFormat => "docx", :FileName => remote_test_out + "/TestSaveAsFromPdfToDoc.docx"})
       request = SaveAsRequest.new(remote_name, request_save_options_data, remote_folder, nil, nil, nil, nil)
 
       result = @words_api.save_as(request)
@@ -78,12 +78,12 @@ module AsposeWordsCloud
     # Test for converting document to one of the available formats.
     #
     def test_save_as_tiff
-      local_name = 'test_multi_pages.docx'
-      remote_name = 'TestSaveAsTiff.pdf'
+      local_name = "test_multi_pages.docx"
+      remote_name = "TestSaveAsTiff.pdf"
 
-      upload_file File.join(local_test_folder, 'Common/' + local_name), remote_folder + '/' + remote_name
+      upload_file File.join(local_test_folder, "Common/" + local_name), remote_folder + "/" + remote_name
 
-      request_save_options = TiffSaveOptionsData.new({:SaveFormat => 'tiff', :FileName => remote_test_out + '/abc.tiff'})
+      request_save_options = TiffSaveOptionsData.new({:SaveFormat => "tiff", :FileName => remote_test_out + "/abc.tiff"})
       request = SaveAsTiffRequest.new(remote_name, request_save_options, remote_folder, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.save_as_tiff(request)
@@ -96,7 +96,7 @@ module AsposeWordsCloud
     # A test for ConvertDocument.
     #
     def test_convert_document
-      request = ConvertDocumentRequest.new(File.open(File.join(local_test_folder, local_folder + '/test_uploadfile.docx')), 'pdf', nil, nil, nil, nil)
+      request = ConvertDocumentRequest.new(File.open(File.join(local_test_folder, local_folder + "/test_uploadfile.docx")), "pdf", nil, nil, nil, nil)
 
       result = @words_api.convert_document(request)
       assert_equal false, result.nil?

@@ -30,11 +30,11 @@ module AsposeWordsCloud
   #
   class DocumentStatisticsTests < BaseTestContext
     def remote_data_folder
-      remote_test_folder + '/DocumentActions/Statistics'
+      remote_test_folder + "/DocumentActions/Statistics"
     end
 
     def local_file
-      'Common/test_multi_pages.docx'
+      "Common/test_multi_pages.docx"
     end
 
 
@@ -42,9 +42,9 @@ module AsposeWordsCloud
     # Test for document classification.
     #
     def test_get_document_statistics
-      remote_file_name = 'TestGetDocumentStatistics.docx'
+      remote_file_name = "TestGetDocumentStatistics.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
       request = GetDocumentStatisticsRequest.new(remote_file_name, remote_data_folder, nil, nil, nil, nil, nil, nil)
 

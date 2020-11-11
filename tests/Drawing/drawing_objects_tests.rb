@@ -30,15 +30,15 @@ module AsposeWordsCloud
   #
   class DrawingObjectsTests < BaseTestContext
     def remote_data_folder
-      remote_test_folder + '/DocumentElements/DrawingObjectss'
+      remote_test_folder + "/DocumentElements/DrawingObjectss"
     end
 
     def local_file
-      'Common/test_multi_pages.docx'
+      "Common/test_multi_pages.docx"
     end
 
     def local_drawing_file
-      'DocumentElements/DrawingObjects/sample_EmbeddedOLE.docx'
+      "DocumentElements/DrawingObjects/sample_EmbeddedOLE.docx"
     end
 
 
@@ -46,11 +46,11 @@ module AsposeWordsCloud
     # Test for getting drawing objects from document.
     #
     def test_get_document_drawing_objects
-      remote_file_name = 'TestGetDocumentDrawingObjects.docx'
+      remote_file_name = "TestGetDocumentDrawingObjects.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
-      request = GetDocumentDrawingObjectsRequest.new(remote_file_name, 'sections/0', remote_data_folder, nil, nil, nil)
+      request = GetDocumentDrawingObjectsRequest.new(remote_file_name, "sections/0", remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_document_drawing_objects(request)
       assert_equal false, result.nil?
@@ -63,9 +63,9 @@ module AsposeWordsCloud
     # Test for getting drawing objects from document without node path.
     #
     def test_get_document_drawing_objects_without_node_path
-      remote_file_name = 'TestGetDocumentDrawingObjectsWithoutNodePath.docx'
+      remote_file_name = "TestGetDocumentDrawingObjectsWithoutNodePath.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
       request = GetDocumentDrawingObjectsRequest.new(remote_file_name, nil, remote_data_folder, nil, nil, nil)
 
@@ -80,11 +80,11 @@ module AsposeWordsCloud
     # Test for getting drawing object by specified index.
     #
     def test_get_document_drawing_object_by_index
-      remote_file_name = 'TestGetDocumentDrawingObjectByIndex.docx'
+      remote_file_name = "TestGetDocumentDrawingObjectByIndex.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
-      request = GetDocumentDrawingObjectByIndexRequest.new(remote_file_name, 0, 'sections/0', remote_data_folder, nil, nil, nil)
+      request = GetDocumentDrawingObjectByIndexRequest.new(remote_file_name, 0, "sections/0", remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_document_drawing_object_by_index(request)
       assert_equal false, result.nil?
@@ -96,9 +96,9 @@ module AsposeWordsCloud
     # Test for getting drawing object by specified index without node path.
     #
     def test_get_document_drawing_object_by_index_without_node_path
-      remote_file_name = 'TestGetDocumentDrawingObjectByIndexWithoutNodePath.docx'
+      remote_file_name = "TestGetDocumentDrawingObjectByIndexWithoutNodePath.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
       request = GetDocumentDrawingObjectByIndexRequest.new(remote_file_name, 0, nil, remote_data_folder, nil, nil, nil)
 
@@ -112,11 +112,11 @@ module AsposeWordsCloud
     # Test for getting drawing object by specified index and format.
     #
     def test_render_drawing_object
-      remote_file_name = 'TestGetDocumentDrawingObjectByIndexWithFormat.docx'
+      remote_file_name = "TestGetDocumentDrawingObjectByIndexWithFormat.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
-      request = RenderDrawingObjectRequest.new(remote_file_name, 'png', 0, 'sections/0', remote_data_folder, nil, nil, nil, nil)
+      request = RenderDrawingObjectRequest.new(remote_file_name, "png", 0, "sections/0", remote_data_folder, nil, nil, nil, nil)
 
       result = @words_api.render_drawing_object(request)
       assert_equal false, result.nil?
@@ -126,11 +126,11 @@ module AsposeWordsCloud
     # Test for getting drawing object by specified index and format without node path.
     #
     def test_render_drawing_object_without_node_path
-      remote_file_name = 'TestGetDocumentDrawingObjectByIndexWithFormatWithoutNodePath.docx'
+      remote_file_name = "TestGetDocumentDrawingObjectByIndexWithFormatWithoutNodePath.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
-      request = RenderDrawingObjectRequest.new(remote_file_name, 'png', 0, nil, remote_data_folder, nil, nil, nil, nil)
+      request = RenderDrawingObjectRequest.new(remote_file_name, "png", 0, nil, remote_data_folder, nil, nil, nil, nil)
 
       result = @words_api.render_drawing_object(request)
       assert_equal false, result.nil?
@@ -140,11 +140,11 @@ module AsposeWordsCloud
     # Test for reading drawing object's image data.
     #
     def test_get_document_drawing_object_image_data
-      remote_file_name = 'TestGetDocumentDrawingObjectImageData.docx'
+      remote_file_name = "TestGetDocumentDrawingObjectImageData.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
-      request = GetDocumentDrawingObjectImageDataRequest.new(remote_file_name, 0, 'sections/0', remote_data_folder, nil, nil, nil)
+      request = GetDocumentDrawingObjectImageDataRequest.new(remote_file_name, 0, "sections/0", remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_document_drawing_object_image_data(request)
       assert_equal false, result.nil?
@@ -154,9 +154,9 @@ module AsposeWordsCloud
     # Test for reading drawing object's image data without node path.
     #
     def test_get_document_drawing_object_image_data_without_node_path
-      remote_file_name = 'TestGetDocumentDrawingObjectImageDataWithoutNodePath.docx'
+      remote_file_name = "TestGetDocumentDrawingObjectImageDataWithoutNodePath.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
       request = GetDocumentDrawingObjectImageDataRequest.new(remote_file_name, 0, nil, remote_data_folder, nil, nil, nil)
 
@@ -168,11 +168,11 @@ module AsposeWordsCloud
     # Test for getting drawing object OLE data.
     #
     def test_get_document_drawing_object_ole_data
-      remote_file_name = 'TestGetDocumentDrawingObjectOleData.docx'
+      remote_file_name = "TestGetDocumentDrawingObjectOleData.docx"
 
-      upload_file File.join(local_test_folder, local_drawing_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_drawing_file), remote_data_folder + "/" + remote_file_name
 
-      request = GetDocumentDrawingObjectOleDataRequest.new(remote_file_name, 0, 'sections/0', remote_data_folder, nil, nil, nil)
+      request = GetDocumentDrawingObjectOleDataRequest.new(remote_file_name, 0, "sections/0", remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_document_drawing_object_ole_data(request)
       assert_equal false, result.nil?
@@ -182,9 +182,9 @@ module AsposeWordsCloud
     # Test for getting drawing object OLE data without node path.
     #
     def test_get_document_drawing_object_ole_data_without_node_path
-      remote_file_name = 'TestGetDocumentDrawingObjectOleDataWithoutNodePath.docx'
+      remote_file_name = "TestGetDocumentDrawingObjectOleDataWithoutNodePath.docx"
 
-      upload_file File.join(local_test_folder, local_drawing_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_drawing_file), remote_data_folder + "/" + remote_file_name
 
       request = GetDocumentDrawingObjectOleDataRequest.new(remote_file_name, 0, nil, remote_data_folder, nil, nil, nil)
 
@@ -196,45 +196,45 @@ module AsposeWordsCloud
     # Test for adding drawing object.
     #
     def test_insert_drawing_object
-      remote_file_name = 'TestInsetDrawingObject.docx'
+      remote_file_name = "TestInsetDrawingObject.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
       request_drawing_object = DrawingObjectInsert.new({:Height => 0.0, :Left => 0.0, :Top => 0.0, :Width => 0.0, :RelativeHorizontalPosition => 'Margin', :RelativeVerticalPosition => 'Margin', :WrapType => 'Inline'})
-      request = InsertDrawingObjectRequest.new(remote_file_name, request_drawing_object, File.open(File.join(local_test_folder, 'Common/aspose-cloud.png')), '', remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request = InsertDrawingObjectRequest.new(remote_file_name, request_drawing_object, File.open(File.join(local_test_folder, "Common/aspose-cloud.png")), "", remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_drawing_object(request)
       assert_equal false, result.nil?
       assert_equal false, result.drawing_object.nil?
-      assert_equal '0.3.7.1', result.drawing_object.node_id
+      assert_equal "0.3.7.1", result.drawing_object.node_id
     end
 
     #
     # Test for adding drawing object without node path.
     #
     def test_insert_drawing_object_without_node_path
-      remote_file_name = 'TestInsetDrawingObjectWithoutNodePath.docx'
+      remote_file_name = "TestInsetDrawingObjectWithoutNodePath.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
       request_drawing_object = DrawingObjectInsert.new({:Height => 0.0, :Left => 0.0, :Top => 0.0, :Width => 0.0, :RelativeHorizontalPosition => 'Margin', :RelativeVerticalPosition => 'Margin', :WrapType => 'Inline'})
-      request = InsertDrawingObjectRequest.new(remote_file_name, request_drawing_object, File.open(File.join(local_test_folder, 'Common/aspose-cloud.png')), nil, remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request = InsertDrawingObjectRequest.new(remote_file_name, request_drawing_object, File.open(File.join(local_test_folder, "Common/aspose-cloud.png")), nil, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_drawing_object(request)
       assert_equal false, result.nil?
       assert_equal false, result.drawing_object.nil?
-      assert_equal '0.3.7.1', result.drawing_object.node_id
+      assert_equal "0.3.7.1", result.drawing_object.node_id
     end
 
     #
     # Test for deleting drawing object.
     #
     def test_delete_drawing_object
-      remote_file_name = 'TestDeleteDrawingObject.docx'
+      remote_file_name = "TestDeleteDrawingObject.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
-      request = DeleteDrawingObjectRequest.new(remote_file_name, 0, '', remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request = DeleteDrawingObjectRequest.new(remote_file_name, 0, "", remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       @words_api.delete_drawing_object(request)
     end
@@ -243,9 +243,9 @@ module AsposeWordsCloud
     # Test for deleting drawing object without node path.
     #
     def test_delete_drawing_object_without_node_path
-      remote_file_name = 'TestDeleteDrawingObjectWithoutNodePath.docx'
+      remote_file_name = "TestDeleteDrawingObjectWithoutNodePath.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
       request = DeleteDrawingObjectRequest.new(remote_file_name, 0, nil, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
@@ -256,12 +256,12 @@ module AsposeWordsCloud
     # Test for updating drawing object.
     #
     def test_update_drawing_object
-      remote_file_name = 'TestUpdateDrawingObject.docx'
+      remote_file_name = "TestUpdateDrawingObject.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
       request_drawing_object = DrawingObjectUpdate.new({:Left => 1.0})
-      request = UpdateDrawingObjectRequest.new(remote_file_name, request_drawing_object, File.open(File.join(local_test_folder, 'Common/aspose-cloud.png')), 0, '', remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request = UpdateDrawingObjectRequest.new(remote_file_name, request_drawing_object, File.open(File.join(local_test_folder, "Common/aspose-cloud.png")), 0, "", remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_drawing_object(request)
       assert_equal false, result.nil?
@@ -273,12 +273,12 @@ module AsposeWordsCloud
     # Test for updating drawing object without node path.
     #
     def test_update_drawing_object_without_node_path
-      remote_file_name = 'TestUpdateDrawingObjectWithoutNodePath.docx'
+      remote_file_name = "TestUpdateDrawingObjectWithoutNodePath.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
       request_drawing_object = DrawingObjectUpdate.new({:Left => 1.0})
-      request = UpdateDrawingObjectRequest.new(remote_file_name, request_drawing_object, File.open(File.join(local_test_folder, 'Common/aspose-cloud.png')), 0, nil, remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request = UpdateDrawingObjectRequest.new(remote_file_name, request_drawing_object, File.open(File.join(local_test_folder, "Common/aspose-cloud.png")), 0, nil, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_drawing_object(request)
       assert_equal false, result.nil?

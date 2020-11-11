@@ -30,11 +30,11 @@ module AsposeWordsCloud
   #
   class RangeTests < BaseTestContext
     def remote_data_folder
-      remote_test_folder + '/DocumentElements/Range'
+      remote_test_folder + "/DocumentElements/Range"
     end
 
     def local_file
-      'DocumentElements/Range/RangeGet.doc'
+      "DocumentElements/Range/RangeGet.doc"
     end
 
 
@@ -42,65 +42,65 @@ module AsposeWordsCloud
     # Test for getting the text from range.
     #
     def test_get_range_text
-      remote_file_name = 'TestGetRangeText.docx'
+      remote_file_name = "TestGetRangeText.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
-      request = GetRangeTextRequest.new(remote_file_name, 'id0.0.0', 'id0.0.1', remote_data_folder, nil, nil, nil)
+      request = GetRangeTextRequest.new(remote_file_name, "id0.0.0", "id0.0.1", remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_range_text(request)
       assert_equal false, result.nil?
-      assert_equal 'This is HEADER ', result.text
+      assert_equal "This is HEADER ", result.text
     end
 
     #
     # Test for removing the text for range.
     #
     def test_remove_range
-      remote_file_name = 'TestRemoveRange.docx'
+      remote_file_name = "TestRemoveRange.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
-      request = RemoveRangeRequest.new(remote_file_name, 'id0.0.0', 'id0.0.1', remote_data_folder, nil, nil, nil, nil)
+      request = RemoveRangeRequest.new(remote_file_name, "id0.0.0", "id0.0.1", remote_data_folder, nil, nil, nil, nil)
 
       result = @words_api.remove_range(request)
       assert_equal false, result.nil?
       assert_equal false, result.document.nil?
-      assert_equal 'TestRemoveRange.docx', result.document.file_name
+      assert_equal "TestRemoveRange.docx", result.document.file_name
     end
 
     #
     # Test for saving a range as a new document.
     #
     def test_save_as_range
-      remote_file_name = 'TestSaveAsRange.docx'
+      remote_file_name = "TestSaveAsRange.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
-      request_document_parameters = RangeDocument.new({:DocumentName => remote_data_folder + '/NewDoc.docx'})
-      request = SaveAsRangeRequest.new(remote_file_name, 'id0.0.0', request_document_parameters, 'id0.0.1', remote_data_folder, nil, nil, nil)
+      request_document_parameters = RangeDocument.new({:DocumentName => remote_data_folder + "/NewDoc.docx"})
+      request = SaveAsRangeRequest.new(remote_file_name, "id0.0.0", request_document_parameters, "id0.0.1", remote_data_folder, nil, nil, nil)
 
       result = @words_api.save_as_range(request)
       assert_equal false, result.nil?
       assert_equal false, result.document.nil?
-      assert_equal 'NewDoc.docx', result.document.file_name
+      assert_equal "NewDoc.docx", result.document.file_name
     end
 
     #
     # Test for replacing text in range.
     #
     def test_replace_with_text
-      remote_file_name = 'TestReplaceWithText.docx'
+      remote_file_name = "TestReplaceWithText.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
-      request_range_text = ReplaceRange.new({:Text => 'Replaced header'})
-      request = ReplaceWithTextRequest.new(remote_file_name, 'id0.0.0', request_range_text, 'id0.0.1', remote_data_folder, nil, nil, nil, nil)
+      request_range_text = ReplaceRange.new({:Text => "Replaced header"})
+      request = ReplaceWithTextRequest.new(remote_file_name, "id0.0.0", request_range_text, "id0.0.1", remote_data_folder, nil, nil, nil, nil)
 
       result = @words_api.replace_with_text(request)
       assert_equal false, result.nil?
       assert_equal false, result.document.nil?
-      assert_equal 'TestReplaceWithText.docx', result.document.file_name
+      assert_equal "TestReplaceWithText.docx", result.document.file_name
     end
   end
 end

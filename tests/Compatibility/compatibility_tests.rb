@@ -30,11 +30,11 @@ module AsposeWordsCloud
   #
   class CompatibilityTests < BaseTestContext
     def remote_data_folder
-      remote_test_folder + '/Compatibility'
+      remote_test_folder + "/Compatibility"
     end
 
     def local_file
-      'Common/test_multi_pages.docx'
+      "Common/test_multi_pages.docx"
     end
 
 
@@ -42,9 +42,9 @@ module AsposeWordsCloud
     # Test for optimize document to specific MS Word version.
     #
     def test_optimize_document
-      remote_file_name = 'TestOptimizeDocument.docx'
+      remote_file_name = "TestOptimizeDocument.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
       request_options = OptimizationOptions.new({:MsWordVersion => 'Word2002'})
       request = OptimizeDocumentRequest.new(remote_file_name, request_options, remote_data_folder, nil, nil, nil, nil, nil, nil)

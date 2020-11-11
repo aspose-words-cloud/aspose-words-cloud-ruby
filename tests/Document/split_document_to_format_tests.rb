@@ -30,11 +30,11 @@ module AsposeWordsCloud
   #
   class SplitDocumentToFormatTests < BaseTestContext
     def remote_data_folder
-      remote_test_folder + '/DocumentActions/SplitDocument'
+      remote_test_folder + "/DocumentActions/SplitDocument"
     end
 
     def local_file
-      'Common/test_multi_pages.docx'
+      "Common/test_multi_pages.docx"
     end
 
 
@@ -42,11 +42,11 @@ module AsposeWordsCloud
     # Test for document splitting.
     #
     def test_split_document
-      remote_file_name = 'TestSplitDocument.docx'
+      remote_file_name = "TestSplitDocument.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
-      request = SplitDocumentRequest.new(remote_file_name, 'text', remote_data_folder, nil, nil, nil, remote_test_out + '/TestSplitDocument.text', 1, 2, nil, nil)
+      request = SplitDocumentRequest.new(remote_file_name, "text", remote_data_folder, nil, nil, nil, remote_test_out + "/TestSplitDocument.text", 1, 2, nil, nil)
 
       result = @words_api.split_document(request)
       assert_equal false, result.nil?

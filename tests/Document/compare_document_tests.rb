@@ -30,11 +30,11 @@ module AsposeWordsCloud
   #
   class CompareDocumentTests < BaseTestContext
     def remote_folder
-      remote_test_folder + '/DocumentActions/CompareDocument'
+      remote_test_folder + "/DocumentActions/CompareDocument"
     end
 
     def local_folder
-      'DocumentActions/CompareDocument'
+      "DocumentActions/CompareDocument"
     end
 
 
@@ -42,21 +42,21 @@ module AsposeWordsCloud
     # Test for document comparison.
     #
     def test_compare_document
-      local_name1 = 'compareTestDoc1.doc'
-      local_name2 = 'compareTestDoc2.doc'
-      remote_name1 = 'TestCompareDocument1.doc'
-      remote_name2 = 'TestCompareDocument2.doc'
+      local_name1 = "compareTestDoc1.doc"
+      local_name2 = "compareTestDoc2.doc"
+      remote_name1 = "TestCompareDocument1.doc"
+      remote_name2 = "TestCompareDocument2.doc"
 
-      upload_file File.join(local_test_folder, local_folder + '/' + local_name1), remote_folder + '/' + remote_name1
-      upload_file File.join(local_test_folder, local_folder + '/' + local_name2), remote_folder + '/' + remote_name2
+      upload_file File.join(local_test_folder, local_folder + "/" + local_name1), remote_folder + "/" + remote_name1
+      upload_file File.join(local_test_folder, local_folder + "/" + local_name2), remote_folder + "/" + remote_name2
 
-      request_compare_data = CompareData.new({:Author => 'author', :ComparingWithDocument => remote_folder + '/' + remote_name2, :DateTime => Date.iso8601('2015-10-26T00:00:00.0000000Z')})
-      request = CompareDocumentRequest.new(remote_name1, request_compare_data, remote_folder, nil, nil, nil, remote_test_out + '/TestCompareDocumentOut.doc')
+      request_compare_data = CompareData.new({:Author => "author", :ComparingWithDocument => remote_folder + "/" + remote_name2, :DateTime => Date.iso8601('2015-10-26T00:00:00.0000000Z')})
+      request = CompareDocumentRequest.new(remote_name1, request_compare_data, remote_folder, nil, nil, nil, remote_test_out + "/TestCompareDocumentOut.doc")
 
       result = @words_api.compare_document(request)
       assert_equal false, result.nil?
       assert_equal false, result.document.nil?
-      assert_equal 'TestCompareDocumentOut.doc', result.document.file_name
+      assert_equal "TestCompareDocumentOut.doc", result.document.file_name
     end
   end
 end
