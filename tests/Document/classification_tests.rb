@@ -30,11 +30,11 @@ module AsposeWordsCloud
   #
   class ClassificationTests < BaseTestContext
     def remote_data_folder
-      remote_test_folder + '/Common'
+      remote_test_folder + "/Common"
     end
 
     def local_file
-      'Common/test_multi_pages.docx'
+      "Common/test_multi_pages.docx"
     end
 
 
@@ -42,24 +42,30 @@ module AsposeWordsCloud
     # Test for raw text classification.
     #
     def test_classify
-      request = ClassifyRequest.new('Try text classification', '3')
+      request = ClassifyRequest.new("Try text classification", "3")
 
       result = @words_api.classify(request)
       assert_equal false, result.nil?
+      assert_equal "Science", result.best_class_name
+      assert_equal false, result.best_results.nil?
+      assert_equal 3, result.best_results.length
     end
 
     #
     # Test for document classification.
     #
     def test_classify_document
-      remote_file_name = 'TestClassifyDocument.docx'
+      remote_file_name = "TestClassifyDocument.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
-      request = ClassifyDocumentRequest.new(remote_file_name, remote_data_folder, nil, nil, nil, '3', nil)
+      request = ClassifyDocumentRequest.new(remote_file_name, remote_data_folder, nil, nil, nil, "3", nil)
 
       result = @words_api.classify_document(request)
       assert_equal false, result.nil?
+      assert_equal "Hobbies_&_Interests", result.best_class_name
+      assert_equal false, result.best_results.nil?
+      assert_equal 3, result.best_results.length
     end
   end
 end

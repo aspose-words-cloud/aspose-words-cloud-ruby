@@ -30,11 +30,11 @@ module AsposeWordsCloud
   #
   class SectionTests < BaseTestContext
     def remote_data_folder
-      remote_test_folder + '/DocumentElements/Section'
+      remote_test_folder + "/DocumentElements/Section"
     end
 
     def local_file
-      'Common/test_multi_pages.docx'
+      "Common/test_multi_pages.docx"
     end
 
 
@@ -42,37 +42,45 @@ module AsposeWordsCloud
     # Test for getting section by index.
     #
     def test_get_section
-      remote_file_name = 'TestGetSection.docx'
+      remote_file_name = "TestGetSection.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
       request = GetSectionRequest.new(remote_file_name, 0, remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_section(request)
       assert_equal false, result.nil?
+      assert_equal false, result.section.nil?
+      assert_equal false, result.section.child_nodes.nil?
+      assert_equal 13, result.section.child_nodes.length
+      assert_equal "0.3.0", result.section.child_nodes[0].node_id
     end
 
     #
     # Test for getting sections.
     #
     def test_get_sections
-      remote_file_name = 'TestGetSections.docx'
+      remote_file_name = "TestGetSections.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
       request = GetSectionsRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_sections(request)
       assert_equal false, result.nil?
+      assert_equal false, result.sections.nil?
+      assert_equal false, result.sections.section_link_list.nil?
+      assert_equal 1, result.sections.section_link_list.length
+      assert_equal "0", result.sections.section_link_list[0].node_id
     end
 
     #
     # Test for delete a section.
     #
     def test_delete_section
-      remote_file_name = 'TestDeleteSection.docx'
+      remote_file_name = "TestDeleteSection.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
       request = DeleteSectionRequest.new(remote_file_name, 0, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
