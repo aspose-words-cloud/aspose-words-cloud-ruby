@@ -11494,7 +11494,7 @@ module AsposeWordsCloud
     private def request_token
       config = @api_client.config
       request_url = "/connect/token"
-      post_data = "grant_type=client_credentials" + "&client_id=" + config.api_key['app_sid'] + "&client_secret=" + config.api_key['api_key']
+      post_data = "grant_type=client_credentials" + "&client_id=" + config.client_data['ClientId'] + "&client_secret=" + config.client_data['ClientSecret']
       data, status_code, header = @api_client.call_api(:POST, request_url, :body => post_data, :return_type => 'Object',  :header_params => {'Content-Type': 'application/x-www-form-urlencoded'})
       @api_client.config.access_token = data[:access_token]
     end

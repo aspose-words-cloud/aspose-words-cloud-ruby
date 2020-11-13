@@ -94,7 +94,7 @@ To use Aspose Words for Cloud Ruby SDK you need to register an account with [Asp
 To install this package do the following:
 update your Gemfile
 ```ruby
-gem 'aspose_words_cloud', '~> 20.10'
+gem 'aspose_words_cloud', '~> 20.11'
 ```
 or install directly
 ```bash
@@ -105,8 +105,8 @@ gem install aspose_words_cloud
 ```ruby
     # Start README example
     AsposeWordsCloud.configure do |config|
-            config.api_key['api_key'] = AppKey
-            config.api_key['app_sid'] = AppSid
+            config.client_data['ClientId'] = clientId
+            config.client_data['ClientSecret'] = clientSecret
             config.host = host
     request = DeleteWatermarkRequest.new remote_name, remote_test_folder + test_folder
     result = @words_api.delete_watermark request

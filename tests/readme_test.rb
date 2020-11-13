@@ -37,15 +37,15 @@ module AsposeWordsCloud
         remote_name = 'TestGetBookmarkByName.docx'
 
         creds = get_config()
-        appKey =  creds['AppKey']
-        appSid =  creds['AppSid']
+        clientSecret =  creds['ClientSecret']
+        clientId =  creds['ClientId']
         baseUrl = creds['BaseUrl']
 
         # Start README example
 
         AsposeWordsCloud.configure do |config|
-          config.api_key['api_key'] = appKey
-          config.api_key['app_sid'] = appSid
+          config.client_data['ClientId'] = clientId
+          config.client_data['ClientSecret'] = clientSecret
           config.baseUrl = baseUrl
         end
 

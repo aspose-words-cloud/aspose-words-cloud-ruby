@@ -33,12 +33,15 @@ module AsposeWordsCloud
     # Test for loading web document.
     #
     def test_load_web_document
-      request_data_save_options = SaveOptionsData.new({:FileName => 'google.doc', :SaveFormat => 'doc', :DmlEffectsRenderingMode => '1', :DmlRenderingMode => '1', :UpdateSdtContent => false, :ZipOutput => false})
-      request_data = LoadWebDocumentData.new({:LoadingDocumentUrl => 'http://google.com', :SaveOptions => request_data_save_options})
+      request_data_save_options = SaveOptionsData.new({:FileName => "google.doc", :SaveFormat => "doc", :DmlEffectsRenderingMode => "1", :DmlRenderingMode => "1", :UpdateSdtContent => false, :ZipOutput => false})
+      request_data = LoadWebDocumentData.new({:LoadingDocumentUrl => "http://google.com", :SaveOptions => request_data_save_options})
       request = LoadWebDocumentRequest.new(request_data, nil)
 
       result = @words_api.load_web_document(request)
       assert_equal false, result.nil?
+      assert_equal false, result.save_result.nil?
+      assert_equal false, result.save_result.dest_document.nil?
+      assert_equal "google.doc", result.save_result.dest_document.href
     end
   end
 end

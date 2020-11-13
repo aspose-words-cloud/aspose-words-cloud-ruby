@@ -30,11 +30,11 @@ module AsposeWordsCloud
   #
   class MailMergeFiledsTests < BaseTestContext
     def remote_data_folder
-      remote_test_folder + '/DocumentActions/MailMerge'
+      remote_test_folder + "/DocumentActions/MailMerge"
     end
 
     def mail_merge_folder
-      'DocumentActions/MailMerge'
+      "DocumentActions/MailMerge"
     end
 
 
@@ -42,26 +42,33 @@ module AsposeWordsCloud
     # Test for putting new fields.
     #
     def test_get_document_field_names_online
-      local_document_file = 'SampleExecuteTemplate.docx'
+      local_document_file = "SampleExecuteTemplate.docx"
 
-      request = GetDocumentFieldNamesOnlineRequest.new(File.open(File.join(local_test_folder, mail_merge_folder + '/' + local_document_file)), true)
+      request = GetDocumentFieldNamesOnlineRequest.new(File.open(File.join(local_test_folder, mail_merge_folder + "/" + local_document_file)), true)
 
       result = @words_api.get_document_field_names_online(request)
       assert_equal false, result.nil?
+      assert_equal false, result.field_names.nil?
+      assert_equal false, result.field_names.names.nil?
+      assert_equal 15, result.field_names.names.length
+      assert_equal "TableStart:Order", result.field_names.names[0]
     end
 
     #
     # Test for getting mailmerge fields.
     #
     def test_get_document_field_names
-      remote_file_name = 'TestGetDocumentFieldNames.docx'
+      remote_file_name = "TestGetDocumentFieldNames.docx"
 
-      upload_file File.join(local_test_folder, 'Common/test_multi_pages.docx'), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, "Common/test_multi_pages.docx"), remote_data_folder + "/" + remote_file_name
 
       request = GetDocumentFieldNamesRequest.new(remote_file_name, remote_data_folder, nil, nil, nil, nil)
 
       result = @words_api.get_document_field_names(request)
       assert_equal false, result.nil?
+      assert_equal false, result.field_names.nil?
+      assert_equal false, result.field_names.names.nil?
+      assert_equal 0, result.field_names.names.length
     end
   end
 end

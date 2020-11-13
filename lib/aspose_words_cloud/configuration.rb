@@ -37,17 +37,17 @@ module AsposeWordsCloud
     #
     # @return [Hash] key: parameter name, value: parameter value (API key)
     #
-    # @example parameter name is "api_key", API key is "xxx" (e.g. "api_key=xxx" in query string)
-    #   config.api_key['api_key'] = 'xxx'
-    attr_accessor :api_key
+    # @example parameter name is "ClientSecret", client secret is "xxx" (e.g. "ClientSecret=xxx" in query string)
+    #   config.client_data['ClientSecret'] = 'xxx'
+    attr_accessor :client_data
 
     # Defines API key prefixes used with API Key authentications.
     #
     # @return [Hash] key: parameter name, value: API key prefix
     #
     # @example parameter name is "Authorization", API key prefix is "Token" (e.g. "Authorization: Token xxx" in headers)
-    #   config.api_key_prefix['api_key'] = 'Token'
-    attr_accessor :api_key_prefix
+    #   config.client_data_prefix['client_secret'] = 'Token'
+    attr_accessor :client_data_prefix
 
     # Defines the username used with HTTP basic authentication.
     #
@@ -94,8 +94,8 @@ module AsposeWordsCloud
     def initialize
       @baseUrl = "https://api.aspose.cloud"
       @api_version = "/v4.0/"
-      @api_key = {}
-      @api_key_prefix = {}
+      @client_data = {}
+      @client_data_prefix = {}
       @client_side_validation = true
       @debugging = false
       @logger = defined?(Rails) ? Rails.logger : Logger.new(STDOUT)
@@ -124,11 +124,11 @@ module AsposeWordsCloud
 
     # Gets API key (with prefix if set).
     # @param [String] param_name the parameter name of API key auth
-    def api_key_with_prefix(param_name)
-      if @api_key_prefix[param_name]
-        "#{@api_key_prefix[param_name]} #{@api_key[param_name]}"
+    def client_data_with_prefix(param_name)
+      if @client_data_prefix[param_name]
+        "#{@client_data_prefix[param_name]} #{@client_data[param_name]}"
       else
-        @api_key[param_name]
+        @client_data[param_name]
       end
     end
 
