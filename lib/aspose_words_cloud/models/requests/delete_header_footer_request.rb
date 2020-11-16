@@ -29,10 +29,10 @@ module AsposeWordsCloud
   # Request model for delete_header_footer operation.
   #
   class DeleteHeaderFooterRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
-    # Path to parent section.
+    # The path to the section in the document tree.
     attr_accessor :section_path
 
     # Object index.
@@ -61,8 +61,8 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
-    # @param section_path Path to parent section.
+    # @param name The filename of the input document.
+    # @param section_path The path to the section in the document tree.
     # @param index Object index.
     # @param folder Original document folder.
     # @param storage Original document storage.

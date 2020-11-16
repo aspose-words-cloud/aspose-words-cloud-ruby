@@ -27,12 +27,12 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # response of the modification operations for the revisions collection (now these are acceptAll and rejectAll).
+  # The REST response with a result of the modification operations for the revisions collection (now these are acceptAll and rejectAll).
   class RevisionsModificationResponse
-    # Gets or sets request Id.
+    # Gets or sets the request Id.
     attr_accessor :request_id
 
-    # Gets or sets result of the modification operations for the revisions collection.
+    # Gets or sets the result of the modification operations for the revisions collection.
     attr_accessor :result
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

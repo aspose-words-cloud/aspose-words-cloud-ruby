@@ -29,13 +29,13 @@ module AsposeWordsCloud
   # Request model for update_table_row_format operation.
   #
   class UpdateTableRowFormatRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
-    # Table row format.
+    # The row format.
     attr_accessor :format
 
-    # Path to table.
+    # The path to the table in the document tree.
     attr_accessor :table_path
 
     # Object index.
@@ -64,9 +64,9 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
-    # @param format Table row format.
-    # @param table_path Path to table.
+    # @param name The filename of the input document.
+    # @param format The row format.
+    # @param table_path The path to the table in the document tree.
     # @param index Object index.
     # @param folder Original document folder.
     # @param storage Original document storage.

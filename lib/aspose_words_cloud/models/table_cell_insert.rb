@@ -27,9 +27,9 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Table cell element.
+  # DTO container with a table cell.
   class TableCellInsert
-    # Gets or sets table cell will be inserted after cell with specified 0-based index.
+    # Gets or sets the 0-based index, the table cell will be inserted after.
     attr_accessor :insert_after
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

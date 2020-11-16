@@ -29,16 +29,16 @@ module AsposeWordsCloud
   # Request model for update_table_properties operation.
   #
   class UpdateTablePropertiesRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
-    # The properties.
+    # The properties of the table.
     attr_accessor :properties
 
     # Object index.
     attr_accessor :index
 
-    # Path to the node, which contains tables.
+    # The path to the node in the document tree.
     attr_accessor :node_path
 
     # Original document folder.
@@ -64,10 +64,10 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
-    # @param properties The properties.
+    # @param name The filename of the input document.
+    # @param properties The properties of the table.
     # @param index Object index.
-    # @param node_path Path to the node, which contains tables.
+    # @param node_path The path to the node in the document tree.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

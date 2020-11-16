@@ -29,7 +29,7 @@ module AsposeWordsCloud
   # Request model for optimize_document operation.
   #
   class OptimizeDocumentRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
     # The document optimization options.
@@ -58,7 +58,7 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
+    # @param name The filename of the input document.
     # @param options The document optimization options.
     # @param folder Original document folder.
     # @param storage Original document storage.

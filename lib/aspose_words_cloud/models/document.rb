@@ -29,20 +29,19 @@ module AsposeWordsCloud
 
   # Represents Words document DTO.
   class Document
-    # Gets or sets returns document properties.
+    # Gets or sets the document properties.
     attr_accessor :document_properties
 
     # Gets or sets the name of the file.
     attr_accessor :file_name
 
-    # Gets or sets a value indicating whether returns true if the document is encrypted and requires a password to open.
+    # Gets or sets a value indicating whether the document is encrypted and requires a password to open.
     attr_accessor :is_encrypted
 
-    # Gets or sets a value indicating whether returns true if the document contains a digital signature. This property merely informs that a
-    # digital signature is present on a document, but it does not specify whether the signature is valid or not.
+    # Gets or sets a value indicating whether the document contains a digital signature. This property merely informs that a digital signature is present on a document, but it does not specify whether the signature is valid or not.
     attr_accessor :is_signed
 
-    # Gets or sets a list of links that originate from this document.
+    # Gets or sets the list of links that originate from this document.
     attr_accessor :links
 
     # Gets or sets the original format of the document.

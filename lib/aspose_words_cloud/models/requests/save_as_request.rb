@@ -29,10 +29,10 @@ module AsposeWordsCloud
   # Request model for save_as operation.
   #
   class SaveAsRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
-    # Save options.
+    # The save options.
     attr_accessor :save_options_data
 
     # Original document folder.
@@ -52,8 +52,8 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
-    # @param save_options_data Save options.
+    # @param name The filename of the input document.
+    # @param save_options_data The save options.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

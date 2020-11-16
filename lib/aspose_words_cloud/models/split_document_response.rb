@@ -27,12 +27,12 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # This response should be returned by the service when handling:  POST /{name}/split .
+  # The REST response with a result of document splitting.
   class SplitDocumentResponse
-    # Gets or sets request Id.
+    # Gets or sets the request Id.
     attr_accessor :request_id
 
-    # Gets or sets resylt of splitting document.
+    # Gets or sets the result of document splitting.
     attr_accessor :split_result
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

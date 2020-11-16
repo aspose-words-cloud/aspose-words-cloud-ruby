@@ -29,7 +29,7 @@ module AsposeWordsCloud
 
   # Run element for insert.
   class RunUpdate
-    # Gets or sets run's text.
+    # Gets or sets the run's text.
     attr_accessor :text
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

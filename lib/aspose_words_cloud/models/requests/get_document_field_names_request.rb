@@ -29,7 +29,7 @@ module AsposeWordsCloud
   # Request model for get_document_field_names operation.
   #
   class GetDocumentFieldNamesRequest
-    # The template name.
+    # The filename of the input document.
     attr_accessor :name
 
     # Original document folder.
@@ -44,17 +44,17 @@ module AsposeWordsCloud
     # Password for opening an encrypted document.
     attr_accessor :password
 
-    # If true, result includes "mustache" field names.
+    # The flag indicating whether to use non merge fields. If true, result includes "mustache" field names.
     attr_accessor :use_non_merge_fields
 
     #
     # Initializes a new instance.
-    # @param name The template name.
+    # @param name The filename of the input document.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     # @param password Password for opening an encrypted document.
-    # @param use_non_merge_fields If true, result includes "mustache" field names.
+    # @param use_non_merge_fields The flag indicating whether to use non merge fields. If true, result includes "mustache" field names.
 
     def initialize(name, folder = nil, storage = nil, load_encoding = nil, password = nil, use_non_merge_fields = nil)
       self.name = name

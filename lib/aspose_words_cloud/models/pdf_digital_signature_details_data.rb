@@ -27,21 +27,21 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # container class for details of digital signature.
+  # Container class for details of digital signature.
   class PdfDigitalSignatureDetailsData
-    # Gets or sets certificate's filename using for signing.
+    # Gets or sets the certificate's filename using for signing.
     attr_accessor :certificate_filename
 
-    # Gets or sets hash algorithm.
+    # Gets or sets the hash algorithm.
     attr_accessor :hash_algorithm
 
-    # Gets or sets location of the signing.
+    # Gets or sets the location of the signing.
     attr_accessor :location
 
-    # Gets or sets reason for the signing.
+    # Gets or sets the reason for the signing.
     attr_accessor :reason
 
-    # Gets or sets date of the signing.
+    # Gets or sets the date of the signing.
     attr_accessor :signature_date
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

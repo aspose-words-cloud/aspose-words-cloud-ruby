@@ -29,13 +29,13 @@ module AsposeWordsCloud
   # Request model for insert_footnote operation.
   #
   class InsertFootnoteRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
-    # Footnote data.
+    # The properties of the footnote.
     attr_accessor :footnote_dto
 
-    # Path to the node, which contains collection of footnotes.
+    # The path to the node in the document tree.
     attr_accessor :node_path
 
     # Original document folder.
@@ -61,9 +61,9 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
-    # @param footnote_dto Footnote data.
-    # @param node_path Path to the node, which contains collection of footnotes.
+    # @param name The filename of the input document.
+    # @param footnote_dto The properties of the footnote.
+    # @param node_path The path to the node in the document tree.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

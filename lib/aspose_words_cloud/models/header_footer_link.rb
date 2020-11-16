@@ -29,10 +29,10 @@ module AsposeWordsCloud
 
   # HeaderFooter link element.
   class HeaderFooterLink
-    # Gets or sets link to the document.
+    # Gets or sets the link to the document.
     attr_accessor :link
 
-    # Gets or sets paragraph's text.
+    # Gets or sets the paragraph's text.
     attr_accessor :type
 
     class EnumAttributeValidator

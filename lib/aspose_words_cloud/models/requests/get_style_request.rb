@@ -29,10 +29,10 @@ module AsposeWordsCloud
   # Request model for get_style operation.
   #
   class GetStyleRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
-    # Style name.
+    # The name of the style.
     attr_accessor :style_name
 
     # Original document folder.
@@ -49,8 +49,8 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
-    # @param style_name Style name.
+    # @param name The filename of the input document.
+    # @param style_name The name of the style.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

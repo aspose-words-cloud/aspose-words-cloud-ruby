@@ -29,10 +29,10 @@ module AsposeWordsCloud
   # Request model for copy_style operation.
   #
   class CopyStyleRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
-    # Style to copy.
+    # The properties of the style.
     attr_accessor :style_copy
 
     # Original document folder.
@@ -58,8 +58,8 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
-    # @param style_copy Style to copy.
+    # @param name The filename of the input document.
+    # @param style_copy The properties of the style.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

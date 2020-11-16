@@ -27,15 +27,15 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Response for the request of the document's statistical data.
+  # The REST response with document's statistical data.
   class StatDataResponse
-    # Gets or sets request Id.
+    # Gets or sets the request Id.
     attr_accessor :request_id
 
-    # Gets or sets link to the document.
+    # Gets or sets the link to the document.
     attr_accessor :document_link
 
-    # Gets or sets statistical data of the document.
+    # Gets or sets the statistical data of the document.
     attr_accessor :stat_data
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

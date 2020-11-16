@@ -27,12 +27,12 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Collection of comments.
+  # The collection of comments.
   class CommentsCollection
-    # Gets or sets link to the document.
+    # Gets or sets the link to the document.
     attr_accessor :link
 
-    # Gets or sets collection of comments.
+    # Gets or sets the collection of comments.
     attr_accessor :comment_list
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

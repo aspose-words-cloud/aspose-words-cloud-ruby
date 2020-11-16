@@ -29,7 +29,7 @@ module AsposeWordsCloud
 
   # Allows to specify additional System.Drawing.Graphics quality options.
   class GraphicsQualityOptionsData
-    # Gets or sets a value that specifies how composited images are drawn to this Graphics.
+    # Gets or sets the value, that specifies how composited images are drawn to this Graphics.
     attr_accessor :compositing_mode
 
     # Gets or sets the rendering quality of composited images drawn to this Graphics.

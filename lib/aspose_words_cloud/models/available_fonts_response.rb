@@ -27,18 +27,18 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # The list of fonts, available for document processing.
+  # The REST response with data on system, additional and custom fonts, available for document processing.
   class AvailableFontsResponse
-    # Gets or sets request Id.
+    # Gets or sets the request Id.
     attr_accessor :request_id
 
-    # Gets or sets the list of addititional fonts, provided by aspose team.
+    # Gets or sets the list of additional fonts, provided by Aspose team.
     attr_accessor :additional_fonts
 
-    # Gets or sets custom user fonts (from user file storage). To use them, you should specify "fontsLocation" parameter in any request.
+    # Gets or sets the list of custom user fonts from user cloud storage. To use them, you should specify "fontsLocation" parameter in any request.
     attr_accessor :custom_fonts
 
-    # Gets or sets the list of system fonts, availiable on the server.
+    # Gets or sets the list of system fonts, available on the server.
     attr_accessor :system_fonts
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

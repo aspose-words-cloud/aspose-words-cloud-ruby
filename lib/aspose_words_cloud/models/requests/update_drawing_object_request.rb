@@ -29,7 +29,7 @@ module AsposeWordsCloud
   # Request model for update_drawing_object operation.
   #
   class UpdateDrawingObjectRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
     # Drawing object parameters.
@@ -41,7 +41,7 @@ module AsposeWordsCloud
     # Object index.
     attr_accessor :index
 
-    # Path to the node, which contains collection of drawing objects.
+    # The path to the node in the document tree.
     attr_accessor :node_path
 
     # Original document folder.
@@ -67,11 +67,11 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
+    # @param name The filename of the input document.
     # @param drawing_object Drawing object parameters.
     # @param image_file File with image.
     # @param index Object index.
-    # @param node_path Path to the node, which contains collection of drawing objects.
+    # @param node_path The path to the node in the document tree.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

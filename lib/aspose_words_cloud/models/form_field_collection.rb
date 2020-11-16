@@ -27,12 +27,12 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Represents DTO for collection of formfields.
+  # DTO container with a collection of form fields.
   class FormFieldCollection
-    # Gets or sets link to the document.
+    # Gets or sets the link to the document.
     attr_accessor :link
 
-    # Gets or sets collection of formfields.
+    # Gets or sets the collection of form fields.
     attr_accessor :list
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

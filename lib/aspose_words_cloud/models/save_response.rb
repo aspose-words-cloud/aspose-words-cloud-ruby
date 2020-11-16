@@ -27,12 +27,12 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Save response.
+  # The REST response with a save result.
   class SaveResponse
-    # Gets or sets request Id.
+    # Gets or sets the request Id.
     attr_accessor :request_id
 
-    # Gets or sets save result.
+    # Gets or sets the save result.
     attr_accessor :save_result
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

@@ -32,7 +32,7 @@ module AsposeWordsCloud
     # Gets or sets horizontal alignment of the string.
     attr_accessor :alignment
 
-    # Gets or sets a System.Drawing.StringFormatFlags enumeration that contains formatting information.
+    # Gets or sets the System.Drawing.StringFormatFlags enumeration, that contains formatting information.
     attr_accessor :format_flags
 
     # Gets or sets the System.Drawing.Text.HotkeyPrefix object for this System.Drawing.StringFormat object.

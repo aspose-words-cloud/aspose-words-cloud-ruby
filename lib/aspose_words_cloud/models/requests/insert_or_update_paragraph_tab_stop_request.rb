@@ -29,16 +29,16 @@ module AsposeWordsCloud
   # Request model for insert_or_update_paragraph_tab_stop operation.
   #
   class InsertOrUpdateParagraphTabStopRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
-    # Paragraph tab stop.
+    # The properties of the paragraph tab stop.
     attr_accessor :dto
 
     # Object index.
     attr_accessor :index
 
-    # Path to the node which contains paragraph.
+    # The path to the node in the document tree.
     attr_accessor :node_path
 
     # Original document folder.
@@ -58,10 +58,10 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
-    # @param dto Paragraph tab stop.
+    # @param name The filename of the input document.
+    # @param dto The properties of the paragraph tab stop.
     # @param index Object index.
-    # @param node_path Path to the node which contains paragraph.
+    # @param node_path The path to the node in the document tree.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

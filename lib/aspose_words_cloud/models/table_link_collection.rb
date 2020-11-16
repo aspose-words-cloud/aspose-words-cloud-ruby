@@ -27,12 +27,12 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Collection of links to tables.
+  # The collection of table's links.
   class TableLinkCollection
-    # Gets or sets link to the document.
+    # Gets or sets the link to the document.
     attr_accessor :link
 
-    # Gets or sets collection of table's links.
+    # Gets or sets the collection of table's links.
     attr_accessor :table_link_list
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

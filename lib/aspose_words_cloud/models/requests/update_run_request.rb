@@ -29,13 +29,13 @@ module AsposeWordsCloud
   # Request model for update_run operation.
   #
   class UpdateRunRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
-    # Run data.
+    # The properties of the Run object.
     attr_accessor :run
 
-    # Path to parent paragraph.
+    # The path to the paragraph in the document tree.
     attr_accessor :paragraph_path
 
     # Object index.
@@ -64,9 +64,9 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
-    # @param run Run data.
-    # @param paragraph_path Path to parent paragraph.
+    # @param name The filename of the input document.
+    # @param run The properties of the Run object.
+    # @param paragraph_path The path to the paragraph in the document tree.
     # @param index Object index.
     # @param folder Original document folder.
     # @param storage Original document storage.

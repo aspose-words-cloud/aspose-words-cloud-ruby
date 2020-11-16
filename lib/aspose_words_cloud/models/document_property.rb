@@ -29,17 +29,17 @@ module AsposeWordsCloud
 
   # Words document property DTO.
   class DocumentProperty
-    # Gets or sets link to the document.
+    # Gets or sets the link to the document.
     attr_accessor :link
 
-    # Gets or sets a value indicating whether flag indicates whether the property is built-in or not.
+    # Gets or sets a value indicating whether the property is built-in or not.
     # If true the property is built-in, if false the property is custom.
     attr_accessor :built_in
 
-    # Gets or sets name of the document property.
+    # Gets or sets the name of the document property.
     attr_accessor :name
 
-    # Gets or sets string value of the document property.
+    # Gets or sets the value of the document property.
     attr_accessor :value
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

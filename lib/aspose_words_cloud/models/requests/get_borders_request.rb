@@ -29,10 +29,10 @@ module AsposeWordsCloud
   # Request model for get_borders operation.
   #
   class GetBordersRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
-    # Path to the node with borders (node should be paragraph, cell or row).
+    # The path to the node in the document tree.
     attr_accessor :node_path
 
     # Original document folder.
@@ -49,8 +49,8 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
-    # @param node_path Path to the node with borders (node should be paragraph, cell or row).
+    # @param name The filename of the input document.
+    # @param node_path The path to the node in the document tree.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

@@ -27,18 +27,18 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Represents the table properties.
+  # DTO container with table properties.
   class TableProperties
-    # Gets or sets link to the document.
+    # Gets or sets the link to the document.
     attr_accessor :link
 
-    # Gets or sets specifies how an inline table is aligned in the document.
+    # Gets or sets the option that controls how an inline table is aligned in the document.
     attr_accessor :alignment
 
-    # Gets or sets allows Microsoft Word and Aspose.Words to automatically resize cells in a table to fit their contents.
+    # Gets or sets a value indicating whether to automatically resize cells in a table to fit their contents.
     attr_accessor :allow_auto_fit
 
-    # Gets or sets whether this is a right-to-left table.
+    # Gets or sets a value indicating whether this is a right-to-left table.
     attr_accessor :bidi
 
     # Gets or sets the amount of space (in points) to add below the contents of cells.
@@ -47,7 +47,7 @@ module AsposeWordsCloud
     # Gets or sets the amount of space (in points) between the cells.
     attr_accessor :cell_spacing
 
-    # Gets or sets the value that represents the left indent of the table.
+    # Gets or sets the value, that represents the left indent of the table.
     attr_accessor :left_indent
 
     # Gets or sets the amount of space (in points) to add to the left of the contents of cells.
@@ -66,10 +66,10 @@ module AsposeWordsCloud
     # Gets or sets the name of the table style applied to this table.
     attr_accessor :style_name
 
-    # Gets or sets bit flags that specify how a table style is applied to this table.
+    # Gets or sets the bit flags, that specify how a table style is applied to this table.
     attr_accessor :style_options
 
-    # Gets or sets get or sets TextWrapping for table.
+    # Gets or sets the option that controls text wrapping for the table.
     attr_accessor :text_wrapping
 
     # Gets or sets the amount of space (in points) to add above the contents of cells.

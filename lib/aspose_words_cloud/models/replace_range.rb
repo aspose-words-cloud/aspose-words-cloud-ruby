@@ -27,12 +27,12 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Range element.
+  # DTO container with a range element.
   class ReplaceRange
-    # Gets or sets range's text.
+    # Gets or sets the range's text.
     attr_accessor :text
 
-    # Gets or sets range's text type.
+    # Gets or sets the range's text type.
     attr_accessor :text_type
 
     class EnumAttributeValidator

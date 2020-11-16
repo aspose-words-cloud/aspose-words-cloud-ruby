@@ -27,13 +27,12 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # This response should be returned by the service when handling:
-  # GET https://api.aspose.cloud/v4.0/words/Test.doc/tables/{0}/rows/{1}/rowformat.
+  # The REST response with the formatting properties of a table row.
   class TableRowFormatResponse
-    # Gets or sets request Id.
+    # Gets or sets the request Id.
     attr_accessor :request_id
 
-    # Gets or sets table.
+    # Gets or sets the formatting properties of a table row.
     attr_accessor :row_format
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

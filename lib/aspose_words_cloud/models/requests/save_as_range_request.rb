@@ -29,15 +29,13 @@ module AsposeWordsCloud
   # Request model for save_as_range operation.
   #
   class SaveAsRangeRequest
-    # The document.
+    # The filename of the input document.
     attr_accessor :name
 
     # The range start identifier.
-    # Identifier is the value of the "nodeId" field, which every document node has, extended with the prefix "id".
-    # It looks like "id0.0.7". Also values like "image5" and "table3" can be used as an identifier for images and tables, where the number is an index of the image/table.
     attr_accessor :range_start_identifier
 
-    # Parameters of a new document.
+    # The parameters of a new document.
     attr_accessor :document_parameters
 
     # The range end identifier.
@@ -57,9 +55,9 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document.
-    # @param range_start_identifier The range start identifier. Identifier is the value of the "nodeId" field, which every document node has, extended with the prefix "id". It looks like "id0.0.7". Also values like "image5" and "table3" can be used as an identifier for images and tables, where the number is an index of the image/table.
-    # @param document_parameters Parameters of a new document.
+    # @param name The filename of the input document.
+    # @param range_start_identifier The range start identifier.
+    # @param document_parameters The parameters of a new document.
     # @param range_end_identifier The range end identifier.
     # @param folder Original document folder.
     # @param storage Original document storage.

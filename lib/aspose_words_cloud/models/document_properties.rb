@@ -27,12 +27,12 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Collection of document properties.
+  # The collection of document properties.
   class DocumentProperties
-    # Gets or sets link to the document.
+    # Gets or sets the link to the document.
     attr_accessor :link
 
-    # Gets or sets collection of document properties.
+    # Gets or sets the collection of document properties.
     attr_accessor :list
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

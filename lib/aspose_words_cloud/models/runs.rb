@@ -27,12 +27,12 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Represents DTO for collection of runs.
+  # DTO container with a collection of runs.
   class Runs
-    # Gets or sets link to the document.
+    # Gets or sets the link to the document.
     attr_accessor :link
 
-    # Gets or sets collection of fields.
+    # Gets or sets the collection of runs.
     attr_accessor :list
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

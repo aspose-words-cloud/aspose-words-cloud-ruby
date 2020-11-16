@@ -29,10 +29,10 @@ module AsposeWordsCloud
   # Request model for get_header_footers operation.
   #
   class GetHeaderFootersRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
-    # Path to parent section.
+    # The path to the section in the document tree.
     attr_accessor :section_path
 
     # Original document folder.
@@ -47,18 +47,18 @@ module AsposeWordsCloud
     # Password for opening an encrypted document.
     attr_accessor :password
 
-    # List of types of headers and footers.
+    # The list of HeaderFooter types.
     attr_accessor :filter_by_type
 
     #
     # Initializes a new instance.
-    # @param name The document name.
-    # @param section_path Path to parent section.
+    # @param name The filename of the input document.
+    # @param section_path The path to the section in the document tree.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     # @param password Password for opening an encrypted document.
-    # @param filter_by_type List of types of headers and footers.
+    # @param filter_by_type The list of HeaderFooter types.
 
     def initialize(name, section_path, folder = nil, storage = nil, load_encoding = nil, password = nil, filter_by_type = nil)
       self.name = name
