@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Paragraph format tab stop.
+  # DTO container with paragraph format tab stop.
   class TabStop
     # Gets or sets the alignment of text at this tab stop.
     attr_accessor :alignment

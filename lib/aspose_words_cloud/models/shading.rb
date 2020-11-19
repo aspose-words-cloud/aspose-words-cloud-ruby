@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Paragraph format shading element.
+  # DTO container with a paragraph format shading element.
   class Shading
     # Gets or sets the color that's applied to the background of the Shading object.
     attr_accessor :background_pattern_color

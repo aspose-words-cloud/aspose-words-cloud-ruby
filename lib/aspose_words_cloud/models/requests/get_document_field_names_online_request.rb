@@ -32,13 +32,13 @@ module AsposeWordsCloud
     # File with template.
     attr_accessor :template
 
-    # Use non merge fields or not.
+    # The flag indicating whether to use non merge fields. If true, result includes "mustache" field names.
     attr_accessor :use_non_merge_fields
 
     #
     # Initializes a new instance.
     # @param template File with template.
-    # @param use_non_merge_fields Use non merge fields or not.
+    # @param use_non_merge_fields The flag indicating whether to use non merge fields. If true, result includes "mustache" field names.
 
     def initialize(template, use_non_merge_fields = nil)
       self.template = template

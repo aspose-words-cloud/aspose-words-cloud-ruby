@@ -29,13 +29,13 @@ module AsposeWordsCloud
   # Request model for update_bookmark operation.
   #
   class UpdateBookmarkRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
-    # BookmarkData with new bookmark data.
+    # The properties of the bookmark.
     attr_accessor :bookmark_data
 
-    # The bookmark name.
+    # The name of the bookmark.
     attr_accessor :bookmark_name
 
     # Original document folder.
@@ -61,9 +61,9 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
-    # @param bookmark_data BookmarkData with new bookmark data.
-    # @param bookmark_name The bookmark name.
+    # @param name The filename of the input document.
+    # @param bookmark_data The properties of the bookmark.
+    # @param bookmark_name The name of the bookmark.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

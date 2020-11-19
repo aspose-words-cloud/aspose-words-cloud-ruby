@@ -29,10 +29,10 @@ module AsposeWordsCloud
   # Request model for insert_comment operation.
   #
   class InsertCommentRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
-    # The comment data.
+    # The properties of the comment.
     attr_accessor :comment
 
     # Original document folder.
@@ -58,8 +58,8 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
-    # @param comment The comment data.
+    # @param name The filename of the input document.
+    # @param comment The properties of the comment.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

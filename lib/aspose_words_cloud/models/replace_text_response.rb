@@ -27,15 +27,15 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Response for "Replace text" action.
+  # The REST response with a number of occurrences of the captured text in the document.
   class ReplaceTextResponse
-    # Gets or sets request Id.
+    # Gets or sets the request Id.
     attr_accessor :request_id
 
-    # Gets or sets link to the document.
+    # Gets or sets the link to the document.
     attr_accessor :document_link
 
-    # Gets or sets number of occurrences of the captured text in the document.
+    # Gets or sets the number of occurrences of the captured text in the document.
     attr_accessor :matches
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

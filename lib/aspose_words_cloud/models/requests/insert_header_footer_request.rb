@@ -29,13 +29,13 @@ module AsposeWordsCloud
   # Request model for insert_header_footer operation.
   #
   class InsertHeaderFooterRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
-    # Type of header/footer.
+    # The type of a HeaderFooter object.
     attr_accessor :header_footer_type
 
-    # Path to parent section.
+    # The path to the section in the document tree.
     attr_accessor :section_path
 
     # Original document folder.
@@ -61,9 +61,9 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
-    # @param header_footer_type Type of header/footer.
-    # @param section_path Path to parent section.
+    # @param name The filename of the input document.
+    # @param header_footer_type The type of a HeaderFooter object.
+    # @param section_path The path to the section in the document tree.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

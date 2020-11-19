@@ -29,13 +29,13 @@ module AsposeWordsCloud
   # Request model for update_list operation.
   #
   class UpdateListRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
-    # List object.
+    # The properties of the list.
     attr_accessor :list_update
 
-    # List unique identifier.
+    # The list Id.
     attr_accessor :list_id
 
     # Original document folder.
@@ -61,9 +61,9 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
-    # @param list_update List object.
-    # @param list_id List unique identifier.
+    # @param name The filename of the input document.
+    # @param list_update The properties of the list.
+    # @param list_id The list Id.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

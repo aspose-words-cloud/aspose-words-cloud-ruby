@@ -27,13 +27,12 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # This response should be returned by the service when handling:
-  # GET https://api.aspose.cloud/v4.0/words/Test.doc/tables/{0}.
+  # The REST response with a table row.
   class TableRowResponse
-    # Gets or sets request Id.
+    # Gets or sets the request Id.
     attr_accessor :request_id
 
-    # Gets or sets table row.
+    # Gets or sets the table row.
     attr_accessor :row
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

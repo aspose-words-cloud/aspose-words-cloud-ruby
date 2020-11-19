@@ -29,16 +29,16 @@ module AsposeWordsCloud
   # Request model for update_paragraph_format operation.
   #
   class UpdateParagraphFormatRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
-    # Paragraph format object.
+    # The formatting properties of a paragraph.
     attr_accessor :dto
 
     # Object index.
     attr_accessor :index
 
-    # Path to the node which contains paragraphs.
+    # The path to the node in the document tree.
     attr_accessor :node_path
 
     # Original document folder.
@@ -64,10 +64,10 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
-    # @param dto Paragraph format object.
+    # @param name The filename of the input document.
+    # @param dto The formatting properties of a paragraph.
     # @param index Object index.
-    # @param node_path Path to the node which contains paragraphs.
+    # @param node_path The path to the node in the document tree.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

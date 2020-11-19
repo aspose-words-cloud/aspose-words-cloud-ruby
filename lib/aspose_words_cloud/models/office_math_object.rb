@@ -27,25 +27,24 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # OfficeMath object.
+  # DTO container with an OfficeMath object.
   class OfficeMathObject
-    # Gets or sets link to the document.
+    # Gets or sets the link to the document.
     attr_accessor :link
 
-    # Gets or sets node id.
+    # Gets or sets the node id.
     attr_accessor :node_id
 
-    # Gets or sets content of footnote.
+    # Gets or sets the content of a footnote.
     attr_accessor :content
 
-    # Gets or sets /sets Office Math display format type which represents whether an equation is displayed inline with the text
-    # or displayed on its own line.
+    # Gets or sets the display format type of the OfficeMath object. This display format defines whether an equation is displayed inline with the text or displayed on its own line.
     attr_accessor :display_type
 
-    # Gets or sets /sets Office Math justification.
+    # Gets or sets the justification of the OfficeMath object.
     attr_accessor :justification
 
-    # Gets or sets type Aspose.Words.Math.OfficeMath.MathObjectType of this Office Math object.
+    # Gets or sets the type of the OfficeMath object.
     attr_accessor :math_object_type
 
     class EnumAttributeValidator

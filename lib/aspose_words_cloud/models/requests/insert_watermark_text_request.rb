@@ -29,10 +29,10 @@ module AsposeWordsCloud
   # Request model for insert_watermark_text operation.
   #
   class InsertWatermarkTextRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
-    # WatermarkText with the watermark data.
+    # The watermark text to insert.
     attr_accessor :watermark_text
 
     # Original document folder.
@@ -58,8 +58,8 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
-    # @param watermark_text WatermarkText with the watermark data.
+    # @param name The filename of the input document.
+    # @param watermark_text The watermark text to insert.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

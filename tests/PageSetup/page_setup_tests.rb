@@ -30,15 +30,15 @@ module AsposeWordsCloud
   #
   class PageSetupTests < BaseTestContext
     def remote_data_folder
-      remote_test_folder + '/DocumentElements/PageSetup'
+      remote_test_folder + "/DocumentElements/PageSetup"
     end
 
     def local_file
-      'Common/test_multi_pages.docx'
+      "Common/test_multi_pages.docx"
     end
 
     def local_text_file
-      'DocumentElements/Text/SampleWordDocument.docx'
+      "DocumentElements/Text/SampleWordDocument.docx"
     end
 
 
@@ -46,40 +46,46 @@ module AsposeWordsCloud
     # Test for getting page settings.
     #
     def test_get_section_page_setup
-      remote_file_name = 'TestGetSectionPageSetup.docx'
+      remote_file_name = "TestGetSectionPageSetup.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
       request = GetSectionPageSetupRequest.new(remote_file_name, 0, remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_section_page_setup(request)
       assert_equal false, result.nil?
+      assert_equal false, result.page_setup.nil?
+      assert_equal 1, result.page_setup.line_starting_number
     end
 
     #
     # Test for updating page settings.
     #
     def test_update_section_page_setup
-      remote_file_name = 'TestUpdateSectionPageSetup.docx'
+      remote_file_name = "TestUpdateSectionPageSetup.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
-      request_page_setup = PageSetup.new({:RtlGutter => true, :LeftMargin => 10, :Orientation => 'Landscape', :PaperSize => 'A5'})
+      request_page_setup = PageSetup.new({:RtlGutter => true, :LeftMargin => 10.0, :Orientation => 'Landscape', :PaperSize => 'A5'})
       request = UpdateSectionPageSetupRequest.new(remote_file_name, 0, request_page_setup, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_section_page_setup(request)
       assert_equal false, result.nil?
+      assert_equal false, result.page_setup.nil?
+      assert_equal true, result.page_setup.rtl_gutter
+
+
     end
 
     #
     # Test for page rendering.
     #
     def test_get_render_page
-      remote_file_name = 'TestGetRenderPage.docx'
+      remote_file_name = "TestGetRenderPage.docx"
 
-      upload_file File.join(local_test_folder, local_text_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_text_file), remote_data_folder + "/" + remote_file_name
 
-      request = RenderPageRequest.new(remote_file_name, 1, 'bmp', remote_data_folder, nil, nil, nil, nil)
+      request = RenderPageRequest.new(remote_file_name, 1, "bmp", remote_data_folder, nil, nil, nil, nil)
 
       result = @words_api.render_page(request)
       assert_equal false, result.nil?

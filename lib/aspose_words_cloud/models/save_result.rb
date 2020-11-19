@@ -29,13 +29,13 @@ module AsposeWordsCloud
 
   # Result of saving.
   class SaveResult
-    # Gets or sets links to additional items (css, images etc).
+    # Gets or sets the list of links to additional items (css, images etc).
     attr_accessor :additional_items
 
-    # Gets or sets link to destination document.
+    # Gets or sets the link to destination document.
     attr_accessor :dest_document
 
-    # Gets or sets link to source document.
+    # Gets or sets the link to source document.
     attr_accessor :source_document
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

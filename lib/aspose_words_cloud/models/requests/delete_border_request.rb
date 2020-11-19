@@ -29,13 +29,13 @@ module AsposeWordsCloud
   # Request model for delete_border operation.
   #
   class DeleteBorderRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
     # Border type.
     attr_accessor :border_type
 
-    # Path to the node with border(node should be paragraph, cell or row).
+    # The path to the node in the document tree.
     attr_accessor :node_path
 
     # Original document folder.
@@ -61,9 +61,9 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
+    # @param name The filename of the input document.
     # @param border_type Border type.
-    # @param node_path Path to the node with border(node should be paragraph, cell or row).
+    # @param node_path The path to the node in the document tree.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

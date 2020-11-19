@@ -27,13 +27,12 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # This response should be returned by the service when handling:
-  # GET https://api.aspose.cloud/v4.0/words/Test.doc/sections.
+  # The REST response with a collection of sections.
   class SectionLinkCollectionResponse
-    # Gets or sets request Id.
+    # Gets or sets the request Id.
     attr_accessor :request_id
 
-    # Gets or sets collection of sections.
+    # Gets or sets the collection of sections.
     attr_accessor :sections
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

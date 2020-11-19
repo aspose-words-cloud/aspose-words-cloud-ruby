@@ -30,11 +30,11 @@ module AsposeWordsCloud
   #
   class TableBorderTests < BaseTestContext
     def remote_data_folder
-      remote_test_folder + '/DocumentElements/Tables'
+      remote_test_folder + "/DocumentElements/Tables"
     end
 
     def local_file
-      'DocumentElements/Tables/TablesGet.docx'
+      "DocumentElements/Tables/TablesGet.docx"
     end
 
 
@@ -42,72 +42,94 @@ module AsposeWordsCloud
     # Test for getting borders.
     #
     def test_get_borders
-      remote_file_name = 'TestGetBorders.docx'
+      remote_file_name = "TestGetBorders.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
-      request = GetBordersRequest.new(remote_file_name, 'tables/1/rows/0/cells/0', remote_data_folder, nil, nil, nil)
+      request = GetBordersRequest.new(remote_file_name, "tables/1/rows/0/cells/0", remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_borders(request)
       assert_equal false, result.nil?
+      assert_equal false, result.borders.nil?
+      assert_equal false, result.borders.list.nil?
+      assert_equal 6, result.borders.list.length
+      assert_equal false, result.borders.list[0].color.nil?
+      assert_equal "#000000", result.borders.list[0].color.web
     end
 
     #
     # Test for getting border.
     #
     def test_get_border
-      remote_file_name = 'TestGetBorder.docx'
+      remote_file_name = "TestGetBorder.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
-      request = GetBorderRequest.new(remote_file_name, 'left', 'tables/1/rows/0/cells/0', remote_data_folder, nil, nil, nil)
+      request = GetBorderRequest.new(remote_file_name, "left", "tables/1/rows/0/cells/0", remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_border(request)
       assert_equal false, result.nil?
+      assert_equal false, result.border.nil?
+      assert_equal false, result.border.color.nil?
+      assert_equal "#000000", result.border.color.web
     end
 
     #
     # Test for deleting borders.
     #
     def test_delete_borders
-      remote_file_name = 'TestDeleteBorders.docx'
+      remote_file_name = "TestDeleteBorders.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
-      request = DeleteBordersRequest.new(remote_file_name, 'tables/1/rows/0/cells/0', remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request = DeleteBordersRequest.new(remote_file_name, "tables/1/rows/0/cells/0", remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.delete_borders(request)
       assert_equal false, result.nil?
+      assert_equal false, result.borders.nil?
+      assert_equal false, result.borders.list.nil?
+      assert_equal 6, result.borders.list.length
+      assert_equal false, result.borders.list[0].color.nil?
+      assert_equal "", result.borders.list[0].color.web
     end
 
     #
     # Test for deleting border.
     #
     def test_delete_border
-      remote_file_name = 'TestDeleteBorder.docx'
+      remote_file_name = "TestDeleteBorder.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
-      request = DeleteBorderRequest.new(remote_file_name, 'left', 'tables/1/rows/0/cells/0', remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request = DeleteBorderRequest.new(remote_file_name, "left", "tables/1/rows/0/cells/0", remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.delete_border(request)
       assert_equal false, result.nil?
+      assert_equal false, result.border.nil?
+      assert_equal false, result.border.color.nil?
+      assert_equal "", result.border.color.web
     end
 
     #
     # Test for updating border.
     #
     def test_update_border
-      remote_file_name = 'TestUpdateBorder.docx'
+      remote_file_name = "TestUpdateBorder.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
-      request_border_properties_color = XmlColor.new({:Alpha => 2})
-      request_border_properties = Border.new({:BorderType => 'Left', :Color => request_border_properties_color, :DistanceFromText => 6, :LineStyle => 'DashDotStroker', :LineWidth => 2, :Shadow => true})
-      request = UpdateBorderRequest.new(remote_file_name, request_border_properties, 'left', 'tables/1/rows/0/cells/0', remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request_border_properties_color = XmlColor.new({:Web => "#AABBCC"})
+      request_border_properties = Border.new({:BorderType => 'Left', :Color => request_border_properties_color, :DistanceFromText => 6.0, :LineStyle => 'DashDotStroker', :LineWidth => 2.0, :Shadow => true})
+      request = UpdateBorderRequest.new(remote_file_name, request_border_properties, "left", "tables/1/rows/0/cells/0", remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_border(request)
       assert_equal false, result.nil?
+      assert_equal false, result.border.nil?
+      assert_equal false, result.border.color.nil?
+      assert_equal "#AABBCC", result.border.color.web
+      assert_equal 6.0, result.border.distance_from_text
+      assert_equal 2.0, result.border.line_width
+      assert_equal true, result.border.shadow
     end
   end
 end

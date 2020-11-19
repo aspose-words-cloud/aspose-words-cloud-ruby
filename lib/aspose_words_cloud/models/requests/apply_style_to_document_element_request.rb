@@ -29,13 +29,13 @@ module AsposeWordsCloud
   # Request model for apply_style_to_document_element operation.
   #
   class ApplyStyleToDocumentElementRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
-    # Style to apply.
+    # The style to apply.
     attr_accessor :style_apply
 
-    # The path to the node that supports a style. Supported node types: ParagraphFormat, List, ListLevel, Table.
+    # The path to the node in the document tree, that supports styles: ParagraphFormat, List, ListLevel, Table.
     attr_accessor :styled_node_path
 
     # Original document folder.
@@ -61,9 +61,9 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
-    # @param style_apply Style to apply.
-    # @param styled_node_path The path to the node that supports a style. Supported node types: ParagraphFormat, List, ListLevel, Table.
+    # @param name The filename of the input document.
+    # @param style_apply The style to apply.
+    # @param styled_node_path The path to the node in the document tree, that supports styles: ParagraphFormat, List, ListLevel, Table.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

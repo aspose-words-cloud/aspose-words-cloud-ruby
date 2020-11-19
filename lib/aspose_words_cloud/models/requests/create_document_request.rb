@@ -32,17 +32,17 @@ module AsposeWordsCloud
     # Original document storage.
     attr_accessor :storage
 
-    # The document name.
+    # The filename of the document.
     attr_accessor :file_name
 
-    # The document folder.
+    # The path to the document folder.
     attr_accessor :folder
 
     #
     # Initializes a new instance.
     # @param storage Original document storage.
-    # @param file_name The document name.
-    # @param folder The document folder.
+    # @param file_name The filename of the document.
+    # @param folder The path to the document folder.
 
     def initialize(storage = nil, file_name = nil, folder = nil)
       self.storage = storage

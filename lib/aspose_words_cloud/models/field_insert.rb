@@ -29,10 +29,10 @@ module AsposeWordsCloud
 
   # Field for insert.
   class FieldInsert
-    # Gets or sets field code.
+    # Gets or sets the field code.
     attr_accessor :field_code
 
-    # Gets or sets LCID of the field.
+    # Gets or sets the LCID of the field.
     attr_accessor :locale_id
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

@@ -39,7 +39,7 @@ module AsposeWordsCloud
       request_token
     end
 
-    # Accepts all revisions in document.
+    # Accepts all revisions in the document.
     # @param request AcceptAllRevisionsRequest
     # @return [RevisionsModificationResponse]
     def accept_all_revisions(request)
@@ -56,7 +56,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Accepts all revisions in document.
+    # Accepts all revisions in the document.
     # @param request AcceptAllRevisionsRequest
     # @return [Array<(RevisionsModificationResponse, Fixnum, Hash)>]
     # RevisionsModificationResponse data, response status code and response headers
@@ -108,7 +108,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Appends documents to original document.
+    # Appends documents to the original document.
     # @param request AppendDocumentRequest
     # @return [DocumentResponse]
     def append_document(request)
@@ -125,7 +125,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Appends documents to original document.
+    # Appends documents to the original document.
     # @param request AppendDocumentRequest
     # @return [Array<(DocumentResponse, Fixnum, Hash)>]
     # DocumentResponse data, response status code and response headers
@@ -181,7 +181,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Apply a style to the document node.
+    # Applies a style to the document node.
     # @param request ApplyStyleToDocumentElementRequest
     # @return [WordsResponse]
     def apply_style_to_document_element(request)
@@ -198,7 +198,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Apply a style to the document node.
+    # Applies a style to the document node.
     # @param request ApplyStyleToDocumentElementRequest
     # @return [Array<(WordsResponse, Fixnum, Hash)>]
     # WordsResponse data, response status code and response headers
@@ -257,7 +257,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Executes document "build report" operation.
+    # Executes the report generation process using the specified document template and the external data source in XML, JSON or CSV format.
     # @param request BuildReportRequest
     # @return [DocumentResponse]
     def build_report(request)
@@ -274,7 +274,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Executes document "build report" operation.
+    # Executes the report generation process using the specified document template and the external data source in XML, JSON or CSV format.
     # @param request BuildReportRequest
     # @return [Array<(DocumentResponse, Fixnum, Hash)>]
     # DocumentResponse data, response status code and response headers
@@ -332,7 +332,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Executes document "build report" online operation.
+    # Executes the report generation process online using the specified document template and the external data source in XML, JSON or CSV format.
     # @param request BuildReportOnlineRequest
     # @return [File]
     def build_report_online(request)
@@ -349,7 +349,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Executes document "build report" online operation.
+    # Executes the report generation process online using the specified document template and the external data source in XML, JSON or CSV format.
     # @param request BuildReportOnlineRequest
     # @return [Array<(File, Fixnum, Hash)>]
     # File data, response status code and response headers
@@ -403,7 +403,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Classifies raw text.
+    # Runs a multi-class text classification for the specified raw text.
     # @param request ClassifyRequest
     # @return [ClassificationResponse]
     def classify(request)
@@ -420,7 +420,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Classifies raw text.
+    # Runs a multi-class text classification for the specified raw text.
     # @param request ClassifyRequest
     # @return [Array<(ClassificationResponse, Fixnum, Hash)>]
     # ClassificationResponse data, response status code and response headers
@@ -467,7 +467,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Classifies document.
+    # Runs a multi-class text classification for the document.
     # @param request ClassifyDocumentRequest
     # @return [ClassificationResponse]
     def classify_document(request)
@@ -484,7 +484,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Classifies document.
+    # Runs a multi-class text classification for the document.
     # @param request ClassifyDocumentRequest
     # @return [Array<(ClassificationResponse, Fixnum, Hash)>]
     # ClassificationResponse data, response status code and response headers
@@ -537,7 +537,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Compares document with original document.
+    # Compares two documents.
     # @param request CompareDocumentRequest
     # @return [DocumentResponse]
     def compare_document(request)
@@ -554,7 +554,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Compares document with original document.
+    # Compares two documents.
     # @param request CompareDocumentRequest
     # @return [Array<(DocumentResponse, Fixnum, Hash)>]
     # DocumentResponse data, response status code and response headers
@@ -608,7 +608,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Converts document from the request's content to the specified format.
+    # Converts a document on a local drive to the specified format.
     # @param request ConvertDocumentRequest
     # @return [File]
     def convert_document(request)
@@ -625,7 +625,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Converts document from the request's content to the specified format.
+    # Converts a document on a local drive to the specified format.
     # @param request ConvertDocumentRequest
     # @return [Array<(File, Fixnum, Hash)>]
     # File data, response status code and response headers
@@ -816,7 +816,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Copy and insert a new style to the document, returns a copied style.
+    # Makes a copy of the style in the document.
     # @param request CopyStyleRequest
     # @return [StyleResponse]
     def copy_style(request)
@@ -833,7 +833,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Copy and insert a new style to the document, returns a copied style.
+    # Makes a copy of the style in the document.
     # @param request CopyStyleRequest
     # @return [Array<(StyleResponse, Fixnum, Hash)>]
     # StyleResponse data, response status code and response headers
@@ -889,8 +889,6 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Creates new document.
-    # Document is created with format which is recognized from file extensions.
     # Supported extensions: ".doc", ".docx", ".docm", ".dot", ".dotm", ".dotx", ".flatopc", ".fopc", ".flatopc_macro", ".fopc_macro", ".flatopc_template", ".fopc_template", ".flatopc_template_macro", ".fopc_template_macro", ".wordml", ".wml", ".rtf".
     # @param request CreateDocumentRequest
     # @return [DocumentResponse]
@@ -908,8 +906,6 @@ module AsposeWordsCloud
         data
     end
 
-    # Creates new document.
-    # Document is created with format which is recognized from file extensions.
     # Supported extensions: ".doc", ".docx", ".docm", ".dot", ".dotm", ".dotx", ".flatopc", ".fopc", ".flatopc_macro", ".fopc_macro", ".flatopc_template", ".fopc_template", ".flatopc_template_macro", ".fopc_template_macro", ".wordml", ".wml", ".rtf".
     # @param request CreateDocumentRequest
     # @return [Array<(DocumentResponse, Fixnum, Hash)>]
@@ -1020,7 +1016,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Adds new or update existing document property.
+    # Adds a new or updates an existing document property.
     # @param request CreateOrUpdateDocumentPropertyRequest
     # @return [DocumentPropertyResponse]
     def create_or_update_document_property(request)
@@ -1037,7 +1033,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Adds new or update existing document property.
+    # Adds a new or updates an existing document property.
     # @param request CreateOrUpdateDocumentPropertyRequest
     # @return [Array<(DocumentPropertyResponse, Fixnum, Hash)>]
     # DocumentPropertyResponse data, response status code and response headers
@@ -1096,7 +1092,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Remove all tab stops.
+    # Removes paragraph tab stops from the document node.
     # @param request DeleteAllParagraphTabStopsRequest
     # @return [TabStopsResponse]
     def delete_all_paragraph_tab_stops(request)
@@ -1113,7 +1109,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Remove all tab stops.
+    # Removes paragraph tab stops from the document node.
     # @param request DeleteAllParagraphTabStopsRequest
     # @return [Array<(TabStopsResponse, Fixnum, Hash)>]
     # TabStopsResponse data, response status code and response headers
@@ -1169,7 +1165,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # 'nodePath' should refer to paragraph, cell or row.
+    # The 'nodePath' parameter should refer to a paragraph, a cell or a row.
     # @param request DeleteBorderRequest
     # @return [BorderResponse]
     def delete_border(request)
@@ -1186,7 +1182,7 @@ module AsposeWordsCloud
         data
     end
 
-    # 'nodePath' should refer to paragraph, cell or row.
+    # The 'nodePath' parameter should refer to a paragraph, a cell or a row.
     # @param request DeleteBorderRequest
     # @return [Array<(BorderResponse, Fixnum, Hash)>]
     # BorderResponse data, response status code and response headers
@@ -1244,7 +1240,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # 'nodePath' should refer to paragraph, cell or row.
+    # The 'nodePath' parameter should refer to a paragraph, a cell or a row.
     # @param request DeleteBordersRequest
     # @return [BordersResponse]
     def delete_borders(request)
@@ -1261,7 +1257,7 @@ module AsposeWordsCloud
         data
     end
 
-    # 'nodePath' should refer to paragraph, cell or row.
+    # The 'nodePath' parameter should refer to a paragraph, a cell or a row.
     # @param request DeleteBordersRequest
     # @return [Array<(BordersResponse, Fixnum, Hash)>]
     # BordersResponse data, response status code and response headers
@@ -1316,7 +1312,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Removes comment from document.
+    # Removes a comment from the document.
     # @param request DeleteCommentRequest
     # @return [nil]
     def delete_comment(request)
@@ -1333,7 +1329,7 @@ module AsposeWordsCloud
         nil
     end
 
-    # Removes comment from document.
+    # Removes a comment from the document.
     # @param request DeleteCommentRequest
     # @return [Array<(nil, Fixnum, Hash)>]
     # nil, response status code and response headers
@@ -1389,7 +1385,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Deletes document property.
+    # Removes a document property.
     # @param request DeleteDocumentPropertyRequest
     # @return [nil]
     def delete_document_property(request)
@@ -1406,7 +1402,7 @@ module AsposeWordsCloud
         nil
     end
 
-    # Deletes document property.
+    # Removes a document property.
     # @param request DeleteDocumentPropertyRequest
     # @return [Array<(nil, Fixnum, Hash)>]
     # nil, response status code and response headers
@@ -1462,7 +1458,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Removes drawing object from document.
+    # Removes a DrawingObject from the document node.
     # @param request DeleteDrawingObjectRequest
     # @return [nil]
     def delete_drawing_object(request)
@@ -1479,7 +1475,7 @@ module AsposeWordsCloud
         nil
     end
 
-    # Removes drawing object from document.
+    # Removes a DrawingObject from the document node.
     # @param request DeleteDrawingObjectRequest
     # @return [Array<(nil, Fixnum, Hash)>]
     # nil, response status code and response headers
@@ -1536,7 +1532,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Deletes field from document.
+    # Removes a field from the document node.
     # @param request DeleteFieldRequest
     # @return [nil]
     def delete_field(request)
@@ -1553,7 +1549,7 @@ module AsposeWordsCloud
         nil
     end
 
-    # Deletes field from document.
+    # Removes a field from the document node.
     # @param request DeleteFieldRequest
     # @return [Array<(nil, Fixnum, Hash)>]
     # nil, response status code and response headers
@@ -1610,7 +1606,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Removes fields from section paragraph.
+    # Removes fields from the document node.
     # @param request DeleteFieldsRequest
     # @return [nil]
     def delete_fields(request)
@@ -1627,7 +1623,7 @@ module AsposeWordsCloud
         nil
     end
 
-    # Removes fields from section paragraph.
+    # Removes fields from the document node.
     # @param request DeleteFieldsRequest
     # @return [Array<(nil, Fixnum, Hash)>]
     # nil, response status code and response headers
@@ -1811,7 +1807,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Removes footnote from document.
+    # Removes a footnote from the document node.
     # @param request DeleteFootnoteRequest
     # @return [nil]
     def delete_footnote(request)
@@ -1828,7 +1824,7 @@ module AsposeWordsCloud
         nil
     end
 
-    # Removes footnote from document.
+    # Removes a footnote from the document node.
     # @param request DeleteFootnoteRequest
     # @return [Array<(nil, Fixnum, Hash)>]
     # nil, response status code and response headers
@@ -1885,7 +1881,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Removes form field from document.
+    # Removes a form field from the document node.
     # @param request DeleteFormFieldRequest
     # @return [nil]
     def delete_form_field(request)
@@ -1902,7 +1898,7 @@ module AsposeWordsCloud
         nil
     end
 
-    # Removes form field from document.
+    # Removes a form field from the document node.
     # @param request DeleteFormFieldRequest
     # @return [Array<(nil, Fixnum, Hash)>]
     # nil, response status code and response headers
@@ -1959,7 +1955,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Deletes header/footer from document.
+    # Removes a HeaderFooter object from the document section.
     # @param request DeleteHeaderFooterRequest
     # @return [nil]
     def delete_header_footer(request)
@@ -1976,7 +1972,7 @@ module AsposeWordsCloud
         nil
     end
 
-    # Deletes header/footer from document.
+    # Removes a HeaderFooter object from the document section.
     # @param request DeleteHeaderFooterRequest
     # @return [Array<(nil, Fixnum, Hash)>]
     # nil, response status code and response headers
@@ -2035,7 +2031,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Deletes document headers and footers.
+    # Removes HeaderFooter objects from the document section.
     # @param request DeleteHeadersFootersRequest
     # @return [nil]
     def delete_headers_footers(request)
@@ -2052,7 +2048,7 @@ module AsposeWordsCloud
         nil
     end
 
-    # Deletes document headers and footers.
+    # Removes HeaderFooter objects from the document section.
     # @param request DeleteHeadersFootersRequest
     # @return [Array<(nil, Fixnum, Hash)>]
     # nil, response status code and response headers
@@ -2109,7 +2105,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Removes macros from document.
+    # Removes macros from the document.
     # @param request DeleteMacrosRequest
     # @return [nil]
     def delete_macros(request)
@@ -2126,7 +2122,7 @@ module AsposeWordsCloud
         nil
     end
 
-    # Removes macros from document.
+    # Removes macros from the document.
     # @param request DeleteMacrosRequest
     # @return [Array<(nil, Fixnum, Hash)>]
     # nil, response status code and response headers
@@ -2179,7 +2175,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Removes OfficeMath object from document.
+    # Removes an OfficeMath object from the document node.
     # @param request DeleteOfficeMathObjectRequest
     # @return [nil]
     def delete_office_math_object(request)
@@ -2196,7 +2192,7 @@ module AsposeWordsCloud
         nil
     end
 
-    # Removes OfficeMath object from document.
+    # Removes an OfficeMath object from the document node.
     # @param request DeleteOfficeMathObjectRequest
     # @return [Array<(nil, Fixnum, Hash)>]
     # nil, response status code and response headers
@@ -2253,7 +2249,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Removes paragraph from section.
+    # Removes a paragraph from the document node.
     # @param request DeleteParagraphRequest
     # @return [nil]
     def delete_paragraph(request)
@@ -2270,7 +2266,7 @@ module AsposeWordsCloud
         nil
     end
 
-    # Removes paragraph from section.
+    # Removes a paragraph from the document node.
     # @param request DeleteParagraphRequest
     # @return [Array<(nil, Fixnum, Hash)>]
     # nil, response status code and response headers
@@ -2327,7 +2323,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Delete paragraph list format, returns updated list format properties.
+    # Removes the formatting properties of a paragraph list from the document node.
     # @param request DeleteParagraphListFormatRequest
     # @return [ParagraphListFormatResponse]
     def delete_paragraph_list_format(request)
@@ -2344,7 +2340,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Delete paragraph list format, returns updated list format properties.
+    # Removes the formatting properties of a paragraph list from the document node.
     # @param request DeleteParagraphListFormatRequest
     # @return [Array<(ParagraphListFormatResponse, Fixnum, Hash)>]
     # ParagraphListFormatResponse data, response status code and response headers
@@ -2402,7 +2398,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Remove the i-th tab stop.
+    # Removes a paragraph tab stop from the document node.
     # @param request DeleteParagraphTabStopRequest
     # @return [TabStopsResponse]
     def delete_paragraph_tab_stop(request)
@@ -2419,7 +2415,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Remove the i-th tab stop.
+    # Removes a paragraph tab stop from the document node.
     # @param request DeleteParagraphTabStopRequest
     # @return [Array<(TabStopsResponse, Fixnum, Hash)>]
     # TabStopsResponse data, response status code and response headers
@@ -2478,7 +2474,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Removes run from document.
+    # Removes a Run object from the paragraph.
     # @param request DeleteRunRequest
     # @return [nil]
     def delete_run(request)
@@ -2495,7 +2491,7 @@ module AsposeWordsCloud
         nil
     end
 
-    # Removes run from document.
+    # Removes a Run object from the paragraph.
     # @param request DeleteRunRequest
     # @return [Array<(nil, Fixnum, Hash)>]
     # nil, response status code and response headers
@@ -2554,7 +2550,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Removes section from document.
+    # Removes a section from the document.
     # @param request DeleteSectionRequest
     # @return [nil]
     def delete_section(request)
@@ -2571,7 +2567,7 @@ module AsposeWordsCloud
         nil
     end
 
-    # Removes section from document.
+    # Removes a section from the document.
     # @param request DeleteSectionRequest
     # @return [Array<(nil, Fixnum, Hash)>]
     # nil, response status code and response headers
@@ -2627,7 +2623,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Deletes a table.
+    # Removes a table from the document node.
     # @param request DeleteTableRequest
     # @return [nil]
     def delete_table(request)
@@ -2644,7 +2640,7 @@ module AsposeWordsCloud
         nil
     end
 
-    # Deletes a table.
+    # Removes a table from the document node.
     # @param request DeleteTableRequest
     # @return [Array<(nil, Fixnum, Hash)>]
     # nil, response status code and response headers
@@ -2701,7 +2697,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Deletes a table cell.
+    # Removes a cell from the table row.
     # @param request DeleteTableCellRequest
     # @return [nil]
     def delete_table_cell(request)
@@ -2718,7 +2714,7 @@ module AsposeWordsCloud
         nil
     end
 
-    # Deletes a table cell.
+    # Removes a cell from the table row.
     # @param request DeleteTableCellRequest
     # @return [Array<(nil, Fixnum, Hash)>]
     # nil, response status code and response headers
@@ -2777,7 +2773,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Deletes a table row.
+    # Removes a row from the table.
     # @param request DeleteTableRowRequest
     # @return [nil]
     def delete_table_row(request)
@@ -2794,7 +2790,7 @@ module AsposeWordsCloud
         nil
     end
 
-    # Deletes a table row.
+    # Removes a row from the table.
     # @param request DeleteTableRowRequest
     # @return [Array<(nil, Fixnum, Hash)>]
     # nil, response status code and response headers
@@ -2853,7 +2849,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Deletes watermark (for deleting last watermark from the document).
+    # Removes a watermark from the document.
     # @param request DeleteWatermarkRequest
     # @return [DocumentResponse]
     def delete_watermark(request)
@@ -2870,7 +2866,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Deletes watermark (for deleting last watermark from the document).
+    # Removes a watermark from the document.
     # @param request DeleteWatermarkRequest
     # @return [Array<(DocumentResponse, Fixnum, Hash)>]
     # DocumentResponse data, response status code and response headers
@@ -2990,7 +2986,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Executes document mail merge operation.
+    # Executes a Mail Merge operation.
     # @param request ExecuteMailMergeRequest
     # @return [DocumentResponse]
     def execute_mail_merge(request)
@@ -3007,7 +3003,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Executes document mail merge operation.
+    # Executes a Mail Merge operation.
     # @param request ExecuteMailMergeRequest
     # @return [Array<(DocumentResponse, Fixnum, Hash)>]
     # DocumentResponse data, response status code and response headers
@@ -3064,7 +3060,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Executes document mail merge online.
+    # Executes a Mail Merge operation online.
     # @param request ExecuteMailMergeOnlineRequest
     # @return [File]
     def execute_mail_merge_online(request)
@@ -3081,7 +3077,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Executes document mail merge online.
+    # Executes a Mail Merge operation online.
     # @param request ExecuteMailMergeOnlineRequest
     # @return [Array<(File, Fixnum, Hash)>]
     # File data, response status code and response headers
@@ -3134,7 +3130,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Gets the list of fonts, available for document processing.
+    # Reads available fonts from the document.
     # @param request GetAvailableFontsRequest
     # @return [AvailableFontsResponse]
     def get_available_fonts(request)
@@ -3151,7 +3147,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Gets the list of fonts, available for document processing.
+    # Reads available fonts from the document.
     # @param request GetAvailableFontsRequest
     # @return [Array<(AvailableFontsResponse, Fixnum, Hash)>]
     # AvailableFontsResponse data, response status code and response headers
@@ -3195,7 +3191,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Reads document bookmark data by its name.
+    # Reads a bookmark, specified by name, from the document.
     # @param request GetBookmarkByNameRequest
     # @return [BookmarkResponse]
     def get_bookmark_by_name(request)
@@ -3212,7 +3208,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Reads document bookmark data by its name.
+    # Reads a bookmark, specified by name, from the document.
     # @param request GetBookmarkByNameRequest
     # @return [Array<(BookmarkResponse, Fixnum, Hash)>]
     # BookmarkResponse data, response status code and response headers
@@ -3266,7 +3262,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Reads document bookmarks common info.
+    # Reads bookmarks from the document.
     # @param request GetBookmarksRequest
     # @return [BookmarksResponse]
     def get_bookmarks(request)
@@ -3283,7 +3279,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Reads document bookmarks common info.
+    # Reads bookmarks from the document.
     # @param request GetBookmarksRequest
     # @return [Array<(BookmarksResponse, Fixnum, Hash)>]
     # BookmarksResponse data, response status code and response headers
@@ -3334,7 +3330,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # 'nodePath' should refer to paragraph, cell or row.
+    # The 'nodePath' parameter should refer to a paragraph, a cell or a row.
     # @param request GetBorderRequest
     # @return [BorderResponse]
     def get_border(request)
@@ -3351,7 +3347,7 @@ module AsposeWordsCloud
         data
     end
 
-    # 'nodePath' should refer to paragraph, cell or row.
+    # The 'nodePath' parameter should refer to a paragraph, a cell or a row.
     # @param request GetBorderRequest
     # @return [Array<(BorderResponse, Fixnum, Hash)>]
     # BorderResponse data, response status code and response headers
@@ -3406,7 +3402,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # 'nodePath' should refer to paragraph, cell or row.
+    # Reads borders from the document node.
     # @param request GetBordersRequest
     # @return [BordersResponse]
     def get_borders(request)
@@ -3423,7 +3419,7 @@ module AsposeWordsCloud
         data
     end
 
-    # 'nodePath' should refer to paragraph, cell or row.
+    # Reads borders from the document node.
     # @param request GetBordersRequest
     # @return [Array<(BordersResponse, Fixnum, Hash)>]
     # BordersResponse data, response status code and response headers
@@ -3475,7 +3471,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Gets comment from document.
+    # Reads a comment from the document.
     # @param request GetCommentRequest
     # @return [CommentResponse]
     def get_comment(request)
@@ -3492,7 +3488,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Gets comment from document.
+    # Reads a comment from the document.
     # @param request GetCommentRequest
     # @return [Array<(CommentResponse, Fixnum, Hash)>]
     # CommentResponse data, response status code and response headers
@@ -3546,7 +3542,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Gets comments from document.
+    # Reads comments from the document.
     # @param request GetCommentsRequest
     # @return [CommentsResponse]
     def get_comments(request)
@@ -3563,7 +3559,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Gets comments from document.
+    # Reads comments from the document.
     # @param request GetCommentsRequest
     # @return [Array<(CommentsResponse, Fixnum, Hash)>]
     # CommentsResponse data, response status code and response headers
@@ -3614,7 +3610,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Reads document common info.
+    # Reads common information from the document.
     # @param request GetDocumentRequest
     # @return [DocumentResponse]
     def get_document(request)
@@ -3631,7 +3627,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Reads document common info.
+    # Reads common information from the document.
     # @param request GetDocumentRequest
     # @return [Array<(DocumentResponse, Fixnum, Hash)>]
     # DocumentResponse data, response status code and response headers
@@ -3682,7 +3678,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Reads document drawing object common info by its index or convert to format specified.
+    # Reads a DrawingObject from the document node.
     # @param request GetDocumentDrawingObjectByIndexRequest
     # @return [DrawingObjectResponse]
     def get_document_drawing_object_by_index(request)
@@ -3699,7 +3695,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Reads document drawing object common info by its index or convert to format specified.
+    # Reads a DrawingObject from the document node.
     # @param request GetDocumentDrawingObjectByIndexRequest
     # @return [Array<(DrawingObjectResponse, Fixnum, Hash)>]
     # DrawingObjectResponse data, response status code and response headers
@@ -3754,7 +3750,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Reads drawing object image data.
+    # Reads image data of a DrawingObject from the document node.
     # @param request GetDocumentDrawingObjectImageDataRequest
     # @return [File]
     def get_document_drawing_object_image_data(request)
@@ -3771,7 +3767,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Reads drawing object image data.
+    # Reads image data of a DrawingObject from the document node.
     # @param request GetDocumentDrawingObjectImageDataRequest
     # @return [Array<(File, Fixnum, Hash)>]
     # File data, response status code and response headers
@@ -3826,7 +3822,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Gets drawing object OLE data.
+    # Reads OLE data of a DrawingObject from the document node.
     # @param request GetDocumentDrawingObjectOleDataRequest
     # @return [File]
     def get_document_drawing_object_ole_data(request)
@@ -3843,7 +3839,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Gets drawing object OLE data.
+    # Reads OLE data of a DrawingObject from the document node.
     # @param request GetDocumentDrawingObjectOleDataRequest
     # @return [Array<(File, Fixnum, Hash)>]
     # File data, response status code and response headers
@@ -3898,7 +3894,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Reads document drawing objects common info.
+    # Reads DrawingObjects from the document node.
     # @param request GetDocumentDrawingObjectsRequest
     # @return [DrawingObjectsResponse]
     def get_document_drawing_objects(request)
@@ -3915,7 +3911,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Reads document drawing objects common info.
+    # Reads DrawingObjects from the document node.
     # @param request GetDocumentDrawingObjectsRequest
     # @return [Array<(DrawingObjectsResponse, Fixnum, Hash)>]
     # DrawingObjectsResponse data, response status code and response headers
@@ -3967,7 +3963,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Reads document field names.
+    # Reads merge field names from the document.
     # @param request GetDocumentFieldNamesRequest
     # @return [FieldNamesResponse]
     def get_document_field_names(request)
@@ -3984,7 +3980,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Reads document field names.
+    # Reads merge field names from the document.
     # @param request GetDocumentFieldNamesRequest
     # @return [Array<(FieldNamesResponse, Fixnum, Hash)>]
     # FieldNamesResponse data, response status code and response headers
@@ -4036,7 +4032,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Reads document field names.
+    # Reads merge field names from the document.
     # @param request GetDocumentFieldNamesOnlineRequest
     # @return [FieldNamesResponse]
     def get_document_field_names_online(request)
@@ -4053,7 +4049,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Reads document field names.
+    # Reads merge field names from the document.
     # @param request GetDocumentFieldNamesOnlineRequest
     # @return [Array<(FieldNamesResponse, Fixnum, Hash)>]
     # FieldNamesResponse data, response status code and response headers
@@ -4101,7 +4097,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Reads document hyperlink by its index.
+    # Reads a hyperlink from the document.
     # @param request GetDocumentHyperlinkByIndexRequest
     # @return [HyperlinkResponse]
     def get_document_hyperlink_by_index(request)
@@ -4118,7 +4114,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Reads document hyperlink by its index.
+    # Reads a hyperlink from the document.
     # @param request GetDocumentHyperlinkByIndexRequest
     # @return [Array<(HyperlinkResponse, Fixnum, Hash)>]
     # HyperlinkResponse data, response status code and response headers
@@ -4172,7 +4168,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Reads document hyperlinks common info.
+    # Reads hyperlinks from the document.
     # @param request GetDocumentHyperlinksRequest
     # @return [HyperlinksResponse]
     def get_document_hyperlinks(request)
@@ -4189,7 +4185,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Reads document hyperlinks common info.
+    # Reads hyperlinks from the document.
     # @param request GetDocumentHyperlinksRequest
     # @return [Array<(HyperlinksResponse, Fixnum, Hash)>]
     # HyperlinksResponse data, response status code and response headers
@@ -4240,7 +4236,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Reads document properties info.
+    # Reads document properties.
     # @param request GetDocumentPropertiesRequest
     # @return [DocumentPropertiesResponse]
     def get_document_properties(request)
@@ -4257,7 +4253,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Reads document properties info.
+    # Reads document properties.
     # @param request GetDocumentPropertiesRequest
     # @return [Array<(DocumentPropertiesResponse, Fixnum, Hash)>]
     # DocumentPropertiesResponse data, response status code and response headers
@@ -4308,7 +4304,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Reads document property info by the property name.
+    # Reads a document property.
     # @param request GetDocumentPropertyRequest
     # @return [DocumentPropertyResponse]
     def get_document_property(request)
@@ -4325,7 +4321,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Reads document property info by the property name.
+    # Reads a document property.
     # @param request GetDocumentPropertyRequest
     # @return [Array<(DocumentPropertyResponse, Fixnum, Hash)>]
     # DocumentPropertyResponse data, response status code and response headers
@@ -4379,7 +4375,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Reads document protection common info.
+    # Reads protection properties from the document.
     # @param request GetDocumentProtectionRequest
     # @return [ProtectionDataResponse]
     def get_document_protection(request)
@@ -4396,7 +4392,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Reads document protection common info.
+    # Reads protection properties from the document.
     # @param request GetDocumentProtectionRequest
     # @return [Array<(ProtectionDataResponse, Fixnum, Hash)>]
     # ProtectionDataResponse data, response status code and response headers
@@ -4518,7 +4514,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Exports the document into the specified format.
+    # Converts a document in cloud storage to the specified format.
     # @param request GetDocumentWithFormatRequest
     # @return [File]
     def get_document_with_format(request)
@@ -4535,7 +4531,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Exports the document into the specified format.
+    # Converts a document in cloud storage to the specified format.
     # @param request GetDocumentWithFormatRequest
     # @return [Array<(File, Fixnum, Hash)>]
     # File data, response status code and response headers
@@ -4591,7 +4587,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Gets field from document.
+    # Reads a field from the document node.
     # @param request GetFieldRequest
     # @return [FieldResponse]
     def get_field(request)
@@ -4608,7 +4604,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Gets field from document.
+    # Reads a field from the document node.
     # @param request GetFieldRequest
     # @return [Array<(FieldResponse, Fixnum, Hash)>]
     # FieldResponse data, response status code and response headers
@@ -4663,7 +4659,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Get fields from document.
+    # Reads fields from the document node.
     # @param request GetFieldsRequest
     # @return [FieldsResponse]
     def get_fields(request)
@@ -4680,7 +4676,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Get fields from document.
+    # Reads fields from the document node.
     # @param request GetFieldsRequest
     # @return [Array<(FieldsResponse, Fixnum, Hash)>]
     # FieldsResponse data, response status code and response headers
@@ -4797,7 +4793,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Reads footnote by index.
+    # Reads a footnote from the document node.
     # @param request GetFootnoteRequest
     # @return [FootnoteResponse]
     def get_footnote(request)
@@ -4814,7 +4810,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Reads footnote by index.
+    # Reads a footnote from the document node.
     # @param request GetFootnoteRequest
     # @return [Array<(FootnoteResponse, Fixnum, Hash)>]
     # FootnoteResponse data, response status code and response headers
@@ -4869,7 +4865,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Gets footnotes from document.
+    # Reads footnotes from the document node.
     # @param request GetFootnotesRequest
     # @return [FootnotesResponse]
     def get_footnotes(request)
@@ -4886,7 +4882,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Gets footnotes from document.
+    # Reads footnotes from the document node.
     # @param request GetFootnotesRequest
     # @return [Array<(FootnotesResponse, Fixnum, Hash)>]
     # FootnotesResponse data, response status code and response headers
@@ -4938,7 +4934,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Returns representation of an one of the form field.
+    # Reads a form field from the document node.
     # @param request GetFormFieldRequest
     # @return [FormFieldResponse]
     def get_form_field(request)
@@ -4955,7 +4951,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Returns representation of an one of the form field.
+    # Reads a form field from the document node.
     # @param request GetFormFieldRequest
     # @return [Array<(FormFieldResponse, Fixnum, Hash)>]
     # FormFieldResponse data, response status code and response headers
@@ -5010,7 +5006,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Gets form fields from document.
+    # Reads form fields from the document node.
     # @param request GetFormFieldsRequest
     # @return [FormFieldsResponse]
     def get_form_fields(request)
@@ -5027,7 +5023,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Gets form fields from document.
+    # Reads form fields from the document node.
     # @param request GetFormFieldsRequest
     # @return [Array<(FormFieldsResponse, Fixnum, Hash)>]
     # FormFieldsResponse data, response status code and response headers
@@ -5079,7 +5075,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Returns a header/footer from the document by index.
+    # Reads a HeaderFooter object from the document.
     # @param request GetHeaderFooterRequest
     # @return [HeaderFooterResponse]
     def get_header_footer(request)
@@ -5096,7 +5092,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Returns a header/footer from the document by index.
+    # Reads a HeaderFooter object from the document.
     # @param request GetHeaderFooterRequest
     # @return [Array<(HeaderFooterResponse, Fixnum, Hash)>]
     # HeaderFooterResponse data, response status code and response headers
@@ -5151,7 +5147,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Returns a header/footer from the document section.
+    # Reads a HeaderFooter object from the document section.
     # @param request GetHeaderFooterOfSectionRequest
     # @return [HeaderFooterResponse]
     def get_header_footer_of_section(request)
@@ -5168,7 +5164,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Returns a header/footer from the document section.
+    # Reads a HeaderFooter object from the document section.
     # @param request GetHeaderFooterOfSectionRequest
     # @return [Array<(HeaderFooterResponse, Fixnum, Hash)>]
     # HeaderFooterResponse data, response status code and response headers
@@ -5226,7 +5222,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Returns a list of header/footers from the document.
+    # Reads HeaderFooter objects from the document section.
     # @param request GetHeaderFootersRequest
     # @return [HeaderFootersResponse]
     def get_header_footers(request)
@@ -5243,7 +5239,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Returns a list of header/footers from the document.
+    # Reads HeaderFooter objects from the document section.
     # @param request GetHeaderFootersRequest
     # @return [Array<(HeaderFootersResponse, Fixnum, Hash)>]
     # HeaderFootersResponse data, response status code and response headers
@@ -5298,7 +5294,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # This resource represents one of the lists contained in the document.
+    # Reads a list from the document.
     # @param request GetListRequest
     # @return [ListResponse]
     def get_list(request)
@@ -5315,7 +5311,7 @@ module AsposeWordsCloud
         data
     end
 
-    # This resource represents one of the lists contained in the document.
+    # Reads a list from the document.
     # @param request GetListRequest
     # @return [Array<(ListResponse, Fixnum, Hash)>]
     # ListResponse data, response status code and response headers
@@ -5369,7 +5365,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Returns a list of lists that are contained in the document.
+    # Reads lists from the document.
     # @param request GetListsRequest
     # @return [ListsResponse]
     def get_lists(request)
@@ -5386,7 +5382,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Returns a list of lists that are contained in the document.
+    # Reads lists from the document.
     # @param request GetListsRequest
     # @return [Array<(ListsResponse, Fixnum, Hash)>]
     # ListsResponse data, response status code and response headers
@@ -5437,7 +5433,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Reads OfficeMath object by index.
+    # Reads an OfficeMath object from the document node.
     # @param request GetOfficeMathObjectRequest
     # @return [OfficeMathObjectResponse]
     def get_office_math_object(request)
@@ -5454,7 +5450,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Reads OfficeMath object by index.
+    # Reads an OfficeMath object from the document node.
     # @param request GetOfficeMathObjectRequest
     # @return [Array<(OfficeMathObjectResponse, Fixnum, Hash)>]
     # OfficeMathObjectResponse data, response status code and response headers
@@ -5509,7 +5505,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Gets OfficeMath objects from document.
+    # Reads OfficeMath objects from the document node.
     # @param request GetOfficeMathObjectsRequest
     # @return [OfficeMathObjectsResponse]
     def get_office_math_objects(request)
@@ -5526,7 +5522,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Gets OfficeMath objects from document.
+    # Reads OfficeMath objects from the document node.
     # @param request GetOfficeMathObjectsRequest
     # @return [Array<(OfficeMathObjectsResponse, Fixnum, Hash)>]
     # OfficeMathObjectsResponse data, response status code and response headers
@@ -5578,7 +5574,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # This resource represents one of the paragraphs contained in the document.
+    # Reads a paragraph from the document node.
     # @param request GetParagraphRequest
     # @return [ParagraphResponse]
     def get_paragraph(request)
@@ -5595,7 +5591,7 @@ module AsposeWordsCloud
         data
     end
 
-    # This resource represents one of the paragraphs contained in the document.
+    # Reads a paragraph from the document node.
     # @param request GetParagraphRequest
     # @return [Array<(ParagraphResponse, Fixnum, Hash)>]
     # ParagraphResponse data, response status code and response headers
@@ -5650,7 +5646,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Represents all the formatting for a paragraph.
+    # Reads the formatting properties of a paragraph from the document node.
     # @param request GetParagraphFormatRequest
     # @return [ParagraphFormatResponse]
     def get_paragraph_format(request)
@@ -5667,7 +5663,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Represents all the formatting for a paragraph.
+    # Reads the formatting properties of a paragraph from the document node.
     # @param request GetParagraphFormatRequest
     # @return [Array<(ParagraphFormatResponse, Fixnum, Hash)>]
     # ParagraphFormatResponse data, response status code and response headers
@@ -5722,7 +5718,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Represents list format for a paragraph.
+    # Reads the formatting properties of a paragraph list from the document node.
     # @param request GetParagraphListFormatRequest
     # @return [ParagraphListFormatResponse]
     def get_paragraph_list_format(request)
@@ -5739,7 +5735,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Represents list format for a paragraph.
+    # Reads the formatting properties of a paragraph list from the document node.
     # @param request GetParagraphListFormatRequest
     # @return [Array<(ParagraphListFormatResponse, Fixnum, Hash)>]
     # ParagraphListFormatResponse data, response status code and response headers
@@ -5794,7 +5790,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Returns a list of paragraphs that are contained in the document.
+    # Reads paragraphs from the document node.
     # @param request GetParagraphsRequest
     # @return [ParagraphLinkCollectionResponse]
     def get_paragraphs(request)
@@ -5811,7 +5807,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Returns a list of paragraphs that are contained in the document.
+    # Reads paragraphs from the document node.
     # @param request GetParagraphsRequest
     # @return [Array<(ParagraphLinkCollectionResponse, Fixnum, Hash)>]
     # ParagraphLinkCollectionResponse data, response status code and response headers
@@ -5863,7 +5859,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Get all tab stops for the paragraph.
+    # Reads paragraph tab stops from the document node.
     # @param request GetParagraphTabStopsRequest
     # @return [TabStopsResponse]
     def get_paragraph_tab_stops(request)
@@ -5880,7 +5876,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Get all tab stops for the paragraph.
+    # Reads paragraph tab stops from the document node.
     # @param request GetParagraphTabStopsRequest
     # @return [Array<(TabStopsResponse, Fixnum, Hash)>]
     # TabStopsResponse data, response status code and response headers
@@ -5935,7 +5931,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Gets the text from the range.
+    # Reads range text from the document.
     # @param request GetRangeTextRequest
     # @return [RangeTextResponse]
     def get_range_text(request)
@@ -5952,7 +5948,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Gets the text from the range.
+    # Reads range text from the document.
     # @param request GetRangeTextRequest
     # @return [Array<(RangeTextResponse, Fixnum, Hash)>]
     # RangeTextResponse data, response status code and response headers
@@ -6007,7 +6003,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # This resource represents run of text contained in the document.
+    # Reads a Run object from the paragraph.
     # @param request GetRunRequest
     # @return [RunResponse]
     def get_run(request)
@@ -6024,7 +6020,7 @@ module AsposeWordsCloud
         data
     end
 
-    # This resource represents run of text contained in the document.
+    # Reads a Run object from the paragraph.
     # @param request GetRunRequest
     # @return [Array<(RunResponse, Fixnum, Hash)>]
     # RunResponse data, response status code and response headers
@@ -6081,7 +6077,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # This resource represents font of run.
+    # Reads the font properties of a Run object from the paragraph.
     # @param request GetRunFontRequest
     # @return [FontResponse]
     def get_run_font(request)
@@ -6098,7 +6094,7 @@ module AsposeWordsCloud
         data
     end
 
-    # This resource represents font of run.
+    # Reads the font properties of a Run object from the paragraph.
     # @param request GetRunFontRequest
     # @return [Array<(FontResponse, Fixnum, Hash)>]
     # FontResponse data, response status code and response headers
@@ -6155,7 +6151,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # This resource represents collection of runs in the paragraph.
+    # Reads Run objects from the paragraph.
     # @param request GetRunsRequest
     # @return [RunsResponse]
     def get_runs(request)
@@ -6172,7 +6168,7 @@ module AsposeWordsCloud
         data
     end
 
-    # This resource represents collection of runs in the paragraph.
+    # Reads Run objects from the paragraph.
     # @param request GetRunsRequest
     # @return [Array<(RunsResponse, Fixnum, Hash)>]
     # RunsResponse data, response status code and response headers
@@ -6226,7 +6222,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Gets document section by index.
+    # Reads a section from the document.
     # @param request GetSectionRequest
     # @return [SectionResponse]
     def get_section(request)
@@ -6243,7 +6239,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Gets document section by index.
+    # Reads a section from the document.
     # @param request GetSectionRequest
     # @return [Array<(SectionResponse, Fixnum, Hash)>]
     # SectionResponse data, response status code and response headers
@@ -6297,7 +6293,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Gets page setup of section.
+    # Reads the page setup of a section from the document.
     # @param request GetSectionPageSetupRequest
     # @return [SectionPageSetupResponse]
     def get_section_page_setup(request)
@@ -6314,7 +6310,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Gets page setup of section.
+    # Reads the page setup of a section from the document.
     # @param request GetSectionPageSetupRequest
     # @return [Array<(SectionPageSetupResponse, Fixnum, Hash)>]
     # SectionPageSetupResponse data, response status code and response headers
@@ -6368,7 +6364,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Returns a list of sections that are contained in the document.
+    # Reads sections from the document.
     # @param request GetSectionsRequest
     # @return [SectionLinkCollectionResponse]
     def get_sections(request)
@@ -6385,7 +6381,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Returns a list of sections that are contained in the document.
+    # Reads sections from the document.
     # @param request GetSectionsRequest
     # @return [Array<(SectionLinkCollectionResponse, Fixnum, Hash)>]
     # SectionLinkCollectionResponse data, response status code and response headers
@@ -6436,7 +6432,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # This resource represents one of the styles contained in the document.
+    # Reads a style from the document.
     # @param request GetStyleRequest
     # @return [StyleResponse]
     def get_style(request)
@@ -6453,7 +6449,7 @@ module AsposeWordsCloud
         data
     end
 
-    # This resource represents one of the styles contained in the document.
+    # Reads a style from the document.
     # @param request GetStyleRequest
     # @return [Array<(StyleResponse, Fixnum, Hash)>]
     # StyleResponse data, response status code and response headers
@@ -6507,7 +6503,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Gets a style from the document node.
+    # Reads a style from the document node.
     # @param request GetStyleFromDocumentElementRequest
     # @return [StyleResponse]
     def get_style_from_document_element(request)
@@ -6524,7 +6520,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Gets a style from the document node.
+    # Reads a style from the document node.
     # @param request GetStyleFromDocumentElementRequest
     # @return [Array<(StyleResponse, Fixnum, Hash)>]
     # StyleResponse data, response status code and response headers
@@ -6578,7 +6574,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Returns a list of styles contained in the document.
+    # Reads styles from the document.
     # @param request GetStylesRequest
     # @return [StylesResponse]
     def get_styles(request)
@@ -6595,7 +6591,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Returns a list of styles contained in the document.
+    # Reads styles from the document.
     # @param request GetStylesRequest
     # @return [Array<(StylesResponse, Fixnum, Hash)>]
     # StylesResponse data, response status code and response headers
@@ -6646,7 +6642,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Returns a table.
+    # Reads a table from the document node.
     # @param request GetTableRequest
     # @return [TableResponse]
     def get_table(request)
@@ -6663,7 +6659,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Returns a table.
+    # Reads a table from the document node.
     # @param request GetTableRequest
     # @return [Array<(TableResponse, Fixnum, Hash)>]
     # TableResponse data, response status code and response headers
@@ -6718,7 +6714,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Returns a table cell.
+    # Reads a cell from the table row.
     # @param request GetTableCellRequest
     # @return [TableCellResponse]
     def get_table_cell(request)
@@ -6735,7 +6731,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Returns a table cell.
+    # Reads a cell from the table row.
     # @param request GetTableCellRequest
     # @return [Array<(TableCellResponse, Fixnum, Hash)>]
     # TableCellResponse data, response status code and response headers
@@ -6792,7 +6788,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Returns a table cell format.
+    # Reads the formatting properties of a table cell.
     # @param request GetTableCellFormatRequest
     # @return [TableCellFormatResponse]
     def get_table_cell_format(request)
@@ -6809,7 +6805,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Returns a table cell format.
+    # Reads the formatting properties of a table cell.
     # @param request GetTableCellFormatRequest
     # @return [Array<(TableCellFormatResponse, Fixnum, Hash)>]
     # TableCellFormatResponse data, response status code and response headers
@@ -6866,7 +6862,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Returns a table properties.
+    # Reads properties of a table from the document node.
     # @param request GetTablePropertiesRequest
     # @return [TablePropertiesResponse]
     def get_table_properties(request)
@@ -6883,7 +6879,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Returns a table properties.
+    # Reads properties of a table from the document node.
     # @param request GetTablePropertiesRequest
     # @return [Array<(TablePropertiesResponse, Fixnum, Hash)>]
     # TablePropertiesResponse data, response status code and response headers
@@ -6938,7 +6934,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Returns a table row.
+    # Reads a row from the table.
     # @param request GetTableRowRequest
     # @return [TableRowResponse]
     def get_table_row(request)
@@ -6955,7 +6951,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Returns a table row.
+    # Reads a row from the table.
     # @param request GetTableRowRequest
     # @return [Array<(TableRowResponse, Fixnum, Hash)>]
     # TableRowResponse data, response status code and response headers
@@ -7012,7 +7008,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Returns a table row format.
+    # Reads the formatting properties of a table row.
     # @param request GetTableRowFormatRequest
     # @return [TableRowFormatResponse]
     def get_table_row_format(request)
@@ -7029,7 +7025,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Returns a table row format.
+    # Reads the formatting properties of a table row.
     # @param request GetTableRowFormatRequest
     # @return [Array<(TableRowFormatResponse, Fixnum, Hash)>]
     # TableRowFormatResponse data, response status code and response headers
@@ -7086,7 +7082,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Returns a list of tables that are contained in the document.
+    # Reads tables from the document node.
     # @param request GetTablesRequest
     # @return [TableLinkCollectionResponse]
     def get_tables(request)
@@ -7103,7 +7099,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Returns a list of tables that are contained in the document.
+    # Reads tables from the document node.
     # @param request GetTablesRequest
     # @return [Array<(TableLinkCollectionResponse, Fixnum, Hash)>]
     # TableLinkCollectionResponse data, response status code and response headers
@@ -7155,7 +7151,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Adds comment to document, returns inserted comment data.
+    # Inserts a new comment to the document.
     # @param request InsertCommentRequest
     # @return [CommentResponse]
     def insert_comment(request)
@@ -7172,7 +7168,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Adds comment to document, returns inserted comment data.
+    # Inserts a new comment to the document.
     # @param request InsertCommentRequest
     # @return [Array<(CommentResponse, Fixnum, Hash)>]
     # CommentResponse data, response status code and response headers
@@ -7228,7 +7224,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Adds drawing object to document, returns added  drawing object's data.
+    # Inserts a new DrawingObject to the document node.
     # @param request InsertDrawingObjectRequest
     # @return [DrawingObjectResponse]
     def insert_drawing_object(request)
@@ -7245,7 +7241,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Adds drawing object to document, returns added  drawing object's data.
+    # Inserts a new DrawingObject to the document node.
     # @param request InsertDrawingObjectRequest
     # @return [Array<(DrawingObjectResponse, Fixnum, Hash)>]
     # DrawingObjectResponse data, response status code and response headers
@@ -7306,7 +7302,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Adds field to document, returns inserted field's data.
+    # Inserts a new field to the document node.
     # @param request InsertFieldRequest
     # @return [FieldResponse]
     def insert_field(request)
@@ -7323,7 +7319,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Adds field to document, returns inserted field's data.
+    # Inserts a new field to the document node.
     # @param request InsertFieldRequest
     # @return [Array<(FieldResponse, Fixnum, Hash)>]
     # FieldResponse data, response status code and response headers
@@ -7381,7 +7377,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Adds footnote to document, returns added footnote's data.
+    # Inserts a new footnote to the document node.
     # @param request InsertFootnoteRequest
     # @return [FootnoteResponse]
     def insert_footnote(request)
@@ -7398,7 +7394,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Adds footnote to document, returns added footnote's data.
+    # Inserts a new footnote to the document node.
     # @param request InsertFootnoteRequest
     # @return [Array<(FootnoteResponse, Fixnum, Hash)>]
     # FootnoteResponse data, response status code and response headers
@@ -7455,7 +7451,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Adds form field to paragraph, returns added form field's data.
+    # Inserts a new form field to the document node.
     # @param request InsertFormFieldRequest
     # @return [FormFieldResponse]
     def insert_form_field(request)
@@ -7472,7 +7468,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Adds form field to paragraph, returns added form field's data.
+    # Inserts a new form field to the document node.
     # @param request InsertFormFieldRequest
     # @return [Array<(FormFieldResponse, Fixnum, Hash)>]
     # FormFieldResponse data, response status code and response headers
@@ -7530,7 +7526,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Inserts to document header or footer.
+    # Inserts a new HeaderFooter object to the document section.
     # @param request InsertHeaderFooterRequest
     # @return [HeaderFooterResponse]
     def insert_header_footer(request)
@@ -7547,7 +7543,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Inserts to document header or footer.
+    # Inserts a new HeaderFooter object to the document section.
     # @param request InsertHeaderFooterRequest
     # @return [Array<(HeaderFooterResponse, Fixnum, Hash)>]
     # HeaderFooterResponse data, response status code and response headers
@@ -7606,7 +7602,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Adds list to document, returns added list's data.
+    # Inserts a new list to the document.
     # @param request InsertListRequest
     # @return [ListResponse]
     def insert_list(request)
@@ -7623,7 +7619,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Adds list to document, returns added list's data.
+    # Inserts a new list to the document.
     # @param request InsertListRequest
     # @return [Array<(ListResponse, Fixnum, Hash)>]
     # ListResponse data, response status code and response headers
@@ -7679,7 +7675,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Insert or resplace tab stop if a tab stop with the position exists.
+    # Inserts a new or updates an existing paragraph tab stop in the document node.
     # @param request InsertOrUpdateParagraphTabStopRequest
     # @return [TabStopsResponse]
     def insert_or_update_paragraph_tab_stop(request)
@@ -7696,7 +7692,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Insert or resplace tab stop if a tab stop with the position exists.
+    # Inserts a new or updates an existing paragraph tab stop in the document node.
     # @param request InsertOrUpdateParagraphTabStopRequest
     # @return [Array<(TabStopsResponse, Fixnum, Hash)>]
     # TabStopsResponse data, response status code and response headers
@@ -7754,7 +7750,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Inserts document page numbers.
+    # Inserts page numbers to the document.
     # @param request InsertPageNumbersRequest
     # @return [DocumentResponse]
     def insert_page_numbers(request)
@@ -7771,7 +7767,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Inserts document page numbers.
+    # Inserts page numbers to the document.
     # @param request InsertPageNumbersRequest
     # @return [Array<(DocumentResponse, Fixnum, Hash)>]
     # DocumentResponse data, response status code and response headers
@@ -7827,7 +7823,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Adds paragraph to document, returns added paragraph's data.
+    # Inserts a new paragraph to the document node.
     # @param request InsertParagraphRequest
     # @return [ParagraphResponse]
     def insert_paragraph(request)
@@ -7844,7 +7840,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Adds paragraph to document, returns added paragraph's data.
+    # Inserts a new paragraph to the document node.
     # @param request InsertParagraphRequest
     # @return [Array<(ParagraphResponse, Fixnum, Hash)>]
     # ParagraphResponse data, response status code and response headers
@@ -7902,7 +7898,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Adds run to document, returns added paragraph's data.
+    # Inserts a new Run object to the paragraph.
     # @param request InsertRunRequest
     # @return [RunResponse]
     def insert_run(request)
@@ -7919,7 +7915,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Adds run to document, returns added paragraph's data.
+    # Inserts a new Run object to the paragraph.
     # @param request InsertRunRequest
     # @return [Array<(RunResponse, Fixnum, Hash)>]
     # RunResponse data, response status code and response headers
@@ -7979,7 +7975,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Adds a style to the document, returns an added style.
+    # Inserts a new style to the document.
     # @param request InsertStyleRequest
     # @return [StyleResponse]
     def insert_style(request)
@@ -7996,7 +7992,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Adds a style to the document, returns an added style.
+    # Inserts a new style to the document.
     # @param request InsertStyleRequest
     # @return [Array<(StyleResponse, Fixnum, Hash)>]
     # StyleResponse data, response status code and response headers
@@ -8052,7 +8048,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Adds table to document, returns added table's data.
+    # Inserts a new table to the document node.
     # @param request InsertTableRequest
     # @return [TableResponse]
     def insert_table(request)
@@ -8069,7 +8065,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Adds table to document, returns added table's data.
+    # Inserts a new table to the document node.
     # @param request InsertTableRequest
     # @return [Array<(TableResponse, Fixnum, Hash)>]
     # TableResponse data, response status code and response headers
@@ -8126,7 +8122,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Adds table cell to table, returns added cell's data.
+    # Inserts a new cell to the table row.
     # @param request InsertTableCellRequest
     # @return [TableCellResponse]
     def insert_table_cell(request)
@@ -8143,7 +8139,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Adds table cell to table, returns added cell's data.
+    # Inserts a new cell to the table row.
     # @param request InsertTableCellRequest
     # @return [Array<(TableCellResponse, Fixnum, Hash)>]
     # TableCellResponse data, response status code and response headers
@@ -8202,7 +8198,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Adds table row to table, returns added row's data.
+    # Inserts a new row to the table.
     # @param request InsertTableRowRequest
     # @return [TableRowResponse]
     def insert_table_row(request)
@@ -8219,7 +8215,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Adds table row to table, returns added row's data.
+    # Inserts a new row to the table.
     # @param request InsertTableRowRequest
     # @return [Array<(TableRowResponse, Fixnum, Hash)>]
     # TableRowResponse data, response status code and response headers
@@ -8278,7 +8274,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Inserts document watermark image.
+    # Inserts a new watermark image to the document.
     # @param request InsertWatermarkImageRequest
     # @return [DocumentResponse]
     def insert_watermark_image(request)
@@ -8295,7 +8291,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Inserts document watermark image.
+    # Inserts a new watermark image to the document.
     # @param request InsertWatermarkImageRequest
     # @return [Array<(DocumentResponse, Fixnum, Hash)>]
     # DocumentResponse data, response status code and response headers
@@ -8352,7 +8348,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Inserts document watermark text.
+    # Inserts a new watermark text to the document.
     # @param request InsertWatermarkTextRequest
     # @return [DocumentResponse]
     def insert_watermark_text(request)
@@ -8369,7 +8365,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Inserts document watermark text.
+    # Inserts a new watermark text to the document.
     # @param request InsertWatermarkTextRequest
     # @return [Array<(DocumentResponse, Fixnum, Hash)>]
     # DocumentResponse data, response status code and response headers
@@ -8425,7 +8421,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Loads new document from web into the file with any supported format of data.
+    # Downloads a document from the Web using URL and saves it to cloud storage in the specified format.
     # @param request LoadWebDocumentRequest
     # @return [SaveResponse]
     def load_web_document(request)
@@ -8442,7 +8438,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Loads new document from web into the file with any supported format of data.
+    # Downloads a document from the Web using URL and saves it to cloud storage in the specified format.
     # @param request LoadWebDocumentRequest
     # @return [Array<(SaveResponse, Fixnum, Hash)>]
     # SaveResponse data, response status code and response headers
@@ -8626,7 +8622,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Allows to optimize the document contents as well as default Aspose.Words behavior to a particular versions of MS Word.
+    # Applies document content optimization options, specific to a particular versions of Microsoft Word.
     # @param request OptimizeDocumentRequest
     # @return [nil]
     def optimize_document(request)
@@ -8643,7 +8639,7 @@ module AsposeWordsCloud
         nil
     end
 
-    # Allows to optimize the document contents as well as default Aspose.Words behavior to a particular versions of MS Word.
+    # Applies document content optimization options, specific to a particular versions of Microsoft Word.
     # @param request OptimizeDocumentRequest
     # @return [Array<(nil, Fixnum, Hash)>]
     # nil, response status code and response headers
@@ -8698,7 +8694,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Protects document.
+    # Adds protection to the document.
     # @param request ProtectDocumentRequest
     # @return [ProtectionDataResponse]
     def protect_document(request)
@@ -8715,7 +8711,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Protects document.
+    # Adds protection to the document.
     # @param request ProtectDocumentRequest
     # @return [Array<(ProtectionDataResponse, Fixnum, Hash)>]
     # ProtectionDataResponse data, response status code and response headers
@@ -8769,7 +8765,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Rejects all revisions in document.
+    # Rejects all revisions in the document.
     # @param request RejectAllRevisionsRequest
     # @return [RevisionsModificationResponse]
     def reject_all_revisions(request)
@@ -8786,7 +8782,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Rejects all revisions in document.
+    # Rejects all revisions in the document.
     # @param request RejectAllRevisionsRequest
     # @return [Array<(RevisionsModificationResponse, Fixnum, Hash)>]
     # RevisionsModificationResponse data, response status code and response headers
@@ -8838,7 +8834,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Removes the range from the document.
+    # Removes a range from the document.
     # @param request RemoveRangeRequest
     # @return [DocumentResponse]
     def remove_range(request)
@@ -8855,7 +8851,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Removes the range from the document.
+    # Removes a range from the document.
     # @param request RemoveRangeRequest
     # @return [Array<(DocumentResponse, Fixnum, Hash)>]
     # DocumentResponse data, response status code and response headers
@@ -8911,7 +8907,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Renders drawing object to specified format.
+    # Renders a DrawingObject to the specified format.
     # @param request RenderDrawingObjectRequest
     # @return [File]
     def render_drawing_object(request)
@@ -8928,7 +8924,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Renders drawing object to specified format.
+    # Renders a DrawingObject to the specified format.
     # @param request RenderDrawingObjectRequest
     # @return [Array<(File, Fixnum, Hash)>]
     # File data, response status code and response headers
@@ -8987,7 +8983,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Renders math object to specified format.
+    # Renders an OfficeMath object to the specified format.
     # @param request RenderMathObjectRequest
     # @return [File]
     def render_math_object(request)
@@ -9004,7 +9000,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Renders math object to specified format.
+    # Renders an OfficeMath object to the specified format.
     # @param request RenderMathObjectRequest
     # @return [Array<(File, Fixnum, Hash)>]
     # File data, response status code and response headers
@@ -9063,7 +9059,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Renders page to specified format.
+    # Renders a page to the specified format.
     # @param request RenderPageRequest
     # @return [File]
     def render_page(request)
@@ -9080,7 +9076,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Renders page to specified format.
+    # Renders a page to the specified format.
     # @param request RenderPageRequest
     # @return [Array<(File, Fixnum, Hash)>]
     # File data, response status code and response headers
@@ -9138,7 +9134,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Renders paragraph to specified format.
+    # Renders a paragraph to the specified format.
     # @param request RenderParagraphRequest
     # @return [File]
     def render_paragraph(request)
@@ -9155,7 +9151,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Renders paragraph to specified format.
+    # Renders a paragraph to the specified format.
     # @param request RenderParagraphRequest
     # @return [Array<(File, Fixnum, Hash)>]
     # File data, response status code and response headers
@@ -9214,7 +9210,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Renders table to specified format.
+    # Renders a table to the specified format.
     # @param request RenderTableRequest
     # @return [File]
     def render_table(request)
@@ -9231,7 +9227,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Renders table to specified format.
+    # Renders a table to the specified format.
     # @param request RenderTableRequest
     # @return [Array<(File, Fixnum, Hash)>]
     # File data, response status code and response headers
@@ -9290,7 +9286,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Replaces document text.
+    # Replaces text in the document.
     # @param request ReplaceTextRequest
     # @return [ReplaceTextResponse]
     def replace_text(request)
@@ -9307,7 +9303,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Replaces document text.
+    # Replaces text in the document.
     # @param request ReplaceTextRequest
     # @return [Array<(ReplaceTextResponse, Fixnum, Hash)>]
     # ReplaceTextResponse data, response status code and response headers
@@ -9363,7 +9359,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Replaces the content in the range.
+    # Replaces a range with text in the document.
     # @param request ReplaceWithTextRequest
     # @return [DocumentResponse]
     def replace_with_text(request)
@@ -9380,7 +9376,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Replaces the content in the range.
+    # Replaces a range with text in the document.
     # @param request ReplaceWithTextRequest
     # @return [Array<(DocumentResponse, Fixnum, Hash)>]
     # DocumentResponse data, response status code and response headers
@@ -9438,7 +9434,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Resets font's cache.
+    # Clears the font cache.
     # @param request ResetCacheRequest
     # @return [nil]
     def reset_cache(request)
@@ -9455,7 +9451,7 @@ module AsposeWordsCloud
         nil
     end
 
-    # Resets font's cache.
+    # Clears the font cache.
     # @param request ResetCacheRequest
     # @return [Array<(nil, Fixnum, Hash)>]
     # nil, response status code and response headers
@@ -9497,7 +9493,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Converts document to destination format with detailed settings and saves result to storage.
+    # Converts a document in cloud storage to the specified format.
     # @param request SaveAsRequest
     # @return [SaveResponse]
     def save_as(request)
@@ -9514,7 +9510,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Converts document to destination format with detailed settings and saves result to storage.
+    # Converts a document in cloud storage to the specified format.
     # @param request SaveAsRequest
     # @return [Array<(SaveResponse, Fixnum, Hash)>]
     # SaveResponse data, response status code and response headers
@@ -9568,7 +9564,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Saves the selected range as a new document.
+    # Saves a range as a new document.
     # @param request SaveAsRangeRequest
     # @return [DocumentResponse]
     def save_as_range(request)
@@ -9585,7 +9581,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Saves the selected range as a new document.
+    # Saves a range as a new document.
     # @param request SaveAsRangeRequest
     # @return [Array<(DocumentResponse, Fixnum, Hash)>]
     # DocumentResponse data, response status code and response headers
@@ -9642,7 +9638,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Converts document to tiff with detailed settings and saves result to storage.
+    # Converts a document in cloud storage to TIFF format using detailed conversion settings.
     # @param request SaveAsTiffRequest
     # @return [SaveResponse]
     def save_as_tiff(request)
@@ -9659,7 +9655,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Converts document to tiff with detailed settings and saves result to storage.
+    # Converts a document in cloud storage to TIFF format using detailed conversion settings.
     # @param request SaveAsTiffRequest
     # @return [Array<(SaveResponse, Fixnum, Hash)>]
     # SaveResponse data, response status code and response headers
@@ -9730,7 +9726,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Searches text in document.
+    # Searches text, specified by the regular expression, in the document.
     # @param request SearchRequest
     # @return [SearchResponse]
     def search(request)
@@ -9747,7 +9743,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Searches text in document.
+    # Searches text, specified by the regular expression, in the document.
     # @param request SearchRequest
     # @return [Array<(SearchResponse, Fixnum, Hash)>]
     # SearchResponse data, response status code and response headers
@@ -9801,7 +9797,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Splits document.
+    # Splits a document into parts and saves them in the specified format.
     # @param request SplitDocumentRequest
     # @return [SplitDocumentResponse]
     def split_document(request)
@@ -9818,7 +9814,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Splits document.
+    # Splits a document into parts and saves them in the specified format.
     # @param request SplitDocumentRequest
     # @return [Array<(SplitDocumentResponse, Fixnum, Hash)>]
     # SplitDocumentResponse data, response status code and response headers
@@ -9877,7 +9873,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Unprotects document.
+    # Removes protection from the document.
     # @param request UnprotectDocumentRequest
     # @return [ProtectionDataResponse]
     def unprotect_document(request)
@@ -9894,7 +9890,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Unprotects document.
+    # Removes protection from the document.
     # @param request UnprotectDocumentRequest
     # @return [Array<(ProtectionDataResponse, Fixnum, Hash)>]
     # ProtectionDataResponse data, response status code and response headers
@@ -9948,7 +9944,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Updates document bookmark.
+    # Updates a bookmark in the document.
     # @param request UpdateBookmarkRequest
     # @return [BookmarkResponse]
     def update_bookmark(request)
@@ -9965,7 +9961,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Updates document bookmark.
+    # Updates a bookmark in the document.
     # @param request UpdateBookmarkRequest
     # @return [Array<(BookmarkResponse, Fixnum, Hash)>]
     # BookmarkResponse data, response status code and response headers
@@ -10024,7 +10020,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # 'nodePath' should refer to paragraph, cell or row.
+    # The 'nodePath' parameter should refer to a paragraph, a cell or a row.
     # @param request UpdateBorderRequest
     # @return [BorderResponse]
     def update_border(request)
@@ -10041,7 +10037,7 @@ module AsposeWordsCloud
         data
     end
 
-    # 'nodePath' should refer to paragraph, cell or row.
+    # The 'nodePath' parameter should refer to a paragraph, a cell or a row.
     # @param request UpdateBorderRequest
     # @return [Array<(BorderResponse, Fixnum, Hash)>]
     # BorderResponse data, response status code and response headers
@@ -10101,7 +10097,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Updates the comment, returns updated comment data.
+    # Updates a comment in the document.
     # @param request UpdateCommentRequest
     # @return [CommentResponse]
     def update_comment(request)
@@ -10118,7 +10114,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Updates the comment, returns updated comment data.
+    # Updates a comment in the document.
     # @param request UpdateCommentRequest
     # @return [Array<(CommentResponse, Fixnum, Hash)>]
     # CommentResponse data, response status code and response headers
@@ -10177,7 +10173,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Updates drawing object, returns updated  drawing object's data.
+    # Updates a DrawingObject in the document node.
     # @param request UpdateDrawingObjectRequest
     # @return [DrawingObjectResponse]
     def update_drawing_object(request)
@@ -10194,7 +10190,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Updates drawing object, returns updated  drawing object's data.
+    # Updates a DrawingObject in the document node.
     # @param request UpdateDrawingObjectRequest
     # @return [Array<(DrawingObjectResponse, Fixnum, Hash)>]
     # DrawingObjectResponse data, response status code and response headers
@@ -10258,7 +10254,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Updates field's properties, returns updated field's data.
+    # Updates a field in the document node.
     # @param request UpdateFieldRequest
     # @return [FieldResponse]
     def update_field(request)
@@ -10275,7 +10271,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Updates field's properties, returns updated field's data.
+    # Updates a field in the document node.
     # @param request UpdateFieldRequest
     # @return [Array<(FieldResponse, Fixnum, Hash)>]
     # FieldResponse data, response status code and response headers
@@ -10335,7 +10331,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Updates (reevaluate) fields in document.
+    # Reevaluates field values in the document.
     # @param request UpdateFieldsRequest
     # @return [DocumentResponse]
     def update_fields(request)
@@ -10352,7 +10348,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Updates (reevaluate) fields in document.
+    # Reevaluates field values in the document.
     # @param request UpdateFieldsRequest
     # @return [Array<(DocumentResponse, Fixnum, Hash)>]
     # DocumentResponse data, response status code and response headers
@@ -10404,7 +10400,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Updates footnote's properties, returns updated run's data.
+    # Updates a footnote in the document node.
     # @param request UpdateFootnoteRequest
     # @return [FootnoteResponse]
     def update_footnote(request)
@@ -10421,7 +10417,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Updates footnote's properties, returns updated run's data.
+    # Updates a footnote in the document node.
     # @param request UpdateFootnoteRequest
     # @return [Array<(FootnoteResponse, Fixnum, Hash)>]
     # FootnoteResponse data, response status code and response headers
@@ -10481,7 +10477,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Updates properties of form field, returns updated form field.
+    # Updates a form field in the document node.
     # @param request UpdateFormFieldRequest
     # @return [FormFieldResponse]
     def update_form_field(request)
@@ -10498,7 +10494,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Updates properties of form field, returns updated form field.
+    # Updates a form field in the document node.
     # @param request UpdateFormFieldRequest
     # @return [Array<(FormFieldResponse, Fixnum, Hash)>]
     # FormFieldResponse data, response status code and response headers
@@ -10558,7 +10554,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Updates list properties, returns updated list.
+    # Updates a list in the document.
     # @param request UpdateListRequest
     # @return [ListResponse]
     def update_list(request)
@@ -10575,7 +10571,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Updates list properties, returns updated list.
+    # Updates a list in the document.
     # @param request UpdateListRequest
     # @return [Array<(ListResponse, Fixnum, Hash)>]
     # ListResponse data, response status code and response headers
@@ -10634,7 +10630,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Updates list level in document list, returns updated list.
+    # Updates the level of a List element in the document.
     # @param request UpdateListLevelRequest
     # @return [ListResponse]
     def update_list_level(request)
@@ -10651,7 +10647,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Updates list level in document list, returns updated list.
+    # Updates the level of a List element in the document.
     # @param request UpdateListLevelRequest
     # @return [Array<(ListResponse, Fixnum, Hash)>]
     # ListResponse data, response status code and response headers
@@ -10713,7 +10709,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Updates paragraph format properties, returns updated format properties.
+    # Updates the formatting properties of a paragraph in the document node.
     # @param request UpdateParagraphFormatRequest
     # @return [ParagraphFormatResponse]
     def update_paragraph_format(request)
@@ -10730,7 +10726,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Updates paragraph format properties, returns updated format properties.
+    # Updates the formatting properties of a paragraph in the document node.
     # @param request UpdateParagraphFormatRequest
     # @return [Array<(ParagraphFormatResponse, Fixnum, Hash)>]
     # ParagraphFormatResponse data, response status code and response headers
@@ -10790,7 +10786,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Updates paragraph list format properties, returns updated list format properties.
+    # Updates the formatting properties of a paragraph list in the document node.
     # @param request UpdateParagraphListFormatRequest
     # @return [ParagraphListFormatResponse]
     def update_paragraph_list_format(request)
@@ -10807,7 +10803,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Updates paragraph list format properties, returns updated list format properties.
+    # Updates the formatting properties of a paragraph list in the document node.
     # @param request UpdateParagraphListFormatRequest
     # @return [Array<(ParagraphListFormatResponse, Fixnum, Hash)>]
     # ParagraphListFormatResponse data, response status code and response headers
@@ -10867,7 +10863,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Updates run's properties, returns updated run's data.
+    # Updates a Run object in the paragraph.
     # @param request UpdateRunRequest
     # @return [RunResponse]
     def update_run(request)
@@ -10884,7 +10880,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Updates run's properties, returns updated run's data.
+    # Updates a Run object in the paragraph.
     # @param request UpdateRunRequest
     # @return [Array<(RunResponse, Fixnum, Hash)>]
     # RunResponse data, response status code and response headers
@@ -10946,7 +10942,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Updates font properties, returns updated font data.
+    # Updates the font properties of a Run object in the paragraph.
     # @param request UpdateRunFontRequest
     # @return [FontResponse]
     def update_run_font(request)
@@ -10963,7 +10959,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Updates font properties, returns updated font data.
+    # Updates the font properties of a Run object in the paragraph.
     # @param request UpdateRunFontRequest
     # @return [Array<(FontResponse, Fixnum, Hash)>]
     # FontResponse data, response status code and response headers
@@ -11025,7 +11021,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Updates page setup of section.
+    # Updates the page setup of a section in the document.
     # @param request UpdateSectionPageSetupRequest
     # @return [SectionPageSetupResponse]
     def update_section_page_setup(request)
@@ -11042,7 +11038,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Updates page setup of section.
+    # Updates the page setup of a section in the document.
     # @param request UpdateSectionPageSetupRequest
     # @return [Array<(SectionPageSetupResponse, Fixnum, Hash)>]
     # SectionPageSetupResponse data, response status code and response headers
@@ -11101,7 +11097,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Updates style properties, returns an updated style.
+    # Updates a style in the document.
     # @param request UpdateStyleRequest
     # @return [StyleResponse]
     def update_style(request)
@@ -11118,7 +11114,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Updates style properties, returns an updated style.
+    # Updates a style in the document.
     # @param request UpdateStyleRequest
     # @return [Array<(StyleResponse, Fixnum, Hash)>]
     # StyleResponse data, response status code and response headers
@@ -11177,7 +11173,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Updates a table cell format.
+    # Updates the formatting properties of a cell in the table row.
     # @param request UpdateTableCellFormatRequest
     # @return [TableCellFormatResponse]
     def update_table_cell_format(request)
@@ -11194,7 +11190,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Updates a table cell format.
+    # Updates the formatting properties of a cell in the table row.
     # @param request UpdateTableCellFormatRequest
     # @return [Array<(TableCellFormatResponse, Fixnum, Hash)>]
     # TableCellFormatResponse data, response status code and response headers
@@ -11256,7 +11252,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Updates a table properties.
+    # Updates properties of a table in the document node.
     # @param request UpdateTablePropertiesRequest
     # @return [TablePropertiesResponse]
     def update_table_properties(request)
@@ -11273,7 +11269,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Updates a table properties.
+    # Updates properties of a table in the document node.
     # @param request UpdateTablePropertiesRequest
     # @return [Array<(TablePropertiesResponse, Fixnum, Hash)>]
     # TablePropertiesResponse data, response status code and response headers
@@ -11333,7 +11329,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Updates a table row format.
+    # Updates the formatting properties of a table row.
     # @param request UpdateTableRowFormatRequest
     # @return [TableRowFormatResponse]
     def update_table_row_format(request)
@@ -11350,7 +11346,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Updates a table row format.
+    # Updates the formatting properties of a table row.
     # @param request UpdateTableRowFormatRequest
     # @return [Array<(TableRowFormatResponse, Fixnum, Hash)>]
     # TableRowFormatResponse data, response status code and response headers
@@ -11494,7 +11490,7 @@ module AsposeWordsCloud
     private def request_token
       config = @api_client.config
       request_url = "/connect/token"
-      post_data = "grant_type=client_credentials" + "&client_id=" + config.api_key['app_sid'] + "&client_secret=" + config.api_key['api_key']
+      post_data = "grant_type=client_credentials" + "&client_id=" + config.client_data['ClientId'] + "&client_secret=" + config.client_data['ClientSecret']
       data, status_code, header = @api_client.call_api(:POST, request_url, :body => post_data, :return_type => 'Object',  :header_params => {'Content-Type': 'application/x-www-form-urlencoded'})
       @api_client.config.access_token = data[:access_token]
     end

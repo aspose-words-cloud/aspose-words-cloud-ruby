@@ -29,13 +29,13 @@ module AsposeWordsCloud
   # Request model for insert_table_cell operation.
   #
   class InsertTableCellRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
-    # Table cell parameters/.
+    # The properties of the cell.
     attr_accessor :cell
 
-    # Path to table row.
+    # The path to the table row in the document tree.
     attr_accessor :table_row_path
 
     # Original document folder.
@@ -61,9 +61,9 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
-    # @param cell Table cell parameters/.
-    # @param table_row_path Path to table row.
+    # @param name The filename of the input document.
+    # @param cell The properties of the cell.
+    # @param table_row_path The path to the table row in the document tree.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

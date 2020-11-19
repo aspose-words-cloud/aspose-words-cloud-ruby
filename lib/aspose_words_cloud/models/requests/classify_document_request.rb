@@ -29,7 +29,7 @@ module AsposeWordsCloud
   # Request model for classify_document operation.
   #
   class ClassifyDocumentRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :document_name
 
     # Original document folder.
@@ -44,21 +44,21 @@ module AsposeWordsCloud
     # Password for opening an encrypted document.
     attr_accessor :password
 
-    # Count of the best classes to return.
+    # The number of the best classes to return.
     attr_accessor :best_classes_count
 
-    # Taxonomy to use for classification return.
+    # The taxonomy to use.
     attr_accessor :taxonomy
 
     #
     # Initializes a new instance.
-    # @param document_name The document name.
+    # @param document_name The filename of the input document.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     # @param password Password for opening an encrypted document.
-    # @param best_classes_count Count of the best classes to return.
-    # @param taxonomy Taxonomy to use for classification return.
+    # @param best_classes_count The number of the best classes to return.
+    # @param taxonomy The taxonomy to use.
 
     def initialize(document_name, folder = nil, storage = nil, load_encoding = nil, password = nil, best_classes_count = nil, taxonomy = nil)
       self.document_name = document_name

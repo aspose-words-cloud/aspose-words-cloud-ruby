@@ -29,13 +29,13 @@ module AsposeWordsCloud
 
   # Result of splitting document.
   class SplitDocumentResult
-    # Gets or sets array of pages.
+    # Gets or sets the list of pages.
     attr_accessor :pages
 
-    # Gets or sets linkt to the source document.
+    # Gets or sets the link to the source document.
     attr_accessor :source_document
 
-    # Gets or sets link to the file archive with pages.
+    # Gets or sets the link to the file archive with pages.
     attr_accessor :zipped_pages
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

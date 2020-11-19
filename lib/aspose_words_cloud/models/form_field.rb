@@ -29,37 +29,37 @@ module AsposeWordsCloud
 
   # FromField.
   class FormField
-    # Gets or sets link to the document.
+    # Gets or sets the link to the document.
     attr_accessor :link
 
-    # Gets or sets node id.
+    # Gets or sets the node id.
     attr_accessor :node_id
 
-    # Gets or sets true if references to the specified form field are automatically updated whenever the field is exited.
+    # Gets or sets a value indicating whether references to the specified form field are automatically updated whenever the field is exited.
     attr_accessor :calculate_on_exit
 
-    # Gets or sets true if a form field is enabled.
+    # Gets or sets a value indicating whether a form field is enabled.
     attr_accessor :enabled
 
-    # Gets or sets returns or sets an entry macro name for the form field.
+    # Gets or sets the entry macro name for the form field.
     attr_accessor :entry_macro
 
-    # Gets or sets returns or sets an exit macro name for the form field.
+    # Gets or sets the exit macro name for the form field.
     attr_accessor :exit_macro
 
-    # Gets or sets returns or sets the text that's displayed in a message box when the form field has the focus and the user presses F1.
+    # Gets or sets text, displayed in a message box when the form field has the focus and the user presses F1.
     attr_accessor :help_text
 
     # Gets or sets the form field name.
     attr_accessor :name
 
-    # Gets or sets specifies the source of the text that's displayed in a message box when a form field has the focus and the user presses F1.
+    # Gets or sets a value indicating whether the source of the text that's displayed in a message box when a form field has the focus and the user presses F1.
     attr_accessor :own_help
 
-    # Gets or sets specifies the source of the text that's displayed in the status bar when a form field has the focus.
+    # Gets or sets a value indicating whether the source of the text that's displayed in the status bar when a form field has the focus.
     attr_accessor :own_status
 
-    # Gets or sets returns or sets the text that's displayed in the status bar when a form field has the focus.
+    # Gets or sets text, displayed in the status bar when a form field has the focus.
     attr_accessor :status_text
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

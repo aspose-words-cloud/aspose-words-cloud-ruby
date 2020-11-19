@@ -27,50 +27,47 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # container class for rtf save options.
+  # Container class for rtf save options.
   class RtfSaveOptionsData
-    # Gets or sets a value determining how 3D effects are rendered.
+    # Gets or sets the value determining how 3D effects are rendered.
     attr_accessor :dml3_d_effects_rendering_mode
 
-    # Gets or sets a value determining how DrawingML effects are rendered.
+    # Gets or sets the value determining how DrawingML effects are rendered.
     # { Simplified | None | Fine }.
     attr_accessor :dml_effects_rendering_mode
 
-    # Gets or sets a value determining how DrawingML shapes are rendered.
-    # { Fallback | DrawingML }.
+    # Gets or sets the option that controls how DrawingML shapes are rendered.
     attr_accessor :dml_rendering_mode
 
-    # Gets or sets name of destination file.
+    # Gets or sets the name of destination file.
     attr_accessor :file_name
 
-    # Gets or sets format of save.
+    # Gets or sets the format of save.
     attr_accessor :save_format
 
-    # Gets or sets a value determining if fields should be updated before saving the document to a fixed page format.
-    # Default value for this property is. true.
+    # Gets or sets a value indicating whether fields should be updated before saving the document to a fixed page format. The default value is true.
     attr_accessor :update_fields
 
-    # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted
-    # property is updated before saving.
+    # Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.
     attr_accessor :update_last_printed_property
 
-    # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
+    # Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
     attr_accessor :update_last_saved_time_property
 
-    # Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.
+    # Gets or sets a value indicating whether content of StructuredDocumentTag is updated before saving.
     attr_accessor :update_sdt_content
 
-    # Gets or sets controls zip output or not.
-    # Default value is false.
+    # Gets or sets a value indicating whether to zip output or not.
+    # The default value is false.
     attr_accessor :zip_output
 
-    # Gets or sets allows to make output RTF documents smaller in size, but if they contain RTL (right-to-left) text, it will not be displayed correctly.
+    # Gets or sets a value indicating whether to make output RTF documents smaller in size, but if they contain RTL (right-to-left) text, it will not be displayed correctly.
     attr_accessor :export_compact_size
 
-    # Gets or sets specifies whether the keywords for "old readers" are written to RTF or not.
+    # Gets or sets a value indicating whether the keywords for "old readers" are written to RTF or not.
     attr_accessor :export_images_for_old_readers
 
-    # Gets or sets specifies whether or not use pretty formats output.
+    # Gets or sets a value indicating whether to use pretty formats output.
     attr_accessor :pretty_format
 
     # Gets or sets a value indicating whether when true all images will be saved as WMF. This option might help to avoid WordPad warning messages.

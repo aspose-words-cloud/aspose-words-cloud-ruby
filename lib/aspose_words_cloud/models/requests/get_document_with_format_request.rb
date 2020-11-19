@@ -29,7 +29,7 @@ module AsposeWordsCloud
   # Request model for get_document_with_format operation.
   #
   class GetDocumentWithFormatRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
     # The destination format.
@@ -47,7 +47,7 @@ module AsposeWordsCloud
     # Password for opening an encrypted document.
     attr_accessor :password
 
-    # Path to save the result.
+    # The path to the output document.
     attr_accessor :out_path
 
     # Folder in filestorage with custom fonts.
@@ -55,13 +55,13 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
+    # @param name The filename of the input document.
     # @param format The destination format.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     # @param password Password for opening an encrypted document.
-    # @param out_path Path to save the result.
+    # @param out_path The path to the output document.
     # @param fonts_location Folder in filestorage with custom fonts.
 
     def initialize(name, format, folder = nil, storage = nil, load_encoding = nil, password = nil, out_path = nil, fonts_location = nil)

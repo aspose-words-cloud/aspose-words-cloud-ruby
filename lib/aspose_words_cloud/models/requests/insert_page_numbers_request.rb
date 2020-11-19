@@ -29,10 +29,10 @@ module AsposeWordsCloud
   # Request model for insert_page_numbers operation.
   #
   class InsertPageNumbersRequest
-    # A document name.
+    # The filename of the input document.
     attr_accessor :name
 
-    # PageNumber with the page numbers settings.
+    # The page numbers settings.
     attr_accessor :page_number
 
     # Original document folder.
@@ -58,8 +58,8 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name A document name.
-    # @param page_number PageNumber with the page numbers settings.
+    # @param name The filename of the input document.
+    # @param page_number The page numbers settings.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

@@ -29,10 +29,10 @@ module AsposeWordsCloud
 
   # Report engine settings.
   class ReportEngineSettings
-    # Gets or sets options for parsing CSV data.
+    # Gets or sets the options for parsing CSV data.
     attr_accessor :csv_data_load_options
 
-    # Gets or sets a name to reference the data source object in the template.
+    # Gets or sets the name to reference the data source object in the template.
     attr_accessor :data_source_name
 
     # Gets or sets type of datasource.

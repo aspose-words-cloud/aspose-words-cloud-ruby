@@ -27,9 +27,9 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Represents a single document list.
+  # DTO container with a single document list.
   class ListLevels
-    # Gets or sets link to the document.
+    # Gets or sets the link to the document.
     attr_accessor :link
 
     # Gets or sets the collection of list levels for this list.
