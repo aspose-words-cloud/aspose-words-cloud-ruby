@@ -704,10 +704,10 @@ module AsposeWordsCloud
         raise ArgumentError, 'Incorrect request type' unless request.is_a? CopyFileRequest
 
         @api_client.config.logger.debug 'Calling API: WordsApi.copy_file ...' if @api_client.config.debugging
-        # verify the required parameter 'dest_path' is set
-        raise ArgumentError, 'Missing the required parameter dest_path when calling WordsApi.copy_file' if @api_client.config.client_side_validation && request.dest_path.nil?
         # verify the required parameter 'src_path' is set
         raise ArgumentError, 'Missing the required parameter src_path when calling WordsApi.copy_file' if @api_client.config.client_side_validation && request.src_path.nil?
+        # verify the required parameter 'dest_path' is set
+        raise ArgumentError, 'Missing the required parameter dest_path when calling WordsApi.copy_file' if @api_client.config.client_side_validation && request.dest_path.nil?
 
         # resource path
         local_var_path = '/words/storage/file/copy/{srcPath}'[1..-1]
@@ -773,10 +773,10 @@ module AsposeWordsCloud
         raise ArgumentError, 'Incorrect request type' unless request.is_a? CopyFolderRequest
 
         @api_client.config.logger.debug 'Calling API: WordsApi.copy_folder ...' if @api_client.config.debugging
-        # verify the required parameter 'dest_path' is set
-        raise ArgumentError, 'Missing the required parameter dest_path when calling WordsApi.copy_folder' if @api_client.config.client_side_validation && request.dest_path.nil?
         # verify the required parameter 'src_path' is set
         raise ArgumentError, 'Missing the required parameter src_path when calling WordsApi.copy_folder' if @api_client.config.client_side_validation && request.src_path.nil?
+        # verify the required parameter 'dest_path' is set
+        raise ArgumentError, 'Missing the required parameter dest_path when calling WordsApi.copy_folder' if @api_client.config.client_side_validation && request.dest_path.nil?
 
         # resource path
         local_var_path = '/words/storage/folder/copy/{srcPath}'[1..-1]
@@ -8510,10 +8510,10 @@ module AsposeWordsCloud
         raise ArgumentError, 'Incorrect request type' unless request.is_a? MoveFileRequest
 
         @api_client.config.logger.debug 'Calling API: WordsApi.move_file ...' if @api_client.config.debugging
-        # verify the required parameter 'dest_path' is set
-        raise ArgumentError, 'Missing the required parameter dest_path when calling WordsApi.move_file' if @api_client.config.client_side_validation && request.dest_path.nil?
         # verify the required parameter 'src_path' is set
         raise ArgumentError, 'Missing the required parameter src_path when calling WordsApi.move_file' if @api_client.config.client_side_validation && request.src_path.nil?
+        # verify the required parameter 'dest_path' is set
+        raise ArgumentError, 'Missing the required parameter dest_path when calling WordsApi.move_file' if @api_client.config.client_side_validation && request.dest_path.nil?
 
         # resource path
         local_var_path = '/words/storage/file/move/{srcPath}'[1..-1]
@@ -8579,10 +8579,10 @@ module AsposeWordsCloud
         raise ArgumentError, 'Incorrect request type' unless request.is_a? MoveFolderRequest
 
         @api_client.config.logger.debug 'Calling API: WordsApi.move_folder ...' if @api_client.config.debugging
-        # verify the required parameter 'dest_path' is set
-        raise ArgumentError, 'Missing the required parameter dest_path when calling WordsApi.move_folder' if @api_client.config.client_side_validation && request.dest_path.nil?
         # verify the required parameter 'src_path' is set
         raise ArgumentError, 'Missing the required parameter src_path when calling WordsApi.move_folder' if @api_client.config.client_side_validation && request.src_path.nil?
+        # verify the required parameter 'dest_path' is set
+        raise ArgumentError, 'Missing the required parameter dest_path when calling WordsApi.move_folder' if @api_client.config.client_side_validation && request.dest_path.nil?
 
         # resource path
         local_var_path = '/words/storage/folder/move/{srcPath}'[1..-1]

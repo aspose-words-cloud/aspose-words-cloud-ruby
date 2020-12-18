@@ -29,7 +29,7 @@ module AsposeWordsCloud
   # Request model for get_files_list operation.
   #
   class GetFilesListRequest
-    # Folder path e.g. /Folder1.
+    # Folder path e.g. '/folder'.
     attr_accessor :path
 
     # Storage name.
@@ -37,7 +37,7 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param path Folder path e.g. /Folder1.
+    # @param path Folder path e.g. '/folder'.
     # @param storage_name Storage name.
 
     def initialize(path, storage_name = nil)
