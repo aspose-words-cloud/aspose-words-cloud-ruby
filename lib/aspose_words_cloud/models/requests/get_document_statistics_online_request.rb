@@ -32,24 +32,34 @@ module AsposeWordsCloud
     # The document.
     attr_accessor :document
 
-    # Support including/excluding comments from the WordCount. Default value is "false".
+    # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+    attr_accessor :load_encoding
+
+    # Password for opening an encrypted document.
+    attr_accessor :password
+
+    # The flag indicating whether to include comments from the WordCount. The default value is "false".
     attr_accessor :include_comments
 
-    # Support including/excluding footnotes from the WordCount. Default value is "false".
+    # The flag indicating whether to include footnotes from the WordCount. The default value is "false".
     attr_accessor :include_footnotes
 
-    # Support including/excluding shape's text from the WordCount. Default value is "false".
+    # The flag indicating whether to include shape's text from the WordCount. The default value is "false".
     attr_accessor :include_text_in_shapes
 
     #
     # Initializes a new instance.
     # @param document The document.
-    # @param include_comments Support including/excluding comments from the WordCount. Default value is "false".
-    # @param include_footnotes Support including/excluding footnotes from the WordCount. Default value is "false".
-    # @param include_text_in_shapes Support including/excluding shape's text from the WordCount. Default value is "false".
+    # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+    # @param password Password for opening an encrypted document.
+    # @param include_comments The flag indicating whether to include comments from the WordCount. The default value is "false".
+    # @param include_footnotes The flag indicating whether to include footnotes from the WordCount. The default value is "false".
+    # @param include_text_in_shapes The flag indicating whether to include shape's text from the WordCount. The default value is "false".
 
-    def initialize(document, include_comments = nil, include_footnotes = nil, include_text_in_shapes = nil)
+    def initialize(document, load_encoding = nil, password = nil, include_comments = nil, include_footnotes = nil, include_text_in_shapes = nil)
       self.document = document
+      self.load_encoding = load_encoding
+      self.password = password
       self.include_comments = include_comments
       self.include_footnotes = include_footnotes
       self.include_text_in_shapes = include_text_in_shapes

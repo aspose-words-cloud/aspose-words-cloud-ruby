@@ -29,10 +29,10 @@ module AsposeWordsCloud
 
   # Represents a collection of merge fields within a document.
   class FieldNames
-    # Gets or sets link to the document.
+    # Gets or sets the link to the document.
     attr_accessor :link
 
-    # Gets or sets collection of fields names.
+    # Gets or sets the collection of fields names.
     attr_accessor :names
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

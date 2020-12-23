@@ -27,9 +27,9 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Table row element.
+  # DTO container with a table row element.
   class TableRowInsert
-    # Gets or sets count of columns. Default is 1.
+    # Gets or sets the count of columns. The default value is 1.
     attr_accessor :columns_count
 
     # Gets or sets table row will be inserted after row with specified 0-based index.

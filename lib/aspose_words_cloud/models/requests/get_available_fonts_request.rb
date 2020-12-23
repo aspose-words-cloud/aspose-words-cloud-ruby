@@ -29,12 +29,12 @@ module AsposeWordsCloud
   # Request model for get_available_fonts operation.
   #
   class GetAvailableFontsRequest
-    # Folder in filestorage with custom fonts.
+    # The folder in cloud storage with custom fonts.
     attr_accessor :fonts_location
 
     #
     # Initializes a new instance.
-    # @param fonts_location Folder in filestorage with custom fonts.
+    # @param fonts_location The folder in cloud storage with custom fonts.
 
     def initialize(fonts_location = nil)
       self.fonts_location = fonts_location

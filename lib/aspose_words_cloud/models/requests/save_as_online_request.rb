@@ -35,6 +35,12 @@ module AsposeWordsCloud
     # Save options.
     attr_accessor :save_options_data
 
+    # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+    attr_accessor :load_encoding
+
+    # Password for opening an encrypted document.
+    attr_accessor :password
+
     # Folder in filestorage with custom fonts.
     attr_accessor :fonts_location
 
@@ -42,11 +48,15 @@ module AsposeWordsCloud
     # Initializes a new instance.
     # @param document The document.
     # @param save_options_data Save options.
+    # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+    # @param password Password for opening an encrypted document.
     # @param fonts_location Folder in filestorage with custom fonts.
 
-    def initialize(document, save_options_data, fonts_location = nil)
+    def initialize(document, save_options_data, load_encoding = nil, password = nil, fonts_location = nil)
       self.document = document
       self.save_options_data = save_options_data
+      self.load_encoding = load_encoding
+      self.password = password
       self.fonts_location = fonts_location
     end
   end

@@ -29,10 +29,10 @@ module AsposeWordsCloud
   # Request model for compare_document operation.
   #
   class CompareDocumentRequest
-    # Original document name.
+    # The filename of the input document.
     attr_accessor :name
 
-    # CompareData with a document to compare.
+    # Compare data.
     attr_accessor :compare_data
 
     # Original document folder.
@@ -52,8 +52,8 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name Original document name.
-    # @param compare_data CompareData with a document to compare.
+    # @param name The filename of the input document.
+    # @param compare_data Compare data.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

@@ -29,7 +29,7 @@ module AsposeWordsCloud
   # Request model for insert_style operation.
   #
   class InsertStyleRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
     # Style to insert.
@@ -58,7 +58,7 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
+    # @param name The filename of the input document.
     # @param style_insert Style to insert.
     # @param folder Original document folder.
     # @param storage Original document storage.

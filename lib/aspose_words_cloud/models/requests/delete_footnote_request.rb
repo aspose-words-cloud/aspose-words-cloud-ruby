@@ -29,13 +29,13 @@ module AsposeWordsCloud
   # Request model for delete_footnote operation.
   #
   class DeleteFootnoteRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
     # Object index.
     attr_accessor :index
 
-    # Path to the node, which contains collection of footnotes.
+    # The path to the node in the document tree.
     attr_accessor :node_path
 
     # Original document folder.
@@ -61,9 +61,9 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
+    # @param name The filename of the input document.
     # @param index Object index.
-    # @param node_path Path to the node, which contains collection of footnotes.
+    # @param node_path The path to the node in the document tree.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

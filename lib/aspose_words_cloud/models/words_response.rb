@@ -27,9 +27,9 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Base class for all responses.
+  # The base class for all responses.
   class WordsResponse
-    # Gets or sets request Id.
+    # Gets or sets the request Id.
     attr_accessor :request_id
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

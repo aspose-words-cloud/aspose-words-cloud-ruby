@@ -27,13 +27,12 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # This response should be returned by the service when handling:
-  # GET https://api.aspose.cloud/v4.0/words/Test.doc/comments/0.
+  # The REST response with a comment.
   class CommentResponse
-    # Gets or sets request Id.
+    # Gets or sets the request Id.
     attr_accessor :request_id
 
-    # Gets or sets comment information.
+    # Gets or sets the comment.
     attr_accessor :comment
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

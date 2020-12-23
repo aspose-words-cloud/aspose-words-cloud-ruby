@@ -29,10 +29,10 @@ module AsposeWordsCloud
   # Request model for render_page operation.
   #
   class RenderPageRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
-    # Comment index.
+    # The index of the page.
     attr_accessor :page_index
 
     # The destination format.
@@ -55,8 +55,8 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
-    # @param page_index Comment index.
+    # @param name The filename of the input document.
+    # @param page_index The index of the page.
     # @param format The destination format.
     # @param folder Original document folder.
     # @param storage Original document storage.

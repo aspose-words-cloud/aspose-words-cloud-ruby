@@ -27,9 +27,9 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Paragraph element.
+  # DTO container with a paragraph's text.
   class ParagraphInsert
-    # Gets or sets paragraph's text.
+    # Gets or sets the paragraph's text.
     attr_accessor :text
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

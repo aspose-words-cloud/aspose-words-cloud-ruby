@@ -29,7 +29,7 @@ module AsposeWordsCloud
 
   # Words document property DTO for create or update.
   class DocumentPropertyCreateOrUpdate
-    # Gets or sets string value of the document property.
+    # Gets or sets the value of the document property.
     attr_accessor :value
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

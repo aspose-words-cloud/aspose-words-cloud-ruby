@@ -27,13 +27,12 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # This response should be returned by the service when handling:
-  # GET https://api.aspose.cloud/v4.0/words/Test.doc/OfficeMathObjects.
+  # The REST response with a collection of OfficeMath objects.
   class OfficeMathObjectsResponse
-    # Gets or sets request Id.
+    # Gets or sets the request Id.
     attr_accessor :request_id
 
-    # Gets or sets collection of OfficeMath objects.
+    # Gets or sets the collection of OfficeMath objects.
     attr_accessor :office_math_objects
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

@@ -27,12 +27,12 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # This response should be returned by the service when handling:  GET /documentProperties.
+  # The REST response with a collection of document properties.
   class DocumentPropertiesResponse
-    # Gets or sets request Id.
+    # Gets or sets the request Id.
     attr_accessor :request_id
 
-    # Gets or sets collection of document properties.
+    # Gets or sets the collection of document properties.
     attr_accessor :document_properties
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

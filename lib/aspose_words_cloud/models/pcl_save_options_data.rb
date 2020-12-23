@@ -29,69 +29,66 @@ module AsposeWordsCloud
 
   # Container class for pcl save options.
   class PclSaveOptionsData
-    # Gets or sets a value determining how 3D effects are rendered.
+    # Gets or sets the value determining how 3D effects are rendered.
     attr_accessor :dml3_d_effects_rendering_mode
 
-    # Gets or sets a value determining how DrawingML effects are rendered.
+    # Gets or sets the value determining how DrawingML effects are rendered.
     # { Simplified | None | Fine }.
     attr_accessor :dml_effects_rendering_mode
 
-    # Gets or sets a value determining how DrawingML shapes are rendered.
-    # { Fallback | DrawingML }.
+    # Gets or sets the option that controls how DrawingML shapes are rendered.
     attr_accessor :dml_rendering_mode
 
-    # Gets or sets name of destination file.
+    # Gets or sets the name of destination file.
     attr_accessor :file_name
 
-    # Gets or sets format of save.
+    # Gets or sets the format of save.
     attr_accessor :save_format
 
-    # Gets or sets a value determining if fields should be updated before saving the document to a fixed page format.
-    # Default value for this property is. true.
+    # Gets or sets a value indicating whether fields should be updated before saving the document to a fixed page format. The default value is true.
     attr_accessor :update_fields
 
-    # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted
-    # property is updated before saving.
+    # Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.
     attr_accessor :update_last_printed_property
 
-    # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
+    # Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
     attr_accessor :update_last_saved_time_property
 
-    # Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.
+    # Gets or sets a value indicating whether content of StructuredDocumentTag is updated before saving.
     attr_accessor :update_sdt_content
 
-    # Gets or sets controls zip output or not.
-    # Default value is false.
+    # Gets or sets a value indicating whether to zip output or not.
+    # The default value is false.
     attr_accessor :zip_output
 
-    # Gets or sets a value determining how colors are rendered.
+    # Gets or sets the value determining how colors are rendered.
     # { Normal | Grayscale}.
     attr_accessor :color_mode
 
-    # Gets or sets determines the quality of the JPEG images inside PDF document.
+    # Gets or sets the quality of the JPEG images inside PDF document.
     attr_accessor :jpeg_quality
 
-    # Gets or sets allows to specify metafile rendering options.
+    # Gets or sets the metafile rendering options.
     attr_accessor :metafile_rendering_options
 
-    # Gets or sets indicates the symbol set that is used to represent numbers while rendering to fixed page formats.
+    # Gets or sets the symbol set, that is used to represent numbers while rendering to fixed page formats.
     attr_accessor :numeral_format
 
-    # Gets or sets flag indicates whether it is required to optimize output of XPS.
+    # Gets or sets a value indicating whether it is required to optimize output of XPS.
     # If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated.
-    # Note: The accuracy of the content display may be affected if this property is set to true.  Default is false.
+    # Note: The accuracy of the content display may be affected if this property is set to true.. The default value is false.
     attr_accessor :optimize_output
 
-    # Gets or sets determines number of pages to render.
+    # Gets or sets the number of pages to render.
     attr_accessor :page_count
 
-    # Gets or sets determines 0-based index of the first page to render.
+    # Gets or sets the 0-based index of the first page to render.
     attr_accessor :page_index
 
-    # Gets or sets name of the font that will be used if no expected font is found in printer and built-in fonts collections.
+    # Gets or sets the font name, that will be used if no expected font is found in printer and built-in fonts collections.
     attr_accessor :falllback_font_name
 
-    # Gets or sets a value determining whether or not complex transformed elements should be rasterized before saving to PCL document.  Default is true.
+    # Gets or sets a value indicating whether complex transformed elements should be rasterized before saving to PCL document.. The default value is true.
     attr_accessor :rasterize_transformed_elements
 
     class EnumAttributeValidator

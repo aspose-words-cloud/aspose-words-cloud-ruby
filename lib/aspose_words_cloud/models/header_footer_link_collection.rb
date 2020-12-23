@@ -27,12 +27,12 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Collection of links to header/footers.
+  # The collection of HeaderFooter's links.
   class HeaderFooterLinkCollection
-    # Gets or sets link to the document.
+    # Gets or sets the link to the document.
     attr_accessor :link
 
-    # Gets or sets collection of section's links.
+    # Gets or sets the collection of HeaderFooter's links.
     attr_accessor :list
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

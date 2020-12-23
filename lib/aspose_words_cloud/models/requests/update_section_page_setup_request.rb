@@ -29,10 +29,10 @@ module AsposeWordsCloud
   # Request model for update_section_page_setup operation.
   #
   class UpdateSectionPageSetupRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
-    # Section index.
+    # The index of the section.
     attr_accessor :section_index
 
     # Page setup properties dto.
@@ -61,8 +61,8 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
-    # @param section_index Section index.
+    # @param name The filename of the input document.
+    # @param section_index The index of the section.
     # @param page_setup Page setup properties dto.
     # @param folder Original document folder.
     # @param storage Original document storage.

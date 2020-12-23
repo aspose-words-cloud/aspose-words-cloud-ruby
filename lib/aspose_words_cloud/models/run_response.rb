@@ -27,13 +27,12 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # This response should be returned by the service when handling:
-  # GET https://api.aspose.cloud/v4.0/words/Test.doc/paragraphs/{0}/runs/{1}.
+  # The REST response with a Run element.
   class RunResponse
-    # Gets or sets request Id.
+    # Gets or sets the request Id.
     attr_accessor :request_id
 
-    # Gets or sets run.
+    # Gets or sets the Run element.
     attr_accessor :run
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

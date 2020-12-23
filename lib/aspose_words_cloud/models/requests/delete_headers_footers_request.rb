@@ -29,10 +29,10 @@ module AsposeWordsCloud
   # Request model for delete_headers_footers operation.
   #
   class DeleteHeadersFootersRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
-    # Path to parent section.
+    # The path to the section in the document tree.
     attr_accessor :section_path
 
     # Original document folder.
@@ -56,13 +56,13 @@ module AsposeWordsCloud
     # The date and time to use for revisions.
     attr_accessor :revision_date_time
 
-    # List of types of headers and footers.
+    # The list of HeaderFooter types.
     attr_accessor :headers_footers_types
 
     #
     # Initializes a new instance.
-    # @param name The document name.
-    # @param section_path Path to parent section.
+    # @param name The filename of the input document.
+    # @param section_path The path to the section in the document tree.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -70,7 +70,7 @@ module AsposeWordsCloud
     # @param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
     # @param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
     # @param revision_date_time The date and time to use for revisions.
-    # @param headers_footers_types List of types of headers and footers.
+    # @param headers_footers_types The list of HeaderFooter types.
 
     def initialize(name, section_path, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil, revision_author = nil, revision_date_time = nil, headers_footers_types = nil)
       self.name = name

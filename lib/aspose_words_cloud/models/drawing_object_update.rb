@@ -29,25 +29,25 @@ module AsposeWordsCloud
 
   # Drawing object element for update.
   class DrawingObjectUpdate
-    # Gets or sets height of the drawing object in points.
+    # Gets or sets the height of the DrawingObject in points.
     attr_accessor :height
 
-    # Gets or sets distance in points from the origin to the left side of the image.
+    # Gets or sets the distance in points from the origin to the left side of the image.
     attr_accessor :left
 
-    # Gets or sets specifies where the distance to the image is measured from.
+    # Gets or sets the relative horizontal position, from which the distance to the image is measured.
     attr_accessor :relative_horizontal_position
 
-    # Gets or sets specifies where the distance to the image measured from.
+    # Gets or sets the relative vertical position, from which the distance to the image measured.
     attr_accessor :relative_vertical_position
 
-    # Gets or sets distance in points from the origin to the top side of the image.
+    # Gets or sets the distance in points from the origin to the top side of the image.
     attr_accessor :top
 
-    # Gets or sets width of the drawing objects in points.
+    # Gets or sets the width of the DrawingObjects in points.
     attr_accessor :width
 
-    # Gets or sets specifies how to wrap text around the image.
+    # Gets or sets the option that controls how to wrap text around the image.
     attr_accessor :wrap_type
 
     class EnumAttributeValidator

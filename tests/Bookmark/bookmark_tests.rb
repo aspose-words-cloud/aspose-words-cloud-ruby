@@ -30,11 +30,15 @@ module AsposeWordsCloud
   #
   class BookmarkTests < BaseTestContext
     def remote_data_folder
-      remote_test_folder + '/DocumentElements/Bookmarks'
+      remote_test_folder + "/DocumentElements/Bookmarks"
     end
 
     def local_file
-      'Common/test_multi_pages.docx'
+      "Common/test_multi_pages.docx"
+    end
+
+    def bookmark_name
+      "aspose"
     end
 
 
@@ -42,9 +46,9 @@ module AsposeWordsCloud
     # Test for getting bookmarks from document.
     #
     def test_get_bookmarks
-      remote_file_name = 'TestGetDocumentBookmarks.docx'
+      remote_file_name = "TestGetDocumentBookmarks.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
       request = GetBookmarksRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
 
@@ -53,16 +57,36 @@ module AsposeWordsCloud
     end
 
     #
+    # Test for getting bookmarks from document online.
+    #
+    def test_get_bookmarks_online
+      request = GetBookmarksOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), nil, nil)
+
+      result = @words_api.get_bookmarks_online(request)
+      assert_equal false, result.nil?
+    end
+
+    #
     # Test for getting bookmark by specified name.
     #
     def test_get_bookmark_by_name
-      remote_file_name = 'TestGetDocumentBookmarkByName.docx'
+      remote_file_name = "TestGetDocumentBookmarkByName.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
-      request = GetBookmarkByNameRequest.new(remote_file_name, 'aspose', remote_data_folder, nil, nil, nil)
+      request = GetBookmarkByNameRequest.new(remote_file_name, bookmark_name, remote_data_folder, nil, nil, nil)
 
       result = @words_api.get_bookmark_by_name(request)
+      assert_equal false, result.nil?
+    end
+
+    #
+    # Test for getting bookmark by specified name online.
+    #
+    def test_get_bookmark_by_name_online
+      request = GetBookmarkByNameOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), bookmark_name, nil, nil)
+
+      result = @words_api.get_bookmark_by_name_online(request)
       assert_equal false, result.nil?
     end
 
@@ -70,15 +94,28 @@ module AsposeWordsCloud
     # Test for updating existed bookmark.
     #
     def test_update_bookmark
-      remote_file_name = 'TestUpdateDocumentBookmark.docx'
-      bookmark_name = 'aspose'
+      remote_file_name = "TestUpdateDocumentBookmark.docx"
+      bookmark_text = "This will be the text for Aspose"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
-      request_bookmark_data = BookmarkData.new({:Name => bookmark_name, :Text => 'This will be the text for Aspose'})
-      request = UpdateBookmarkRequest.new(remote_file_name, request_bookmark_data, bookmark_name, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
+      request_bookmark_data = BookmarkData.new({:Name => bookmark_name, :Text => bookmark_text})
+      request = UpdateBookmarkRequest.new(remote_file_name, bookmark_name, request_bookmark_data, remote_data_folder, nil, nil, nil, remote_test_out + "/" + remote_file_name, nil, nil)
 
       result = @words_api.update_bookmark(request)
+      assert_equal false, result.nil?
+    end
+
+    #
+    # Test for updating existed bookmark online.
+    #
+    def test_update_bookmark_online
+      remote_file_name = "TestUpdateDocumentBookmark.docx"
+
+      request_bookmark_data = BookmarkData.new({:Name => bookmark_name, :Text => "This will be the text for Aspose"})
+      request = UpdateBookmarkOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), bookmark_name, request_bookmark_data, nil, nil, remote_test_out + "/" + remote_file_name, nil, nil)
+
+      result = @words_api.update_bookmark_online(request)
       assert_equal false, result.nil?
     end
   end

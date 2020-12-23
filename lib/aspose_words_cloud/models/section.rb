@@ -27,24 +27,24 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Section element.
+  # DTO container with a section element.
   class Section
-    # Gets or sets link to the document.
+    # Gets or sets the link to the document.
     attr_accessor :link
 
-    # Gets or sets child nodes.
+    # Gets or sets the list of child nodes.
     attr_accessor :child_nodes
 
-    # Gets or sets link to HeaderFooters resource.
+    # Gets or sets the link to HeaderFooters resource.
     attr_accessor :header_footers
 
-    # Gets or sets link to PageSetup resource.
+    # Gets or sets the link to PageSetup resource.
     attr_accessor :page_setup
 
-    # Gets or sets link to Paragraphs resource.
+    # Gets or sets the link to Paragraphs resource.
     attr_accessor :paragraphs
 
-    # Gets or sets link to Tables resource.
+    # Gets or sets the link to Tables resource.
     attr_accessor :tables
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

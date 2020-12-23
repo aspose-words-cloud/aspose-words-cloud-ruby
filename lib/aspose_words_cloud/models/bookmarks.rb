@@ -29,10 +29,10 @@ module AsposeWordsCloud
 
   # Represents an array of bookmarks.
   class Bookmarks
-    # Gets or sets link to the document.
+    # Gets or sets the link to the document.
     attr_accessor :link
 
-    # Gets or sets array of bookmarks.
+    # Gets or sets the array of bookmarks.
     attr_accessor :bookmark_list
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

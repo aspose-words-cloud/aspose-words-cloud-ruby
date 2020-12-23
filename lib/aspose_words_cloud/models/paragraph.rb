@@ -27,15 +27,15 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Paragraph element.
+  # DTO container with a paragraph element.
   class Paragraph
-    # Gets or sets link to the document.
+    # Gets or sets the link to the document.
     attr_accessor :link
 
-    # Gets or sets node id.
+    # Gets or sets the node id.
     attr_accessor :node_id
 
-    # Gets or sets child nodes.
+    # Gets or sets the list of child nodes.
     attr_accessor :child_nodes
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

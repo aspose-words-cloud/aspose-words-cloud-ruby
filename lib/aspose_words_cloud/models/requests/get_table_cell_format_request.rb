@@ -29,10 +29,10 @@ module AsposeWordsCloud
   # Request model for get_table_cell_format operation.
   #
   class GetTableCellFormatRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
-    # Path to table row.
+    # The path to the table row in the document tree.
     attr_accessor :table_row_path
 
     # Object index.
@@ -52,8 +52,8 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
-    # @param table_row_path Path to table row.
+    # @param name The filename of the input document.
+    # @param table_row_path The path to the table row in the document tree.
     # @param index Object index.
     # @param folder Original document folder.
     # @param storage Original document storage.

@@ -29,7 +29,7 @@ module AsposeWordsCloud
   # Request model for append_document operation.
   #
   class AppendDocumentRequest
-    # Original document name.
+    # The filename of the input document.
     attr_accessor :name
 
     # <see cref="DocumentEntryList"/> with a list of documents to append.
@@ -58,7 +58,7 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name Original document name.
+    # @param name The filename of the input document.
     # @param document_list <see cref="DocumentEntryList"/> with a list of documents to append.
     # @param folder Original document folder.
     # @param storage Original document storage.

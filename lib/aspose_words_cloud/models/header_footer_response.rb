@@ -27,13 +27,12 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # This response should be returned by the service when handling:
-  # GET https://api.aspose.cloud/v4.0/words/Test.doc/headersfooters/{0}.
+  # The REST response with a HeaderFooter.
   class HeaderFooterResponse
-    # Gets or sets request Id.
+    # Gets or sets the request Id.
     attr_accessor :request_id
 
-    # Gets or sets headerFooter.
+    # Gets or sets the HeaderFooter.
     attr_accessor :header_footer
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

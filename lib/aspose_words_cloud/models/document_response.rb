@@ -27,12 +27,12 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Represents the response with document description.
+  # The REST response with a document description.
   class DocumentResponse
-    # Gets or sets request Id.
+    # Gets or sets the request Id.
     attr_accessor :request_id
 
-    # Gets or sets document description.
+    # Gets or sets the document description.
     attr_accessor :document
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

@@ -29,16 +29,13 @@ module AsposeWordsCloud
 
   # Container class for Downsample options.
   class DownsampleOptionsData
-    # Gets or sets specifies whether images should be downsampled.
+    # Gets or sets a value indicating whether images should be downsampled.
     attr_accessor :downsample_images
 
-    # Gets or sets specifies the resolution in pixels per inch which the images should be downsampled to.
+    # Gets or sets the resolution in pixels per inch which the images should be downsampled to.
     attr_accessor :resolution
 
-    # Gets or sets specifies the threshold resolution in pixels per inch.
-    # If resolution of an image in the document is less than threshold value,
-    # the downsampling algorithm will not be applied.
-    # A value of 0 means the threshold check is not used and all images that can be reduced in size are downsampled.
+    # Gets or sets the threshold resolution in pixels per inch. If resolution of an image in the document is less than threshold value, the downsampling algorithm will not be applied. A value of 0 means the threshold check is not used and all images that can be reduced in size are downsampled.
     attr_accessor :resolution_threshold
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

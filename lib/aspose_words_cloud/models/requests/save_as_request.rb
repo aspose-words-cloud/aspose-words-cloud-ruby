@@ -29,7 +29,7 @@ module AsposeWordsCloud
   # Request model for save_as operation.
   #
   class SaveAsRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
     # Save options.
@@ -52,7 +52,7 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
+    # @param name The filename of the input document.
     # @param save_options_data Save options.
     # @param folder Original document folder.
     # @param storage Original document storage.

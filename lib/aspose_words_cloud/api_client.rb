@@ -66,12 +66,12 @@ module AsposeWordsCloud
     # @return [Array<(Object, Fixnum, Hash)>] an array of 3 elements:
     #   the data deserialized from response body (could be nil), response status code and response headers.
     def call_api(http_method, path, opts = {})
-      if @config.api_key['app_sid'].nil? || @config.api_key['app_sid'] == ''
-        raise "AppSid could not be an empty string."
+      if @config.client_data['ClientId'].nil? || @config.client_data['ClientId'] == ''
+        raise "ClientId could not be an empty string."
       end
 
-      if @config.api_key['api_key'].nil? || @config.api_key['api_key'] == ''
-        raise "AppKey could not be an empty string."
+      if @config.client_data['ClientSecret'].nil? || @config.client_data['ClientSecret'] == ''
+        raise "ClientSecret could not be an empty string."
       end
 
       response = build_request(http_method, path, opts)

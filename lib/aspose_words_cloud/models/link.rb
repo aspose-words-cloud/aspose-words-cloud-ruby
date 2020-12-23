@@ -30,24 +30,16 @@ module AsposeWordsCloud
   # Provides information for the object link.
   # This is supposed to be an atom:link, therefore it should have all attributes specified here http://tools.ietf.org/html/rfc4287#section-4.2.7.
   class Link
-    # Gets or sets the "href" attribute contains the link's IRI. atom:link elements MUST
-    # have an href attribute, whose value MUST be a IRI reference.
+    # Gets or sets the "href" attribute with the link's IRI. atom:link elements MUST have an href attribute, whose value MUST be a IRI reference.
     attr_accessor :href
 
-    # Gets or sets atom:link elements MAY have a "rel" attribute that indicates the link
-    # relation type.  If the "rel" attribute is not present, the link
-    # element MUST be interpreted as if the link relation type is "alternate".
+    # Gets or sets the option that controls whether atom:link elements MAY have a "rel" attribute that indicates the link relation type.  If the "rel" attribute is not present, the link element MUST be interpreted as if the link relation type is "alternate".
     attr_accessor :rel
 
-    # Gets or sets the "title" attribute conveys human-readable information about the
-    # link.  The content of the "title" attribute is Language-Sensitive.
+    # Gets or sets the "title" attribute, that conveys human-readable information about the link. The content of the "title" attribute is Language-Sensitive.
     attr_accessor :title
 
-    # Gets or sets on the link element, the "type" attribute's value is an advisory
-    # media type: it is a hint about the type of the representation that is
-    # expected to be returned when the value of the href attribute is
-    # dereferenced.  Note that the type attribute does not override the
-    # actual media type returned with the representation.
+    # Gets or sets the "type" attribute. The "type" attribute's value is an advisory media type: it is a hint about the type of the representation that is expected to be returned when the value of the href attribute is dereferenced. Note that the type attribute does not override the actual media type returned with the representation.
     attr_accessor :type
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

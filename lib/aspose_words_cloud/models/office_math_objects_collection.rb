@@ -27,12 +27,12 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Collection of OfficeMath objects.
+  # DTO container with a collection of OfficeMath objects.
   class OfficeMathObjectsCollection
-    # Gets or sets link to the document.
+    # Gets or sets the link to the document.
     attr_accessor :link
 
-    # Gets or sets collection of OfficeMath objects.
+    # Gets or sets the collection of OfficeMath objects.
     attr_accessor :list
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

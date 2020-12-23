@@ -29,10 +29,10 @@ module AsposeWordsCloud
   # Request model for get_document_property operation.
   #
   class GetDocumentPropertyRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
-    # The property name.
+    # The name of the property.
     attr_accessor :property_name
 
     # Original document folder.
@@ -49,8 +49,8 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
-    # @param property_name The property name.
+    # @param name The filename of the input document.
+    # @param property_name The name of the property.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

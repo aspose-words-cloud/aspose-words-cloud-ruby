@@ -27,146 +27,141 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # container class for pdf save options.
+  # Container class for pdf save options.
   class PdfSaveOptionsData
-    # Gets or sets a value determining how 3D effects are rendered.
+    # Gets or sets the value determining how 3D effects are rendered.
     attr_accessor :dml3_d_effects_rendering_mode
 
-    # Gets or sets a value determining how DrawingML effects are rendered.
+    # Gets or sets the value determining how DrawingML effects are rendered.
     # { Simplified | None | Fine }.
     attr_accessor :dml_effects_rendering_mode
 
-    # Gets or sets a value determining how DrawingML shapes are rendered.
-    # { Fallback | DrawingML }.
+    # Gets or sets the option that controls how DrawingML shapes are rendered.
     attr_accessor :dml_rendering_mode
 
-    # Gets or sets name of destination file.
+    # Gets or sets the name of destination file.
     attr_accessor :file_name
 
-    # Gets or sets format of save.
+    # Gets or sets the format of save.
     attr_accessor :save_format
 
-    # Gets or sets a value determining if fields should be updated before saving the document to a fixed page format.
-    # Default value for this property is. true.
+    # Gets or sets a value indicating whether fields should be updated before saving the document to a fixed page format. The default value is true.
     attr_accessor :update_fields
 
-    # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted
-    # property is updated before saving.
+    # Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.
     attr_accessor :update_last_printed_property
 
-    # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
+    # Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
     attr_accessor :update_last_saved_time_property
 
-    # Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.
+    # Gets or sets a value indicating whether content of StructuredDocumentTag is updated before saving.
     attr_accessor :update_sdt_content
 
-    # Gets or sets controls zip output or not.
-    # Default value is false.
+    # Gets or sets a value indicating whether to zip output or not.
+    # The default value is false.
     attr_accessor :zip_output
 
-    # Gets or sets a value determining how colors are rendered.
+    # Gets or sets the value determining how colors are rendered.
     # { Normal | Grayscale}.
     attr_accessor :color_mode
 
-    # Gets or sets determines the quality of the JPEG images inside PDF document.
+    # Gets or sets the quality of the JPEG images inside PDF document.
     attr_accessor :jpeg_quality
 
-    # Gets or sets allows to specify metafile rendering options.
+    # Gets or sets the metafile rendering options.
     attr_accessor :metafile_rendering_options
 
-    # Gets or sets indicates the symbol set that is used to represent numbers while rendering to fixed page formats.
+    # Gets or sets the symbol set, that is used to represent numbers while rendering to fixed page formats.
     attr_accessor :numeral_format
 
-    # Gets or sets flag indicates whether it is required to optimize output of XPS.
+    # Gets or sets a value indicating whether it is required to optimize output of XPS.
     # If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated.
-    # Note: The accuracy of the content display may be affected if this property is set to true.  Default is false.
+    # Note: The accuracy of the content display may be affected if this property is set to true.. The default value is false.
     attr_accessor :optimize_output
 
-    # Gets or sets determines number of pages to render.
+    # Gets or sets the number of pages to render.
     attr_accessor :page_count
 
-    # Gets or sets determines 0-based index of the first page to render.
+    # Gets or sets the 0-based index of the first page to render.
     attr_accessor :page_index
 
-    # Gets or sets specifies the PDF standards compliance level for output documents.
+    # Gets or sets the PDF standards compliance level for output documents.
     attr_accessor :compliance
 
-    # Gets or sets specifies whether to convert footnote/endnote references in main text story into active hyperlinks.
+    # Gets or sets a value indicating whether to convert footnote/endnote references in main text story into active hyperlinks.
     # When clicked the hyperlink will lead to the corresponding footnote/endnote.
-    # Default is false.
+    # The default value is false.
     attr_accessor :create_note_hyperlinks
 
-    # Gets or sets a value determining the way CustomDocumentProperties are exported to PDF file.
-    # Default value is None.
+    # Gets or sets the option that controls the way CustomDocumentProperties are exported to PDF file.
+    # The default value is None.
     attr_accessor :custom_properties_export
 
-    # Gets or sets specifies the details for signing the output PDF document.
+    # Gets or sets the details for signing the output PDF document.
     attr_accessor :digital_signature_details
 
-    # Gets or sets a flag specifying whether the window’s title bar should display the document title taken from the Title entry of the document information dictionary.
+    # Gets or sets a value indicating whether the window’s title bar should display the document title taken from the Title entry of the document information dictionary.
     attr_accessor :display_doc_title
 
-    # Gets or sets allows to specify downsample options.
+    # Gets or sets the downsample options.
     attr_accessor :downsample_options
 
-    # Gets or sets controls how fonts are embedded into the resulting PDF documents.
+    # Gets or sets a value indicating whether fonts are embedded into the resulting PDF documents.
     attr_accessor :embed_full_fonts
 
-    # Gets or sets specifies the details for encrypting the output PDF document.
+    # Gets or sets the details for encrypting the output PDF document.
     attr_accessor :encryption_details
 
-    # Gets or sets a flag specifying whether URI should be escaped before writing.
+    # Gets or sets a value indicating whether URI should be escaped before writing.
     attr_accessor :escape_uri
 
-    # Gets or sets determines whether or not to export document structure.
+    # Gets or sets a value indicating whether to export document structure.
     attr_accessor :export_document_structure
 
-    # Gets or sets specifies the font embedding mode.
+    # Gets or sets the font embedding mode.
     attr_accessor :font_embedding_mode
 
-    # Gets or sets determines how bookmarks in headers/footers are exported.
+    # Gets or sets the option that controls how bookmarks in headers/footers are exported.
     # The default value is Aspose.Words.Saving.HeaderFooterBookmarksExportMode.All.
     attr_accessor :header_footer_bookmarks_export_mode
 
-    # Gets or sets specifies how the color space will be selected for the images in PDF document.
+    # Gets or sets the option that controls how the color space will be selected for the images in PDF document.
     attr_accessor :image_color_space_export_mode
 
-    # Gets or sets specifies compression type to be used for all images in the document.
+    # Gets or sets the compression type to be used for all images in the document.
     attr_accessor :image_compression
 
-    # Gets or sets a flag indicating whether image interpolation shall be performed by a conforming
-    # reader. When false is specified, the flag is not written to the output document
-    # and the default behaviour of reader is used instead.
+    # Gets or sets a value indicating whether image interpolation shall be performed by a conforming reader. When false is specified, the flag is not written to the output document and the default behavior of reader is used instead.
     attr_accessor :interpolate_images
 
-    # Gets or sets determines whether hyperlinks in the output Pdf document are forced to be opened in a new window (or tab) of a browser.
+    # Gets or sets a value indicating whether hyperlinks in the output Pdf document are forced to be opened in a new window (or tab) of a browser.
     attr_accessor :open_hyperlinks_in_new_window
 
-    # Gets or sets allows to specify outline options.
+    # Gets or sets the outline options.
     attr_accessor :outline_options
 
-    # Gets or sets specifies how the PDF document should be displayed when opened in the PDF reader.
+    # Gets or sets the option that controls how the PDF document should be displayed when opened in the PDF reader.
     attr_accessor :page_mode
 
-    # Gets or sets a value determining whether or not to preblend transparent images with black background color.
+    # Gets or sets a value indicating whether to preblend transparent images with black background color.
     attr_accessor :preblend_images
 
-    # Gets or sets specifies whether to preserve Microsoft Word form fields as form fields in PDF or convert them to text.
+    # Gets or sets a value indicating whether to preserve Microsoft Word form fields as form fields in PDF or convert them to text.
     attr_accessor :preserve_form_fields
 
-    # Gets or sets specifies compression type to be used for all textual content in the document.
+    # Gets or sets the compression type to be used for all textual content in the document.
     attr_accessor :text_compression
 
-    # Gets or sets determines whether the document should be saved using a booklet printing layout.
+    # Gets or sets a value indicating whether the document should be saved using a booklet printing layout.
     attr_accessor :use_book_fold_printing_settings
 
-    # Gets or sets determines whether or not to substitute TrueType fonts Arial, Times New Roman, Courier New and Symbol with core PDF Type 1 fonts.
+    # Gets or sets a value indicating whether to substitute TrueType fonts Arial, Times New Roman, Courier New and Symbol with core PDF Type 1 fonts.
     attr_accessor :use_core_fonts
 
-    # Gets or sets determines what type of zoom should be applied when a document is opened with a PDF viewer.
+    # Gets or sets the option that controls what type of zoom should be applied when a document is opened with a PDF viewer.
     attr_accessor :zoom_behavior
 
-    # Gets or sets determines zoom factor (in percentages) for a document.
+    # Gets or sets the zoom factor (in percentages) for a document.
     attr_accessor :zoom_factor
 
     class EnumAttributeValidator

@@ -29,7 +29,7 @@ module AsposeWordsCloud
   # Request model for copy_style operation.
   #
   class CopyStyleRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
     # Style to copy.
@@ -58,7 +58,7 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
+    # @param name The filename of the input document.
     # @param style_copy Style to copy.
     # @param folder Original document folder.
     # @param storage Original document storage.

@@ -27,12 +27,12 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Response for Api error.
+  # The REST response with an API error.
   class WordsApiErrorResponse
-    # Gets or sets request Id.
+    # Gets or sets the request Id.
     attr_accessor :request_id
 
-    # Gets or sets error.
+    # Gets or sets the API error.
     attr_accessor :error
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

@@ -27,13 +27,12 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # This response should be returned by the service when handling:
-  # GET https://api.aspose.cloud/v4.0/words/Test.doc/styles.
+  # The REST response with an array of styles.
   class StylesResponse
-    # Gets or sets request Id.
+    # Gets or sets the request Id.
     attr_accessor :request_id
 
-    # Gets or sets styles which are contained in document.
+    # Gets or sets the array of styles.
     attr_accessor :styles
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

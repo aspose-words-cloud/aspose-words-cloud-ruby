@@ -27,21 +27,21 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Field.
+  # DTO container with a field.
   class Field
-    # Gets or sets link to the document.
+    # Gets or sets the link to the document.
     attr_accessor :link
 
-    # Gets or sets node id.
+    # Gets or sets the node id.
     attr_accessor :node_id
 
-    # Gets or sets field code.
+    # Gets or sets the field code.
     attr_accessor :field_code
 
-    # Gets or sets LCID of the field.
+    # Gets or sets the LCID of the field.
     attr_accessor :locale_id
 
-    # Gets or sets field result.
+    # Gets or sets the field result.
     attr_accessor :result
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

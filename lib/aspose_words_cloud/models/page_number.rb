@@ -32,7 +32,7 @@ module AsposeWordsCloud
     # Gets or sets text alignment, possible values are left, right, center or justify.
     attr_accessor :alignment
 
-    # Gets or sets page number format, e.g. "{PAGE} of {NUMPAGES}".
+    # Gets or sets the page number format, e.g. "{PAGE} of {NUMPAGES}".
     attr_accessor :format
 
     # Gets or sets a value indicating whether if true the page number is added at the top of the page, else at the bottom.

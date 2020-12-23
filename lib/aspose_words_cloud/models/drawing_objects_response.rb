@@ -27,12 +27,12 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # This response should be returned by the service when handling:  GET /drawingObjects.
+  # The REST response with a collection of DrawingObjects.
   class DrawingObjectsResponse
-    # Gets or sets request Id.
+    # Gets or sets the request Id.
     attr_accessor :request_id
 
-    # Gets or sets collection of drawing objects.
+    # Gets or sets the collection of DrawingObjects.
     attr_accessor :drawing_objects
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

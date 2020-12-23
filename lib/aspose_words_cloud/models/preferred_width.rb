@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Preferred width.
+  # DTO container with a preferred width value.
   class PreferredWidth
     # Gets or sets the unit of measure used for this preferred width value.
     attr_accessor :type

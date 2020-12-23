@@ -29,10 +29,10 @@ module AsposeWordsCloud
   # Request model for delete_comment operation.
   #
   class DeleteCommentRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
-    # The comment index.
+    # The index of the comment.
     attr_accessor :comment_index
 
     # Original document folder.
@@ -58,8 +58,8 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
-    # @param comment_index The comment index.
+    # @param name The filename of the input document.
+    # @param comment_index The index of the comment.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

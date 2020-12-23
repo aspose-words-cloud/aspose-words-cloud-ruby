@@ -30,11 +30,11 @@ module AsposeWordsCloud
   #
   class DocumentWithFormatTests < BaseTestContext
     def remote_data_folder
-      remote_test_folder + '/DocumentActions/DocumentWithFormat'
+      remote_test_folder + "/DocumentActions/DocumentWithFormat"
     end
 
     def local_file
-      'Common/test_multi_pages.docx'
+      "Common/test_multi_pages.docx"
     end
 
 
@@ -42,11 +42,11 @@ module AsposeWordsCloud
     # Test for getting document with specified format.
     #
     def test_get_document_with_format
-      remote_file_name = 'TestGetDocumentWithFormat.docx'
+      remote_file_name = "TestGetDocumentWithFormat.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
-      request = GetDocumentWithFormatRequest.new(remote_file_name, 'text', remote_data_folder, nil, nil, nil, nil, nil)
+      request = GetDocumentWithFormatRequest.new(remote_file_name, "text", remote_data_folder, nil, nil, nil, nil, nil)
 
       result = @words_api.get_document_with_format(request)
       assert_equal false, result.nil?
@@ -56,11 +56,11 @@ module AsposeWordsCloud
     # Test for getting document with specified format.
     #
     def test_get_document_with_format_and_out_path
-      remote_file_name = 'TestGetDocumentWithFormat.docx'
+      remote_file_name = "TestGetDocumentWithFormat.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
-      request = GetDocumentWithFormatRequest.new(remote_file_name, 'text', remote_data_folder, nil, nil, nil, remote_test_out + '/TestGetDocumentWithFormatAndOutPath.text', nil)
+      request = GetDocumentWithFormatRequest.new(remote_file_name, "text", remote_data_folder, nil, nil, nil, remote_test_out + "/TestGetDocumentWithFormatAndOutPath.text", nil)
 
       result = @words_api.get_document_with_format(request)
       assert_equal false, result.nil?
