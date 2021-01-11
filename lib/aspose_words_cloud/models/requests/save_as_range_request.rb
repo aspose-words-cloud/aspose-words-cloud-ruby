@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="save_as_range_request.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -35,7 +35,7 @@ module AsposeWordsCloud
     # The range start identifier.
     attr_accessor :range_start_identifier
 
-    # The parameters of a new document.
+    # Parameters of a new document.
     attr_accessor :document_parameters
 
     # The range end identifier.
@@ -57,7 +57,7 @@ module AsposeWordsCloud
     # Initializes a new instance.
     # @param name The filename of the input document.
     # @param range_start_identifier The range start identifier.
-    # @param document_parameters The parameters of a new document.
+    # @param document_parameters Parameters of a new document.
     # @param range_end_identifier The range end identifier.
     # @param folder Original document folder.
     # @param storage Original document storage.

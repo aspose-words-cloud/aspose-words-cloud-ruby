@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="save_as_tiff_request.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -32,7 +32,7 @@ module AsposeWordsCloud
     # The filename of the input document.
     attr_accessor :name
 
-    # The save options to TIFF format.
+    # Tiff save options.
     attr_accessor :save_options
 
     # Original document folder.
@@ -104,7 +104,7 @@ module AsposeWordsCloud
     #
     # Initializes a new instance.
     # @param name The filename of the input document.
-    # @param save_options The save options to TIFF format.
+    # @param save_options Tiff save options.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

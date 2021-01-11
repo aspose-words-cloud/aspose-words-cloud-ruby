@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="Classification_tests.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -66,6 +66,16 @@ module AsposeWordsCloud
       assert_equal "Hobbies_&_Interests", result.best_class_name
       assert_equal false, result.best_results.nil?
       assert_equal 3, result.best_results.length
+    end
+
+    #
+    # Test for document classification online.
+    #
+    def test_classify_document_online
+      request = ClassifyDocumentOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), nil, nil, "3", nil)
+
+      result = @words_api.classify_document_online(request)
+      assert_equal false, result.nil?
     end
   end
 end

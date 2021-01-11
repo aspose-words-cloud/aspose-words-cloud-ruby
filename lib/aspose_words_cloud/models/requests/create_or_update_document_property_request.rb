@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="create_or_update_document_property_request.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -35,7 +35,7 @@ module AsposeWordsCloud
     # The name of the property.
     attr_accessor :property_name
 
-    # The property with a new value.
+    # The property with new value.
     attr_accessor :property
 
     # Original document folder.
@@ -63,7 +63,7 @@ module AsposeWordsCloud
     # Initializes a new instance.
     # @param name The filename of the input document.
     # @param property_name The name of the property.
-    # @param property The property with a new value.
+    # @param property The property with new value.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

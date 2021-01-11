@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="update_section_page_setup_request.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -35,7 +35,7 @@ module AsposeWordsCloud
     # The index of the section.
     attr_accessor :section_index
 
-    # The properties of the page setup.
+    # Page setup properties dto.
     attr_accessor :page_setup
 
     # Original document folder.
@@ -63,7 +63,7 @@ module AsposeWordsCloud
     # Initializes a new instance.
     # @param name The filename of the input document.
     # @param section_index The index of the section.
-    # @param page_setup The properties of the page setup.
+    # @param page_setup Page setup properties dto.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

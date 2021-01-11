@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="SplitDocumentToFormat_tests.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -53,6 +53,16 @@ module AsposeWordsCloud
       assert_equal false, result.split_result.nil?
       assert_equal false, result.split_result.pages.nil?
       assert_equal 2, result.split_result.pages.length
+    end
+
+    #
+    # Test for document splitting online.
+    #
+    def test_split_document_online
+      request = SplitDocumentOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), "text", nil, nil, remote_test_out + "/TestSplitDocument.text", 1, 2, nil, nil)
+
+      result = @words_api.split_document_online(request)
+      assert_equal false, result.nil?
     end
   end
 end

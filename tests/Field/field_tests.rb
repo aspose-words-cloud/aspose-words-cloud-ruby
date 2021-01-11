@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="Field_tests.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -62,6 +62,16 @@ module AsposeWordsCloud
     end
 
     #
+    # Test for getting fields online.
+    #
+    def test_get_fields_online
+      request = GetFieldsOnlineRequest.new(File.open(File.join(local_test_folder, field_folder + "/GetField.docx")), "sections/0", nil, nil)
+
+      result = @words_api.get_fields_online(request)
+      assert_equal false, result.nil?
+    end
+
+    #
     # Test for getting fields without node path.
     #
     def test_get_fields_without_node_path
@@ -95,6 +105,16 @@ module AsposeWordsCloud
       assert_equal false, result.nil?
       assert_equal false, result.field.nil?
       assert_equal "1", result.field.result
+    end
+
+    #
+    # Test for getting field by index online.
+    #
+    def test_get_field_online
+      request = GetFieldOnlineRequest.new(File.open(File.join(local_test_folder, field_folder + "/GetField.docx")), 0, "sections/0/paragraphs/0", nil, nil)
+
+      result = @words_api.get_field_online(request)
+      assert_equal false, result.nil?
     end
 
     #
@@ -134,6 +154,17 @@ module AsposeWordsCloud
     end
 
     #
+    # Test for putting field online.
+    #
+    def test_insert_field_online
+      request_field = FieldInsert.new({:FieldCode => "{ NUMPAGES }"})
+      request = InsertFieldOnlineRequest.new(File.open(File.join(local_test_folder, field_folder + "/GetField.docx")), request_field, "sections/0/paragraphs/0", nil, nil, nil, nil, nil, nil)
+
+      result = @words_api.insert_field_online(request)
+      assert_equal false, result.nil?
+    end
+
+    #
     # Test for putting field without node path.
     #
     def test_insert_field_without_node_path
@@ -162,13 +193,24 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, field_folder + "/" + local_file_name), remote_data_folder + "/" + remote_file_name
 
       request_field = FieldUpdate.new({:FieldCode => "{ NUMPAGES }"})
-      request = UpdateFieldRequest.new(remote_file_name, request_field, 0, "sections/0/paragraphs/0", remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request = UpdateFieldRequest.new(remote_file_name, 0, request_field, "sections/0/paragraphs/0", remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_field(request)
       assert_equal false, result.nil?
       assert_equal false, result.field.nil?
       assert_equal "{ NUMPAGES }", result.field.field_code
       assert_equal "0.0.0.0", result.field.node_id
+    end
+
+    #
+    # Test for posting field online.
+    #
+    def test_update_field_online
+      request_field = FieldUpdate.new({:FieldCode => "{ NUMPAGES }"})
+      request = UpdateFieldOnlineRequest.new(File.open(File.join(local_test_folder, field_folder + "/GetField.docx")), request_field, 0, "sections/0/paragraphs/0", nil, nil, nil, nil, nil)
+
+      result = @words_api.update_field_online(request)
+      assert_equal false, result.nil?
     end
 
     #
@@ -190,6 +232,19 @@ module AsposeWordsCloud
     end
 
     #
+    # Test for inserting page numbers field online.
+    #
+    def test_insert_page_numbers_online
+      local_file_name = "test_multi_pages.docx"
+
+      request_page_number = PageNumber.new({:Alignment => "center", :Format => "{PAGE} of {NUMPAGES}"})
+      request = InsertPageNumbersOnlineRequest.new(File.open(File.join(local_test_folder, "Common/" + local_file_name)), request_page_number, nil, nil, nil, nil, nil)
+
+      result = @words_api.insert_page_numbers_online(request)
+      assert_equal false, result.nil?
+    end
+
+    #
     # Test for deleting field.
     #
     def test_delete_field
@@ -201,6 +256,16 @@ module AsposeWordsCloud
       request = DeleteFieldRequest.new(remote_file_name, 0, "sections/0/paragraphs/0", remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       @words_api.delete_field(request)
+    end
+
+    #
+    # Test for deleting field online.
+    #
+    def test_delete_field_online
+      request = DeleteFieldOnlineRequest.new(File.open(File.join(local_test_folder, field_folder + "/GetField.docx")), 0, "sections/0/paragraphs/0", nil, nil, nil, nil, nil)
+
+      result = @words_api.delete_field_online(request)
+      assert_equal false, result.nil?
     end
 
     #
@@ -302,6 +367,18 @@ module AsposeWordsCloud
     end
 
     #
+    # Test for deleting fields online.
+    #
+    def test_delete_document_fields_online
+      local_file_name = "Common/test_multi_pages.docx"
+
+      request = DeleteFieldsOnlineRequest.new(File.open(File.join(local_test_folder, local_file_name)), "", nil, nil, nil, nil, nil)
+
+      result = @words_api.delete_fields_online(request)
+      assert_equal false, result.nil?
+    end
+
+    #
     # Test for posting updated fields.
     #
     def test_update_document_fields
@@ -316,6 +393,18 @@ module AsposeWordsCloud
       assert_equal false, result.nil?
       assert_equal false, result.document.nil?
       assert_equal "TestUpdateDocumentFields.docx", result.document.file_name
+    end
+
+    #
+    # Test for posting updated fields online.
+    #
+    def test_update_document_fields_online
+      local_file = "Common/test_multi_pages.docx"
+
+      request = UpdateFieldsOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), nil, nil, nil)
+
+      result = @words_api.update_fields_online(request)
+      assert_equal false, result.nil?
     end
   end
 end

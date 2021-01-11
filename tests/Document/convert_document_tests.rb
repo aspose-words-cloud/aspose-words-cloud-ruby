@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="ConvertDocument_tests.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -57,6 +57,19 @@ module AsposeWordsCloud
     end
 
     #
+    # Test for converting document online to one of the available formats.
+    #
+    def test_save_as_online
+      local_name = "test_multi_pages.docx"
+
+      request_save_options_data = SaveOptionsData.new({:SaveFormat => "pdf", :FileName => remote_test_out + "/TestSaveAs.pdf"})
+      request = SaveAsOnlineRequest.new(File.open(File.join(local_test_folder, "Common/" + local_name)), request_save_options_data, nil, nil, nil)
+
+      result = @words_api.save_as_online(request)
+      assert_equal false, result.nil?
+    end
+
+    #
     # Test for converting document to one of the available formats.
     #
     def test_save_as_docx
@@ -90,6 +103,19 @@ module AsposeWordsCloud
       assert_equal false, result.nil?
       assert_equal false, result.save_result.nil?
       assert_equal false, result.save_result.dest_document.nil?
+    end
+
+    #
+    # Test for converting document to one of the available formats.
+    #
+    def test_save_as_tiff_online
+      local_name = "test_multi_pages.docx"
+
+      request_save_options = TiffSaveOptionsData.new({:SaveFormat => "tiff", :FileName => remote_test_out + "/abc.tiff"})
+      request = SaveAsTiffOnlineRequest.new(File.open(File.join(local_test_folder, "Common/" + local_name)), request_save_options, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil)
+
+      result = @words_api.save_as_tiff_online(request)
+      assert_equal false, result.nil?
     end
 
     #

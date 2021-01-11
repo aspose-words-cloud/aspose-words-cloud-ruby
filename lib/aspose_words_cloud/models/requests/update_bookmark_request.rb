@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="update_bookmark_request.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -32,11 +32,11 @@ module AsposeWordsCloud
     # The filename of the input document.
     attr_accessor :name
 
-    # The properties of the bookmark.
-    attr_accessor :bookmark_data
-
     # The name of the bookmark.
     attr_accessor :bookmark_name
+
+    # Bookmark data.
+    attr_accessor :bookmark_data
 
     # Original document folder.
     attr_accessor :folder
@@ -62,8 +62,8 @@ module AsposeWordsCloud
     #
     # Initializes a new instance.
     # @param name The filename of the input document.
-    # @param bookmark_data The properties of the bookmark.
     # @param bookmark_name The name of the bookmark.
+    # @param bookmark_data Bookmark data.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -72,10 +72,10 @@ module AsposeWordsCloud
     # @param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
     # @param revision_date_time The date and time to use for revisions.
 
-    def initialize(name, bookmark_data, bookmark_name, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil, revision_author = nil, revision_date_time = nil)
+    def initialize(name, bookmark_name, bookmark_data, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil, revision_author = nil, revision_date_time = nil)
       self.name = name
-      self.bookmark_data = bookmark_data
       self.bookmark_name = bookmark_name
+      self.bookmark_data = bookmark_data
       self.folder = folder
       self.storage = storage
       self.load_encoding = load_encoding

@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="copy_style_request.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -32,7 +32,7 @@ module AsposeWordsCloud
     # The filename of the input document.
     attr_accessor :name
 
-    # The properties of the style.
+    # Style to copy.
     attr_accessor :style_copy
 
     # Original document folder.
@@ -59,7 +59,7 @@ module AsposeWordsCloud
     #
     # Initializes a new instance.
     # @param name The filename of the input document.
-    # @param style_copy The properties of the style.
+    # @param style_copy Style to copy.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

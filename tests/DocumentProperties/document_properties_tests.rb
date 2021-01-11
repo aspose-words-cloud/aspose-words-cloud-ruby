@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="DocumentProperties_tests.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -59,6 +59,16 @@ module AsposeWordsCloud
     end
 
     #
+    # Test for getting document properties online.
+    #
+    def test_get_document_properties_online
+      request = GetDocumentPropertiesOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), nil, nil)
+
+      result = @words_api.get_document_properties_online(request)
+      assert_equal false, result.nil?
+    end
+
+    #
     # A test for GetDocumentProperty.
     #
     def test_get_document_property
@@ -76,6 +86,16 @@ module AsposeWordsCloud
     end
 
     #
+    # A test for GetDocumentProperty online.
+    #
+    def test_get_document_property_online
+      request = GetDocumentPropertyOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), "Author", nil, nil)
+
+      result = @words_api.get_document_property_online(request)
+      assert_equal false, result.nil?
+    end
+
+    #
     # Test for deleting document property.
     #
     def test_delete_document_property
@@ -86,6 +106,16 @@ module AsposeWordsCloud
       request = DeleteDocumentPropertyRequest.new(remote_file_name, "testProp", remote_data_folder, nil, nil, nil, remote_test_out + "/" + remote_file_name, nil, nil)
 
       @words_api.delete_document_property(request)
+    end
+
+    #
+    # Test for deleting document property online.
+    #
+    def test_delete_document_property_online
+      request = DeleteDocumentPropertyOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), "testProp", nil, nil, nil, nil, nil)
+
+      result = @words_api.delete_document_property_online(request)
+      assert_equal false, result.nil?
     end
 
     #
@@ -104,6 +134,17 @@ module AsposeWordsCloud
       assert_equal false, result.document_property.nil?
       assert_equal "AsposeAuthor", result.document_property.name
       assert_equal "Imran Anwar", result.document_property.value
+    end
+
+    #
+    # Test for updating document property online.
+    #
+    def test_update_document_property_online
+      request_property = DocumentPropertyCreateOrUpdate.new({:Value => "Imran Anwar"})
+      request = CreateOrUpdateDocumentPropertyOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), "AsposeAuthor", request_property, nil, nil, nil, nil, nil)
+
+      result = @words_api.create_or_update_document_property_online(request)
+      assert_equal false, result.nil?
     end
   end
 end

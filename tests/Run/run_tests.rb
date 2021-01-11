@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="Run_tests.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -47,12 +47,23 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
       request_run = RunUpdate.new({:Text => "run with text"})
-      request = UpdateRunRequest.new(remote_file_name, request_run, "paragraphs/1", 0, remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request = UpdateRunRequest.new(remote_file_name, "paragraphs/1", 0, request_run, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_run(request)
       assert_equal false, result.nil?
       assert_equal false, result.run.nil?
       assert_equal "run with text", result.run.text
+    end
+
+    #
+    # Test for updating run online.
+    #
+    def test_update_run_online
+      request_run = RunUpdate.new({:Text => "run with text"})
+      request = UpdateRunOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), "paragraphs/1", request_run, 0, nil, nil, nil, nil, nil)
+
+      result = @words_api.update_run_online(request)
+      assert_equal false, result.nil?
     end
 
     #
@@ -74,6 +85,17 @@ module AsposeWordsCloud
     end
 
     #
+    # Test for adding run online.
+    #
+    def test_insert_run_online
+      request_run = RunInsert.new({:Text => "run with text"})
+      request = InsertRunOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), "paragraphs/1", request_run, nil, nil, nil, nil, nil, nil)
+
+      result = @words_api.insert_run_online(request)
+      assert_equal false, result.nil?
+    end
+
+    #
     # Test for deleting run.
     #
     def test_delete_run
@@ -84,6 +106,16 @@ module AsposeWordsCloud
       request = DeleteRunRequest.new(remote_file_name, "paragraphs/1", 0, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       @words_api.delete_run(request)
+    end
+
+    #
+    # Test for deleting run online.
+    #
+    def test_delete_run_online
+      request = DeleteRunOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), "paragraphs/1", 0, nil, nil, nil, nil, nil)
+
+      result = @words_api.delete_run_online(request)
+      assert_equal false, result.nil?
     end
   end
 end

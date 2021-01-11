@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="Revisions_tests.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -55,6 +55,16 @@ module AsposeWordsCloud
     end
 
     #
+    # Test for accepting revisions in document online.
+    #
+    def test_accept_all_revisions_online
+      request = AcceptAllRevisionsOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), nil, nil, nil)
+
+      result = @words_api.accept_all_revisions_online(request)
+      assert_equal false, result.nil?
+    end
+
+    #
     # Test for rejecting revisions in document.
     #
     def test_reject_all_revisions
@@ -68,6 +78,16 @@ module AsposeWordsCloud
       assert_equal false, result.nil?
       assert_equal false, result.result.nil?
       assert_equal false, result.result.dest.nil?
+    end
+
+    #
+    # Test for rejecting revisions in document online.
+    #
+    def test_reject_all_revisions_online
+      request = RejectAllRevisionsOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), nil, nil, nil)
+
+      result = @words_api.reject_all_revisions_online(request)
+      assert_equal false, result.nil?
     end
   end
 end

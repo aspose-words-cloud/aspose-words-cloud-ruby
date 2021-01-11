@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="replace_with_text_request.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -35,7 +35,7 @@ module AsposeWordsCloud
     # The range start identifier.
     attr_accessor :range_start_identifier
 
-    # The text replacement properties.
+    # Model with text for replacement.
     attr_accessor :range_text
 
     # The range end identifier.
@@ -60,7 +60,7 @@ module AsposeWordsCloud
     # Initializes a new instance.
     # @param name The filename of the input document.
     # @param range_start_identifier The range start identifier.
-    # @param range_text The text replacement properties.
+    # @param range_text Model with text for replacement.
     # @param range_end_identifier The range end identifier.
     # @param folder Original document folder.
     # @param storage Original document storage.

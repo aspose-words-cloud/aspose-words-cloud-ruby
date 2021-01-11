@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="MathObject_tests.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -57,6 +57,16 @@ module AsposeWordsCloud
     end
 
     #
+    # Test for getting mathObjects online.
+    #
+    def test_get_office_math_objects_online
+      request = GetOfficeMathObjectsOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), "", nil, nil)
+
+      result = @words_api.get_office_math_objects_online(request)
+      assert_equal false, result.nil?
+    end
+
+    #
     # Test for getting mathObjects without node path.
     #
     def test_get_office_math_objects_without_node_path
@@ -91,6 +101,16 @@ module AsposeWordsCloud
     end
 
     #
+    # Test for getting mathObject online.
+    #
+    def test_get_office_math_object_online
+      request = GetOfficeMathObjectOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 0, "", nil, nil)
+
+      result = @words_api.get_office_math_object_online(request)
+      assert_equal false, result.nil?
+    end
+
+    #
     # Test for getting mathObject without node path.
     #
     def test_get_office_math_object_without_node_path
@@ -114,9 +134,19 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
-      request = RenderMathObjectRequest.new(remote_file_name, "png", 0, "", remote_data_folder, nil, nil, nil, nil)
+      request = RenderMathObjectRequest.new(remote_file_name, "png", 0, "", remote_data_folder, nil, nil, nil, nil, nil)
 
       result = @words_api.render_math_object(request)
+      assert_equal false, result.nil?
+    end
+
+    #
+    # Test for rendering mathObject.
+    #
+    def test_render_math_object_online
+      request = RenderMathObjectOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), "png", 0, "", nil, nil, nil, nil)
+
+      result = @words_api.render_math_object_online(request)
       assert_equal false, result.nil?
     end
 
@@ -128,7 +158,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
-      request = RenderMathObjectRequest.new(remote_file_name, "png", 0, nil, remote_data_folder, nil, nil, nil, nil)
+      request = RenderMathObjectRequest.new(remote_file_name, "png", 0, nil, remote_data_folder, nil, nil, nil, nil, nil)
 
       result = @words_api.render_math_object(request)
       assert_equal false, result.nil?
@@ -145,6 +175,16 @@ module AsposeWordsCloud
       request = DeleteOfficeMathObjectRequest.new(remote_file_name, 0, "", remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       @words_api.delete_office_math_object(request)
+    end
+
+    #
+    # Test for deleting mathObject online.
+    #
+    def test_delete_office_math_object_online
+      request = DeleteOfficeMathObjectOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 0, "", nil, nil, nil, nil, nil)
+
+      result = @words_api.delete_office_math_object_online(request)
+      assert_equal false, result.nil?
     end
 
     #
