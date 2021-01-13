@@ -382,7 +382,7 @@ module AsposeWordsCloud
         post_body = @api_client.object_to_http_body(request.style_apply)
         auth_names = ['JWT']
 
-        data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
@@ -13645,7 +13645,7 @@ module AsposeWordsCloud
         post_body = @api_client.object_to_http_body(request.header_footer_type)
         auth_names = ['JWT']
 
-        data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
@@ -16191,7 +16191,7 @@ module AsposeWordsCloud
         post_body = nil
         auth_names = ['JWT']
 
-        data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
@@ -16207,7 +16207,7 @@ module AsposeWordsCloud
 
     # Renders a DrawingObject to the specified format.
     # @param request RenderDrawingObjectOnlineRequest
-    # @return [RenderDrawingObjectOnlineResponse]
+    # @return [File]
     def render_drawing_object_online(request)
         begin
         data, _status_code, _headers = render_drawing_object_online_with_http_info(request)
@@ -16224,8 +16224,8 @@ module AsposeWordsCloud
 
     # Renders a DrawingObject to the specified format.
     # @param request RenderDrawingObjectOnlineRequest
-    # @return [Array<(RenderDrawingObjectOnlineResponse, Fixnum, Hash)>]
-    # RenderDrawingObjectOnlineResponse, response status code and response headers
+    # @return [Array<(File, Fixnum, Hash)>]
+    # File, response status code and response headers
     private def render_drawing_object_online_with_http_info(request)
         raise ArgumentError, 'Incorrect request type' unless request.is_a? RenderDrawingObjectOnlineRequest
 
@@ -16272,7 +16272,7 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'RenderDrawingObjectOnlineResponse')
+                                                        return_type: 'File')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#render_drawing_object_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -16343,7 +16343,7 @@ module AsposeWordsCloud
         post_body = nil
         auth_names = ['JWT']
 
-        data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
@@ -16359,7 +16359,7 @@ module AsposeWordsCloud
 
     # Renders an OfficeMath object to the specified format.
     # @param request RenderMathObjectOnlineRequest
-    # @return [RenderMathObjectOnlineResponse]
+    # @return [File]
     def render_math_object_online(request)
         begin
         data, _status_code, _headers = render_math_object_online_with_http_info(request)
@@ -16376,8 +16376,8 @@ module AsposeWordsCloud
 
     # Renders an OfficeMath object to the specified format.
     # @param request RenderMathObjectOnlineRequest
-    # @return [Array<(RenderMathObjectOnlineResponse, Fixnum, Hash)>]
-    # RenderMathObjectOnlineResponse, response status code and response headers
+    # @return [Array<(File, Fixnum, Hash)>]
+    # File, response status code and response headers
     private def render_math_object_online_with_http_info(request)
         raise ArgumentError, 'Incorrect request type' unless request.is_a? RenderMathObjectOnlineRequest
 
@@ -16424,7 +16424,7 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'RenderMathObjectOnlineResponse')
+                                                        return_type: 'File')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#render_math_object_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -16643,7 +16643,7 @@ module AsposeWordsCloud
         post_body = nil
         auth_names = ['JWT']
 
-        data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
@@ -16659,7 +16659,7 @@ module AsposeWordsCloud
 
     # Renders a paragraph to the specified format.
     # @param request RenderParagraphOnlineRequest
-    # @return [RenderParagraphOnlineResponse]
+    # @return [File]
     def render_paragraph_online(request)
         begin
         data, _status_code, _headers = render_paragraph_online_with_http_info(request)
@@ -16676,8 +16676,8 @@ module AsposeWordsCloud
 
     # Renders a paragraph to the specified format.
     # @param request RenderParagraphOnlineRequest
-    # @return [Array<(RenderParagraphOnlineResponse, Fixnum, Hash)>]
-    # RenderParagraphOnlineResponse, response status code and response headers
+    # @return [Array<(File, Fixnum, Hash)>]
+    # File, response status code and response headers
     private def render_paragraph_online_with_http_info(request)
         raise ArgumentError, 'Incorrect request type' unless request.is_a? RenderParagraphOnlineRequest
 
@@ -16724,7 +16724,7 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'RenderParagraphOnlineResponse')
+                                                        return_type: 'File')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#render_paragraph_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -16795,7 +16795,7 @@ module AsposeWordsCloud
         post_body = nil
         auth_names = ['JWT']
 
-        data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        data, status_code, headers = @api_client.call_api(:GET, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
@@ -16811,7 +16811,7 @@ module AsposeWordsCloud
 
     # Renders a table to the specified format.
     # @param request RenderTableOnlineRequest
-    # @return [RenderTableOnlineResponse]
+    # @return [File]
     def render_table_online(request)
         begin
         data, _status_code, _headers = render_table_online_with_http_info(request)
@@ -16828,8 +16828,8 @@ module AsposeWordsCloud
 
     # Renders a table to the specified format.
     # @param request RenderTableOnlineRequest
-    # @return [Array<(RenderTableOnlineResponse, Fixnum, Hash)>]
-    # RenderTableOnlineResponse, response status code and response headers
+    # @return [Array<(File, Fixnum, Hash)>]
+    # File, response status code and response headers
     private def render_table_online_with_http_info(request)
         raise ArgumentError, 'Incorrect request type' unless request.is_a? RenderTableOnlineRequest
 
@@ -16876,7 +16876,7 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'RenderTableOnlineResponse')
+                                                        return_type: 'File')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#render_table_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -18345,7 +18345,7 @@ module AsposeWordsCloud
         post_body = @api_client.object_to_http_body(request.border_properties)
         auth_names = ['JWT']
 
-        data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
@@ -18653,7 +18653,7 @@ module AsposeWordsCloud
         post_body = nil
         auth_names = ['JWT']
 
-        data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
@@ -18809,7 +18809,7 @@ module AsposeWordsCloud
         post_body = @api_client.object_to_http_body(request.field)
         auth_names = ['JWT']
 
-        data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
@@ -19098,7 +19098,7 @@ module AsposeWordsCloud
         post_body = @api_client.object_to_http_body(request.footnote_dto)
         auth_names = ['JWT']
 
-        data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
@@ -19251,7 +19251,7 @@ module AsposeWordsCloud
         post_body = @api_client.object_to_http_body(request.form_field)
         auth_names = ['JWT']
 
-        data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
@@ -19712,7 +19712,7 @@ module AsposeWordsCloud
         post_body = @api_client.object_to_http_body(request.paragraph_format_dto)
         auth_names = ['JWT']
 
-        data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
@@ -19865,7 +19865,7 @@ module AsposeWordsCloud
         post_body = @api_client.object_to_http_body(request.list_format_dto)
         auth_names = ['JWT']
 
-        data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
@@ -20020,7 +20020,7 @@ module AsposeWordsCloud
         post_body = @api_client.object_to_http_body(request.run)
         auth_names = ['JWT']
 
-        data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
@@ -20099,7 +20099,7 @@ module AsposeWordsCloud
         post_body = @api_client.object_to_http_body(request.font_dto)
         auth_names = ['JWT']
 
-        data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
@@ -20636,7 +20636,7 @@ module AsposeWordsCloud
         post_body = @api_client.object_to_http_body(request.format)
         auth_names = ['JWT']
 
-        data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
@@ -20791,7 +20791,7 @@ module AsposeWordsCloud
         post_body = @api_client.object_to_http_body(request.properties)
         auth_names = ['JWT']
 
-        data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
@@ -20946,7 +20946,7 @@ module AsposeWordsCloud
         post_body = @api_client.object_to_http_body(request.format)
         auth_names = ['JWT']
 
-        data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
                                                         header_params: header_params,
                                                         query_params: query_params,
                                                         form_params: form_params,
