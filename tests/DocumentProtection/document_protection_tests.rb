@@ -51,8 +51,6 @@ module AsposeWordsCloud
 
       result = @words_api.protect_document(request)
       assert_equal false, result.nil?
-      assert_equal false, result.protection_data.nil?
-      assert_equal "ReadOnly", result.protection_data.protection_type
     end
 
     #
@@ -105,8 +103,6 @@ module AsposeWordsCloud
 
       result = @words_api.unprotect_document(request)
       assert_equal false, result.nil?
-      assert_equal false, result.protection_data.nil?
-      assert_equal "NoProtection", result.protection_data.protection_type
     end
 
     #

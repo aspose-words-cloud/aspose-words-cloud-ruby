@@ -52,8 +52,6 @@ module AsposeWordsCloud
 
       result = @words_api.save_as(request)
       assert_equal false, result.nil?
-      assert_equal false, result.save_result.nil?
-      assert_equal false, result.save_result.dest_document.nil?
     end
 
     #
@@ -83,8 +81,6 @@ module AsposeWordsCloud
 
       result = @words_api.save_as(request)
       assert_equal false, result.nil?
-      assert_equal false, result.save_result.nil?
-      assert_equal false, result.save_result.dest_document.nil?
     end
 
     #
@@ -101,8 +97,6 @@ module AsposeWordsCloud
 
       result = @words_api.save_as_tiff(request)
       assert_equal false, result.nil?
-      assert_equal false, result.save_result.nil?
-      assert_equal false, result.save_result.dest_document.nil?
     end
 
     #

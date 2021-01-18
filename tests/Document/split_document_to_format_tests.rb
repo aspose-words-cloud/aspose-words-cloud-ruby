@@ -50,9 +50,6 @@ module AsposeWordsCloud
 
       result = @words_api.split_document(request)
       assert_equal false, result.nil?
-      assert_equal false, result.split_result.nil?
-      assert_equal false, result.split_result.pages.nil?
-      assert_equal 2, result.split_result.pages.length
     end
 
     #

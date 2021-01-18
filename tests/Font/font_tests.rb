@@ -46,7 +46,6 @@ module AsposeWordsCloud
 
       result = @words_api.get_available_fonts(request)
       assert_equal false, result.nil?
-      assert_equal false, result.system_fonts.nil?
     end
   end
 end

@@ -50,8 +50,6 @@ module AsposeWordsCloud
 
       result = @words_api.accept_all_revisions(request)
       assert_equal false, result.nil?
-      assert_equal false, result.result.nil?
-      assert_equal false, result.result.dest.nil?
     end
 
     #
@@ -76,8 +74,6 @@ module AsposeWordsCloud
 
       result = @words_api.reject_all_revisions(request)
       assert_equal false, result.nil?
-      assert_equal false, result.result.nil?
-      assert_equal false, result.result.dest.nil?
     end
 
     #

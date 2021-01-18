@@ -50,9 +50,6 @@ module AsposeWordsCloud
 
       result = @words_api.get_styles(request)
       assert_equal false, result.nil?
-      assert_equal false, result.styles.nil?
-      assert_equal 22, result.styles.length
-      assert_equal "Default Paragraph Font", result.styles[0].name
     end
 
     #
@@ -77,8 +74,6 @@ module AsposeWordsCloud
 
       result = @words_api.get_style(request)
       assert_equal false, result.nil?
-      assert_equal false, result.style.nil?
-      assert_equal "Heading 1", result.style.name
     end
 
     #
@@ -104,8 +99,6 @@ module AsposeWordsCloud
 
       result = @words_api.update_style(request)
       assert_equal false, result.nil?
-      assert_equal false, result.style.nil?
-      assert_equal "My Style", result.style.name
     end
 
     #
@@ -132,8 +125,6 @@ module AsposeWordsCloud
 
       result = @words_api.insert_style(request)
       assert_equal false, result.nil?
-      assert_equal false, result.style.nil?
-      assert_equal "My Style", result.style.name
     end
 
     #
@@ -160,8 +151,6 @@ module AsposeWordsCloud
 
       result = @words_api.copy_style(request)
       assert_equal false, result.nil?
-      assert_equal false, result.style.nil?
-      assert_equal "Heading 1_0", result.style.name
     end
 
     #
@@ -187,8 +176,6 @@ module AsposeWordsCloud
 
       result = @words_api.get_style_from_document_element(request)
       assert_equal false, result.nil?
-      assert_equal false, result.style.nil?
-      assert_equal "TOC 1", result.style.name
     end
 
     #

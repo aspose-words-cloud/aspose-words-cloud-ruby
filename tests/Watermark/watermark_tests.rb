@@ -52,8 +52,6 @@ module AsposeWordsCloud
 
       result = @words_api.insert_watermark_image(request)
       assert_equal false, result.nil?
-      assert_equal false, result.document.nil?
-      assert_equal "TestInsertWatermarkImage.docx", result.document.file_name
     end
 
     #
@@ -79,8 +77,6 @@ module AsposeWordsCloud
 
       result = @words_api.insert_watermark_text(request)
       assert_equal false, result.nil?
-      assert_equal false, result.document.nil?
-      assert_equal "TestInsertWatermarkText.docx", result.document.file_name
     end
 
     #
@@ -106,8 +102,6 @@ module AsposeWordsCloud
 
       result = @words_api.delete_watermark(request)
       assert_equal false, result.nil?
-      assert_equal false, result.document.nil?
-      assert_equal "TestDeleteWatermark.docx", result.document.file_name
     end
 
     #

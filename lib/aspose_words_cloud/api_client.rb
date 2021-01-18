@@ -30,6 +30,7 @@ require 'tempfile'
 require 'uri'
 require 'faraday'
 require 'mimemagic'
+require 'multipart_parser/reader'
 require_relative 'version'
 require_relative 'api_error'
 
@@ -93,8 +94,12 @@ module AsposeWordsCloud
         end
       end
 
+      if opts[:multipart_response] == true
+        data = deserialize_multipart(response)
+      else
+        data = deserialize(response.body, opts[:return_type]) if opts[:return_type]
+      end
 
-      data = deserialize(response, opts[:return_type]) if opts[:return_type]
       [data, response.status, response.headers]
     end
 
@@ -167,11 +172,9 @@ module AsposeWordsCloud
 
     # Deserialize the response to the given return type.
     #
-    # @param [Response] response HTTP response
+    # @param [String] response HTTP response
     # @param [String] return_type some examples: "User", "Array[User]", "Hash[String,Integer]"
-    def deserialize(response, return_type)
-      body = response.body
-
+    def deserialize(body, return_type)
       # handle file downloading - return the File instance processed in request callbacks
       # note that response body is empty when the file is written in chunks in request on_body callback
       return @tempfile if return_type == 'File'
@@ -180,11 +183,6 @@ module AsposeWordsCloud
 
       # return response body directly for String return type
       return body if return_type == 'String'
-
-      # ensuring a default content type
-      content_type = response.headers['Content-Type'] || 'application/json'
-
-      raise "Content-Type is not supported: #{content_type}" unless json_mime?(content_type)
 
       begin
         data = JSON.parse("[#{body}]", :symbolize_names => true)[0]
@@ -197,6 +195,31 @@ module AsposeWordsCloud
       end
 
       convert_to_type data, return_type
+    end
+
+    # Deserialize multipart the response to the given return type.
+    #
+    # @param [Response] response HTTP response
+    def deserialize_multipart(response)
+      parts={}
+      reader = MultipartParser::Reader.new(MultipartParser::Reader::extract_boundary_value('multipart/form-data; charset=utf-8; boundary=---------------------------9051914041544843365972754266'))
+
+      reader.on_part do |part|
+        pn = part.name.downcase.to_sym
+        part.on_data do |partial_data|
+          if parts[pn].nil?
+            parts[pn] = partial_data
+          else
+            parts[pn] = [parts[pn]] unless parts[pn].kind_of?(Array)
+            parts[pn] << partial_data
+          end
+        end
+      end
+
+      reader.write response.body
+      reader.ended? or raise Exception, 'Truncated multipart message'
+
+      parts
     end
 
     # Convert data to the given return type.

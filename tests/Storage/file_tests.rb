@@ -48,9 +48,6 @@ module AsposeWordsCloud
 
       result = @words_api.upload_file(request)
       assert_equal false, result.nil?
-      assert_equal false, result.uploaded.nil?
-      assert_equal 1, result.uploaded.length
-      assert_equal "TestUploadFile.docx", result.uploaded[0]
     end
 
     #
