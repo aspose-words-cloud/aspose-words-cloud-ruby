@@ -48,7 +48,6 @@ module AsposeWordsCloud
 
       result = @words_api.replace_text(request)
       assert_equal false, result.nil?
-      assert_equal 3, result.matches
     end
 
     #
@@ -77,11 +76,6 @@ module AsposeWordsCloud
 
       result = @words_api.search(request)
       assert_equal false, result.nil?
-      assert_equal false, result.search_results.nil?
-      assert_equal false, result.search_results.results_list.nil?
-      assert_equal 23, result.search_results.results_list.length
-      assert_equal false, result.search_results.results_list[0].range_start.nil?
-      assert_equal 65, result.search_results.results_list[0].range_start.offset
     end
 
     #

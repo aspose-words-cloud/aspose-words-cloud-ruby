@@ -36,6 +36,7 @@ module AsposeWordsCloud
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
       require_all '../models/requests'
+      require_all '../models/responses'
       request_token
     end
 
@@ -105,6 +106,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#accept_all_revisions\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -167,12 +169,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'AcceptAllRevisionsOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#accept_all_revisions_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = AcceptAllRevisionsOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'RevisionsModificationResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Appends documents to the original document.
@@ -245,6 +252,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#append_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -312,12 +320,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'AppendDocumentOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#append_document_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = AppendDocumentOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'DocumentResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Applies a style to the document node.
@@ -393,6 +406,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#apply_style_to_document_element\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -463,12 +477,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'ApplyStyleToDocumentElementOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#apply_style_to_document_element_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = ApplyStyleToDocumentElementOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'WordsResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Executes the report generation process using the specified document template and the external data source in XML, JSON or CSV format.
@@ -543,6 +562,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#build_report\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -614,6 +634,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#build_report_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -678,6 +699,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#classify\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -748,6 +770,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#classify_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -816,6 +839,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#classify_document_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -887,6 +911,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#compare_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -952,12 +977,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'CompareDocumentOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#compare_document_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = CompareDocumentOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'DocumentResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Converts a document on a local drive to the specified format.
@@ -1028,6 +1058,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#convert_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -1097,6 +1128,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#copy_file\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -1165,6 +1197,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#copy_folder\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -1238,6 +1271,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#copy_style\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -1305,12 +1339,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'CopyStyleOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#copy_style_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = CopyStyleOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'StyleResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Supported extensions: ".doc", ".docx", ".docm", ".dot", ".dotm", ".dotx", ".flatopc", ".fopc", ".flatopc_macro", ".fopc_macro", ".flatopc_template", ".fopc_template", ".flatopc_template_macro", ".fopc_template_macro", ".wordml", ".wml", ".rtf".
@@ -1373,6 +1412,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#create_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -1437,6 +1477,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#create_folder\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -1513,6 +1554,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#create_or_update_document_property\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -1583,12 +1625,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'CreateOrUpdateDocumentPropertyOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#create_or_update_document_property_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = CreateOrUpdateDocumentPropertyOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'DocumentPropertyResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Removes paragraph tab stops from the document node.
@@ -1661,6 +1708,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#delete_all_paragraph_tab_stops\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -1727,12 +1775,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'DeleteAllParagraphTabStopsOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_all_paragraph_tab_stops_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = DeleteAllParagraphTabStopsOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'TabStopsResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # The 'nodePath' parameter should refer to a paragraph, a cell or a row.
@@ -1807,6 +1860,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#delete_border\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -1875,12 +1929,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'DeleteBorderOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_border_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = DeleteBorderOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'BorderResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # The 'nodePath' parameter should refer to a paragraph, a cell or a row.
@@ -1952,6 +2011,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#delete_borders\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -2017,12 +2077,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'DeleteBordersOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_borders_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = DeleteBordersOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'BordersResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Removes a comment from the document.
@@ -2095,6 +2160,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#delete_comment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -2167,6 +2233,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#delete_comment_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -2240,6 +2307,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#delete_document_property\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -2312,6 +2380,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#delete_document_property_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -2386,6 +2455,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#delete_drawing_object\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -2459,6 +2529,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#delete_drawing_object_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -2533,6 +2604,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#delete_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -2606,6 +2678,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#delete_field_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -2677,6 +2750,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#delete_fields\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -2747,6 +2821,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#delete_fields_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -2812,6 +2887,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#delete_file\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -2877,6 +2953,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#delete_folder\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -2951,6 +3028,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#delete_footnote\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -3024,6 +3102,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#delete_footnote_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -3098,6 +3177,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#delete_form_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -3171,6 +3251,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#delete_form_field_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -3247,6 +3328,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#delete_header_footer\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -3322,6 +3404,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#delete_header_footer_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -3396,6 +3479,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#delete_headers_footers\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -3469,6 +3553,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#delete_headers_footers_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -3539,6 +3624,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#delete_macros\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -3608,6 +3694,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#delete_macros_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -3682,6 +3769,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#delete_office_math_object\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -3755,6 +3843,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#delete_office_math_object_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -3829,6 +3918,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#delete_paragraph\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -3904,6 +3994,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#delete_paragraph_list_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -3972,12 +4063,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'DeleteParagraphListFormatOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_paragraph_list_format_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = DeleteParagraphListFormatOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'ParagraphListFormatResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Removes a paragraph from the document node.
@@ -4050,6 +4146,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#delete_paragraph_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -4126,6 +4223,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#delete_paragraph_tab_stop\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -4195,12 +4293,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'DeleteParagraphTabStopOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_paragraph_tab_stop_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = DeleteParagraphTabStopOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'TabStopsResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Removes a Run object from the paragraph.
@@ -4276,6 +4379,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#delete_run\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -4351,6 +4455,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#delete_run_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -4424,6 +4529,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#delete_section\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -4496,6 +4602,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#delete_section_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -4570,6 +4677,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#delete_table\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -4646,6 +4754,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#delete_table_cell\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -4721,6 +4830,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#delete_table_cell_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -4794,6 +4904,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#delete_table_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -4870,6 +4981,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#delete_table_row\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -4945,6 +5057,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#delete_table_row_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -5016,6 +5129,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#delete_watermark\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -5080,12 +5194,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'DeleteWatermarkOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_watermark_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = DeleteWatermarkOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'DocumentResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Download file.
@@ -5151,6 +5270,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#download_file\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -5225,6 +5345,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#execute_mail_merge\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -5295,6 +5416,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#execute_mail_merge_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -5356,6 +5478,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_available_fonts\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -5427,6 +5550,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_bookmark_by_name\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -5496,6 +5620,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_bookmark_by_name_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -5564,6 +5689,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_bookmarks\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -5630,6 +5756,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_bookmarks_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -5702,6 +5829,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_border\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -5772,6 +5900,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_border_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -5841,6 +5970,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_borders\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -5908,6 +6038,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_borders_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -5979,6 +6110,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_comment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -6048,6 +6180,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_comment_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -6116,6 +6249,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_comments\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -6182,6 +6316,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_comments_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -6250,6 +6385,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -6322,6 +6458,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_drawing_object_by_index\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -6392,6 +6529,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_drawing_object_by_index_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -6464,6 +6602,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_drawing_object_image_data\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -6534,6 +6673,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_drawing_object_image_data_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -6606,6 +6746,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_drawing_object_ole_data\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -6676,6 +6817,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_drawing_object_ole_data_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -6745,6 +6887,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_drawing_objects\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -6812,6 +6955,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_drawing_objects_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -6881,6 +7025,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_field_names\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -6948,6 +7093,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_field_names_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -7019,6 +7165,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_hyperlink_by_index\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -7088,6 +7235,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_hyperlink_by_index_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -7156,6 +7304,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_hyperlinks\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -7222,6 +7371,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_hyperlinks_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -7290,6 +7440,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_properties\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -7356,6 +7507,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_properties_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -7427,6 +7579,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_property\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -7496,6 +7649,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_property_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -7564,6 +7718,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_protection\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -7630,6 +7785,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_protection_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -7701,6 +7857,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_statistics\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -7770,6 +7927,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_statistics_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -7843,6 +8001,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_document_with_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -7915,6 +8074,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -7985,6 +8145,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_field_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -8054,6 +8215,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_fields\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -8121,6 +8283,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_fields_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -8186,6 +8349,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_files_list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -8258,6 +8422,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_footnote\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -8328,6 +8493,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_footnote_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -8397,6 +8563,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_footnotes\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -8464,6 +8631,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_footnotes_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -8536,6 +8704,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_form_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -8606,6 +8775,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_form_field_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -8675,6 +8845,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_form_fields\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -8742,6 +8913,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_form_fields_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -8814,6 +8986,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_header_footer\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -8889,6 +9062,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_header_footer_of_section\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -8962,6 +9136,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_header_footer_of_section_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -9032,6 +9207,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_header_footer_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -9104,6 +9280,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_header_footers\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -9174,6 +9351,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_header_footers_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -9245,6 +9423,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -9314,6 +9493,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_list_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -9382,6 +9562,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_lists\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -9448,6 +9629,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_lists_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -9520,6 +9702,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_office_math_object\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -9590,6 +9773,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_office_math_object_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -9659,6 +9843,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_office_math_objects\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -9726,6 +9911,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_office_math_objects_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -9798,6 +9984,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_paragraph\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -9870,6 +10057,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_paragraph_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -9940,6 +10128,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_paragraph_format_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -10012,6 +10201,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_paragraph_list_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -10082,6 +10272,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_paragraph_list_format_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -10152,6 +10343,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_paragraph_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -10221,6 +10413,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_paragraphs\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -10288,6 +10481,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_paragraphs_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -10360,6 +10554,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_paragraph_tab_stops\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -10430,6 +10625,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_paragraph_tab_stops_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -10502,6 +10698,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_range_text\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -10572,6 +10769,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_range_text_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -10646,6 +10844,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_run\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -10720,6 +10919,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_run_font\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -10792,6 +10992,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_run_font_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -10864,6 +11065,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_run_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -10935,6 +11137,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_runs\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -11004,6 +11207,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_runs_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -11075,6 +11279,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_section\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -11144,6 +11349,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_section_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -11215,6 +11421,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_section_page_setup\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -11284,6 +11491,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_section_page_setup_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -11352,6 +11560,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_sections\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -11418,6 +11627,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_sections_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -11489,6 +11699,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_style\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -11560,6 +11771,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_style_from_document_element\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -11629,6 +11841,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_style_from_document_element_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -11698,6 +11911,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_style_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -11766,6 +11980,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_styles\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -11832,6 +12047,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_styles_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -11904,6 +12120,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_table\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -11978,6 +12195,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_table_cell\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -12052,6 +12270,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_table_cell_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -12124,6 +12343,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_table_cell_format_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -12196,6 +12416,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_table_cell_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -12266,6 +12487,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_table_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -12338,6 +12560,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_table_properties\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -12408,6 +12631,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_table_properties_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -12482,6 +12706,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_table_row\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -12556,6 +12781,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_table_row_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -12628,6 +12854,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_table_row_format_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -12700,6 +12927,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_table_row_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -12769,6 +12997,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_tables\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -12836,6 +13065,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#get_tables_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -12909,6 +13139,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#insert_comment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -12976,12 +13207,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'InsertCommentOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_comment_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = InsertCommentOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'CommentResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Inserts a new DrawingObject to the document node.
@@ -13059,6 +13295,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#insert_drawing_object\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -13130,12 +13367,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'InsertDrawingObjectOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_drawing_object_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = InsertDrawingObjectOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'DrawingObjectResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Inserts a new field to the document node.
@@ -13210,6 +13452,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#insert_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -13279,12 +13522,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'InsertFieldOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_field_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = InsertFieldOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'FieldResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Inserts a new footnote to the document node.
@@ -13358,6 +13606,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#insert_footnote\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -13426,12 +13675,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'InsertFootnoteOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_footnote_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = InsertFootnoteOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'FootnoteResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Inserts a new form field to the document node.
@@ -13506,6 +13760,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#insert_form_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -13575,12 +13830,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'InsertFormFieldOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_form_field_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = InsertFormFieldOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'FormFieldResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Inserts a new HeaderFooter object to the document section.
@@ -13656,6 +13916,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#insert_header_footer\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -13726,12 +13987,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'InsertHeaderFooterOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_header_footer_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = InsertHeaderFooterOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'HeaderFooterResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Inserts a new list to the document.
@@ -13804,6 +14070,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#insert_list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -13871,12 +14138,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'InsertListOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_list_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = InsertListOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'ListResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Inserts a new or updates an existing paragraph tab stop in the document node.
@@ -13951,6 +14223,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#insert_or_update_paragraph_tab_stop\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -14020,12 +14293,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'InsertOrUpdateParagraphTabStopOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_or_update_paragraph_tab_stop_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = InsertOrUpdateParagraphTabStopOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'TabStopsResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Inserts page numbers to the document.
@@ -14098,6 +14376,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#insert_page_numbers\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -14165,12 +14444,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'InsertPageNumbersOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_page_numbers_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = InsertPageNumbersOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'DocumentResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Inserts a new paragraph to the document node.
@@ -14245,6 +14529,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#insert_paragraph\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -14314,12 +14599,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'InsertParagraphOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_paragraph_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = InsertParagraphOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'ParagraphResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Inserts a new Run object to the paragraph.
@@ -14396,6 +14686,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#insert_run\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -14467,12 +14758,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'InsertRunOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_run_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = InsertRunOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'RunResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Inserts a new style to the document.
@@ -14545,6 +14841,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#insert_style\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -14612,12 +14909,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'InsertStyleOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_style_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = InsertStyleOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'StyleResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Inserts a new table to the document node.
@@ -14691,6 +14993,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#insert_table\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -14767,6 +15070,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#insert_table_cell\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -14837,12 +15141,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'InsertTableCellOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_table_cell_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = InsertTableCellOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'TableCellResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Inserts a new table to the document node.
@@ -14910,12 +15219,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'InsertTableOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_table_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = InsertTableOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'TableResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Inserts a new row to the table.
@@ -14991,6 +15305,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#insert_table_row\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -15061,12 +15376,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'InsertTableRowOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_table_row_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = InsertTableRowOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'TableRowResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Inserts a new watermark image to the document.
@@ -15140,6 +15460,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#insert_watermark_image\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -15209,12 +15530,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'InsertWatermarkImageOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_watermark_image_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = InsertWatermarkImageOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'DocumentResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Inserts a new watermark text to the document.
@@ -15287,6 +15613,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#insert_watermark_text\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -15354,12 +15681,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'InsertWatermarkTextOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#insert_watermark_text_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = InsertWatermarkTextOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'DocumentResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Downloads a document from the Web using URL and saves it to cloud storage in the specified format.
@@ -15423,6 +15755,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#load_web_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -15492,6 +15825,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#move_file\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -15560,6 +15894,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#move_folder\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -15632,6 +15967,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#optimize_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -15704,6 +16040,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#optimize_document_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -15775,6 +16112,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#protect_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -15840,12 +16178,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'ProtectDocumentOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#protect_document_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = ProtectDocumentOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'ProtectionDataResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Rejects all revisions in the document.
@@ -15914,6 +16257,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#reject_all_revisions\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -15976,12 +16320,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'RejectAllRevisionsOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#reject_all_revisions_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = RejectAllRevisionsOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'RevisionsModificationResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Removes a range from the document.
@@ -16054,6 +16403,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#remove_range\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -16120,12 +16470,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'RemoveRangeOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#remove_range_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = RemoveRangeOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'DocumentResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Renders a DrawingObject to the specified format.
@@ -16202,6 +16557,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#render_drawing_object\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -16277,6 +16633,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#render_drawing_object_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -16354,6 +16711,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#render_math_object\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -16429,6 +16787,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#render_math_object_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -16504,6 +16863,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#render_page\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -16577,6 +16937,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#render_page_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -16654,6 +17015,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#render_paragraph\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -16729,6 +17091,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#render_paragraph_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -16806,6 +17169,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#render_table\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -16881,6 +17245,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#render_table_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -16954,6 +17319,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#replace_text\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -17021,12 +17387,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'ReplaceTextOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#replace_text_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = ReplaceTextOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'ReplaceTextResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Replaces a range with text in the document.
@@ -17101,6 +17472,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#replace_with_text\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -17170,12 +17542,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'ReplaceWithTextOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#replace_with_text_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = ReplaceWithTextOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'DocumentResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Clears the font cache.
@@ -17234,6 +17611,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#reset_cache\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -17305,6 +17683,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#save_as\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -17370,12 +17749,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'SaveAsOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#save_as_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = SaveAsOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'SaveResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Saves a range as a new document.
@@ -17449,6 +17833,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#save_as_range\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -17517,12 +17902,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'SaveAsRangeOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#save_as_range_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = SaveAsRangeOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'DocumentResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Converts a document in cloud storage to TIFF format using detailed conversion settings.
@@ -17610,6 +18000,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#save_as_tiff\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -17692,12 +18083,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'SaveAsTiffOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#save_as_tiff_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = SaveAsTiffOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'SaveResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Searches text, specified by the regular expression, in the document.
@@ -17768,6 +18164,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#search\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -17837,6 +18234,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#search_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -17913,6 +18311,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#split_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -17982,12 +18381,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'SplitDocumentOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#split_document_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = SplitDocumentOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'SplitDocumentResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Removes protection from the document.
@@ -18058,6 +18462,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#unprotect_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -18123,12 +18528,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'UnprotectDocumentOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#unprotect_document_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = UnprotectDocumentOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'ProtectionDataResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Updates a bookmark in the document.
@@ -18204,6 +18614,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#update_bookmark\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -18274,12 +18685,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'UpdateBookmarkOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_bookmark_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = UpdateBookmarkOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'BookmarkResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # The 'nodePath' parameter should refer to a paragraph, a cell or a row.
@@ -18356,6 +18772,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#update_border\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -18427,12 +18844,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'UpdateBorderOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_border_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = UpdateBorderOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'BorderResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Updates a comment in the document.
@@ -18508,6 +18930,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#update_comment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -18578,12 +19001,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'UpdateCommentOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_comment_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = UpdateCommentOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'CommentResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Updates a DrawingObject in the document node.
@@ -18664,6 +19092,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#update_drawing_object\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -18738,12 +19167,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'UpdateDrawingObjectOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_drawing_object_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = UpdateDrawingObjectOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'DrawingObjectResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Updates a field in the document node.
@@ -18820,6 +19254,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#update_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -18891,12 +19326,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'UpdateFieldOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_field_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = UpdateFieldOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'FieldResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Reevaluates field values in the document.
@@ -18965,6 +19405,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#update_fields\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -19027,12 +19468,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'UpdateFieldsOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_fields_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = UpdateFieldsOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'DocumentResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Updates a footnote in the document node.
@@ -19109,6 +19555,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#update_footnote\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -19180,12 +19627,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'UpdateFootnoteOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_footnote_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = UpdateFootnoteOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'FootnoteResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Updates a form field in the document node.
@@ -19262,6 +19714,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#update_form_field\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -19333,12 +19786,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'UpdateFormFieldOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_form_field_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = UpdateFormFieldOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'FormFieldResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Updates a list in the document.
@@ -19414,6 +19872,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#update_list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -19493,6 +19952,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#update_list_level\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -19566,12 +20026,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'UpdateListLevelOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_list_level_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = UpdateListLevelOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'ListResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Updates a list in the document.
@@ -19641,12 +20106,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'UpdateListOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_list_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = UpdateListOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'ListResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Updates the formatting properties of a paragraph in the document node.
@@ -19723,6 +20193,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#update_paragraph_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -19794,12 +20265,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'UpdateParagraphFormatOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_paragraph_format_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = UpdateParagraphFormatOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'ParagraphFormatResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Updates the formatting properties of a paragraph list in the document node.
@@ -19876,6 +20352,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#update_paragraph_list_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -19947,12 +20424,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'UpdateParagraphListFormatOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_paragraph_list_format_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = UpdateParagraphListFormatOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'ParagraphListFormatResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Updates a Run object in the paragraph.
@@ -20031,6 +20513,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#update_run\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -20110,6 +20593,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#update_run_font\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -20183,12 +20667,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'UpdateRunFontOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_run_font_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = UpdateRunFontOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'FontResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Updates a Run object in the paragraph.
@@ -20261,12 +20750,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'UpdateRunOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_run_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = UpdateRunOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'RunResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Updates the page setup of a section in the document.
@@ -20342,6 +20836,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#update_section_page_setup\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -20412,12 +20907,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'UpdateSectionPageSetupOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_section_page_setup_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = UpdateSectionPageSetupOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'SectionPageSetupResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Updates a style in the document.
@@ -20493,6 +20993,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#update_style\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -20563,12 +21064,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'UpdateStyleOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_style_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = UpdateStyleOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'StyleResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Updates the formatting properties of a cell in the table row.
@@ -20647,6 +21153,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#update_table_cell_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -20720,12 +21227,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'UpdateTableCellFormatOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_table_cell_format_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = UpdateTableCellFormatOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'TableCellFormatResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Updates properties of a table in the document node.
@@ -20802,6 +21314,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#update_table_properties\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -20873,12 +21386,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'UpdateTablePropertiesOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_table_properties_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = UpdateTablePropertiesOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'TablePropertiesResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Updates the formatting properties of a table row.
@@ -20957,6 +21475,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#update_table_row_format\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 
@@ -21030,12 +21549,17 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
+                                                        multipart_response: true,
                                                         return_type: 'UpdateTableRowFormatOnlineResponse')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#update_table_row_format_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
-        [data, status_code, headers]
+
+        mp_data = UpdateTableRowFormatOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'TableRowFormatResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
     end
 
     # Upload file.
@@ -21103,6 +21627,7 @@ module AsposeWordsCloud
         @api_client.config.logger.debug "API called:
         WordsApi#upload_file\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
+
         [data, status_code, headers]
     end
 

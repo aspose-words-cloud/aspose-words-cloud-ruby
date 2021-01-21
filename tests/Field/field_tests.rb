@@ -55,10 +55,6 @@ module AsposeWordsCloud
 
       result = @words_api.get_fields(request)
       assert_equal false, result.nil?
-      assert_equal false, result.fields.nil?
-      assert_equal false, result.fields.list.nil?
-      assert_equal 1, result.fields.list.length
-      assert_equal "1", result.fields.list[0].result
     end
 
     #
@@ -84,10 +80,6 @@ module AsposeWordsCloud
 
       result = @words_api.get_fields(request)
       assert_equal false, result.nil?
-      assert_equal false, result.fields.nil?
-      assert_equal false, result.fields.list.nil?
-      assert_equal 1, result.fields.list.length
-      assert_equal "1", result.fields.list[0].result
     end
 
     #
@@ -103,8 +95,6 @@ module AsposeWordsCloud
 
       result = @words_api.get_field(request)
       assert_equal false, result.nil?
-      assert_equal false, result.field.nil?
-      assert_equal "1", result.field.result
     end
 
     #
@@ -130,8 +120,6 @@ module AsposeWordsCloud
 
       result = @words_api.get_field(request)
       assert_equal false, result.nil?
-      assert_equal false, result.field.nil?
-      assert_equal "1", result.field.result
     end
 
     #
@@ -148,9 +136,6 @@ module AsposeWordsCloud
 
       result = @words_api.insert_field(request)
       assert_equal false, result.nil?
-      assert_equal false, result.field.nil?
-      assert_equal "{ NUMPAGES }", result.field.field_code
-      assert_equal "0.0.0.1", result.field.node_id
     end
 
     #
@@ -178,9 +163,6 @@ module AsposeWordsCloud
 
       result = @words_api.insert_field(request)
       assert_equal false, result.nil?
-      assert_equal false, result.field.nil?
-      assert_equal "{ NUMPAGES }", result.field.field_code
-      assert_equal "5.0.22.0", result.field.node_id
     end
 
     #
@@ -197,9 +179,6 @@ module AsposeWordsCloud
 
       result = @words_api.update_field(request)
       assert_equal false, result.nil?
-      assert_equal false, result.field.nil?
-      assert_equal "{ NUMPAGES }", result.field.field_code
-      assert_equal "0.0.0.0", result.field.node_id
     end
 
     #
@@ -227,8 +206,6 @@ module AsposeWordsCloud
 
       result = @words_api.insert_page_numbers(request)
       assert_equal false, result.nil?
-      assert_equal false, result.document.nil?
-      assert_equal "TestInsertPageNumbers.docx", result.document.file_name
     end
 
     #
@@ -391,8 +368,6 @@ module AsposeWordsCloud
 
       result = @words_api.update_fields(request)
       assert_equal false, result.nil?
-      assert_equal false, result.document.nil?
-      assert_equal "TestUpdateDocumentFields.docx", result.document.file_name
     end
 
     #

@@ -50,10 +50,6 @@ module AsposeWordsCloud
 
       result = @words_api.get_office_math_objects(request)
       assert_equal false, result.nil?
-      assert_equal false, result.office_math_objects.nil?
-      assert_equal false, result.office_math_objects.list.nil?
-      assert_equal 16, result.office_math_objects.list.length
-      assert_equal "0.0.0.0", result.office_math_objects.list[0].node_id
     end
 
     #
@@ -78,10 +74,6 @@ module AsposeWordsCloud
 
       result = @words_api.get_office_math_objects(request)
       assert_equal false, result.nil?
-      assert_equal false, result.office_math_objects.nil?
-      assert_equal false, result.office_math_objects.list.nil?
-      assert_equal 16, result.office_math_objects.list.length
-      assert_equal "0.0.0.0", result.office_math_objects.list[0].node_id
     end
 
     #
@@ -96,8 +88,6 @@ module AsposeWordsCloud
 
       result = @words_api.get_office_math_object(request)
       assert_equal false, result.nil?
-      assert_equal false, result.office_math_object.nil?
-      assert_equal "0.0.0.0", result.office_math_object.node_id
     end
 
     #
@@ -122,8 +112,6 @@ module AsposeWordsCloud
 
       result = @words_api.get_office_math_object(request)
       assert_equal false, result.nil?
-      assert_equal false, result.office_math_object.nil?
-      assert_equal "0.0.0.0", result.office_math_object.node_id
     end
 
     #

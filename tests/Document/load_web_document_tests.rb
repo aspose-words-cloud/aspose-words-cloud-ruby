@@ -39,9 +39,6 @@ module AsposeWordsCloud
 
       result = @words_api.load_web_document(request)
       assert_equal false, result.nil?
-      assert_equal false, result.save_result.nil?
-      assert_equal false, result.save_result.dest_document.nil?
-      assert_equal "google.doc", result.save_result.dest_document.href
     end
   end
 end

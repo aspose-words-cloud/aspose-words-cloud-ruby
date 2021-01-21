@@ -50,10 +50,6 @@ module AsposeWordsCloud
 
       result = @words_api.get_tables(request)
       assert_equal false, result.nil?
-      assert_equal false, result.tables.nil?
-      assert_equal false, result.tables.table_link_list.nil?
-      assert_equal 5, result.tables.table_link_list.length
-      assert_equal "0.0.1", result.tables.table_link_list[0].node_id
     end
 
     #
@@ -78,10 +74,6 @@ module AsposeWordsCloud
 
       result = @words_api.get_tables(request)
       assert_equal false, result.nil?
-      assert_equal false, result.tables.nil?
-      assert_equal false, result.tables.table_link_list.nil?
-      assert_equal 5, result.tables.table_link_list.length
-      assert_equal "0.0.1", result.tables.table_link_list[0].node_id
     end
 
     #
@@ -96,11 +88,6 @@ module AsposeWordsCloud
 
       result = @words_api.get_table(request)
       assert_equal false, result.nil?
-      assert_equal false, result.table.nil?
-      assert_equal false, result.table.table_row_list.nil?
-      assert_equal 1, result.table.table_row_list.length
-      assert_equal false, result.table.table_row_list[0].table_cell_list.nil?
-      assert_equal 2, result.table.table_row_list[0].table_cell_list.length
     end
 
     #
@@ -125,11 +112,6 @@ module AsposeWordsCloud
 
       result = @words_api.get_table(request)
       assert_equal false, result.nil?
-      assert_equal false, result.table.nil?
-      assert_equal false, result.table.table_row_list.nil?
-      assert_equal 1, result.table.table_row_list.length
-      assert_equal false, result.table.table_row_list[0].table_cell_list.nil?
-      assert_equal 2, result.table.table_row_list[0].table_cell_list.length
     end
 
     #
@@ -181,11 +163,6 @@ module AsposeWordsCloud
 
       result = @words_api.insert_table(request)
       assert_equal false, result.nil?
-      assert_equal false, result.table.nil?
-      assert_equal false, result.table.table_row_list.nil?
-      assert_equal 4, result.table.table_row_list.length
-      assert_equal false, result.table.table_row_list[0].table_cell_list.nil?
-      assert_equal 5, result.table.table_row_list[0].table_cell_list.length
     end
 
     #
@@ -212,11 +189,6 @@ module AsposeWordsCloud
 
       result = @words_api.insert_table(request)
       assert_equal false, result.nil?
-      assert_equal false, result.table.nil?
-      assert_equal false, result.table.table_row_list.nil?
-      assert_equal 4, result.table.table_row_list.length
-      assert_equal false, result.table.table_row_list[0].table_cell_list.nil?
-      assert_equal 5, result.table.table_row_list[0].table_cell_list.length
     end
 
     #
@@ -231,8 +203,6 @@ module AsposeWordsCloud
 
       result = @words_api.get_table_properties(request)
       assert_equal false, result.nil?
-      assert_equal false, result.properties.nil?
-      assert_equal "Table Grid", result.properties.style_name
     end
 
     #
@@ -257,8 +227,6 @@ module AsposeWordsCloud
 
       result = @words_api.get_table_properties(request)
       assert_equal false, result.nil?
-      assert_equal false, result.properties.nil?
-      assert_equal "Table Grid", result.properties.style_name
     end
 
     #
@@ -274,11 +242,6 @@ module AsposeWordsCloud
 
       result = @words_api.update_table_properties(request)
       assert_equal false, result.nil?
-      assert_equal false, result.properties.nil?
-      assert_equal false, result.properties.allow_auto_fit
-      assert_equal true, result.properties.bidi
-      assert_equal 1.0, result.properties.bottom_padding
-      assert_equal 2.0, result.properties.cell_spacing
     end
 
     #
@@ -305,11 +268,6 @@ module AsposeWordsCloud
 
       result = @words_api.update_table_properties(request)
       assert_equal false, result.nil?
-      assert_equal false, result.properties.nil?
-      assert_equal false, result.properties.allow_auto_fit
-      assert_equal true, result.properties.bidi
-      assert_equal 1.0, result.properties.bottom_padding
-      assert_equal 2.0, result.properties.cell_spacing
     end
 
     #
@@ -324,9 +282,6 @@ module AsposeWordsCloud
 
       result = @words_api.get_table_row(request)
       assert_equal false, result.nil?
-      assert_equal false, result.row.nil?
-      assert_equal false, result.row.table_cell_list.nil?
-      assert_equal 2, result.row.table_cell_list.length
     end
 
     #
@@ -375,9 +330,6 @@ module AsposeWordsCloud
 
       result = @words_api.insert_table_row(request)
       assert_equal false, result.nil?
-      assert_equal false, result.row.nil?
-      assert_equal false, result.row.table_cell_list.nil?
-      assert_equal 5, result.row.table_cell_list.length
     end
 
     #
@@ -403,8 +355,6 @@ module AsposeWordsCloud
 
       result = @words_api.get_table_row_format(request)
       assert_equal false, result.nil?
-      assert_equal false, result.row_format.nil?
-      assert_equal true, result.row_format.allow_break_across_pages
     end
 
     #
@@ -430,10 +380,6 @@ module AsposeWordsCloud
 
       result = @words_api.update_table_row_format(request)
       assert_equal false, result.nil?
-      assert_equal false, result.row_format.nil?
-      assert_equal true, result.row_format.allow_break_across_pages
-      assert_equal true, result.row_format.heading_format
-      assert_equal 10.0, result.row_format.height
     end
 
     #
@@ -459,8 +405,6 @@ module AsposeWordsCloud
 
       result = @words_api.get_table_cell(request)
       assert_equal false, result.nil?
-      assert_equal false, result.cell.nil?
-      assert_equal "0.0.5.0.0", result.cell.node_id
     end
 
     #
@@ -509,8 +453,6 @@ module AsposeWordsCloud
 
       result = @words_api.insert_table_cell(request)
       assert_equal false, result.nil?
-      assert_equal false, result.cell.nil?
-      assert_equal "0.0.5.0.3", result.cell.node_id
     end
 
     #
@@ -536,8 +478,6 @@ module AsposeWordsCloud
 
       result = @words_api.get_table_cell_format(request)
       assert_equal false, result.nil?
-      assert_equal false, result.cell_format.nil?
-      assert_equal true, result.cell_format.wrap_text
     end
 
     #
@@ -563,10 +503,6 @@ module AsposeWordsCloud
 
       result = @words_api.update_table_cell_format(request)
       assert_equal false, result.nil?
-      assert_equal false, result.cell_format.nil?
-      assert_equal 5.0, result.cell_format.bottom_padding
-      assert_equal true, result.cell_format.fit_text
-      assert_equal true, result.cell_format.wrap_text
     end
 
     #

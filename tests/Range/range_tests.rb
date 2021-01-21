@@ -50,7 +50,6 @@ module AsposeWordsCloud
 
       result = @words_api.get_range_text(request)
       assert_equal false, result.nil?
-      assert_equal "This is HEADER ", result.text
     end
 
     #
@@ -100,8 +99,6 @@ module AsposeWordsCloud
 
       result = @words_api.save_as_range(request)
       assert_equal false, result.nil?
-      assert_equal false, result.document.nil?
-      assert_equal "NewDoc.docx", result.document.file_name
     end
 
     #
@@ -128,8 +125,6 @@ module AsposeWordsCloud
 
       result = @words_api.replace_with_text(request)
       assert_equal false, result.nil?
-      assert_equal false, result.document.nil?
-      assert_equal "TestReplaceWithText.docx", result.document.file_name
     end
 
     #

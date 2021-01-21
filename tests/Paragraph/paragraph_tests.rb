@@ -58,8 +58,6 @@ module AsposeWordsCloud
 
       result = @words_api.get_paragraph(request)
       assert_equal false, result.nil?
-      assert_equal false, result.paragraph.nil?
-      assert_equal "0.0.0", result.paragraph.node_id
     end
 
     #
@@ -84,8 +82,6 @@ module AsposeWordsCloud
 
       result = @words_api.get_paragraph(request)
       assert_equal false, result.nil?
-      assert_equal false, result.paragraph.nil?
-      assert_equal "0.0.0", result.paragraph.node_id
     end
 
     #
@@ -100,10 +96,6 @@ module AsposeWordsCloud
 
       result = @words_api.get_paragraphs(request)
       assert_equal false, result.nil?
-      assert_equal false, result.paragraphs.nil?
-      assert_equal false, result.paragraphs.paragraph_link_list.nil?
-      assert_equal 15, result.paragraphs.paragraph_link_list.length
-      assert_equal "Page 1 of 3", result.paragraphs.paragraph_link_list[0].text
     end
 
     #
@@ -128,10 +120,6 @@ module AsposeWordsCloud
 
       result = @words_api.get_paragraphs(request)
       assert_equal false, result.nil?
-      assert_equal false, result.paragraphs.nil?
-      assert_equal false, result.paragraphs.paragraph_link_list.nil?
-      assert_equal 15, result.paragraphs.paragraph_link_list.length
-      assert_equal "Page 1 of 3", result.paragraphs.paragraph_link_list[0].text
     end
 
     #
@@ -146,8 +134,6 @@ module AsposeWordsCloud
 
       result = @words_api.get_run(request)
       assert_equal false, result.nil?
-      assert_equal false, result.run.nil?
-      assert_equal "Page ", result.run.text
     end
 
     #
@@ -172,8 +158,6 @@ module AsposeWordsCloud
 
       result = @words_api.get_run_font(request)
       assert_equal false, result.nil?
-      assert_equal false, result.font.nil?
-      assert_equal "Times New Roman", result.font.name
     end
 
     #
@@ -198,10 +182,6 @@ module AsposeWordsCloud
 
       result = @words_api.get_runs(request)
       assert_equal false, result.nil?
-      assert_equal false, result.runs.nil?
-      assert_equal false, result.runs.list.nil?
-      assert_equal 6, result.runs.list.length
-      assert_equal "Page ", result.runs.list[0].text
     end
 
     #
@@ -227,8 +207,6 @@ module AsposeWordsCloud
 
       result = @words_api.update_run_font(request)
       assert_equal false, result.nil?
-      assert_equal false, result.font.nil?
-      assert_equal true, result.font.bold
     end
 
     #
@@ -255,8 +233,6 @@ module AsposeWordsCloud
 
       result = @words_api.insert_paragraph(request)
       assert_equal false, result.nil?
-      assert_equal false, result.paragraph.nil?
-      assert_equal "0.3.8", result.paragraph.node_id
     end
 
     #
@@ -283,8 +259,6 @@ module AsposeWordsCloud
 
       result = @words_api.insert_paragraph(request)
       assert_equal false, result.nil?
-      assert_equal false, result.paragraph.nil?
-      assert_equal "0.3.8", result.paragraph.node_id
     end
 
     #
@@ -337,8 +311,6 @@ module AsposeWordsCloud
 
       result = @words_api.get_paragraph_format(request)
       assert_equal false, result.nil?
-      assert_equal false, result.paragraph_format.nil?
-      assert_equal "Normal", result.paragraph_format.style_name
     end
 
     #
@@ -363,8 +335,6 @@ module AsposeWordsCloud
 
       result = @words_api.get_paragraph_format(request)
       assert_equal false, result.nil?
-      assert_equal false, result.paragraph_format.nil?
-      assert_equal "Normal", result.paragraph_format.style_name
     end
 
     #
@@ -380,8 +350,6 @@ module AsposeWordsCloud
 
       result = @words_api.update_paragraph_format(request)
       assert_equal false, result.nil?
-      assert_equal false, result.paragraph_format.nil?
-
     end
 
     #
@@ -443,8 +411,6 @@ module AsposeWordsCloud
 
       result = @words_api.get_paragraph_list_format(request)
       assert_equal false, result.nil?
-      assert_equal false, result.list_format.nil?
-      assert_equal 1, result.list_format.list_id
     end
 
     #
@@ -469,8 +435,6 @@ module AsposeWordsCloud
 
       result = @words_api.get_paragraph_list_format(request)
       assert_equal false, result.nil?
-      assert_equal false, result.list_format.nil?
-      assert_equal 1, result.list_format.list_id
     end
 
     #
@@ -486,8 +450,6 @@ module AsposeWordsCloud
 
       result = @words_api.update_paragraph_list_format(request)
       assert_equal false, result.nil?
-      assert_equal false, result.list_format.nil?
-      assert_equal 2, result.list_format.list_id
     end
 
     #
@@ -514,8 +476,6 @@ module AsposeWordsCloud
 
       result = @words_api.update_paragraph_list_format(request)
       assert_equal false, result.nil?
-      assert_equal false, result.list_format.nil?
-      assert_equal 2, result.list_format.list_id
     end
 
     #
@@ -568,9 +528,6 @@ module AsposeWordsCloud
 
       result = @words_api.get_paragraph_tab_stops(request)
       assert_equal false, result.nil?
-      assert_equal false, result.tab_stops.nil?
-      assert_equal 2, result.tab_stops.length
-      assert_equal 72.0, result.tab_stops[0].position
     end
 
     #
@@ -595,9 +552,6 @@ module AsposeWordsCloud
 
       result = @words_api.get_paragraph_tab_stops(request)
       assert_equal false, result.nil?
-      assert_equal false, result.tab_stops.nil?
-      assert_equal 2, result.tab_stops.length
-      assert_equal 72.0, result.tab_stops[0].position
     end
 
     #
@@ -613,11 +567,6 @@ module AsposeWordsCloud
 
       result = @words_api.insert_or_update_paragraph_tab_stop(request)
       assert_equal false, result.nil?
-      assert_equal false, result.tab_stops.nil?
-      assert_equal 3, result.tab_stops.length
-      assert_equal 100.0, result.tab_stops[1].position
-
-
     end
 
     #
@@ -644,11 +593,6 @@ module AsposeWordsCloud
 
       result = @words_api.insert_or_update_paragraph_tab_stop(request)
       assert_equal false, result.nil?
-      assert_equal false, result.tab_stops.nil?
-      assert_equal 3, result.tab_stops.length
-      assert_equal 100.0, result.tab_stops[1].position
-
-
     end
 
     #
@@ -663,8 +607,6 @@ module AsposeWordsCloud
 
       result = @words_api.delete_all_paragraph_tab_stops(request)
       assert_equal false, result.nil?
-      assert_equal false, result.tab_stops.nil?
-      assert_equal 0, result.tab_stops.length
     end
 
     #
@@ -689,8 +631,6 @@ module AsposeWordsCloud
 
       result = @words_api.delete_all_paragraph_tab_stops(request)
       assert_equal false, result.nil?
-      assert_equal false, result.tab_stops.nil?
-      assert_equal 0, result.tab_stops.length
     end
 
     #
@@ -705,8 +645,6 @@ module AsposeWordsCloud
 
       result = @words_api.delete_paragraph_tab_stop(request)
       assert_equal false, result.nil?
-      assert_equal false, result.tab_stops.nil?
-      assert_equal 1, result.tab_stops.length
     end
 
     #
@@ -731,8 +669,6 @@ module AsposeWordsCloud
 
       result = @words_api.delete_paragraph_tab_stop(request)
       assert_equal false, result.nil?
-      assert_equal false, result.tab_stops.nil?
-      assert_equal 1, result.tab_stops.length
     end
   end
 end

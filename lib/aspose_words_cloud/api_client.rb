@@ -30,6 +30,7 @@ require 'tempfile'
 require 'uri'
 require 'faraday'
 require 'mimemagic'
+require 'multipart_parser/reader'
 require_relative 'version'
 require_relative 'api_error'
 
@@ -93,8 +94,12 @@ module AsposeWordsCloud
         end
       end
 
+      if opts[:multipart_response] == true
+        data = deserialize_multipart(response)
+      else
+        data = deserialize(response.body, opts[:return_type]) if opts[:return_type]
+      end
 
-      data = deserialize(response, opts[:return_type]) if opts[:return_type]
       [data, response.status, response.headers]
     end
 
@@ -147,8 +152,9 @@ module AsposeWordsCloud
       when :get
         return conn.get url, req_opts[:body]
       else
-        return conn.delete url do |c|
+        conn.delete url do |c|
           c.body = req_opts[:body]
+        return conn.delete
         end
       end
     end
@@ -167,11 +173,9 @@ module AsposeWordsCloud
 
     # Deserialize the response to the given return type.
     #
-    # @param [Response] response HTTP response
+    # @param [String] response HTTP response
     # @param [String] return_type some examples: "User", "Array[User]", "Hash[String,Integer]"
-    def deserialize(response, return_type)
-      body = response.body
-
+    def deserialize(body, return_type)
       # handle file downloading - return the File instance processed in request callbacks
       # note that response body is empty when the file is written in chunks in request on_body callback
       return @tempfile if return_type == 'File'
@@ -180,11 +184,6 @@ module AsposeWordsCloud
 
       # return response body directly for String return type
       return body if return_type == 'String'
-
-      # ensuring a default content type
-      content_type = response.headers['Content-Type'] || 'application/json'
-
-      raise "Content-Type is not supported: #{content_type}" unless json_mime?(content_type)
 
       begin
         data = JSON.parse("[#{body}]", :symbolize_names => true)[0]
@@ -197,6 +196,32 @@ module AsposeWordsCloud
       end
 
       convert_to_type data, return_type
+    end
+
+    # Deserialize multipart the response to the given return type.
+    #
+    # @param [Response] response HTTP response
+    def deserialize_multipart(response)
+      parts={}
+      content_type = response.headers['content-type']
+      reader = MultipartParser::Reader.new(MultipartParser::Reader::extract_boundary_value(content_type))
+
+      reader.on_part do |part|
+        pn = part.headers['content-type'] == 'application/json' ? 'model' : 'document'
+        part.on_data do |partial_data|
+          if parts[pn].nil?
+            parts[pn] = partial_data
+          else
+            parts[pn] = [parts[pn]] if parts[pn].kind_of?(Array)
+            parts[pn] << partial_data
+          end
+        end
+      end
+
+      reader.write response.body
+      reader.ended? or raise Exception, 'Truncated multipart message'
+
+      parts
     end
 
     # Convert data to the given return type.
@@ -271,6 +296,26 @@ module AsposeWordsCloud
                             "explicitly with `tempfile.delete`"
       end
     end
+
+  # Save response body into a file in (the defined) temporary folder, using the filename
+  # from the "Content-Disposition" header if provided, otherwise a random filename.
+  # The response body is written to the file in chunks in order to handle files which
+  # size is larger than maximum Ruby String or even larger than the maximum memory a Ruby
+  # process can use.
+  #
+  # @see Configuration#temp_folder_path
+  def download_file_from_multipart(body)
+    prefix = 'download-'
+    prefix += '-' unless prefix.end_with?('-')
+    tempfile = Tempfile.open(prefix, @config.temp_folder_path, encoding:body.encoding)
+    @tempfile = tempfile
+    tempfile.write(body)
+    @config.logger.info "Temp file written to #{tempfile.path}, please copy the file to a proper folder "\
+                            "with e.g. `FileUtils.cp(tempfile.path, '/new/file/path')` otherwise the temp file "\
+                            "will be deleted automatically with GC. It's also recommended to delete the temp file "\
+                            "explicitly with `tempfile.delete`"
+    @tempfile
+  end
 
     # Sanitize filename by removing path.
     # e.g. ../../sun.gif becomes sun.gif

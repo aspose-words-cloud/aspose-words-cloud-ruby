@@ -46,9 +46,6 @@ module AsposeWordsCloud
 
       result = @words_api.classify(request)
       assert_equal false, result.nil?
-      assert_equal "Science", result.best_class_name
-      assert_equal false, result.best_results.nil?
-      assert_equal 3, result.best_results.length
     end
 
     #
@@ -63,9 +60,6 @@ module AsposeWordsCloud
 
       result = @words_api.classify_document(request)
       assert_equal false, result.nil?
-      assert_equal "Hobbies_&_Interests", result.best_class_name
-      assert_equal false, result.best_results.nil?
-      assert_equal 3, result.best_results.length
     end
 
     #
