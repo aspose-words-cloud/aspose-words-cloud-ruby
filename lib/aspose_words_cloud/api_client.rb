@@ -154,7 +154,6 @@ module AsposeWordsCloud
       else
         conn.delete url do |c|
           c.body = req_opts[:body]
-        return conn.delete
         end
       end
     end
