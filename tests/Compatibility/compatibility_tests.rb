@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="Compatibility_tests.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -50,6 +50,17 @@ module AsposeWordsCloud
       request = OptimizeDocumentRequest.new(remote_file_name, request_options, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       @words_api.optimize_document(request)
+    end
+
+    #
+    # Test for optimize document to specific MS Word version.
+    #
+    def test_optimize_document_online
+      request_options = OptimizationOptions.new({:MsWordVersion => 'Word2002'})
+      request = OptimizeDocumentOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), request_options, nil, nil, nil, nil, nil)
+
+      result = @words_api.optimize_document_online(request)
+      assert_equal false, result.nil?
     end
   end
 end

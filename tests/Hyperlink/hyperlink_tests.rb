@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="Hyperlink_tests.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -50,8 +50,16 @@ module AsposeWordsCloud
 
       result = @words_api.get_document_hyperlink_by_index(request)
       assert_equal false, result.nil?
-      assert_equal false, result.hyperlink.nil?
-      assert_equal "Aspose", result.hyperlink.display_text
+    end
+
+    #
+    # Test for getting hyperlink by specified index online.
+    #
+    def test_get_document_hyperlink_by_index_online
+      request = GetDocumentHyperlinkByIndexOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 0, nil, nil)
+
+      result = @words_api.get_document_hyperlink_by_index_online(request)
+      assert_equal false, result.nil?
     end
 
     #
@@ -66,10 +74,16 @@ module AsposeWordsCloud
 
       result = @words_api.get_document_hyperlinks(request)
       assert_equal false, result.nil?
-      assert_equal false, result.hyperlinks.nil?
-      assert_equal false, result.hyperlinks.hyperlink_list.nil?
-      assert_equal 2, result.hyperlinks.hyperlink_list.length
-      assert_equal "Aspose", result.hyperlinks.hyperlink_list[0].display_text
+    end
+
+    #
+    # Test for getting hyperlinks online.
+    #
+    def test_get_document_hyperlinks_online
+      request = GetDocumentHyperlinksOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), nil, nil)
+
+      result = @words_api.get_document_hyperlinks_online(request)
+      assert_equal false, result.nil?
     end
   end
 end

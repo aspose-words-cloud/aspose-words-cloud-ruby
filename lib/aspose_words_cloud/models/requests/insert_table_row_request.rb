@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="insert_table_row_request.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -32,11 +32,11 @@ module AsposeWordsCloud
     # The filename of the input document.
     attr_accessor :name
 
-    # The properties of the row.
-    attr_accessor :row
-
     # The path to the table in the document tree.
     attr_accessor :table_path
+
+    # Table row parameters.
+    attr_accessor :row
 
     # Original document folder.
     attr_accessor :folder
@@ -62,8 +62,8 @@ module AsposeWordsCloud
     #
     # Initializes a new instance.
     # @param name The filename of the input document.
-    # @param row The properties of the row.
     # @param table_path The path to the table in the document tree.
+    # @param row Table row parameters.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -72,10 +72,10 @@ module AsposeWordsCloud
     # @param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
     # @param revision_date_time The date and time to use for revisions.
 
-    def initialize(name, row, table_path, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil, revision_author = nil, revision_date_time = nil)
+    def initialize(name, table_path, row, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil, revision_author = nil, revision_date_time = nil)
       self.name = name
-      self.row = row
       self.table_path = table_path
+      self.row = row
       self.folder = folder
       self.storage = storage
       self.load_encoding = load_encoding

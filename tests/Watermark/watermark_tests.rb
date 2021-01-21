@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="Watermark_tests.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -52,8 +52,16 @@ module AsposeWordsCloud
 
       result = @words_api.insert_watermark_image(request)
       assert_equal false, result.nil?
-      assert_equal false, result.document.nil?
-      assert_equal "TestInsertWatermarkImage.docx", result.document.file_name
+    end
+
+    #
+    # Test for adding watermark image online.
+    #
+    def test_insert_watermark_image_online
+      request = InsertWatermarkImageOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), File.open(File.join(local_test_folder, "Common/aspose-cloud.png")), nil, nil, nil, nil, nil, nil, nil)
+
+      result = @words_api.insert_watermark_image_online(request)
+      assert_equal false, result.nil?
     end
 
     #
@@ -69,8 +77,17 @@ module AsposeWordsCloud
 
       result = @words_api.insert_watermark_text(request)
       assert_equal false, result.nil?
-      assert_equal false, result.document.nil?
-      assert_equal "TestInsertWatermarkText.docx", result.document.file_name
+    end
+
+    #
+    # Test for adding watermark text online.
+    #
+    def test_insert_watermark_text_online
+      request_watermark_text = WatermarkText.new({:Text => "This is the text", :RotationAngle => 90})
+      request = InsertWatermarkTextOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), request_watermark_text, nil, nil, nil, nil, nil)
+
+      result = @words_api.insert_watermark_text_online(request)
+      assert_equal false, result.nil?
     end
 
     #
@@ -85,8 +102,16 @@ module AsposeWordsCloud
 
       result = @words_api.delete_watermark(request)
       assert_equal false, result.nil?
-      assert_equal false, result.document.nil?
-      assert_equal "TestDeleteWatermark.docx", result.document.file_name
+    end
+
+    #
+    # Test for deleting watermark online.
+    #
+    def test_delete_watermark_online
+      request = DeleteWatermarkOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), nil, nil, nil, nil, nil)
+
+      result = @words_api.delete_watermark_online(request)
+      assert_equal false, result.nil?
     end
   end
 end

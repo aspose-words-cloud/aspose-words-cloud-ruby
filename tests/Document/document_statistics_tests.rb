@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="DocumentStatistics_tests.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -50,8 +50,16 @@ module AsposeWordsCloud
 
       result = @words_api.get_document_statistics(request)
       assert_equal false, result.nil?
-      assert_equal false, result.stat_data.nil?
-      assert_equal 10, result.stat_data.word_count
+    end
+
+    #
+    # Test for document classification online.
+    #
+    def test_get_document_statistics_online
+      request = GetDocumentStatisticsOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), nil, nil, nil, nil, nil)
+
+      result = @words_api.get_document_statistics_online(request)
+      assert_equal false, result.nil?
     end
   end
 end

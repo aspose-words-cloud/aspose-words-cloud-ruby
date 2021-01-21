@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="insert_paragraph_request.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -32,7 +32,7 @@ module AsposeWordsCloud
     # The filename of the input document.
     attr_accessor :name
 
-    # The properties of the paragraph.
+    # Paragraph data.
     attr_accessor :paragraph
 
     # The path to the node in the document tree.
@@ -65,7 +65,7 @@ module AsposeWordsCloud
     #
     # Initializes a new instance.
     # @param name The filename of the input document.
-    # @param paragraph The properties of the paragraph.
+    # @param paragraph Paragraph data.
     # @param node_path The path to the node in the document tree.
     # @param folder Original document folder.
     # @param storage Original document storage.

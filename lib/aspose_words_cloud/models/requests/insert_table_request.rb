@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="insert_table_request.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -32,7 +32,7 @@ module AsposeWordsCloud
     # The filename of the input document.
     attr_accessor :name
 
-    # The properties of the table.
+    # Table parameters.
     attr_accessor :table
 
     # The path to the node in the document tree.
@@ -62,7 +62,7 @@ module AsposeWordsCloud
     #
     # Initializes a new instance.
     # @param name The filename of the input document.
-    # @param table The properties of the table.
+    # @param table Table parameters.
     # @param node_path The path to the node in the document tree.
     # @param folder Original document folder.
     # @param storage Original document storage.

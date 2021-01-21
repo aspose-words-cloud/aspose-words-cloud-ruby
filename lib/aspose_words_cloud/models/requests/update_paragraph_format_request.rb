@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="update_paragraph_format_request.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -32,11 +32,11 @@ module AsposeWordsCloud
     # The filename of the input document.
     attr_accessor :name
 
-    # The formatting properties of a paragraph.
-    attr_accessor :dto
-
     # Object index.
     attr_accessor :index
+
+    # Dto for paragraph format update.
+    attr_accessor :paragraph_format_dto
 
     # The path to the node in the document tree.
     attr_accessor :node_path
@@ -65,8 +65,8 @@ module AsposeWordsCloud
     #
     # Initializes a new instance.
     # @param name The filename of the input document.
-    # @param dto The formatting properties of a paragraph.
     # @param index Object index.
+    # @param paragraph_format_dto Dto for paragraph format update.
     # @param node_path The path to the node in the document tree.
     # @param folder Original document folder.
     # @param storage Original document storage.
@@ -76,10 +76,10 @@ module AsposeWordsCloud
     # @param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
     # @param revision_date_time The date and time to use for revisions.
 
-    def initialize(name, dto, index, node_path = nil, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil, revision_author = nil, revision_date_time = nil)
+    def initialize(name, index, paragraph_format_dto, node_path = nil, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil, revision_author = nil, revision_date_time = nil)
       self.name = name
-      self.dto = dto
       self.index = index
+      self.paragraph_format_dto = paragraph_format_dto
       self.node_path = node_path
       self.folder = folder
       self.storage = storage

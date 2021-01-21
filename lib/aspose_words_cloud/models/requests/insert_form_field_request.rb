@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="insert_form_field_request.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -32,7 +32,7 @@ module AsposeWordsCloud
     # The filename of the input document.
     attr_accessor :name
 
-    # The properties of the form field.
+    # From field data.
     attr_accessor :form_field
 
     # The path to the node in the document tree.
@@ -65,7 +65,7 @@ module AsposeWordsCloud
     #
     # Initializes a new instance.
     # @param name The filename of the input document.
-    # @param form_field The properties of the form field.
+    # @param form_field From field data.
     # @param node_path The path to the node in the document tree.
     # @param folder Original document folder.
     # @param storage Original document storage.

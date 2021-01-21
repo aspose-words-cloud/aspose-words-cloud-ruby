@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="HeaderFooter_tests.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -50,9 +50,16 @@ module AsposeWordsCloud
 
       result = @words_api.get_header_footers(request)
       assert_equal false, result.nil?
-      assert_equal false, result.header_footers.nil?
-      assert_equal false, result.header_footers.list.nil?
-      assert_equal 6, result.header_footers.list.length
+    end
+
+    #
+    # Test for getting headers and footers online.
+    #
+    def test_get_header_footers_online
+      request = GetHeaderFootersOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), "", nil, nil, nil)
+
+      result = @words_api.get_header_footers_online(request)
+      assert_equal false, result.nil?
     end
 
     #
@@ -67,10 +74,16 @@ module AsposeWordsCloud
 
       result = @words_api.get_header_footer(request)
       assert_equal false, result.nil?
-      assert_equal false, result.header_footer.nil?
-      assert_equal false, result.header_footer.child_nodes.nil?
-      assert_equal 1, result.header_footer.child_nodes.length
-      assert_equal "0.0.0", result.header_footer.child_nodes[0].node_id
+    end
+
+    #
+    # Test for getting headerfooter online.
+    #
+    def test_get_header_footer_online
+      request = GetHeaderFooterOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 0, nil, nil, nil)
+
+      result = @words_api.get_header_footer_online(request)
+      assert_equal false, result.nil?
     end
 
     #
@@ -85,10 +98,16 @@ module AsposeWordsCloud
 
       result = @words_api.get_header_footer_of_section(request)
       assert_equal false, result.nil?
-      assert_equal false, result.header_footer.nil?
-      assert_equal false, result.header_footer.child_nodes.nil?
-      assert_equal 1, result.header_footer.child_nodes.length
-      assert_equal "0.0.0", result.header_footer.child_nodes[0].node_id
+    end
+
+    #
+    # Test for getting headerfooter of section online.
+    #
+    def test_get_header_footer_of_section_online
+      request = GetHeaderFooterOfSectionOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 0, 0, nil, nil, nil)
+
+      result = @words_api.get_header_footer_of_section_online(request)
+      assert_equal false, result.nil?
     end
 
     #
@@ -105,6 +124,16 @@ module AsposeWordsCloud
     end
 
     #
+    # Test for deleting headerfooter online.
+    #
+    def test_delete_header_footer_online
+      request = DeleteHeaderFooterOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), "", 0, nil, nil, nil, nil, nil)
+
+      result = @words_api.delete_header_footer_online(request)
+      assert_equal false, result.nil?
+    end
+
+    #
     # Test for deleting headerfooters.
     #
     def test_delete_headers_footers
@@ -118,6 +147,16 @@ module AsposeWordsCloud
     end
 
     #
+    # Test for deleting headerfooters online.
+    #
+    def test_delete_headers_footers_online
+      request = DeleteHeadersFootersOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), "", nil, nil, nil, nil, nil, nil)
+
+      result = @words_api.delete_headers_footers_online(request)
+      assert_equal false, result.nil?
+    end
+
+    #
     # Test for adding headerfooters.
     #
     def test_insert_header_footer
@@ -125,14 +164,20 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
-      request = InsertHeaderFooterRequest.new(remote_file_name, "FooterEven", "", remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request = InsertHeaderFooterRequest.new(remote_file_name, "", "FooterEven", remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_header_footer(request)
       assert_equal false, result.nil?
-      assert_equal false, result.header_footer.nil?
-      assert_equal false, result.header_footer.child_nodes.nil?
-      assert_equal 1, result.header_footer.child_nodes.length
-      assert_equal "0.2.0", result.header_footer.child_nodes[0].node_id
+    end
+
+    #
+    # Test for adding headerfooters online.
+    #
+    def test_insert_header_footer_online
+      request = InsertHeaderFooterOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), "", "FooterEven", nil, nil, nil, nil, nil)
+
+      result = @words_api.insert_header_footer_online(request)
+      assert_equal false, result.nil?
     end
   end
 end

@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="MailMergeFileds_tests.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -44,14 +44,10 @@ module AsposeWordsCloud
     def test_get_document_field_names_online
       local_document_file = "SampleExecuteTemplate.docx"
 
-      request = GetDocumentFieldNamesOnlineRequest.new(File.open(File.join(local_test_folder, mail_merge_folder + "/" + local_document_file)), true)
+      request = GetDocumentFieldNamesOnlineRequest.new(File.open(File.join(local_test_folder, mail_merge_folder + "/" + local_document_file)), nil, nil, true)
 
       result = @words_api.get_document_field_names_online(request)
       assert_equal false, result.nil?
-      assert_equal false, result.field_names.nil?
-      assert_equal false, result.field_names.names.nil?
-      assert_equal 15, result.field_names.names.length
-      assert_equal "TableStart:Order", result.field_names.names[0]
     end
 
     #
@@ -66,9 +62,6 @@ module AsposeWordsCloud
 
       result = @words_api.get_document_field_names(request)
       assert_equal false, result.nil?
-      assert_equal false, result.field_names.nil?
-      assert_equal false, result.field_names.names.nil?
-      assert_equal 0, result.field_names.names.length
     end
   end
 end

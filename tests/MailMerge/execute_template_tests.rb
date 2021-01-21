@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="ExecuteTemplate_tests.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -52,8 +52,6 @@ module AsposeWordsCloud
 
       result = @words_api.execute_mail_merge(request)
       assert_equal false, result.nil?
-      assert_equal false, result.document.nil?
-      assert_equal "TestExecuteTemplate.docx", result.document.file_name
     end
 
     #

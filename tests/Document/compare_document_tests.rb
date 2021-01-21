@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="CompareDocument_tests.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -55,8 +55,23 @@ module AsposeWordsCloud
 
       result = @words_api.compare_document(request)
       assert_equal false, result.nil?
-      assert_equal false, result.document.nil?
-      assert_equal "TestCompareDocumentOut.doc", result.document.file_name
+    end
+
+    #
+    # Test for document comparison online.
+    #
+    def test_compare_document_online
+      local_name1 = "compareTestDoc1.doc"
+      local_name2 = "compareTestDoc2.doc"
+      remote_name2 = "TestCompareDocument2.doc"
+
+      upload_file File.join(local_test_folder, local_folder + "/" + local_name2), remote_folder + "/" + remote_name2
+
+      request_compare_data = CompareData.new({:Author => "author", :ComparingWithDocument => remote_folder + "/" + remote_name2, :DateTime => Date.iso8601('2015-10-26T00:00:00.0000000Z')})
+      request = CompareDocumentOnlineRequest.new(File.open(File.join(local_test_folder, local_folder + "/" + local_name1)), request_compare_data, nil, nil, remote_test_out + "/TestCompareDocumentOut.doc")
+
+      result = @words_api.compare_document_online(request)
+      assert_equal false, result.nil?
     end
   end
 end

@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="get_document_field_names_online_request.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,19 +29,29 @@ module AsposeWordsCloud
   # Request model for get_document_field_names_online operation.
   #
   class GetDocumentFieldNamesOnlineRequest
-    # File with template.
-    attr_accessor :template
+    # The document.
+    attr_accessor :document
+
+    # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+    attr_accessor :load_encoding
+
+    # Password for opening an encrypted document.
+    attr_accessor :password
 
     # The flag indicating whether to use non merge fields. If true, result includes "mustache" field names.
     attr_accessor :use_non_merge_fields
 
     #
     # Initializes a new instance.
-    # @param template File with template.
+    # @param document The document.
+    # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+    # @param password Password for opening an encrypted document.
     # @param use_non_merge_fields The flag indicating whether to use non merge fields. If true, result includes "mustache" field names.
 
-    def initialize(template, use_non_merge_fields = nil)
-      self.template = template
+    def initialize(document, load_encoding = nil, password = nil, use_non_merge_fields = nil)
+      self.document = document
+      self.load_encoding = load_encoding
+      self.password = password
       self.use_non_merge_fields = use_non_merge_fields
     end
   end

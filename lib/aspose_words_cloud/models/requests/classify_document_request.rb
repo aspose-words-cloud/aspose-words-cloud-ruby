@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="classify_document_request.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,8 +29,8 @@ module AsposeWordsCloud
   # Request model for classify_document operation.
   #
   class ClassifyDocumentRequest
-    # The filename of the input document.
-    attr_accessor :document_name
+    # The document name.
+    attr_accessor :name
 
     # Original document folder.
     attr_accessor :folder
@@ -52,7 +52,7 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param document_name The filename of the input document.
+    # @param name The document name.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -60,8 +60,8 @@ module AsposeWordsCloud
     # @param best_classes_count The number of the best classes to return.
     # @param taxonomy The taxonomy to use.
 
-    def initialize(document_name, folder = nil, storage = nil, load_encoding = nil, password = nil, best_classes_count = nil, taxonomy = nil)
-      self.document_name = document_name
+    def initialize(name, folder = nil, storage = nil, load_encoding = nil, password = nil, best_classes_count = nil, taxonomy = nil)
+      self.name = name
       self.folder = folder
       self.storage = storage
       self.load_encoding = load_encoding

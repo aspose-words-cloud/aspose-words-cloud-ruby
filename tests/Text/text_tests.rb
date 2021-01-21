@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="Text_tests.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -48,7 +48,19 @@ module AsposeWordsCloud
 
       result = @words_api.replace_text(request)
       assert_equal false, result.nil?
-      assert_equal 3, result.matches
+    end
+
+    #
+    # Test for replacing text online.
+    #
+    def test_replace_text_online
+      local_file = "Common/test_multi_pages.docx"
+
+      request_replace_text = ReplaceTextParameters.new({:OldValue => "aspose", :NewValue => "aspose new"})
+      request = ReplaceTextOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), request_replace_text, nil, nil, nil, nil, nil)
+
+      result = @words_api.replace_text_online(request)
+      assert_equal false, result.nil?
     end
 
     #
@@ -64,11 +76,18 @@ module AsposeWordsCloud
 
       result = @words_api.search(request)
       assert_equal false, result.nil?
-      assert_equal false, result.search_results.nil?
-      assert_equal false, result.search_results.results_list.nil?
-      assert_equal 23, result.search_results.results_list.length
-      assert_equal false, result.search_results.results_list[0].range_start.nil?
-      assert_equal 65, result.search_results.results_list[0].range_start.offset
+    end
+
+    #
+    # Test for searching online.
+    #
+    def test_search_online
+      local_file = "DocumentElements/Text/SampleWordDocument.docx"
+
+      request = SearchOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), "aspose", nil, nil)
+
+      result = @words_api.search_online(request)
+      assert_equal false, result.nil?
     end
   end
 end

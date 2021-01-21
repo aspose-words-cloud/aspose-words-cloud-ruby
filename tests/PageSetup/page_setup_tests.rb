@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="PageSetup_tests.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -54,8 +54,16 @@ module AsposeWordsCloud
 
       result = @words_api.get_section_page_setup(request)
       assert_equal false, result.nil?
-      assert_equal false, result.page_setup.nil?
-      assert_equal 1, result.page_setup.line_starting_number
+    end
+
+    #
+    # Test for getting page settings online.
+    #
+    def test_get_section_page_setup_online
+      request = GetSectionPageSetupOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 0, nil, nil)
+
+      result = @words_api.get_section_page_setup_online(request)
+      assert_equal false, result.nil?
     end
 
     #
@@ -71,10 +79,17 @@ module AsposeWordsCloud
 
       result = @words_api.update_section_page_setup(request)
       assert_equal false, result.nil?
-      assert_equal false, result.page_setup.nil?
-      assert_equal true, result.page_setup.rtl_gutter
+    end
 
+    #
+    # Test for updating page settings online.
+    #
+    def test_update_section_page_setup_online
+      request_page_setup = PageSetup.new({:RtlGutter => true, :LeftMargin => 10, :Orientation => 'Landscape', :PaperSize => 'A5'})
+      request = UpdateSectionPageSetupOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 0, request_page_setup, nil, nil, nil, nil, nil)
 
+      result = @words_api.update_section_page_setup_online(request)
+      assert_equal false, result.nil?
     end
 
     #
@@ -88,6 +103,16 @@ module AsposeWordsCloud
       request = RenderPageRequest.new(remote_file_name, 1, "bmp", remote_data_folder, nil, nil, nil, nil)
 
       result = @words_api.render_page(request)
+      assert_equal false, result.nil?
+    end
+
+    #
+    # Test for page rendering.
+    #
+    def test_get_render_page_online
+      request = RenderPageOnlineRequest.new(File.open(File.join(local_test_folder, local_text_file)), 1, "bmp", nil, nil, nil)
+
+      result = @words_api.render_page_online(request)
       assert_equal false, result.nil?
     end
   end

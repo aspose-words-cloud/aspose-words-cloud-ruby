@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="LoadWebDocument_tests.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -39,9 +39,6 @@ module AsposeWordsCloud
 
       result = @words_api.load_web_document(request)
       assert_equal false, result.nil?
-      assert_equal false, result.save_result.nil?
-      assert_equal false, result.save_result.dest_document.nil?
-      assert_equal "google.doc", result.save_result.dest_document.href
     end
   end
 end

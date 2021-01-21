@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="Section_tests.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -50,10 +50,16 @@ module AsposeWordsCloud
 
       result = @words_api.get_section(request)
       assert_equal false, result.nil?
-      assert_equal false, result.section.nil?
-      assert_equal false, result.section.child_nodes.nil?
-      assert_equal 13, result.section.child_nodes.length
-      assert_equal "0.3.0", result.section.child_nodes[0].node_id
+    end
+
+    #
+    # Test for getting section by index online.
+    #
+    def test_get_section_online
+      request = GetSectionOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 0, nil, nil)
+
+      result = @words_api.get_section_online(request)
+      assert_equal false, result.nil?
     end
 
     #
@@ -68,10 +74,16 @@ module AsposeWordsCloud
 
       result = @words_api.get_sections(request)
       assert_equal false, result.nil?
-      assert_equal false, result.sections.nil?
-      assert_equal false, result.sections.section_link_list.nil?
-      assert_equal 1, result.sections.section_link_list.length
-      assert_equal "0", result.sections.section_link_list[0].node_id
+    end
+
+    #
+    # Test for getting sections online.
+    #
+    def test_get_sections_online
+      request = GetSectionsOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), nil, nil)
+
+      result = @words_api.get_sections_online(request)
+      assert_equal false, result.nil?
     end
 
     #
@@ -85,6 +97,16 @@ module AsposeWordsCloud
       request = DeleteSectionRequest.new(remote_file_name, 0, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       @words_api.delete_section(request)
+    end
+
+    #
+    # Test for delete a section online.
+    #
+    def test_delete_section_online
+      request = DeleteSectionOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 0, nil, nil, nil, nil, nil)
+
+      result = @words_api.delete_section_online(request)
+      assert_equal false, result.nil?
     end
   end
 end

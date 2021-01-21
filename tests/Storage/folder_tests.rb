@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="Folder_tests.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -68,7 +68,6 @@ module AsposeWordsCloud
 
       result = @words_api.get_files_list(request)
       assert_equal false, result.nil?
-      assert_equal false, result.value.nil?
     end
 
     #
