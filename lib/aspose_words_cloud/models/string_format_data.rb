@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="string_format_data.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -32,7 +32,7 @@ module AsposeWordsCloud
     # Gets or sets horizontal alignment of the string.
     attr_accessor :alignment
 
-    # Gets or sets a System.Drawing.StringFormatFlags enumeration that contains formatting information.
+    # Gets or sets the System.Drawing.StringFormatFlags enumeration, that contains formatting information.
     attr_accessor :format_flags
 
     # Gets or sets the System.Drawing.Text.HotkeyPrefix object for this System.Drawing.StringFormat object.

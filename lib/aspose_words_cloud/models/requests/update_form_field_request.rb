@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="update_form_field_request.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,16 +29,16 @@ module AsposeWordsCloud
   # Request model for update_form_field operation.
   #
   class UpdateFormFieldRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
-
-    # From field data.
-    attr_accessor :form_field
 
     # Object index.
     attr_accessor :index
 
-    # Path to the node that contains collection of formfields.
+    # From field data.
+    attr_accessor :form_field
+
+    # The path to the node in the document tree.
     attr_accessor :node_path
 
     # Original document folder.
@@ -64,10 +64,10 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
-    # @param form_field From field data.
+    # @param name The filename of the input document.
     # @param index Object index.
-    # @param node_path Path to the node that contains collection of formfields.
+    # @param form_field From field data.
+    # @param node_path The path to the node in the document tree.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -76,10 +76,10 @@ module AsposeWordsCloud
     # @param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
     # @param revision_date_time The date and time to use for revisions.
 
-    def initialize(name, form_field, index, node_path = nil, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil, revision_author = nil, revision_date_time = nil)
+    def initialize(name, index, form_field, node_path = nil, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil, revision_author = nil, revision_date_time = nil)
       self.name = name
-      self.form_field = form_field
       self.index = index
+      self.form_field = form_field
       self.node_path = node_path
       self.folder = folder
       self.storage = storage

@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="revisions_modification_response.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,12 +27,12 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # response of the modification operations for the revisions collection (now these are acceptAll and rejectAll).
+  # The REST response with a result of the modification operations for the revisions collection (now these are acceptAll and rejectAll).
   class RevisionsModificationResponse
-    # Gets or sets request Id.
+    # Gets or sets the request Id.
     attr_accessor :request_id
 
-    # Gets or sets result of the modification operations for the revisions collection.
+    # Gets or sets the result of the modification operations for the revisions collection.
     attr_accessor :result
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

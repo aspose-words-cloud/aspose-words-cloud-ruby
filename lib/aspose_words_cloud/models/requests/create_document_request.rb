@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="create_document_request.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,25 +29,25 @@ module AsposeWordsCloud
   # Request model for create_document operation.
   #
   class CreateDocumentRequest
+    # The filename of the document.
+    attr_accessor :file_name
+
+    # The path to the document folder.
+    attr_accessor :folder
+
     # Original document storage.
     attr_accessor :storage
 
-    # The document name.
-    attr_accessor :file_name
-
-    # The document folder.
-    attr_accessor :folder
-
     #
     # Initializes a new instance.
+    # @param file_name The filename of the document.
+    # @param folder The path to the document folder.
     # @param storage Original document storage.
-    # @param file_name The document name.
-    # @param folder The document folder.
 
-    def initialize(storage = nil, file_name = nil, folder = nil)
-      self.storage = storage
+    def initialize(file_name = nil, folder = nil, storage = nil)
       self.file_name = file_name
       self.folder = folder
+      self.storage = storage
     end
   end
 end

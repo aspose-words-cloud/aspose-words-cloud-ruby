@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="response_error.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,19 +29,19 @@ module AsposeWordsCloud
 
   # Api error.
   class ResponseError
-    # Gets or sets api error code.
+    # Gets or sets the API error code.
     attr_accessor :code
 
-    # Gets or sets server datetime.
+    # Gets or sets the server DateTime.
     attr_accessor :date_time
 
-    # Gets or sets error description.
+    # Gets or sets the error description.
     attr_accessor :description
 
-    # Gets or sets inner error.
+    # Gets or sets the inner error.
     attr_accessor :inner_error
 
-    # Gets or sets error message.
+    # Gets or sets the error message.
     attr_accessor :message
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

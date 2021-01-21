@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="Compatibility_tests.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -30,11 +30,11 @@ module AsposeWordsCloud
   #
   class CompatibilityTests < BaseTestContext
     def remote_data_folder
-      remote_test_folder + '/Compatibility'
+      remote_test_folder + "/Compatibility"
     end
 
     def local_file
-      'Common/test_multi_pages.docx'
+      "Common/test_multi_pages.docx"
     end
 
 
@@ -42,14 +42,25 @@ module AsposeWordsCloud
     # Test for optimize document to specific MS Word version.
     #
     def test_optimize_document
-      remote_file_name = 'TestOptimizeDocument.docx'
+      remote_file_name = "TestOptimizeDocument.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
       request_options = OptimizationOptions.new({:MsWordVersion => 'Word2002'})
       request = OptimizeDocumentRequest.new(remote_file_name, request_options, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       @words_api.optimize_document(request)
+    end
+
+    #
+    # Test for optimize document to specific MS Word version.
+    #
+    def test_optimize_document_online
+      request_options = OptimizationOptions.new({:MsWordVersion => 'Word2002'})
+      request = OptimizeDocumentOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), request_options, nil, nil, nil, nil, nil)
+
+      result = @words_api.optimize_document_online(request)
+      assert_equal false, result.nil?
     end
   end
 end

@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="tab_stops_response.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,13 +27,12 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # This response should be returned by the service when handling:
-  # GET https://api.aspose.cloud/v4.0/words/Test.doc/paragraphs/{0}/tabstops.
+  # The REST response with an array of tab stops.
   class TabStopsResponse
-    # Gets or sets request Id.
+    # Gets or sets the request Id.
     attr_accessor :request_id
 
-    # Gets or sets represents a tab stop.
+    # Gets or sets the array of tab stops.
     attr_accessor :tab_stops
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

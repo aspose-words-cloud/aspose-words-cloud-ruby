@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="Folder_tests.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -30,11 +30,11 @@ module AsposeWordsCloud
   #
   class FolderTests < BaseTestContext
     def remote_data_folder
-      remote_test_folder + '/Storage'
+      remote_test_folder + "/Storage"
     end
 
     def local_file
-      'Common/test_multi_pages.docx'
+      "Common/test_multi_pages.docx"
     end
 
 
@@ -42,7 +42,7 @@ module AsposeWordsCloud
     # Test for create folder.
     #
     def test_create_folder
-      request = CreateFolderRequest.new(remote_data_folder + '/TestCreateFolder', nil)
+      request = CreateFolderRequest.new(remote_data_folder + "/TestCreateFolder", nil)
 
       @words_api.create_folder(request)
     end
@@ -51,9 +51,9 @@ module AsposeWordsCloud
     # Test for delete folder.
     #
     def test_delete_folder
-      test_delete_folder = remote_data_folder + '/TestDeleteFolder'
+      test_delete_folder = remote_data_folder + "/TestDeleteFolder"
 
-      upload_file File.join(local_test_folder, local_file), test_delete_folder + '/TestDeleteFolder.docx'
+      upload_file File.join(local_test_folder, local_file), test_delete_folder + "/TestDeleteFolder.docx"
 
       request = DeleteFolderRequest.new(test_delete_folder, nil, nil)
 
@@ -74,11 +74,11 @@ module AsposeWordsCloud
     # Test for copy folder.
     #
     def test_copy_folder
-      folder_to_copy = remote_data_folder + '/TestCopyFolder'
+      folder_to_copy = remote_data_folder + "/TestCopyFolder"
 
-      upload_file File.join(local_test_folder, local_file), folder_to_copy + 'Src/TestCopyFolderSrc.docx'
+      upload_file File.join(local_test_folder, local_file), folder_to_copy + "Src/TestCopyFolderSrc.docx"
 
-      request = CopyFolderRequest.new(folder_to_copy + 'Dest', folder_to_copy + 'Src', nil, nil)
+      request = CopyFolderRequest.new(folder_to_copy + "Dest", folder_to_copy + "Src", nil, nil)
 
       @words_api.copy_folder(request)
     end
@@ -87,9 +87,9 @@ module AsposeWordsCloud
     # Test for move folder.
     #
     def test_move_folder
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/TestMoveFolderSrc/TestMoveFolderSrc.docx'
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/TestMoveFolderSrc/TestMoveFolderSrc.docx"
 
-      request = MoveFolderRequest.new(remote_test_out + '/TestMoveFolderDest_' + generate_uuid, remote_data_folder + '/TestMoveFolderSrc', nil, nil)
+      request = MoveFolderRequest.new(remote_test_out + "/TestMoveFolderDest_" + generate_uuid, remote_data_folder + "/TestMoveFolderSrc", nil, nil)
 
       @words_api.move_folder(request)
     end

@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="paragraph_list_format_response.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,10 +27,9 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # This response should be returned by the service when handling:
-  # GET https://api.aspose.cloud/v4.0/words/Test.doc/paragraphs/{0}/listFormat.
+  # The REST response with a list format for a paragraph.
   class ParagraphListFormatResponse
-    # Gets or sets request Id.
+    # Gets or sets the request Id.
     attr_accessor :request_id
 
     # Gets or sets the list format for a paragraph.

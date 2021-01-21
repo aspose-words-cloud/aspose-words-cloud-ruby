@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="execute_mail_merge_online_request.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -35,22 +35,22 @@ module AsposeWordsCloud
     # File with mailmerge data.
     attr_accessor :data
 
-    # With regions flag.
+    # The flag indicating whether to execute Mail Merge operation with regions.
     attr_accessor :with_regions
 
-    # Clean up options.
+    # The cleanup options.
     attr_accessor :cleanup
 
-    # This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead.
+    # The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.
     attr_accessor :document_file_name
 
     #
     # Initializes a new instance.
     # @param template File with template.
     # @param data File with mailmerge data.
-    # @param with_regions With regions flag.
-    # @param cleanup Clean up options.
-    # @param document_file_name This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead.
+    # @param with_regions The flag indicating whether to execute Mail Merge operation with regions.
+    # @param cleanup The cleanup options.
+    # @param document_file_name The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.
 
     def initialize(template, data, with_regions = nil, cleanup = nil, document_file_name = nil)
       self.template = template

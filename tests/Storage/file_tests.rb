@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="File_tests.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -30,11 +30,11 @@ module AsposeWordsCloud
   #
   class FileTests < BaseTestContext
     def remote_data_folder
-      remote_test_folder + '/Storage'
+      remote_test_folder + "/Storage"
     end
 
     def local_file
-      'Common/test_multi_pages.docx'
+      "Common/test_multi_pages.docx"
     end
 
 
@@ -42,9 +42,9 @@ module AsposeWordsCloud
     # Test for uploading file.
     #
     def test_upload_file
-      remote_file_name = 'TestUploadFile.docx'
+      remote_file_name = "TestUploadFile.docx"
 
-      request = UploadFileRequest.new(File.open(File.join(local_test_folder, local_file)), remote_data_folder + '/' + remote_file_name, nil)
+      request = UploadFileRequest.new(File.open(File.join(local_test_folder, local_file)), remote_data_folder + "/" + remote_file_name, nil)
 
       result = @words_api.upload_file(request)
       assert_equal false, result.nil?
@@ -54,11 +54,11 @@ module AsposeWordsCloud
     # Test for copy file.
     #
     def test_copy_file
-      remote_file_name = 'TestCopyFileSrc.docx'
+      remote_file_name = "TestCopyFileSrc.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
-      request = CopyFileRequest.new(remote_data_folder + '/TestCopyFileDest.docx', remote_data_folder + '/' + remote_file_name, nil, nil, nil)
+      request = CopyFileRequest.new(remote_data_folder + "/TestCopyFileDest.docx", remote_data_folder + "/" + remote_file_name, nil, nil, nil)
 
       @words_api.copy_file(request)
     end
@@ -67,11 +67,11 @@ module AsposeWordsCloud
     # Test for move file.
     #
     def test_move_file
-      remote_file_name = 'TestMoveFileSrc.docx'
+      remote_file_name = "TestMoveFileSrc.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
-      request = MoveFileRequest.new(remote_test_out + '/TestMoveFileDest_' + generate_uuid + '.docx', remote_data_folder + '/' + remote_file_name, nil, nil, nil)
+      request = MoveFileRequest.new(remote_test_out + "/TestMoveFileDest_" + generate_uuid + ".docx", remote_data_folder + "/" + remote_file_name, nil, nil, nil)
 
       @words_api.move_file(request)
     end
@@ -80,11 +80,11 @@ module AsposeWordsCloud
     # Test for delete file.
     #
     def test_delete_file
-      remote_file_name = 'TestDeleteFile.docx'
+      remote_file_name = "TestDeleteFile.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
-      request = DeleteFileRequest.new(remote_data_folder + '/' + remote_file_name, nil, nil)
+      request = DeleteFileRequest.new(remote_data_folder + "/" + remote_file_name, nil, nil)
 
       @words_api.delete_file(request)
     end
@@ -93,11 +93,11 @@ module AsposeWordsCloud
     # Test for download file.
     #
     def test_download_file
-      remote_file_name = 'TestDownloadFile.docx'
+      remote_file_name = "TestDownloadFile.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
-      request = DownloadFileRequest.new(remote_data_folder + '/' + remote_file_name, nil, nil)
+      request = DownloadFileRequest.new(remote_data_folder + "/" + remote_file_name, nil, nil)
 
       result = @words_api.download_file(request)
       assert_equal false, result.nil?

@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="update_table_cell_format_request.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,17 +29,17 @@ module AsposeWordsCloud
   # Request model for update_table_cell_format operation.
   #
   class UpdateTableCellFormatRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
-    # The properties.
-    attr_accessor :format
-
-    # Path to table row.
+    # The path to the table row in the document tree.
     attr_accessor :table_row_path
 
     # Object index.
     attr_accessor :index
+
+    # The properties.
+    attr_accessor :format
 
     # Original document folder.
     attr_accessor :folder
@@ -64,10 +64,10 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
-    # @param format The properties.
-    # @param table_row_path Path to table row.
+    # @param name The filename of the input document.
+    # @param table_row_path The path to the table row in the document tree.
     # @param index Object index.
+    # @param format The properties.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -76,11 +76,11 @@ module AsposeWordsCloud
     # @param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
     # @param revision_date_time The date and time to use for revisions.
 
-    def initialize(name, format, table_row_path, index, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil, revision_author = nil, revision_date_time = nil)
+    def initialize(name, table_row_path, index, format, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil, revision_author = nil, revision_date_time = nil)
       self.name = name
-      self.format = format
       self.table_row_path = table_row_path
       self.index = index
+      self.format = format
       self.folder = folder
       self.storage = storage
       self.load_encoding = load_encoding

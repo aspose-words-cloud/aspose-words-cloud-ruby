@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="list_level_update.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -32,35 +32,31 @@ module AsposeWordsCloud
     # Gets or sets the justification of the actual number of the list item.
     attr_accessor :alignment
 
-    # Gets or sets a value indicating whether true if the level turns all inherited numbers to Arabic, false if it preserves
-    # their number style.
+    # Gets or sets a value indicating whether the level turns all inherited numbers to Arabic, false if it preserves their number style.
     attr_accessor :is_legal
 
-    # Gets or sets returns or sets the number format for the list level.
+    # Gets or sets the number format for the list level.
     attr_accessor :number_format
 
-    # Gets or sets returns or sets the position (in points) of the number or bullet for the list
-    # level.
+    # Gets or sets the position (in points) of the number or bullet for the list level.
     attr_accessor :number_position
 
-    # Gets or sets returns or sets the number style for this list level.
+    # Gets or sets the number style for this list level.
     attr_accessor :number_style
 
-    # Gets or sets or returns the list level that must appear before the specified list level
-    # restarts numbering.
+    # Gets or sets the list level that must appear before the specified list level restarts numbering.
     attr_accessor :restart_after_level
 
-    # Gets or sets returns or sets the starting number for this list level.
+    # Gets or sets the starting number for this list level.
     attr_accessor :start_at
 
-    # Gets or sets returns or sets the tab position (in points) for the list level.
+    # Gets or sets the tab position (in points) for the list level.
     attr_accessor :tab_position
 
-    # Gets or sets returns or sets the position (in points) for the second line of wrapping text
-    # for the list level.
+    # Gets or sets the position (in points) for the second line of wrapping text for the list level.
     attr_accessor :text_position
 
-    # Gets or sets returns or sets the character inserted after the number for the list level.
+    # Gets or sets the character to be inserted after the number for the list level.
     attr_accessor :trailing_character
 
     class EnumAttributeValidator

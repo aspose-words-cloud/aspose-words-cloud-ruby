@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="paragraph_insert.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,9 +27,9 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Paragraph element.
+  # DTO container with a paragraph's text.
   class ParagraphInsert
-    # Gets or sets paragraph's text.
+    # Gets or sets the paragraph's text.
     attr_accessor :text
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

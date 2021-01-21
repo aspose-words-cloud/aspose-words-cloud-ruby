@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="insert_run_request.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,10 +29,10 @@ module AsposeWordsCloud
   # Request model for insert_run operation.
   #
   class InsertRunRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
-    # Path to parent paragraph.
+    # The path to the paragraph in the document tree.
     attr_accessor :paragraph_path
 
     # Run data.
@@ -59,13 +59,13 @@ module AsposeWordsCloud
     # The date and time to use for revisions.
     attr_accessor :revision_date_time
 
-    # Paragraph will be inserted before node with index.
+    # The index of the node. A new Run object will be inserted before the node with the specified node Id.
     attr_accessor :insert_before_node
 
     #
     # Initializes a new instance.
-    # @param name The document name.
-    # @param paragraph_path Path to parent paragraph.
+    # @param name The filename of the input document.
+    # @param paragraph_path The path to the paragraph in the document tree.
     # @param run Run data.
     # @param folder Original document folder.
     # @param storage Original document storage.
@@ -74,7 +74,7 @@ module AsposeWordsCloud
     # @param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
     # @param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
     # @param revision_date_time The date and time to use for revisions.
-    # @param insert_before_node Paragraph will be inserted before node with index.
+    # @param insert_before_node The index of the node. A new Run object will be inserted before the node with the specified node Id.
 
     def initialize(name, paragraph_path, run, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil, revision_author = nil, revision_date_time = nil, insert_before_node = nil)
       self.name = name

@@ -13,6 +13,22 @@ This repository contains Aspose.Words Cloud SDK for Ruby source code. This SDK a
 * Watermarks and protection
 * Full read & write access to Document Object Model, including sections, paragraphs, text, images, tables, headers/footers and many others
 
+## Enhancements in Version 21.1
+
+- Added online version for all API methods
+
+
+## Enhancements in Version 20.11
+
+- In configuration json file appSid / appKey has been replaced to clientId / clientSecret.
+- In Words API initialization methods clientId parameter precedes clientSecret parameter.
+
+
+## Enhancements in Version 20.10
+
+- Internal API changes.
+
+
 ## Enhancements in Version 20.9
 
 - Added Batch API feature
@@ -89,7 +105,7 @@ To use Aspose Words for Cloud Ruby SDK you need to register an account with [Asp
 To install this package do the following:
 update your Gemfile
 ```ruby
-gem 'aspose_words_cloud', '~> 20.10'
+gem 'aspose_words_cloud', '~> 21.1'
 ```
 or install directly
 ```bash
@@ -100,8 +116,8 @@ gem install aspose_words_cloud
 ```ruby
     # Start README example
     AsposeWordsCloud.configure do |config|
-            config.api_key['api_key'] = AppKey
-            config.api_key['app_sid'] = AppSid
+            config.client_data['ClientId'] = clientId
+            config.client_data['ClientSecret'] = clientSecret
             config.host = host
     request = DeleteWatermarkRequest.new remote_name, remote_test_folder + test_folder
     result = @words_api.delete_watermark request

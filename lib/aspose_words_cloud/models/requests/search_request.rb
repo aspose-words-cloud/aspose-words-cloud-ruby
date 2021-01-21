@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="search_request.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,7 +29,7 @@ module AsposeWordsCloud
   # Request model for search operation.
   #
   class SearchRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
     # The regular expression used to find matches.
@@ -49,7 +49,7 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
+    # @param name The filename of the input document.
     # @param pattern The regular expression used to find matches.
     # @param folder Original document folder.
     # @param storage Original document storage.

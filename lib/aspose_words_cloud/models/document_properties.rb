@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="document_properties.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,12 +27,12 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Collection of document properties.
+  # The collection of document properties.
   class DocumentProperties
-    # Gets or sets link to the document.
+    # Gets or sets the link to the document.
     attr_accessor :link
 
-    # Gets or sets collection of document properties.
+    # Gets or sets the collection of document properties.
     attr_accessor :list
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

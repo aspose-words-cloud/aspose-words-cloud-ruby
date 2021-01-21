@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="DocumentStatistics_tests.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -30,11 +30,11 @@ module AsposeWordsCloud
   #
   class DocumentStatisticsTests < BaseTestContext
     def remote_data_folder
-      remote_test_folder + '/DocumentActions/Statistics'
+      remote_test_folder + "/DocumentActions/Statistics"
     end
 
     def local_file
-      'Common/test_multi_pages.docx'
+      "Common/test_multi_pages.docx"
     end
 
 
@@ -42,13 +42,23 @@ module AsposeWordsCloud
     # Test for document classification.
     #
     def test_get_document_statistics
-      remote_file_name = 'TestGetDocumentStatistics.docx'
+      remote_file_name = "TestGetDocumentStatistics.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
       request = GetDocumentStatisticsRequest.new(remote_file_name, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.get_document_statistics(request)
+      assert_equal false, result.nil?
+    end
+
+    #
+    # Test for document classification online.
+    #
+    def test_get_document_statistics_online
+      request = GetDocumentStatisticsOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), nil, nil, nil, nil, nil)
+
+      result = @words_api.get_document_statistics_online(request)
       assert_equal false, result.nil?
     end
   end

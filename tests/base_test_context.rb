@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="base_test_context.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -33,9 +33,9 @@ module AsposeWordsCloud
     def setup
       creds = get_config()
       AsposeWordsCloud.configure do |config|
-        config.api_key['api_key'] = creds['AppKey']
-        config.api_key['app_sid'] = creds['AppSid']
-          config.debugging = creds['Debug']
+        config.client_data['ClientId'] = creds['ClientId']
+        config.client_data['ClientSecret'] = creds['ClientSecret']
+        config.debugging = creds['Debug']
         config.baseUrl = creds['BaseUrl']
       end
       @words_api = WordsApi.new

@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="bookmarks_outline_level_data.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,12 +27,12 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # container class for individual bookmarks outline level.
+  # Container class for individual bookmarks outline level.
   class BookmarksOutlineLevelData
-    # Gets or sets specify the bookmark's level.
+    # Gets or sets the bookmark's level.
     attr_accessor :bookmarks_outline_level
 
-    # Gets or sets specify the bookmark's name.
+    # Gets or sets the bookmark's name.
     attr_accessor :name
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

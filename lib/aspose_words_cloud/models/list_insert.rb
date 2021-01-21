@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="list_insert.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,7 +29,7 @@ module AsposeWordsCloud
 
   # Insert document to document list.
   class ListInsert
-    # Gets or sets a value indicating whether specifies whether list should be restarted at each section. Default value is false.
+    # Gets or sets the option that controls how list should be restarted at each section.
     attr_accessor :template
 
     class EnumAttributeValidator

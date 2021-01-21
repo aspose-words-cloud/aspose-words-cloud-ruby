@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="search_response.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,16 +27,15 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # This response should be returned by the service when handling:
-  # GET https://api.aspose.cloud/v4.0/words/Test.doc/search.
+  # The REST response with a regular expression pattern and a collection of search results.
   class SearchResponse
-    # Gets or sets request Id.
+    # Gets or sets the request Id.
     attr_accessor :request_id
 
-    # Gets or sets a regular expression pattern used to find matches.
+    # Gets or sets the regular expression pattern used to find matches.
     attr_accessor :searching_pattern
 
-    # Gets or sets collection of search results.
+    # Gets or sets the collection of search results.
     attr_accessor :search_results
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="comment_link.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,7 +29,7 @@ module AsposeWordsCloud
 
   # Comment link.
   class CommentLink
-    # Gets or sets link to the document.
+    # Gets or sets the link to the document.
     attr_accessor :link
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="list_info.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,21 +27,21 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Represents a single document list.
+  # DTO container with a single document list.
   class ListInfo
-    # Gets or sets link to the document.
+    # Gets or sets the link to the document.
     attr_accessor :link
 
-    # Gets or sets a value indicating whether returns true if this list is a definition of a list style.
+    # Gets or sets a value indicating whether this list is a definition of a list style.
     attr_accessor :is_list_style_definition
 
-    # Gets or sets a value indicating whether returns true if this list is a reference to a list style.
+    # Gets or sets a value indicating whether this list is a reference to a list style.
     attr_accessor :is_list_style_reference
 
-    # Gets or sets a value indicating whether returns true when the list contains 9 levels; false when 1 level.
+    # Gets or sets a value indicating whether the list contains 9 levels; false when 1 level.
     attr_accessor :is_multi_level
 
-    # Gets or sets a value indicating whether specifies whether list should be restarted at each section. Default value is false.
+    # Gets or sets a value indicating whether list should be restarted at each section. The default value is false.
     attr_accessor :is_restart_at_each_section
 
     # Gets or sets the unique identifier of the list.

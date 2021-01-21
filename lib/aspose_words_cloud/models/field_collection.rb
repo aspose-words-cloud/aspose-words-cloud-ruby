@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="field_collection.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,12 +27,12 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Represents DTO for collection of fields.
+  # DTO container with a collection of fields.
   class FieldCollection
-    # Gets or sets link to the document.
+    # Gets or sets the link to the document.
     attr_accessor :link
 
-    # Gets or sets collection of fields.
+    # Gets or sets the collection of fields.
     attr_accessor :list
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="text_save_options_data.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,63 +29,60 @@ module AsposeWordsCloud
 
   # Container class for text save options.
   class TextSaveOptionsData
-    # Gets or sets a value determining how 3D effects are rendered.
+    # Gets or sets the value determining how 3D effects are rendered.
     attr_accessor :dml3_d_effects_rendering_mode
 
-    # Gets or sets a value determining how DrawingML effects are rendered.
+    # Gets or sets the value determining how DrawingML effects are rendered.
     # { Simplified | None | Fine }.
     attr_accessor :dml_effects_rendering_mode
 
-    # Gets or sets a value determining how DrawingML shapes are rendered.
-    # { Fallback | DrawingML }.
+    # Gets or sets the option that controls how DrawingML shapes are rendered.
     attr_accessor :dml_rendering_mode
 
-    # Gets or sets name of destination file.
+    # Gets or sets the name of destination file.
     attr_accessor :file_name
 
-    # Gets or sets format of save.
+    # Gets or sets the format of save.
     attr_accessor :save_format
 
-    # Gets or sets a value determining if fields should be updated before saving the document to a fixed page format.
-    # Default value for this property is. true.
+    # Gets or sets a value indicating whether fields should be updated before saving the document to a fixed page format. The default value is true.
     attr_accessor :update_fields
 
-    # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted
-    # property is updated before saving.
+    # Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.
     attr_accessor :update_last_printed_property
 
-    # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
+    # Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
     attr_accessor :update_last_saved_time_property
 
-    # Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.
+    # Gets or sets a value indicating whether content of StructuredDocumentTag is updated before saving.
     attr_accessor :update_sdt_content
 
-    # Gets or sets controls zip output or not.
-    # Default value is false.
+    # Gets or sets a value indicating whether to zip output or not.
+    # The default value is false.
     attr_accessor :zip_output
 
-    # Gets or sets specifies the encoding to use when exporting in plain text format.
+    # Gets or sets the character encoding to use when exporting in plain text format.
     attr_accessor :encoding
 
-    # Gets or sets specifies whether to output headers and footers when exporting in plain text format.
+    # Gets or sets the option that controls whether to output headers and footers when exporting in plain text format.
     # default value is TxtExportHeadersFootersMode.PrimaryOnly.
     attr_accessor :export_headers_footers_mode
 
-    # Gets or sets allows to specify whether the page breaks should be preserved during export.
+    # Gets or sets a value indicating whether the page breaks should be preserved during export.
     # The default value is false.
     attr_accessor :force_page_breaks
 
-    # Gets or sets specifies the string to use as a paragraph break when exporting in plain text format.
+    # Gets or sets the string to use as a paragraph break when exporting in plain text format.
     attr_accessor :paragraph_break
 
-    # Gets or sets specifies whether to add bi-directional marks before each BiDi run when exporting in plain text format.
+    # Gets or sets a value indicating whether to add bi-directional marks before each BiDi run when exporting in plain text format.
     # The default value is true.
     attr_accessor :add_bidi_marks
 
-    # Gets or sets specifies whether the program should attempt to preserve layout of tables when saving in the plain text format.
+    # Gets or sets a value indicating whether the program should attempt to preserve layout of tables when saving in the plain text format.
     attr_accessor :preserve_table_layout
 
-    # Gets or sets specifies whether the program should simplify list labels in case of complex label formatting not being adequately represented by plain text.
+    # Gets or sets a value indicating whether the program should simplify list labels in case of complex label formatting not being adequately represented by plain text.
     attr_accessor :simplify_list_labels
 
     class EnumAttributeValidator

@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="optimization_options.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,7 +29,7 @@ module AsposeWordsCloud
 
   # Container class for the document optimization options.
   class OptimizationOptions
-    # Gets or sets specific MSWord version.
+    # Gets or sets the specific MSWord version.
     attr_accessor :ms_word_version
 
     class EnumAttributeValidator

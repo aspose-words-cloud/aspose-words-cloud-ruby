@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="save_as_tiff_request.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,7 +29,7 @@ module AsposeWordsCloud
   # Request model for save_as_tiff operation.
   #
   class SaveAsTiffRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
     # Tiff save options.
@@ -47,16 +47,16 @@ module AsposeWordsCloud
     # Password for opening an encrypted document.
     attr_accessor :password
 
-    # Use antialiasing flag.
+    # The flag indicating whether to use antialiasing.
     attr_accessor :use_anti_aliasing
 
-    # Use high quality flag.
+    # The flag indicating whether to use high quality.
     attr_accessor :use_high_quality_rendering
 
-    # Brightness for the generated images.
+    # The level of brightness for the generated images.
     attr_accessor :image_brightness
 
-    # Color mode for the generated images.
+    # The color mode for the generated images.
     attr_accessor :image_color_mode
 
     # The contrast for the generated images.
@@ -65,37 +65,37 @@ module AsposeWordsCloud
     # The images numeral format.
     attr_accessor :numeral_format
 
-    # Number of pages to render.
+    # The number of pages to render.
     attr_accessor :page_count
 
-    # Page index to start rendering.
+    # The index of the page to start rendering.
     attr_accessor :page_index
 
-    # Background image color.
+    # The background image color.
     attr_accessor :paper_color
 
-    # The pixel format of generated images.
+    # The pixel format of the generated images.
     attr_accessor :pixel_format
 
-    # The resolution of generated images.
+    # The resolution of the generated images.
     attr_accessor :resolution
 
-    # Zoom factor for generated images.
+    # The zoom factor for the generated images.
     attr_accessor :scale
 
     # The compression tipe.
     attr_accessor :tiff_compression
 
-    # Optional, default is Fallback.
+    # The optional dml rendering mode. The default value is Fallback.
     attr_accessor :dml_rendering_mode
 
-    # Optional, default is Simplified.
+    # The optional dml effects rendering mode. The default value is Simplified.
     attr_accessor :dml_effects_rendering_mode
 
-    # Optional, Tiff binarization method, possible values are: FloydSteinbergDithering, Threshold.
+    # The optional TIFF binarization method. Possible values are: FloydSteinbergDithering, Threshold.
     attr_accessor :tiff_binarization_method
 
-    # Optional. A value determining zip output or not.
+    # The flag indicating whether to ZIP the output.
     attr_accessor :zip_output
 
     # Folder in filestorage with custom fonts.
@@ -103,29 +103,29 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
+    # @param name The filename of the input document.
     # @param save_options Tiff save options.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     # @param password Password for opening an encrypted document.
-    # @param use_anti_aliasing Use antialiasing flag.
-    # @param use_high_quality_rendering Use high quality flag.
-    # @param image_brightness Brightness for the generated images.
-    # @param image_color_mode Color mode for the generated images.
+    # @param use_anti_aliasing The flag indicating whether to use antialiasing.
+    # @param use_high_quality_rendering The flag indicating whether to use high quality.
+    # @param image_brightness The level of brightness for the generated images.
+    # @param image_color_mode The color mode for the generated images.
     # @param image_contrast The contrast for the generated images.
     # @param numeral_format The images numeral format.
-    # @param page_count Number of pages to render.
-    # @param page_index Page index to start rendering.
-    # @param paper_color Background image color.
-    # @param pixel_format The pixel format of generated images.
-    # @param resolution The resolution of generated images.
-    # @param scale Zoom factor for generated images.
+    # @param page_count The number of pages to render.
+    # @param page_index The index of the page to start rendering.
+    # @param paper_color The background image color.
+    # @param pixel_format The pixel format of the generated images.
+    # @param resolution The resolution of the generated images.
+    # @param scale The zoom factor for the generated images.
     # @param tiff_compression The compression tipe.
-    # @param dml_rendering_mode Optional, default is Fallback.
-    # @param dml_effects_rendering_mode Optional, default is Simplified.
-    # @param tiff_binarization_method Optional, Tiff binarization method, possible values are: FloydSteinbergDithering, Threshold.
-    # @param zip_output Optional. A value determining zip output or not.
+    # @param dml_rendering_mode The optional dml rendering mode. The default value is Fallback.
+    # @param dml_effects_rendering_mode The optional dml effects rendering mode. The default value is Simplified.
+    # @param tiff_binarization_method The optional TIFF binarization method. Possible values are: FloydSteinbergDithering, Threshold.
+    # @param zip_output The flag indicating whether to ZIP the output.
     # @param fonts_location Folder in filestorage with custom fonts.
 
     def initialize(name, save_options, folder = nil, storage = nil, load_encoding = nil, password = nil, use_anti_aliasing = nil, use_high_quality_rendering = nil, image_brightness = nil, image_color_mode = nil, image_contrast = nil, numeral_format = nil, page_count = nil, page_index = nil, paper_color = nil, pixel_format = nil, resolution = nil, scale = nil, tiff_compression = nil, dml_rendering_mode = nil, dml_effects_rendering_mode = nil, tiff_binarization_method = nil, zip_output = nil, fonts_location = nil)

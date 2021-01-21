@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="header_footer_link.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,10 +29,10 @@ module AsposeWordsCloud
 
   # HeaderFooter link element.
   class HeaderFooterLink
-    # Gets or sets link to the document.
+    # Gets or sets the link to the document.
     attr_accessor :link
 
-    # Gets or sets paragraph's text.
+    # Gets or sets the paragraph's text.
     attr_accessor :type
 
     class EnumAttributeValidator

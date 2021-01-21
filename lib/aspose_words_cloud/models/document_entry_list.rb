@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="document_entry_list.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,10 +29,10 @@ module AsposeWordsCloud
 
   # Represents a list of documents which will be appended to the original resource document.
   class DocumentEntryList
-    # Gets or sets parameter that indicates to apply headers and footers from base document to appending documents. Default is true.
+    # Gets or sets a value indicating whether to apply headers and footers from base document to appending documents. The default value is true.
     attr_accessor :apply_base_document_headers_and_footers_to_appending_documents
 
-    # Gets or sets list of documents.
+    # Gets or sets the list of documents.
     attr_accessor :document_entries
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

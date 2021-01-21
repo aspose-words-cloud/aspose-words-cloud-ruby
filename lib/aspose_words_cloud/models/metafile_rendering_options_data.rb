@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="metafile_rendering_options_data.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,22 +27,22 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # container class for options of metafile rendering.
+  # Container class for options of metafile rendering.
   class MetafileRenderingOptionsData
-    # Gets or sets determines how EMF+ Dual metafiles should be rendered.
+    # Gets or sets the option that controls how EMF+ Dual metafiles should be rendered.
     attr_accessor :emf_plus_dual_rendering_mode
 
-    # Gets or sets a value determining whether or not the raster operations should be emulated.
+    # Gets or sets a value indicating whether the raster operations should be emulated.
     attr_accessor :emulate_raster_operations
 
-    # Gets or sets determines how metafile images should be rendered.
+    # Gets or sets the option that controls how metafile images should be rendered.
     attr_accessor :rendering_mode
 
-    # Gets or sets a value determining whether or not to scale fonts in WMF metafile according to metafile size on the page.
+    # Gets or sets a value indicating whether to scale fonts in WMF metafile according to metafile size on the page.
     # The default value is true.
     attr_accessor :scale_wmf_fonts_to_metafile_size
 
-    # Gets or sets determines how WMF metafiles with embedded EMF metafiles should be rendered.
+    # Gets or sets the flag, that controls how WMF metafiles with embedded EMF metafiles should be rendered.
     attr_accessor :use_emf_embedded_to_wmf
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

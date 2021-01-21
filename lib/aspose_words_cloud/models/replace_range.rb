@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="replace_range.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,12 +27,12 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Range element.
+  # DTO container with a range element.
   class ReplaceRange
-    # Gets or sets range's text.
+    # Gets or sets the range's text.
     attr_accessor :text
 
-    # Gets or sets range's text type.
+    # Gets or sets the range's text type.
     attr_accessor :text_type
 
     class EnumAttributeValidator

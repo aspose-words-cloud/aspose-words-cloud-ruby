@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="classify_request.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,16 +29,16 @@ module AsposeWordsCloud
   # Request model for classify operation.
   #
   class ClassifyRequest
-    # Text to classify.
+    # The text to classify.
     attr_accessor :text
 
-    # Number of the best classes to return.
+    # The number of the best classes to return.
     attr_accessor :best_classes_count
 
     #
     # Initializes a new instance.
-    # @param text Text to classify.
-    # @param best_classes_count Number of the best classes to return.
+    # @param text The text to classify.
+    # @param best_classes_count The number of the best classes to return.
 
     def initialize(text, best_classes_count = nil)
       self.text = text

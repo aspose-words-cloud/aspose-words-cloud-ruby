@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="range_document.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,9 +27,9 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Range element.
+  # DTO container with a Range element.
   class RangeDocument
-    # Gets or sets name for new document.
+    # Gets or sets the name for a new document.
     attr_accessor :document_name
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

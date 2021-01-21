@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="xml_color.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,10 +29,10 @@ module AsposeWordsCloud
 
   # Utility class for Color serialization.
   class XmlColor
-    # Gets or sets alpha component of color structure.
+    # Gets or sets the Alpha component of color structure.
     attr_accessor :alpha
 
-    # Gets or sets hTML string color representation.
+    # Gets or sets the HTML string color representation.
     attr_accessor :web
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

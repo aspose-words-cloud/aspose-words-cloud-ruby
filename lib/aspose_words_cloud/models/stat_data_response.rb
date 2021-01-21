@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="stat_data_response.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,15 +27,15 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Response for the request of the document's statistical data.
+  # The REST response with document's statistical data.
   class StatDataResponse
-    # Gets or sets request Id.
+    # Gets or sets the request Id.
     attr_accessor :request_id
 
-    # Gets or sets link to the document.
+    # Gets or sets the link to the document.
     attr_accessor :document_link
 
-    # Gets or sets statistical data of the document.
+    # Gets or sets the statistical data of the document.
     attr_accessor :stat_data
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="delete_table_cell_request.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,10 +29,10 @@ module AsposeWordsCloud
   # Request model for delete_table_cell operation.
   #
   class DeleteTableCellRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
-    # Path to table row.
+    # The path to the table row in the document tree.
     attr_accessor :table_row_path
 
     # Object index.
@@ -61,8 +61,8 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
-    # @param table_row_path Path to table row.
+    # @param name The filename of the input document.
+    # @param table_row_path The path to the table row in the document tree.
     # @param index Object index.
     # @param folder Original document folder.
     # @param storage Original document storage.

@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="list_update.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,7 +29,7 @@ module AsposeWordsCloud
 
   # Update document properties if document list.
   class ListUpdate
-    # Gets or sets a value indicating whether specifies whether list should be restarted at each section. Default value is false.
+    # Gets or sets a value indicating whether list should be restarted at each section. The default value is false.
     attr_accessor :is_restart_at_each_section
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

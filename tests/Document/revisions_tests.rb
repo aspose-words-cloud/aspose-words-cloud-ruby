@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="Revisions_tests.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -30,11 +30,11 @@ module AsposeWordsCloud
   #
   class RevisionsTests < BaseTestContext
     def remote_data_folder
-      remote_test_folder + '/DocumentActions/Revisions'
+      remote_test_folder + "/DocumentActions/Revisions"
     end
 
     def local_file
-      'Common/test_multi_pages.docx'
+      "Common/test_multi_pages.docx"
     end
 
 
@@ -42,13 +42,23 @@ module AsposeWordsCloud
     # Test for accepting revisions in document.
     #
     def test_accept_all_revisions
-      remote_file_name = 'TestAcceptAllRevisions.docx'
+      remote_file_name = "TestAcceptAllRevisions.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
-      request = AcceptAllRevisionsRequest.new(remote_file_name, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name)
+      request = AcceptAllRevisionsRequest.new(remote_file_name, remote_data_folder, nil, nil, nil, remote_test_out + "/" + remote_file_name)
 
       result = @words_api.accept_all_revisions(request)
+      assert_equal false, result.nil?
+    end
+
+    #
+    # Test for accepting revisions in document online.
+    #
+    def test_accept_all_revisions_online
+      request = AcceptAllRevisionsOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), nil, nil, nil)
+
+      result = @words_api.accept_all_revisions_online(request)
       assert_equal false, result.nil?
     end
 
@@ -56,13 +66,23 @@ module AsposeWordsCloud
     # Test for rejecting revisions in document.
     #
     def test_reject_all_revisions
-      remote_file_name = 'TestRejectAllRevisions.docx'
+      remote_file_name = "TestRejectAllRevisions.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
-      request = RejectAllRevisionsRequest.new(remote_file_name, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name)
+      request = RejectAllRevisionsRequest.new(remote_file_name, remote_data_folder, nil, nil, nil, remote_test_out + "/" + remote_file_name)
 
       result = @words_api.reject_all_revisions(request)
+      assert_equal false, result.nil?
+    end
+
+    #
+    # Test for rejecting revisions in document online.
+    #
+    def test_reject_all_revisions_online
+      request = RejectAllRevisionsOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), nil, nil, nil)
+
+      result = @words_api.reject_all_revisions_online(request)
       assert_equal false, result.nil?
     end
   end

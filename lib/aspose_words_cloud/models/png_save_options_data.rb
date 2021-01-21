@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="png_save_options_data.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,108 +27,105 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # container class for png save options.
+  # Container class for png save options.
   class PngSaveOptionsData
-    # Gets or sets a value determining how 3D effects are rendered.
+    # Gets or sets the value determining how 3D effects are rendered.
     attr_accessor :dml3_d_effects_rendering_mode
 
-    # Gets or sets a value determining how DrawingML effects are rendered.
+    # Gets or sets the value determining how DrawingML effects are rendered.
     # { Simplified | None | Fine }.
     attr_accessor :dml_effects_rendering_mode
 
-    # Gets or sets a value determining how DrawingML shapes are rendered.
-    # { Fallback | DrawingML }.
+    # Gets or sets the option that controls how DrawingML shapes are rendered.
     attr_accessor :dml_rendering_mode
 
-    # Gets or sets name of destination file.
+    # Gets or sets the name of destination file.
     attr_accessor :file_name
 
-    # Gets or sets format of save.
+    # Gets or sets the format of save.
     attr_accessor :save_format
 
-    # Gets or sets a value determining if fields should be updated before saving the document to a fixed page format.
-    # Default value for this property is. true.
+    # Gets or sets a value indicating whether fields should be updated before saving the document to a fixed page format. The default value is true.
     attr_accessor :update_fields
 
-    # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted
-    # property is updated before saving.
+    # Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.
     attr_accessor :update_last_printed_property
 
-    # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
+    # Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
     attr_accessor :update_last_saved_time_property
 
-    # Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.
+    # Gets or sets a value indicating whether content of StructuredDocumentTag is updated before saving.
     attr_accessor :update_sdt_content
 
-    # Gets or sets controls zip output or not.
-    # Default value is false.
+    # Gets or sets a value indicating whether to zip output or not.
+    # The default value is false.
     attr_accessor :zip_output
 
-    # Gets or sets a value determining how colors are rendered.
+    # Gets or sets the value determining how colors are rendered.
     # { Normal | Grayscale}.
     attr_accessor :color_mode
 
-    # Gets or sets determines the quality of the JPEG images inside PDF document.
+    # Gets or sets the quality of the JPEG images inside PDF document.
     attr_accessor :jpeg_quality
 
-    # Gets or sets allows to specify metafile rendering options.
+    # Gets or sets the metafile rendering options.
     attr_accessor :metafile_rendering_options
 
-    # Gets or sets indicates the symbol set that is used to represent numbers while rendering to fixed page formats.
+    # Gets or sets the symbol set, that is used to represent numbers while rendering to fixed page formats.
     attr_accessor :numeral_format
 
-    # Gets or sets flag indicates whether it is required to optimize output of XPS.
+    # Gets or sets a value indicating whether it is required to optimize output of XPS.
     # If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated.
-    # Note: The accuracy of the content display may be affected if this property is set to true.  Default is false.
+    # Note: The accuracy of the content display may be affected if this property is set to true.. The default value is false.
     attr_accessor :optimize_output
 
-    # Gets or sets determines number of pages to render.
+    # Gets or sets the number of pages to render.
     attr_accessor :page_count
 
-    # Gets or sets determines 0-based index of the first page to render.
+    # Gets or sets the 0-based index of the first page to render.
     attr_accessor :page_index
 
-    # Gets or sets allows to specify additional System.Drawing.Graphics quality options.
+    # Gets or sets the additional System.Drawing.Graphics quality options.
     attr_accessor :graphics_quality_options
 
-    # Gets or sets the horizontal resolution for the generated images, in dots per inch.
+    # Gets or sets the horizontal resolution in dots per inch for the generated images.
     # This property has effect only when saving to raster image formats.
     # The default value is 96.
     attr_accessor :horizontal_resolution
 
-    # Gets or sets brightness of image.
+    # Gets or sets the brightness level of the image.
     attr_accessor :image_brightness
 
-    # Gets or sets color mode of image.
+    # Gets or sets the color mode of the image.
     attr_accessor :image_color_mode
 
-    # Gets or sets contrast of image.
+    # Gets or sets the contrast level of the image.
     attr_accessor :image_contrast
 
-    # Gets or sets background (paper) color of image.
+    # Gets or sets the background (paper) color of the image.
     attr_accessor :paper_color
 
-    # Gets or sets pixel format of image.
+    # Gets or sets the pixel format of the image.
     attr_accessor :pixel_format
 
-    # Gets or sets both horizontal and vertical resolution for the generated images, in dots per inch.
+    # Gets or sets both horizontal and vertical resolution in dots per inch for the generated images.
     # This property has effect only when saving to raster image formats.
     # The default value is 96.
     attr_accessor :resolution
 
-    # Gets or sets zoom factor of image.
+    # Gets or sets the zoom factor of the image.
     attr_accessor :scale
 
-    # Gets or sets determine whether or not to use anti-aliasing for rendering.
+    # Gets or sets a value indicating whether to use anti-aliasing for rendering.
     attr_accessor :use_anti_aliasing
 
-    # Gets or sets a value determining whether to use GDI+ or Aspose.Words metafile renderer when saving to EMF.
+    # Gets or sets a value indicating whether to use GDI+ or Aspose.Words metafile renderer when saving to EMF.
     attr_accessor :use_gdi_emf_renderer
 
-    # Gets or sets determine whether or not to use high quality (i.e. slow) rendering algorithms.
+    # Gets or sets a value indicating whether to use high quality (i.e. slow) rendering algorithms.
     attr_accessor :use_high_quality_rendering
 
-    # Gets or sets the vertical resolution for the generated images, in dots per inch.
+    # Gets or sets the vertical resolution in dots per inch for the generated images.
     # This property has effect only when saving to raster image formats.
     # The default value is 96.
     attr_accessor :vertical_resolution

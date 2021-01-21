@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="list_format.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,9 +27,9 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Paragraph list format element.
+  # DTO container with a paragraph list format element.
   class ListFormat
-    # Gets or sets link to the document.
+    # Gets or sets the link to the document.
     attr_accessor :link
 
     # Gets or sets a value indicating whether the paragraph has bulleted or numbered formatting applied to it.

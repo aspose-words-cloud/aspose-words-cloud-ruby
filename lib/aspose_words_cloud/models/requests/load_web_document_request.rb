@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="load_web_document_request.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,7 +29,7 @@ module AsposeWordsCloud
   # Request model for load_web_document operation.
   #
   class LoadWebDocumentRequest
-    # Parameters of loading.
+    # The properties of data downloading.
     attr_accessor :data
 
     # Original document storage.
@@ -37,7 +37,7 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param data Parameters of loading.
+    # @param data The properties of data downloading.
     # @param storage Original document storage.
 
     def initialize(data, storage = nil)

@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="create_or_update_document_property_request.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,10 +29,10 @@ module AsposeWordsCloud
   # Request model for create_or_update_document_property operation.
   #
   class CreateOrUpdateDocumentPropertyRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
-    # The property name.
+    # The name of the property.
     attr_accessor :property_name
 
     # The property with new value.
@@ -61,8 +61,8 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
-    # @param property_name The property name.
+    # @param name The filename of the input document.
+    # @param property_name The name of the property.
     # @param property The property with new value.
     # @param folder Original document folder.
     # @param storage Original document storage.

@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="get_document_statistics_request.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,7 +29,7 @@ module AsposeWordsCloud
   # Request model for get_document_statistics operation.
   #
   class GetDocumentStatisticsRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
     # Original document folder.
@@ -44,25 +44,25 @@ module AsposeWordsCloud
     # Password for opening an encrypted document.
     attr_accessor :password
 
-    # Support including/excluding comments from the WordCount. Default value is "false".
+    # The flag indicating whether to include comments from the WordCount. The default value is "false".
     attr_accessor :include_comments
 
-    # Support including/excluding footnotes from the WordCount. Default value is "false".
+    # The flag indicating whether to include footnotes from the WordCount. The default value is "false".
     attr_accessor :include_footnotes
 
-    # Support including/excluding shape's text from the WordCount. Default value is "false".
+    # The flag indicating whether to include shape's text from the WordCount. The default value is "false".
     attr_accessor :include_text_in_shapes
 
     #
     # Initializes a new instance.
-    # @param name The document name.
+    # @param name The filename of the input document.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     # @param password Password for opening an encrypted document.
-    # @param include_comments Support including/excluding comments from the WordCount. Default value is "false".
-    # @param include_footnotes Support including/excluding footnotes from the WordCount. Default value is "false".
-    # @param include_text_in_shapes Support including/excluding shape's text from the WordCount. Default value is "false".
+    # @param include_comments The flag indicating whether to include comments from the WordCount. The default value is "false".
+    # @param include_footnotes The flag indicating whether to include footnotes from the WordCount. The default value is "false".
+    # @param include_text_in_shapes The flag indicating whether to include shape's text from the WordCount. The default value is "false".
 
     def initialize(name, folder = nil, storage = nil, load_encoding = nil, password = nil, include_comments = nil, include_footnotes = nil, include_text_in_shapes = nil)
       self.name = name

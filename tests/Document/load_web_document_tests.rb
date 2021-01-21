@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="LoadWebDocument_tests.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -33,8 +33,8 @@ module AsposeWordsCloud
     # Test for loading web document.
     #
     def test_load_web_document
-      request_data_save_options = SaveOptionsData.new({:FileName => 'google.doc', :SaveFormat => 'doc', :DmlEffectsRenderingMode => '1', :DmlRenderingMode => '1', :UpdateSdtContent => false, :ZipOutput => false})
-      request_data = LoadWebDocumentData.new({:LoadingDocumentUrl => 'http://google.com', :SaveOptions => request_data_save_options})
+      request_data_save_options = SaveOptionsData.new({:FileName => "google.doc", :SaveFormat => "doc", :DmlEffectsRenderingMode => "1", :DmlRenderingMode => "1", :UpdateSdtContent => false, :ZipOutput => false})
+      request_data = LoadWebDocumentData.new({:LoadingDocumentUrl => "http://google.com", :SaveOptions => request_data_save_options})
       request = LoadWebDocumentRequest.new(request_data, nil)
 
       result = @words_api.load_web_document(request)

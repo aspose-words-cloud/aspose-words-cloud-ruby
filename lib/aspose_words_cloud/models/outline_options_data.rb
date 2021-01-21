@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="outline_options_data.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,27 +27,24 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # container class for outline options.
+  # Container class for outline options.
   class OutlineOptionsData
-    # Gets or sets allows to specify individual bookmarks outline level.
+    # Gets or sets the individual bookmarks outline level.
     attr_accessor :bookmarks_outline_levels
 
-    # Gets or sets a value determining whether or not to create missing outline levels
-    # when the document is exported.
-    # Default value for this property is false.
+    # Gets or sets a value indicating whether to create missing outline levels when the document is exported. The default value is false.
     attr_accessor :create_missing_outline_levels
 
-    # Gets or sets specifies whether or not to create outlines for headings (paragraphs formatted
-    # with the Heading styles) inside tables.
+    # Gets or sets a value indicating whether to create outlines for headings (paragraphs formatted with the Heading styles) inside tables.
     attr_accessor :create_outlines_for_headings_in_tables
 
-    # Gets or sets specifies the default level in the document outline at which to display Word bookmarks.
+    # Gets or sets the default level in the document outline at which to display Word bookmarks.
     attr_accessor :default_bookmarks_outline_level
 
-    # Gets or sets specifies how many levels in the document outline to show expanded when the file is viewed.
+    # Gets or sets the number of levels in the document outline to show expanded when the file is viewed.
     attr_accessor :expanded_outline_levels
 
-    # Gets or sets specifies how many levels of headings (paragraphs formatted with the Heading styles) to include in the document outline.
+    # Gets or sets the number of levels of headings (paragraphs formatted with the Heading styles) to include in the document outline.
     attr_accessor :headings_outline_levels
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

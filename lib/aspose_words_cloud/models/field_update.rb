@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="field_update.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,10 +29,10 @@ module AsposeWordsCloud
 
   # Field for update.
   class FieldUpdate
-    # Gets or sets field code.
+    # Gets or sets the field code.
     attr_accessor :field_code
 
-    # Gets or sets LCID of the field.
+    # Gets or sets the LCID of the field.
     attr_accessor :locale_id
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

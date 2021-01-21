@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="readme_test.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -37,15 +37,15 @@ module AsposeWordsCloud
         remote_name = 'TestGetBookmarkByName.docx'
 
         creds = get_config()
-        appKey =  creds['AppKey']
-        appSid =  creds['AppSid']
+        clientSecret =  creds['ClientSecret']
+        clientId =  creds['ClientId']
         baseUrl = creds['BaseUrl']
 
         # Start README example
 
         AsposeWordsCloud.configure do |config|
-          config.api_key['api_key'] = appKey
-          config.api_key['app_sid'] = appSid
+          config.client_data['ClientId'] = clientId
+          config.client_data['ClientSecret'] = clientSecret
           config.baseUrl = baseUrl
         end
 

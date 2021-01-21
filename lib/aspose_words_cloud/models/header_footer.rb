@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="header_footer.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,21 +27,21 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Section element.
+  # DTO container with a section element.
   class HeaderFooter
-    # Gets or sets link to the document.
+    # Gets or sets the link to the document.
     attr_accessor :link
 
-    # Gets or sets paragraph's text.
+    # Gets or sets the paragraph's text.
     attr_accessor :type
 
-    # Gets or sets child nodes.
+    # Gets or sets the child nodes.
     attr_accessor :child_nodes
 
-    # Gets or sets link to DrawingObjects resource.
+    # Gets or sets the link to DrawingObjects resource.
     attr_accessor :drawing_objects
 
-    # Gets or sets link to Paragraphs resource.
+    # Gets or sets the link to Paragraphs resource.
     attr_accessor :paragraphs
 
     class EnumAttributeValidator

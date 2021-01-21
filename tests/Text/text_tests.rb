@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="Text_tests.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -30,7 +30,7 @@ module AsposeWordsCloud
   #
   class TextTests < BaseTestContext
     def remote_data_folder
-      remote_test_folder + '/DocumentElements/Text'
+      remote_test_folder + "/DocumentElements/Text"
     end
 
 
@@ -38,15 +38,28 @@ module AsposeWordsCloud
     # Test for replacing text.
     #
     def test_replace_text
-      remote_file_name = 'TestReplaceText.docx'
-      local_file = 'Common/test_multi_pages.docx'
+      remote_file_name = "TestReplaceText.docx"
+      local_file = "Common/test_multi_pages.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
-      request_replace_text = ReplaceTextParameters.new({:OldValue => 'aspose', :NewValue => 'aspose new'})
-      request = ReplaceTextRequest.new(remote_file_name, request_replace_text, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
+      request_replace_text = ReplaceTextParameters.new({:OldValue => "Testing", :NewValue => "Aspose testing"})
+      request = ReplaceTextRequest.new(remote_file_name, request_replace_text, remote_data_folder, nil, nil, nil, remote_test_out + "/" + remote_file_name, nil, nil)
 
       result = @words_api.replace_text(request)
+      assert_equal false, result.nil?
+    end
+
+    #
+    # Test for replacing text online.
+    #
+    def test_replace_text_online
+      local_file = "Common/test_multi_pages.docx"
+
+      request_replace_text = ReplaceTextParameters.new({:OldValue => "aspose", :NewValue => "aspose new"})
+      request = ReplaceTextOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), request_replace_text, nil, nil, nil, nil, nil)
+
+      result = @words_api.replace_text_online(request)
       assert_equal false, result.nil?
     end
 
@@ -54,14 +67,26 @@ module AsposeWordsCloud
     # Test for searching.
     #
     def test_search
-      remote_file_name = 'TestSearch.docx'
-      local_file = 'DocumentElements/Text/SampleWordDocument.docx'
+      remote_file_name = "TestSearch.docx"
+      local_file = "DocumentElements/Text/SampleWordDocument.docx"
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
 
-      request = SearchRequest.new(remote_file_name, 'aspose', remote_data_folder, nil, nil, nil)
+      request = SearchRequest.new(remote_file_name, "aspose", remote_data_folder, nil, nil, nil)
 
       result = @words_api.search(request)
+      assert_equal false, result.nil?
+    end
+
+    #
+    # Test for searching online.
+    #
+    def test_search_online
+      local_file = "DocumentElements/Text/SampleWordDocument.docx"
+
+      request = SearchOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), "aspose", nil, nil)
+
+      result = @words_api.search_online(request)
       assert_equal false, result.nil?
     end
   end

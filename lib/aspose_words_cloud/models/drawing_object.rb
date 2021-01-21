@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="drawing_object.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,42 +27,42 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Represents Drawing Object DTO.
+  # DTO container with a DrawingObject.
   class DrawingObject
-    # Gets or sets link to the document.
+    # Gets or sets the link to the document.
     attr_accessor :link
 
-    # Gets or sets node id.
+    # Gets or sets the node id.
     attr_accessor :node_id
 
-    # Gets or sets height of the drawing object in points.
+    # Gets or sets the height of the DrawingObject in points.
     attr_accessor :height
 
-    # Gets or sets link to image data. Can be null if shape does not have an image.
+    # Gets or sets the link to image data. Can be null if shape does not have an image.
     attr_accessor :image_data_link
 
-    # Gets or sets distance in points from the origin to the left side of the image.
+    # Gets or sets the distance in points from the origin to the left side of the image.
     attr_accessor :left
 
-    # Gets or sets link to ole object. Can be null if shape does not have ole data.
+    # Gets or sets the link to OLE object. Can be null if shape does not have OLE data.
     attr_accessor :ole_data_link
 
-    # Gets or sets specifies where the distance to the image is measured from.
+    # Gets or sets the relative horizontal position, from which the distance to the image is measured.
     attr_accessor :relative_horizontal_position
 
-    # Gets or sets specifies where the distance to the image measured from.
+    # Gets or sets the relative vertical position, from which the distance to the image is measured.
     attr_accessor :relative_vertical_position
 
-    # Gets or sets a list of links that originate from this DrawingObjectDto.
+    # Gets or sets the list of links that originate from this DrawingObjectDto.
     attr_accessor :render_links
 
-    # Gets or sets distance in points from the origin to the top side of the image.
+    # Gets or sets the distance in points from the origin to the top side of the image.
     attr_accessor :top
 
-    # Gets or sets width of the drawing objects in points.
+    # Gets or sets the width of the DrawingObjects in points.
     attr_accessor :width
 
-    # Gets or sets specifies how to wrap text around the image.
+    # Gets or sets the option that controls how to wrap text around the image.
     attr_accessor :wrap_type
 
     class EnumAttributeValidator

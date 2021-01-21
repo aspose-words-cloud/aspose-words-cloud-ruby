@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="get_run_request.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,10 +29,10 @@ module AsposeWordsCloud
   # Request model for get_run operation.
   #
   class GetRunRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
-    # Path to parent paragraph.
+    # The path to the paragraph in the document tree.
     attr_accessor :paragraph_path
 
     # Object index.
@@ -52,8 +52,8 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
-    # @param paragraph_path Path to parent paragraph.
+    # @param name The filename of the input document.
+    # @param paragraph_path The path to the paragraph in the document tree.
     # @param index Object index.
     # @param folder Original document folder.
     # @param storage Original document storage.

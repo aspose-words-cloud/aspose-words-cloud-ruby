@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="insert_or_update_paragraph_tab_stop_request.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,16 +29,16 @@ module AsposeWordsCloud
   # Request model for insert_or_update_paragraph_tab_stop operation.
   #
   class InsertOrUpdateParagraphTabStopRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
-
-    # Paragraph tab stop.
-    attr_accessor :dto
 
     # Object index.
     attr_accessor :index
 
-    # Path to the node which contains paragraph.
+    # TabStopInsert dto.
+    attr_accessor :tab_stop_insert_dto
+
+    # The path to the node in the document tree.
     attr_accessor :node_path
 
     # Original document folder.
@@ -58,20 +58,20 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
-    # @param dto Paragraph tab stop.
+    # @param name The filename of the input document.
     # @param index Object index.
-    # @param node_path Path to the node which contains paragraph.
+    # @param tab_stop_insert_dto TabStopInsert dto.
+    # @param node_path The path to the node in the document tree.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     # @param password Password for opening an encrypted document.
     # @param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
 
-    def initialize(name, dto, index, node_path = nil, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil)
+    def initialize(name, index, tab_stop_insert_dto, node_path = nil, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil)
       self.name = name
-      self.dto = dto
       self.index = index
+      self.tab_stop_insert_dto = tab_stop_insert_dto
       self.node_path = node_path
       self.folder = folder
       self.storage = storage

@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="optimize_document_request.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,7 +29,7 @@ module AsposeWordsCloud
   # Request model for optimize_document operation.
   #
   class OptimizeDocumentRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
     # The document optimization options.
@@ -58,7 +58,7 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
+    # @param name The filename of the input document.
     # @param options The document optimization options.
     # @param folder Original document folder.
     # @param storage Original document storage.

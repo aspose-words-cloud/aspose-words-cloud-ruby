@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="classification_response.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,19 +27,18 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # This response should be returned by the service when handling:
-  # PUT https://api.aspose.cloud/v4.0/words/classify.
+  # The REST response with data on multi-class text classification.
   class ClassificationResponse
-    # Gets or sets request Id.
+    # Gets or sets the request Id.
     attr_accessor :request_id
 
-    # Gets or sets best class name.
+    # Gets or sets the best class name.
     attr_accessor :best_class_name
 
-    # Gets or sets best class probability.
+    # Gets or sets the best class probability.
     attr_accessor :best_class_probability
 
-    # Gets or sets array of best classes results.
+    # Gets or sets the array of best classes results.
     attr_accessor :best_results
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

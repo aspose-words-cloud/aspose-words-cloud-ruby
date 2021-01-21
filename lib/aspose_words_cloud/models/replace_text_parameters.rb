@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="replace_text_parameters.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -38,10 +38,10 @@ module AsposeWordsCloud
     # Gets or sets a value indicating whether flag, means that OldValue contains regex expression.
     attr_accessor :is_old_value_regex
 
-    # Gets or sets new text value to replace by.
+    # Gets or sets the new text value to replace by.
     attr_accessor :new_value
 
-    # Gets or sets old text value (or regex pattern IsOldValueRegex) to replace.
+    # Gets or sets the old text value (or regex pattern IsOldValueRegex) to replace.
     attr_accessor :old_value
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

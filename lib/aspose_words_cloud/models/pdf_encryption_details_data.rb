@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="pdf_encryption_details_data.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,18 +27,18 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # container class for details of encryption.
+  # Container class for details of encryption.
   class PdfEncryptionDetailsData
-    # Gets or sets specifies the encryption algorithm to use.
+    # Gets or sets the encryption algorithm to use.
     attr_accessor :encryption_algorithm
 
-    # Gets or sets specifies the owner password for the encrypted PDF document.
+    # Gets or sets the owner password for the encrypted PDF document.
     attr_accessor :owner_password
 
-    # Gets or sets specifies the operations that are allowed to a user on an encrypted PDF document.
+    # Gets or sets the operations that are allowed to a user on the encrypted PDF document.
     attr_accessor :permissions
 
-    # Gets or sets specifies the user password required for opening the encrypted PDF document.
+    # Gets or sets the user password required for opening the encrypted PDF document.
     attr_accessor :user_password
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

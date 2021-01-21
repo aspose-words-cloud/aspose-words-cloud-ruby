@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="bookmark_response.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,12 +27,12 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # This response should be returned by the service when handling:  GET bookmarks/{bookmarkName}.
+  # The REST response with a bookmark.
   class BookmarkResponse
-    # Gets or sets request Id.
+    # Gets or sets the request Id.
     attr_accessor :request_id
 
-    # Gets or sets bookmark.
+    # Gets or sets the bookmark.
     attr_accessor :bookmark
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

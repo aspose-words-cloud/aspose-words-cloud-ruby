@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="load_web_document_data.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,10 +29,10 @@ module AsposeWordsCloud
 
   # Contains data for load web document.
   class LoadWebDocumentData
-    # Gets or sets web document url.
+    # Gets or sets the web document URL.
     attr_accessor :loading_document_url
 
-    # Gets or sets save options.
+    # Gets or sets the save options.
     attr_accessor :save_options
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

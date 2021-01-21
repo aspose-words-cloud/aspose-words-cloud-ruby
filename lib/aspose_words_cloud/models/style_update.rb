@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="style_update.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,17 +29,16 @@ module AsposeWordsCloud
 
   # Represents a single document style properties to update.
   class StyleUpdate
-    # Gets or sets /sets the name of the style this style is based on.
+    # Gets or sets the name of the style this style is based on.
     attr_accessor :base_style_name
 
-    # Gets or sets a value indicating whether specifies whether this style is shown in the Quick Style gallery inside MS Word UI.
+    # Gets or sets a value indicating whether this style is shown in the Quick Style gallery inside MS Word UI.
     attr_accessor :is_quick_style
 
     # Gets or sets the name of the style.
     attr_accessor :name
 
-    # Gets or sets /sets the name of the style to be applied automatically to a new paragraph
-    # inserted after a paragraph formatted with the specified style.
+    # Gets or sets the name of the style to be applied automatically to a new paragraph inserted after a paragraph formatted with the specified style.
     attr_accessor :next_paragraph_style_name
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

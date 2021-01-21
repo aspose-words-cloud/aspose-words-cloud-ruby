@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="search_result.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,10 +29,10 @@ module AsposeWordsCloud
 
   # Result of search operation.
   class SearchResult
-    # Gets or sets link to result range end node.
+    # Gets or sets the link to result range end node.
     attr_accessor :range_end
 
-    # Gets or sets link to result range start node.
+    # Gets or sets the link to result range start node.
     attr_accessor :range_start
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

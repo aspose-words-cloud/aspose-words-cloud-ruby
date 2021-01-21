@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="footnotes_stat_data.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,10 +29,10 @@ module AsposeWordsCloud
 
   # Container for the footnotes statistical data.
   class FootnotesStatData
-    # Gets or sets total count of paragraphs in footnotes.
+    # Gets or sets the total count of paragraphs in footnotes.
     attr_accessor :paragraph_count
 
-    # Gets or sets total count of words in footnotes.
+    # Gets or sets the total count of words in footnotes.
     attr_accessor :word_count
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

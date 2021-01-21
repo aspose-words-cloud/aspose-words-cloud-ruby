@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="bookmark.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,13 +29,13 @@ module AsposeWordsCloud
 
   # Represents a single bookmark.
   class Bookmark
-    # Gets or sets link to the document.
+    # Gets or sets the link to the document.
     attr_accessor :link
 
     # Gets or sets the name of the bookmark.
     attr_accessor :name
 
-    # Gets or sets the text enclosed in the bookmark.
+    # Gets or sets text, enclosed in the bookmark.
     attr_accessor :text
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

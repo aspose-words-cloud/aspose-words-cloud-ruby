@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="copy_style_request.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,7 +29,7 @@ module AsposeWordsCloud
   # Request model for copy_style operation.
   #
   class CopyStyleRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
     # Style to copy.
@@ -58,7 +58,7 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
+    # @param name The filename of the input document.
     # @param style_copy Style to copy.
     # @param folder Original document folder.
     # @param storage Original document storage.

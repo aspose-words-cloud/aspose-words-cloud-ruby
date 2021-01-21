@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="update_comment_request.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,13 +29,13 @@ module AsposeWordsCloud
   # Request model for update_comment operation.
   #
   class UpdateCommentRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
-    # The comment index.
+    # The index of the comment.
     attr_accessor :comment_index
 
-    # The comment data.
+    # Comment data.
     attr_accessor :comment
 
     # Original document folder.
@@ -61,9 +61,9 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
-    # @param comment_index The comment index.
-    # @param comment The comment data.
+    # @param name The filename of the input document.
+    # @param comment_index The index of the comment.
+    # @param comment Comment data.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

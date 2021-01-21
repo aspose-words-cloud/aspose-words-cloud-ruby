@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="get_document_property_request.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,10 +29,10 @@ module AsposeWordsCloud
   # Request model for get_document_property operation.
   #
   class GetDocumentPropertyRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
-    # The property name.
+    # The name of the property.
     attr_accessor :property_name
 
     # Original document folder.
@@ -49,8 +49,8 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
-    # @param property_name The property name.
+    # @param name The filename of the input document.
+    # @param property_name The name of the property.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="update_list_request.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,14 +29,14 @@ module AsposeWordsCloud
   # Request model for update_list operation.
   #
   class UpdateListRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
+
+    # The list Id.
+    attr_accessor :list_id
 
     # List object.
     attr_accessor :list_update
-
-    # List unique identifier.
-    attr_accessor :list_id
 
     # Original document folder.
     attr_accessor :folder
@@ -61,9 +61,9 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
+    # @param name The filename of the input document.
+    # @param list_id The list Id.
     # @param list_update List object.
-    # @param list_id List unique identifier.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -72,10 +72,10 @@ module AsposeWordsCloud
     # @param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
     # @param revision_date_time The date and time to use for revisions.
 
-    def initialize(name, list_update, list_id, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil, revision_author = nil, revision_date_time = nil)
+    def initialize(name, list_id, list_update, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil, revision_author = nil, revision_date_time = nil)
       self.name = name
-      self.list_update = list_update
       self.list_id = list_id
+      self.list_update = list_update
       self.folder = folder
       self.storage = storage
       self.load_encoding = load_encoding

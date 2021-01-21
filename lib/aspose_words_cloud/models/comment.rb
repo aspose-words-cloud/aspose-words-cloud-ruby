@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="comment.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,30 +27,30 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Comment.
+  # DTO container with a comment.
   class Comment
-    # Gets or sets link to the document.
+    # Gets or sets the link to the document.
     attr_accessor :link
 
-    # Gets or sets returns or sets the author name for a comment.
+    # Gets or sets the author name for a comment.
     attr_accessor :author
 
-    # Gets or sets content of comment.
+    # Gets or sets the content of the comment.
     attr_accessor :content
 
     # Gets or sets the date and time that the comment was made.
     attr_accessor :date_time
 
-    # Gets or sets returns or sets the initials of the user associated with a specific comment.
+    # Gets or sets the initials of the user associated with a specific comment.
     attr_accessor :initial
 
-    # Gets or sets link to comment range end node.
+    # Gets or sets the link to comment range end node.
     attr_accessor :range_end
 
-    # Gets or sets link to comment range start node.
+    # Gets or sets the link to comment range start node.
     attr_accessor :range_start
 
-    # Gets or sets this is a convenience property that allows to easily get or set text of the comment.
+    # Gets or sets text of the comment.
     attr_accessor :text
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

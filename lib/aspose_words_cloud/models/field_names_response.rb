@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="field_names_response.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,12 +27,12 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # This response should be returned by the service when handling:  GET /{name}/mailMergeFieldNames.
+  # The REST response with a collection of mail merge fields.
   class FieldNamesResponse
-    # Gets or sets request Id.
+    # Gets or sets the request Id.
     attr_accessor :request_id
 
-    # Gets or sets collection of mail merge fields.
+    # Gets or sets the collection of mail merge fields.
     attr_accessor :field_names
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

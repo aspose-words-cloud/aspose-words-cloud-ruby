@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="font_info.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,18 +27,18 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Font info.
+  # DTO container with font info.
   class FontInfo
-    # Gets or sets path to the font file if any.
+    # Gets or sets the path to the font file if any.
     attr_accessor :file_path
 
-    # Gets or sets family name of the font.
+    # Gets or sets the family name of the font.
     attr_accessor :font_family_name
 
-    # Gets or sets full name of the font.
+    # Gets or sets the full name of the font.
     attr_accessor :full_font_name
 
-    # Gets or sets version string of the font.
+    # Gets or sets the version string of the font.
     attr_accessor :version
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

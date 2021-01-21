@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="insert_watermark_image_request.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,7 +29,7 @@ module AsposeWordsCloud
   # Request model for insert_watermark_image operation.
   #
   class InsertWatermarkImageRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
     # File with image.
@@ -56,15 +56,15 @@ module AsposeWordsCloud
     # The date and time to use for revisions.
     attr_accessor :revision_date_time
 
-    # The watermark rotation angle.
+    # The rotation angle of the watermark.
     attr_accessor :rotation_angle
 
-    # The image file server full name. If the name is empty the image is expected in request content.
+    # The filename of the image. If the parameter value is missing — the image data is expected in the request content.
     attr_accessor :image
 
     #
     # Initializes a new instance.
-    # @param name The document name.
+    # @param name The filename of the input document.
     # @param image_file File with image.
     # @param folder Original document folder.
     # @param storage Original document storage.
@@ -73,8 +73,8 @@ module AsposeWordsCloud
     # @param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
     # @param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
     # @param revision_date_time The date and time to use for revisions.
-    # @param rotation_angle The watermark rotation angle.
-    # @param image The image file server full name. If the name is empty the image is expected in request content.
+    # @param rotation_angle The rotation angle of the watermark.
+    # @param image The filename of the image. If the parameter value is missing — the image data is expected in the request content.
 
     def initialize(name, image_file = nil, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil, revision_author = nil, revision_date_time = nil, rotation_angle = nil, image = nil)
       self.name = name

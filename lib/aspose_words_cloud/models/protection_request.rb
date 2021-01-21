@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="protection_request.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,13 +29,13 @@ module AsposeWordsCloud
 
   # Request on changing of protection.
   class ProtectionRequest
-    # Gets or sets new password.
+    # Gets or sets the new password.
     attr_accessor :new_password
 
-    # Gets or sets current password.
+    # Gets or sets the current password.
     attr_accessor :password
 
-    # Gets or sets new type of protection.
+    # Gets or sets the new type of protection.
     attr_accessor :protection_type
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

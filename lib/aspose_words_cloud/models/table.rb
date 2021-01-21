@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="table.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,18 +27,18 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Table element.
+  # DTO container with a table element.
   class Table
-    # Gets or sets link to the document.
+    # Gets or sets the link to the document.
     attr_accessor :link
 
-    # Gets or sets node id.
+    # Gets or sets the node id.
     attr_accessor :node_id
 
     # Gets or sets table properties.
     attr_accessor :table_properties
 
-    # Gets or sets collection of table's rows.
+    # Gets or sets the collection of table's rows.
     attr_accessor :table_row_list
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="graphics_quality_options_data.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,7 +29,7 @@ module AsposeWordsCloud
 
   # Allows to specify additional System.Drawing.Graphics quality options.
   class GraphicsQualityOptionsData
-    # Gets or sets a value that specifies how composited images are drawn to this Graphics.
+    # Gets or sets the value, that specifies how composited images are drawn to this Graphics.
     attr_accessor :compositing_mode
 
     # Gets or sets the rendering quality of composited images drawn to this Graphics.

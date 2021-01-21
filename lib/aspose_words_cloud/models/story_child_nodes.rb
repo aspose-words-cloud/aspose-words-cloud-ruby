@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="story_child_nodes.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,7 +29,7 @@ module AsposeWordsCloud
 
   # Child nodes of Story or InlineStory.
   class StoryChildNodes
-    # Gets or sets child nodes.
+    # Gets or sets the list of child nodes.
     attr_accessor :child_nodes
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

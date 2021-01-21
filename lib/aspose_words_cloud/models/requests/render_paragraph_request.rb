@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="render_paragraph_request.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,7 +29,7 @@ module AsposeWordsCloud
   # Request model for render_paragraph operation.
   #
   class RenderParagraphRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
     # The destination format.
@@ -38,7 +38,7 @@ module AsposeWordsCloud
     # Object index.
     attr_accessor :index
 
-    # Path to the node, which contains paragraphs.
+    # The path to the node in the document tree.
     attr_accessor :node_path
 
     # Original document folder.
@@ -53,22 +53,26 @@ module AsposeWordsCloud
     # Password for opening an encrypted document.
     attr_accessor :password
 
+    # Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+    attr_accessor :dest_file_name
+
     # Folder in filestorage with custom fonts.
     attr_accessor :fonts_location
 
     #
     # Initializes a new instance.
-    # @param name The document name.
+    # @param name The filename of the input document.
     # @param format The destination format.
     # @param index Object index.
-    # @param node_path Path to the node, which contains paragraphs.
+    # @param node_path The path to the node in the document tree.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     # @param password Password for opening an encrypted document.
+    # @param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
     # @param fonts_location Folder in filestorage with custom fonts.
 
-    def initialize(name, format, index, node_path = nil, folder = nil, storage = nil, load_encoding = nil, password = nil, fonts_location = nil)
+    def initialize(name, format, index, node_path = nil, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil, fonts_location = nil)
       self.name = name
       self.format = format
       self.index = index
@@ -77,6 +81,7 @@ module AsposeWordsCloud
       self.storage = storage
       self.load_encoding = load_encoding
       self.password = password
+      self.dest_file_name = dest_file_name
       self.fonts_location = fonts_location
     end
   end

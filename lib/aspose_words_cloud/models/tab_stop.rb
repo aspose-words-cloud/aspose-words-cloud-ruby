@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="tab_stop.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Paragraph format tab stop.
+  # DTO container with paragraph format tab stop.
   class TabStop
     # Gets or sets the alignment of text at this tab stop.
     attr_accessor :alignment

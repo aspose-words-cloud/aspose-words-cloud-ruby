@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="preferred_width.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Preferred width.
+  # DTO container with a preferred width value.
   class PreferredWidth
     # Gets or sets the unit of measure used for this preferred width value.
     attr_accessor :type

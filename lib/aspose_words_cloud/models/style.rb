@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="style.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,39 +27,36 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Represents a single document style.
+  # DTO container with a single document style.
   class Style
-    # Gets or sets link to the document.
+    # Gets or sets the link to the document.
     attr_accessor :link
 
-    # Gets or sets all aliases of this style. If style has no aliases then empty array of string
-    # is returned.
+    # Gets or sets all aliases of this style. If style has no aliases then empty array of string is returned.
     attr_accessor :aliases
 
-    # Gets or sets /sets the name of the style this style is based on.
+    # Gets or sets the name of the style this style is based on.
     attr_accessor :base_style_name
 
-    # Gets or sets a value indicating whether true if this style is one of the built-in styles in MS Word.
+    # Gets or sets a value indicating whether this style is one of the built-in styles in MS Word.
     attr_accessor :built_in
 
     # Gets or sets the character formatting of the style.
     attr_accessor :font
 
-    # Gets or sets a value indicating whether true when the style is one of the built-in Heading styles.
+    # Gets or sets a value indicating whether the style is one of the built-in Heading styles.
     attr_accessor :is_heading
 
-    # Gets or sets a value indicating whether specifies whether this style is shown in the Quick Style gallery inside MS Word UI.
+    # Gets or sets a value indicating whether this style is shown in the Quick Style gallery inside MS Word UI.
     attr_accessor :is_quick_style
 
-    # Gets or sets the name of the Style linked to this one. Returns Empty string if no styles
-    # are linked.
+    # Gets or sets the name of the Style linked to this one. Returns Empty string if no styles are linked.
     attr_accessor :linked_style_name
 
     # Gets or sets the name of the style.
     attr_accessor :name
 
-    # Gets or sets /sets the name of the style to be applied automatically to a new paragraph
-    # inserted after a paragraph formatted with the specified style.
+    # Gets or sets the name of the style to be applied automatically to a new paragraph inserted after a paragraph formatted with the specified style.
     attr_accessor :next_paragraph_style_name
 
     # Gets or sets the locale independent style identifier for a built-in style.

@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="words_response.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,9 +27,9 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Base class for all responses.
+  # The base class for all responses.
   class WordsResponse
-    # Gets or sets request Id.
+    # Gets or sets the request Id.
     attr_accessor :request_id
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

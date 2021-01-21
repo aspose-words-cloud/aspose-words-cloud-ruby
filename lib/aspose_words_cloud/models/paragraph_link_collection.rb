@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="paragraph_link_collection.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,12 +27,12 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Collection of links to paragraphs.
+  # The collection of paragraph's links.
   class ParagraphLinkCollection
-    # Gets or sets link to the document.
+    # Gets or sets the link to the document.
     attr_accessor :link
 
-    # Gets or sets collection of paragraph's links.
+    # Gets or sets the collection of paragraph's links.
     attr_accessor :paragraph_link_list
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

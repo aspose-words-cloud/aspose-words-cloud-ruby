@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="table_row_insert.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,9 +27,9 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Table row element.
+  # DTO container with a table row element.
   class TableRowInsert
-    # Gets or sets count of columns. Default is 1.
+    # Gets or sets the count of columns. The default value is 1.
     attr_accessor :columns_count
 
     # Gets or sets table row will be inserted after row with specified 0-based index.

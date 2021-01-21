@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="table_row_format.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,15 +27,15 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Represents all formatting for a table row.
+  # DTO container with formatting for a table row.
   class TableRowFormat
-    # Gets or sets link to the document.
+    # Gets or sets the link to the document.
     attr_accessor :link
 
-    # Gets or sets true if the text in a table row is allowed to split across a page break.
+    # Gets or sets a value indicating whether the text in a table row is allowed to split across a page break.
     attr_accessor :allow_break_across_pages
 
-    # Gets or sets true if the row is repeated as a table heading on every page when the table spans more than one page.
+    # Gets or sets a value indicating whether the row is repeated as a table heading on every page when the table spans more than one page.
     attr_accessor :heading_format
 
     # Gets or sets the height of the table row in points.

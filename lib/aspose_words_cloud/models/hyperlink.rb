@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="hyperlink.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,13 +29,13 @@ module AsposeWordsCloud
 
   # Hyperlink element.
   class Hyperlink
-    # Gets or sets link to the document.
+    # Gets or sets the link to the document.
     attr_accessor :link
 
-    # Gets or sets hypelink's display text.
+    # Gets or sets the hypelink's display text.
     attr_accessor :display_text
 
-    # Gets or sets value.
+    # Gets or sets the value.
     attr_accessor :value
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

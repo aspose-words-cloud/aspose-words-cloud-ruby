@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="protection_data_response.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,15 +27,15 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Response for the request of data about protection.
+  # The REST response with data on document's protection.
   class ProtectionDataResponse
-    # Gets or sets request Id.
+    # Gets or sets the request Id.
     attr_accessor :request_id
 
-    # Gets or sets link to the document.
+    # Gets or sets the link to the document.
     attr_accessor :document_link
 
-    # Gets or sets protection's data of the document.
+    # Gets or sets the protection properties of the document.
     attr_accessor :protection_data
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="drawing_object_response.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,12 +27,12 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Response for "drawingObjects/n" resource.
+  # The REST response with a DrawingObject.
   class DrawingObjectResponse
-    # Gets or sets request Id.
+    # Gets or sets the request Id.
     attr_accessor :request_id
 
-    # Gets or sets drawing object.
+    # Gets or sets the DrawingObject.
     attr_accessor :drawing_object
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

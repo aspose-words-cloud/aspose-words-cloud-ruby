@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="footnote.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,28 +27,28 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Footnote.
+  # DTO container with a footnote.
   class Footnote
-    # Gets or sets link to the document.
+    # Gets or sets the link to the document.
     attr_accessor :link
 
-    # Gets or sets node id.
+    # Gets or sets the node id.
     attr_accessor :node_id
 
-    # Gets or sets content of footnote.
+    # Gets or sets the content of the footnote.
     attr_accessor :content
 
-    # Gets or sets returns a value that specifies whether this is a footnote or endnote.
+    # Gets or sets the value, that specifies whether this is a footnote or endnote.
     attr_accessor :footnote_type
 
-    # Gets or sets link to comment range start node.
+    # Gets or sets the link to comment range start node.
     attr_accessor :position
 
-    # Gets or sets /sets custom reference mark to be used for this footnote.
+    # Gets or sets the custom reference mark to be used for this footnote.
     # Default value is Empty, meaning auto-numbered footnotes are used.
     attr_accessor :reference_mark
 
-    # Gets or sets this is a convenience property that allows to easily get or set text of the footnote.
+    # Gets or sets text of the footnote.
     attr_accessor :text
 
     class EnumAttributeValidator

@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="delete_section_request.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,10 +29,10 @@ module AsposeWordsCloud
   # Request model for delete_section operation.
   #
   class DeleteSectionRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
-    # Section index.
+    # The index of the section.
     attr_accessor :section_index
 
     # Original document folder.
@@ -58,8 +58,8 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
-    # @param section_index Section index.
+    # @param name The filename of the input document.
+    # @param section_index The index of the section.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

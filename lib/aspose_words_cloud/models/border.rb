@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="border.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,7 +29,7 @@ module AsposeWordsCloud
 
   # Represents a border of an object.
   class Border
-    # Gets or sets link to the document.
+    # Gets or sets the link to the document.
     attr_accessor :link
 
     # Gets or sets the border type.
@@ -38,7 +38,7 @@ module AsposeWordsCloud
     # Gets or sets the border color.
     attr_accessor :color
 
-    # Gets or sets distance of the border from text or from the page edge in points.
+    # Gets or sets the distance of the border from text or from the page edge in points.
     attr_accessor :distance_from_text
 
     # Gets or sets the border style.

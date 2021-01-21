@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="update_paragraph_list_format_request.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,16 +29,16 @@ module AsposeWordsCloud
   # Request model for update_paragraph_list_format operation.
   #
   class UpdateParagraphListFormatRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
-
-    # Paragraph format object.
-    attr_accessor :dto
 
     # Object index.
     attr_accessor :index
 
-    # Path to the node which contains paragraphs.
+    # ListFormatUpdate dto.
+    attr_accessor :list_format_dto
+
+    # The path to the node in the document tree.
     attr_accessor :node_path
 
     # Original document folder.
@@ -64,10 +64,10 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
-    # @param dto Paragraph format object.
+    # @param name The filename of the input document.
     # @param index Object index.
-    # @param node_path Path to the node which contains paragraphs.
+    # @param list_format_dto ListFormatUpdate dto.
+    # @param node_path The path to the node in the document tree.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -76,10 +76,10 @@ module AsposeWordsCloud
     # @param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
     # @param revision_date_time The date and time to use for revisions.
 
-    def initialize(name, dto, index, node_path = nil, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil, revision_author = nil, revision_date_time = nil)
+    def initialize(name, index, list_format_dto, node_path = nil, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil, revision_author = nil, revision_date_time = nil)
       self.name = name
-      self.dto = dto
       self.index = index
+      self.list_format_dto = list_format_dto
       self.node_path = node_path
       self.folder = folder
       self.storage = storage

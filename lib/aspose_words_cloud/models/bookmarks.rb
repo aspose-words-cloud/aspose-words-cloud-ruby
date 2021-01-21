@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="bookmarks.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,10 +29,10 @@ module AsposeWordsCloud
 
   # Represents an array of bookmarks.
   class Bookmarks
-    # Gets or sets link to the document.
+    # Gets or sets the link to the document.
     attr_accessor :link
 
-    # Gets or sets array of bookmarks.
+    # Gets or sets the array of bookmarks.
     attr_accessor :bookmark_list
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

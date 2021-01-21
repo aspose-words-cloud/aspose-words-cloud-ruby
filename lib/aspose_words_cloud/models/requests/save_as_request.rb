@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="save_as_request.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,7 +29,7 @@ module AsposeWordsCloud
   # Request model for save_as operation.
   #
   class SaveAsRequest
-    # The document name.
+    # The filename of the input document.
     attr_accessor :name
 
     # Save options.
@@ -52,7 +52,7 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param name The document name.
+    # @param name The filename of the input document.
     # @param save_options_data Save options.
     # @param folder Original document folder.
     # @param storage Original document storage.

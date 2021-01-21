@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="get_available_fonts_request.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,12 +29,12 @@ module AsposeWordsCloud
   # Request model for get_available_fonts operation.
   #
   class GetAvailableFontsRequest
-    # Folder in filestorage with custom fonts.
+    # The folder in cloud storage with custom fonts.
     attr_accessor :fonts_location
 
     #
     # Initializes a new instance.
-    # @param fonts_location Folder in filestorage with custom fonts.
+    # @param fonts_location The folder in cloud storage with custom fonts.
 
     def initialize(fonts_location = nil)
       self.fonts_location = fonts_location

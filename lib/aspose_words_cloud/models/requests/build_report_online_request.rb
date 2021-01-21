@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="build_report_online_request.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -38,7 +38,7 @@ module AsposeWordsCloud
     # An object providing a settings of report engine.
     attr_accessor :report_engine_settings
 
-    # This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead.
+    # The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.
     attr_accessor :document_file_name
 
     #
@@ -46,7 +46,7 @@ module AsposeWordsCloud
     # @param template File with template.
     # @param data A string providing a data to populate the specified template. The string must be of one of the following types: xml, json, csv.
     # @param report_engine_settings An object providing a settings of report engine.
-    # @param document_file_name This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead.
+    # @param document_file_name The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.
 
     def initialize(template, data, report_engine_settings, document_file_name = nil)
       self.template = template

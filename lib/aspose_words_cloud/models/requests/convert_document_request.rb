@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="convert_document_request.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -32,17 +32,17 @@ module AsposeWordsCloud
     # Converting document.
     attr_accessor :document
 
-    # Format to convert.
+    # The format to convert.
     attr_accessor :format
+
+    # The path to the output document on a local storage.
+    attr_accessor :out_path
+
+    # The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "sourceFilename" will be used instead.
+    attr_accessor :file_name_field_value
 
     # Original document storage.
     attr_accessor :storage
-
-    # Path for saving operation result to the local storage.
-    attr_accessor :out_path
-
-    # This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "sourceFilename" will be used instead.
-    attr_accessor :file_name_field_value
 
     # Folder in filestorage with custom fonts.
     attr_accessor :fonts_location
@@ -50,18 +50,18 @@ module AsposeWordsCloud
     #
     # Initializes a new instance.
     # @param document Converting document.
-    # @param format Format to convert.
+    # @param format The format to convert.
+    # @param out_path The path to the output document on a local storage.
+    # @param file_name_field_value The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "sourceFilename" will be used instead.
     # @param storage Original document storage.
-    # @param out_path Path for saving operation result to the local storage.
-    # @param file_name_field_value This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "sourceFilename" will be used instead.
     # @param fonts_location Folder in filestorage with custom fonts.
 
-    def initialize(document, format, storage = nil, out_path = nil, file_name_field_value = nil, fonts_location = nil)
+    def initialize(document, format, out_path = nil, file_name_field_value = nil, storage = nil, fonts_location = nil)
       self.document = document
       self.format = format
-      self.storage = storage
       self.out_path = out_path
       self.file_name_field_value = file_name_field_value
+      self.storage = storage
       self.fonts_location = fonts_location
     end
   end

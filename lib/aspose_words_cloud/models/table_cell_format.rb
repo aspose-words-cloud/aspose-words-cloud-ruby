@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="table_cell_format.rb">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,45 +27,45 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Represents all formatting for a table row.
+  # DTO container with all formatting for a table row.
   class TableCellFormat
-    # Gets or sets link to the document.
+    # Gets or sets the link to the document.
     attr_accessor :link
 
-    # Gets or sets returns or sets the amount of space (in points) to add below the contents of cell.
+    # Gets or sets the amount of space (in points) to add below the contents of the cell.
     attr_accessor :bottom_padding
 
-    # Gets or sets if true, fits text in the cell, compressing each paragraph to the width of the cell.
+    # Gets or sets a value indicating whether to fit text in the cell, compress each paragraph to the width of the cell.
     attr_accessor :fit_text
 
-    # Gets or sets specifies how the cell is merged horizontally with other cells in the row.
+    # Gets or sets the option that controls how the cell is merged horizontally with other cells in the row.
     attr_accessor :horizontal_merge
 
-    # Gets or sets returns or sets the amount of space (in points) to add to the left of the contents of cell.
+    # Gets or sets the amount of space (in points) to add to the left of the contents of the cell.
     attr_accessor :left_padding
 
-    # Gets or sets returns or sets the orientation of text in a table cell.
+    # Gets or sets the orientation of text in a table cell.
     attr_accessor :orientation
 
-    # Gets or sets returns or sets the preferred width of the cell.
+    # Gets or sets the preferred width of the cell.
     attr_accessor :preferred_width
 
-    # Gets or sets returns or sets the amount of space (in points) to add to the right of the contents of cell.
+    # Gets or sets the amount of space (in points) to add to the right of the contents of the cell.
     attr_accessor :right_padding
 
-    # Gets or sets returns or sets the amount of space (in points) to add above the contents of cell.
+    # Gets or sets the amount of space (in points) to add above the contents of the cell.
     attr_accessor :top_padding
 
-    # Gets or sets returns or sets the vertical alignment of text in the cell.
+    # Gets or sets the vertical alignment of text in the cell.
     attr_accessor :vertical_alignment
 
-    # Gets or sets specifies how the cell is merged with other cells vertically.
+    # Gets or sets the option that controls how the cell is merged with other cells vertically.
     attr_accessor :vertical_merge
 
     # Gets or sets the width of the cell in points.
     attr_accessor :width
 
-    # Gets or sets if true, wrap text for the cell.
+    # Gets or sets a value indicating whether to wrap text in the cell.
     attr_accessor :wrap_text
 
     class EnumAttributeValidator
