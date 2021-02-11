@@ -29,6 +29,9 @@ module AsposeWordsCloud
 
   # Container class for pcl save options.
   class PclSaveOptionsData
+    # Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false..
+    attr_accessor :allow_embedding_post_script_fonts
+
     # Gets or sets the value determining how 3D effects are rendered.
     attr_accessor :dml3_d_effects_rendering_mode
 
@@ -116,6 +119,7 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'allow_embedding_post_script_fonts' => :'AllowEmbeddingPostScriptFonts',
         :'dml3_d_effects_rendering_mode' => :'Dml3DEffectsRenderingMode',
         :'dml_effects_rendering_mode' => :'DmlEffectsRenderingMode',
         :'dml_rendering_mode' => :'DmlRenderingMode',
@@ -141,6 +145,7 @@ module AsposeWordsCloud
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'allow_embedding_post_script_fonts' => :'BOOLEAN',
         :'dml3_d_effects_rendering_mode' => :'String',
         :'dml_effects_rendering_mode' => :'String',
         :'dml_rendering_mode' => :'String',
@@ -170,6 +175,10 @@ module AsposeWordsCloud
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.key?(:'AllowEmbeddingPostScriptFonts')
+        self.allow_embedding_post_script_fonts = attributes[:'AllowEmbeddingPostScriptFonts']
+      end
 
       if attributes.key?(:'Dml3DEffectsRenderingMode')
         self.dml3_d_effects_rendering_mode = attributes[:'Dml3DEffectsRenderingMode']
@@ -284,6 +293,7 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
+          allow_embedding_post_script_fonts == other.allow_embedding_post_script_fonts &&
           dml3_d_effects_rendering_mode == other.dml3_d_effects_rendering_mode &&
           dml_effects_rendering_mode == other.dml_effects_rendering_mode &&
           dml_rendering_mode == other.dml_rendering_mode &&
@@ -314,7 +324,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, save_format, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, falllback_font_name, rasterize_transformed_elements].hash
+      [allow_embedding_post_script_fonts, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, save_format, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, falllback_font_name, rasterize_transformed_elements].hash
     end
 
     # Builds the object from hash

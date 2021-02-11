@@ -29,7 +29,7 @@ module AsposeWordsCloud
   # Request model for delete_folder operation.
   #
   class DeleteFolderRequest
-    # Folder path e.g. /Folder1s.
+    # Folder path e.g. '/folder'.
     attr_accessor :path
 
     # Storage name.
@@ -40,7 +40,7 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param path Folder path e.g. /Folder1s.
+    # @param path Folder path e.g. '/folder'.
     # @param storage_name Storage name.
     # @param recursive Enable to delete folders, subfolders and files.
 

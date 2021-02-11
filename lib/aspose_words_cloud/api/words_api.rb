@@ -2237,6 +2237,147 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
+    # Removes all comments from the document.
+    # @param request DeleteCommentsRequest
+    # @return [nil]
+    def delete_comments(request)
+        begin
+        data, _status_code, _headers = delete_comments_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_comments_with_http_info(request)
+            else
+            raise
+            end
+        end
+        nil
+    end
+
+    # Removes all comments from the document.
+    # @param request DeleteCommentsRequest
+    # @return [Array<(nil, Fixnum, Hash)>]
+    # nil, response status code and response headers
+    private def delete_comments_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteCommentsRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.delete_comments ...' if @api_client.config.debugging
+        # verify the required parameter 'name' is set
+        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_comments' if @api_client.config.client_side_validation && request.name.nil?
+
+        # resource path
+        local_var_path = '/words/{name}/comments'[1..-1]
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.nil? ? '' : request.name.to_s)
+        local_var_path = local_var_path.sub('//', '/')
+
+        # query parameters
+        query_params = {}
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        # header parameters
+        header_params = {}
+        # HTTP header 'Accept' (if needed)
+        header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+        # HTTP header 'Content-Type'
+        header_params['Content-Type'] = @api_client.select_header_content_type(['application/xml', 'application/json'])
+
+        # form parameters
+        form_params = {}
+
+        # http body (model)
+        post_body = nil
+        auth_names = ['JWT']
+
+        data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names)
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#delete_comments\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [data, status_code, headers]
+    end
+
+    # Removes all comments from the document.
+    # @param request DeleteCommentsOnlineRequest
+    # @return [File]
+    def delete_comments_online(request)
+        begin
+        data, _status_code, _headers = delete_comments_online_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_comments_online_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Removes all comments from the document.
+    # @param request DeleteCommentsOnlineRequest
+    # @return [Array<(File, Fixnum, Hash)>]
+    # File, response status code and response headers
+    private def delete_comments_online_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteCommentsOnlineRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.delete_comments_online ...' if @api_client.config.debugging
+        # verify the required parameter 'document' is set
+        raise ArgumentError, 'Missing the required parameter document when calling WordsApi.delete_comments_online' if @api_client.config.client_side_validation && request.document.nil?
+
+        # resource path
+        local_var_path = '/words/online/delete/comments'[1..-1]
+        local_var_path = local_var_path.sub('//', '/')
+
+        # query parameters
+        query_params = {}
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        # header parameters
+        header_params = {}
+        # HTTP header 'Accept' (if needed)
+        header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+        # HTTP header 'Content-Type'
+        header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+
+        # form parameters
+        form_params = {}
+        form_params[downcase_first_letter('Document')] = request.document
+
+        # http body (model)
+        post_body = nil
+        auth_names = ['JWT']
+
+        data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'File')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#delete_comments_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [data, status_code, headers]
+    end
+
     # Removes a document property.
     # @param request DeleteDocumentPropertyRequest
     # @return [nil]
