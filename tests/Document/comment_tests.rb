@@ -176,5 +176,28 @@ module AsposeWordsCloud
       result = @words_api.delete_comment_online(request)
       assert_equal false, result.nil?
     end
+
+    #
+    # A test for DeleteComments.
+    #
+    def test_delete_comments
+      remote_file_name = "TestDeleteComment.docx"
+
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
+
+      request = DeleteCommentsRequest.new(remote_file_name, remote_data_folder, nil, nil, nil, remote_test_out + "/" + remote_file_name, nil, nil)
+
+      @words_api.delete_comments(request)
+    end
+
+    #
+    # A test for DeleteComments online.
+    #
+    def test_delete_comments_online
+      request = DeleteCommentsOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), nil, nil, nil, nil, nil)
+
+      result = @words_api.delete_comments_online(request)
+      assert_equal false, result.nil?
+    end
   end
 end
