@@ -30,11 +30,11 @@ module AsposeWordsCloud
   #
   class ExecuteMailMergeTests < BaseTestContext
     def remote_data_folder
-      remote_test_folder + "/DocumentActions/MailMerge"
+      remote_test_folder + '/DocumentActions/MailMerge'
     end
 
     def mail_merge_folder
-      "DocumentActions/MailMerge"
+      'DocumentActions/MailMerge'
     end
 
 
@@ -42,10 +42,10 @@ module AsposeWordsCloud
     # Test for executing mail merge online.
     #
     def test_execute_mail_merge_online
-      local_document_file = "SampleExecuteTemplate.docx"
-      local_data_file = "SampleExecuteTemplateData.txt"
+      local_document_file = 'SampleExecuteTemplate.docx'
+      local_data_file = 'SampleExecuteTemplateData.txt'
 
-      request = ExecuteMailMergeOnlineRequest.new(File.open(File.join(local_test_folder, mail_merge_folder + "/" + local_document_file)), File.open(File.join(local_test_folder, mail_merge_folder + "/" + local_data_file)), nil, nil, nil)
+      request = ExecuteMailMergeOnlineRequest.new(File.open(File.join(local_test_folder, mail_merge_folder + '/' + local_document_file)), File.open(File.join(local_test_folder, mail_merge_folder + '/' + local_data_file)), nil, nil, nil)
 
       result = @words_api.execute_mail_merge_online(request)
       assert_equal false, result.nil?
@@ -55,13 +55,13 @@ module AsposeWordsCloud
     # Test for executing mail merge.
     #
     def test_execute_mail_merge
-      local_document_file = "SampleExecuteTemplate.docx"
-      remote_file_name = "TestExecuteMailMerge.docx"
-      local_data_file = File.read(File.join(local_test_folder, mail_merge_folder + "/SampleMailMergeTemplateData.txt"))
+      local_document_file = 'SampleExecuteTemplate.docx'
+      remote_file_name = 'TestExecuteMailMerge.docx'
+      local_data_file = File.read(File.join(local_test_folder, mail_merge_folder + '/SampleMailMergeTemplateData.txt'))
 
-      upload_file File.join(local_test_folder, mail_merge_folder + "/" + local_document_file), remote_data_folder + "/" + remote_file_name
+      upload_file File.join(local_test_folder, mail_merge_folder + '/' + local_document_file), remote_data_folder + '/' + remote_file_name
 
-      request = ExecuteMailMergeRequest.new(remote_file_name, local_data_file, remote_data_folder, nil, nil, nil, false, nil, nil, nil, remote_test_out + "/" + remote_file_name)
+      request = ExecuteMailMergeRequest.new(remote_file_name, local_data_file, remote_data_folder, nil, nil, nil, false, nil, nil, nil, remote_test_out + '/' + remote_file_name)
 
       result = @words_api.execute_mail_merge(request)
       assert_equal false, result.nil?

@@ -30,11 +30,11 @@ module AsposeWordsCloud
   #
   class ListsTests < BaseTestContext
     def remote_data_folder
-      remote_test_folder + "/DocumentElements/Lists"
+      remote_test_folder + '/DocumentElements/Lists'
     end
 
     def local_file
-      "DocumentElements/Lists/ListsGet.doc"
+      'DocumentElements/Lists/ListsGet.doc'
     end
 
 
@@ -42,9 +42,9 @@ module AsposeWordsCloud
     # Test for getting lists from document.
     #
     def test_get_lists
-      remote_file_name = "TestGetLists.doc"
+      remote_file_name = 'TestGetLists.doc'
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
       request = GetListsRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
 
@@ -66,9 +66,9 @@ module AsposeWordsCloud
     # Test for getting list from document.
     #
     def test_get_list
-      remote_file_name = "TestGetList.doc"
+      remote_file_name = 'TestGetList.doc'
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
       request = GetListRequest.new(remote_file_name, 1, remote_data_folder, nil, nil, nil)
 
@@ -90,9 +90,9 @@ module AsposeWordsCloud
     # Test for updating list from document.
     #
     def test_update_list
-      remote_file_name = "TestUpdateList.doc"
+      remote_file_name = 'TestUpdateList.doc'
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
       request_list_update = ListUpdate.new({:IsRestartAtEachSection => true})
       request = UpdateListRequest.new(remote_file_name, 1, request_list_update, remote_data_folder, nil, nil, nil, nil, nil, nil)
@@ -116,9 +116,9 @@ module AsposeWordsCloud
     # Test for updating list level from document.
     #
     def test_update_list_level
-      remote_file_name = "TestUpdateListLevel.doc"
+      remote_file_name = 'TestUpdateListLevel.doc'
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
       request_list_update = ListLevelUpdate.new({:Alignment => 'Right'})
       request = UpdateListLevelRequest.new(remote_file_name, 1, 1, request_list_update, remote_data_folder, nil, nil, nil, nil, nil, nil)
@@ -142,9 +142,9 @@ module AsposeWordsCloud
     # Test for inserting list from document.
     #
     def test_insert_list
-      remote_file_name = "TestInsertList.doc"
+      remote_file_name = 'TestInsertList.doc'
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
       request_list_insert = ListInsert.new({:Template => 'OutlineLegal'})
       request = InsertListRequest.new(remote_file_name, request_list_insert, remote_data_folder, nil, nil, nil, nil, nil, nil)
