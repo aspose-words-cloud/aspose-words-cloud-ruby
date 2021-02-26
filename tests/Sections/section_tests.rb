@@ -30,11 +30,11 @@ module AsposeWordsCloud
   #
   class SectionTests < BaseTestContext
     def remote_data_folder
-      remote_test_folder + "/DocumentElements/Section"
+      remote_test_folder + '/DocumentElements/Section'
     end
 
     def local_file
-      "Common/test_multi_pages.docx"
+      'Common/test_multi_pages.docx'
     end
 
 
@@ -42,9 +42,9 @@ module AsposeWordsCloud
     # Test for getting section by index.
     #
     def test_get_section
-      remote_file_name = "TestGetSection.docx"
+      remote_file_name = 'TestGetSection.docx'
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
       request = GetSectionRequest.new(remote_file_name, 0, remote_data_folder, nil, nil, nil)
 
@@ -66,9 +66,9 @@ module AsposeWordsCloud
     # Test for getting sections.
     #
     def test_get_sections
-      remote_file_name = "TestGetSections.docx"
+      remote_file_name = 'TestGetSections.docx'
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
       request = GetSectionsRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
 
@@ -90,9 +90,9 @@ module AsposeWordsCloud
     # Test for delete a section.
     #
     def test_delete_section
-      remote_file_name = "TestDeleteSection.docx"
+      remote_file_name = 'TestDeleteSection.docx'
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
       request = DeleteSectionRequest.new(remote_file_name, 0, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
