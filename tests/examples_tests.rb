@@ -28,6 +28,7 @@ module AsposeWordsCloud
   class ExamplesTests < BaseTestContext
     def setup
       super
+      upload_file 'ExamplesData/test_doc.docx', 'test_doc.docx'
     end
 
     def test_accept_all_revisions
