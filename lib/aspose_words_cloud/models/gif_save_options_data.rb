@@ -48,6 +48,10 @@ module AsposeWordsCloud
     # Gets or sets the format of save.
     attr_accessor :save_format
 
+    # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving.
+    # Default value is false.
+    attr_accessor :update_created_time_property
+
     # Gets or sets a value indicating whether fields should be updated before saving the document to a fixed page format. The default value is true.
     attr_accessor :update_fields
 
@@ -164,6 +168,7 @@ module AsposeWordsCloud
         :'dml_rendering_mode' => :'DmlRenderingMode',
         :'file_name' => :'FileName',
         :'save_format' => :'SaveFormat',
+        :'update_created_time_property' => :'UpdateCreatedTimeProperty',
         :'update_fields' => :'UpdateFields',
         :'update_last_printed_property' => :'UpdateLastPrintedProperty',
         :'update_last_saved_time_property' => :'UpdateLastSavedTimeProperty',
@@ -201,6 +206,7 @@ module AsposeWordsCloud
         :'dml_rendering_mode' => :'String',
         :'file_name' => :'String',
         :'save_format' => :'String',
+        :'update_created_time_property' => :'BOOLEAN',
         :'update_fields' => :'BOOLEAN',
         :'update_last_printed_property' => :'BOOLEAN',
         :'update_last_saved_time_property' => :'BOOLEAN',
@@ -259,6 +265,10 @@ module AsposeWordsCloud
 
       if attributes.key?(:'SaveFormat')
         self.save_format = attributes[:'SaveFormat']
+      end
+
+      if attributes.key?(:'UpdateCreatedTimeProperty')
+        self.update_created_time_property = attributes[:'UpdateCreatedTimeProperty']
       end
 
       if attributes.key?(:'UpdateFields')
@@ -404,6 +414,7 @@ module AsposeWordsCloud
           dml_rendering_mode == other.dml_rendering_mode &&
           file_name == other.file_name &&
           save_format == other.save_format &&
+          update_created_time_property == other.update_created_time_property &&
           update_fields == other.update_fields &&
           update_last_printed_property == other.update_last_printed_property &&
           update_last_saved_time_property == other.update_last_saved_time_property &&
@@ -440,7 +451,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, save_format, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, graphics_quality_options, horizontal_resolution, image_brightness, image_color_mode, image_contrast, paper_color, pixel_format, resolution, scale, use_anti_aliasing, use_gdi_emf_renderer, use_high_quality_rendering, vertical_resolution].hash
+      [allow_embedding_post_script_fonts, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, save_format, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, graphics_quality_options, horizontal_resolution, image_brightness, image_color_mode, image_contrast, paper_color, pixel_format, resolution, scale, use_anti_aliasing, use_gdi_emf_renderer, use_high_quality_rendering, vertical_resolution].hash
     end
 
     # Builds the object from hash
