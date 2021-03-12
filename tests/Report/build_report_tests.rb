@@ -30,11 +30,11 @@ module AsposeWordsCloud
   #
   class BuildReportTests < BaseTestContext
     def remote_data_folder
-      remote_test_folder + "/DocumentActions/Reporting"
+      remote_test_folder + '/DocumentActions/Reporting'
     end
 
     def reporting_folder
-      "DocumentActions/Reporting"
+      'DocumentActions/Reporting'
     end
 
 
@@ -42,11 +42,11 @@ module AsposeWordsCloud
     # Test for build report online.
     #
     def test_build_report_online
-      local_document_file = "ReportTemplate.docx"
-      local_data_file = File.read(File.join(local_test_folder, reporting_folder + "/ReportData.json"))
+      local_document_file = 'ReportTemplate.docx'
+      local_data_file = File.read(File.join(local_test_folder, reporting_folder + '/ReportData.json'))
 
-      request_report_engine_settings = ReportEngineSettings.new({:DataSourceType => 'Json', :DataSourceName => "persons"})
-      request = BuildReportOnlineRequest.new(File.open(File.join(local_test_folder, reporting_folder + "/" + local_document_file)), local_data_file, request_report_engine_settings, nil)
+      request_report_engine_settings = ReportEngineSettings.new({:DataSourceType => 'Json', :DataSourceName => 'persons'})
+      request = BuildReportOnlineRequest.new(File.open(File.join(local_test_folder, reporting_folder + '/' + local_document_file)), local_data_file, request_report_engine_settings, nil)
 
       result = @words_api.build_report_online(request)
       assert_equal false, result.nil?
@@ -56,11 +56,11 @@ module AsposeWordsCloud
     # Test for build report.
     #
     def test_build_report
-      local_document_file = "ReportTemplate.docx"
-      remote_file_name = "TestBuildReport.docx"
-      local_data_file = File.read(File.join(local_test_folder, reporting_folder + "/ReportData.json"))
+      local_document_file = 'ReportTemplate.docx'
+      remote_file_name = 'TestBuildReport.docx'
+      local_data_file = File.read(File.join(local_test_folder, reporting_folder + '/ReportData.json'))
 
-      upload_file File.join(local_test_folder, reporting_folder + "/" + local_document_file), remote_data_folder + "/" + remote_file_name
+      upload_file File.join(local_test_folder, reporting_folder + '/' + local_document_file), remote_data_folder + '/' + remote_file_name
 
       request_report_engine_settings_report_build_options = ['AllowMissingMembers', 'RemoveEmptyParagraphs']
       request_report_engine_settings = ReportEngineSettings.new({:DataSourceType => 'Json', :ReportBuildOptions => request_report_engine_settings_report_build_options})

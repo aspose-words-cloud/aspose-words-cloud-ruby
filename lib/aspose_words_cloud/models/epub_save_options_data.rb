@@ -48,6 +48,10 @@ module AsposeWordsCloud
     # Gets or sets the format of save.
     attr_accessor :save_format
 
+    # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving.
+    # Default value is false.
+    attr_accessor :update_created_time_property
+
     # Gets or sets a value indicating whether fields should be updated before saving the document to a fixed page format. The default value is true.
     attr_accessor :update_fields
 
@@ -226,6 +230,7 @@ module AsposeWordsCloud
         :'dml_rendering_mode' => :'DmlRenderingMode',
         :'file_name' => :'FileName',
         :'save_format' => :'SaveFormat',
+        :'update_created_time_property' => :'UpdateCreatedTimeProperty',
         :'update_fields' => :'UpdateFields',
         :'update_last_printed_property' => :'UpdateLastPrintedProperty',
         :'update_last_saved_time_property' => :'UpdateLastSavedTimeProperty',
@@ -283,6 +288,7 @@ module AsposeWordsCloud
         :'dml_rendering_mode' => :'String',
         :'file_name' => :'String',
         :'save_format' => :'String',
+        :'update_created_time_property' => :'BOOLEAN',
         :'update_fields' => :'BOOLEAN',
         :'update_last_printed_property' => :'BOOLEAN',
         :'update_last_saved_time_property' => :'BOOLEAN',
@@ -361,6 +367,10 @@ module AsposeWordsCloud
 
       if attributes.key?(:'SaveFormat')
         self.save_format = attributes[:'SaveFormat']
+      end
+
+      if attributes.key?(:'UpdateCreatedTimeProperty')
+        self.update_created_time_property = attributes[:'UpdateCreatedTimeProperty']
       end
 
       if attributes.key?(:'UpdateFields')
@@ -634,6 +644,7 @@ module AsposeWordsCloud
           dml_rendering_mode == other.dml_rendering_mode &&
           file_name == other.file_name &&
           save_format == other.save_format &&
+          update_created_time_property == other.update_created_time_property &&
           update_fields == other.update_fields &&
           update_last_printed_property == other.update_last_printed_property &&
           update_last_saved_time_property == other.update_last_saved_time_property &&
@@ -690,7 +701,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, save_format, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, allow_negative_indent, css_class_name_prefix, css_style_sheet_file_name, css_style_sheet_type, document_split_criteria, document_split_heading_level, encoding, export_document_properties, export_drop_down_form_field_as_text, export_font_resources, export_fonts_as_base64, export_headers_footers_mode, export_images_as_base64, export_language_information, export_list_labels, export_original_url_for_linked_images, export_page_margins, export_page_setup, export_relative_font_size, export_roundtrip_information, export_text_box_as_svg, export_text_input_form_field_as_text, export_toc_page_numbers, export_xhtml_transitional, font_resources_subsetting_size_threshold, fonts_folder, fonts_folder_alias, html_version, image_resolution, images_folder, images_folder_alias, metafile_format, office_math_output_mode, pretty_format, resolve_font_names, resource_folder, resource_folder_alias, scale_image_to_shape_size, table_width_output_mode, epub_navigation_map_level].hash
+      [allow_embedding_post_script_fonts, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, save_format, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, allow_negative_indent, css_class_name_prefix, css_style_sheet_file_name, css_style_sheet_type, document_split_criteria, document_split_heading_level, encoding, export_document_properties, export_drop_down_form_field_as_text, export_font_resources, export_fonts_as_base64, export_headers_footers_mode, export_images_as_base64, export_language_information, export_list_labels, export_original_url_for_linked_images, export_page_margins, export_page_setup, export_relative_font_size, export_roundtrip_information, export_text_box_as_svg, export_text_input_form_field_as_text, export_toc_page_numbers, export_xhtml_transitional, font_resources_subsetting_size_threshold, fonts_folder, fonts_folder_alias, html_version, image_resolution, images_folder, images_folder_alias, metafile_format, office_math_output_mode, pretty_format, resolve_font_names, resource_folder, resource_folder_alias, scale_image_to_shape_size, table_width_output_mode, epub_navigation_map_level].hash
     end
 
     # Builds the object from hash
