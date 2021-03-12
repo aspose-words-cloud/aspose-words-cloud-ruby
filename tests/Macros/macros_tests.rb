@@ -30,11 +30,11 @@ module AsposeWordsCloud
   #
   class MacrosTests < BaseTestContext
     def remote_data_folder
-      remote_test_folder + "/DocumentElements/Macros"
+      remote_test_folder + '/DocumentElements/Macros'
     end
 
     def local_file
-      "Common/test_multi_pages.docx"
+      'Common/test_multi_pages.docx'
     end
 
 
@@ -42,9 +42,9 @@ module AsposeWordsCloud
     # Test for deleting macros.
     #
     def test_delete_macros
-      remote_file_name = "TestDeleteDocumentMacros.docx"
+      remote_file_name = 'TestDeleteDocumentMacros.docx'
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
       request = DeleteMacrosRequest.new(remote_file_name, remote_data_folder, nil, nil, nil, nil, nil, nil)
 

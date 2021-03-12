@@ -30,11 +30,11 @@ module AsposeWordsCloud
   #
   class HyperlinkTests < BaseTestContext
     def remote_data_folder
-      remote_test_folder + "/DocumentElements/Hyperlink"
+      remote_test_folder + '/DocumentElements/Hyperlink'
     end
 
     def local_file
-      "Common/test_doc.docx"
+      'Common/test_doc.docx'
     end
 
 
@@ -42,9 +42,9 @@ module AsposeWordsCloud
     # Test for getting hyperlink by specified index.
     #
     def test_get_document_hyperlink_by_index
-      remote_file_name = "TestGetDocumentHyperlinkByIndex.docx"
+      remote_file_name = 'TestGetDocumentHyperlinkByIndex.docx'
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
       request = GetDocumentHyperlinkByIndexRequest.new(remote_file_name, 0, remote_data_folder, nil, nil, nil)
 
@@ -66,9 +66,9 @@ module AsposeWordsCloud
     # Test for getting hyperlinks.
     #
     def test_get_document_hyperlinks
-      remote_file_name = "TestGetDocumentHyperlinks.docx"
+      remote_file_name = 'TestGetDocumentHyperlinks.docx'
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
       request = GetDocumentHyperlinksRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
 

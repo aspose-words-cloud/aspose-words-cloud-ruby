@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="Font_tests.rb">
+# <copyright company="Aspose" file="examples_tests.rb">
 #   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -22,30 +22,36 @@
 #  SOFTWARE.
 # </summary>
 # ------------------------------------------------------------------------------------
+
 module AsposeWordsCloud
-  require_relative '../base_test_context'
-
-  #
-  # Example of how to work with font.
-  #
-  class FontTests < BaseTestContext
-    #
-    # Test for reseting cache.
-    #
-    def test_reset_cache
-      request = ResetCacheRequest.new()
-
-      @words_api.reset_cache(request)
+  require_relative 'base_test_context'
+  class ExamplesTests < BaseTestContext
+    def setup
+      super
+      upload_file 'ExamplesData/test_doc.docx', 'test_doc.docx'
     end
 
-    #
-    # Test for GetAvailableFonts resource.
-    #
-    def test_get_available_fonts
-      request = GetAvailableFontsRequest.new(nil)
+    def test_accept_all_revisions
+      documents_dir = 'ExamplesData'
+      file_name = 'test_doc.docx'
 
-      result = @words_api.get_available_fonts(request)
-      assert_equal false, result.nil?
+      # Upload original document to cloud storage.
+      upload_file_request = UploadFileRequest.new(File.open(File.join(documents_dir, file_name)), file_name, nil)
+      @words_api.upload_file(upload_file_request)
+
+      # Calls AcceptAllRevisions method for document in cloud.
+      request = AcceptAllRevisionsRequest.new(file_name, nil, nil, nil, nil, nil)
+      @words_api.accept_all_revisions(request)
+    end
+
+    def test_accept_all_revisions_online
+      documents_dir = 'ExamplesData'
+      file_name = 'test_doc.docx'
+
+      # Calls AcceptAllRevisionsOnline method for document in cloud.
+      request = AcceptAllRevisionsOnlineRequest.new(File.open(File.join(documents_dir, file_name)), nil, nil, nil)
+      accept_all_revisions_online_result = @words_api.accept_all_revisions_online(request)
+      FileUtils.cp accept_all_revisions_online_result.document.path, 'test_result.docx'
     end
   end
 end

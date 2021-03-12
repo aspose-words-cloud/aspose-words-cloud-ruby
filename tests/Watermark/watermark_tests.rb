@@ -30,11 +30,11 @@ module AsposeWordsCloud
   #
   class WatermarkTests < BaseTestContext
     def remote_data_folder
-      remote_test_folder + "/DocumentActions/Watermark"
+      remote_test_folder + '/DocumentActions/Watermark'
     end
 
     def local_file
-      "Common/test_multi_pages.docx"
+      'Common/test_multi_pages.docx'
     end
 
 
@@ -42,13 +42,13 @@ module AsposeWordsCloud
     # Test for adding watermark image.
     #
     def test_insert_watermark_image
-      remote_file_name = "TestInsertWatermarkImage.docx"
-      remote_image_path = remote_data_folder + "/TestInsertWatermarkImage.png"
+      remote_file_name = 'TestInsertWatermarkImage.docx'
+      remote_image_path = remote_data_folder + '/TestInsertWatermarkImage.png'
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
-      upload_file File.join(local_test_folder, "Common/aspose-cloud.png"), remote_image_path
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, 'Common/aspose-cloud.png'), remote_image_path
 
-      request = InsertWatermarkImageRequest.new(remote_file_name, nil, remote_data_folder, nil, nil, nil, remote_test_out + "/" + remote_file_name, nil, nil, nil, remote_image_path)
+      request = InsertWatermarkImageRequest.new(remote_file_name, nil, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil, nil, remote_image_path)
 
       result = @words_api.insert_watermark_image(request)
       assert_equal false, result.nil?
@@ -58,7 +58,7 @@ module AsposeWordsCloud
     # Test for adding watermark image online.
     #
     def test_insert_watermark_image_online
-      request = InsertWatermarkImageOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), File.open(File.join(local_test_folder, "Common/aspose-cloud.png")), nil, nil, nil, nil, nil, nil, nil)
+      request = InsertWatermarkImageOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), File.open(File.join(local_test_folder, 'Common/aspose-cloud.png')), nil, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_watermark_image_online(request)
       assert_equal false, result.nil?
@@ -68,12 +68,12 @@ module AsposeWordsCloud
     # Test for adding watermark text.
     #
     def test_insert_watermark_text
-      remote_file_name = "TestInsertWatermarkText.docx"
+      remote_file_name = 'TestInsertWatermarkText.docx'
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request_watermark_text = WatermarkText.new({:Text => "This is the text", :RotationAngle => 90.0})
-      request = InsertWatermarkTextRequest.new(remote_file_name, request_watermark_text, remote_data_folder, nil, nil, nil, remote_test_out + "/" + remote_file_name, nil, nil)
+      request_watermark_text = WatermarkText.new({:Text => 'This is the text', :RotationAngle => 90.0})
+      request = InsertWatermarkTextRequest.new(remote_file_name, request_watermark_text, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
 
       result = @words_api.insert_watermark_text(request)
       assert_equal false, result.nil?
@@ -83,7 +83,7 @@ module AsposeWordsCloud
     # Test for adding watermark text online.
     #
     def test_insert_watermark_text_online
-      request_watermark_text = WatermarkText.new({:Text => "This is the text", :RotationAngle => 90})
+      request_watermark_text = WatermarkText.new({:Text => 'This is the text', :RotationAngle => 90})
       request = InsertWatermarkTextOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), request_watermark_text, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_watermark_text_online(request)
@@ -94,11 +94,11 @@ module AsposeWordsCloud
     # Test for deleting watermark.
     #
     def test_delete_watermark
-      remote_file_name = "TestDeleteWatermark.docx"
+      remote_file_name = 'TestDeleteWatermark.docx'
 
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + "/" + remote_file_name
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = DeleteWatermarkRequest.new(remote_file_name, remote_data_folder, nil, nil, nil, remote_test_out + "/" + remote_file_name, nil, nil)
+      request = DeleteWatermarkRequest.new(remote_file_name, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
 
       result = @words_api.delete_watermark(request)
       assert_equal false, result.nil?

@@ -13,6 +13,12 @@ This repository contains Aspose.Words Cloud SDK for Ruby source code. This SDK a
 * Watermarks and protection
 * Full read & write access to Document Object Model, including sections, paragraphs, text, images, tables, headers/footers and many others
 
+## Enhancements in Version 21.3
+
+- Added 'UpdateCreatedTimeProperty' save option
+- Added Tables into HeaderFooter so it's possible to address paragraphs inside table which is located in headerfooter (sections/0/headersfooters/1/tables/0/rows/0/cells/0/paragraphs/0)
+
+
 ## Enhancements in Version 21.2
 
 - Added delete all comments method
@@ -110,7 +116,7 @@ To use Aspose Words for Cloud Ruby SDK you need to register an account with [Asp
 To install this package do the following:
 update your Gemfile
 ```ruby
-gem 'aspose_words_cloud', '~> 21.2'
+gem 'aspose_words_cloud', '~> 21.3'
 ```
 or install directly
 ```bash
