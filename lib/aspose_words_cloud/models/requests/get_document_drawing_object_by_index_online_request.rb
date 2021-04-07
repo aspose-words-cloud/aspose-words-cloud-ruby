@@ -1,4 +1,4 @@
-# ------------------------------------------------------------------------------------
+﻿# ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="get_document_drawing_object_by_index_online_request.rb">
 #   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>

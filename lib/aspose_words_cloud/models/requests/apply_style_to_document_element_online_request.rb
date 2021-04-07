@@ -1,4 +1,4 @@
-# ------------------------------------------------------------------------------------
+﻿# ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="apply_style_to_document_element_online_request.rb">
 #   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>

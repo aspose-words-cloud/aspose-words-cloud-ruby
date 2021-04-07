@@ -1,4 +1,4 @@
-# ------------------------------------------------------------------------------------
+﻿# ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="get_paragraph_tab_stops_request.rb">
 #   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>

@@ -1,4 +1,4 @@
-# ------------------------------------------------------------------------------------
+﻿# ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="delete_paragraph_list_format_request.rb">
 #   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>

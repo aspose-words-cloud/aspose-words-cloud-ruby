@@ -1,4 +1,4 @@
-# ------------------------------------------------------------------------------------
+﻿# ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="delete_document_property_request.rb">
 #   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>

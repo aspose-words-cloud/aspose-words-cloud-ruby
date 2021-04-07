@@ -1,4 +1,4 @@
-# ------------------------------------------------------------------------------------
+﻿# ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="insert_drawing_object_online_response.rb">
 #   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>

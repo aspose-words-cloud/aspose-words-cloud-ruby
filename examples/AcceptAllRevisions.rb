@@ -1,4 +1,4 @@
-require 'aspose_words_cloud'
+﻿require 'aspose_words_cloud'
 
 AsposeWordsCloud.configure do |config|
   config.client_data['ClientId'] = '####-####-####-####-####'

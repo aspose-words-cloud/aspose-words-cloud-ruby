@@ -1,4 +1,4 @@
-# ------------------------------------------------------------------------------------
+﻿# ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="graphics_quality_options_data.rb">
 #   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
