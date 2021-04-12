@@ -53,7 +53,7 @@ module AsposeWordsCloud
     # The rotation angle of the watermark.
     attr_accessor :rotation_angle
 
-    # The filename of the image. If the parameter value is missing — the image data is expected in the request content.
+    # The filename of the image. If the parameter value is missing â€” the image data is expected in the request content.
     attr_accessor :image
 
     #
@@ -66,7 +66,7 @@ module AsposeWordsCloud
     # @param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
     # @param revision_date_time The date and time to use for revisions.
     # @param rotation_angle The rotation angle of the watermark.
-    # @param image The filename of the image. If the parameter value is missing — the image data is expected in the request content.
+    # @param image The filename of the image. If the parameter value is missing â€” the image data is expected in the request content.
 
     def initialize(document, image_file, load_encoding = nil, password = nil, dest_file_name = nil, revision_author = nil, revision_date_time = nil, rotation_angle = nil, image = nil)
       self.document = document

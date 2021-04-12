@@ -36,7 +36,7 @@ module AsposeWordsCloud
     #
     def test_ur_encode
       filename = 'test_multi_pages.docx'
-      remote_name = '[“Test_Two,_Inc.”]-_83(b)Election([“Bill_Gates”]).docx'
+      remote_name = '[â€œTest_Two,_Inc.â€]-_83(b)Election([â€œBill_Gatesâ€]).docx'
       bookmark_name = 'aspose'
 
       upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)
