@@ -1,4 +1,4 @@
-﻿# ------------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="split_document_online_request.rb">
 #   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>

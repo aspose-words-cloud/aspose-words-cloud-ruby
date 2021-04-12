@@ -1,4 +1,4 @@
-﻿# ------------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="pdf_digital_signature_details_data.rb">
 #   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>

@@ -1,4 +1,4 @@
-Ôªø# ------------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="url_encode_test.rb">
 #   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
@@ -36,7 +36,7 @@ module AsposeWordsCloud
     #
     def test_ur_encode
       filename = 'test_multi_pages.docx'
-      remote_name = '[‚ÄúTest_Two,_Inc.‚Äù]-_83(b)Election([‚ÄúBill_Gates‚Äù]).docx'
+      remote_name = '[ìTest_Two,_Inc.î]-_83(b)Election([ìBill_Gatesî]).docx'
       bookmark_name = 'aspose'
 
       upload_file File.join(local_common_folder, filename), File.join(remote_test_folder, test_folder, remote_name)

@@ -1,4 +1,4 @@
-﻿# ------------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="get_office_math_objects_request.rb">
 #   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>

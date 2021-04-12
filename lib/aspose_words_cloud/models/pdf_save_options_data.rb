@@ -1,4 +1,4 @@
-﻿# ------------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="pdf_save_options_data.rb">
 #   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
@@ -110,7 +110,7 @@ module AsposeWordsCloud
     # Gets or sets the details for signing the output PDF document.
     attr_accessor :digital_signature_details
 
-    # Gets or sets a value indicating whether the window’s title bar should display the document title taken from the Title entry of the document information dictionary.
+    # Gets or sets a value indicating whether the window�s title bar should display the document title taken from the Title entry of the document information dictionary.
     attr_accessor :display_doc_title
 
     # Gets or sets the downsample options.

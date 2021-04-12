@@ -1,4 +1,4 @@
-﻿# Aspose.Words Cloud SDK for Ruby  
+# Aspose.Words Cloud SDK for Ruby  
 This repository contains Aspose.Words Cloud SDK for Ruby source code. This SDK allows you to work with Aspose.Words Cloud REST APIs in your Ruby applications quickly and easily, with zero initial cost.
 
 [Aspose.Words Cloud](https://products.aspose.cloud/words/family "Aspose.Words for Cloud")  

@@ -1,4 +1,4 @@
-﻿# ------------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="delete_border_online_response.rb">
 #   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>

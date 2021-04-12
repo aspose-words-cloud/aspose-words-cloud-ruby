@@ -1,4 +1,4 @@
-﻿# ------------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="get_section_page_setup_online_request.rb">
 #   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
