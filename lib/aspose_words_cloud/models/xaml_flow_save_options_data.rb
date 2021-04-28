@@ -32,6 +32,9 @@ module AsposeWordsCloud
     # Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false..
     attr_accessor :allow_embedding_post_script_fonts
 
+    # Gets or sets CustomTimeZoneInfo.
+    attr_accessor :custom_time_zone_info_data
+
     # Gets or sets the value determining how 3D effects are rendered.
     attr_accessor :dml3_d_effects_rendering_mode
 
@@ -100,6 +103,7 @@ module AsposeWordsCloud
     def self.attribute_map
       {
         :'allow_embedding_post_script_fonts' => :'AllowEmbeddingPostScriptFonts',
+        :'custom_time_zone_info_data' => :'CustomTimeZoneInfoData',
         :'dml3_d_effects_rendering_mode' => :'Dml3DEffectsRenderingMode',
         :'dml_effects_rendering_mode' => :'DmlEffectsRenderingMode',
         :'dml_rendering_mode' => :'DmlRenderingMode',
@@ -120,6 +124,7 @@ module AsposeWordsCloud
     def self.swagger_types
       {
         :'allow_embedding_post_script_fonts' => :'BOOLEAN',
+        :'custom_time_zone_info_data' => :'TimeZoneInfoData',
         :'dml3_d_effects_rendering_mode' => :'String',
         :'dml_effects_rendering_mode' => :'String',
         :'dml_rendering_mode' => :'String',
@@ -146,6 +151,10 @@ module AsposeWordsCloud
 
       if attributes.key?(:'AllowEmbeddingPostScriptFonts')
         self.allow_embedding_post_script_fonts = attributes[:'AllowEmbeddingPostScriptFonts']
+      end
+
+      if attributes.key?(:'CustomTimeZoneInfoData')
+        self.custom_time_zone_info_data = attributes[:'CustomTimeZoneInfoData']
       end
 
       if attributes.key?(:'Dml3DEffectsRenderingMode')
@@ -238,6 +247,7 @@ module AsposeWordsCloud
       return true if self.equal?(other)
       self.class == other.class &&
           allow_embedding_post_script_fonts == other.allow_embedding_post_script_fonts &&
+          custom_time_zone_info_data == other.custom_time_zone_info_data &&
           dml3_d_effects_rendering_mode == other.dml3_d_effects_rendering_mode &&
           dml_effects_rendering_mode == other.dml_effects_rendering_mode &&
           dml_rendering_mode == other.dml_rendering_mode &&
@@ -262,7 +272,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, save_format, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, images_folder, images_folder_alias].hash
+      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, save_format, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, images_folder, images_folder_alias].hash
     end
 
     # Builds the object from hash
