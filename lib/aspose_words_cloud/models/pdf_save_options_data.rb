@@ -32,6 +32,9 @@ module AsposeWordsCloud
     # Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false..
     attr_accessor :allow_embedding_post_script_fonts
 
+    # Gets or sets CustomTimeZoneInfo.
+    attr_accessor :custom_time_zone_info_data
+
     # Gets or sets the value determining how 3D effects are rendered.
     attr_accessor :dml3_d_effects_rendering_mode
 
@@ -119,9 +122,6 @@ module AsposeWordsCloud
     # Gets or sets the details for encrypting the output PDF document.
     attr_accessor :encryption_details
 
-    # Gets or sets a value indicating whether URI should be escaped before writing.
-    attr_accessor :escape_uri
-
     # Gets or sets a value indicating whether to export document structure.
     attr_accessor :export_document_structure
 
@@ -197,6 +197,7 @@ module AsposeWordsCloud
     def self.attribute_map
       {
         :'allow_embedding_post_script_fonts' => :'AllowEmbeddingPostScriptFonts',
+        :'custom_time_zone_info_data' => :'CustomTimeZoneInfoData',
         :'dml3_d_effects_rendering_mode' => :'Dml3DEffectsRenderingMode',
         :'dml_effects_rendering_mode' => :'DmlEffectsRenderingMode',
         :'dml_rendering_mode' => :'DmlRenderingMode',
@@ -223,7 +224,6 @@ module AsposeWordsCloud
         :'downsample_options' => :'DownsampleOptions',
         :'embed_full_fonts' => :'EmbedFullFonts',
         :'encryption_details' => :'EncryptionDetails',
-        :'escape_uri' => :'EscapeUri',
         :'export_document_structure' => :'ExportDocumentStructure',
         :'font_embedding_mode' => :'FontEmbeddingMode',
         :'header_footer_bookmarks_export_mode' => :'HeaderFooterBookmarksExportMode',
@@ -247,6 +247,7 @@ module AsposeWordsCloud
     def self.swagger_types
       {
         :'allow_embedding_post_script_fonts' => :'BOOLEAN',
+        :'custom_time_zone_info_data' => :'TimeZoneInfoData',
         :'dml3_d_effects_rendering_mode' => :'String',
         :'dml_effects_rendering_mode' => :'String',
         :'dml_rendering_mode' => :'String',
@@ -273,7 +274,6 @@ module AsposeWordsCloud
         :'downsample_options' => :'DownsampleOptionsData',
         :'embed_full_fonts' => :'BOOLEAN',
         :'encryption_details' => :'PdfEncryptionDetailsData',
-        :'escape_uri' => :'BOOLEAN',
         :'export_document_structure' => :'BOOLEAN',
         :'font_embedding_mode' => :'String',
         :'header_footer_bookmarks_export_mode' => :'String',
@@ -303,6 +303,10 @@ module AsposeWordsCloud
 
       if attributes.key?(:'AllowEmbeddingPostScriptFonts')
         self.allow_embedding_post_script_fonts = attributes[:'AllowEmbeddingPostScriptFonts']
+      end
+
+      if attributes.key?(:'CustomTimeZoneInfoData')
+        self.custom_time_zone_info_data = attributes[:'CustomTimeZoneInfoData']
       end
 
       if attributes.key?(:'Dml3DEffectsRenderingMode')
@@ -407,10 +411,6 @@ module AsposeWordsCloud
 
       if attributes.key?(:'EncryptionDetails')
         self.encryption_details = attributes[:'EncryptionDetails']
-      end
-
-      if attributes.key?(:'EscapeUri')
-        self.escape_uri = attributes[:'EscapeUri']
       end
 
       if attributes.key?(:'ExportDocumentStructure')
@@ -531,6 +531,7 @@ module AsposeWordsCloud
       return true if self.equal?(other)
       self.class == other.class &&
           allow_embedding_post_script_fonts == other.allow_embedding_post_script_fonts &&
+          custom_time_zone_info_data == other.custom_time_zone_info_data &&
           dml3_d_effects_rendering_mode == other.dml3_d_effects_rendering_mode &&
           dml_effects_rendering_mode == other.dml_effects_rendering_mode &&
           dml_rendering_mode == other.dml_rendering_mode &&
@@ -557,7 +558,6 @@ module AsposeWordsCloud
           downsample_options == other.downsample_options &&
           embed_full_fonts == other.embed_full_fonts &&
           encryption_details == other.encryption_details &&
-          escape_uri == other.escape_uri &&
           export_document_structure == other.export_document_structure &&
           font_embedding_mode == other.font_embedding_mode &&
           header_footer_bookmarks_export_mode == other.header_footer_bookmarks_export_mode &&
@@ -585,7 +585,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, save_format, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, compliance, create_note_hyperlinks, custom_properties_export, digital_signature_details, display_doc_title, downsample_options, embed_full_fonts, encryption_details, escape_uri, export_document_structure, font_embedding_mode, header_footer_bookmarks_export_mode, image_color_space_export_mode, image_compression, interpolate_images, open_hyperlinks_in_new_window, outline_options, page_mode, preblend_images, preserve_form_fields, text_compression, use_book_fold_printing_settings, use_core_fonts, zoom_behavior, zoom_factor].hash
+      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, save_format, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, compliance, create_note_hyperlinks, custom_properties_export, digital_signature_details, display_doc_title, downsample_options, embed_full_fonts, encryption_details, export_document_structure, font_embedding_mode, header_footer_bookmarks_export_mode, image_color_space_export_mode, image_compression, interpolate_images, open_hyperlinks_in_new_window, outline_options, page_mode, preblend_images, preserve_form_fields, text_compression, use_book_fold_printing_settings, use_core_fonts, zoom_behavior, zoom_factor].hash
     end
 
     # Builds the object from hash
