@@ -48,6 +48,7 @@ def testGemLocally()
 			docker.image('ruby:2.4').inside('-u root'){
 				stage('upload to rubygems'){
 					sh "gem build aspose_words_cloud.gemspec"
+                    sh "gem install nokogiri -v 1.10.10"
 					sh "gem install ./aspose_words_cloud-${version}.gem"
 				}
 				
