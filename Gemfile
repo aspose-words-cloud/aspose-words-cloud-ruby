@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'faraday', '~> 0.14.0'
-gem 'mimemagic', '~> 0.3.2'
+gem 'faraday', '>= 1.4.1'
+gem 'marcel', '>= 1.0.0'
 gem 'multipart-parser', '~> 0.1.1'
 
 group :development do
@@ -9,6 +9,5 @@ group :development do
   gem 'ci_reporter_minitest'
   gem 'rubocop', '~> 0.58.2'
   gem 'rubocop-checkstyle_formatter'
-  gem 'aspose_storage_cloud', '~> 18.6', '>= 18.5'
   gem 'minitest', '~> 5.11', '>= 5.11.3'
 end

@@ -59,5 +59,107 @@ module AsposeWordsCloud
       self.dest_storage_name = dest_storage_name
       self.version_id = version_id
     end
+
+    # Creating batch part from request
+    def to_batch_part(api_client)
+      # verify the required parameter 'dest_path' is set
+      raise ArgumentError, 'Missing the required parameter dest_path when calling WordsApi.copy_file' if api_client.config.client_side_validation && self.dest_path.nil?
+      # verify the required parameter 'src_path' is set
+      raise ArgumentError, 'Missing the required parameter src_path when calling WordsApi.copy_file' if api_client.config.client_side_validation && self.src_path.nil?
+
+      # resource path
+      local_var_path = '/words/storage/file/copy/{srcPath}'[7..-1]
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('SrcPath') + '}', self.src_path.nil? ? '' : self.src_path.to_s)
+      local_var_path = local_var_path.sub('//', '/')
+
+      # query parameters
+      query_params = {}
+      query_params[downcase_first_letter('DestPath')] = self.dest_path
+      query_params[downcase_first_letter('SrcStorageName')] = self.src_storage_name unless self.src_storage_name.nil?
+      query_params[downcase_first_letter('DestStorageName')] = self.dest_storage_name unless self.dest_storage_name.nil?
+      query_params[downcase_first_letter('VersionId')] = self.version_id unless self.version_id.nil?
+
+      if query_params
+        query_params.each { |key, value| local_var_path = api_client.add_param_to_query(local_var_path, key, value) }
+      end
+
+      header_params = {}
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      body = nil
+      part = ""
+      part.concat("PUT".force_encoding('UTF-8'))
+      part.concat(" ".force_encoding('UTF-8'))
+      part.concat(local_var_path.force_encoding('UTF-8'))
+      part.concat(" \r\n".force_encoding('UTF-8'))
+
+      header_params.each_pair {|key, value| part.concat(key.dup.force_encoding('UTF-8') , ": ".force_encoding('UTF-8'), value.dup.force_encoding('UTF-8'), "\r\n".force_encoding('UTF-8')) }
+      part.concat("\r\n".force_encoding('UTF-8'))
+     if body
+       if body.is_a?(Hash)
+        body.each do |key, value|
+          part.concat(value, "\r\n")
+        end
+        else
+          part.concat(body)
+      end
+     end
+     part
+    end
+
+    def create_http_request(api_client)
+      # verify the required parameter 'dest_path' is set
+      raise ArgumentError, 'Missing the required parameter dest_path when calling WordsApi.copy_file' if api_client.config.client_side_validation && self.dest_path.nil?
+      # verify the required parameter 'src_path' is set
+      raise ArgumentError, 'Missing the required parameter src_path when calling WordsApi.copy_file' if api_client.config.client_side_validation && self.src_path.nil?
+
+      # resource path
+      local_var_path = '/words/storage/file/copy/{srcPath}'[1..-1]
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('SrcPath') + '}', self.src_path.nil? ? '' : self.src_path.to_s)
+      local_var_path = local_var_path.sub('//', '/')
+
+      # query parameters
+      query_params = {}
+      query_params[downcase_first_letter('DestPath')] = self.dest_path
+      query_params[downcase_first_letter('SrcStorageName')] = self.src_storage_name unless self.src_storage_name.nil?
+      query_params[downcase_first_letter('DestStorageName')] = self.dest_storage_name unless self.dest_storage_name.nil?
+      query_params[downcase_first_letter('VersionId')] = self.version_id unless self.version_id.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = api_client.select_header_content_type(['application/xml', 'application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      body = api_client.build_request_body(header_params, form_params, post_body)
+      {
+        'method': :PUT,
+        'path': local_var_path,
+        'header_params': header_params,
+        'query_params': query_params,
+        'body': body,
+        'auth_names': ['JWT']
+      }
+    end
+
+    #
+    # Helper method to convert first letter to downcase
+    #
+    def downcase_first_letter(str)
+      str[0].downcase + str[1..-1]
+    end
+
+    # Get response type
+    def get_response_type
+      nil
+    end
   end
 end

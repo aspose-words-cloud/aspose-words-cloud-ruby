@@ -89,5 +89,119 @@ module AsposeWordsCloud
       self.zip_output = zip_output
       self.fonts_location = fonts_location
     end
+
+    # Creating batch part from request
+    def to_batch_part(api_client)
+      # verify the required parameter 'name' is set
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.split_document' if api_client.config.client_side_validation && self.name.nil?
+      # verify the required parameter 'format' is set
+      raise ArgumentError, 'Missing the required parameter format when calling WordsApi.split_document' if api_client.config.client_side_validation && self.format.nil?
+
+      # resource path
+      local_var_path = '/words/{name}/split'[7..-1]
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)
+      local_var_path = local_var_path.sub('//', '/')
+
+      # query parameters
+      query_params = {}
+      query_params[downcase_first_letter('Format')] = self.format
+      query_params[downcase_first_letter('Folder')] = self.folder unless self.folder.nil?
+      query_params[downcase_first_letter('Storage')] = self.storage unless self.storage.nil?
+      query_params[downcase_first_letter('LoadEncoding')] = self.load_encoding unless self.load_encoding.nil?
+      query_params[downcase_first_letter('Password')] = self.password unless self.password.nil?
+      query_params[downcase_first_letter('DestFileName')] = self.dest_file_name unless self.dest_file_name.nil?
+      query_params[downcase_first_letter('From')] = self.from unless self.from.nil?
+      query_params[downcase_first_letter('To')] = self.to unless self.to.nil?
+      query_params[downcase_first_letter('ZipOutput')] = self.zip_output unless self.zip_output.nil?
+      query_params[downcase_first_letter('FontsLocation')] = self.fonts_location unless self.fonts_location.nil?
+
+      if query_params
+        query_params.each { |key, value| local_var_path = api_client.add_param_to_query(local_var_path, key, value) }
+      end
+
+      header_params = {}
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      body = nil
+      part = ""
+      part.concat("PUT".force_encoding('UTF-8'))
+      part.concat(" ".force_encoding('UTF-8'))
+      part.concat(local_var_path.force_encoding('UTF-8'))
+      part.concat(" \r\n".force_encoding('UTF-8'))
+
+      header_params.each_pair {|key, value| part.concat(key.dup.force_encoding('UTF-8') , ": ".force_encoding('UTF-8'), value.dup.force_encoding('UTF-8'), "\r\n".force_encoding('UTF-8')) }
+      part.concat("\r\n".force_encoding('UTF-8'))
+     if body
+       if body.is_a?(Hash)
+        body.each do |key, value|
+          part.concat(value, "\r\n")
+        end
+        else
+          part.concat(body)
+      end
+     end
+     part
+    end
+
+    def create_http_request(api_client)
+      # verify the required parameter 'name' is set
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.split_document' if api_client.config.client_side_validation && self.name.nil?
+      # verify the required parameter 'format' is set
+      raise ArgumentError, 'Missing the required parameter format when calling WordsApi.split_document' if api_client.config.client_side_validation && self.format.nil?
+
+      # resource path
+      local_var_path = '/words/{name}/split'[1..-1]
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)
+      local_var_path = local_var_path.sub('//', '/')
+
+      # query parameters
+      query_params = {}
+      query_params[downcase_first_letter('Format')] = self.format
+      query_params[downcase_first_letter('Folder')] = self.folder unless self.folder.nil?
+      query_params[downcase_first_letter('Storage')] = self.storage unless self.storage.nil?
+      query_params[downcase_first_letter('LoadEncoding')] = self.load_encoding unless self.load_encoding.nil?
+      query_params[downcase_first_letter('Password')] = self.password unless self.password.nil?
+      query_params[downcase_first_letter('DestFileName')] = self.dest_file_name unless self.dest_file_name.nil?
+      query_params[downcase_first_letter('From')] = self.from unless self.from.nil?
+      query_params[downcase_first_letter('To')] = self.to unless self.to.nil?
+      query_params[downcase_first_letter('ZipOutput')] = self.zip_output unless self.zip_output.nil?
+      query_params[downcase_first_letter('FontsLocation')] = self.fonts_location unless self.fonts_location.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = api_client.select_header_content_type(['application/xml', 'application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      body = api_client.build_request_body(header_params, form_params, post_body)
+      {
+        'method': :PUT,
+        'path': local_var_path,
+        'header_params': header_params,
+        'query_params': query_params,
+        'body': body,
+        'auth_names': ['JWT']
+      }
+    end
+
+    #
+    # Helper method to convert first letter to downcase
+    #
+    def downcase_first_letter(str)
+      str[0].downcase + str[1..-1]
+    end
+
+    # Get response type
+    def get_response_type
+      'SplitDocumentResponse'
+    end
   end
 end

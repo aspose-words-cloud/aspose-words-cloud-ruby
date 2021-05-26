@@ -89,5 +89,118 @@ module AsposeWordsCloud
       self.use_whole_paragraph_as_region = use_whole_paragraph_as_region
       self.dest_file_name = dest_file_name
     end
+
+    # Creating batch part from request
+    def to_batch_part(api_client)
+      # verify the required parameter 'name' is set
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.execute_mail_merge' if api_client.config.client_side_validation && self.name.nil?
+
+      # resource path
+      local_var_path = '/words/{name}/MailMerge'[7..-1]
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)
+      local_var_path = local_var_path.sub('//', '/')
+
+      # query parameters
+      query_params = {}
+      query_params[downcase_first_letter('Folder')] = self.folder unless self.folder.nil?
+      query_params[downcase_first_letter('Storage')] = self.storage unless self.storage.nil?
+      query_params[downcase_first_letter('LoadEncoding')] = self.load_encoding unless self.load_encoding.nil?
+      query_params[downcase_first_letter('Password')] = self.password unless self.password.nil?
+      query_params[downcase_first_letter('WithRegions')] = self.with_regions unless self.with_regions.nil?
+      query_params[downcase_first_letter('MailMergeDataFile')] = self.mail_merge_data_file unless self.mail_merge_data_file.nil?
+      query_params[downcase_first_letter('Cleanup')] = self.cleanup unless self.cleanup.nil?
+      query_params[downcase_first_letter('UseWholeParagraphAsRegion')] = self.use_whole_paragraph_as_region unless self.use_whole_paragraph_as_region.nil?
+      query_params[downcase_first_letter('DestFileName')] = self.dest_file_name unless self.dest_file_name.nil?
+
+      if query_params
+        query_params.each { |key, value| local_var_path = api_client.add_param_to_query(local_var_path, key, value) }
+      end
+
+      header_params = {}
+      # header parameters
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = api_client.select_header_content_type(['multipart/form-data'])
+
+      # form parameters
+      form_params = {}
+      form_params[downcase_first_letter('Data')] = self.data
+
+      # http body (model)
+      post_body = nil
+      body = api_client.build_request_body_batch(header_params, form_params, post_body)
+      part = ""
+      part.concat("PUT".force_encoding('UTF-8'))
+      part.concat(" ".force_encoding('UTF-8'))
+      part.concat(local_var_path.force_encoding('UTF-8'))
+      part.concat(" \r\n".force_encoding('UTF-8'))
+
+      header_params.each_pair {|key, value| part.concat(key.dup.force_encoding('UTF-8') , ": ".force_encoding('UTF-8'), value.dup.force_encoding('UTF-8'), "\r\n".force_encoding('UTF-8')) }
+      part.concat("\r\n".force_encoding('UTF-8'))
+     if body
+       if body.is_a?(Hash)
+        body.each do |key, value|
+          part.concat(value, "\r\n")
+        end
+        else
+          part.concat(body)
+      end
+     end
+     part
+    end
+
+    def create_http_request(api_client)
+      # verify the required parameter 'name' is set
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.execute_mail_merge' if api_client.config.client_side_validation && self.name.nil?
+
+      # resource path
+      local_var_path = '/words/{name}/MailMerge'[1..-1]
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)
+      local_var_path = local_var_path.sub('//', '/')
+
+      # query parameters
+      query_params = {}
+      query_params[downcase_first_letter('Folder')] = self.folder unless self.folder.nil?
+      query_params[downcase_first_letter('Storage')] = self.storage unless self.storage.nil?
+      query_params[downcase_first_letter('LoadEncoding')] = self.load_encoding unless self.load_encoding.nil?
+      query_params[downcase_first_letter('Password')] = self.password unless self.password.nil?
+      query_params[downcase_first_letter('WithRegions')] = self.with_regions unless self.with_regions.nil?
+      query_params[downcase_first_letter('MailMergeDataFile')] = self.mail_merge_data_file unless self.mail_merge_data_file.nil?
+      query_params[downcase_first_letter('Cleanup')] = self.cleanup unless self.cleanup.nil?
+      query_params[downcase_first_letter('UseWholeParagraphAsRegion')] = self.use_whole_paragraph_as_region unless self.use_whole_paragraph_as_region.nil?
+      query_params[downcase_first_letter('DestFileName')] = self.dest_file_name unless self.dest_file_name.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = api_client.select_header_content_type(['multipart/form-data'])
+
+      # form parameters
+      form_params = {}
+      form_params[downcase_first_letter('Data')] = self.data
+
+      # http body (model)
+      post_body = nil
+      body = api_client.build_request_body(header_params, form_params, post_body)
+      {
+        'method': :PUT,
+        'path': local_var_path,
+        'header_params': header_params,
+        'query_params': query_params,
+        'body': body,
+        'auth_names': ['JWT']
+      }
+    end
+
+    #
+    # Helper method to convert first letter to downcase
+    #
+    def downcase_first_letter(str)
+      str[0].downcase + str[1..-1]
+    end
+
+    # Get response type
+    def get_response_type
+      'DocumentResponse'
+    end
   end
 end

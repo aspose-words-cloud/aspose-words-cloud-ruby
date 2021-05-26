@@ -79,5 +79,122 @@ module AsposeWordsCloud
       self.revision_date_time = revision_date_time
       self.insert_before_node = insert_before_node
     end
+
+    # Creating batch part from request
+    def to_batch_part(api_client)
+      # verify the required parameter 'document' is set
+      raise ArgumentError, 'Missing the required parameter document when calling WordsApi.insert_run_online' if api_client.config.client_side_validation && self.document.nil?
+      # verify the required parameter 'paragraph_path' is set
+      raise ArgumentError, 'Missing the required parameter paragraph_path when calling WordsApi.insert_run_online' if api_client.config.client_side_validation && self.paragraph_path.nil?
+      # verify the required parameter 'run' is set
+      raise ArgumentError, 'Missing the required parameter run when calling WordsApi.insert_run_online' if api_client.config.client_side_validation && self.run.nil?
+
+      # resource path
+      local_var_path = '/words/online/post/{paragraphPath}/runs'[7..-1]
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('ParagraphPath') + '}', self.paragraph_path.nil? ? '' : self.paragraph_path.to_s)
+      local_var_path = local_var_path.sub('//', '/')
+
+      # query parameters
+      query_params = {}
+      query_params[downcase_first_letter('LoadEncoding')] = self.load_encoding unless self.load_encoding.nil?
+      query_params[downcase_first_letter('Password')] = self.password unless self.password.nil?
+      query_params[downcase_first_letter('DestFileName')] = self.dest_file_name unless self.dest_file_name.nil?
+      query_params[downcase_first_letter('RevisionAuthor')] = self.revision_author unless self.revision_author.nil?
+      query_params[downcase_first_letter('RevisionDateTime')] = self.revision_date_time unless self.revision_date_time.nil?
+      query_params[downcase_first_letter('InsertBeforeNode')] = self.insert_before_node unless self.insert_before_node.nil?
+
+      if query_params
+        query_params.each { |key, value| local_var_path = api_client.add_param_to_query(local_var_path, key, value) }
+      end
+
+      header_params = {}
+      # header parameters
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = api_client.select_header_content_type(['multipart/form-data'])
+
+      # form parameters
+      form_params = {}
+      form_params[downcase_first_letter('Document')] = self.document
+      form_params[downcase_first_letter('Run')] = self.run.to_body.to_json
+
+      # http body (model)
+      post_body = nil
+      body = api_client.build_request_body_batch(header_params, form_params, post_body)
+      part = ""
+      part.concat("PUT".force_encoding('UTF-8'))
+      part.concat(" ".force_encoding('UTF-8'))
+      part.concat(local_var_path.force_encoding('UTF-8'))
+      part.concat(" \r\n".force_encoding('UTF-8'))
+
+      header_params.each_pair {|key, value| part.concat(key.dup.force_encoding('UTF-8') , ": ".force_encoding('UTF-8'), value.dup.force_encoding('UTF-8'), "\r\n".force_encoding('UTF-8')) }
+      part.concat("\r\n".force_encoding('UTF-8'))
+     if body
+       if body.is_a?(Hash)
+        body.each do |key, value|
+          part.concat(value, "\r\n")
+        end
+        else
+          part.concat(body)
+      end
+     end
+     part
+    end
+
+    def create_http_request(api_client)
+      # verify the required parameter 'document' is set
+      raise ArgumentError, 'Missing the required parameter document when calling WordsApi.insert_run_online' if api_client.config.client_side_validation && self.document.nil?
+      # verify the required parameter 'paragraph_path' is set
+      raise ArgumentError, 'Missing the required parameter paragraph_path when calling WordsApi.insert_run_online' if api_client.config.client_side_validation && self.paragraph_path.nil?
+      # verify the required parameter 'run' is set
+      raise ArgumentError, 'Missing the required parameter run when calling WordsApi.insert_run_online' if api_client.config.client_side_validation && self.run.nil?
+
+      # resource path
+      local_var_path = '/words/online/post/{paragraphPath}/runs'[1..-1]
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('ParagraphPath') + '}', self.paragraph_path.nil? ? '' : self.paragraph_path.to_s)
+      local_var_path = local_var_path.sub('//', '/')
+
+      # query parameters
+      query_params = {}
+      query_params[downcase_first_letter('LoadEncoding')] = self.load_encoding unless self.load_encoding.nil?
+      query_params[downcase_first_letter('Password')] = self.password unless self.password.nil?
+      query_params[downcase_first_letter('DestFileName')] = self.dest_file_name unless self.dest_file_name.nil?
+      query_params[downcase_first_letter('RevisionAuthor')] = self.revision_author unless self.revision_author.nil?
+      query_params[downcase_first_letter('RevisionDateTime')] = self.revision_date_time unless self.revision_date_time.nil?
+      query_params[downcase_first_letter('InsertBeforeNode')] = self.insert_before_node unless self.insert_before_node.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = api_client.select_header_content_type(['multipart/form-data'])
+
+      # form parameters
+      form_params = {}
+      form_params[downcase_first_letter('Document')] = self.document
+      form_params[downcase_first_letter('Run')] = self.run.to_body.to_json
+
+      # http body (model)
+      post_body = nil
+      body = api_client.build_request_body(header_params, form_params, post_body)
+      {
+        'method': :PUT,
+        'path': local_var_path,
+        'header_params': header_params,
+        'query_params': query_params,
+        'body': body,
+        'auth_names': ['JWT']
+      }
+    end
+
+    #
+    # Helper method to convert first letter to downcase
+    #
+    def downcase_first_letter(str)
+      str[0].downcase + str[1..-1]
+    end
+
+    # Get response type
+    def get_response_type
+      'InsertRunOnlineResponse'
+    end
   end
 end

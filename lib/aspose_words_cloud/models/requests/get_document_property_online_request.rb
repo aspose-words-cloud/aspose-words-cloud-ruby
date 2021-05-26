@@ -54,5 +54,108 @@ module AsposeWordsCloud
       self.load_encoding = load_encoding
       self.password = password
     end
+
+    # Creating batch part from request
+    def to_batch_part(api_client)
+      # verify the required parameter 'document' is set
+      raise ArgumentError, 'Missing the required parameter document when calling WordsApi.get_document_property_online' if api_client.config.client_side_validation && self.document.nil?
+      # verify the required parameter 'property_name' is set
+      raise ArgumentError, 'Missing the required parameter property_name when calling WordsApi.get_document_property_online' if api_client.config.client_side_validation && self.property_name.nil?
+
+      # resource path
+      local_var_path = '/words/online/get/documentProperties/{propertyName}'[7..-1]
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('PropertyName') + '}', self.property_name.nil? ? '' : self.property_name.to_s)
+      local_var_path = local_var_path.sub('//', '/')
+
+      # query parameters
+      query_params = {}
+      query_params[downcase_first_letter('LoadEncoding')] = self.load_encoding unless self.load_encoding.nil?
+      query_params[downcase_first_letter('Password')] = self.password unless self.password.nil?
+
+      if query_params
+        query_params.each { |key, value| local_var_path = api_client.add_param_to_query(local_var_path, key, value) }
+      end
+
+      header_params = {}
+      # header parameters
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = api_client.select_header_content_type(['multipart/form-data'])
+
+      # form parameters
+      form_params = {}
+      form_params[downcase_first_letter('Document')] = self.document
+
+      # http body (model)
+      post_body = nil
+      body = api_client.build_request_body_batch(header_params, form_params, post_body)
+      part = ""
+      part.concat("PUT".force_encoding('UTF-8'))
+      part.concat(" ".force_encoding('UTF-8'))
+      part.concat(local_var_path.force_encoding('UTF-8'))
+      part.concat(" \r\n".force_encoding('UTF-8'))
+
+      header_params.each_pair {|key, value| part.concat(key.dup.force_encoding('UTF-8') , ": ".force_encoding('UTF-8'), value.dup.force_encoding('UTF-8'), "\r\n".force_encoding('UTF-8')) }
+      part.concat("\r\n".force_encoding('UTF-8'))
+     if body
+       if body.is_a?(Hash)
+        body.each do |key, value|
+          part.concat(value, "\r\n")
+        end
+        else
+          part.concat(body)
+      end
+     end
+     part
+    end
+
+    def create_http_request(api_client)
+      # verify the required parameter 'document' is set
+      raise ArgumentError, 'Missing the required parameter document when calling WordsApi.get_document_property_online' if api_client.config.client_side_validation && self.document.nil?
+      # verify the required parameter 'property_name' is set
+      raise ArgumentError, 'Missing the required parameter property_name when calling WordsApi.get_document_property_online' if api_client.config.client_side_validation && self.property_name.nil?
+
+      # resource path
+      local_var_path = '/words/online/get/documentProperties/{propertyName}'[1..-1]
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('PropertyName') + '}', self.property_name.nil? ? '' : self.property_name.to_s)
+      local_var_path = local_var_path.sub('//', '/')
+
+      # query parameters
+      query_params = {}
+      query_params[downcase_first_letter('LoadEncoding')] = self.load_encoding unless self.load_encoding.nil?
+      query_params[downcase_first_letter('Password')] = self.password unless self.password.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = api_client.select_header_content_type(['multipart/form-data'])
+
+      # form parameters
+      form_params = {}
+      form_params[downcase_first_letter('Document')] = self.document
+
+      # http body (model)
+      post_body = nil
+      body = api_client.build_request_body(header_params, form_params, post_body)
+      {
+        'method': :PUT,
+        'path': local_var_path,
+        'header_params': header_params,
+        'query_params': query_params,
+        'body': body,
+        'auth_names': ['JWT']
+      }
+    end
+
+    #
+    # Helper method to convert first letter to downcase
+    #
+    def downcase_first_letter(str)
+      str[0].downcase + str[1..-1]
+    end
+
+    # Get response type
+    def get_response_type
+      'DocumentPropertyResponse'
+    end
   end
 end
