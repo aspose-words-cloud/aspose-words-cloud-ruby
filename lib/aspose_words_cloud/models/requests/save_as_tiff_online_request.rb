@@ -144,5 +144,144 @@ module AsposeWordsCloud
       self.zip_output = zip_output
       self.fonts_location = fonts_location
     end
+
+    # Creating batch part from request
+    def to_batch_part(api_client)
+      # verify the required parameter 'document' is set
+      raise ArgumentError, 'Missing the required parameter document when calling WordsApi.save_as_tiff_online' if api_client.config.client_side_validation && self.document.nil?
+      # verify the required parameter 'save_options' is set
+      raise ArgumentError, 'Missing the required parameter save_options when calling WordsApi.save_as_tiff_online' if api_client.config.client_side_validation && self.save_options.nil?
+
+      # resource path
+      local_var_path = '/words/online/put/saveAs/tiff'[7..-1]
+      local_var_path = local_var_path.sub('//', '/')
+
+      # query parameters
+      query_params = {}
+      query_params[downcase_first_letter('LoadEncoding')] = self.load_encoding unless self.load_encoding.nil?
+      query_params[downcase_first_letter('Password')] = self.password unless self.password.nil?
+      query_params[downcase_first_letter('UseAntiAliasing')] = self.use_anti_aliasing unless self.use_anti_aliasing.nil?
+      query_params[downcase_first_letter('UseHighQualityRendering')] = self.use_high_quality_rendering unless self.use_high_quality_rendering.nil?
+      query_params[downcase_first_letter('ImageBrightness')] = self.image_brightness unless self.image_brightness.nil?
+      query_params[downcase_first_letter('ImageColorMode')] = self.image_color_mode unless self.image_color_mode.nil?
+      query_params[downcase_first_letter('ImageContrast')] = self.image_contrast unless self.image_contrast.nil?
+      query_params[downcase_first_letter('NumeralFormat')] = self.numeral_format unless self.numeral_format.nil?
+      query_params[downcase_first_letter('PageCount')] = self.page_count unless self.page_count.nil?
+      query_params[downcase_first_letter('PageIndex')] = self.page_index unless self.page_index.nil?
+      query_params[downcase_first_letter('PaperColor')] = self.paper_color unless self.paper_color.nil?
+      query_params[downcase_first_letter('PixelFormat')] = self.pixel_format unless self.pixel_format.nil?
+      query_params[downcase_first_letter('Resolution')] = self.resolution unless self.resolution.nil?
+      query_params[downcase_first_letter('Scale')] = self.scale unless self.scale.nil?
+      query_params[downcase_first_letter('TiffCompression')] = self.tiff_compression unless self.tiff_compression.nil?
+      query_params[downcase_first_letter('DmlRenderingMode')] = self.dml_rendering_mode unless self.dml_rendering_mode.nil?
+      query_params[downcase_first_letter('DmlEffectsRenderingMode')] = self.dml_effects_rendering_mode unless self.dml_effects_rendering_mode.nil?
+      query_params[downcase_first_letter('TiffBinarizationMethod')] = self.tiff_binarization_method unless self.tiff_binarization_method.nil?
+      query_params[downcase_first_letter('ZipOutput')] = self.zip_output unless self.zip_output.nil?
+      query_params[downcase_first_letter('FontsLocation')] = self.fonts_location unless self.fonts_location.nil?
+
+      if query_params
+        query_params.each { |key, value| local_var_path = api_client.add_param_to_query(local_var_path, key, value) }
+      end
+
+      header_params = {}
+      # header parameters
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = api_client.select_header_content_type(['multipart/form-data'])
+
+      # form parameters
+      form_params = {}
+      form_params[downcase_first_letter('Document')] = self.document
+      form_params[downcase_first_letter('SaveOptions')] = self.save_options.to_body.to_json
+
+      # http body (model)
+      post_body = nil
+      body = api_client.build_request_body_batch(header_params, form_params, post_body)
+      part = ""
+      part.concat("PUT".force_encoding('UTF-8'))
+      part.concat(" ".force_encoding('UTF-8'))
+      part.concat(local_var_path.force_encoding('UTF-8'))
+      part.concat(" \r\n".force_encoding('UTF-8'))
+
+      header_params.each_pair {|key, value| part.concat(key.dup.force_encoding('UTF-8') , ": ".force_encoding('UTF-8'), value.dup.force_encoding('UTF-8'), "\r\n".force_encoding('UTF-8')) }
+      part.concat("\r\n".force_encoding('UTF-8'))
+      if body
+        if body.is_a?(Hash)
+          body.each do |key, value|
+          part.concat(value, "\r\n")
+        end
+        else
+          part.concat(body)
+        end
+      end
+     part
+    end
+
+    def create_http_request(api_client)
+      # verify the required parameter 'document' is set
+      raise ArgumentError, 'Missing the required parameter document when calling WordsApi.save_as_tiff_online' if api_client.config.client_side_validation && self.document.nil?
+      # verify the required parameter 'save_options' is set
+      raise ArgumentError, 'Missing the required parameter save_options when calling WordsApi.save_as_tiff_online' if api_client.config.client_side_validation && self.save_options.nil?
+
+      # resource path
+      local_var_path = '/words/online/put/saveAs/tiff'[1..-1]
+      local_var_path = local_var_path.sub('//', '/')
+
+      # query parameters
+      query_params = {}
+      query_params[downcase_first_letter('LoadEncoding')] = self.load_encoding unless self.load_encoding.nil?
+      query_params[downcase_first_letter('Password')] = self.password unless self.password.nil?
+      query_params[downcase_first_letter('UseAntiAliasing')] = self.use_anti_aliasing unless self.use_anti_aliasing.nil?
+      query_params[downcase_first_letter('UseHighQualityRendering')] = self.use_high_quality_rendering unless self.use_high_quality_rendering.nil?
+      query_params[downcase_first_letter('ImageBrightness')] = self.image_brightness unless self.image_brightness.nil?
+      query_params[downcase_first_letter('ImageColorMode')] = self.image_color_mode unless self.image_color_mode.nil?
+      query_params[downcase_first_letter('ImageContrast')] = self.image_contrast unless self.image_contrast.nil?
+      query_params[downcase_first_letter('NumeralFormat')] = self.numeral_format unless self.numeral_format.nil?
+      query_params[downcase_first_letter('PageCount')] = self.page_count unless self.page_count.nil?
+      query_params[downcase_first_letter('PageIndex')] = self.page_index unless self.page_index.nil?
+      query_params[downcase_first_letter('PaperColor')] = self.paper_color unless self.paper_color.nil?
+      query_params[downcase_first_letter('PixelFormat')] = self.pixel_format unless self.pixel_format.nil?
+      query_params[downcase_first_letter('Resolution')] = self.resolution unless self.resolution.nil?
+      query_params[downcase_first_letter('Scale')] = self.scale unless self.scale.nil?
+      query_params[downcase_first_letter('TiffCompression')] = self.tiff_compression unless self.tiff_compression.nil?
+      query_params[downcase_first_letter('DmlRenderingMode')] = self.dml_rendering_mode unless self.dml_rendering_mode.nil?
+      query_params[downcase_first_letter('DmlEffectsRenderingMode')] = self.dml_effects_rendering_mode unless self.dml_effects_rendering_mode.nil?
+      query_params[downcase_first_letter('TiffBinarizationMethod')] = self.tiff_binarization_method unless self.tiff_binarization_method.nil?
+      query_params[downcase_first_letter('ZipOutput')] = self.zip_output unless self.zip_output.nil?
+      query_params[downcase_first_letter('FontsLocation')] = self.fonts_location unless self.fonts_location.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = api_client.select_header_content_type(['multipart/form-data'])
+
+      # form parameters
+      form_params = {}
+      form_params[downcase_first_letter('Document')] = self.document
+      form_params[downcase_first_letter('SaveOptions')] = self.save_options.to_body.to_json
+
+      # http body (model)
+      post_body = nil
+      body = api_client.build_request_body(header_params, form_params, post_body)
+      {
+        'method': :PUT,
+        'path': local_var_path,
+        'header_params': header_params,
+        'query_params': query_params,
+        'body': body,
+        'auth_names': ['JWT']
+      }
+    end
+
+    #
+    # Helper method to convert first letter to downcase
+    #
+    def downcase_first_letter(str)
+      str[0].downcase + str[1..-1]
+    end
+
+    # Get response type
+    def get_response_type
+      'SaveAsTiffOnlineResponse'
+    end
   end
 end

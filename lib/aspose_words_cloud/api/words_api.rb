@@ -25,6 +25,7 @@
 
 require 'uri'
 require 'json'
+require 'faraday'
 
 module AsposeWordsCloud
   #
@@ -38,6 +39,26 @@ module AsposeWordsCloud
       require_all '../models/requests'
       require_all '../models/responses'
       request_token
+    end
+
+    def batch(requests)
+      raise ArgumentError, 'Requests array is nil' unless requests != nil
+      raise ArgumentError, 'There must be at least one request' unless requests.length != 0
+      form_params = {}
+      request_token
+      header_params = {'Content-Type' => 'multipart/form-data'}
+      @api_client.update_params_for_auth! header_params, {}, "JWT"
+      requests.each_with_index do |request, index|
+        form_params["request-#{index}"] = Faraday::ParamPart.new(request.to_batch_part(@api_client), "application/http; msgtype=request")
+      end
+      data, status_code, headers = @api_client.call_api(:PUT, "/v4.0/words/batch",
+                                                        header_params: header_params,
+                                                        query_params: {},
+                                                        form_params: form_params,
+                                                        body: nil,
+                                                        batch: true,
+                                                        parts: requests,
+                                                        auth_names: ['JWT'])
     end
 
     # Accepts all revisions in the document.

@@ -69,5 +69,111 @@ module AsposeWordsCloud
       self.password = password
       self.filter_by_type = filter_by_type
     end
+
+    # Creating batch part from request
+    def to_batch_part(api_client)
+      # verify the required parameter 'name' is set
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_header_footer' if api_client.config.client_side_validation && self.name.nil?
+      # verify the required parameter 'header_footer_index' is set
+      raise ArgumentError, 'Missing the required parameter header_footer_index when calling WordsApi.get_header_footer' if api_client.config.client_side_validation && self.header_footer_index.nil?
+
+      # resource path
+      local_var_path = '/words/{name}/headersfooters/{headerFooterIndex}'[7..-1]
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('HeaderFooterIndex') + '}', self.header_footer_index.nil? ? '' : self.header_footer_index.to_s)
+      local_var_path = local_var_path.sub('//', '/')
+
+      # query parameters
+      query_params = {}
+      query_params[downcase_first_letter('Folder')] = self.folder unless self.folder.nil?
+      query_params[downcase_first_letter('Storage')] = self.storage unless self.storage.nil?
+      query_params[downcase_first_letter('LoadEncoding')] = self.load_encoding unless self.load_encoding.nil?
+      query_params[downcase_first_letter('Password')] = self.password unless self.password.nil?
+      query_params[downcase_first_letter('FilterByType')] = self.filter_by_type unless self.filter_by_type.nil?
+
+      if query_params
+        query_params.each { |key, value| local_var_path = api_client.add_param_to_query(local_var_path, key, value) }
+      end
+
+      header_params = {}
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      body = nil
+      part = ""
+      part.concat("GET".force_encoding('UTF-8'))
+      part.concat(" ".force_encoding('UTF-8'))
+      part.concat(local_var_path.force_encoding('UTF-8'))
+      part.concat(" \r\n".force_encoding('UTF-8'))
+
+      header_params.each_pair {|key, value| part.concat(key.dup.force_encoding('UTF-8') , ": ".force_encoding('UTF-8'), value.dup.force_encoding('UTF-8'), "\r\n".force_encoding('UTF-8')) }
+      part.concat("\r\n".force_encoding('UTF-8'))
+      if body
+        if body.is_a?(Hash)
+          body.each do |key, value|
+          part.concat(value, "\r\n")
+        end
+        else
+          part.concat(body)
+        end
+      end
+     part
+    end
+
+    def create_http_request(api_client)
+      # verify the required parameter 'name' is set
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_header_footer' if api_client.config.client_side_validation && self.name.nil?
+      # verify the required parameter 'header_footer_index' is set
+      raise ArgumentError, 'Missing the required parameter header_footer_index when calling WordsApi.get_header_footer' if api_client.config.client_side_validation && self.header_footer_index.nil?
+
+      # resource path
+      local_var_path = '/words/{name}/headersfooters/{headerFooterIndex}'[1..-1]
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('HeaderFooterIndex') + '}', self.header_footer_index.nil? ? '' : self.header_footer_index.to_s)
+      local_var_path = local_var_path.sub('//', '/')
+
+      # query parameters
+      query_params = {}
+      query_params[downcase_first_letter('Folder')] = self.folder unless self.folder.nil?
+      query_params[downcase_first_letter('Storage')] = self.storage unless self.storage.nil?
+      query_params[downcase_first_letter('LoadEncoding')] = self.load_encoding unless self.load_encoding.nil?
+      query_params[downcase_first_letter('Password')] = self.password unless self.password.nil?
+      query_params[downcase_first_letter('FilterByType')] = self.filter_by_type unless self.filter_by_type.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = api_client.select_header_content_type(['application/xml', 'application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      body = api_client.build_request_body(header_params, form_params, post_body)
+      {
+        'method': :GET,
+        'path': local_var_path,
+        'header_params': header_params,
+        'query_params': query_params,
+        'body': body,
+        'auth_names': ['JWT']
+      }
+    end
+
+    #
+    # Helper method to convert first letter to downcase
+    #
+    def downcase_first_letter(str)
+      str[0].downcase + str[1..-1]
+    end
+
+    # Get response type
+    def get_response_type
+      'HeaderFooterResponse'
+    end
   end
 end
