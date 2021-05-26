@@ -29,7 +29,7 @@ require 'logger'
 require 'tempfile'
 require 'uri'
 require 'faraday'
-require 'mimemagic'
+require 'marcel'
 require 'multipart_parser/reader'
 require_relative 'version'
 require_relative 'api_error'
@@ -96,6 +96,8 @@ module AsposeWordsCloud
 
       if opts[:multipart_response] == true
         data = deserialize_multipart(response)
+      elsif opts[:batch] == true
+        data = deserialize_batch(response, opts[:parts])
       else
         data = deserialize(response.body, opts[:return_type]) if opts[:return_type]
       end
@@ -223,6 +225,50 @@ module AsposeWordsCloud
       parts
     end
 
+    # Deserialize batch
+    def deserialize_batch(response, requests)
+      result = { errors: [], parts: [] }
+      def result.part(name)
+        hash = self[:parts].detect { |h| h[:part].name == name }
+        [hash[:part], hash[:body].join]
+      end
+      responses_data = []
+      content_type = response.headers['content-type']
+      reader = MultipartParser::Reader.new(MultipartParser::Reader::extract_boundary_value(content_type))
+      reader.on_part do |part|
+        result[:parts] << thispart = {
+          part: part,
+          body: []
+        }
+        part.on_data do |chunk|
+          thispart[:body] << chunk
+        end
+      end
+      reader.on_error do |msg|
+        result[:errors] << msg
+      end
+      reader.write response.body
+      reader.ended? or raise Exception, 'Truncated multipart message'
+
+      separator = "\r\n\r\n"
+      result[:parts].each do |part|
+        part[:body] = part[:body].join("")
+        part_body = part[:body]
+        data_index = part_body.index(separator)
+        if data_index != nil
+          header_data = part_body[0..data_index]
+          body_data = part_body[data_index+separator.length, part_body.length]
+          part[:body] = body_data
+        end
+      end
+
+      result[:parts].each_with_index do |response_data, index|
+        return_type = requests[index].get_response_type
+        responses_data.push(deserialize(response_data[:body], return_type))
+      end
+      responses_data
+    end
+
     # Convert data to the given return type.
     # @param [Object] data Data to be converted
     # @param [String] return_type Return type
@@ -339,14 +385,14 @@ module AsposeWordsCloud
     # @return [String] HTTP body data in the form of string
     def build_request_body(header_params, form_params, body)
       # http form
-      if header_params['Content-Type'] == 'application/x-www-form-urlencoded' ||
-          header_params['Content-Type'] == 'multipart/form-data'
+      if header_params['Content-Type']['application/x-www-form-urlencoded'] ||
+          header_params['Content-Type']['multipart/form-data']
         data = {}
         form_params.each do |key, value|
           case value
-          when ::File
-            data[key] = Faraday::UploadIO.new(value.path, MimeMagic.by_magic(value).to_s, key)
-          when ::Array, nil
+          when ::File, ::Tempfile
+            data[key] = Faraday::UploadIO.new(value.path, Marcel::Magic.by_magic(value).to_s, key)
+          when ::Array, nil, Faraday::ParamPart
             data[key] = value
           else
             data[key] = value.to_s
@@ -358,6 +404,47 @@ module AsposeWordsCloud
         data = nil
       end
       data
+    end
+
+    # Builds the HTTP request body
+    #
+    # @param [Hash] header_params Header parameters
+    # @param [Hash] form_params Query parameters
+    # @param [Object] body HTTP body (JSON/XML)
+    # @return [String] HTTP body data in the form of string
+    def build_request_body_batch(header_params, form_params, body)
+      # http form
+      if header_params['Content-Type']['application/x-www-form-urlencoded'] ||
+        header_params['Content-Type']['multipart/form-data']
+        data = {}
+        form_params.each do |key, value|
+          case value
+          when ::File, ::Tempfile
+            data[key] = File.open(value.path, 'rb') { |f| f.read }
+          when ::Array, nil, Faraday::ParamPart
+            data[key] = value
+          else
+            data[key] = value.to_s
+          end
+        end
+      elsif body
+        data = body.is_a?(String) ? body : body.to_json
+      else
+        data = nil
+      end
+      data
+    end
+
+    # Append query parameter to url
+    #
+    # @param [String] url current url
+    # @param [String] param_name query parameter name
+    # @param [String] param_value query parameter value
+    def add_param_to_query(url, param_name, param_value)
+      uri = URI(url)
+      params = URI.decode_www_form(uri.query || "") << [param_name, param_value]
+      uri.query = URI.encode_www_form(params)
+      uri.to_s
     end
 
     # Update hearder and query params based on authentication settings.

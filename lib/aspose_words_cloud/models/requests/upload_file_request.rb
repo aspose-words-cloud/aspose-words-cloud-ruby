@@ -51,5 +51,106 @@ module AsposeWordsCloud
       self.path = path
       self.storage_name = storage_name
     end
+
+    # Creating batch part from request
+    def to_batch_part(api_client)
+      # verify the required parameter 'file_content' is set
+      raise ArgumentError, 'Missing the required parameter file_content when calling WordsApi.upload_file' if api_client.config.client_side_validation && self.file_content.nil?
+      # verify the required parameter 'path' is set
+      raise ArgumentError, 'Missing the required parameter path when calling WordsApi.upload_file' if api_client.config.client_side_validation && self.path.nil?
+
+      # resource path
+      local_var_path = '/words/storage/file/{path}'[7..-1]
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Path') + '}', self.path.nil? ? '' : self.path.to_s)
+      local_var_path = local_var_path.sub('//', '/')
+
+      # query parameters
+      query_params = {}
+      query_params[downcase_first_letter('StorageName')] = self.storage_name unless self.storage_name.nil?
+
+      if query_params
+        query_params.each { |key, value| local_var_path = api_client.add_param_to_query(local_var_path, key, value) }
+      end
+
+      header_params = {}
+      # header parameters
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = api_client.select_header_content_type(['multipart/form-data'])
+
+      # form parameters
+      form_params = {}
+      form_params[downcase_first_letter('FileContent')] = self.file_content
+
+      # http body (model)
+      post_body = nil
+      body = api_client.build_request_body_batch(header_params, form_params, post_body)
+      part = ""
+      part.concat("PUT".force_encoding('UTF-8'))
+      part.concat(" ".force_encoding('UTF-8'))
+      part.concat(local_var_path.force_encoding('UTF-8'))
+      part.concat(" \r\n".force_encoding('UTF-8'))
+
+      header_params.each_pair {|key, value| part.concat(key.dup.force_encoding('UTF-8') , ": ".force_encoding('UTF-8'), value.dup.force_encoding('UTF-8'), "\r\n".force_encoding('UTF-8')) }
+      part.concat("\r\n".force_encoding('UTF-8'))
+      if body
+        if body.is_a?(Hash)
+          body.each do |key, value|
+          part.concat(value, "\r\n")
+        end
+        else
+          part.concat(body)
+        end
+      end
+     part
+    end
+
+    def create_http_request(api_client)
+      # verify the required parameter 'file_content' is set
+      raise ArgumentError, 'Missing the required parameter file_content when calling WordsApi.upload_file' if api_client.config.client_side_validation && self.file_content.nil?
+      # verify the required parameter 'path' is set
+      raise ArgumentError, 'Missing the required parameter path when calling WordsApi.upload_file' if api_client.config.client_side_validation && self.path.nil?
+
+      # resource path
+      local_var_path = '/words/storage/file/{path}'[1..-1]
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Path') + '}', self.path.nil? ? '' : self.path.to_s)
+      local_var_path = local_var_path.sub('//', '/')
+
+      # query parameters
+      query_params = {}
+      query_params[downcase_first_letter('StorageName')] = self.storage_name unless self.storage_name.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = api_client.select_header_content_type(['multipart/form-data'])
+
+      # form parameters
+      form_params = {}
+      form_params[downcase_first_letter('FileContent')] = self.file_content
+
+      # http body (model)
+      post_body = nil
+      body = api_client.build_request_body(header_params, form_params, post_body)
+      {
+        'method': :PUT,
+        'path': local_var_path,
+        'header_params': header_params,
+        'query_params': query_params,
+        'body': body,
+        'auth_names': ['JWT']
+      }
+    end
+
+    #
+    # Helper method to convert first letter to downcase
+    #
+    def downcase_first_letter(str)
+      str[0].downcase + str[1..-1]
+    end
+
+    # Get response type
+    def get_response_type
+      'FilesUploadResult'
+    end
   end
 end

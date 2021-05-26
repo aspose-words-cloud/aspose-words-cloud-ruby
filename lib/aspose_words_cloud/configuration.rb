@@ -119,7 +119,8 @@ module AsposeWordsCloud
         return URI.join(baseUrl, path).to_s
       end
 
-      return URI.join(baseUrl, "/v4.0/", URI.encode(path)).to_s
+      p = URI::Parser.new
+      URI.join(baseUrl, "/v4.0/", p.escape(path)).to_s
     end
 
     # Gets API key (with prefix if set).
