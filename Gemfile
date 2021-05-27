@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'faraday', '~> 0.14.0'
-gem 'mimemagic', '~> 0.3.2'
+gem 'faraday', '>= 1.4.1'
+gem 'marcel', '>= 1.0.0'
 gem 'multipart-parser', '~> 0.1.1'
 
 group :development do

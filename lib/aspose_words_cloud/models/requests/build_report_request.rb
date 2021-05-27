@@ -74,5 +74,120 @@ module AsposeWordsCloud
       self.password = password
       self.dest_file_name = dest_file_name
     end
+
+    # Creating batch part from request
+    def to_batch_part(api_client)
+      # verify the required parameter 'name' is set
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.build_report' if api_client.config.client_side_validation && self.name.nil?
+      # verify the required parameter 'data' is set
+      raise ArgumentError, 'Missing the required parameter data when calling WordsApi.build_report' if api_client.config.client_side_validation && self.data.nil?
+      # verify the required parameter 'report_engine_settings' is set
+      raise ArgumentError, 'Missing the required parameter report_engine_settings when calling WordsApi.build_report' if api_client.config.client_side_validation && self.report_engine_settings.nil?
+
+      # resource path
+      local_var_path = '/words/{name}/buildReport'[7..-1]
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)
+      local_var_path = local_var_path.sub('//', '/')
+
+      # query parameters
+      query_params = {}
+      query_params[downcase_first_letter('Folder')] = self.folder unless self.folder.nil?
+      query_params[downcase_first_letter('Storage')] = self.storage unless self.storage.nil?
+      query_params[downcase_first_letter('LoadEncoding')] = self.load_encoding unless self.load_encoding.nil?
+      query_params[downcase_first_letter('Password')] = self.password unless self.password.nil?
+      query_params[downcase_first_letter('DestFileName')] = self.dest_file_name unless self.dest_file_name.nil?
+
+      if query_params
+        query_params.each { |key, value| local_var_path = api_client.add_param_to_query(local_var_path, key, value) }
+      end
+
+      header_params = {}
+      # header parameters
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = api_client.select_header_content_type(['multipart/form-data'])
+
+      # form parameters
+      form_params = {}
+      form_params[downcase_first_letter('Data')] = self.data
+      form_params[downcase_first_letter('ReportEngineSettings')] = self.report_engine_settings.to_body.to_json
+
+      # http body (model)
+      post_body = nil
+      body = api_client.build_request_body_batch(header_params, form_params, post_body)
+      part = ""
+      part.concat("PUT".force_encoding('UTF-8'))
+      part.concat(" ".force_encoding('UTF-8'))
+      part.concat(local_var_path.force_encoding('UTF-8'))
+      part.concat(" \r\n".force_encoding('UTF-8'))
+
+      header_params.each_pair {|key, value| part.concat(key.dup.force_encoding('UTF-8') , ": ".force_encoding('UTF-8'), value.dup.force_encoding('UTF-8'), "\r\n".force_encoding('UTF-8')) }
+      part.concat("\r\n".force_encoding('UTF-8'))
+      if body
+        if body.is_a?(Hash)
+          body.each do |key, value|
+          part.concat(value, "\r\n")
+        end
+        else
+          part.concat(body)
+        end
+      end
+     part
+    end
+
+    def create_http_request(api_client)
+      # verify the required parameter 'name' is set
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.build_report' if api_client.config.client_side_validation && self.name.nil?
+      # verify the required parameter 'data' is set
+      raise ArgumentError, 'Missing the required parameter data when calling WordsApi.build_report' if api_client.config.client_side_validation && self.data.nil?
+      # verify the required parameter 'report_engine_settings' is set
+      raise ArgumentError, 'Missing the required parameter report_engine_settings when calling WordsApi.build_report' if api_client.config.client_side_validation && self.report_engine_settings.nil?
+
+      # resource path
+      local_var_path = '/words/{name}/buildReport'[1..-1]
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)
+      local_var_path = local_var_path.sub('//', '/')
+
+      # query parameters
+      query_params = {}
+      query_params[downcase_first_letter('Folder')] = self.folder unless self.folder.nil?
+      query_params[downcase_first_letter('Storage')] = self.storage unless self.storage.nil?
+      query_params[downcase_first_letter('LoadEncoding')] = self.load_encoding unless self.load_encoding.nil?
+      query_params[downcase_first_letter('Password')] = self.password unless self.password.nil?
+      query_params[downcase_first_letter('DestFileName')] = self.dest_file_name unless self.dest_file_name.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = api_client.select_header_content_type(['multipart/form-data'])
+
+      # form parameters
+      form_params = {}
+      form_params[downcase_first_letter('Data')] = self.data
+      form_params[downcase_first_letter('ReportEngineSettings')] = self.report_engine_settings.to_body.to_json
+
+      # http body (model)
+      post_body = nil
+      body = api_client.build_request_body(header_params, form_params, post_body)
+      {
+        'method': :PUT,
+        'path': local_var_path,
+        'header_params': header_params,
+        'query_params': query_params,
+        'body': body,
+        'auth_names': ['JWT']
+      }
+    end
+
+    #
+    # Helper method to convert first letter to downcase
+    #
+    def downcase_first_letter(str)
+      str[0].downcase + str[1..-1]
+    end
+
+    # Get response type
+    def get_response_type
+      'DocumentResponse'
+    end
   end
 end

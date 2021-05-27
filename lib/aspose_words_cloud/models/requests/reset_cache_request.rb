@@ -29,5 +29,86 @@ module AsposeWordsCloud
   # Request model for reset_cache operation.
   #
   class ResetCacheRequest
+    # Creating batch part from request
+    def to_batch_part(api_client)
+      # resource path
+      local_var_path = '/words/fonts/cache'[7..-1]
+      local_var_path = local_var_path.sub('//', '/')
+
+      # query parameters
+      query_params = {}
+
+      if query_params
+        query_params.each { |key, value| local_var_path = api_client.add_param_to_query(local_var_path, key, value) }
+      end
+
+      header_params = {}
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      body = nil
+      part = ""
+      part.concat("DELETE".force_encoding('UTF-8'))
+      part.concat(" ".force_encoding('UTF-8'))
+      part.concat(local_var_path.force_encoding('UTF-8'))
+      part.concat(" \r\n".force_encoding('UTF-8'))
+
+      header_params.each_pair {|key, value| part.concat(key.dup.force_encoding('UTF-8') , ": ".force_encoding('UTF-8'), value.dup.force_encoding('UTF-8'), "\r\n".force_encoding('UTF-8')) }
+      part.concat("\r\n".force_encoding('UTF-8'))
+      if body
+        if body.is_a?(Hash)
+          body.each do |key, value|
+          part.concat(value, "\r\n")
+        end
+        else
+          part.concat(body)
+        end
+      end
+     part
+    end
+
+    def create_http_request(api_client)
+      # resource path
+      local_var_path = '/words/fonts/cache'[1..-1]
+      local_var_path = local_var_path.sub('//', '/')
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = api_client.select_header_content_type(['application/xml', 'application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      body = api_client.build_request_body(header_params, form_params, post_body)
+      {
+        'method': :DELETE,
+        'path': local_var_path,
+        'header_params': header_params,
+        'query_params': query_params,
+        'body': body,
+        'auth_names': ['JWT']
+      }
+    end
+
+    #
+    # Helper method to convert first letter to downcase
+    #
+    def downcase_first_letter(str)
+      str[0].downcase + str[1..-1]
+    end
+
+    # Get response type
+    def get_response_type
+      nil
+    end
   end
 end
