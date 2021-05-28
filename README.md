@@ -15,7 +15,7 @@ This repository contains Aspose.Words Cloud SDK for Ruby source code. This SDK a
 
 ## Enhancements in Version 21.5
 
-- Update dependencies in sdk
+- Updated dependencies in sdk
 - Implemented Batch API
 
 
