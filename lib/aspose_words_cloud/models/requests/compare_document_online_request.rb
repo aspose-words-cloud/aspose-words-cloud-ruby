@@ -95,7 +95,7 @@ module AsposeWordsCloud
       form_params = {}
       form_params[downcase_first_letter('Document')] = self.document
       form_params[downcase_first_letter('CompareData')] = self.compare_data.to_body.to_json
-      form_params[downcase_first_letter('ComparingDocument')] = self.comparing_document
+      form_params[downcase_first_letter('ComparingDocument')] = self.comparing_document unless self.comparing_document.nil?
 
       # http body (model)
       post_body = nil
@@ -145,7 +145,7 @@ module AsposeWordsCloud
       form_params = {}
       form_params[downcase_first_letter('Document')] = self.document
       form_params[downcase_first_letter('CompareData')] = self.compare_data.to_body.to_json
-      form_params[downcase_first_letter('ComparingDocument')] = self.comparing_document
+      form_params[downcase_first_letter('ComparingDocument')] = self.comparing_document unless self.comparing_document.nil?
 
       # http body (model)
       post_body = nil
