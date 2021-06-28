@@ -352,7 +352,7 @@ module AsposeWordsCloud
   def download_file_from_multipart(body)
     prefix = 'download-'
     prefix += '-' unless prefix.end_with?('-')
-    tempfile = Tempfile.open(prefix, @config.temp_folder_path, encoding:body.encoding)
+    tempfile = Tempfile.open(prefix, @config.temp_folder_path, encoding:body.encoding, binmode: true)
     @tempfile = tempfile
     tempfile.write(body)
     @config.logger.info "Temp file written to #{tempfile.path}, please copy the file to a proper folder "\
