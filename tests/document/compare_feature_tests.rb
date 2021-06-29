@@ -24,7 +24,7 @@
 # ------------------------------------------------------------------------------------
 
 module AsposeWordsCloud
-  require_relative 'base_test_context'
+  require_relative '../base_test_context'
   class CompareFeatureTests < BaseTestContext
 
     def remote_folder
