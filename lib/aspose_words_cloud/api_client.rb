@@ -355,6 +355,7 @@ module AsposeWordsCloud
     tempfile = Tempfile.open(prefix, @config.temp_folder_path, encoding:body.encoding, binmode: true)
     @tempfile = tempfile
     tempfile.write(body)
+    tempfile.size
     @config.logger.info "Temp file written to #{tempfile.path}, please copy the file to a proper folder "\
                             "with e.g. `FileUtils.cp(tempfile.path, '/new/file/path')` otherwise the temp file "\
                             "will be deleted automatically with GC. It's also recommended to delete the temp file "\
