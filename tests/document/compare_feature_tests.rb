@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="CompareDocument_tests.rb">
+# <copyright company="Aspose" file="compare_feature_tests.rb">
 #   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -22,13 +22,11 @@
 #  SOFTWARE.
 # </summary>
 # ------------------------------------------------------------------------------------
+
 module AsposeWordsCloud
   require_relative '../base_test_context'
+  class CompareFeatureTests < BaseTestContext
 
-  #
-  # Example of document comparison.
-  #
-  class CompareDocumentTests < BaseTestContext
     def remote_folder
       remote_test_folder + '/DocumentActions/CompareDocument'
     end
@@ -37,11 +35,10 @@ module AsposeWordsCloud
       'DocumentActions/CompareDocument'
     end
 
-
     #
     # Test for document comparison.
     #
-    def test_compare_document
+    def test_compare_doc_documents_from_storage
       local_name1 = 'compareTestDoc1.doc'
       local_name2 = 'compareTestDoc2.doc'
       remote_name1 = 'TestCompareDocument1.doc'
@@ -58,9 +55,9 @@ module AsposeWordsCloud
     end
 
     #
-    # Test for document comparison online.
+    # Test for document comparison.
     #
-    def test_compare_document_online
+    def test_compare_doc_documents_online
       local_name1 = 'compareTestDoc1.doc'
       local_name2 = 'compareTestDoc2.doc'
       remote_name2 = 'TestCompareDocument2.doc'
@@ -72,12 +69,32 @@ module AsposeWordsCloud
 
       result = @words_api.compare_document_online(request)
       assert_equal false, result.nil?
+      assert_equal AsposeWordsCloud::DocumentResponse, result.model.class
     end
 
     #
-    # Test for document comparison online.
+    # Test for document comparison.
     #
-    def test_compare_two_document_online
+    def test_compare_pdf_documents_from_storage
+      local_name1 = 'compareTestDoc1.pdf'
+      local_name2 = 'compareTestDoc2.pdf'
+      remote_name1 = 'TestCompareDocument1.pdf'
+      remote_name2 = 'TestCompareDocument2.pdf'
+
+      upload_file File.join(local_test_folder, local_folder + '/' + local_name1), remote_folder + '/' + remote_name1
+      upload_file File.join(local_test_folder, local_folder + '/' + local_name2), remote_folder + '/' + remote_name2
+
+      request_compare_data = CompareData.new({:Author => 'author', :ComparingWithDocument => remote_folder + '/' + remote_name2, :DateTime => Date.iso8601('2015-10-26T00:00:00.0000000Z')})
+      request = CompareDocumentRequest.new(remote_name1, request_compare_data, remote_folder, nil, nil, nil, remote_test_out + '/TestCompareDocumentOut.doc')
+
+      result = @words_api.compare_document(request)
+      assert_equal false, result.nil?
+    end
+
+    #
+    # Test for document comparison.
+    #
+    def test_compare_two_doc_documents_online
       local_name1 = 'compareTestDoc1.doc'
       local_name2 = 'compareTestDoc2.doc'
       remote_name2 = 'TestCompareDocument2.doc'
@@ -89,6 +106,25 @@ module AsposeWordsCloud
 
       result = @words_api.compare_document_online(request)
       assert_equal false, result.nil?
+      assert_equal AsposeWordsCloud::DocumentResponse, result.model.class
+    end
+
+    #
+    # Test for document comparison.
+    #
+    def test_compare_two_pdf_documents_online
+      local_name1 = 'compareTestDoc1.pdf'
+      local_name2 = 'compareTestDoc2.pdf'
+      remote_name2 = 'TestCompareDocument2.pdf'
+
+      upload_file File.join(local_test_folder, local_folder + '/' + local_name2), remote_folder + '/' + remote_name2
+
+      request_compare_data = CompareData.new({:Author => 'author', :ComparingWithDocument => remote_folder + '/' + remote_name2, :DateTime => Date.iso8601('2015-10-26T00:00:00.0000000Z')})
+      request = CompareDocumentOnlineRequest.new(File.open(File.join(local_test_folder, local_folder + '/' + local_name1)), request_compare_data, File.open(File.join(local_test_folder, local_folder + '/' + local_name2)), nil, nil, remote_test_out + '/TestCompareDocumentOut.doc')
+
+      result = @words_api.compare_document_online(request)
+      assert_equal false, result.nil?
+      assert_equal AsposeWordsCloud::DocumentResponse, result.model.class
     end
   end
 end

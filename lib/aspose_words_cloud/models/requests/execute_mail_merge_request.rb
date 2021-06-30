@@ -123,7 +123,7 @@ module AsposeWordsCloud
 
       # form parameters
       form_params = {}
-      form_params[downcase_first_letter('Data')] = self.data
+      form_params[downcase_first_letter('Data')] = self.data unless self.data.nil?
 
       # http body (model)
       post_body = nil
@@ -176,7 +176,7 @@ module AsposeWordsCloud
 
       # form parameters
       form_params = {}
-      form_params[downcase_first_letter('Data')] = self.data
+      form_params[downcase_first_letter('Data')] = self.data unless self.data.nil?
 
       # http body (model)
       post_body = nil

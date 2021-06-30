@@ -29,6 +29,9 @@ module AsposeWordsCloud
 
   # DTO container with compare documents options.
   class CompareOptions
+    # Gets or sets whether accept revisions before comparison or not.
+    attr_accessor :accept_all_revisions_before_comparison
+
     # Gets or sets a value indicating whether documents comparison is case insensitive. By default comparison is case sensitive.
     attr_accessor :ignore_case_changes
 
@@ -81,6 +84,7 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'accept_all_revisions_before_comparison' => :'AcceptAllRevisionsBeforeComparison',
         :'ignore_case_changes' => :'IgnoreCaseChanges',
         :'ignore_comments' => :'IgnoreComments',
         :'ignore_fields' => :'IgnoreFields',
@@ -96,6 +100,7 @@ module AsposeWordsCloud
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'accept_all_revisions_before_comparison' => :'BOOLEAN',
         :'ignore_case_changes' => :'BOOLEAN',
         :'ignore_comments' => :'BOOLEAN',
         :'ignore_fields' => :'BOOLEAN',
@@ -115,6 +120,10 @@ module AsposeWordsCloud
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.key?(:'AcceptAllRevisionsBeforeComparison')
+        self.accept_all_revisions_before_comparison = attributes[:'AcceptAllRevisionsBeforeComparison']
+      end
 
       if attributes.key?(:'IgnoreCaseChanges')
         self.ignore_case_changes = attributes[:'IgnoreCaseChanges']
@@ -189,6 +198,7 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
+          accept_all_revisions_before_comparison == other.accept_all_revisions_before_comparison &&
           ignore_case_changes == other.ignore_case_changes &&
           ignore_comments == other.ignore_comments &&
           ignore_fields == other.ignore_fields &&
@@ -209,7 +219,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [ignore_case_changes, ignore_comments, ignore_fields, ignore_footnotes, ignore_formatting, ignore_headers_and_footers, ignore_tables, ignore_textboxes, target].hash
+      [accept_all_revisions_before_comparison, ignore_case_changes, ignore_comments, ignore_fields, ignore_footnotes, ignore_formatting, ignore_headers_and_footers, ignore_tables, ignore_textboxes, target].hash
     end
 
     # Builds the object from hash

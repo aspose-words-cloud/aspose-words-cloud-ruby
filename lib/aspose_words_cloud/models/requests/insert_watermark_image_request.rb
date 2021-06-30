@@ -123,7 +123,7 @@ module AsposeWordsCloud
 
       # form parameters
       form_params = {}
-      form_params[downcase_first_letter('ImageFile')] = self.image_file
+      form_params[downcase_first_letter('ImageFile')] = self.image_file unless self.image_file.nil?
 
       # http body (model)
       post_body = nil
@@ -176,7 +176,7 @@ module AsposeWordsCloud
 
       # form parameters
       form_params = {}
-      form_params[downcase_first_letter('ImageFile')] = self.image_file
+      form_params[downcase_first_letter('ImageFile')] = self.image_file unless self.image_file.nil?
 
       # http body (model)
       post_body = nil
