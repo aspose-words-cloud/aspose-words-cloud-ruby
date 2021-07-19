@@ -53,5 +53,14 @@ module AsposeWordsCloud
       accept_all_revisions_online_result = @words_api.accept_all_revisions_online(request)
       FileUtils.cp accept_all_revisions_online_result.document.path, 'test_result.docx'
     end
+
+    def test_update_bookmark
+      remote_file_name= 'Sample.docx'
+      bookmark_name= 'aspose'
+
+      request_bookmark_data = BookmarkData.new({:Name => bookmark_name, :Text => bookmark_text})
+      update_bookmark = UpdateBookmarkRequest.new(remote_file_name, bookmark_name, request_bookmark_data, nil, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
+      @words_api.update_bookmark(update_bookmark)
+    end
   end
 end

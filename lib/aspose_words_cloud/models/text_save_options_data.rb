@@ -48,6 +48,9 @@ module AsposeWordsCloud
     # Gets or sets the name of destination file.
     attr_accessor :file_name
 
+    # Gets or sets the value determining how ink (InkML) objects are rendered.
+    attr_accessor :iml_rendering_mode
+
     # Gets or sets the format of save.
     attr_accessor :save_format
 
@@ -89,6 +92,10 @@ module AsposeWordsCloud
     # The default value is true.
     attr_accessor :add_bidi_marks
 
+    # Gets or sets an integer value that specifies the maximum number of characters per one line.
+    # The default value is 0, that means no limit.
+    attr_accessor :max_characters_per_line
+
     # Gets or sets a value indicating whether the program should attempt to preserve layout of tables when saving in the plain text format.
     attr_accessor :preserve_table_layout
 
@@ -126,6 +133,7 @@ module AsposeWordsCloud
         :'dml_effects_rendering_mode' => :'DmlEffectsRenderingMode',
         :'dml_rendering_mode' => :'DmlRenderingMode',
         :'file_name' => :'FileName',
+        :'iml_rendering_mode' => :'ImlRenderingMode',
         :'save_format' => :'SaveFormat',
         :'update_created_time_property' => :'UpdateCreatedTimeProperty',
         :'update_fields' => :'UpdateFields',
@@ -138,6 +146,7 @@ module AsposeWordsCloud
         :'force_page_breaks' => :'ForcePageBreaks',
         :'paragraph_break' => :'ParagraphBreak',
         :'add_bidi_marks' => :'AddBidiMarks',
+        :'max_characters_per_line' => :'MaxCharactersPerLine',
         :'preserve_table_layout' => :'PreserveTableLayout',
         :'simplify_list_labels' => :'SimplifyListLabels'
       }
@@ -152,6 +161,7 @@ module AsposeWordsCloud
         :'dml_effects_rendering_mode' => :'String',
         :'dml_rendering_mode' => :'String',
         :'file_name' => :'String',
+        :'iml_rendering_mode' => :'String',
         :'save_format' => :'String',
         :'update_created_time_property' => :'BOOLEAN',
         :'update_fields' => :'BOOLEAN',
@@ -164,6 +174,7 @@ module AsposeWordsCloud
         :'force_page_breaks' => :'BOOLEAN',
         :'paragraph_break' => :'String',
         :'add_bidi_marks' => :'BOOLEAN',
+        :'max_characters_per_line' => :'Integer',
         :'preserve_table_layout' => :'BOOLEAN',
         :'simplify_list_labels' => :'BOOLEAN'
       }
@@ -199,6 +210,10 @@ module AsposeWordsCloud
 
       if attributes.key?(:'FileName')
         self.file_name = attributes[:'FileName']
+      end
+
+      if attributes.key?(:'ImlRenderingMode')
+        self.iml_rendering_mode = attributes[:'ImlRenderingMode']
       end
 
       if attributes.key?(:'SaveFormat')
@@ -247,6 +262,10 @@ module AsposeWordsCloud
 
       if attributes.key?(:'AddBidiMarks')
         self.add_bidi_marks = attributes[:'AddBidiMarks']
+      end
+
+      if attributes.key?(:'MaxCharactersPerLine')
+        self.max_characters_per_line = attributes[:'MaxCharactersPerLine']
       end
 
       if attributes.key?(:'PreserveTableLayout')
@@ -316,6 +335,7 @@ module AsposeWordsCloud
           dml_effects_rendering_mode == other.dml_effects_rendering_mode &&
           dml_rendering_mode == other.dml_rendering_mode &&
           file_name == other.file_name &&
+          iml_rendering_mode == other.iml_rendering_mode &&
           save_format == other.save_format &&
           update_created_time_property == other.update_created_time_property &&
           update_fields == other.update_fields &&
@@ -328,6 +348,7 @@ module AsposeWordsCloud
           force_page_breaks == other.force_page_breaks &&
           paragraph_break == other.paragraph_break &&
           add_bidi_marks == other.add_bidi_marks &&
+          max_characters_per_line == other.max_characters_per_line &&
           preserve_table_layout == other.preserve_table_layout &&
           simplify_list_labels == other.simplify_list_labels
     end
@@ -341,7 +362,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, save_format, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, encoding, export_headers_footers_mode, force_page_breaks, paragraph_break, add_bidi_marks, preserve_table_layout, simplify_list_labels].hash
+      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, save_format, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, encoding, export_headers_footers_mode, force_page_breaks, paragraph_break, add_bidi_marks, max_characters_per_line, preserve_table_layout, simplify_list_labels].hash
     end
 
     # Builds the object from hash
