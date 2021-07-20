@@ -6,6 +6,6 @@ end
 remote_file_name= 'Sample.docx'
 bookmark_name= 'aspose'
 
-request_bookmark_data = BookmarkData.new({:Name => bookmark_name, :Text => bookmark_text})
-update_bookmark = UpdateBookmarkRequest.new(remote_file_name, bookmark_name, request_bookmark_data, nil, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
+test_bookmark_data = BookmarkData.new({:Name => bookmark_name, :Text => 'New Bookmark Text'})
+update_bookmark = UpdateBookmarkRequest.new(remote_file_name, bookmark_name, test_bookmark_data, nil, nil, nil, nil, nil, nil, nil)
 @words_api.update_bookmark(update_bookmark)
