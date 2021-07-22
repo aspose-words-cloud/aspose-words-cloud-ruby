@@ -72,8 +72,8 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request_watermark_text = WatermarkText.new({:Text => 'This is the text', :RotationAngle => 90.0})
-      request = InsertWatermarkTextRequest.new(remote_file_name, request_watermark_text, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
+      watermark_text = WatermarkText.new({:Text => 'This is the text', :RotationAngle => 90.0})
+      request = InsertWatermarkTextRequest.new(remote_file_name, watermark_text, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
 
       result = @words_api.insert_watermark_text(request)
       assert_equal false, result.nil?
@@ -83,8 +83,8 @@ module AsposeWordsCloud
     # Test for adding watermark text online.
     #
     def test_insert_watermark_text_online
-      request_watermark_text = WatermarkText.new({:Text => 'This is the text', :RotationAngle => 90})
-      request = InsertWatermarkTextOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), request_watermark_text, nil, nil, nil, nil, nil)
+      watermark_text = WatermarkText.new({:Text => 'This is the text', :RotationAngle => 90})
+      request = InsertWatermarkTextOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), watermark_text, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_watermark_text_online(request)
       assert_equal false, result.nil?

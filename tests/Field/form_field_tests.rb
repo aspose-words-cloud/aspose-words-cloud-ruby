@@ -46,8 +46,8 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, field_folder + '/FormFilled.docx'), remote_data_folder + '/' + remote_file_name
 
-      request_form_field = FormFieldTextInput.new({:Name => 'FullName', :Enabled => true, :CalculateOnExit => true, :StatusText => '', :TextInputType => 'Regular', :TextInputDefault => 'No name'})
-      request = UpdateFormFieldRequest.new(remote_file_name, 0, request_form_field, 'sections/0', remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
+      form_field = FormFieldTextInput.new({:Name => 'FullName', :Enabled => true, :CalculateOnExit => true, :StatusText => '', :TextInputType => 'Regular', :TextInputDefault => 'No name'})
+      request = UpdateFormFieldRequest.new(remote_file_name, 0, form_field, 'sections/0', remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
 
       result = @words_api.update_form_field(request)
       assert_equal false, result.nil?
@@ -57,8 +57,8 @@ module AsposeWordsCloud
     # Test for posting form field online.
     #
     def test_update_form_field_online
-      request_form_field = FormFieldTextInput.new({:Name => 'FullName', :Enabled => true, :CalculateOnExit => true, :StatusText => '', :TextInputType => 'Regular', :TextInputDefault => 'No name'})
-      request = UpdateFormFieldOnlineRequest.new(File.open(File.join(local_test_folder, field_folder + '/FormFilled.docx')), request_form_field, 0, 'sections/0', nil, nil, nil, nil, nil)
+      form_field = FormFieldTextInput.new({:Name => 'FullName', :Enabled => true, :CalculateOnExit => true, :StatusText => '', :TextInputType => 'Regular', :TextInputDefault => 'No name'})
+      request = UpdateFormFieldOnlineRequest.new(File.open(File.join(local_test_folder, field_folder + '/FormFilled.docx')), form_field, 0, 'sections/0', nil, nil, nil, nil, nil)
 
       result = @words_api.update_form_field_online(request)
       assert_equal false, result.nil?
@@ -72,8 +72,8 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, field_folder + '/FormFilled.docx'), remote_data_folder + '/' + remote_file_name
 
-      request_form_field = FormFieldTextInput.new({:Name => 'FullName', :Enabled => true, :CalculateOnExit => true, :StatusText => '', :TextInputType => 'Regular', :TextInputDefault => 'No name'})
-      request = UpdateFormFieldRequest.new(remote_file_name, 0, request_form_field, nil, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
+      form_field = FormFieldTextInput.new({:Name => 'FullName', :Enabled => true, :CalculateOnExit => true, :StatusText => '', :TextInputType => 'Regular', :TextInputDefault => 'No name'})
+      request = UpdateFormFieldRequest.new(remote_file_name, 0, form_field, nil, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
 
       result = @words_api.update_form_field(request)
       assert_equal false, result.nil?
@@ -163,8 +163,8 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, 'Common/test_multi_pages.docx'), remote_data_folder + '/' + remote_file_name
 
-      request_form_field = FormFieldTextInput.new({:Name => 'FullName', :Enabled => true, :CalculateOnExit => true, :StatusText => '', :TextInputType => 'Regular', :TextInputDefault => '123', :TextInputFormat => 'UPPERCASE'})
-      request = InsertFormFieldRequest.new(remote_file_name, request_form_field, 'sections/0/paragraphs/0', remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil, nil)
+      form_field = FormFieldTextInput.new({:Name => 'FullName', :Enabled => true, :CalculateOnExit => true, :StatusText => '', :TextInputType => 'Regular', :TextInputDefault => '123', :TextInputFormat => 'UPPERCASE'})
+      request = InsertFormFieldRequest.new(remote_file_name, form_field, 'sections/0/paragraphs/0', remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil, nil)
 
       result = @words_api.insert_form_field(request)
       assert_equal false, result.nil?
@@ -174,8 +174,8 @@ module AsposeWordsCloud
     # Test for insert form field without node path online.
     #
     def test_insert_form_field_online
-      request_form_field = FormFieldTextInput.new({:Name => 'FullName', :Enabled => true, :CalculateOnExit => true, :StatusText => '', :TextInputType => 'Regular', :TextInputDefault => '123', :TextInputFormat => 'UPPERCASE'})
-      request = InsertFormFieldOnlineRequest.new(File.open(File.join(local_test_folder, field_folder + '/FormFilled.docx')), request_form_field, 'sections/0/paragraphs/0', nil, nil, nil, nil, nil, nil)
+      form_field = FormFieldTextInput.new({:Name => 'FullName', :Enabled => true, :CalculateOnExit => true, :StatusText => '', :TextInputType => 'Regular', :TextInputDefault => '123', :TextInputFormat => 'UPPERCASE'})
+      request = InsertFormFieldOnlineRequest.new(File.open(File.join(local_test_folder, field_folder + '/FormFilled.docx')), form_field, 'sections/0/paragraphs/0', nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_form_field_online(request)
       assert_equal false, result.nil?
@@ -189,8 +189,8 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, 'Common/test_multi_pages.docx'), remote_data_folder + '/' + remote_file_name
 
-      request_form_field = FormFieldTextInput.new({:Name => 'FullName', :Enabled => true, :CalculateOnExit => true, :StatusText => '', :TextInputType => 'Regular', :TextInputDefault => '123', :TextInputFormat => 'UPPERCASE'})
-      request = InsertFormFieldRequest.new(remote_file_name, request_form_field, nil, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil, nil)
+      form_field = FormFieldTextInput.new({:Name => 'FullName', :Enabled => true, :CalculateOnExit => true, :StatusText => '', :TextInputType => 'Regular', :TextInputDefault => '123', :TextInputFormat => 'UPPERCASE'})
+      request = InsertFormFieldRequest.new(remote_file_name, form_field, nil, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil, nil)
 
       result = @words_api.insert_form_field(request)
       assert_equal false, result.nil?

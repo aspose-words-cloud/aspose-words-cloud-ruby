@@ -74,8 +74,8 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request_page_setup = PageSetup.new({:RtlGutter => true, :LeftMargin => 10.0, :Orientation => 'Landscape', :PaperSize => 'A5'})
-      request = UpdateSectionPageSetupRequest.new(remote_file_name, 0, request_page_setup, remote_data_folder, nil, nil, nil, nil, nil, nil)
+      page_setup = PageSetup.new({:RtlGutter => true, :LeftMargin => 10.0, :Orientation => 'Landscape', :PaperSize => 'A5'})
+      request = UpdateSectionPageSetupRequest.new(remote_file_name, 0, page_setup, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_section_page_setup(request)
       assert_equal false, result.nil?
@@ -85,8 +85,8 @@ module AsposeWordsCloud
     # Test for updating page settings online.
     #
     def test_update_section_page_setup_online
-      request_page_setup = PageSetup.new({:RtlGutter => true, :LeftMargin => 10, :Orientation => 'Landscape', :PaperSize => 'A5'})
-      request = UpdateSectionPageSetupOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 0, request_page_setup, nil, nil, nil, nil, nil)
+      page_setup = PageSetup.new({:RtlGutter => true, :LeftMargin => 10, :Orientation => 'Landscape', :PaperSize => 'A5'})
+      request = UpdateSectionPageSetupOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 0, page_setup, nil, nil, nil, nil, nil)
 
       result = @words_api.update_section_page_setup_online(request)
       assert_equal false, result.nil?

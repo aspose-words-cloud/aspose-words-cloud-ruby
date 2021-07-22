@@ -117,8 +117,8 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request_property = DocumentPropertyCreateOrUpdate.new({:Value => 'Imran Anwar'})
-      request = CreateOrUpdateDocumentPropertyRequest.new(remote_file_name, 'AsposeAuthor', request_property, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
+      property = DocumentPropertyCreateOrUpdate.new({:Value => 'Imran Anwar'})
+      request = CreateOrUpdateDocumentPropertyRequest.new(remote_file_name, 'AsposeAuthor', property, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
 
       result = @words_api.create_or_update_document_property(request)
       assert_equal false, result.nil?
@@ -128,8 +128,8 @@ module AsposeWordsCloud
     # Test for updating document property online.
     #
     def test_update_document_property_online
-      request_property = DocumentPropertyCreateOrUpdate.new({:Value => 'Imran Anwar'})
-      request = CreateOrUpdateDocumentPropertyOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 'AsposeAuthor', request_property, nil, nil, nil, nil, nil)
+      property = DocumentPropertyCreateOrUpdate.new({:Value => 'Imran Anwar'})
+      request = CreateOrUpdateDocumentPropertyOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 'AsposeAuthor', property, nil, nil, nil, nil, nil)
 
       result = @words_api.create_or_update_document_property_online(request)
       assert_equal false, result.nil?

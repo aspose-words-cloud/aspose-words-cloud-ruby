@@ -94,12 +94,12 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request_comment_range_start_node = NodeLink.new({:NodeId => '0.3.0.3'})
-      request_comment_range_start = DocumentPosition.new({:Node => request_comment_range_start_node, :Offset => 0})
-      request_comment_range_end_node = NodeLink.new({:NodeId => '0.3.0.3'})
-      request_comment_range_end = DocumentPosition.new({:Node => request_comment_range_end_node, :Offset => 0})
-      request_comment = CommentInsert.new({:RangeStart => request_comment_range_start, :RangeEnd => request_comment_range_end, :Initial => 'IA', :Author => 'Imran Anwar', :Text => 'A new Comment'})
-      request = InsertCommentRequest.new(remote_file_name, request_comment, remote_data_folder, nil, nil, nil, nil, nil, nil)
+      comment_range_start_node = NodeLink.new({:NodeId => '0.3.0.3'})
+      comment_range_start = DocumentPosition.new({:Node => comment_range_start_node, :Offset => 0})
+      comment_range_end_node = NodeLink.new({:NodeId => '0.3.0.3'})
+      comment_range_end = DocumentPosition.new({:Node => comment_range_end_node, :Offset => 0})
+      comment = CommentInsert.new({:RangeStart => comment_range_start, :RangeEnd => comment_range_end, :Initial => 'IA', :Author => 'Imran Anwar', :Text => 'A new Comment'})
+      request = InsertCommentRequest.new(remote_file_name, comment, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_comment(request)
       assert_equal false, result.nil?
@@ -109,12 +109,12 @@ module AsposeWordsCloud
     # Test for adding comment online.
     #
     def test_insert_comment_online
-      request_comment_range_start_node = NodeLink.new({:NodeId => '0.3.0.3'})
-      request_comment_range_start = DocumentPosition.new({:Node => request_comment_range_start_node, :Offset => 0})
-      request_comment_range_end_node = NodeLink.new({:NodeId => '0.3.0.3'})
-      request_comment_range_end = DocumentPosition.new({:Node => request_comment_range_end_node, :Offset => 0})
-      request_comment = CommentInsert.new({:RangeStart => request_comment_range_start, :RangeEnd => request_comment_range_end, :Initial => 'IA', :Author => 'Imran Anwar', :Text => 'A new Comment'})
-      request = InsertCommentOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), request_comment, nil, nil, nil, nil, nil)
+      comment_range_start_node = NodeLink.new({:NodeId => '0.3.0.3'})
+      comment_range_start = DocumentPosition.new({:Node => comment_range_start_node, :Offset => 0})
+      comment_range_end_node = NodeLink.new({:NodeId => '0.3.0.3'})
+      comment_range_end = DocumentPosition.new({:Node => comment_range_end_node, :Offset => 0})
+      comment = CommentInsert.new({:RangeStart => comment_range_start, :RangeEnd => comment_range_end, :Initial => 'IA', :Author => 'Imran Anwar', :Text => 'A new Comment'})
+      request = InsertCommentOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), comment, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_comment_online(request)
       assert_equal false, result.nil?
@@ -128,12 +128,12 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request_comment_range_start_node = NodeLink.new({:NodeId => '0.3.0'})
-      request_comment_range_start = DocumentPosition.new({:Node => request_comment_range_start_node, :Offset => 0})
-      request_comment_range_end_node = NodeLink.new({:NodeId => '0.3.0'})
-      request_comment_range_end = DocumentPosition.new({:Node => request_comment_range_end_node, :Offset => 0})
-      request_comment = CommentUpdate.new({:RangeStart => request_comment_range_start, :RangeEnd => request_comment_range_end, :Initial => 'IA', :Author => 'Imran Anwar', :Text => 'A new Comment'})
-      request = UpdateCommentRequest.new(remote_file_name, 0, request_comment, remote_data_folder, nil, nil, nil, nil, nil, nil)
+      comment_range_start_node = NodeLink.new({:NodeId => '0.3.0'})
+      comment_range_start = DocumentPosition.new({:Node => comment_range_start_node, :Offset => 0})
+      comment_range_end_node = NodeLink.new({:NodeId => '0.3.0'})
+      comment_range_end = DocumentPosition.new({:Node => comment_range_end_node, :Offset => 0})
+      comment = CommentUpdate.new({:RangeStart => comment_range_start, :RangeEnd => comment_range_end, :Initial => 'IA', :Author => 'Imran Anwar', :Text => 'A new Comment'})
+      request = UpdateCommentRequest.new(remote_file_name, 0, comment, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_comment(request)
       assert_equal false, result.nil?
@@ -143,12 +143,12 @@ module AsposeWordsCloud
     # Test for updating comment online.
     #
     def test_update_comment_online
-      request_comment_range_start_node = NodeLink.new({:NodeId => '0.3.0'})
-      request_comment_range_start = DocumentPosition.new({:Node => request_comment_range_start_node, :Offset => 0})
-      request_comment_range_end_node = NodeLink.new({:NodeId => '0.3.0'})
-      request_comment_range_end = DocumentPosition.new({:Node => request_comment_range_end_node, :Offset => 0})
-      request_comment = CommentUpdate.new({:RangeStart => request_comment_range_start, :RangeEnd => request_comment_range_end, :Initial => 'IA', :Author => 'Imran Anwar', :Text => 'A new Comment'})
-      request = UpdateCommentOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 0, request_comment, nil, nil, nil, nil, nil)
+      comment_range_start_node = NodeLink.new({:NodeId => '0.3.0'})
+      comment_range_start = DocumentPosition.new({:Node => comment_range_start_node, :Offset => 0})
+      comment_range_end_node = NodeLink.new({:NodeId => '0.3.0'})
+      comment_range_end = DocumentPosition.new({:Node => comment_range_end_node, :Offset => 0})
+      comment = CommentUpdate.new({:RangeStart => comment_range_start, :RangeEnd => comment_range_end, :Initial => 'IA', :Author => 'Imran Anwar', :Text => 'A new Comment'})
+      request = UpdateCommentOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 0, comment, nil, nil, nil, nil, nil)
 
       result = @words_api.update_comment_online(request)
       assert_equal false, result.nil?

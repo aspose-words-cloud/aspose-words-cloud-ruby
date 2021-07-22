@@ -142,9 +142,9 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request_border_properties_color = XmlColor.new({:Web => '#AABBCC'})
-      request_border_properties = Border.new({:BorderType => 'Left', :Color => request_border_properties_color, :DistanceFromText => 6.0, :LineStyle => 'DashDotStroker', :LineWidth => 2.0, :Shadow => true})
-      request = UpdateBorderRequest.new(remote_file_name, 'left', request_border_properties, 'tables/1/rows/0/cells/0', remote_data_folder, nil, nil, nil, nil, nil, nil)
+      border_properties_color = XmlColor.new({:Web => '#AABBCC'})
+      border_properties = Border.new({:BorderType => 'Left', :Color => border_properties_color, :DistanceFromText => 6.0, :LineStyle => 'DashDotStroker', :LineWidth => 2.0, :Shadow => true})
+      request = UpdateBorderRequest.new(remote_file_name, 'left', border_properties, 'tables/1/rows/0/cells/0', remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_border(request)
       assert_equal false, result.nil?
@@ -154,9 +154,9 @@ module AsposeWordsCloud
     # Test for updating border online.
     #
     def test_update_border_online
-      request_border_properties_color = XmlColor.new({:Web => '#AABBCC'})
-      request_border_properties = Border.new({:BorderType => 'Left', :Color => request_border_properties_color, :DistanceFromText => 6, :LineStyle => 'DashDotStroker', :LineWidth => 2, :Shadow => true})
-      request = UpdateBorderOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), request_border_properties, 'left', 'tables/1/rows/0/cells/0', nil, nil, nil, nil, nil)
+      border_properties_color = XmlColor.new({:Web => '#AABBCC'})
+      border_properties = Border.new({:BorderType => 'Left', :Color => border_properties_color, :DistanceFromText => 6, :LineStyle => 'DashDotStroker', :LineWidth => 2, :Shadow => true})
+      request = UpdateBorderOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), border_properties, 'left', 'tables/1/rows/0/cells/0', nil, nil, nil, nil, nil)
 
       result = @words_api.update_border_online(request)
       assert_equal false, result.nil?

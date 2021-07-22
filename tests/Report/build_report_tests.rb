@@ -45,8 +45,8 @@ module AsposeWordsCloud
       local_document_file = 'ReportTemplate.docx'
       local_data_file = File.read(File.join(local_test_folder, reporting_folder + '/ReportData.json'))
 
-      request_report_engine_settings = ReportEngineSettings.new({:DataSourceType => 'Json', :DataSourceName => 'persons'})
-      request = BuildReportOnlineRequest.new(File.open(File.join(local_test_folder, reporting_folder + '/' + local_document_file)), local_data_file, request_report_engine_settings, nil)
+      report_engine_settings = ReportEngineSettings.new({:DataSourceType => 'Json', :DataSourceName => 'persons'})
+      request = BuildReportOnlineRequest.new(File.open(File.join(local_test_folder, reporting_folder + '/' + local_document_file)), local_data_file, report_engine_settings, nil)
 
       result = @words_api.build_report_online(request)
       assert_equal false, result.nil?
@@ -62,9 +62,9 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, reporting_folder + '/' + local_document_file), remote_data_folder + '/' + remote_file_name
 
-      request_report_engine_settings_report_build_options = ['AllowMissingMembers', 'RemoveEmptyParagraphs']
-      request_report_engine_settings = ReportEngineSettings.new({:DataSourceType => 'Json', :ReportBuildOptions => request_report_engine_settings_report_build_options})
-      request = BuildReportRequest.new(remote_file_name, local_data_file, request_report_engine_settings, remote_data_folder, nil, nil, nil, nil)
+      report_engine_settings_report_build_options = ['AllowMissingMembers', 'RemoveEmptyParagraphs']
+      report_engine_settings = ReportEngineSettings.new({:DataSourceType => 'Json', :ReportBuildOptions => report_engine_settings_report_build_options})
+      request = BuildReportRequest.new(remote_file_name, local_data_file, report_engine_settings, remote_data_folder, nil, nil, nil, nil)
 
       result = @words_api.build_report(request)
       assert_equal false, result.nil?

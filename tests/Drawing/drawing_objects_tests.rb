@@ -240,8 +240,8 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request_drawing_object = DrawingObjectInsert.new({:Height => 0, :Left => 0, :Top => 0, :Width => 0, :RelativeHorizontalPosition => 'Margin', :RelativeVerticalPosition => 'Margin', :WrapType => 'Inline'})
-      request = InsertDrawingObjectRequest.new(remote_file_name, request_drawing_object, File.open(File.join(local_test_folder, 'Common/aspose-cloud.png')), '', remote_data_folder, nil, nil, nil, nil, nil, nil)
+      drawing_object = DrawingObjectInsert.new({:Height => 0, :Left => 0, :Top => 0, :Width => 0, :RelativeHorizontalPosition => 'Margin', :RelativeVerticalPosition => 'Margin', :WrapType => 'Inline'})
+      request = InsertDrawingObjectRequest.new(remote_file_name, drawing_object, File.open(File.join(local_test_folder, 'Common/aspose-cloud.png')), '', remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_drawing_object(request)
       assert_equal false, result.nil?
@@ -251,8 +251,8 @@ module AsposeWordsCloud
     # Test for adding drawing object online.
     #
     def test_insert_drawing_object_online
-      request_drawing_object = DrawingObjectInsert.new({:Height => 0, :Left => 0, :Top => 0, :Width => 0, :RelativeHorizontalPosition => 'Margin', :RelativeVerticalPosition => 'Margin', :WrapType => 'Inline'})
-      request = InsertDrawingObjectOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), request_drawing_object, File.open(File.join(local_test_folder, 'Common/aspose-cloud.png')), '', nil, nil, nil, nil, nil)
+      drawing_object = DrawingObjectInsert.new({:Height => 0, :Left => 0, :Top => 0, :Width => 0, :RelativeHorizontalPosition => 'Margin', :RelativeVerticalPosition => 'Margin', :WrapType => 'Inline'})
+      request = InsertDrawingObjectOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), drawing_object, File.open(File.join(local_test_folder, 'Common/aspose-cloud.png')), '', nil, nil, nil, nil, nil)
 
       result = @words_api.insert_drawing_object_online(request)
       assert_equal false, result.nil?
@@ -266,8 +266,8 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request_drawing_object = DrawingObjectInsert.new({:Height => 0, :Left => 0, :Top => 0, :Width => 0, :RelativeHorizontalPosition => 'Margin', :RelativeVerticalPosition => 'Margin', :WrapType => 'Inline'})
-      request = InsertDrawingObjectRequest.new(remote_file_name, request_drawing_object, File.open(File.join(local_test_folder, 'Common/aspose-cloud.png')), nil, remote_data_folder, nil, nil, nil, nil, nil, nil)
+      drawing_object = DrawingObjectInsert.new({:Height => 0, :Left => 0, :Top => 0, :Width => 0, :RelativeHorizontalPosition => 'Margin', :RelativeVerticalPosition => 'Margin', :WrapType => 'Inline'})
+      request = InsertDrawingObjectRequest.new(remote_file_name, drawing_object, File.open(File.join(local_test_folder, 'Common/aspose-cloud.png')), nil, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_drawing_object(request)
       assert_equal false, result.nil?
@@ -317,8 +317,8 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request_drawing_object = DrawingObjectUpdate.new({:Left => 0})
-      request = UpdateDrawingObjectRequest.new(remote_file_name, request_drawing_object, File.open(File.join(local_test_folder, 'Common/aspose-cloud.png')), 0, '', remote_data_folder, nil, nil, nil, nil, nil, nil)
+      drawing_object = DrawingObjectUpdate.new({:Left => 0})
+      request = UpdateDrawingObjectRequest.new(remote_file_name, drawing_object, File.open(File.join(local_test_folder, 'Common/aspose-cloud.png')), 0, '', remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_drawing_object(request)
       assert_equal false, result.nil?
@@ -328,8 +328,8 @@ module AsposeWordsCloud
     # Test for updating drawing object online.
     #
     def test_update_drawing_object_online
-      request_drawing_object = DrawingObjectUpdate.new({:Left => 0})
-      request = UpdateDrawingObjectOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), request_drawing_object, File.open(File.join(local_test_folder, 'Common/aspose-cloud.png')), 0, '', nil, nil, nil, nil, nil)
+      drawing_object = DrawingObjectUpdate.new({:Left => 0})
+      request = UpdateDrawingObjectOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), drawing_object, File.open(File.join(local_test_folder, 'Common/aspose-cloud.png')), 0, '', nil, nil, nil, nil, nil)
 
       result = @words_api.update_drawing_object_online(request)
       assert_equal false, result.nil?
@@ -343,8 +343,8 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request_drawing_object = DrawingObjectUpdate.new({:Left => 0})
-      request = UpdateDrawingObjectRequest.new(remote_file_name, request_drawing_object, File.open(File.join(local_test_folder, 'Common/aspose-cloud.png')), 0, nil, remote_data_folder, nil, nil, nil, nil, nil, nil)
+      drawing_object = DrawingObjectUpdate.new({:Left => 0})
+      request = UpdateDrawingObjectRequest.new(remote_file_name, drawing_object, File.open(File.join(local_test_folder, 'Common/aspose-cloud.png')), 0, nil, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_drawing_object(request)
       assert_equal false, result.nil?
