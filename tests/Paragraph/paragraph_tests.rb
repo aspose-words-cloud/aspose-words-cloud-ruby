@@ -202,8 +202,8 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      font_dto = Font.new({:Bold => true})
-      request = UpdateRunFontRequest.new(remote_file_name, 'paragraphs/0', 0, font_dto, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
+      request_font_dto = Font.new({:Bold => true})
+      request = UpdateRunFontRequest.new(remote_file_name, 'paragraphs/0', 0, request_font_dto, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
 
       result = @words_api.update_run_font(request)
       assert_equal false, result.nil?
@@ -213,8 +213,8 @@ module AsposeWordsCloud
     # Test for updating paragraph run font online.
     #
     def test_update_run_font_online
-      font_dto = Font.new({:Bold => true})
-      request = UpdateRunFontOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 'paragraphs/0', font_dto, 0, nil, nil, nil, nil, nil)
+      request_font_dto = Font.new({:Bold => true})
+      request = UpdateRunFontOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 'paragraphs/0', request_font_dto, 0, nil, nil, nil, nil, nil)
 
       result = @words_api.update_run_font_online(request)
       assert_equal false, result.nil?
@@ -228,8 +228,8 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      paragraph = ParagraphInsert.new({:Text => 'This is a new paragraph for your document'})
-      request = InsertParagraphRequest.new(remote_file_name, paragraph, 'sections/0', remote_data_folder, nil, nil, nil, nil, nil, nil, nil)
+      request_paragraph = ParagraphInsert.new({:Text => 'This is a new paragraph for your document'})
+      request = InsertParagraphRequest.new(remote_file_name, request_paragraph, 'sections/0', remote_data_folder, nil, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_paragraph(request)
       assert_equal false, result.nil?
@@ -239,8 +239,8 @@ module AsposeWordsCloud
     # Test for adding paragraph online.
     #
     def test_insert_paragraph_online
-      paragraph = ParagraphInsert.new({:Text => 'This is a new paragraph for your document'})
-      request = InsertParagraphOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), paragraph, 'sections/0', nil, nil, nil, nil, nil, nil)
+      request_paragraph = ParagraphInsert.new({:Text => 'This is a new paragraph for your document'})
+      request = InsertParagraphOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), request_paragraph, 'sections/0', nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_paragraph_online(request)
       assert_equal false, result.nil?
@@ -254,8 +254,8 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      paragraph = ParagraphInsert.new({:Text => 'This is a new paragraph for your document'})
-      request = InsertParagraphRequest.new(remote_file_name, paragraph, nil, remote_data_folder, nil, nil, nil, nil, nil, nil, nil)
+      request_paragraph = ParagraphInsert.new({:Text => 'This is a new paragraph for your document'})
+      request = InsertParagraphRequest.new(remote_file_name, request_paragraph, nil, remote_data_folder, nil, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_paragraph(request)
       assert_equal false, result.nil?
@@ -345,8 +345,8 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      paragraph_format_dto = ParagraphFormatUpdate.new({:Alignment => 'Right'})
-      request = UpdateParagraphFormatRequest.new(remote_file_name, 0, paragraph_format_dto, '', remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request_paragraph_format_dto = ParagraphFormatUpdate.new({:Alignment => 'Right'})
+      request = UpdateParagraphFormatRequest.new(remote_file_name, 0, request_paragraph_format_dto, '', remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_paragraph_format(request)
       assert_equal false, result.nil?
@@ -356,8 +356,8 @@ module AsposeWordsCloud
     # Test for updating  paragraph format settings online.
     #
     def test_update_paragraph_format_online
-      paragraph_format_dto = ParagraphFormatUpdate.new({:Alignment => 'Right'})
-      request = UpdateParagraphFormatOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), paragraph_format_dto, 0, '', nil, nil, nil, nil, nil)
+      request_paragraph_format_dto = ParagraphFormatUpdate.new({:Alignment => 'Right'})
+      request = UpdateParagraphFormatOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), request_paragraph_format_dto, 0, '', nil, nil, nil, nil, nil)
 
       result = @words_api.update_paragraph_format_online(request)
       assert_equal false, result.nil?
@@ -445,8 +445,8 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, list_folder + '/ParagraphUpdateListFormat.doc'), remote_data_folder + '/' + remote_file_name
 
-      list_format_dto = ListFormatUpdate.new({:ListId => 2})
-      request = UpdateParagraphListFormatRequest.new(remote_file_name, 0, list_format_dto, '', remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request_list_format_dto = ListFormatUpdate.new({:ListId => 2})
+      request = UpdateParagraphListFormatRequest.new(remote_file_name, 0, request_list_format_dto, '', remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_paragraph_list_format(request)
       assert_equal false, result.nil?
@@ -456,8 +456,8 @@ module AsposeWordsCloud
     # Test for updating paragraph list format online.
     #
     def test_update_paragraph_list_format_online
-      list_format_dto = ListFormatUpdate.new({:ListId => 2})
-      request = UpdateParagraphListFormatOnlineRequest.new(File.open(File.join(local_test_folder, list_folder + '/ParagraphUpdateListFormat.doc')), list_format_dto, 0, '', nil, nil, nil, nil, nil)
+      request_list_format_dto = ListFormatUpdate.new({:ListId => 2})
+      request = UpdateParagraphListFormatOnlineRequest.new(File.open(File.join(local_test_folder, list_folder + '/ParagraphUpdateListFormat.doc')), request_list_format_dto, 0, '', nil, nil, nil, nil, nil)
 
       result = @words_api.update_paragraph_list_format_online(request)
       assert_equal false, result.nil?
@@ -471,8 +471,8 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, list_folder + '/ParagraphUpdateListFormat.doc'), remote_data_folder + '/' + remote_file_name
 
-      list_format_dto = ListFormatUpdate.new({:ListId => 2})
-      request = UpdateParagraphListFormatRequest.new(remote_file_name, 0, list_format_dto, nil, remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request_list_format_dto = ListFormatUpdate.new({:ListId => 2})
+      request = UpdateParagraphListFormatRequest.new(remote_file_name, 0, request_list_format_dto, nil, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_paragraph_list_format(request)
       assert_equal false, result.nil?
@@ -562,8 +562,8 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, tab_stop_folder + '/ParagraphTabStops.docx'), remote_data_folder + '/' + remote_file_name
 
-      tab_stop_insert_dto = TabStopInsert.new({:Alignment => 'Left', :Leader => 'None', :Position => 100.0})
-      request = InsertOrUpdateParagraphTabStopRequest.new(remote_file_name, 0, tab_stop_insert_dto, '', remote_data_folder, nil, nil, nil, nil)
+      request_tab_stop_insert_dto = TabStopInsert.new({:Alignment => 'Left', :Leader => 'None', :Position => 100.0})
+      request = InsertOrUpdateParagraphTabStopRequest.new(remote_file_name, 0, request_tab_stop_insert_dto, '', remote_data_folder, nil, nil, nil, nil)
 
       result = @words_api.insert_or_update_paragraph_tab_stop(request)
       assert_equal false, result.nil?
@@ -573,8 +573,8 @@ module AsposeWordsCloud
     # Test for inserting paragraph tab stop online.
     #
     def test_insert_paragraph_tab_stops_online
-      tab_stop_insert_dto = TabStopInsert.new({:Alignment => 'Left', :Leader => 'None', :Position => 72})
-      request = InsertOrUpdateParagraphTabStopOnlineRequest.new(File.open(File.join(local_test_folder, tab_stop_folder + '/ParagraphTabStops.docx')), tab_stop_insert_dto, 0, '', nil, nil, nil)
+      request_tab_stop_insert_dto = TabStopInsert.new({:Alignment => 'Left', :Leader => 'None', :Position => 72})
+      request = InsertOrUpdateParagraphTabStopOnlineRequest.new(File.open(File.join(local_test_folder, tab_stop_folder + '/ParagraphTabStops.docx')), request_tab_stop_insert_dto, 0, '', nil, nil, nil)
 
       result = @words_api.insert_or_update_paragraph_tab_stop_online(request)
       assert_equal false, result.nil?
@@ -588,8 +588,8 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, tab_stop_folder + '/ParagraphTabStops.docx'), remote_data_folder + '/' + remote_file_name
 
-      tab_stop_insert_dto = TabStopInsert.new({:Alignment => 'Left', :Leader => 'None', :Position => 100.0})
-      request = InsertOrUpdateParagraphTabStopRequest.new(remote_file_name, 0, tab_stop_insert_dto, nil, remote_data_folder, nil, nil, nil, nil)
+      request_tab_stop_insert_dto = TabStopInsert.new({:Alignment => 'Left', :Leader => 'None', :Position => 100.0})
+      request = InsertOrUpdateParagraphTabStopRequest.new(remote_file_name, 0, request_tab_stop_insert_dto, nil, remote_data_folder, nil, nil, nil, nil)
 
       result = @words_api.insert_or_update_paragraph_tab_stop(request)
       assert_equal false, result.nil?

@@ -46,8 +46,8 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      options = OptimizationOptions.new({:MsWordVersion => 'Word2002'})
-      request = OptimizeDocumentRequest.new(remote_file_name, options, remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request_options = OptimizationOptions.new({:MsWordVersion => 'Word2002'})
+      request = OptimizeDocumentRequest.new(remote_file_name, request_options, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       @words_api.optimize_document(request)
     end
@@ -56,8 +56,8 @@ module AsposeWordsCloud
     # Test for optimize document to specific MS Word version.
     #
     def test_optimize_document_online
-      options = OptimizationOptions.new({:MsWordVersion => 'Word2002'})
-      request = OptimizeDocumentOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), options, nil, nil, nil, nil, nil)
+      request_options = OptimizationOptions.new({:MsWordVersion => 'Word2002'})
+      request = OptimizeDocumentOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), request_options, nil, nil, nil, nil, nil)
 
       result = @words_api.optimize_document_online(request)
       assert_equal false, result.nil?
