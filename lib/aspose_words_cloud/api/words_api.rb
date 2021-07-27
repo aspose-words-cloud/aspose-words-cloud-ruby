@@ -7217,8 +7217,8 @@ module AsposeWordsCloud
         raise ArgumentError, 'Incorrect request type' unless request.is_a? GetDocumentFieldNamesOnlineRequest
 
         @api_client.config.logger.debug 'Calling API: WordsApi.get_document_field_names_online ...' if @api_client.config.debugging
-        # verify the required parameter 'document' is set
-        raise ArgumentError, 'Missing the required parameter document when calling WordsApi.get_document_field_names_online' if @api_client.config.client_side_validation && request.document.nil?
+        # verify the required parameter 'template' is set
+        raise ArgumentError, 'Missing the required parameter template when calling WordsApi.get_document_field_names_online' if @api_client.config.client_side_validation && request.template.nil?
 
         # resource path
         local_var_path = '/words/online/get/mailMerge/FieldNames'[1..-1]
@@ -7239,7 +7239,7 @@ module AsposeWordsCloud
 
         # form parameters
         form_params = {}
-        form_params[downcase_first_letter('Document')] = request.document
+        form_params[downcase_first_letter('Template')] = request.template
 
         # http body (model)
         post_body = nil
@@ -17911,7 +17911,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Converts a document in cloud storage to the specified format.
+    # Converts a document to the specified format.
     # @param request SaveAsOnlineRequest
     # @return [SaveAsOnlineResponse]
     def save_as_online(request)
@@ -17928,7 +17928,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Converts a document in cloud storage to the specified format.
+    # Converts a document to the specified format.
     # @param request SaveAsOnlineRequest
     # @return [Array<(SaveAsOnlineResponse, Fixnum, Hash)>]
     # SaveAsOnlineResponse, response status code and response headers
@@ -18228,7 +18228,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Converts a document in cloud storage to TIFF format using detailed conversion settings.
+    # Converts a document to TIFF format using detailed conversion settings.
     # @param request SaveAsTiffOnlineRequest
     # @return [SaveAsTiffOnlineResponse]
     def save_as_tiff_online(request)
@@ -18245,7 +18245,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Converts a document in cloud storage to TIFF format using detailed conversion settings.
+    # Converts a document to TIFF format using detailed conversion settings.
     # @param request SaveAsTiffOnlineRequest
     # @return [Array<(SaveAsTiffOnlineResponse, Fixnum, Hash)>]
     # SaveAsTiffOnlineResponse, response status code and response headers
