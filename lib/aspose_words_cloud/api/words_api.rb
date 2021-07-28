@@ -10792,6 +10792,67 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
+    # Get assymetric public key.
+    # @param request GetPublicKeyRequest
+    # @return [PublicKeyResponse]
+    def get_public_key(request)
+        begin
+        data, _status_code, _headers = get_public_key_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = get_public_key_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Get assymetric public key.
+    # @param request GetPublicKeyRequest
+    # @return [Array<(PublicKeyResponse, Fixnum, Hash)>]
+    # PublicKeyResponse, response status code and response headers
+    private def get_public_key_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? GetPublicKeyRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.get_public_key ...' if @api_client.config.debugging
+        # resource path
+        local_var_path = '/words/encryption/publickey'[1..-1]
+        local_var_path = local_var_path.sub('//', '/')
+
+        # query parameters
+        query_params = {}
+
+        # header parameters
+        header_params = {}
+        # HTTP header 'Accept' (if needed)
+        header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+        # HTTP header 'Content-Type'
+        header_params['Content-Type'] = @api_client.select_header_content_type(['application/xml', 'application/json'])
+
+        # form parameters
+        form_params = {}
+
+        # http body (model)
+        post_body = nil
+        auth_names = ['JWT']
+
+        data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'PublicKeyResponse')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#get_public_key\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [data, status_code, headers]
+    end
+
     # Reads range text from the document.
     # @param request GetRangeTextRequest
     # @return [RangeTextResponse]
