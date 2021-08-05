@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="version.rb">
+# <copyright company="Aspose" file="PasswordEncryption_tests.rb">
 #   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -22,7 +22,30 @@
 #  SOFTWARE.
 # </summary>
 # ------------------------------------------------------------------------------------
-
 module AsposeWordsCloud
-  VERSION = "21.7.0".freeze
+  require_relative '../base_test_context'
+
+  #
+  # Example of how to handle an encrypted document.
+  #
+  class PasswordEncryptionTests < BaseTestContext
+    def remote_data_folder
+      remote_test_folder + '/DocumentActions/PasswordEncryption'
+    end
+
+    def local_file
+      'Common/test_multi_pages.docx'
+    end
+
+
+    #
+    # Test for getting a public key for password encryption.
+    #
+    def test_get_public_key
+      request = GetPublicKeyRequest.new()
+
+      result = @words_api.get_public_key(request)
+      assert_equal false, result.nil?
+    end
+  end
 end
