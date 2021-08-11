@@ -3,7 +3,6 @@ AsposeWordsCloud.configure do |config|
   config.client_data['ClientSecret'] = '##################'
 end
 @words_api = WordsAPI.new
-remote_file_name= 'Sample.docx'
-
-accept_request = AcceptAllRevisionsRequest.new(remote_file_name, nil, nil, nil, nil, remote_file_name)
-@words_api.accept_all_revisions(accept_request)
+documents_dir = '...'
+request = GetFootnotesOnlineRequest.new(File.open(File.join(documents_dir, '/Footnote.doc')), '', nil, nil)
+@words_api.get_footnotes_online(request)

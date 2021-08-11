@@ -4,5 +4,5 @@ AsposeWordsCloud.configure do |config|
 end
 @words_api = WordsAPI.new
 documents_dir = '...'
-accept_request = AcceptAllRevisionsOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), nil, nil, nil)
-@words_api.accept_all_revisions_online(accept_request)
+split_request = SplitDocumentOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 'text', nil, nil, '/TestSplitDocument.text', 1, 2, nil, nil)
+@words_api.split_document_online(split_request)

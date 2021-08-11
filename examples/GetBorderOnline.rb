@@ -4,5 +4,5 @@ AsposeWordsCloud.configure do |config|
 end
 @words_api = WordsAPI.new
 documents_dir = '...'
-accept_request = AcceptAllRevisionsOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), nil, nil, nil)
-@words_api.accept_all_revisions_online(accept_request)
+request = GetBorderOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 'left', 'tables/1/rows/0/cells/0', nil, nil)
+@words_api.get_border_online(request)

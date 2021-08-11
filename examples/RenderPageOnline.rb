@@ -4,5 +4,5 @@ AsposeWordsCloud.configure do |config|
 end
 @words_api = WordsAPI.new
 documents_dir = '...'
-accept_request = AcceptAllRevisionsOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), nil, nil, nil)
-@words_api.accept_all_revisions_online(accept_request)
+render_request = RenderPageOnlineRequest.new(File.open(File.join(documents_dir, 'DocumentElements/Text/SampleWordDocument.docx')), 1, 'bmp', nil, nil, nil)
+@words_api.render_page_online(render_request)

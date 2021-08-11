@@ -4,5 +4,5 @@ AsposeWordsCloud.configure do |config|
 end
 @words_api = WordsAPI.new
 documents_dir = '...'
-accept_request = AcceptAllRevisionsOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), nil, nil, nil)
-@words_api.accept_all_revisions_online(accept_request)
+delete_request = DeleteTableRowOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 'tables/1', 0, nil, nil, nil, nil, nil)
+@words_api.delete_table_row_online(delete_request)

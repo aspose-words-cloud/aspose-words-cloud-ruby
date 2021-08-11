@@ -4,5 +4,5 @@ AsposeWordsCloud.configure do |config|
 end
 @words_api = WordsAPI.new
 documents_dir = '...'
-accept_request = AcceptAllRevisionsOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), nil, nil, nil)
-@words_api.accept_all_revisions_online(accept_request)
+request = GetDocumentHyperlinkByIndexOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 0, nil, nil)
+@words_api.get_document_hyperlink_by_index_online(request)

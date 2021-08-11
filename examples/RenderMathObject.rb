@@ -3,7 +3,5 @@ AsposeWordsCloud.configure do |config|
   config.client_data['ClientSecret'] = '##################'
 end
 @words_api = WordsAPI.new
-remote_file_name= 'Sample.docx'
-
-accept_request = AcceptAllRevisionsRequest.new(remote_file_name, nil, nil, nil, nil, remote_file_name)
-@words_api.accept_all_revisions(accept_request)
+render_request = RenderMathObjectRequest.new('Sample.docx', 'png', 0, nil, nil, nil, nil, nil, nil, nil)
+@words_api.render_math_object(render_request)

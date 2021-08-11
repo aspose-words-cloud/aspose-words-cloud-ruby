@@ -3,7 +3,6 @@ AsposeWordsCloud.configure do |config|
   config.client_data['ClientSecret'] = '##################'
 end
 @words_api = WordsAPI.new
-remote_file_name= 'Sample.docx'
-
-accept_request = AcceptAllRevisionsRequest.new(remote_file_name, nil, nil, nil, nil, remote_file_name)
-@words_api.accept_all_revisions(accept_request)
+documents_dir = '...'
+request = GetFieldOnlineRequest.new(File.open(File.join(documents_dir, '/GetField.docx')), 0, 'sections/0/paragraphs/0', nil, nil)
+@words_api.get_field_online(request)

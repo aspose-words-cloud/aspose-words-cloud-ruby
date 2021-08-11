@@ -3,7 +3,5 @@ AsposeWordsCloud.configure do |config|
   config.client_data['ClientSecret'] = '##################'
 end
 @words_api = WordsAPI.new
-remote_file_name= 'Sample.docx'
-
-accept_request = AcceptAllRevisionsRequest.new(remote_file_name, nil, nil, nil, nil, remote_file_name)
-@words_api.accept_all_revisions(accept_request)
+request = GetDocumentWithFormatRequest.new('Sample.docx', 'text', nil, nil, nil, nil, '/TestGetDocumentWithFormatAndOutPath.text', nil)
+@words_api.get_document_with_format(request)

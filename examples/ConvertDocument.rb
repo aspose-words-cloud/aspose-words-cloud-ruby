@@ -4,5 +4,5 @@ AsposeWordsCloud.configure do |config|
 end
 @words_api = WordsAPI.new
 documents_dir = '...'
-accept_request = AcceptAllRevisionsOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), nil, nil, nil)
-@words_api.accept_all_revisions_online(accept_request)
+convert_request = ConvertDocumentRequest.new(File.open(File.join(documents_dir, '/test_uploadfile.docx')), 'pdf', nil, nil, nil, nil)
+@words_api.convert_document(convert_request)

@@ -5,5 +5,5 @@ end
 @words_api = WordsAPI.new
 remote_file_name= 'Sample.docx'
 
-accept_request = AcceptAllRevisionsRequest.new(remote_file_name, nil, nil, nil, nil, remote_file_name)
-@words_api.accept_all_revisions(accept_request)
+reject_request = RejectAllRevisionsRequest.new(remote_file_name, nil, nil, nil, nil, remote_file_name)
+@words_api.reject_all_revisions(reject_request)

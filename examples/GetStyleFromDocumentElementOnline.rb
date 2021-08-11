@@ -4,5 +4,5 @@ AsposeWordsCloud.configure do |config|
 end
 @words_api = WordsAPI.new
 documents_dir = '...'
-accept_request = AcceptAllRevisionsOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), nil, nil, nil)
-@words_api.accept_all_revisions_online(accept_request)
+request = GetStyleFromDocumentElementOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 'paragraphs/1/paragraphFormat', nil, nil)
+@words_api.get_style_from_document_element_online(request)

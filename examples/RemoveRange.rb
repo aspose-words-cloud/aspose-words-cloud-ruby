@@ -3,7 +3,5 @@ AsposeWordsCloud.configure do |config|
   config.client_data['ClientSecret'] = '##################'
 end
 @words_api = WordsAPI.new
-remote_file_name= 'Sample.docx'
-
-accept_request = AcceptAllRevisionsRequest.new(remote_file_name, nil, nil, nil, nil, remote_file_name)
-@words_api.accept_all_revisions(accept_request)
+remove_request = RemoveRangeRequest.new('Sample.docx', 'id0.0.0', 'id0.0.1', nil, nil, nil, nil, nil)
+@words_api.remove_range(remove_request)

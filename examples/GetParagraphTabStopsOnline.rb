@@ -4,5 +4,5 @@ AsposeWordsCloud.configure do |config|
 end
 @words_api = WordsAPI.new
 documents_dir = '...'
-accept_request = AcceptAllRevisionsOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), nil, nil, nil)
-@words_api.accept_all_revisions_online(accept_request)
+request = GetParagraphTabStopsOnlineRequest.new(File.open(File.join(documents_dir, '/ParagraphTabStops.docx')), 0, '', nil, nil)
+@words_api.get_paragraph_tab_stops_online(request)
