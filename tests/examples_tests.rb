@@ -1601,6 +1601,7 @@ module AsposeWordsCloud
     end
 
     def test_update_bookmark
+      bookmark_name= 'aspose'
       remote_file_name= 'Sample.docx'
 
       request_bookmark_data = BookmarkData.new({:Name => bookmark_name, :Text => 'This will be the text for Aspose'})
@@ -1610,6 +1611,8 @@ module AsposeWordsCloud
 
     def test_update_bookmark_online
       documents_dir = 'ExamplesData'
+      bookmark_name= 'aspose'
+
       request_bookmark_data = BookmarkData.new({:Name => bookmark_name, :Text => 'This will be the text for Aspose'})
       update_request = UpdateBookmarkOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), bookmark_name, request_bookmark_data, nil, nil, 'Sample.docx', nil, nil)
       @words_api.update_bookmark_online(update_request)
