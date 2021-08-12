@@ -5,5 +5,5 @@ end
 @words_api = WordsAPI.new
 documents_dir = '...'
 request_run = RunUpdate.new({:Text => 'run with text'})
-update_request = UpdateRunOnlineRequest.new(File.open(File.join(documents_dir, 'DocumentElements/Runs/Run.doc')), 'paragraphs/1', request_run, 0, nil, nil, nil, nil, nil)
+update_request = UpdateRunOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.doc')), 'paragraphs/1', request_run, 0, nil, nil, nil, nil, nil)
 @words_api.update_run_online(update_request)

@@ -4,5 +4,5 @@ AsposeWordsCloud.configure do |config|
 end
 @words_api = WordsAPI.new
 documents_dir = '...'
-remove_request = RemoveRangeOnlineRequest.new(File.open(File.join(documents_dir, 'DocumentElements/Range/RangeGet.doc')), 'id0.0.0', 'id0.0.1', nil, nil, nil)
+remove_request = RemoveRangeOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.doc')), 'id0.0.0', 'id0.0.1', nil, nil, nil)
 @words_api.remove_range_online(remove_request)

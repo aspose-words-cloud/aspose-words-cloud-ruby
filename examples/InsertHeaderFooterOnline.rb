@@ -4,5 +4,5 @@ AsposeWordsCloud.configure do |config|
 end
 @words_api = WordsAPI.new
 documents_dir = '...'
-insert_request = InsertHeaderFooterOnlineRequest.new(File.open(File.join(documents_dir, 'DocumentElements/HeaderFooters/HeadersFooters.doc')), '', 'FooterEven', nil, nil, nil, nil, nil)
+insert_request = InsertHeaderFooterOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.doc')), '', 'FooterEven', nil, nil, nil, nil, nil)
 @words_api.insert_header_footer_online(insert_request)

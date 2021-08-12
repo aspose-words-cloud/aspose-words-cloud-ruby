@@ -31,9 +31,7 @@ module AsposeWordsCloud
     end
 
     def test_accept_all_revisions
-      remote_file_name= 'Sample.docx'
-
-      accept_request = AcceptAllRevisionsRequest.new(remote_file_name, nil, nil, nil, nil, remote_file_name)
+      accept_request = AcceptAllRevisionsRequest.new('Sample.docx', nil, nil, nil, nil, nil)
       @words_api.accept_all_revisions(accept_request)
     end
 
@@ -49,7 +47,7 @@ module AsposeWordsCloud
       request_document_list_document_entries0 = DocumentEntry.new({:Href => remote_file_name, :ImportFormatMode => 'KeepSourceFormatting'})
       request_document_list_document_entries = [request_document_list_document_entries0]
       request_document_list = DocumentEntryList.new({:DocumentEntries => request_document_list_document_entries})
-      append_request = AppendDocumentRequest.new(remote_file_name, request_document_list, nil, nil, nil, nil, remote_file_name, nil, nil)
+      append_request = AppendDocumentRequest.new(remote_file_name, request_document_list, nil, nil, nil, nil, nil, nil, nil)
       @words_api.append_document(append_request)
     end
 
@@ -160,10 +158,8 @@ module AsposeWordsCloud
     end
 
     def test_create_or_update_document_property
-      remote_file_name= 'Sample.docx'
-
       request_property = DocumentPropertyCreateOrUpdate.new({:Value => 'Imran Anwar'})
-      create_request = CreateOrUpdateDocumentPropertyRequest.new(remote_file_name, 'AsposeAuthor', request_property, nil, nil, nil, nil, remote_file_name, nil, nil)
+      create_request = CreateOrUpdateDocumentPropertyRequest.new('Sample.docx', 'AsposeAuthor', request_property, nil, nil, nil, nil, nil, nil, nil)
       @words_api.create_or_update_document_property(create_request)
     end
 
@@ -208,9 +204,7 @@ module AsposeWordsCloud
     end
 
     def test_delete_comment
-      remote_file_name= 'Sample.docx'
-
-      delete_request = DeleteCommentRequest.new(remote_file_name, 0, nil, nil, nil, nil, remote_file_name, nil, nil)
+      delete_request = DeleteCommentRequest.new('Sample.docx', 0, nil, nil, nil, nil, nil, nil, nil)
       @words_api.delete_comment(delete_request)
     end
 
@@ -221,9 +215,7 @@ module AsposeWordsCloud
     end
 
     def test_delete_comments
-      remote_file_name= 'Sample.docx'
-
-      delete_request = DeleteCommentsRequest.new(remote_file_name, nil, nil, nil, nil, remote_file_name, nil, nil)
+      delete_request = DeleteCommentsRequest.new('Sample.docx', nil, nil, nil, nil, nil, nil, nil)
       @words_api.delete_comments(delete_request)
     end
 
@@ -234,9 +226,7 @@ module AsposeWordsCloud
     end
 
     def test_delete_custom_xml_part
-      remote_file_name= 'Sample.docx'
-
-      delete_request = DeleteCustomXmlPartRequest.new(remote_file_name, 0, nil, nil, nil, nil, remote_file_name, nil, nil)
+      delete_request = DeleteCustomXmlPartRequest.new('Sample.docx', 0, nil, nil, nil, nil, nil, nil, nil)
       @words_api.delete_custom_xml_part(delete_request)
     end
 
@@ -247,9 +237,7 @@ module AsposeWordsCloud
     end
 
     def test_delete_custom_xml_parts
-      remote_file_name= 'Sample.docx'
-
-      delete_request = DeleteCustomXmlPartsRequest.new(remote_file_name, nil, nil, nil, nil, remote_file_name, nil, nil)
+      delete_request = DeleteCustomXmlPartsRequest.new('Sample.docx', nil, nil, nil, nil, nil, nil, nil)
       @words_api.delete_custom_xml_parts(delete_request)
     end
 
@@ -260,9 +248,7 @@ module AsposeWordsCloud
     end
 
     def test_delete_document_property
-      remote_file_name= 'Sample.docx'
-
-      delete_request = DeleteDocumentPropertyRequest.new(remote_file_name, 'testProp', nil, nil, nil, nil, remote_file_name, nil, nil)
+      delete_request = DeleteDocumentPropertyRequest.new('Sample.docx', 'testProp', nil, nil, nil, nil, nil, nil, nil)
       @words_api.delete_document_property(delete_request)
     end
 
@@ -327,9 +313,7 @@ module AsposeWordsCloud
     end
 
     def test_delete_form_field
-      remote_file_name= 'Sample.docx'
-
-      delete_request = DeleteFormFieldRequest.new(remote_file_name, 0, nil, nil, nil, nil, nil, remote_file_name, nil, nil)
+      delete_request = DeleteFormFieldRequest.new('Sample.docx', 0, nil, nil, nil, nil, nil, nil, nil, nil)
       @words_api.delete_form_field(delete_request)
     end
 
@@ -346,7 +330,7 @@ module AsposeWordsCloud
 
     def test_delete_header_footer_online
       documents_dir = 'ExamplesData'
-      delete_request = DeleteHeaderFooterOnlineRequest.new(File.open(File.join(documents_dir, 'DocumentElements/HeaderFooters/HeadersFooters.doc')), '', 0, nil, nil, nil, nil, nil)
+      delete_request = DeleteHeaderFooterOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.doc')), '', 0, nil, nil, nil, nil, nil)
       @words_api.delete_header_footer_online(delete_request)
     end
 
@@ -357,7 +341,7 @@ module AsposeWordsCloud
 
     def test_delete_headers_footers_online
       documents_dir = 'ExamplesData'
-      delete_request = DeleteHeadersFootersOnlineRequest.new(File.open(File.join(documents_dir, 'DocumentElements/HeaderFooters/HeadersFooters.doc')), '', nil, nil, nil, nil, nil, nil)
+      delete_request = DeleteHeadersFootersOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.doc')), '', nil, nil, nil, nil, nil, nil)
       @words_api.delete_headers_footers_online(delete_request)
     end
 
@@ -423,7 +407,7 @@ module AsposeWordsCloud
 
     def test_delete_run_online
       documents_dir = 'ExamplesData'
-      delete_request = DeleteRunOnlineRequest.new(File.open(File.join(documents_dir, 'DocumentElements/Runs/Run.doc')), 'paragraphs/1', 0, nil, nil, nil, nil, nil)
+      delete_request = DeleteRunOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.doc')), 'paragraphs/1', 0, nil, nil, nil, nil, nil)
       @words_api.delete_run_online(delete_request)
     end
 
@@ -472,9 +456,7 @@ module AsposeWordsCloud
     end
 
     def test_delete_watermark
-      remote_file_name= 'Sample.docx'
-
-      delete_request = DeleteWatermarkRequest.new(remote_file_name, nil, nil, nil, nil, remote_file_name, nil, nil)
+      delete_request = DeleteWatermarkRequest.new('Sample.docx', nil, nil, nil, nil, nil, nil, nil)
       @words_api.delete_watermark(delete_request)
     end
 
@@ -490,9 +472,7 @@ module AsposeWordsCloud
     end
 
     def test_execute_mail_merge
-      remote_file_name= 'Sample.docx'
-
-      mail_merge_request = ExecuteMailMergeRequest.new(remote_file_name, 'TestExecuteTemplateData.txt', nil, nil, nil, nil, nil, nil, nil, nil, remote_file_name)
+      mail_merge_request = ExecuteMailMergeRequest.new('Sample.docx', 'TestExecuteTemplateData.txt', nil, nil, nil, nil, nil, nil, nil, nil, nil)
       @words_api.execute_mail_merge(mail_merge_request)
     end
 
@@ -809,13 +789,13 @@ module AsposeWordsCloud
 
     def test_get_header_footer_of_section_online
       documents_dir = 'ExamplesData'
-      request = GetHeaderFooterOfSectionOnlineRequest.new(File.open(File.join(documents_dir, 'DocumentElements/HeaderFooters/HeadersFooters.doc')), 0, 0, nil, nil, nil)
+      request = GetHeaderFooterOfSectionOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.doc')), 0, 0, nil, nil, nil)
       @words_api.get_header_footer_of_section_online(request)
     end
 
     def test_get_header_footer_online
       documents_dir = 'ExamplesData'
-      request = GetHeaderFooterOnlineRequest.new(File.open(File.join(documents_dir, 'DocumentElements/HeaderFooters/HeadersFooters.doc')), 0, nil, nil, nil)
+      request = GetHeaderFooterOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.doc')), 0, nil, nil, nil)
       @words_api.get_header_footer_online(request)
     end
 
@@ -826,7 +806,7 @@ module AsposeWordsCloud
 
     def test_get_header_footers_online
       documents_dir = 'ExamplesData'
-      request = GetHeaderFootersOnlineRequest.new(File.open(File.join(documents_dir, 'DocumentElements/HeaderFooters/HeadersFooters.doc')), '', nil, nil, nil)
+      request = GetHeaderFootersOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.doc')), '', nil, nil, nil)
       @words_api.get_header_footers_online(request)
     end
 
@@ -837,7 +817,7 @@ module AsposeWordsCloud
 
     def test_get_list_online
       documents_dir = 'ExamplesData'
-      request = GetListOnlineRequest.new(File.open(File.join(documents_dir, 'DocumentElements/Lists/ListsGet.doc')), 1, nil, nil)
+      request = GetListOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.doc')), 1, nil, nil)
       @words_api.get_list_online(request)
     end
 
@@ -848,7 +828,7 @@ module AsposeWordsCloud
 
     def test_get_lists_online
       documents_dir = 'ExamplesData'
-      request = GetListsOnlineRequest.new(File.open(File.join(documents_dir, 'DocumentElements/Lists/ListsGet.doc')), nil, nil)
+      request = GetListsOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.doc')), nil, nil)
       @words_api.get_lists_online(request)
     end
 
@@ -941,7 +921,7 @@ module AsposeWordsCloud
 
     def test_get_range_text_online
       documents_dir = 'ExamplesData'
-      request = GetRangeTextOnlineRequest.new(File.open(File.join(documents_dir, 'DocumentElements/Range/RangeGet.doc')), 'id0.0.0', 'id0.0.1', nil, nil)
+      request = GetRangeTextOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.doc')), 'id0.0.0', 'id0.0.1', nil, nil)
       @words_api.get_range_text_online(request)
     end
 
@@ -1196,10 +1176,8 @@ module AsposeWordsCloud
     end
 
     def test_insert_form_field
-      remote_file_name= 'Sample.docx'
-
       request_form_field = FormFieldTextInput.new({:Name => 'FullName', :Enabled => true, :CalculateOnExit => true, :StatusText => '', :TextInputType => 'Regular', :TextInputDefault => '123', :TextInputFormat => 'UPPERCASE'})
-      insert_request = InsertFormFieldRequest.new(remote_file_name, request_form_field, nil, nil, nil, nil, nil, remote_file_name, nil, nil, nil)
+      insert_request = InsertFormFieldRequest.new('Sample.docx', request_form_field, nil, nil, nil, nil, nil, nil, nil, nil, nil)
       @words_api.insert_form_field(insert_request)
     end
 
@@ -1217,7 +1195,7 @@ module AsposeWordsCloud
 
     def test_insert_header_footer_online
       documents_dir = 'ExamplesData'
-      insert_request = InsertHeaderFooterOnlineRequest.new(File.open(File.join(documents_dir, 'DocumentElements/HeaderFooters/HeadersFooters.doc')), '', 'FooterEven', nil, nil, nil, nil, nil)
+      insert_request = InsertHeaderFooterOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.doc')), '', 'FooterEven', nil, nil, nil, nil, nil)
       @words_api.insert_header_footer_online(insert_request)
     end
 
@@ -1230,7 +1208,7 @@ module AsposeWordsCloud
     def test_insert_list_online
       documents_dir = 'ExamplesData'
       request_list_insert = ListInsert.new({:Template => 'OutlineLegal'})
-      insert_request = InsertListOnlineRequest.new(File.open(File.join(documents_dir, 'DocumentElements/Lists/ListsGet.doc')), request_list_insert, nil, nil, nil, nil, nil)
+      insert_request = InsertListOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.doc')), request_list_insert, nil, nil, nil, nil, nil)
       @words_api.insert_list_online(insert_request)
     end
 
@@ -1248,10 +1226,8 @@ module AsposeWordsCloud
     end
 
     def test_insert_page_numbers
-      remote_file_name= 'Sample.docx'
-
       request_page_number = PageNumber.new({:Alignment => 'center', :Format => '{PAGE} of {NUMPAGES}'})
-      insert_request = InsertPageNumbersRequest.new(remote_file_name, request_page_number, nil, nil, nil, nil, remote_file_name, nil, nil)
+      insert_request = InsertPageNumbersRequest.new('Sample.docx', request_page_number, nil, nil, nil, nil, nil, nil, nil)
       @words_api.insert_page_numbers(insert_request)
     end
 
@@ -1284,7 +1260,7 @@ module AsposeWordsCloud
     def test_insert_run_online
       documents_dir = 'ExamplesData'
       request_run = RunInsert.new({:Text => 'run with text'})
-      insert_request = InsertRunOnlineRequest.new(File.open(File.join(documents_dir, 'DocumentElements/Runs/Run.doc')), 'paragraphs/1', request_run, nil, nil, nil, nil, nil, nil)
+      insert_request = InsertRunOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.doc')), 'paragraphs/1', request_run, nil, nil, nil, nil, nil, nil)
       @words_api.insert_run_online(insert_request)
     end
 
@@ -1342,9 +1318,7 @@ module AsposeWordsCloud
 
     def test_insert_watermark_image
       documents_dir = 'ExamplesData'
-      remote_file_name= 'Sample.docx'
-
-      insert_request = InsertWatermarkImageRequest.new(remote_file_name, nil, nil, nil, nil, nil, remote_file_name, nil, nil, nil, 'Sample.png')
+      insert_request = InsertWatermarkImageRequest.new('Sample.docx', nil, nil, nil, nil, nil, nil, nil, nil, nil, 'Sample.png')
       @words_api.insert_watermark_image(insert_request)
     end
 
@@ -1355,10 +1329,8 @@ module AsposeWordsCloud
     end
 
     def test_insert_watermark_text
-      remote_file_name= 'Sample.docx'
-
       request_watermark_text = WatermarkText.new({:Text => 'This is the text', :RotationAngle => 90.0})
-      insert_request = InsertWatermarkTextRequest.new(remote_file_name, request_watermark_text, nil, nil, nil, nil, remote_file_name, nil, nil)
+      insert_request = InsertWatermarkTextRequest.new('Sample.docx', request_watermark_text, nil, nil, nil, nil, nil, nil, nil)
       @words_api.insert_watermark_text(insert_request)
     end
 
@@ -1400,10 +1372,8 @@ module AsposeWordsCloud
     end
 
     def test_protect_document
-      remote_file_name= 'Sample.docx'
-
       request_protection_request = ProtectionRequest.new({:Password => '123', :ProtectionType => 'ReadOnly'})
-      protect_request = ProtectDocumentRequest.new(remote_file_name, request_protection_request, nil, nil, nil, nil, remote_file_name)
+      protect_request = ProtectDocumentRequest.new('Sample.docx', request_protection_request, nil, nil, nil, nil, nil)
       @words_api.protect_document(protect_request)
     end
 
@@ -1415,9 +1385,7 @@ module AsposeWordsCloud
     end
 
     def test_reject_all_revisions
-      remote_file_name= 'Sample.docx'
-
-      reject_request = RejectAllRevisionsRequest.new(remote_file_name, nil, nil, nil, nil, remote_file_name)
+      reject_request = RejectAllRevisionsRequest.new('Sample.docx', nil, nil, nil, nil, nil)
       @words_api.reject_all_revisions(reject_request)
     end
 
@@ -1434,7 +1402,7 @@ module AsposeWordsCloud
 
     def test_remove_range_online
       documents_dir = 'ExamplesData'
-      remove_request = RemoveRangeOnlineRequest.new(File.open(File.join(documents_dir, 'DocumentElements/Range/RangeGet.doc')), 'id0.0.0', 'id0.0.1', nil, nil, nil)
+      remove_request = RemoveRangeOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.doc')), 'id0.0.0', 'id0.0.1', nil, nil, nil)
       @words_api.remove_range_online(remove_request)
     end
 
@@ -1467,7 +1435,7 @@ module AsposeWordsCloud
 
     def test_render_page_online
       documents_dir = 'ExamplesData'
-      render_request = RenderPageOnlineRequest.new(File.open(File.join(documents_dir, 'DocumentElements/Text/SampleWordDocument.docx')), 1, 'bmp', nil, nil, nil)
+      render_request = RenderPageOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 1, 'bmp', nil, nil, nil)
       @words_api.render_page_online(render_request)
     end
 
@@ -1494,10 +1462,8 @@ module AsposeWordsCloud
     end
 
     def test_replace_text
-      remote_file_name= 'Sample.docx'
-
       request_replace_text = ReplaceTextParameters.new({:OldValue => 'Testing', :NewValue => 'Aspose testing'})
-      replace_request = ReplaceTextRequest.new(remote_file_name, request_replace_text, nil, nil, nil, nil, remote_file_name, nil, nil)
+      replace_request = ReplaceTextRequest.new('Sample.docx', request_replace_text, nil, nil, nil, nil, nil, nil, nil)
       @words_api.replace_text(replace_request)
     end
 
@@ -1517,7 +1483,7 @@ module AsposeWordsCloud
     def test_replace_with_text_online
       documents_dir = 'ExamplesData'
       request_range_text = ReplaceRange.new({:Text => 'Replaced header'})
-      replace_request = ReplaceWithTextOnlineRequest.new(File.open(File.join(documents_dir, 'DocumentElements/Range/RangeGet.doc')), 'id0.0.0', request_range_text, 'id0.0.1', nil, nil, nil)
+      replace_request = ReplaceWithTextOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.doc')), 'id0.0.0', request_range_text, 'id0.0.1', nil, nil, nil)
       @words_api.replace_with_text_online(replace_request)
     end
 
@@ -1548,7 +1514,7 @@ module AsposeWordsCloud
     def test_save_as_range_online
       documents_dir = 'ExamplesData'
       request_document_parameters = RangeDocument.new({:DocumentName => '/NewDoc.docx'})
-      save_request = SaveAsRangeOnlineRequest.new(File.open(File.join(documents_dir, 'DocumentElements/Range/RangeGet.doc')), 'id0.0.0', request_document_parameters, 'id0.0.1', nil, nil)
+      save_request = SaveAsRangeOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.doc')), 'id0.0.0', request_document_parameters, 'id0.0.1', nil, nil)
       @words_api.save_as_range_online(save_request)
     end
 
@@ -1602,10 +1568,9 @@ module AsposeWordsCloud
 
     def test_update_bookmark
       bookmark_name= 'aspose'
-      remote_file_name= 'Sample.docx'
 
       request_bookmark_data = BookmarkData.new({:Name => bookmark_name, :Text => 'This will be the text for Aspose'})
-      update_request = UpdateBookmarkRequest.new(remote_file_name, bookmark_name, request_bookmark_data, nil, nil, nil, nil, remote_file_name, nil, nil)
+      update_request = UpdateBookmarkRequest.new('Sample.docx', bookmark_name, request_bookmark_data, nil, nil, nil, nil, nil, nil, nil)
       @words_api.update_bookmark(update_request)
     end
 
@@ -1719,10 +1684,8 @@ module AsposeWordsCloud
     end
 
     def test_update_form_field
-      remote_file_name= 'Sample.docx'
-
       request_form_field = FormFieldTextInput.new({:Name => 'FullName', :Enabled => true, :CalculateOnExit => true, :StatusText => '', :TextInputType => 'Regular', :TextInputDefault => 'No name'})
-      update_request = UpdateFormFieldRequest.new(remote_file_name, 0, request_form_field, nil, nil, nil, nil, nil, remote_file_name, nil, nil)
+      update_request = UpdateFormFieldRequest.new('Sample.docx', 0, request_form_field, nil, nil, nil, nil, nil, nil, nil, nil)
       @words_api.update_form_field(update_request)
     end
 
@@ -1748,14 +1711,14 @@ module AsposeWordsCloud
     def test_update_list_level_online
       documents_dir = 'ExamplesData'
       request_list_update = ListLevelUpdate.new({:Alignment => 'Right'})
-      update_request = UpdateListLevelOnlineRequest.new(File.open(File.join(documents_dir, 'DocumentElements/Lists/ListsGet.doc')), 1, request_list_update, 1, nil, nil, nil, nil, nil)
+      update_request = UpdateListLevelOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.doc')), 1, request_list_update, 1, nil, nil, nil, nil, nil)
       @words_api.update_list_level_online(update_request)
     end
 
     def test_update_list_online
       documents_dir = 'ExamplesData'
       request_list_update = ListUpdate.new({:IsRestartAtEachSection => true})
-      update_request = UpdateListOnlineRequest.new(File.open(File.join(documents_dir, 'DocumentElements/Lists/ListsGet.doc')), 1, request_list_update, nil, nil, nil, nil, nil)
+      update_request = UpdateListOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.doc')), 1, request_list_update, nil, nil, nil, nil, nil)
       @words_api.update_list_online(update_request)
     end
 
@@ -1792,10 +1755,8 @@ module AsposeWordsCloud
     end
 
     def test_update_run_font
-      remote_file_name= 'Sample.docx'
-
       request_font_dto = Font.new({:Bold => true})
-      update_request = UpdateRunFontRequest.new(remote_file_name, 'paragraphs/0', 0, request_font_dto, nil, nil, nil, nil, remote_file_name, nil, nil)
+      update_request = UpdateRunFontRequest.new('Sample.docx', 'paragraphs/0', 0, request_font_dto, nil, nil, nil, nil, nil, nil, nil)
       @words_api.update_run_font(update_request)
     end
 
@@ -1809,7 +1770,7 @@ module AsposeWordsCloud
     def test_update_run_online
       documents_dir = 'ExamplesData'
       request_run = RunUpdate.new({:Text => 'run with text'})
-      update_request = UpdateRunOnlineRequest.new(File.open(File.join(documents_dir, 'DocumentElements/Runs/Run.doc')), 'paragraphs/1', request_run, 0, nil, nil, nil, nil, nil)
+      update_request = UpdateRunOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.doc')), 'paragraphs/1', request_run, 0, nil, nil, nil, nil, nil)
       @words_api.update_run_online(update_request)
     end
 
