@@ -4,5 +4,5 @@ AsposeWordsCloud.configure do |config|
 end
 @words_api = WordsAPI.new
 documents_dir = '...'
-request = GetTablesOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), '', nil, nil)
+request = GetTablesOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), nil, nil, nil)
 @words_api.get_tables_online(request)

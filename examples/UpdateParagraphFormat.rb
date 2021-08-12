@@ -4,5 +4,5 @@ AsposeWordsCloud.configure do |config|
 end
 @words_api = WordsAPI.new
 request_paragraph_format_dto = ParagraphFormatUpdate.new({:Alignment => 'Right'})
-update_request = UpdateParagraphFormatRequest.new('Sample.docx', 0, request_paragraph_format_dto, '', nil, nil, nil, nil, nil, nil, nil)
+update_request = UpdateParagraphFormatRequest.new('Sample.docx', 0, request_paragraph_format_dto, nil, nil, nil, nil, nil, nil, nil, nil)
 @words_api.update_paragraph_format(update_request)

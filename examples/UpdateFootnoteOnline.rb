@@ -5,5 +5,5 @@ end
 @words_api = WordsAPI.new
 documents_dir = '...'
 request_footnote_dto = FootnoteUpdate.new({:Text => 'new text is here'})
-update_request = UpdateFootnoteOnlineRequest.new(File.open(File.join(documents_dir, '/Footnote.doc')), request_footnote_dto, 0, '', nil, nil, nil, nil, nil)
+update_request = UpdateFootnoteOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.doc')), request_footnote_dto, 0, nil, nil, nil, nil, nil, nil)
 @words_api.update_footnote_online(update_request)

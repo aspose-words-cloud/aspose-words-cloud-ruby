@@ -4,5 +4,5 @@ AsposeWordsCloud.configure do |config|
 end
 @words_api = WordsAPI.new
 documents_dir = '...'
-request = GetParagraphListFormatOnlineRequest.new(File.open(File.join(documents_dir, '/ParagraphGetListFormat.doc')), 0, '', nil, nil)
+request = GetParagraphListFormatOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.doc')), 0, nil, nil, nil)
 @words_api.get_paragraph_list_format_online(request)

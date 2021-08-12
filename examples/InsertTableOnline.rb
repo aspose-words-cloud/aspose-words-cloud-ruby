@@ -5,5 +5,5 @@ end
 @words_api = WordsAPI.new
 documents_dir = '...'
 request_table = TableInsert.new({:ColumnsCount => 5, :RowsCount => 4})
-insert_request = InsertTableOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), request_table, '', nil, nil, nil, nil, nil)
+insert_request = InsertTableOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), request_table, nil, nil, nil, nil, nil, nil)
 @words_api.insert_table_online(insert_request)

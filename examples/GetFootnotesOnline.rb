@@ -4,5 +4,5 @@ AsposeWordsCloud.configure do |config|
 end
 @words_api = WordsAPI.new
 documents_dir = '...'
-request = GetFootnotesOnlineRequest.new(File.open(File.join(documents_dir, '/Footnote.doc')), '', nil, nil)
+request = GetFootnotesOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.doc')), nil, nil, nil)
 @words_api.get_footnotes_online(request)

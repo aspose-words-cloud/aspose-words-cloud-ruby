@@ -4,5 +4,5 @@ AsposeWordsCloud.configure do |config|
 end
 @words_api = WordsAPI.new
 documents_dir = '...'
-request = GetFormFieldsOnlineRequest.new(File.open(File.join(documents_dir, '/FormFilled.docx')), 'sections/0', nil, nil)
+request = GetFormFieldsOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 'sections/0', nil, nil)
 @words_api.get_form_fields_online(request)

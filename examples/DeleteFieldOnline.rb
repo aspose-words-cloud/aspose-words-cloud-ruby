@@ -4,5 +4,5 @@ AsposeWordsCloud.configure do |config|
 end
 @words_api = WordsAPI.new
 documents_dir = '...'
-delete_request = DeleteFieldOnlineRequest.new(File.open(File.join(documents_dir, '/GetField.docx')), 0, 'sections/0/paragraphs/0', nil, nil, nil, nil, nil)
+delete_request = DeleteFieldOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 0, 'sections/0/paragraphs/0', nil, nil, nil, nil, nil)
 @words_api.delete_field_online(delete_request)

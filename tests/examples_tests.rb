@@ -120,7 +120,7 @@ module AsposeWordsCloud
 
     def test_convert_document
       documents_dir = 'ExamplesData'
-      convert_request = ConvertDocumentRequest.new(File.open(File.join(documents_dir, '/test_uploadfile.docx')), 'pdf', nil, nil, nil, nil)
+      convert_request = ConvertDocumentRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 'pdf', nil, nil, nil, nil)
       @words_api.convert_document(convert_request)
     end
 
@@ -181,7 +181,7 @@ module AsposeWordsCloud
 
     def test_delete_all_paragraph_tab_stops_online
       documents_dir = 'ExamplesData'
-      delete_request = DeleteAllParagraphTabStopsOnlineRequest.new(File.open(File.join(documents_dir, '/ParagraphTabStops.docx')), 0, '', nil, nil, nil)
+      delete_request = DeleteAllParagraphTabStopsOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 0, nil, nil, nil, nil)
       @words_api.delete_all_paragraph_tab_stops_online(delete_request)
     end
 
@@ -279,7 +279,7 @@ module AsposeWordsCloud
 
     def test_delete_drawing_object_online
       documents_dir = 'ExamplesData'
-      delete_request = DeleteDrawingObjectOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 0, '', nil, nil, nil, nil, nil)
+      delete_request = DeleteDrawingObjectOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 0, nil, nil, nil, nil, nil, nil)
       @words_api.delete_drawing_object_online(delete_request)
     end
 
@@ -290,18 +290,18 @@ module AsposeWordsCloud
 
     def test_delete_field_online
       documents_dir = 'ExamplesData'
-      delete_request = DeleteFieldOnlineRequest.new(File.open(File.join(documents_dir, '/GetField.docx')), 0, 'sections/0/paragraphs/0', nil, nil, nil, nil, nil)
+      delete_request = DeleteFieldOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 0, 'sections/0/paragraphs/0', nil, nil, nil, nil, nil)
       @words_api.delete_field_online(delete_request)
     end
 
     def test_delete_fields
-      delete_request = DeleteFieldsRequest.new('Sample.docx', '', nil, nil, nil, nil, nil, nil, nil)
+      delete_request = DeleteFieldsRequest.new('Sample.docx', nil, nil, nil, nil, nil, nil, nil, nil)
       @words_api.delete_fields(delete_request)
     end
 
     def test_delete_fields_online
       documents_dir = 'ExamplesData'
-      delete_request = DeleteFieldsOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), '', nil, nil, nil, nil, nil)
+      delete_request = DeleteFieldsOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), nil, nil, nil, nil, nil, nil)
       @words_api.delete_fields_online(delete_request)
     end
 
@@ -322,7 +322,7 @@ module AsposeWordsCloud
 
     def test_delete_footnote_online
       documents_dir = 'ExamplesData'
-      delete_request = DeleteFootnoteOnlineRequest.new(File.open(File.join(documents_dir, '/Footnote.doc')), 0, '', nil, nil, nil, nil, nil)
+      delete_request = DeleteFootnoteOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.doc')), 0, nil, nil, nil, nil, nil, nil)
       @words_api.delete_footnote_online(delete_request)
     end
 
@@ -335,7 +335,7 @@ module AsposeWordsCloud
 
     def test_delete_form_field_online
       documents_dir = 'ExamplesData'
-      delete_request = DeleteFormFieldOnlineRequest.new(File.open(File.join(documents_dir, '/FormFilled.docx')), 0, 'sections/0', nil, nil, nil, nil, nil)
+      delete_request = DeleteFormFieldOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 0, 'sections/0', nil, nil, nil, nil, nil)
       @words_api.delete_form_field_online(delete_request)
     end
 
@@ -379,7 +379,7 @@ module AsposeWordsCloud
 
     def test_delete_office_math_object_online
       documents_dir = 'ExamplesData'
-      delete_request = DeleteOfficeMathObjectOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 0, '', nil, nil, nil, nil, nil)
+      delete_request = DeleteOfficeMathObjectOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 0, nil, nil, nil, nil, nil, nil)
       @words_api.delete_office_math_object_online(delete_request)
     end
 
@@ -395,13 +395,13 @@ module AsposeWordsCloud
 
     def test_delete_paragraph_list_format_online
       documents_dir = 'ExamplesData'
-      delete_request = DeleteParagraphListFormatOnlineRequest.new(File.open(File.join(documents_dir, '/ParagraphDeleteListFormat.doc')), 0, '', nil, nil, nil, nil, nil)
+      delete_request = DeleteParagraphListFormatOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.doc')), 0, nil, nil, nil, nil, nil, nil)
       @words_api.delete_paragraph_list_format_online(delete_request)
     end
 
     def test_delete_paragraph_online
       documents_dir = 'ExamplesData'
-      delete_request = DeleteParagraphOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 0, '', nil, nil, nil, nil, nil)
+      delete_request = DeleteParagraphOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 0, nil, nil, nil, nil, nil, nil)
       @words_api.delete_paragraph_online(delete_request)
     end
 
@@ -412,7 +412,7 @@ module AsposeWordsCloud
 
     def test_delete_paragraph_tab_stop_online
       documents_dir = 'ExamplesData'
-      delete_request = DeleteParagraphTabStopOnlineRequest.new(File.open(File.join(documents_dir, '/ParagraphTabStops.docx')), 72.0, 0, '', nil, nil, nil)
+      delete_request = DeleteParagraphTabStopOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 72.0, 0, nil, nil, nil, nil)
       @words_api.delete_paragraph_tab_stop_online(delete_request)
     end
 
@@ -456,7 +456,7 @@ module AsposeWordsCloud
 
     def test_delete_table_online
       documents_dir = 'ExamplesData'
-      delete_request = DeleteTableOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 1, '', nil, nil, nil, nil, nil)
+      delete_request = DeleteTableOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 1, nil, nil, nil, nil, nil, nil)
       @words_api.delete_table_online(delete_request)
     end
 
@@ -733,7 +733,7 @@ module AsposeWordsCloud
 
     def test_get_field_online
       documents_dir = 'ExamplesData'
-      request = GetFieldOnlineRequest.new(File.open(File.join(documents_dir, '/GetField.docx')), 0, 'sections/0/paragraphs/0', nil, nil)
+      request = GetFieldOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 0, 'sections/0/paragraphs/0', nil, nil)
       @words_api.get_field_online(request)
     end
 
@@ -744,7 +744,7 @@ module AsposeWordsCloud
 
     def test_get_fields_online
       documents_dir = 'ExamplesData'
-      request = GetFieldsOnlineRequest.new(File.open(File.join(documents_dir, '/GetField.docx')), 'sections/0', nil, nil)
+      request = GetFieldsOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 'sections/0', nil, nil)
       @words_api.get_fields_online(request)
     end
 
@@ -760,7 +760,7 @@ module AsposeWordsCloud
 
     def test_get_footnote_online
       documents_dir = 'ExamplesData'
-      request = GetFootnoteOnlineRequest.new(File.open(File.join(documents_dir, '/Footnote.doc')), 0, '', nil, nil)
+      request = GetFootnoteOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.doc')), 0, nil, nil, nil)
       @words_api.get_footnote_online(request)
     end
 
@@ -771,7 +771,7 @@ module AsposeWordsCloud
 
     def test_get_footnotes_online
       documents_dir = 'ExamplesData'
-      request = GetFootnotesOnlineRequest.new(File.open(File.join(documents_dir, '/Footnote.doc')), '', nil, nil)
+      request = GetFootnotesOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.doc')), nil, nil, nil)
       @words_api.get_footnotes_online(request)
     end
 
@@ -782,7 +782,7 @@ module AsposeWordsCloud
 
     def test_get_form_field_online
       documents_dir = 'ExamplesData'
-      request = GetFormFieldOnlineRequest.new(File.open(File.join(documents_dir, '/FormFilled.docx')), 0, 'sections/0', nil, nil)
+      request = GetFormFieldOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 0, 'sections/0', nil, nil)
       @words_api.get_form_field_online(request)
     end
 
@@ -793,7 +793,7 @@ module AsposeWordsCloud
 
     def test_get_form_fields_online
       documents_dir = 'ExamplesData'
-      request = GetFormFieldsOnlineRequest.new(File.open(File.join(documents_dir, '/FormFilled.docx')), 'sections/0', nil, nil)
+      request = GetFormFieldsOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 'sections/0', nil, nil)
       @words_api.get_form_fields_online(request)
     end
 
@@ -859,7 +859,7 @@ module AsposeWordsCloud
 
     def test_get_office_math_object_online
       documents_dir = 'ExamplesData'
-      request = GetOfficeMathObjectOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 0, '', nil, nil)
+      request = GetOfficeMathObjectOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 0, nil, nil, nil)
       @words_api.get_office_math_object_online(request)
     end
 
@@ -870,7 +870,7 @@ module AsposeWordsCloud
 
     def test_get_office_math_objects_online
       documents_dir = 'ExamplesData'
-      request = GetOfficeMathObjectsOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), '', nil, nil)
+      request = GetOfficeMathObjectsOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), nil, nil, nil)
       @words_api.get_office_math_objects_online(request)
     end
 
@@ -886,7 +886,7 @@ module AsposeWordsCloud
 
     def test_get_paragraph_format_online
       documents_dir = 'ExamplesData'
-      request = GetParagraphFormatOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 0, '', nil, nil)
+      request = GetParagraphFormatOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 0, nil, nil, nil)
       @words_api.get_paragraph_format_online(request)
     end
 
@@ -897,7 +897,7 @@ module AsposeWordsCloud
 
     def test_get_paragraph_list_format_online
       documents_dir = 'ExamplesData'
-      request = GetParagraphListFormatOnlineRequest.new(File.open(File.join(documents_dir, '/ParagraphGetListFormat.doc')), 0, '', nil, nil)
+      request = GetParagraphListFormatOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.doc')), 0, nil, nil, nil)
       @words_api.get_paragraph_list_format_online(request)
     end
 
@@ -925,7 +925,7 @@ module AsposeWordsCloud
 
     def test_get_paragraph_tab_stops_online
       documents_dir = 'ExamplesData'
-      request = GetParagraphTabStopsOnlineRequest.new(File.open(File.join(documents_dir, '/ParagraphTabStops.docx')), 0, '', nil, nil)
+      request = GetParagraphTabStopsOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 0, nil, nil, nil)
       @words_api.get_paragraph_tab_stops_online(request)
     end
 
@@ -1073,7 +1073,7 @@ module AsposeWordsCloud
 
     def test_get_table_online
       documents_dir = 'ExamplesData'
-      request = GetTableOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 1, '', nil, nil)
+      request = GetTableOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 1, nil, nil, nil)
       @words_api.get_table_online(request)
     end
 
@@ -1084,7 +1084,7 @@ module AsposeWordsCloud
 
     def test_get_table_properties_online
       documents_dir = 'ExamplesData'
-      request = GetTablePropertiesOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 1, '', nil, nil)
+      request = GetTablePropertiesOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 1, nil, nil, nil)
       @words_api.get_table_properties_online(request)
     end
 
@@ -1117,7 +1117,7 @@ module AsposeWordsCloud
 
     def test_get_tables_online
       documents_dir = 'ExamplesData'
-      request = GetTablesOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), '', nil, nil)
+      request = GetTablesOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), nil, nil, nil)
       @words_api.get_tables_online(request)
     end
 
@@ -1165,7 +1165,7 @@ module AsposeWordsCloud
     def test_insert_drawing_object_online
       documents_dir = 'ExamplesData'
       request_drawing_object = DrawingObjectInsert.new({:Height => 0, :Left => 0, :Top => 0, :Width => 0, :RelativeHorizontalPosition => 'Margin', :RelativeVerticalPosition => 'Margin', :WrapType => 'Inline'})
-      insert_request = InsertDrawingObjectOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), request_drawing_object, File.open(File.join(documents_dir, 'Common/aspose-cloud.png')), '', nil, nil, nil, nil, nil)
+      insert_request = InsertDrawingObjectOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), request_drawing_object, File.open(File.join(documents_dir, 'Common/aspose-cloud.png')), nil, nil, nil, nil, nil, nil)
       @words_api.insert_drawing_object_online(insert_request)
     end
 
@@ -1178,7 +1178,7 @@ module AsposeWordsCloud
     def test_insert_field_online
       documents_dir = 'ExamplesData'
       request_field = FieldInsert.new({:FieldCode => '{ NUMPAGES }'})
-      insert_request = InsertFieldOnlineRequest.new(File.open(File.join(documents_dir, '/GetField.docx')), request_field, 'sections/0/paragraphs/0', nil, nil, nil, nil, nil, nil)
+      insert_request = InsertFieldOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), request_field, 'sections/0/paragraphs/0', nil, nil, nil, nil, nil, nil)
       @words_api.insert_field_online(insert_request)
     end
 
@@ -1191,7 +1191,7 @@ module AsposeWordsCloud
     def test_insert_footnote_online
       documents_dir = 'ExamplesData'
       request_footnote_dto = FootnoteInsert.new({:FootnoteType => 'Endnote', :Text => 'test endnote'})
-      insert_request = InsertFootnoteOnlineRequest.new(File.open(File.join(documents_dir, '/Footnote.doc')), request_footnote_dto, '', nil, nil, nil, nil, nil)
+      insert_request = InsertFootnoteOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.doc')), request_footnote_dto, nil, nil, nil, nil, nil, nil)
       @words_api.insert_footnote_online(insert_request)
     end
 
@@ -1206,7 +1206,7 @@ module AsposeWordsCloud
     def test_insert_form_field_online
       documents_dir = 'ExamplesData'
       request_form_field = FormFieldTextInput.new({:Name => 'FullName', :Enabled => true, :CalculateOnExit => true, :StatusText => '', :TextInputType => 'Regular', :TextInputDefault => '123', :TextInputFormat => 'UPPERCASE'})
-      insert_request = InsertFormFieldOnlineRequest.new(File.open(File.join(documents_dir, '/FormFilled.docx')), request_form_field, 'sections/0/paragraphs/0', nil, nil, nil, nil, nil, nil)
+      insert_request = InsertFormFieldOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), request_form_field, 'sections/0/paragraphs/0', nil, nil, nil, nil, nil, nil)
       @words_api.insert_form_field_online(insert_request)
     end
 
@@ -1243,7 +1243,7 @@ module AsposeWordsCloud
     def test_insert_or_update_paragraph_tab_stop_online
       documents_dir = 'ExamplesData'
       request_tab_stop_insert_dto = TabStopInsert.new({:Alignment => 'Left', :Leader => 'None', :Position => 72})
-      insert_request = InsertOrUpdateParagraphTabStopOnlineRequest.new(File.open(File.join(documents_dir, '/ParagraphTabStops.docx')), request_tab_stop_insert_dto, 0, '', nil, nil, nil)
+      insert_request = InsertOrUpdateParagraphTabStopOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), request_tab_stop_insert_dto, 0, nil, nil, nil, nil)
       @words_api.insert_or_update_paragraph_tab_stop_online(insert_request)
     end
 
@@ -1323,7 +1323,7 @@ module AsposeWordsCloud
     def test_insert_table_online
       documents_dir = 'ExamplesData'
       request_table = TableInsert.new({:ColumnsCount => 5, :RowsCount => 4})
-      insert_request = InsertTableOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), request_table, '', nil, nil, nil, nil, nil)
+      insert_request = InsertTableOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), request_table, nil, nil, nil, nil, nil, nil)
       @words_api.insert_table_online(insert_request)
     end
 
@@ -1456,7 +1456,7 @@ module AsposeWordsCloud
 
     def test_render_math_object_online
       documents_dir = 'ExamplesData'
-      render_request = RenderMathObjectOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 'png', 0, '', nil, nil, nil, nil)
+      render_request = RenderMathObjectOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 'png', 0, nil, nil, nil, nil, nil)
       @words_api.render_math_object_online(render_request)
     end
 
@@ -1478,7 +1478,7 @@ module AsposeWordsCloud
 
     def test_render_paragraph_online
       documents_dir = 'ExamplesData'
-      render_request = RenderParagraphOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 'png', 0, '', nil, nil, nil, nil)
+      render_request = RenderParagraphOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 'png', 0, nil, nil, nil, nil, nil)
       @words_api.render_paragraph_online(render_request)
     end
 
@@ -1489,7 +1489,7 @@ module AsposeWordsCloud
 
     def test_render_table_online
       documents_dir = 'ExamplesData'
-      render_request = RenderTableOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 'png', 0, '', nil, nil, nil, nil)
+      render_request = RenderTableOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 'png', 0, nil, nil, nil, nil, nil)
       @words_api.render_table_online(render_request)
     end
 
@@ -1677,7 +1677,7 @@ module AsposeWordsCloud
     def test_update_drawing_object_online
       documents_dir = 'ExamplesData'
       request_drawing_object = DrawingObjectUpdate.new({:Left => 0})
-      update_request = UpdateDrawingObjectOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), request_drawing_object, File.open(File.join(documents_dir, 'Common/aspose-cloud.png')), 0, '', nil, nil, nil, nil, nil)
+      update_request = UpdateDrawingObjectOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), request_drawing_object, File.open(File.join(documents_dir, 'Common/aspose-cloud.png')), 0, nil, nil, nil, nil, nil, nil)
       @words_api.update_drawing_object_online(update_request)
     end
 
@@ -1690,7 +1690,7 @@ module AsposeWordsCloud
     def test_update_field_online
       documents_dir = 'ExamplesData'
       request_field = FieldUpdate.new({:FieldCode => '{ NUMPAGES }'})
-      update_request = UpdateFieldOnlineRequest.new(File.open(File.join(documents_dir, '/GetField.docx')), request_field, 0, 'sections/0/paragraphs/0', nil, nil, nil, nil, nil)
+      update_request = UpdateFieldOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), request_field, 0, 'sections/0/paragraphs/0', nil, nil, nil, nil, nil)
       @words_api.update_field_online(update_request)
     end
 
@@ -1714,7 +1714,7 @@ module AsposeWordsCloud
     def test_update_footnote_online
       documents_dir = 'ExamplesData'
       request_footnote_dto = FootnoteUpdate.new({:Text => 'new text is here'})
-      update_request = UpdateFootnoteOnlineRequest.new(File.open(File.join(documents_dir, '/Footnote.doc')), request_footnote_dto, 0, '', nil, nil, nil, nil, nil)
+      update_request = UpdateFootnoteOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.doc')), request_footnote_dto, 0, nil, nil, nil, nil, nil, nil)
       @words_api.update_footnote_online(update_request)
     end
 
@@ -1729,7 +1729,7 @@ module AsposeWordsCloud
     def test_update_form_field_online
       documents_dir = 'ExamplesData'
       request_form_field = FormFieldTextInput.new({:Name => 'FullName', :Enabled => true, :CalculateOnExit => true, :StatusText => '', :TextInputType => 'Regular', :TextInputDefault => 'No name'})
-      update_request = UpdateFormFieldOnlineRequest.new(File.open(File.join(documents_dir, '/FormFilled.docx')), request_form_field, 0, 'sections/0', nil, nil, nil, nil, nil)
+      update_request = UpdateFormFieldOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), request_form_field, 0, 'sections/0', nil, nil, nil, nil, nil)
       @words_api.update_form_field_online(update_request)
     end
 
@@ -1761,14 +1761,14 @@ module AsposeWordsCloud
 
     def test_update_paragraph_format
       request_paragraph_format_dto = ParagraphFormatUpdate.new({:Alignment => 'Right'})
-      update_request = UpdateParagraphFormatRequest.new('Sample.docx', 0, request_paragraph_format_dto, '', nil, nil, nil, nil, nil, nil, nil)
+      update_request = UpdateParagraphFormatRequest.new('Sample.docx', 0, request_paragraph_format_dto, nil, nil, nil, nil, nil, nil, nil, nil)
       @words_api.update_paragraph_format(update_request)
     end
 
     def test_update_paragraph_format_online
       documents_dir = 'ExamplesData'
       request_paragraph_format_dto = ParagraphFormatUpdate.new({:Alignment => 'Right'})
-      update_request = UpdateParagraphFormatOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), request_paragraph_format_dto, 0, '', nil, nil, nil, nil, nil)
+      update_request = UpdateParagraphFormatOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), request_paragraph_format_dto, 0, nil, nil, nil, nil, nil, nil)
       @words_api.update_paragraph_format_online(update_request)
     end
 
@@ -1781,7 +1781,7 @@ module AsposeWordsCloud
     def test_update_paragraph_list_format_online
       documents_dir = 'ExamplesData'
       request_list_format_dto = ListFormatUpdate.new({:ListId => 2})
-      update_request = UpdateParagraphListFormatOnlineRequest.new(File.open(File.join(documents_dir, '/ParagraphUpdateListFormat.doc')), request_list_format_dto, 0, '', nil, nil, nil, nil, nil)
+      update_request = UpdateParagraphListFormatOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.doc')), request_list_format_dto, 0, nil, nil, nil, nil, nil, nil)
       @words_api.update_paragraph_list_format_online(update_request)
     end
 
@@ -1861,7 +1861,7 @@ module AsposeWordsCloud
     def test_update_table_properties_online
       documents_dir = 'ExamplesData'
       request_properties = TableProperties.new({:Alignment => 'Right', :AllowAutoFit => false, :Bidi => true, :BottomPadding => 1, :CellSpacing => 2, :StyleOptions => 'ColumnBands'})
-      update_request = UpdateTablePropertiesOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), request_properties, 1, '', nil, nil, nil, nil, nil)
+      update_request = UpdateTablePropertiesOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), request_properties, 1, nil, nil, nil, nil, nil, nil)
       @words_api.update_table_properties_online(update_request)
     end
 

@@ -4,5 +4,5 @@ AsposeWordsCloud.configure do |config|
 end
 @words_api = WordsAPI.new
 documents_dir = '...'
-delete_request = DeleteFootnoteOnlineRequest.new(File.open(File.join(documents_dir, '/Footnote.doc')), 0, '', nil, nil, nil, nil, nil)
+delete_request = DeleteFootnoteOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.doc')), 0, nil, nil, nil, nil, nil, nil)
 @words_api.delete_footnote_online(delete_request)
