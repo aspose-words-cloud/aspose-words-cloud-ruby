@@ -55,7 +55,8 @@ module AsposeWordsCloud
     # Test for deleting macros online.
     #
     def test_delete_macros_online
-      request = DeleteMacrosOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), nil, nil, nil, nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = DeleteMacrosOnlineRequest.new(request_document, nil, nil, nil, nil, nil)
 
       result = @words_api.delete_macros_online(request)
       assert_equal false, result.nil?

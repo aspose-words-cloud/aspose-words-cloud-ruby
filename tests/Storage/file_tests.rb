@@ -44,7 +44,8 @@ module AsposeWordsCloud
     def test_upload_file
       remote_file_name = 'TestUploadFile.docx'
 
-      request = UploadFileRequest.new(File.open(File.join(local_test_folder, local_file)), remote_data_folder + '/' + remote_file_name, nil)
+      request_file_content = File.open(File.join(local_test_folder, local_file))
+      request = UploadFileRequest.new(request_file_content, remote_data_folder + '/' + remote_file_name, nil)
 
       result = @words_api.upload_file(request)
       assert_equal false, result.nil?

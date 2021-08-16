@@ -56,7 +56,8 @@ module AsposeWordsCloud
     # Test for getting hyperlink by specified index online.
     #
     def test_get_document_hyperlink_by_index_online
-      request = GetDocumentHyperlinkByIndexOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 0, nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = GetDocumentHyperlinkByIndexOnlineRequest.new(request_document, 0, nil, nil)
 
       result = @words_api.get_document_hyperlink_by_index_online(request)
       assert_equal false, result.nil?
@@ -80,7 +81,8 @@ module AsposeWordsCloud
     # Test for getting hyperlinks online.
     #
     def test_get_document_hyperlinks_online
-      request = GetDocumentHyperlinksOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = GetDocumentHyperlinksOnlineRequest.new(request_document, nil, nil)
 
       result = @words_api.get_document_hyperlinks_online(request)
       assert_equal false, result.nil?

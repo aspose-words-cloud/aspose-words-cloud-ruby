@@ -45,7 +45,9 @@ module AsposeWordsCloud
       local_document_file = 'SampleExecuteTemplate.docx'
       local_data_file = 'SampleExecuteTemplateData.txt'
 
-      request = ExecuteMailMergeOnlineRequest.new(File.open(File.join(local_test_folder, mail_merge_folder + '/' + local_document_file)), File.open(File.join(local_test_folder, mail_merge_folder + '/' + local_data_file)), nil, nil, nil)
+      request_template = File.open(File.join(local_test_folder, mail_merge_folder + '/' + local_document_file))
+      request_data = File.open(File.join(local_test_folder, mail_merge_folder + '/' + local_data_file))
+      request = ExecuteMailMergeOnlineRequest.new(request_template, request_data, nil, nil, nil)
 
       result = @words_api.execute_mail_merge_online(request)
       assert_equal false, result.nil?

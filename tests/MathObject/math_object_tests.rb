@@ -56,7 +56,8 @@ module AsposeWordsCloud
     # Test for getting mathObjects online.
     #
     def test_get_office_math_objects_online
-      request = GetOfficeMathObjectsOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), '', nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = GetOfficeMathObjectsOnlineRequest.new(request_document, '', nil, nil)
 
       result = @words_api.get_office_math_objects_online(request)
       assert_equal false, result.nil?
@@ -94,7 +95,8 @@ module AsposeWordsCloud
     # Test for getting mathObject online.
     #
     def test_get_office_math_object_online
-      request = GetOfficeMathObjectOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 0, '', nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = GetOfficeMathObjectOnlineRequest.new(request_document, 0, '', nil, nil)
 
       result = @words_api.get_office_math_object_online(request)
       assert_equal false, result.nil?
@@ -132,7 +134,8 @@ module AsposeWordsCloud
     # Test for rendering mathObject.
     #
     def test_render_math_object_online
-      request = RenderMathObjectOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 'png', 0, '', nil, nil, nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = RenderMathObjectOnlineRequest.new(request_document, 'png', 0, '', nil, nil, nil, nil)
 
       result = @words_api.render_math_object_online(request)
       assert_equal false, result.nil?
@@ -169,7 +172,8 @@ module AsposeWordsCloud
     # Test for deleting mathObject online.
     #
     def test_delete_office_math_object_online
-      request = DeleteOfficeMathObjectOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 0, '', nil, nil, nil, nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = DeleteOfficeMathObjectOnlineRequest.new(request_document, 0, '', nil, nil, nil, nil, nil)
 
       result = @words_api.delete_office_math_object_online(request)
       assert_equal false, result.nil?

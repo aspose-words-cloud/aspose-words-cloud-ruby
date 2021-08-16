@@ -56,7 +56,8 @@ module AsposeWordsCloud
     # Test for accepting revisions in document online.
     #
     def test_accept_all_revisions_online
-      request = AcceptAllRevisionsOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), nil, nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = AcceptAllRevisionsOnlineRequest.new(request_document, nil, nil, nil)
 
       result = @words_api.accept_all_revisions_online(request)
       assert_equal false, result.nil?
@@ -80,7 +81,8 @@ module AsposeWordsCloud
     # Test for rejecting revisions in document online.
     #
     def test_reject_all_revisions_online
-      request = RejectAllRevisionsOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), nil, nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = RejectAllRevisionsOnlineRequest.new(request_document, nil, nil, nil)
 
       result = @words_api.reject_all_revisions_online(request)
       assert_equal false, result.nil?

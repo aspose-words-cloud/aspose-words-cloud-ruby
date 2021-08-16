@@ -56,7 +56,8 @@ module AsposeWordsCloud
     # Test for getting section by index online.
     #
     def test_get_section_online
-      request = GetSectionOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 0, nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = GetSectionOnlineRequest.new(request_document, 0, nil, nil)
 
       result = @words_api.get_section_online(request)
       assert_equal false, result.nil?
@@ -80,7 +81,8 @@ module AsposeWordsCloud
     # Test for getting sections online.
     #
     def test_get_sections_online
-      request = GetSectionsOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = GetSectionsOnlineRequest.new(request_document, nil, nil)
 
       result = @words_api.get_sections_online(request)
       assert_equal false, result.nil?
@@ -103,7 +105,8 @@ module AsposeWordsCloud
     # Test for delete a section online.
     #
     def test_delete_section_online
-      request = DeleteSectionOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 0, nil, nil, nil, nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = DeleteSectionOnlineRequest.new(request_document, 0, nil, nil, nil, nil, nil)
 
       result = @words_api.delete_section_online(request)
       assert_equal false, result.nil?

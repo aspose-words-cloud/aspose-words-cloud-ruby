@@ -56,7 +56,8 @@ module AsposeWordsCloud
     # Test for getting lists from document online.
     #
     def test_get_lists_online
-      request = GetListsOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = GetListsOnlineRequest.new(request_document, nil, nil)
 
       result = @words_api.get_lists_online(request)
       assert_equal false, result.nil?
@@ -80,7 +81,8 @@ module AsposeWordsCloud
     # Test for getting list from document online.
     #
     def test_get_list_online
-      request = GetListOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 1, nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = GetListOnlineRequest.new(request_document, 1, nil, nil)
 
       result = @words_api.get_list_online(request)
       assert_equal false, result.nil?
@@ -94,7 +96,6 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request_list_update = ListUpdate.new({:IsRestartAtEachSection => true})
       request = UpdateListRequest.new(remote_file_name, 1, request_list_update, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_list(request)
@@ -105,8 +106,9 @@ module AsposeWordsCloud
     # Test for updating list from document online.
     #
     def test_update_list_online
-      request_list_update = ListUpdate.new({:IsRestartAtEachSection => true})
-      request = UpdateListOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 1, request_list_update, nil, nil, nil, nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+
+      request = UpdateListOnlineRequest.new(request_document, 1, request_list_update, nil, nil, nil, nil, nil)
 
       result = @words_api.update_list_online(request)
       assert_equal false, result.nil?
@@ -120,7 +122,6 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request_list_update = ListLevelUpdate.new({:Alignment => 'Right'})
       request = UpdateListLevelRequest.new(remote_file_name, 1, 1, request_list_update, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_list_level(request)
@@ -131,8 +132,9 @@ module AsposeWordsCloud
     # Test for updating list level from document online.
     #
     def test_update_list_level_online
-      request_list_update = ListLevelUpdate.new({:Alignment => 'Right'})
-      request = UpdateListLevelOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 1, request_list_update, 1, nil, nil, nil, nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+
+      request = UpdateListLevelOnlineRequest.new(request_document, 1, request_list_update, 1, nil, nil, nil, nil, nil)
 
       result = @words_api.update_list_level_online(request)
       assert_equal false, result.nil?
@@ -146,7 +148,6 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request_list_insert = ListInsert.new({:Template => 'OutlineLegal'})
       request = InsertListRequest.new(remote_file_name, request_list_insert, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_list(request)
@@ -157,8 +158,9 @@ module AsposeWordsCloud
     # Test for inserting list from document online.
     #
     def test_insert_list_online
-      request_list_insert = ListInsert.new({:Template => 'OutlineLegal'})
-      request = InsertListOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), request_list_insert, nil, nil, nil, nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+
+      request = InsertListOnlineRequest.new(request_document, request_list_insert, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_list_online(request)
       assert_equal false, result.nil?

@@ -56,7 +56,8 @@ module AsposeWordsCloud
     # Test for getting document properties online.
     #
     def test_get_document_properties_online
-      request = GetDocumentPropertiesOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = GetDocumentPropertiesOnlineRequest.new(request_document, nil, nil)
 
       result = @words_api.get_document_properties_online(request)
       assert_equal false, result.nil?
@@ -80,7 +81,8 @@ module AsposeWordsCloud
     # A test for GetDocumentProperty online.
     #
     def test_get_document_property_online
-      request = GetDocumentPropertyOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 'Author', nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = GetDocumentPropertyOnlineRequest.new(request_document, 'Author', nil, nil)
 
       result = @words_api.get_document_property_online(request)
       assert_equal false, result.nil?
@@ -103,7 +105,8 @@ module AsposeWordsCloud
     # Test for deleting document property online.
     #
     def test_delete_document_property_online
-      request = DeleteDocumentPropertyOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 'testProp', nil, nil, nil, nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = DeleteDocumentPropertyOnlineRequest.new(request_document, 'testProp', nil, nil, nil, nil, nil)
 
       result = @words_api.delete_document_property_online(request)
       assert_equal false, result.nil?
@@ -117,7 +120,6 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request_property = DocumentPropertyCreateOrUpdate.new({:Value => 'Imran Anwar'})
       request = CreateOrUpdateDocumentPropertyRequest.new(remote_file_name, 'AsposeAuthor', request_property, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
 
       result = @words_api.create_or_update_document_property(request)
@@ -128,8 +130,9 @@ module AsposeWordsCloud
     # Test for updating document property online.
     #
     def test_update_document_property_online
-      request_property = DocumentPropertyCreateOrUpdate.new({:Value => 'Imran Anwar'})
-      request = CreateOrUpdateDocumentPropertyOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 'AsposeAuthor', request_property, nil, nil, nil, nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+
+      request = CreateOrUpdateDocumentPropertyOnlineRequest.new(request_document, 'AsposeAuthor', request_property, nil, nil, nil, nil, nil)
 
       result = @words_api.create_or_update_document_property_online(request)
       assert_equal false, result.nil?

@@ -36,11 +36,14 @@ module AsposeWordsCloud
       file_name = 'test_doc.docx'
 
       # Upload original document to cloud storage.
-      upload_file_request = UploadFileRequest.new(File.open(File.join(documents_dir, file_name)), file_name, nil)
+      my_var1 = File.open(File.join(documents_dir, file_name))
+      my_var2 = file_name;
+      upload_file_request = UploadFileRequest.new(my_var1, my_var2, nil)
       @words_api.upload_file(upload_file_request)
 
       # Calls AcceptAllRevisions method for document in cloud.
-      request = AcceptAllRevisionsRequest.new(file_name, nil, nil, nil, nil, nil)
+      my_var3 = file_name;
+      request = AcceptAllRevisionsRequest.new(my_var3, nil, nil, nil, nil, nil)
       @words_api.accept_all_revisions(request)
     end
 
@@ -49,7 +52,8 @@ module AsposeWordsCloud
       file_name = 'test_doc.docx'
 
       # Calls AcceptAllRevisionsOnline method for document in cloud.
-      request = AcceptAllRevisionsOnlineRequest.new(File.open(File.join(documents_dir, file_name)), nil, nil, nil)
+      request_document = File.open(File.join(documents_dir, file_name))
+      request = AcceptAllRevisionsOnlineRequest.new(request_document, nil, nil, nil)
       accept_all_revisions_online_result = @words_api.accept_all_revisions_online(request)
       FileUtils.cp accept_all_revisions_online_result.document.path, 'test_result.docx'
     end

@@ -66,7 +66,8 @@ module AsposeWordsCloud
     # Test for document classification online.
     #
     def test_classify_document_online
-      request = ClassifyDocumentOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), nil, nil, '3', nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = ClassifyDocumentOnlineRequest.new(request_document, nil, nil, '3', nil)
 
       result = @words_api.classify_document_online(request)
       assert_equal false, result.nil?

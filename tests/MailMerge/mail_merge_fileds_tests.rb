@@ -44,7 +44,8 @@ module AsposeWordsCloud
     def test_get_document_field_names_online
       local_document_file = 'SampleExecuteTemplate.docx'
 
-      request = GetDocumentFieldNamesOnlineRequest.new(File.open(File.join(local_test_folder, mail_merge_folder + '/' + local_document_file)), nil, nil, true)
+      request_template = File.open(File.join(local_test_folder, mail_merge_folder + '/' + local_document_file))
+      request = GetDocumentFieldNamesOnlineRequest.new(request_template, nil, nil, true)
 
       result = @words_api.get_document_field_names_online(request)
       assert_equal false, result.nil?

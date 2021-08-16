@@ -56,7 +56,8 @@ module AsposeWordsCloud
     # Test for document splitting online.
     #
     def test_split_document_online
-      request = SplitDocumentOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 'text', nil, nil, remote_test_out + '/TestSplitDocument.text', 1, 2, nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = SplitDocumentOnlineRequest.new(request_document, 'text', nil, nil, remote_test_out + '/TestSplitDocument.text', 1, 2, nil, nil)
 
       result = @words_api.split_document_online(request)
       assert_equal false, result.nil?

@@ -46,7 +46,6 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request_run = RunUpdate.new({:Text => 'run with text'})
       request = UpdateRunRequest.new(remote_file_name, 'paragraphs/1', 0, request_run, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_run(request)
@@ -57,8 +56,9 @@ module AsposeWordsCloud
     # Test for updating run online.
     #
     def test_update_run_online
-      request_run = RunUpdate.new({:Text => 'run with text'})
-      request = UpdateRunOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 'paragraphs/1', request_run, 0, nil, nil, nil, nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+
+      request = UpdateRunOnlineRequest.new(request_document, 'paragraphs/1', request_run, 0, nil, nil, nil, nil, nil)
 
       result = @words_api.update_run_online(request)
       assert_equal false, result.nil?
@@ -72,7 +72,6 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request_run = RunInsert.new({:Text => 'run with text'})
       request = InsertRunRequest.new(remote_file_name, 'paragraphs/1', request_run, remote_data_folder, nil, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_run(request)
@@ -83,8 +82,9 @@ module AsposeWordsCloud
     # Test for adding run online.
     #
     def test_insert_run_online
-      request_run = RunInsert.new({:Text => 'run with text'})
-      request = InsertRunOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 'paragraphs/1', request_run, nil, nil, nil, nil, nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+
+      request = InsertRunOnlineRequest.new(request_document, 'paragraphs/1', request_run, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_run_online(request)
       assert_equal false, result.nil?
@@ -107,7 +107,8 @@ module AsposeWordsCloud
     # Test for deleting run online.
     #
     def test_delete_run_online
-      request = DeleteRunOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 'paragraphs/1', 0, nil, nil, nil, nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = DeleteRunOnlineRequest.new(request_document, 'paragraphs/1', 0, nil, nil, nil, nil, nil)
 
       result = @words_api.delete_run_online(request)
       assert_equal false, result.nil?

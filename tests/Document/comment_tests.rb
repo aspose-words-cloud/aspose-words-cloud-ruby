@@ -56,7 +56,8 @@ module AsposeWordsCloud
     # Test for getting comment by specified comment's index online.
     #
     def test_get_comment_online
-      request = GetCommentOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 0, nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = GetCommentOnlineRequest.new(request_document, 0, nil, nil)
 
       result = @words_api.get_comment_online(request)
       assert_equal false, result.nil?
@@ -80,7 +81,8 @@ module AsposeWordsCloud
     # Test for getting all comments from document online.
     #
     def test_get_comments_online
-      request = GetCommentsOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = GetCommentsOnlineRequest.new(request_document, nil, nil)
 
       result = @words_api.get_comments_online(request)
       assert_equal false, result.nil?
@@ -94,11 +96,6 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request_comment_range_start_node = NodeLink.new({:NodeId => '0.3.0.3'})
-      request_comment_range_start = DocumentPosition.new({:Node => request_comment_range_start_node, :Offset => 0})
-      request_comment_range_end_node = NodeLink.new({:NodeId => '0.3.0.3'})
-      request_comment_range_end = DocumentPosition.new({:Node => request_comment_range_end_node, :Offset => 0})
-      request_comment = CommentInsert.new({:RangeStart => request_comment_range_start, :RangeEnd => request_comment_range_end, :Initial => 'IA', :Author => 'Imran Anwar', :Text => 'A new Comment'})
       request = InsertCommentRequest.new(remote_file_name, request_comment, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_comment(request)
@@ -109,12 +106,13 @@ module AsposeWordsCloud
     # Test for adding comment online.
     #
     def test_insert_comment_online
-      request_comment_range_start_node = NodeLink.new({:NodeId => '0.3.0.3'})
-      request_comment_range_start = DocumentPosition.new({:Node => request_comment_range_start_node, :Offset => 0})
-      request_comment_range_end_node = NodeLink.new({:NodeId => '0.3.0.3'})
-      request_comment_range_end = DocumentPosition.new({:Node => request_comment_range_end_node, :Offset => 0})
-      request_comment = CommentInsert.new({:RangeStart => request_comment_range_start, :RangeEnd => request_comment_range_end, :Initial => 'IA', :Author => 'Imran Anwar', :Text => 'A new Comment'})
-      request = InsertCommentOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), request_comment, nil, nil, nil, nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+
+
+
+
+
+      request = InsertCommentOnlineRequest.new(request_document, request_comment, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_comment_online(request)
       assert_equal false, result.nil?
@@ -128,11 +126,6 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request_comment_range_start_node = NodeLink.new({:NodeId => '0.3.0'})
-      request_comment_range_start = DocumentPosition.new({:Node => request_comment_range_start_node, :Offset => 0})
-      request_comment_range_end_node = NodeLink.new({:NodeId => '0.3.0'})
-      request_comment_range_end = DocumentPosition.new({:Node => request_comment_range_end_node, :Offset => 0})
-      request_comment = CommentUpdate.new({:RangeStart => request_comment_range_start, :RangeEnd => request_comment_range_end, :Initial => 'IA', :Author => 'Imran Anwar', :Text => 'A new Comment'})
       request = UpdateCommentRequest.new(remote_file_name, 0, request_comment, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_comment(request)
@@ -143,12 +136,13 @@ module AsposeWordsCloud
     # Test for updating comment online.
     #
     def test_update_comment_online
-      request_comment_range_start_node = NodeLink.new({:NodeId => '0.3.0'})
-      request_comment_range_start = DocumentPosition.new({:Node => request_comment_range_start_node, :Offset => 0})
-      request_comment_range_end_node = NodeLink.new({:NodeId => '0.3.0'})
-      request_comment_range_end = DocumentPosition.new({:Node => request_comment_range_end_node, :Offset => 0})
-      request_comment = CommentUpdate.new({:RangeStart => request_comment_range_start, :RangeEnd => request_comment_range_end, :Initial => 'IA', :Author => 'Imran Anwar', :Text => 'A new Comment'})
-      request = UpdateCommentOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 0, request_comment, nil, nil, nil, nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+
+
+
+
+
+      request = UpdateCommentOnlineRequest.new(request_document, 0, request_comment, nil, nil, nil, nil, nil)
 
       result = @words_api.update_comment_online(request)
       assert_equal false, result.nil?
@@ -171,7 +165,8 @@ module AsposeWordsCloud
     # A test for DeleteComment online.
     #
     def test_delete_comment_online
-      request = DeleteCommentOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 0, nil, nil, nil, nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = DeleteCommentOnlineRequest.new(request_document, 0, nil, nil, nil, nil, nil)
 
       result = @words_api.delete_comment_online(request)
       assert_equal false, result.nil?
@@ -194,7 +189,8 @@ module AsposeWordsCloud
     # A test for DeleteComments online.
     #
     def test_delete_comments_online
-      request = DeleteCommentsOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), nil, nil, nil, nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = DeleteCommentsOnlineRequest.new(request_document, nil, nil, nil, nil, nil)
 
       result = @words_api.delete_comments_online(request)
       assert_equal false, result.nil?
