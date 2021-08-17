@@ -161,6 +161,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
+      request_table = TableInsert.new({:ColumnsCount => 5, :RowsCount => 4})
       request = InsertTableRequest.new(remote_file_name, request_table, '', remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_table(request)
@@ -172,7 +173,7 @@ module AsposeWordsCloud
     #
     def test_insert_table_online
       request_document = File.open(File.join(local_test_folder, local_file))
-
+      request_table = TableInsert.new({:ColumnsCount => 5, :RowsCount => 4})
       request = InsertTableOnlineRequest.new(request_document, request_table, '', nil, nil, nil, nil, nil)
 
       result = @words_api.insert_table_online(request)
@@ -187,6 +188,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
+      request_table = TableInsert.new({:ColumnsCount => 5, :RowsCount => 4})
       request = InsertTableRequest.new(remote_file_name, request_table, nil, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_table(request)
@@ -240,6 +242,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
+      request_properties = TableProperties.new({:Alignment => 'Right', :AllowAutoFit => false, :Bidi => true, :BottomPadding => 1, :CellSpacing => 2.0, :StyleOptions => 'ColumnBands'})
       request = UpdateTablePropertiesRequest.new(remote_file_name, 1, request_properties, '', remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_table_properties(request)
@@ -251,7 +254,7 @@ module AsposeWordsCloud
     #
     def test_update_table_properties_online
       request_document = File.open(File.join(local_test_folder, local_file))
-
+      request_properties = TableProperties.new({:Alignment => 'Right', :AllowAutoFit => false, :Bidi => true, :BottomPadding => 1, :CellSpacing => 2, :StyleOptions => 'ColumnBands'})
       request = UpdateTablePropertiesOnlineRequest.new(request_document, request_properties, 1, '', nil, nil, nil, nil, nil)
 
       result = @words_api.update_table_properties_online(request)
@@ -266,6 +269,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
+      request_properties = TableProperties.new({:Alignment => 'Right', :AllowAutoFit => false, :Bidi => true, :BottomPadding => 1.0, :CellSpacing => 2.0, :StyleOptions => 'ColumnBands'})
       request = UpdateTablePropertiesRequest.new(remote_file_name, 1, request_properties, nil, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_table_properties(request)
@@ -329,6 +333,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
+      request_row = TableRowInsert.new({:ColumnsCount => 5})
       request = InsertTableRowRequest.new(remote_file_name, 'sections/0/tables/2', request_row, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_table_row(request)
@@ -340,7 +345,7 @@ module AsposeWordsCloud
     #
     def test_insert_table_row_online
       request_document = File.open(File.join(local_test_folder, local_file))
-
+      request_row = TableRowInsert.new({:ColumnsCount => 5})
       request = InsertTableRowOnlineRequest.new(request_document, 'sections/0/tables/2', request_row, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_table_row_online(request)
@@ -380,6 +385,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
+      request_format = TableRowFormat.new({:AllowBreakAcrossPages => true, :HeadingFormat => true, :Height => 10.0, :HeightRule => 'Exactly'})
       request = UpdateTableRowFormatRequest.new(remote_file_name, 'sections/0/tables/2', 0, request_format, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_table_row_format(request)
@@ -391,7 +397,7 @@ module AsposeWordsCloud
     #
     def test_update_table_row_format_online
       request_document = File.open(File.join(local_test_folder, local_file))
-
+      request_format = TableRowFormat.new({:AllowBreakAcrossPages => true, :HeadingFormat => true, :Height => 10, :HeightRule => 'Auto'})
       request = UpdateTableRowFormatOnlineRequest.new(request_document, 'sections/0/tables/2', request_format, 0, nil, nil, nil, nil, nil)
 
       result = @words_api.update_table_row_format_online(request)
@@ -455,7 +461,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = InsertTableCellRequest.new(remote_file_name, 'sections/0/tables/2/rows/0', request_cell, remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request = InsertTableCellRequest.new(remote_file_name, 'sections/0/tables/2/rows/0', nil, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_table_cell(request)
       assert_equal false, result.nil?
@@ -467,7 +473,7 @@ module AsposeWordsCloud
     def test_insert_table_cell_online
       request_document = File.open(File.join(local_test_folder, local_file))
 
-      request = InsertTableCellOnlineRequest.new(request_document, 'sections/0/tables/2/rows/0', request_cell, nil, nil, nil, nil, nil)
+      request = InsertTableCellOnlineRequest.new(request_document, 'sections/0/tables/2/rows/0', nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_table_cell_online(request)
       assert_equal false, result.nil?
@@ -506,6 +512,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
+      request_format = TableCellFormat.new({:BottomPadding => 5.0, :FitText => true, :HorizontalMerge => 'First', :WrapText => true})
       request = UpdateTableCellFormatRequest.new(remote_file_name, 'sections/0/tables/2/rows/0', 0, request_format, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_table_cell_format(request)
@@ -517,7 +524,7 @@ module AsposeWordsCloud
     #
     def test_update_table_cell_format_online
       request_document = File.open(File.join(local_test_folder, local_file))
-
+      request_format = TableCellFormat.new({:BottomPadding => 5, :FitText => true, :HorizontalMerge => 'First', :WrapText => true})
       request = UpdateTableCellFormatOnlineRequest.new(request_document, 'sections/0/tables/2/rows/0', request_format, 0, nil, nil, nil, nil, nil)
 
       result = @words_api.update_table_cell_format_online(request)

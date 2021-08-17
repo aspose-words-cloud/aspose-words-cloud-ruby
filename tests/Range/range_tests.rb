@@ -96,6 +96,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
+      request_document_parameters = RangeDocument.new({:DocumentName => remote_data_folder + '/NewDoc.docx'})
       request = SaveAsRangeRequest.new(remote_file_name, 'id0.0.0', request_document_parameters, 'id0.0.1', remote_data_folder, nil, nil, nil)
 
       result = @words_api.save_as_range(request)
@@ -107,7 +108,7 @@ module AsposeWordsCloud
     #
     def test_save_as_range_online
       request_document = File.open(File.join(local_test_folder, local_file))
-
+      request_document_parameters = RangeDocument.new({:DocumentName => remote_data_folder + '/NewDoc.docx'})
       request = SaveAsRangeOnlineRequest.new(request_document, 'id0.0.0', request_document_parameters, 'id0.0.1', nil, nil)
 
       result = @words_api.save_as_range_online(request)
@@ -122,6 +123,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
+      request_range_text = ReplaceRange.new({:Text => 'Replaced header'})
       request = ReplaceWithTextRequest.new(remote_file_name, 'id0.0.0', request_range_text, 'id0.0.1', remote_data_folder, nil, nil, nil, nil)
 
       result = @words_api.replace_with_text(request)
@@ -133,7 +135,7 @@ module AsposeWordsCloud
     #
     def test_replace_with_text_online
       request_document = File.open(File.join(local_test_folder, local_file))
-
+      request_range_text = ReplaceRange.new({:Text => 'Replaced header'})
       request = ReplaceWithTextOnlineRequest.new(request_document, 'id0.0.0', request_range_text, 'id0.0.1', nil, nil, nil)
 
       result = @words_api.replace_with_text_online(request)

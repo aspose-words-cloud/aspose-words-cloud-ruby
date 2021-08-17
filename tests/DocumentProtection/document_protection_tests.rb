@@ -46,6 +46,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
+      request_protection_request = ProtectionRequest.new({:Password => '123', :ProtectionType => 'ReadOnly'})
       request = ProtectDocumentRequest.new(remote_file_name, request_protection_request, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name)
 
       result = @words_api.protect_document(request)
@@ -57,7 +58,7 @@ module AsposeWordsCloud
     #
     def test_protect_document_online
       request_document = File.open(File.join(local_test_folder, local_file))
-
+      request_protection_request = ProtectionRequest.new({:NewPassword => '123'})
       request = ProtectDocumentOnlineRequest.new(request_document, request_protection_request, nil, nil, nil)
 
       result = @words_api.protect_document_online(request)
@@ -99,6 +100,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file_path), remote_data_folder + '/' + remote_file_name
 
+      request_protection_request = ProtectionRequest.new({:Password => 'aspose'})
       request = UnprotectDocumentRequest.new(remote_file_name, request_protection_request, remote_data_folder, nil, nil, nil, nil)
 
       result = @words_api.unprotect_document(request)
@@ -112,7 +114,7 @@ module AsposeWordsCloud
       local_file_path = 'DocumentActions/DocumentProtection/SampleProtectedBlankWordDocument.docx'
 
       request_document = File.open(File.join(local_test_folder, local_file_path))
-
+      request_protection_request = ProtectionRequest.new({:Password => 'aspose'})
       request = UnprotectDocumentOnlineRequest.new(request_document, request_protection_request, nil, nil, nil)
 
       result = @words_api.unprotect_document_online(request)

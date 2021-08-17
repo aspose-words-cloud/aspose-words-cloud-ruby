@@ -46,6 +46,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, footnote_folder + '/Footnote.doc'), remote_data_folder + '/' + remote_file_name
 
+      request_footnote_dto = FootnoteInsert.new({:FootnoteType => 'Endnote', :Text => 'test endnote'})
       request = InsertFootnoteRequest.new(remote_file_name, request_footnote_dto, '', remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_footnote(request)
@@ -57,7 +58,7 @@ module AsposeWordsCloud
     #
     def test_insert_footnote_online
       request_document = File.open(File.join(local_test_folder, footnote_folder + '/Footnote.doc'))
-
+      request_footnote_dto = FootnoteInsert.new({:FootnoteType => 'Endnote', :Text => 'test endnote'})
       request = InsertFootnoteOnlineRequest.new(request_document, request_footnote_dto, '', nil, nil, nil, nil, nil)
 
       result = @words_api.insert_footnote_online(request)
@@ -72,6 +73,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, footnote_folder + '/Footnote.doc'), remote_data_folder + '/' + remote_file_name
 
+      request_footnote_dto = FootnoteInsert.new({:FootnoteType => 'Endnote', :Text => 'test endnote'})
       request = InsertFootnoteRequest.new(remote_file_name, request_footnote_dto, nil, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_footnote(request)
@@ -201,6 +203,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, footnote_folder + '/Footnote.doc'), remote_data_folder + '/' + remote_file_name
 
+      request_footnote_dto = FootnoteUpdate.new({:Text => 'new text is here'})
       request = UpdateFootnoteRequest.new(remote_file_name, 0, request_footnote_dto, '', remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_footnote(request)
@@ -212,7 +215,7 @@ module AsposeWordsCloud
     #
     def test_update_footnote_online
       request_document = File.open(File.join(local_test_folder, footnote_folder + '/Footnote.doc'))
-
+      request_footnote_dto = FootnoteUpdate.new({:Text => 'new text is here'})
       request = UpdateFootnoteOnlineRequest.new(request_document, request_footnote_dto, 0, '', nil, nil, nil, nil, nil)
 
       result = @words_api.update_footnote_online(request)
@@ -227,6 +230,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, footnote_folder + '/Footnote.doc'), remote_data_folder + '/' + remote_file_name
 
+      request_footnote_dto = FootnoteUpdate.new({:Text => 'new text is here'})
       request = UpdateFootnoteRequest.new(remote_file_name, 0, request_footnote_dto, nil, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_footnote(request)

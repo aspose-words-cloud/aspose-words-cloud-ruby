@@ -46,6 +46,9 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
+      request_document_list_document_entries0 = DocumentEntry.new({:Href => remote_data_folder + '/' + remote_file_name, :ImportFormatMode => 'KeepSourceFormatting'})
+      request_document_list_document_entries = [request_document_list_document_entries0]
+      request_document_list = DocumentEntryList.new({:DocumentEntries => request_document_list_document_entries})
       request = AppendDocumentRequest.new(remote_file_name, request_document_list, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
 
       result = @words_api.append_document(request)
@@ -61,9 +64,9 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
       request_document = File.open(File.join(local_test_folder, local_file))
-
-
-
+      request_document_list_document_entries0 = DocumentEntry.new({:Href => remote_data_folder + '/' + remote_file_name, :ImportFormatMode => 'KeepSourceFormatting'})
+      request_document_list_document_entries = [request_document_list_document_entries0]
+      request_document_list = DocumentEntryList.new({:DocumentEntries => request_document_list_document_entries})
       request = AppendDocumentOnlineRequest.new(request_document, request_document_list, nil, nil, nil, nil, nil)
 
       result = @words_api.append_document_online(request)

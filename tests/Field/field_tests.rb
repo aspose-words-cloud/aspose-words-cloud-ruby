@@ -133,6 +133,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, text_folder + '/' + local_file_name), remote_data_folder + '/' + remote_file_name
 
+      request_field = FieldInsert.new({:FieldCode => '{ NUMPAGES }'})
       request = InsertFieldRequest.new(remote_file_name, request_field, 'sections/0/paragraphs/0', remote_data_folder, nil, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_field(request)
@@ -144,7 +145,7 @@ module AsposeWordsCloud
     #
     def test_insert_field_online
       request_document = File.open(File.join(local_test_folder, field_folder + '/GetField.docx'))
-
+      request_field = FieldInsert.new({:FieldCode => '{ NUMPAGES }'})
       request = InsertFieldOnlineRequest.new(request_document, request_field, 'sections/0/paragraphs/0', nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_field_online(request)
@@ -160,6 +161,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, text_folder + '/' + local_file_name), remote_data_folder + '/' + remote_file_name
 
+      request_field = FieldInsert.new({:FieldCode => '{ NUMPAGES }'})
       request = InsertFieldRequest.new(remote_file_name, request_field, nil, remote_data_folder, nil, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_field(request)
@@ -175,6 +177,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, field_folder + '/' + local_file_name), remote_data_folder + '/' + remote_file_name
 
+      request_field = FieldUpdate.new({:FieldCode => '{ NUMPAGES }'})
       request = UpdateFieldRequest.new(remote_file_name, 0, request_field, 'sections/0/paragraphs/0', remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_field(request)
@@ -186,7 +189,7 @@ module AsposeWordsCloud
     #
     def test_update_field_online
       request_document = File.open(File.join(local_test_folder, field_folder + '/GetField.docx'))
-
+      request_field = FieldUpdate.new({:FieldCode => '{ NUMPAGES }'})
       request = UpdateFieldOnlineRequest.new(request_document, request_field, 0, 'sections/0/paragraphs/0', nil, nil, nil, nil, nil)
 
       result = @words_api.update_field_online(request)
@@ -202,6 +205,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, 'Common/' + local_file_name), remote_data_folder + '/' + remote_file_name
 
+      request_page_number = PageNumber.new({:Alignment => 'center', :Format => '{PAGE} of {NUMPAGES}'})
       request = InsertPageNumbersRequest.new(remote_file_name, request_page_number, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
 
       result = @words_api.insert_page_numbers(request)
@@ -215,7 +219,7 @@ module AsposeWordsCloud
       local_file_name = 'test_multi_pages.docx'
 
       request_document = File.open(File.join(local_test_folder, 'Common/' + local_file_name))
-
+      request_page_number = PageNumber.new({:Alignment => 'center', :Format => '{PAGE} of {NUMPAGES}'})
       request = InsertPageNumbersOnlineRequest.new(request_document, request_page_number, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_page_numbers_online(request)

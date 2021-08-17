@@ -207,6 +207,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
+      request_font_dto = Font.new({:Bold => true})
       request = UpdateRunFontRequest.new(remote_file_name, 'paragraphs/0', 0, request_font_dto, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
 
       result = @words_api.update_run_font(request)
@@ -218,7 +219,7 @@ module AsposeWordsCloud
     #
     def test_update_run_font_online
       request_document = File.open(File.join(local_test_folder, local_file))
-
+      request_font_dto = Font.new({:Bold => true})
       request = UpdateRunFontOnlineRequest.new(request_document, 'paragraphs/0', request_font_dto, 0, nil, nil, nil, nil, nil)
 
       result = @words_api.update_run_font_online(request)
@@ -233,6 +234,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
+      request_paragraph = ParagraphInsert.new({:Text => 'This is a new paragraph for your document'})
       request = InsertParagraphRequest.new(remote_file_name, request_paragraph, 'sections/0', remote_data_folder, nil, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_paragraph(request)
@@ -244,7 +246,7 @@ module AsposeWordsCloud
     #
     def test_insert_paragraph_online
       request_document = File.open(File.join(local_test_folder, local_file))
-
+      request_paragraph = ParagraphInsert.new({:Text => 'This is a new paragraph for your document'})
       request = InsertParagraphOnlineRequest.new(request_document, request_paragraph, 'sections/0', nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_paragraph_online(request)
@@ -259,6 +261,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
+      request_paragraph = ParagraphInsert.new({:Text => 'This is a new paragraph for your document'})
       request = InsertParagraphRequest.new(remote_file_name, request_paragraph, nil, remote_data_folder, nil, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_paragraph(request)
@@ -351,6 +354,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
+      request_paragraph_format_dto = ParagraphFormatUpdate.new({:Alignment => 'Right'})
       request = UpdateParagraphFormatRequest.new(remote_file_name, 0, request_paragraph_format_dto, '', remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_paragraph_format(request)
@@ -362,7 +366,7 @@ module AsposeWordsCloud
     #
     def test_update_paragraph_format_online
       request_document = File.open(File.join(local_test_folder, local_file))
-
+      request_paragraph_format_dto = ParagraphFormatUpdate.new({:Alignment => 'Right'})
       request = UpdateParagraphFormatOnlineRequest.new(request_document, request_paragraph_format_dto, 0, '', nil, nil, nil, nil, nil)
 
       result = @words_api.update_paragraph_format_online(request)
@@ -453,6 +457,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, list_folder + '/ParagraphUpdateListFormat.doc'), remote_data_folder + '/' + remote_file_name
 
+      request_list_format_dto = ListFormatUpdate.new({:ListId => 2})
       request = UpdateParagraphListFormatRequest.new(remote_file_name, 0, request_list_format_dto, '', remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_paragraph_list_format(request)
@@ -464,7 +469,7 @@ module AsposeWordsCloud
     #
     def test_update_paragraph_list_format_online
       request_document = File.open(File.join(local_test_folder, list_folder + '/ParagraphUpdateListFormat.doc'))
-
+      request_list_format_dto = ListFormatUpdate.new({:ListId => 2})
       request = UpdateParagraphListFormatOnlineRequest.new(request_document, request_list_format_dto, 0, '', nil, nil, nil, nil, nil)
 
       result = @words_api.update_paragraph_list_format_online(request)
@@ -479,6 +484,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, list_folder + '/ParagraphUpdateListFormat.doc'), remote_data_folder + '/' + remote_file_name
 
+      request_list_format_dto = ListFormatUpdate.new({:ListId => 2})
       request = UpdateParagraphListFormatRequest.new(remote_file_name, 0, request_list_format_dto, nil, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_paragraph_list_format(request)
@@ -571,6 +577,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, tab_stop_folder + '/ParagraphTabStops.docx'), remote_data_folder + '/' + remote_file_name
 
+      request_tab_stop_insert_dto = TabStopInsert.new({:Alignment => 'Left', :Leader => 'None', :Position => 100.0})
       request = InsertOrUpdateParagraphTabStopRequest.new(remote_file_name, 0, request_tab_stop_insert_dto, '', remote_data_folder, nil, nil, nil, nil)
 
       result = @words_api.insert_or_update_paragraph_tab_stop(request)
@@ -582,7 +589,7 @@ module AsposeWordsCloud
     #
     def test_insert_paragraph_tab_stops_online
       request_document = File.open(File.join(local_test_folder, tab_stop_folder + '/ParagraphTabStops.docx'))
-
+      request_tab_stop_insert_dto = TabStopInsert.new({:Alignment => 'Left', :Leader => 'None', :Position => 72})
       request = InsertOrUpdateParagraphTabStopOnlineRequest.new(request_document, request_tab_stop_insert_dto, 0, '', nil, nil, nil)
 
       result = @words_api.insert_or_update_paragraph_tab_stop_online(request)
@@ -597,6 +604,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, tab_stop_folder + '/ParagraphTabStops.docx'), remote_data_folder + '/' + remote_file_name
 
+      request_tab_stop_insert_dto = TabStopInsert.new({:Alignment => 'Left', :Leader => 'None', :Position => 100.0})
       request = InsertOrUpdateParagraphTabStopRequest.new(remote_file_name, 0, request_tab_stop_insert_dto, nil, remote_data_folder, nil, nil, nil, nil)
 
       result = @words_api.insert_or_update_paragraph_tab_stop(request)

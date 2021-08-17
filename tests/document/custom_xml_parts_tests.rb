@@ -96,6 +96,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
+      request_custom_xml_part = CustomXmlPartInsert.new({:Id => 'hello', :Data => '<data>Hello world</data>'})
       request = InsertCustomXmlPartRequest.new(remote_file_name, request_custom_xml_part, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_custom_xml_part(request)
@@ -107,7 +108,7 @@ module AsposeWordsCloud
     #
     def test_insert_custom_xml_part_online
       request_document = File.open(File.join(local_test_folder, local_file))
-
+      request_custom_xml_part = CustomXmlPartInsert.new({:Id => 'hello', :Data => '<data>Hello world</data>'})
       request = InsertCustomXmlPartOnlineRequest.new(request_document, request_custom_xml_part, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_custom_xml_part_online(request)
@@ -122,6 +123,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
+      request_custom_xml_part = CustomXmlPartUpdate.new({:Data => '<data>Hello world</data>'})
       request = UpdateCustomXmlPartRequest.new(remote_file_name, 0, request_custom_xml_part, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.update_custom_xml_part(request)
@@ -133,7 +135,7 @@ module AsposeWordsCloud
     #
     def test_update_custom_xml_part_online
       request_document = File.open(File.join(local_test_folder, local_file))
-
+      request_custom_xml_part = CustomXmlPartUpdate.new({:Data => '<data>Hello world</data>'})
       request = UpdateCustomXmlPartOnlineRequest.new(request_document, 0, request_custom_xml_part, nil, nil, nil, nil, nil)
 
       result = @words_api.update_custom_xml_part_online(request)

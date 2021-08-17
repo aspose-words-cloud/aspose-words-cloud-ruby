@@ -47,6 +47,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, 'Common/' + local_name), remote_folder + '/' + remote_name
 
+      request_save_options_data = SaveOptionsData.new({:SaveFormat => 'pdf', :FileName => remote_test_out + '/TestSaveAs.pdf'})
       request = SaveAsRequest.new(remote_name, request_save_options_data, remote_folder, nil, nil, nil, nil)
 
       result = @words_api.save_as(request)
@@ -60,7 +61,7 @@ module AsposeWordsCloud
       local_name = 'test_multi_pages.docx'
 
       request_document = File.open(File.join(local_test_folder, 'Common/' + local_name))
-
+      request_save_options_data = SaveOptionsData.new({:SaveFormat => 'pdf', :FileName => remote_test_out + '/TestSaveAs.pdf'})
       request = SaveAsOnlineRequest.new(request_document, request_save_options_data, nil, nil, nil)
 
       result = @words_api.save_as_online(request)
@@ -76,6 +77,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_folder + '/' + local_name), remote_folder + '/' + remote_name
 
+      request_save_options_data = SaveOptionsData.new({:SaveFormat => 'docx', :FileName => remote_test_out + '/TestSaveAsFromPdfToDoc.docx'})
       request = SaveAsRequest.new(remote_name, request_save_options_data, remote_folder, nil, nil, nil, nil)
 
       result = @words_api.save_as(request)
@@ -91,6 +93,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, 'Common/' + local_name), remote_folder + '/' + remote_name
 
+      request_save_options = TiffSaveOptionsData.new({:SaveFormat => 'tiff', :FileName => remote_test_out + '/abc.tiff'})
       request = SaveAsTiffRequest.new(remote_name, request_save_options, remote_folder, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.save_as_tiff(request)
@@ -104,7 +107,7 @@ module AsposeWordsCloud
       local_name = 'test_multi_pages.docx'
 
       request_document = File.open(File.join(local_test_folder, 'Common/' + local_name))
-
+      request_save_options = TiffSaveOptionsData.new({:SaveFormat => 'tiff', :FileName => remote_test_out + '/abc.tiff'})
       request = SaveAsTiffOnlineRequest.new(request_document, request_save_options, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.save_as_tiff_online(request)
