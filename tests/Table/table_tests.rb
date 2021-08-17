@@ -461,7 +461,8 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = InsertTableCellRequest.new(remote_file_name, 'sections/0/tables/2/rows/0', nil, remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request_cell = TableCellInsert.new({})
+      request = InsertTableCellRequest.new(remote_file_name, 'sections/0/tables/2/rows/0', request_cell, remote_data_folder, nil, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_table_cell(request)
       assert_equal false, result.nil?
@@ -472,8 +473,8 @@ module AsposeWordsCloud
     #
     def test_insert_table_cell_online
       request_document = File.open(File.join(local_test_folder, local_file))
-
-      request = InsertTableCellOnlineRequest.new(request_document, 'sections/0/tables/2/rows/0', nil, nil, nil, nil, nil, nil)
+      request_cell = TableCellInsert.new({})
+      request = InsertTableCellOnlineRequest.new(request_document, 'sections/0/tables/2/rows/0', request_cell, nil, nil, nil, nil, nil)
 
       result = @words_api.insert_table_cell_online(request)
       assert_equal false, result.nil?
