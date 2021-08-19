@@ -46,7 +46,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetDocumentHyperlinkByIndexRequest.new(remote_file_name, 0, remote_data_folder, nil, nil, nil)
+      request = GetDocumentHyperlinkByIndexRequest.new(remote_file_name, 0, folder: remote_data_folder)
 
       result = @words_api.get_document_hyperlink_by_index(request)
       assert_equal false, result.nil?
@@ -57,7 +57,7 @@ module AsposeWordsCloud
     #
     def test_get_document_hyperlink_by_index_online
       request_document = File.open(File.join(local_test_folder, local_file))
-      request = GetDocumentHyperlinkByIndexOnlineRequest.new(request_document, 0, nil, nil)
+      request = GetDocumentHyperlinkByIndexOnlineRequest.new(request_document, 0)
 
       result = @words_api.get_document_hyperlink_by_index_online(request)
       assert_equal false, result.nil?
@@ -71,7 +71,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetDocumentHyperlinksRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
+      request = GetDocumentHyperlinksRequest.new(remote_file_name, folder: remote_data_folder)
 
       result = @words_api.get_document_hyperlinks(request)
       assert_equal false, result.nil?
@@ -82,7 +82,7 @@ module AsposeWordsCloud
     #
     def test_get_document_hyperlinks_online
       request_document = File.open(File.join(local_test_folder, local_file))
-      request = GetDocumentHyperlinksOnlineRequest.new(request_document, nil, nil)
+      request = GetDocumentHyperlinksOnlineRequest.new(request_document)
 
       result = @words_api.get_document_hyperlinks_online(request)
       assert_equal false, result.nil?

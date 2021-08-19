@@ -42,7 +42,7 @@ module AsposeWordsCloud
     # Test for create folder.
     #
     def test_create_folder
-      request = CreateFolderRequest.new(remote_data_folder + '/TestCreateFolder', nil)
+      request = CreateFolderRequest.new(remote_data_folder + '/TestCreateFolder')
 
       @words_api.create_folder(request)
     end
@@ -55,7 +55,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), test_delete_folder + '/TestDeleteFolder.docx'
 
-      request = DeleteFolderRequest.new(test_delete_folder, nil, nil)
+      request = DeleteFolderRequest.new(test_delete_folder)
 
       @words_api.delete_folder(request)
     end
@@ -64,7 +64,7 @@ module AsposeWordsCloud
     # Test for get file list of folder.
     #
     def test_get_files_list
-      request = GetFilesListRequest.new(remote_data_folder, nil)
+      request = GetFilesListRequest.new(remote_data_folder)
 
       result = @words_api.get_files_list(request)
       assert_equal false, result.nil?
@@ -78,7 +78,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), folder_to_copy + 'Src/TestCopyFolderSrc.docx'
 
-      request = CopyFolderRequest.new(folder_to_copy + 'Dest', folder_to_copy + 'Src', nil, nil)
+      request = CopyFolderRequest.new(folder_to_copy + 'Dest', folder_to_copy + 'Src')
 
       @words_api.copy_folder(request)
     end
@@ -89,7 +89,7 @@ module AsposeWordsCloud
     def test_move_folder
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/TestMoveFolderSrc/TestMoveFolderSrc.docx'
 
-      request = MoveFolderRequest.new(remote_test_out + '/TestMoveFolderDest_' + generate_uuid, remote_data_folder + '/TestMoveFolderSrc', nil, nil)
+      request = MoveFolderRequest.new(remote_test_out + '/TestMoveFolderDest_' + generate_uuid, remote_data_folder + '/TestMoveFolderSrc')
 
       @words_api.move_folder(request)
     end

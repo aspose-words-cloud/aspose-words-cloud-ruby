@@ -48,7 +48,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, mail_merge_folder + '/' + local_document_file), remote_data_folder + '/' + remote_file_name
 
-      request = ExecuteMailMergeRequest.new(remote_file_name, local_data_file, remote_data_folder, nil, nil, nil, nil, nil, nil, nil, remote_test_out + '/' + remote_file_name)
+      request = ExecuteMailMergeRequest.new(remote_file_name, data: local_data_file, folder: remote_data_folder, dest_file_name: remote_test_out + '/' + remote_file_name)
 
       result = @words_api.execute_mail_merge(request)
       assert_equal false, result.nil?
@@ -63,7 +63,7 @@ module AsposeWordsCloud
 
       request_template = File.open(File.join(local_test_folder, mail_merge_folder + '/' + local_document_file))
       request_data = File.open(File.join(local_test_folder, mail_merge_folder + '/' + local_data_file))
-      request = ExecuteMailMergeOnlineRequest.new(request_template, request_data, nil, nil, nil)
+      request = ExecuteMailMergeOnlineRequest.new(request_template, request_data)
 
       result = @words_api.execute_mail_merge_online(request)
       assert_equal false, result.nil?

@@ -46,7 +46,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = AcceptAllRevisionsRequest.new(remote_file_name, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name)
+      request = AcceptAllRevisionsRequest.new(remote_file_name, folder: remote_data_folder, dest_file_name: remote_test_out + '/' + remote_file_name)
 
       result = @words_api.accept_all_revisions(request)
       assert_equal false, result.nil?
@@ -57,7 +57,7 @@ module AsposeWordsCloud
     #
     def test_accept_all_revisions_online
       request_document = File.open(File.join(local_test_folder, local_file))
-      request = AcceptAllRevisionsOnlineRequest.new(request_document, nil, nil, nil)
+      request = AcceptAllRevisionsOnlineRequest.new(request_document)
 
       result = @words_api.accept_all_revisions_online(request)
       assert_equal false, result.nil?
@@ -71,7 +71,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = RejectAllRevisionsRequest.new(remote_file_name, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name)
+      request = RejectAllRevisionsRequest.new(remote_file_name, folder: remote_data_folder, dest_file_name: remote_test_out + '/' + remote_file_name)
 
       result = @words_api.reject_all_revisions(request)
       assert_equal false, result.nil?
@@ -82,7 +82,7 @@ module AsposeWordsCloud
     #
     def test_reject_all_revisions_online
       request_document = File.open(File.join(local_test_folder, local_file))
-      request = RejectAllRevisionsOnlineRequest.new(request_document, nil, nil, nil)
+      request = RejectAllRevisionsOnlineRequest.new(request_document)
 
       result = @words_api.reject_all_revisions_online(request)
       assert_equal false, result.nil?

@@ -44,7 +44,7 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
       request_replace_text = ReplaceTextParameters.new({:OldValue => 'Testing', :NewValue => 'Aspose testing'})
-      request = ReplaceTextRequest.new(remote_file_name, request_replace_text, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
+      request = ReplaceTextRequest.new(remote_file_name, request_replace_text, folder: remote_data_folder, dest_file_name: remote_test_out + '/' + remote_file_name)
 
       result = @words_api.replace_text(request)
       assert_equal false, result.nil?
@@ -58,7 +58,7 @@ module AsposeWordsCloud
 
       request_document = File.open(File.join(local_test_folder, local_file))
       request_replace_text = ReplaceTextParameters.new({:OldValue => 'aspose', :NewValue => 'aspose new'})
-      request = ReplaceTextOnlineRequest.new(request_document, request_replace_text, nil, nil, nil, nil, nil)
+      request = ReplaceTextOnlineRequest.new(request_document, request_replace_text)
 
       result = @words_api.replace_text_online(request)
       assert_equal false, result.nil?
@@ -73,7 +73,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = SearchRequest.new(remote_file_name, 'aspose', remote_data_folder, nil, nil, nil)
+      request = SearchRequest.new(remote_file_name, 'aspose', folder: remote_data_folder)
 
       result = @words_api.search(request)
       assert_equal false, result.nil?
@@ -86,7 +86,7 @@ module AsposeWordsCloud
       local_file = 'DocumentElements/Text/SampleWordDocument.docx'
 
       request_document = File.open(File.join(local_test_folder, local_file))
-      request = SearchOnlineRequest.new(request_document, 'aspose', nil, nil)
+      request = SearchOnlineRequest.new(request_document, 'aspose')
 
       result = @words_api.search_online(request)
       assert_equal false, result.nil?

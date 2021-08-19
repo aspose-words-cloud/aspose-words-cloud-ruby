@@ -46,7 +46,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetDocumentPropertiesRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
+      request = GetDocumentPropertiesRequest.new(remote_file_name, folder: remote_data_folder)
 
       result = @words_api.get_document_properties(request)
       assert_equal false, result.nil?
@@ -57,7 +57,7 @@ module AsposeWordsCloud
     #
     def test_get_document_properties_online
       request_document = File.open(File.join(local_test_folder, local_file))
-      request = GetDocumentPropertiesOnlineRequest.new(request_document, nil, nil)
+      request = GetDocumentPropertiesOnlineRequest.new(request_document)
 
       result = @words_api.get_document_properties_online(request)
       assert_equal false, result.nil?
@@ -71,7 +71,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetDocumentPropertyRequest.new(remote_file_name, 'Author', remote_data_folder, nil, nil, nil)
+      request = GetDocumentPropertyRequest.new(remote_file_name, 'Author', folder: remote_data_folder)
 
       result = @words_api.get_document_property(request)
       assert_equal false, result.nil?
@@ -82,7 +82,7 @@ module AsposeWordsCloud
     #
     def test_get_document_property_online
       request_document = File.open(File.join(local_test_folder, local_file))
-      request = GetDocumentPropertyOnlineRequest.new(request_document, 'Author', nil, nil)
+      request = GetDocumentPropertyOnlineRequest.new(request_document, 'Author')
 
       result = @words_api.get_document_property_online(request)
       assert_equal false, result.nil?
@@ -96,7 +96,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = DeleteDocumentPropertyRequest.new(remote_file_name, 'testProp', remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
+      request = DeleteDocumentPropertyRequest.new(remote_file_name, 'testProp', folder: remote_data_folder, dest_file_name: remote_test_out + '/' + remote_file_name)
 
       @words_api.delete_document_property(request)
     end
@@ -106,7 +106,7 @@ module AsposeWordsCloud
     #
     def test_delete_document_property_online
       request_document = File.open(File.join(local_test_folder, local_file))
-      request = DeleteDocumentPropertyOnlineRequest.new(request_document, 'testProp', nil, nil, nil, nil, nil)
+      request = DeleteDocumentPropertyOnlineRequest.new(request_document, 'testProp')
 
       result = @words_api.delete_document_property_online(request)
       assert_equal false, result.nil?
@@ -121,7 +121,7 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
       request_property = DocumentPropertyCreateOrUpdate.new({:Value => 'Imran Anwar'})
-      request = CreateOrUpdateDocumentPropertyRequest.new(remote_file_name, 'AsposeAuthor', request_property, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
+      request = CreateOrUpdateDocumentPropertyRequest.new(remote_file_name, 'AsposeAuthor', request_property, folder: remote_data_folder, dest_file_name: remote_test_out + '/' + remote_file_name)
 
       result = @words_api.create_or_update_document_property(request)
       assert_equal false, result.nil?
@@ -133,7 +133,7 @@ module AsposeWordsCloud
     def test_update_document_property_online
       request_document = File.open(File.join(local_test_folder, local_file))
       request_property = DocumentPropertyCreateOrUpdate.new({:Value => 'Imran Anwar'})
-      request = CreateOrUpdateDocumentPropertyOnlineRequest.new(request_document, 'AsposeAuthor', request_property, nil, nil, nil, nil, nil)
+      request = CreateOrUpdateDocumentPropertyOnlineRequest.new(request_document, 'AsposeAuthor', request_property)
 
       result = @words_api.create_or_update_document_property_online(request)
       assert_equal false, result.nil?

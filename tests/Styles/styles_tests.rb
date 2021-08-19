@@ -46,7 +46,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetStylesRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
+      request = GetStylesRequest.new(remote_file_name, folder: remote_data_folder)
 
       result = @words_api.get_styles(request)
       assert_equal false, result.nil?
@@ -57,7 +57,7 @@ module AsposeWordsCloud
     #
     def test_get_styles_online
       request_document = File.open(File.join(local_test_folder, local_file))
-      request = GetStylesOnlineRequest.new(request_document, nil, nil)
+      request = GetStylesOnlineRequest.new(request_document)
 
       result = @words_api.get_styles_online(request)
       assert_equal false, result.nil?
@@ -71,7 +71,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetStyleRequest.new(remote_file_name, 'Heading 1', remote_data_folder, nil, nil, nil)
+      request = GetStyleRequest.new(remote_file_name, 'Heading 1', folder: remote_data_folder)
 
       result = @words_api.get_style(request)
       assert_equal false, result.nil?
@@ -82,7 +82,7 @@ module AsposeWordsCloud
     #
     def test_get_style_online
       request_document = File.open(File.join(local_test_folder, local_file))
-      request = GetStyleOnlineRequest.new(request_document, 'Heading 1', nil, nil)
+      request = GetStyleOnlineRequest.new(request_document, 'Heading 1')
 
       result = @words_api.get_style_online(request)
       assert_equal false, result.nil?
@@ -97,7 +97,7 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
       request_style_update = StyleUpdate.new({:Name => 'My Style'})
-      request = UpdateStyleRequest.new(remote_file_name, 'Heading 1', request_style_update, remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request = UpdateStyleRequest.new(remote_file_name, 'Heading 1', request_style_update, folder: remote_data_folder)
 
       result = @words_api.update_style(request)
       assert_equal false, result.nil?
@@ -109,7 +109,7 @@ module AsposeWordsCloud
     def test_update_style_online
       request_document = File.open(File.join(local_test_folder, local_file))
       request_style_update = StyleUpdate.new({:Name => 'My Style'})
-      request = UpdateStyleOnlineRequest.new(request_document, 'Heading 1', request_style_update, nil, nil, nil, nil, nil)
+      request = UpdateStyleOnlineRequest.new(request_document, 'Heading 1', request_style_update)
 
       result = @words_api.update_style_online(request)
       assert_equal false, result.nil?
@@ -124,7 +124,7 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
       request_style_insert = StyleInsert.new({:StyleName => 'My Style', :StyleType => 'Paragraph'})
-      request = InsertStyleRequest.new(remote_file_name, request_style_insert, remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request = InsertStyleRequest.new(remote_file_name, request_style_insert, folder: remote_data_folder)
 
       result = @words_api.insert_style(request)
       assert_equal false, result.nil?
@@ -136,7 +136,7 @@ module AsposeWordsCloud
     def test_insert_style_online
       request_document = File.open(File.join(local_test_folder, local_file))
       request_style_insert = StyleInsert.new({:StyleName => 'My Style', :StyleType => 'Paragraph'})
-      request = InsertStyleOnlineRequest.new(request_document, request_style_insert, nil, nil, nil, nil, nil)
+      request = InsertStyleOnlineRequest.new(request_document, request_style_insert)
 
       result = @words_api.insert_style_online(request)
       assert_equal false, result.nil?
@@ -151,7 +151,7 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
       request_style_copy = StyleCopy.new({:StyleName => 'Heading 1'})
-      request = CopyStyleRequest.new(remote_file_name, request_style_copy, remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request = CopyStyleRequest.new(remote_file_name, request_style_copy, folder: remote_data_folder)
 
       result = @words_api.copy_style(request)
       assert_equal false, result.nil?
@@ -163,7 +163,7 @@ module AsposeWordsCloud
     def test_copy_style_online
       request_document = File.open(File.join(local_test_folder, local_file))
       request_style_copy = StyleCopy.new({:StyleName => 'Heading 1'})
-      request = CopyStyleOnlineRequest.new(request_document, request_style_copy, nil, nil, nil, nil, nil)
+      request = CopyStyleOnlineRequest.new(request_document, request_style_copy)
 
       result = @words_api.copy_style_online(request)
       assert_equal false, result.nil?
@@ -177,7 +177,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetStyleFromDocumentElementRequest.new(remote_file_name, 'paragraphs/1/paragraphFormat', remote_data_folder, nil, nil, nil)
+      request = GetStyleFromDocumentElementRequest.new(remote_file_name, 'paragraphs/1/paragraphFormat', folder: remote_data_folder)
 
       result = @words_api.get_style_from_document_element(request)
       assert_equal false, result.nil?
@@ -188,7 +188,7 @@ module AsposeWordsCloud
     #
     def test_get_style_from_document_element_online
       request_document = File.open(File.join(local_test_folder, local_file))
-      request = GetStyleFromDocumentElementOnlineRequest.new(request_document, 'paragraphs/1/paragraphFormat', nil, nil)
+      request = GetStyleFromDocumentElementOnlineRequest.new(request_document, 'paragraphs/1/paragraphFormat')
 
       result = @words_api.get_style_from_document_element_online(request)
       assert_equal false, result.nil?
@@ -203,7 +203,7 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
       request_style_apply = StyleApply.new({:StyleName => 'Heading 1'})
-      request = ApplyStyleToDocumentElementRequest.new(remote_file_name, 'paragraphs/1/paragraphFormat', request_style_apply, remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request = ApplyStyleToDocumentElementRequest.new(remote_file_name, 'paragraphs/1/paragraphFormat', request_style_apply, folder: remote_data_folder)
 
       result = @words_api.apply_style_to_document_element(request)
       assert_equal false, result.nil?
@@ -215,7 +215,7 @@ module AsposeWordsCloud
     def test_apply_style_to_document_element_online
       request_document = File.open(File.join(local_test_folder, local_file))
       request_style_apply = StyleApply.new({:StyleName => 'Heading 1'})
-      request = ApplyStyleToDocumentElementOnlineRequest.new(request_document, 'paragraphs/1/paragraphFormat', request_style_apply, nil, nil, nil, nil, nil)
+      request = ApplyStyleToDocumentElementOnlineRequest.new(request_document, 'paragraphs/1/paragraphFormat', request_style_apply)
 
       result = @words_api.apply_style_to_document_element_online(request)
       assert_equal false, result.nil?

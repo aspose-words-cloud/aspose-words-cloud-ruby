@@ -46,7 +46,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetDocumentRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
+      request = GetDocumentRequest.new(remote_file_name, folder: remote_data_folder)
 
       result = @words_api.get_document(request)
       assert_equal false, result.nil?
@@ -58,7 +58,7 @@ module AsposeWordsCloud
     def test_create_document
       remote_file_name = 'TestCreateDocument.doc'
 
-      request = CreateDocumentRequest.new(remote_file_name, remote_data_folder, nil)
+      request = CreateDocumentRequest.new(file_name: remote_file_name, folder: remote_data_folder)
 
       result = @words_api.create_document(request)
       assert_equal false, result.nil?

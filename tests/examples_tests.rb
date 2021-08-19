@@ -38,12 +38,12 @@ module AsposeWordsCloud
       # Upload original document to cloud storage.
       my_var1 = File.open(File.join(documents_dir, file_name))
       my_var2 = file_name
-      upload_file_request = UploadFileRequest.new(my_var1, my_var2, nil)
+      upload_file_request = UploadFileRequest.new(my_var1, my_var2)
       @words_api.upload_file(upload_file_request)
 
       # Calls AcceptAllRevisions method for document in cloud.
       my_var3 = file_name
-      request = AcceptAllRevisionsRequest.new(my_var3, nil, nil, nil, nil, nil)
+      request = AcceptAllRevisionsRequest.new(my_var3)
       @words_api.accept_all_revisions(request)
     end
 
@@ -53,7 +53,7 @@ module AsposeWordsCloud
 
       # Calls AcceptAllRevisionsOnline method for document in cloud.
       request_document = File.open(File.join(documents_dir, file_name))
-      request = AcceptAllRevisionsOnlineRequest.new(request_document, nil, nil, nil)
+      request = AcceptAllRevisionsOnlineRequest.new(request_document)
       accept_all_revisions_online_result = @words_api.accept_all_revisions_online(request)
       FileUtils.cp accept_all_revisions_online_result.document.path, 'test_result.docx'
     end

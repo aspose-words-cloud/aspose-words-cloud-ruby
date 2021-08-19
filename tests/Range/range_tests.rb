@@ -46,7 +46,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetRangeTextRequest.new(remote_file_name, 'id0.0.0', 'id0.0.1', remote_data_folder, nil, nil, nil)
+      request = GetRangeTextRequest.new(remote_file_name, 'id0.0.0', range_end_identifier: 'id0.0.1', folder: remote_data_folder)
 
       result = @words_api.get_range_text(request)
       assert_equal false, result.nil?
@@ -57,7 +57,7 @@ module AsposeWordsCloud
     #
     def test_get_range_text_online
       request_document = File.open(File.join(local_test_folder, local_file))
-      request = GetRangeTextOnlineRequest.new(request_document, 'id0.0.0', 'id0.0.1', nil, nil)
+      request = GetRangeTextOnlineRequest.new(request_document, 'id0.0.0', range_end_identifier: 'id0.0.1')
 
       result = @words_api.get_range_text_online(request)
       assert_equal false, result.nil?
@@ -71,7 +71,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = RemoveRangeRequest.new(remote_file_name, 'id0.0.0', 'id0.0.1', remote_data_folder, nil, nil, nil, nil)
+      request = RemoveRangeRequest.new(remote_file_name, 'id0.0.0', range_end_identifier: 'id0.0.1', folder: remote_data_folder)
 
       result = @words_api.remove_range(request)
       assert_equal false, result.nil?
@@ -82,7 +82,7 @@ module AsposeWordsCloud
     #
     def test_remove_range_online
       request_document = File.open(File.join(local_test_folder, local_file))
-      request = RemoveRangeOnlineRequest.new(request_document, 'id0.0.0', 'id0.0.1', nil, nil, nil)
+      request = RemoveRangeOnlineRequest.new(request_document, 'id0.0.0', range_end_identifier: 'id0.0.1')
 
       result = @words_api.remove_range_online(request)
       assert_equal false, result.nil?
@@ -97,7 +97,7 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
       request_document_parameters = RangeDocument.new({:DocumentName => remote_data_folder + '/NewDoc.docx'})
-      request = SaveAsRangeRequest.new(remote_file_name, 'id0.0.0', request_document_parameters, 'id0.0.1', remote_data_folder, nil, nil, nil)
+      request = SaveAsRangeRequest.new(remote_file_name, 'id0.0.0', request_document_parameters, range_end_identifier: 'id0.0.1', folder: remote_data_folder)
 
       result = @words_api.save_as_range(request)
       assert_equal false, result.nil?
@@ -109,7 +109,7 @@ module AsposeWordsCloud
     def test_save_as_range_online
       request_document = File.open(File.join(local_test_folder, local_file))
       request_document_parameters = RangeDocument.new({:DocumentName => remote_data_folder + '/NewDoc.docx'})
-      request = SaveAsRangeOnlineRequest.new(request_document, 'id0.0.0', request_document_parameters, 'id0.0.1', nil, nil)
+      request = SaveAsRangeOnlineRequest.new(request_document, 'id0.0.0', request_document_parameters, range_end_identifier: 'id0.0.1')
 
       result = @words_api.save_as_range_online(request)
       assert_equal false, result.nil?
@@ -124,7 +124,7 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
       request_range_text = ReplaceRange.new({:Text => 'Replaced header'})
-      request = ReplaceWithTextRequest.new(remote_file_name, 'id0.0.0', request_range_text, 'id0.0.1', remote_data_folder, nil, nil, nil, nil)
+      request = ReplaceWithTextRequest.new(remote_file_name, 'id0.0.0', request_range_text, range_end_identifier: 'id0.0.1', folder: remote_data_folder)
 
       result = @words_api.replace_with_text(request)
       assert_equal false, result.nil?
@@ -136,7 +136,7 @@ module AsposeWordsCloud
     def test_replace_with_text_online
       request_document = File.open(File.join(local_test_folder, local_file))
       request_range_text = ReplaceRange.new({:Text => 'Replaced header'})
-      request = ReplaceWithTextOnlineRequest.new(request_document, 'id0.0.0', request_range_text, 'id0.0.1', nil, nil, nil)
+      request = ReplaceWithTextOnlineRequest.new(request_document, 'id0.0.0', request_range_text, range_end_identifier: 'id0.0.1')
 
       result = @words_api.replace_with_text_online(request)
       assert_equal false, result.nil?

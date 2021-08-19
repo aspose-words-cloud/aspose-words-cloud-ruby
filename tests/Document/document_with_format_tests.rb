@@ -46,7 +46,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetDocumentWithFormatRequest.new(remote_file_name, 'text', remote_data_folder, nil, nil, nil, nil, nil)
+      request = GetDocumentWithFormatRequest.new(remote_file_name, 'text', folder: remote_data_folder)
 
       result = @words_api.get_document_with_format(request)
       assert_equal false, result.nil?
@@ -60,7 +60,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetDocumentWithFormatRequest.new(remote_file_name, 'text', remote_data_folder, nil, nil, nil, remote_test_out + '/TestGetDocumentWithFormatAndOutPath.text', nil)
+      request = GetDocumentWithFormatRequest.new(remote_file_name, 'text', folder: remote_data_folder, out_path: remote_test_out + '/TestGetDocumentWithFormatAndOutPath.text')
 
       result = @words_api.get_document_with_format(request)
       assert_equal false, result.nil?

@@ -7,6 +7,6 @@ file_name = 'test_doc.docx'
 
 # Calls AcceptAllRevisionsOnline method for document in cloud.
 request_document = File.open(file_name)
-request = AcceptAllRevisionsOnlineRequest.new(request_document, nil, nil, nil)
+request = AcceptAllRevisionsOnlineRequest.new(request_document)
 accept_all_revisions_online_result = @words_api.accept_all_revisions_online(request)
 FileUtils.cp accept_all_revisions_online_result.document.path, 'test_result.docx'

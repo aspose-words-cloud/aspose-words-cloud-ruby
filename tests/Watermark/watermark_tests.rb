@@ -48,7 +48,7 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
       upload_file File.join(local_test_folder, 'Common/aspose-cloud.png'), remote_image_path
 
-      request = InsertWatermarkImageRequest.new(remote_file_name, nil, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil, nil, remote_image_path)
+      request = InsertWatermarkImageRequest.new(remote_file_name, image_file: nil, folder: remote_data_folder, dest_file_name: remote_test_out + '/' + remote_file_name, image: remote_image_path)
 
       result = @words_api.insert_watermark_image(request)
       assert_equal false, result.nil?
@@ -60,7 +60,7 @@ module AsposeWordsCloud
     def test_insert_watermark_image_online
       request_document = File.open(File.join(local_test_folder, local_file))
       request_image_file = File.open(File.join(local_test_folder, 'Common/aspose-cloud.png'))
-      request = InsertWatermarkImageOnlineRequest.new(request_document, request_image_file, nil, nil, nil, nil, nil, nil, nil)
+      request = InsertWatermarkImageOnlineRequest.new(request_document, request_image_file)
 
       result = @words_api.insert_watermark_image_online(request)
       assert_equal false, result.nil?
@@ -75,7 +75,7 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
       request_watermark_text = WatermarkText.new({:Text => 'This is the text', :RotationAngle => 90.0})
-      request = InsertWatermarkTextRequest.new(remote_file_name, request_watermark_text, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
+      request = InsertWatermarkTextRequest.new(remote_file_name, request_watermark_text, folder: remote_data_folder, dest_file_name: remote_test_out + '/' + remote_file_name)
 
       result = @words_api.insert_watermark_text(request)
       assert_equal false, result.nil?
@@ -87,7 +87,7 @@ module AsposeWordsCloud
     def test_insert_watermark_text_online
       request_document = File.open(File.join(local_test_folder, local_file))
       request_watermark_text = WatermarkText.new({:Text => 'This is the text', :RotationAngle => 90})
-      request = InsertWatermarkTextOnlineRequest.new(request_document, request_watermark_text, nil, nil, nil, nil, nil)
+      request = InsertWatermarkTextOnlineRequest.new(request_document, request_watermark_text)
 
       result = @words_api.insert_watermark_text_online(request)
       assert_equal false, result.nil?
@@ -101,7 +101,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = DeleteWatermarkRequest.new(remote_file_name, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
+      request = DeleteWatermarkRequest.new(remote_file_name, folder: remote_data_folder, dest_file_name: remote_test_out + '/' + remote_file_name)
 
       result = @words_api.delete_watermark(request)
       assert_equal false, result.nil?
@@ -112,7 +112,7 @@ module AsposeWordsCloud
     #
     def test_delete_watermark_online
       request_document = File.open(File.join(local_test_folder, local_file))
-      request = DeleteWatermarkOnlineRequest.new(request_document, nil, nil, nil, nil, nil)
+      request = DeleteWatermarkOnlineRequest.new(request_document)
 
       result = @words_api.delete_watermark_online(request)
       assert_equal false, result.nil?
