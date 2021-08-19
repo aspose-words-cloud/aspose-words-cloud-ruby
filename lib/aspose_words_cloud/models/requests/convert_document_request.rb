@@ -56,7 +56,7 @@ module AsposeWordsCloud
     # @param storage Original document storage.
     # @param fonts_location Folder in filestorage with custom fonts.
 
-    def initialize(document, format, out_path = nil, file_name_field_value = nil, storage = nil, fonts_location = nil)
+    def initialize(document:, format:, out_path: nil, file_name_field_value: nil, storage: nil, fonts_location: nil)
       self.document = document
       self.format = format
       self.out_path = out_path

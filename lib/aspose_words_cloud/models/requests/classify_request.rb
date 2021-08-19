@@ -40,7 +40,7 @@ module AsposeWordsCloud
     # @param text The text to classify.
     # @param best_classes_count The number of the best classes to return.
 
-    def initialize(text, best_classes_count = nil)
+    def initialize(text:, best_classes_count: nil)
       self.text = text
       self.best_classes_count = best_classes_count
     end

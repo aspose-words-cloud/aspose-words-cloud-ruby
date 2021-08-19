@@ -46,7 +46,7 @@ module AsposeWordsCloud
     # @param path Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext If the content is multipart and path does not contains the file name it tries to get them from filename parameter from Content-Disposition header.
     # @param storage_name Storage name.
 
-    def initialize(file_content, path, storage_name = nil)
+    def initialize(file_content:, path:, storage_name: nil)
       self.file_content = file_content
       self.path = path
       self.storage_name = storage_name

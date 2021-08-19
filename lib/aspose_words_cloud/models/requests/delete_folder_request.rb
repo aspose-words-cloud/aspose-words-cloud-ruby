@@ -44,7 +44,7 @@ module AsposeWordsCloud
     # @param storage_name Storage name.
     # @param recursive Enable to delete folders, subfolders and files.
 
-    def initialize(path, storage_name = nil, recursive = nil)
+    def initialize(path:, storage_name: nil, recursive: nil)
       self.path = path
       self.storage_name = storage_name
       self.recursive = recursive

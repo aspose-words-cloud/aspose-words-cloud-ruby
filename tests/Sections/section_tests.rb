@@ -46,7 +46,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetSectionRequest.new(remote_file_name, 0, folder: remote_data_folder)
+      request = GetSectionRequest.new(name: remote_file_name, section_index: 0, folder: remote_data_folder)
 
       result = @words_api.get_section(request)
       assert_equal false, result.nil?
@@ -57,7 +57,7 @@ module AsposeWordsCloud
     #
     def test_get_section_online
       request_document = File.open(File.join(local_test_folder, local_file))
-      request = GetSectionOnlineRequest.new(request_document, 0)
+      request = GetSectionOnlineRequest.new(document: request_document, section_index: 0)
 
       result = @words_api.get_section_online(request)
       assert_equal false, result.nil?
@@ -71,7 +71,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetSectionsRequest.new(remote_file_name, folder: remote_data_folder)
+      request = GetSectionsRequest.new(name: remote_file_name, folder: remote_data_folder)
 
       result = @words_api.get_sections(request)
       assert_equal false, result.nil?
@@ -82,7 +82,7 @@ module AsposeWordsCloud
     #
     def test_get_sections_online
       request_document = File.open(File.join(local_test_folder, local_file))
-      request = GetSectionsOnlineRequest.new(request_document)
+      request = GetSectionsOnlineRequest.new(document: request_document)
 
       result = @words_api.get_sections_online(request)
       assert_equal false, result.nil?
@@ -96,7 +96,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = DeleteSectionRequest.new(remote_file_name, 0, folder: remote_data_folder)
+      request = DeleteSectionRequest.new(name: remote_file_name, section_index: 0, folder: remote_data_folder)
 
       @words_api.delete_section(request)
     end
@@ -106,7 +106,7 @@ module AsposeWordsCloud
     #
     def test_delete_section_online
       request_document = File.open(File.join(local_test_folder, local_file))
-      request = DeleteSectionOnlineRequest.new(request_document, 0)
+      request = DeleteSectionOnlineRequest.new(document: request_document, section_index: 0)
 
       result = @words_api.delete_section_online(request)
       assert_equal false, result.nil?

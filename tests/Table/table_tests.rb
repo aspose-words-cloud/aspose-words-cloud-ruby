@@ -46,7 +46,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetTablesRequest.new(remote_file_name, node_path: '', folder: remote_data_folder)
+      request = GetTablesRequest.new(name: remote_file_name, node_path: '', folder: remote_data_folder)
 
       result = @words_api.get_tables(request)
       assert_equal false, result.nil?
@@ -57,7 +57,7 @@ module AsposeWordsCloud
     #
     def test_get_tables_online
       request_document = File.open(File.join(local_test_folder, local_file))
-      request = GetTablesOnlineRequest.new(request_document, node_path: '')
+      request = GetTablesOnlineRequest.new(document: request_document, node_path: '')
 
       result = @words_api.get_tables_online(request)
       assert_equal false, result.nil?
@@ -71,7 +71,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetTablesRequest.new(remote_file_name, folder: remote_data_folder)
+      request = GetTablesRequest.new(name: remote_file_name, folder: remote_data_folder)
 
       result = @words_api.get_tables(request)
       assert_equal false, result.nil?
@@ -85,7 +85,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetTableRequest.new(remote_file_name, 1, node_path: '', folder: remote_data_folder)
+      request = GetTableRequest.new(name: remote_file_name, index: 1, node_path: '', folder: remote_data_folder)
 
       result = @words_api.get_table(request)
       assert_equal false, result.nil?
@@ -96,7 +96,7 @@ module AsposeWordsCloud
     #
     def test_get_table_online
       request_document = File.open(File.join(local_test_folder, local_file))
-      request = GetTableOnlineRequest.new(request_document, 1, node_path: '')
+      request = GetTableOnlineRequest.new(document: request_document, index: 1, node_path: '')
 
       result = @words_api.get_table_online(request)
       assert_equal false, result.nil?
@@ -110,7 +110,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetTableRequest.new(remote_file_name, 1, folder: remote_data_folder)
+      request = GetTableRequest.new(name: remote_file_name, index: 1, folder: remote_data_folder)
 
       result = @words_api.get_table(request)
       assert_equal false, result.nil?
@@ -124,7 +124,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = DeleteTableRequest.new(remote_file_name, 1, node_path: '', folder: remote_data_folder)
+      request = DeleteTableRequest.new(name: remote_file_name, index: 1, node_path: '', folder: remote_data_folder)
 
       @words_api.delete_table(request)
     end
@@ -134,7 +134,7 @@ module AsposeWordsCloud
     #
     def test_delete_table_online
       request_document = File.open(File.join(local_test_folder, local_file))
-      request = DeleteTableOnlineRequest.new(request_document, 1, node_path: '')
+      request = DeleteTableOnlineRequest.new(document: request_document, index: 1, node_path: '')
 
       result = @words_api.delete_table_online(request)
       assert_equal false, result.nil?
@@ -148,7 +148,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = DeleteTableRequest.new(remote_file_name, 1, folder: remote_data_folder)
+      request = DeleteTableRequest.new(name: remote_file_name, index: 1, folder: remote_data_folder)
 
       @words_api.delete_table(request)
     end
@@ -162,7 +162,7 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
       request_table = TableInsert.new({:ColumnsCount => 5, :RowsCount => 4})
-      request = InsertTableRequest.new(remote_file_name, request_table, node_path: '', folder: remote_data_folder)
+      request = InsertTableRequest.new(name: remote_file_name, table: request_table, node_path: '', folder: remote_data_folder)
 
       result = @words_api.insert_table(request)
       assert_equal false, result.nil?
@@ -174,7 +174,7 @@ module AsposeWordsCloud
     def test_insert_table_online
       request_document = File.open(File.join(local_test_folder, local_file))
       request_table = TableInsert.new({:ColumnsCount => 5, :RowsCount => 4})
-      request = InsertTableOnlineRequest.new(request_document, request_table, node_path: '')
+      request = InsertTableOnlineRequest.new(document: request_document, table: request_table, node_path: '')
 
       result = @words_api.insert_table_online(request)
       assert_equal false, result.nil?
@@ -189,7 +189,7 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
       request_table = TableInsert.new({:ColumnsCount => 5, :RowsCount => 4})
-      request = InsertTableRequest.new(remote_file_name, request_table, folder: remote_data_folder)
+      request = InsertTableRequest.new(name: remote_file_name, table: request_table, folder: remote_data_folder)
 
       result = @words_api.insert_table(request)
       assert_equal false, result.nil?
@@ -203,7 +203,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetTablePropertiesRequest.new(remote_file_name, 1, node_path: '', folder: remote_data_folder)
+      request = GetTablePropertiesRequest.new(name: remote_file_name, index: 1, node_path: '', folder: remote_data_folder)
 
       result = @words_api.get_table_properties(request)
       assert_equal false, result.nil?
@@ -214,7 +214,7 @@ module AsposeWordsCloud
     #
     def test_get_table_properties_online
       request_document = File.open(File.join(local_test_folder, local_file))
-      request = GetTablePropertiesOnlineRequest.new(request_document, 1, node_path: '')
+      request = GetTablePropertiesOnlineRequest.new(document: request_document, index: 1, node_path: '')
 
       result = @words_api.get_table_properties_online(request)
       assert_equal false, result.nil?
@@ -228,7 +228,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetTablePropertiesRequest.new(remote_file_name, 1, folder: remote_data_folder)
+      request = GetTablePropertiesRequest.new(name: remote_file_name, index: 1, folder: remote_data_folder)
 
       result = @words_api.get_table_properties(request)
       assert_equal false, result.nil?
@@ -243,7 +243,7 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
       request_properties = TableProperties.new({:Alignment => 'Right', :AllowAutoFit => false, :Bidi => true, :BottomPadding => 1, :CellSpacing => 2.0, :StyleOptions => 'ColumnBands'})
-      request = UpdateTablePropertiesRequest.new(remote_file_name, 1, request_properties, node_path: '', folder: remote_data_folder)
+      request = UpdateTablePropertiesRequest.new(name: remote_file_name, index: 1, properties: request_properties, node_path: '', folder: remote_data_folder)
 
       result = @words_api.update_table_properties(request)
       assert_equal false, result.nil?
@@ -255,7 +255,7 @@ module AsposeWordsCloud
     def test_update_table_properties_online
       request_document = File.open(File.join(local_test_folder, local_file))
       request_properties = TableProperties.new({:Alignment => 'Right', :AllowAutoFit => false, :Bidi => true, :BottomPadding => 1, :CellSpacing => 2, :StyleOptions => 'ColumnBands'})
-      request = UpdateTablePropertiesOnlineRequest.new(request_document, request_properties, 1, node_path: '')
+      request = UpdateTablePropertiesOnlineRequest.new(document: request_document, properties: request_properties, index: 1, node_path: '')
 
       result = @words_api.update_table_properties_online(request)
       assert_equal false, result.nil?
@@ -270,7 +270,7 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
       request_properties = TableProperties.new({:Alignment => 'Right', :AllowAutoFit => false, :Bidi => true, :BottomPadding => 1.0, :CellSpacing => 2.0, :StyleOptions => 'ColumnBands'})
-      request = UpdateTablePropertiesRequest.new(remote_file_name, 1, request_properties, folder: remote_data_folder)
+      request = UpdateTablePropertiesRequest.new(name: remote_file_name, index: 1, properties: request_properties, folder: remote_data_folder)
 
       result = @words_api.update_table_properties(request)
       assert_equal false, result.nil?
@@ -284,7 +284,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetTableRowRequest.new(remote_file_name, 'tables/1', 0, folder: remote_data_folder)
+      request = GetTableRowRequest.new(name: remote_file_name, table_path: 'tables/1', index: 0, folder: remote_data_folder)
 
       result = @words_api.get_table_row(request)
       assert_equal false, result.nil?
@@ -295,7 +295,7 @@ module AsposeWordsCloud
     #
     def test_get_table_row_online
       request_document = File.open(File.join(local_test_folder, local_file))
-      request = GetTableRowOnlineRequest.new(request_document, 'tables/1', 0)
+      request = GetTableRowOnlineRequest.new(document: request_document, table_path: 'tables/1', index: 0)
 
       result = @words_api.get_table_row_online(request)
       assert_equal false, result.nil?
@@ -309,7 +309,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = DeleteTableRowRequest.new(remote_file_name, 'tables/1', 0, folder: remote_data_folder)
+      request = DeleteTableRowRequest.new(name: remote_file_name, table_path: 'tables/1', index: 0, folder: remote_data_folder)
 
       @words_api.delete_table_row(request)
     end
@@ -319,7 +319,7 @@ module AsposeWordsCloud
     #
     def test_delete_table_row_online
       request_document = File.open(File.join(local_test_folder, local_file))
-      request = DeleteTableRowOnlineRequest.new(request_document, 'tables/1', 0)
+      request = DeleteTableRowOnlineRequest.new(document: request_document, table_path: 'tables/1', index: 0)
 
       result = @words_api.delete_table_row_online(request)
       assert_equal false, result.nil?
@@ -334,7 +334,7 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
       request_row = TableRowInsert.new({:ColumnsCount => 5})
-      request = InsertTableRowRequest.new(remote_file_name, 'sections/0/tables/2', request_row, folder: remote_data_folder)
+      request = InsertTableRowRequest.new(name: remote_file_name, table_path: 'sections/0/tables/2', row: request_row, folder: remote_data_folder)
 
       result = @words_api.insert_table_row(request)
       assert_equal false, result.nil?
@@ -346,7 +346,7 @@ module AsposeWordsCloud
     def test_insert_table_row_online
       request_document = File.open(File.join(local_test_folder, local_file))
       request_row = TableRowInsert.new({:ColumnsCount => 5})
-      request = InsertTableRowOnlineRequest.new(request_document, 'sections/0/tables/2', request_row)
+      request = InsertTableRowOnlineRequest.new(document: request_document, table_path: 'sections/0/tables/2', row: request_row)
 
       result = @words_api.insert_table_row_online(request)
       assert_equal false, result.nil?
@@ -360,7 +360,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetTableRowFormatRequest.new(remote_file_name, 'sections/0/tables/2', 0, folder: remote_data_folder)
+      request = GetTableRowFormatRequest.new(name: remote_file_name, table_path: 'sections/0/tables/2', index: 0, folder: remote_data_folder)
 
       result = @words_api.get_table_row_format(request)
       assert_equal false, result.nil?
@@ -371,7 +371,7 @@ module AsposeWordsCloud
     #
     def test_get_table_row_format_online
       request_document = File.open(File.join(local_test_folder, local_file))
-      request = GetTableRowFormatOnlineRequest.new(request_document, 'sections/0/tables/2', 0)
+      request = GetTableRowFormatOnlineRequest.new(document: request_document, table_path: 'sections/0/tables/2', index: 0)
 
       result = @words_api.get_table_row_format_online(request)
       assert_equal false, result.nil?
@@ -386,7 +386,7 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
       request_format = TableRowFormat.new({:AllowBreakAcrossPages => true, :HeadingFormat => true, :Height => 10.0, :HeightRule => 'Exactly'})
-      request = UpdateTableRowFormatRequest.new(remote_file_name, 'sections/0/tables/2', 0, request_format, folder: remote_data_folder)
+      request = UpdateTableRowFormatRequest.new(name: remote_file_name, table_path: 'sections/0/tables/2', index: 0, format: request_format, folder: remote_data_folder)
 
       result = @words_api.update_table_row_format(request)
       assert_equal false, result.nil?
@@ -398,7 +398,7 @@ module AsposeWordsCloud
     def test_update_table_row_format_online
       request_document = File.open(File.join(local_test_folder, local_file))
       request_format = TableRowFormat.new({:AllowBreakAcrossPages => true, :HeadingFormat => true, :Height => 10, :HeightRule => 'Auto'})
-      request = UpdateTableRowFormatOnlineRequest.new(request_document, 'sections/0/tables/2', request_format, 0)
+      request = UpdateTableRowFormatOnlineRequest.new(document: request_document, table_path: 'sections/0/tables/2', format: request_format, index: 0)
 
       result = @words_api.update_table_row_format_online(request)
       assert_equal false, result.nil?
@@ -412,7 +412,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetTableCellRequest.new(remote_file_name, 'sections/0/tables/2/rows/0', 0, folder: remote_data_folder)
+      request = GetTableCellRequest.new(name: remote_file_name, table_row_path: 'sections/0/tables/2/rows/0', index: 0, folder: remote_data_folder)
 
       result = @words_api.get_table_cell(request)
       assert_equal false, result.nil?
@@ -423,7 +423,7 @@ module AsposeWordsCloud
     #
     def test_get_table_cell_online
       request_document = File.open(File.join(local_test_folder, local_file))
-      request = GetTableCellOnlineRequest.new(request_document, 'sections/0/tables/2/rows/0', 0)
+      request = GetTableCellOnlineRequest.new(document: request_document, table_row_path: 'sections/0/tables/2/rows/0', index: 0)
 
       result = @words_api.get_table_cell_online(request)
       assert_equal false, result.nil?
@@ -437,7 +437,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = DeleteTableCellRequest.new(remote_file_name, 'sections/0/tables/2/rows/0', 0, folder: remote_data_folder)
+      request = DeleteTableCellRequest.new(name: remote_file_name, table_row_path: 'sections/0/tables/2/rows/0', index: 0, folder: remote_data_folder)
 
       @words_api.delete_table_cell(request)
     end
@@ -447,7 +447,7 @@ module AsposeWordsCloud
     #
     def test_delete_table_cell_online
       request_document = File.open(File.join(local_test_folder, local_file))
-      request = DeleteTableCellOnlineRequest.new(request_document, 'sections/0/tables/2/rows/0', 0)
+      request = DeleteTableCellOnlineRequest.new(document: request_document, table_row_path: 'sections/0/tables/2/rows/0', index: 0)
 
       result = @words_api.delete_table_cell_online(request)
       assert_equal false, result.nil?
@@ -462,7 +462,7 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
       request_cell = TableCellInsert.new({})
-      request = InsertTableCellRequest.new(remote_file_name, 'sections/0/tables/2/rows/0', request_cell, folder: remote_data_folder)
+      request = InsertTableCellRequest.new(name: remote_file_name, table_row_path: 'sections/0/tables/2/rows/0', cell: request_cell, folder: remote_data_folder)
 
       result = @words_api.insert_table_cell(request)
       assert_equal false, result.nil?
@@ -474,7 +474,7 @@ module AsposeWordsCloud
     def test_insert_table_cell_online
       request_document = File.open(File.join(local_test_folder, local_file))
       request_cell = TableCellInsert.new({})
-      request = InsertTableCellOnlineRequest.new(request_document, 'sections/0/tables/2/rows/0', request_cell)
+      request = InsertTableCellOnlineRequest.new(document: request_document, table_row_path: 'sections/0/tables/2/rows/0', cell: request_cell)
 
       result = @words_api.insert_table_cell_online(request)
       assert_equal false, result.nil?
@@ -488,7 +488,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetTableCellFormatRequest.new(remote_file_name, 'sections/0/tables/2/rows/0', 0, folder: remote_data_folder)
+      request = GetTableCellFormatRequest.new(name: remote_file_name, table_row_path: 'sections/0/tables/2/rows/0', index: 0, folder: remote_data_folder)
 
       result = @words_api.get_table_cell_format(request)
       assert_equal false, result.nil?
@@ -499,7 +499,7 @@ module AsposeWordsCloud
     #
     def test_get_table_cell_format_online
       request_document = File.open(File.join(local_test_folder, local_file))
-      request = GetTableCellFormatOnlineRequest.new(request_document, 'sections/0/tables/2/rows/0', 0)
+      request = GetTableCellFormatOnlineRequest.new(document: request_document, table_row_path: 'sections/0/tables/2/rows/0', index: 0)
 
       result = @words_api.get_table_cell_format_online(request)
       assert_equal false, result.nil?
@@ -514,7 +514,7 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
       request_format = TableCellFormat.new({:BottomPadding => 5.0, :FitText => true, :HorizontalMerge => 'First', :WrapText => true})
-      request = UpdateTableCellFormatRequest.new(remote_file_name, 'sections/0/tables/2/rows/0', 0, request_format, folder: remote_data_folder)
+      request = UpdateTableCellFormatRequest.new(name: remote_file_name, table_row_path: 'sections/0/tables/2/rows/0', index: 0, format: request_format, folder: remote_data_folder)
 
       result = @words_api.update_table_cell_format(request)
       assert_equal false, result.nil?
@@ -526,7 +526,7 @@ module AsposeWordsCloud
     def test_update_table_cell_format_online
       request_document = File.open(File.join(local_test_folder, local_file))
       request_format = TableCellFormat.new({:BottomPadding => 5, :FitText => true, :HorizontalMerge => 'First', :WrapText => true})
-      request = UpdateTableCellFormatOnlineRequest.new(request_document, 'sections/0/tables/2/rows/0', request_format, 0)
+      request = UpdateTableCellFormatOnlineRequest.new(document: request_document, table_row_path: 'sections/0/tables/2/rows/0', format: request_format, index: 0)
 
       result = @words_api.update_table_cell_format_online(request)
       assert_equal false, result.nil?
@@ -540,7 +540,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = RenderTableRequest.new(remote_file_name, 'png', 0, node_path: '', folder: remote_data_folder)
+      request = RenderTableRequest.new(name: remote_file_name, format: 'png', index: 0, node_path: '', folder: remote_data_folder)
 
       result = @words_api.render_table(request)
       assert_equal false, result.nil?
@@ -551,7 +551,7 @@ module AsposeWordsCloud
     #
     def test_render_table_online
       request_document = File.open(File.join(local_test_folder, local_file))
-      request = RenderTableOnlineRequest.new(request_document, 'png', 0, node_path: '')
+      request = RenderTableOnlineRequest.new(document: request_document, format: 'png', index: 0, node_path: '')
 
       result = @words_api.render_table_online(request)
       assert_equal false, result.nil?
@@ -565,7 +565,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = RenderTableRequest.new(remote_file_name, 'png', 0, folder: remote_data_folder)
+      request = RenderTableRequest.new(name: remote_file_name, format: 'png', index: 0, folder: remote_data_folder)
 
       result = @words_api.render_table(request)
       assert_equal false, result.nil?

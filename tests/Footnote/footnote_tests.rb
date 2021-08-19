@@ -47,7 +47,7 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, footnote_folder + '/Footnote.doc'), remote_data_folder + '/' + remote_file_name
 
       request_footnote_dto = FootnoteInsert.new({:FootnoteType => 'Endnote', :Text => 'test endnote'})
-      request = InsertFootnoteRequest.new(remote_file_name, request_footnote_dto, node_path: '', folder: remote_data_folder)
+      request = InsertFootnoteRequest.new(name: remote_file_name, footnote_dto: request_footnote_dto, node_path: '', folder: remote_data_folder)
 
       result = @words_api.insert_footnote(request)
       assert_equal false, result.nil?
@@ -59,7 +59,7 @@ module AsposeWordsCloud
     def test_insert_footnote_online
       request_document = File.open(File.join(local_test_folder, footnote_folder + '/Footnote.doc'))
       request_footnote_dto = FootnoteInsert.new({:FootnoteType => 'Endnote', :Text => 'test endnote'})
-      request = InsertFootnoteOnlineRequest.new(request_document, request_footnote_dto, node_path: '')
+      request = InsertFootnoteOnlineRequest.new(document: request_document, footnote_dto: request_footnote_dto, node_path: '')
 
       result = @words_api.insert_footnote_online(request)
       assert_equal false, result.nil?
@@ -74,7 +74,7 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, footnote_folder + '/Footnote.doc'), remote_data_folder + '/' + remote_file_name
 
       request_footnote_dto = FootnoteInsert.new({:FootnoteType => 'Endnote', :Text => 'test endnote'})
-      request = InsertFootnoteRequest.new(remote_file_name, request_footnote_dto, folder: remote_data_folder)
+      request = InsertFootnoteRequest.new(name: remote_file_name, footnote_dto: request_footnote_dto, folder: remote_data_folder)
 
       result = @words_api.insert_footnote(request)
       assert_equal false, result.nil?
@@ -88,7 +88,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, footnote_folder + '/Footnote.doc'), remote_data_folder + '/' + remote_file_name
 
-      request = DeleteFootnoteRequest.new(remote_file_name, 0, node_path: '', folder: remote_data_folder)
+      request = DeleteFootnoteRequest.new(name: remote_file_name, index: 0, node_path: '', folder: remote_data_folder)
 
       @words_api.delete_footnote(request)
     end
@@ -98,7 +98,7 @@ module AsposeWordsCloud
     #
     def test_delete_footnote_online
       request_document = File.open(File.join(local_test_folder, footnote_folder + '/Footnote.doc'))
-      request = DeleteFootnoteOnlineRequest.new(request_document, 0, node_path: '')
+      request = DeleteFootnoteOnlineRequest.new(document: request_document, index: 0, node_path: '')
 
       result = @words_api.delete_footnote_online(request)
       assert_equal false, result.nil?
@@ -112,7 +112,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, footnote_folder + '/Footnote.doc'), remote_data_folder + '/' + remote_file_name
 
-      request = DeleteFootnoteRequest.new(remote_file_name, 0, folder: remote_data_folder)
+      request = DeleteFootnoteRequest.new(name: remote_file_name, index: 0, folder: remote_data_folder)
 
       @words_api.delete_footnote(request)
     end
@@ -125,7 +125,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, footnote_folder + '/Footnote.doc'), remote_data_folder + '/' + remote_file_name
 
-      request = GetFootnotesRequest.new(remote_file_name, node_path: '', folder: remote_data_folder)
+      request = GetFootnotesRequest.new(name: remote_file_name, node_path: '', folder: remote_data_folder)
 
       result = @words_api.get_footnotes(request)
       assert_equal false, result.nil?
@@ -136,7 +136,7 @@ module AsposeWordsCloud
     #
     def test_get_footnotes_online
       request_document = File.open(File.join(local_test_folder, footnote_folder + '/Footnote.doc'))
-      request = GetFootnotesOnlineRequest.new(request_document, node_path: '')
+      request = GetFootnotesOnlineRequest.new(document: request_document, node_path: '')
 
       result = @words_api.get_footnotes_online(request)
       assert_equal false, result.nil?
@@ -150,7 +150,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, footnote_folder + '/Footnote.doc'), remote_data_folder + '/' + remote_file_name
 
-      request = GetFootnotesRequest.new(remote_file_name, folder: remote_data_folder)
+      request = GetFootnotesRequest.new(name: remote_file_name, folder: remote_data_folder)
 
       result = @words_api.get_footnotes(request)
       assert_equal false, result.nil?
@@ -164,7 +164,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, footnote_folder + '/Footnote.doc'), remote_data_folder + '/' + remote_file_name
 
-      request = GetFootnoteRequest.new(remote_file_name, 0, node_path: '', folder: remote_data_folder)
+      request = GetFootnoteRequest.new(name: remote_file_name, index: 0, node_path: '', folder: remote_data_folder)
 
       result = @words_api.get_footnote(request)
       assert_equal false, result.nil?
@@ -175,7 +175,7 @@ module AsposeWordsCloud
     #
     def test_get_footnote_online
       request_document = File.open(File.join(local_test_folder, footnote_folder + '/Footnote.doc'))
-      request = GetFootnoteOnlineRequest.new(request_document, 0, node_path: '')
+      request = GetFootnoteOnlineRequest.new(document: request_document, index: 0, node_path: '')
 
       result = @words_api.get_footnote_online(request)
       assert_equal false, result.nil?
@@ -189,7 +189,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, footnote_folder + '/Footnote.doc'), remote_data_folder + '/' + remote_file_name
 
-      request = GetFootnoteRequest.new(remote_file_name, 0, folder: remote_data_folder)
+      request = GetFootnoteRequest.new(name: remote_file_name, index: 0, folder: remote_data_folder)
 
       result = @words_api.get_footnote(request)
       assert_equal false, result.nil?
@@ -204,7 +204,7 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, footnote_folder + '/Footnote.doc'), remote_data_folder + '/' + remote_file_name
 
       request_footnote_dto = FootnoteUpdate.new({:Text => 'new text is here'})
-      request = UpdateFootnoteRequest.new(remote_file_name, 0, request_footnote_dto, node_path: '', folder: remote_data_folder)
+      request = UpdateFootnoteRequest.new(name: remote_file_name, index: 0, footnote_dto: request_footnote_dto, node_path: '', folder: remote_data_folder)
 
       result = @words_api.update_footnote(request)
       assert_equal false, result.nil?
@@ -216,7 +216,7 @@ module AsposeWordsCloud
     def test_update_footnote_online
       request_document = File.open(File.join(local_test_folder, footnote_folder + '/Footnote.doc'))
       request_footnote_dto = FootnoteUpdate.new({:Text => 'new text is here'})
-      request = UpdateFootnoteOnlineRequest.new(request_document, request_footnote_dto, 0, node_path: '')
+      request = UpdateFootnoteOnlineRequest.new(document: request_document, footnote_dto: request_footnote_dto, index: 0, node_path: '')
 
       result = @words_api.update_footnote_online(request)
       assert_equal false, result.nil?
@@ -231,7 +231,7 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, footnote_folder + '/Footnote.doc'), remote_data_folder + '/' + remote_file_name
 
       request_footnote_dto = FootnoteUpdate.new({:Text => 'new text is here'})
-      request = UpdateFootnoteRequest.new(remote_file_name, 0, request_footnote_dto, folder: remote_data_folder)
+      request = UpdateFootnoteRequest.new(name: remote_file_name, index: 0, footnote_dto: request_footnote_dto, folder: remote_data_folder)
 
       result = @words_api.update_footnote(request)
       assert_equal false, result.nil?

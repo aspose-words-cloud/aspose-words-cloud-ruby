@@ -50,7 +50,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetSectionPageSetupRequest.new(remote_file_name, 0, folder: remote_data_folder)
+      request = GetSectionPageSetupRequest.new(name: remote_file_name, section_index: 0, folder: remote_data_folder)
 
       result = @words_api.get_section_page_setup(request)
       assert_equal false, result.nil?
@@ -61,7 +61,7 @@ module AsposeWordsCloud
     #
     def test_get_section_page_setup_online
       request_document = File.open(File.join(local_test_folder, local_file))
-      request = GetSectionPageSetupOnlineRequest.new(request_document, 0)
+      request = GetSectionPageSetupOnlineRequest.new(document: request_document, section_index: 0)
 
       result = @words_api.get_section_page_setup_online(request)
       assert_equal false, result.nil?
@@ -76,7 +76,7 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
       request_page_setup = PageSetup.new({:RtlGutter => true, :LeftMargin => 10.0, :Orientation => 'Landscape', :PaperSize => 'A5'})
-      request = UpdateSectionPageSetupRequest.new(remote_file_name, 0, request_page_setup, folder: remote_data_folder)
+      request = UpdateSectionPageSetupRequest.new(name: remote_file_name, section_index: 0, page_setup: request_page_setup, folder: remote_data_folder)
 
       result = @words_api.update_section_page_setup(request)
       assert_equal false, result.nil?
@@ -88,7 +88,7 @@ module AsposeWordsCloud
     def test_update_section_page_setup_online
       request_document = File.open(File.join(local_test_folder, local_file))
       request_page_setup = PageSetup.new({:RtlGutter => true, :LeftMargin => 10, :Orientation => 'Landscape', :PaperSize => 'A5'})
-      request = UpdateSectionPageSetupOnlineRequest.new(request_document, 0, request_page_setup)
+      request = UpdateSectionPageSetupOnlineRequest.new(document: request_document, section_index: 0, page_setup: request_page_setup)
 
       result = @words_api.update_section_page_setup_online(request)
       assert_equal false, result.nil?
@@ -102,7 +102,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_text_file), remote_data_folder + '/' + remote_file_name
 
-      request = RenderPageRequest.new(remote_file_name, 1, 'bmp', folder: remote_data_folder)
+      request = RenderPageRequest.new(name: remote_file_name, page_index: 1, format: 'bmp', folder: remote_data_folder)
 
       result = @words_api.render_page(request)
       assert_equal false, result.nil?
@@ -113,7 +113,7 @@ module AsposeWordsCloud
     #
     def test_get_render_page_online
       request_document = File.open(File.join(local_test_folder, local_text_file))
-      request = RenderPageOnlineRequest.new(request_document, 1, 'bmp')
+      request = RenderPageOnlineRequest.new(document: request_document, page_index: 1, format: 'bmp')
 
       result = @words_api.render_page_online(request)
       assert_equal false, result.nil?

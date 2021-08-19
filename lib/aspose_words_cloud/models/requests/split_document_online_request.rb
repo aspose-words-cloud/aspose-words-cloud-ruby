@@ -68,7 +68,7 @@ module AsposeWordsCloud
     # @param zip_output The flag indicating whether to ZIP the output.
     # @param fonts_location Folder in filestorage with custom fonts.
 
-    def initialize(document, format, load_encoding = nil, password = nil, dest_file_name = nil, from = nil, to = nil, zip_output = nil, fonts_location = nil)
+    def initialize(document:, format:, load_encoding: nil, password: nil, dest_file_name: nil, from: nil, to: nil, zip_output: nil, fonts_location: nil)
       self.document = document
       self.format = format
       self.load_encoding = load_encoding

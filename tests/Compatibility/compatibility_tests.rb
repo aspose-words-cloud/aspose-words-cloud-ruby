@@ -47,7 +47,7 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
       request_options = OptimizationOptions.new({:MsWordVersion => 'Word2002'})
-      request = OptimizeDocumentRequest.new(remote_file_name, request_options, folder: remote_data_folder)
+      request = OptimizeDocumentRequest.new(name: remote_file_name, options: request_options, folder: remote_data_folder)
 
       @words_api.optimize_document(request)
     end
@@ -58,7 +58,7 @@ module AsposeWordsCloud
     def test_optimize_document_online
       request_document = File.open(File.join(local_test_folder, local_file))
       request_options = OptimizationOptions.new({:MsWordVersion => 'Word2002'})
-      request = OptimizeDocumentOnlineRequest.new(request_document, request_options)
+      request = OptimizeDocumentOnlineRequest.new(document: request_document, options: request_options)
 
       result = @words_api.optimize_document_online(request)
       assert_equal false, result.nil?
