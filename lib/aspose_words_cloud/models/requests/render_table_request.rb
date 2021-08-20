@@ -72,7 +72,7 @@ module AsposeWordsCloud
     # @param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
     # @param fonts_location Folder in filestorage with custom fonts.
 
-    def initialize(name, format, index, node_path = nil, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil, fonts_location = nil)
+    def initialize(name:, format:, index:, node_path: nil, folder: nil, storage: nil, load_encoding: nil, password: nil, dest_file_name: nil, fonts_location: nil)
       self.name = name
       self.format = format
       self.index = index

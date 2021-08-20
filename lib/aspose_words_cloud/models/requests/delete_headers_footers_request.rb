@@ -72,7 +72,7 @@ module AsposeWordsCloud
     # @param revision_date_time The date and time to use for revisions.
     # @param headers_footers_types The list of HeaderFooter types.
 
-    def initialize(name, section_path, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil, revision_author = nil, revision_date_time = nil, headers_footers_types = nil)
+    def initialize(name:, section_path:, folder: nil, storage: nil, load_encoding: nil, password: nil, dest_file_name: nil, revision_author: nil, revision_date_time: nil, headers_footers_types: nil)
       self.name = name
       self.section_path = section_path
       self.folder = folder

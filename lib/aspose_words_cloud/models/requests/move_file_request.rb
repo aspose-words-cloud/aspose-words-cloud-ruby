@@ -52,7 +52,7 @@ module AsposeWordsCloud
     # @param dest_storage_name Destination storage name.
     # @param version_id File version ID to move.
 
-    def initialize(dest_path, src_path, src_storage_name = nil, dest_storage_name = nil, version_id = nil)
+    def initialize(dest_path:, src_path:, src_storage_name: nil, dest_storage_name: nil, version_id: nil)
       self.dest_path = dest_path
       self.src_path = src_path
       self.src_storage_name = src_storage_name

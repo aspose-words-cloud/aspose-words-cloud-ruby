@@ -46,7 +46,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetListsRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
+      request = GetListsRequest.new(name: remote_file_name, folder: remote_data_folder)
 
       result = @words_api.get_lists(request)
       assert_equal false, result.nil?
@@ -56,7 +56,8 @@ module AsposeWordsCloud
     # Test for getting lists from document online.
     #
     def test_get_lists_online
-      request = GetListsOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = GetListsOnlineRequest.new(document: request_document)
 
       result = @words_api.get_lists_online(request)
       assert_equal false, result.nil?
@@ -70,7 +71,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetListRequest.new(remote_file_name, 1, remote_data_folder, nil, nil, nil)
+      request = GetListRequest.new(name: remote_file_name, list_id: 1, folder: remote_data_folder)
 
       result = @words_api.get_list(request)
       assert_equal false, result.nil?
@@ -80,7 +81,8 @@ module AsposeWordsCloud
     # Test for getting list from document online.
     #
     def test_get_list_online
-      request = GetListOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 1, nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = GetListOnlineRequest.new(document: request_document, list_id: 1)
 
       result = @words_api.get_list_online(request)
       assert_equal false, result.nil?
@@ -95,7 +97,7 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
       request_list_update = ListUpdate.new({:IsRestartAtEachSection => true})
-      request = UpdateListRequest.new(remote_file_name, 1, request_list_update, remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request = UpdateListRequest.new(name: remote_file_name, list_id: 1, list_update: request_list_update, folder: remote_data_folder)
 
       result = @words_api.update_list(request)
       assert_equal false, result.nil?
@@ -105,8 +107,9 @@ module AsposeWordsCloud
     # Test for updating list from document online.
     #
     def test_update_list_online
+      request_document = File.open(File.join(local_test_folder, local_file))
       request_list_update = ListUpdate.new({:IsRestartAtEachSection => true})
-      request = UpdateListOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 1, request_list_update, nil, nil, nil, nil, nil)
+      request = UpdateListOnlineRequest.new(document: request_document, list_id: 1, list_update: request_list_update)
 
       result = @words_api.update_list_online(request)
       assert_equal false, result.nil?
@@ -121,7 +124,7 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
       request_list_update = ListLevelUpdate.new({:Alignment => 'Right'})
-      request = UpdateListLevelRequest.new(remote_file_name, 1, 1, request_list_update, remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request = UpdateListLevelRequest.new(name: remote_file_name, list_id: 1, list_level: 1, list_update: request_list_update, folder: remote_data_folder)
 
       result = @words_api.update_list_level(request)
       assert_equal false, result.nil?
@@ -131,8 +134,9 @@ module AsposeWordsCloud
     # Test for updating list level from document online.
     #
     def test_update_list_level_online
+      request_document = File.open(File.join(local_test_folder, local_file))
       request_list_update = ListLevelUpdate.new({:Alignment => 'Right'})
-      request = UpdateListLevelOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 1, request_list_update, 1, nil, nil, nil, nil, nil)
+      request = UpdateListLevelOnlineRequest.new(document: request_document, list_id: 1, list_update: request_list_update, list_level: 1)
 
       result = @words_api.update_list_level_online(request)
       assert_equal false, result.nil?
@@ -147,7 +151,7 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
       request_list_insert = ListInsert.new({:Template => 'OutlineLegal'})
-      request = InsertListRequest.new(remote_file_name, request_list_insert, remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request = InsertListRequest.new(name: remote_file_name, list_insert: request_list_insert, folder: remote_data_folder)
 
       result = @words_api.insert_list(request)
       assert_equal false, result.nil?
@@ -157,8 +161,9 @@ module AsposeWordsCloud
     # Test for inserting list from document online.
     #
     def test_insert_list_online
+      request_document = File.open(File.join(local_test_folder, local_file))
       request_list_insert = ListInsert.new({:Template => 'OutlineLegal'})
-      request = InsertListOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), request_list_insert, nil, nil, nil, nil, nil)
+      request = InsertListOnlineRequest.new(document: request_document, list_insert: request_list_insert)
 
       result = @words_api.insert_list_online(request)
       assert_equal false, result.nil?

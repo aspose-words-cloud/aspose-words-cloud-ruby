@@ -46,7 +46,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetHeaderFootersRequest.new(remote_file_name, '', remote_data_folder, nil, nil, nil, nil)
+      request = GetHeaderFootersRequest.new(name: remote_file_name, section_path: '', folder: remote_data_folder)
 
       result = @words_api.get_header_footers(request)
       assert_equal false, result.nil?
@@ -56,7 +56,8 @@ module AsposeWordsCloud
     # Test for getting headers and footers online.
     #
     def test_get_header_footers_online
-      request = GetHeaderFootersOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), '', nil, nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = GetHeaderFootersOnlineRequest.new(document: request_document, section_path: '')
 
       result = @words_api.get_header_footers_online(request)
       assert_equal false, result.nil?
@@ -70,7 +71,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetHeaderFooterRequest.new(remote_file_name, 0, remote_data_folder, nil, nil, nil, nil)
+      request = GetHeaderFooterRequest.new(name: remote_file_name, header_footer_index: 0, folder: remote_data_folder)
 
       result = @words_api.get_header_footer(request)
       assert_equal false, result.nil?
@@ -80,7 +81,8 @@ module AsposeWordsCloud
     # Test for getting headerfooter online.
     #
     def test_get_header_footer_online
-      request = GetHeaderFooterOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 0, nil, nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = GetHeaderFooterOnlineRequest.new(document: request_document, header_footer_index: 0)
 
       result = @words_api.get_header_footer_online(request)
       assert_equal false, result.nil?
@@ -94,7 +96,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetHeaderFooterOfSectionRequest.new(remote_file_name, 0, 0, remote_data_folder, nil, nil, nil, nil)
+      request = GetHeaderFooterOfSectionRequest.new(name: remote_file_name, header_footer_index: 0, section_index: 0, folder: remote_data_folder)
 
       result = @words_api.get_header_footer_of_section(request)
       assert_equal false, result.nil?
@@ -104,7 +106,8 @@ module AsposeWordsCloud
     # Test for getting headerfooter of section online.
     #
     def test_get_header_footer_of_section_online
-      request = GetHeaderFooterOfSectionOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 0, 0, nil, nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = GetHeaderFooterOfSectionOnlineRequest.new(document: request_document, header_footer_index: 0, section_index: 0)
 
       result = @words_api.get_header_footer_of_section_online(request)
       assert_equal false, result.nil?
@@ -118,7 +121,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = DeleteHeaderFooterRequest.new(remote_file_name, '', 0, remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request = DeleteHeaderFooterRequest.new(name: remote_file_name, section_path: '', index: 0, folder: remote_data_folder)
 
       @words_api.delete_header_footer(request)
     end
@@ -127,7 +130,8 @@ module AsposeWordsCloud
     # Test for deleting headerfooter online.
     #
     def test_delete_header_footer_online
-      request = DeleteHeaderFooterOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), '', 0, nil, nil, nil, nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = DeleteHeaderFooterOnlineRequest.new(document: request_document, section_path: '', index: 0)
 
       result = @words_api.delete_header_footer_online(request)
       assert_equal false, result.nil?
@@ -141,7 +145,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = DeleteHeadersFootersRequest.new(remote_file_name, '', remote_data_folder, nil, nil, nil, nil, nil, nil, nil)
+      request = DeleteHeadersFootersRequest.new(name: remote_file_name, section_path: '', folder: remote_data_folder)
 
       @words_api.delete_headers_footers(request)
     end
@@ -150,7 +154,8 @@ module AsposeWordsCloud
     # Test for deleting headerfooters online.
     #
     def test_delete_headers_footers_online
-      request = DeleteHeadersFootersOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), '', nil, nil, nil, nil, nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = DeleteHeadersFootersOnlineRequest.new(document: request_document, section_path: '')
 
       result = @words_api.delete_headers_footers_online(request)
       assert_equal false, result.nil?
@@ -164,7 +169,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = InsertHeaderFooterRequest.new(remote_file_name, '', 'FooterEven', remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request = InsertHeaderFooterRequest.new(name: remote_file_name, section_path: '', header_footer_type: 'FooterEven', folder: remote_data_folder)
 
       result = @words_api.insert_header_footer(request)
       assert_equal false, result.nil?
@@ -174,7 +179,8 @@ module AsposeWordsCloud
     # Test for adding headerfooters online.
     #
     def test_insert_header_footer_online
-      request = InsertHeaderFooterOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), '', 'FooterEven', nil, nil, nil, nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = InsertHeaderFooterOnlineRequest.new(document: request_document, section_path: '', header_footer_type: 'FooterEven')
 
       result = @words_api.insert_header_footer_online(request)
       assert_equal false, result.nil?

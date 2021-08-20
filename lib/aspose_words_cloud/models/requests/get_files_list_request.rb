@@ -40,7 +40,7 @@ module AsposeWordsCloud
     # @param path Folder path e.g. '/folder'.
     # @param storage_name Storage name.
 
-    def initialize(path, storage_name = nil)
+    def initialize(path:, storage_name: nil)
       self.path = path
       self.storage_name = storage_name
     end

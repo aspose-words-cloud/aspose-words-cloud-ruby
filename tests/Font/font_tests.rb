@@ -42,7 +42,7 @@ module AsposeWordsCloud
     # Test for GetAvailableFonts resource.
     #
     def test_get_available_fonts
-      request = GetAvailableFontsRequest.new(nil)
+      request = GetAvailableFontsRequest.new()
 
       result = @words_api.get_available_fonts(request)
       assert_equal false, result.nil?
