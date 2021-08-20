@@ -48,6 +48,10 @@ module AsposeWordsCloud
     # Gets or sets the name of destination file.
     attr_accessor :file_name
 
+    # Gets or sets value determining which document formats are allowed to be mapped by Aspose.Words.Markup.StructuredDocumentTag.XmlMapping.
+    # By default only Aspose.Words.LoadFormat.FlatOpc document format is allowed to be mapped.
+    attr_accessor :flat_opc_xml_mapping_only
+
     # Gets or sets the value determining how ink (InkML) objects are rendered.
     attr_accessor :iml_rendering_mode
 
@@ -128,6 +132,9 @@ module AsposeWordsCloud
     # Gets or sets a value indicating whether to export document structure.
     attr_accessor :export_document_structure
 
+    # Gets or sets a value determining whether or not to create a "Span" tag in the document structure to export the text language.
+    attr_accessor :export_language_to_span_tag
+
     # Gets or sets the font embedding mode.
     attr_accessor :font_embedding_mode
 
@@ -205,6 +212,7 @@ module AsposeWordsCloud
         :'dml_effects_rendering_mode' => :'DmlEffectsRenderingMode',
         :'dml_rendering_mode' => :'DmlRenderingMode',
         :'file_name' => :'FileName',
+        :'flat_opc_xml_mapping_only' => :'FlatOpcXmlMappingOnly',
         :'iml_rendering_mode' => :'ImlRenderingMode',
         :'save_format' => :'SaveFormat',
         :'update_created_time_property' => :'UpdateCreatedTimeProperty',
@@ -229,6 +237,7 @@ module AsposeWordsCloud
         :'embed_full_fonts' => :'EmbedFullFonts',
         :'encryption_details' => :'EncryptionDetails',
         :'export_document_structure' => :'ExportDocumentStructure',
+        :'export_language_to_span_tag' => :'ExportLanguageToSpanTag',
         :'font_embedding_mode' => :'FontEmbeddingMode',
         :'header_footer_bookmarks_export_mode' => :'HeaderFooterBookmarksExportMode',
         :'image_color_space_export_mode' => :'ImageColorSpaceExportMode',
@@ -256,6 +265,7 @@ module AsposeWordsCloud
         :'dml_effects_rendering_mode' => :'String',
         :'dml_rendering_mode' => :'String',
         :'file_name' => :'String',
+        :'flat_opc_xml_mapping_only' => :'BOOLEAN',
         :'iml_rendering_mode' => :'String',
         :'save_format' => :'String',
         :'update_created_time_property' => :'BOOLEAN',
@@ -280,6 +290,7 @@ module AsposeWordsCloud
         :'embed_full_fonts' => :'BOOLEAN',
         :'encryption_details' => :'PdfEncryptionDetailsData',
         :'export_document_structure' => :'BOOLEAN',
+        :'export_language_to_span_tag' => :'BOOLEAN',
         :'font_embedding_mode' => :'String',
         :'header_footer_bookmarks_export_mode' => :'String',
         :'image_color_space_export_mode' => :'String',
@@ -328,6 +339,10 @@ module AsposeWordsCloud
 
       if attributes.key?(:'FileName')
         self.file_name = attributes[:'FileName']
+      end
+
+      if attributes.key?(:'FlatOpcXmlMappingOnly')
+        self.flat_opc_xml_mapping_only = attributes[:'FlatOpcXmlMappingOnly']
       end
 
       if attributes.key?(:'ImlRenderingMode')
@@ -424,6 +439,10 @@ module AsposeWordsCloud
 
       if attributes.key?(:'ExportDocumentStructure')
         self.export_document_structure = attributes[:'ExportDocumentStructure']
+      end
+
+      if attributes.key?(:'ExportLanguageToSpanTag')
+        self.export_language_to_span_tag = attributes[:'ExportLanguageToSpanTag']
       end
 
       if attributes.key?(:'FontEmbeddingMode')
@@ -545,6 +564,7 @@ module AsposeWordsCloud
           dml_effects_rendering_mode == other.dml_effects_rendering_mode &&
           dml_rendering_mode == other.dml_rendering_mode &&
           file_name == other.file_name &&
+          flat_opc_xml_mapping_only == other.flat_opc_xml_mapping_only &&
           iml_rendering_mode == other.iml_rendering_mode &&
           save_format == other.save_format &&
           update_created_time_property == other.update_created_time_property &&
@@ -569,6 +589,7 @@ module AsposeWordsCloud
           embed_full_fonts == other.embed_full_fonts &&
           encryption_details == other.encryption_details &&
           export_document_structure == other.export_document_structure &&
+          export_language_to_span_tag == other.export_language_to_span_tag &&
           font_embedding_mode == other.font_embedding_mode &&
           header_footer_bookmarks_export_mode == other.header_footer_bookmarks_export_mode &&
           image_color_space_export_mode == other.image_color_space_export_mode &&
@@ -595,7 +616,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, save_format, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, compliance, create_note_hyperlinks, custom_properties_export, digital_signature_details, display_doc_title, downsample_options, embed_full_fonts, encryption_details, export_document_structure, font_embedding_mode, header_footer_bookmarks_export_mode, image_color_space_export_mode, image_compression, interpolate_images, open_hyperlinks_in_new_window, outline_options, page_mode, preblend_images, preserve_form_fields, text_compression, use_book_fold_printing_settings, use_core_fonts, zoom_behavior, zoom_factor].hash
+      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, flat_opc_xml_mapping_only, iml_rendering_mode, save_format, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, compliance, create_note_hyperlinks, custom_properties_export, digital_signature_details, display_doc_title, downsample_options, embed_full_fonts, encryption_details, export_document_structure, export_language_to_span_tag, font_embedding_mode, header_footer_bookmarks_export_mode, image_color_space_export_mode, image_compression, interpolate_images, open_hyperlinks_in_new_window, outline_options, page_mode, preblend_images, preserve_form_fields, text_compression, use_book_fold_printing_settings, use_core_fonts, zoom_behavior, zoom_factor].hash
     end
 
     # Builds the object from hash
