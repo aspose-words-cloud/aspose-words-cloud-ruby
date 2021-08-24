@@ -8,5 +8,5 @@ request_comment_range_start = DocumentPosition.new({:Node => request_comment_ran
 request_comment_range_end_node = NodeLink.new({:NodeId => '0.3.0.3'})
 request_comment_range_end = DocumentPosition.new({:Node => request_comment_range_end_node, :Offset => 0})
 request_comment = CommentInsert.new({:RangeStart => request_comment_range_start, :RangeEnd => request_comment_range_end, :Initial => 'IA', :Author => 'Imran Anwar', :Text => 'A new Comment'})
-insert_request = InsertCommentRequest.new('Sample.docx', request_comment, nil, nil, nil, nil, nil, nil, nil)
+insert_request = InsertCommentRequest.new(name: 'Sample.docx', comment: request_comment)
 @words_api.insert_comment(insert_request)

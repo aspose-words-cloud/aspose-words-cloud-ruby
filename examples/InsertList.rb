@@ -4,5 +4,5 @@ AsposeWordsCloud.configure do |config|
 end
 @words_api = WordsAPI.new
 request_list_insert = ListInsert.new({:Template => 'OutlineLegal'})
-insert_request = InsertListRequest.new('TestGetLists.doc', request_list_insert, nil, nil, nil, nil, nil, nil, nil)
+insert_request = InsertListRequest.new(name: 'TestGetLists.doc', list_insert: request_list_insert)
 @words_api.insert_list(insert_request)

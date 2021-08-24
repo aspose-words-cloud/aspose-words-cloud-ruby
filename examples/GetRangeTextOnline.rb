@@ -3,6 +3,6 @@ AsposeWordsCloud.configure do |config|
   config.client_data['ClientSecret'] = '##################'
 end
 @words_api = WordsAPI.new
-documents_dir = '...'
-request = GetRangeTextOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.doc')), 'id0.0.0', 'id0.0.1', nil, nil)
+request_document = File.open('Sample.doc')
+request = GetRangeTextOnlineRequest.new(document: request_document, range_start_identifier: 'id0.0.0', range_end_identifier: 'id0.0.1')
 @words_api.get_range_text_online(request)

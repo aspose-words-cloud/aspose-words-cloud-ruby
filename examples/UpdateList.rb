@@ -4,5 +4,5 @@ AsposeWordsCloud.configure do |config|
 end
 @words_api = WordsAPI.new
 request_list_update = ListUpdate.new({:IsRestartAtEachSection => true})
-update_request = UpdateListRequest.new('TestGetLists.doc', 1, request_list_update, nil, nil, nil, nil, nil, nil, nil)
+update_request = UpdateListRequest.new(name: 'TestGetLists.doc', list_id: 1, list_update: request_list_update)
 @words_api.update_list(update_request)

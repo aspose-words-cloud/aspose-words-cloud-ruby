@@ -8,5 +8,5 @@ request_comment_range_start = DocumentPosition.new({:Node => request_comment_ran
 request_comment_range_end_node = NodeLink.new({:NodeId => '0.3.0'})
 request_comment_range_end = DocumentPosition.new({:Node => request_comment_range_end_node, :Offset => 0})
 request_comment = CommentUpdate.new({:RangeStart => request_comment_range_start, :RangeEnd => request_comment_range_end, :Initial => 'IA', :Author => 'Imran Anwar', :Text => 'A new Comment'})
-update_request = UpdateCommentRequest.new('Sample.docx', 0, request_comment, nil, nil, nil, nil, nil, nil, nil)
+update_request = UpdateCommentRequest.new(name: 'Sample.docx', comment_index: 0, comment: request_comment)
 @words_api.update_comment(update_request)

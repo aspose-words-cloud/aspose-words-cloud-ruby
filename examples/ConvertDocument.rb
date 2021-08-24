@@ -3,6 +3,6 @@ AsposeWordsCloud.configure do |config|
   config.client_data['ClientSecret'] = '##################'
 end
 @words_api = WordsAPI.new
-documents_dir = '...'
-convert_request = ConvertDocumentRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 'pdf', nil, nil, nil, nil)
+request_document = File.open('Sample.docx')
+convert_request = ConvertDocumentRequest.new(document: request_document, format: 'pdf')
 @words_api.convert_document(convert_request)

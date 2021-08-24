@@ -3,5 +3,5 @@ AsposeWordsCloud.configure do |config|
   config.client_data['ClientSecret'] = '##################'
 end
 @words_api = WordsAPI.new
-delete_request = DeleteCommentRequest.new('Sample.docx', 0, nil, nil, nil, nil, nil, nil, nil)
+delete_request = DeleteCommentRequest.new(name: 'Sample.docx', comment_index: 0)
 @words_api.delete_comment(delete_request)

@@ -4,5 +4,5 @@ AsposeWordsCloud.configure do |config|
 end
 @words_api = WordsAPI.new
 request_format = TableRowFormat.new({:AllowBreakAcrossPages => true, :HeadingFormat => true, :Height => 10.0, :HeightRule => 'Exactly'})
-update_request = UpdateTableRowFormatRequest.new('Sample.docx', 'sections/0/tables/2', 0, request_format, nil, nil, nil, nil, nil, nil, nil)
+update_request = UpdateTableRowFormatRequest.new(name: 'Sample.docx', table_path: 'sections/0/tables/2', index: 0, format: request_format)
 @words_api.update_table_row_format(update_request)

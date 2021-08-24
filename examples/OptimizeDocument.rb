@@ -4,5 +4,5 @@ AsposeWordsCloud.configure do |config|
 end
 @words_api = WordsAPI.new
 request_options = OptimizationOptions.new({:MsWordVersion => 'Word2002'})
-optimize_request = OptimizeDocumentRequest.new('Sample.docx', request_options, nil, nil, nil, nil, nil, nil, nil)
+optimize_request = OptimizeDocumentRequest.new(name: 'Sample.docx', options: request_options)
 @words_api.optimize_document(optimize_request)

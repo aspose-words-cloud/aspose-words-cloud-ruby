@@ -3,6 +3,6 @@ AsposeWordsCloud.configure do |config|
   config.client_data['ClientSecret'] = '##################'
 end
 @words_api = WordsAPI.new
-documents_dir = '...'
-delete_request = DeleteRunOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.doc')), 'paragraphs/1', 0, nil, nil, nil, nil, nil)
+request_document = File.open('Sample.doc')
+delete_request = DeleteRunOnlineRequest.new(document: request_document, paragraph_path: 'paragraphs/1', index: 0)
 @words_api.delete_run_online(delete_request)

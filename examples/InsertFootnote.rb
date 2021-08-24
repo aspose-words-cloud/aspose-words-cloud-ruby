@@ -4,5 +4,5 @@ AsposeWordsCloud.configure do |config|
 end
 @words_api = WordsAPI.new
 request_footnote_dto = FootnoteInsert.new({:FootnoteType => 'Endnote', :Text => 'test endnote'})
-insert_request = InsertFootnoteRequest.new('Sample.docx', request_footnote_dto, nil, nil, nil, nil, nil, nil, nil, nil)
+insert_request = InsertFootnoteRequest.new(name: 'Sample.docx', footnote_dto: request_footnote_dto)
 @words_api.insert_footnote(insert_request)

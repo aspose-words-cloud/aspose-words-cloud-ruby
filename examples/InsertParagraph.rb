@@ -4,5 +4,5 @@ AsposeWordsCloud.configure do |config|
 end
 @words_api = WordsAPI.new
 request_paragraph = ParagraphInsert.new({:Text => 'This is a new paragraph for your document'})
-insert_request = InsertParagraphRequest.new('Sample.docx', request_paragraph, nil, nil, nil, nil, nil, nil, nil, nil, nil)
+insert_request = InsertParagraphRequest.new(name: 'Sample.docx', paragraph: request_paragraph)
 @words_api.insert_paragraph(insert_request)

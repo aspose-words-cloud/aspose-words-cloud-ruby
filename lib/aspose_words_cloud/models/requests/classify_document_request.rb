@@ -60,7 +60,7 @@ module AsposeWordsCloud
     # @param best_classes_count The number of the best classes to return.
     # @param taxonomy The taxonomy to use.
 
-    def initialize(name, folder = nil, storage = nil, load_encoding = nil, password = nil, best_classes_count = nil, taxonomy = nil)
+    def initialize(name:, folder: nil, storage: nil, load_encoding: nil, password: nil, best_classes_count: nil, taxonomy: nil)
       self.name = name
       self.folder = folder
       self.storage = storage

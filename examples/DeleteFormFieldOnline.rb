@@ -3,6 +3,6 @@ AsposeWordsCloud.configure do |config|
   config.client_data['ClientSecret'] = '##################'
 end
 @words_api = WordsAPI.new
-documents_dir = '...'
-delete_request = DeleteFormFieldOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 0, 'sections/0', nil, nil, nil, nil, nil)
+request_document = File.open('Sample.docx')
+delete_request = DeleteFormFieldOnlineRequest.new(document: request_document, index: 0, node_path: 'sections/0')
 @words_api.delete_form_field_online(delete_request)

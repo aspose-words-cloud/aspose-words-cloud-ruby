@@ -4,5 +4,5 @@ AsposeWordsCloud.configure do |config|
 end
 @words_api = WordsAPI.new
 request_save_options_data = SaveOptionsData.new({:SaveFormat => 'docx', :FileName => '/TestSaveAsFromPdfToDoc.docx'})
-save_request = SaveAsRequest.new('Sample.docx', request_save_options_data, nil, nil, nil, nil, nil)
+save_request = SaveAsRequest.new(name: 'Sample.docx', save_options_data: request_save_options_data)
 @words_api.save_as(save_request)

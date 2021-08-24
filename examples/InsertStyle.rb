@@ -4,5 +4,5 @@ AsposeWordsCloud.configure do |config|
 end
 @words_api = WordsAPI.new
 request_style_insert = StyleInsert.new({:StyleName => 'My Style', :StyleType => 'Paragraph'})
-insert_request = InsertStyleRequest.new('Sample.docx', request_style_insert, nil, nil, nil, nil, nil, nil, nil)
+insert_request = InsertStyleRequest.new(name: 'Sample.docx', style_insert: request_style_insert)
 @words_api.insert_style(insert_request)

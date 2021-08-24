@@ -3,5 +3,5 @@ AsposeWordsCloud.configure do |config|
   config.client_data['ClientSecret'] = '##################'
 end
 @words_api = WordsAPI.new
-request = GetFormFieldsRequest.new('Sample.docx', nil, nil, nil, nil, nil)
+request = GetFormFieldsRequest.new(name: 'Sample.docx')
 @words_api.get_form_fields(request)

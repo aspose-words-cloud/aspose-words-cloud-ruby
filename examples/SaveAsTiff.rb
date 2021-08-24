@@ -4,5 +4,5 @@ AsposeWordsCloud.configure do |config|
 end
 @words_api = WordsAPI.new
 request_save_options = TiffSaveOptionsData.new({:SaveFormat => 'tiff', :FileName => '/abc.tiff'})
-save_request = SaveAsTiffRequest.new('Sample.docx', request_save_options, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil)
+save_request = SaveAsTiffRequest.new(name: 'Sample.docx', save_options: request_save_options)
 @words_api.save_as_tiff(save_request)

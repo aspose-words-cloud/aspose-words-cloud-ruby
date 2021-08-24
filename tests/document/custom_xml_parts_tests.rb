@@ -46,7 +46,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetCustomXmlPartRequest.new(remote_file_name, 0, remote_data_folder, nil, nil, nil)
+      request = GetCustomXmlPartRequest.new(name: remote_file_name, custom_xml_part_index: 0, folder: remote_data_folder)
 
       result = @words_api.get_custom_xml_part(request)
       assert_equal false, result.nil?
@@ -56,7 +56,8 @@ module AsposeWordsCloud
     # Test for getting custom xml part by specified index online.
     #
     def test_get_custom_xml_part_online
-      request = GetCustomXmlPartOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 0, nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = GetCustomXmlPartOnlineRequest.new(document: request_document, custom_xml_part_index: 0)
 
       result = @words_api.get_custom_xml_part_online(request)
       assert_equal false, result.nil?
@@ -70,7 +71,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetCustomXmlPartsRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
+      request = GetCustomXmlPartsRequest.new(name: remote_file_name, folder: remote_data_folder)
 
       result = @words_api.get_custom_xml_parts(request)
       assert_equal false, result.nil?
@@ -80,7 +81,8 @@ module AsposeWordsCloud
     # Test for getting all custom xml parts from document online.
     #
     def test_get_custom_xml_parts_online
-      request = GetCustomXmlPartsOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = GetCustomXmlPartsOnlineRequest.new(document: request_document)
 
       result = @words_api.get_custom_xml_parts_online(request)
       assert_equal false, result.nil?
@@ -95,7 +97,7 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
       request_custom_xml_part = CustomXmlPartInsert.new({:Id => 'hello', :Data => '<data>Hello world</data>'})
-      request = InsertCustomXmlPartRequest.new(remote_file_name, request_custom_xml_part, remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request = InsertCustomXmlPartRequest.new(name: remote_file_name, custom_xml_part: request_custom_xml_part, folder: remote_data_folder)
 
       result = @words_api.insert_custom_xml_part(request)
       assert_equal false, result.nil?
@@ -105,8 +107,9 @@ module AsposeWordsCloud
     # Test for adding custom xml part online.
     #
     def test_insert_custom_xml_part_online
+      request_document = File.open(File.join(local_test_folder, local_file))
       request_custom_xml_part = CustomXmlPartInsert.new({:Id => 'hello', :Data => '<data>Hello world</data>'})
-      request = InsertCustomXmlPartOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), request_custom_xml_part, nil, nil, nil, nil, nil)
+      request = InsertCustomXmlPartOnlineRequest.new(document: request_document, custom_xml_part: request_custom_xml_part)
 
       result = @words_api.insert_custom_xml_part_online(request)
       assert_equal false, result.nil?
@@ -121,7 +124,7 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
       request_custom_xml_part = CustomXmlPartUpdate.new({:Data => '<data>Hello world</data>'})
-      request = UpdateCustomXmlPartRequest.new(remote_file_name, 0, request_custom_xml_part, remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request = UpdateCustomXmlPartRequest.new(name: remote_file_name, custom_xml_part_index: 0, custom_xml_part: request_custom_xml_part, folder: remote_data_folder)
 
       result = @words_api.update_custom_xml_part(request)
       assert_equal false, result.nil?
@@ -131,8 +134,9 @@ module AsposeWordsCloud
     # Test for updating custom xml part online.
     #
     def test_update_custom_xml_part_online
+      request_document = File.open(File.join(local_test_folder, local_file))
       request_custom_xml_part = CustomXmlPartUpdate.new({:Data => '<data>Hello world</data>'})
-      request = UpdateCustomXmlPartOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 0, request_custom_xml_part, nil, nil, nil, nil, nil)
+      request = UpdateCustomXmlPartOnlineRequest.new(document: request_document, custom_xml_part_index: 0, custom_xml_part: request_custom_xml_part)
 
       result = @words_api.update_custom_xml_part_online(request)
       assert_equal false, result.nil?
@@ -146,7 +150,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = DeleteCustomXmlPartRequest.new(remote_file_name, 0, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
+      request = DeleteCustomXmlPartRequest.new(name: remote_file_name, custom_xml_part_index: 0, folder: remote_data_folder, dest_file_name: remote_test_out + '/' + remote_file_name)
 
       @words_api.delete_custom_xml_part(request)
     end
@@ -155,7 +159,8 @@ module AsposeWordsCloud
     # A test for DeleteCustomXmlPart online.
     #
     def test_delete_custom_xml_part_online
-      request = DeleteCustomXmlPartOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 0, nil, nil, nil, nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = DeleteCustomXmlPartOnlineRequest.new(document: request_document, custom_xml_part_index: 0)
 
       result = @words_api.delete_custom_xml_part_online(request)
       assert_equal false, result.nil?
@@ -169,7 +174,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = DeleteCustomXmlPartsRequest.new(remote_file_name, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
+      request = DeleteCustomXmlPartsRequest.new(name: remote_file_name, folder: remote_data_folder, dest_file_name: remote_test_out + '/' + remote_file_name)
 
       @words_api.delete_custom_xml_parts(request)
     end
@@ -178,7 +183,8 @@ module AsposeWordsCloud
     # A test for DeleteCustomXmlParts online.
     #
     def test_delete_custom_xml_parts_online
-      request = DeleteCustomXmlPartsOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), nil, nil, nil, nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = DeleteCustomXmlPartsOnlineRequest.new(document: request_document)
 
       result = @words_api.delete_custom_xml_parts_online(request)
       assert_equal false, result.nil?

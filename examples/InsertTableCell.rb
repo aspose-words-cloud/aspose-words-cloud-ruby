@@ -4,5 +4,5 @@ AsposeWordsCloud.configure do |config|
 end
 @words_api = WordsAPI.new
 request_cell = TableCellInsert.new({})
-insert_request = InsertTableCellRequest.new('Sample.docx', 'sections/0/tables/2/rows/0', request_cell, nil, nil, nil, nil, nil, nil, nil)
+insert_request = InsertTableCellRequest.new(name: 'Sample.docx', table_row_path: 'sections/0/tables/2/rows/0', cell: request_cell)
 @words_api.insert_table_cell(insert_request)

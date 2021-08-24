@@ -51,7 +51,7 @@ module AsposeWordsCloud
     end
 
     def upload_file(file_path, remote_path)
-      request = UploadFileRequest.new File.new(file_path, 'rb'), remote_path
+      request = UploadFileRequest.new(file_content: File.new(file_path, 'rb'), path: remote_path)
       @words_api.upload_file request
     end
 

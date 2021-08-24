@@ -3,6 +3,6 @@ AsposeWordsCloud.configure do |config|
   config.client_data['ClientSecret'] = '##################'
 end
 @words_api = WordsAPI.new
-documents_dir = '...'
-insert_request = InsertHeaderFooterOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.doc')), '', 'FooterEven', nil, nil, nil, nil, nil)
+request_document = File.open('Sample.doc')
+insert_request = InsertHeaderFooterOnlineRequest.new(document: request_document, section_path: '', header_footer_type: 'FooterEven')
 @words_api.insert_header_footer_online(insert_request)

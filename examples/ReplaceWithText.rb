@@ -4,5 +4,5 @@ AsposeWordsCloud.configure do |config|
 end
 @words_api = WordsAPI.new
 request_range_text = ReplaceRange.new({:Text => 'Replaced header'})
-replace_request = ReplaceWithTextRequest.new('Sample.docx', 'id0.0.0', request_range_text, 'id0.0.1', nil, nil, nil, nil, nil)
+replace_request = ReplaceWithTextRequest.new(name: 'Sample.docx', range_start_identifier: 'id0.0.0', range_text: request_range_text, range_end_identifier: 'id0.0.1')
 @words_api.replace_with_text(replace_request)

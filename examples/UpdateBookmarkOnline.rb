@@ -3,9 +3,9 @@ AsposeWordsCloud.configure do |config|
   config.client_data['ClientSecret'] = '##################'
 end
 @words_api = WordsAPI.new
-documents_dir = '...'
 bookmark_name= 'aspose'
 
+request_document = File.open('Sample.docx')
 request_bookmark_data = BookmarkData.new({:Name => bookmark_name, :Text => 'This will be the text for Aspose'})
-update_request = UpdateBookmarkOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), bookmark_name, request_bookmark_data, nil, nil, 'Sample.docx', nil, nil)
+update_request = UpdateBookmarkOnlineRequest.new(document: request_document, bookmark_name: bookmark_name, bookmark_data: request_bookmark_data, dest_file_name: 'Sample.docx')
 @words_api.update_bookmark_online(update_request)

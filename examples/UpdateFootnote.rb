@@ -4,5 +4,5 @@ AsposeWordsCloud.configure do |config|
 end
 @words_api = WordsAPI.new
 request_footnote_dto = FootnoteUpdate.new({:Text => 'new text is here'})
-update_request = UpdateFootnoteRequest.new('Sample.docx', 0, request_footnote_dto, nil, nil, nil, nil, nil, nil, nil, nil)
+update_request = UpdateFootnoteRequest.new(name: 'Sample.docx', index: 0, footnote_dto: request_footnote_dto)
 @words_api.update_footnote(update_request)

@@ -4,5 +4,5 @@ AsposeWordsCloud.configure do |config|
 end
 @words_api = WordsAPI.new
 request_style_copy = StyleCopy.new({:StyleName => 'Heading 1'})
-copy_request = CopyStyleRequest.new('Sample.docx', request_style_copy, nil, nil, nil, nil, nil, nil, nil)
+copy_request = CopyStyleRequest.new(name: 'Sample.docx', style_copy: request_style_copy)
 @words_api.copy_style(copy_request)

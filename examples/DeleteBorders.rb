@@ -3,5 +3,5 @@ AsposeWordsCloud.configure do |config|
   config.client_data['ClientSecret'] = '##################'
 end
 @words_api = WordsAPI.new
-delete_request = DeleteBordersRequest.new('Sample.docx', 'tables/1/rows/0/cells/0', nil, nil, nil, nil, nil, nil, nil)
+delete_request = DeleteBordersRequest.new(name: 'Sample.docx', node_path: 'tables/1/rows/0/cells/0')
 @words_api.delete_borders(delete_request)

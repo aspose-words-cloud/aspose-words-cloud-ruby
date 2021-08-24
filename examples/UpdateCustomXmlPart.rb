@@ -4,5 +4,5 @@ AsposeWordsCloud.configure do |config|
 end
 @words_api = WordsAPI.new
 request_custom_xml_part = CustomXmlPartUpdate.new({:Data => '<data>Hello world</data>'})
-update_request = UpdateCustomXmlPartRequest.new('Sample.docx', 0, request_custom_xml_part, nil, nil, nil, nil, nil, nil, nil)
+update_request = UpdateCustomXmlPartRequest.new(name: 'Sample.docx', custom_xml_part_index: 0, custom_xml_part: request_custom_xml_part)
 @words_api.update_custom_xml_part(update_request)

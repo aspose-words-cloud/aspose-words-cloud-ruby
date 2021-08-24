@@ -56,7 +56,7 @@ module AsposeWordsCloud
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     # @param password Password for opening an encrypted document.
 
-    def initialize(name, custom_xml_part_index, folder = nil, storage = nil, load_encoding = nil, password = nil)
+    def initialize(name:, custom_xml_part_index:, folder: nil, storage: nil, load_encoding: nil, password: nil)
       self.name = name
       self.custom_xml_part_index = custom_xml_part_index
       self.folder = folder

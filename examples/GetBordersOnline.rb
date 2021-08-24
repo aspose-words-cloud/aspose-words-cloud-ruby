@@ -3,6 +3,6 @@ AsposeWordsCloud.configure do |config|
   config.client_data['ClientSecret'] = '##################'
 end
 @words_api = WordsAPI.new
-documents_dir = '...'
-request = GetBordersOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 'tables/1/rows/0/cells/0', nil, nil)
+request_document = File.open('Sample.docx')
+request = GetBordersOnlineRequest.new(document: request_document, node_path: 'tables/1/rows/0/cells/0')
 @words_api.get_borders_online(request)

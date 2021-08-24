@@ -44,7 +44,7 @@ module AsposeWordsCloud
     # @param storage_name Storage name.
     # @param version_id File version ID to delete.
 
-    def initialize(path, storage_name = nil, version_id = nil)
+    def initialize(path:, storage_name: nil, version_id: nil)
       self.path = path
       self.storage_name = storage_name
       self.version_id = version_id

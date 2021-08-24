@@ -4,5 +4,5 @@ AsposeWordsCloud.configure do |config|
 end
 @words_api = WordsAPI.new
 request_property = DocumentPropertyCreateOrUpdate.new({:Value => 'Imran Anwar'})
-create_request = CreateOrUpdateDocumentPropertyRequest.new('Sample.docx', 'AsposeAuthor', request_property, nil, nil, nil, nil, nil, nil, nil)
+create_request = CreateOrUpdateDocumentPropertyRequest.new(name: 'Sample.docx', property_name: 'AsposeAuthor', property: request_property)
 @words_api.create_or_update_document_property(create_request)

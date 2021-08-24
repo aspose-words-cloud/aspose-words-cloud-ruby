@@ -3,6 +3,6 @@ AsposeWordsCloud.configure do |config|
   config.client_data['ClientSecret'] = '##################'
 end
 @words_api = WordsAPI.new
-documents_dir = '...'
-delete_request = DeleteParagraphListFormatOnlineRequest.new(File.open(File.join(documents_dir, 'Sample.doc')), 0, nil, nil, nil, nil, nil, nil)
+request_document = File.open('Sample.doc')
+delete_request = DeleteParagraphListFormatOnlineRequest.new(document: request_document, index: 0)
 @words_api.delete_paragraph_list_format_online(delete_request)

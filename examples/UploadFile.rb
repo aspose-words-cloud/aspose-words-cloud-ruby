@@ -3,6 +3,6 @@ AsposeWordsCloud.configure do |config|
   config.client_data['ClientSecret'] = '##################'
 end
 @words_api = WordsAPI.new
-documents_dir = '...'
-upload_request = UploadFileRequest.new(File.open(File.join(documents_dir, 'Sample.docx')), 'Sample.docx', nil)
+request_file_content = File.open('Sample.docx')
+upload_request = UploadFileRequest.new(file_content: request_file_content, path: 'Sample.docx')
 @words_api.upload_file(upload_request)

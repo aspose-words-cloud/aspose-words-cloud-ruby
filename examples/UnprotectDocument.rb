@@ -4,5 +4,5 @@ AsposeWordsCloud.configure do |config|
 end
 @words_api = WordsAPI.new
 request_protection_request = ProtectionRequest.new({:Password => 'aspose'})
-unprotect_request = UnprotectDocumentRequest.new('Sample.docx', request_protection_request, nil, nil, nil, nil, nil)
+unprotect_request = UnprotectDocumentRequest.new(name: 'Sample.docx', protection_request: request_protection_request)
 @words_api.unprotect_document(unprotect_request)

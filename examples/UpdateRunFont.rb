@@ -4,5 +4,5 @@ AsposeWordsCloud.configure do |config|
 end
 @words_api = WordsAPI.new
 request_font_dto = Font.new({:Bold => true})
-update_request = UpdateRunFontRequest.new('Sample.docx', 'paragraphs/0', 0, request_font_dto, nil, nil, nil, nil, nil, nil, nil)
+update_request = UpdateRunFontRequest.new(name: 'Sample.docx', paragraph_path: 'paragraphs/0', index: 0, font_dto: request_font_dto)
 @words_api.update_run_font(update_request)

@@ -4,5 +4,5 @@ AsposeWordsCloud.configure do |config|
 end
 @words_api = WordsAPI.new
 request_form_field = FormFieldTextInput.new({:Name => 'FullName', :Enabled => true, :CalculateOnExit => true, :StatusText => '', :TextInputType => 'Regular', :TextInputDefault => 'No name'})
-update_request = UpdateFormFieldRequest.new('Sample.docx', 0, request_form_field, nil, nil, nil, nil, nil, nil, nil, nil)
+update_request = UpdateFormFieldRequest.new(name: 'Sample.docx', index: 0, form_field: request_form_field)
 @words_api.update_form_field(update_request)

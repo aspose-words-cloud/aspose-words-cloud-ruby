@@ -49,7 +49,7 @@ module AsposeWordsCloud
       request_document_list_document_entries0 = DocumentEntry.new({:Href => remote_data_folder + '/' + remote_file_name, :ImportFormatMode => 'KeepSourceFormatting'})
       request_document_list_document_entries = [request_document_list_document_entries0]
       request_document_list = DocumentEntryList.new({:DocumentEntries => request_document_list_document_entries})
-      request = AppendDocumentRequest.new(remote_file_name, request_document_list, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
+      request = AppendDocumentRequest.new(name: remote_file_name, document_list: request_document_list, folder: remote_data_folder, dest_file_name: remote_test_out + '/' + remote_file_name)
 
       result = @words_api.append_document(request)
       assert_equal false, result.nil?
@@ -63,10 +63,11 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
+      request_document = File.open(File.join(local_test_folder, local_file))
       request_document_list_document_entries0 = DocumentEntry.new({:Href => remote_data_folder + '/' + remote_file_name, :ImportFormatMode => 'KeepSourceFormatting'})
       request_document_list_document_entries = [request_document_list_document_entries0]
       request_document_list = DocumentEntryList.new({:DocumentEntries => request_document_list_document_entries})
-      request = AppendDocumentOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), request_document_list, nil, nil, nil, nil, nil)
+      request = AppendDocumentOnlineRequest.new(document: request_document, document_list: request_document_list)
 
       result = @words_api.append_document_online(request)
       assert_equal false, result.nil?

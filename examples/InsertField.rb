@@ -4,5 +4,5 @@ AsposeWordsCloud.configure do |config|
 end
 @words_api = WordsAPI.new
 request_field = FieldInsert.new({:FieldCode => '{ NUMPAGES }'})
-insert_request = InsertFieldRequest.new('Sample.docx', request_field, nil, nil, nil, nil, nil, nil, nil, nil, nil)
+insert_request = InsertFieldRequest.new(name: 'Sample.docx', field: request_field)
 @words_api.insert_field(insert_request)

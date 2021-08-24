@@ -48,7 +48,7 @@ module AsposeWordsCloud
     # @param report_engine_settings An object providing a settings of report engine.
     # @param document_file_name The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.
 
-    def initialize(template, data, report_engine_settings, document_file_name = nil)
+    def initialize(template:, data:, report_engine_settings:, document_file_name: nil)
       self.template = template
       self.data = data
       self.report_engine_settings = report_engine_settings
