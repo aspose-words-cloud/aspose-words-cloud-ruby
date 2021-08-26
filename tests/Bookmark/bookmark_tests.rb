@@ -50,7 +50,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetBookmarksRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
+      request = GetBookmarksRequest.new(name: remote_file_name, folder: remote_data_folder)
 
       result = @words_api.get_bookmarks(request)
       assert_equal false, result.nil?
@@ -60,7 +60,8 @@ module AsposeWordsCloud
     # Test for getting bookmarks from document online.
     #
     def test_get_bookmarks_online
-      request = GetBookmarksOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = GetBookmarksOnlineRequest.new(document: request_document)
 
       result = @words_api.get_bookmarks_online(request)
       assert_equal false, result.nil?
@@ -74,7 +75,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetBookmarkByNameRequest.new(remote_file_name, bookmark_name, remote_data_folder, nil, nil, nil)
+      request = GetBookmarkByNameRequest.new(name: remote_file_name, bookmark_name: bookmark_name, folder: remote_data_folder)
 
       result = @words_api.get_bookmark_by_name(request)
       assert_equal false, result.nil?
@@ -84,7 +85,8 @@ module AsposeWordsCloud
     # Test for getting bookmark by specified name online.
     #
     def test_get_bookmark_by_name_online
-      request = GetBookmarkByNameOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), bookmark_name, nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = GetBookmarkByNameOnlineRequest.new(document: request_document, bookmark_name: bookmark_name)
 
       result = @words_api.get_bookmark_by_name_online(request)
       assert_equal false, result.nil?
@@ -100,7 +102,7 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
       request_bookmark_data = BookmarkData.new({:Name => bookmark_name, :Text => bookmark_text})
-      request = UpdateBookmarkRequest.new(remote_file_name, bookmark_name, request_bookmark_data, remote_data_folder, nil, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
+      request = UpdateBookmarkRequest.new(name: remote_file_name, bookmark_name: bookmark_name, bookmark_data: request_bookmark_data, folder: remote_data_folder, dest_file_name: remote_test_out + '/' + remote_file_name)
 
       result = @words_api.update_bookmark(request)
       assert_equal false, result.nil?
@@ -112,8 +114,9 @@ module AsposeWordsCloud
     def test_update_bookmark_online
       remote_file_name = 'TestUpdateDocumentBookmark.docx'
 
+      request_document = File.open(File.join(local_test_folder, local_file))
       request_bookmark_data = BookmarkData.new({:Name => bookmark_name, :Text => 'This will be the text for Aspose'})
-      request = UpdateBookmarkOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), bookmark_name, request_bookmark_data, nil, nil, remote_test_out + '/' + remote_file_name, nil, nil)
+      request = UpdateBookmarkOnlineRequest.new(document: request_document, bookmark_name: bookmark_name, bookmark_data: request_bookmark_data, dest_file_name: remote_test_out + '/' + remote_file_name)
 
       result = @words_api.update_bookmark_online(request)
       assert_equal false, result.nil?

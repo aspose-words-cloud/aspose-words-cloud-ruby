@@ -60,7 +60,7 @@ module AsposeWordsCloud
     # @param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
     # @param revision_date_time The date and time to use for revisions.
 
-    def initialize(document, property_name, load_encoding = nil, password = nil, dest_file_name = nil, revision_author = nil, revision_date_time = nil)
+    def initialize(document:, property_name:, load_encoding: nil, password: nil, dest_file_name: nil, revision_author: nil, revision_date_time: nil)
       self.document = document
       self.property_name = property_name
       self.load_encoding = load_encoding

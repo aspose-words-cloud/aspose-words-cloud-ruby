@@ -51,7 +51,7 @@ module AsposeWordsCloud
 
         api = WordsApi.new
 
-        uploadRequest = UploadFileRequest.new File.new(File.join(local_common_folder, filename), 'rb'), File.join(remote_folder, remote_name)
+        uploadRequest = UploadFileRequest.new(file_content: File.new(File.join(local_common_folder, filename), 'rb'), path: File.join(remote_folder, remote_name))
         api.upload_file uploadRequest
 
         request = DeleteWatermarkRequest.new remote_name, remote_folder

@@ -44,7 +44,8 @@ module AsposeWordsCloud
     def test_upload_file
       remote_file_name = 'TestUploadFile.docx'
 
-      request = UploadFileRequest.new(File.open(File.join(local_test_folder, local_file)), remote_data_folder + '/' + remote_file_name, nil)
+      request_file_content = File.open(File.join(local_test_folder, local_file))
+      request = UploadFileRequest.new(file_content: request_file_content, path: remote_data_folder + '/' + remote_file_name)
 
       result = @words_api.upload_file(request)
       assert_equal false, result.nil?
@@ -58,7 +59,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = CopyFileRequest.new(remote_data_folder + '/TestCopyFileDest.docx', remote_data_folder + '/' + remote_file_name, nil, nil, nil)
+      request = CopyFileRequest.new(dest_path: remote_data_folder + '/TestCopyFileDest.docx', src_path: remote_data_folder + '/' + remote_file_name)
 
       @words_api.copy_file(request)
     end
@@ -71,7 +72,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = MoveFileRequest.new(remote_test_out + '/TestMoveFileDest_' + generate_uuid + '.docx', remote_data_folder + '/' + remote_file_name, nil, nil, nil)
+      request = MoveFileRequest.new(dest_path: remote_test_out + '/TestMoveFileDest_' + generate_uuid + '.docx', src_path: remote_data_folder + '/' + remote_file_name)
 
       @words_api.move_file(request)
     end
@@ -84,7 +85,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = DeleteFileRequest.new(remote_data_folder + '/' + remote_file_name, nil, nil)
+      request = DeleteFileRequest.new(path: remote_data_folder + '/' + remote_file_name)
 
       @words_api.delete_file(request)
     end
@@ -97,7 +98,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = DownloadFileRequest.new(remote_data_folder + '/' + remote_file_name, nil, nil)
+      request = DownloadFileRequest.new(path: remote_data_folder + '/' + remote_file_name)
 
       result = @words_api.download_file(request)
       assert_equal false, result.nil?

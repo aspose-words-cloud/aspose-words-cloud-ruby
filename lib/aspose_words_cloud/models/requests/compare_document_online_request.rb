@@ -56,7 +56,7 @@ module AsposeWordsCloud
     # @param password Password for opening an encrypted document.
     # @param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
 
-    def initialize(document, compare_data, comparing_document = nil, load_encoding = nil, password = nil, dest_file_name = nil)
+    def initialize(document:, compare_data:, comparing_document: nil, load_encoding: nil, password: nil, dest_file_name: nil)
       self.document = document
       self.compare_data = compare_data
       self.comparing_document = comparing_document

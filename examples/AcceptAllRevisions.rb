@@ -5,13 +5,15 @@ AsposeWordsCloud.configure do |config|
   config.client_data['ClientSecret'] = '##################'
 end
 @words_api = WordsAPI.new
-documents_dir = '...'
 file_name = 'test_doc.docx'
 
 # Upload original document to cloud storage.
-upload_file_request = UploadFileRequest.new(File.open(File.join(documents_dir, file_name)), file_name, nil)
+my_var1 = File.open(file_name)
+my_var2 = file_name
+upload_file_request = UploadFileRequest.new(file_content: my_var1, path: my_var2)
 @words_api.upload_file(upload_file_request)
 
 # Calls AcceptAllRevisions method for document in cloud.
-request = AcceptAllRevisionsRequest.new(file_name, nil, nil, nil, nil, nil)
+my_var3 = file_name
+request = AcceptAllRevisionsRequest.new(name: my_var3)
 @words_api.accept_all_revisions(request)

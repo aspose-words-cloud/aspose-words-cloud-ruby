@@ -36,7 +36,7 @@ module AsposeWordsCloud
     # Initializes a new instance.
     # @param fonts_location The folder in cloud storage with custom fonts.
 
-    def initialize(fonts_location = nil)
+    def initialize(fonts_location: nil)
       self.fonts_location = fonts_location
     end
 

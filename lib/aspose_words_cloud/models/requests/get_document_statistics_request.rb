@@ -64,7 +64,7 @@ module AsposeWordsCloud
     # @param include_footnotes The flag indicating whether to include footnotes from the WordCount. The default value is "false".
     # @param include_text_in_shapes The flag indicating whether to include shape's text from the WordCount. The default value is "false".
 
-    def initialize(name, folder = nil, storage = nil, load_encoding = nil, password = nil, include_comments = nil, include_footnotes = nil, include_text_in_shapes = nil)
+    def initialize(name:, folder: nil, storage: nil, load_encoding: nil, password: nil, include_comments: nil, include_footnotes: nil, include_text_in_shapes: nil)
       self.name = name
       self.folder = folder
       self.storage = storage

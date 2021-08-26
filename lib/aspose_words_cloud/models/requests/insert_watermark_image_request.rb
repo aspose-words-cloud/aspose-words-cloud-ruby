@@ -76,7 +76,7 @@ module AsposeWordsCloud
     # @param rotation_angle The rotation angle of the watermark.
     # @param image The filename of the image. If the parameter value is missing — the image data is expected in the request content.
 
-    def initialize(name, image_file = nil, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil, revision_author = nil, revision_date_time = nil, rotation_angle = nil, image = nil)
+    def initialize(name:, image_file: nil, folder: nil, storage: nil, load_encoding: nil, password: nil, dest_file_name: nil, revision_author: nil, revision_date_time: nil, rotation_angle: nil, image: nil)
       self.name = name
       self.image_file = image_file
       self.folder = folder

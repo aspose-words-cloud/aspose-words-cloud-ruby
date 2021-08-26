@@ -52,7 +52,7 @@ module AsposeWordsCloud
     # @param password Password for opening an encrypted document.
     # @param filter_by_type The list of HeaderFooter types.
 
-    def initialize(document, section_path, load_encoding = nil, password = nil, filter_by_type = nil)
+    def initialize(document:, section_path:, load_encoding: nil, password: nil, filter_by_type: nil)
       self.document = document
       self.section_path = section_path
       self.load_encoding = load_encoding

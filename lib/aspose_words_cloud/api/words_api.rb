@@ -2400,6 +2400,294 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
+    # Removes the custom xml part from the document.
+    # @param request DeleteCustomXmlPartRequest
+    # @return [nil]
+    def delete_custom_xml_part(request)
+        begin
+        data, _status_code, _headers = delete_custom_xml_part_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_custom_xml_part_with_http_info(request)
+            else
+            raise
+            end
+        end
+        nil
+    end
+
+    # Removes the custom xml part from the document.
+    # @param request DeleteCustomXmlPartRequest
+    # @return [Array<(nil, Fixnum, Hash)>]
+    # nil, response status code and response headers
+    private def delete_custom_xml_part_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteCustomXmlPartRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.delete_custom_xml_part ...' if @api_client.config.debugging
+        # verify the required parameter 'name' is set
+        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_custom_xml_part' if @api_client.config.client_side_validation && request.name.nil?
+        # verify the required parameter 'custom_xml_part_index' is set
+        raise ArgumentError, 'Missing the required parameter custom_xml_part_index when calling WordsApi.delete_custom_xml_part' if @api_client.config.client_side_validation && request.custom_xml_part_index.nil?
+
+        # resource path
+        local_var_path = '/words/{name}/customXmlParts/{customXmlPartIndex}'[1..-1]
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.nil? ? '' : request.name.to_s)
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('CustomXmlPartIndex') + '}', request.custom_xml_part_index.nil? ? '' : request.custom_xml_part_index.to_s)
+        local_var_path = local_var_path.sub('//', '/')
+
+        # query parameters
+        query_params = {}
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        # header parameters
+        header_params = {}
+        # HTTP header 'Accept' (if needed)
+        header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+        # HTTP header 'Content-Type'
+        header_params['Content-Type'] = @api_client.select_header_content_type(['application/xml', 'application/json'])
+
+        # form parameters
+        form_params = {}
+
+        # http body (model)
+        post_body = nil
+        auth_names = ['JWT']
+
+        data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names)
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#delete_custom_xml_part\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [data, status_code, headers]
+    end
+
+    # Removes the custom xml part from the document.
+    # @param request DeleteCustomXmlPartOnlineRequest
+    # @return [File]
+    def delete_custom_xml_part_online(request)
+        begin
+        data, _status_code, _headers = delete_custom_xml_part_online_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_custom_xml_part_online_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Removes the custom xml part from the document.
+    # @param request DeleteCustomXmlPartOnlineRequest
+    # @return [Array<(File, Fixnum, Hash)>]
+    # File, response status code and response headers
+    private def delete_custom_xml_part_online_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteCustomXmlPartOnlineRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.delete_custom_xml_part_online ...' if @api_client.config.debugging
+        # verify the required parameter 'document' is set
+        raise ArgumentError, 'Missing the required parameter document when calling WordsApi.delete_custom_xml_part_online' if @api_client.config.client_side_validation && request.document.nil?
+        # verify the required parameter 'custom_xml_part_index' is set
+        raise ArgumentError, 'Missing the required parameter custom_xml_part_index when calling WordsApi.delete_custom_xml_part_online' if @api_client.config.client_side_validation && request.custom_xml_part_index.nil?
+
+        # resource path
+        local_var_path = '/words/online/delete/customXmlParts/{customXmlPartIndex}'[1..-1]
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('CustomXmlPartIndex') + '}', request.custom_xml_part_index.nil? ? '' : request.custom_xml_part_index.to_s)
+        local_var_path = local_var_path.sub('//', '/')
+
+        # query parameters
+        query_params = {}
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        # header parameters
+        header_params = {}
+        # HTTP header 'Accept' (if needed)
+        header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+        # HTTP header 'Content-Type'
+        header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+
+        # form parameters
+        form_params = {}
+        form_params[downcase_first_letter('Document')] = request.document
+
+        # http body (model)
+        post_body = nil
+        auth_names = ['JWT']
+
+        data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'File')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#delete_custom_xml_part_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [data, status_code, headers]
+    end
+
+    # Removes all custom xml parts from the document.
+    # @param request DeleteCustomXmlPartsRequest
+    # @return [nil]
+    def delete_custom_xml_parts(request)
+        begin
+        data, _status_code, _headers = delete_custom_xml_parts_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_custom_xml_parts_with_http_info(request)
+            else
+            raise
+            end
+        end
+        nil
+    end
+
+    # Removes all custom xml parts from the document.
+    # @param request DeleteCustomXmlPartsRequest
+    # @return [Array<(nil, Fixnum, Hash)>]
+    # nil, response status code and response headers
+    private def delete_custom_xml_parts_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteCustomXmlPartsRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.delete_custom_xml_parts ...' if @api_client.config.debugging
+        # verify the required parameter 'name' is set
+        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_custom_xml_parts' if @api_client.config.client_side_validation && request.name.nil?
+
+        # resource path
+        local_var_path = '/words/{name}/customXmlParts'[1..-1]
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.nil? ? '' : request.name.to_s)
+        local_var_path = local_var_path.sub('//', '/')
+
+        # query parameters
+        query_params = {}
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        # header parameters
+        header_params = {}
+        # HTTP header 'Accept' (if needed)
+        header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+        # HTTP header 'Content-Type'
+        header_params['Content-Type'] = @api_client.select_header_content_type(['application/xml', 'application/json'])
+
+        # form parameters
+        form_params = {}
+
+        # http body (model)
+        post_body = nil
+        auth_names = ['JWT']
+
+        data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names)
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#delete_custom_xml_parts\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [data, status_code, headers]
+    end
+
+    # Removes all custom xml parts from the document.
+    # @param request DeleteCustomXmlPartsOnlineRequest
+    # @return [File]
+    def delete_custom_xml_parts_online(request)
+        begin
+        data, _status_code, _headers = delete_custom_xml_parts_online_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_custom_xml_parts_online_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Removes all custom xml parts from the document.
+    # @param request DeleteCustomXmlPartsOnlineRequest
+    # @return [Array<(File, Fixnum, Hash)>]
+    # File, response status code and response headers
+    private def delete_custom_xml_parts_online_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteCustomXmlPartsOnlineRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.delete_custom_xml_parts_online ...' if @api_client.config.debugging
+        # verify the required parameter 'document' is set
+        raise ArgumentError, 'Missing the required parameter document when calling WordsApi.delete_custom_xml_parts_online' if @api_client.config.client_side_validation && request.document.nil?
+
+        # resource path
+        local_var_path = '/words/online/delete/customXmlParts'[1..-1]
+        local_var_path = local_var_path.sub('//', '/')
+
+        # query parameters
+        query_params = {}
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        # header parameters
+        header_params = {}
+        # HTTP header 'Accept' (if needed)
+        header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+        # HTTP header 'Content-Type'
+        header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+
+        # form parameters
+        form_params = {}
+        form_params[downcase_first_letter('Document')] = request.document
+
+        # http body (model)
+        post_body = nil
+        auth_names = ['JWT']
+
+        data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'File')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#delete_custom_xml_parts_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [data, status_code, headers]
+    end
+
     # Removes a document property.
     # @param request DeleteDocumentPropertyRequest
     # @return [nil]
@@ -6478,6 +6766,284 @@ module AsposeWordsCloud
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_comments_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [data, status_code, headers]
+    end
+
+    # Reads the custom xml part from the document.
+    # @param request GetCustomXmlPartRequest
+    # @return [CustomXmlPartResponse]
+    def get_custom_xml_part(request)
+        begin
+        data, _status_code, _headers = get_custom_xml_part_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = get_custom_xml_part_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Reads the custom xml part from the document.
+    # @param request GetCustomXmlPartRequest
+    # @return [Array<(CustomXmlPartResponse, Fixnum, Hash)>]
+    # CustomXmlPartResponse, response status code and response headers
+    private def get_custom_xml_part_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? GetCustomXmlPartRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.get_custom_xml_part ...' if @api_client.config.debugging
+        # verify the required parameter 'name' is set
+        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_custom_xml_part' if @api_client.config.client_side_validation && request.name.nil?
+        # verify the required parameter 'custom_xml_part_index' is set
+        raise ArgumentError, 'Missing the required parameter custom_xml_part_index when calling WordsApi.get_custom_xml_part' if @api_client.config.client_side_validation && request.custom_xml_part_index.nil?
+
+        # resource path
+        local_var_path = '/words/{name}/customXmlParts/{customXmlPartIndex}'[1..-1]
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.nil? ? '' : request.name.to_s)
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('CustomXmlPartIndex') + '}', request.custom_xml_part_index.nil? ? '' : request.custom_xml_part_index.to_s)
+        local_var_path = local_var_path.sub('//', '/')
+
+        # query parameters
+        query_params = {}
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        # header parameters
+        header_params = {}
+        # HTTP header 'Accept' (if needed)
+        header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+        # HTTP header 'Content-Type'
+        header_params['Content-Type'] = @api_client.select_header_content_type(['application/xml', 'application/json'])
+
+        # form parameters
+        form_params = {}
+
+        # http body (model)
+        post_body = nil
+        auth_names = ['JWT']
+
+        data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'CustomXmlPartResponse')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#get_custom_xml_part\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [data, status_code, headers]
+    end
+
+    # Reads the custom xml part from the document.
+    # @param request GetCustomXmlPartOnlineRequest
+    # @return [CustomXmlPartResponse]
+    def get_custom_xml_part_online(request)
+        begin
+        data, _status_code, _headers = get_custom_xml_part_online_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = get_custom_xml_part_online_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Reads the custom xml part from the document.
+    # @param request GetCustomXmlPartOnlineRequest
+    # @return [Array<(CustomXmlPartResponse, Fixnum, Hash)>]
+    # CustomXmlPartResponse, response status code and response headers
+    private def get_custom_xml_part_online_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? GetCustomXmlPartOnlineRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.get_custom_xml_part_online ...' if @api_client.config.debugging
+        # verify the required parameter 'document' is set
+        raise ArgumentError, 'Missing the required parameter document when calling WordsApi.get_custom_xml_part_online' if @api_client.config.client_side_validation && request.document.nil?
+        # verify the required parameter 'custom_xml_part_index' is set
+        raise ArgumentError, 'Missing the required parameter custom_xml_part_index when calling WordsApi.get_custom_xml_part_online' if @api_client.config.client_side_validation && request.custom_xml_part_index.nil?
+
+        # resource path
+        local_var_path = '/words/online/get/customXmlParts/{customXmlPartIndex}'[1..-1]
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('CustomXmlPartIndex') + '}', request.custom_xml_part_index.nil? ? '' : request.custom_xml_part_index.to_s)
+        local_var_path = local_var_path.sub('//', '/')
+
+        # query parameters
+        query_params = {}
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        # header parameters
+        header_params = {}
+        # HTTP header 'Accept' (if needed)
+        header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+        # HTTP header 'Content-Type'
+        header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+
+        # form parameters
+        form_params = {}
+        form_params[downcase_first_letter('Document')] = request.document
+
+        # http body (model)
+        post_body = nil
+        auth_names = ['JWT']
+
+        data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'CustomXmlPartResponse')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#get_custom_xml_part_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [data, status_code, headers]
+    end
+
+    # Reads custom xml parts from the document.
+    # @param request GetCustomXmlPartsRequest
+    # @return [CustomXmlPartsResponse]
+    def get_custom_xml_parts(request)
+        begin
+        data, _status_code, _headers = get_custom_xml_parts_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = get_custom_xml_parts_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Reads custom xml parts from the document.
+    # @param request GetCustomXmlPartsRequest
+    # @return [Array<(CustomXmlPartsResponse, Fixnum, Hash)>]
+    # CustomXmlPartsResponse, response status code and response headers
+    private def get_custom_xml_parts_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? GetCustomXmlPartsRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.get_custom_xml_parts ...' if @api_client.config.debugging
+        # verify the required parameter 'name' is set
+        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_custom_xml_parts' if @api_client.config.client_side_validation && request.name.nil?
+
+        # resource path
+        local_var_path = '/words/{name}/customXmlParts'[1..-1]
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.nil? ? '' : request.name.to_s)
+        local_var_path = local_var_path.sub('//', '/')
+
+        # query parameters
+        query_params = {}
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        # header parameters
+        header_params = {}
+        # HTTP header 'Accept' (if needed)
+        header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+        # HTTP header 'Content-Type'
+        header_params['Content-Type'] = @api_client.select_header_content_type(['application/xml', 'application/json'])
+
+        # form parameters
+        form_params = {}
+
+        # http body (model)
+        post_body = nil
+        auth_names = ['JWT']
+
+        data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'CustomXmlPartsResponse')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#get_custom_xml_parts\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [data, status_code, headers]
+    end
+
+    # Reads custom xml parts from the document.
+    # @param request GetCustomXmlPartsOnlineRequest
+    # @return [CustomXmlPartsResponse]
+    def get_custom_xml_parts_online(request)
+        begin
+        data, _status_code, _headers = get_custom_xml_parts_online_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = get_custom_xml_parts_online_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Reads custom xml parts from the document.
+    # @param request GetCustomXmlPartsOnlineRequest
+    # @return [Array<(CustomXmlPartsResponse, Fixnum, Hash)>]
+    # CustomXmlPartsResponse, response status code and response headers
+    private def get_custom_xml_parts_online_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? GetCustomXmlPartsOnlineRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.get_custom_xml_parts_online ...' if @api_client.config.debugging
+        # verify the required parameter 'document' is set
+        raise ArgumentError, 'Missing the required parameter document when calling WordsApi.get_custom_xml_parts_online' if @api_client.config.client_side_validation && request.document.nil?
+
+        # resource path
+        local_var_path = '/words/online/get/customXmlParts'[1..-1]
+        local_var_path = local_var_path.sub('//', '/')
+
+        # query parameters
+        query_params = {}
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        # header parameters
+        header_params = {}
+        # HTTP header 'Accept' (if needed)
+        header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+        # HTTP header 'Content-Type'
+        header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+
+        # form parameters
+        form_params = {}
+        form_params[downcase_first_letter('Document')] = request.document
+
+        # http body (model)
+        post_body = nil
+        auth_names = ['JWT']
+
+        data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'CustomXmlPartsResponse')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#get_custom_xml_parts_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
 
         [data, status_code, headers]
@@ -13444,6 +14010,157 @@ module AsposeWordsCloud
         [mp_data, status_code, headers]
     end
 
+    # Inserts a new custom xml part to the document.
+    # @param request InsertCustomXmlPartRequest
+    # @return [CustomXmlPartResponse]
+    def insert_custom_xml_part(request)
+        begin
+        data, _status_code, _headers = insert_custom_xml_part_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = insert_custom_xml_part_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Inserts a new custom xml part to the document.
+    # @param request InsertCustomXmlPartRequest
+    # @return [Array<(CustomXmlPartResponse, Fixnum, Hash)>]
+    # CustomXmlPartResponse, response status code and response headers
+    private def insert_custom_xml_part_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? InsertCustomXmlPartRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.insert_custom_xml_part ...' if @api_client.config.debugging
+        # verify the required parameter 'name' is set
+        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.insert_custom_xml_part' if @api_client.config.client_side_validation && request.name.nil?
+        # verify the required parameter 'custom_xml_part' is set
+        raise ArgumentError, 'Missing the required parameter custom_xml_part when calling WordsApi.insert_custom_xml_part' if @api_client.config.client_side_validation && request.custom_xml_part.nil?
+
+        # resource path
+        local_var_path = '/words/{name}/customXmlParts'[1..-1]
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.nil? ? '' : request.name.to_s)
+        local_var_path = local_var_path.sub('//', '/')
+
+        # query parameters
+        query_params = {}
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        # header parameters
+        header_params = {}
+        # HTTP header 'Accept' (if needed)
+        header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+        # HTTP header 'Content-Type'
+        header_params['Content-Type'] = @api_client.select_header_content_type(['application/xml', 'application/json'])
+
+        # form parameters
+        form_params = {}
+
+        # http body (model)
+        post_body = @api_client.object_to_http_body(request.custom_xml_part)
+        auth_names = ['JWT']
+
+        data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'CustomXmlPartResponse')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#insert_custom_xml_part\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [data, status_code, headers]
+    end
+
+    # Inserts a new custom xml part to the document.
+    # @param request InsertCustomXmlPartOnlineRequest
+    # @return [InsertCustomXmlPartOnlineResponse]
+    def insert_custom_xml_part_online(request)
+        begin
+        data, _status_code, _headers = insert_custom_xml_part_online_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = insert_custom_xml_part_online_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Inserts a new custom xml part to the document.
+    # @param request InsertCustomXmlPartOnlineRequest
+    # @return [Array<(InsertCustomXmlPartOnlineResponse, Fixnum, Hash)>]
+    # InsertCustomXmlPartOnlineResponse, response status code and response headers
+    private def insert_custom_xml_part_online_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? InsertCustomXmlPartOnlineRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.insert_custom_xml_part_online ...' if @api_client.config.debugging
+        # verify the required parameter 'document' is set
+        raise ArgumentError, 'Missing the required parameter document when calling WordsApi.insert_custom_xml_part_online' if @api_client.config.client_side_validation && request.document.nil?
+        # verify the required parameter 'custom_xml_part' is set
+        raise ArgumentError, 'Missing the required parameter custom_xml_part when calling WordsApi.insert_custom_xml_part_online' if @api_client.config.client_side_validation && request.custom_xml_part.nil?
+
+        # resource path
+        local_var_path = '/words/online/post/customXmlParts'[1..-1]
+        local_var_path = local_var_path.sub('//', '/')
+
+        # query parameters
+        query_params = {}
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        # header parameters
+        header_params = {}
+        # HTTP header 'Accept' (if needed)
+        header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+        # HTTP header 'Content-Type'
+        header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+
+        # form parameters
+        form_params = {}
+        form_params[downcase_first_letter('Document')] = request.document
+        form_params[downcase_first_letter('CustomXmlPart')] = request.custom_xml_part.to_body.to_json
+
+        # http body (model)
+        post_body = nil
+        auth_names = ['JWT']
+
+        data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        multipart_response: true,
+                                                        return_type: 'InsertCustomXmlPartOnlineResponse')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#insert_custom_xml_part_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        mp_data = InsertCustomXmlPartOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'CustomXmlPartResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
+    end
+
     # Inserts a new DrawingObject to the document node.
     # @param request InsertDrawingObjectRequest
     # @return [DrawingObjectResponse]
@@ -19234,6 +19951,163 @@ module AsposeWordsCloud
 
         mp_data = UpdateCommentOnlineResponse.new()
         mp_data.model = @api_client.deserialize(data['model'], 'CommentResponse')
+        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        [mp_data, status_code, headers]
+    end
+
+    # Updates the custom xml part in the document.
+    # @param request UpdateCustomXmlPartRequest
+    # @return [CustomXmlPartResponse]
+    def update_custom_xml_part(request)
+        begin
+        data, _status_code, _headers = update_custom_xml_part_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = update_custom_xml_part_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Updates the custom xml part in the document.
+    # @param request UpdateCustomXmlPartRequest
+    # @return [Array<(CustomXmlPartResponse, Fixnum, Hash)>]
+    # CustomXmlPartResponse, response status code and response headers
+    private def update_custom_xml_part_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? UpdateCustomXmlPartRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.update_custom_xml_part ...' if @api_client.config.debugging
+        # verify the required parameter 'name' is set
+        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.update_custom_xml_part' if @api_client.config.client_side_validation && request.name.nil?
+        # verify the required parameter 'custom_xml_part_index' is set
+        raise ArgumentError, 'Missing the required parameter custom_xml_part_index when calling WordsApi.update_custom_xml_part' if @api_client.config.client_side_validation && request.custom_xml_part_index.nil?
+        # verify the required parameter 'custom_xml_part' is set
+        raise ArgumentError, 'Missing the required parameter custom_xml_part when calling WordsApi.update_custom_xml_part' if @api_client.config.client_side_validation && request.custom_xml_part.nil?
+
+        # resource path
+        local_var_path = '/words/{name}/customXmlParts/{customXmlPartIndex}'[1..-1]
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.nil? ? '' : request.name.to_s)
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('CustomXmlPartIndex') + '}', request.custom_xml_part_index.nil? ? '' : request.custom_xml_part_index.to_s)
+        local_var_path = local_var_path.sub('//', '/')
+
+        # query parameters
+        query_params = {}
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        # header parameters
+        header_params = {}
+        # HTTP header 'Accept' (if needed)
+        header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+        # HTTP header 'Content-Type'
+        header_params['Content-Type'] = @api_client.select_header_content_type(['application/xml', 'application/json'])
+
+        # form parameters
+        form_params = {}
+
+        # http body (model)
+        post_body = @api_client.object_to_http_body(request.custom_xml_part)
+        auth_names = ['JWT']
+
+        data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'CustomXmlPartResponse')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#update_custom_xml_part\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [data, status_code, headers]
+    end
+
+    # Updates the custom xml part in the document.
+    # @param request UpdateCustomXmlPartOnlineRequest
+    # @return [UpdateCustomXmlPartOnlineResponse]
+    def update_custom_xml_part_online(request)
+        begin
+        data, _status_code, _headers = update_custom_xml_part_online_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = update_custom_xml_part_online_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Updates the custom xml part in the document.
+    # @param request UpdateCustomXmlPartOnlineRequest
+    # @return [Array<(UpdateCustomXmlPartOnlineResponse, Fixnum, Hash)>]
+    # UpdateCustomXmlPartOnlineResponse, response status code and response headers
+    private def update_custom_xml_part_online_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? UpdateCustomXmlPartOnlineRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.update_custom_xml_part_online ...' if @api_client.config.debugging
+        # verify the required parameter 'document' is set
+        raise ArgumentError, 'Missing the required parameter document when calling WordsApi.update_custom_xml_part_online' if @api_client.config.client_side_validation && request.document.nil?
+        # verify the required parameter 'custom_xml_part_index' is set
+        raise ArgumentError, 'Missing the required parameter custom_xml_part_index when calling WordsApi.update_custom_xml_part_online' if @api_client.config.client_side_validation && request.custom_xml_part_index.nil?
+        # verify the required parameter 'custom_xml_part' is set
+        raise ArgumentError, 'Missing the required parameter custom_xml_part when calling WordsApi.update_custom_xml_part_online' if @api_client.config.client_side_validation && request.custom_xml_part.nil?
+
+        # resource path
+        local_var_path = '/words/online/put/customXmlParts/{customXmlPartIndex}'[1..-1]
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('CustomXmlPartIndex') + '}', request.custom_xml_part_index.nil? ? '' : request.custom_xml_part_index.to_s)
+        local_var_path = local_var_path.sub('//', '/')
+
+        # query parameters
+        query_params = {}
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        # header parameters
+        header_params = {}
+        # HTTP header 'Accept' (if needed)
+        header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+        # HTTP header 'Content-Type'
+        header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+
+        # form parameters
+        form_params = {}
+        form_params[downcase_first_letter('Document')] = request.document
+        form_params[downcase_first_letter('CustomXmlPart')] = request.custom_xml_part.to_body.to_json
+
+        # http body (model)
+        post_body = nil
+        auth_names = ['JWT']
+
+        data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        multipart_response: true,
+                                                        return_type: 'UpdateCustomXmlPartOnlineResponse')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#update_custom_xml_part_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        mp_data = UpdateCustomXmlPartOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['model'], 'CustomXmlPartResponse')
         mp_data.document = @api_client.download_file_from_multipart(data['document'])
         [mp_data, status_code, headers]
     end

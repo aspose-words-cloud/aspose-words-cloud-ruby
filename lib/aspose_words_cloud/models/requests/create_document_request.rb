@@ -44,7 +44,7 @@ module AsposeWordsCloud
     # @param folder The path to the document folder.
     # @param storage Original document storage.
 
-    def initialize(file_name = nil, folder = nil, storage = nil)
+    def initialize(file_name: nil, folder: nil, storage: nil)
       self.file_name = file_name
       self.folder = folder
       self.storage = storage
