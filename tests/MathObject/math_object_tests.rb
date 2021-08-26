@@ -46,7 +46,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetOfficeMathObjectsRequest.new(remote_file_name, '', remote_data_folder, nil, nil, nil)
+      request = GetOfficeMathObjectsRequest.new(name: remote_file_name, node_path: '', folder: remote_data_folder)
 
       result = @words_api.get_office_math_objects(request)
       assert_equal false, result.nil?
@@ -56,7 +56,8 @@ module AsposeWordsCloud
     # Test for getting mathObjects online.
     #
     def test_get_office_math_objects_online
-      request = GetOfficeMathObjectsOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), '', nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = GetOfficeMathObjectsOnlineRequest.new(document: request_document, node_path: '')
 
       result = @words_api.get_office_math_objects_online(request)
       assert_equal false, result.nil?
@@ -70,7 +71,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetOfficeMathObjectsRequest.new(remote_file_name, nil, remote_data_folder, nil, nil, nil)
+      request = GetOfficeMathObjectsRequest.new(name: remote_file_name, folder: remote_data_folder)
 
       result = @words_api.get_office_math_objects(request)
       assert_equal false, result.nil?
@@ -84,7 +85,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetOfficeMathObjectRequest.new(remote_file_name, 0, '', remote_data_folder, nil, nil, nil)
+      request = GetOfficeMathObjectRequest.new(name: remote_file_name, index: 0, node_path: '', folder: remote_data_folder)
 
       result = @words_api.get_office_math_object(request)
       assert_equal false, result.nil?
@@ -94,7 +95,8 @@ module AsposeWordsCloud
     # Test for getting mathObject online.
     #
     def test_get_office_math_object_online
-      request = GetOfficeMathObjectOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 0, '', nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = GetOfficeMathObjectOnlineRequest.new(document: request_document, index: 0, node_path: '')
 
       result = @words_api.get_office_math_object_online(request)
       assert_equal false, result.nil?
@@ -108,7 +110,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetOfficeMathObjectRequest.new(remote_file_name, 0, nil, remote_data_folder, nil, nil, nil)
+      request = GetOfficeMathObjectRequest.new(name: remote_file_name, index: 0, folder: remote_data_folder)
 
       result = @words_api.get_office_math_object(request)
       assert_equal false, result.nil?
@@ -122,7 +124,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = RenderMathObjectRequest.new(remote_file_name, 'png', 0, '', remote_data_folder, nil, nil, nil, nil, nil)
+      request = RenderMathObjectRequest.new(name: remote_file_name, format: 'png', index: 0, node_path: '', folder: remote_data_folder)
 
       result = @words_api.render_math_object(request)
       assert_equal false, result.nil?
@@ -132,7 +134,8 @@ module AsposeWordsCloud
     # Test for rendering mathObject.
     #
     def test_render_math_object_online
-      request = RenderMathObjectOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 'png', 0, '', nil, nil, nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = RenderMathObjectOnlineRequest.new(document: request_document, format: 'png', index: 0, node_path: '')
 
       result = @words_api.render_math_object_online(request)
       assert_equal false, result.nil?
@@ -146,7 +149,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = RenderMathObjectRequest.new(remote_file_name, 'png', 0, nil, remote_data_folder, nil, nil, nil, nil, nil)
+      request = RenderMathObjectRequest.new(name: remote_file_name, format: 'png', index: 0, folder: remote_data_folder)
 
       result = @words_api.render_math_object(request)
       assert_equal false, result.nil?
@@ -160,7 +163,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = DeleteOfficeMathObjectRequest.new(remote_file_name, 0, '', remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request = DeleteOfficeMathObjectRequest.new(name: remote_file_name, index: 0, node_path: '', folder: remote_data_folder)
 
       @words_api.delete_office_math_object(request)
     end
@@ -169,7 +172,8 @@ module AsposeWordsCloud
     # Test for deleting mathObject online.
     #
     def test_delete_office_math_object_online
-      request = DeleteOfficeMathObjectOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 0, '', nil, nil, nil, nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = DeleteOfficeMathObjectOnlineRequest.new(document: request_document, index: 0, node_path: '')
 
       result = @words_api.delete_office_math_object_online(request)
       assert_equal false, result.nil?
@@ -183,7 +187,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = DeleteOfficeMathObjectRequest.new(remote_file_name, 0, nil, remote_data_folder, nil, nil, nil, nil, nil, nil)
+      request = DeleteOfficeMathObjectRequest.new(name: remote_file_name, index: 0, folder: remote_data_folder)
 
       @words_api.delete_office_math_object(request)
     end

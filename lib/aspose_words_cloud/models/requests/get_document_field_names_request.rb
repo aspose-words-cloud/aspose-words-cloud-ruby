@@ -56,7 +56,7 @@ module AsposeWordsCloud
     # @param password Password for opening an encrypted document.
     # @param use_non_merge_fields The flag indicating whether to use non merge fields. If true, result includes "mustache" field names.
 
-    def initialize(name, folder = nil, storage = nil, load_encoding = nil, password = nil, use_non_merge_fields = nil)
+    def initialize(name:, folder: nil, storage: nil, load_encoding: nil, password: nil, use_non_merge_fields: nil)
       self.name = name
       self.folder = folder
       self.storage = storage

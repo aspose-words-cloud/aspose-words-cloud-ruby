@@ -48,7 +48,7 @@ module AsposeWordsCloud
     # @param src_storage_name Source storage name.
     # @param dest_storage_name Destination storage name.
 
-    def initialize(dest_path, src_path, src_storage_name = nil, dest_storage_name = nil)
+    def initialize(dest_path:, src_path:, src_storage_name: nil, dest_storage_name: nil)
       self.dest_path = dest_path
       self.src_path = src_path
       self.src_storage_name = src_storage_name

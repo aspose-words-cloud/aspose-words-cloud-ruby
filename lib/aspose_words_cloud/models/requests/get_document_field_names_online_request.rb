@@ -29,8 +29,8 @@ module AsposeWordsCloud
   # Request model for get_document_field_names_online operation.
   #
   class GetDocumentFieldNamesOnlineRequest
-    # The document.
-    attr_accessor :document
+    # The template document.
+    attr_accessor :template
 
     # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     attr_accessor :load_encoding
@@ -43,13 +43,13 @@ module AsposeWordsCloud
 
     #
     # Initializes a new instance.
-    # @param document The document.
+    # @param template The template document.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     # @param password Password for opening an encrypted document.
     # @param use_non_merge_fields The flag indicating whether to use non merge fields. If true, result includes "mustache" field names.
 
-    def initialize(document, load_encoding = nil, password = nil, use_non_merge_fields = nil)
-      self.document = document
+    def initialize(template:, load_encoding: nil, password: nil, use_non_merge_fields: nil)
+      self.template = template
       self.load_encoding = load_encoding
       self.password = password
       self.use_non_merge_fields = use_non_merge_fields
@@ -57,8 +57,8 @@ module AsposeWordsCloud
 
     # Creating batch part from request
     def to_batch_part(api_client)
-      # verify the required parameter 'document' is set
-      raise ArgumentError, 'Missing the required parameter document when calling WordsApi.get_document_field_names_online' if api_client.config.client_side_validation && self.document.nil?
+      # verify the required parameter 'template' is set
+      raise ArgumentError, 'Missing the required parameter template when calling WordsApi.get_document_field_names_online' if api_client.config.client_side_validation && self.template.nil?
 
       # resource path
       local_var_path = '/words/online/get/mailMerge/FieldNames'[7..-1]
@@ -81,7 +81,7 @@ module AsposeWordsCloud
 
       # form parameters
       form_params = {}
-      form_params[downcase_first_letter('Document')] = self.document
+      form_params[downcase_first_letter('Template')] = self.template
 
       # http body (model)
       post_body = nil
@@ -107,8 +107,8 @@ module AsposeWordsCloud
     end
 
     def create_http_request(api_client)
-      # verify the required parameter 'document' is set
-      raise ArgumentError, 'Missing the required parameter document when calling WordsApi.get_document_field_names_online' if api_client.config.client_side_validation && self.document.nil?
+      # verify the required parameter 'template' is set
+      raise ArgumentError, 'Missing the required parameter template when calling WordsApi.get_document_field_names_online' if api_client.config.client_side_validation && self.template.nil?
 
       # resource path
       local_var_path = '/words/online/get/mailMerge/FieldNames'[1..-1]
@@ -127,7 +127,7 @@ module AsposeWordsCloud
 
       # form parameters
       form_params = {}
-      form_params[downcase_first_letter('Document')] = self.document
+      form_params[downcase_first_letter('Template')] = self.template
 
       # http body (model)
       post_body = nil

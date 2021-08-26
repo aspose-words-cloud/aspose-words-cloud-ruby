@@ -76,7 +76,7 @@ module AsposeWordsCloud
     # @param revision_date_time The date and time to use for revisions.
     # @param insert_before_node The index of the node. A new Run object will be inserted before the node with the specified node Id.
 
-    def initialize(name, paragraph_path, run, folder = nil, storage = nil, load_encoding = nil, password = nil, dest_file_name = nil, revision_author = nil, revision_date_time = nil, insert_before_node = nil)
+    def initialize(name:, paragraph_path:, run:, folder: nil, storage: nil, load_encoding: nil, password: nil, dest_file_name: nil, revision_author: nil, revision_date_time: nil, insert_before_node: nil)
       self.name = name
       self.paragraph_path = paragraph_path
       self.run = run

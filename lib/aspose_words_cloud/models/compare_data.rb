@@ -40,13 +40,17 @@ module AsposeWordsCloud
 
     # Gets or sets the date and time to use for revisions.
     attr_accessor :date_time
+
+    # Gets or sets the result document format.
+    attr_accessor :result_document_format
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'author' => :'Author',
         :'compare_options' => :'CompareOptions',
         :'comparing_with_document' => :'ComparingWithDocument',
-        :'date_time' => :'DateTime'
+        :'date_time' => :'DateTime',
+        :'result_document_format' => :'ResultDocumentFormat'
       }
     end
 
@@ -56,7 +60,8 @@ module AsposeWordsCloud
         :'author' => :'String',
         :'compare_options' => :'CompareOptions',
         :'comparing_with_document' => :'String',
-        :'date_time' => :'DateTime'
+        :'date_time' => :'DateTime',
+        :'result_document_format' => :'String'
       }
     end
 
@@ -83,6 +88,10 @@ module AsposeWordsCloud
       if attributes.key?(:'DateTime')
         self.date_time = attributes[:'DateTime']
       end
+
+      if attributes.key?(:'ResultDocumentFormat')
+        self.result_document_format = attributes[:'ResultDocumentFormat']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -106,7 +115,8 @@ module AsposeWordsCloud
           author == other.author &&
           compare_options == other.compare_options &&
           comparing_with_document == other.comparing_with_document &&
-          date_time == other.date_time
+          date_time == other.date_time &&
+          result_document_format == other.result_document_format
     end
 
     # @see the `==` method
@@ -118,7 +128,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [author, compare_options, comparing_with_document, date_time].hash
+      [author, compare_options, comparing_with_document, date_time, result_document_format].hash
     end
 
     # Builds the object from hash

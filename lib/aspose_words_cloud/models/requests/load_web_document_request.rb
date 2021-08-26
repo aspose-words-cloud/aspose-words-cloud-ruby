@@ -40,7 +40,7 @@ module AsposeWordsCloud
     # @param data The properties of data downloading.
     # @param storage Original document storage.
 
-    def initialize(data, storage = nil)
+    def initialize(data:, storage: nil)
       self.data = data
       self.storage = storage
     end

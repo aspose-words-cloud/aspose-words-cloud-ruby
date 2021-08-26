@@ -68,7 +68,7 @@ module AsposeWordsCloud
     # @param revision_date_time The date and time to use for revisions.
     # @param insert_before_node The index of the node. A new paragraph will be inserted before the node with the specified index.
 
-    def initialize(document, paragraph, node_path = nil, load_encoding = nil, password = nil, dest_file_name = nil, revision_author = nil, revision_date_time = nil, insert_before_node = nil)
+    def initialize(document:, paragraph:, node_path: nil, load_encoding: nil, password: nil, dest_file_name: nil, revision_author: nil, revision_date_time: nil, insert_before_node: nil)
       self.document = document
       self.paragraph = paragraph
       self.node_path = node_path

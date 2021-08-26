@@ -52,7 +52,7 @@ module AsposeWordsCloud
     # @param password Password for opening an encrypted document.
     # @param fonts_location Folder in filestorage with custom fonts.
 
-    def initialize(document, save_options_data, load_encoding = nil, password = nil, fonts_location = nil)
+    def initialize(document:, save_options_data:, load_encoding: nil, password: nil, fonts_location: nil)
       self.document = document
       self.save_options_data = save_options_data
       self.load_encoding = load_encoding

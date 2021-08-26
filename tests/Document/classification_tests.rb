@@ -42,7 +42,7 @@ module AsposeWordsCloud
     # Test for raw text classification.
     #
     def test_classify
-      request = ClassifyRequest.new('Try text classification', '3')
+      request = ClassifyRequest.new(text: 'Try text classification', best_classes_count: '3')
 
       result = @words_api.classify(request)
       assert_equal false, result.nil?
@@ -56,7 +56,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = ClassifyDocumentRequest.new(remote_file_name, remote_data_folder, nil, nil, nil, '3', nil)
+      request = ClassifyDocumentRequest.new(name: remote_file_name, folder: remote_data_folder, best_classes_count: '3')
 
       result = @words_api.classify_document(request)
       assert_equal false, result.nil?
@@ -66,7 +66,8 @@ module AsposeWordsCloud
     # Test for document classification online.
     #
     def test_classify_document_online
-      request = ClassifyDocumentOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), nil, nil, '3', nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = ClassifyDocumentOnlineRequest.new(document: request_document, best_classes_count: '3')
 
       result = @words_api.classify_document_online(request)
       assert_equal false, result.nil?

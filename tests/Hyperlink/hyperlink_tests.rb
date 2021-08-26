@@ -46,7 +46,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetDocumentHyperlinkByIndexRequest.new(remote_file_name, 0, remote_data_folder, nil, nil, nil)
+      request = GetDocumentHyperlinkByIndexRequest.new(name: remote_file_name, hyperlink_index: 0, folder: remote_data_folder)
 
       result = @words_api.get_document_hyperlink_by_index(request)
       assert_equal false, result.nil?
@@ -56,7 +56,8 @@ module AsposeWordsCloud
     # Test for getting hyperlink by specified index online.
     #
     def test_get_document_hyperlink_by_index_online
-      request = GetDocumentHyperlinkByIndexOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), 0, nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = GetDocumentHyperlinkByIndexOnlineRequest.new(document: request_document, hyperlink_index: 0)
 
       result = @words_api.get_document_hyperlink_by_index_online(request)
       assert_equal false, result.nil?
@@ -70,7 +71,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = GetDocumentHyperlinksRequest.new(remote_file_name, remote_data_folder, nil, nil, nil)
+      request = GetDocumentHyperlinksRequest.new(name: remote_file_name, folder: remote_data_folder)
 
       result = @words_api.get_document_hyperlinks(request)
       assert_equal false, result.nil?
@@ -80,7 +81,8 @@ module AsposeWordsCloud
     # Test for getting hyperlinks online.
     #
     def test_get_document_hyperlinks_online
-      request = GetDocumentHyperlinksOnlineRequest.new(File.open(File.join(local_test_folder, local_file)), nil, nil)
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = GetDocumentHyperlinksOnlineRequest.new(document: request_document)
 
       result = @words_api.get_document_hyperlinks_online(request)
       assert_equal false, result.nil?
