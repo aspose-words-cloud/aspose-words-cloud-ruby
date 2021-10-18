@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="report_engine_settings.rb">
+# <copyright company="Aspose" file="json_data_load_options.rb">
 #   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -27,25 +27,21 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Report engine settings.
-  class ReportEngineSettings
-    # Gets or sets the options for parsing CSV data.
-    attr_accessor :csv_data_load_options
+  # Represents options for parsing JSON data.
+  class JsonDataLoadOptions
+    # Gets or sets a value indicating whether a generated data source will always contain
+    # an object for a JSON root element. If a JSON root element contains a single complex
+    # property, such an object is not created by default.
+    attr_accessor :always_generate_root_object
 
-    # Gets or sets the name to reference the data source object in the template.
-    attr_accessor :data_source_name
+    # Gets or sets exact formats for parsing JSON date-time values while loading JSON.
+    # The default is null.
+    attr_accessor :exact_date_time_parse_formats
 
-    # Gets or sets type of datasource.
-    attr_accessor :data_source_type
-
-    # Gets or sets the options for parsing JSON data.
-    attr_accessor :json_data_load_options
-
-    # Gets or sets type of options to build report.
-    attr_accessor :report_build_options
-
-    # Gets or sets the options for parsing XML data.
-    attr_accessor :xml_data_load_options
+    # Gets or sets a mode for parsing JSON simple values (null, boolean, number, integer,
+    # and string) while loading JSON. Such a mode does not affect parsing of date-time
+    # values. The default is Aspose.Words.Reporting.JsonSimpleValueParseMode.Loose.
+    attr_accessor :simple_value_parse_mode
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -72,24 +68,18 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'csv_data_load_options' => :'CsvDataLoadOptions',
-        :'data_source_name' => :'DataSourceName',
-        :'data_source_type' => :'DataSourceType',
-        :'json_data_load_options' => :'JsonDataLoadOptions',
-        :'report_build_options' => :'ReportBuildOptions',
-        :'xml_data_load_options' => :'XmlDataLoadOptions'
+        :'always_generate_root_object' => :'AlwaysGenerateRootObject',
+        :'exact_date_time_parse_formats' => :'ExactDateTimeParseFormats',
+        :'simple_value_parse_mode' => :'SimpleValueParseMode'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'csv_data_load_options' => :'CsvDataLoadOptions',
-        :'data_source_name' => :'String',
-        :'data_source_type' => :'String',
-        :'json_data_load_options' => :'JsonDataLoadOptions',
-        :'report_build_options' => :'Array<String>',
-        :'xml_data_load_options' => :'XmlDataLoadOptions'
+        :'always_generate_root_object' => :'BOOLEAN',
+        :'exact_date_time_parse_formats' => :'Array<String>',
+        :'simple_value_parse_mode' => :'String'
       }
     end
 
@@ -101,30 +91,18 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'CsvDataLoadOptions')
-        self.csv_data_load_options = attributes[:'CsvDataLoadOptions']
+      if attributes.key?(:'AlwaysGenerateRootObject')
+        self.always_generate_root_object = attributes[:'AlwaysGenerateRootObject']
       end
 
-      if attributes.key?(:'DataSourceName')
-        self.data_source_name = attributes[:'DataSourceName']
-      end
-
-      if attributes.key?(:'DataSourceType')
-        self.data_source_type = attributes[:'DataSourceType']
-      end
-
-      if attributes.key?(:'JsonDataLoadOptions')
-        self.json_data_load_options = attributes[:'JsonDataLoadOptions']
-      end
-
-      if attributes.key?(:'ReportBuildOptions')
-        if (value = attributes[:'ReportBuildOptions']).is_a?(Array)
-          self.report_build_options = value
+      if attributes.key?(:'ExactDateTimeParseFormats')
+        if (value = attributes[:'ExactDateTimeParseFormats']).is_a?(Array)
+          self.exact_date_time_parse_formats = value
         end
       end
 
-      if attributes.key?(:'XmlDataLoadOptions')
-        self.xml_data_load_options = attributes[:'XmlDataLoadOptions']
+      if attributes.key?(:'SimpleValueParseMode')
+        self.simple_value_parse_mode = attributes[:'SimpleValueParseMode']
       end
     end
 
@@ -138,23 +116,23 @@ module AsposeWordsCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      data_source_type_validator = EnumAttributeValidator.new('String', ["Xml", "Json", "Csv"])
-      return false unless data_source_type_validator.valid?(@data_source_type)
+      simple_value_parse_mode_validator = EnumAttributeValidator.new('String', ["Loose", "Strict"])
+      return false unless simple_value_parse_mode_validator.valid?(@simple_value_parse_mode)
 
       return true
     end
 
     # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] data_source_type Object to be assigned
-    def data_source_type=(data_source_type)
-      validator = EnumAttributeValidator.new('String', ["Xml", "Json", "Csv"])
-      if data_source_type.to_i == 0
-        unless validator.valid?(data_source_type)
-          raise ArgumentError, "invalid value for 'data_source_type', must be one of #{validator.allowable_values}."
+    # @param [Object] simple_value_parse_mode Object to be assigned
+    def simple_value_parse_mode=(simple_value_parse_mode)
+      validator = EnumAttributeValidator.new('String', ["Loose", "Strict"])
+      if simple_value_parse_mode.to_i == 0
+        unless validator.valid?(simple_value_parse_mode)
+          raise ArgumentError, "invalid value for 'simple_value_parse_mode', must be one of #{validator.allowable_values}."
         end
-        @data_source_type = data_source_type
+        @simple_value_parse_mode = simple_value_parse_mode
       else
-        @data_source_type = validator.allowable_values[data_source_type.to_i]
+        @simple_value_parse_mode = validator.allowable_values[simple_value_parse_mode.to_i]
       end
     end
 
@@ -164,12 +142,9 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          csv_data_load_options == other.csv_data_load_options &&
-          data_source_name == other.data_source_name &&
-          data_source_type == other.data_source_type &&
-          json_data_load_options == other.json_data_load_options &&
-          report_build_options == other.report_build_options &&
-          xml_data_load_options == other.xml_data_load_options
+          always_generate_root_object == other.always_generate_root_object &&
+          exact_date_time_parse_formats == other.exact_date_time_parse_formats &&
+          simple_value_parse_mode == other.simple_value_parse_mode
     end
 
     # @see the `==` method
@@ -181,7 +156,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [csv_data_load_options, data_source_name, data_source_type, json_data_load_options, report_build_options, xml_data_load_options].hash
+      [always_generate_root_object, exact_date_time_parse_formats, simple_value_parse_mode].hash
     end
 
     # Builds the object from hash

@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="report_engine_settings.rb">
+# <copyright company="Aspose" file="xml_data_load_options.rb">
 #   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -27,69 +27,23 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Report engine settings.
-  class ReportEngineSettings
-    # Gets or sets the options for parsing CSV data.
-    attr_accessor :csv_data_load_options
-
-    # Gets or sets the name to reference the data source object in the template.
-    attr_accessor :data_source_name
-
-    # Gets or sets type of datasource.
-    attr_accessor :data_source_type
-
-    # Gets or sets the options for parsing JSON data.
-    attr_accessor :json_data_load_options
-
-    # Gets or sets type of options to build report.
-    attr_accessor :report_build_options
-
-    # Gets or sets the options for parsing XML data.
-    attr_accessor :xml_data_load_options
-
-    class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
-
-      def initialize(datatype, allowable_values)
-        @allowable_values = allowable_values.map do |value|
-          case datatype.to_s
-          when /Integer/i
-            value.to_i
-          when /Float/i
-            value.to_f
-          else
-            value
-          end
-        end
-      end
-
-      def valid?(value)
-        !value || allowable_values.include?(value)
-      end
-    end
-
+  # Represents options for XML data loading.
+  class XmlDataLoadOptions
+    # Gets or sets a flag indicating whether a generated data source will always contain an object for an XML root
+    # element. If an XML root element has no attributes and all its child elements have same names, such an object
+    # is not created by default.
+    attr_accessor :always_generate_root_object
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'csv_data_load_options' => :'CsvDataLoadOptions',
-        :'data_source_name' => :'DataSourceName',
-        :'data_source_type' => :'DataSourceType',
-        :'json_data_load_options' => :'JsonDataLoadOptions',
-        :'report_build_options' => :'ReportBuildOptions',
-        :'xml_data_load_options' => :'XmlDataLoadOptions'
+        :'always_generate_root_object' => :'AlwaysGenerateRootObject'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'csv_data_load_options' => :'CsvDataLoadOptions',
-        :'data_source_name' => :'String',
-        :'data_source_type' => :'String',
-        :'json_data_load_options' => :'JsonDataLoadOptions',
-        :'report_build_options' => :'Array<String>',
-        :'xml_data_load_options' => :'XmlDataLoadOptions'
+        :'always_generate_root_object' => :'BOOLEAN'
       }
     end
 
@@ -101,30 +55,8 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'CsvDataLoadOptions')
-        self.csv_data_load_options = attributes[:'CsvDataLoadOptions']
-      end
-
-      if attributes.key?(:'DataSourceName')
-        self.data_source_name = attributes[:'DataSourceName']
-      end
-
-      if attributes.key?(:'DataSourceType')
-        self.data_source_type = attributes[:'DataSourceType']
-      end
-
-      if attributes.key?(:'JsonDataLoadOptions')
-        self.json_data_load_options = attributes[:'JsonDataLoadOptions']
-      end
-
-      if attributes.key?(:'ReportBuildOptions')
-        if (value = attributes[:'ReportBuildOptions']).is_a?(Array)
-          self.report_build_options = value
-        end
-      end
-
-      if attributes.key?(:'XmlDataLoadOptions')
-        self.xml_data_load_options = attributes[:'XmlDataLoadOptions']
+      if attributes.key?(:'AlwaysGenerateRootObject')
+        self.always_generate_root_object = attributes[:'AlwaysGenerateRootObject']
       end
     end
 
@@ -138,38 +70,15 @@ module AsposeWordsCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      data_source_type_validator = EnumAttributeValidator.new('String', ["Xml", "Json", "Csv"])
-      return false unless data_source_type_validator.valid?(@data_source_type)
-
       return true
     end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] data_source_type Object to be assigned
-    def data_source_type=(data_source_type)
-      validator = EnumAttributeValidator.new('String', ["Xml", "Json", "Csv"])
-      if data_source_type.to_i == 0
-        unless validator.valid?(data_source_type)
-          raise ArgumentError, "invalid value for 'data_source_type', must be one of #{validator.allowable_values}."
-        end
-        @data_source_type = data_source_type
-      else
-        @data_source_type = validator.allowable_values[data_source_type.to_i]
-      end
-    end
-
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          csv_data_load_options == other.csv_data_load_options &&
-          data_source_name == other.data_source_name &&
-          data_source_type == other.data_source_type &&
-          json_data_load_options == other.json_data_load_options &&
-          report_build_options == other.report_build_options &&
-          xml_data_load_options == other.xml_data_load_options
+          always_generate_root_object == other.always_generate_root_object
     end
 
     # @see the `==` method
@@ -181,7 +90,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [csv_data_load_options, data_source_name, data_source_type, json_data_load_options, report_build_options, xml_data_load_options].hash
+      [always_generate_root_object].hash
     end
 
     # Builds the object from hash
