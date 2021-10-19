@@ -102,9 +102,6 @@ module AsposeWordsCloud
     # Gets or sets the 0-based index of the first page to render.
     attr_accessor :page_index
 
-    # Gets or sets the additional System.Drawing.Graphics quality options.
-    attr_accessor :graphics_quality_options
-
     # Gets or sets the horizontal resolution in dots per inch for the generated images.
     # This property has effect only when saving to raster image formats.
     # The default value is 96.
@@ -204,7 +201,6 @@ module AsposeWordsCloud
         :'optimize_output' => :'OptimizeOutput',
         :'page_count' => :'PageCount',
         :'page_index' => :'PageIndex',
-        :'graphics_quality_options' => :'GraphicsQualityOptions',
         :'horizontal_resolution' => :'HorizontalResolution',
         :'image_brightness' => :'ImageBrightness',
         :'image_color_mode' => :'ImageColorMode',
@@ -248,7 +244,6 @@ module AsposeWordsCloud
         :'optimize_output' => :'BOOLEAN',
         :'page_count' => :'Integer',
         :'page_index' => :'Integer',
-        :'graphics_quality_options' => :'GraphicsQualityOptionsData',
         :'horizontal_resolution' => :'Float',
         :'image_brightness' => :'Float',
         :'image_color_mode' => :'String',
@@ -361,10 +356,6 @@ module AsposeWordsCloud
 
       if attributes.key?(:'PageIndex')
         self.page_index = attributes[:'PageIndex']
-      end
-
-      if attributes.key?(:'GraphicsQualityOptions')
-        self.graphics_quality_options = attributes[:'GraphicsQualityOptions']
       end
 
       if attributes.key?(:'HorizontalResolution')
@@ -486,7 +477,6 @@ module AsposeWordsCloud
           optimize_output == other.optimize_output &&
           page_count == other.page_count &&
           page_index == other.page_index &&
-          graphics_quality_options == other.graphics_quality_options &&
           horizontal_resolution == other.horizontal_resolution &&
           image_brightness == other.image_brightness &&
           image_color_mode == other.image_color_mode &&
@@ -513,7 +503,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, flat_opc_xml_mapping_only, iml_rendering_mode, save_format, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, graphics_quality_options, horizontal_resolution, image_brightness, image_color_mode, image_contrast, paper_color, pixel_format, resolution, scale, use_anti_aliasing, use_gdi_emf_renderer, use_high_quality_rendering, vertical_resolution, threshold_for_floyd_steinberg_dithering, tiff_binarization_method, tiff_compression].hash
+      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, flat_opc_xml_mapping_only, iml_rendering_mode, save_format, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, horizontal_resolution, image_brightness, image_color_mode, image_contrast, paper_color, pixel_format, resolution, scale, use_anti_aliasing, use_gdi_emf_renderer, use_high_quality_rendering, vertical_resolution, threshold_for_floyd_steinberg_dithering, tiff_binarization_method, tiff_compression].hash
     end
 
     # Builds the object from hash
