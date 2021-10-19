@@ -38,8 +38,14 @@ module AsposeWordsCloud
     # Gets or sets type of datasource.
     attr_accessor :data_source_type
 
+    # Gets or sets the options for parsing JSON data.
+    attr_accessor :json_data_load_options
+
     # Gets or sets type of options to build report.
     attr_accessor :report_build_options
+
+    # Gets or sets the options for parsing XML data.
+    attr_accessor :xml_data_load_options
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -69,7 +75,9 @@ module AsposeWordsCloud
         :'csv_data_load_options' => :'CsvDataLoadOptions',
         :'data_source_name' => :'DataSourceName',
         :'data_source_type' => :'DataSourceType',
-        :'report_build_options' => :'ReportBuildOptions'
+        :'json_data_load_options' => :'JsonDataLoadOptions',
+        :'report_build_options' => :'ReportBuildOptions',
+        :'xml_data_load_options' => :'XmlDataLoadOptions'
       }
     end
 
@@ -79,7 +87,9 @@ module AsposeWordsCloud
         :'csv_data_load_options' => :'CsvDataLoadOptions',
         :'data_source_name' => :'String',
         :'data_source_type' => :'String',
-        :'report_build_options' => :'Array<String>'
+        :'json_data_load_options' => :'JsonDataLoadOptions',
+        :'report_build_options' => :'Array<String>',
+        :'xml_data_load_options' => :'XmlDataLoadOptions'
       }
     end
 
@@ -103,10 +113,18 @@ module AsposeWordsCloud
         self.data_source_type = attributes[:'DataSourceType']
       end
 
+      if attributes.key?(:'JsonDataLoadOptions')
+        self.json_data_load_options = attributes[:'JsonDataLoadOptions']
+      end
+
       if attributes.key?(:'ReportBuildOptions')
         if (value = attributes[:'ReportBuildOptions']).is_a?(Array)
           self.report_build_options = value
         end
+      end
+
+      if attributes.key?(:'XmlDataLoadOptions')
+        self.xml_data_load_options = attributes[:'XmlDataLoadOptions']
       end
     end
 
@@ -149,7 +167,9 @@ module AsposeWordsCloud
           csv_data_load_options == other.csv_data_load_options &&
           data_source_name == other.data_source_name &&
           data_source_type == other.data_source_type &&
-          report_build_options == other.report_build_options
+          json_data_load_options == other.json_data_load_options &&
+          report_build_options == other.report_build_options &&
+          xml_data_load_options == other.xml_data_load_options
     end
 
     # @see the `==` method
@@ -161,7 +181,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [csv_data_load_options, data_source_name, data_source_type, report_build_options].hash
+      [csv_data_load_options, data_source_name, data_source_type, json_data_load_options, report_build_options, xml_data_load_options].hash
     end
 
     # Builds the object from hash
