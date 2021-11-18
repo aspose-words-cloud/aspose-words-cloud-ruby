@@ -69,6 +69,11 @@ module AsposeWordsCloud
         query_params.each { |key, value| local_var_path = api_client.add_param_to_query(local_var_path, key, value) }
       end
 
+      if query_params.has_key? 'password'
+        query_params.delete('password')
+        query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+      end
+
       header_params = {}
 
       # form parameters
@@ -110,6 +115,11 @@ module AsposeWordsCloud
       query_params = {}
       query_params[downcase_first_letter('StorageName')] = self.storage_name unless self.storage_name.nil?
       query_params[downcase_first_letter('VersionId')] = self.version_id unless self.version_id.nil?
+
+      if query_params.has_key? 'password'
+        query_params.delete('password')
+        query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+      end
 
       # header parameters
       header_params = {}

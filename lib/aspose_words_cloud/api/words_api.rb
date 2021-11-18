@@ -26,6 +26,7 @@
 require 'uri'
 require 'json'
 require 'faraday'
+require 'Base64'
 
 module AsposeWordsCloud
   #
@@ -39,6 +40,7 @@ module AsposeWordsCloud
       require_all '../models/requests'
       require_all '../models/responses'
       request_token
+      request_rsa_key
     end
 
     def batch(requests)
@@ -101,6 +103,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -168,6 +175,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -248,6 +260,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -318,6 +335,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -402,6 +424,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -475,6 +502,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -556,6 +588,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -627,6 +664,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('DocumentFileName')] = request.document_file_name unless request.document_file_name.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -694,6 +736,11 @@ module AsposeWordsCloud
         # query parameters
         query_params = {}
         query_params[downcase_first_letter('BestClassesCount')] = request.best_classes_count unless request.best_classes_count.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -766,6 +813,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('BestClassesCount')] = request.best_classes_count unless request.best_classes_count.nil?
         query_params[downcase_first_letter('Taxonomy')] = request.taxonomy unless request.taxonomy.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -833,6 +885,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
         query_params[downcase_first_letter('BestClassesCount')] = request.best_classes_count unless request.best_classes_count.nil?
         query_params[downcase_first_letter('Taxonomy')] = request.taxonomy unless request.taxonomy.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -907,6 +964,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -975,6 +1037,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -1054,6 +1121,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -1126,6 +1198,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestStorageName')] = request.dest_storage_name unless request.dest_storage_name.nil?
         query_params[downcase_first_letter('VersionId')] = request.version_id unless request.version_id.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -1194,6 +1271,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestPath')] = request.dest_path
         query_params[downcase_first_letter('SrcStorageName')] = request.src_storage_name unless request.src_storage_name.nil?
         query_params[downcase_first_letter('DestStorageName')] = request.dest_storage_name unless request.dest_storage_name.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -1268,6 +1350,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -1339,6 +1426,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -1409,6 +1501,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -1474,6 +1571,11 @@ module AsposeWordsCloud
         # query parameters
         query_params = {}
         query_params[downcase_first_letter('StorageName')] = request.storage_name unless request.storage_name.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -1551,6 +1653,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -1624,6 +1731,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -1705,6 +1817,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -1775,6 +1892,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -1857,6 +1979,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -1929,6 +2056,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -2008,6 +2140,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -2077,6 +2214,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -2158,6 +2300,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -2228,6 +2375,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -2302,6 +2454,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -2369,6 +2526,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -2446,6 +2608,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -2516,6 +2683,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -2590,6 +2762,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -2657,6 +2834,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -2734,6 +2916,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -2804,6 +2991,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -2882,6 +3074,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -2953,6 +3150,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -3031,6 +3233,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -3102,6 +3309,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -3177,6 +3389,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -3246,6 +3463,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -3314,6 +3536,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('StorageName')] = request.storage_name unless request.storage_name.nil?
         query_params[downcase_first_letter('VersionId')] = request.version_id unless request.version_id.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -3379,6 +3606,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('StorageName')] = request.storage_name unless request.storage_name.nil?
         query_params[downcase_first_letter('Recursive')] = request.recursive unless request.recursive.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -3455,6 +3687,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -3526,6 +3763,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -3604,6 +3846,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -3675,6 +3922,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -3755,6 +4007,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -3828,6 +4085,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -3906,6 +4168,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
         query_params[downcase_first_letter('HeadersFootersTypes')] = request.headers_footers_types unless request.headers_footers_types.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -3977,6 +4244,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
         query_params[downcase_first_letter('HeadersFootersTypes')] = request.headers_footers_types unless request.headers_footers_types.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -4051,6 +4323,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -4118,6 +4395,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -4196,6 +4478,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -4267,6 +4554,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -4345,6 +4637,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -4420,6 +4717,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -4492,6 +4794,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -4571,6 +4878,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -4649,6 +4961,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -4722,6 +5039,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -4806,6 +5128,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -4879,6 +5206,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -4956,6 +5288,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -5026,6 +5363,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -5104,6 +5446,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -5181,6 +5528,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -5255,6 +5607,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -5328,6 +5685,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -5408,6 +5770,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -5482,6 +5849,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -5555,6 +5927,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -5623,6 +6000,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -5695,6 +6077,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('StorageName')] = request.storage_name unless request.storage_name.nil?
         query_params[downcase_first_letter('VersionId')] = request.version_id unless request.version_id.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -5770,6 +6157,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('UseWholeParagraphAsRegion')] = request.use_whole_paragraph_as_region unless request.use_whole_paragraph_as_region.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -5840,6 +6232,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Cleanup')] = request.cleanup unless request.cleanup.nil?
         query_params[downcase_first_letter('DocumentFileName')] = request.document_file_name unless request.document_file_name.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -5903,6 +6300,11 @@ module AsposeWordsCloud
         # query parameters
         query_params = {}
         query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -5976,6 +6378,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -6044,6 +6451,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -6115,6 +6527,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -6180,6 +6597,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -6255,6 +6677,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -6324,6 +6751,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -6396,6 +6828,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -6462,6 +6899,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -6536,6 +6978,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -6604,6 +7051,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -6675,6 +7127,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -6740,6 +7197,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -6814,6 +7276,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -6882,6 +7349,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -6953,6 +7425,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -7018,6 +7495,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -7088,6 +7570,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -7162,6 +7649,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -7231,6 +7723,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -7306,6 +7803,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -7375,6 +7877,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -7450,6 +7957,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -7519,6 +8031,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -7591,6 +8108,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -7657,6 +8179,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -7729,6 +8256,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
         query_params[downcase_first_letter('UseNonMergeFields')] = request.use_non_merge_fields unless request.use_non_merge_fields.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -7795,6 +8327,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
         query_params[downcase_first_letter('UseNonMergeFields')] = request.use_non_merge_fields unless request.use_non_merge_fields.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -7869,6 +8406,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -7937,6 +8479,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -8008,6 +8555,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -8073,6 +8625,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -8144,6 +8701,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -8209,6 +8771,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -8283,6 +8850,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -8351,6 +8923,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -8422,6 +8999,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -8487,6 +9069,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -8561,6 +9148,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('IncludeFootnotes')] = request.include_footnotes unless request.include_footnotes.nil?
         query_params[downcase_first_letter('IncludeTextInShapes')] = request.include_text_in_shapes unless request.include_text_in_shapes.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -8629,6 +9221,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('IncludeComments')] = request.include_comments unless request.include_comments.nil?
         query_params[downcase_first_letter('IncludeFootnotes')] = request.include_footnotes unless request.include_footnotes.nil?
         query_params[downcase_first_letter('IncludeTextInShapes')] = request.include_text_in_shapes unless request.include_text_in_shapes.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -8705,6 +9302,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('OutPath')] = request.out_path unless request.out_path.nil?
         query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -8778,6 +9380,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -8847,6 +9454,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -8919,6 +9531,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -8986,6 +9603,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -9052,6 +9674,11 @@ module AsposeWordsCloud
         # query parameters
         query_params = {}
         query_params[downcase_first_letter('StorageName')] = request.storage_name unless request.storage_name.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -9126,6 +9753,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -9195,6 +9827,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -9267,6 +9904,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -9333,6 +9975,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -9408,6 +10055,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -9477,6 +10129,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -9549,6 +10206,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -9615,6 +10277,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -9689,6 +10356,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
         query_params[downcase_first_letter('FilterByType')] = request.filter_by_type unless request.filter_by_type.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -9766,6 +10438,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
         query_params[downcase_first_letter('FilterByType')] = request.filter_by_type unless request.filter_by_type.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -9839,6 +10516,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
         query_params[downcase_first_letter('FilterByType')] = request.filter_by_type unless request.filter_by_type.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -9909,6 +10591,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
         query_params[downcase_first_letter('FilterByType')] = request.filter_by_type unless request.filter_by_type.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -9984,6 +10671,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
         query_params[downcase_first_letter('FilterByType')] = request.filter_by_type unless request.filter_by_type.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -10054,6 +10746,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
         query_params[downcase_first_letter('FilterByType')] = request.filter_by_type unless request.filter_by_type.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -10079,6 +10776,72 @@ module AsposeWordsCloud
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_header_footers_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [data, status_code, headers]
+    end
+
+    # Returns application info.
+    # @param request GetInfoRequest
+    # @return [InfoResponse]
+    def get_info(request)
+        begin
+        data, _status_code, _headers = get_info_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = get_info_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Returns application info.
+    # @param request GetInfoRequest
+    # @return [Array<(InfoResponse, Fixnum, Hash)>]
+    # InfoResponse, response status code and response headers
+    private def get_info_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? GetInfoRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.get_info ...' if @api_client.config.debugging
+        # resource path
+        local_var_path = '/words/info'[1..-1]
+        local_var_path = local_var_path.sub('//', '/')
+
+        # query parameters
+        query_params = {}
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
+        # header parameters
+        header_params = {}
+        # HTTP header 'Accept' (if needed)
+        header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+        # HTTP header 'Content-Type'
+        header_params['Content-Type'] = @api_client.select_header_content_type(['application/xml', 'application/json'])
+
+        # form parameters
+        form_params = {}
+
+        # http body (model)
+        post_body = nil
+        auth_names = ['JWT']
+
+        data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'InfoResponse')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#get_info\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
 
         [data, status_code, headers]
@@ -10126,6 +10889,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -10195,6 +10963,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -10266,6 +11039,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -10331,6 +11109,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -10406,6 +11189,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -10475,6 +11263,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -10547,6 +11340,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -10613,6 +11411,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -10688,6 +11491,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -10761,6 +11569,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -10830,6 +11643,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -10905,6 +11723,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -10974,6 +11797,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -11046,6 +11874,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -11117,6 +11950,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -11183,6 +12021,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -11258,6 +12101,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -11328,6 +12176,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -11389,6 +12242,11 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -11463,6 +12321,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -11532,6 +12395,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -11609,6 +12477,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -11684,6 +12557,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -11755,6 +12633,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -11829,6 +12712,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -11902,6 +12790,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -11970,6 +12863,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -12044,6 +12942,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -12112,6 +13015,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -12186,6 +13094,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -12254,6 +13167,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -12325,6 +13243,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -12390,6 +13313,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -12464,6 +13392,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -12536,6 +13469,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -12604,6 +13542,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -12675,6 +13618,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -12745,6 +13693,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -12810,6 +13763,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -12884,6 +13842,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -12960,6 +13923,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -13035,6 +14003,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -13106,6 +14079,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -13180,6 +14158,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -13250,6 +14233,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -13325,6 +14313,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -13394,6 +14387,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -13471,6 +14469,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -13546,6 +14549,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -13617,6 +14625,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -13691,6 +14704,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -13762,6 +14780,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -13828,6 +14851,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -13904,6 +14932,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -13974,6 +15007,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -14055,6 +15093,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -14125,6 +15168,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -14209,6 +15257,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -14284,6 +15337,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -14368,6 +15426,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
         query_params[downcase_first_letter('InsertBeforeNode')] = request.insert_before_node unless request.insert_before_node.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -14440,6 +15503,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
         query_params[downcase_first_letter('InsertBeforeNode')] = request.insert_before_node unless request.insert_before_node.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -14522,6 +15590,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -14593,6 +15666,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -14676,6 +15754,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
         query_params[downcase_first_letter('InsertBeforeNode')] = request.insert_before_node unless request.insert_before_node.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -14748,6 +15831,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
         query_params[downcase_first_letter('InsertBeforeNode')] = request.insert_before_node unless request.insert_before_node.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -14832,6 +15920,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -14905,6 +15998,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -14986,6 +16084,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -15056,6 +16159,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -15139,6 +16247,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -15211,6 +16324,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -15292,6 +16410,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -15362,6 +16485,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -15445,6 +16573,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
         query_params[downcase_first_letter('InsertBeforeNode')] = request.insert_before_node unless request.insert_before_node.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -15517,6 +16650,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
         query_params[downcase_first_letter('InsertBeforeNode')] = request.insert_before_node unless request.insert_before_node.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -15602,6 +16740,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
         query_params[downcase_first_letter('InsertBeforeNode')] = request.insert_before_node unless request.insert_before_node.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -15676,6 +16819,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
         query_params[downcase_first_letter('InsertBeforeNode')] = request.insert_before_node unless request.insert_before_node.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -15757,6 +16905,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -15827,6 +16980,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -15909,6 +17067,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -15986,6 +17149,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -16059,6 +17227,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -16137,6 +17310,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -16221,6 +17399,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -16294,6 +17477,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -16375,6 +17563,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RotationAngle')] = request.rotation_angle unless request.rotation_angle.nil?
         query_params[downcase_first_letter('Image')] = request.image unless request.image.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -16448,6 +17641,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
         query_params[downcase_first_letter('RotationAngle')] = request.rotation_angle unless request.rotation_angle.nil?
         query_params[downcase_first_letter('Image')] = request.image unless request.image.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -16529,6 +17727,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -16599,6 +17802,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -16671,6 +17879,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -16742,6 +17955,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestStorageName')] = request.dest_storage_name unless request.dest_storage_name.nil?
         query_params[downcase_first_letter('VersionId')] = request.version_id unless request.version_id.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -16810,6 +18028,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestPath')] = request.dest_path
         query_params[downcase_first_letter('SrcStorageName')] = request.src_storage_name unless request.src_storage_name.nil?
         query_params[downcase_first_letter('DestStorageName')] = request.dest_storage_name unless request.dest_storage_name.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -16884,6 +18107,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -16953,6 +18181,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -17028,6 +18261,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -17096,6 +18334,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -17173,6 +18416,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -17239,6 +18487,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -17319,6 +18572,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -17389,6 +18647,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -17473,6 +18736,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -17547,6 +18815,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -17627,6 +18900,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -17701,6 +18979,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -17779,6 +19062,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
         query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -17851,6 +19139,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
         query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -17931,6 +19224,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -18005,6 +19303,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -18085,6 +19388,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -18159,6 +19467,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -18235,6 +19548,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -18305,6 +19623,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -18388,6 +19711,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -18461,6 +19789,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -18527,6 +19860,11 @@ module AsposeWordsCloud
 
         # query parameters
         query_params = {}
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -18599,6 +19937,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
         query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -18667,6 +20010,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
         query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -18749,6 +20097,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -18820,6 +20173,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -18916,6 +20274,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('ZipOutput')] = request.zip_output unless request.zip_output.nil?
         query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -19002,6 +20365,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('ZipOutput')] = request.zip_output unless request.zip_output.nil?
         query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -19080,6 +20448,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -19148,6 +20521,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Pattern')] = request.pattern
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -19227,6 +20605,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('ZipOutput')] = request.zip_output unless request.zip_output.nil?
         query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -19300,6 +20683,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('To')] = request.to unless request.to.nil?
         query_params[downcase_first_letter('ZipOutput')] = request.zip_output unless request.zip_output.nil?
         query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -19378,6 +20766,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -19446,6 +20839,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -19530,6 +20928,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -19603,6 +21006,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -19688,6 +21096,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -19762,6 +21175,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -19846,6 +21264,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -19919,6 +21342,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -20003,6 +21431,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -20076,6 +21509,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -20163,6 +21601,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -20241,6 +21684,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -20327,6 +21775,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -20401,6 +21854,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -20478,6 +21936,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -20544,6 +22007,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -20628,6 +22096,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -20702,6 +22175,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -20787,6 +22265,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -20861,6 +22344,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -20945,6 +22433,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -21025,6 +22518,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -21101,6 +22599,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -21181,6 +22684,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -21266,6 +22774,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -21340,6 +22853,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -21425,6 +22943,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -21499,6 +23022,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -21586,6 +23114,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -21666,6 +23199,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -21742,6 +23280,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -21826,6 +23369,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -21909,6 +23457,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -21982,6 +23535,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -22066,6 +23624,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -22139,6 +23702,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -22226,6 +23794,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -22302,6 +23875,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -22387,6 +23965,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -22461,6 +24044,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
 
         # header parameters
         header_params = {}
@@ -22548,6 +24136,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -22625,6 +24218,11 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -22699,6 +24297,11 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('StorageName')] = request.storage_name unless request.storage_name.nil?
 
+        if query_params.has_key? 'password'
+          query_params.delete('password')
+          query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+        end
+
         # header parameters
         header_params = {}
         # HTTP header 'Accept' (if needed)
@@ -22754,6 +24357,30 @@ module AsposeWordsCloud
       Dir[File.expand_path(File.join(File.dirname(File.absolute_path(__FILE__)), _dir)) + "/*.rb"].each do |file|
         require file
       end
+    end
+
+     #
+     # Gets a rsa key from server
+     #
+    private def request_rsa_key
+      config = @api_client.config
+      data = self.get_public_key GetPublicKeyRequest.new
+      modulus = data.modulus
+      exponent = data.exponent
+
+      config.rsa_key = OpenSSL::PKey::RSA.new
+      config.rsa_key.set_key(base64_to_long(modulus), base64_to_long(exponent), nil)
+    end
+
+    private def base64_to_long(data)
+      decoded_with_padding = Base64.urlsafe_decode64(data) + Base64.decode64('==')
+      decoded_with_padding.to_s.unpack('C*').map do |byte|
+        to_hex(byte)
+      end.join.to_i(16)
+    end
+
+    private def to_hex(int)
+      int < 16 ? '0' + int.to_s(16) : int.to_s(16)
     end
   end
 end

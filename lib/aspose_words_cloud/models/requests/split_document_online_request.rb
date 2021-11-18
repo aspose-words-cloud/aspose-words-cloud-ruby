@@ -106,6 +106,11 @@ module AsposeWordsCloud
         query_params.each { |key, value| local_var_path = api_client.add_param_to_query(local_var_path, key, value) }
       end
 
+      if query_params.has_key? 'password'
+        query_params.delete('password')
+        query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+      end
+
       header_params = {}
       # header parameters
       # HTTP header 'Content-Type'
@@ -158,6 +163,11 @@ module AsposeWordsCloud
       query_params[downcase_first_letter('To')] = self.to unless self.to.nil?
       query_params[downcase_first_letter('ZipOutput')] = self.zip_output unless self.zip_output.nil?
       query_params[downcase_first_letter('FontsLocation')] = self.fonts_location unless self.fonts_location.nil?
+
+      if query_params.has_key? 'password'
+        query_params.delete('password')
+        query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
+      end
 
       # header parameters
       header_params = {}
