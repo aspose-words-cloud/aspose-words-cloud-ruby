@@ -26,7 +26,7 @@
 require 'uri'
 require 'json'
 require 'faraday'
-require 'Base64'
+require 'base64'
 
 module AsposeWordsCloud
   #
