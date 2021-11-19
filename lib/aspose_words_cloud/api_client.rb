@@ -29,6 +29,7 @@ require 'logger'
 require 'tempfile'
 require 'uri'
 require 'faraday'
+require 'base64'
 require 'marcel'
 require 'multipart_parser/reader'
 require_relative 'version'
@@ -97,7 +98,7 @@ module AsposeWordsCloud
       if opts[:multipart_response] == true
         data = deserialize_multipart(response)
       elsif opts[:batch] == true
-        data = deserialize_batch(response, opts[:parts])
+        data = deserialize_batch(response, opts[:parts], opts[:request_map])
       else
         data = deserialize(response.body, opts[:return_type]) if opts[:return_type]
       end
@@ -226,7 +227,7 @@ module AsposeWordsCloud
     end
 
     # Deserialize batch
-    def deserialize_batch(response, requests)
+    def deserialize_batch(response, requests, request_map)
       result = { errors: [], parts: [] }
       def result.part(name)
         hash = self[:parts].detect { |h| h[:part].name == name }
@@ -263,7 +264,9 @@ module AsposeWordsCloud
       end
 
       result[:parts].each_with_index do |response_data, index|
-        return_type = requests[index].get_response_type
+        req_id = response_data[:part].headers['requestid']
+        request = request_map[req_id]
+        return_type = request.get_response_type
         responses_data.push(deserialize(response_data[:body], return_type))
       end
       responses_data
@@ -443,7 +446,12 @@ module AsposeWordsCloud
     # @param [String] param_value query parameter value
     def add_param_to_query(url, param_name, param_value)
       uri = URI(url)
-      params = URI.decode_www_form(uri.query || "") << [param_name, param_value]
+      if param_name == 'password' && !param_value.empty?
+        params = URI.decode_www_form(uri.query || "") << ['encryptedPassword', Base64.encode64(self.config.rsa_key.public_encrypt(param_value.to_s.force_encoding("utf-8")))]
+      else
+        params = URI.decode_www_form(uri.query || "") << [param_name, param_value]
+      end
+
       uri.query = URI.encode_www_form(params)
       uri.to_s
     end

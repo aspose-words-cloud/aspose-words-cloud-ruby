@@ -61,7 +61,7 @@ module AsposeWordsCloud
     end
 
     # Creating batch part from request
-    def to_batch_part(api_client)
+    def to_batch_part(api_client, guid)
       # verify the required parameter 'dest_path' is set
       raise ArgumentError, 'Missing the required parameter dest_path when calling WordsApi.copy_file' if api_client.config.client_side_validation && self.dest_path.nil?
       # verify the required parameter 'src_path' is set
@@ -83,12 +83,8 @@ module AsposeWordsCloud
         query_params.each { |key, value| local_var_path = api_client.add_param_to_query(local_var_path, key, value) }
       end
 
-      if query_params.has_key? 'password'
-        query_params.delete('password')
-        query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
-      end
-
       header_params = {}
+      header_params['RequestId'] = guid
 
       # form parameters
       form_params = {}
@@ -133,11 +129,6 @@ module AsposeWordsCloud
       query_params[downcase_first_letter('SrcStorageName')] = self.src_storage_name unless self.src_storage_name.nil?
       query_params[downcase_first_letter('DestStorageName')] = self.dest_storage_name unless self.dest_storage_name.nil?
       query_params[downcase_first_letter('VersionId')] = self.version_id unless self.version_id.nil?
-
-      if query_params.has_key? 'password'
-        query_params.delete('password')
-        query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
-      end
 
       # header parameters
       header_params = {}

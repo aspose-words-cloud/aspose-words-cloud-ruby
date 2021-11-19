@@ -53,7 +53,7 @@ module AsposeWordsCloud
     end
 
     # Creating batch part from request
-    def to_batch_part(api_client)
+    def to_batch_part(api_client, guid)
       # verify the required parameter 'file_content' is set
       raise ArgumentError, 'Missing the required parameter file_content when calling WordsApi.upload_file' if api_client.config.client_side_validation && self.file_content.nil?
       # verify the required parameter 'path' is set
@@ -72,15 +72,11 @@ module AsposeWordsCloud
         query_params.each { |key, value| local_var_path = api_client.add_param_to_query(local_var_path, key, value) }
       end
 
-      if query_params.has_key? 'password'
-        query_params.delete('password')
-        query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
-      end
-
       header_params = {}
       # header parameters
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = api_client.select_header_content_type(['multipart/form-data'])
+      header_params['RequestId'] = guid
 
       # form parameters
       form_params = {}
@@ -123,11 +119,6 @@ module AsposeWordsCloud
       # query parameters
       query_params = {}
       query_params[downcase_first_letter('StorageName')] = self.storage_name unless self.storage_name.nil?
-
-      if query_params.has_key? 'password'
-        query_params.delete('password')
-        query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
-      end
 
       # header parameters
       header_params = {}

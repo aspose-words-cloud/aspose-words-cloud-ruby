@@ -71,7 +71,7 @@ module AsposeWordsCloud
     end
 
     # Creating batch part from request
-    def to_batch_part(api_client)
+    def to_batch_part(api_client, guid)
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.get_paragraph_format' if api_client.config.client_side_validation && self.name.nil?
       # verify the required parameter 'index' is set
@@ -95,12 +95,8 @@ module AsposeWordsCloud
         query_params.each { |key, value| local_var_path = api_client.add_param_to_query(local_var_path, key, value) }
       end
 
-      if query_params.has_key? 'password'
-        query_params.delete('password')
-        query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
-      end
-
       header_params = {}
+      header_params['RequestId'] = guid
 
       # form parameters
       form_params = {}
@@ -147,11 +143,6 @@ module AsposeWordsCloud
       query_params[downcase_first_letter('Storage')] = self.storage unless self.storage.nil?
       query_params[downcase_first_letter('LoadEncoding')] = self.load_encoding unless self.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = self.password unless self.password.nil?
-
-      if query_params.has_key? 'password'
-        query_params.delete('password')
-        query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
-      end
 
       # header parameters
       header_params = {}

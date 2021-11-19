@@ -86,7 +86,7 @@ module AsposeWordsCloud
     end
 
     # Creating batch part from request
-    def to_batch_part(api_client)
+    def to_batch_part(api_client, guid)
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.insert_table' if api_client.config.client_side_validation && self.name.nil?
       # verify the required parameter 'table' is set
@@ -112,15 +112,11 @@ module AsposeWordsCloud
         query_params.each { |key, value| local_var_path = api_client.add_param_to_query(local_var_path, key, value) }
       end
 
-      if query_params.has_key? 'password'
-        query_params.delete('password')
-        query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
-      end
-
       header_params = {}
       # header parameters
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = api_client.select_header_content_type(['application/xml', 'application/json'])
+      header_params['RequestId'] = guid
 
       # form parameters
       form_params = {}
@@ -169,11 +165,6 @@ module AsposeWordsCloud
       query_params[downcase_first_letter('DestFileName')] = self.dest_file_name unless self.dest_file_name.nil?
       query_params[downcase_first_letter('RevisionAuthor')] = self.revision_author unless self.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = self.revision_date_time unless self.revision_date_time.nil?
-
-      if query_params.has_key? 'password'
-        query_params.delete('password')
-        query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
-      end
 
       # header parameters
       header_params = {}

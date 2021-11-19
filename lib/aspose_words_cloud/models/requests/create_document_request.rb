@@ -51,7 +51,7 @@ module AsposeWordsCloud
     end
 
     # Creating batch part from request
-    def to_batch_part(api_client)
+    def to_batch_part(api_client, guid)
       # resource path
       local_var_path = '/words/create'[7..-1]
       local_var_path = local_var_path.sub('//', '/')
@@ -66,12 +66,8 @@ module AsposeWordsCloud
         query_params.each { |key, value| local_var_path = api_client.add_param_to_query(local_var_path, key, value) }
       end
 
-      if query_params.has_key? 'password'
-        query_params.delete('password')
-        query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
-      end
-
       header_params = {}
+      header_params['RequestId'] = guid
 
       # form parameters
       form_params = {}
@@ -109,11 +105,6 @@ module AsposeWordsCloud
       query_params[downcase_first_letter('FileName')] = self.file_name unless self.file_name.nil?
       query_params[downcase_first_letter('Folder')] = self.folder unless self.folder.nil?
       query_params[downcase_first_letter('Storage')] = self.storage unless self.storage.nil?
-
-      if query_params.has_key? 'password'
-        query_params.delete('password')
-        query_params['encryptedPassword'] = Base64.encode64(@api_client.config.rsa_key.public_encrypt(request.password.force_encoding("utf-8")))
-      end
 
       # header parameters
       header_params = {}
