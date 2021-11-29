@@ -98,7 +98,7 @@ module AsposeWordsCloud
       if opts[:multipart_response] == true
         data = deserialize_multipart(response)
       elsif opts[:batch] == true
-        data = deserialize_batch(response, opts[:parts], opts[:request_map])
+        data = deserialize_batch(response, opts[:request_map])
       else
         data = deserialize(response.body, opts[:return_type]) if opts[:return_type]
       end
@@ -227,7 +227,7 @@ module AsposeWordsCloud
     end
 
     # Deserialize batch
-    def deserialize_batch(response, requests, request_map)
+    def deserialize_batch(response, request_map)
       result = { errors: [], parts: [] }
       def result.part(name)
         hash = self[:parts].detect { |h| h[:part].name == name }
@@ -265,8 +265,8 @@ module AsposeWordsCloud
 
       result[:parts].each_with_index do |response_data, index|
         req_id = response_data[:part].headers['requestid']
-        request = request_map[req_id]
-        return_type = request.get_response_type
+        batch_request = request_map[req_id]
+        return_type = batch_request.request.get_response_type
         responses_data.push(deserialize(response_data[:body], return_type))
       end
       responses_data

@@ -26,7 +26,6 @@
 require 'uri'
 require 'json'
 require 'faraday'
-require 'securerandom'
 
 module AsposeWordsCloud
   #
@@ -43,18 +42,18 @@ module AsposeWordsCloud
       request_rsa_key
     end
 
-    def batch(requests, display_intermediate_result = true)
-      raise ArgumentError, 'Requests array is nil' unless requests != nil
-      raise ArgumentError, 'There must be at least one request' unless requests.length != 0
+    def batch(batch_requests, display_intermediate_result = true)
+      raise ArgumentError, 'Requests array is nil' unless batch_requests != nil
+      raise ArgumentError, 'There must be at least one request' unless batch_requests.length != 0
       form_params = {}
       id_request_to_map = {}
       request_token
       header_params = {'Content-Type' => 'multipart/form-data'}
       @api_client.update_params_for_auth! header_params, {}, "JWT"
-      requests.each_with_index do |request, index|
-        guid = SecureRandom.uuid
-        form_params["request-#{index}"] = Faraday::ParamPart.new(request.to_batch_part(@api_client, guid), "application/http; msgtype=request")
-        id_request_to_map[guid] = request
+      batch_requests.each_with_index do |batch_request, index|
+        guid = batch_request.request_id
+        form_params["request-#{index}"] = Faraday::ParamPart.new(batch_request.request.to_batch_part(@api_client, guid), "application/http; msgtype=request")
+        id_request_to_map[guid] = batch_request
       end
       url = display_intermediate_result ? "/v4.0/words/batch" : "/v4.0/words/batch?displayIntermediateResults=false"
       data, status_code, headers = @api_client.call_api(:PUT, url,
@@ -63,7 +62,6 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: nil,
                                                         batch: true,
-                                                        parts: requests,
                                                         auth_names: ['JWT'],
                                                         request_map: id_request_to_map)
     end
