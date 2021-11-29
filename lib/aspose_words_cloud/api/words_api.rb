@@ -5787,6 +5787,7 @@ module AsposeWordsCloud
         # form parameters
         form_params = {}
         form_params[downcase_first_letter('Data')] = request.data
+        form_params[downcase_first_letter('Options')] = request.options.to_body.to_json
 
         # http body (model)
         post_body = nil
@@ -5858,6 +5859,7 @@ module AsposeWordsCloud
         form_params = {}
         form_params[downcase_first_letter('Template')] = request.template
         form_params[downcase_first_letter('Data')] = request.data
+        form_params[downcase_first_letter('Options')] = request.options.to_body.to_json
 
         # http body (model)
         post_body = nil
