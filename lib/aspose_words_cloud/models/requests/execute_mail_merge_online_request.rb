@@ -35,6 +35,9 @@ module AsposeWordsCloud
     # File with mailmerge data.
     attr_accessor :data
 
+    # Mail merge options.
+    attr_accessor :options
+
     # The flag indicating whether to execute Mail Merge operation with regions.
     attr_accessor :with_regions
 
@@ -48,13 +51,15 @@ module AsposeWordsCloud
     # Initializes a new instance.
     # @param template File with template.
     # @param data File with mailmerge data.
+    # @param options Mail merge options.
     # @param with_regions The flag indicating whether to execute Mail Merge operation with regions.
     # @param cleanup The cleanup options.
     # @param document_file_name The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.
 
-    def initialize(template:, data:, with_regions: nil, cleanup: nil, document_file_name: nil)
+    def initialize(template:, data:, options: nil, with_regions: nil, cleanup: nil, document_file_name: nil)
       self.template = template
       self.data = data
+      self.options = options
       self.with_regions = with_regions
       self.cleanup = cleanup
       self.document_file_name = document_file_name
@@ -91,6 +96,7 @@ module AsposeWordsCloud
       form_params = {}
       form_params[downcase_first_letter('Template')] = self.template
       form_params[downcase_first_letter('Data')] = self.data
+      form_params[downcase_first_letter('Options')] = self.options.to_body.to_json unless self.options.nil?
 
       # http body (model)
       post_body = nil
@@ -140,6 +146,7 @@ module AsposeWordsCloud
       form_params = {}
       form_params[downcase_first_letter('Template')] = self.template
       form_params[downcase_first_letter('Data')] = self.data
+      form_params[downcase_first_letter('Options')] = self.options.to_body.to_json unless self.options.nil?
 
       # http body (model)
       post_body = nil
