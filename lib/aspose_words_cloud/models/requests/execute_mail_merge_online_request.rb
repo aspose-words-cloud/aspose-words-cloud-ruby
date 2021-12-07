@@ -35,7 +35,7 @@ module AsposeWordsCloud
     # File with mailmerge data.
     attr_accessor :data
 
-    # Mail merge options.
+    # Field options.
     attr_accessor :options
 
     # The flag indicating whether to execute Mail Merge operation with regions.
@@ -51,7 +51,7 @@ module AsposeWordsCloud
     # Initializes a new instance.
     # @param template File with template.
     # @param data File with mailmerge data.
-    # @param options Mail merge options.
+    # @param options Field options.
     # @param with_regions The flag indicating whether to execute Mail Merge operation with regions.
     # @param cleanup The cleanup options.
     # @param document_file_name The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.
