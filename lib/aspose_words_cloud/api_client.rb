@@ -27,6 +27,7 @@ require 'date'
 require 'json'
 require 'logger'
 require 'tempfile'
+require 'timeout'
 require 'uri'
 require 'faraday'
 require 'base64'
@@ -147,16 +148,18 @@ module AsposeWordsCloud
       f.adapter Faraday.default_adapter
       end
 
-      case http_method
-      when :post
-        return conn.post url, req_opts[:body]
-      when :put
-        return conn.put url, req_opts[:body]
-      when :get
-        return conn.get url, req_opts[:body]
-      else
-        conn.delete url do |c|
-          c.body = req_opts[:body]
+      Timeout.timeout(@config.timeout) do
+        case http_method
+        when :post
+          return conn.post url, req_opts[:body]
+        when :put
+          return conn.put url, req_opts[:body]
+        when :get
+          return conn.get url, req_opts[:body]
+        else
+          conn.delete url do |c|
+            c.body = req_opts[:body]
+          end
         end
       end
     end

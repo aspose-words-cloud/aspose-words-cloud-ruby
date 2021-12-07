@@ -93,6 +93,10 @@ module AsposeWordsCloud
     # Defines RSA key
     attr_accessor :rsa_key
 
+    # Defines request timeout
+    attr_accessor :timeout
+
+
 
     def initialize
       @baseUrl = "https://api.aspose.cloud"
