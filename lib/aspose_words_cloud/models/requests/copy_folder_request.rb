@@ -56,7 +56,7 @@ module AsposeWordsCloud
     end
 
     # Creating batch part from request
-    def to_batch_part(api_client)
+    def to_batch_part(api_client, guid)
       # verify the required parameter 'dest_path' is set
       raise ArgumentError, 'Missing the required parameter dest_path when calling WordsApi.copy_folder' if api_client.config.client_side_validation && self.dest_path.nil?
       # verify the required parameter 'src_path' is set
@@ -78,6 +78,7 @@ module AsposeWordsCloud
       end
 
       header_params = {}
+      header_params['RequestId'] = guid
 
       # form parameters
       form_params = {}

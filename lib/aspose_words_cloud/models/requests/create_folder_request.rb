@@ -46,7 +46,7 @@ module AsposeWordsCloud
     end
 
     # Creating batch part from request
-    def to_batch_part(api_client)
+    def to_batch_part(api_client, guid)
       # verify the required parameter 'path' is set
       raise ArgumentError, 'Missing the required parameter path when calling WordsApi.create_folder' if api_client.config.client_side_validation && self.path.nil?
 
@@ -64,6 +64,7 @@ module AsposeWordsCloud
       end
 
       header_params = {}
+      header_params['RequestId'] = guid
 
       # form parameters
       form_params = {}

@@ -53,7 +53,7 @@ module AsposeWordsCloud
     end
 
     # Creating batch part from request
-    def to_batch_part(api_client)
+    def to_batch_part(api_client, guid)
       # verify the required parameter 'file_content' is set
       raise ArgumentError, 'Missing the required parameter file_content when calling WordsApi.upload_file' if api_client.config.client_side_validation && self.file_content.nil?
       # verify the required parameter 'path' is set
@@ -76,6 +76,7 @@ module AsposeWordsCloud
       # header parameters
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = api_client.select_header_content_type(['multipart/form-data'])
+      header_params['RequestId'] = guid
 
       # form parameters
       form_params = {}

@@ -81,7 +81,7 @@ module AsposeWordsCloud
     end
 
     # Creating batch part from request
-    def to_batch_part(api_client)
+    def to_batch_part(api_client, guid)
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.replace_text' if api_client.config.client_side_validation && self.name.nil?
       # verify the required parameter 'replace_text' is set
@@ -110,6 +110,7 @@ module AsposeWordsCloud
       # header parameters
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = api_client.select_header_content_type(['application/xml', 'application/json'])
+      header_params['RequestId'] = guid
 
       # form parameters
       form_params = {}

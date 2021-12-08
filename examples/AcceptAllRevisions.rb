@@ -5,7 +5,7 @@ AsposeWordsCloud.configure do |config|
   config.client_data['ClientSecret'] = '##################'
 end
 @words_api = WordsAPI.new
-file_name = 'test_doc.docx'
+file_name= 'test_doc.docx'
 
 # Upload original document to cloud storage.
 my_var1 = File.open(file_name)

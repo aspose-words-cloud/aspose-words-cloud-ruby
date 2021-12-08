@@ -33,7 +33,7 @@ module AsposeWordsCloud
 
     def test_accept_all_revisions
       documents_dir = 'ExamplesData'
-      file_name = 'test_doc.docx'
+      file_name= 'test_doc.docx'
 
       # Upload original document to cloud storage.
       my_var1 = File.open(File.join(documents_dir, file_name))
@@ -49,7 +49,7 @@ module AsposeWordsCloud
 
     def test_accept_all_revisions_online
       documents_dir = 'ExamplesData'
-      file_name = 'test_doc.docx'
+      file_name= 'test_doc.docx'
 
       # Calls AcceptAllRevisionsOnline method for document in cloud.
       request_document = File.open(File.join(documents_dir, file_name))

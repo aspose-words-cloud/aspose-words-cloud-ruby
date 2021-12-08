@@ -91,7 +91,7 @@ module AsposeWordsCloud
     end
 
     # Creating batch part from request
-    def to_batch_part(api_client)
+    def to_batch_part(api_client, guid)
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.insert_drawing_object' if api_client.config.client_side_validation && self.name.nil?
       # verify the required parameter 'drawing_object' is set
@@ -123,6 +123,7 @@ module AsposeWordsCloud
       # header parameters
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = api_client.select_header_content_type(['multipart/form-data'])
+      header_params['RequestId'] = guid
 
       # form parameters
       form_params = {}

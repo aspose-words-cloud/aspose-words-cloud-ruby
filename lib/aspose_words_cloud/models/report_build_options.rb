@@ -33,6 +33,7 @@ module AsposeWordsCloud
     ALLOWMISSINGMEMBERS = "AllowMissingMembers".freeze
     REMOVEEMPTYPARAGRAPHS = "RemoveEmptyParagraphs".freeze
     INLINEERRORMESSAGES = "InlineErrorMessages".freeze
+    USELEGACYHEADERFOOTERVISITING = "UseLegacyHeaderFooterVisiting".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string
