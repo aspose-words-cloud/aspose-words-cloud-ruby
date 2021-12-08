@@ -39,26 +39,31 @@ module AsposeWordsCloud
       require_all '../models/requests'
       require_all '../models/responses'
       request_token
+      request_rsa_key
     end
 
-    def batch(requests)
-      raise ArgumentError, 'Requests array is nil' unless requests != nil
-      raise ArgumentError, 'There must be at least one request' unless requests.length != 0
+    def batch(batch_requests, display_intermediate_result = true)
+      raise ArgumentError, 'Requests array is nil' unless batch_requests != nil
+      raise ArgumentError, 'There must be at least one request' unless batch_requests.length != 0
       form_params = {}
+      id_request_to_map = {}
       request_token
       header_params = {'Content-Type' => 'multipart/form-data'}
       @api_client.update_params_for_auth! header_params, {}, "JWT"
-      requests.each_with_index do |request, index|
-        form_params["request-#{index}"] = Faraday::ParamPart.new(request.to_batch_part(@api_client), "application/http; msgtype=request")
+      batch_requests.each_with_index do |batch_request, index|
+        guid = batch_request.request_id
+        form_params["request-#{index}"] = Faraday::ParamPart.new(batch_request.request.to_batch_part(@api_client, guid), "application/http; msgtype=request")
+        id_request_to_map[guid] = batch_request
       end
-      data, status_code, headers = @api_client.call_api(:PUT, "/v4.0/words/batch",
+      url = display_intermediate_result ? "/v4.0/words/batch" : "/v4.0/words/batch?displayIntermediateResults=false"
+      data, status_code, headers = @api_client.call_api(:PUT, url,
                                                         header_params: header_params,
                                                         query_params: {},
                                                         form_params: form_params,
                                                         body: nil,
                                                         batch: true,
-                                                        parts: requests,
-                                                        auth_names: ['JWT'])
+                                                        auth_names: ['JWT'],
+                                                        request_map: id_request_to_map)
     end
 
     # Accepts all revisions in the document.
@@ -5780,6 +5785,7 @@ module AsposeWordsCloud
         # form parameters
         form_params = {}
         form_params[downcase_first_letter('Data')] = request.data
+        form_params[downcase_first_letter('Options')] = request.options.to_body.to_json unless request.options.nil?
 
         # http body (model)
         post_body = nil
@@ -5851,6 +5857,7 @@ module AsposeWordsCloud
         form_params = {}
         form_params[downcase_first_letter('Template')] = request.template
         form_params[downcase_first_letter('Data')] = request.data
+        form_params[downcase_first_letter('Options')] = request.options.to_body.to_json unless request.options.nil?
 
         # http body (model)
         post_body = nil
@@ -10079,6 +10086,67 @@ module AsposeWordsCloud
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#get_header_footers_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [data, status_code, headers]
+    end
+
+    # Returns application info.
+    # @param request GetInfoRequest
+    # @return [InfoResponse]
+    def get_info(request)
+        begin
+        data, _status_code, _headers = get_info_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = get_info_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Returns application info.
+    # @param request GetInfoRequest
+    # @return [Array<(InfoResponse, Fixnum, Hash)>]
+    # InfoResponse, response status code and response headers
+    private def get_info_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? GetInfoRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.get_info ...' if @api_client.config.debugging
+        # resource path
+        local_var_path = '/words/info'[1..-1]
+        local_var_path = local_var_path.sub('//', '/')
+
+        # query parameters
+        query_params = {}
+
+        # header parameters
+        header_params = {}
+        # HTTP header 'Accept' (if needed)
+        header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+        # HTTP header 'Content-Type'
+        header_params['Content-Type'] = @api_client.select_header_content_type(['application/xml', 'application/json'])
+
+        # form parameters
+        form_params = {}
+
+        # http body (model)
+        post_body = nil
+        auth_names = ['JWT']
+
+        data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'InfoResponse')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#get_info\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
 
         [data, status_code, headers]
@@ -22754,6 +22822,30 @@ module AsposeWordsCloud
       Dir[File.expand_path(File.join(File.dirname(File.absolute_path(__FILE__)), _dir)) + "/*.rb"].each do |file|
         require file
       end
+    end
+
+     #
+     # Gets a rsa key from server
+     #
+    private def request_rsa_key
+      config = @api_client.config
+      data = self.get_public_key GetPublicKeyRequest.new
+      modulus = data.modulus
+      exponent = data.exponent
+
+      config.rsa_key = OpenSSL::PKey::RSA.new
+      config.rsa_key.set_key(base64_to_long(modulus), base64_to_long(exponent), nil)
+    end
+
+    private def base64_to_long(data)
+      decoded_with_padding = Base64.urlsafe_decode64(data) + Base64.decode64('==')
+      decoded_with_padding.to_s.unpack('C*').map do |byte|
+        to_hex(byte)
+      end.join.to_i(16)
+    end
+
+    private def to_hex(int)
+      int < 16 ? '0' + int.to_s(16) : int.to_s(16)
     end
   end
 end

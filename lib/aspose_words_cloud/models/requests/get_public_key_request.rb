@@ -30,7 +30,7 @@ module AsposeWordsCloud
   #
   class GetPublicKeyRequest
     # Creating batch part from request
-    def to_batch_part(api_client)
+    def to_batch_part(api_client, guid)
       # resource path
       local_var_path = '/words/encryption/publickey'[7..-1]
       local_var_path = local_var_path.sub('//', '/')
@@ -43,6 +43,7 @@ module AsposeWordsCloud
       end
 
       header_params = {}
+      header_params['RequestId'] = guid
 
       # form parameters
       form_params = {}

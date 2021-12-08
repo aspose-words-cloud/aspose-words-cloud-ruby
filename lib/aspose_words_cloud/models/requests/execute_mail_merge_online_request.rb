@@ -35,6 +35,9 @@ module AsposeWordsCloud
     # File with mailmerge data.
     attr_accessor :data
 
+    # Field options.
+    attr_accessor :options
+
     # The flag indicating whether to execute Mail Merge operation with regions.
     attr_accessor :with_regions
 
@@ -48,20 +51,22 @@ module AsposeWordsCloud
     # Initializes a new instance.
     # @param template File with template.
     # @param data File with mailmerge data.
+    # @param options Field options.
     # @param with_regions The flag indicating whether to execute Mail Merge operation with regions.
     # @param cleanup The cleanup options.
     # @param document_file_name The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.
 
-    def initialize(template:, data:, with_regions: nil, cleanup: nil, document_file_name: nil)
+    def initialize(template:, data:, options: nil, with_regions: nil, cleanup: nil, document_file_name: nil)
       self.template = template
       self.data = data
+      self.options = options
       self.with_regions = with_regions
       self.cleanup = cleanup
       self.document_file_name = document_file_name
     end
 
     # Creating batch part from request
-    def to_batch_part(api_client)
+    def to_batch_part(api_client, guid)
       # verify the required parameter 'template' is set
       raise ArgumentError, 'Missing the required parameter template when calling WordsApi.execute_mail_merge_online' if api_client.config.client_side_validation && self.template.nil?
       # verify the required parameter 'data' is set
@@ -85,11 +90,13 @@ module AsposeWordsCloud
       # header parameters
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = api_client.select_header_content_type(['multipart/form-data'])
+      header_params['RequestId'] = guid
 
       # form parameters
       form_params = {}
       form_params[downcase_first_letter('Template')] = self.template
       form_params[downcase_first_letter('Data')] = self.data
+      form_params[downcase_first_letter('Options')] = self.options.to_body.to_json unless self.options.nil?
 
       # http body (model)
       post_body = nil
@@ -139,6 +146,7 @@ module AsposeWordsCloud
       form_params = {}
       form_params[downcase_first_letter('Template')] = self.template
       form_params[downcase_first_letter('Data')] = self.data
+      form_params[downcase_first_letter('Options')] = self.options.to_body.to_json unless self.options.nil?
 
       # http body (model)
       post_body = nil

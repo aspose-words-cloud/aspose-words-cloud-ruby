@@ -42,10 +42,10 @@ require_relative 'base_test_context'
       remote_file_name = 'TestBatchParagraphs.docx'
       request0 = UploadFileRequest.new(file_content: File.new(File.join(local_test_folder, local_file), 'rb'), path: remote_data_folder + '/' + remote_file_name)
       paragraph = ParagraphInsert.new({:Text => 'This is a new paragraph for your document'})
-      request1 = GetParagraphsRequest.new(name: remote_file_name, node_path: 'sections/0', folder: remote_data_folder)
-      request2 = GetParagraphRequest.new(name: remote_file_name, index: 0, folder: remote_data_folder)
-      request3 = InsertParagraphRequest.new(name: remote_file_name, paragraph: paragraph, node_path: 'sections/0', folder: remote_data_folder)
-      request4 = DeleteParagraphRequest.new(name: remote_file_name, index: 0, node_path: '', folder: remote_data_folder)
+      request1 = BatchPartRequest.new(GetParagraphsRequest.new(name: remote_file_name, node_path: 'sections/0', folder: remote_data_folder))
+      request2 = BatchPartRequest.new(GetParagraphRequest.new(name: remote_file_name, index: 0, folder: remote_data_folder))
+      request3 = BatchPartRequest.new(InsertParagraphRequest.new(name: remote_file_name, paragraph: paragraph, node_path: 'sections/0', folder: remote_data_folder))
+      request4 = BatchPartRequest.new(DeleteParagraphRequest.new(name: remote_file_name, index: 0, node_path: '', folder: remote_data_folder))
       @words_api.upload_file request0
       result = @words_api.batch [request1, request2, request3, request4]
       assert_equal(4, result[0].length)
@@ -53,6 +53,20 @@ require_relative 'base_test_context'
       assert_equal(true, result[0][1].is_a?(ParagraphResponse))
       assert_equal(true, result[0][2].is_a?(ParagraphResponse))
       assert_equal(true, result[0][3].nil?)
+    end
+
+    def test_batch_without_intermediate_results
+      remote_file_name = 'TestBatchParagraphs.docx'
+      request0 = UploadFileRequest.new(file_content: File.new(File.join(local_test_folder, local_file), 'rb'), path: remote_data_folder + '/' + remote_file_name)
+      paragraph = ParagraphInsert.new({:Text => 'This is a new paragraph for your document'})
+      request1 = BatchPartRequest.new(GetParagraphsRequest.new(name: remote_file_name, node_path: 'sections/0', folder: remote_data_folder))
+      request2 = BatchPartRequest.new(GetParagraphRequest.new(name: remote_file_name, index: 0, folder: remote_data_folder))
+      request3 = BatchPartRequest.new(InsertParagraphRequest.new(name: remote_file_name, paragraph: paragraph, node_path: 'sections/0', folder: remote_data_folder))
+      request4 = BatchPartRequest.new(DeleteParagraphRequest.new(name: remote_file_name, index: 0, node_path: '', folder: remote_data_folder))
+      @words_api.upload_file request0
+      result = @words_api.batch([request1, request2, request3, request4], false)
+      assert_equal(1, result[0].length)
+      assert_equal(true, result[0][1].nil?)
     end
 
   end

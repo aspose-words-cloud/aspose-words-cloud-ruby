@@ -3,7 +3,7 @@ AsposeWordsCloud.configure do |config|
   config.client_data['ClientSecret'] = '##################'
 end
 @words_api = WordsAPI.new
-file_name = 'test_doc.docx'
+file_name= 'test_doc.docx'
 
 # Calls AcceptAllRevisionsOnline method for document in cloud.
 request_document = File.open(file_name)

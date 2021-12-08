@@ -46,7 +46,7 @@ module AsposeWordsCloud
     end
 
     # Creating batch part from request
-    def to_batch_part(api_client)
+    def to_batch_part(api_client, guid)
       # verify the required parameter 'text' is set
       raise ArgumentError, 'Missing the required parameter text when calling WordsApi.classify' if api_client.config.client_side_validation && self.text.nil?
 
@@ -66,6 +66,7 @@ module AsposeWordsCloud
       # header parameters
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = api_client.select_header_content_type(['application/xml', 'application/json'])
+      header_params['RequestId'] = guid
 
       # form parameters
       form_params = {}
