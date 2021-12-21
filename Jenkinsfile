@@ -7,6 +7,7 @@ properties([
 			[$class: 'BooleanParameterDefinition', name: 'debugMode', defaultValue: 'false', description: 'debug mode'],
             [$class: 'BooleanParameterDefinition', name: 'ignoreCiSkip', defaultValue: false, description: 'ignore CI Skip'],
             [$class: 'StringParameterDefinition', name: 'credentialsId', defaultValue: '6839cbe8-39fa-40c0-86ce-90706f0bae5d', description: 'credentials id'],
+            [$class: 'BooleanParameterDefinition', name: 'packageTesting', defaultValue: false, description: 'Testing package from repository without local sources. Used for prodhealthcheck'],
 		]
 	]
 ])
@@ -36,6 +37,10 @@ def runtests(dockerImageVersion)
             
             if (needToBuild) {
                 docker.image('ruby:' + dockerImageVersion).inside('-u root'){
+                if (params.packageTesting) {
+                            sh "rm -rf lib"
+                            sh "mv GemfileTest Gemfile"
+                    }
                     stage('build'){
                             sh "mkdir testReports"
                             sh "gem install bundler -v 2.0.2 && bundle install"
