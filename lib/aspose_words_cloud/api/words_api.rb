@@ -105,6 +105,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
         # header parameters
@@ -172,6 +173,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
         # header parameters
@@ -249,6 +251,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -320,6 +323,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -403,6 +407,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -477,6 +482,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -559,6 +565,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
         # header parameters
@@ -768,6 +775,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('BestClassesCount')] = request.best_classes_count unless request.best_classes_count.nil?
         query_params[downcase_first_letter('Taxonomy')] = request.taxonomy unless request.taxonomy.nil?
 
@@ -836,6 +844,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('BestClassesCount')] = request.best_classes_count unless request.best_classes_count.nil?
         query_params[downcase_first_letter('Taxonomy')] = request.taxonomy unless request.taxonomy.nil?
 
@@ -910,6 +919,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
         # header parameters
@@ -979,6 +989,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
         # header parameters
@@ -1269,6 +1280,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -1340,6 +1352,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -1552,6 +1565,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -1626,6 +1640,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -1708,6 +1723,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
         # header parameters
@@ -1779,6 +1795,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
         # header parameters
@@ -1858,6 +1875,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -1931,6 +1949,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -2009,6 +2028,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -2079,6 +2099,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -2159,6 +2180,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -2230,6 +2252,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -2303,6 +2326,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -2371,6 +2395,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -2447,6 +2472,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -2518,6 +2544,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -2591,6 +2618,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -2659,6 +2687,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -2735,6 +2764,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -2806,6 +2836,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -2883,6 +2914,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -2955,6 +2987,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -3032,6 +3065,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -3104,6 +3138,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -3178,6 +3213,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -3247,6 +3283,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -3456,6 +3493,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -3528,6 +3566,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -3605,6 +3644,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -3677,6 +3717,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -3756,6 +3797,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -3830,6 +3872,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -3906,6 +3949,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -3978,6 +4022,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -4052,6 +4097,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -4120,6 +4166,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -4197,6 +4244,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -4269,6 +4317,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -4346,6 +4395,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -4421,6 +4471,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -4494,6 +4545,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -4572,6 +4624,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -4652,6 +4705,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
         # header parameters
@@ -4726,6 +4780,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Position')] = request.position
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
         # header parameters
@@ -4807,6 +4862,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -4881,6 +4937,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -4957,6 +5014,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -5028,6 +5086,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -5105,6 +5164,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -5182,6 +5242,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -5256,6 +5317,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -5330,6 +5392,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -5409,6 +5472,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -5483,6 +5547,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -5556,6 +5621,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -5625,6 +5691,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -5769,6 +5836,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('WithRegions')] = request.with_regions unless request.with_regions.nil?
         query_params[downcase_first_letter('MailMergeDataFile')] = request.mail_merge_data_file unless request.mail_merge_data_file.nil?
         query_params[downcase_first_letter('Cleanup')] = request.cleanup unless request.cleanup.nil?
@@ -5982,6 +6050,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -6051,6 +6120,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -6121,6 +6191,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -6187,6 +6258,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -6261,6 +6333,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -6331,6 +6404,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -6402,6 +6476,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -6469,6 +6544,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -6542,6 +6618,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -6611,6 +6688,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -6681,6 +6759,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -6747,6 +6826,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -6820,6 +6900,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -6889,6 +6970,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -6959,6 +7041,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -7025,6 +7108,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -7095,6 +7179,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -7168,6 +7253,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -7238,6 +7324,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -7312,6 +7399,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -7382,6 +7470,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -7456,6 +7545,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -7526,6 +7616,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -7597,6 +7688,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -7664,6 +7756,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -7734,6 +7827,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('UseNonMergeFields')] = request.use_non_merge_fields unless request.use_non_merge_fields.nil?
 
         # header parameters
@@ -7801,6 +7895,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('UseNonMergeFields')] = request.use_non_merge_fields unless request.use_non_merge_fields.nil?
 
         # header parameters
@@ -7875,6 +7970,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -7944,6 +8040,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -8014,6 +8111,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -8080,6 +8178,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -8150,6 +8249,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -8216,6 +8316,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -8289,6 +8390,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -8358,6 +8460,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -8428,6 +8531,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -8494,6 +8598,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -8564,6 +8669,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('IncludeComments')] = request.include_comments unless request.include_comments.nil?
         query_params[downcase_first_letter('IncludeFootnotes')] = request.include_footnotes unless request.include_footnotes.nil?
         query_params[downcase_first_letter('IncludeTextInShapes')] = request.include_text_in_shapes unless request.include_text_in_shapes.nil?
@@ -8633,6 +8739,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('IncludeComments')] = request.include_comments unless request.include_comments.nil?
         query_params[downcase_first_letter('IncludeFootnotes')] = request.include_footnotes unless request.include_footnotes.nil?
         query_params[downcase_first_letter('IncludeTextInShapes')] = request.include_text_in_shapes unless request.include_text_in_shapes.nil?
@@ -8709,6 +8816,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('OutPath')] = request.out_path unless request.out_path.nil?
         query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
 
@@ -8784,6 +8892,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -8854,6 +8963,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -8925,6 +9035,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -8992,6 +9103,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -9132,6 +9244,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -9202,6 +9315,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -9273,6 +9387,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -9340,6 +9455,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -9414,6 +9530,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -9484,6 +9601,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -9555,6 +9673,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -9622,6 +9741,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -9695,6 +9815,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('FilterByType')] = request.filter_by_type unless request.filter_by_type.nil?
 
         # header parameters
@@ -9771,6 +9892,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('FilterByType')] = request.filter_by_type unless request.filter_by_type.nil?
 
         # header parameters
@@ -9844,6 +9966,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('FilterByType')] = request.filter_by_type unless request.filter_by_type.nil?
 
         # header parameters
@@ -9915,6 +10038,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('FilterByType')] = request.filter_by_type unless request.filter_by_type.nil?
 
         # header parameters
@@ -9989,6 +10113,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('FilterByType')] = request.filter_by_type unless request.filter_by_type.nil?
 
         # header parameters
@@ -10059,6 +10184,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('FilterByType')] = request.filter_by_type unless request.filter_by_type.nil?
 
         # header parameters
@@ -10194,6 +10320,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -10263,6 +10390,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -10333,6 +10461,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -10399,6 +10528,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -10473,6 +10603,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -10543,6 +10674,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -10614,6 +10746,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -10681,6 +10814,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -10755,6 +10889,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -10828,6 +10963,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -10898,6 +11034,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -10972,6 +11109,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -11042,6 +11180,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -11113,6 +11252,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -11184,6 +11324,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -11251,6 +11392,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -11325,6 +11467,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -11395,6 +11538,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -11530,6 +11674,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -11600,6 +11745,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -11676,6 +11822,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -11751,6 +11898,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -11823,6 +11971,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -11896,6 +12045,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -11969,6 +12119,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -12038,6 +12189,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -12111,6 +12263,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -12180,6 +12333,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -12253,6 +12407,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -12322,6 +12477,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -12392,6 +12548,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -12458,6 +12615,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -12531,6 +12689,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -12603,6 +12762,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -12672,6 +12832,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -12742,6 +12903,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -12812,6 +12974,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -12878,6 +13041,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -12952,6 +13116,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -13027,6 +13192,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -13102,6 +13268,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -13174,6 +13341,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -13247,6 +13415,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -13318,6 +13487,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -13392,6 +13562,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -13462,6 +13633,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -13538,6 +13710,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -13613,6 +13786,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -13685,6 +13859,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -13758,6 +13933,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -13829,6 +14005,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -13896,6 +14073,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -13968,6 +14146,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -14039,6 +14218,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -14119,6 +14299,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -14190,6 +14371,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -14273,6 +14455,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -14349,6 +14532,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -14431,6 +14615,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -14504,6 +14689,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -14586,6 +14772,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -14658,6 +14845,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -14739,6 +14927,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -14812,6 +15001,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -14896,6 +15086,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -14970,6 +15161,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -15050,6 +15242,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -15121,6 +15314,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -15205,6 +15399,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
         # header parameters
@@ -15278,6 +15473,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
         # header parameters
@@ -15356,6 +15552,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -15427,6 +15624,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -15508,6 +15706,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -15581,6 +15780,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -15665,6 +15865,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -15740,6 +15941,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -15821,6 +16023,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -15892,6 +16095,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -15973,6 +16177,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -16050,6 +16255,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -16124,6 +16330,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -16202,6 +16409,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -16285,6 +16493,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -16359,6 +16568,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -16437,6 +16647,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -16511,6 +16722,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -16593,6 +16805,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -16664,6 +16877,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -16948,6 +17162,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -17018,6 +17233,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -17094,6 +17310,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
         # header parameters
@@ -17163,6 +17380,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
         # header parameters
@@ -17239,6 +17457,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
         # header parameters
@@ -17306,6 +17525,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
         # header parameters
@@ -17385,6 +17605,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
         # header parameters
@@ -17456,6 +17677,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
         # header parameters
@@ -17538,6 +17760,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
 
@@ -17613,6 +17836,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Format')] = request.format
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
 
@@ -17692,6 +17916,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
 
@@ -17767,6 +17992,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Format')] = request.format
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
 
@@ -17845,6 +18071,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
 
         # header parameters
@@ -17918,6 +18145,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Format')] = request.format
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
 
         # header parameters
@@ -17996,6 +18224,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
 
@@ -18071,6 +18300,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Format')] = request.format
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
 
@@ -18150,6 +18380,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
 
@@ -18225,6 +18456,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Format')] = request.format
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
 
@@ -18299,6 +18531,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -18370,6 +18603,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -18454,6 +18688,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
         # header parameters
@@ -18527,6 +18762,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
         # header parameters
@@ -18665,6 +18901,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
 
         # header parameters
@@ -18734,6 +18971,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
 
         # header parameters
@@ -18816,6 +19054,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -18888,6 +19127,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -18965,6 +19205,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('UseAntiAliasing')] = request.use_anti_aliasing unless request.use_anti_aliasing.nil?
         query_params[downcase_first_letter('UseHighQualityRendering')] = request.use_high_quality_rendering unless request.use_high_quality_rendering.nil?
         query_params[downcase_first_letter('ImageBrightness')] = request.image_brightness unless request.image_brightness.nil?
@@ -19051,6 +19292,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('UseAntiAliasing')] = request.use_anti_aliasing unless request.use_anti_aliasing.nil?
         query_params[downcase_first_letter('UseHighQualityRendering')] = request.use_high_quality_rendering unless request.use_high_quality_rendering.nil?
         query_params[downcase_first_letter('ImageBrightness')] = request.image_brightness unless request.image_brightness.nil?
@@ -19147,6 +19389,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -19216,6 +19459,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Pattern')] = request.pattern
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
 
         # header parameters
         header_params = {}
@@ -19289,6 +19533,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('From')] = request.from unless request.from.nil?
         query_params[downcase_first_letter('To')] = request.to unless request.to.nil?
@@ -19363,6 +19608,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Format')] = request.format
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('From')] = request.from unless request.from.nil?
         query_params[downcase_first_letter('To')] = request.to unless request.to.nil?
@@ -19444,6 +19690,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
         # header parameters
@@ -19513,6 +19760,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
         # header parameters
@@ -19594,6 +19842,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -19668,6 +19917,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -19752,6 +20002,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -19827,6 +20078,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -19910,6 +20162,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -19984,6 +20237,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -20067,6 +20321,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -20141,6 +20396,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -20227,6 +20483,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -20306,6 +20563,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -20391,6 +20649,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -20466,6 +20725,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -20544,6 +20804,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
         # header parameters
@@ -20611,6 +20872,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
 
         # header parameters
@@ -20692,6 +20954,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -20767,6 +21030,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -20851,6 +21115,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -20926,6 +21191,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -21009,6 +21275,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -21089,6 +21356,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -21166,6 +21434,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -21246,6 +21515,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -21330,6 +21600,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -21405,6 +21676,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -21489,6 +21761,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -21564,6 +21837,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -21650,6 +21924,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -21730,6 +22005,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -21807,6 +22083,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -21890,6 +22167,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -21973,6 +22251,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -22047,6 +22326,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -22130,6 +22410,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -22204,6 +22485,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -22290,6 +22572,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -22367,6 +22650,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -22451,6 +22735,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -22526,6 +22811,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -22612,6 +22898,7 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
@@ -22689,6 +22976,7 @@ module AsposeWordsCloud
         query_params = {}
         query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
         query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
         query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
         query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?

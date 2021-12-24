@@ -38,8 +38,11 @@ module AsposeWordsCloud
     # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     attr_accessor :load_encoding
 
-    # Password for opening an encrypted document.
+    # Password for opening an encrypted document. The password is provided as is (obsolete).
     attr_accessor :password
+
+    # Password for opening an encrypted document. The password must be encrypted on RSA public key provided by GetPublicKey() method and then encoded as base64 string.
+    attr_accessor :encrypted_password
 
     # The list of HeaderFooter types.
     attr_accessor :filter_by_type
@@ -49,14 +52,16 @@ module AsposeWordsCloud
     # @param document The document.
     # @param header_footer_index The index of the HeaderFooter object.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @param password Password for opening an encrypted document.
+    # @param password Password for opening an encrypted document. The password is provided as is (obsolete).
+    # @param encrypted_password Password for opening an encrypted document. The password must be encrypted on RSA public key provided by GetPublicKey() method and then encoded as base64 string.
     # @param filter_by_type The list of HeaderFooter types.
 
-    def initialize(document:, header_footer_index:, load_encoding: nil, password: nil, filter_by_type: nil)
+    def initialize(document:, header_footer_index:, load_encoding: nil, password: nil, encrypted_password: nil, filter_by_type: nil)
       self.document = document
       self.header_footer_index = header_footer_index
       self.load_encoding = load_encoding
       self.password = password
+      self.encrypted_password = encrypted_password
       self.filter_by_type = filter_by_type
     end
 
@@ -76,6 +81,7 @@ module AsposeWordsCloud
       query_params = {}
       query_params[downcase_first_letter('LoadEncoding')] = self.load_encoding unless self.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = self.password unless self.password.nil?
+      query_params[downcase_first_letter('EncryptedPassword')] = self.encrypted_password unless self.encrypted_password.nil?
       query_params[downcase_first_letter('FilterByType')] = self.filter_by_type unless self.filter_by_type.nil?
 
       if query_params
@@ -130,6 +136,7 @@ module AsposeWordsCloud
       query_params = {}
       query_params[downcase_first_letter('LoadEncoding')] = self.load_encoding unless self.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = self.password unless self.password.nil?
+      query_params[downcase_first_letter('EncryptedPassword')] = self.encrypted_password unless self.encrypted_password.nil?
       query_params[downcase_first_letter('FilterByType')] = self.filter_by_type unless self.filter_by_type.nil?
 
       # header parameters

@@ -50,8 +50,11 @@ module AsposeWordsCloud
     # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     attr_accessor :load_encoding
 
-    # Password for opening an encrypted document.
+    # Password for opening an encrypted document. The password is provided as is (obsolete).
     attr_accessor :password
+
+    # Password for opening an encrypted document. The password must be encrypted on RSA public key provided by GetPublicKey() method and then encoded as base64 string.
+    attr_accessor :encrypted_password
 
     # Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
     attr_accessor :dest_file_name
@@ -68,11 +71,12 @@ module AsposeWordsCloud
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @param password Password for opening an encrypted document.
+    # @param password Password for opening an encrypted document. The password is provided as is (obsolete).
+    # @param encrypted_password Password for opening an encrypted document. The password must be encrypted on RSA public key provided by GetPublicKey() method and then encoded as base64 string.
     # @param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
     # @param fonts_location Folder in filestorage with custom fonts.
 
-    def initialize(name:, format:, index:, node_path: nil, folder: nil, storage: nil, load_encoding: nil, password: nil, dest_file_name: nil, fonts_location: nil)
+    def initialize(name:, format:, index:, node_path: nil, folder: nil, storage: nil, load_encoding: nil, password: nil, encrypted_password: nil, dest_file_name: nil, fonts_location: nil)
       self.name = name
       self.format = format
       self.index = index
@@ -81,6 +85,7 @@ module AsposeWordsCloud
       self.storage = storage
       self.load_encoding = load_encoding
       self.password = password
+      self.encrypted_password = encrypted_password
       self.dest_file_name = dest_file_name
       self.fonts_location = fonts_location
     end
@@ -108,6 +113,7 @@ module AsposeWordsCloud
       query_params[downcase_first_letter('Storage')] = self.storage unless self.storage.nil?
       query_params[downcase_first_letter('LoadEncoding')] = self.load_encoding unless self.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = self.password unless self.password.nil?
+      query_params[downcase_first_letter('EncryptedPassword')] = self.encrypted_password unless self.encrypted_password.nil?
       query_params[downcase_first_letter('DestFileName')] = self.dest_file_name unless self.dest_file_name.nil?
       query_params[downcase_first_letter('FontsLocation')] = self.fonts_location unless self.fonts_location.nil?
 
@@ -166,6 +172,7 @@ module AsposeWordsCloud
       query_params[downcase_first_letter('Storage')] = self.storage unless self.storage.nil?
       query_params[downcase_first_letter('LoadEncoding')] = self.load_encoding unless self.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = self.password unless self.password.nil?
+      query_params[downcase_first_letter('EncryptedPassword')] = self.encrypted_password unless self.encrypted_password.nil?
       query_params[downcase_first_letter('DestFileName')] = self.dest_file_name unless self.dest_file_name.nil?
       query_params[downcase_first_letter('FontsLocation')] = self.fonts_location unless self.fonts_location.nil?
 

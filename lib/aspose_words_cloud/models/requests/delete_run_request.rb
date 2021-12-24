@@ -47,8 +47,11 @@ module AsposeWordsCloud
     # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     attr_accessor :load_encoding
 
-    # Password for opening an encrypted document.
+    # Password for opening an encrypted document. The password is provided as is (obsolete).
     attr_accessor :password
+
+    # Password for opening an encrypted document. The password must be encrypted on RSA public key provided by GetPublicKey() method and then encoded as base64 string.
+    attr_accessor :encrypted_password
 
     # Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
     attr_accessor :dest_file_name
@@ -67,12 +70,13 @@ module AsposeWordsCloud
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @param password Password for opening an encrypted document.
+    # @param password Password for opening an encrypted document. The password is provided as is (obsolete).
+    # @param encrypted_password Password for opening an encrypted document. The password must be encrypted on RSA public key provided by GetPublicKey() method and then encoded as base64 string.
     # @param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
     # @param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
     # @param revision_date_time The date and time to use for revisions.
 
-    def initialize(name:, paragraph_path:, index:, folder: nil, storage: nil, load_encoding: nil, password: nil, dest_file_name: nil, revision_author: nil, revision_date_time: nil)
+    def initialize(name:, paragraph_path:, index:, folder: nil, storage: nil, load_encoding: nil, password: nil, encrypted_password: nil, dest_file_name: nil, revision_author: nil, revision_date_time: nil)
       self.name = name
       self.paragraph_path = paragraph_path
       self.index = index
@@ -80,6 +84,7 @@ module AsposeWordsCloud
       self.storage = storage
       self.load_encoding = load_encoding
       self.password = password
+      self.encrypted_password = encrypted_password
       self.dest_file_name = dest_file_name
       self.revision_author = revision_author
       self.revision_date_time = revision_date_time
@@ -107,6 +112,7 @@ module AsposeWordsCloud
       query_params[downcase_first_letter('Storage')] = self.storage unless self.storage.nil?
       query_params[downcase_first_letter('LoadEncoding')] = self.load_encoding unless self.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = self.password unless self.password.nil?
+      query_params[downcase_first_letter('EncryptedPassword')] = self.encrypted_password unless self.encrypted_password.nil?
       query_params[downcase_first_letter('DestFileName')] = self.dest_file_name unless self.dest_file_name.nil?
       query_params[downcase_first_letter('RevisionAuthor')] = self.revision_author unless self.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = self.revision_date_time unless self.revision_date_time.nil?
@@ -165,6 +171,7 @@ module AsposeWordsCloud
       query_params[downcase_first_letter('Storage')] = self.storage unless self.storage.nil?
       query_params[downcase_first_letter('LoadEncoding')] = self.load_encoding unless self.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = self.password unless self.password.nil?
+      query_params[downcase_first_letter('EncryptedPassword')] = self.encrypted_password unless self.encrypted_password.nil?
       query_params[downcase_first_letter('DestFileName')] = self.dest_file_name unless self.dest_file_name.nil?
       query_params[downcase_first_letter('RevisionAuthor')] = self.revision_author unless self.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = self.revision_date_time unless self.revision_date_time.nil?

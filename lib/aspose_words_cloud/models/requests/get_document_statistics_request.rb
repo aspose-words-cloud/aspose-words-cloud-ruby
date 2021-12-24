@@ -41,8 +41,11 @@ module AsposeWordsCloud
     # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     attr_accessor :load_encoding
 
-    # Password for opening an encrypted document.
+    # Password for opening an encrypted document. The password is provided as is (obsolete).
     attr_accessor :password
+
+    # Password for opening an encrypted document. The password must be encrypted on RSA public key provided by GetPublicKey() method and then encoded as base64 string.
+    attr_accessor :encrypted_password
 
     # The flag indicating whether to include comments from the WordCount. The default value is "false".
     attr_accessor :include_comments
@@ -59,17 +62,19 @@ module AsposeWordsCloud
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @param password Password for opening an encrypted document.
+    # @param password Password for opening an encrypted document. The password is provided as is (obsolete).
+    # @param encrypted_password Password for opening an encrypted document. The password must be encrypted on RSA public key provided by GetPublicKey() method and then encoded as base64 string.
     # @param include_comments The flag indicating whether to include comments from the WordCount. The default value is "false".
     # @param include_footnotes The flag indicating whether to include footnotes from the WordCount. The default value is "false".
     # @param include_text_in_shapes The flag indicating whether to include shape's text from the WordCount. The default value is "false".
 
-    def initialize(name:, folder: nil, storage: nil, load_encoding: nil, password: nil, include_comments: nil, include_footnotes: nil, include_text_in_shapes: nil)
+    def initialize(name:, folder: nil, storage: nil, load_encoding: nil, password: nil, encrypted_password: nil, include_comments: nil, include_footnotes: nil, include_text_in_shapes: nil)
       self.name = name
       self.folder = folder
       self.storage = storage
       self.load_encoding = load_encoding
       self.password = password
+      self.encrypted_password = encrypted_password
       self.include_comments = include_comments
       self.include_footnotes = include_footnotes
       self.include_text_in_shapes = include_text_in_shapes
@@ -91,6 +96,7 @@ module AsposeWordsCloud
       query_params[downcase_first_letter('Storage')] = self.storage unless self.storage.nil?
       query_params[downcase_first_letter('LoadEncoding')] = self.load_encoding unless self.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = self.password unless self.password.nil?
+      query_params[downcase_first_letter('EncryptedPassword')] = self.encrypted_password unless self.encrypted_password.nil?
       query_params[downcase_first_letter('IncludeComments')] = self.include_comments unless self.include_comments.nil?
       query_params[downcase_first_letter('IncludeFootnotes')] = self.include_footnotes unless self.include_footnotes.nil?
       query_params[downcase_first_letter('IncludeTextInShapes')] = self.include_text_in_shapes unless self.include_text_in_shapes.nil?
@@ -143,6 +149,7 @@ module AsposeWordsCloud
       query_params[downcase_first_letter('Storage')] = self.storage unless self.storage.nil?
       query_params[downcase_first_letter('LoadEncoding')] = self.load_encoding unless self.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = self.password unless self.password.nil?
+      query_params[downcase_first_letter('EncryptedPassword')] = self.encrypted_password unless self.encrypted_password.nil?
       query_params[downcase_first_letter('IncludeComments')] = self.include_comments unless self.include_comments.nil?
       query_params[downcase_first_letter('IncludeFootnotes')] = self.include_footnotes unless self.include_footnotes.nil?
       query_params[downcase_first_letter('IncludeTextInShapes')] = self.include_text_in_shapes unless self.include_text_in_shapes.nil?
