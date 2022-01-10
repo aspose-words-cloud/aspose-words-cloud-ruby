@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="save_as_tiff_online_request.rb">
-#   Copyright (c) 2021 Aspose.Words for Cloud
+#   Copyright (c) 2022 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -38,8 +38,11 @@ module AsposeWordsCloud
     # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     attr_accessor :load_encoding
 
-    # Password for opening an encrypted document.
+    # Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
     attr_accessor :password
+
+    # Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
+    attr_accessor :encrypted_password
 
     # The flag indicating whether to use antialiasing.
     attr_accessor :use_anti_aliasing
@@ -100,7 +103,8 @@ module AsposeWordsCloud
     # @param document The document.
     # @param save_options Tiff save options.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @param password Password for opening an encrypted document.
+    # @param password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+    # @param encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
     # @param use_anti_aliasing The flag indicating whether to use antialiasing.
     # @param use_high_quality_rendering The flag indicating whether to use high quality.
     # @param image_brightness The level of brightness for the generated images.
@@ -120,11 +124,12 @@ module AsposeWordsCloud
     # @param zip_output The flag indicating whether to ZIP the output.
     # @param fonts_location Folder in filestorage with custom fonts.
 
-    def initialize(document:, save_options:, load_encoding: nil, password: nil, use_anti_aliasing: nil, use_high_quality_rendering: nil, image_brightness: nil, image_color_mode: nil, image_contrast: nil, numeral_format: nil, page_count: nil, page_index: nil, paper_color: nil, pixel_format: nil, resolution: nil, scale: nil, tiff_compression: nil, dml_rendering_mode: nil, dml_effects_rendering_mode: nil, tiff_binarization_method: nil, zip_output: nil, fonts_location: nil)
+    def initialize(document:, save_options:, load_encoding: nil, password: nil, encrypted_password: nil, use_anti_aliasing: nil, use_high_quality_rendering: nil, image_brightness: nil, image_color_mode: nil, image_contrast: nil, numeral_format: nil, page_count: nil, page_index: nil, paper_color: nil, pixel_format: nil, resolution: nil, scale: nil, tiff_compression: nil, dml_rendering_mode: nil, dml_effects_rendering_mode: nil, tiff_binarization_method: nil, zip_output: nil, fonts_location: nil)
       self.document = document
       self.save_options = save_options
       self.load_encoding = load_encoding
       self.password = password
+      self.encrypted_password = encrypted_password
       self.use_anti_aliasing = use_anti_aliasing
       self.use_high_quality_rendering = use_high_quality_rendering
       self.image_brightness = image_brightness
@@ -160,6 +165,7 @@ module AsposeWordsCloud
       query_params = {}
       query_params[downcase_first_letter('LoadEncoding')] = self.load_encoding unless self.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = self.password unless self.password.nil?
+      query_params[downcase_first_letter('EncryptedPassword')] = self.encrypted_password unless self.encrypted_password.nil?
       query_params[downcase_first_letter('UseAntiAliasing')] = self.use_anti_aliasing unless self.use_anti_aliasing.nil?
       query_params[downcase_first_letter('UseHighQualityRendering')] = self.use_high_quality_rendering unless self.use_high_quality_rendering.nil?
       query_params[downcase_first_letter('ImageBrightness')] = self.image_brightness unless self.image_brightness.nil?
@@ -231,6 +237,7 @@ module AsposeWordsCloud
       query_params = {}
       query_params[downcase_first_letter('LoadEncoding')] = self.load_encoding unless self.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = self.password unless self.password.nil?
+      query_params[downcase_first_letter('EncryptedPassword')] = self.encrypted_password unless self.encrypted_password.nil?
       query_params[downcase_first_letter('UseAntiAliasing')] = self.use_anti_aliasing unless self.use_anti_aliasing.nil?
       query_params[downcase_first_letter('UseHighQualityRendering')] = self.use_high_quality_rendering unless self.use_high_quality_rendering.nil?
       query_params[downcase_first_letter('ImageBrightness')] = self.image_brightness unless self.image_brightness.nil?
