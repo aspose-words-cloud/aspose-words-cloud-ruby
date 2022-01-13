@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="document_entry.rb">
-#   Copyright (c) 2021 Aspose.Words for Cloud
+#   Copyright (c) 2022 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -34,11 +34,15 @@ module AsposeWordsCloud
 
     # Gets or sets the option that controls formatting will be used: appended or destination document. Can be KeepSourceFormatting or UseDestinationStyles.
     attr_accessor :import_format_mode
+
+    # Gets or sets document password encrypted on API public key. The default value is null (the document has no password).
+    attr_accessor :password
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'href' => :'Href',
-        :'import_format_mode' => :'ImportFormatMode'
+        :'import_format_mode' => :'ImportFormatMode',
+        :'password' => :'Password'
       }
     end
 
@@ -46,7 +50,8 @@ module AsposeWordsCloud
     def self.swagger_types
       {
         :'href' => :'String',
-        :'import_format_mode' => :'String'
+        :'import_format_mode' => :'String',
+        :'password' => :'String'
       }
     end
 
@@ -64,6 +69,10 @@ module AsposeWordsCloud
 
       if attributes.key?(:'ImportFormatMode')
         self.import_format_mode = attributes[:'ImportFormatMode']
+      end
+
+      if attributes.key?(:'Password')
+        self.password = attributes[:'Password']
       end
     end
 
@@ -86,7 +95,8 @@ module AsposeWordsCloud
       return true if self.equal?(other)
       self.class == other.class &&
           href == other.href &&
-          import_format_mode == other.import_format_mode
+          import_format_mode == other.import_format_mode &&
+          password == other.password
     end
 
     # @see the `==` method
@@ -98,7 +108,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [href, import_format_mode].hash
+      [href, import_format_mode, password].hash
     end
 
     # Builds the object from hash

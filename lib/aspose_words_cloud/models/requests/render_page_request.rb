@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="render_page_request.rb">
-#   Copyright (c) 2021 Aspose.Words for Cloud
+#   Copyright (c) 2022 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -47,8 +47,11 @@ module AsposeWordsCloud
     # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     attr_accessor :load_encoding
 
-    # Password for opening an encrypted document.
+    # Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
     attr_accessor :password
+
+    # Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
+    attr_accessor :encrypted_password
 
     # Folder in filestorage with custom fonts.
     attr_accessor :fonts_location
@@ -61,10 +64,11 @@ module AsposeWordsCloud
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @param password Password for opening an encrypted document.
+    # @param password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+    # @param encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
     # @param fonts_location Folder in filestorage with custom fonts.
 
-    def initialize(name:, page_index:, format:, folder: nil, storage: nil, load_encoding: nil, password: nil, fonts_location: nil)
+    def initialize(name:, page_index:, format:, folder: nil, storage: nil, load_encoding: nil, password: nil, encrypted_password: nil, fonts_location: nil)
       self.name = name
       self.page_index = page_index
       self.format = format
@@ -72,6 +76,7 @@ module AsposeWordsCloud
       self.storage = storage
       self.load_encoding = load_encoding
       self.password = password
+      self.encrypted_password = encrypted_password
       self.fonts_location = fonts_location
     end
 
@@ -97,6 +102,7 @@ module AsposeWordsCloud
       query_params[downcase_first_letter('Storage')] = self.storage unless self.storage.nil?
       query_params[downcase_first_letter('LoadEncoding')] = self.load_encoding unless self.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = self.password unless self.password.nil?
+      query_params[downcase_first_letter('EncryptedPassword')] = self.encrypted_password unless self.encrypted_password.nil?
       query_params[downcase_first_letter('FontsLocation')] = self.fonts_location unless self.fonts_location.nil?
 
       if query_params
@@ -153,6 +159,7 @@ module AsposeWordsCloud
       query_params[downcase_first_letter('Storage')] = self.storage unless self.storage.nil?
       query_params[downcase_first_letter('LoadEncoding')] = self.load_encoding unless self.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = self.password unless self.password.nil?
+      query_params[downcase_first_letter('EncryptedPassword')] = self.encrypted_password unless self.encrypted_password.nil?
       query_params[downcase_first_letter('FontsLocation')] = self.fonts_location unless self.fonts_location.nil?
 
       # header parameters

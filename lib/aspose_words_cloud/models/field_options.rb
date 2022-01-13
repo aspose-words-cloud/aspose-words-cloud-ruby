@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="field_options.rb">
-#   Copyright (c) 2021 Aspose.Words for Cloud
+#   Copyright (c) 2022 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -44,6 +44,10 @@ module AsposeWordsCloud
     # Gets or sets Field Index Format.
     attr_accessor :field_index_format
 
+    # Gets or sets Field Update Culture Name.
+    # It is used for all fields if FieldUpdateCultureSource is FieldCode.
+    attr_accessor :field_update_culture_name
+
     # Gets or sets Field Update Culture Source.
     attr_accessor :field_update_culture_source
 
@@ -57,6 +61,7 @@ module AsposeWordsCloud
     attr_accessor :legacy_number_format
 
     # Gets or sets PreProcess Culture Name.
+    # It is a culture code for DOC fields.
     attr_accessor :pre_process_culture_name
 
     # Gets or sets Template Name.
@@ -95,6 +100,7 @@ module AsposeWordsCloud
         :'custom_toc_style_separator' => :'CustomTocStyleSeparator',
         :'default_document_author' => :'DefaultDocumentAuthor',
         :'field_index_format' => :'FieldIndexFormat',
+        :'field_update_culture_name' => :'FieldUpdateCultureName',
         :'field_update_culture_source' => :'FieldUpdateCultureSource',
         :'file_name' => :'FileName',
         :'is_bidi_text_supported_on_update' => :'IsBidiTextSupportedOnUpdate',
@@ -113,6 +119,7 @@ module AsposeWordsCloud
         :'custom_toc_style_separator' => :'String',
         :'default_document_author' => :'String',
         :'field_index_format' => :'String',
+        :'field_update_culture_name' => :'String',
         :'field_update_culture_source' => :'String',
         :'file_name' => :'String',
         :'is_bidi_text_supported_on_update' => :'BOOLEAN',
@@ -151,6 +158,10 @@ module AsposeWordsCloud
 
       if attributes.key?(:'FieldIndexFormat')
         self.field_index_format = attributes[:'FieldIndexFormat']
+      end
+
+      if attributes.key?(:'FieldUpdateCultureName')
+        self.field_update_culture_name = attributes[:'FieldUpdateCultureName']
       end
 
       if attributes.key?(:'FieldUpdateCultureSource')
@@ -239,6 +250,7 @@ module AsposeWordsCloud
           custom_toc_style_separator == other.custom_toc_style_separator &&
           default_document_author == other.default_document_author &&
           field_index_format == other.field_index_format &&
+          field_update_culture_name == other.field_update_culture_name &&
           field_update_culture_source == other.field_update_culture_source &&
           file_name == other.file_name &&
           is_bidi_text_supported_on_update == other.is_bidi_text_supported_on_update &&
@@ -257,7 +269,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [built_in_templates_paths, current_user, custom_toc_style_separator, default_document_author, field_index_format, field_update_culture_source, file_name, is_bidi_text_supported_on_update, legacy_number_format, pre_process_culture_name, template_name, use_invariant_culture_number_format].hash
+      [built_in_templates_paths, current_user, custom_toc_style_separator, default_document_author, field_index_format, field_update_culture_name, field_update_culture_source, file_name, is_bidi_text_supported_on_update, legacy_number_format, pre_process_culture_name, template_name, use_invariant_culture_number_format].hash
     end
 
     # Builds the object from hash
