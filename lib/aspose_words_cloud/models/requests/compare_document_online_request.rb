@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="compare_document_online_request.rb">
-#   Copyright (c) 2021 Aspose.Words for Cloud
+#   Copyright (c) 2022 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -41,11 +41,17 @@ module AsposeWordsCloud
     # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     attr_accessor :load_encoding
 
-    # Password for opening an encrypted document.
+    # Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
     attr_accessor :password
+
+    # Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
+    attr_accessor :encrypted_password
 
     # Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
     attr_accessor :dest_file_name
+
+    # encrypted password for the second document.
+    attr_accessor :encrypted_password2
 
     #
     # Initializes a new instance.
@@ -53,16 +59,20 @@ module AsposeWordsCloud
     # @param compare_data Compare data.
     # @param comparing_document The comparing document.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @param password Password for opening an encrypted document.
+    # @param password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+    # @param encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
     # @param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+    # @param encrypted_password2 encrypted password for the second document.
 
-    def initialize(document:, compare_data:, comparing_document: nil, load_encoding: nil, password: nil, dest_file_name: nil)
+    def initialize(document:, compare_data:, comparing_document: nil, load_encoding: nil, password: nil, encrypted_password: nil, dest_file_name: nil, encrypted_password2: nil)
       self.document = document
       self.compare_data = compare_data
       self.comparing_document = comparing_document
       self.load_encoding = load_encoding
       self.password = password
+      self.encrypted_password = encrypted_password
       self.dest_file_name = dest_file_name
+      self.encrypted_password2 = encrypted_password2
     end
 
     # Creating batch part from request
@@ -80,7 +90,9 @@ module AsposeWordsCloud
       query_params = {}
       query_params[downcase_first_letter('LoadEncoding')] = self.load_encoding unless self.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = self.password unless self.password.nil?
+      query_params[downcase_first_letter('EncryptedPassword')] = self.encrypted_password unless self.encrypted_password.nil?
       query_params[downcase_first_letter('DestFileName')] = self.dest_file_name unless self.dest_file_name.nil?
+      query_params[downcase_first_letter('EncryptedPassword2')] = self.encrypted_password2 unless self.encrypted_password2.nil?
 
       if query_params
         query_params.each { |key, value| local_var_path = api_client.add_param_to_query(local_var_path, key, value) }
@@ -135,7 +147,9 @@ module AsposeWordsCloud
       query_params = {}
       query_params[downcase_first_letter('LoadEncoding')] = self.load_encoding unless self.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = self.password unless self.password.nil?
+      query_params[downcase_first_letter('EncryptedPassword')] = self.encrypted_password unless self.encrypted_password.nil?
       query_params[downcase_first_letter('DestFileName')] = self.dest_file_name unless self.dest_file_name.nil?
+      query_params[downcase_first_letter('EncryptedPassword2')] = self.encrypted_password2 unless self.encrypted_password2.nil?
 
       # header parameters
       header_params = {}
