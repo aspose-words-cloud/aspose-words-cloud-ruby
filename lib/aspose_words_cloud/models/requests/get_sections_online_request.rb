@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="get_sections_online_request.rb">
-#   Copyright (c) 2021 Aspose.Words for Cloud
+#   Copyright (c) 2022 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -35,19 +35,24 @@ module AsposeWordsCloud
     # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     attr_accessor :load_encoding
 
-    # Password for opening an encrypted document.
+    # Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
     attr_accessor :password
+
+    # Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
+    attr_accessor :encrypted_password
 
     #
     # Initializes a new instance.
     # @param document The document.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @param password Password for opening an encrypted document.
+    # @param password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+    # @param encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
 
-    def initialize(document:, load_encoding: nil, password: nil)
+    def initialize(document:, load_encoding: nil, password: nil, encrypted_password: nil)
       self.document = document
       self.load_encoding = load_encoding
       self.password = password
+      self.encrypted_password = encrypted_password
     end
 
     # Creating batch part from request
@@ -63,6 +68,7 @@ module AsposeWordsCloud
       query_params = {}
       query_params[downcase_first_letter('LoadEncoding')] = self.load_encoding unless self.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = self.password unless self.password.nil?
+      query_params[downcase_first_letter('EncryptedPassword')] = self.encrypted_password unless self.encrypted_password.nil?
 
       if query_params
         query_params.each { |key, value| local_var_path = api_client.add_param_to_query(local_var_path, key, value) }
@@ -113,6 +119,7 @@ module AsposeWordsCloud
       query_params = {}
       query_params[downcase_first_letter('LoadEncoding')] = self.load_encoding unless self.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = self.password unless self.password.nil?
+      query_params[downcase_first_letter('EncryptedPassword')] = self.encrypted_password unless self.encrypted_password.nil?
 
       # header parameters
       header_params = {}
