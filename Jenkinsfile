@@ -72,7 +72,7 @@ def runtests(dockerImageVersion)
 node('words-linux') {        
     stage('oldruby'){
 		try {
-			runtests("2.4")
+			runtests("2.7")
 		} finally {
 			cleanWs()
 		}
@@ -80,7 +80,7 @@ node('words-linux') {
 	
 	stage('newruby'){
 		try {
-			runtests("2.5") 
+			runtests("3.1") 
 		} finally {
 			cleanWs()
 		}
