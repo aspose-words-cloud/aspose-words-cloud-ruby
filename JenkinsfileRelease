@@ -45,7 +45,7 @@ def testGemLocally()
         }
 		
 	    stage('3:build gem and test'){
-			docker.image('ruby:2.4').inside('-u root'){
+			docker.image('ruby:2.7').inside('-u root'){
 				stage('upload to rubygems'){
 					sh "gem build aspose_words_cloud.gemspec"
                     sh "gem install nokogiri -v 1.10.10"
@@ -80,7 +80,7 @@ def publishGem()
 		}			
 		    
 	    stage('5:build gem publish'){	
-			docker.image('ruby:2.4').inside('-u root'){
+			docker.image('ruby:2.7').inside('-u root'){
 				stage('upload to rubygems'){
 					sh "gem build aspose_words_cloud.gemspec"
 					sh "mkdir ~/.gem"
