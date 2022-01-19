@@ -398,7 +398,7 @@ module AsposeWordsCloud
         form_params.each do |key, value|
           case value
           when ::File, ::Tempfile
-            data[key] = Faraday::UploadIO.new(value.path, Marcel::Magic.by_magic(value).to_s, key)
+            data[key] = Faraday::FilePart.new(value.path, Marcel::Magic.by_magic(value).to_s, key)
           when ::Array, nil, Faraday::ParamPart
             data[key] = value
           else
