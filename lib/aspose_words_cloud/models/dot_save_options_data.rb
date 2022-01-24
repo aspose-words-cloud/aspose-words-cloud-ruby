@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="xps_save_options_data.rb">
+# <copyright company="Aspose" file="dot_save_options_data.rb">
 #   Copyright (c) 2022 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -27,8 +27,8 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Container class for xps save options.
-  class XpsSaveOptionsData
+  # Container class for dot save options.
+  class DotSaveOptionsData
     # Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false..
     attr_accessor :allow_embedding_post_script_fonts
 
@@ -75,44 +75,22 @@ module AsposeWordsCloud
     # The default value is false.
     attr_accessor :zip_output
 
-    # Gets or sets the value determining how colors are rendered.
-    # { Normal | Grayscale}.
-    attr_accessor :color_mode
+    # Gets or sets a value indicating when False, that small metafiles are not compressed for performance reason.
+    # The default value is true, all metafiles are compressed regardless of its size.
+    attr_accessor :always_compress_metafiles
 
-    # Gets or sets the quality of the JPEG images inside PDF document.
-    attr_accessor :jpeg_quality
+    # Gets or sets the password.
+    attr_accessor :password
 
-    # Gets or sets the metafile rendering options.
-    attr_accessor :metafile_rendering_options
+    # Gets or sets a value indicating when False, that PictureBullet data is not saved to the output document.
+    # The default value is true.
+    attr_accessor :save_picture_bullet
 
-    # Gets or sets the symbol set, that is used to represent numbers while rendering to fixed page formats.
-    attr_accessor :numeral_format
-
-    # Gets or sets a value indicating whether it is required to optimize output of XPS.
-    # If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated.
-    # Note: The accuracy of the content display may be affected if this property is set to true.. The default value is false.
-    attr_accessor :optimize_output
-
-    # Gets or sets the number of pages to render.
-    attr_accessor :page_count
-
-    # Gets or sets the 0-based index of the first page to render.
-    attr_accessor :page_index
-
-    # Gets or sets the level in the XPS document outline at which to display Word bookmarks.
-    attr_accessor :bookmarks_outline_level
-
-    # Gets or sets the number of heading levels (paragraphs formatted with the Heading styles) to include in the XPS document outline.
-    attr_accessor :headings_outline_levels
-
-    # Gets or sets the outline options.
-    attr_accessor :outline_options
+    # Gets or sets a value indicating whether to save RoutingSlip data to output document.
+    attr_accessor :save_routing_slip
 
     # Gets or sets the format of save.
     attr_accessor :save_format
-
-    # Gets or sets a value indicating whether the document should be saved using a booklet printing layout.
-    attr_accessor :use_book_fold_printing_settings
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -153,18 +131,11 @@ module AsposeWordsCloud
         :'update_last_saved_time_property' => :'UpdateLastSavedTimeProperty',
         :'update_sdt_content' => :'UpdateSdtContent',
         :'zip_output' => :'ZipOutput',
-        :'color_mode' => :'ColorMode',
-        :'jpeg_quality' => :'JpegQuality',
-        :'metafile_rendering_options' => :'MetafileRenderingOptions',
-        :'numeral_format' => :'NumeralFormat',
-        :'optimize_output' => :'OptimizeOutput',
-        :'page_count' => :'PageCount',
-        :'page_index' => :'PageIndex',
-        :'bookmarks_outline_level' => :'BookmarksOutlineLevel',
-        :'headings_outline_levels' => :'HeadingsOutlineLevels',
-        :'outline_options' => :'OutlineOptions',
-        :'save_format' => :'SaveFormat',
-        :'use_book_fold_printing_settings' => :'UseBookFoldPrintingSettings'
+        :'always_compress_metafiles' => :'AlwaysCompressMetafiles',
+        :'password' => :'Password',
+        :'save_picture_bullet' => :'SavePictureBullet',
+        :'save_routing_slip' => :'SaveRoutingSlip',
+        :'save_format' => :'SaveFormat'
       }
     end
 
@@ -185,18 +156,11 @@ module AsposeWordsCloud
         :'update_last_saved_time_property' => :'BOOLEAN',
         :'update_sdt_content' => :'BOOLEAN',
         :'zip_output' => :'BOOLEAN',
-        :'color_mode' => :'String',
-        :'jpeg_quality' => :'Integer',
-        :'metafile_rendering_options' => :'MetafileRenderingOptionsData',
-        :'numeral_format' => :'String',
-        :'optimize_output' => :'BOOLEAN',
-        :'page_count' => :'Integer',
-        :'page_index' => :'Integer',
-        :'bookmarks_outline_level' => :'Integer',
-        :'headings_outline_levels' => :'Integer',
-        :'outline_options' => :'OutlineOptionsData',
-        :'save_format' => :'String',
-        :'use_book_fold_printing_settings' => :'BOOLEAN'
+        :'always_compress_metafiles' => :'BOOLEAN',
+        :'password' => :'String',
+        :'save_picture_bullet' => :'BOOLEAN',
+        :'save_routing_slip' => :'BOOLEAN',
+        :'save_format' => :'String'
       }
     end
 
@@ -208,7 +172,7 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      self.save_format = 'xps'
+      self.save_format = 'dot'
 
       if attributes.key?(:'AllowEmbeddingPostScriptFonts')
         self.allow_embedding_post_script_fonts = attributes[:'AllowEmbeddingPostScriptFonts']
@@ -266,48 +230,20 @@ module AsposeWordsCloud
         self.zip_output = attributes[:'ZipOutput']
       end
 
-      if attributes.key?(:'ColorMode')
-        self.color_mode = attributes[:'ColorMode']
+      if attributes.key?(:'AlwaysCompressMetafiles')
+        self.always_compress_metafiles = attributes[:'AlwaysCompressMetafiles']
       end
 
-      if attributes.key?(:'JpegQuality')
-        self.jpeg_quality = attributes[:'JpegQuality']
+      if attributes.key?(:'Password')
+        self.password = attributes[:'Password']
       end
 
-      if attributes.key?(:'MetafileRenderingOptions')
-        self.metafile_rendering_options = attributes[:'MetafileRenderingOptions']
+      if attributes.key?(:'SavePictureBullet')
+        self.save_picture_bullet = attributes[:'SavePictureBullet']
       end
 
-      if attributes.key?(:'NumeralFormat')
-        self.numeral_format = attributes[:'NumeralFormat']
-      end
-
-      if attributes.key?(:'OptimizeOutput')
-        self.optimize_output = attributes[:'OptimizeOutput']
-      end
-
-      if attributes.key?(:'PageCount')
-        self.page_count = attributes[:'PageCount']
-      end
-
-      if attributes.key?(:'PageIndex')
-        self.page_index = attributes[:'PageIndex']
-      end
-
-      if attributes.key?(:'BookmarksOutlineLevel')
-        self.bookmarks_outline_level = attributes[:'BookmarksOutlineLevel']
-      end
-
-      if attributes.key?(:'HeadingsOutlineLevels')
-        self.headings_outline_levels = attributes[:'HeadingsOutlineLevels']
-      end
-
-      if attributes.key?(:'OutlineOptions')
-        self.outline_options = attributes[:'OutlineOptions']
-      end
-
-      if attributes.key?(:'UseBookFoldPrintingSettings')
-        self.use_book_fold_printing_settings = attributes[:'UseBookFoldPrintingSettings']
+      if attributes.key?(:'SaveRoutingSlip')
+        self.save_routing_slip = attributes[:'SaveRoutingSlip']
       end
     end
 
@@ -361,18 +297,11 @@ module AsposeWordsCloud
           update_last_saved_time_property == other.update_last_saved_time_property &&
           update_sdt_content == other.update_sdt_content &&
           zip_output == other.zip_output &&
-          color_mode == other.color_mode &&
-          jpeg_quality == other.jpeg_quality &&
-          metafile_rendering_options == other.metafile_rendering_options &&
-          numeral_format == other.numeral_format &&
-          optimize_output == other.optimize_output &&
-          page_count == other.page_count &&
-          page_index == other.page_index &&
-          bookmarks_outline_level == other.bookmarks_outline_level &&
-          headings_outline_levels == other.headings_outline_levels &&
-          outline_options == other.outline_options &&
-          save_format == other.save_format &&
-          use_book_fold_printing_settings == other.use_book_fold_printing_settings
+          always_compress_metafiles == other.always_compress_metafiles &&
+          password == other.password &&
+          save_picture_bullet == other.save_picture_bullet &&
+          save_routing_slip == other.save_routing_slip &&
+          save_format == other.save_format
     end
 
     # @see the `==` method
@@ -384,7 +313,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, flat_opc_xml_mapping_only, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, bookmarks_outline_level, headings_outline_levels, outline_options, save_format, use_book_fold_printing_settings].hash
+      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, flat_opc_xml_mapping_only, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, always_compress_metafiles, password, save_picture_bullet, save_routing_slip, save_format].hash
     end
 
     # Builds the object from hash

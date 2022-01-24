@@ -55,9 +55,6 @@ module AsposeWordsCloud
     # Gets or sets the value determining how ink (InkML) objects are rendered.
     attr_accessor :iml_rendering_mode
 
-    # Gets or sets the format of save.
-    attr_accessor :save_format
-
     # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving.
     # Default value is false.
     attr_accessor :update_created_time_property
@@ -142,6 +139,9 @@ module AsposeWordsCloud
     # Gets or sets a value indicating whether "@font-face" CSS rules should be placed into a separate file "fontFaces.css" when a document is being saved with external stylesheet (that is, when Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedCss is false). The default value is false, all CSS rules are written into single file "styles.css".
     attr_accessor :save_font_face_css_separately
 
+    # Gets or sets the format of save.
+    attr_accessor :save_format
+
     # Gets or sets a value indicating whether to show border around pages.
     attr_accessor :show_page_border
 
@@ -181,7 +181,6 @@ module AsposeWordsCloud
         :'file_name' => :'FileName',
         :'flat_opc_xml_mapping_only' => :'FlatOpcXmlMappingOnly',
         :'iml_rendering_mode' => :'ImlRenderingMode',
-        :'save_format' => :'SaveFormat',
         :'update_created_time_property' => :'UpdateCreatedTimeProperty',
         :'update_fields' => :'UpdateFields',
         :'update_last_printed_property' => :'UpdateLastPrintedProperty',
@@ -207,6 +206,7 @@ module AsposeWordsCloud
         :'resources_folder' => :'ResourcesFolder',
         :'resources_folder_alias' => :'ResourcesFolderAlias',
         :'save_font_face_css_separately' => :'SaveFontFaceCssSeparately',
+        :'save_format' => :'SaveFormat',
         :'show_page_border' => :'ShowPageBorder',
         :'use_target_machine_fonts' => :'UseTargetMachineFonts'
       }
@@ -223,7 +223,6 @@ module AsposeWordsCloud
         :'file_name' => :'String',
         :'flat_opc_xml_mapping_only' => :'BOOLEAN',
         :'iml_rendering_mode' => :'String',
-        :'save_format' => :'String',
         :'update_created_time_property' => :'BOOLEAN',
         :'update_fields' => :'BOOLEAN',
         :'update_last_printed_property' => :'BOOLEAN',
@@ -249,6 +248,7 @@ module AsposeWordsCloud
         :'resources_folder' => :'String',
         :'resources_folder_alias' => :'String',
         :'save_font_face_css_separately' => :'BOOLEAN',
+        :'save_format' => :'String',
         :'show_page_border' => :'BOOLEAN',
         :'use_target_machine_fonts' => :'BOOLEAN'
       }
@@ -261,6 +261,8 @@ module AsposeWordsCloud
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      self.save_format = 'htmlfixed'
 
       if attributes.key?(:'AllowEmbeddingPostScriptFonts')
         self.allow_embedding_post_script_fonts = attributes[:'AllowEmbeddingPostScriptFonts']
@@ -292,10 +294,6 @@ module AsposeWordsCloud
 
       if attributes.key?(:'ImlRenderingMode')
         self.iml_rendering_mode = attributes[:'ImlRenderingMode']
-      end
-
-      if attributes.key?(:'SaveFormat')
-        self.save_format = attributes[:'SaveFormat']
       end
 
       if attributes.key?(:'UpdateCreatedTimeProperty')
@@ -451,7 +449,6 @@ module AsposeWordsCloud
           file_name == other.file_name &&
           flat_opc_xml_mapping_only == other.flat_opc_xml_mapping_only &&
           iml_rendering_mode == other.iml_rendering_mode &&
-          save_format == other.save_format &&
           update_created_time_property == other.update_created_time_property &&
           update_fields == other.update_fields &&
           update_last_printed_property == other.update_last_printed_property &&
@@ -477,6 +474,7 @@ module AsposeWordsCloud
           resources_folder == other.resources_folder &&
           resources_folder_alias == other.resources_folder_alias &&
           save_font_face_css_separately == other.save_font_face_css_separately &&
+          save_format == other.save_format &&
           show_page_border == other.show_page_border &&
           use_target_machine_fonts == other.use_target_machine_fonts
     end
@@ -490,7 +488,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, flat_opc_xml_mapping_only, iml_rendering_mode, save_format, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, css_class_names_prefix, encoding, export_embedded_css, export_embedded_fonts, export_embedded_images, export_form_fields, font_format, page_horizontal_alignment, page_margins, resources_folder, resources_folder_alias, save_font_face_css_separately, show_page_border, use_target_machine_fonts].hash
+      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, flat_opc_xml_mapping_only, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, css_class_names_prefix, encoding, export_embedded_css, export_embedded_fonts, export_embedded_images, export_form_fields, font_format, page_horizontal_alignment, page_margins, resources_folder, resources_folder_alias, save_font_face_css_separately, save_format, show_page_border, use_target_machine_fonts].hash
     end
 
     # Builds the object from hash
