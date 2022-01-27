@@ -204,10 +204,6 @@ module AsposeWordsCloud
         self.iml_rendering_mode = attributes[:'ImlRenderingMode']
       end
 
-      if attributes.key?(:'SaveFormat')
-        self.save_format = attributes[:'SaveFormat']
-      end
-
       if attributes.key?(:'UpdateCreatedTimeProperty')
         self.update_created_time_property = attributes[:'UpdateCreatedTimeProperty']
       end
