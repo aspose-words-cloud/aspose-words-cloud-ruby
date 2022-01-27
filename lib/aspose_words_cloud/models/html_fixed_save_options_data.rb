@@ -139,7 +139,7 @@ module AsposeWordsCloud
     # Gets or sets a value indicating whether "@font-face" CSS rules should be placed into a separate file "fontFaces.css" when a document is being saved with external stylesheet (that is, when Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedCss is false). The default value is false, all CSS rules are written into single file "styles.css".
     attr_accessor :save_font_face_css_separately
 
-    # Gets or sets the format of save.
+    # Gets the format of save.
     attr_accessor :save_format
 
     # Gets or sets a value indicating whether to show border around pages.

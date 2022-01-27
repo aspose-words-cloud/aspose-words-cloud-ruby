@@ -163,7 +163,7 @@ module AsposeWordsCloud
     # Gets or sets a value indicating whether to preserve Microsoft Word form fields as form fields in PDF or convert them to text.
     attr_accessor :preserve_form_fields
 
-    # Gets or sets the format of save.
+    # Gets the format of save.
     attr_accessor :save_format
 
     # Gets or sets the compression type to be used for all textual content in the document.

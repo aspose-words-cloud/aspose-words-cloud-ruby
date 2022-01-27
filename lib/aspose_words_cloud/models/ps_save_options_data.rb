@@ -99,7 +99,7 @@ module AsposeWordsCloud
     # Gets or sets the 0-based index of the first page to render.
     attr_accessor :page_index
 
-    # Gets or sets the format of save.
+    # Gets the format of save.
     attr_accessor :save_format
 
     # Gets or sets a value indicating whether the document should be saved using a booklet printing layout.

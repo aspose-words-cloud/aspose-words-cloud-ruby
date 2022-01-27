@@ -111,7 +111,7 @@ module AsposeWordsCloud
     # Gets or sets the name of the folder used to construct image URIs.
     attr_accessor :resources_folder_alias
 
-    # Gets or sets the format of save.
+    # Gets the format of save.
     attr_accessor :save_format
 
     # Gets or sets a value indicating whether to show or hide page stepper.

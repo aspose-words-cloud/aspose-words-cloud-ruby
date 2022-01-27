@@ -206,7 +206,7 @@ module AsposeWordsCloud
     # Gets or sets the maximum level of headings populated to the navigation map when exporting.
     attr_accessor :epub_navigation_map_level
 
-    # Gets or sets the format of save.
+    # Gets the format of save.
     attr_accessor :save_format
 
     class EnumAttributeValidator

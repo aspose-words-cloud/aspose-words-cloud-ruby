@@ -82,7 +82,7 @@ module AsposeWordsCloud
     # Gets or sets the password.
     attr_accessor :password
 
-    # Gets or sets the format of save.
+    # Gets the format of save.
     attr_accessor :save_format
 
     # Gets or sets a value indicating when False, that PictureBullet data is not saved to the output document.

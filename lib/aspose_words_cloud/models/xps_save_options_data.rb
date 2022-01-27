@@ -108,7 +108,7 @@ module AsposeWordsCloud
     # Gets or sets the outline options.
     attr_accessor :outline_options
 
-    # Gets or sets the format of save.
+    # Gets the format of save.
     attr_accessor :save_format
 
     # Gets or sets a value indicating whether the document should be saved using a booklet printing layout.

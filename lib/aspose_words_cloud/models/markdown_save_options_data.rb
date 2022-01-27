@@ -89,7 +89,7 @@ module AsposeWordsCloud
     # Gets or sets the string to use as a paragraph break when exporting in plain text format.
     attr_accessor :paragraph_break
 
-    # Gets or sets the format of save.
+    # Gets the format of save.
     attr_accessor :save_format
 
     # Gets or sets the value, that specifies how to align contents in tables when exporting into the Markdown format.

@@ -141,7 +141,7 @@ module AsposeWordsCloud
     # The default value is 96.
     attr_accessor :vertical_resolution
 
-    # Gets or sets the format of save.
+    # Gets the format of save.
     attr_accessor :save_format
 
     # Gets or sets the threshold that determines the value of the binarization error in the Floyd-Steinberg method. when ImageBinarizationMethod is ImageBinarizationMethod.FloydSteinbergDithering.

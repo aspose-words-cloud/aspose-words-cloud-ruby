@@ -100,7 +100,7 @@ module AsposeWordsCloud
     # Gets or sets a value indicating whether the program should attempt to preserve layout of tables when saving in the plain text format.
     attr_accessor :preserve_table_layout
 
-    # Gets or sets the format of save.
+    # Gets the format of save.
     attr_accessor :save_format
 
     # Gets or sets a value indicating whether the program should simplify list labels in case of complex label formatting not being adequately represented by plain text.

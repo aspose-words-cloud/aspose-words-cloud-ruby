@@ -89,7 +89,7 @@ module AsposeWordsCloud
     # Gets or sets a value indicating whether to save RoutingSlip data to output document.
     attr_accessor :save_routing_slip
 
-    # Gets or sets the format of save.
+    # Gets the format of save.
     attr_accessor :save_format
 
     class EnumAttributeValidator

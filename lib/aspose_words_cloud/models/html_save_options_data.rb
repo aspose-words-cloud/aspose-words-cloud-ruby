@@ -197,7 +197,7 @@ module AsposeWordsCloud
     # Gets or sets the name of the folder used to construct URIs of all resources written into HTML document. The default value is an empty string.
     attr_accessor :resource_folder_alias
 
-    # Gets or sets the format of save.
+    # Gets the format of save.
     attr_accessor :save_format
 
     # Gets or sets a value indicating whether images are scaled by Aspose.Words to the bounding shape size when exporting.

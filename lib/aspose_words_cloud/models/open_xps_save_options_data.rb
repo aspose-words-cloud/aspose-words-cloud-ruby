@@ -111,7 +111,7 @@ module AsposeWordsCloud
     # Gets or sets a value indicating whether the document should be saved using a booklet printing layout.
     attr_accessor :use_book_fold_printing_settings
 
-    # Gets or sets the format of save.
+    # Gets the format of save.
     attr_accessor :save_format
 
     class EnumAttributeValidator

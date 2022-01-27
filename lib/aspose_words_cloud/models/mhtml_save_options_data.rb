@@ -206,7 +206,7 @@ module AsposeWordsCloud
     # Gets or sets a value indicating whether to use CID (Content-ID) URLs to reference resources (images, fonts, CSS) included in MHTML documents. The default value is false.
     attr_accessor :export_cid_urls_for_mhtml_resources
 
-    # Gets or sets the format of save.
+    # Gets the format of save.
     attr_accessor :save_format
 
     class EnumAttributeValidator

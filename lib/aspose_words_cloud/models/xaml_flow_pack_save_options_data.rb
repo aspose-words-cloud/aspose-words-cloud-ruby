@@ -81,7 +81,7 @@ module AsposeWordsCloud
     # Gets or sets the name of the folder used to construct image URIs.
     attr_accessor :images_folder_alias
 
-    # Gets or sets the format of save.
+    # Gets the format of save.
     attr_accessor :save_format
 
     class EnumAttributeValidator

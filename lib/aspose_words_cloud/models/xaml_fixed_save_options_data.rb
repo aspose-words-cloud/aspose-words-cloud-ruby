@@ -106,7 +106,7 @@ module AsposeWordsCloud
     # Gets or sets the name of the folder used to construct image URIs written into an fixed page Xaml document. The default value is null.
     attr_accessor :resources_folder_alias
 
-    # Gets or sets the format of save.
+    # Gets the format of save.
     attr_accessor :save_format
 
     class EnumAttributeValidator

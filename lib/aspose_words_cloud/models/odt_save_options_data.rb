@@ -88,7 +88,7 @@ module AsposeWordsCloud
     # Gets or sets a value indicating whether to use pretty formats output.
     attr_accessor :pretty_format
 
-    # Gets or sets the format of save.
+    # Gets the format of save.
     attr_accessor :save_format
 
     class EnumAttributeValidator

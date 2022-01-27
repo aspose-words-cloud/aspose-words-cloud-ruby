@@ -105,7 +105,7 @@ module AsposeWordsCloud
     # Gets or sets a value indicating whether complex transformed elements should be rasterized before saving to PCL document.. The default value is true.
     attr_accessor :rasterize_transformed_elements
 
-    # Gets or sets the format of save.
+    # Gets the format of save.
     attr_accessor :save_format
 
     class EnumAttributeValidator
