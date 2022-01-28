@@ -55,7 +55,7 @@ module AsposeWordsCloud
     # Gets or sets the value determining how ink (InkML) objects are rendered.
     attr_accessor :iml_rendering_mode
 
-    # Gets the format of save.
+    # Gets or sets the format of save.
     attr_accessor :save_format
 
     # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving.
@@ -180,6 +180,10 @@ module AsposeWordsCloud
 
       if attributes.key?(:'ImlRenderingMode')
         self.iml_rendering_mode = attributes[:'ImlRenderingMode']
+      end
+
+      if attributes.key?(:'SaveFormat')
+        self.save_format = attributes[:'SaveFormat']
       end
 
       if attributes.key?(:'UpdateCreatedTimeProperty')

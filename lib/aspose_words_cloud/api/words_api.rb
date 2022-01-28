@@ -36,10 +36,10 @@ module AsposeWordsCloud
 
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
+      @rsa_key = nil
       require_all '../models/requests'
       require_all '../models/responses'
       request_token
-      request_rsa_key
     end
 
     def batch(batch_requests, display_intermediate_result = true)
@@ -23087,6 +23087,31 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
+    # Encrypt string.
+    # @param data string
+    # @return [string]
+    def encrypt(data)
+        if data.to_s.empty?
+            return data
+        end
+
+        if @rsa_key == nil
+            modulus = @api_client.config.modulus
+            exponent = @api_client.config.exponent
+
+            if modulus.to_s.empty || exponent.to_s.empty
+                data = self.get_public_key GetPublicKeyRequest.new
+                modulus = data.modulus
+                exponent = data.exponent
+            end
+
+            @rsa_key = OpenSSL::PKey::RSA.new
+            @rsa_key.set_key(base64_to_long(modulus), base64_to_long(exponent), nil)            
+        end
+
+        Base64.encode64(@rsa_key.public_encrypt(data.to_s.force_encoding("utf-8")))
+    end
+
      #
      # Helper method to convert first letter to downcase
      #
@@ -23112,19 +23137,6 @@ module AsposeWordsCloud
       Dir[File.expand_path(File.join(File.dirname(File.absolute_path(__FILE__)), _dir)) + "/*.rb"].each do |file|
         require file
       end
-    end
-
-     #
-     # Gets a rsa key from server
-     #
-    private def request_rsa_key
-      config = @api_client.config
-      data = self.get_public_key GetPublicKeyRequest.new
-      modulus = data.modulus
-      exponent = data.exponent
-
-      config.rsa_key = OpenSSL::PKey::RSA.new
-      config.rsa_key.set_key(base64_to_long(modulus), base64_to_long(exponent), nil)
     end
 
     private def base64_to_long(data)

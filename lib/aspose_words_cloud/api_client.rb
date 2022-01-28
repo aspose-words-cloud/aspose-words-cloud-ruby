@@ -340,7 +340,6 @@ module AsposeWordsCloud
       @tempfile = tempfile
       tempfile.write(response.body)
       response.on_complete do |resp|
-        tempfile.rewind
         tempfile.close
         @config.logger.info "Temp file written to #{tempfile.path}, please copy the file to a proper folder "\
                             "with e.g. `FileUtils.cp(tempfile.path, '/new/file/path')` otherwise the temp file "\
@@ -399,7 +398,7 @@ module AsposeWordsCloud
         form_params.each do |key, value|
           case value
           when ::File, ::Tempfile
-            data[key] = Faraday::FilePart.new(value.path, Marcel::Magic.by_magic(value).to_s, key)
+            data[key] = Faraday::UploadIO.new(value.path, Marcel::Magic.by_magic(value).to_s, key)
           when ::Array, nil, Faraday::ParamPart
             data[key] = value
           else
@@ -451,7 +450,7 @@ module AsposeWordsCloud
     def add_param_to_query(url, param_name, param_value)
       uri = URI(url)
       if param_name == 'password' && !param_value.empty?
-        params = URI.decode_www_form(uri.query || "") << ['encryptedPassword', Base64.encode64(self.config.rsa_key.public_encrypt(param_value.to_s.force_encoding("utf-8")))]
+        params = URI.decode_www_form(uri.query || "") << ['encryptedPassword', self.config.encryptor.encrypt(param_value)]
       else
         params = URI.decode_www_form(uri.query || "") << [param_name, param_value]
       end

@@ -47,7 +47,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, 'Common/' + local_name), remote_folder + '/' + remote_name
 
-      request_save_options_data = PdfSaveOptionsData.new({:FileName => remote_test_out + '/TestSaveAs.pdf'})
+      request_save_options_data = SaveOptionsData.new({:SaveFormat => 'pdf', :FileName => remote_test_out + '/TestSaveAs.pdf'})
       request = SaveAsRequest.new(name: remote_name, save_options_data: request_save_options_data, folder: remote_folder)
 
       result = @words_api.save_as(request)
@@ -61,7 +61,7 @@ module AsposeWordsCloud
       local_name = 'test_multi_pages.docx'
 
       request_document = File.open(File.join(local_test_folder, 'Common/' + local_name))
-      request_save_options_data = PdfSaveOptionsData.new({:FileName => remote_test_out + '/TestSaveAs.pdf'})
+      request_save_options_data = SaveOptionsData.new({:SaveFormat => 'pdf', :FileName => remote_test_out + '/TestSaveAs.pdf'})
       request = SaveAsOnlineRequest.new(document: request_document, save_options_data: request_save_options_data)
 
       result = @words_api.save_as_online(request)
@@ -77,7 +77,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_folder + '/' + local_name), remote_folder + '/' + remote_name
 
-      request_save_options_data = DocxSaveOptionsData.new({:FileName => remote_test_out + '/TestSaveAsFromPdfToDoc.docx'})
+      request_save_options_data = SaveOptionsData.new({:SaveFormat => 'docx', :FileName => remote_test_out + '/TestSaveAsFromPdfToDoc.docx'})
       request = SaveAsRequest.new(name: remote_name, save_options_data: request_save_options_data, folder: remote_folder)
 
       result = @words_api.save_as(request)
@@ -93,7 +93,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, 'Common/' + local_name), remote_folder + '/' + remote_name
 
-      request_save_options = TiffSaveOptionsData.new({:FileName => remote_test_out + '/abc.tiff'})
+      request_save_options = TiffSaveOptionsData.new({:SaveFormat => 'tiff', :FileName => remote_test_out + '/abc.tiff'})
       request = SaveAsTiffRequest.new(name: remote_name, save_options: request_save_options, folder: remote_folder)
 
       result = @words_api.save_as_tiff(request)
@@ -107,7 +107,7 @@ module AsposeWordsCloud
       local_name = 'test_multi_pages.docx'
 
       request_document = File.open(File.join(local_test_folder, 'Common/' + local_name))
-      request_save_options = TiffSaveOptionsData.new({:FileName => remote_test_out + '/abc.tiff'})
+      request_save_options = TiffSaveOptionsData.new({:SaveFormat => 'tiff', :FileName => remote_test_out + '/abc.tiff'})
       request = SaveAsTiffOnlineRequest.new(document: request_document, save_options: request_save_options)
 
       result = @words_api.save_as_tiff_online(request)
