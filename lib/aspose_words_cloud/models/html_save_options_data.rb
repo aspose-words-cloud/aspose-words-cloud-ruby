@@ -55,9 +55,6 @@ module AsposeWordsCloud
     # Gets or sets the value determining how ink (InkML) objects are rendered.
     attr_accessor :iml_rendering_mode
 
-    # Gets or sets the format of save.
-    attr_accessor :save_format
-
     # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving.
     # Default value is false.
     attr_accessor :update_created_time_property
@@ -200,6 +197,9 @@ module AsposeWordsCloud
     # Gets or sets the name of the folder used to construct URIs of all resources written into HTML document. The default value is an empty string.
     attr_accessor :resource_folder_alias
 
+    # Gets the format of save.
+    attr_accessor :save_format
+
     # Gets or sets a value indicating whether images are scaled by Aspose.Words to the bounding shape size when exporting.
     attr_accessor :scale_image_to_shape_size
 
@@ -239,7 +239,6 @@ module AsposeWordsCloud
         :'file_name' => :'FileName',
         :'flat_opc_xml_mapping_only' => :'FlatOpcXmlMappingOnly',
         :'iml_rendering_mode' => :'ImlRenderingMode',
-        :'save_format' => :'SaveFormat',
         :'update_created_time_property' => :'UpdateCreatedTimeProperty',
         :'update_fields' => :'UpdateFields',
         :'update_last_printed_property' => :'UpdateLastPrintedProperty',
@@ -283,6 +282,7 @@ module AsposeWordsCloud
         :'resolve_font_names' => :'ResolveFontNames',
         :'resource_folder' => :'ResourceFolder',
         :'resource_folder_alias' => :'ResourceFolderAlias',
+        :'save_format' => :'SaveFormat',
         :'scale_image_to_shape_size' => :'ScaleImageToShapeSize',
         :'table_width_output_mode' => :'TableWidthOutputMode'
       }
@@ -299,7 +299,6 @@ module AsposeWordsCloud
         :'file_name' => :'String',
         :'flat_opc_xml_mapping_only' => :'BOOLEAN',
         :'iml_rendering_mode' => :'String',
-        :'save_format' => :'String',
         :'update_created_time_property' => :'BOOLEAN',
         :'update_fields' => :'BOOLEAN',
         :'update_last_printed_property' => :'BOOLEAN',
@@ -343,6 +342,7 @@ module AsposeWordsCloud
         :'resolve_font_names' => :'BOOLEAN',
         :'resource_folder' => :'String',
         :'resource_folder_alias' => :'String',
+        :'save_format' => :'String',
         :'scale_image_to_shape_size' => :'BOOLEAN',
         :'table_width_output_mode' => :'String'
       }
@@ -355,6 +355,8 @@ module AsposeWordsCloud
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      self.save_format = 'html'
 
       if attributes.key?(:'AllowEmbeddingPostScriptFonts')
         self.allow_embedding_post_script_fonts = attributes[:'AllowEmbeddingPostScriptFonts']
@@ -386,10 +388,6 @@ module AsposeWordsCloud
 
       if attributes.key?(:'ImlRenderingMode')
         self.iml_rendering_mode = attributes[:'ImlRenderingMode']
-      end
-
-      if attributes.key?(:'SaveFormat')
-        self.save_format = attributes[:'SaveFormat']
       end
 
       if attributes.key?(:'UpdateCreatedTimeProperty')
@@ -665,7 +663,6 @@ module AsposeWordsCloud
           file_name == other.file_name &&
           flat_opc_xml_mapping_only == other.flat_opc_xml_mapping_only &&
           iml_rendering_mode == other.iml_rendering_mode &&
-          save_format == other.save_format &&
           update_created_time_property == other.update_created_time_property &&
           update_fields == other.update_fields &&
           update_last_printed_property == other.update_last_printed_property &&
@@ -709,6 +706,7 @@ module AsposeWordsCloud
           resolve_font_names == other.resolve_font_names &&
           resource_folder == other.resource_folder &&
           resource_folder_alias == other.resource_folder_alias &&
+          save_format == other.save_format &&
           scale_image_to_shape_size == other.scale_image_to_shape_size &&
           table_width_output_mode == other.table_width_output_mode
     end
@@ -722,7 +720,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, flat_opc_xml_mapping_only, iml_rendering_mode, save_format, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, allow_negative_indent, css_class_name_prefix, css_style_sheet_file_name, css_style_sheet_type, document_split_criteria, document_split_heading_level, encoding, export_document_properties, export_drop_down_form_field_as_text, export_font_resources, export_fonts_as_base64, export_headers_footers_mode, export_images_as_base64, export_language_information, export_list_labels, export_original_url_for_linked_images, export_page_margins, export_page_setup, export_relative_font_size, export_roundtrip_information, export_text_box_as_svg, export_text_input_form_field_as_text, export_toc_page_numbers, export_xhtml_transitional, font_resources_subsetting_size_threshold, fonts_folder, fonts_folder_alias, html_version, image_resolution, images_folder, images_folder_alias, metafile_format, office_math_output_mode, pretty_format, resolve_font_names, resource_folder, resource_folder_alias, scale_image_to_shape_size, table_width_output_mode].hash
+      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, flat_opc_xml_mapping_only, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, allow_negative_indent, css_class_name_prefix, css_style_sheet_file_name, css_style_sheet_type, document_split_criteria, document_split_heading_level, encoding, export_document_properties, export_drop_down_form_field_as_text, export_font_resources, export_fonts_as_base64, export_headers_footers_mode, export_images_as_base64, export_language_information, export_list_labels, export_original_url_for_linked_images, export_page_margins, export_page_setup, export_relative_font_size, export_roundtrip_information, export_text_box_as_svg, export_text_input_form_field_as_text, export_toc_page_numbers, export_xhtml_transitional, font_resources_subsetting_size_threshold, fonts_folder, fonts_folder_alias, html_version, image_resolution, images_folder, images_folder_alias, metafile_format, office_math_output_mode, pretty_format, resolve_font_names, resource_folder, resource_folder_alias, save_format, scale_image_to_shape_size, table_width_output_mode].hash
     end
 
     # Builds the object from hash

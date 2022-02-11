@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="ooxml_save_options_data.rb">
+# <copyright company="Aspose" file="xaml_flow_pack_save_options_data.rb">
 #   Copyright (c) 2022 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -27,8 +27,8 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Container class for docx/docm/dotx/dotm/flatopc save options.
-  class OoxmlSaveOptionsData
+  # Container class for xamlflow_pack save options.
+  class XamlFlowPackSaveOptionsData
     # Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false..
     attr_accessor :allow_embedding_post_script_fonts
 
@@ -55,9 +55,6 @@ module AsposeWordsCloud
     # Gets or sets the value determining how ink (InkML) objects are rendered.
     attr_accessor :iml_rendering_mode
 
-    # Gets or sets the format of save.
-    attr_accessor :save_format
-
     # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving.
     # Default value is false.
     attr_accessor :update_created_time_property
@@ -78,17 +75,14 @@ module AsposeWordsCloud
     # The default value is false.
     attr_accessor :zip_output
 
-    # Gets or sets the oOXML version for the output document.
-    attr_accessor :compliance
+    # Gets or sets the physical folder where images are saved when exporting.
+    attr_accessor :images_folder
 
-    # Gets or sets the compression level.
-    attr_accessor :compression_level
+    # Gets or sets the name of the folder used to construct image URIs.
+    attr_accessor :images_folder_alias
 
-    # Gets or sets the password to encrypt document using ECMA376 Standard encryption algorithm.
-    attr_accessor :password
-
-    # Gets or sets a value indicating whether to use pretty formats output.
-    attr_accessor :pretty_format
+    # Gets the format of save.
+    attr_accessor :save_format
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -123,17 +117,15 @@ module AsposeWordsCloud
         :'file_name' => :'FileName',
         :'flat_opc_xml_mapping_only' => :'FlatOpcXmlMappingOnly',
         :'iml_rendering_mode' => :'ImlRenderingMode',
-        :'save_format' => :'SaveFormat',
         :'update_created_time_property' => :'UpdateCreatedTimeProperty',
         :'update_fields' => :'UpdateFields',
         :'update_last_printed_property' => :'UpdateLastPrintedProperty',
         :'update_last_saved_time_property' => :'UpdateLastSavedTimeProperty',
         :'update_sdt_content' => :'UpdateSdtContent',
         :'zip_output' => :'ZipOutput',
-        :'compliance' => :'Compliance',
-        :'compression_level' => :'CompressionLevel',
-        :'password' => :'Password',
-        :'pretty_format' => :'PrettyFormat'
+        :'images_folder' => :'ImagesFolder',
+        :'images_folder_alias' => :'ImagesFolderAlias',
+        :'save_format' => :'SaveFormat'
       }
     end
 
@@ -148,17 +140,15 @@ module AsposeWordsCloud
         :'file_name' => :'String',
         :'flat_opc_xml_mapping_only' => :'BOOLEAN',
         :'iml_rendering_mode' => :'String',
-        :'save_format' => :'String',
         :'update_created_time_property' => :'BOOLEAN',
         :'update_fields' => :'BOOLEAN',
         :'update_last_printed_property' => :'BOOLEAN',
         :'update_last_saved_time_property' => :'BOOLEAN',
         :'update_sdt_content' => :'BOOLEAN',
         :'zip_output' => :'BOOLEAN',
-        :'compliance' => :'String',
-        :'compression_level' => :'String',
-        :'password' => :'String',
-        :'pretty_format' => :'BOOLEAN'
+        :'images_folder' => :'String',
+        :'images_folder_alias' => :'String',
+        :'save_format' => :'String'
       }
     end
 
@@ -169,6 +159,8 @@ module AsposeWordsCloud
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      self.save_format = 'xamlflow_pack'
 
       if attributes.key?(:'AllowEmbeddingPostScriptFonts')
         self.allow_embedding_post_script_fonts = attributes[:'AllowEmbeddingPostScriptFonts']
@@ -202,10 +194,6 @@ module AsposeWordsCloud
         self.iml_rendering_mode = attributes[:'ImlRenderingMode']
       end
 
-      if attributes.key?(:'SaveFormat')
-        self.save_format = attributes[:'SaveFormat']
-      end
-
       if attributes.key?(:'UpdateCreatedTimeProperty')
         self.update_created_time_property = attributes[:'UpdateCreatedTimeProperty']
       end
@@ -230,20 +218,12 @@ module AsposeWordsCloud
         self.zip_output = attributes[:'ZipOutput']
       end
 
-      if attributes.key?(:'Compliance')
-        self.compliance = attributes[:'Compliance']
+      if attributes.key?(:'ImagesFolder')
+        self.images_folder = attributes[:'ImagesFolder']
       end
 
-      if attributes.key?(:'CompressionLevel')
-        self.compression_level = attributes[:'CompressionLevel']
-      end
-
-      if attributes.key?(:'Password')
-        self.password = attributes[:'Password']
-      end
-
-      if attributes.key?(:'PrettyFormat')
-        self.pretty_format = attributes[:'PrettyFormat']
+      if attributes.key?(:'ImagesFolderAlias')
+        self.images_folder_alias = attributes[:'ImagesFolderAlias']
       end
     end
 
@@ -259,8 +239,6 @@ module AsposeWordsCloud
     def valid?
       dml3_d_effects_rendering_mode_validator = EnumAttributeValidator.new('String', ["Basic", "Advanced"])
       return false unless dml3_d_effects_rendering_mode_validator.valid?(@dml3_d_effects_rendering_mode)
-      compression_level_validator = EnumAttributeValidator.new('String', ["Normal", "Maximum", "Fast", "SuperFast"])
-      return false unless compression_level_validator.valid?(@compression_level)
 
       return true
     end
@@ -279,20 +257,6 @@ module AsposeWordsCloud
       end
     end
 
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] compression_level Object to be assigned
-    def compression_level=(compression_level)
-      validator = EnumAttributeValidator.new('String', ["Normal", "Maximum", "Fast", "SuperFast"])
-      if compression_level.to_i == 0
-        unless validator.valid?(compression_level)
-          raise ArgumentError, "invalid value for 'compression_level', must be one of #{validator.allowable_values}."
-        end
-        @compression_level = compression_level
-      else
-        @compression_level = validator.allowable_values[compression_level.to_i]
-      end
-    end
-
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
@@ -307,17 +271,15 @@ module AsposeWordsCloud
           file_name == other.file_name &&
           flat_opc_xml_mapping_only == other.flat_opc_xml_mapping_only &&
           iml_rendering_mode == other.iml_rendering_mode &&
-          save_format == other.save_format &&
           update_created_time_property == other.update_created_time_property &&
           update_fields == other.update_fields &&
           update_last_printed_property == other.update_last_printed_property &&
           update_last_saved_time_property == other.update_last_saved_time_property &&
           update_sdt_content == other.update_sdt_content &&
           zip_output == other.zip_output &&
-          compliance == other.compliance &&
-          compression_level == other.compression_level &&
-          password == other.password &&
-          pretty_format == other.pretty_format
+          images_folder == other.images_folder &&
+          images_folder_alias == other.images_folder_alias &&
+          save_format == other.save_format
     end
 
     # @see the `==` method
@@ -329,7 +291,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, flat_opc_xml_mapping_only, iml_rendering_mode, save_format, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, compliance, compression_level, password, pretty_format].hash
+      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, flat_opc_xml_mapping_only, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, images_folder, images_folder_alias, save_format].hash
     end
 
     # Builds the object from hash
