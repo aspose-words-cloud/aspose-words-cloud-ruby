@@ -55,9 +55,6 @@ module AsposeWordsCloud
     # Gets or sets the value determining how ink (InkML) objects are rendered.
     attr_accessor :iml_rendering_mode
 
-    # Gets or sets the format of save.
-    attr_accessor :save_format
-
     # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving.
     # Default value is false.
     attr_accessor :update_created_time_property
@@ -108,6 +105,9 @@ module AsposeWordsCloud
     # Gets or sets a value indicating whether complex transformed elements should be rasterized before saving to PCL document.. The default value is true.
     attr_accessor :rasterize_transformed_elements
 
+    # Gets the format of save.
+    attr_accessor :save_format
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -141,7 +141,6 @@ module AsposeWordsCloud
         :'file_name' => :'FileName',
         :'flat_opc_xml_mapping_only' => :'FlatOpcXmlMappingOnly',
         :'iml_rendering_mode' => :'ImlRenderingMode',
-        :'save_format' => :'SaveFormat',
         :'update_created_time_property' => :'UpdateCreatedTimeProperty',
         :'update_fields' => :'UpdateFields',
         :'update_last_printed_property' => :'UpdateLastPrintedProperty',
@@ -156,7 +155,8 @@ module AsposeWordsCloud
         :'page_count' => :'PageCount',
         :'page_index' => :'PageIndex',
         :'falllback_font_name' => :'FalllbackFontName',
-        :'rasterize_transformed_elements' => :'RasterizeTransformedElements'
+        :'rasterize_transformed_elements' => :'RasterizeTransformedElements',
+        :'save_format' => :'SaveFormat'
       }
     end
 
@@ -171,7 +171,6 @@ module AsposeWordsCloud
         :'file_name' => :'String',
         :'flat_opc_xml_mapping_only' => :'BOOLEAN',
         :'iml_rendering_mode' => :'String',
-        :'save_format' => :'String',
         :'update_created_time_property' => :'BOOLEAN',
         :'update_fields' => :'BOOLEAN',
         :'update_last_printed_property' => :'BOOLEAN',
@@ -186,7 +185,8 @@ module AsposeWordsCloud
         :'page_count' => :'Integer',
         :'page_index' => :'Integer',
         :'falllback_font_name' => :'String',
-        :'rasterize_transformed_elements' => :'BOOLEAN'
+        :'rasterize_transformed_elements' => :'BOOLEAN',
+        :'save_format' => :'String'
       }
     end
 
@@ -197,6 +197,8 @@ module AsposeWordsCloud
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      self.save_format = 'pcl'
 
       if attributes.key?(:'AllowEmbeddingPostScriptFonts')
         self.allow_embedding_post_script_fonts = attributes[:'AllowEmbeddingPostScriptFonts']
@@ -228,10 +230,6 @@ module AsposeWordsCloud
 
       if attributes.key?(:'ImlRenderingMode')
         self.iml_rendering_mode = attributes[:'ImlRenderingMode']
-      end
-
-      if attributes.key?(:'SaveFormat')
-        self.save_format = attributes[:'SaveFormat']
       end
 
       if attributes.key?(:'UpdateCreatedTimeProperty')
@@ -339,7 +337,6 @@ module AsposeWordsCloud
           file_name == other.file_name &&
           flat_opc_xml_mapping_only == other.flat_opc_xml_mapping_only &&
           iml_rendering_mode == other.iml_rendering_mode &&
-          save_format == other.save_format &&
           update_created_time_property == other.update_created_time_property &&
           update_fields == other.update_fields &&
           update_last_printed_property == other.update_last_printed_property &&
@@ -354,7 +351,8 @@ module AsposeWordsCloud
           page_count == other.page_count &&
           page_index == other.page_index &&
           falllback_font_name == other.falllback_font_name &&
-          rasterize_transformed_elements == other.rasterize_transformed_elements
+          rasterize_transformed_elements == other.rasterize_transformed_elements &&
+          save_format == other.save_format
     end
 
     # @see the `==` method
@@ -366,7 +364,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, flat_opc_xml_mapping_only, iml_rendering_mode, save_format, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, falllback_font_name, rasterize_transformed_elements].hash
+      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, flat_opc_xml_mapping_only, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, falllback_font_name, rasterize_transformed_elements, save_format].hash
     end
 
     # Builds the object from hash

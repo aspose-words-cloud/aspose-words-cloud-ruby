@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="html_fixed_save_options_data.rb">
+# <copyright company="Aspose" file="dot_save_options_data.rb">
 #   Copyright (c) 2022 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -27,8 +27,8 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Container class for fixed html save options.
-  class HtmlFixedSaveOptionsData
+  # Container class for dot save options.
+  class DotSaveOptionsData
     # Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false..
     attr_accessor :allow_embedding_post_script_fonts
 
@@ -75,78 +75,22 @@ module AsposeWordsCloud
     # The default value is false.
     attr_accessor :zip_output
 
-    # Gets or sets the value determining how colors are rendered.
-    # { Normal | Grayscale}.
-    attr_accessor :color_mode
+    # Gets or sets a value indicating when False, that small metafiles are not compressed for performance reason.
+    # The default value is true, all metafiles are compressed regardless of its size.
+    attr_accessor :always_compress_metafiles
 
-    # Gets or sets the quality of the JPEG images inside PDF document.
-    attr_accessor :jpeg_quality
+    # Gets or sets the password.
+    attr_accessor :password
 
-    # Gets or sets the metafile rendering options.
-    attr_accessor :metafile_rendering_options
+    # Gets or sets a value indicating when False, that PictureBullet data is not saved to the output document.
+    # The default value is true.
+    attr_accessor :save_picture_bullet
 
-    # Gets or sets the symbol set, that is used to represent numbers while rendering to fixed page formats.
-    attr_accessor :numeral_format
-
-    # Gets or sets a value indicating whether it is required to optimize output of XPS.
-    # If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated.
-    # Note: The accuracy of the content display may be affected if this property is set to true.. The default value is false.
-    attr_accessor :optimize_output
-
-    # Gets or sets the number of pages to render.
-    attr_accessor :page_count
-
-    # Gets or sets the 0-based index of the first page to render.
-    attr_accessor :page_index
-
-    # Gets or sets the prefix which is added to all class names in style.css file.
-    # Default value is "aw".
-    attr_accessor :css_class_names_prefix
-
-    # Gets or sets the character encoding.
-    attr_accessor :encoding
-
-    # Gets or sets a value indicating whether the CSS (Cascading Style Sheet) should be embedded into the Html document.
-    attr_accessor :export_embedded_css
-
-    # Gets or sets a value indicating whether fonts should be embedded into the Html document in Base64 format.
-    attr_accessor :export_embedded_fonts
-
-    # Gets or sets a value indicating whether images should be embedded into the Html document in Base64 format.
-    attr_accessor :export_embedded_images
-
-    # Gets or sets a value indicating whether form fields are exported as interactive items (as 'input' tag) rather than converted to text or graphics.
-    attr_accessor :export_form_fields
-
-    # Gets or sets the export format of fonts.
-    attr_accessor :font_format
-
-    # Gets or sets the horizontal alignment of pages in the HTML document.
-    # The default value is HtmlFixedHorizontalPageAlignment.Center.
-    attr_accessor :page_horizontal_alignment
-
-    # Gets or sets the margin around pages in HTML document.
-    # The margins value is measured in points and should be equal to or greater than 0.
-    # Default value is 10 points.
-    attr_accessor :page_margins
-
-    # Gets or sets the physical folder where resources are saved when exporting the document.
-    attr_accessor :resources_folder
-
-    # Gets or sets the name of the folder used to construct resource URIs.
-    attr_accessor :resources_folder_alias
-
-    # Gets or sets a value indicating whether "@font-face" CSS rules should be placed into a separate file "fontFaces.css" when a document is being saved with external stylesheet (that is, when Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedCss is false). The default value is false, all CSS rules are written into single file "styles.css".
-    attr_accessor :save_font_face_css_separately
+    # Gets or sets a value indicating whether to save RoutingSlip data to output document.
+    attr_accessor :save_routing_slip
 
     # Gets the format of save.
     attr_accessor :save_format
-
-    # Gets or sets a value indicating whether to show border around pages.
-    attr_accessor :show_page_border
-
-    # Gets or sets a value indicating whether fonts from target machine must be used to display the document. If this flag is set to true, Aspose.Words.Saving.HtmlFixedSaveOptions.FontFormat and Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedFonts properties do not have effect, also Aspose.Words.Saving.HtmlFixedSaveOptions.ResourceSavingCallback is not fired for fonts. The default value is false.
-    attr_accessor :use_target_machine_fonts
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -187,28 +131,11 @@ module AsposeWordsCloud
         :'update_last_saved_time_property' => :'UpdateLastSavedTimeProperty',
         :'update_sdt_content' => :'UpdateSdtContent',
         :'zip_output' => :'ZipOutput',
-        :'color_mode' => :'ColorMode',
-        :'jpeg_quality' => :'JpegQuality',
-        :'metafile_rendering_options' => :'MetafileRenderingOptions',
-        :'numeral_format' => :'NumeralFormat',
-        :'optimize_output' => :'OptimizeOutput',
-        :'page_count' => :'PageCount',
-        :'page_index' => :'PageIndex',
-        :'css_class_names_prefix' => :'CssClassNamesPrefix',
-        :'encoding' => :'Encoding',
-        :'export_embedded_css' => :'ExportEmbeddedCss',
-        :'export_embedded_fonts' => :'ExportEmbeddedFonts',
-        :'export_embedded_images' => :'ExportEmbeddedImages',
-        :'export_form_fields' => :'ExportFormFields',
-        :'font_format' => :'FontFormat',
-        :'page_horizontal_alignment' => :'PageHorizontalAlignment',
-        :'page_margins' => :'PageMargins',
-        :'resources_folder' => :'ResourcesFolder',
-        :'resources_folder_alias' => :'ResourcesFolderAlias',
-        :'save_font_face_css_separately' => :'SaveFontFaceCssSeparately',
-        :'save_format' => :'SaveFormat',
-        :'show_page_border' => :'ShowPageBorder',
-        :'use_target_machine_fonts' => :'UseTargetMachineFonts'
+        :'always_compress_metafiles' => :'AlwaysCompressMetafiles',
+        :'password' => :'Password',
+        :'save_picture_bullet' => :'SavePictureBullet',
+        :'save_routing_slip' => :'SaveRoutingSlip',
+        :'save_format' => :'SaveFormat'
       }
     end
 
@@ -229,28 +156,11 @@ module AsposeWordsCloud
         :'update_last_saved_time_property' => :'BOOLEAN',
         :'update_sdt_content' => :'BOOLEAN',
         :'zip_output' => :'BOOLEAN',
-        :'color_mode' => :'String',
-        :'jpeg_quality' => :'Integer',
-        :'metafile_rendering_options' => :'MetafileRenderingOptionsData',
-        :'numeral_format' => :'String',
-        :'optimize_output' => :'BOOLEAN',
-        :'page_count' => :'Integer',
-        :'page_index' => :'Integer',
-        :'css_class_names_prefix' => :'String',
-        :'encoding' => :'String',
-        :'export_embedded_css' => :'BOOLEAN',
-        :'export_embedded_fonts' => :'BOOLEAN',
-        :'export_embedded_images' => :'BOOLEAN',
-        :'export_form_fields' => :'BOOLEAN',
-        :'font_format' => :'String',
-        :'page_horizontal_alignment' => :'String',
-        :'page_margins' => :'Float',
-        :'resources_folder' => :'String',
-        :'resources_folder_alias' => :'String',
-        :'save_font_face_css_separately' => :'BOOLEAN',
-        :'save_format' => :'String',
-        :'show_page_border' => :'BOOLEAN',
-        :'use_target_machine_fonts' => :'BOOLEAN'
+        :'always_compress_metafiles' => :'BOOLEAN',
+        :'password' => :'String',
+        :'save_picture_bullet' => :'BOOLEAN',
+        :'save_routing_slip' => :'BOOLEAN',
+        :'save_format' => :'String'
       }
     end
 
@@ -262,7 +172,7 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      self.save_format = 'htmlfixed'
+      self.save_format = 'dot'
 
       if attributes.key?(:'AllowEmbeddingPostScriptFonts')
         self.allow_embedding_post_script_fonts = attributes[:'AllowEmbeddingPostScriptFonts']
@@ -320,88 +230,20 @@ module AsposeWordsCloud
         self.zip_output = attributes[:'ZipOutput']
       end
 
-      if attributes.key?(:'ColorMode')
-        self.color_mode = attributes[:'ColorMode']
+      if attributes.key?(:'AlwaysCompressMetafiles')
+        self.always_compress_metafiles = attributes[:'AlwaysCompressMetafiles']
       end
 
-      if attributes.key?(:'JpegQuality')
-        self.jpeg_quality = attributes[:'JpegQuality']
+      if attributes.key?(:'Password')
+        self.password = attributes[:'Password']
       end
 
-      if attributes.key?(:'MetafileRenderingOptions')
-        self.metafile_rendering_options = attributes[:'MetafileRenderingOptions']
+      if attributes.key?(:'SavePictureBullet')
+        self.save_picture_bullet = attributes[:'SavePictureBullet']
       end
 
-      if attributes.key?(:'NumeralFormat')
-        self.numeral_format = attributes[:'NumeralFormat']
-      end
-
-      if attributes.key?(:'OptimizeOutput')
-        self.optimize_output = attributes[:'OptimizeOutput']
-      end
-
-      if attributes.key?(:'PageCount')
-        self.page_count = attributes[:'PageCount']
-      end
-
-      if attributes.key?(:'PageIndex')
-        self.page_index = attributes[:'PageIndex']
-      end
-
-      if attributes.key?(:'CssClassNamesPrefix')
-        self.css_class_names_prefix = attributes[:'CssClassNamesPrefix']
-      end
-
-      if attributes.key?(:'Encoding')
-        self.encoding = attributes[:'Encoding']
-      end
-
-      if attributes.key?(:'ExportEmbeddedCss')
-        self.export_embedded_css = attributes[:'ExportEmbeddedCss']
-      end
-
-      if attributes.key?(:'ExportEmbeddedFonts')
-        self.export_embedded_fonts = attributes[:'ExportEmbeddedFonts']
-      end
-
-      if attributes.key?(:'ExportEmbeddedImages')
-        self.export_embedded_images = attributes[:'ExportEmbeddedImages']
-      end
-
-      if attributes.key?(:'ExportFormFields')
-        self.export_form_fields = attributes[:'ExportFormFields']
-      end
-
-      if attributes.key?(:'FontFormat')
-        self.font_format = attributes[:'FontFormat']
-      end
-
-      if attributes.key?(:'PageHorizontalAlignment')
-        self.page_horizontal_alignment = attributes[:'PageHorizontalAlignment']
-      end
-
-      if attributes.key?(:'PageMargins')
-        self.page_margins = attributes[:'PageMargins']
-      end
-
-      if attributes.key?(:'ResourcesFolder')
-        self.resources_folder = attributes[:'ResourcesFolder']
-      end
-
-      if attributes.key?(:'ResourcesFolderAlias')
-        self.resources_folder_alias = attributes[:'ResourcesFolderAlias']
-      end
-
-      if attributes.key?(:'SaveFontFaceCssSeparately')
-        self.save_font_face_css_separately = attributes[:'SaveFontFaceCssSeparately']
-      end
-
-      if attributes.key?(:'ShowPageBorder')
-        self.show_page_border = attributes[:'ShowPageBorder']
-      end
-
-      if attributes.key?(:'UseTargetMachineFonts')
-        self.use_target_machine_fonts = attributes[:'UseTargetMachineFonts']
+      if attributes.key?(:'SaveRoutingSlip')
+        self.save_routing_slip = attributes[:'SaveRoutingSlip']
       end
     end
 
@@ -455,28 +297,11 @@ module AsposeWordsCloud
           update_last_saved_time_property == other.update_last_saved_time_property &&
           update_sdt_content == other.update_sdt_content &&
           zip_output == other.zip_output &&
-          color_mode == other.color_mode &&
-          jpeg_quality == other.jpeg_quality &&
-          metafile_rendering_options == other.metafile_rendering_options &&
-          numeral_format == other.numeral_format &&
-          optimize_output == other.optimize_output &&
-          page_count == other.page_count &&
-          page_index == other.page_index &&
-          css_class_names_prefix == other.css_class_names_prefix &&
-          encoding == other.encoding &&
-          export_embedded_css == other.export_embedded_css &&
-          export_embedded_fonts == other.export_embedded_fonts &&
-          export_embedded_images == other.export_embedded_images &&
-          export_form_fields == other.export_form_fields &&
-          font_format == other.font_format &&
-          page_horizontal_alignment == other.page_horizontal_alignment &&
-          page_margins == other.page_margins &&
-          resources_folder == other.resources_folder &&
-          resources_folder_alias == other.resources_folder_alias &&
-          save_font_face_css_separately == other.save_font_face_css_separately &&
-          save_format == other.save_format &&
-          show_page_border == other.show_page_border &&
-          use_target_machine_fonts == other.use_target_machine_fonts
+          always_compress_metafiles == other.always_compress_metafiles &&
+          password == other.password &&
+          save_picture_bullet == other.save_picture_bullet &&
+          save_routing_slip == other.save_routing_slip &&
+          save_format == other.save_format
     end
 
     # @see the `==` method
@@ -488,7 +313,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, flat_opc_xml_mapping_only, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, css_class_names_prefix, encoding, export_embedded_css, export_embedded_fonts, export_embedded_images, export_form_fields, font_format, page_horizontal_alignment, page_margins, resources_folder, resources_folder_alias, save_font_face_css_separately, save_format, show_page_border, use_target_machine_fonts].hash
+      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, flat_opc_xml_mapping_only, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, always_compress_metafiles, password, save_picture_bullet, save_routing_slip, save_format].hash
     end
 
     # Builds the object from hash

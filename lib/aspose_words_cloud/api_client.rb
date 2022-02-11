@@ -340,6 +340,7 @@ module AsposeWordsCloud
       @tempfile = tempfile
       tempfile.write(response.body)
       response.on_complete do |resp|
+        tempfile.rewind
         tempfile.close
         @config.logger.info "Temp file written to #{tempfile.path}, please copy the file to a proper folder "\
                             "with e.g. `FileUtils.cp(tempfile.path, '/new/file/path')` otherwise the temp file "\
