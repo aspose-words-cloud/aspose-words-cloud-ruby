@@ -329,6 +329,7 @@ module AsposeWordsCloud
         if data_index != nil
           header_data = part_body[0..data_index]
           body_data = part_body[data_index+separator.length, part_body.length]
+          part[:headers] = header_data
           part[:body] = body_data
         end
       end

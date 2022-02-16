@@ -64,6 +64,7 @@ module AsposeWordsCloud
                                                         batch: true,
                                                         auth_names: ['JWT'],
                                                         request_map: id_request_to_map)
+      [data, status_code, headers]
     end
 
     # Accepts all revisions in the document.
