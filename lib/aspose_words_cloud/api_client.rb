@@ -232,7 +232,7 @@ module AsposeWordsCloud
           end
         end
 
-        reader.write body
+        reader.write data
         reader.ended? or raise Exception, 'Truncated multipart message'
       else
         result[extract_filename_from_headers(headers)] = data
