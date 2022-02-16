@@ -204,10 +204,13 @@ gem install aspose_words_cloud
     # End README example
 ```
 
+### File handling
+In case when method's result is file then Tempfile class is used to store data. It is returned in close state and rewound to the file beginning.
+
 [Tests](tests/) contain various examples of using the SDK.
 
 ## Dependencies
-- Ruby 2.3 or later
+- Ruby 2.6 or later
 - referenced packages (see [here](Gemfile) for more details)
 
 ## Licensing
