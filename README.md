@@ -15,9 +15,11 @@ This repository contains Aspose.Words Cloud SDK for Ruby source code. This SDK a
 
 ## Enhancements in Version 22.2
 
-- Made 'SaveOprionsData.SaveFormat' property readonly with default value.
+- Made 'SaveOptionsData.SaveFormat' property readonly with default value.
 - Added subclasses for all formats of SaveOprionsData with specified SaveFormat.
 - 'SaveOptionsData', 'FixedPageSaveOptionsData', 'ImageSaveOptionsData', 'OoxmlSaveOptionsData', 'TxtSaveOptionsBaseData' classes now is abstract.
+- Online methods returns the dictionary of files with included original filename as key instead of single file content in 'Document' property.
+- Changed 'CssStyleSheetType' property type to enum instead of string in 'HtmlSaveOptionsData'.
 
 
 ## Enhancements in Version 22.1
@@ -185,7 +187,7 @@ To use Aspose Words for Cloud Ruby SDK you need to register an account with [Asp
 To install this package do the following:
 update your Gemfile
 ```ruby
-gem 'aspose_words_cloud', '~> 22.2'
+gem 'aspose_words_cloud', '~> 22.1'
 ```
 or install directly
 ```bash
@@ -204,13 +206,10 @@ gem install aspose_words_cloud
     # End README example
 ```
 
-### File handling
-In case when method's result is file then Tempfile class is used to store data. It is returned in close state and rewound to the file beginning.
-
 [Tests](tests/) contain various examples of using the SDK.
 
 ## Dependencies
-- Ruby 2.6 or later
+- Ruby 2.3 or later
 - referenced packages (see [here](Gemfile) for more details)
 
 ## Licensing

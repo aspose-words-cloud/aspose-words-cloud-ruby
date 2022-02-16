@@ -173,7 +173,7 @@ module AsposeWordsCloud
 
     # Get response type
     def get_response_type
-      'File'
+      'FILES_COLLECTION'
     end
   end
 end

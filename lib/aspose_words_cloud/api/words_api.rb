@@ -205,8 +205,8 @@ module AsposeWordsCloud
         end
 
         mp_data = AcceptAllRevisionsOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'RevisionsModificationResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'RevisionsModificationResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -358,8 +358,8 @@ module AsposeWordsCloud
         end
 
         mp_data = AppendDocumentOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'DocumentResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'DocumentResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -517,8 +517,8 @@ module AsposeWordsCloud
         end
 
         mp_data = ApplyStyleToDocumentElementOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'WordsResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'WordsResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -1025,8 +1025,8 @@ module AsposeWordsCloud
         end
 
         mp_data = CompareDocumentOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'DocumentResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'DocumentResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -1389,8 +1389,8 @@ module AsposeWordsCloud
         end
 
         mp_data = CopyStyleOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'StyleResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'StyleResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -1677,8 +1677,8 @@ module AsposeWordsCloud
         end
 
         mp_data = CreateOrUpdateDocumentPropertyOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'DocumentPropertyResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'DocumentPropertyResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -1829,8 +1829,8 @@ module AsposeWordsCloud
         end
 
         mp_data = DeleteAllParagraphTabStopsOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'TabStopsResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'TabStopsResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -1985,8 +1985,8 @@ module AsposeWordsCloud
         end
 
         mp_data = DeleteBorderOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'BorderResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'BorderResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -2135,8 +2135,8 @@ module AsposeWordsCloud
         end
 
         mp_data = DeleteBordersOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'BordersResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'BordersResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -2217,7 +2217,7 @@ module AsposeWordsCloud
 
     # Removes a comment from the document.
     # @param request DeleteCommentOnlineRequest
-    # @return [File]
+    # @return [FILES_COLLECTION]
     def delete_comment_online(request)
         begin
         data, _status_code, _headers = delete_comment_online_with_http_info(request)
@@ -2234,8 +2234,8 @@ module AsposeWordsCloud
 
     # Removes a comment from the document.
     # @param request DeleteCommentOnlineRequest
-    # @return [Array<(File, Fixnum, Hash)>]
-    # File, response status code and response headers
+    # @return [Array<(FILES_COLLECTION, Fixnum, Hash)>]
+    # FILES_COLLECTION, response status code and response headers
     private def delete_comment_online_with_http_info(request)
         raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteCommentOnlineRequest
 
@@ -2280,12 +2280,13 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'File')
+                                                        return_type: 'FILES_COLLECTION')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_comment_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
 
+        # FILES_COLLECTION #
         [data, status_code, headers]
     end
 
@@ -2363,7 +2364,7 @@ module AsposeWordsCloud
 
     # Removes all comments from the document.
     # @param request DeleteCommentsOnlineRequest
-    # @return [File]
+    # @return [FILES_COLLECTION]
     def delete_comments_online(request)
         begin
         data, _status_code, _headers = delete_comments_online_with_http_info(request)
@@ -2380,8 +2381,8 @@ module AsposeWordsCloud
 
     # Removes all comments from the document.
     # @param request DeleteCommentsOnlineRequest
-    # @return [Array<(File, Fixnum, Hash)>]
-    # File, response status code and response headers
+    # @return [Array<(FILES_COLLECTION, Fixnum, Hash)>]
+    # FILES_COLLECTION, response status code and response headers
     private def delete_comments_online_with_http_info(request)
         raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteCommentsOnlineRequest
 
@@ -2423,12 +2424,13 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'File')
+                                                        return_type: 'FILES_COLLECTION')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_comments_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
 
+        # FILES_COLLECTION #
         [data, status_code, headers]
     end
 
@@ -2509,7 +2511,7 @@ module AsposeWordsCloud
 
     # Removes the custom xml part from the document.
     # @param request DeleteCustomXmlPartOnlineRequest
-    # @return [File]
+    # @return [FILES_COLLECTION]
     def delete_custom_xml_part_online(request)
         begin
         data, _status_code, _headers = delete_custom_xml_part_online_with_http_info(request)
@@ -2526,8 +2528,8 @@ module AsposeWordsCloud
 
     # Removes the custom xml part from the document.
     # @param request DeleteCustomXmlPartOnlineRequest
-    # @return [Array<(File, Fixnum, Hash)>]
-    # File, response status code and response headers
+    # @return [Array<(FILES_COLLECTION, Fixnum, Hash)>]
+    # FILES_COLLECTION, response status code and response headers
     private def delete_custom_xml_part_online_with_http_info(request)
         raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteCustomXmlPartOnlineRequest
 
@@ -2572,12 +2574,13 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'File')
+                                                        return_type: 'FILES_COLLECTION')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_custom_xml_part_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
 
+        # FILES_COLLECTION #
         [data, status_code, headers]
     end
 
@@ -2655,7 +2658,7 @@ module AsposeWordsCloud
 
     # Removes all custom xml parts from the document.
     # @param request DeleteCustomXmlPartsOnlineRequest
-    # @return [File]
+    # @return [FILES_COLLECTION]
     def delete_custom_xml_parts_online(request)
         begin
         data, _status_code, _headers = delete_custom_xml_parts_online_with_http_info(request)
@@ -2672,8 +2675,8 @@ module AsposeWordsCloud
 
     # Removes all custom xml parts from the document.
     # @param request DeleteCustomXmlPartsOnlineRequest
-    # @return [Array<(File, Fixnum, Hash)>]
-    # File, response status code and response headers
+    # @return [Array<(FILES_COLLECTION, Fixnum, Hash)>]
+    # FILES_COLLECTION, response status code and response headers
     private def delete_custom_xml_parts_online_with_http_info(request)
         raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteCustomXmlPartsOnlineRequest
 
@@ -2715,12 +2718,13 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'File')
+                                                        return_type: 'FILES_COLLECTION')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_custom_xml_parts_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
 
+        # FILES_COLLECTION #
         [data, status_code, headers]
     end
 
@@ -2801,7 +2805,7 @@ module AsposeWordsCloud
 
     # Removes a document property.
     # @param request DeleteDocumentPropertyOnlineRequest
-    # @return [File]
+    # @return [FILES_COLLECTION]
     def delete_document_property_online(request)
         begin
         data, _status_code, _headers = delete_document_property_online_with_http_info(request)
@@ -2818,8 +2822,8 @@ module AsposeWordsCloud
 
     # Removes a document property.
     # @param request DeleteDocumentPropertyOnlineRequest
-    # @return [Array<(File, Fixnum, Hash)>]
-    # File, response status code and response headers
+    # @return [Array<(FILES_COLLECTION, Fixnum, Hash)>]
+    # FILES_COLLECTION, response status code and response headers
     private def delete_document_property_online_with_http_info(request)
         raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteDocumentPropertyOnlineRequest
 
@@ -2864,12 +2868,13 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'File')
+                                                        return_type: 'FILES_COLLECTION')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_document_property_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
 
+        # FILES_COLLECTION #
         [data, status_code, headers]
     end
 
@@ -2951,7 +2956,7 @@ module AsposeWordsCloud
 
     # Removes a DrawingObject from the document node.
     # @param request DeleteDrawingObjectOnlineRequest
-    # @return [File]
+    # @return [FILES_COLLECTION]
     def delete_drawing_object_online(request)
         begin
         data, _status_code, _headers = delete_drawing_object_online_with_http_info(request)
@@ -2968,8 +2973,8 @@ module AsposeWordsCloud
 
     # Removes a DrawingObject from the document node.
     # @param request DeleteDrawingObjectOnlineRequest
-    # @return [Array<(File, Fixnum, Hash)>]
-    # File, response status code and response headers
+    # @return [Array<(FILES_COLLECTION, Fixnum, Hash)>]
+    # FILES_COLLECTION, response status code and response headers
     private def delete_drawing_object_online_with_http_info(request)
         raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteDrawingObjectOnlineRequest
 
@@ -3015,12 +3020,13 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'File')
+                                                        return_type: 'FILES_COLLECTION')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_drawing_object_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
 
+        # FILES_COLLECTION #
         [data, status_code, headers]
     end
 
@@ -3102,7 +3108,7 @@ module AsposeWordsCloud
 
     # Removes a field from the document node.
     # @param request DeleteFieldOnlineRequest
-    # @return [File]
+    # @return [FILES_COLLECTION]
     def delete_field_online(request)
         begin
         data, _status_code, _headers = delete_field_online_with_http_info(request)
@@ -3119,8 +3125,8 @@ module AsposeWordsCloud
 
     # Removes a field from the document node.
     # @param request DeleteFieldOnlineRequest
-    # @return [Array<(File, Fixnum, Hash)>]
-    # File, response status code and response headers
+    # @return [Array<(FILES_COLLECTION, Fixnum, Hash)>]
+    # FILES_COLLECTION, response status code and response headers
     private def delete_field_online_with_http_info(request)
         raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteFieldOnlineRequest
 
@@ -3166,12 +3172,13 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'File')
+                                                        return_type: 'FILES_COLLECTION')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_field_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
 
+        # FILES_COLLECTION #
         [data, status_code, headers]
     end
 
@@ -3250,7 +3257,7 @@ module AsposeWordsCloud
 
     # Removes fields from the document node.
     # @param request DeleteFieldsOnlineRequest
-    # @return [File]
+    # @return [FILES_COLLECTION]
     def delete_fields_online(request)
         begin
         data, _status_code, _headers = delete_fields_online_with_http_info(request)
@@ -3267,8 +3274,8 @@ module AsposeWordsCloud
 
     # Removes fields from the document node.
     # @param request DeleteFieldsOnlineRequest
-    # @return [Array<(File, Fixnum, Hash)>]
-    # File, response status code and response headers
+    # @return [Array<(FILES_COLLECTION, Fixnum, Hash)>]
+    # FILES_COLLECTION, response status code and response headers
     private def delete_fields_online_with_http_info(request)
         raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteFieldsOnlineRequest
 
@@ -3311,12 +3318,13 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'File')
+                                                        return_type: 'FILES_COLLECTION')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_fields_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
 
+        # FILES_COLLECTION #
         [data, status_code, headers]
     end
 
@@ -3530,7 +3538,7 @@ module AsposeWordsCloud
 
     # Removes a footnote from the document node.
     # @param request DeleteFootnoteOnlineRequest
-    # @return [File]
+    # @return [FILES_COLLECTION]
     def delete_footnote_online(request)
         begin
         data, _status_code, _headers = delete_footnote_online_with_http_info(request)
@@ -3547,8 +3555,8 @@ module AsposeWordsCloud
 
     # Removes a footnote from the document node.
     # @param request DeleteFootnoteOnlineRequest
-    # @return [Array<(File, Fixnum, Hash)>]
-    # File, response status code and response headers
+    # @return [Array<(FILES_COLLECTION, Fixnum, Hash)>]
+    # FILES_COLLECTION, response status code and response headers
     private def delete_footnote_online_with_http_info(request)
         raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteFootnoteOnlineRequest
 
@@ -3594,12 +3602,13 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'File')
+                                                        return_type: 'FILES_COLLECTION')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_footnote_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
 
+        # FILES_COLLECTION #
         [data, status_code, headers]
     end
 
@@ -3681,7 +3690,7 @@ module AsposeWordsCloud
 
     # Removes a form field from the document node.
     # @param request DeleteFormFieldOnlineRequest
-    # @return [File]
+    # @return [FILES_COLLECTION]
     def delete_form_field_online(request)
         begin
         data, _status_code, _headers = delete_form_field_online_with_http_info(request)
@@ -3698,8 +3707,8 @@ module AsposeWordsCloud
 
     # Removes a form field from the document node.
     # @param request DeleteFormFieldOnlineRequest
-    # @return [Array<(File, Fixnum, Hash)>]
-    # File, response status code and response headers
+    # @return [Array<(FILES_COLLECTION, Fixnum, Hash)>]
+    # FILES_COLLECTION, response status code and response headers
     private def delete_form_field_online_with_http_info(request)
         raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteFormFieldOnlineRequest
 
@@ -3745,12 +3754,13 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'File')
+                                                        return_type: 'FILES_COLLECTION')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_form_field_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
 
+        # FILES_COLLECTION #
         [data, status_code, headers]
     end
 
@@ -3834,7 +3844,7 @@ module AsposeWordsCloud
 
     # Removes a HeaderFooter object from the document section.
     # @param request DeleteHeaderFooterOnlineRequest
-    # @return [File]
+    # @return [FILES_COLLECTION]
     def delete_header_footer_online(request)
         begin
         data, _status_code, _headers = delete_header_footer_online_with_http_info(request)
@@ -3851,8 +3861,8 @@ module AsposeWordsCloud
 
     # Removes a HeaderFooter object from the document section.
     # @param request DeleteHeaderFooterOnlineRequest
-    # @return [Array<(File, Fixnum, Hash)>]
-    # File, response status code and response headers
+    # @return [Array<(FILES_COLLECTION, Fixnum, Hash)>]
+    # FILES_COLLECTION, response status code and response headers
     private def delete_header_footer_online_with_http_info(request)
         raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteHeaderFooterOnlineRequest
 
@@ -3900,12 +3910,13 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'File')
+                                                        return_type: 'FILES_COLLECTION')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_header_footer_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
 
+        # FILES_COLLECTION #
         [data, status_code, headers]
     end
 
@@ -3987,7 +3998,7 @@ module AsposeWordsCloud
 
     # Removes HeaderFooter objects from the document section.
     # @param request DeleteHeadersFootersOnlineRequest
-    # @return [File]
+    # @return [FILES_COLLECTION]
     def delete_headers_footers_online(request)
         begin
         data, _status_code, _headers = delete_headers_footers_online_with_http_info(request)
@@ -4004,8 +4015,8 @@ module AsposeWordsCloud
 
     # Removes HeaderFooter objects from the document section.
     # @param request DeleteHeadersFootersOnlineRequest
-    # @return [Array<(File, Fixnum, Hash)>]
-    # File, response status code and response headers
+    # @return [Array<(FILES_COLLECTION, Fixnum, Hash)>]
+    # FILES_COLLECTION, response status code and response headers
     private def delete_headers_footers_online_with_http_info(request)
         raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteHeadersFootersOnlineRequest
 
@@ -4051,12 +4062,13 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'File')
+                                                        return_type: 'FILES_COLLECTION')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_headers_footers_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
 
+        # FILES_COLLECTION #
         [data, status_code, headers]
     end
 
@@ -4134,7 +4146,7 @@ module AsposeWordsCloud
 
     # Removes macros from the document.
     # @param request DeleteMacrosOnlineRequest
-    # @return [File]
+    # @return [FILES_COLLECTION]
     def delete_macros_online(request)
         begin
         data, _status_code, _headers = delete_macros_online_with_http_info(request)
@@ -4151,8 +4163,8 @@ module AsposeWordsCloud
 
     # Removes macros from the document.
     # @param request DeleteMacrosOnlineRequest
-    # @return [Array<(File, Fixnum, Hash)>]
-    # File, response status code and response headers
+    # @return [Array<(FILES_COLLECTION, Fixnum, Hash)>]
+    # FILES_COLLECTION, response status code and response headers
     private def delete_macros_online_with_http_info(request)
         raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteMacrosOnlineRequest
 
@@ -4194,12 +4206,13 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'File')
+                                                        return_type: 'FILES_COLLECTION')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_macros_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
 
+        # FILES_COLLECTION #
         [data, status_code, headers]
     end
 
@@ -4281,7 +4294,7 @@ module AsposeWordsCloud
 
     # Removes an OfficeMath object from the document node.
     # @param request DeleteOfficeMathObjectOnlineRequest
-    # @return [File]
+    # @return [FILES_COLLECTION]
     def delete_office_math_object_online(request)
         begin
         data, _status_code, _headers = delete_office_math_object_online_with_http_info(request)
@@ -4298,8 +4311,8 @@ module AsposeWordsCloud
 
     # Removes an OfficeMath object from the document node.
     # @param request DeleteOfficeMathObjectOnlineRequest
-    # @return [Array<(File, Fixnum, Hash)>]
-    # File, response status code and response headers
+    # @return [Array<(FILES_COLLECTION, Fixnum, Hash)>]
+    # FILES_COLLECTION, response status code and response headers
     private def delete_office_math_object_online_with_http_info(request)
         raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteOfficeMathObjectOnlineRequest
 
@@ -4345,12 +4358,13 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'File')
+                                                        return_type: 'FILES_COLLECTION')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_office_math_object_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
 
+        # FILES_COLLECTION #
         [data, status_code, headers]
     end
 
@@ -4581,14 +4595,14 @@ module AsposeWordsCloud
         end
 
         mp_data = DeleteParagraphListFormatOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'ParagraphListFormatResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'ParagraphListFormatResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
     # Removes a paragraph from the document node.
     # @param request DeleteParagraphOnlineRequest
-    # @return [File]
+    # @return [FILES_COLLECTION]
     def delete_paragraph_online(request)
         begin
         data, _status_code, _headers = delete_paragraph_online_with_http_info(request)
@@ -4605,8 +4619,8 @@ module AsposeWordsCloud
 
     # Removes a paragraph from the document node.
     # @param request DeleteParagraphOnlineRequest
-    # @return [Array<(File, Fixnum, Hash)>]
-    # File, response status code and response headers
+    # @return [Array<(FILES_COLLECTION, Fixnum, Hash)>]
+    # FILES_COLLECTION, response status code and response headers
     private def delete_paragraph_online_with_http_info(request)
         raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteParagraphOnlineRequest
 
@@ -4652,12 +4666,13 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'File')
+                                                        return_type: 'FILES_COLLECTION')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_paragraph_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
 
+        # FILES_COLLECTION #
         [data, status_code, headers]
     end
 
@@ -4814,8 +4829,8 @@ module AsposeWordsCloud
         end
 
         mp_data = DeleteParagraphTabStopOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'TabStopsResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'TabStopsResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -4899,7 +4914,7 @@ module AsposeWordsCloud
 
     # Removes a Run object from the paragraph.
     # @param request DeleteRunOnlineRequest
-    # @return [File]
+    # @return [FILES_COLLECTION]
     def delete_run_online(request)
         begin
         data, _status_code, _headers = delete_run_online_with_http_info(request)
@@ -4916,8 +4931,8 @@ module AsposeWordsCloud
 
     # Removes a Run object from the paragraph.
     # @param request DeleteRunOnlineRequest
-    # @return [Array<(File, Fixnum, Hash)>]
-    # File, response status code and response headers
+    # @return [Array<(FILES_COLLECTION, Fixnum, Hash)>]
+    # FILES_COLLECTION, response status code and response headers
     private def delete_run_online_with_http_info(request)
         raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteRunOnlineRequest
 
@@ -4965,12 +4980,13 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'File')
+                                                        return_type: 'FILES_COLLECTION')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_run_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
 
+        # FILES_COLLECTION #
         [data, status_code, headers]
     end
 
@@ -5051,7 +5067,7 @@ module AsposeWordsCloud
 
     # Removes a section from the document.
     # @param request DeleteSectionOnlineRequest
-    # @return [File]
+    # @return [FILES_COLLECTION]
     def delete_section_online(request)
         begin
         data, _status_code, _headers = delete_section_online_with_http_info(request)
@@ -5068,8 +5084,8 @@ module AsposeWordsCloud
 
     # Removes a section from the document.
     # @param request DeleteSectionOnlineRequest
-    # @return [Array<(File, Fixnum, Hash)>]
-    # File, response status code and response headers
+    # @return [Array<(FILES_COLLECTION, Fixnum, Hash)>]
+    # FILES_COLLECTION, response status code and response headers
     private def delete_section_online_with_http_info(request)
         raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteSectionOnlineRequest
 
@@ -5114,12 +5130,13 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'File')
+                                                        return_type: 'FILES_COLLECTION')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_section_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
 
+        # FILES_COLLECTION #
         [data, status_code, headers]
     end
 
@@ -5279,7 +5296,7 @@ module AsposeWordsCloud
 
     # Removes a cell from the table row.
     # @param request DeleteTableCellOnlineRequest
-    # @return [File]
+    # @return [FILES_COLLECTION]
     def delete_table_cell_online(request)
         begin
         data, _status_code, _headers = delete_table_cell_online_with_http_info(request)
@@ -5296,8 +5313,8 @@ module AsposeWordsCloud
 
     # Removes a cell from the table row.
     # @param request DeleteTableCellOnlineRequest
-    # @return [Array<(File, Fixnum, Hash)>]
-    # File, response status code and response headers
+    # @return [Array<(FILES_COLLECTION, Fixnum, Hash)>]
+    # FILES_COLLECTION, response status code and response headers
     private def delete_table_cell_online_with_http_info(request)
         raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteTableCellOnlineRequest
 
@@ -5345,18 +5362,19 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'File')
+                                                        return_type: 'FILES_COLLECTION')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_table_cell_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
 
+        # FILES_COLLECTION #
         [data, status_code, headers]
     end
 
     # Removes a table from the document node.
     # @param request DeleteTableOnlineRequest
-    # @return [File]
+    # @return [FILES_COLLECTION]
     def delete_table_online(request)
         begin
         data, _status_code, _headers = delete_table_online_with_http_info(request)
@@ -5373,8 +5391,8 @@ module AsposeWordsCloud
 
     # Removes a table from the document node.
     # @param request DeleteTableOnlineRequest
-    # @return [Array<(File, Fixnum, Hash)>]
-    # File, response status code and response headers
+    # @return [Array<(FILES_COLLECTION, Fixnum, Hash)>]
+    # FILES_COLLECTION, response status code and response headers
     private def delete_table_online_with_http_info(request)
         raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteTableOnlineRequest
 
@@ -5420,12 +5438,13 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'File')
+                                                        return_type: 'FILES_COLLECTION')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_table_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
 
+        # FILES_COLLECTION #
         [data, status_code, headers]
     end
 
@@ -5509,7 +5528,7 @@ module AsposeWordsCloud
 
     # Removes a row from the table.
     # @param request DeleteTableRowOnlineRequest
-    # @return [File]
+    # @return [FILES_COLLECTION]
     def delete_table_row_online(request)
         begin
         data, _status_code, _headers = delete_table_row_online_with_http_info(request)
@@ -5526,8 +5545,8 @@ module AsposeWordsCloud
 
     # Removes a row from the table.
     # @param request DeleteTableRowOnlineRequest
-    # @return [Array<(File, Fixnum, Hash)>]
-    # File, response status code and response headers
+    # @return [Array<(FILES_COLLECTION, Fixnum, Hash)>]
+    # FILES_COLLECTION, response status code and response headers
     private def delete_table_row_online_with_http_info(request)
         raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteTableRowOnlineRequest
 
@@ -5575,12 +5594,13 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'File')
+                                                        return_type: 'FILES_COLLECTION')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#delete_table_row_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
 
+        # FILES_COLLECTION #
         [data, status_code, headers]
     end
 
@@ -5727,8 +5747,8 @@ module AsposeWordsCloud
         end
 
         mp_data = DeleteWatermarkOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'DocumentResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'DocumentResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -14255,8 +14275,8 @@ module AsposeWordsCloud
         end
 
         mp_data = InsertCommentOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'CommentResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'CommentResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -14408,8 +14428,8 @@ module AsposeWordsCloud
         end
 
         mp_data = InsertCustomXmlPartOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'CustomXmlPartResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'CustomXmlPartResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -14570,8 +14590,8 @@ module AsposeWordsCloud
         end
 
         mp_data = InsertDrawingObjectOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'DrawingObjectResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'DrawingObjectResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -14727,8 +14747,8 @@ module AsposeWordsCloud
         end
 
         mp_data = InsertFieldOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'FieldResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'FieldResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -14882,8 +14902,8 @@ module AsposeWordsCloud
         end
 
         mp_data = InsertFootnoteOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'FootnoteResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'FootnoteResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -15039,8 +15059,8 @@ module AsposeWordsCloud
         end
 
         mp_data = InsertFormFieldOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'FormFieldResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'FormFieldResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -15198,8 +15218,8 @@ module AsposeWordsCloud
         end
 
         mp_data = InsertHeaderFooterOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'HeaderFooterResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'HeaderFooterResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -15351,8 +15371,8 @@ module AsposeWordsCloud
         end
 
         mp_data = InsertListOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'ListResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'ListResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -15508,8 +15528,8 @@ module AsposeWordsCloud
         end
 
         mp_data = InsertOrUpdateParagraphTabStopOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'TabStopsResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'TabStopsResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -15661,8 +15681,8 @@ module AsposeWordsCloud
         end
 
         mp_data = InsertPageNumbersOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'DocumentResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'DocumentResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -15818,8 +15838,8 @@ module AsposeWordsCloud
         end
 
         mp_data = InsertParagraphOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'ParagraphResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'ParagraphResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -15979,8 +15999,8 @@ module AsposeWordsCloud
         end
 
         mp_data = InsertRunOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'RunResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'RunResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -16132,8 +16152,8 @@ module AsposeWordsCloud
         end
 
         mp_data = InsertStyleOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'StyleResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'StyleResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -16367,8 +16387,8 @@ module AsposeWordsCloud
         end
 
         mp_data = InsertTableCellOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'TableCellResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'TableCellResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -16446,8 +16466,8 @@ module AsposeWordsCloud
         end
 
         mp_data = InsertTableOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'TableResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'TableResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -16605,8 +16625,8 @@ module AsposeWordsCloud
         end
 
         mp_data = InsertTableRowOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'TableRowResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'TableRowResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -16761,8 +16781,8 @@ module AsposeWordsCloud
         end
 
         mp_data = InsertWatermarkImageOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'DocumentResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'DocumentResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -16914,8 +16934,8 @@ module AsposeWordsCloud
         end
 
         mp_data = InsertWatermarkTextOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'DocumentResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'DocumentResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -17199,7 +17219,7 @@ module AsposeWordsCloud
 
     # Applies document content optimization options, specific to a particular versions of Microsoft Word.
     # @param request OptimizeDocumentOnlineRequest
-    # @return [File]
+    # @return [FILES_COLLECTION]
     def optimize_document_online(request)
         begin
         data, _status_code, _headers = optimize_document_online_with_http_info(request)
@@ -17216,8 +17236,8 @@ module AsposeWordsCloud
 
     # Applies document content optimization options, specific to a particular versions of Microsoft Word.
     # @param request OptimizeDocumentOnlineRequest
-    # @return [Array<(File, Fixnum, Hash)>]
-    # File, response status code and response headers
+    # @return [Array<(FILES_COLLECTION, Fixnum, Hash)>]
+    # FILES_COLLECTION, response status code and response headers
     private def optimize_document_online_with_http_info(request)
         raise ArgumentError, 'Incorrect request type' unless request.is_a? OptimizeDocumentOnlineRequest
 
@@ -17262,12 +17282,13 @@ module AsposeWordsCloud
                                                         form_params: form_params,
                                                         body: post_body,
                                                         auth_names: auth_names,
-                                                        return_type: 'File')
+                                                        return_type: 'FILES_COLLECTION')
         if @api_client.config.debugging
         @api_client.config.logger.debug "API called:
         WordsApi#optimize_document_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
         end
 
+        # FILES_COLLECTION #
         [data, status_code, headers]
     end
 
@@ -17415,8 +17436,8 @@ module AsposeWordsCloud
         end
 
         mp_data = ProtectDocumentOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'ProtectionDataResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'ProtectionDataResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -17559,8 +17580,8 @@ module AsposeWordsCloud
         end
 
         mp_data = RejectAllRevisionsOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'RevisionsModificationResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'RevisionsModificationResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -17711,8 +17732,8 @@ module AsposeWordsCloud
         end
 
         mp_data = RemoveRangeOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'DocumentResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'DocumentResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -18640,8 +18661,8 @@ module AsposeWordsCloud
         end
 
         mp_data = ReplaceTextOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'ReplaceTextResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'ReplaceTextResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -18797,8 +18818,8 @@ module AsposeWordsCloud
         end
 
         mp_data = ReplaceWithTextOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'DocumentResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'DocumentResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -19006,8 +19027,8 @@ module AsposeWordsCloud
         end
 
         mp_data = SaveAsOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'SaveResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'SaveResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -19161,8 +19182,8 @@ module AsposeWordsCloud
         end
 
         mp_data = SaveAsRangeOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'DocumentResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'DocumentResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -19344,8 +19365,8 @@ module AsposeWordsCloud
         end
 
         mp_data = SaveAsTiffOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'SaveResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'SaveResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -19646,8 +19667,8 @@ module AsposeWordsCloud
         end
 
         mp_data = SplitDocumentOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'SplitDocumentResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'SplitDocumentResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -19795,8 +19816,8 @@ module AsposeWordsCloud
         end
 
         mp_data = UnprotectDocumentOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'ProtectionDataResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'ProtectionDataResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -19954,8 +19975,8 @@ module AsposeWordsCloud
         end
 
         mp_data = UpdateBookmarkOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'BookmarkResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'BookmarkResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -20115,8 +20136,8 @@ module AsposeWordsCloud
         end
 
         mp_data = UpdateBorderOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'BorderResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'BorderResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -20274,8 +20295,8 @@ module AsposeWordsCloud
         end
 
         mp_data = UpdateCommentOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'CommentResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'CommentResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -20433,8 +20454,8 @@ module AsposeWordsCloud
         end
 
         mp_data = UpdateCustomXmlPartOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'CustomXmlPartResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'CustomXmlPartResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -20601,8 +20622,8 @@ module AsposeWordsCloud
         end
 
         mp_data = UpdateDrawingObjectOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'DrawingObjectResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'DrawingObjectResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -20762,8 +20783,8 @@ module AsposeWordsCloud
         end
 
         mp_data = UpdateFieldOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'FieldResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'FieldResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -20906,8 +20927,8 @@ module AsposeWordsCloud
         end
 
         mp_data = UpdateFieldsOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'DocumentResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'DocumentResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -21067,8 +21088,8 @@ module AsposeWordsCloud
         end
 
         mp_data = UpdateFootnoteOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'FootnoteResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'FootnoteResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -21228,8 +21249,8 @@ module AsposeWordsCloud
         end
 
         mp_data = UpdateFormFieldOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'FormFieldResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'FormFieldResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -21471,8 +21492,8 @@ module AsposeWordsCloud
         end
 
         mp_data = UpdateListLevelOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'ListResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'ListResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -21552,8 +21573,8 @@ module AsposeWordsCloud
         end
 
         mp_data = UpdateListOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'ListResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'ListResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -21713,8 +21734,8 @@ module AsposeWordsCloud
         end
 
         mp_data = UpdateParagraphFormatOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'ParagraphFormatResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'ParagraphFormatResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -21874,8 +21895,8 @@ module AsposeWordsCloud
         end
 
         mp_data = UpdateParagraphListFormatOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'ParagraphListFormatResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'ParagraphListFormatResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -22120,8 +22141,8 @@ module AsposeWordsCloud
         end
 
         mp_data = UpdateRunFontOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'FontResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'FontResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -22204,8 +22225,8 @@ module AsposeWordsCloud
         end
 
         mp_data = UpdateRunOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'RunResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'RunResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -22363,8 +22384,8 @@ module AsposeWordsCloud
         end
 
         mp_data = UpdateSectionPageSetupOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'SectionPageSetupResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'SectionPageSetupResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -22522,8 +22543,8 @@ module AsposeWordsCloud
         end
 
         mp_data = UpdateStyleOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'StyleResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'StyleResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -22687,8 +22708,8 @@ module AsposeWordsCloud
         end
 
         mp_data = UpdateTableCellFormatOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'TableCellFormatResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'TableCellFormatResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -22848,8 +22869,8 @@ module AsposeWordsCloud
         end
 
         mp_data = UpdateTablePropertiesOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'TablePropertiesResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'TablePropertiesResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 
@@ -23013,8 +23034,8 @@ module AsposeWordsCloud
         end
 
         mp_data = UpdateTableRowFormatOnlineResponse.new()
-        mp_data.model = @api_client.deserialize(data['model'], 'TableRowFormatResponse')
-        mp_data.document = @api_client.download_file_from_multipart(data['document'])
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'TableRowFormatResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
 

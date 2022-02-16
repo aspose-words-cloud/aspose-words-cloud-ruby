@@ -592,6 +592,8 @@ module AsposeWordsCloud
     def valid?
       dml3_d_effects_rendering_mode_validator = EnumAttributeValidator.new('String', ["Basic", "Advanced"])
       return false unless dml3_d_effects_rendering_mode_validator.valid?(@dml3_d_effects_rendering_mode)
+      css_style_sheet_type_validator = EnumAttributeValidator.new('String', ["Inline", "Embedded", "External"])
+      return false unless css_style_sheet_type_validator.valid?(@css_style_sheet_type)
       html_version_validator = EnumAttributeValidator.new('String', ["Xhtml", "Html5"])
       return false unless html_version_validator.valid?(@html_version)
       metafile_format_validator = EnumAttributeValidator.new('String', ["Png", "Svg", "EmfOrWmf"])
@@ -613,6 +615,20 @@ module AsposeWordsCloud
         @dml3_d_effects_rendering_mode = dml3_d_effects_rendering_mode
       else
         @dml3_d_effects_rendering_mode = validator.allowable_values[dml3_d_effects_rendering_mode.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] css_style_sheet_type Object to be assigned
+    def css_style_sheet_type=(css_style_sheet_type)
+      validator = EnumAttributeValidator.new('String', ["Inline", "Embedded", "External"])
+      if css_style_sheet_type.to_i == 0
+        unless validator.valid?(css_style_sheet_type)
+          raise ArgumentError, "invalid value for 'css_style_sheet_type', must be one of #{validator.allowable_values}."
+        end
+        @css_style_sheet_type = css_style_sheet_type
+      else
+        @css_style_sheet_type = validator.allowable_values[css_style_sheet_type.to_i]
       end
     end
 

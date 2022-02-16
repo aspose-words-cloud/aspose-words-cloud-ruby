@@ -55,7 +55,6 @@ module AsposeWordsCloud
       request_document = File.open(File.join(documents_dir, file_name))
       request = AcceptAllRevisionsOnlineRequest.new(document: request_document)
       accept_all_revisions_online_result = @words_api.accept_all_revisions_online(request)
-      FileUtils.cp accept_all_revisions_online_result.document.path, 'test_result.docx'
     end
   end
 end
