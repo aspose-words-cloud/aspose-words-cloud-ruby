@@ -90,13 +90,15 @@ module AsposeWordsCloud
     # @return [true, false]
     attr_accessor :client_side_validation
 
-    # Defines RSA key
-    attr_accessor :rsa_key
+    # Defines RSA key data
+    attr_accessor :exponent
+    attr_accessor :modulus
+
+    # Defines encryptor
+    attr_accessor :encryptor
 
     # Defines request timeout
     attr_accessor :timeout
-
-
 
     def initialize
       @baseUrl = "https://api.aspose.cloud"
