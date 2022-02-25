@@ -417,6 +417,20 @@ module AsposeWordsCloud
     def valid?
       dml3_d_effects_rendering_mode_validator = EnumAttributeValidator.new('String', ["Basic", "Advanced"])
       return false unless dml3_d_effects_rendering_mode_validator.valid?(@dml3_d_effects_rendering_mode)
+      dml_effects_rendering_mode_validator = EnumAttributeValidator.new('String', ["Simplified", "None", "Fine"])
+      return false unless dml_effects_rendering_mode_validator.valid?(@dml_effects_rendering_mode)
+      dml_rendering_mode_validator = EnumAttributeValidator.new('String', ["Fallback", "DrawingML"])
+      return false unless dml_rendering_mode_validator.valid?(@dml_rendering_mode)
+      iml_rendering_mode_validator = EnumAttributeValidator.new('String', ["Fallback", "InkML"])
+      return false unless iml_rendering_mode_validator.valid?(@iml_rendering_mode)
+      color_mode_validator = EnumAttributeValidator.new('String', ["Normal", "Grayscale"])
+      return false unless color_mode_validator.valid?(@color_mode)
+      numeral_format_validator = EnumAttributeValidator.new('String', ["European", "ArabicIndic", "EasternArabicIndic", "Context", "System"])
+      return false unless numeral_format_validator.valid?(@numeral_format)
+      font_format_validator = EnumAttributeValidator.new('String', ["Woff", "Ttf"])
+      return false unless font_format_validator.valid?(@font_format)
+      page_horizontal_alignment_validator = EnumAttributeValidator.new('String', ["Left", "Center", "Right"])
+      return false unless page_horizontal_alignment_validator.valid?(@page_horizontal_alignment)
 
       return true
     end
@@ -432,6 +446,104 @@ module AsposeWordsCloud
         @dml3_d_effects_rendering_mode = dml3_d_effects_rendering_mode
       else
         @dml3_d_effects_rendering_mode = validator.allowable_values[dml3_d_effects_rendering_mode.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] dml_effects_rendering_mode Object to be assigned
+    def dml_effects_rendering_mode=(dml_effects_rendering_mode)
+      validator = EnumAttributeValidator.new('String', ["Simplified", "None", "Fine"])
+      if dml_effects_rendering_mode.to_i == 0
+        unless validator.valid?(dml_effects_rendering_mode)
+          raise ArgumentError, "invalid value for 'dml_effects_rendering_mode', must be one of #{validator.allowable_values}."
+        end
+        @dml_effects_rendering_mode = dml_effects_rendering_mode
+      else
+        @dml_effects_rendering_mode = validator.allowable_values[dml_effects_rendering_mode.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] dml_rendering_mode Object to be assigned
+    def dml_rendering_mode=(dml_rendering_mode)
+      validator = EnumAttributeValidator.new('String', ["Fallback", "DrawingML"])
+      if dml_rendering_mode.to_i == 0
+        unless validator.valid?(dml_rendering_mode)
+          raise ArgumentError, "invalid value for 'dml_rendering_mode', must be one of #{validator.allowable_values}."
+        end
+        @dml_rendering_mode = dml_rendering_mode
+      else
+        @dml_rendering_mode = validator.allowable_values[dml_rendering_mode.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] iml_rendering_mode Object to be assigned
+    def iml_rendering_mode=(iml_rendering_mode)
+      validator = EnumAttributeValidator.new('String', ["Fallback", "InkML"])
+      if iml_rendering_mode.to_i == 0
+        unless validator.valid?(iml_rendering_mode)
+          raise ArgumentError, "invalid value for 'iml_rendering_mode', must be one of #{validator.allowable_values}."
+        end
+        @iml_rendering_mode = iml_rendering_mode
+      else
+        @iml_rendering_mode = validator.allowable_values[iml_rendering_mode.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] color_mode Object to be assigned
+    def color_mode=(color_mode)
+      validator = EnumAttributeValidator.new('String', ["Normal", "Grayscale"])
+      if color_mode.to_i == 0
+        unless validator.valid?(color_mode)
+          raise ArgumentError, "invalid value for 'color_mode', must be one of #{validator.allowable_values}."
+        end
+        @color_mode = color_mode
+      else
+        @color_mode = validator.allowable_values[color_mode.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] numeral_format Object to be assigned
+    def numeral_format=(numeral_format)
+      validator = EnumAttributeValidator.new('String', ["European", "ArabicIndic", "EasternArabicIndic", "Context", "System"])
+      if numeral_format.to_i == 0
+        unless validator.valid?(numeral_format)
+          raise ArgumentError, "invalid value for 'numeral_format', must be one of #{validator.allowable_values}."
+        end
+        @numeral_format = numeral_format
+      else
+        @numeral_format = validator.allowable_values[numeral_format.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] font_format Object to be assigned
+    def font_format=(font_format)
+      validator = EnumAttributeValidator.new('String', ["Woff", "Ttf"])
+      if font_format.to_i == 0
+        unless validator.valid?(font_format)
+          raise ArgumentError, "invalid value for 'font_format', must be one of #{validator.allowable_values}."
+        end
+        @font_format = font_format
+      else
+        @font_format = validator.allowable_values[font_format.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] page_horizontal_alignment Object to be assigned
+    def page_horizontal_alignment=(page_horizontal_alignment)
+      validator = EnumAttributeValidator.new('String', ["Left", "Center", "Right"])
+      if page_horizontal_alignment.to_i == 0
+        unless validator.valid?(page_horizontal_alignment)
+          raise ArgumentError, "invalid value for 'page_horizontal_alignment', must be one of #{validator.allowable_values}."
+        end
+        @page_horizontal_alignment = page_horizontal_alignment
+      else
+        @page_horizontal_alignment = validator.allowable_values[page_horizontal_alignment.to_i]
       end
     end
 
