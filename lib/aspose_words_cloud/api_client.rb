@@ -466,7 +466,7 @@ module AsposeWordsCloud
     def add_param_to_query(url, param_name, param_value)
       uri = URI(url)
       if param_name == 'password' && !param_value.empty?
-        params = URI.decode_www_form(uri.query || "") << ['encryptedPassword', Base64.encode64(self.config.rsa_key.public_encrypt(param_value.to_s.force_encoding("utf-8")))]
+        params = URI.decode_www_form(uri.query || "") << ['encryptedPassword', self.config.encryptor.encrypt(param_value)]
       else
         params = URI.decode_www_form(uri.query || "") << [param_name, param_value]
       end

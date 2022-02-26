@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="LoadWebDocument_tests.rb">
+# <copyright company="Aspose" file="pdf_permissions.rb">
 #   Copyright (c) 2022 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -22,23 +22,31 @@
 #  SOFTWARE.
 # </summary>
 # ------------------------------------------------------------------------------------
+
+require 'date'
+
 module AsposeWordsCloud
-  require_relative '../base_test_context'
 
-  #
-  # Example of how to load web document.
-  #
-  class LoadWebDocumentTests < BaseTestContext
-    #
-    # Test for loading web document.
-    #
-    def test_load_web_document
-      request_data_save_options = DocSaveOptionsData.new({:FileName => 'google.doc', :DmlEffectsRenderingMode => 'None', :DmlRenderingMode => 'DrawingML', :UpdateSdtContent => false, :ZipOutput => false})
-      request_data = LoadWebDocumentData.new({:LoadingDocumentUrl => 'http://google.com', :SaveOptions => request_data_save_options})
-      request = LoadWebDocumentRequest.new(data: request_data)
+  # Specifies the operations that are allowed to a user on an encrypted PDF document.
+  class PdfPermissions
+    DISALLOWALL = "DisallowAll".freeze
+    PRINTING = "Printing".freeze
+    MODIFYCONTENTS = "ModifyContents".freeze
+    CONTENTCOPY = "ContentCopy".freeze
+    MODIFYANNOTATIONS = "ModifyAnnotations".freeze
+    FILLIN = "FillIn".freeze
+    CONTENTCOPYFORACCESSIBILITY = "ContentCopyForAccessibility".freeze
+    DOCUMENTASSEMBLY = "DocumentAssembly".freeze
+    HIGHRESOLUTIONPRINTING = "HighResolutionPrinting".freeze
+    ALLOWALL = "AllowAll".freeze
 
-      result = @words_api.load_web_document(request)
-      assert_equal false, result.nil?
+    # Builds the enum from string
+    # @param [String] The enum value in the form of the string
+    # @return [String] The enum value
+    def build_from_hash(value)
+      constantValues = PdfPermissions.constants.select{|c| PdfPermissions::const_get(c) == value}
+      raise "Invalid ENUM value #{value} for class #PdfPermissions" if constantValues.empty?
+      value
     end
   end
 end
