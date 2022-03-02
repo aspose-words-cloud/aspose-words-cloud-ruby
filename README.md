@@ -16,6 +16,9 @@ This repository contains Aspose.Words Cloud SDK for Ruby source code. This SDK a
 ## Enhancements in Version 22.3
 
 - Online methods returns the dictionary of files with included original filename as key instead of single file content in responses.
+- Parameters contained sensitive data should be passed in encrypted form. Names of the parameters have 'encrypted' prefix.
+- Added Encrypt method to encrypt data on the API public key. Use it to prepare values for parameters required encrypted data.
+- GetPublicKey method is not billable.
 
 
 ## Enhancements in Version 22.2
@@ -190,7 +193,7 @@ To use Aspose Words for Cloud Ruby SDK you need to register an account with [Asp
 To install this package do the following:
 update your Gemfile
 ```ruby
-gem 'aspose_words_cloud', '~> 22.2'
+gem 'aspose_words_cloud', '~> 22.3'
 ```
 or install directly
 ```bash

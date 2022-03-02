@@ -29,9 +29,6 @@ module AsposeWordsCloud
 
   # Container class for details of encryption.
   class PdfEncryptionDetailsData
-    # Gets or sets the encryption algorithm to use.
-    attr_accessor :encryption_algorithm
-
     # Gets or sets the owner password for the encrypted PDF document.
     attr_accessor :owner_password
 
@@ -40,33 +37,9 @@ module AsposeWordsCloud
 
     # Gets or sets the user password required for opening the encrypted PDF document.
     attr_accessor :user_password
-
-    class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
-
-      def initialize(datatype, allowable_values)
-        @allowable_values = allowable_values.map do |value|
-          case datatype.to_s
-          when /Integer/i
-            value.to_i
-          when /Float/i
-            value.to_f
-          else
-            value
-          end
-        end
-      end
-
-      def valid?(value)
-        !value || allowable_values.include?(value)
-      end
-    end
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'encryption_algorithm' => :'EncryptionAlgorithm',
         :'owner_password' => :'OwnerPassword',
         :'permissions' => :'Permissions',
         :'user_password' => :'UserPassword'
@@ -76,7 +49,6 @@ module AsposeWordsCloud
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'encryption_algorithm' => :'String',
         :'owner_password' => :'String',
         :'permissions' => :'Array<String>',
         :'user_password' => :'String'
@@ -90,10 +62,6 @@ module AsposeWordsCloud
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.key?(:'EncryptionAlgorithm')
-        self.encryption_algorithm = attributes[:'EncryptionAlgorithm']
-      end
 
       if attributes.key?(:'OwnerPassword')
         self.owner_password = attributes[:'OwnerPassword']
@@ -120,33 +88,14 @@ module AsposeWordsCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      encryption_algorithm_validator = EnumAttributeValidator.new('String', ["RC4_40", "RC4_128"])
-      return false unless encryption_algorithm_validator.valid?(@encryption_algorithm)
-
       return true
     end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] encryption_algorithm Object to be assigned
-    def encryption_algorithm=(encryption_algorithm)
-      validator = EnumAttributeValidator.new('String', ["RC4_40", "RC4_128"])
-      if encryption_algorithm.to_i == 0
-        unless validator.valid?(encryption_algorithm)
-          raise ArgumentError, "invalid value for 'encryption_algorithm', must be one of #{validator.allowable_values}."
-        end
-        @encryption_algorithm = encryption_algorithm
-      else
-        @encryption_algorithm = validator.allowable_values[encryption_algorithm.to_i]
-      end
-    end
-
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          encryption_algorithm == other.encryption_algorithm &&
           owner_password == other.owner_password &&
           permissions == other.permissions &&
           user_password == other.user_password
@@ -161,7 +110,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [encryption_algorithm, owner_password, permissions, user_password].hash
+      [owner_password, permissions, user_password].hash
     end
 
     # Builds the object from hash
