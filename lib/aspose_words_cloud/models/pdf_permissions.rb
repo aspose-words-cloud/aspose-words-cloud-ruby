@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="version.rb">
+# <copyright company="Aspose" file="pdf_permissions.rb">
 #   Copyright (c) 2022 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -23,6 +23,30 @@
 # </summary>
 # ------------------------------------------------------------------------------------
 
+require 'date'
+
 module AsposeWordsCloud
-  VERSION = "22.3.0".freeze
+
+  # Specifies the operations that are allowed to a user on an encrypted PDF document.
+  class PdfPermissions
+    DISALLOWALL = "DisallowAll".freeze
+    PRINTING = "Printing".freeze
+    MODIFYCONTENTS = "ModifyContents".freeze
+    CONTENTCOPY = "ContentCopy".freeze
+    MODIFYANNOTATIONS = "ModifyAnnotations".freeze
+    FILLIN = "FillIn".freeze
+    CONTENTCOPYFORACCESSIBILITY = "ContentCopyForAccessibility".freeze
+    DOCUMENTASSEMBLY = "DocumentAssembly".freeze
+    HIGHRESOLUTIONPRINTING = "HighResolutionPrinting".freeze
+    ALLOWALL = "AllowAll".freeze
+
+    # Builds the enum from string
+    # @param [String] The enum value in the form of the string
+    # @return [String] The enum value
+    def build_from_hash(value)
+      constantValues = PdfPermissions.constants.select{|c| PdfPermissions::const_get(c) == value}
+      raise "Invalid ENUM value #{value} for class #PdfPermissions" if constantValues.empty?
+      value
+    end
+  end
 end

@@ -38,7 +38,6 @@ def runtests(dockerImageVersion)
             if (needToBuild) {
                 docker.image('ruby:' + dockerImageVersion).inside('-u root'){
                 if (params.packageTesting) {
-                            sh "rm -rf lib"
                             sh "mv GemfileTest Gemfile"
                     }
                     stage('build'){
