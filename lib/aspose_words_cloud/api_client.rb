@@ -78,7 +78,6 @@ module AsposeWordsCloud
       end
 
       response = build_request(http_method, path, opts)
-      download_file response if opts[:return_type] == 'File'
       if @config.debugging
         @config.logger.debug "'HTTP' response body '~BEGIN~'\n #{response.body}\n'~END~'\n"
       end
@@ -97,11 +96,11 @@ module AsposeWordsCloud
       end
 
       if opts[:multipart_response] == true
-        data = deserialize_multipart(response)
+        data = deserialize_multipart(response.body, response.headers)
       elsif opts[:batch] == true
         data = deserialize_batch(response, opts[:request_map])
       else
-        data = deserialize(response.body, opts[:return_type]) if opts[:return_type]
+        data = deserialize(response.body, response.headers, opts[:return_type]) if opts[:return_type]
       end
 
       [data, response.status, response.headers]
@@ -176,14 +175,82 @@ module AsposeWordsCloud
        (mime == "*/*") || !(mime =~ /Application\/.*json(?!p)(;.*)?/i).nil?
     end
 
+    def custom_strip(string, chars)
+      chars = Regexp.escape(chars)
+      string.gsub(/\A[#{chars}]+|[#{chars}]+\z/, "")
+    end
+
+    def extract_filename_from_headers(headers)
+      filename = 'default'
+      if headers.key?('content-disposition')
+        disposition = headers['content-disposition']
+        parts = disposition.split(';')
+        for part in parts
+          part2 = custom_strip(part, ' ')
+          subparts = part2.split('=')
+          if subparts.length() == 2 && subparts[0] == 'filename'
+            filename = custom_strip(subparts[1], ' \"')
+          end
+        end
+      end
+
+      filename
+    end
+
+    def extract_partname_from_headers(headers)
+      filename = 'default'
+      if headers.key?('content-disposition')
+        disposition = headers['content-disposition']
+        parts = disposition.split(';')
+        for part in parts
+          part2 = custom_strip(part, ' ')
+          subparts = part2.split('=')
+          if subparts.length() == 2 && subparts[0] == 'name'
+            filename = custom_strip(subparts[1], ' \"')
+          end
+        end
+      end
+
+      filename
+    end
+
+    # Deserialize files collection.
+    def parse_files_collection(data, headers)
+      result = {}
+      if headers.key?("content-type") && headers['content-type'].start_with?('multipart/mixed')
+        content_type = headers['content-type']
+        reader = MultipartParser::Reader.new(MultipartParser::Reader::extract_boundary_value(content_type))
+        reader.on_part do |part|
+          pn = extract_filename_from_headers(part.headers)
+          part.on_data do |partial_data|
+            if result[pn].nil?
+              result[pn] = partial_data
+            else
+              result[pn] = [result[pn]] if result[pn].kind_of?(Array)
+              result[pn] << partial_data
+            end
+          end
+        end
+
+        reader.write data
+        reader.ended? or raise Exception, 'Truncated multipart message'
+      else
+        result[extract_filename_from_headers(headers)] = data
+      end
+
+      result
+    end
+
     # Deserialize the response to the given return type.
     #
     # @param [String] response HTTP response
     # @param [String] return_type some examples: "User", "Array[User]", "Hash[String,Integer]"
-    def deserialize(body, return_type)
+    def deserialize(body, headers, return_type)
       # handle file downloading - return the File instance processed in request callbacks
       # note that response body is empty when the file is written in chunks in request on_body callback
-      return @tempfile if return_type == 'File'
+      return body if return_type == 'File'
+
+      return parse_files_collection(body, headers) if return_type == 'FILES_COLLECTION'
 
       return nil if body.nil? || body.empty?
 
@@ -206,24 +273,24 @@ module AsposeWordsCloud
     # Deserialize multipart the response to the given return type.
     #
     # @param [Response] response HTTP response
-    def deserialize_multipart(response)
+    def deserialize_multipart(body, headers)
       parts={}
-      content_type = response.headers['content-type']
+      content_type = headers['content-type']
       reader = MultipartParser::Reader.new(MultipartParser::Reader::extract_boundary_value(content_type))
 
       reader.on_part do |part|
-        pn = part.headers['content-type'] == 'application/json' ? 'model' : 'document'
+        pn = extract_partname_from_headers(part.headers)
         part.on_data do |partial_data|
           if parts[pn].nil?
-            parts[pn] = partial_data
+            parts[pn] = { data: partial_data, headers: part.headers }
           else
-            parts[pn] = [parts[pn]] if parts[pn].kind_of?(Array)
-            parts[pn] << partial_data
+            parts[pn][:data] = [parts[pn][:data]] if parts[pn][:data].kind_of?(Array)
+            parts[pn][:data] << partial_data
           end
         end
       end
 
-      reader.write response.body
+      reader.write body
       reader.ended? or raise Exception, 'Truncated multipart message'
 
       parts
@@ -262,6 +329,7 @@ module AsposeWordsCloud
         if data_index != nil
           header_data = part_body[0..data_index]
           body_data = part_body[data_index+separator.length, part_body.length]
+          part[:headers] = header_data
           part[:body] = body_data
         end
       end
@@ -270,7 +338,7 @@ module AsposeWordsCloud
         req_id = response_data[:part].headers['requestid']
         batch_request = request_map[req_id]
         return_type = batch_request.request.get_response_type
-        responses_data.push(deserialize(response_data[:body], return_type))
+        responses_data.push(deserialize(response_data[:body], response_data[:part].headers, return_type))
       end
       responses_data
     end
@@ -316,59 +384,6 @@ module AsposeWordsCloud
         end
       end
     end
-
-    # Save response body into a file in (the defined) temporary folder, using the filename
-    # from the "Content-Disposition" header if provided, otherwise a random filename.
-    # The response body is written to the file in chunks in order to handle files which
-    # size is larger than maximum Ruby String or even larger than the maximum memory a Ruby
-    # process can use.
-    #
-    # @see Configuration#temp_folder_path
-    def download_file(response)
-      tempfile = nil
-      encoding = nil
-      content_disposition = response.headers['Content-Disposition']
-      if content_disposition and content_disposition =~ /filename=/i
-        filename = content_disposition[/filename=['"]?([^'"\s]+)['"]?/, 1]
-        prefix = sanitize_filename(filename)
-      else
-        prefix = 'download-'
-      end
-      prefix += '-' unless prefix.end_with?('-')
-      encoding = response.body.encoding
-      tempfile = Tempfile.open(prefix, @config.temp_folder_path, encoding: encoding)
-      @tempfile = tempfile
-      tempfile.write(response.body)
-      response.on_complete do |resp|
-        tempfile.rewind
-        tempfile.close
-        @config.logger.info "Temp file written to #{tempfile.path}, please copy the file to a proper folder "\
-                            "with e.g. `FileUtils.cp(tempfile.path, '/new/file/path')` otherwise the temp file "\
-                            "will be deleted automatically with GC. It's also recommended to delete the temp file "\
-                            "explicitly with `tempfile.delete`"
-      end
-    end
-
-  # Save response body into a file in (the defined) temporary folder, using the filename
-  # from the "Content-Disposition" header if provided, otherwise a random filename.
-  # The response body is written to the file in chunks in order to handle files which
-  # size is larger than maximum Ruby String or even larger than the maximum memory a Ruby
-  # process can use.
-  #
-  # @see Configuration#temp_folder_path
-  def download_file_from_multipart(body)
-    prefix = 'download-'
-    prefix += '-' unless prefix.end_with?('-')
-    tempfile = Tempfile.open(prefix, @config.temp_folder_path, encoding:body.encoding, binmode: true)
-    @tempfile = tempfile
-    tempfile.write(body)
-    tempfile.size
-    @config.logger.info "Temp file written to #{tempfile.path}, please copy the file to a proper folder "\
-                            "with e.g. `FileUtils.cp(tempfile.path, '/new/file/path')` otherwise the temp file "\
-                            "will be deleted automatically with GC. It's also recommended to delete the temp file "\
-                            "explicitly with `tempfile.delete`"
-    @tempfile
-  end
 
     # Sanitize filename by removing path.
     # e.g. ../../sun.gif becomes sun.gif
@@ -451,7 +466,7 @@ module AsposeWordsCloud
     def add_param_to_query(url, param_name, param_value)
       uri = URI(url)
       if param_name == 'password' && !param_value.empty?
-        params = URI.decode_www_form(uri.query || "") << ['encryptedPassword', Base64.encode64(self.config.rsa_key.public_encrypt(param_value.to_s.force_encoding("utf-8")))]
+        params = URI.decode_www_form(uri.query || "") << ['encryptedPassword', self.config.encryptor.encrypt(param_value)]
       else
         params = URI.decode_www_form(uri.query || "") << [param_name, param_value]
       end

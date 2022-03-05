@@ -583,12 +583,28 @@ module AsposeWordsCloud
     def valid?
       dml3_d_effects_rendering_mode_validator = EnumAttributeValidator.new('String', ["Basic", "Advanced"])
       return false unless dml3_d_effects_rendering_mode_validator.valid?(@dml3_d_effects_rendering_mode)
+      dml_effects_rendering_mode_validator = EnumAttributeValidator.new('String', ["Simplified", "None", "Fine"])
+      return false unless dml_effects_rendering_mode_validator.valid?(@dml_effects_rendering_mode)
+      dml_rendering_mode_validator = EnumAttributeValidator.new('String', ["Fallback", "DrawingML"])
+      return false unless dml_rendering_mode_validator.valid?(@dml_rendering_mode)
+      iml_rendering_mode_validator = EnumAttributeValidator.new('String', ["Fallback", "InkML"])
+      return false unless iml_rendering_mode_validator.valid?(@iml_rendering_mode)
+      css_style_sheet_type_validator = EnumAttributeValidator.new('String', ["Inline", "Embedded", "External"])
+      return false unless css_style_sheet_type_validator.valid?(@css_style_sheet_type)
+      document_split_criteria_validator = EnumAttributeValidator.new('String', ["None", "PageBreak", "ColumnBreak", "SectionBreak", "HeadingParagraph"])
+      return false unless document_split_criteria_validator.valid?(@document_split_criteria)
+      export_headers_footers_mode_validator = EnumAttributeValidator.new('String', ["None", "PerSection", "FirstSectionHeaderLastSectionFooter", "FirstPageHeaderFooterPerSection"])
+      return false unless export_headers_footers_mode_validator.valid?(@export_headers_footers_mode)
+      export_list_labels_validator = EnumAttributeValidator.new('String', ["Auto", "AsInlineText", "ByHtmlTags"])
+      return false unless export_list_labels_validator.valid?(@export_list_labels)
       html_version_validator = EnumAttributeValidator.new('String', ["Xhtml", "Html5"])
       return false unless html_version_validator.valid?(@html_version)
       metafile_format_validator = EnumAttributeValidator.new('String', ["Png", "Svg", "EmfOrWmf"])
       return false unless metafile_format_validator.valid?(@metafile_format)
       office_math_output_mode_validator = EnumAttributeValidator.new('String', ["Image", "MathML", "Text"])
       return false unless office_math_output_mode_validator.valid?(@office_math_output_mode)
+      table_width_output_mode_validator = EnumAttributeValidator.new('String', ["All", "RelativeOnly", "None"])
+      return false unless table_width_output_mode_validator.valid?(@table_width_output_mode)
 
       return true
     end
@@ -604,6 +620,104 @@ module AsposeWordsCloud
         @dml3_d_effects_rendering_mode = dml3_d_effects_rendering_mode
       else
         @dml3_d_effects_rendering_mode = validator.allowable_values[dml3_d_effects_rendering_mode.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] dml_effects_rendering_mode Object to be assigned
+    def dml_effects_rendering_mode=(dml_effects_rendering_mode)
+      validator = EnumAttributeValidator.new('String', ["Simplified", "None", "Fine"])
+      if dml_effects_rendering_mode.to_i == 0
+        unless validator.valid?(dml_effects_rendering_mode)
+          raise ArgumentError, "invalid value for 'dml_effects_rendering_mode', must be one of #{validator.allowable_values}."
+        end
+        @dml_effects_rendering_mode = dml_effects_rendering_mode
+      else
+        @dml_effects_rendering_mode = validator.allowable_values[dml_effects_rendering_mode.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] dml_rendering_mode Object to be assigned
+    def dml_rendering_mode=(dml_rendering_mode)
+      validator = EnumAttributeValidator.new('String', ["Fallback", "DrawingML"])
+      if dml_rendering_mode.to_i == 0
+        unless validator.valid?(dml_rendering_mode)
+          raise ArgumentError, "invalid value for 'dml_rendering_mode', must be one of #{validator.allowable_values}."
+        end
+        @dml_rendering_mode = dml_rendering_mode
+      else
+        @dml_rendering_mode = validator.allowable_values[dml_rendering_mode.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] iml_rendering_mode Object to be assigned
+    def iml_rendering_mode=(iml_rendering_mode)
+      validator = EnumAttributeValidator.new('String', ["Fallback", "InkML"])
+      if iml_rendering_mode.to_i == 0
+        unless validator.valid?(iml_rendering_mode)
+          raise ArgumentError, "invalid value for 'iml_rendering_mode', must be one of #{validator.allowable_values}."
+        end
+        @iml_rendering_mode = iml_rendering_mode
+      else
+        @iml_rendering_mode = validator.allowable_values[iml_rendering_mode.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] css_style_sheet_type Object to be assigned
+    def css_style_sheet_type=(css_style_sheet_type)
+      validator = EnumAttributeValidator.new('String', ["Inline", "Embedded", "External"])
+      if css_style_sheet_type.to_i == 0
+        unless validator.valid?(css_style_sheet_type)
+          raise ArgumentError, "invalid value for 'css_style_sheet_type', must be one of #{validator.allowable_values}."
+        end
+        @css_style_sheet_type = css_style_sheet_type
+      else
+        @css_style_sheet_type = validator.allowable_values[css_style_sheet_type.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] document_split_criteria Object to be assigned
+    def document_split_criteria=(document_split_criteria)
+      validator = EnumAttributeValidator.new('String', ["None", "PageBreak", "ColumnBreak", "SectionBreak", "HeadingParagraph"])
+      if document_split_criteria.to_i == 0
+        unless validator.valid?(document_split_criteria)
+          raise ArgumentError, "invalid value for 'document_split_criteria', must be one of #{validator.allowable_values}."
+        end
+        @document_split_criteria = document_split_criteria
+      else
+        @document_split_criteria = validator.allowable_values[document_split_criteria.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] export_headers_footers_mode Object to be assigned
+    def export_headers_footers_mode=(export_headers_footers_mode)
+      validator = EnumAttributeValidator.new('String', ["None", "PerSection", "FirstSectionHeaderLastSectionFooter", "FirstPageHeaderFooterPerSection"])
+      if export_headers_footers_mode.to_i == 0
+        unless validator.valid?(export_headers_footers_mode)
+          raise ArgumentError, "invalid value for 'export_headers_footers_mode', must be one of #{validator.allowable_values}."
+        end
+        @export_headers_footers_mode = export_headers_footers_mode
+      else
+        @export_headers_footers_mode = validator.allowable_values[export_headers_footers_mode.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] export_list_labels Object to be assigned
+    def export_list_labels=(export_list_labels)
+      validator = EnumAttributeValidator.new('String', ["Auto", "AsInlineText", "ByHtmlTags"])
+      if export_list_labels.to_i == 0
+        unless validator.valid?(export_list_labels)
+          raise ArgumentError, "invalid value for 'export_list_labels', must be one of #{validator.allowable_values}."
+        end
+        @export_list_labels = export_list_labels
+      else
+        @export_list_labels = validator.allowable_values[export_list_labels.to_i]
       end
     end
 
@@ -646,6 +760,20 @@ module AsposeWordsCloud
         @office_math_output_mode = office_math_output_mode
       else
         @office_math_output_mode = validator.allowable_values[office_math_output_mode.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] table_width_output_mode Object to be assigned
+    def table_width_output_mode=(table_width_output_mode)
+      validator = EnumAttributeValidator.new('String', ["All", "RelativeOnly", "None"])
+      if table_width_output_mode.to_i == 0
+        unless validator.valid?(table_width_output_mode)
+          raise ArgumentError, "invalid value for 'table_width_output_mode', must be one of #{validator.allowable_values}."
+        end
+        @table_width_output_mode = table_width_output_mode
+      else
+        @table_width_output_mode = validator.allowable_values[table_width_output_mode.to_i]
       end
     end
 

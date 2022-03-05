@@ -258,6 +258,12 @@ module AsposeWordsCloud
     def valid?
       dml3_d_effects_rendering_mode_validator = EnumAttributeValidator.new('String', ["Basic", "Advanced"])
       return false unless dml3_d_effects_rendering_mode_validator.valid?(@dml3_d_effects_rendering_mode)
+      dml_effects_rendering_mode_validator = EnumAttributeValidator.new('String', ["Simplified", "None", "Fine"])
+      return false unless dml_effects_rendering_mode_validator.valid?(@dml_effects_rendering_mode)
+      dml_rendering_mode_validator = EnumAttributeValidator.new('String', ["Fallback", "DrawingML"])
+      return false unless dml_rendering_mode_validator.valid?(@dml_rendering_mode)
+      iml_rendering_mode_validator = EnumAttributeValidator.new('String', ["Fallback", "InkML"])
+      return false unless iml_rendering_mode_validator.valid?(@iml_rendering_mode)
       measure_unit_validator = EnumAttributeValidator.new('String', ["Centimeters", "Inches"])
       return false unless measure_unit_validator.valid?(@measure_unit)
 
@@ -275,6 +281,48 @@ module AsposeWordsCloud
         @dml3_d_effects_rendering_mode = dml3_d_effects_rendering_mode
       else
         @dml3_d_effects_rendering_mode = validator.allowable_values[dml3_d_effects_rendering_mode.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] dml_effects_rendering_mode Object to be assigned
+    def dml_effects_rendering_mode=(dml_effects_rendering_mode)
+      validator = EnumAttributeValidator.new('String', ["Simplified", "None", "Fine"])
+      if dml_effects_rendering_mode.to_i == 0
+        unless validator.valid?(dml_effects_rendering_mode)
+          raise ArgumentError, "invalid value for 'dml_effects_rendering_mode', must be one of #{validator.allowable_values}."
+        end
+        @dml_effects_rendering_mode = dml_effects_rendering_mode
+      else
+        @dml_effects_rendering_mode = validator.allowable_values[dml_effects_rendering_mode.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] dml_rendering_mode Object to be assigned
+    def dml_rendering_mode=(dml_rendering_mode)
+      validator = EnumAttributeValidator.new('String', ["Fallback", "DrawingML"])
+      if dml_rendering_mode.to_i == 0
+        unless validator.valid?(dml_rendering_mode)
+          raise ArgumentError, "invalid value for 'dml_rendering_mode', must be one of #{validator.allowable_values}."
+        end
+        @dml_rendering_mode = dml_rendering_mode
+      else
+        @dml_rendering_mode = validator.allowable_values[dml_rendering_mode.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] iml_rendering_mode Object to be assigned
+    def iml_rendering_mode=(iml_rendering_mode)
+      validator = EnumAttributeValidator.new('String', ["Fallback", "InkML"])
+      if iml_rendering_mode.to_i == 0
+        unless validator.valid?(iml_rendering_mode)
+          raise ArgumentError, "invalid value for 'iml_rendering_mode', must be one of #{validator.allowable_values}."
+        end
+        @iml_rendering_mode = iml_rendering_mode
+      else
+        @iml_rendering_mode = validator.allowable_values[iml_rendering_mode.to_i]
       end
     end
 

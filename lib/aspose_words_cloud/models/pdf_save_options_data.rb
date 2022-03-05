@@ -516,8 +516,32 @@ module AsposeWordsCloud
     def valid?
       dml3_d_effects_rendering_mode_validator = EnumAttributeValidator.new('String', ["Basic", "Advanced"])
       return false unless dml3_d_effects_rendering_mode_validator.valid?(@dml3_d_effects_rendering_mode)
+      dml_effects_rendering_mode_validator = EnumAttributeValidator.new('String', ["Simplified", "None", "Fine"])
+      return false unless dml_effects_rendering_mode_validator.valid?(@dml_effects_rendering_mode)
+      dml_rendering_mode_validator = EnumAttributeValidator.new('String', ["Fallback", "DrawingML"])
+      return false unless dml_rendering_mode_validator.valid?(@dml_rendering_mode)
+      iml_rendering_mode_validator = EnumAttributeValidator.new('String', ["Fallback", "InkML"])
+      return false unless iml_rendering_mode_validator.valid?(@iml_rendering_mode)
+      color_mode_validator = EnumAttributeValidator.new('String', ["Normal", "Grayscale"])
+      return false unless color_mode_validator.valid?(@color_mode)
+      numeral_format_validator = EnumAttributeValidator.new('String', ["European", "ArabicIndic", "EasternArabicIndic", "Context", "System"])
+      return false unless numeral_format_validator.valid?(@numeral_format)
+      compliance_validator = EnumAttributeValidator.new('String', ["Pdf17", "Pdf20", "PdfA1a", "PdfA1b", "PdfA2a", "PdfA2u", "PdfUa1"])
+      return false unless compliance_validator.valid?(@compliance)
+      custom_properties_export_validator = EnumAttributeValidator.new('String', ["None", "Standard", "Metadata"])
+      return false unless custom_properties_export_validator.valid?(@custom_properties_export)
+      font_embedding_mode_validator = EnumAttributeValidator.new('String', ["EmbedAll", "EmbedNonstandard", "EmbedNone"])
+      return false unless font_embedding_mode_validator.valid?(@font_embedding_mode)
       header_footer_bookmarks_export_mode_validator = EnumAttributeValidator.new('String', ["None", "First", "All"])
       return false unless header_footer_bookmarks_export_mode_validator.valid?(@header_footer_bookmarks_export_mode)
+      image_color_space_export_mode_validator = EnumAttributeValidator.new('String', ["Auto", "SimpleCmyk"])
+      return false unless image_color_space_export_mode_validator.valid?(@image_color_space_export_mode)
+      page_mode_validator = EnumAttributeValidator.new('String', ["UseNone", "UseOutlines", "UseThumbs", "FullScreen", "UseOC", "UseAttachments"])
+      return false unless page_mode_validator.valid?(@page_mode)
+      text_compression_validator = EnumAttributeValidator.new('String', ["None", "Flate"])
+      return false unless text_compression_validator.valid?(@text_compression)
+      zoom_behavior_validator = EnumAttributeValidator.new('String', ["None", "ZoomFactor", "FitPage", "FitWidth", "FitHeight", "FitBox"])
+      return false unless zoom_behavior_validator.valid?(@zoom_behavior)
 
       return true
     end
@@ -537,6 +561,118 @@ module AsposeWordsCloud
     end
 
     # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] dml_effects_rendering_mode Object to be assigned
+    def dml_effects_rendering_mode=(dml_effects_rendering_mode)
+      validator = EnumAttributeValidator.new('String', ["Simplified", "None", "Fine"])
+      if dml_effects_rendering_mode.to_i == 0
+        unless validator.valid?(dml_effects_rendering_mode)
+          raise ArgumentError, "invalid value for 'dml_effects_rendering_mode', must be one of #{validator.allowable_values}."
+        end
+        @dml_effects_rendering_mode = dml_effects_rendering_mode
+      else
+        @dml_effects_rendering_mode = validator.allowable_values[dml_effects_rendering_mode.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] dml_rendering_mode Object to be assigned
+    def dml_rendering_mode=(dml_rendering_mode)
+      validator = EnumAttributeValidator.new('String', ["Fallback", "DrawingML"])
+      if dml_rendering_mode.to_i == 0
+        unless validator.valid?(dml_rendering_mode)
+          raise ArgumentError, "invalid value for 'dml_rendering_mode', must be one of #{validator.allowable_values}."
+        end
+        @dml_rendering_mode = dml_rendering_mode
+      else
+        @dml_rendering_mode = validator.allowable_values[dml_rendering_mode.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] iml_rendering_mode Object to be assigned
+    def iml_rendering_mode=(iml_rendering_mode)
+      validator = EnumAttributeValidator.new('String', ["Fallback", "InkML"])
+      if iml_rendering_mode.to_i == 0
+        unless validator.valid?(iml_rendering_mode)
+          raise ArgumentError, "invalid value for 'iml_rendering_mode', must be one of #{validator.allowable_values}."
+        end
+        @iml_rendering_mode = iml_rendering_mode
+      else
+        @iml_rendering_mode = validator.allowable_values[iml_rendering_mode.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] color_mode Object to be assigned
+    def color_mode=(color_mode)
+      validator = EnumAttributeValidator.new('String', ["Normal", "Grayscale"])
+      if color_mode.to_i == 0
+        unless validator.valid?(color_mode)
+          raise ArgumentError, "invalid value for 'color_mode', must be one of #{validator.allowable_values}."
+        end
+        @color_mode = color_mode
+      else
+        @color_mode = validator.allowable_values[color_mode.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] numeral_format Object to be assigned
+    def numeral_format=(numeral_format)
+      validator = EnumAttributeValidator.new('String', ["European", "ArabicIndic", "EasternArabicIndic", "Context", "System"])
+      if numeral_format.to_i == 0
+        unless validator.valid?(numeral_format)
+          raise ArgumentError, "invalid value for 'numeral_format', must be one of #{validator.allowable_values}."
+        end
+        @numeral_format = numeral_format
+      else
+        @numeral_format = validator.allowable_values[numeral_format.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] compliance Object to be assigned
+    def compliance=(compliance)
+      validator = EnumAttributeValidator.new('String', ["Pdf17", "Pdf20", "PdfA1a", "PdfA1b", "PdfA2a", "PdfA2u", "PdfUa1"])
+      if compliance.to_i == 0
+        unless validator.valid?(compliance)
+          raise ArgumentError, "invalid value for 'compliance', must be one of #{validator.allowable_values}."
+        end
+        @compliance = compliance
+      else
+        @compliance = validator.allowable_values[compliance.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] custom_properties_export Object to be assigned
+    def custom_properties_export=(custom_properties_export)
+      validator = EnumAttributeValidator.new('String', ["None", "Standard", "Metadata"])
+      if custom_properties_export.to_i == 0
+        unless validator.valid?(custom_properties_export)
+          raise ArgumentError, "invalid value for 'custom_properties_export', must be one of #{validator.allowable_values}."
+        end
+        @custom_properties_export = custom_properties_export
+      else
+        @custom_properties_export = validator.allowable_values[custom_properties_export.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] font_embedding_mode Object to be assigned
+    def font_embedding_mode=(font_embedding_mode)
+      validator = EnumAttributeValidator.new('String', ["EmbedAll", "EmbedNonstandard", "EmbedNone"])
+      if font_embedding_mode.to_i == 0
+        unless validator.valid?(font_embedding_mode)
+          raise ArgumentError, "invalid value for 'font_embedding_mode', must be one of #{validator.allowable_values}."
+        end
+        @font_embedding_mode = font_embedding_mode
+      else
+        @font_embedding_mode = validator.allowable_values[font_embedding_mode.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
     # @param [Object] header_footer_bookmarks_export_mode Object to be assigned
     def header_footer_bookmarks_export_mode=(header_footer_bookmarks_export_mode)
       validator = EnumAttributeValidator.new('String', ["None", "First", "All"])
@@ -547,6 +683,62 @@ module AsposeWordsCloud
         @header_footer_bookmarks_export_mode = header_footer_bookmarks_export_mode
       else
         @header_footer_bookmarks_export_mode = validator.allowable_values[header_footer_bookmarks_export_mode.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] image_color_space_export_mode Object to be assigned
+    def image_color_space_export_mode=(image_color_space_export_mode)
+      validator = EnumAttributeValidator.new('String', ["Auto", "SimpleCmyk"])
+      if image_color_space_export_mode.to_i == 0
+        unless validator.valid?(image_color_space_export_mode)
+          raise ArgumentError, "invalid value for 'image_color_space_export_mode', must be one of #{validator.allowable_values}."
+        end
+        @image_color_space_export_mode = image_color_space_export_mode
+      else
+        @image_color_space_export_mode = validator.allowable_values[image_color_space_export_mode.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] page_mode Object to be assigned
+    def page_mode=(page_mode)
+      validator = EnumAttributeValidator.new('String', ["UseNone", "UseOutlines", "UseThumbs", "FullScreen", "UseOC", "UseAttachments"])
+      if page_mode.to_i == 0
+        unless validator.valid?(page_mode)
+          raise ArgumentError, "invalid value for 'page_mode', must be one of #{validator.allowable_values}."
+        end
+        @page_mode = page_mode
+      else
+        @page_mode = validator.allowable_values[page_mode.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] text_compression Object to be assigned
+    def text_compression=(text_compression)
+      validator = EnumAttributeValidator.new('String', ["None", "Flate"])
+      if text_compression.to_i == 0
+        unless validator.valid?(text_compression)
+          raise ArgumentError, "invalid value for 'text_compression', must be one of #{validator.allowable_values}."
+        end
+        @text_compression = text_compression
+      else
+        @text_compression = validator.allowable_values[text_compression.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] zoom_behavior Object to be assigned
+    def zoom_behavior=(zoom_behavior)
+      validator = EnumAttributeValidator.new('String', ["None", "ZoomFactor", "FitPage", "FitWidth", "FitHeight", "FitBox"])
+      if zoom_behavior.to_i == 0
+        unless validator.valid?(zoom_behavior)
+          raise ArgumentError, "invalid value for 'zoom_behavior', must be one of #{validator.allowable_values}."
+        end
+        @zoom_behavior = zoom_behavior
+      else
+        @zoom_behavior = validator.allowable_values[zoom_behavior.to_i]
       end
     end
 

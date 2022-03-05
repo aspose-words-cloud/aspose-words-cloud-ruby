@@ -9,4 +9,4 @@ file_name= 'test_doc.docx'
 request_document = File.open(file_name)
 request = AcceptAllRevisionsOnlineRequest.new(document: request_document)
 accept_all_revisions_online_result = @words_api.accept_all_revisions_online(request)
-FileUtils.cp accept_all_revisions_online_result.document.path, 'test_result.docx'
+File.open('test_result.docx', 'wb').write(accept_all_revisions_online_result.document.values[0])

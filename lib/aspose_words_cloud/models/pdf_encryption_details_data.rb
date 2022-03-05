@@ -29,9 +29,6 @@ module AsposeWordsCloud
 
   # Container class for details of encryption.
   class PdfEncryptionDetailsData
-    # Gets or sets the encryption algorithm to use.
-    attr_accessor :encryption_algorithm
-
     # Gets or sets the owner password for the encrypted PDF document.
     attr_accessor :owner_password
 
@@ -43,7 +40,6 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'encryption_algorithm' => :'EncryptionAlgorithm',
         :'owner_password' => :'OwnerPassword',
         :'permissions' => :'Permissions',
         :'user_password' => :'UserPassword'
@@ -53,9 +49,8 @@ module AsposeWordsCloud
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'encryption_algorithm' => :'String',
         :'owner_password' => :'String',
-        :'permissions' => :'String',
+        :'permissions' => :'Array<String>',
         :'user_password' => :'String'
       }
     end
@@ -68,16 +63,14 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'EncryptionAlgorithm')
-        self.encryption_algorithm = attributes[:'EncryptionAlgorithm']
-      end
-
       if attributes.key?(:'OwnerPassword')
         self.owner_password = attributes[:'OwnerPassword']
       end
 
       if attributes.key?(:'Permissions')
-        self.permissions = attributes[:'Permissions']
+        if (value = attributes[:'Permissions']).is_a?(Array)
+          self.permissions = value
+        end
       end
 
       if attributes.key?(:'UserPassword')
@@ -103,7 +96,6 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          encryption_algorithm == other.encryption_algorithm &&
           owner_password == other.owner_password &&
           permissions == other.permissions &&
           user_password == other.user_password
@@ -118,7 +110,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [encryption_algorithm, owner_password, permissions, user_password].hash
+      [owner_password, permissions, user_password].hash
     end
 
     # Builds the object from hash

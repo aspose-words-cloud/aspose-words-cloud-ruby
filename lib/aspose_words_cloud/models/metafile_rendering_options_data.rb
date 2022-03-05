@@ -44,6 +44,29 @@ module AsposeWordsCloud
 
     # Gets or sets the flag, that controls how WMF metafiles with embedded EMF metafiles should be rendered.
     attr_accessor :use_emf_embedded_to_wmf
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -105,8 +128,42 @@ module AsposeWordsCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      emf_plus_dual_rendering_mode_validator = EnumAttributeValidator.new('String', ["EmfPlusWithFallback", "EmfPlus", "Emf"])
+      return false unless emf_plus_dual_rendering_mode_validator.valid?(@emf_plus_dual_rendering_mode)
+      rendering_mode_validator = EnumAttributeValidator.new('String', ["VectorWithFallback", "Vector", "Bitmap"])
+      return false unless rendering_mode_validator.valid?(@rendering_mode)
+
       return true
     end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] emf_plus_dual_rendering_mode Object to be assigned
+    def emf_plus_dual_rendering_mode=(emf_plus_dual_rendering_mode)
+      validator = EnumAttributeValidator.new('String', ["EmfPlusWithFallback", "EmfPlus", "Emf"])
+      if emf_plus_dual_rendering_mode.to_i == 0
+        unless validator.valid?(emf_plus_dual_rendering_mode)
+          raise ArgumentError, "invalid value for 'emf_plus_dual_rendering_mode', must be one of #{validator.allowable_values}."
+        end
+        @emf_plus_dual_rendering_mode = emf_plus_dual_rendering_mode
+      else
+        @emf_plus_dual_rendering_mode = validator.allowable_values[emf_plus_dual_rendering_mode.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] rendering_mode Object to be assigned
+    def rendering_mode=(rendering_mode)
+      validator = EnumAttributeValidator.new('String', ["VectorWithFallback", "Vector", "Bitmap"])
+      if rendering_mode.to_i == 0
+        unless validator.valid?(rendering_mode)
+          raise ArgumentError, "invalid value for 'rendering_mode', must be one of #{validator.allowable_values}."
+        end
+        @rendering_mode = rendering_mode
+      else
+        @rendering_mode = validator.allowable_values[rendering_mode.to_i]
+      end
+    end
+
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
