@@ -220,5 +220,22 @@ module AsposeWordsCloud
       result = @words_api.apply_style_to_document_element_online(request)
       assert_equal false, result.nil?
     end
+
+    #
+    # Test for copying styles from a template.
+    #
+    def test_copy_styles_from_template
+      remote_file_name = 'TestCopyStylesFromTemplate.docx'
+      template_folder = 'DocumentElements/Styles'
+      template_name = 'StyleTemplate.docx'
+
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, template_folder + '/' + template_name), remote_data_folder + '/' + template_name
+
+      request = CopyStylesFromTemplateRequest.new(name: remote_file_name, template_name: template_name, folder: remote_data_folder)
+
+      result = @words_api.copy_styles_from_template(request)
+      assert_equal false, result.nil?
+    end
   end
 end
