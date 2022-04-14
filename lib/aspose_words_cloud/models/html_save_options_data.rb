@@ -140,6 +140,9 @@ module AsposeWordsCloud
     # Gets or sets a value indicating whether to write the roundtrip information when saving to HTML. The default value is true.
     attr_accessor :export_roundtrip_information
 
+    # Gets or sets the flag, that controls whether Aspose.Words.Drawing.Shape nodes are converted to SVG images when saving to HTML, MHTML or EPUB. Default value is false.
+    attr_accessor :export_shapes_as_svg
+
     # Gets or sets the flag, that controls how textboxes represented by Aspose.Words.Drawing.Shape are saved to HTML, MHTML or EPUB. The default value is false.
     # When set to true, exports textboxes as inline "svg" elements. When false, exports as "image" elements.
     attr_accessor :export_text_box_as_svg
@@ -265,6 +268,7 @@ module AsposeWordsCloud
         :'export_page_setup' => :'ExportPageSetup',
         :'export_relative_font_size' => :'ExportRelativeFontSize',
         :'export_roundtrip_information' => :'ExportRoundtripInformation',
+        :'export_shapes_as_svg' => :'ExportShapesAsSvg',
         :'export_text_box_as_svg' => :'ExportTextBoxAsSvg',
         :'export_text_input_form_field_as_text' => :'ExportTextInputFormFieldAsText',
         :'export_toc_page_numbers' => :'ExportTocPageNumbers',
@@ -325,6 +329,7 @@ module AsposeWordsCloud
         :'export_page_setup' => :'BOOLEAN',
         :'export_relative_font_size' => :'BOOLEAN',
         :'export_roundtrip_information' => :'BOOLEAN',
+        :'export_shapes_as_svg' => :'BOOLEAN',
         :'export_text_box_as_svg' => :'BOOLEAN',
         :'export_text_input_form_field_as_text' => :'BOOLEAN',
         :'export_toc_page_numbers' => :'BOOLEAN',
@@ -492,6 +497,10 @@ module AsposeWordsCloud
 
       if attributes.key?(:'ExportRoundtripInformation')
         self.export_roundtrip_information = attributes[:'ExportRoundtripInformation']
+      end
+
+      if attributes.key?(:'ExportShapesAsSvg')
+        self.export_shapes_as_svg = attributes[:'ExportShapesAsSvg']
       end
 
       if attributes.key?(:'ExportTextBoxAsSvg')
@@ -817,6 +826,7 @@ module AsposeWordsCloud
           export_page_setup == other.export_page_setup &&
           export_relative_font_size == other.export_relative_font_size &&
           export_roundtrip_information == other.export_roundtrip_information &&
+          export_shapes_as_svg == other.export_shapes_as_svg &&
           export_text_box_as_svg == other.export_text_box_as_svg &&
           export_text_input_form_field_as_text == other.export_text_input_form_field_as_text &&
           export_toc_page_numbers == other.export_toc_page_numbers &&
@@ -848,7 +858,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, flat_opc_xml_mapping_only, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, allow_negative_indent, css_class_name_prefix, css_style_sheet_file_name, css_style_sheet_type, document_split_criteria, document_split_heading_level, encoding, export_document_properties, export_drop_down_form_field_as_text, export_font_resources, export_fonts_as_base64, export_headers_footers_mode, export_images_as_base64, export_language_information, export_list_labels, export_original_url_for_linked_images, export_page_margins, export_page_setup, export_relative_font_size, export_roundtrip_information, export_text_box_as_svg, export_text_input_form_field_as_text, export_toc_page_numbers, export_xhtml_transitional, font_resources_subsetting_size_threshold, fonts_folder, fonts_folder_alias, html_version, image_resolution, images_folder, images_folder_alias, metafile_format, office_math_output_mode, pretty_format, resolve_font_names, resource_folder, resource_folder_alias, save_format, scale_image_to_shape_size, table_width_output_mode].hash
+      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, flat_opc_xml_mapping_only, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, allow_negative_indent, css_class_name_prefix, css_style_sheet_file_name, css_style_sheet_type, document_split_criteria, document_split_heading_level, encoding, export_document_properties, export_drop_down_form_field_as_text, export_font_resources, export_fonts_as_base64, export_headers_footers_mode, export_images_as_base64, export_language_information, export_list_labels, export_original_url_for_linked_images, export_page_margins, export_page_setup, export_relative_font_size, export_roundtrip_information, export_shapes_as_svg, export_text_box_as_svg, export_text_input_form_field_as_text, export_toc_page_numbers, export_xhtml_transitional, font_resources_subsetting_size_threshold, fonts_folder, fonts_folder_alias, html_version, image_resolution, images_folder, images_folder_alias, metafile_format, office_math_output_mode, pretty_format, resolve_font_names, resource_folder, resource_folder_alias, save_format, scale_image_to_shape_size, table_width_output_mode].hash
     end
 
     # Builds the object from hash
