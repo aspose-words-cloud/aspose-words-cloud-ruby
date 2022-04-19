@@ -24,5 +24,5 @@
 # ------------------------------------------------------------------------------------
 
 module AsposeWordsCloud
-  VERSION = "1.0".freeze
+  VERSION = "22.4".freeze
 end
