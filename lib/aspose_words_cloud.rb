@@ -516,6 +516,7 @@ require_relative 'aspose_words_cloud/models/requests/insert_watermark_image_requ
 require_relative 'aspose_words_cloud/models/requests/insert_watermark_image_online_request'
 require_relative 'aspose_words_cloud/models/requests/insert_watermark_text_request'
 require_relative 'aspose_words_cloud/models/requests/insert_watermark_text_online_request'
+require_relative 'aspose_words_cloud/models/requests/link_header_footers_to_previous_request'
 require_relative 'aspose_words_cloud/models/requests/load_web_document_request'
 require_relative 'aspose_words_cloud/models/requests/move_file_request'
 require_relative 'aspose_words_cloud/models/requests/move_folder_request'

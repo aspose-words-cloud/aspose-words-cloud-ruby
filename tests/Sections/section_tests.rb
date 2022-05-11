@@ -111,5 +111,14 @@ module AsposeWordsCloud
       result = @words_api.delete_section_online(request)
       assert_equal false, result.nil?
     end
+
+    #
+    # Test for linking headers and footers to previous section.
+    #
+    def test_link_header_footers_to_previous
+      request = LinkHeaderFootersToPreviousRequest.new(name: 'DocumentElements/Sections/Source.docx', section_index: 1)
+
+      @words_api.link_header_footers_to_previous(request)
+    end
   end
 end

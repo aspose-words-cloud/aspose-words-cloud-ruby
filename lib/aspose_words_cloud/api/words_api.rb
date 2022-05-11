@@ -17016,6 +17016,82 @@ module AsposeWordsCloud
         [mp_data, status_code, headers]
     end
 
+    # Links headers / footers of the section to the previous one.
+    # @param request LinkHeaderFootersToPreviousRequest
+    # @return [nil]
+    def link_header_footers_to_previous(request)
+        begin
+        data, _status_code, _headers = link_header_footers_to_previous_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = link_header_footers_to_previous_with_http_info(request)
+            else
+            raise
+            end
+        end
+        nil
+    end
+
+    # Links headers / footers of the section to the previous one.
+    # @param request LinkHeaderFootersToPreviousRequest
+    # @return [Array<(nil, Fixnum, Hash)>]
+    # nil, response status code and response headers
+    private def link_header_footers_to_previous_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? LinkHeaderFootersToPreviousRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.link_header_footers_to_previous ...' if @api_client.config.debugging
+        # verify the required parameter 'name' is set
+        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.link_header_footers_to_previous' if @api_client.config.client_side_validation && request.name.nil?
+        # verify the required parameter 'section_index' is set
+        raise ArgumentError, 'Missing the required parameter section_index when calling WordsApi.link_header_footers_to_previous' if @api_client.config.client_side_validation && request.section_index.nil?
+
+        # resource path
+        local_var_path = '/words/{name}/sections/{sectionIndex}/link'[1..-1]
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.nil? ? '' : request.name.to_s)
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('SectionIndex') + '}', request.section_index.nil? ? '' : request.section_index.to_s)
+        local_var_path = local_var_path.sub('//', '/')
+
+        # query parameters
+        query_params = {}
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+        query_params[downcase_first_letter('Mode')] = request.mode unless request.mode.nil?
+
+        # header parameters
+        header_params = {}
+        # HTTP header 'Accept' (if needed)
+        header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+        # HTTP header 'Content-Type'
+        header_params['Content-Type'] = @api_client.select_header_content_type(['application/xml', 'application/json'])
+
+        # form parameters
+        form_params = {}
+
+        # http body (model)
+        post_body = nil
+        auth_names = ['JWT']
+
+        data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names)
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#link_header_footers_to_previous\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [data, status_code, headers]
+    end
+
     # Downloads a document from the Web using URL and saves it to cloud storage in the specified format.
     # @param request LoadWebDocumentRequest
     # @return [SaveResponse]
