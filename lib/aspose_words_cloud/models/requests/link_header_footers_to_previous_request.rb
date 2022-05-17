@@ -129,7 +129,7 @@ module AsposeWordsCloud
       post_body = nil
       body = nil
       part = ""
-      part.concat("POST".force_encoding('UTF-8'))
+      part.concat("PUT".force_encoding('UTF-8'))
       part.concat(" ".force_encoding('UTF-8'))
       part.concat(local_var_path.force_encoding('UTF-8'))
       part.concat(" \r\n".force_encoding('UTF-8'))
@@ -184,7 +184,7 @@ module AsposeWordsCloud
       post_body = nil
       body = api_client.build_request_body(header_params, form_params, post_body)
       {
-        'method': :POST,
+        'method': :PUT,
         'path': local_var_path,
         'header_params': header_params,
         'query_params': query_params,

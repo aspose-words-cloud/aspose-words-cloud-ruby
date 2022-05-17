@@ -116,7 +116,11 @@ module AsposeWordsCloud
     # Test for linking headers and footers to previous section.
     #
     def test_link_header_footers_to_previous
-      request = LinkHeaderFootersToPreviousRequest.new(name: 'DocumentElements/Sections/Source.docx', section_index: 1)
+      remote_file_name = 'TestLinkHeaderFootersToPrevious.docx'
+
+      upload_file File.join(local_test_folder, 'DocumentElements/Sections/Source.docx'), remote_data_folder + '/' + remote_file_name
+
+      request = LinkHeaderFootersToPreviousRequest.new(name: remote_file_name, section_index: 1, folder: remote_data_folder)
 
       @words_api.link_header_footers_to_previous(request)
     end
