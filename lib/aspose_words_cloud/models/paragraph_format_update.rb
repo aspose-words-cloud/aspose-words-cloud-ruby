@@ -326,7 +326,7 @@ module AsposeWordsCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      alignment_validator = EnumAttributeValidator.new('String', ["Left", "Center", "Right", "Justify", "Distributed", "ArabicMediumKashida", "ArabicHighKashida", "ArabicLowKashida", "ThaiDistributed"])
+      alignment_validator = EnumAttributeValidator.new('String', ["Left", "Center", "Right", "Justify", "Distributed", "ArabicMediumKashida", "ArabicHighKashida", "ArabicLowKashida", "ThaiDistributed", "MathElementCenterAsGroup"])
       return false unless alignment_validator.valid?(@alignment)
       drop_cap_position_validator = EnumAttributeValidator.new('String', ["None", "Normal", "Margin"])
       return false unless drop_cap_position_validator.valid?(@drop_cap_position)
@@ -343,7 +343,7 @@ module AsposeWordsCloud
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] alignment Object to be assigned
     def alignment=(alignment)
-      validator = EnumAttributeValidator.new('String', ["Left", "Center", "Right", "Justify", "Distributed", "ArabicMediumKashida", "ArabicHighKashida", "ArabicLowKashida", "ThaiDistributed"])
+      validator = EnumAttributeValidator.new('String', ["Left", "Center", "Right", "Justify", "Distributed", "ArabicMediumKashida", "ArabicHighKashida", "ArabicLowKashida", "ThaiDistributed", "MathElementCenterAsGroup"])
       if alignment.to_i == 0
         unless validator.valid?(alignment)
           raise ArgumentError, "invalid value for 'alignment', must be one of #{validator.allowable_values}."
