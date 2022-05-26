@@ -51,9 +51,8 @@ module AsposeWordsCloud
       header_params = {'Content-Type' => 'multipart/form-data'}
       @api_client.update_params_for_auth! header_params, {}, "JWT"
       batch_requests.each_with_index do |batch_request, index|
-        guid = batch_request.request_id
-        form_params["request-#{index}"] = Faraday::ParamPart.new(batch_request.request.to_batch_part(@api_client, guid), "application/http; msgtype=request")
-        id_request_to_map[guid] = batch_request
+        form_params["request-#{index}"] = Faraday::ParamPart.new(batch_request.request.to_batch_part(@api_client, batch_request.request_id, batch_request.parent_request_id), "application/http; msgtype=request")
+        id_request_to_map[batch_request.request_id] = batch_request
       end
       url = display_intermediate_result ? "/v4.0/words/batch" : "/v4.0/words/batch?displayIntermediateResults=false"
       data, status_code, headers = @api_client.call_api(:PUT, url,
@@ -1909,6 +1908,300 @@ module AsposeWordsCloud
         mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'TabStopsResponse')
         mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
+    end
+
+    # Removes a bookmark from the document.
+    # @param request DeleteBookmarkRequest
+    # @return [nil]
+    def delete_bookmark(request)
+        begin
+        data, _status_code, _headers = delete_bookmark_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_bookmark_with_http_info(request)
+            else
+            raise
+            end
+        end
+        nil
+    end
+
+    # Removes a bookmark from the document.
+    # @param request DeleteBookmarkRequest
+    # @return [Array<(nil, Fixnum, Hash)>]
+    # nil, response status code and response headers
+    private def delete_bookmark_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteBookmarkRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.delete_bookmark ...' if @api_client.config.debugging
+        # verify the required parameter 'name' is set
+        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_bookmark' if @api_client.config.client_side_validation && request.name.nil?
+        # verify the required parameter 'bookmark_name' is set
+        raise ArgumentError, 'Missing the required parameter bookmark_name when calling WordsApi.delete_bookmark' if @api_client.config.client_side_validation && request.bookmark_name.nil?
+
+        # resource path
+        local_var_path = '/words/{name}/bookmarks/{bookmarkName}'[1..-1]
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.nil? ? '' : request.name.to_s)
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('BookmarkName') + '}', request.bookmark_name.nil? ? '' : request.bookmark_name.to_s)
+        local_var_path = local_var_path.sub('//', '/')
+
+        # query parameters
+        query_params = {}
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        # header parameters
+        header_params = {}
+        # HTTP header 'Accept' (if needed)
+        header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+        # HTTP header 'Content-Type'
+        header_params['Content-Type'] = @api_client.select_header_content_type(['application/xml', 'application/json'])
+
+        # form parameters
+        form_params = {}
+
+        # http body (model)
+        post_body = nil
+        auth_names = ['JWT']
+
+        data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names)
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#delete_bookmark\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [data, status_code, headers]
+    end
+
+    # Removes a bookmark from the document.
+    # @param request DeleteBookmarkOnlineRequest
+    # @return [FILES_COLLECTION]
+    def delete_bookmark_online(request)
+        begin
+        data, _status_code, _headers = delete_bookmark_online_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_bookmark_online_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Removes a bookmark from the document.
+    # @param request DeleteBookmarkOnlineRequest
+    # @return [Array<(FILES_COLLECTION, Fixnum, Hash)>]
+    # FILES_COLLECTION, response status code and response headers
+    private def delete_bookmark_online_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteBookmarkOnlineRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.delete_bookmark_online ...' if @api_client.config.debugging
+        # verify the required parameter 'document' is set
+        raise ArgumentError, 'Missing the required parameter document when calling WordsApi.delete_bookmark_online' if @api_client.config.client_side_validation && request.document.nil?
+        # verify the required parameter 'bookmark_name' is set
+        raise ArgumentError, 'Missing the required parameter bookmark_name when calling WordsApi.delete_bookmark_online' if @api_client.config.client_side_validation && request.bookmark_name.nil?
+
+        # resource path
+        local_var_path = '/words/online/delete/bookmarks/{bookmarkName}'[1..-1]
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('BookmarkName') + '}', request.bookmark_name.nil? ? '' : request.bookmark_name.to_s)
+        local_var_path = local_var_path.sub('//', '/')
+
+        # query parameters
+        query_params = {}
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        # header parameters
+        header_params = {}
+        # HTTP header 'Accept' (if needed)
+        header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+        # HTTP header 'Content-Type'
+        header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+
+        # form parameters
+        form_params = {}
+        form_params[downcase_first_letter('Document')] = request.document
+
+        # http body (model)
+        post_body = nil
+        auth_names = ['JWT']
+
+        data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FILES_COLLECTION')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#delete_bookmark_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        # FILES_COLLECTION #
+        [data, status_code, headers]
+    end
+
+    # Removes all bookmarks from the document.
+    # @param request DeleteBookmarksRequest
+    # @return [nil]
+    def delete_bookmarks(request)
+        begin
+        data, _status_code, _headers = delete_bookmarks_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_bookmarks_with_http_info(request)
+            else
+            raise
+            end
+        end
+        nil
+    end
+
+    # Removes all bookmarks from the document.
+    # @param request DeleteBookmarksRequest
+    # @return [Array<(nil, Fixnum, Hash)>]
+    # nil, response status code and response headers
+    private def delete_bookmarks_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteBookmarksRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.delete_bookmarks ...' if @api_client.config.debugging
+        # verify the required parameter 'name' is set
+        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_bookmarks' if @api_client.config.client_side_validation && request.name.nil?
+
+        # resource path
+        local_var_path = '/words/{name}/bookmarks'[1..-1]
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.nil? ? '' : request.name.to_s)
+        local_var_path = local_var_path.sub('//', '/')
+
+        # query parameters
+        query_params = {}
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        # header parameters
+        header_params = {}
+        # HTTP header 'Accept' (if needed)
+        header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+        # HTTP header 'Content-Type'
+        header_params['Content-Type'] = @api_client.select_header_content_type(['application/xml', 'application/json'])
+
+        # form parameters
+        form_params = {}
+
+        # http body (model)
+        post_body = nil
+        auth_names = ['JWT']
+
+        data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names)
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#delete_bookmarks\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [data, status_code, headers]
+    end
+
+    # Removes all bookmarks from the document.
+    # @param request DeleteBookmarksOnlineRequest
+    # @return [FILES_COLLECTION]
+    def delete_bookmarks_online(request)
+        begin
+        data, _status_code, _headers = delete_bookmarks_online_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_bookmarks_online_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Removes all bookmarks from the document.
+    # @param request DeleteBookmarksOnlineRequest
+    # @return [Array<(FILES_COLLECTION, Fixnum, Hash)>]
+    # FILES_COLLECTION, response status code and response headers
+    private def delete_bookmarks_online_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteBookmarksOnlineRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.delete_bookmarks_online ...' if @api_client.config.debugging
+        # verify the required parameter 'document' is set
+        raise ArgumentError, 'Missing the required parameter document when calling WordsApi.delete_bookmarks_online' if @api_client.config.client_side_validation && request.document.nil?
+
+        # resource path
+        local_var_path = '/words/online/delete/bookmarks'[1..-1]
+        local_var_path = local_var_path.sub('//', '/')
+
+        # query parameters
+        query_params = {}
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        # header parameters
+        header_params = {}
+        # HTTP header 'Accept' (if needed)
+        header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+        # HTTP header 'Content-Type'
+        header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+
+        # form parameters
+        form_params = {}
+        form_params[downcase_first_letter('Document')] = request.document
+
+        # http body (model)
+        post_body = nil
+        auth_names = ['JWT']
+
+        data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'FILES_COLLECTION')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#delete_bookmarks_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        # FILES_COLLECTION #
+        [data, status_code, headers]
     end
 
     # The 'nodePath' parameter should refer to a paragraph, a cell or a row.
@@ -14202,6 +14495,159 @@ module AsposeWordsCloud
         end
 
         [data, status_code, headers]
+    end
+
+    # Inserts a new bookmark to the document.
+    # @param request InsertBookmarkRequest
+    # @return [BookmarkResponse]
+    def insert_bookmark(request)
+        begin
+        data, _status_code, _headers = insert_bookmark_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = insert_bookmark_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Inserts a new bookmark to the document.
+    # @param request InsertBookmarkRequest
+    # @return [Array<(BookmarkResponse, Fixnum, Hash)>]
+    # BookmarkResponse, response status code and response headers
+    private def insert_bookmark_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? InsertBookmarkRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.insert_bookmark ...' if @api_client.config.debugging
+        # verify the required parameter 'name' is set
+        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.insert_bookmark' if @api_client.config.client_side_validation && request.name.nil?
+        # verify the required parameter 'bookmark' is set
+        raise ArgumentError, 'Missing the required parameter bookmark when calling WordsApi.insert_bookmark' if @api_client.config.client_side_validation && request.bookmark.nil?
+
+        # resource path
+        local_var_path = '/words/{name}/bookmarks'[1..-1]
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.nil? ? '' : request.name.to_s)
+        local_var_path = local_var_path.sub('//', '/')
+
+        # query parameters
+        query_params = {}
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        # header parameters
+        header_params = {}
+        # HTTP header 'Accept' (if needed)
+        header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+        # HTTP header 'Content-Type'
+        header_params['Content-Type'] = @api_client.select_header_content_type(['application/xml', 'application/json'])
+
+        # form parameters
+        form_params = {}
+
+        # http body (model)
+        post_body = @api_client.object_to_http_body(request.bookmark)
+        auth_names = ['JWT']
+
+        data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'BookmarkResponse')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#insert_bookmark\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [data, status_code, headers]
+    end
+
+    # Inserts a new bookmark to the document.
+    # @param request InsertBookmarkOnlineRequest
+    # @return [InsertBookmarkOnlineResponse]
+    def insert_bookmark_online(request)
+        begin
+        data, _status_code, _headers = insert_bookmark_online_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = insert_bookmark_online_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Inserts a new bookmark to the document.
+    # @param request InsertBookmarkOnlineRequest
+    # @return [Array<(InsertBookmarkOnlineResponse, Fixnum, Hash)>]
+    # InsertBookmarkOnlineResponse, response status code and response headers
+    private def insert_bookmark_online_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? InsertBookmarkOnlineRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.insert_bookmark_online ...' if @api_client.config.debugging
+        # verify the required parameter 'document' is set
+        raise ArgumentError, 'Missing the required parameter document when calling WordsApi.insert_bookmark_online' if @api_client.config.client_side_validation && request.document.nil?
+        # verify the required parameter 'bookmark' is set
+        raise ArgumentError, 'Missing the required parameter bookmark when calling WordsApi.insert_bookmark_online' if @api_client.config.client_side_validation && request.bookmark.nil?
+
+        # resource path
+        local_var_path = '/words/online/post/bookmarks'[1..-1]
+        local_var_path = local_var_path.sub('//', '/')
+
+        # query parameters
+        query_params = {}
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+        query_params[downcase_first_letter('RevisionAuthor')] = request.revision_author unless request.revision_author.nil?
+        query_params[downcase_first_letter('RevisionDateTime')] = request.revision_date_time unless request.revision_date_time.nil?
+
+        # header parameters
+        header_params = {}
+        # HTTP header 'Accept' (if needed)
+        header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+        # HTTP header 'Content-Type'
+        header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+
+        # form parameters
+        form_params = {}
+        form_params[downcase_first_letter('Document')] = request.document
+        form_params[downcase_first_letter('Bookmark')] = request.bookmark.to_body.to_json
+
+        # http body (model)
+        post_body = nil
+        auth_names = ['JWT']
+
+        data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        multipart_response: true,
+                                                        return_type: 'InsertBookmarkOnlineResponse')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#insert_bookmark_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        mp_data = InsertBookmarkOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'BookmarkResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
+        [mp_data, status_code, headers]
     end
 
     # Inserts a new comment to the document.
