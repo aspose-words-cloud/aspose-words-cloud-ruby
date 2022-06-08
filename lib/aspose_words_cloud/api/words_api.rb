@@ -1470,7 +1470,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Supported extensions: ".doc", ".docx", ".docm", ".dot", ".dotm", ".dotx", ".flatopc", ".fopc", ".flatopc_macro", ".fopc_macro", ".flatopc_template", ".fopc_template", ".flatopc_template_macro", ".fopc_template_macro", ".wordml", ".wml", ".rtf".
+    # Supported all save format extensions.
     # @param request CreateDocumentRequest
     # @return [DocumentResponse]
     def create_document(request)
@@ -1487,7 +1487,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Supported extensions: ".doc", ".docx", ".docm", ".dot", ".dotm", ".dotx", ".flatopc", ".fopc", ".flatopc_macro", ".fopc_macro", ".flatopc_template", ".fopc_template", ".flatopc_template_macro", ".fopc_template_macro", ".wordml", ".wml", ".rtf".
+    # Supported all save format extensions.
     # @param request CreateDocumentRequest
     # @return [Array<(DocumentResponse, Fixnum, Hash)>]
     # DocumentResponse, response status code and response headers

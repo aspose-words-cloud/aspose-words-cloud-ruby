@@ -18,6 +18,7 @@ This repository contains Aspose.Words Cloud SDK for Ruby source code. This SDK a
 - Added 'DeleteBookmark' and 'DeleteBookmarkOnline' API methods for delete bookmarks by name from the document.
 - Added 'DeleteBookmarks' and 'DeleteBookmarksOnline' API methods for delete all bookmarks from the document.
 - Added 'InsertBookmark' and 'InsertBookmarkOnline' API methods for create new bookmarks in the document.
+- Support all save formats for 'CreateDocument' operation.
 - Support dependsOn feature for batch requests.
 
 ## Enhancements in Version 22.5
@@ -212,7 +213,7 @@ To use Aspose Words for Cloud Ruby SDK you need to register an account with [Asp
 To install this package do the following:
 update your Gemfile
 ```ruby
-gem 'aspose_words_cloud', '~> 22.4'
+gem 'aspose_words_cloud', '~> 22.6'
 ```
 or install directly
 ```bash
