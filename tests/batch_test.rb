@@ -69,5 +69,27 @@ require_relative 'base_test_context'
       assert_equal(true, result[0][1].nil?)
     end
 
+    def test_batch_depends_on
+      uf_req = AsposeWordsCloud::UploadFileRequest.new(file_content: File.join(local_test_folder, local_file), path: remote_data_folder + '/' + remote_file_name)
+      bp_req_0 = AsposeWordsCloud::BatchPartRequest.new(uf_req)
+
+      rt_param_1 = AsposeWordsCloud::ReplaceTextParameters.new({:OldValue => 'placeholder1', :NewValue => 'FOO'})
+      rt_req_1 = AsposeWordsCloud::ReplaceTextRequest.new(name: remote_file_name, folder: remote_data_folder, replace_text: rt_param_1)
+      bp_req_1 = AsposeWordsCloud::BatchPartRequest.new(rt_req_1)
+
+      rt_param_2 = AsposeWordsCloud::ReplaceTextParameters.new({:OldValue => 'placeholder2', :NewValue => 'BAR'})
+      rt_req_2 = AsposeWordsCloud::ReplaceTextRequest.new(name: remote_file_name, folder: remote_data_folder, replace_text: rt_param_2)
+      bp_req_2 = AsposeWordsCloud::BatchPartRequest.new(rt_req_2)
+
+      df_req = AsposeWordsCloud::DownloadFileRequest.new(path: remote_data_folder + '/' + remote_file_name)
+      bp_req_3 = AsposeWordsCloud::BatchPartRequest.new(df_req)
+
+      bp_req_1.dependsOn(bp_req_0)
+      bp_req_2.dependsOn(bp_req_1)
+      bp_req_3.dependsOn(bp_req_2)
+
+      @words_api.batch([bp_req_0, bp_req_1, bp_req_2, bp_req_3])
+    end
+
   end
 end

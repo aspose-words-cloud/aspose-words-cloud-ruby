@@ -51,7 +51,7 @@ module AsposeWordsCloud
     end
 
     # Creating batch part from request
-    def to_batch_part(api_client, guid)
+    def to_batch_part(api_client, requestId, parentRequestId = nil)
       # verify the required parameter 'path' is set
       raise ArgumentError, 'Missing the required parameter path when calling WordsApi.download_file' if api_client.config.client_side_validation && self.path.nil?
 
@@ -70,7 +70,11 @@ module AsposeWordsCloud
       end
 
       header_params = {}
-      header_params['RequestId'] = guid
+      header_params['RequestId'] = requestId
+
+      if parentRequestId != nil
+        header_params['DependsOn'] = parentRequestId
+      end
 
       # form parameters
       form_params = {}
