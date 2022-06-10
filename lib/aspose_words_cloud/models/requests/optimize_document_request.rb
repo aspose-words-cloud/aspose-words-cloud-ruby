@@ -86,7 +86,7 @@ module AsposeWordsCloud
     end
 
     # Creating batch part from request
-    def to_batch_part(api_client, guid)
+    def to_batch_part(api_client, requestId, parentRequestId = nil)
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.optimize_document' if api_client.config.client_side_validation && self.name.nil?
       # verify the required parameter 'options' is set
@@ -116,7 +116,11 @@ module AsposeWordsCloud
       # header parameters
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = api_client.select_header_content_type(['application/xml', 'application/json'])
-      header_params['RequestId'] = guid
+      header_params['RequestId'] = requestId
+
+      if parentRequestId != nil
+        header_params['DependsOn'] = parentRequestId
+      end
 
       # form parameters
       form_params = {}

@@ -61,7 +61,7 @@ module AsposeWordsCloud
     end
 
     # Creating batch part from request
-    def to_batch_part(api_client, guid)
+    def to_batch_part(api_client, requestId, parentRequestId = nil)
       # verify the required parameter 'template' is set
       raise ArgumentError, 'Missing the required parameter template when calling WordsApi.get_document_field_names_online' if api_client.config.client_side_validation && self.template.nil?
 
@@ -84,7 +84,11 @@ module AsposeWordsCloud
       # header parameters
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = api_client.select_header_content_type(['multipart/form-data'])
-      header_params['RequestId'] = guid
+      header_params['RequestId'] = requestId
+
+      if parentRequestId != nil
+        header_params['DependsOn'] = parentRequestId
+      end
 
       # form parameters
       form_params = {}

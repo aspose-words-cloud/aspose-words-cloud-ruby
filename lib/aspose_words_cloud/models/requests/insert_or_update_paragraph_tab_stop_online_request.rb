@@ -76,7 +76,7 @@ module AsposeWordsCloud
     end
 
     # Creating batch part from request
-    def to_batch_part(api_client, guid)
+    def to_batch_part(api_client, requestId, parentRequestId = nil)
       # verify the required parameter 'document' is set
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.insert_or_update_paragraph_tab_stop_online' if api_client.config.client_side_validation && self.document.nil?
       # verify the required parameter 'tab_stop_insert_dto' is set
@@ -105,7 +105,11 @@ module AsposeWordsCloud
       # header parameters
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = api_client.select_header_content_type(['multipart/form-data'])
-      header_params['RequestId'] = guid
+      header_params['RequestId'] = requestId
+
+      if parentRequestId != nil
+        header_params['DependsOn'] = parentRequestId
+      end
 
       # form parameters
       form_params = {}

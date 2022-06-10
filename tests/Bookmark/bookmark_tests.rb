@@ -121,5 +121,88 @@ module AsposeWordsCloud
       result = @words_api.update_bookmark_online(request)
       assert_equal false, result.nil?
     end
+
+    #
+    # Test for deleting bookmark by specified name.
+    #
+    def test_delete_bookmark
+      remote_file_name = 'TestDeleteBookmark.docx'
+
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+
+      request = DeleteBookmarkRequest.new(name: remote_file_name, bookmark_name: bookmark_name, folder: remote_data_folder)
+
+      @words_api.delete_bookmark(request)
+    end
+
+    #
+    # Test for deleting bookmark by specified name online.
+    #
+    def test_delete_bookmark_online
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = DeleteBookmarkOnlineRequest.new(document: request_document, bookmark_name: bookmark_name)
+
+      result = @words_api.delete_bookmark_online(request)
+      assert_equal false, result.nil?
+    end
+
+    #
+    # Test for deleting all bookmarks from document.
+    #
+    def test_delete_bookmarks
+      remote_file_name = 'TestDeleteBookmarks.docx'
+
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+
+      request = DeleteBookmarksRequest.new(name: remote_file_name, folder: remote_data_folder)
+
+      @words_api.delete_bookmarks(request)
+    end
+
+    #
+    # Test for deleting all bookmarks from document online.
+    #
+    def test_delete_bookmarks_online
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = DeleteBookmarksOnlineRequest.new(document: request_document)
+
+      result = @words_api.delete_bookmarks_online(request)
+      assert_equal false, result.nil?
+    end
+
+    #
+    # Test for inserting new bookmark.
+    #
+    def test_insert_bookmark
+      remote_file_name = 'TestInsertBookmark.docx'
+
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+
+      request_bookmark_start_range_node = NodeLink.new({:NodeId => '0.0.0.0'})
+      request_bookmark_start_range = DocumentPosition.new({:Node => request_bookmark_start_range_node})
+      request_bookmark_end_range_node = NodeLink.new({:NodeId => '0.0.0.0'})
+      request_bookmark_end_range = DocumentPosition.new({:Node => request_bookmark_end_range_node})
+      request_bookmark = BookmarkInsert.new({:StartRange => request_bookmark_start_range, :EndRange => request_bookmark_end_range, :Name => 'new_bookmark', :Text => 'Some text'})
+      request = InsertBookmarkRequest.new(name: remote_file_name, bookmark: request_bookmark, folder: remote_data_folder)
+
+      result = @words_api.insert_bookmark(request)
+      assert_equal false, result.nil?
+    end
+
+    #
+    # Test for inserting new bookmark online.
+    #
+    def test_insert_bookmark_online
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request_bookmark_start_range_node = NodeLink.new({:NodeId => '0.0.0.0'})
+      request_bookmark_start_range = DocumentPosition.new({:Node => request_bookmark_start_range_node})
+      request_bookmark_end_range_node = NodeLink.new({:NodeId => '0.0.0.0'})
+      request_bookmark_end_range = DocumentPosition.new({:Node => request_bookmark_end_range_node})
+      request_bookmark = BookmarkInsert.new({:StartRange => request_bookmark_start_range, :EndRange => request_bookmark_end_range, :Name => 'new_bookmark', :Text => 'Some text'})
+      request = InsertBookmarkOnlineRequest.new(document: request_document, bookmark: request_bookmark)
+
+      result = @words_api.insert_bookmark_online(request)
+      assert_equal false, result.nil?
+    end
   end
 end

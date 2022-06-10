@@ -41,7 +41,7 @@ module AsposeWordsCloud
     end
 
     # Creating batch part from request
-    def to_batch_part(api_client, guid)
+    def to_batch_part(api_client, requestId, parentRequestId = nil)
       # resource path
       local_var_path = '/words/fonts/available'[7..-1]
       local_var_path = local_var_path.sub('//', '/')
@@ -55,7 +55,11 @@ module AsposeWordsCloud
       end
 
       header_params = {}
-      header_params['RequestId'] = guid
+      header_params['RequestId'] = requestId
+
+      if parentRequestId != nil
+        header_params['DependsOn'] = parentRequestId
+      end
 
       # form parameters
       form_params = {}

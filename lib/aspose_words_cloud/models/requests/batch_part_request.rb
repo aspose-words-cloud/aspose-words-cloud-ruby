@@ -53,5 +53,9 @@ module AsposeWordsCloud
       part
     end
 
+    def dependsOn(request)
+      self.parent_request_id = request.request_id
+    end
+
   end
 end
