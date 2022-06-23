@@ -1030,6 +1030,155 @@ module AsposeWordsCloud
         [mp_data, status_code, headers]
     end
 
+    # The default settings allows to reduce the size of the document without any visible degradation of images quality.
+    # @param request CompressDocumentRequest
+    # @return [CompressResponse]
+    def compress_document(request)
+        begin
+        data, _status_code, _headers = compress_document_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = compress_document_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # The default settings allows to reduce the size of the document without any visible degradation of images quality.
+    # @param request CompressDocumentRequest
+    # @return [Array<(CompressResponse, Fixnum, Hash)>]
+    # CompressResponse, response status code and response headers
+    private def compress_document_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? CompressDocumentRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.compress_document ...' if @api_client.config.debugging
+        # verify the required parameter 'name' is set
+        raise ArgumentError, 'Missing the required parameter name when calling WordsApi.compress_document' if @api_client.config.client_side_validation && request.name.nil?
+        # verify the required parameter 'compress_options' is set
+        raise ArgumentError, 'Missing the required parameter compress_options when calling WordsApi.compress_document' if @api_client.config.client_side_validation && request.compress_options.nil?
+
+        # resource path
+        local_var_path = '/words/{name}/compress'[1..-1]
+        local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', request.name.nil? ? '' : request.name.to_s)
+        local_var_path = local_var_path.sub('//', '/')
+
+        # query parameters
+        query_params = {}
+        query_params[downcase_first_letter('Folder')] = request.folder unless request.folder.nil?
+        query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+
+        # header parameters
+        header_params = {}
+        # HTTP header 'Accept' (if needed)
+        header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+        # HTTP header 'Content-Type'
+        header_params['Content-Type'] = @api_client.select_header_content_type(['application/xml', 'application/json'])
+
+        # form parameters
+        form_params = {}
+
+        # http body (model)
+        post_body = @api_client.object_to_http_body(request.compress_options)
+        auth_names = ['JWT']
+
+        data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        return_type: 'CompressResponse')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#compress_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [data, status_code, headers]
+    end
+
+    # Compress and resize images inside the document.
+    # @param request CompressDocumentOnlineRequest
+    # @return [CompressDocumentOnlineResponse]
+    def compress_document_online(request)
+        begin
+        data, _status_code, _headers = compress_document_online_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = compress_document_online_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Compress and resize images inside the document.
+    # @param request CompressDocumentOnlineRequest
+    # @return [Array<(CompressDocumentOnlineResponse, Fixnum, Hash)>]
+    # CompressDocumentOnlineResponse, response status code and response headers
+    private def compress_document_online_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? CompressDocumentOnlineRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.compress_document_online ...' if @api_client.config.debugging
+        # verify the required parameter 'document' is set
+        raise ArgumentError, 'Missing the required parameter document when calling WordsApi.compress_document_online' if @api_client.config.client_side_validation && request.document.nil?
+        # verify the required parameter 'compress_options' is set
+        raise ArgumentError, 'Missing the required parameter compress_options when calling WordsApi.compress_document_online' if @api_client.config.client_side_validation && request.compress_options.nil?
+
+        # resource path
+        local_var_path = '/words/online/put/compress'[1..-1]
+        local_var_path = local_var_path.sub('//', '/')
+
+        # query parameters
+        query_params = {}
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
+        query_params[downcase_first_letter('DestFileName')] = request.dest_file_name unless request.dest_file_name.nil?
+
+        # header parameters
+        header_params = {}
+        # HTTP header 'Accept' (if needed)
+        header_params['Accept'] = @api_client.select_header_accept(['application/xml', 'application/json'])
+        # HTTP header 'Content-Type'
+        header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+
+        # form parameters
+        form_params = {}
+        form_params[downcase_first_letter('Document')] = request.document
+        form_params[downcase_first_letter('CompressOptions')] = request.compress_options.to_body.to_json
+
+        # http body (model)
+        post_body = nil
+        auth_names = ['JWT']
+
+        data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        auth_names: auth_names,
+                                                        multipart_response: true,
+                                                        return_type: 'CompressDocumentOnlineResponse')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#compress_document_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        mp_data = CompressDocumentOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'CompressResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
+        [mp_data, status_code, headers]
+    end
+
     # Converts a document on a local drive to the specified format.
     # @param request ConvertDocumentRequest
     # @return [File]
