@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="append_document_request.rb">
+# <copyright company="Aspose" file="compress_document_online_request.rb">
 #   Copyright (c) 2022 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -26,20 +26,14 @@
 module AsposeWordsCloud
 
   #
-  # Request model for append_document operation.
+  # Request model for compress_document_online operation.
   #
-  class AppendDocumentRequest
-    # The filename of the input document.
-    attr_accessor :name
+  class CompressDocumentOnlineRequest
+    # The document.
+    attr_accessor :document
 
-    # <see cref="BaseEntryList"/> with a list of entries to append.
-    attr_accessor :document_list
-
-    # Original document folder.
-    attr_accessor :folder
-
-    # Original document storage.
-    attr_accessor :storage
+    # Options for compress the document.
+    attr_accessor :compress_options
 
     # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     attr_accessor :load_encoding
@@ -53,60 +47,41 @@ module AsposeWordsCloud
     # Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
     attr_accessor :dest_file_name
 
-    # Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    attr_accessor :revision_author
-
-    # The date and time to use for revisions.
-    attr_accessor :revision_date_time
-
     #
     # Initializes a new instance.
-    # @param name The filename of the input document.
-    # @param document_list <see cref="BaseEntryList"/> with a list of entries to append.
-    # @param folder Original document folder.
-    # @param storage Original document storage.
+    # @param document The document.
+    # @param compress_options Options for compress the document.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     # @param password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
     # @param encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
     # @param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    # @param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    # @param revision_date_time The date and time to use for revisions.
 
-    def initialize(name:, document_list:, folder: nil, storage: nil, load_encoding: nil, password: nil, encrypted_password: nil, dest_file_name: nil, revision_author: nil, revision_date_time: nil)
-      self.name = name
-      self.document_list = document_list
-      self.folder = folder
-      self.storage = storage
+    def initialize(document:, compress_options:, load_encoding: nil, password: nil, encrypted_password: nil, dest_file_name: nil)
+      self.document = document
+      self.compress_options = compress_options
       self.load_encoding = load_encoding
       self.password = password
       self.encrypted_password = encrypted_password
       self.dest_file_name = dest_file_name
-      self.revision_author = revision_author
-      self.revision_date_time = revision_date_time
     end
 
     # Creating batch part from request
     def to_batch_part(api_client, requestId, parentRequestId = nil)
-      # verify the required parameter 'name' is set
-      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.append_document' if api_client.config.client_side_validation && self.name.nil?
-      # verify the required parameter 'document_list' is set
-      raise ArgumentError, 'Missing the required parameter document_list when calling WordsApi.append_document' if api_client.config.client_side_validation && self.document_list.nil?
+      # verify the required parameter 'document' is set
+      raise ArgumentError, 'Missing the required parameter document when calling WordsApi.compress_document_online' if api_client.config.client_side_validation && self.document.nil?
+      # verify the required parameter 'compress_options' is set
+      raise ArgumentError, 'Missing the required parameter compress_options when calling WordsApi.compress_document_online' if api_client.config.client_side_validation && self.compress_options.nil?
 
       # resource path
-      local_var_path = '/words/{name}/appendDocument'[7..-1]
-      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)
+      local_var_path = '/words/online/put/compress'[7..-1]
       local_var_path = local_var_path.sub('//', '/')
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = self.folder unless self.folder.nil?
-      query_params[downcase_first_letter('Storage')] = self.storage unless self.storage.nil?
       query_params[downcase_first_letter('LoadEncoding')] = self.load_encoding unless self.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = self.password unless self.password.nil?
       query_params[downcase_first_letter('EncryptedPassword')] = self.encrypted_password unless self.encrypted_password.nil?
       query_params[downcase_first_letter('DestFileName')] = self.dest_file_name unless self.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = self.revision_author unless self.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = self.revision_date_time unless self.revision_date_time.nil?
 
       if query_params
         query_params.each { |key, value| local_var_path = api_client.add_param_to_query(local_var_path, key, value) }
@@ -115,7 +90,7 @@ module AsposeWordsCloud
       header_params = {}
       # header parameters
       # HTTP header 'Content-Type'
-      header_params['Content-Type'] = api_client.select_header_content_type(['application/xml', 'application/json'])
+      header_params['Content-Type'] = api_client.select_header_content_type(['multipart/form-data'])
       header_params['RequestId'] = requestId
 
       if parentRequestId != nil
@@ -124,10 +99,12 @@ module AsposeWordsCloud
 
       # form parameters
       form_params = {}
+      form_params[downcase_first_letter('Document')] = self.document
+      form_params[downcase_first_letter('CompressOptions')] = self.compress_options.to_body.to_json
 
       # http body (model)
-      post_body = api_client.object_to_http_body(self.document_list)
-      body = post_body
+      post_body = nil
+      body = api_client.build_request_body_batch(header_params, form_params, post_body)
       part = ""
       part.concat("PUT".force_encoding('UTF-8'))
       part.concat(" ".force_encoding('UTF-8'))
@@ -149,38 +126,35 @@ module AsposeWordsCloud
     end
 
     def create_http_request(api_client)
-      # verify the required parameter 'name' is set
-      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.append_document' if api_client.config.client_side_validation && self.name.nil?
-      # verify the required parameter 'document_list' is set
-      raise ArgumentError, 'Missing the required parameter document_list when calling WordsApi.append_document' if api_client.config.client_side_validation && self.document_list.nil?
+      # verify the required parameter 'document' is set
+      raise ArgumentError, 'Missing the required parameter document when calling WordsApi.compress_document_online' if api_client.config.client_side_validation && self.document.nil?
+      # verify the required parameter 'compress_options' is set
+      raise ArgumentError, 'Missing the required parameter compress_options when calling WordsApi.compress_document_online' if api_client.config.client_side_validation && self.compress_options.nil?
 
       # resource path
-      local_var_path = '/words/{name}/appendDocument'[1..-1]
-      local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)
+      local_var_path = '/words/online/put/compress'[1..-1]
       local_var_path = local_var_path.sub('//', '/')
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('Folder')] = self.folder unless self.folder.nil?
-      query_params[downcase_first_letter('Storage')] = self.storage unless self.storage.nil?
       query_params[downcase_first_letter('LoadEncoding')] = self.load_encoding unless self.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = self.password unless self.password.nil?
       query_params[downcase_first_letter('EncryptedPassword')] = self.encrypted_password unless self.encrypted_password.nil?
       query_params[downcase_first_letter('DestFileName')] = self.dest_file_name unless self.dest_file_name.nil?
-      query_params[downcase_first_letter('RevisionAuthor')] = self.revision_author unless self.revision_author.nil?
-      query_params[downcase_first_letter('RevisionDateTime')] = self.revision_date_time unless self.revision_date_time.nil?
 
       # header parameters
       header_params = {}
       # HTTP header 'Content-Type'
-      header_params['Content-Type'] = api_client.select_header_content_type(['application/xml', 'application/json'])
+      header_params['Content-Type'] = api_client.select_header_content_type(['multipart/form-data'])
 
       # form parameters
       form_params = {}
+      form_params[downcase_first_letter('Document')] = self.document
+      form_params[downcase_first_letter('CompressOptions')] = self.compress_options.to_body.to_json
 
       # http body (model)
-      post_body = api_client.object_to_http_body(self.document_list)
-      body = post_body
+      post_body = nil
+      body = api_client.build_request_body(header_params, form_params, post_body)
       {
         'method': :PUT,
         'path': local_var_path,
@@ -200,7 +174,7 @@ module AsposeWordsCloud
 
     # Get response type
     def get_response_type
-      'DocumentResponse'
+      'CompressDocumentOnlineResponse'
     end
   end
 end

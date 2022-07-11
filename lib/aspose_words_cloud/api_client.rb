@@ -141,24 +141,22 @@ module AsposeWordsCloud
         end
       end
 
-      conn = Faraday.new url, { :params => query_params, :headers => header_params } do |f|
+      conn = Faraday.new url, { :params => query_params, :headers => header_params, request: { timeout: @config.timeout }} do |f|
       f.request :multipart
       f.request :url_encoded
       f.adapter Faraday.default_adapter
       end
 
-      Timeout.timeout(@config.timeout) do
-        case http_method
-        when :post
-          return conn.post url, req_opts[:body]
-        when :put
-          return conn.put url, req_opts[:body]
-        when :get
-          return conn.get url, req_opts[:body]
-        else
-          conn.delete url do |c|
-            c.body = req_opts[:body]
-          end
+      case http_method
+      when :post
+        return conn.post url, req_opts[:body]
+      when :put
+        return conn.put url, req_opts[:body]
+      when :get
+        return conn.get url, req_opts[:body]
+      else
+        conn.delete url do |c|
+          c.body = req_opts[:body]
         end
       end
     end
