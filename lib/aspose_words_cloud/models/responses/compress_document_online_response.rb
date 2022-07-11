@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="report_build_options.rb">
+# <copyright company="Aspose" file="compress_document_online_response.rb">
 #   Copyright (c) 2022 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -23,26 +23,24 @@
 # </summary>
 # ------------------------------------------------------------------------------------
 
-require 'date'
-
 module AsposeWordsCloud
 
-  # Specifies options controlling behavior of ReportingEngine while building a report.
-  class ReportBuildOptions
-    NONE = "None".freeze
-    ALLOWMISSINGMEMBERS = "AllowMissingMembers".freeze
-    REMOVEEMPTYPARAGRAPHS = "RemoveEmptyParagraphs".freeze
-    INLINEERRORMESSAGES = "InlineErrorMessages".freeze
-    USELEGACYHEADERFOOTERVISITING = "UseLegacyHeaderFooterVisiting".freeze
-    RESPECTJPEGEXIFORIENTATION = "RespectJpegExifOrientation".freeze
+  #
+  # Response model for compress_document_online operation.
+  #
+  class CompressDocumentOnlineResponse
+    # The response model.
+    attr_accessor :model
 
-    # Builds the enum from string
-    # @param [String] The enum value in the form of the string
-    # @return [String] The enum value
-    def build_from_hash(value)
-      constantValues = ReportBuildOptions.constants.select{|c| ReportBuildOptions::const_get(c) == value}
-      raise "Invalid ENUM value #{value} for class #ReportBuildOptions" if constantValues.empty?
-      value
+    # The document after modification.
+    attr_accessor :document
+
+    #
+    # Initializes a new instance.
+    #
+    def initialize()
+      self.model = nil
+      self.document = nil
     end
   end
 end
