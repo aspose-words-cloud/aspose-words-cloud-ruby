@@ -1,8 +1,8 @@
 parameters {
 		string(name: 'version', defaultValue: '19.10.0', description: 'version of gem')
 		string(name: 'deployKey', defaultValue: 'xxx', description: 'key')
-		string(name: 'testServerUrl', defaultValue: 'https://api-qa.aspose.cloud', description: 'server url')
-		string(name: 'StartFromStage', defaultValue: '0', description: '0 based index of stage which will be started')		
+		string(name: 'apiUrl', defaultValue: 'https://api-qa.aspose.cloud', description: 'server url')
+		string(name: 'StartFromStage', defaultValue: '0', description: '0 based index of stage which will be started')				
 }
 node('words-linux') {         
     try {		
@@ -40,14 +40,15 @@ def testGemLocally()
 			checkout([$class: 'GitSCM', branches: [[name: '*/testPackage']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'LocalBranch', localBranch: "**"]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '361885ba-9425-4230-950e-0af201d90547', url: 'https://git.auckland.dynabic.com/words-cloud/words-cloud-ruby.git']]])
             withCredentials([usernamePassword(credentialsId: '6839cbe8-39fa-40c0-86ce-90706f0bae5d', passwordVariable: 'ClientSecret', usernameVariable: 'ClientId')]) {
                 sh 'mkdir -p Settings'
-                sh 'echo "{\\"ClientId\\": \\"$ClientId\\",\\"ClientSecret\\": \\"$ClientSecret\\", \\"BaseUrl\\": \\"$apiUrl\\", \\"Debug\\" : $debugMode}" > Settings/servercreds.json'
+                sh 'echo "{\\"ClientId\\": \\"$ClientId\\",\\"ClientSecret\\": \\"$ClientSecret\\", \\"BaseUrl\\": \\"$apiUrl\\"}" > Settings/servercreds.json'
             }
         }
 		
 	    stage('3:build gem and test'){
-			docker.image('ruby:2.4').inside('-u root'){
+			docker.image('ruby:2.7').inside('-u root'){
 				stage('upload to rubygems'){
 					sh "gem build aspose_words_cloud.gemspec"
+                    sh "gem install nokogiri -v 1.10.10"
 					sh "gem install ./aspose_words_cloud-${version}.gem"
 				}
 				
@@ -79,7 +80,7 @@ def publishGem()
 		}			
 		    
 	    stage('5:build gem publish'){	
-			docker.image('ruby:2.4').inside('-u root'){
+			docker.image('ruby:2.7').inside('-u root'){
 				stage('upload to rubygems'){
 					sh "gem build aspose_words_cloud.gemspec"
 					sh "mkdir ~/.gem"
