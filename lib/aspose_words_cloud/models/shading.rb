@@ -258,5 +258,17 @@ module AsposeWordsCloud
       end
     end
 
+    def collectFilesContent(resultFilesContent)
+      if self.background_pattern_color
+          self.background_pattern_color.collectFilesContent(resultFilesContent)
+      end
+
+      if self.foreground_pattern_color
+          self.foreground_pattern_color.collectFilesContent(resultFilesContent)
+      end
+
+
+    end
+
   end
 end

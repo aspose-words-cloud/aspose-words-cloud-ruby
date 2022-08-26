@@ -87,14 +87,33 @@ module AsposeWordsCloud
       end
 
       # form parameters
-      form_params = {}
-      form_params[downcase_first_letter('Template')] = self.template
-      form_params[downcase_first_letter('Data')] = self.data
-      form_params[downcase_first_letter('ReportEngineSettings')] = self.report_engine_settings.to_body.to_json
+      form_params = []
+      files_content = []
+      if self.template.nil?
+        raise "Parameter Template is required."
+      end
+      unless self.template.nil?
+        form_params.push({:'Name' => 'template', :'Data' => self.template, :'MimeType' =>'application/octet-stream'})
+      end
+
+      if self.data.nil?
+        raise "Parameter Data is required."
+      end
+      unless self.data.nil?
+        form_params.push({:'Name' => 'data', :'Data' => self.data, :'MimeType' =>'text/plain'})
+      end
+
+      if self.report_engine_settings.nil?
+        raise "Parameter ReportEngineSettings is required."
+      end
+      unless self.report_engine_settings.nil?
+        form_params.push({:'Name' => 'reportEngineSettings', :'Data' => self.report_engine_settings.to_body.to_json, :'MimeType' =>'application/json'})
+        self.report_engine_settings.collectFilesContent(files_content)
+      end
+
 
       # http body (model)
-      post_body = nil
-      body = api_client.build_request_body_batch(header_params, form_params, post_body)
+      body = api_client.build_request_body_batch(header_params, form_params, files_content)
       part = ""
       part.concat("PUT".force_encoding('UTF-8'))
       part.concat(" ".force_encoding('UTF-8'))
@@ -106,8 +125,8 @@ module AsposeWordsCloud
       if body
         if body.is_a?(Hash)
           body.each do |key, value|
-          part.concat(value, "\r\n")
-        end
+            part.concat(value, "\r\n")
+          end
         else
           part.concat(body)
         end
@@ -137,14 +156,31 @@ module AsposeWordsCloud
       header_params['Content-Type'] = api_client.select_header_content_type(['multipart/form-data'])
 
       # form parameters
-      form_params = {}
-      form_params[downcase_first_letter('Template')] = self.template
-      form_params[downcase_first_letter('Data')] = self.data
-      form_params[downcase_first_letter('ReportEngineSettings')] = self.report_engine_settings.to_body.to_json
+      form_params = []
+      files_content = []
+      if self.template.nil?
+        raise "Parameter Template is required."
+      end
+      unless self.template.nil?
+        form_params.push({:'Name' => 'template', :'Data' => self.template, :'MimeType' =>'application/octet-stream'})
+      end
 
-      # http body (model)
-      post_body = nil
-      body = api_client.build_request_body(header_params, form_params, post_body)
+      if self.data.nil?
+        raise "Parameter Data is required."
+      end
+      unless self.data.nil?
+        form_params.push({:'Name' => 'data', :'Data' => self.data, :'MimeType' =>'text/plain'})
+      end
+
+      if self.report_engine_settings.nil?
+        raise "Parameter ReportEngineSettings is required."
+      end
+      unless self.report_engine_settings.nil?
+        form_params.push({:'Name' => 'reportEngineSettings', :'Data' => self.report_engine_settings.to_body.to_json, :'MimeType' =>'application/json'})
+        self.report_engine_settings.collectFilesContent(files_content)
+      end
+
+      body = api_client.build_request_body(header_params, form_params, files_content)
       {
         'method': :PUT,
         'path': local_var_path,

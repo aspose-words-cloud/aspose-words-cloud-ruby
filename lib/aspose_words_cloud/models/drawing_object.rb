@@ -382,5 +382,28 @@ module AsposeWordsCloud
       end
     end
 
+    def collectFilesContent(resultFilesContent)
+      if self.image_data_link
+          self.image_data_link.collectFilesContent(resultFilesContent)
+      end
+
+
+      if self.ole_data_link
+          self.ole_data_link.collectFilesContent(resultFilesContent)
+      end
+
+
+
+      if self.render_links
+          for element in self.render_links do
+              element.collectFilesContent(resultFilesContent);
+          end
+      end
+
+
+
+
+    end
+
   end
 end

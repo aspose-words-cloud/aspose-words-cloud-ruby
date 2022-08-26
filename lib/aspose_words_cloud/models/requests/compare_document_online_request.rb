@@ -109,14 +109,30 @@ module AsposeWordsCloud
       end
 
       # form parameters
-      form_params = {}
-      form_params[downcase_first_letter('Document')] = self.document
-      form_params[downcase_first_letter('CompareData')] = self.compare_data.to_body.to_json
-      form_params[downcase_first_letter('ComparingDocument')] = self.comparing_document unless self.comparing_document.nil?
+      form_params = []
+      files_content = []
+      if self.document.nil?
+        raise "Parameter Document is required."
+      end
+      unless self.document.nil?
+        form_params.push({:'Name' => 'document', :'Data' => self.document, :'MimeType' =>'application/octet-stream'})
+      end
+
+      if self.compare_data.nil?
+        raise "Parameter CompareData is required."
+      end
+      unless self.compare_data.nil?
+        form_params.push({:'Name' => 'compareData', :'Data' => self.compare_data.to_body.to_json, :'MimeType' =>'application/json'})
+        self.compare_data.collectFilesContent(files_content)
+      end
+
+      unless self.comparing_document.nil?
+        form_params.push({:'Name' => 'comparingDocument', :'Data' => self.comparing_document, :'MimeType' =>'application/octet-stream'})
+      end
+
 
       # http body (model)
-      post_body = nil
-      body = api_client.build_request_body_batch(header_params, form_params, post_body)
+      body = api_client.build_request_body_batch(header_params, form_params, files_content)
       part = ""
       part.concat("PUT".force_encoding('UTF-8'))
       part.concat(" ".force_encoding('UTF-8'))
@@ -128,8 +144,8 @@ module AsposeWordsCloud
       if body
         if body.is_a?(Hash)
           body.each do |key, value|
-          part.concat(value, "\r\n")
-        end
+            part.concat(value, "\r\n")
+          end
         else
           part.concat(body)
         end
@@ -161,14 +177,28 @@ module AsposeWordsCloud
       header_params['Content-Type'] = api_client.select_header_content_type(['multipart/form-data'])
 
       # form parameters
-      form_params = {}
-      form_params[downcase_first_letter('Document')] = self.document
-      form_params[downcase_first_letter('CompareData')] = self.compare_data.to_body.to_json
-      form_params[downcase_first_letter('ComparingDocument')] = self.comparing_document unless self.comparing_document.nil?
+      form_params = []
+      files_content = []
+      if self.document.nil?
+        raise "Parameter Document is required."
+      end
+      unless self.document.nil?
+        form_params.push({:'Name' => 'document', :'Data' => self.document, :'MimeType' =>'application/octet-stream'})
+      end
 
-      # http body (model)
-      post_body = nil
-      body = api_client.build_request_body(header_params, form_params, post_body)
+      if self.compare_data.nil?
+        raise "Parameter CompareData is required."
+      end
+      unless self.compare_data.nil?
+        form_params.push({:'Name' => 'compareData', :'Data' => self.compare_data.to_body.to_json, :'MimeType' =>'application/json'})
+        self.compare_data.collectFilesContent(files_content)
+      end
+
+      unless self.comparing_document.nil?
+        form_params.push({:'Name' => 'comparingDocument', :'Data' => self.comparing_document, :'MimeType' =>'application/octet-stream'})
+      end
+
+      body = api_client.build_request_body(header_params, form_params, files_content)
       {
         'method': :PUT,
         'path': local_var_path,

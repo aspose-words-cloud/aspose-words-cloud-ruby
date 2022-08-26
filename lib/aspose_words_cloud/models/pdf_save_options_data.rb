@@ -915,5 +915,43 @@ module AsposeWordsCloud
       end
     end
 
+    def collectFilesContent(resultFilesContent)
+      if self.digital_signature_details
+          self.digital_signature_details.collectFilesContent(resultFilesContent)
+      end
+
+
+      if self.downsample_options
+          self.downsample_options.collectFilesContent(resultFilesContent)
+      end
+
+
+      if self.encryption_details
+          self.encryption_details.collectFilesContent(resultFilesContent)
+      end
+
+
+
+
+
+
+
+
+
+      if self.outline_options
+          self.outline_options.collectFilesContent(resultFilesContent)
+      end
+
+
+
+
+
+
+
+
+
+
+    end
+
   end
 end

@@ -209,5 +209,14 @@ module AsposeWordsCloud
       end
     end
 
+    def collectFilesContent(resultFilesContent)
+      if self.tab_stops
+          for element in self.tab_stops do
+              element.collectFilesContent(resultFilesContent);
+          end
+      end
+
+    end
+
   end
 end

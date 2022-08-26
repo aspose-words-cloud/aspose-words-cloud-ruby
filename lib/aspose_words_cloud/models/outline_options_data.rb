@@ -249,5 +249,19 @@ module AsposeWordsCloud
       end
     end
 
+    def collectFilesContent(resultFilesContent)
+      if self.bookmarks_outline_levels
+          for element in self.bookmarks_outline_levels do
+              element.collectFilesContent(resultFilesContent);
+          end
+      end
+
+
+
+
+
+
+    end
+
   end
 end

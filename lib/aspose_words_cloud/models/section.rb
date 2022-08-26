@@ -249,5 +249,30 @@ module AsposeWordsCloud
       end
     end
 
+    def collectFilesContent(resultFilesContent)
+      if self.child_nodes
+          for element in self.child_nodes do
+              element.collectFilesContent(resultFilesContent);
+          end
+      end
+
+      if self.header_footers
+          self.header_footers.collectFilesContent(resultFilesContent)
+      end
+
+      if self.page_setup
+          self.page_setup.collectFilesContent(resultFilesContent)
+      end
+
+      if self.paragraphs
+          self.paragraphs.collectFilesContent(resultFilesContent)
+      end
+
+      if self.tables
+          self.tables.collectFilesContent(resultFilesContent)
+      end
+
+    end
+
   end
 end

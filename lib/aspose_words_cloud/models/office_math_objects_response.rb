@@ -207,5 +207,12 @@ module AsposeWordsCloud
       end
     end
 
+    def collectFilesContent(resultFilesContent)
+      if self.office_math_objects
+          self.office_math_objects.collectFilesContent(resultFilesContent)
+      end
+
+    end
+
   end
 end

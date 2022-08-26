@@ -227,5 +227,15 @@ module AsposeWordsCloud
       end
     end
 
+    def collectFilesContent(resultFilesContent)
+      if self.footnotes_stat_data
+          self.footnotes_stat_data.collectFilesContent(resultFilesContent)
+      end
+
+
+
+
+    end
+
   end
 end

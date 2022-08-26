@@ -229,5 +229,18 @@ module AsposeWordsCloud
       end
     end
 
+    def collectFilesContent(resultFilesContent)
+      if self.row_format
+          self.row_format.collectFilesContent(resultFilesContent)
+      end
+
+      if self.table_cell_list
+          for element in self.table_cell_list do
+              element.collectFilesContent(resultFilesContent);
+          end
+      end
+
+    end
+
   end
 end

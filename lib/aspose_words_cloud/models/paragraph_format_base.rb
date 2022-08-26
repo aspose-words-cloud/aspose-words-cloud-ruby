@@ -563,5 +563,21 @@ module AsposeWordsCloud
       end
     end
 
+    def collectFilesContent(resultFilesContent)
+      if self.shading
+          self.shading.collectFilesContent(resultFilesContent)
+      end
+
+
+
+
+
+
+
+
+
+
+    end
+
   end
 end

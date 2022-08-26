@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="base_entry.rb">
+# <copyright company="Aspose" file="base_image_entry_list.rb">
 #   Copyright (c) 2022 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -27,21 +27,21 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Represents a entry which will be appended to the original resource document.
-  class BaseEntry
-    # Gets or sets the path to entry to append at the server.
-    attr_accessor :href
+  # Represents a list of images which will be appended to the original resource document or image.
+  class BaseImageEntryList
+    # Gets or sets a value indicating whether each image should be added to a new page in the document.
+    attr_accessor :append_each_image_on_new_page
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'href' => :'Href'
+        :'append_each_image_on_new_page' => :'AppendEachImageOnNewPage'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'href' => :'String'
+        :'append_each_image_on_new_page' => :'BOOLEAN'
       }
     end
 
@@ -53,8 +53,8 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'Href')
-        self.href = attributes[:'Href']
+      if attributes.key?(:'AppendEachImageOnNewPage')
+        self.append_each_image_on_new_page = attributes[:'AppendEachImageOnNewPage']
       end
     end
 
@@ -76,7 +76,7 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          href == other.href
+          append_each_image_on_new_page == other.append_each_image_on_new_page
     end
 
     # @see the `==` method
@@ -88,7 +88,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [href].hash
+      [append_each_image_on_new_page].hash
     end
 
     # Builds the object from hash
@@ -195,6 +195,9 @@ module AsposeWordsCloud
       else
         value
       end
+    end
+
+    def collectFilesContent(resultFilesContent)
     end
 
   end

@@ -59,14 +59,12 @@ module AsposeWordsCloud
     # Test for appending document online.
     #
     def test_append_document_online
-      remote_file_name = 'TestAppendDocument.docx'
-
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
-
       request_document = File.open(File.join(local_test_folder, local_file))
-      request_document_list_document_entries0 = DocumentEntry.new({:Href => remote_data_folder + '/' + remote_file_name, :ImportFormatMode => 'KeepSourceFormatting'})
-      request_document_list_document_entries = [request_document_list_document_entries0]
-      request_document_list = DocumentEntryList.new({:DocumentEntries => request_document_list_document_entries})
+      request_document_list_online_document_entries0_fileStream = File.open(File.join(local_test_folder, local_file))
+      request_document_list_online_document_entries0_file = AsposeWordsCloud::FileContent.new(local_file, request_document_list_online_document_entries0_fileStream)
+      request_document_list_online_document_entries0 = OnlineDocumentEntry.new({:File => request_document_list_online_document_entries0_file, :ImportFormatMode => 'KeepSourceFormatting'})
+      request_document_list_online_document_entries = [request_document_list_online_document_entries0]
+      request_document_list = OnlineDocumentEntryList.new({:OnlineDocumentEntries => request_document_list_online_document_entries})
       request = AppendDocumentOnlineRequest.new(document: request_document, document_list: request_document_list)
 
       result = @words_api.append_document_online(request)

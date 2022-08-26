@@ -573,5 +573,14 @@ module AsposeWordsCloud
       end
     end
 
+    def collectFilesContent(resultFilesContent)
+      if self.outline_options
+          self.outline_options.collectFilesContent(resultFilesContent)
+      end
+
+
+
+    end
+
   end
 end

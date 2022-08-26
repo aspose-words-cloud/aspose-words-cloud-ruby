@@ -219,5 +219,22 @@ module AsposeWordsCloud
       end
     end
 
+    def collectFilesContent(resultFilesContent)
+      if self.pages
+          for element in self.pages do
+              element.collectFilesContent(resultFilesContent);
+          end
+      end
+
+      if self.source_document
+          self.source_document.collectFilesContent(resultFilesContent)
+      end
+
+      if self.zipped_pages
+          self.zipped_pages.collectFilesContent(resultFilesContent)
+      end
+
+    end
+
   end
 end

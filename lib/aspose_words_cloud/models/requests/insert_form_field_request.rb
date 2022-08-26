@@ -135,11 +135,19 @@ module AsposeWordsCloud
       end
 
       # form parameters
-      form_params = {}
+      form_params = []
+      files_content = []
+      if self.form_field.nil?
+        raise "Parameter FormField is required."
+      end
+      unless self.form_field.nil?
+        form_params.push({:'Name' => 'formField', :'Data' => self.form_field.to_body.to_json, :'MimeType' =>'application/json'})
+        self.form_field.collectFilesContent(files_content)
+      end
+
 
       # http body (model)
-      post_body = api_client.object_to_http_body(self.form_field)
-      body = post_body
+      body = api_client.build_request_body_batch(header_params, form_params, files_content)
       part = ""
       part.concat("POST".force_encoding('UTF-8'))
       part.concat(" ".force_encoding('UTF-8'))
@@ -151,8 +159,8 @@ module AsposeWordsCloud
       if body
         if body.is_a?(Hash)
           body.each do |key, value|
-          part.concat(value, "\r\n")
-        end
+            part.concat(value, "\r\n")
+          end
         else
           part.concat(body)
         end
@@ -190,11 +198,17 @@ module AsposeWordsCloud
       header_params['Content-Type'] = api_client.select_header_content_type(['application/xml', 'application/json'])
 
       # form parameters
-      form_params = {}
+      form_params = []
+      files_content = []
+      if self.form_field.nil?
+        raise "Parameter FormField is required."
+      end
+      unless self.form_field.nil?
+        form_params.push({:'Name' => 'formField', :'Data' => self.form_field.to_body.to_json, :'MimeType' =>'application/json'})
+        self.form_field.collectFilesContent(files_content)
+      end
 
-      # http body (model)
-      post_body = api_client.object_to_http_body(self.form_field)
-      body = post_body
+      body = api_client.build_request_body(header_params, form_params, files_content)
       {
         'method': :POST,
         'path': local_var_path,

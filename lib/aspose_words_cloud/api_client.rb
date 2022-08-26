@@ -112,7 +112,6 @@ module AsposeWordsCloud
     # @param [String] path URL path (e.g. /account/new)
     # @option opts [Hash] :header_params Header parameters
     # @option opts [Hash] :query_params Query parameters
-    # @option opts [Hash] :form_params Query parameters
     # @option opts [Object] :body HTTP body (JSON/XML)
     # @return [Faraday::Response] A Faraday Response
     def build_request(http_method, path, opts = {})
@@ -121,10 +120,8 @@ module AsposeWordsCloud
 
       header_params = @default_headers.merge(opts[:header_params] || {})
       query_params = opts[:query_params] || {}
-      form_params = opts[:form_params] || {}
+      update_params_for_auth! header_params, query_params, ["JWT"]
       body = opts[:body] if opts[:body] || nil?
-
-      update_params_for_auth! header_params, query_params, opts[:auth_names]
 
       req_opts = {
         :method => http_method,
@@ -134,8 +131,6 @@ module AsposeWordsCloud
       }
 
       if [:post, :patch, :put, :delete].include?(http_method)
-        req_body = build_request_body(header_params, form_params, opts[:body])
-        req_opts.update :body => req_body
         if @config.debugging
           @config.logger.debug "HTTP request body param ~BEGIN~\n#{req_body}\n~END~\n"
         end
@@ -404,26 +399,43 @@ module AsposeWordsCloud
     # @param [Hash] form_params Query parameters
     # @param [Object] body HTTP body (JSON/XML)
     # @return [String] HTTP body data in the form of string
-    def build_request_body(header_params, form_params, body)
+    def build_request_body(header_params, form_params, files_content)
       # http form
-      if header_params['Content-Type']['application/x-www-form-urlencoded'] ||
-          header_params['Content-Type']['multipart/form-data']
+      files_content.each do |file_content|
+        form_params.push({:'Name' => file_content.id, :'Data' => file_content.content, :'MimeType' =>'application/octet-stream'})
+      end
+
+      if form_params.length() == 0
+        data = nil
+      elsif form_params.length() == 1
+        form_param = form_params[0]
+        value = form_param[:'Data']
+        case value
+        when ::File, ::Tempfile
+          data = File.open(value.path, 'rb') { |f| f.read }
+        when ::Array, nil, Faraday::ParamPart
+          data = value
+        else
+          data = value.to_s
+        end
+        header_params['Content-Type'] = form_param[:'MimeType']
+      else
         data = {}
-        form_params.each do |key, value|
+        form_params.each do |form_param|
+          key = form_param[:'Name']
+          value = form_param[:'Data']
+          mimeType = form_param[:'MimeType']
           case value
           when ::File, ::Tempfile
-            data[key] = Faraday::FilePart.new(value.path, Marcel::Magic.by_magic(value).to_s, key)
+            data[key] = Faraday::FilePart.new(value.path, mimeType)
           when ::Array, nil, Faraday::ParamPart
             data[key] = value
           else
-            data[key] = value.to_s
+            data[key] = Faraday::ParamPart.new(value.to_s, mimeType)
           end
         end
-      elsif body
-        data = body.is_a?(String) ? body : body.to_json
-      else
-        data = nil
       end
+
       data
     end
 
@@ -433,26 +445,50 @@ module AsposeWordsCloud
     # @param [Hash] form_params Query parameters
     # @param [Object] body HTTP body (JSON/XML)
     # @return [String] HTTP body data in the form of string
-    def build_request_body_batch(header_params, form_params, body)
-      # http form
-      if header_params['Content-Type']['application/x-www-form-urlencoded'] ||
-        header_params['Content-Type']['multipart/form-data']
-        data = {}
-        form_params.each do |key, value|
+    def build_request_body_batch(header_params, form_params, files_content)
+      files_content.each do |file_content|
+        form_params.push({:'Name' => file_content.id, :'Data' => file_content.content, :'MimeType' =>'application/octet-stream'})
+      end
+
+      if form_params.length() == 0
+        data = ''
+      elsif form_params.length() == 1
+        form_param = form_params[0]
+        key = form_param[:'Name']
+        value = form_param[:'Data']
+        case value
+        when ::File, ::Tempfile
+          data = File.open(value.path, 'rb') { |f| f.read }
+        when ::Array, nil, Faraday::ParamPart
+          data = value
+        else
+          data = value.to_s
+        end
+        header_params['Content-Type'] = form_param[:'MimeType']
+      else
+        boundary = SecureRandom.uuid
+        data = ""
+        form_params.each do |form_param|
+          key = form_param[:'Name']
+          value = form_param[:'Data']
+          mimeType = form_param[:'MimeType']
+          data.concat(("--" + boundary + "\r\n").force_encoding('UTF-8'))
+          data.concat(("Content-Type: " + mimeType + "\r\n").force_encoding('UTF-8'))
+          data.concat(("Content-Disposition: form-data; name=\"" + key + "\"\r\n\r\n").force_encoding('UTF-8'))
           case value
           when ::File, ::Tempfile
-            data[key] = File.open(value.path, 'rb') { |f| f.read }
+            data.concat(File.open(value.path, 'rb') { |f| f.read })
           when ::Array, nil, Faraday::ParamPart
-            data[key] = value
+            data.concat(value)
           else
-            data[key] = value.to_s
+            data.concat(value.to_s)
           end
+          data.concat(("\r\n").force_encoding('UTF-8'))
         end
-      elsif body
-        data = body.is_a?(String) ? body : body.to_json
-      else
-        data = nil
+        data.concat(("--" + boundary + "--").force_encoding('UTF-8'))
+        header_params['Content-Type'] = 'multipart/form-data; boundary="' + boundary + '"';
       end
+
       data
     end
 

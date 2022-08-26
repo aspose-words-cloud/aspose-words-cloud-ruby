@@ -207,5 +207,12 @@ module AsposeWordsCloud
       end
     end
 
+    def collectFilesContent(resultFilesContent)
+      if self.document_property
+          self.document_property.collectFilesContent(resultFilesContent)
+      end
+
+    end
+
   end
 end

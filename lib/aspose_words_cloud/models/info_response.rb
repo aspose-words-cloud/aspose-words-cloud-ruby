@@ -229,5 +229,16 @@ module AsposeWordsCloud
       end
     end
 
+    def collectFilesContent(resultFilesContent)
+      if self.additional_info
+          for element in self.additional_info do
+              element.collectFilesContent(resultFilesContent);
+          end
+      end
+
+
+
+    end
+
   end
 end

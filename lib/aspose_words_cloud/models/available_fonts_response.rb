@@ -233,5 +233,26 @@ module AsposeWordsCloud
       end
     end
 
+    def collectFilesContent(resultFilesContent)
+      if self.additional_fonts
+          for element in self.additional_fonts do
+              element.collectFilesContent(resultFilesContent);
+          end
+      end
+
+      if self.custom_fonts
+          for element in self.custom_fonts do
+              element.collectFilesContent(resultFilesContent);
+          end
+      end
+
+      if self.system_fonts
+          for element in self.system_fonts do
+              element.collectFilesContent(resultFilesContent);
+          end
+      end
+
+    end
+
   end
 end

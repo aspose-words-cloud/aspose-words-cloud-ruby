@@ -70,6 +70,7 @@ require_relative 'base_test_context'
     end
 
     def test_batch_depends_on
+      remote_file_name = 'TestBatchParagraphs.docx'
       uf_req = AsposeWordsCloud::UploadFileRequest.new(file_content: File.join(local_test_folder, local_file), path: remote_data_folder + '/' + remote_file_name)
       bp_req_0 = AsposeWordsCloud::BatchPartRequest.new(uf_req)
 

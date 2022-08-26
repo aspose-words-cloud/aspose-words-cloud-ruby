@@ -390,5 +390,25 @@ module AsposeWordsCloud
       end
     end
 
+    def collectFilesContent(resultFilesContent)
+      if self.font
+          self.font.collectFilesContent(resultFilesContent)
+      end
+
+
+      if self.linked_style
+          self.linked_style.collectFilesContent(resultFilesContent)
+      end
+
+
+
+
+
+
+
+
+
+    end
+
   end
 end

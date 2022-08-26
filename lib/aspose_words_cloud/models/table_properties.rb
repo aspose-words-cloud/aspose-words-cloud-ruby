@@ -427,5 +427,18 @@ module AsposeWordsCloud
       end
     end
 
+    def collectFilesContent(resultFilesContent)
+      if self.preferred_width
+          self.preferred_width.collectFilesContent(resultFilesContent)
+      end
+
+
+
+
+
+
+
+    end
+
   end
 end

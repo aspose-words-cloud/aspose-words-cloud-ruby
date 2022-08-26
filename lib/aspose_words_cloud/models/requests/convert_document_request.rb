@@ -44,15 +44,6 @@ module AsposeWordsCloud
     # Original document storage.
     attr_accessor :storage
 
-    # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    attr_accessor :load_encoding
-
-    # Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
-    attr_accessor :password
-
-    # Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
-    attr_accessor :encrypted_password
-
     # Folder in filestorage with custom fonts.
     attr_accessor :fonts_location
 
@@ -63,20 +54,14 @@ module AsposeWordsCloud
     # @param out_path The path to the output document on a local storage.
     # @param file_name_field_value The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "sourceFilename" will be used instead.
     # @param storage Original document storage.
-    # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    # @param password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
-    # @param encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
     # @param fonts_location Folder in filestorage with custom fonts.
 
-    def initialize(document:, format:, out_path: nil, file_name_field_value: nil, storage: nil, load_encoding: nil, password: nil, encrypted_password: nil, fonts_location: nil)
+    def initialize(document:, format:, out_path: nil, file_name_field_value: nil, storage: nil, fonts_location: nil)
       self.document = document
       self.format = format
       self.out_path = out_path
       self.file_name_field_value = file_name_field_value
       self.storage = storage
-      self.load_encoding = load_encoding
-      self.password = password
-      self.encrypted_password = encrypted_password
       self.fonts_location = fonts_location
     end
 
@@ -89,17 +74,14 @@ module AsposeWordsCloud
 
       # resource path
       local_var_path = '/words/convert'[7..-1]
-      local_var_path = local_var_path.sub('{' + downcase_first_letter('OutPath') + '}', self.out_path.nil? ? '' : self.out_path.to_s)
       local_var_path = local_var_path.sub('//', '/')
 
       # query parameters
       query_params = {}
       query_params[downcase_first_letter('Format')] = self.format
+      query_params[downcase_first_letter('OutPath')] = self.out_path unless self.out_path.nil?
       query_params[downcase_first_letter('FileNameFieldValue')] = self.file_name_field_value unless self.file_name_field_value.nil?
       query_params[downcase_first_letter('Storage')] = self.storage unless self.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = self.load_encoding unless self.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = self.password unless self.password.nil?
-      query_params[downcase_first_letter('EncryptedPassword')] = self.encrypted_password unless self.encrypted_password.nil?
       query_params[downcase_first_letter('FontsLocation')] = self.fonts_location unless self.fonts_location.nil?
 
       if query_params
@@ -117,12 +99,18 @@ module AsposeWordsCloud
       end
 
       # form parameters
-      form_params = {}
-      form_params[downcase_first_letter('Document')] = self.document
+      form_params = []
+      files_content = []
+      if self.document.nil?
+        raise "Parameter Document is required."
+      end
+      unless self.document.nil?
+        form_params.push({:'Name' => 'document', :'Data' => self.document, :'MimeType' =>'application/octet-stream'})
+      end
+
 
       # http body (model)
-      post_body = nil
-      body = api_client.build_request_body_batch(header_params, form_params, post_body)
+      body = api_client.build_request_body_batch(header_params, form_params, files_content)
       part = ""
       part.concat("PUT".force_encoding('UTF-8'))
       part.concat(" ".force_encoding('UTF-8'))
@@ -134,8 +122,8 @@ module AsposeWordsCloud
       if body
         if body.is_a?(Hash)
           body.each do |key, value|
-          part.concat(value, "\r\n")
-        end
+            part.concat(value, "\r\n")
+          end
         else
           part.concat(body)
         end
@@ -151,17 +139,14 @@ module AsposeWordsCloud
 
       # resource path
       local_var_path = '/words/convert'[1..-1]
-      local_var_path = local_var_path.sub('{' + downcase_first_letter('OutPath') + '}', self.out_path.nil? ? '' : self.out_path.to_s)
       local_var_path = local_var_path.sub('//', '/')
 
       # query parameters
       query_params = {}
       query_params[downcase_first_letter('Format')] = self.format
+      query_params[downcase_first_letter('OutPath')] = self.out_path unless self.out_path.nil?
       query_params[downcase_first_letter('FileNameFieldValue')] = self.file_name_field_value unless self.file_name_field_value.nil?
       query_params[downcase_first_letter('Storage')] = self.storage unless self.storage.nil?
-      query_params[downcase_first_letter('LoadEncoding')] = self.load_encoding unless self.load_encoding.nil?
-      query_params[downcase_first_letter('Password')] = self.password unless self.password.nil?
-      query_params[downcase_first_letter('EncryptedPassword')] = self.encrypted_password unless self.encrypted_password.nil?
       query_params[downcase_first_letter('FontsLocation')] = self.fonts_location unless self.fonts_location.nil?
 
       # header parameters
@@ -170,12 +155,16 @@ module AsposeWordsCloud
       header_params['Content-Type'] = api_client.select_header_content_type(['multipart/form-data'])
 
       # form parameters
-      form_params = {}
-      form_params[downcase_first_letter('Document')] = self.document
+      form_params = []
+      files_content = []
+      if self.document.nil?
+        raise "Parameter Document is required."
+      end
+      unless self.document.nil?
+        form_params.push({:'Name' => 'document', :'Data' => self.document, :'MimeType' =>'application/octet-stream'})
+      end
 
-      # http body (model)
-      post_body = nil
-      body = api_client.build_request_body(header_params, form_params, post_body)
+      body = api_client.build_request_body(header_params, form_params, files_content)
       {
         'method': :PUT,
         'path': local_var_path,

@@ -207,5 +207,12 @@ module AsposeWordsCloud
       end
     end
 
+    def collectFilesContent(resultFilesContent)
+      if self.custom_xml_parts
+          self.custom_xml_parts.collectFilesContent(resultFilesContent)
+      end
+
+    end
+
   end
 end

@@ -290,5 +290,23 @@ module AsposeWordsCloud
       end
     end
 
+    def collectFilesContent(resultFilesContent)
+      if self.csv_data_load_options
+          self.csv_data_load_options.collectFilesContent(resultFilesContent)
+      end
+
+
+
+      if self.json_data_load_options
+          self.json_data_load_options.collectFilesContent(resultFilesContent)
+      end
+
+
+      if self.xml_data_load_options
+          self.xml_data_load_options.collectFilesContent(resultFilesContent)
+      end
+
+    end
+
   end
 end

@@ -314,5 +314,16 @@ module AsposeWordsCloud
       end
     end
 
+    def collectFilesContent(resultFilesContent)
+      if self.color
+          self.color.collectFilesContent(resultFilesContent)
+      end
+
+
+
+
+
+    end
+
   end
 end
