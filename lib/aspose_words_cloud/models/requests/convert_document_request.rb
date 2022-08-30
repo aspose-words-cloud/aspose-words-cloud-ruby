@@ -89,12 +89,12 @@ module AsposeWordsCloud
 
       # resource path
       local_var_path = '/words/convert'[7..-1]
-      local_var_path = local_var_path.sub('{' + downcase_first_letter('OutPath') + '}', self.out_path.nil? ? '' : self.out_path.to_s)
       local_var_path = local_var_path.sub('//', '/')
 
       # query parameters
       query_params = {}
       query_params[downcase_first_letter('Format')] = self.format
+      query_params[downcase_first_letter('OutPath')] = self.out_path unless self.out_path.nil?
       query_params[downcase_first_letter('FileNameFieldValue')] = self.file_name_field_value unless self.file_name_field_value.nil?
       query_params[downcase_first_letter('Storage')] = self.storage unless self.storage.nil?
       query_params[downcase_first_letter('LoadEncoding')] = self.load_encoding unless self.load_encoding.nil?
@@ -151,12 +151,12 @@ module AsposeWordsCloud
 
       # resource path
       local_var_path = '/words/convert'[1..-1]
-      local_var_path = local_var_path.sub('{' + downcase_first_letter('OutPath') + '}', self.out_path.nil? ? '' : self.out_path.to_s)
       local_var_path = local_var_path.sub('//', '/')
 
       # query parameters
       query_params = {}
       query_params[downcase_first_letter('Format')] = self.format
+      query_params[downcase_first_letter('OutPath')] = self.out_path unless self.out_path.nil?
       query_params[downcase_first_letter('FileNameFieldValue')] = self.file_name_field_value unless self.file_name_field_value.nil?
       query_params[downcase_first_letter('Storage')] = self.storage unless self.storage.nil?
       query_params[downcase_first_letter('LoadEncoding')] = self.load_encoding unless self.load_encoding.nil?
