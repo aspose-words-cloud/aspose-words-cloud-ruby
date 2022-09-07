@@ -1219,6 +1219,9 @@ module AsposeWordsCloud
         query_params[downcase_first_letter('OutPath')] = request.out_path unless request.out_path.nil?
         query_params[downcase_first_letter('FileNameFieldValue')] = request.file_name_field_value unless request.file_name_field_value.nil?
         query_params[downcase_first_letter('Storage')] = request.storage unless request.storage.nil?
+        query_params[downcase_first_letter('LoadEncoding')] = request.load_encoding unless request.load_encoding.nil?
+        query_params[downcase_first_letter('Password')] = request.password unless request.password.nil?
+        query_params[downcase_first_letter('EncryptedPassword')] = request.encrypted_password unless request.encrypted_password.nil?
         query_params[downcase_first_letter('FontsLocation')] = request.fonts_location unless request.fonts_location.nil?
 
         # header parameters
