@@ -27,7 +27,7 @@ module AsposeWordsCloud
   require "minitest/autorun"
   require "minitest/unit"
   require 'securerandom'
-  require 'aspose_words_cloud'
+  require_relative '../lib/aspose_words_cloud'
   class BaseTestContext < Minitest::Test
     include MiniTest::Assertions
     def setup
