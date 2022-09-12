@@ -29,19 +29,19 @@ module AsposeWordsCloud
 
   # Represents a document which will be appended to the original resource document.
   class DocumentEntry
+    # Gets or sets the file reference.
+    attr_accessor :file_reference
+
     # Gets or sets document password encrypted on API public key. The default value is null (the document has no password).
     attr_accessor :encrypted_password
-
-    # Gets or sets the path to document to append at the server.
-    attr_accessor :href
 
     # Gets or sets the option that controls formatting will be used: appended or destination document. Can be KeepSourceFormatting or UseDestinationStyles.
     attr_accessor :import_format_mode
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'file_reference' => :'FileReference',
         :'encrypted_password' => :'EncryptedPassword',
-        :'href' => :'Href',
         :'import_format_mode' => :'ImportFormatMode'
       }
     end
@@ -49,8 +49,8 @@ module AsposeWordsCloud
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'file_reference' => :'FileReference',
         :'encrypted_password' => :'String',
-        :'href' => :'String',
         :'import_format_mode' => :'String'
       }
     end
@@ -63,12 +63,12 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'EncryptedPassword')
-        self.encrypted_password = attributes[:'EncryptedPassword']
+      if attributes.key?(:'FileReference')
+        self.file_reference = attributes[:'FileReference']
       end
 
-      if attributes.key?(:'Href')
-        self.href = attributes[:'Href']
+      if attributes.key?(:'EncryptedPassword')
+        self.encrypted_password = attributes[:'EncryptedPassword']
       end
 
       if attributes.key?(:'ImportFormatMode')
@@ -94,8 +94,8 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
+          file_reference == other.file_reference &&
           encrypted_password == other.encrypted_password &&
-          href == other.href &&
           import_format_mode == other.import_format_mode
     end
 
@@ -108,7 +108,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [encrypted_password, href, import_format_mode].hash
+      [file_reference, encrypted_password, import_format_mode].hash
     end
 
     # Builds the object from hash
@@ -215,6 +215,15 @@ module AsposeWordsCloud
       else
         value
       end
+    end
+
+    def collectFilesContent(resultFilesContent)
+      if self.file_reference
+          self.file_reference.collectFilesContent(resultFilesContent)
+      end
+
+
+
     end
 
   end

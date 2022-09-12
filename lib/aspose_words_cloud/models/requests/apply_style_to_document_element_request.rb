@@ -131,11 +131,18 @@ module AsposeWordsCloud
       end
 
       # form parameters
-      form_params = {}
+      form_params = []
+      files_content = []
+      if self.style_apply.nil?
+        raise "Parameter StyleApply is required."
+      end
+      unless self.style_apply.nil?
+        form_params.push({:'Name' => 'styleApply', :'Data' => self.style_apply.to_body.to_json, :'MimeType' =>'application/json'})
+      end
+
 
       # http body (model)
-      post_body = api_client.object_to_http_body(self.style_apply)
-      body = post_body
+      body = api_client.build_request_body_batch(header_params, form_params, files_content)
       part = ""
       part.concat("PUT".force_encoding('UTF-8'))
       part.concat(" ".force_encoding('UTF-8'))
@@ -147,8 +154,8 @@ module AsposeWordsCloud
       if body
         if body.is_a?(Hash)
           body.each do |key, value|
-          part.concat(value, "\r\n")
-        end
+            part.concat(value, "\r\n")
+          end
         else
           part.concat(body)
         end
@@ -187,11 +194,16 @@ module AsposeWordsCloud
       header_params['Content-Type'] = api_client.select_header_content_type(['application/xml', 'application/json'])
 
       # form parameters
-      form_params = {}
+      form_params = []
+      files_content = []
+      if self.style_apply.nil?
+        raise "Parameter StyleApply is required."
+      end
+      unless self.style_apply.nil?
+        form_params.push({:'Name' => 'styleApply', :'Data' => self.style_apply.to_body.to_json, :'MimeType' =>'application/json'})
+      end
 
-      # http body (model)
-      post_body = api_client.object_to_http_body(self.style_apply)
-      body = post_body
+      body = api_client.build_request_body(header_params, form_params, files_content)
       {
         'method': :PUT,
         'path': local_var_path,

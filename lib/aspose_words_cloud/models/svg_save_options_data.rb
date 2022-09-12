@@ -609,5 +609,8 @@ module AsposeWordsCloud
       end
     end
 
+    def collectFilesContent(resultFilesContent)
+    end
+
   end
 end
