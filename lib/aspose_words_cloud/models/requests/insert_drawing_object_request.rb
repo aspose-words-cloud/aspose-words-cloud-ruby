@@ -136,13 +136,25 @@ module AsposeWordsCloud
       end
 
       # form parameters
-      form_params = {}
-      form_params[downcase_first_letter('DrawingObject')] = self.drawing_object.to_body.to_json
-      form_params[downcase_first_letter('ImageFile')] = self.image_file
+      form_params = []
+      files_content = []
+      if self.drawing_object.nil?
+        raise "Parameter DrawingObject is required."
+      end
+      unless self.drawing_object.nil?
+        form_params.push({:'Name' => 'drawingObject', :'Data' => self.drawing_object.to_body.to_json, :'MimeType' =>'application/json'})
+      end
+
+      if self.image_file.nil?
+        raise "Parameter ImageFile is required."
+      end
+      unless self.image_file.nil?
+        form_params.push({:'Name' => 'imageFile', :'Data' => self.image_file, :'MimeType' =>'application/octet-stream'})
+      end
+
 
       # http body (model)
-      post_body = nil
-      body = api_client.build_request_body_batch(header_params, form_params, post_body)
+      body = api_client.build_request_body_batch(header_params, form_params, files_content)
       part = ""
       part.concat("POST".force_encoding('UTF-8'))
       part.concat(" ".force_encoding('UTF-8'))
@@ -154,8 +166,8 @@ module AsposeWordsCloud
       if body
         if body.is_a?(Hash)
           body.each do |key, value|
-          part.concat(value, "\r\n")
-        end
+            part.concat(value, "\r\n")
+          end
         else
           part.concat(body)
         end
@@ -194,13 +206,23 @@ module AsposeWordsCloud
       header_params['Content-Type'] = api_client.select_header_content_type(['multipart/form-data'])
 
       # form parameters
-      form_params = {}
-      form_params[downcase_first_letter('DrawingObject')] = self.drawing_object.to_body.to_json
-      form_params[downcase_first_letter('ImageFile')] = self.image_file
+      form_params = []
+      files_content = []
+      if self.drawing_object.nil?
+        raise "Parameter DrawingObject is required."
+      end
+      unless self.drawing_object.nil?
+        form_params.push({:'Name' => 'drawingObject', :'Data' => self.drawing_object.to_body.to_json, :'MimeType' =>'application/json'})
+      end
 
-      # http body (model)
-      post_body = nil
-      body = api_client.build_request_body(header_params, form_params, post_body)
+      if self.image_file.nil?
+        raise "Parameter ImageFile is required."
+      end
+      unless self.image_file.nil?
+        form_params.push({:'Name' => 'imageFile', :'Data' => self.image_file, :'MimeType' =>'application/octet-stream'})
+      end
+
+      body = api_client.build_request_body(header_params, form_params, files_content)
       {
         'method': :POST,
         'path': local_var_path,
