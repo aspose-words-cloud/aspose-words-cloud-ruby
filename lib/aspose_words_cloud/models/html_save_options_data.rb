@@ -48,10 +48,6 @@ module AsposeWordsCloud
     # Gets or sets the name of destination file.
     attr_accessor :file_name
 
-    # Gets or sets value determining which document formats are allowed to be mapped by Aspose.Words.Markup.StructuredDocumentTag.XmlMapping.
-    # By default only Aspose.Words.LoadFormat.FlatOpc document format is allowed to be mapped.
-    attr_accessor :flat_opc_xml_mapping_only
-
     # Gets or sets the value determining how ink (InkML) objects are rendered.
     attr_accessor :iml_rendering_mode
 
@@ -233,7 +229,6 @@ module AsposeWordsCloud
         :'dml_effects_rendering_mode' => :'DmlEffectsRenderingMode',
         :'dml_rendering_mode' => :'DmlRenderingMode',
         :'file_name' => :'FileName',
-        :'flat_opc_xml_mapping_only' => :'FlatOpcXmlMappingOnly',
         :'iml_rendering_mode' => :'ImlRenderingMode',
         :'update_created_time_property' => :'UpdateCreatedTimeProperty',
         :'update_fields' => :'UpdateFields',
@@ -292,7 +287,6 @@ module AsposeWordsCloud
         :'dml_effects_rendering_mode' => :'String',
         :'dml_rendering_mode' => :'String',
         :'file_name' => :'String',
-        :'flat_opc_xml_mapping_only' => :'BOOLEAN',
         :'iml_rendering_mode' => :'String',
         :'update_created_time_property' => :'BOOLEAN',
         :'update_fields' => :'BOOLEAN',
@@ -374,10 +368,6 @@ module AsposeWordsCloud
 
       if attributes.key?(:'FileName')
         self.file_name = attributes[:'FileName']
-      end
-
-      if attributes.key?(:'FlatOpcXmlMappingOnly')
-        self.flat_opc_xml_mapping_only = attributes[:'FlatOpcXmlMappingOnly']
       end
 
       if attributes.key?(:'ImlRenderingMode')
@@ -779,7 +769,6 @@ module AsposeWordsCloud
           dml_effects_rendering_mode == other.dml_effects_rendering_mode &&
           dml_rendering_mode == other.dml_rendering_mode &&
           file_name == other.file_name &&
-          flat_opc_xml_mapping_only == other.flat_opc_xml_mapping_only &&
           iml_rendering_mode == other.iml_rendering_mode &&
           update_created_time_property == other.update_created_time_property &&
           update_fields == other.update_fields &&
@@ -837,7 +826,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, flat_opc_xml_mapping_only, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, allow_negative_indent, css_class_name_prefix, css_style_sheet_file_name, css_style_sheet_type, document_split_criteria, document_split_heading_level, encoding, export_document_properties, export_drop_down_form_field_as_text, export_font_resources, export_fonts_as_base64, export_headers_footers_mode, export_images_as_base64, export_language_information, export_list_labels, export_original_url_for_linked_images, export_page_margins, export_page_setup, export_relative_font_size, export_roundtrip_information, export_text_input_form_field_as_text, export_toc_page_numbers, export_xhtml_transitional, font_resources_subsetting_size_threshold, fonts_folder, fonts_folder_alias, html_version, image_resolution, images_folder, images_folder_alias, metafile_format, office_math_output_mode, pretty_format, resolve_font_names, resource_folder, resource_folder_alias, save_format, scale_image_to_shape_size, table_width_output_mode].hash
+      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, allow_negative_indent, css_class_name_prefix, css_style_sheet_file_name, css_style_sheet_type, document_split_criteria, document_split_heading_level, encoding, export_document_properties, export_drop_down_form_field_as_text, export_font_resources, export_fonts_as_base64, export_headers_footers_mode, export_images_as_base64, export_language_information, export_list_labels, export_original_url_for_linked_images, export_page_margins, export_page_setup, export_relative_font_size, export_roundtrip_information, export_text_input_form_field_as_text, export_toc_page_numbers, export_xhtml_transitional, font_resources_subsetting_size_threshold, fonts_folder, fonts_folder_alias, html_version, image_resolution, images_folder, images_folder_alias, metafile_format, office_math_output_mode, pretty_format, resolve_font_names, resource_folder, resource_folder_alias, save_format, scale_image_to_shape_size, table_width_output_mode].hash
     end
 
     # Builds the object from hash

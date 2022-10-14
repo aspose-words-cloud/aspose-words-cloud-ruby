@@ -48,10 +48,6 @@ module AsposeWordsCloud
     # Gets or sets the name of destination file.
     attr_accessor :file_name
 
-    # Gets or sets value determining which document formats are allowed to be mapped by Aspose.Words.Markup.StructuredDocumentTag.XmlMapping.
-    # By default only Aspose.Words.LoadFormat.FlatOpc document format is allowed to be mapped.
-    attr_accessor :flat_opc_xml_mapping_only
-
     # Gets or sets the value determining how ink (InkML) objects are rendered.
     attr_accessor :iml_rendering_mode
 
@@ -98,6 +94,9 @@ module AsposeWordsCloud
 
     # Gets or sets the 0-based index of the first page to render.
     attr_accessor :page_index
+
+    # Gets or sets a value indicating whether or not to cache shapes placed in header and footer of document.
+    attr_accessor :cache_header_footer_shapes
 
     # Gets or sets the PDF standards compliance level for output documents.
     attr_accessor :compliance
@@ -212,7 +211,6 @@ module AsposeWordsCloud
         :'dml_effects_rendering_mode' => :'DmlEffectsRenderingMode',
         :'dml_rendering_mode' => :'DmlRenderingMode',
         :'file_name' => :'FileName',
-        :'flat_opc_xml_mapping_only' => :'FlatOpcXmlMappingOnly',
         :'iml_rendering_mode' => :'ImlRenderingMode',
         :'update_created_time_property' => :'UpdateCreatedTimeProperty',
         :'update_fields' => :'UpdateFields',
@@ -227,6 +225,7 @@ module AsposeWordsCloud
         :'optimize_output' => :'OptimizeOutput',
         :'page_count' => :'PageCount',
         :'page_index' => :'PageIndex',
+        :'cache_header_footer_shapes' => :'CacheHeaderFooterShapes',
         :'compliance' => :'Compliance',
         :'create_note_hyperlinks' => :'CreateNoteHyperlinks',
         :'custom_properties_export' => :'CustomPropertiesExport',
@@ -265,7 +264,6 @@ module AsposeWordsCloud
         :'dml_effects_rendering_mode' => :'String',
         :'dml_rendering_mode' => :'String',
         :'file_name' => :'String',
-        :'flat_opc_xml_mapping_only' => :'BOOLEAN',
         :'iml_rendering_mode' => :'String',
         :'update_created_time_property' => :'BOOLEAN',
         :'update_fields' => :'BOOLEAN',
@@ -280,6 +278,7 @@ module AsposeWordsCloud
         :'optimize_output' => :'BOOLEAN',
         :'page_count' => :'Integer',
         :'page_index' => :'Integer',
+        :'cache_header_footer_shapes' => :'BOOLEAN',
         :'compliance' => :'String',
         :'create_note_hyperlinks' => :'BOOLEAN',
         :'custom_properties_export' => :'String',
@@ -343,10 +342,6 @@ module AsposeWordsCloud
         self.file_name = attributes[:'FileName']
       end
 
-      if attributes.key?(:'FlatOpcXmlMappingOnly')
-        self.flat_opc_xml_mapping_only = attributes[:'FlatOpcXmlMappingOnly']
-      end
-
       if attributes.key?(:'ImlRenderingMode')
         self.iml_rendering_mode = attributes[:'ImlRenderingMode']
       end
@@ -401,6 +396,10 @@ module AsposeWordsCloud
 
       if attributes.key?(:'PageIndex')
         self.page_index = attributes[:'PageIndex']
+      end
+
+      if attributes.key?(:'CacheHeaderFooterShapes')
+        self.cache_header_footer_shapes = attributes[:'CacheHeaderFooterShapes']
       end
 
       if attributes.key?(:'Compliance')
@@ -754,7 +753,6 @@ module AsposeWordsCloud
           dml_effects_rendering_mode == other.dml_effects_rendering_mode &&
           dml_rendering_mode == other.dml_rendering_mode &&
           file_name == other.file_name &&
-          flat_opc_xml_mapping_only == other.flat_opc_xml_mapping_only &&
           iml_rendering_mode == other.iml_rendering_mode &&
           update_created_time_property == other.update_created_time_property &&
           update_fields == other.update_fields &&
@@ -769,6 +767,7 @@ module AsposeWordsCloud
           optimize_output == other.optimize_output &&
           page_count == other.page_count &&
           page_index == other.page_index &&
+          cache_header_footer_shapes == other.cache_header_footer_shapes &&
           compliance == other.compliance &&
           create_note_hyperlinks == other.create_note_hyperlinks &&
           custom_properties_export == other.custom_properties_export &&
@@ -806,7 +805,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, flat_opc_xml_mapping_only, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, compliance, create_note_hyperlinks, custom_properties_export, digital_signature_details, display_doc_title, downsample_options, embed_full_fonts, encryption_details, export_document_structure, export_language_to_span_tag, font_embedding_mode, header_footer_bookmarks_export_mode, image_color_space_export_mode, image_compression, interpolate_images, open_hyperlinks_in_new_window, outline_options, page_mode, preblend_images, preserve_form_fields, save_format, text_compression, use_book_fold_printing_settings, use_core_fonts, zoom_behavior, zoom_factor].hash
+      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, cache_header_footer_shapes, compliance, create_note_hyperlinks, custom_properties_export, digital_signature_details, display_doc_title, downsample_options, embed_full_fonts, encryption_details, export_document_structure, export_language_to_span_tag, font_embedding_mode, header_footer_bookmarks_export_mode, image_color_space_export_mode, image_compression, interpolate_images, open_hyperlinks_in_new_window, outline_options, page_mode, preblend_images, preserve_form_fields, save_format, text_compression, use_book_fold_printing_settings, use_core_fonts, zoom_behavior, zoom_factor].hash
     end
 
     # Builds the object from hash
