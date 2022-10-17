@@ -30,9 +30,9 @@ require_relative 'aspose_words_cloud/version'
 require_relative 'aspose_words_cloud/configuration'
 
 # Models
+require_relative 'aspose_words_cloud/models/file_reference'
 require_relative 'aspose_words_cloud/models/response_error'
 require_relative 'aspose_words_cloud/models/available_fonts_response'
-require_relative 'aspose_words_cloud/models/base_entry'
 require_relative 'aspose_words_cloud/models/bmp_save_options_data'
 require_relative 'aspose_words_cloud/models/bookmark'
 require_relative 'aspose_words_cloud/models/bookmark_data'
