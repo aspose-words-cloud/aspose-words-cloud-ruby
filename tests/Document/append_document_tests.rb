@@ -46,7 +46,8 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request_document_list_document_entries0 = DocumentEntry.new({:Href => remote_data_folder + '/' + remote_file_name, :ImportFormatMode => 'KeepSourceFormatting'})
+      request_document_list_document_entries0_file_reference = AsposeWordsCloud::FileReference.fromRemoteFilePath(remote_data_folder + '/' + remote_file_name)
+      request_document_list_document_entries0 = DocumentEntry.new({:FileReference => request_document_list_document_entries0_file_reference, :ImportFormatMode => 'KeepSourceFormatting'})
       request_document_list_document_entries = [request_document_list_document_entries0]
       request_document_list = DocumentEntryList.new({:DocumentEntries => request_document_list_document_entries})
       request = AppendDocumentRequest.new(name: remote_file_name, document_list: request_document_list, folder: remote_data_folder, dest_file_name: remote_test_out + '/' + remote_file_name)
@@ -59,12 +60,10 @@ module AsposeWordsCloud
     # Test for appending document online.
     #
     def test_append_document_online
-      remote_file_name = 'TestAppendDocument.docx'
-
-      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
-
       request_document = File.open(File.join(local_test_folder, local_file))
-      request_document_list_document_entries0 = DocumentEntry.new({:Href => remote_data_folder + '/' + remote_file_name, :ImportFormatMode => 'KeepSourceFormatting'})
+      request_document_list_document_entries0_file_referenceStream = File.open(File.join(local_test_folder, local_file))
+      request_document_list_document_entries0_file_reference = AsposeWordsCloud::FileReference.fromLocalFileContent(request_document_list_document_entries0_file_referenceStream)
+      request_document_list_document_entries0 = DocumentEntry.new({:FileReference => request_document_list_document_entries0_file_reference, :ImportFormatMode => 'KeepSourceFormatting'})
       request_document_list_document_entries = [request_document_list_document_entries0]
       request_document_list = DocumentEntryList.new({:DocumentEntries => request_document_list_document_entries})
       request = AppendDocumentOnlineRequest.new(document: request_document, document_list: request_document_list)

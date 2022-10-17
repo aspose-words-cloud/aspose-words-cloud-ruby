@@ -48,10 +48,6 @@ module AsposeWordsCloud
     # Gets or sets the name of destination file.
     attr_accessor :file_name
 
-    # Gets or sets value determining which document formats are allowed to be mapped by Aspose.Words.Markup.StructuredDocumentTag.XmlMapping.
-    # By default only Aspose.Words.LoadFormat.FlatOpc document format is allowed to be mapped.
-    attr_accessor :flat_opc_xml_mapping_only
-
     # Gets or sets the value determining how ink (InkML) objects are rendered.
     attr_accessor :iml_rendering_mode
 
@@ -145,7 +141,6 @@ module AsposeWordsCloud
         :'dml_effects_rendering_mode' => :'DmlEffectsRenderingMode',
         :'dml_rendering_mode' => :'DmlRenderingMode',
         :'file_name' => :'FileName',
-        :'flat_opc_xml_mapping_only' => :'FlatOpcXmlMappingOnly',
         :'iml_rendering_mode' => :'ImlRenderingMode',
         :'update_created_time_property' => :'UpdateCreatedTimeProperty',
         :'update_fields' => :'UpdateFields',
@@ -177,7 +172,6 @@ module AsposeWordsCloud
         :'dml_effects_rendering_mode' => :'String',
         :'dml_rendering_mode' => :'String',
         :'file_name' => :'String',
-        :'flat_opc_xml_mapping_only' => :'BOOLEAN',
         :'iml_rendering_mode' => :'String',
         :'update_created_time_property' => :'BOOLEAN',
         :'update_fields' => :'BOOLEAN',
@@ -232,10 +226,6 @@ module AsposeWordsCloud
 
       if attributes.key?(:'FileName')
         self.file_name = attributes[:'FileName']
-      end
-
-      if attributes.key?(:'FlatOpcXmlMappingOnly')
-        self.flat_opc_xml_mapping_only = attributes[:'FlatOpcXmlMappingOnly']
       end
 
       if attributes.key?(:'ImlRenderingMode')
@@ -433,7 +423,6 @@ module AsposeWordsCloud
           dml_effects_rendering_mode == other.dml_effects_rendering_mode &&
           dml_rendering_mode == other.dml_rendering_mode &&
           file_name == other.file_name &&
-          flat_opc_xml_mapping_only == other.flat_opc_xml_mapping_only &&
           iml_rendering_mode == other.iml_rendering_mode &&
           update_created_time_property == other.update_created_time_property &&
           update_fields == other.update_fields &&
@@ -464,7 +453,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, flat_opc_xml_mapping_only, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, bookmarks_outline_level, headings_outline_levels, outline_options, use_book_fold_printing_settings, save_format].hash
+      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, bookmarks_outline_level, headings_outline_levels, outline_options, use_book_fold_printing_settings, save_format].hash
     end
 
     # Builds the object from hash
@@ -571,6 +560,9 @@ module AsposeWordsCloud
       else
         value
       end
+    end
+
+    def collectFilesContent(resultFilesContent)
     end
 
   end

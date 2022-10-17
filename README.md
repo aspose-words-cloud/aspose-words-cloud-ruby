@@ -13,6 +13,15 @@ This repository contains Aspose.Words Cloud SDK for Ruby source code. This SDK a
 * Watermarks and protection
 * Full read & write access to Document Object Model, including sections, paragraphs, text, images, tables, headers/footers and many others
 
+## Enhancements in Version 22.10
+
+- Added 'CacheHeaderFooterShapes' property for PdfSaveOptionsData class.
+- FileReference structure has been added that allows to determine how the document will be accessed: from the remote storage, or loaded directly in the request.
+- The 'AppendDocument' and 'AppendDocumentOnline' methods takes a 'FileReference' instead of an 'href' property.
+- Added property 'StartingNumber' for 'PageNumbers' class.
+- Added property 'GlobalCultureName' for 'FieldOptions' class.
+
+
 ## Enhancements in Version 22.9
 
 - CompressDocument method now can handle images.
@@ -230,7 +239,7 @@ To use Aspose Words for Cloud Ruby SDK you need to register an account with [Asp
 To install this package do the following:
 update your Gemfile
 ```ruby
-gem 'aspose_words_cloud', '~> 22.9'
+gem 'aspose_words_cloud', '~> 22.10'
 ```
 or install directly
 ```bash

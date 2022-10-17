@@ -38,6 +38,9 @@ module AsposeWordsCloud
     # Gets or sets a value indicating whether if true the page number is added at the top of the page, else at the bottom.
     attr_accessor :is_top
 
+    # Gets or sets the starting page number of the document.
+    attr_accessor :page_starting_number
+
     # Gets or sets a value indicating whether if true the page number is added on first page too.
     attr_accessor :set_page_number_on_first_page
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -46,6 +49,7 @@ module AsposeWordsCloud
         :'alignment' => :'Alignment',
         :'format' => :'Format',
         :'is_top' => :'IsTop',
+        :'page_starting_number' => :'PageStartingNumber',
         :'set_page_number_on_first_page' => :'SetPageNumberOnFirstPage'
       }
     end
@@ -56,6 +60,7 @@ module AsposeWordsCloud
         :'alignment' => :'String',
         :'format' => :'String',
         :'is_top' => :'BOOLEAN',
+        :'page_starting_number' => :'Integer',
         :'set_page_number_on_first_page' => :'BOOLEAN'
       }
     end
@@ -78,6 +83,10 @@ module AsposeWordsCloud
 
       if attributes.key?(:'IsTop')
         self.is_top = attributes[:'IsTop']
+      end
+
+      if attributes.key?(:'PageStartingNumber')
+        self.page_starting_number = attributes[:'PageStartingNumber']
       end
 
       if attributes.key?(:'SetPageNumberOnFirstPage')
@@ -106,6 +115,7 @@ module AsposeWordsCloud
           alignment == other.alignment &&
           format == other.format &&
           is_top == other.is_top &&
+          page_starting_number == other.page_starting_number &&
           set_page_number_on_first_page == other.set_page_number_on_first_page
     end
 
@@ -118,7 +128,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [alignment, format, is_top, set_page_number_on_first_page].hash
+      [alignment, format, is_top, page_starting_number, set_page_number_on_first_page].hash
     end
 
     # Builds the object from hash
@@ -225,6 +235,9 @@ module AsposeWordsCloud
       else
         value
       end
+    end
+
+    def collectFilesContent(resultFilesContent)
     end
 
   end

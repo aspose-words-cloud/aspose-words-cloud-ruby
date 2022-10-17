@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="base_entry.rb">
+# <copyright company="Aspose" file="file_reference.rb">
 #   Copyright (c) 2022 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -22,40 +22,50 @@
 #  SOFTWARE.
 # </summary>
 # ------------------------------------------------------------------------------------
-
-require 'date'
-
+require 'securerandom'
 module AsposeWordsCloud
 
-  # Represents a entry which will be appended to the original resource document.
-  class BaseEntry
-    # Gets or sets the path to entry to append at the server.
-    attr_accessor :href
+  #
+  # Class to wrap file content inside another class models.
+  #
+  class FileReference
+    # Gets or sets the file source.
+    attr_accessor :source
+
+    # Gets or sets the reference.
+    attr_accessor :reference
+
+    # Gets or sets the file data.
+    attr_accessor :content
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'href' => :'Href'
+        :'source' => :'Source',
+        :'reference' => :'Reference'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'href' => :'String'
+        :'source' => :'Source',
+        :'reference' => :'Reference'
       }
     end
 
-    # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
+    def initialize(source, reference, content)
+      self.source = source
+      self.reference = reference
+      self.content = content
+    end
 
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+    def self.fromRemoteFilePath(remoteFilePath)
+      self.new('Storage', remoteFilePath, nil)
+    end
 
-      if attributes.key?(:'Href')
-        self.href = attributes[:'Href']
-      end
+    def self.fromLocalFileContent(localFileContent)
+      self.new('Request', SecureRandom.uuid, localFileContent)
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -75,8 +85,7 @@ module AsposeWordsCloud
     # @param [Object] Object to be compared
     def ==(other)
       return true if self.equal?(other)
-      self.class == other.class &&
-          href == other.href
+      self.class == other.class && source == other.source && reference == other.reference
     end
 
     # @see the `==` method
@@ -88,7 +97,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [href].hash
+      [source, reference].hash
     end
 
     # Builds the object from hash
@@ -197,5 +206,10 @@ module AsposeWordsCloud
       end
     end
 
+    def collectFilesContent(resultFilesContent)
+      if source == 'Request'
+        resultFilesContent.push(self)
+      end
+    end
   end
 end

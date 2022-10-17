@@ -29,19 +29,19 @@ module AsposeWordsCloud
 
   # Represents a image which will be appended to the original resource image or document.
   class ImageEntry
-    # Gets or sets the path to entry to append at the server.
-    attr_accessor :href
+    # Gets or sets the file reference.
+    attr_accessor :file_reference
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'href' => :'Href'
+        :'file_reference' => :'FileReference'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'href' => :'String'
+        :'file_reference' => :'FileReference'
       }
     end
 
@@ -53,8 +53,8 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'Href')
-        self.href = attributes[:'Href']
+      if attributes.key?(:'FileReference')
+        self.file_reference = attributes[:'FileReference']
       end
     end
 
@@ -76,7 +76,7 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          href == other.href
+          file_reference == other.file_reference
     end
 
     # @see the `==` method
@@ -88,7 +88,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [href].hash
+      [file_reference].hash
     end
 
     # Builds the object from hash
@@ -195,6 +195,13 @@ module AsposeWordsCloud
       else
         value
       end
+    end
+
+    def collectFilesContent(resultFilesContent)
+      if self.file_reference
+          self.file_reference.collectFilesContent(resultFilesContent)
+      end
+
     end
 
   end
