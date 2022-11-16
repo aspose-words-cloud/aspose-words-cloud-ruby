@@ -102,7 +102,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_text_file), remote_data_folder + '/' + remote_file_name
 
-      request = RenderPageRequest.new(name: remote_file_name, page_index: 1, format: 'bmp', folder: remote_data_folder)
+      request = RenderPageRequest.new(name: remote_file_name, page_index: 1, format: 'jpg', folder: remote_data_folder)
 
       result = @words_api.render_page(request)
       assert_equal false, result.nil?
@@ -113,7 +113,7 @@ module AsposeWordsCloud
     #
     def test_get_render_page_online
       request_document = File.open(File.join(local_test_folder, local_text_file))
-      request = RenderPageOnlineRequest.new(document: request_document, page_index: 1, format: 'bmp')
+      request = RenderPageOnlineRequest.new(document: request_document, page_index: 1, format: 'jpg')
 
       result = @words_api.render_page_online(request)
       assert_equal false, result.nil?
