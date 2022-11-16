@@ -95,8 +95,8 @@ module AsposeWordsCloud
     # Gets or sets the 0-based index of the first page to render.
     attr_accessor :page_index
 
-    # Gets or sets a value indicating whether or not to cache shapes placed in header and footer of document.
-    attr_accessor :cache_header_footer_shapes
+    # Gets or sets a value determining whether or not to cache graphics placed in document's background.
+    attr_accessor :cache_background_graphics
 
     # Gets or sets the PDF standards compliance level for output documents.
     attr_accessor :compliance
@@ -118,6 +118,9 @@ module AsposeWordsCloud
 
     # Gets or sets the downsample options.
     attr_accessor :downsample_options
+
+    # Gets or sets a value determining whether or not to embed attachments to the PDF document.
+    attr_accessor :embed_attachments
 
     # Gets or sets a value indicating whether fonts are embedded into the resulting PDF documents.
     attr_accessor :embed_full_fonts
@@ -225,13 +228,14 @@ module AsposeWordsCloud
         :'optimize_output' => :'OptimizeOutput',
         :'page_count' => :'PageCount',
         :'page_index' => :'PageIndex',
-        :'cache_header_footer_shapes' => :'CacheHeaderFooterShapes',
+        :'cache_background_graphics' => :'CacheBackgroundGraphics',
         :'compliance' => :'Compliance',
         :'create_note_hyperlinks' => :'CreateNoteHyperlinks',
         :'custom_properties_export' => :'CustomPropertiesExport',
         :'digital_signature_details' => :'DigitalSignatureDetails',
         :'display_doc_title' => :'DisplayDocTitle',
         :'downsample_options' => :'DownsampleOptions',
+        :'embed_attachments' => :'EmbedAttachments',
         :'embed_full_fonts' => :'EmbedFullFonts',
         :'encryption_details' => :'EncryptionDetails',
         :'export_document_structure' => :'ExportDocumentStructure',
@@ -278,13 +282,14 @@ module AsposeWordsCloud
         :'optimize_output' => :'BOOLEAN',
         :'page_count' => :'Integer',
         :'page_index' => :'Integer',
-        :'cache_header_footer_shapes' => :'BOOLEAN',
+        :'cache_background_graphics' => :'BOOLEAN',
         :'compliance' => :'String',
         :'create_note_hyperlinks' => :'BOOLEAN',
         :'custom_properties_export' => :'String',
         :'digital_signature_details' => :'PdfDigitalSignatureDetailsData',
         :'display_doc_title' => :'BOOLEAN',
         :'downsample_options' => :'DownsampleOptionsData',
+        :'embed_attachments' => :'BOOLEAN',
         :'embed_full_fonts' => :'BOOLEAN',
         :'encryption_details' => :'PdfEncryptionDetailsData',
         :'export_document_structure' => :'BOOLEAN',
@@ -398,8 +403,8 @@ module AsposeWordsCloud
         self.page_index = attributes[:'PageIndex']
       end
 
-      if attributes.key?(:'CacheHeaderFooterShapes')
-        self.cache_header_footer_shapes = attributes[:'CacheHeaderFooterShapes']
+      if attributes.key?(:'CacheBackgroundGraphics')
+        self.cache_background_graphics = attributes[:'CacheBackgroundGraphics']
       end
 
       if attributes.key?(:'Compliance')
@@ -424,6 +429,10 @@ module AsposeWordsCloud
 
       if attributes.key?(:'DownsampleOptions')
         self.downsample_options = attributes[:'DownsampleOptions']
+      end
+
+      if attributes.key?(:'EmbedAttachments')
+        self.embed_attachments = attributes[:'EmbedAttachments']
       end
 
       if attributes.key?(:'EmbedFullFonts')
@@ -767,13 +776,14 @@ module AsposeWordsCloud
           optimize_output == other.optimize_output &&
           page_count == other.page_count &&
           page_index == other.page_index &&
-          cache_header_footer_shapes == other.cache_header_footer_shapes &&
+          cache_background_graphics == other.cache_background_graphics &&
           compliance == other.compliance &&
           create_note_hyperlinks == other.create_note_hyperlinks &&
           custom_properties_export == other.custom_properties_export &&
           digital_signature_details == other.digital_signature_details &&
           display_doc_title == other.display_doc_title &&
           downsample_options == other.downsample_options &&
+          embed_attachments == other.embed_attachments &&
           embed_full_fonts == other.embed_full_fonts &&
           encryption_details == other.encryption_details &&
           export_document_structure == other.export_document_structure &&
@@ -805,7 +815,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, cache_header_footer_shapes, compliance, create_note_hyperlinks, custom_properties_export, digital_signature_details, display_doc_title, downsample_options, embed_full_fonts, encryption_details, export_document_structure, export_language_to_span_tag, font_embedding_mode, header_footer_bookmarks_export_mode, image_color_space_export_mode, image_compression, interpolate_images, open_hyperlinks_in_new_window, outline_options, page_mode, preblend_images, preserve_form_fields, save_format, text_compression, use_book_fold_printing_settings, use_core_fonts, zoom_behavior, zoom_factor].hash
+      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, cache_background_graphics, compliance, create_note_hyperlinks, custom_properties_export, digital_signature_details, display_doc_title, downsample_options, embed_attachments, embed_full_fonts, encryption_details, export_document_structure, export_language_to_span_tag, font_embedding_mode, header_footer_bookmarks_export_mode, image_color_space_export_mode, image_compression, interpolate_images, open_hyperlinks_in_new_window, outline_options, page_mode, preblend_images, preserve_form_fields, save_format, text_compression, use_book_fold_printing_settings, use_core_fonts, zoom_behavior, zoom_factor].hash
     end
 
     # Builds the object from hash
