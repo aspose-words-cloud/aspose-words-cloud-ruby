@@ -28,6 +28,7 @@ require 'date'
 module AsposeWordsCloud
 
   # Represents options for XML data loading.
+  # To learn more, visit the LINQ Reporting Engine documentation article.
   class XmlDataLoadOptions
     # Gets or sets a flag indicating whether a generated data source will always contain an object for an XML root
     # element. If an XML root element has no attributes and all its child elements have same names, such an object

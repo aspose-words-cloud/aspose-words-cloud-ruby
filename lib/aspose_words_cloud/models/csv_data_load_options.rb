@@ -28,6 +28,7 @@ require 'date'
 module AsposeWordsCloud
 
   # Represents options for parsing CSV data.
+  # To learn more, visit the LINQ Reporting Engine documentation article.
   class CsvDataLoadOptions
     # Gets or sets the character that is used to comment lines of CSV data.
     attr_accessor :comment_char
