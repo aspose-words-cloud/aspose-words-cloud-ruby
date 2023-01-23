@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="get_document_hyperlink_by_index_online_request.rb">
-#   Copyright (c) 2022 Aspose.Words for Cloud
+#   Copyright (c) 2023 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
