@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="update_custom_xml_part_request.rb">
-#   Copyright (c) 2022 Aspose.Words for Cloud
+#   Copyright (c) 2023 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
