@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="version.rb">
+# <copyright company="Aspose" file="insert_structured_document_tag_online_response.rb">
 #   Copyright (c) 2023 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -24,5 +24,23 @@
 # ------------------------------------------------------------------------------------
 
 module AsposeWordsCloud
-  VERSION = "23.2".freeze
+
+  #
+  # Response model for insert_structured_document_tag_online operation.
+  #
+  class InsertStructuredDocumentTagOnlineResponse
+    # The response model.
+    attr_accessor :model
+
+    # The document after modification.
+    attr_accessor :document
+
+    #
+    # Initializes a new instance.
+    #
+    def initialize()
+      self.model = nil
+      self.document = nil
+    end
+  end
 end
