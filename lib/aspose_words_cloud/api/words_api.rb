@@ -3257,6 +3257,90 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
+    # Removes a StructuredDocumentTag (SDT) from the document node.
+    # @param request DeleteStructuredDocumentTagRequest
+    # @return [nil]
+    def delete_structured_document_tag(request)
+        begin
+        data, _status_code, _headers = delete_structured_document_tag_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_structured_document_tag_with_http_info(request)
+            else
+            raise
+            end
+        end
+        nil
+    end
+
+    # Removes a StructuredDocumentTag (SDT) from the document node.
+    # @param request DeleteStructuredDocumentTagRequest
+    # @return [Array<(nil, Fixnum, Hash)>]
+    # nil, response status code and response headers
+    private def delete_structured_document_tag_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteStructuredDocumentTagRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.delete_structured_document_tag ...' if @api_client.config.debugging
+        request_data = request.create_http_request(@api_client)
+
+        data, status_code, headers = @api_client.call_api(
+                                                        request_data[:'method'],
+                                                        request_data[:'path'],
+                                                        header_params: request_data[:'header_params'],
+                                                        query_params: request_data[:'query_params'],
+                                                        body: request_data[:'body'])
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#delete_structured_document_tag\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [data, status_code, headers]
+    end
+
+    # Removes a StructuredDocumentTag (SDT) from the document node.
+    # @param request DeleteStructuredDocumentTagOnlineRequest
+    # @return [FILES_COLLECTION]
+    def delete_structured_document_tag_online(request)
+        begin
+        data, _status_code, _headers = delete_structured_document_tag_online_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_structured_document_tag_online_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Removes a StructuredDocumentTag (SDT) from the document node.
+    # @param request DeleteStructuredDocumentTagOnlineRequest
+    # @return [Array<(FILES_COLLECTION, Fixnum, Hash)>]
+    # FILES_COLLECTION, response status code and response headers
+    private def delete_structured_document_tag_online_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteStructuredDocumentTagOnlineRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.delete_structured_document_tag_online ...' if @api_client.config.debugging
+        request_data = request.create_http_request(@api_client)
+
+        data, status_code, headers = @api_client.call_api(
+                                                        request_data[:'method'],
+                                                        request_data[:'path'],
+                                                        header_params: request_data[:'header_params'],
+                                                        query_params: request_data[:'query_params'],
+                                                        body: request_data[:'body'],
+                                                        return_type: 'FILES_COLLECTION')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#delete_structured_document_tag_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        # FILES_COLLECTION #
+        [data, status_code, headers]
+    end
+
     # Removes a table from the document node.
     # @param request DeleteTableRequest
     # @return [nil]
@@ -7671,6 +7755,174 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
+    # Reads a StructuredDocumentTag (SDT) from the document node.
+    # @param request GetStructuredDocumentTagRequest
+    # @return [StructuredDocumentTagResponse]
+    def get_structured_document_tag(request)
+        begin
+        data, _status_code, _headers = get_structured_document_tag_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = get_structured_document_tag_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Reads a StructuredDocumentTag (SDT) from the document node.
+    # @param request GetStructuredDocumentTagRequest
+    # @return [Array<(StructuredDocumentTagResponse, Fixnum, Hash)>]
+    # StructuredDocumentTagResponse, response status code and response headers
+    private def get_structured_document_tag_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? GetStructuredDocumentTagRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.get_structured_document_tag ...' if @api_client.config.debugging
+        request_data = request.create_http_request(@api_client)
+
+        data, status_code, headers = @api_client.call_api(
+                                                        request_data[:'method'],
+                                                        request_data[:'path'],
+                                                        header_params: request_data[:'header_params'],
+                                                        query_params: request_data[:'query_params'],
+                                                        body: request_data[:'body'],
+                                                        return_type: 'StructuredDocumentTagResponse')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#get_structured_document_tag\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [data, status_code, headers]
+    end
+
+    # Reads a StructuredDocumentTag (SDT) from the document node.
+    # @param request GetStructuredDocumentTagOnlineRequest
+    # @return [StructuredDocumentTagResponse]
+    def get_structured_document_tag_online(request)
+        begin
+        data, _status_code, _headers = get_structured_document_tag_online_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = get_structured_document_tag_online_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Reads a StructuredDocumentTag (SDT) from the document node.
+    # @param request GetStructuredDocumentTagOnlineRequest
+    # @return [Array<(StructuredDocumentTagResponse, Fixnum, Hash)>]
+    # StructuredDocumentTagResponse, response status code and response headers
+    private def get_structured_document_tag_online_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? GetStructuredDocumentTagOnlineRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.get_structured_document_tag_online ...' if @api_client.config.debugging
+        request_data = request.create_http_request(@api_client)
+
+        data, status_code, headers = @api_client.call_api(
+                                                        request_data[:'method'],
+                                                        request_data[:'path'],
+                                                        header_params: request_data[:'header_params'],
+                                                        query_params: request_data[:'query_params'],
+                                                        body: request_data[:'body'],
+                                                        return_type: 'StructuredDocumentTagResponse')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#get_structured_document_tag_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [data, status_code, headers]
+    end
+
+    # Reads StructuredDocumentTags (SDT) from the document node.
+    # @param request GetStructuredDocumentTagsRequest
+    # @return [StructuredDocumentTagsResponse]
+    def get_structured_document_tags(request)
+        begin
+        data, _status_code, _headers = get_structured_document_tags_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = get_structured_document_tags_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Reads StructuredDocumentTags (SDT) from the document node.
+    # @param request GetStructuredDocumentTagsRequest
+    # @return [Array<(StructuredDocumentTagsResponse, Fixnum, Hash)>]
+    # StructuredDocumentTagsResponse, response status code and response headers
+    private def get_structured_document_tags_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? GetStructuredDocumentTagsRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.get_structured_document_tags ...' if @api_client.config.debugging
+        request_data = request.create_http_request(@api_client)
+
+        data, status_code, headers = @api_client.call_api(
+                                                        request_data[:'method'],
+                                                        request_data[:'path'],
+                                                        header_params: request_data[:'header_params'],
+                                                        query_params: request_data[:'query_params'],
+                                                        body: request_data[:'body'],
+                                                        return_type: 'StructuredDocumentTagsResponse')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#get_structured_document_tags\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [data, status_code, headers]
+    end
+
+    # Reads StructuredDocumentTags (SDT) from the document node.
+    # @param request GetStructuredDocumentTagsOnlineRequest
+    # @return [StructuredDocumentTagsResponse]
+    def get_structured_document_tags_online(request)
+        begin
+        data, _status_code, _headers = get_structured_document_tags_online_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = get_structured_document_tags_online_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Reads StructuredDocumentTags (SDT) from the document node.
+    # @param request GetStructuredDocumentTagsOnlineRequest
+    # @return [Array<(StructuredDocumentTagsResponse, Fixnum, Hash)>]
+    # StructuredDocumentTagsResponse, response status code and response headers
+    private def get_structured_document_tags_online_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? GetStructuredDocumentTagsOnlineRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.get_structured_document_tags_online ...' if @api_client.config.debugging
+        request_data = request.create_http_request(@api_client)
+
+        data, status_code, headers = @api_client.call_api(
+                                                        request_data[:'method'],
+                                                        request_data[:'path'],
+                                                        header_params: request_data[:'header_params'],
+                                                        query_params: request_data[:'query_params'],
+                                                        body: request_data[:'body'],
+                                                        return_type: 'StructuredDocumentTagsResponse')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#get_structured_document_tags_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [data, status_code, headers]
+    end
+
     # Reads a style from the document.
     # @param request GetStyleRequest
     # @return [StyleResponse]
@@ -9651,6 +9903,94 @@ module AsposeWordsCloud
 
         mp_data = InsertRunOnlineResponse.new()
         mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'RunResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
+        [mp_data, status_code, headers]
+    end
+
+    # Inserts a new StructuredDocumentTag (SDT) to the document node.
+    # @param request InsertStructuredDocumentTagRequest
+    # @return [StructuredDocumentTagResponse]
+    def insert_structured_document_tag(request)
+        begin
+        data, _status_code, _headers = insert_structured_document_tag_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = insert_structured_document_tag_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Inserts a new StructuredDocumentTag (SDT) to the document node.
+    # @param request InsertStructuredDocumentTagRequest
+    # @return [Array<(StructuredDocumentTagResponse, Fixnum, Hash)>]
+    # StructuredDocumentTagResponse, response status code and response headers
+    private def insert_structured_document_tag_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? InsertStructuredDocumentTagRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.insert_structured_document_tag ...' if @api_client.config.debugging
+        request_data = request.create_http_request(@api_client)
+
+        data, status_code, headers = @api_client.call_api(
+                                                        request_data[:'method'],
+                                                        request_data[:'path'],
+                                                        header_params: request_data[:'header_params'],
+                                                        query_params: request_data[:'query_params'],
+                                                        body: request_data[:'body'],
+                                                        return_type: 'StructuredDocumentTagResponse')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#insert_structured_document_tag\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [data, status_code, headers]
+    end
+
+    # Inserts a new StructuredDocumentTag (SDT) to the document node.
+    # @param request InsertStructuredDocumentTagOnlineRequest
+    # @return [InsertStructuredDocumentTagOnlineResponse]
+    def insert_structured_document_tag_online(request)
+        begin
+        data, _status_code, _headers = insert_structured_document_tag_online_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = insert_structured_document_tag_online_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Inserts a new StructuredDocumentTag (SDT) to the document node.
+    # @param request InsertStructuredDocumentTagOnlineRequest
+    # @return [Array<(InsertStructuredDocumentTagOnlineResponse, Fixnum, Hash)>]
+    # InsertStructuredDocumentTagOnlineResponse, response status code and response headers
+    private def insert_structured_document_tag_online_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? InsertStructuredDocumentTagOnlineRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.insert_structured_document_tag_online ...' if @api_client.config.debugging
+        request_data = request.create_http_request(@api_client)
+
+        data, status_code, headers = @api_client.call_api(
+                                                        request_data[:'method'],
+                                                        request_data[:'path'],
+                                                        header_params: request_data[:'header_params'],
+                                                        query_params: request_data[:'query_params'],
+                                                        body: request_data[:'body'],
+                                                        multipart_response: true,
+                                                        return_type: 'InsertStructuredDocumentTagOnlineResponse')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#insert_structured_document_tag_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        mp_data = InsertStructuredDocumentTagOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'StructuredDocumentTagResponse')
         mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
@@ -13261,6 +13601,94 @@ module AsposeWordsCloud
 
         mp_data = UpdateSectionPageSetupOnlineResponse.new()
         mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'SectionPageSetupResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
+        [mp_data, status_code, headers]
+    end
+
+    # Updates a StructuredDocumentTag (SDT) in the document node.
+    # @param request UpdateStructuredDocumentTagRequest
+    # @return [StructuredDocumentTagResponse]
+    def update_structured_document_tag(request)
+        begin
+        data, _status_code, _headers = update_structured_document_tag_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = update_structured_document_tag_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Updates a StructuredDocumentTag (SDT) in the document node.
+    # @param request UpdateStructuredDocumentTagRequest
+    # @return [Array<(StructuredDocumentTagResponse, Fixnum, Hash)>]
+    # StructuredDocumentTagResponse, response status code and response headers
+    private def update_structured_document_tag_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? UpdateStructuredDocumentTagRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.update_structured_document_tag ...' if @api_client.config.debugging
+        request_data = request.create_http_request(@api_client)
+
+        data, status_code, headers = @api_client.call_api(
+                                                        request_data[:'method'],
+                                                        request_data[:'path'],
+                                                        header_params: request_data[:'header_params'],
+                                                        query_params: request_data[:'query_params'],
+                                                        body: request_data[:'body'],
+                                                        return_type: 'StructuredDocumentTagResponse')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#update_structured_document_tag\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [data, status_code, headers]
+    end
+
+    # Updates a StructuredDocumentTag (SDT) in the document node.
+    # @param request UpdateStructuredDocumentTagOnlineRequest
+    # @return [UpdateStructuredDocumentTagOnlineResponse]
+    def update_structured_document_tag_online(request)
+        begin
+        data, _status_code, _headers = update_structured_document_tag_online_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = update_structured_document_tag_online_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Updates a StructuredDocumentTag (SDT) in the document node.
+    # @param request UpdateStructuredDocumentTagOnlineRequest
+    # @return [Array<(UpdateStructuredDocumentTagOnlineResponse, Fixnum, Hash)>]
+    # UpdateStructuredDocumentTagOnlineResponse, response status code and response headers
+    private def update_structured_document_tag_online_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? UpdateStructuredDocumentTagOnlineRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.update_structured_document_tag_online ...' if @api_client.config.debugging
+        request_data = request.create_http_request(@api_client)
+
+        data, status_code, headers = @api_client.call_api(
+                                                        request_data[:'method'],
+                                                        request_data[:'path'],
+                                                        header_params: request_data[:'header_params'],
+                                                        query_params: request_data[:'query_params'],
+                                                        body: request_data[:'body'],
+                                                        multipart_response: true,
+                                                        return_type: 'UpdateStructuredDocumentTagOnlineResponse')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#update_structured_document_tag_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        mp_data = UpdateStructuredDocumentTagOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'StructuredDocumentTagResponse')
         mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
     end
