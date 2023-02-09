@@ -1,0 +1,564 @@
+# ------------------------------------------------------------------------------------
+# <copyright company="Aspose" file="structured_document_tag.rb">
+#   Copyright (c) 2023 Aspose.Words for Cloud
+# </copyright>
+# <summary>
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
+#  of this software and associated documentation files (the "Software"), to deal
+#  in the Software without restriction, including without limitation the rights
+#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#  copies of the Software, and to permit persons to whom the Software is
+#  furnished to do so, subject to the following conditions:
+#
+#  The above copyright notice and this permission notice shall be included in all
+#  copies or substantial portions of the Software.
+#
+#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+#  SOFTWARE.
+# </summary>
+# ------------------------------------------------------------------------------------
+
+require 'date'
+
+module AsposeWordsCloud
+
+  # DTO container with a StructuredDocumentTag.
+  class StructuredDocumentTag
+    # Gets or sets the link to the document.
+    attr_accessor :link
+
+    # Gets or sets the node id.
+    attr_accessor :node_id
+
+    # Gets or sets the appearance of a structured document tag.
+    attr_accessor :appearance
+
+    # Gets or sets category of building block for this SDT node. Can not be null.
+    attr_accessor :building_block_category
+
+    # Gets or sets type of building block for this SDT. Can not be null.
+    attr_accessor :building_block_gallery
+
+    # Gets or sets the type of calendar for this SDT. Default is Aspose.Words.Markup.SdtCalendarType.Default.
+    attr_accessor :calendar_type
+
+    # Gets or sets a value indicating whether current state of the Checkbox SDT. Default value for this property.
+    attr_accessor :checked
+
+    # Gets or sets the color of the structured document tag.
+    attr_accessor :color
+
+    # Gets or sets String that represents the format in which dates are displayed. Can not be null. The dates for English (U.S.) is "mm/dd/yyyy".
+    attr_accessor :date_display_format
+
+    # Gets or sets the language format for the date displayed in this SDT.
+    attr_accessor :date_display_locale
+
+    # Gets or sets format in which the date for a date SDT is stored when the SDT is bound to an XML node in the document's data store.
+    # Default value is Aspose.Words.Markup.SdtDateStorageFormat.DateTime.
+    attr_accessor :date_storage_format
+
+    # Gets or sets the full date and time last entered into this SDT.
+    attr_accessor :full_date
+
+    # Gets or sets a unique read-only persistent numerical Id for this SDT.
+    attr_accessor :id
+
+    # Gets or sets a value indicating whether the content of this SDT shall be interpreted to contain placeholder text (as opposed to regular text contents within the SDT).
+    # If set to true, this state shall be resumed (showing placeholder text) upon opening his document.
+    attr_accessor :is_showing_placeholder_text
+
+    # Gets or sets a value indicating whether this SDT shall be removed from the WordProcessingML document when its contents are modified.
+    attr_accessor :is_temporary
+
+    # Gets or sets the level at which this SDT occurs in the document tree.
+    attr_accessor :level
+
+    # Gets or sets Aspose.Words.Markup.SdtListItemCollection associated with this SDT.
+    attr_accessor :list_items
+
+    # Gets or sets a value indicating whether, this property will prohibit a user from deleting this SDT.
+    attr_accessor :lock_content_control
+
+    # Gets or sets a value indicating whether, this property will prohibit a user from editing the contents of this SDT.
+    attr_accessor :lock_contents
+
+    # Gets or sets a value indicating whether this SDT allows multiple lines of text.
+    attr_accessor :multiline
+
+    # Gets or sets Name of the Aspose.Words.BuildingBlocks.BuildingBlock containing placeholder text.
+    # Aspose.Words.BuildingBlocks.BuildingBlock with this name Aspose.Words.BuildingBlocks.BuildingBlock.Name has to be present in the Aspose.Words.Document.GlossaryDocument otherwise System.InvalidOperationException will occur.
+    attr_accessor :placeholder_name
+
+    # Gets or sets type of this Structured document tag.
+    attr_accessor :sdt_type
+
+    # Gets or sets the name of the style applied to the structured document tag.
+    attr_accessor :style_name
+
+    # Gets or sets a tag associated with the current SDT node. Can not be null.
+    attr_accessor :tag
+
+    # Gets or sets the friendly name associated with this SDT. Can not be null.
+    attr_accessor :title
+
+    # Gets a string that represents the XML contained within the node in the Aspose.Words.SaveFormat.FlatOpc format.
+    attr_accessor :word_open_xml
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
+
+    # Attribute mapping from ruby-style variable name to JSON key.
+    def self.attribute_map
+      {
+        :'link' => :'Link',
+        :'node_id' => :'NodeId',
+        :'appearance' => :'Appearance',
+        :'building_block_category' => :'BuildingBlockCategory',
+        :'building_block_gallery' => :'BuildingBlockGallery',
+        :'calendar_type' => :'CalendarType',
+        :'checked' => :'Checked',
+        :'color' => :'Color',
+        :'date_display_format' => :'DateDisplayFormat',
+        :'date_display_locale' => :'DateDisplayLocale',
+        :'date_storage_format' => :'DateStorageFormat',
+        :'full_date' => :'FullDate',
+        :'id' => :'Id',
+        :'is_showing_placeholder_text' => :'IsShowingPlaceholderText',
+        :'is_temporary' => :'IsTemporary',
+        :'level' => :'Level',
+        :'list_items' => :'ListItems',
+        :'lock_content_control' => :'LockContentControl',
+        :'lock_contents' => :'LockContents',
+        :'multiline' => :'Multiline',
+        :'placeholder_name' => :'PlaceholderName',
+        :'sdt_type' => :'SdtType',
+        :'style_name' => :'StyleName',
+        :'tag' => :'Tag',
+        :'title' => :'Title',
+        :'word_open_xml' => :'WordOpenXML'
+      }
+    end
+
+    # Attribute type mapping.
+    def self.swagger_types
+      {
+        :'link' => :'WordsApiLink',
+        :'node_id' => :'String',
+        :'appearance' => :'String',
+        :'building_block_category' => :'String',
+        :'building_block_gallery' => :'String',
+        :'calendar_type' => :'String',
+        :'checked' => :'BOOLEAN',
+        :'color' => :'String',
+        :'date_display_format' => :'String',
+        :'date_display_locale' => :'Integer',
+        :'date_storage_format' => :'String',
+        :'full_date' => :'DateTime',
+        :'id' => :'Integer',
+        :'is_showing_placeholder_text' => :'BOOLEAN',
+        :'is_temporary' => :'BOOLEAN',
+        :'level' => :'String',
+        :'list_items' => :'Array<StructuredDocumentTagListItem>',
+        :'lock_content_control' => :'BOOLEAN',
+        :'lock_contents' => :'BOOLEAN',
+        :'multiline' => :'BOOLEAN',
+        :'placeholder_name' => :'String',
+        :'sdt_type' => :'String',
+        :'style_name' => :'String',
+        :'tag' => :'String',
+        :'title' => :'String',
+        :'word_open_xml' => :'String'
+      }
+    end
+
+    # Initializes the object
+    # @param [Hash] attributes Model attributes in the form of hash
+    def initialize(attributes = {})
+      return unless attributes.is_a?(Hash)
+
+      # convert string to symbol for hash key
+      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.key?(:'Link')
+        self.link = attributes[:'Link']
+      end
+
+      if attributes.key?(:'NodeId')
+        self.node_id = attributes[:'NodeId']
+      end
+
+      if attributes.key?(:'Appearance')
+        self.appearance = attributes[:'Appearance']
+      end
+
+      if attributes.key?(:'BuildingBlockCategory')
+        self.building_block_category = attributes[:'BuildingBlockCategory']
+      end
+
+      if attributes.key?(:'BuildingBlockGallery')
+        self.building_block_gallery = attributes[:'BuildingBlockGallery']
+      end
+
+      if attributes.key?(:'CalendarType')
+        self.calendar_type = attributes[:'CalendarType']
+      end
+
+      if attributes.key?(:'Checked')
+        self.checked = attributes[:'Checked']
+      end
+
+      if attributes.key?(:'Color')
+        self.color = attributes[:'Color']
+      end
+
+      if attributes.key?(:'DateDisplayFormat')
+        self.date_display_format = attributes[:'DateDisplayFormat']
+      end
+
+      if attributes.key?(:'DateDisplayLocale')
+        self.date_display_locale = attributes[:'DateDisplayLocale']
+      end
+
+      if attributes.key?(:'DateStorageFormat')
+        self.date_storage_format = attributes[:'DateStorageFormat']
+      end
+
+      if attributes.key?(:'FullDate')
+        self.full_date = attributes[:'FullDate']
+      end
+
+      if attributes.key?(:'Id')
+        self.id = attributes[:'Id']
+      end
+
+      if attributes.key?(:'IsShowingPlaceholderText')
+        self.is_showing_placeholder_text = attributes[:'IsShowingPlaceholderText']
+      end
+
+      if attributes.key?(:'IsTemporary')
+        self.is_temporary = attributes[:'IsTemporary']
+      end
+
+      if attributes.key?(:'Level')
+        self.level = attributes[:'Level']
+      end
+
+      if attributes.key?(:'ListItems')
+        if (value = attributes[:'ListItems']).is_a?(Array)
+          self.list_items = value
+        end
+      end
+
+      if attributes.key?(:'LockContentControl')
+        self.lock_content_control = attributes[:'LockContentControl']
+      end
+
+      if attributes.key?(:'LockContents')
+        self.lock_contents = attributes[:'LockContents']
+      end
+
+      if attributes.key?(:'Multiline')
+        self.multiline = attributes[:'Multiline']
+      end
+
+      if attributes.key?(:'PlaceholderName')
+        self.placeholder_name = attributes[:'PlaceholderName']
+      end
+
+      if attributes.key?(:'SdtType')
+        self.sdt_type = attributes[:'SdtType']
+      end
+
+      if attributes.key?(:'StyleName')
+        self.style_name = attributes[:'StyleName']
+      end
+
+      if attributes.key?(:'Tag')
+        self.tag = attributes[:'Tag']
+      end
+
+      if attributes.key?(:'Title')
+        self.title = attributes[:'Title']
+      end
+
+      if attributes.key?(:'WordOpenXML')
+        self.word_open_xml = attributes[:'WordOpenXML']
+      end
+    end
+
+    # Show invalid properties with the reasons. Usually used together with valid?
+    # @return Array for valid properies with the reasons
+    def list_invalid_properties
+      invalid_properties = []
+      return invalid_properties
+    end
+
+    # Check to see if the all the properties in the model are valid
+    # @return true if the model is valid
+    def valid?
+      appearance_validator = EnumAttributeValidator.new('String', ["Default", "BoundingBox", "Tags", "Hidden"])
+      return false unless appearance_validator.valid?(@appearance)
+      calendar_type_validator = EnumAttributeValidator.new('String', ["Default", "Gregorian", "GregorianArabic", "GregorianMeFrench", "GregorianUs", "GregorianXlitEnglish", "GregorianXlitFrench", "Hebrew", "Hijri", "Japan", "Korea", "None", "Saka", "Taiwan", "Thai"])
+      return false unless calendar_type_validator.valid?(@calendar_type)
+      date_storage_format_validator = EnumAttributeValidator.new('String', ["Date", "DateTime", "Default", "Text"])
+      return false unless date_storage_format_validator.valid?(@date_storage_format)
+      level_validator = EnumAttributeValidator.new('String', ["Unknown", "Inline", "Block", "Row", "Cell"])
+      return false unless level_validator.valid?(@level)
+      sdt_type_validator = EnumAttributeValidator.new('String', ["None", "Bibliography", "Citation", "Equation", "DropDownList", "ComboBox", "Date", "BuildingBlockGallery", "DocPartObj", "Group", "Picture", "RichText", "PlainText", "Checkbox", "RepeatingSection", "RepeatingSectionItem", "EntityPicker"])
+      return false unless sdt_type_validator.valid?(@sdt_type)
+
+      return true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] appearance Object to be assigned
+    def appearance=(appearance)
+      validator = EnumAttributeValidator.new('String', ["Default", "BoundingBox", "Tags", "Hidden"])
+      if appearance.to_i == 0
+        unless validator.valid?(appearance)
+          raise ArgumentError, "invalid value for 'appearance', must be one of #{validator.allowable_values}."
+        end
+        @appearance = appearance
+      else
+        @appearance = validator.allowable_values[appearance.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] calendar_type Object to be assigned
+    def calendar_type=(calendar_type)
+      validator = EnumAttributeValidator.new('String', ["Default", "Gregorian", "GregorianArabic", "GregorianMeFrench", "GregorianUs", "GregorianXlitEnglish", "GregorianXlitFrench", "Hebrew", "Hijri", "Japan", "Korea", "None", "Saka", "Taiwan", "Thai"])
+      if calendar_type.to_i == 0
+        unless validator.valid?(calendar_type)
+          raise ArgumentError, "invalid value for 'calendar_type', must be one of #{validator.allowable_values}."
+        end
+        @calendar_type = calendar_type
+      else
+        @calendar_type = validator.allowable_values[calendar_type.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] date_storage_format Object to be assigned
+    def date_storage_format=(date_storage_format)
+      validator = EnumAttributeValidator.new('String', ["Date", "DateTime", "Default", "Text"])
+      if date_storage_format.to_i == 0
+        unless validator.valid?(date_storage_format)
+          raise ArgumentError, "invalid value for 'date_storage_format', must be one of #{validator.allowable_values}."
+        end
+        @date_storage_format = date_storage_format
+      else
+        @date_storage_format = validator.allowable_values[date_storage_format.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] level Object to be assigned
+    def level=(level)
+      validator = EnumAttributeValidator.new('String', ["Unknown", "Inline", "Block", "Row", "Cell"])
+      if level.to_i == 0
+        unless validator.valid?(level)
+          raise ArgumentError, "invalid value for 'level', must be one of #{validator.allowable_values}."
+        end
+        @level = level
+      else
+        @level = validator.allowable_values[level.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] sdt_type Object to be assigned
+    def sdt_type=(sdt_type)
+      validator = EnumAttributeValidator.new('String', ["None", "Bibliography", "Citation", "Equation", "DropDownList", "ComboBox", "Date", "BuildingBlockGallery", "DocPartObj", "Group", "Picture", "RichText", "PlainText", "Checkbox", "RepeatingSection", "RepeatingSectionItem", "EntityPicker"])
+      if sdt_type.to_i == 0
+        unless validator.valid?(sdt_type)
+          raise ArgumentError, "invalid value for 'sdt_type', must be one of #{validator.allowable_values}."
+        end
+        @sdt_type = sdt_type
+      else
+        @sdt_type = validator.allowable_values[sdt_type.to_i]
+      end
+    end
+
+
+    # Checks equality by comparing each attribute.
+    # @param [Object] Object to be compared
+    def ==(other)
+      return true if self.equal?(other)
+      self.class == other.class &&
+          link == other.link &&
+          node_id == other.node_id &&
+          appearance == other.appearance &&
+          building_block_category == other.building_block_category &&
+          building_block_gallery == other.building_block_gallery &&
+          calendar_type == other.calendar_type &&
+          checked == other.checked &&
+          color == other.color &&
+          date_display_format == other.date_display_format &&
+          date_display_locale == other.date_display_locale &&
+          date_storage_format == other.date_storage_format &&
+          full_date == other.full_date &&
+          id == other.id &&
+          is_showing_placeholder_text == other.is_showing_placeholder_text &&
+          is_temporary == other.is_temporary &&
+          level == other.level &&
+          list_items == other.list_items &&
+          lock_content_control == other.lock_content_control &&
+          lock_contents == other.lock_contents &&
+          multiline == other.multiline &&
+          placeholder_name == other.placeholder_name &&
+          sdt_type == other.sdt_type &&
+          style_name == other.style_name &&
+          tag == other.tag &&
+          title == other.title &&
+          word_open_xml == other.word_open_xml
+    end
+
+    # @see the `==` method
+    # @param [Object] Object to be compared
+    def eql?(other)
+      self == other
+    end
+
+    # Calculates hash code according to all attributes.
+    # @return [Fixnum] Hash code
+    def hash
+      [link, node_id, appearance, building_block_category, building_block_gallery, calendar_type, checked, color, date_display_format, date_display_locale, date_storage_format, full_date, id, is_showing_placeholder_text, is_temporary, level, list_items, lock_content_control, lock_contents, multiline, placeholder_name, sdt_type, style_name, tag, title, word_open_xml].hash
+    end
+
+    # Builds the object from hash
+    # @param [Hash] attributes Model attributes in the form of hash
+    # @return [Object] Returns the model itself
+    def build_from_hash(attributes)
+      return nil unless attributes.is_a?(Hash)
+      self.class.swagger_types.each_pair do |key, type|
+        if type =~ /\AArray<(.*)>/i
+          # check to ensure the input is an array given that the the attribute
+          # is documented as an array but the input is not
+          if attributes[self.class.attribute_map[key]].is_a?(Array)
+            self.send("#{key}=", attributes[self.class.attribute_map[key]].map { |v| _deserialize($1, v) })
+          end
+        elsif !attributes[self.class.attribute_map[key]].nil?
+          self.send("#{key}=", _deserialize(type, attributes[self.class.attribute_map[key]]))
+        end
+        # or else data not found in attributes(hash), not an issue as the data can be optional
+      end
+
+      self
+    end
+
+    # Deserializes the data based on type
+    # @param string type Data type
+    # @param string value Value to be deserialized
+    # @return [Object] Deserialized data
+    def _deserialize(type, value)
+      case type.to_sym
+      when :DateTime
+        Time.at(/\d/.match(value)[0].to_f).to_datetime
+      when :Date
+        Time.at(/\d/.match(value)[0].to_f).to_date
+      when :String
+        value.to_s
+      when :Integer
+        value.to_i
+      when :Float
+        value.to_f
+      when :BOOLEAN
+        if value.to_s =~ /\A(true|t|yes|y|1)\z/i
+          true
+        else
+          false
+        end
+      when :Object
+        # generic object (usually a Hash), return directly
+        value
+      when /\AArray<(?<inner_type>.+)>\z/
+        inner_type = Regexp.last_match[:inner_type]
+        value.map { |v| _deserialize(inner_type, v) }
+      when /\AHash<(?<k_type>.+?), (?<v_type>.+)>\z/
+        k_type = Regexp.last_match[:k_type]
+        v_type = Regexp.last_match[:v_type]
+        {}.tap do |hash|
+          value.each do |k, v|
+            hash[_deserialize(k_type, k)] = _deserialize(v_type, v)
+          end
+        end
+      else
+      # model
+        temp_model = AsposeWordsCloud.const_get(type).new
+        temp_model.build_from_hash(value)
+      end
+    end
+
+    # Returns the string representation of the object
+    # @return [String] String presentation of the object
+    def to_s
+      to_hash.to_s
+    end
+
+    # to_body is an alias to to_hash (backward compatibility)
+    # @return [Hash] Returns the object in the form of hash
+    def to_body
+      to_hash
+    end
+
+    # Returns the object in the form of hash
+    # @return [Hash] Returns the object in the form of hash
+    def to_hash
+      hash = {}
+      self.class.attribute_map.each_pair do |attr, param|
+        value = self.send(attr)
+        next if value.nil?
+        hash[param] = _to_hash(value)
+      end
+      hash
+    end
+
+    # Outputs non-array value in the form of hash
+    # For object, use to_hash. Otherwise, just return the value
+    # @param [Object] value Any valid value
+    # @return [Hash] Returns the value in the form of hash
+    def _to_hash(value)
+      if value.is_a?(Array)
+        value.compact.map { |v| _to_hash(v) }
+      elsif value.is_a?(Hash)
+        {}.tap do |hash|
+          value.each { |k, v| hash[k] = _to_hash(v) }
+        end
+      elsif value.respond_to? :to_hash
+        value.to_hash
+      else
+        value
+      end
+    end
+
+    def collectFilesContent(resultFilesContent)
+    end
+
+  end
+end
