@@ -64,8 +64,8 @@ module AsposeWordsCloud
         :'author' => :'String',
         :'date_time' => :'DateTime',
         :'initial' => :'String',
-        :'range_end' => :'DocumentPosition',
-        :'range_start' => :'DocumentPosition',
+        :'range_end' => :'NewDocumentPosition',
+        :'range_start' => :'NewDocumentPosition',
         :'text' => :'String'
       }
     end

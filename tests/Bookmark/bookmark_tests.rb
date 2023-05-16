@@ -178,10 +178,8 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request_bookmark_start_range_node = NodeLink.new({:NodeId => '0.0.0.0'})
-      request_bookmark_start_range = DocumentPosition.new({:Node => request_bookmark_start_range_node})
-      request_bookmark_end_range_node = NodeLink.new({:NodeId => '0.0.0.0'})
-      request_bookmark_end_range = DocumentPosition.new({:Node => request_bookmark_end_range_node})
+      request_bookmark_start_range = NewDocumentPosition.new({:NodeId => '0.0.0.0', :Offset => 0})
+      request_bookmark_end_range = NewDocumentPosition.new({:NodeId => '0.0.0.0', :Offset => 0})
       request_bookmark = BookmarkInsert.new({:StartRange => request_bookmark_start_range, :EndRange => request_bookmark_end_range, :Name => 'new_bookmark', :Text => 'Some text'})
       request = InsertBookmarkRequest.new(name: remote_file_name, bookmark: request_bookmark, folder: remote_data_folder)
 
@@ -194,10 +192,8 @@ module AsposeWordsCloud
     #
     def test_insert_bookmark_online
       request_document = File.open(File.join(local_test_folder, local_file))
-      request_bookmark_start_range_node = NodeLink.new({:NodeId => '0.0.0.0'})
-      request_bookmark_start_range = DocumentPosition.new({:Node => request_bookmark_start_range_node})
-      request_bookmark_end_range_node = NodeLink.new({:NodeId => '0.0.0.0'})
-      request_bookmark_end_range = DocumentPosition.new({:Node => request_bookmark_end_range_node})
+      request_bookmark_start_range = NewDocumentPosition.new({:NodeId => '0.0.0.0', :Offset => 0})
+      request_bookmark_end_range = NewDocumentPosition.new({:NodeId => '0.0.0.0', :Offset => 0})
       request_bookmark = BookmarkInsert.new({:StartRange => request_bookmark_start_range, :EndRange => request_bookmark_end_range, :Name => 'new_bookmark', :Text => 'Some text'})
       request = InsertBookmarkOnlineRequest.new(document: request_document, bookmark: request_bookmark)
 
