@@ -55,8 +55,8 @@ module AsposeWordsCloud
       {
         :'name' => :'String',
         :'text' => :'String',
-        :'end_range' => :'DocumentPosition',
-        :'start_range' => :'DocumentPosition'
+        :'end_range' => :'NewDocumentPosition',
+        :'start_range' => :'NewDocumentPosition'
       }
     end
 

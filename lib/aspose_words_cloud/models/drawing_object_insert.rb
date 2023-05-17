@@ -94,7 +94,7 @@ module AsposeWordsCloud
       {
         :'height' => :'Float',
         :'left' => :'Float',
-        :'position' => :'DocumentPosition',
+        :'position' => :'NewDocumentPosition',
         :'relative_horizontal_position' => :'String',
         :'relative_vertical_position' => :'String',
         :'top' => :'Float',

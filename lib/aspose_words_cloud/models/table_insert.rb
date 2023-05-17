@@ -50,7 +50,7 @@ module AsposeWordsCloud
     def self.swagger_types
       {
         :'columns_count' => :'Integer',
-        :'position' => :'DocumentPosition',
+        :'position' => :'NewDocumentPosition',
         :'rows_count' => :'Integer'
       }
     end

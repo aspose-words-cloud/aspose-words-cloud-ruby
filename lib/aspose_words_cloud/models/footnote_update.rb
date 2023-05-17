@@ -78,7 +78,7 @@ module AsposeWordsCloud
     def self.swagger_types
       {
         :'footnote_type' => :'String',
-        :'position' => :'DocumentPosition',
+        :'position' => :'NewDocumentPosition',
         :'reference_mark' => :'String',
         :'text' => :'String'
       }
