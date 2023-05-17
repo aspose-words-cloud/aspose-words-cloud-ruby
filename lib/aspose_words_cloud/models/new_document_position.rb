@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="comment_insert.rb">
+# <copyright company="Aspose" file="new_document_position.rb">
 #   Copyright (c) 2023 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -27,46 +27,26 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Comment insert.
-  class CommentInsert
-    # Gets or sets the author name for a comment.
-    attr_accessor :author
+  # DTO container with a new position in the document tree.
+  class NewDocumentPosition
+    # Gets or sets the node id.
+    attr_accessor :node_id
 
-    # Gets or sets the date and time that the comment was made.
-    attr_accessor :date_time
-
-    # Gets or sets the initials of the user associated with a specific comment.
-    attr_accessor :initial
-
-    # Gets or sets the link to comment range end node.
-    attr_accessor :range_end
-
-    # Gets or sets the link to comment range start node.
-    attr_accessor :range_start
-
-    # Gets or sets text of the comment.
-    attr_accessor :text
+    # Gets or sets the offset in the node.
+    attr_accessor :offset
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'author' => :'Author',
-        :'date_time' => :'DateTime',
-        :'initial' => :'Initial',
-        :'range_end' => :'RangeEnd',
-        :'range_start' => :'RangeStart',
-        :'text' => :'Text'
+        :'node_id' => :'NodeId',
+        :'offset' => :'Offset'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'author' => :'String',
-        :'date_time' => :'DateTime',
-        :'initial' => :'String',
-        :'range_end' => :'NewDocumentPosition',
-        :'range_start' => :'NewDocumentPosition',
-        :'text' => :'String'
+        :'node_id' => :'String',
+        :'offset' => :'Integer'
       }
     end
 
@@ -78,28 +58,12 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'Author')
-        self.author = attributes[:'Author']
+      if attributes.key?(:'NodeId')
+        self.node_id = attributes[:'NodeId']
       end
 
-      if attributes.key?(:'DateTime')
-        self.date_time = attributes[:'DateTime']
-      end
-
-      if attributes.key?(:'Initial')
-        self.initial = attributes[:'Initial']
-      end
-
-      if attributes.key?(:'RangeEnd')
-        self.range_end = attributes[:'RangeEnd']
-      end
-
-      if attributes.key?(:'RangeStart')
-        self.range_start = attributes[:'RangeStart']
-      end
-
-      if attributes.key?(:'Text')
-        self.text = attributes[:'Text']
+      if attributes.key?(:'Offset')
+        self.offset = attributes[:'Offset']
       end
     end
 
@@ -121,12 +85,8 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          author == other.author &&
-          date_time == other.date_time &&
-          initial == other.initial &&
-          range_end == other.range_end &&
-          range_start == other.range_start &&
-          text == other.text
+          node_id == other.node_id &&
+          offset == other.offset
     end
 
     # @see the `==` method
@@ -138,7 +98,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [author, date_time, initial, range_end, range_start, text].hash
+      [node_id, offset].hash
     end
 
     # Builds the object from hash
