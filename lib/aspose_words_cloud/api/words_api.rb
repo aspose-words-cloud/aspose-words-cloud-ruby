@@ -9907,6 +9907,90 @@ module AsposeWordsCloud
         [mp_data, status_code, headers]
     end
 
+    # Inserts a section to the document.
+    # @param request InsertSectionRequest
+    # @return [nil]
+    def insert_section(request)
+        begin
+        data, _status_code, _headers = insert_section_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = insert_section_with_http_info(request)
+            else
+            raise
+            end
+        end
+        nil
+    end
+
+    # Inserts a section to the document.
+    # @param request InsertSectionRequest
+    # @return [Array<(nil, Fixnum, Hash)>]
+    # nil, response status code and response headers
+    private def insert_section_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? InsertSectionRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.insert_section ...' if @api_client.config.debugging
+        request_data = request.create_http_request(@api_client)
+
+        data, status_code, headers = @api_client.call_api(
+                                                        request_data[:'method'],
+                                                        request_data[:'path'],
+                                                        header_params: request_data[:'header_params'],
+                                                        query_params: request_data[:'query_params'],
+                                                        body: request_data[:'body'])
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#insert_section\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [data, status_code, headers]
+    end
+
+    # Inserts a section to the document.
+    # @param request InsertSectionOnlineRequest
+    # @return [FILES_COLLECTION]
+    def insert_section_online(request)
+        begin
+        data, _status_code, _headers = insert_section_online_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = insert_section_online_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Inserts a section to the document.
+    # @param request InsertSectionOnlineRequest
+    # @return [Array<(FILES_COLLECTION, Fixnum, Hash)>]
+    # FILES_COLLECTION, response status code and response headers
+    private def insert_section_online_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? InsertSectionOnlineRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.insert_section_online ...' if @api_client.config.debugging
+        request_data = request.create_http_request(@api_client)
+
+        data, status_code, headers = @api_client.call_api(
+                                                        request_data[:'method'],
+                                                        request_data[:'path'],
+                                                        header_params: request_data[:'header_params'],
+                                                        query_params: request_data[:'query_params'],
+                                                        body: request_data[:'body'],
+                                                        return_type: 'FILES_COLLECTION')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#insert_section_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        # FILES_COLLECTION #
+        [data, status_code, headers]
+    end
+
     # Inserts a new StructuredDocumentTag (SDT) to the document node.
     # @param request InsertStructuredDocumentTagRequest
     # @return [StructuredDocumentTagResponse]
