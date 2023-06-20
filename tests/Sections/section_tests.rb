@@ -113,6 +113,30 @@ module AsposeWordsCloud
     end
 
     #
+    # Test for insertion a section.
+    #
+    def test_insert_section
+      remote_file_name = 'TestInsertSection.docx'
+
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+
+      request = InsertSectionRequest.new(name: remote_file_name, section_index: 0, folder: remote_data_folder)
+
+      @words_api.insert_section(request)
+    end
+
+    #
+    # Test for insertion a section online.
+    #
+    def test_insert_section_online
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = InsertSectionOnlineRequest.new(document: request_document, section_index: 0)
+
+      result = @words_api.insert_section_online(request)
+      assert_equal false, result.nil?
+    end
+
+    #
     # Test for linking headers and footers to previous section.
     #
     def test_link_header_footers_to_previous
