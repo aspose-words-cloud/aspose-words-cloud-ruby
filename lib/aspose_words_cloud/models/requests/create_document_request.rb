@@ -44,7 +44,7 @@ module AsposeWordsCloud
     # @param folder The path to the document folder.
     # @param storage Original document storage.
 
-    def initialize(file_name: nil, folder: nil, storage: nil)
+    def initialize(file_name:, folder: nil, storage: nil)
       self.file_name = file_name
       self.folder = folder
       self.storage = storage
@@ -52,13 +52,16 @@ module AsposeWordsCloud
 
     # Creating batch part from request
     def to_batch_part(api_client, requestId, parentRequestId = nil)
+      # verify the required parameter 'file_name' is set
+      raise ArgumentError, 'Missing the required parameter file_name when calling WordsApi.create_document' if api_client.config.client_side_validation && self.file_name.nil?
+
       # resource path
       local_var_path = '/words/create'[7..-1]
       local_var_path = local_var_path.sub('//', '/')
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('FileName')] = self.file_name unless self.file_name.nil?
+      query_params[downcase_first_letter('FileName')] = self.file_name
       query_params[downcase_first_letter('Folder')] = self.folder unless self.folder.nil?
       query_params[downcase_first_letter('Storage')] = self.storage unless self.storage.nil?
 
@@ -100,13 +103,16 @@ module AsposeWordsCloud
     end
 
     def create_http_request(api_client)
+      # verify the required parameter 'file_name' is set
+      raise ArgumentError, 'Missing the required parameter file_name when calling WordsApi.create_document' if api_client.config.client_side_validation && self.file_name.nil?
+
       # resource path
       local_var_path = '/words/create'[1..-1]
       local_var_path = local_var_path.sub('//', '/')
 
       # query parameters
       query_params = {}
-      query_params[downcase_first_letter('FileName')] = self.file_name unless self.file_name.nil?
+      query_params[downcase_first_letter('FileName')] = self.file_name
       query_params[downcase_first_letter('Folder')] = self.folder unless self.folder.nil?
       query_params[downcase_first_letter('Storage')] = self.storage unless self.storage.nil?
 
