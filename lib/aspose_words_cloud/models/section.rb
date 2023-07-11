@@ -35,14 +35,14 @@ module AsposeWordsCloud
     # Gets or sets the list of child nodes.
     attr_accessor :child_nodes
 
-    # Gets or sets the link to HeaderFooters resource.
-    attr_accessor :header_footers
+    # Gets or sets the link to Paragraphs resource.
+    attr_accessor :paragraphs
 
     # Gets or sets the link to PageSetup resource.
     attr_accessor :page_setup
 
-    # Gets or sets the link to Paragraphs resource.
-    attr_accessor :paragraphs
+    # Gets or sets the link to HeaderFooters resource.
+    attr_accessor :header_footers
 
     # Gets or sets the link to Tables resource.
     attr_accessor :tables
@@ -51,9 +51,9 @@ module AsposeWordsCloud
       {
         :'link' => :'Link',
         :'child_nodes' => :'ChildNodes',
-        :'header_footers' => :'HeaderFooters',
-        :'page_setup' => :'PageSetup',
         :'paragraphs' => :'Paragraphs',
+        :'page_setup' => :'PageSetup',
+        :'header_footers' => :'HeaderFooters',
         :'tables' => :'Tables'
       }
     end
@@ -63,9 +63,9 @@ module AsposeWordsCloud
       {
         :'link' => :'WordsApiLink',
         :'child_nodes' => :'Array<NodeLink>',
-        :'header_footers' => :'LinkElement',
-        :'page_setup' => :'LinkElement',
         :'paragraphs' => :'LinkElement',
+        :'page_setup' => :'LinkElement',
+        :'header_footers' => :'LinkElement',
         :'tables' => :'LinkElement'
       }
     end
@@ -88,16 +88,16 @@ module AsposeWordsCloud
         end
       end
 
-      if attributes.key?(:'HeaderFooters')
-        self.header_footers = attributes[:'HeaderFooters']
+      if attributes.key?(:'Paragraphs')
+        self.paragraphs = attributes[:'Paragraphs']
       end
 
       if attributes.key?(:'PageSetup')
         self.page_setup = attributes[:'PageSetup']
       end
 
-      if attributes.key?(:'Paragraphs')
-        self.paragraphs = attributes[:'Paragraphs']
+      if attributes.key?(:'HeaderFooters')
+        self.header_footers = attributes[:'HeaderFooters']
       end
 
       if attributes.key?(:'Tables')
@@ -125,9 +125,9 @@ module AsposeWordsCloud
       self.class == other.class &&
           link == other.link &&
           child_nodes == other.child_nodes &&
-          header_footers == other.header_footers &&
-          page_setup == other.page_setup &&
           paragraphs == other.paragraphs &&
+          page_setup == other.page_setup &&
+          header_footers == other.header_footers &&
           tables == other.tables
     end
 
@@ -140,7 +140,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, child_nodes, header_footers, page_setup, paragraphs, tables].hash
+      [link, child_nodes, paragraphs, page_setup, header_footers, tables].hash
     end
 
     # Builds the object from hash

@@ -78,15 +78,15 @@ module AsposeWordsCloud
     # Gets or sets the password.
     attr_accessor :password
 
-    # Gets the format of save.
-    attr_accessor :save_format
-
     # Gets or sets a value indicating when False, that PictureBullet data is not saved to the output document.
     # The default value is true.
     attr_accessor :save_picture_bullet
 
     # Gets or sets a value indicating whether to save RoutingSlip data to output document.
     attr_accessor :save_routing_slip
+
+    # Gets the format of save.
+    attr_accessor :save_format
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -128,9 +128,9 @@ module AsposeWordsCloud
         :'zip_output' => :'ZipOutput',
         :'always_compress_metafiles' => :'AlwaysCompressMetafiles',
         :'password' => :'Password',
-        :'save_format' => :'SaveFormat',
         :'save_picture_bullet' => :'SavePictureBullet',
-        :'save_routing_slip' => :'SaveRoutingSlip'
+        :'save_routing_slip' => :'SaveRoutingSlip',
+        :'save_format' => :'SaveFormat'
       }
     end
 
@@ -152,9 +152,9 @@ module AsposeWordsCloud
         :'zip_output' => :'BOOLEAN',
         :'always_compress_metafiles' => :'BOOLEAN',
         :'password' => :'String',
-        :'save_format' => :'String',
         :'save_picture_bullet' => :'BOOLEAN',
-        :'save_routing_slip' => :'BOOLEAN'
+        :'save_routing_slip' => :'BOOLEAN',
+        :'save_format' => :'String'
       }
     end
 
@@ -336,9 +336,9 @@ module AsposeWordsCloud
           zip_output == other.zip_output &&
           always_compress_metafiles == other.always_compress_metafiles &&
           password == other.password &&
-          save_format == other.save_format &&
           save_picture_bullet == other.save_picture_bullet &&
-          save_routing_slip == other.save_routing_slip
+          save_routing_slip == other.save_routing_slip &&
+          save_format == other.save_format
     end
 
     # @see the `==` method
@@ -350,7 +350,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, always_compress_metafiles, password, save_format, save_picture_bullet, save_routing_slip].hash
+      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, always_compress_metafiles, password, save_picture_bullet, save_routing_slip, save_format].hash
     end
 
     # Builds the object from hash

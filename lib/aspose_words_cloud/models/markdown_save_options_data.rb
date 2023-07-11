@@ -85,12 +85,12 @@ module AsposeWordsCloud
     # Gets or sets the string to use as a paragraph break when exporting in plain text format.
     attr_accessor :paragraph_break
 
-    # Gets the format of save.
-    attr_accessor :save_format
-
     # Gets or sets the value, that specifies how to align contents in tables when exporting into the Markdown format.
     # The default value is Auto.
     attr_accessor :table_content_alignment
+
+    # Gets the format of save.
+    attr_accessor :save_format
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -134,8 +134,8 @@ module AsposeWordsCloud
         :'export_headers_footers_mode' => :'ExportHeadersFootersMode',
         :'force_page_breaks' => :'ForcePageBreaks',
         :'paragraph_break' => :'ParagraphBreak',
-        :'save_format' => :'SaveFormat',
-        :'table_content_alignment' => :'TableContentAlignment'
+        :'table_content_alignment' => :'TableContentAlignment',
+        :'save_format' => :'SaveFormat'
       }
     end
 
@@ -159,8 +159,8 @@ module AsposeWordsCloud
         :'export_headers_footers_mode' => :'String',
         :'force_page_breaks' => :'BOOLEAN',
         :'paragraph_break' => :'String',
-        :'save_format' => :'String',
-        :'table_content_alignment' => :'String'
+        :'table_content_alignment' => :'String',
+        :'save_format' => :'String'
       }
     end
 
@@ -380,8 +380,8 @@ module AsposeWordsCloud
           export_headers_footers_mode == other.export_headers_footers_mode &&
           force_page_breaks == other.force_page_breaks &&
           paragraph_break == other.paragraph_break &&
-          save_format == other.save_format &&
-          table_content_alignment == other.table_content_alignment
+          table_content_alignment == other.table_content_alignment &&
+          save_format == other.save_format
     end
 
     # @see the `==` method
@@ -393,7 +393,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, encoding, export_headers_footers_mode, force_page_breaks, paragraph_break, save_format, table_content_alignment].hash
+      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, encoding, export_headers_footers_mode, force_page_breaks, paragraph_break, table_content_alignment, save_format].hash
     end
 
     # Builds the object from hash

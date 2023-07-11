@@ -32,22 +32,22 @@ module AsposeWordsCloud
     # Gets or sets the link to the document.
     attr_accessor :link
 
-    # Gets or sets a value indicating whether the property is built-in or not.
-    # If true the property is built-in, if false the property is custom.
-    attr_accessor :built_in
-
     # Gets or sets the name of the document property.
     attr_accessor :name
 
     # Gets or sets the value of the document property.
     attr_accessor :value
+
+    # Gets or sets a value indicating whether the property is built-in or not.
+    # If true the property is built-in, if false the property is custom.
+    attr_accessor :built_in
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'link' => :'Link',
-        :'built_in' => :'BuiltIn',
         :'name' => :'Name',
-        :'value' => :'Value'
+        :'value' => :'Value',
+        :'built_in' => :'BuiltIn'
       }
     end
 
@@ -55,9 +55,9 @@ module AsposeWordsCloud
     def self.swagger_types
       {
         :'link' => :'WordsApiLink',
-        :'built_in' => :'BOOLEAN',
         :'name' => :'String',
-        :'value' => :'String'
+        :'value' => :'String',
+        :'built_in' => :'BOOLEAN'
       }
     end
 
@@ -73,16 +73,16 @@ module AsposeWordsCloud
         self.link = attributes[:'Link']
       end
 
-      if attributes.key?(:'BuiltIn')
-        self.built_in = attributes[:'BuiltIn']
-      end
-
       if attributes.key?(:'Name')
         self.name = attributes[:'Name']
       end
 
       if attributes.key?(:'Value')
         self.value = attributes[:'Value']
+      end
+
+      if attributes.key?(:'BuiltIn')
+        self.built_in = attributes[:'BuiltIn']
       end
     end
 
@@ -105,9 +105,9 @@ module AsposeWordsCloud
       return true if self.equal?(other)
       self.class == other.class &&
           link == other.link &&
-          built_in == other.built_in &&
           name == other.name &&
-          value == other.value
+          value == other.value &&
+          built_in == other.built_in
     end
 
     # @see the `==` method
@@ -119,7 +119,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, built_in, name, value].hash
+      [link, name, value, built_in].hash
     end
 
     # Builds the object from hash

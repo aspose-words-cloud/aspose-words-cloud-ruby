@@ -32,37 +32,37 @@ module AsposeWordsCloud
     # Gets or sets the link to the document.
     attr_accessor :link
 
-    # Gets or sets the author name for a comment.
-    attr_accessor :author
-
-    # Gets or sets the content of the comment.
-    attr_accessor :content
-
-    # Gets or sets the date and time that the comment was made.
-    attr_accessor :date_time
-
-    # Gets or sets the initials of the user associated with a specific comment.
-    attr_accessor :initial
+    # Gets or sets the link to comment range start node.
+    attr_accessor :range_start
 
     # Gets or sets the link to comment range end node.
     attr_accessor :range_end
 
-    # Gets or sets the link to comment range start node.
-    attr_accessor :range_start
+    # Gets or sets the author name for a comment.
+    attr_accessor :author
+
+    # Gets or sets the initials of the user associated with a specific comment.
+    attr_accessor :initial
+
+    # Gets or sets the date and time that the comment was made.
+    attr_accessor :date_time
 
     # Gets or sets text of the comment.
     attr_accessor :text
+
+    # Gets or sets the content of the comment.
+    attr_accessor :content
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'link' => :'Link',
-        :'author' => :'Author',
-        :'content' => :'Content',
-        :'date_time' => :'DateTime',
-        :'initial' => :'Initial',
-        :'range_end' => :'RangeEnd',
         :'range_start' => :'RangeStart',
-        :'text' => :'Text'
+        :'range_end' => :'RangeEnd',
+        :'author' => :'Author',
+        :'initial' => :'Initial',
+        :'date_time' => :'DateTime',
+        :'text' => :'Text',
+        :'content' => :'Content'
       }
     end
 
@@ -70,13 +70,13 @@ module AsposeWordsCloud
     def self.swagger_types
       {
         :'link' => :'WordsApiLink',
-        :'author' => :'String',
-        :'content' => :'StoryChildNodes',
-        :'date_time' => :'DateTime',
-        :'initial' => :'String',
-        :'range_end' => :'DocumentPosition',
         :'range_start' => :'DocumentPosition',
-        :'text' => :'String'
+        :'range_end' => :'DocumentPosition',
+        :'author' => :'String',
+        :'initial' => :'String',
+        :'date_time' => :'DateTime',
+        :'text' => :'String',
+        :'content' => :'StoryChildNodes'
       }
     end
 
@@ -92,32 +92,32 @@ module AsposeWordsCloud
         self.link = attributes[:'Link']
       end
 
-      if attributes.key?(:'Author')
-        self.author = attributes[:'Author']
-      end
-
-      if attributes.key?(:'Content')
-        self.content = attributes[:'Content']
-      end
-
-      if attributes.key?(:'DateTime')
-        self.date_time = attributes[:'DateTime']
-      end
-
-      if attributes.key?(:'Initial')
-        self.initial = attributes[:'Initial']
+      if attributes.key?(:'RangeStart')
+        self.range_start = attributes[:'RangeStart']
       end
 
       if attributes.key?(:'RangeEnd')
         self.range_end = attributes[:'RangeEnd']
       end
 
-      if attributes.key?(:'RangeStart')
-        self.range_start = attributes[:'RangeStart']
+      if attributes.key?(:'Author')
+        self.author = attributes[:'Author']
+      end
+
+      if attributes.key?(:'Initial')
+        self.initial = attributes[:'Initial']
+      end
+
+      if attributes.key?(:'DateTime')
+        self.date_time = attributes[:'DateTime']
       end
 
       if attributes.key?(:'Text')
         self.text = attributes[:'Text']
+      end
+
+      if attributes.key?(:'Content')
+        self.content = attributes[:'Content']
       end
     end
 
@@ -140,13 +140,13 @@ module AsposeWordsCloud
       return true if self.equal?(other)
       self.class == other.class &&
           link == other.link &&
-          author == other.author &&
-          content == other.content &&
-          date_time == other.date_time &&
-          initial == other.initial &&
-          range_end == other.range_end &&
           range_start == other.range_start &&
-          text == other.text
+          range_end == other.range_end &&
+          author == other.author &&
+          initial == other.initial &&
+          date_time == other.date_time &&
+          text == other.text &&
+          content == other.content
     end
 
     # @see the `==` method
@@ -158,7 +158,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, author, content, date_time, initial, range_end, range_start, text].hash
+      [link, range_start, range_end, author, initial, date_time, text, content].hash
     end
 
     # Builds the object from hash

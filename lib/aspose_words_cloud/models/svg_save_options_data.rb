@@ -107,14 +107,14 @@ module AsposeWordsCloud
     # Gets or sets the name of the folder used to construct image URIs.
     attr_accessor :resources_folder_alias
 
-    # Gets the format of save.
-    attr_accessor :save_format
-
     # Gets or sets a value indicating whether to show or hide page stepper.
     attr_accessor :show_page_border
 
     # Gets or sets the option that controls how text should be rendered.
     attr_accessor :text_output_mode
+
+    # Gets the format of save.
+    attr_accessor :save_format
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -165,9 +165,9 @@ module AsposeWordsCloud
         :'fit_to_view_port' => :'FitToViewPort',
         :'resources_folder' => :'ResourcesFolder',
         :'resources_folder_alias' => :'ResourcesFolderAlias',
-        :'save_format' => :'SaveFormat',
         :'show_page_border' => :'ShowPageBorder',
-        :'text_output_mode' => :'TextOutputMode'
+        :'text_output_mode' => :'TextOutputMode',
+        :'save_format' => :'SaveFormat'
       }
     end
 
@@ -198,9 +198,9 @@ module AsposeWordsCloud
         :'fit_to_view_port' => :'BOOLEAN',
         :'resources_folder' => :'String',
         :'resources_folder_alias' => :'String',
-        :'save_format' => :'String',
         :'show_page_border' => :'BOOLEAN',
-        :'text_output_mode' => :'String'
+        :'text_output_mode' => :'String',
+        :'save_format' => :'String'
       }
     end
 
@@ -475,9 +475,9 @@ module AsposeWordsCloud
           fit_to_view_port == other.fit_to_view_port &&
           resources_folder == other.resources_folder &&
           resources_folder_alias == other.resources_folder_alias &&
-          save_format == other.save_format &&
           show_page_border == other.show_page_border &&
-          text_output_mode == other.text_output_mode
+          text_output_mode == other.text_output_mode &&
+          save_format == other.save_format
     end
 
     # @see the `==` method
@@ -489,7 +489,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, export_embedded_images, fit_to_view_port, resources_folder, resources_folder_alias, save_format, show_page_border, text_output_mode].hash
+      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, export_embedded_images, fit_to_view_port, resources_folder, resources_folder_alias, show_page_border, text_output_mode, save_format].hash
     end
 
     # Builds the object from hash

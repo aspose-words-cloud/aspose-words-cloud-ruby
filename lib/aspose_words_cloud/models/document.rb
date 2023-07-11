@@ -29,6 +29,9 @@ module AsposeWordsCloud
 
   # Represents Words document DTO.
   class Document
+    # Gets or sets the list of links that originate from this document.
+    attr_accessor :links
+
     # Gets or sets the document properties.
     attr_accessor :document_properties
 
@@ -40,9 +43,6 @@ module AsposeWordsCloud
 
     # Gets or sets a value indicating whether the document contains a digital signature. This property merely informs that a digital signature is present on a document, but it does not specify whether the signature is valid or not.
     attr_accessor :is_signed
-
-    # Gets or sets the list of links that originate from this document.
-    attr_accessor :links
 
     # Gets or sets the original format of the document.
     attr_accessor :source_format
@@ -72,11 +72,11 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'links' => :'Links',
         :'document_properties' => :'DocumentProperties',
         :'file_name' => :'FileName',
         :'is_encrypted' => :'IsEncrypted',
         :'is_signed' => :'IsSigned',
-        :'links' => :'Links',
         :'source_format' => :'SourceFormat'
       }
     end
@@ -84,11 +84,11 @@ module AsposeWordsCloud
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'links' => :'Array<Link>',
         :'document_properties' => :'DocumentProperties',
         :'file_name' => :'String',
         :'is_encrypted' => :'BOOLEAN',
         :'is_signed' => :'BOOLEAN',
-        :'links' => :'Array<Link>',
         :'source_format' => :'String'
       }
     end
@@ -100,6 +100,12 @@ module AsposeWordsCloud
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.key?(:'Links')
+        if (value = attributes[:'Links']).is_a?(Array)
+          self.links = value
+        end
+      end
 
       if attributes.key?(:'DocumentProperties')
         self.document_properties = attributes[:'DocumentProperties']
@@ -115,12 +121,6 @@ module AsposeWordsCloud
 
       if attributes.key?(:'IsSigned')
         self.is_signed = attributes[:'IsSigned']
-      end
-
-      if attributes.key?(:'Links')
-        if (value = attributes[:'Links']).is_a?(Array)
-          self.links = value
-        end
       end
 
       if attributes.key?(:'SourceFormat')
@@ -164,11 +164,11 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
+          links == other.links &&
           document_properties == other.document_properties &&
           file_name == other.file_name &&
           is_encrypted == other.is_encrypted &&
           is_signed == other.is_signed &&
-          links == other.links &&
           source_format == other.source_format
     end
 
@@ -181,7 +181,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [document_properties, file_name, is_encrypted, is_signed, links, source_format].hash
+      [links, document_properties, file_name, is_encrypted, is_signed, source_format].hash
     end
 
     # Builds the object from hash

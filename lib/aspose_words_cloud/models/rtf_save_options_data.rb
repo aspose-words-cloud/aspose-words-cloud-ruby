@@ -80,11 +80,11 @@ module AsposeWordsCloud
     # Gets or sets a value indicating whether to use pretty formats output.
     attr_accessor :pretty_format
 
-    # Gets the format of save.
-    attr_accessor :save_format
-
     # Gets or sets a value indicating whether when true all images will be saved as WMF. This option might help to avoid WordPad warning messages.
     attr_accessor :save_images_as_wmf
+
+    # Gets the format of save.
+    attr_accessor :save_format
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -127,8 +127,8 @@ module AsposeWordsCloud
         :'export_compact_size' => :'ExportCompactSize',
         :'export_images_for_old_readers' => :'ExportImagesForOldReaders',
         :'pretty_format' => :'PrettyFormat',
-        :'save_format' => :'SaveFormat',
-        :'save_images_as_wmf' => :'SaveImagesAsWmf'
+        :'save_images_as_wmf' => :'SaveImagesAsWmf',
+        :'save_format' => :'SaveFormat'
       }
     end
 
@@ -151,8 +151,8 @@ module AsposeWordsCloud
         :'export_compact_size' => :'BOOLEAN',
         :'export_images_for_old_readers' => :'BOOLEAN',
         :'pretty_format' => :'BOOLEAN',
-        :'save_format' => :'String',
-        :'save_images_as_wmf' => :'BOOLEAN'
+        :'save_images_as_wmf' => :'BOOLEAN',
+        :'save_format' => :'String'
       }
     end
 
@@ -335,8 +335,8 @@ module AsposeWordsCloud
           export_compact_size == other.export_compact_size &&
           export_images_for_old_readers == other.export_images_for_old_readers &&
           pretty_format == other.pretty_format &&
-          save_format == other.save_format &&
-          save_images_as_wmf == other.save_images_as_wmf
+          save_images_as_wmf == other.save_images_as_wmf &&
+          save_format == other.save_format
     end
 
     # @see the `==` method
@@ -348,7 +348,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, export_compact_size, export_images_for_old_readers, pretty_format, save_format, save_images_as_wmf].hash
+      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, export_compact_size, export_images_for_old_readers, pretty_format, save_images_as_wmf, save_format].hash
     end
 
     # Builds the object from hash

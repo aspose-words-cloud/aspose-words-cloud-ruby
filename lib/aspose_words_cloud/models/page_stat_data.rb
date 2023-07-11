@@ -32,21 +32,21 @@ module AsposeWordsCloud
     # Gets or sets the detailed statistics on the footnotes.
     attr_accessor :footnotes_stat_data
 
-    # Gets or sets the page number.
-    attr_accessor :page_number
-
     # Gets or sets the total count of paragraphs in the page.
     attr_accessor :paragraph_count
 
     # Gets or sets the total count of words in the page.
     attr_accessor :word_count
+
+    # Gets or sets the page number.
+    attr_accessor :page_number
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'footnotes_stat_data' => :'FootnotesStatData',
-        :'page_number' => :'PageNumber',
         :'paragraph_count' => :'ParagraphCount',
-        :'word_count' => :'WordCount'
+        :'word_count' => :'WordCount',
+        :'page_number' => :'PageNumber'
       }
     end
 
@@ -54,9 +54,9 @@ module AsposeWordsCloud
     def self.swagger_types
       {
         :'footnotes_stat_data' => :'FootnotesStatData',
-        :'page_number' => :'Integer',
         :'paragraph_count' => :'Integer',
-        :'word_count' => :'Integer'
+        :'word_count' => :'Integer',
+        :'page_number' => :'Integer'
       }
     end
 
@@ -72,16 +72,16 @@ module AsposeWordsCloud
         self.footnotes_stat_data = attributes[:'FootnotesStatData']
       end
 
-      if attributes.key?(:'PageNumber')
-        self.page_number = attributes[:'PageNumber']
-      end
-
       if attributes.key?(:'ParagraphCount')
         self.paragraph_count = attributes[:'ParagraphCount']
       end
 
       if attributes.key?(:'WordCount')
         self.word_count = attributes[:'WordCount']
+      end
+
+      if attributes.key?(:'PageNumber')
+        self.page_number = attributes[:'PageNumber']
       end
     end
 
@@ -104,9 +104,9 @@ module AsposeWordsCloud
       return true if self.equal?(other)
       self.class == other.class &&
           footnotes_stat_data == other.footnotes_stat_data &&
-          page_number == other.page_number &&
           paragraph_count == other.paragraph_count &&
-          word_count == other.word_count
+          word_count == other.word_count &&
+          page_number == other.page_number
     end
 
     # @see the `==` method
@@ -118,7 +118,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [footnotes_stat_data, page_number, paragraph_count, word_count].hash
+      [footnotes_stat_data, paragraph_count, word_count, page_number].hash
     end
 
     # Builds the object from hash

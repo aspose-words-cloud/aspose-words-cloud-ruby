@@ -29,24 +29,24 @@ module AsposeWordsCloud
 
   # Result of search operation.
   class SearchResult
-    # Gets or sets the link to result range end node.
-    attr_accessor :range_end
-
     # Gets or sets the link to result range start node.
     attr_accessor :range_start
+
+    # Gets or sets the link to result range end node.
+    attr_accessor :range_end
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'range_end' => :'RangeEnd',
-        :'range_start' => :'RangeStart'
+        :'range_start' => :'RangeStart',
+        :'range_end' => :'RangeEnd'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'range_end' => :'DocumentPosition',
-        :'range_start' => :'DocumentPosition'
+        :'range_start' => :'DocumentPosition',
+        :'range_end' => :'DocumentPosition'
       }
     end
 
@@ -58,12 +58,12 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'RangeEnd')
-        self.range_end = attributes[:'RangeEnd']
-      end
-
       if attributes.key?(:'RangeStart')
         self.range_start = attributes[:'RangeStart']
+      end
+
+      if attributes.key?(:'RangeEnd')
+        self.range_end = attributes[:'RangeEnd']
       end
     end
 
@@ -85,8 +85,8 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          range_end == other.range_end &&
-          range_start == other.range_start
+          range_start == other.range_start &&
+          range_end == other.range_end
     end
 
     # @see the `==` method
@@ -98,7 +98,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [range_end, range_start].hash
+      [range_start, range_end].hash
     end
 
     # Builds the object from hash
