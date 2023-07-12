@@ -29,29 +29,29 @@ module AsposeWordsCloud
 
   # Result of splitting document.
   class SplitDocumentResult
-    # Gets or sets the list of pages.
-    attr_accessor :pages
-
     # Gets or sets the link to the source document.
     attr_accessor :source_document
 
     # Gets or sets the link to the file archive with pages.
     attr_accessor :zipped_pages
+
+    # Gets or sets the list of pages.
+    attr_accessor :pages
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'pages' => :'Pages',
         :'source_document' => :'SourceDocument',
-        :'zipped_pages' => :'ZippedPages'
+        :'zipped_pages' => :'ZippedPages',
+        :'pages' => :'Pages'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'pages' => :'Array<FileLink>',
         :'source_document' => :'FileLink',
-        :'zipped_pages' => :'FileLink'
+        :'zipped_pages' => :'FileLink',
+        :'pages' => :'Array<FileLink>'
       }
     end
 
@@ -63,18 +63,18 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'Pages')
-        if (value = attributes[:'Pages']).is_a?(Array)
-          self.pages = value
-        end
-      end
-
       if attributes.key?(:'SourceDocument')
         self.source_document = attributes[:'SourceDocument']
       end
 
       if attributes.key?(:'ZippedPages')
         self.zipped_pages = attributes[:'ZippedPages']
+      end
+
+      if attributes.key?(:'Pages')
+        if (value = attributes[:'Pages']).is_a?(Array)
+          self.pages = value
+        end
       end
     end
 
@@ -96,9 +96,9 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          pages == other.pages &&
           source_document == other.source_document &&
-          zipped_pages == other.zipped_pages
+          zipped_pages == other.zipped_pages &&
+          pages == other.pages
     end
 
     # @see the `==` method
@@ -110,7 +110,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [pages, source_document, zipped_pages].hash
+      [source_document, zipped_pages, pages].hash
     end
 
     # Builds the object from hash

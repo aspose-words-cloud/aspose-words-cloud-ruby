@@ -38,11 +38,11 @@ module AsposeWordsCloud
     # Gets or sets the child nodes.
     attr_accessor :child_nodes
 
-    # Gets or sets the link to DrawingObjects resource.
-    attr_accessor :drawing_objects
-
     # Gets or sets the link to Paragraphs resource.
     attr_accessor :paragraphs
+
+    # Gets or sets the link to DrawingObjects resource.
+    attr_accessor :drawing_objects
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -72,8 +72,8 @@ module AsposeWordsCloud
         :'link' => :'Link',
         :'type' => :'Type',
         :'child_nodes' => :'ChildNodes',
-        :'drawing_objects' => :'DrawingObjects',
-        :'paragraphs' => :'Paragraphs'
+        :'paragraphs' => :'Paragraphs',
+        :'drawing_objects' => :'DrawingObjects'
       }
     end
 
@@ -83,8 +83,8 @@ module AsposeWordsCloud
         :'link' => :'WordsApiLink',
         :'type' => :'String',
         :'child_nodes' => :'Array<NodeLink>',
-        :'drawing_objects' => :'LinkElement',
-        :'paragraphs' => :'LinkElement'
+        :'paragraphs' => :'LinkElement',
+        :'drawing_objects' => :'LinkElement'
       }
     end
 
@@ -110,12 +110,12 @@ module AsposeWordsCloud
         end
       end
 
-      if attributes.key?(:'DrawingObjects')
-        self.drawing_objects = attributes[:'DrawingObjects']
-      end
-
       if attributes.key?(:'Paragraphs')
         self.paragraphs = attributes[:'Paragraphs']
+      end
+
+      if attributes.key?(:'DrawingObjects')
+        self.drawing_objects = attributes[:'DrawingObjects']
       end
     end
 
@@ -158,8 +158,8 @@ module AsposeWordsCloud
           link == other.link &&
           type == other.type &&
           child_nodes == other.child_nodes &&
-          drawing_objects == other.drawing_objects &&
-          paragraphs == other.paragraphs
+          paragraphs == other.paragraphs &&
+          drawing_objects == other.drawing_objects
     end
 
     # @see the `==` method
@@ -171,7 +171,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, type, child_nodes, drawing_objects, paragraphs].hash
+      [link, type, child_nodes, paragraphs, drawing_objects].hash
     end
 
     # Builds the object from hash

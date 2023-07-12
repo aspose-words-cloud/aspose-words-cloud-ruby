@@ -126,9 +126,6 @@ module AsposeWordsCloud
     # Gets or sets a value indicating whether to use anti-aliasing for rendering.
     attr_accessor :use_anti_aliasing
 
-    # Gets or sets a value indicating whether to use GDI+ or Aspose.Words metafile renderer when saving to EMF.
-    attr_accessor :use_gdi_emf_renderer
-
     # Gets or sets a value indicating whether to use high quality (i.e. slow) rendering algorithms.
     attr_accessor :use_high_quality_rendering
 
@@ -137,8 +134,8 @@ module AsposeWordsCloud
     # The default value is 96.
     attr_accessor :vertical_resolution
 
-    # Gets the format of save.
-    attr_accessor :save_format
+    # Gets or sets a value indicating whether to use GDI+ or Aspose.Words metafile renderer when saving to EMF.
+    attr_accessor :use_gdi_emf_renderer
 
     # Gets or sets the threshold that determines the value of the binarization error in the Floyd-Steinberg method. when ImageBinarizationMethod is ImageBinarizationMethod.FloydSteinbergDithering.
     # Default value is 128.
@@ -149,6 +146,9 @@ module AsposeWordsCloud
 
     # Gets or sets the type of compression.
     attr_accessor :tiff_compression
+
+    # Gets the format of save.
+    attr_accessor :save_format
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -204,13 +204,13 @@ module AsposeWordsCloud
         :'resolution' => :'Resolution',
         :'scale' => :'Scale',
         :'use_anti_aliasing' => :'UseAntiAliasing',
-        :'use_gdi_emf_renderer' => :'UseGdiEmfRenderer',
         :'use_high_quality_rendering' => :'UseHighQualityRendering',
         :'vertical_resolution' => :'VerticalResolution',
-        :'save_format' => :'SaveFormat',
+        :'use_gdi_emf_renderer' => :'UseGdiEmfRenderer',
         :'threshold_for_floyd_steinberg_dithering' => :'ThresholdForFloydSteinbergDithering',
         :'tiff_binarization_method' => :'TiffBinarizationMethod',
-        :'tiff_compression' => :'TiffCompression'
+        :'tiff_compression' => :'TiffCompression',
+        :'save_format' => :'SaveFormat'
       }
     end
 
@@ -246,13 +246,13 @@ module AsposeWordsCloud
         :'resolution' => :'Float',
         :'scale' => :'Float',
         :'use_anti_aliasing' => :'BOOLEAN',
-        :'use_gdi_emf_renderer' => :'BOOLEAN',
         :'use_high_quality_rendering' => :'BOOLEAN',
         :'vertical_resolution' => :'Float',
-        :'save_format' => :'String',
+        :'use_gdi_emf_renderer' => :'BOOLEAN',
         :'threshold_for_floyd_steinberg_dithering' => :'Integer',
         :'tiff_binarization_method' => :'String',
-        :'tiff_compression' => :'String'
+        :'tiff_compression' => :'String',
+        :'save_format' => :'String'
       }
     end
 
@@ -382,16 +382,16 @@ module AsposeWordsCloud
         self.use_anti_aliasing = attributes[:'UseAntiAliasing']
       end
 
-      if attributes.key?(:'UseGdiEmfRenderer')
-        self.use_gdi_emf_renderer = attributes[:'UseGdiEmfRenderer']
-      end
-
       if attributes.key?(:'UseHighQualityRendering')
         self.use_high_quality_rendering = attributes[:'UseHighQualityRendering']
       end
 
       if attributes.key?(:'VerticalResolution')
         self.vertical_resolution = attributes[:'VerticalResolution']
+      end
+
+      if attributes.key?(:'UseGdiEmfRenderer')
+        self.use_gdi_emf_renderer = attributes[:'UseGdiEmfRenderer']
       end
 
       if attributes.key?(:'ThresholdForFloydSteinbergDithering')
@@ -616,13 +616,13 @@ module AsposeWordsCloud
           resolution == other.resolution &&
           scale == other.scale &&
           use_anti_aliasing == other.use_anti_aliasing &&
-          use_gdi_emf_renderer == other.use_gdi_emf_renderer &&
           use_high_quality_rendering == other.use_high_quality_rendering &&
           vertical_resolution == other.vertical_resolution &&
-          save_format == other.save_format &&
+          use_gdi_emf_renderer == other.use_gdi_emf_renderer &&
           threshold_for_floyd_steinberg_dithering == other.threshold_for_floyd_steinberg_dithering &&
           tiff_binarization_method == other.tiff_binarization_method &&
-          tiff_compression == other.tiff_compression
+          tiff_compression == other.tiff_compression &&
+          save_format == other.save_format
     end
 
     # @see the `==` method
@@ -634,7 +634,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, horizontal_resolution, image_brightness, image_color_mode, image_contrast, paper_color, pixel_format, resolution, scale, use_anti_aliasing, use_gdi_emf_renderer, use_high_quality_rendering, vertical_resolution, save_format, threshold_for_floyd_steinberg_dithering, tiff_binarization_method, tiff_compression].hash
+      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, horizontal_resolution, image_brightness, image_color_mode, image_contrast, paper_color, pixel_format, resolution, scale, use_anti_aliasing, use_high_quality_rendering, vertical_resolution, use_gdi_emf_renderer, threshold_for_floyd_steinberg_dithering, tiff_binarization_method, tiff_compression, save_format].hash
     end
 
     # Builds the object from hash

@@ -35,18 +35,18 @@ module AsposeWordsCloud
     # Gets or sets the node id.
     attr_accessor :node_id
 
-    # Gets or sets the formatting properties of a row.
-    attr_accessor :row_format
-
     # Gets or sets the collection of rows.
     attr_accessor :table_cell_list
+
+    # Gets or sets the formatting properties of a row.
+    attr_accessor :row_format
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'link' => :'Link',
         :'node_id' => :'NodeId',
-        :'row_format' => :'RowFormat',
-        :'table_cell_list' => :'TableCellList'
+        :'table_cell_list' => :'TableCellList',
+        :'row_format' => :'RowFormat'
       }
     end
 
@@ -55,8 +55,8 @@ module AsposeWordsCloud
       {
         :'link' => :'WordsApiLink',
         :'node_id' => :'String',
-        :'row_format' => :'TableRowFormat',
-        :'table_cell_list' => :'Array<TableCell>'
+        :'table_cell_list' => :'Array<TableCell>',
+        :'row_format' => :'TableRowFormat'
       }
     end
 
@@ -76,14 +76,14 @@ module AsposeWordsCloud
         self.node_id = attributes[:'NodeId']
       end
 
-      if attributes.key?(:'RowFormat')
-        self.row_format = attributes[:'RowFormat']
-      end
-
       if attributes.key?(:'TableCellList')
         if (value = attributes[:'TableCellList']).is_a?(Array)
           self.table_cell_list = value
         end
+      end
+
+      if attributes.key?(:'RowFormat')
+        self.row_format = attributes[:'RowFormat']
       end
     end
 
@@ -107,8 +107,8 @@ module AsposeWordsCloud
       self.class == other.class &&
           link == other.link &&
           node_id == other.node_id &&
-          row_format == other.row_format &&
-          table_cell_list == other.table_cell_list
+          table_cell_list == other.table_cell_list &&
+          row_format == other.row_format
     end
 
     # @see the `==` method
@@ -120,7 +120,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, node_id, row_format, table_cell_list].hash
+      [link, node_id, table_cell_list, row_format].hash
     end
 
     # Builds the object from hash

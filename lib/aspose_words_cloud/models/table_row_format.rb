@@ -32,17 +32,17 @@ module AsposeWordsCloud
     # Gets or sets the link to the document.
     attr_accessor :link
 
-    # Gets or sets a value indicating whether the text in a table row is allowed to split across a page break.
-    attr_accessor :allow_break_across_pages
-
-    # Gets or sets a value indicating whether the row is repeated as a table heading on every page when the table spans more than one page.
-    attr_accessor :heading_format
-
     # Gets or sets the height of the table row in points.
     attr_accessor :height
 
     # Gets or sets the rule for determining the height of the table row.
     attr_accessor :height_rule
+
+    # Gets or sets a value indicating whether the text in a table row is allowed to split across a page break.
+    attr_accessor :allow_break_across_pages
+
+    # Gets or sets a value indicating whether the row is repeated as a table heading on every page when the table spans more than one page.
+    attr_accessor :heading_format
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -70,10 +70,10 @@ module AsposeWordsCloud
     def self.attribute_map
       {
         :'link' => :'Link',
-        :'allow_break_across_pages' => :'AllowBreakAcrossPages',
-        :'heading_format' => :'HeadingFormat',
         :'height' => :'Height',
-        :'height_rule' => :'HeightRule'
+        :'height_rule' => :'HeightRule',
+        :'allow_break_across_pages' => :'AllowBreakAcrossPages',
+        :'heading_format' => :'HeadingFormat'
       }
     end
 
@@ -81,10 +81,10 @@ module AsposeWordsCloud
     def self.swagger_types
       {
         :'link' => :'WordsApiLink',
-        :'allow_break_across_pages' => :'BOOLEAN',
-        :'heading_format' => :'BOOLEAN',
         :'height' => :'Float',
-        :'height_rule' => :'String'
+        :'height_rule' => :'String',
+        :'allow_break_across_pages' => :'BOOLEAN',
+        :'heading_format' => :'BOOLEAN'
       }
     end
 
@@ -100,20 +100,20 @@ module AsposeWordsCloud
         self.link = attributes[:'Link']
       end
 
-      if attributes.key?(:'AllowBreakAcrossPages')
-        self.allow_break_across_pages = attributes[:'AllowBreakAcrossPages']
-      end
-
-      if attributes.key?(:'HeadingFormat')
-        self.heading_format = attributes[:'HeadingFormat']
-      end
-
       if attributes.key?(:'Height')
         self.height = attributes[:'Height']
       end
 
       if attributes.key?(:'HeightRule')
         self.height_rule = attributes[:'HeightRule']
+      end
+
+      if attributes.key?(:'AllowBreakAcrossPages')
+        self.allow_break_across_pages = attributes[:'AllowBreakAcrossPages']
+      end
+
+      if attributes.key?(:'HeadingFormat')
+        self.heading_format = attributes[:'HeadingFormat']
       end
     end
 
@@ -154,10 +154,10 @@ module AsposeWordsCloud
       return true if self.equal?(other)
       self.class == other.class &&
           link == other.link &&
-          allow_break_across_pages == other.allow_break_across_pages &&
-          heading_format == other.heading_format &&
           height == other.height &&
-          height_rule == other.height_rule
+          height_rule == other.height_rule &&
+          allow_break_across_pages == other.allow_break_across_pages &&
+          heading_format == other.heading_format
     end
 
     # @see the `==` method
@@ -169,7 +169,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, allow_break_across_pages, heading_format, height, height_rule].hash
+      [link, height, height_rule, allow_break_across_pages, heading_format].hash
     end
 
     # Builds the object from hash

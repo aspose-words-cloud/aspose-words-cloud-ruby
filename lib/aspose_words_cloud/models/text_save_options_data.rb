@@ -96,11 +96,11 @@ module AsposeWordsCloud
     # Gets or sets a value indicating whether the program should attempt to preserve layout of tables when saving in the plain text format.
     attr_accessor :preserve_table_layout
 
-    # Gets the format of save.
-    attr_accessor :save_format
-
     # Gets or sets a value indicating whether the program should simplify list labels in case of complex label formatting not being adequately represented by plain text.
     attr_accessor :simplify_list_labels
+
+    # Gets the format of save.
+    attr_accessor :save_format
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -147,8 +147,8 @@ module AsposeWordsCloud
         :'add_bidi_marks' => :'AddBidiMarks',
         :'max_characters_per_line' => :'MaxCharactersPerLine',
         :'preserve_table_layout' => :'PreserveTableLayout',
-        :'save_format' => :'SaveFormat',
-        :'simplify_list_labels' => :'SimplifyListLabels'
+        :'simplify_list_labels' => :'SimplifyListLabels',
+        :'save_format' => :'SaveFormat'
       }
     end
 
@@ -175,8 +175,8 @@ module AsposeWordsCloud
         :'add_bidi_marks' => :'BOOLEAN',
         :'max_characters_per_line' => :'Integer',
         :'preserve_table_layout' => :'BOOLEAN',
-        :'save_format' => :'String',
-        :'simplify_list_labels' => :'BOOLEAN'
+        :'simplify_list_labels' => :'BOOLEAN',
+        :'save_format' => :'String'
       }
     end
 
@@ -395,8 +395,8 @@ module AsposeWordsCloud
           add_bidi_marks == other.add_bidi_marks &&
           max_characters_per_line == other.max_characters_per_line &&
           preserve_table_layout == other.preserve_table_layout &&
-          save_format == other.save_format &&
-          simplify_list_labels == other.simplify_list_labels
+          simplify_list_labels == other.simplify_list_labels &&
+          save_format == other.save_format
     end
 
     # @see the `==` method
@@ -408,7 +408,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, encoding, export_headers_footers_mode, force_page_breaks, paragraph_break, add_bidi_marks, max_characters_per_line, preserve_table_layout, save_format, simplify_list_labels].hash
+      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, encoding, export_headers_footers_mode, force_page_breaks, paragraph_break, add_bidi_marks, max_characters_per_line, preserve_table_layout, simplify_list_labels, save_format].hash
     end
 
     # Builds the object from hash

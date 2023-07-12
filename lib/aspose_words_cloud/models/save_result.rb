@@ -29,29 +29,29 @@ module AsposeWordsCloud
 
   # Result of saving.
   class SaveResult
-    # Gets or sets the list of links to additional items (css, images etc).
-    attr_accessor :additional_items
-
     # Gets or sets the link to destination document.
     attr_accessor :dest_document
 
     # Gets or sets the link to source document.
     attr_accessor :source_document
+
+    # Gets or sets the list of links to additional items (css, images etc).
+    attr_accessor :additional_items
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'additional_items' => :'AdditionalItems',
         :'dest_document' => :'DestDocument',
-        :'source_document' => :'SourceDocument'
+        :'source_document' => :'SourceDocument',
+        :'additional_items' => :'AdditionalItems'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'additional_items' => :'Array<FileLink>',
         :'dest_document' => :'FileLink',
-        :'source_document' => :'FileLink'
+        :'source_document' => :'FileLink',
+        :'additional_items' => :'Array<FileLink>'
       }
     end
 
@@ -63,18 +63,18 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'AdditionalItems')
-        if (value = attributes[:'AdditionalItems']).is_a?(Array)
-          self.additional_items = value
-        end
-      end
-
       if attributes.key?(:'DestDocument')
         self.dest_document = attributes[:'DestDocument']
       end
 
       if attributes.key?(:'SourceDocument')
         self.source_document = attributes[:'SourceDocument']
+      end
+
+      if attributes.key?(:'AdditionalItems')
+        if (value = attributes[:'AdditionalItems']).is_a?(Array)
+          self.additional_items = value
+        end
       end
     end
 
@@ -96,9 +96,9 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          additional_items == other.additional_items &&
           dest_document == other.dest_document &&
-          source_document == other.source_document
+          source_document == other.source_document &&
+          additional_items == other.additional_items
     end
 
     # @see the `==` method
@@ -110,7 +110,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [additional_items, dest_document, source_document].hash
+      [dest_document, source_document, additional_items].hash
     end
 
     # Builds the object from hash

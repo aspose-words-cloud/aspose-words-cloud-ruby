@@ -29,24 +29,24 @@ module AsposeWordsCloud
 
   # Contains data for load web document.
   class LoadWebDocumentData
-    # Gets or sets the web document URL.
-    attr_accessor :loading_document_url
-
     # Gets or sets the save options.
     attr_accessor :save_options
+
+    # Gets or sets the web document URL.
+    attr_accessor :loading_document_url
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'loading_document_url' => :'LoadingDocumentUrl',
-        :'save_options' => :'SaveOptions'
+        :'save_options' => :'SaveOptions',
+        :'loading_document_url' => :'LoadingDocumentUrl'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'loading_document_url' => :'String',
-        :'save_options' => :'SaveOptionsData'
+        :'save_options' => :'SaveOptionsData',
+        :'loading_document_url' => :'String'
       }
     end
 
@@ -58,12 +58,12 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'LoadingDocumentUrl')
-        self.loading_document_url = attributes[:'LoadingDocumentUrl']
-      end
-
       if attributes.key?(:'SaveOptions')
         self.save_options = attributes[:'SaveOptions']
+      end
+
+      if attributes.key?(:'LoadingDocumentUrl')
+        self.loading_document_url = attributes[:'LoadingDocumentUrl']
       end
     end
 
@@ -85,8 +85,8 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          loading_document_url == other.loading_document_url &&
-          save_options == other.save_options
+          save_options == other.save_options &&
+          loading_document_url == other.loading_document_url
     end
 
     # @see the `==` method
@@ -98,7 +98,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [loading_document_url, save_options].hash
+      [save_options, loading_document_url].hash
     end
 
     # Builds the object from hash

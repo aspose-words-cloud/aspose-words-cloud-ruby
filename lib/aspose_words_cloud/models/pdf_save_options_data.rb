@@ -165,9 +165,6 @@ module AsposeWordsCloud
     # Gets or sets a value indicating whether to preserve Microsoft Word form fields as form fields in PDF or convert them to text.
     attr_accessor :preserve_form_fields
 
-    # Gets the format of save.
-    attr_accessor :save_format
-
     # Gets or sets the compression type to be used for all textual content in the document.
     attr_accessor :text_compression
 
@@ -182,6 +179,9 @@ module AsposeWordsCloud
 
     # Gets or sets the zoom factor (in percentages) for a document.
     attr_accessor :zoom_factor
+
+    # Gets the format of save.
+    attr_accessor :save_format
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -250,12 +250,12 @@ module AsposeWordsCloud
         :'page_mode' => :'PageMode',
         :'preblend_images' => :'PreblendImages',
         :'preserve_form_fields' => :'PreserveFormFields',
-        :'save_format' => :'SaveFormat',
         :'text_compression' => :'TextCompression',
         :'use_book_fold_printing_settings' => :'UseBookFoldPrintingSettings',
         :'use_core_fonts' => :'UseCoreFonts',
         :'zoom_behavior' => :'ZoomBehavior',
-        :'zoom_factor' => :'ZoomFactor'
+        :'zoom_factor' => :'ZoomFactor',
+        :'save_format' => :'SaveFormat'
       }
     end
 
@@ -304,12 +304,12 @@ module AsposeWordsCloud
         :'page_mode' => :'String',
         :'preblend_images' => :'BOOLEAN',
         :'preserve_form_fields' => :'BOOLEAN',
-        :'save_format' => :'String',
         :'text_compression' => :'String',
         :'use_book_fold_printing_settings' => :'BOOLEAN',
         :'use_core_fonts' => :'BOOLEAN',
         :'zoom_behavior' => :'String',
-        :'zoom_factor' => :'Integer'
+        :'zoom_factor' => :'Integer',
+        :'save_format' => :'String'
       }
     end
 
@@ -798,12 +798,12 @@ module AsposeWordsCloud
           page_mode == other.page_mode &&
           preblend_images == other.preblend_images &&
           preserve_form_fields == other.preserve_form_fields &&
-          save_format == other.save_format &&
           text_compression == other.text_compression &&
           use_book_fold_printing_settings == other.use_book_fold_printing_settings &&
           use_core_fonts == other.use_core_fonts &&
           zoom_behavior == other.zoom_behavior &&
-          zoom_factor == other.zoom_factor
+          zoom_factor == other.zoom_factor &&
+          save_format == other.save_format
     end
 
     # @see the `==` method
@@ -815,7 +815,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, cache_background_graphics, compliance, create_note_hyperlinks, custom_properties_export, digital_signature_details, display_doc_title, downsample_options, embed_attachments, embed_full_fonts, encryption_details, export_document_structure, export_language_to_span_tag, font_embedding_mode, header_footer_bookmarks_export_mode, image_color_space_export_mode, image_compression, interpolate_images, open_hyperlinks_in_new_window, outline_options, page_mode, preblend_images, preserve_form_fields, save_format, text_compression, use_book_fold_printing_settings, use_core_fonts, zoom_behavior, zoom_factor].hash
+      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, cache_background_graphics, compliance, create_note_hyperlinks, custom_properties_export, digital_signature_details, display_doc_title, downsample_options, embed_attachments, embed_full_fonts, encryption_details, export_document_structure, export_language_to_span_tag, font_embedding_mode, header_footer_bookmarks_export_mode, image_color_space_export_mode, image_compression, interpolate_images, open_hyperlinks_in_new_window, outline_options, page_mode, preblend_images, preserve_form_fields, text_compression, use_book_fold_printing_settings, use_core_fonts, zoom_behavior, zoom_factor, save_format].hash
     end
 
     # Builds the object from hash

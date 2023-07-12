@@ -32,17 +32,17 @@ module AsposeWordsCloud
     # Gets or sets the link to the document.
     attr_accessor :link
 
-    # Gets or sets the custom xml part data.
-    attr_accessor :data
-
     # Gets or sets the custom xml part id.
     attr_accessor :id
+
+    # Gets or sets the custom xml part data.
+    attr_accessor :data
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'link' => :'Link',
-        :'data' => :'Data',
-        :'id' => :'Id'
+        :'id' => :'Id',
+        :'data' => :'Data'
       }
     end
 
@@ -50,8 +50,8 @@ module AsposeWordsCloud
     def self.swagger_types
       {
         :'link' => :'WordsApiLink',
-        :'data' => :'String',
-        :'id' => :'String'
+        :'id' => :'String',
+        :'data' => :'String'
       }
     end
 
@@ -67,12 +67,12 @@ module AsposeWordsCloud
         self.link = attributes[:'Link']
       end
 
-      if attributes.key?(:'Data')
-        self.data = attributes[:'Data']
-      end
-
       if attributes.key?(:'Id')
         self.id = attributes[:'Id']
+      end
+
+      if attributes.key?(:'Data')
+        self.data = attributes[:'Data']
       end
     end
 
@@ -95,8 +95,8 @@ module AsposeWordsCloud
       return true if self.equal?(other)
       self.class == other.class &&
           link == other.link &&
-          data == other.data &&
-          id == other.id
+          id == other.id &&
+          data == other.data
     end
 
     # @see the `==` method
@@ -108,7 +108,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, data, id].hash
+      [link, id, data].hash
     end
 
     # Builds the object from hash

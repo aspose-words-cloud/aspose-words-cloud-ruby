@@ -35,18 +35,18 @@ module AsposeWordsCloud
     # Gets or sets the node id.
     attr_accessor :node_id
 
-    # Gets or sets table properties.
-    attr_accessor :table_properties
-
     # Gets or sets the collection of table's rows.
     attr_accessor :table_row_list
+
+    # Gets or sets table properties.
+    attr_accessor :table_properties
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'link' => :'Link',
         :'node_id' => :'NodeId',
-        :'table_properties' => :'TableProperties',
-        :'table_row_list' => :'TableRowList'
+        :'table_row_list' => :'TableRowList',
+        :'table_properties' => :'TableProperties'
       }
     end
 
@@ -55,8 +55,8 @@ module AsposeWordsCloud
       {
         :'link' => :'WordsApiLink',
         :'node_id' => :'String',
-        :'table_properties' => :'TableProperties',
-        :'table_row_list' => :'Array<TableRow>'
+        :'table_row_list' => :'Array<TableRow>',
+        :'table_properties' => :'TableProperties'
       }
     end
 
@@ -76,14 +76,14 @@ module AsposeWordsCloud
         self.node_id = attributes[:'NodeId']
       end
 
-      if attributes.key?(:'TableProperties')
-        self.table_properties = attributes[:'TableProperties']
-      end
-
       if attributes.key?(:'TableRowList')
         if (value = attributes[:'TableRowList']).is_a?(Array)
           self.table_row_list = value
         end
+      end
+
+      if attributes.key?(:'TableProperties')
+        self.table_properties = attributes[:'TableProperties']
       end
     end
 
@@ -107,8 +107,8 @@ module AsposeWordsCloud
       self.class == other.class &&
           link == other.link &&
           node_id == other.node_id &&
-          table_properties == other.table_properties &&
-          table_row_list == other.table_row_list
+          table_row_list == other.table_row_list &&
+          table_properties == other.table_properties
     end
 
     # @see the `==` method
@@ -120,7 +120,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, node_id, table_properties, table_row_list].hash
+      [link, node_id, table_row_list, table_properties].hash
     end
 
     # Builds the object from hash

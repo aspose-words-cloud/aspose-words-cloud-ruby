@@ -35,32 +35,32 @@ module AsposeWordsCloud
     # Gets or sets the node id.
     attr_accessor :node_id
 
+    # Gets or sets the list of links that originate from this DrawingObjectDto.
+    attr_accessor :render_links
+
+    # Gets or sets the width of the DrawingObjects in points.
+    attr_accessor :width
+
     # Gets or sets the height of the DrawingObject in points.
     attr_accessor :height
-
-    # Gets or sets the link to image data. Can be null if shape does not have an image.
-    attr_accessor :image_data_link
-
-    # Gets or sets the distance in points from the origin to the left side of the image.
-    attr_accessor :left
 
     # Gets or sets the link to OLE object. Can be null if shape does not have OLE data.
     attr_accessor :ole_data_link
 
+    # Gets or sets the link to image data. Can be null if shape does not have an image.
+    attr_accessor :image_data_link
+
     # Gets or sets the relative horizontal position, from which the distance to the image is measured.
     attr_accessor :relative_horizontal_position
+
+    # Gets or sets the distance in points from the origin to the left side of the image.
+    attr_accessor :left
 
     # Gets or sets the relative vertical position, from which the distance to the image is measured.
     attr_accessor :relative_vertical_position
 
-    # Gets or sets the list of links that originate from this DrawingObjectDto.
-    attr_accessor :render_links
-
     # Gets or sets the distance in points from the origin to the top side of the image.
     attr_accessor :top
-
-    # Gets or sets the width of the DrawingObjects in points.
-    attr_accessor :width
 
     # Gets or sets the option that controls how to wrap text around the image.
     attr_accessor :wrap_type
@@ -92,15 +92,15 @@ module AsposeWordsCloud
       {
         :'link' => :'Link',
         :'node_id' => :'NodeId',
-        :'height' => :'Height',
-        :'image_data_link' => :'ImageDataLink',
-        :'left' => :'Left',
-        :'ole_data_link' => :'OleDataLink',
-        :'relative_horizontal_position' => :'RelativeHorizontalPosition',
-        :'relative_vertical_position' => :'RelativeVerticalPosition',
         :'render_links' => :'RenderLinks',
-        :'top' => :'Top',
         :'width' => :'Width',
+        :'height' => :'Height',
+        :'ole_data_link' => :'OleDataLink',
+        :'image_data_link' => :'ImageDataLink',
+        :'relative_horizontal_position' => :'RelativeHorizontalPosition',
+        :'left' => :'Left',
+        :'relative_vertical_position' => :'RelativeVerticalPosition',
+        :'top' => :'Top',
         :'wrap_type' => :'WrapType'
       }
     end
@@ -110,15 +110,15 @@ module AsposeWordsCloud
       {
         :'link' => :'WordsApiLink',
         :'node_id' => :'String',
-        :'height' => :'Float',
-        :'image_data_link' => :'WordsApiLink',
-        :'left' => :'Float',
-        :'ole_data_link' => :'WordsApiLink',
-        :'relative_horizontal_position' => :'String',
-        :'relative_vertical_position' => :'String',
         :'render_links' => :'Array<WordsApiLink>',
-        :'top' => :'Float',
         :'width' => :'Float',
+        :'height' => :'Float',
+        :'ole_data_link' => :'WordsApiLink',
+        :'image_data_link' => :'WordsApiLink',
+        :'relative_horizontal_position' => :'String',
+        :'left' => :'Float',
+        :'relative_vertical_position' => :'String',
+        :'top' => :'Float',
         :'wrap_type' => :'String'
       }
     end
@@ -139,42 +139,42 @@ module AsposeWordsCloud
         self.node_id = attributes[:'NodeId']
       end
 
-      if attributes.key?(:'Height')
-        self.height = attributes[:'Height']
-      end
-
-      if attributes.key?(:'ImageDataLink')
-        self.image_data_link = attributes[:'ImageDataLink']
-      end
-
-      if attributes.key?(:'Left')
-        self.left = attributes[:'Left']
-      end
-
-      if attributes.key?(:'OleDataLink')
-        self.ole_data_link = attributes[:'OleDataLink']
-      end
-
-      if attributes.key?(:'RelativeHorizontalPosition')
-        self.relative_horizontal_position = attributes[:'RelativeHorizontalPosition']
-      end
-
-      if attributes.key?(:'RelativeVerticalPosition')
-        self.relative_vertical_position = attributes[:'RelativeVerticalPosition']
-      end
-
       if attributes.key?(:'RenderLinks')
         if (value = attributes[:'RenderLinks']).is_a?(Array)
           self.render_links = value
         end
       end
 
-      if attributes.key?(:'Top')
-        self.top = attributes[:'Top']
-      end
-
       if attributes.key?(:'Width')
         self.width = attributes[:'Width']
+      end
+
+      if attributes.key?(:'Height')
+        self.height = attributes[:'Height']
+      end
+
+      if attributes.key?(:'OleDataLink')
+        self.ole_data_link = attributes[:'OleDataLink']
+      end
+
+      if attributes.key?(:'ImageDataLink')
+        self.image_data_link = attributes[:'ImageDataLink']
+      end
+
+      if attributes.key?(:'RelativeHorizontalPosition')
+        self.relative_horizontal_position = attributes[:'RelativeHorizontalPosition']
+      end
+
+      if attributes.key?(:'Left')
+        self.left = attributes[:'Left']
+      end
+
+      if attributes.key?(:'RelativeVerticalPosition')
+        self.relative_vertical_position = attributes[:'RelativeVerticalPosition']
+      end
+
+      if attributes.key?(:'Top')
+        self.top = attributes[:'Top']
       end
 
       if attributes.key?(:'WrapType')
@@ -252,15 +252,15 @@ module AsposeWordsCloud
       self.class == other.class &&
           link == other.link &&
           node_id == other.node_id &&
-          height == other.height &&
-          image_data_link == other.image_data_link &&
-          left == other.left &&
-          ole_data_link == other.ole_data_link &&
-          relative_horizontal_position == other.relative_horizontal_position &&
-          relative_vertical_position == other.relative_vertical_position &&
           render_links == other.render_links &&
-          top == other.top &&
           width == other.width &&
+          height == other.height &&
+          ole_data_link == other.ole_data_link &&
+          image_data_link == other.image_data_link &&
+          relative_horizontal_position == other.relative_horizontal_position &&
+          left == other.left &&
+          relative_vertical_position == other.relative_vertical_position &&
+          top == other.top &&
           wrap_type == other.wrap_type
     end
 
@@ -273,7 +273,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, node_id, height, image_data_link, left, ole_data_link, relative_horizontal_position, relative_vertical_position, render_links, top, width, wrap_type].hash
+      [link, node_id, render_links, width, height, ole_data_link, image_data_link, relative_horizontal_position, left, relative_vertical_position, top, wrap_type].hash
     end
 
     # Builds the object from hash
