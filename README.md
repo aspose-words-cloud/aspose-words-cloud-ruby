@@ -15,6 +15,7 @@ This repository contains Aspose.Words Cloud SDK for Ruby source code. This SDK a
 
 ## Enhancements in Version 23.6
 
+- Fix XMLHttpRequest in web applications.
 
 
 ## Enhancements in Version 23.5
