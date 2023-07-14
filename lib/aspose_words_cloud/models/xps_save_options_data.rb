@@ -104,11 +104,11 @@ module AsposeWordsCloud
     # Gets or sets the outline options.
     attr_accessor :outline_options
 
-    # Gets the format of save.
-    attr_accessor :save_format
-
     # Gets or sets a value indicating whether the document should be saved using a booklet printing layout.
     attr_accessor :use_book_fold_printing_settings
+
+    # Gets the format of save.
+    attr_accessor :save_format
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -158,8 +158,8 @@ module AsposeWordsCloud
         :'bookmarks_outline_level' => :'BookmarksOutlineLevel',
         :'headings_outline_levels' => :'HeadingsOutlineLevels',
         :'outline_options' => :'OutlineOptions',
-        :'save_format' => :'SaveFormat',
-        :'use_book_fold_printing_settings' => :'UseBookFoldPrintingSettings'
+        :'use_book_fold_printing_settings' => :'UseBookFoldPrintingSettings',
+        :'save_format' => :'SaveFormat'
       }
     end
 
@@ -189,8 +189,8 @@ module AsposeWordsCloud
         :'bookmarks_outline_level' => :'Integer',
         :'headings_outline_levels' => :'Integer',
         :'outline_options' => :'OutlineOptionsData',
-        :'save_format' => :'String',
-        :'use_book_fold_printing_settings' => :'BOOLEAN'
+        :'use_book_fold_printing_settings' => :'BOOLEAN',
+        :'save_format' => :'String'
       }
     end
 
@@ -440,8 +440,8 @@ module AsposeWordsCloud
           bookmarks_outline_level == other.bookmarks_outline_level &&
           headings_outline_levels == other.headings_outline_levels &&
           outline_options == other.outline_options &&
-          save_format == other.save_format &&
-          use_book_fold_printing_settings == other.use_book_fold_printing_settings
+          use_book_fold_printing_settings == other.use_book_fold_printing_settings &&
+          save_format == other.save_format
     end
 
     # @see the `==` method
@@ -453,7 +453,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, bookmarks_outline_level, headings_outline_levels, outline_options, save_format, use_book_fold_printing_settings].hash
+      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, bookmarks_outline_level, headings_outline_levels, outline_options, use_book_fold_printing_settings, save_format].hash
     end
 
     # Builds the object from hash

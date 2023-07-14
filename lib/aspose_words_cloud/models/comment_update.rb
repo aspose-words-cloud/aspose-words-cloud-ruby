@@ -29,6 +29,12 @@ module AsposeWordsCloud
 
   # Comment update.
   class CommentUpdate
+    # Gets or sets the link to comment range start node.
+    attr_accessor :range_start
+
+    # Gets or sets the link to comment range end node.
+    attr_accessor :range_end
+
     # Gets or sets the author name for a comment.
     attr_accessor :author
 
@@ -38,22 +44,16 @@ module AsposeWordsCloud
     # Gets or sets the initials of the user associated with a specific comment.
     attr_accessor :initial
 
-    # Gets or sets the link to comment range end node.
-    attr_accessor :range_end
-
-    # Gets or sets the link to comment range start node.
-    attr_accessor :range_start
-
     # Gets or sets text of the comment.
     attr_accessor :text
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'range_start' => :'RangeStart',
+        :'range_end' => :'RangeEnd',
         :'author' => :'Author',
         :'date_time' => :'DateTime',
         :'initial' => :'Initial',
-        :'range_end' => :'RangeEnd',
-        :'range_start' => :'RangeStart',
         :'text' => :'Text'
       }
     end
@@ -61,11 +61,11 @@ module AsposeWordsCloud
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'range_start' => :'NewDocumentPosition',
+        :'range_end' => :'NewDocumentPosition',
         :'author' => :'String',
         :'date_time' => :'DateTime',
         :'initial' => :'String',
-        :'range_end' => :'NewDocumentPosition',
-        :'range_start' => :'NewDocumentPosition',
         :'text' => :'String'
       }
     end
@@ -78,6 +78,14 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.key?(:'RangeStart')
+        self.range_start = attributes[:'RangeStart']
+      end
+
+      if attributes.key?(:'RangeEnd')
+        self.range_end = attributes[:'RangeEnd']
+      end
+
       if attributes.key?(:'Author')
         self.author = attributes[:'Author']
       end
@@ -88,14 +96,6 @@ module AsposeWordsCloud
 
       if attributes.key?(:'Initial')
         self.initial = attributes[:'Initial']
-      end
-
-      if attributes.key?(:'RangeEnd')
-        self.range_end = attributes[:'RangeEnd']
-      end
-
-      if attributes.key?(:'RangeStart')
-        self.range_start = attributes[:'RangeStart']
       end
 
       if attributes.key?(:'Text')
@@ -121,11 +121,11 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
+          range_start == other.range_start &&
+          range_end == other.range_end &&
           author == other.author &&
           date_time == other.date_time &&
           initial == other.initial &&
-          range_end == other.range_end &&
-          range_start == other.range_start &&
           text == other.text
     end
 
@@ -138,7 +138,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [author, date_time, initial, range_end, range_start, text].hash
+      [range_start, range_end, author, date_time, initial, text].hash
     end
 
     # Builds the object from hash

@@ -35,43 +35,48 @@ module AsposeWordsCloud
     # Gets or sets the node id.
     attr_accessor :node_id
 
-    # Gets or sets the appearance of a structured document tag.
-    attr_accessor :appearance
-
-    # Gets or sets category of building block for this SDT node. Can not be null.
-    attr_accessor :building_block_category
-
-    # Gets or sets type of building block for this SDT. Can not be null.
-    attr_accessor :building_block_gallery
-
-    # Gets or sets the type of calendar for this SDT. Default is Aspose.Words.Markup.SdtCalendarType.Default.
-    attr_accessor :calendar_type
+    # Gets or sets Aspose.Words.Markup.SdtListItemCollection associated with this SDT.
+    attr_accessor :list_items
 
     # Gets or sets a value indicating whether current state of the Checkbox SDT. Default value for this property.
     attr_accessor :checked
 
-    # Gets or sets the color of the structured document tag.
-    attr_accessor :color
+    # Gets or sets the appearance of a structured document tag.
+    attr_accessor :appearance
+
+    # Gets or sets the language format for the date displayed in this SDT.
+    attr_accessor :date_display_locale
 
     # Gets or sets String that represents the format in which dates are displayed. Can not be null. The dates for English (U.S.) is "mm/dd/yyyy".
     attr_accessor :date_display_format
 
-    # Gets or sets the language format for the date displayed in this SDT.
-    attr_accessor :date_display_locale
+    # Gets or sets the full date and time last entered into this SDT.
+    attr_accessor :full_date
+
+    # Gets or sets the friendly name associated with this SDT. Can not be null.
+    attr_accessor :title
 
     # Gets or sets format in which the date for a date SDT is stored when the SDT is bound to an XML node in the document's data store.
     # Default value is Aspose.Words.Markup.SdtDateStorageFormat.DateTime.
     attr_accessor :date_storage_format
 
-    # Gets or sets the full date and time last entered into this SDT.
-    attr_accessor :full_date
+    # Gets or sets type of building block for this SDT. Can not be null.
+    attr_accessor :building_block_gallery
 
-    # Gets or sets a unique read-only persistent numerical Id for this SDT.
-    attr_accessor :id
+    # Gets or sets category of building block for this SDT node. Can not be null.
+    attr_accessor :building_block_category
 
-    # Gets or sets a value indicating whether the content of this SDT shall be interpreted to contain placeholder text (as opposed to regular text contents within the SDT).
-    # If set to true, this state shall be resumed (showing placeholder text) upon opening his document.
-    attr_accessor :is_showing_placeholder_text
+    # Gets or sets a value indicating whether this SDT allows multiple lines of text.
+    attr_accessor :multiline
+
+    # Gets or sets the color of the structured document tag.
+    attr_accessor :color
+
+    # Gets or sets the name of the style applied to the structured document tag.
+    attr_accessor :style_name
+
+    # Gets or sets the type of calendar for this SDT. Default is Aspose.Words.Markup.SdtCalendarType.Default.
+    attr_accessor :calendar_type
 
     # Gets or sets a value indicating whether this SDT shall be removed from the WordProcessingML document when its contents are modified.
     attr_accessor :is_temporary
@@ -79,8 +84,12 @@ module AsposeWordsCloud
     # Gets or sets the level at which this SDT occurs in the document tree.
     attr_accessor :level
 
-    # Gets or sets Aspose.Words.Markup.SdtListItemCollection associated with this SDT.
-    attr_accessor :list_items
+    # Gets or sets type of this Structured document tag.
+    attr_accessor :sdt_type
+
+    # Gets or sets Name of the Aspose.Words.BuildingBlocks.BuildingBlock containing placeholder text.
+    # Aspose.Words.BuildingBlocks.BuildingBlock with this name Aspose.Words.BuildingBlocks.BuildingBlock.Name has to be present in the Aspose.Words.Document.GlossaryDocument otherwise System.InvalidOperationException will occur.
+    attr_accessor :placeholder_name
 
     # Gets or sets a value indicating whether, this property will prohibit a user from deleting this SDT.
     attr_accessor :lock_content_control
@@ -88,24 +97,15 @@ module AsposeWordsCloud
     # Gets or sets a value indicating whether, this property will prohibit a user from editing the contents of this SDT.
     attr_accessor :lock_contents
 
-    # Gets or sets a value indicating whether this SDT allows multiple lines of text.
-    attr_accessor :multiline
-
-    # Gets or sets Name of the Aspose.Words.BuildingBlocks.BuildingBlock containing placeholder text.
-    # Aspose.Words.BuildingBlocks.BuildingBlock with this name Aspose.Words.BuildingBlocks.BuildingBlock.Name has to be present in the Aspose.Words.Document.GlossaryDocument otherwise System.InvalidOperationException will occur.
-    attr_accessor :placeholder_name
-
-    # Gets or sets type of this Structured document tag.
-    attr_accessor :sdt_type
-
-    # Gets or sets the name of the style applied to the structured document tag.
-    attr_accessor :style_name
+    # Gets or sets a value indicating whether the content of this SDT shall be interpreted to contain placeholder text (as opposed to regular text contents within the SDT).
+    # If set to true, this state shall be resumed (showing placeholder text) upon opening his document.
+    attr_accessor :is_showing_placeholder_text
 
     # Gets or sets a tag associated with the current SDT node. Can not be null.
     attr_accessor :tag
 
-    # Gets or sets the friendly name associated with this SDT. Can not be null.
-    attr_accessor :title
+    # Gets or sets a unique read-only persistent numerical Id for this SDT.
+    attr_accessor :id
 
     # Gets a string that represents the XML contained within the node in the Aspose.Words.SaveFormat.FlatOpc format.
     attr_accessor :word_open_xml
@@ -137,29 +137,29 @@ module AsposeWordsCloud
       {
         :'link' => :'Link',
         :'node_id' => :'NodeId',
-        :'appearance' => :'Appearance',
-        :'building_block_category' => :'BuildingBlockCategory',
-        :'building_block_gallery' => :'BuildingBlockGallery',
-        :'calendar_type' => :'CalendarType',
+        :'list_items' => :'ListItems',
         :'checked' => :'Checked',
-        :'color' => :'Color',
-        :'date_display_format' => :'DateDisplayFormat',
+        :'appearance' => :'Appearance',
         :'date_display_locale' => :'DateDisplayLocale',
-        :'date_storage_format' => :'DateStorageFormat',
+        :'date_display_format' => :'DateDisplayFormat',
         :'full_date' => :'FullDate',
-        :'id' => :'Id',
-        :'is_showing_placeholder_text' => :'IsShowingPlaceholderText',
+        :'title' => :'Title',
+        :'date_storage_format' => :'DateStorageFormat',
+        :'building_block_gallery' => :'BuildingBlockGallery',
+        :'building_block_category' => :'BuildingBlockCategory',
+        :'multiline' => :'Multiline',
+        :'color' => :'Color',
+        :'style_name' => :'StyleName',
+        :'calendar_type' => :'CalendarType',
         :'is_temporary' => :'IsTemporary',
         :'level' => :'Level',
-        :'list_items' => :'ListItems',
+        :'sdt_type' => :'SdtType',
+        :'placeholder_name' => :'PlaceholderName',
         :'lock_content_control' => :'LockContentControl',
         :'lock_contents' => :'LockContents',
-        :'multiline' => :'Multiline',
-        :'placeholder_name' => :'PlaceholderName',
-        :'sdt_type' => :'SdtType',
-        :'style_name' => :'StyleName',
+        :'is_showing_placeholder_text' => :'IsShowingPlaceholderText',
         :'tag' => :'Tag',
-        :'title' => :'Title',
+        :'id' => :'Id',
         :'word_open_xml' => :'WordOpenXML'
       }
     end
@@ -169,29 +169,29 @@ module AsposeWordsCloud
       {
         :'link' => :'WordsApiLink',
         :'node_id' => :'String',
-        :'appearance' => :'String',
-        :'building_block_category' => :'String',
-        :'building_block_gallery' => :'String',
-        :'calendar_type' => :'String',
+        :'list_items' => :'Array<StructuredDocumentTagListItem>',
         :'checked' => :'BOOLEAN',
-        :'color' => :'String',
-        :'date_display_format' => :'String',
+        :'appearance' => :'String',
         :'date_display_locale' => :'Integer',
-        :'date_storage_format' => :'String',
+        :'date_display_format' => :'String',
         :'full_date' => :'DateTime',
-        :'id' => :'Integer',
-        :'is_showing_placeholder_text' => :'BOOLEAN',
+        :'title' => :'String',
+        :'date_storage_format' => :'String',
+        :'building_block_gallery' => :'String',
+        :'building_block_category' => :'String',
+        :'multiline' => :'BOOLEAN',
+        :'color' => :'String',
+        :'style_name' => :'String',
+        :'calendar_type' => :'String',
         :'is_temporary' => :'BOOLEAN',
         :'level' => :'String',
-        :'list_items' => :'Array<StructuredDocumentTagListItem>',
+        :'sdt_type' => :'String',
+        :'placeholder_name' => :'String',
         :'lock_content_control' => :'BOOLEAN',
         :'lock_contents' => :'BOOLEAN',
-        :'multiline' => :'BOOLEAN',
-        :'placeholder_name' => :'String',
-        :'sdt_type' => :'String',
-        :'style_name' => :'String',
+        :'is_showing_placeholder_text' => :'BOOLEAN',
         :'tag' => :'String',
-        :'title' => :'String',
+        :'id' => :'Integer',
         :'word_open_xml' => :'String'
       }
     end
@@ -212,52 +212,62 @@ module AsposeWordsCloud
         self.node_id = attributes[:'NodeId']
       end
 
-      if attributes.key?(:'Appearance')
-        self.appearance = attributes[:'Appearance']
-      end
-
-      if attributes.key?(:'BuildingBlockCategory')
-        self.building_block_category = attributes[:'BuildingBlockCategory']
-      end
-
-      if attributes.key?(:'BuildingBlockGallery')
-        self.building_block_gallery = attributes[:'BuildingBlockGallery']
-      end
-
-      if attributes.key?(:'CalendarType')
-        self.calendar_type = attributes[:'CalendarType']
+      if attributes.key?(:'ListItems')
+        if (value = attributes[:'ListItems']).is_a?(Array)
+          self.list_items = value
+        end
       end
 
       if attributes.key?(:'Checked')
         self.checked = attributes[:'Checked']
       end
 
-      if attributes.key?(:'Color')
-        self.color = attributes[:'Color']
-      end
-
-      if attributes.key?(:'DateDisplayFormat')
-        self.date_display_format = attributes[:'DateDisplayFormat']
+      if attributes.key?(:'Appearance')
+        self.appearance = attributes[:'Appearance']
       end
 
       if attributes.key?(:'DateDisplayLocale')
         self.date_display_locale = attributes[:'DateDisplayLocale']
       end
 
-      if attributes.key?(:'DateStorageFormat')
-        self.date_storage_format = attributes[:'DateStorageFormat']
+      if attributes.key?(:'DateDisplayFormat')
+        self.date_display_format = attributes[:'DateDisplayFormat']
       end
 
       if attributes.key?(:'FullDate')
         self.full_date = attributes[:'FullDate']
       end
 
-      if attributes.key?(:'Id')
-        self.id = attributes[:'Id']
+      if attributes.key?(:'Title')
+        self.title = attributes[:'Title']
       end
 
-      if attributes.key?(:'IsShowingPlaceholderText')
-        self.is_showing_placeholder_text = attributes[:'IsShowingPlaceholderText']
+      if attributes.key?(:'DateStorageFormat')
+        self.date_storage_format = attributes[:'DateStorageFormat']
+      end
+
+      if attributes.key?(:'BuildingBlockGallery')
+        self.building_block_gallery = attributes[:'BuildingBlockGallery']
+      end
+
+      if attributes.key?(:'BuildingBlockCategory')
+        self.building_block_category = attributes[:'BuildingBlockCategory']
+      end
+
+      if attributes.key?(:'Multiline')
+        self.multiline = attributes[:'Multiline']
+      end
+
+      if attributes.key?(:'Color')
+        self.color = attributes[:'Color']
+      end
+
+      if attributes.key?(:'StyleName')
+        self.style_name = attributes[:'StyleName']
+      end
+
+      if attributes.key?(:'CalendarType')
+        self.calendar_type = attributes[:'CalendarType']
       end
 
       if attributes.key?(:'IsTemporary')
@@ -268,10 +278,12 @@ module AsposeWordsCloud
         self.level = attributes[:'Level']
       end
 
-      if attributes.key?(:'ListItems')
-        if (value = attributes[:'ListItems']).is_a?(Array)
-          self.list_items = value
-        end
+      if attributes.key?(:'SdtType')
+        self.sdt_type = attributes[:'SdtType']
+      end
+
+      if attributes.key?(:'PlaceholderName')
+        self.placeholder_name = attributes[:'PlaceholderName']
       end
 
       if attributes.key?(:'LockContentControl')
@@ -282,28 +294,16 @@ module AsposeWordsCloud
         self.lock_contents = attributes[:'LockContents']
       end
 
-      if attributes.key?(:'Multiline')
-        self.multiline = attributes[:'Multiline']
-      end
-
-      if attributes.key?(:'PlaceholderName')
-        self.placeholder_name = attributes[:'PlaceholderName']
-      end
-
-      if attributes.key?(:'SdtType')
-        self.sdt_type = attributes[:'SdtType']
-      end
-
-      if attributes.key?(:'StyleName')
-        self.style_name = attributes[:'StyleName']
+      if attributes.key?(:'IsShowingPlaceholderText')
+        self.is_showing_placeholder_text = attributes[:'IsShowingPlaceholderText']
       end
 
       if attributes.key?(:'Tag')
         self.tag = attributes[:'Tag']
       end
 
-      if attributes.key?(:'Title')
-        self.title = attributes[:'Title']
+      if attributes.key?(:'Id')
+        self.id = attributes[:'Id']
       end
 
       if attributes.key?(:'WordOpenXML')
@@ -323,10 +323,10 @@ module AsposeWordsCloud
     def valid?
       appearance_validator = EnumAttributeValidator.new('String', ["Default", "BoundingBox", "Tags", "Hidden"])
       return false unless appearance_validator.valid?(@appearance)
-      calendar_type_validator = EnumAttributeValidator.new('String', ["Default", "Gregorian", "GregorianArabic", "GregorianMeFrench", "GregorianUs", "GregorianXlitEnglish", "GregorianXlitFrench", "Hebrew", "Hijri", "Japan", "Korea", "None", "Saka", "Taiwan", "Thai"])
-      return false unless calendar_type_validator.valid?(@calendar_type)
       date_storage_format_validator = EnumAttributeValidator.new('String', ["Date", "DateTime", "Default", "Text"])
       return false unless date_storage_format_validator.valid?(@date_storage_format)
+      calendar_type_validator = EnumAttributeValidator.new('String', ["Default", "Gregorian", "GregorianArabic", "GregorianMeFrench", "GregorianUs", "GregorianXlitEnglish", "GregorianXlitFrench", "Hebrew", "Hijri", "Japan", "Korea", "None", "Saka", "Taiwan", "Thai"])
+      return false unless calendar_type_validator.valid?(@calendar_type)
       level_validator = EnumAttributeValidator.new('String', ["Unknown", "Inline", "Block", "Row", "Cell"])
       return false unless level_validator.valid?(@level)
       sdt_type_validator = EnumAttributeValidator.new('String', ["None", "Bibliography", "Citation", "Equation", "DropDownList", "ComboBox", "Date", "BuildingBlockGallery", "DocPartObj", "Group", "Picture", "RichText", "PlainText", "Checkbox", "RepeatingSection", "RepeatingSectionItem", "EntityPicker"])
@@ -350,20 +350,6 @@ module AsposeWordsCloud
     end
 
     # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] calendar_type Object to be assigned
-    def calendar_type=(calendar_type)
-      validator = EnumAttributeValidator.new('String', ["Default", "Gregorian", "GregorianArabic", "GregorianMeFrench", "GregorianUs", "GregorianXlitEnglish", "GregorianXlitFrench", "Hebrew", "Hijri", "Japan", "Korea", "None", "Saka", "Taiwan", "Thai"])
-      if calendar_type.to_i == 0
-        unless validator.valid?(calendar_type)
-          raise ArgumentError, "invalid value for 'calendar_type', must be one of #{validator.allowable_values}."
-        end
-        @calendar_type = calendar_type
-      else
-        @calendar_type = validator.allowable_values[calendar_type.to_i]
-      end
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
     # @param [Object] date_storage_format Object to be assigned
     def date_storage_format=(date_storage_format)
       validator = EnumAttributeValidator.new('String', ["Date", "DateTime", "Default", "Text"])
@@ -374,6 +360,20 @@ module AsposeWordsCloud
         @date_storage_format = date_storage_format
       else
         @date_storage_format = validator.allowable_values[date_storage_format.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] calendar_type Object to be assigned
+    def calendar_type=(calendar_type)
+      validator = EnumAttributeValidator.new('String', ["Default", "Gregorian", "GregorianArabic", "GregorianMeFrench", "GregorianUs", "GregorianXlitEnglish", "GregorianXlitFrench", "Hebrew", "Hijri", "Japan", "Korea", "None", "Saka", "Taiwan", "Thai"])
+      if calendar_type.to_i == 0
+        unless validator.valid?(calendar_type)
+          raise ArgumentError, "invalid value for 'calendar_type', must be one of #{validator.allowable_values}."
+        end
+        @calendar_type = calendar_type
+      else
+        @calendar_type = validator.allowable_values[calendar_type.to_i]
       end
     end
 
@@ -413,29 +413,29 @@ module AsposeWordsCloud
       self.class == other.class &&
           link == other.link &&
           node_id == other.node_id &&
-          appearance == other.appearance &&
-          building_block_category == other.building_block_category &&
-          building_block_gallery == other.building_block_gallery &&
-          calendar_type == other.calendar_type &&
+          list_items == other.list_items &&
           checked == other.checked &&
-          color == other.color &&
-          date_display_format == other.date_display_format &&
+          appearance == other.appearance &&
           date_display_locale == other.date_display_locale &&
-          date_storage_format == other.date_storage_format &&
+          date_display_format == other.date_display_format &&
           full_date == other.full_date &&
-          id == other.id &&
-          is_showing_placeholder_text == other.is_showing_placeholder_text &&
+          title == other.title &&
+          date_storage_format == other.date_storage_format &&
+          building_block_gallery == other.building_block_gallery &&
+          building_block_category == other.building_block_category &&
+          multiline == other.multiline &&
+          color == other.color &&
+          style_name == other.style_name &&
+          calendar_type == other.calendar_type &&
           is_temporary == other.is_temporary &&
           level == other.level &&
-          list_items == other.list_items &&
+          sdt_type == other.sdt_type &&
+          placeholder_name == other.placeholder_name &&
           lock_content_control == other.lock_content_control &&
           lock_contents == other.lock_contents &&
-          multiline == other.multiline &&
-          placeholder_name == other.placeholder_name &&
-          sdt_type == other.sdt_type &&
-          style_name == other.style_name &&
+          is_showing_placeholder_text == other.is_showing_placeholder_text &&
           tag == other.tag &&
-          title == other.title &&
+          id == other.id &&
           word_open_xml == other.word_open_xml
     end
 
@@ -448,7 +448,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, node_id, appearance, building_block_category, building_block_gallery, calendar_type, checked, color, date_display_format, date_display_locale, date_storage_format, full_date, id, is_showing_placeholder_text, is_temporary, level, list_items, lock_content_control, lock_contents, multiline, placeholder_name, sdt_type, style_name, tag, title, word_open_xml].hash
+      [link, node_id, list_items, checked, appearance, date_display_locale, date_display_format, full_date, title, date_storage_format, building_block_gallery, building_block_category, multiline, color, style_name, calendar_type, is_temporary, level, sdt_type, placeholder_name, lock_content_control, lock_contents, is_showing_placeholder_text, tag, id, word_open_xml].hash
     end
 
     # Builds the object from hash

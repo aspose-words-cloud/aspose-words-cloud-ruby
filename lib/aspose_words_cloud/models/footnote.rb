@@ -35,14 +35,11 @@ module AsposeWordsCloud
     # Gets or sets the node id.
     attr_accessor :node_id
 
-    # Gets or sets the content of the footnote.
-    attr_accessor :content
+    # Gets or sets the link to comment range start node.
+    attr_accessor :position
 
     # Gets or sets the value, that specifies whether this is a footnote or endnote.
     attr_accessor :footnote_type
-
-    # Gets or sets the link to comment range start node.
-    attr_accessor :position
 
     # Gets or sets the custom reference mark to be used for this footnote.
     # Default value is Empty, meaning auto-numbered footnotes are used.
@@ -50,6 +47,9 @@ module AsposeWordsCloud
 
     # Gets or sets text of the footnote.
     attr_accessor :text
+
+    # Gets or sets the content of the footnote.
+    attr_accessor :content
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -78,11 +78,11 @@ module AsposeWordsCloud
       {
         :'link' => :'Link',
         :'node_id' => :'NodeId',
-        :'content' => :'Content',
-        :'footnote_type' => :'FootnoteType',
         :'position' => :'Position',
+        :'footnote_type' => :'FootnoteType',
         :'reference_mark' => :'ReferenceMark',
-        :'text' => :'Text'
+        :'text' => :'Text',
+        :'content' => :'Content'
       }
     end
 
@@ -91,11 +91,11 @@ module AsposeWordsCloud
       {
         :'link' => :'WordsApiLink',
         :'node_id' => :'String',
-        :'content' => :'StoryChildNodes',
-        :'footnote_type' => :'String',
         :'position' => :'DocumentPosition',
+        :'footnote_type' => :'String',
         :'reference_mark' => :'String',
-        :'text' => :'String'
+        :'text' => :'String',
+        :'content' => :'StoryChildNodes'
       }
     end
 
@@ -115,16 +115,12 @@ module AsposeWordsCloud
         self.node_id = attributes[:'NodeId']
       end
 
-      if attributes.key?(:'Content')
-        self.content = attributes[:'Content']
+      if attributes.key?(:'Position')
+        self.position = attributes[:'Position']
       end
 
       if attributes.key?(:'FootnoteType')
         self.footnote_type = attributes[:'FootnoteType']
-      end
-
-      if attributes.key?(:'Position')
-        self.position = attributes[:'Position']
       end
 
       if attributes.key?(:'ReferenceMark')
@@ -133,6 +129,10 @@ module AsposeWordsCloud
 
       if attributes.key?(:'Text')
         self.text = attributes[:'Text']
+      end
+
+      if attributes.key?(:'Content')
+        self.content = attributes[:'Content']
       end
     end
 
@@ -174,11 +174,11 @@ module AsposeWordsCloud
       self.class == other.class &&
           link == other.link &&
           node_id == other.node_id &&
-          content == other.content &&
-          footnote_type == other.footnote_type &&
           position == other.position &&
+          footnote_type == other.footnote_type &&
           reference_mark == other.reference_mark &&
-          text == other.text
+          text == other.text &&
+          content == other.content
     end
 
     # @see the `==` method
@@ -190,7 +190,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, node_id, content, footnote_type, position, reference_mark, text].hash
+      [link, node_id, position, footnote_type, reference_mark, text, content].hash
     end
 
     # Builds the object from hash

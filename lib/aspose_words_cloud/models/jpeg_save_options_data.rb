@@ -126,9 +126,6 @@ module AsposeWordsCloud
     # Gets or sets a value indicating whether to use anti-aliasing for rendering.
     attr_accessor :use_anti_aliasing
 
-    # Gets or sets a value indicating whether to use GDI+ or Aspose.Words metafile renderer when saving to EMF.
-    attr_accessor :use_gdi_emf_renderer
-
     # Gets or sets a value indicating whether to use high quality (i.e. slow) rendering algorithms.
     attr_accessor :use_high_quality_rendering
 
@@ -136,6 +133,9 @@ module AsposeWordsCloud
     # This property has effect only when saving to raster image formats.
     # The default value is 96.
     attr_accessor :vertical_resolution
+
+    # Gets or sets a value indicating whether to use GDI+ or Aspose.Words metafile renderer when saving to EMF.
+    attr_accessor :use_gdi_emf_renderer
 
     # Gets the format of save.
     attr_accessor :save_format
@@ -194,9 +194,9 @@ module AsposeWordsCloud
         :'resolution' => :'Resolution',
         :'scale' => :'Scale',
         :'use_anti_aliasing' => :'UseAntiAliasing',
-        :'use_gdi_emf_renderer' => :'UseGdiEmfRenderer',
         :'use_high_quality_rendering' => :'UseHighQualityRendering',
         :'vertical_resolution' => :'VerticalResolution',
+        :'use_gdi_emf_renderer' => :'UseGdiEmfRenderer',
         :'save_format' => :'SaveFormat'
       }
     end
@@ -233,9 +233,9 @@ module AsposeWordsCloud
         :'resolution' => :'Float',
         :'scale' => :'Float',
         :'use_anti_aliasing' => :'BOOLEAN',
-        :'use_gdi_emf_renderer' => :'BOOLEAN',
         :'use_high_quality_rendering' => :'BOOLEAN',
         :'vertical_resolution' => :'Float',
+        :'use_gdi_emf_renderer' => :'BOOLEAN',
         :'save_format' => :'String'
       }
     end
@@ -366,16 +366,16 @@ module AsposeWordsCloud
         self.use_anti_aliasing = attributes[:'UseAntiAliasing']
       end
 
-      if attributes.key?(:'UseGdiEmfRenderer')
-        self.use_gdi_emf_renderer = attributes[:'UseGdiEmfRenderer']
-      end
-
       if attributes.key?(:'UseHighQualityRendering')
         self.use_high_quality_rendering = attributes[:'UseHighQualityRendering']
       end
 
       if attributes.key?(:'VerticalResolution')
         self.vertical_resolution = attributes[:'VerticalResolution']
+      end
+
+      if attributes.key?(:'UseGdiEmfRenderer')
+        self.use_gdi_emf_renderer = attributes[:'UseGdiEmfRenderer']
       end
     end
 
@@ -556,9 +556,9 @@ module AsposeWordsCloud
           resolution == other.resolution &&
           scale == other.scale &&
           use_anti_aliasing == other.use_anti_aliasing &&
-          use_gdi_emf_renderer == other.use_gdi_emf_renderer &&
           use_high_quality_rendering == other.use_high_quality_rendering &&
           vertical_resolution == other.vertical_resolution &&
+          use_gdi_emf_renderer == other.use_gdi_emf_renderer &&
           save_format == other.save_format
     end
 
@@ -571,7 +571,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, horizontal_resolution, image_brightness, image_color_mode, image_contrast, paper_color, pixel_format, resolution, scale, use_anti_aliasing, use_gdi_emf_renderer, use_high_quality_rendering, vertical_resolution, save_format].hash
+      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, horizontal_resolution, image_brightness, image_color_mode, image_contrast, paper_color, pixel_format, resolution, scale, use_anti_aliasing, use_high_quality_rendering, vertical_resolution, use_gdi_emf_renderer, save_format].hash
     end
 
     # Builds the object from hash

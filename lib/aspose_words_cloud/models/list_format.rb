@@ -32,21 +32,21 @@ module AsposeWordsCloud
     # Gets or sets the link to the document.
     attr_accessor :link
 
-    # Gets or sets a value indicating whether the paragraph has bulleted or numbered formatting applied to it.
-    attr_accessor :is_list_item
+    # Gets or sets the list level number (0 to 8) for the paragraph.
+    attr_accessor :list_level_number
 
     # Gets or sets the list id of this paragraph.
     attr_accessor :list_id
 
-    # Gets or sets the list level number (0 to 8) for the paragraph.
-    attr_accessor :list_level_number
+    # Gets or sets a value indicating whether the paragraph has bulleted or numbered formatting applied to it.
+    attr_accessor :is_list_item
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'link' => :'Link',
-        :'is_list_item' => :'IsListItem',
+        :'list_level_number' => :'ListLevelNumber',
         :'list_id' => :'ListId',
-        :'list_level_number' => :'ListLevelNumber'
+        :'is_list_item' => :'IsListItem'
       }
     end
 
@@ -54,9 +54,9 @@ module AsposeWordsCloud
     def self.swagger_types
       {
         :'link' => :'WordsApiLink',
-        :'is_list_item' => :'BOOLEAN',
+        :'list_level_number' => :'Integer',
         :'list_id' => :'Integer',
-        :'list_level_number' => :'Integer'
+        :'is_list_item' => :'BOOLEAN'
       }
     end
 
@@ -72,16 +72,16 @@ module AsposeWordsCloud
         self.link = attributes[:'Link']
       end
 
-      if attributes.key?(:'IsListItem')
-        self.is_list_item = attributes[:'IsListItem']
+      if attributes.key?(:'ListLevelNumber')
+        self.list_level_number = attributes[:'ListLevelNumber']
       end
 
       if attributes.key?(:'ListId')
         self.list_id = attributes[:'ListId']
       end
 
-      if attributes.key?(:'ListLevelNumber')
-        self.list_level_number = attributes[:'ListLevelNumber']
+      if attributes.key?(:'IsListItem')
+        self.is_list_item = attributes[:'IsListItem']
       end
     end
 
@@ -104,9 +104,9 @@ module AsposeWordsCloud
       return true if self.equal?(other)
       self.class == other.class &&
           link == other.link &&
-          is_list_item == other.is_list_item &&
+          list_level_number == other.list_level_number &&
           list_id == other.list_id &&
-          list_level_number == other.list_level_number
+          is_list_item == other.is_list_item
     end
 
     # @see the `==` method
@@ -118,7 +118,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, is_list_item, list_id, list_level_number].hash
+      [link, list_level_number, list_id, is_list_item].hash
     end
 
     # Builds the object from hash

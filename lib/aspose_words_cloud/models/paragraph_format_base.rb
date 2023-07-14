@@ -81,9 +81,6 @@ module AsposeWordsCloud
     # Gets or sets the value (in points) that represents the right indent for paragraph.
     attr_accessor :right_indent
 
-    # Gets or sets the Shading object, that refers to the shading formatting for the paragraph.
-    attr_accessor :shading
-
     # Gets or sets the amount of spacing (in points) after the paragraph.
     attr_accessor :space_after
 
@@ -110,6 +107,9 @@ module AsposeWordsCloud
 
     # Gets or sets a value indicating whether the first and last lines in the paragraph are to remain on the same page as the rest of the paragraph.
     attr_accessor :widow_control
+
+    # Gets or sets the Shading object, that refers to the shading formatting for the paragraph.
+    attr_accessor :shading
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -153,7 +153,6 @@ module AsposeWordsCloud
         :'outline_level' => :'OutlineLevel',
         :'page_break_before' => :'PageBreakBefore',
         :'right_indent' => :'RightIndent',
-        :'shading' => :'Shading',
         :'space_after' => :'SpaceAfter',
         :'space_after_auto' => :'SpaceAfterAuto',
         :'space_before' => :'SpaceBefore',
@@ -162,7 +161,8 @@ module AsposeWordsCloud
         :'style_name' => :'StyleName',
         :'suppress_auto_hyphens' => :'SuppressAutoHyphens',
         :'suppress_line_numbers' => :'SuppressLineNumbers',
-        :'widow_control' => :'WidowControl'
+        :'widow_control' => :'WidowControl',
+        :'shading' => :'Shading'
       }
     end
 
@@ -186,7 +186,6 @@ module AsposeWordsCloud
         :'outline_level' => :'String',
         :'page_break_before' => :'BOOLEAN',
         :'right_indent' => :'Float',
-        :'shading' => :'Shading',
         :'space_after' => :'Float',
         :'space_after_auto' => :'BOOLEAN',
         :'space_before' => :'Float',
@@ -195,7 +194,8 @@ module AsposeWordsCloud
         :'style_name' => :'String',
         :'suppress_auto_hyphens' => :'BOOLEAN',
         :'suppress_line_numbers' => :'BOOLEAN',
-        :'widow_control' => :'BOOLEAN'
+        :'widow_control' => :'BOOLEAN',
+        :'shading' => :'Shading'
       }
     end
 
@@ -275,10 +275,6 @@ module AsposeWordsCloud
         self.right_indent = attributes[:'RightIndent']
       end
 
-      if attributes.key?(:'Shading')
-        self.shading = attributes[:'Shading']
-      end
-
       if attributes.key?(:'SpaceAfter')
         self.space_after = attributes[:'SpaceAfter']
       end
@@ -313,6 +309,10 @@ module AsposeWordsCloud
 
       if attributes.key?(:'WidowControl')
         self.widow_control = attributes[:'WidowControl']
+      end
+
+      if attributes.key?(:'Shading')
+        self.shading = attributes[:'Shading']
       end
     end
 
@@ -433,7 +433,6 @@ module AsposeWordsCloud
           outline_level == other.outline_level &&
           page_break_before == other.page_break_before &&
           right_indent == other.right_indent &&
-          shading == other.shading &&
           space_after == other.space_after &&
           space_after_auto == other.space_after_auto &&
           space_before == other.space_before &&
@@ -442,7 +441,8 @@ module AsposeWordsCloud
           style_name == other.style_name &&
           suppress_auto_hyphens == other.suppress_auto_hyphens &&
           suppress_line_numbers == other.suppress_line_numbers &&
-          widow_control == other.widow_control
+          widow_control == other.widow_control &&
+          shading == other.shading
     end
 
     # @see the `==` method
@@ -454,7 +454,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, add_space_between_far_east_and_alpha, add_space_between_far_east_and_digit, alignment, bidi, drop_cap_position, first_line_indent, keep_together, keep_with_next, left_indent, line_spacing, line_spacing_rule, lines_to_drop, no_space_between_paragraphs_of_same_style, outline_level, page_break_before, right_indent, shading, space_after, space_after_auto, space_before, space_before_auto, style_identifier, style_name, suppress_auto_hyphens, suppress_line_numbers, widow_control].hash
+      [link, add_space_between_far_east_and_alpha, add_space_between_far_east_and_digit, alignment, bidi, drop_cap_position, first_line_indent, keep_together, keep_with_next, left_indent, line_spacing, line_spacing_rule, lines_to_drop, no_space_between_paragraphs_of_same_style, outline_level, page_break_before, right_indent, space_after, space_after_auto, space_before, space_before_auto, style_identifier, style_name, suppress_auto_hyphens, suppress_line_numbers, widow_control, shading].hash
     end
 
     # Builds the object from hash
