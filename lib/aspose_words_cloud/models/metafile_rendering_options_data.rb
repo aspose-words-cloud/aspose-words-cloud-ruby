@@ -248,6 +248,10 @@ module AsposeWordsCloud
         end
       else
       # model
+        if value['$type']
+            type = value['$type'][0..-4]
+        end
+
         temp_model = AsposeWordsCloud.const_get(type).new
         temp_model.build_from_hash(value)
       end

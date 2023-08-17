@@ -372,6 +372,10 @@ module AsposeWordsCloud
         end
       else
         # models, e.g. Pet
+        if data['$type']
+          return_type = data['$type'][0..-4]
+        end
+
         AsposeWordsCloud.const_get(return_type).new.tap do |model|
           model.build_from_hash data
         end
