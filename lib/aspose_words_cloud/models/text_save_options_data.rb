@@ -64,9 +64,6 @@ module AsposeWordsCloud
     # Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
     attr_accessor :update_last_saved_time_property
 
-    # Gets or sets a value indicating whether content of StructuredDocumentTag is updated before saving.
-    attr_accessor :update_sdt_content
-
     # Gets or sets a value indicating whether to zip output or not.
     # The default value is false.
     attr_accessor :zip_output
@@ -138,7 +135,6 @@ module AsposeWordsCloud
         :'update_fields' => :'UpdateFields',
         :'update_last_printed_property' => :'UpdateLastPrintedProperty',
         :'update_last_saved_time_property' => :'UpdateLastSavedTimeProperty',
-        :'update_sdt_content' => :'UpdateSdtContent',
         :'zip_output' => :'ZipOutput',
         :'encoding' => :'Encoding',
         :'export_headers_footers_mode' => :'ExportHeadersFootersMode',
@@ -166,7 +162,6 @@ module AsposeWordsCloud
         :'update_fields' => :'BOOLEAN',
         :'update_last_printed_property' => :'BOOLEAN',
         :'update_last_saved_time_property' => :'BOOLEAN',
-        :'update_sdt_content' => :'BOOLEAN',
         :'zip_output' => :'BOOLEAN',
         :'encoding' => :'String',
         :'export_headers_footers_mode' => :'String',
@@ -232,10 +227,6 @@ module AsposeWordsCloud
 
       if attributes.key?(:'UpdateLastSavedTimeProperty')
         self.update_last_saved_time_property = attributes[:'UpdateLastSavedTimeProperty']
-      end
-
-      if attributes.key?(:'UpdateSdtContent')
-        self.update_sdt_content = attributes[:'UpdateSdtContent']
       end
 
       if attributes.key?(:'ZipOutput')
@@ -386,7 +377,6 @@ module AsposeWordsCloud
           update_fields == other.update_fields &&
           update_last_printed_property == other.update_last_printed_property &&
           update_last_saved_time_property == other.update_last_saved_time_property &&
-          update_sdt_content == other.update_sdt_content &&
           zip_output == other.zip_output &&
           encoding == other.encoding &&
           export_headers_footers_mode == other.export_headers_footers_mode &&
@@ -408,7 +398,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, encoding, export_headers_footers_mode, force_page_breaks, paragraph_break, add_bidi_marks, max_characters_per_line, preserve_table_layout, simplify_list_labels, save_format].hash
+      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, zip_output, encoding, export_headers_footers_mode, force_page_breaks, paragraph_break, add_bidi_marks, max_characters_per_line, preserve_table_layout, simplify_list_labels, save_format].hash
     end
 
     # Builds the object from hash

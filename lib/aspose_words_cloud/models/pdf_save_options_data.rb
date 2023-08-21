@@ -64,9 +64,6 @@ module AsposeWordsCloud
     # Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
     attr_accessor :update_last_saved_time_property
 
-    # Gets or sets a value indicating whether content of StructuredDocumentTag is updated before saving.
-    attr_accessor :update_sdt_content
-
     # Gets or sets a value indicating whether to zip output or not.
     # The default value is false.
     attr_accessor :zip_output
@@ -219,7 +216,6 @@ module AsposeWordsCloud
         :'update_fields' => :'UpdateFields',
         :'update_last_printed_property' => :'UpdateLastPrintedProperty',
         :'update_last_saved_time_property' => :'UpdateLastSavedTimeProperty',
-        :'update_sdt_content' => :'UpdateSdtContent',
         :'zip_output' => :'ZipOutput',
         :'color_mode' => :'ColorMode',
         :'jpeg_quality' => :'JpegQuality',
@@ -273,7 +269,6 @@ module AsposeWordsCloud
         :'update_fields' => :'BOOLEAN',
         :'update_last_printed_property' => :'BOOLEAN',
         :'update_last_saved_time_property' => :'BOOLEAN',
-        :'update_sdt_content' => :'BOOLEAN',
         :'zip_output' => :'BOOLEAN',
         :'color_mode' => :'String',
         :'jpeg_quality' => :'Integer',
@@ -365,10 +360,6 @@ module AsposeWordsCloud
 
       if attributes.key?(:'UpdateLastSavedTimeProperty')
         self.update_last_saved_time_property = attributes[:'UpdateLastSavedTimeProperty']
-      end
-
-      if attributes.key?(:'UpdateSdtContent')
-        self.update_sdt_content = attributes[:'UpdateSdtContent']
       end
 
       if attributes.key?(:'ZipOutput')
@@ -767,7 +758,6 @@ module AsposeWordsCloud
           update_fields == other.update_fields &&
           update_last_printed_property == other.update_last_printed_property &&
           update_last_saved_time_property == other.update_last_saved_time_property &&
-          update_sdt_content == other.update_sdt_content &&
           zip_output == other.zip_output &&
           color_mode == other.color_mode &&
           jpeg_quality == other.jpeg_quality &&
@@ -815,7 +805,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, update_sdt_content, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, cache_background_graphics, compliance, create_note_hyperlinks, custom_properties_export, digital_signature_details, display_doc_title, downsample_options, embed_attachments, embed_full_fonts, encryption_details, export_document_structure, export_language_to_span_tag, font_embedding_mode, header_footer_bookmarks_export_mode, image_color_space_export_mode, image_compression, interpolate_images, open_hyperlinks_in_new_window, outline_options, page_mode, preblend_images, preserve_form_fields, text_compression, use_book_fold_printing_settings, use_core_fonts, zoom_behavior, zoom_factor, save_format].hash
+      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, cache_background_graphics, compliance, create_note_hyperlinks, custom_properties_export, digital_signature_details, display_doc_title, downsample_options, embed_attachments, embed_full_fonts, encryption_details, export_document_structure, export_language_to_span_tag, font_embedding_mode, header_footer_bookmarks_export_mode, image_color_space_export_mode, image_compression, interpolate_images, open_hyperlinks_in_new_window, outline_options, page_mode, preblend_images, preserve_form_fields, text_compression, use_book_fold_printing_settings, use_core_fonts, zoom_behavior, zoom_factor, save_format].hash
     end
 
     # Builds the object from hash
