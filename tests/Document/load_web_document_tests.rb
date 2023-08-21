@@ -33,7 +33,7 @@ module AsposeWordsCloud
     # Test for loading web document.
     #
     def test_load_web_document
-      request_data_save_options = DocSaveOptionsData.new({:FileName => 'google.doc', :DmlEffectsRenderingMode => 'None', :DmlRenderingMode => 'DrawingML', :UpdateSdtContent => false, :ZipOutput => false})
+      request_data_save_options = DocSaveOptionsData.new({:FileName => 'google.doc', :DmlEffectsRenderingMode => 'None', :DmlRenderingMode => 'DrawingML', :ZipOutput => false})
       request_data = LoadWebDocumentData.new({:LoadingDocumentUrl => 'http://google.com', :SaveOptions => request_data_save_options})
       request = LoadWebDocumentRequest.new(data: request_data)
 

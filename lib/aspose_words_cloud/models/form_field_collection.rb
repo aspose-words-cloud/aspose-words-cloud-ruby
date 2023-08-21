@@ -162,14 +162,8 @@ module AsposeWordsCloud
         end
       else
       # model
-        print "MODEL DEBUG: "
-        print type
-        print " => "
-        print value['$type']
-        print "\n"
-      
-        if value['$type']
-            type = value['$type'][0..-4]
+        if value[:'$type']
+            type = value[:'$type'][0..-4]
         end
 
         temp_model = AsposeWordsCloud.const_get(type).new

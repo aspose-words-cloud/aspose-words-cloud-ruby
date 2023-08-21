@@ -192,8 +192,8 @@ module AsposeWordsCloud
         end
       else
       # model
-        if value['$type']
-            type = value['$type'][0..-4]
+        if value[:'$type']
+            type = value[:'$type'][0..-4]
         end
 
         temp_model = AsposeWordsCloud.const_get(type).new
