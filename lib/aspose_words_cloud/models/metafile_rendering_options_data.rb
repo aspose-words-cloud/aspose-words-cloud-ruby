@@ -35,12 +35,12 @@ module AsposeWordsCloud
     # Gets or sets a value indicating whether the raster operations should be emulated.
     attr_accessor :emulate_raster_operations
 
+    # Gets or sets a value determining whether metafile rendering emulates the display of the metafile according to the size on page
+    # or the display of the metafile in its default size.
+    attr_accessor :emulate_rendering_to_size_on_page
+
     # Gets or sets the option that controls how metafile images should be rendered.
     attr_accessor :rendering_mode
-
-    # Gets or sets a value indicating whether to scale fonts in WMF metafile according to metafile size on the page.
-    # The default value is true.
-    attr_accessor :scale_wmf_fonts_to_metafile_size
 
     # Gets or sets the flag, that controls how WMF metafiles with embedded EMF metafiles should be rendered.
     attr_accessor :use_emf_embedded_to_wmf
@@ -72,8 +72,8 @@ module AsposeWordsCloud
       {
         :'emf_plus_dual_rendering_mode' => :'EmfPlusDualRenderingMode',
         :'emulate_raster_operations' => :'EmulateRasterOperations',
+        :'emulate_rendering_to_size_on_page' => :'EmulateRenderingToSizeOnPage',
         :'rendering_mode' => :'RenderingMode',
-        :'scale_wmf_fonts_to_metafile_size' => :'ScaleWmfFontsToMetafileSize',
         :'use_emf_embedded_to_wmf' => :'UseEmfEmbeddedToWmf'
       }
     end
@@ -83,8 +83,8 @@ module AsposeWordsCloud
       {
         :'emf_plus_dual_rendering_mode' => :'String',
         :'emulate_raster_operations' => :'BOOLEAN',
+        :'emulate_rendering_to_size_on_page' => :'BOOLEAN',
         :'rendering_mode' => :'String',
-        :'scale_wmf_fonts_to_metafile_size' => :'BOOLEAN',
         :'use_emf_embedded_to_wmf' => :'BOOLEAN'
       }
     end
@@ -105,12 +105,12 @@ module AsposeWordsCloud
         self.emulate_raster_operations = attributes[:'EmulateRasterOperations']
       end
 
-      if attributes.key?(:'RenderingMode')
-        self.rendering_mode = attributes[:'RenderingMode']
+      if attributes.key?(:'EmulateRenderingToSizeOnPage')
+        self.emulate_rendering_to_size_on_page = attributes[:'EmulateRenderingToSizeOnPage']
       end
 
-      if attributes.key?(:'ScaleWmfFontsToMetafileSize')
-        self.scale_wmf_fonts_to_metafile_size = attributes[:'ScaleWmfFontsToMetafileSize']
+      if attributes.key?(:'RenderingMode')
+        self.rendering_mode = attributes[:'RenderingMode']
       end
 
       if attributes.key?(:'UseEmfEmbeddedToWmf')
@@ -172,8 +172,8 @@ module AsposeWordsCloud
       self.class == other.class &&
           emf_plus_dual_rendering_mode == other.emf_plus_dual_rendering_mode &&
           emulate_raster_operations == other.emulate_raster_operations &&
+          emulate_rendering_to_size_on_page == other.emulate_rendering_to_size_on_page &&
           rendering_mode == other.rendering_mode &&
-          scale_wmf_fonts_to_metafile_size == other.scale_wmf_fonts_to_metafile_size &&
           use_emf_embedded_to_wmf == other.use_emf_embedded_to_wmf
     end
 
@@ -186,7 +186,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [emf_plus_dual_rendering_mode, emulate_raster_operations, rendering_mode, scale_wmf_fonts_to_metafile_size, use_emf_embedded_to_wmf].hash
+      [emf_plus_dual_rendering_mode, emulate_raster_operations, emulate_rendering_to_size_on_page, rendering_mode, use_emf_embedded_to_wmf].hash
     end
 
     # Builds the object from hash
