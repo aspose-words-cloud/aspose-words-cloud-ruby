@@ -131,6 +131,12 @@ module AsposeWordsCloud
     # The default value is 96.
     attr_accessor :vertical_resolution
 
+    # Gets or sets the height of a generated image in pixels.
+    attr_accessor :image_height
+
+    # Gets or sets the width of a generated image in pixels.
+    attr_accessor :image_width
+
     # Gets or sets a value indicating whether to use GDI+ or Aspose.Words metafile renderer when saving to EMF.
     attr_accessor :use_gdi_emf_renderer
 
@@ -202,6 +208,8 @@ module AsposeWordsCloud
         :'use_anti_aliasing' => :'UseAntiAliasing',
         :'use_high_quality_rendering' => :'UseHighQualityRendering',
         :'vertical_resolution' => :'VerticalResolution',
+        :'image_height' => :'ImageHeight',
+        :'image_width' => :'ImageWidth',
         :'use_gdi_emf_renderer' => :'UseGdiEmfRenderer',
         :'threshold_for_floyd_steinberg_dithering' => :'ThresholdForFloydSteinbergDithering',
         :'tiff_binarization_method' => :'TiffBinarizationMethod',
@@ -243,6 +251,8 @@ module AsposeWordsCloud
         :'use_anti_aliasing' => :'BOOLEAN',
         :'use_high_quality_rendering' => :'BOOLEAN',
         :'vertical_resolution' => :'Float',
+        :'image_height' => :'Integer',
+        :'image_width' => :'Integer',
         :'use_gdi_emf_renderer' => :'BOOLEAN',
         :'threshold_for_floyd_steinberg_dithering' => :'Integer',
         :'tiff_binarization_method' => :'String',
@@ -379,6 +389,14 @@ module AsposeWordsCloud
 
       if attributes.key?(:'VerticalResolution')
         self.vertical_resolution = attributes[:'VerticalResolution']
+      end
+
+      if attributes.key?(:'ImageHeight')
+        self.image_height = attributes[:'ImageHeight']
+      end
+
+      if attributes.key?(:'ImageWidth')
+        self.image_width = attributes[:'ImageWidth']
       end
 
       if attributes.key?(:'UseGdiEmfRenderer')
@@ -608,6 +626,8 @@ module AsposeWordsCloud
           use_anti_aliasing == other.use_anti_aliasing &&
           use_high_quality_rendering == other.use_high_quality_rendering &&
           vertical_resolution == other.vertical_resolution &&
+          image_height == other.image_height &&
+          image_width == other.image_width &&
           use_gdi_emf_renderer == other.use_gdi_emf_renderer &&
           threshold_for_floyd_steinberg_dithering == other.threshold_for_floyd_steinberg_dithering &&
           tiff_binarization_method == other.tiff_binarization_method &&
@@ -624,7 +644,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, horizontal_resolution, image_brightness, image_color_mode, image_contrast, paper_color, pixel_format, resolution, scale, use_anti_aliasing, use_high_quality_rendering, vertical_resolution, use_gdi_emf_renderer, threshold_for_floyd_steinberg_dithering, tiff_binarization_method, tiff_compression, save_format].hash
+      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, horizontal_resolution, image_brightness, image_color_mode, image_contrast, paper_color, pixel_format, resolution, scale, use_anti_aliasing, use_high_quality_rendering, vertical_resolution, image_height, image_width, use_gdi_emf_renderer, threshold_for_floyd_steinberg_dithering, tiff_binarization_method, tiff_compression, save_format].hash
     end
 
     # Builds the object from hash

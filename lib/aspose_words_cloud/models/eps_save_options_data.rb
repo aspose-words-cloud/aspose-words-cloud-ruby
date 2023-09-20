@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="gif_save_options_data.rb">
+# <copyright company="Aspose" file="eps_save_options_data.rb">
 #   Copyright (c) 2023 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -27,8 +27,8 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Container class for gif save options.
-  class GifSaveOptionsData
+  # Container class for eps save options.
+  class EpsSaveOptionsData
     # Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false..
     attr_accessor :allow_embedding_post_script_fonts
 
@@ -253,7 +253,7 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      self.save_format = 'gif'
+      self.save_format = 'eps'
 
       if attributes.key?(:'AllowEmbeddingPostScriptFonts')
         self.allow_embedding_post_script_fonts = attributes[:'AllowEmbeddingPostScriptFonts']
