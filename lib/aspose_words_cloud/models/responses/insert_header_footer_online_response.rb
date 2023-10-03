@@ -29,7 +29,8 @@ module AsposeWordsCloud
   # Response model for insert_header_footer_online operation.
   #
   class InsertHeaderFooterOnlineResponse
-    # The response model.
+    # The REST response with a HeaderFooter.
+    # This response is returned by the Service when handling "GET https://api.aspose.cloud/v4.0/words/Test.doc/headersfooters/{0}" REST API requests.
     attr_accessor :model
 
     # The document after modification.

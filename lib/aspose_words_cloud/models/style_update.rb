@@ -29,34 +29,37 @@ module AsposeWordsCloud
 
   # Represents a single document style properties to update.
   class StyleUpdate
+    # Gets or sets the name of the style to be applied automatically to a new paragraph inserted after a paragraph formatted with the specified style.
+    # This property is not used by Aspose.Words. The next paragraph style will only be applied automatically when you edit the document in MS Word.
+    attr_accessor :next_paragraph_style_name
+
     # Gets or sets the name of the style this style is based on.
+    # This will be an empty string if the style is not based on any other style and it can be set to an empty string.
     attr_accessor :base_style_name
 
     # Gets or sets a value indicating whether this style is shown in the Quick Style gallery inside MS Word UI.
     attr_accessor :is_quick_style
 
     # Gets or sets the name of the style.
+    # Can not be empty string. If there already is a style with such name in the collection, than this style will override it. All affected nodes will reference new style.
     attr_accessor :name
-
-    # Gets or sets the name of the style to be applied automatically to a new paragraph inserted after a paragraph formatted with the specified style.
-    attr_accessor :next_paragraph_style_name
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'next_paragraph_style_name' => :'NextParagraphStyleName',
         :'base_style_name' => :'BaseStyleName',
         :'is_quick_style' => :'IsQuickStyle',
-        :'name' => :'Name',
-        :'next_paragraph_style_name' => :'NextParagraphStyleName'
+        :'name' => :'Name'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'next_paragraph_style_name' => :'String',
         :'base_style_name' => :'String',
         :'is_quick_style' => :'BOOLEAN',
-        :'name' => :'String',
-        :'next_paragraph_style_name' => :'String'
+        :'name' => :'String'
       }
     end
 
@@ -68,6 +71,10 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.key?(:'NextParagraphStyleName')
+        self.next_paragraph_style_name = attributes[:'NextParagraphStyleName']
+      end
+
       if attributes.key?(:'BaseStyleName')
         self.base_style_name = attributes[:'BaseStyleName']
       end
@@ -78,10 +85,6 @@ module AsposeWordsCloud
 
       if attributes.key?(:'Name')
         self.name = attributes[:'Name']
-      end
-
-      if attributes.key?(:'NextParagraphStyleName')
-        self.next_paragraph_style_name = attributes[:'NextParagraphStyleName']
       end
     end
 
@@ -103,10 +106,10 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
+          next_paragraph_style_name == other.next_paragraph_style_name &&
           base_style_name == other.base_style_name &&
           is_quick_style == other.is_quick_style &&
-          name == other.name &&
-          next_paragraph_style_name == other.next_paragraph_style_name
+          name == other.name
     end
 
     # @see the `==` method
@@ -118,7 +121,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [base_style_name, is_quick_style, name, next_paragraph_style_name].hash
+      [next_paragraph_style_name, base_style_name, is_quick_style, name].hash
     end
 
     # Builds the object from hash

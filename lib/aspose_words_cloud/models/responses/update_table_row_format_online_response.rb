@@ -29,7 +29,8 @@ module AsposeWordsCloud
   # Response model for update_table_row_format_online operation.
   #
   class UpdateTableRowFormatOnlineResponse
-    # The response model.
+    # The REST response with the formatting properties of a table row.
+    # This response is returned by the Service when handling "GET https://api.aspose.cloud/v4.0/words/Test.doc/tables/{0}/rows/{1}/rowformat" REST API requests.
     attr_accessor :model
 
     # The document after modification.

@@ -29,17 +29,19 @@ module AsposeWordsCloud
 
   # Footnote for insert.
   class FootnoteInsert
-    # Gets or sets the option, that specifies whether this is a footnote or endnote.
-    attr_accessor :footnote_type
-
     # Gets or sets the link to comment range start node.
     attr_accessor :position
 
+    # Gets or sets the option, that specifies whether this is a footnote or endnote.
+    attr_accessor :footnote_type
+
     # Gets or sets the custom reference mark to be used for this footnote.
     # Default value is Empty, meaning auto-numbered footnotes are used.
+    # RTF-format can only store 1 symbol as custom reference mark, so upon export only the first symbol will be written others will be discard.
     attr_accessor :reference_mark
 
     # Gets or sets text of the footnote.
+    # This method allows to quickly set text of a footnote from a string. The string can contain paragraph breaks, this will create paragraphs of text in the footnote accordingly.
     attr_accessor :text
 
     class EnumAttributeValidator
@@ -67,8 +69,8 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'footnote_type' => :'FootnoteType',
         :'position' => :'Position',
+        :'footnote_type' => :'FootnoteType',
         :'reference_mark' => :'ReferenceMark',
         :'text' => :'Text'
       }
@@ -77,8 +79,8 @@ module AsposeWordsCloud
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'footnote_type' => :'String',
         :'position' => :'NewDocumentPosition',
+        :'footnote_type' => :'String',
         :'reference_mark' => :'String',
         :'text' => :'String'
       }
@@ -92,12 +94,12 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'FootnoteType')
-        self.footnote_type = attributes[:'FootnoteType']
-      end
-
       if attributes.key?(:'Position')
         self.position = attributes[:'Position']
+      end
+
+      if attributes.key?(:'FootnoteType')
+        self.footnote_type = attributes[:'FootnoteType']
       end
 
       if attributes.key?(:'ReferenceMark')
@@ -145,8 +147,8 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          footnote_type == other.footnote_type &&
           position == other.position &&
+          footnote_type == other.footnote_type &&
           reference_mark == other.reference_mark &&
           text == other.text
     end
@@ -160,7 +162,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [footnote_type, position, reference_mark, text].hash
+      [position, footnote_type, reference_mark, text].hash
     end
 
     # Builds the object from hash

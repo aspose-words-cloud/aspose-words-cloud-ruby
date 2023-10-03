@@ -42,6 +42,7 @@ module AsposeWordsCloud
     attr_accessor :alignment
 
     # Gets or sets a value indicating whether this is a right-to-left paragraph.
+    # When true, the runs and other inline objects in this paragraph are laid out right to left.
     attr_accessor :bidi
 
     # Gets or sets the position for a drop cap text.
@@ -61,6 +62,7 @@ module AsposeWordsCloud
     attr_accessor :left_indent
 
     # Gets or sets the line spacing (in points) for the paragraph.
+    # When LineSpacingRule property is set to AtLeast, the line spacing can be greater than or equal to, but never less than the specified LineSpacing value.When LineSpacingRule property is set to Exactly, the line spacing never changes from the specified LineSpacing value, even if a larger font is used within the paragraph.
     attr_accessor :line_spacing
 
     # Gets or sets the line spacing for the paragraph.
@@ -70,6 +72,7 @@ module AsposeWordsCloud
     attr_accessor :lines_to_drop
 
     # Gets or sets a value indicating whether SpaceBefore and SpaceAfter will be ignored between the paragraphs of the same style.
+    # This setting only takes affect when applied to a paragraph style. If applied to a paragraph directly, it has no effect.
     attr_accessor :no_space_between_paragraphs_of_same_style
 
     # Gets or sets the outline level of the paragraph in the document.
@@ -82,15 +85,19 @@ module AsposeWordsCloud
     attr_accessor :right_indent
 
     # Gets or sets the amount of spacing (in points) after the paragraph.
+    # Has no effect when SpaceAfterAuto is true.
     attr_accessor :space_after
 
     # Gets or sets a value indicating whether the amount of spacing after the paragraph is set automatically.
+    # When set to true, overrides the effect of SpaceAfter.
     attr_accessor :space_after_auto
 
     # Gets or sets the amount of spacing (in points) before the paragraph.
+    # Has no effect when SpaceBeforeAuto is true.
     attr_accessor :space_before
 
     # Gets or sets a value indicating whether the amount of spacing before the paragraph is set automatically.
+    # When set to true, overrides the effect of SpaceBefore.
     attr_accessor :space_before_auto
 
     # Gets or sets the locale independent style identifier of the paragraph style applied to this formatting.

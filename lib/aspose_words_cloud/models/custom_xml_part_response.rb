@@ -28,6 +28,7 @@ require 'date'
 module AsposeWordsCloud
 
   # The REST response with a custom xml part.
+  # This response is returned by the Service when handling "GET https://api.aspose.cloud/v4.0/words/Test.doc/customXmlParts/0" REST API requests.
   class CustomXmlPartResponse
     # Gets or sets the request Id.
     attr_accessor :request_id

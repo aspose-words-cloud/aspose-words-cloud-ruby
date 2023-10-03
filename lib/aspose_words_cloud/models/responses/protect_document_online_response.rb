@@ -29,7 +29,7 @@ module AsposeWordsCloud
   # Response model for protect_document_online operation.
   #
   class ProtectDocumentOnlineResponse
-    # The response model.
+    # The REST response with data on document's protection.
     attr_accessor :model
 
     # The document after modification.

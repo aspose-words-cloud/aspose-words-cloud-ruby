@@ -28,6 +28,7 @@ require 'date'
 module AsposeWordsCloud
 
   # The REST response with a collection of hyperlinks.
+  # This response should be returned by the service when handling "GET /{name}/hyperlinks" REST API calls.
   class HyperlinksResponse
     # Gets or sets the request Id.
     attr_accessor :request_id

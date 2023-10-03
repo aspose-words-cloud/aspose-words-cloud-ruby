@@ -29,7 +29,7 @@ module AsposeWordsCloud
   # Response model for delete_watermark_online operation.
   #
   class DeleteWatermarkOnlineResponse
-    # The response model.
+    # The REST response with a document description.
     attr_accessor :model
 
     # The document after modification.

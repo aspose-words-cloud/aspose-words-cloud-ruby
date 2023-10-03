@@ -72,7 +72,7 @@ module AsposeWordsCloud
     # @param rotation_angle The rotation angle of the watermark.
     # @param image The filename of the image. If the parameter value is missing — the image data is expected in the request content.
 
-    def initialize(document:, image_file:, load_encoding: nil, password: nil, encrypted_password: nil, dest_file_name: nil, revision_author: nil, revision_date_time: nil, rotation_angle: nil, image: nil)
+    def initialize(document:, image_file: nil, load_encoding: nil, password: nil, encrypted_password: nil, dest_file_name: nil, revision_author: nil, revision_date_time: nil, rotation_angle: nil, image: nil)
       self.document = document
       self.image_file = image_file
       self.load_encoding = load_encoding
@@ -89,8 +89,6 @@ module AsposeWordsCloud
     def to_batch_part(api_client, requestId, parentRequestId = nil)
       # verify the required parameter 'document' is set
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.insert_watermark_image_online' if api_client.config.client_side_validation && self.document.nil?
-      # verify the required parameter 'image_file' is set
-      raise ArgumentError, 'Missing the required parameter image_file when calling WordsApi.insert_watermark_image_online' if api_client.config.client_side_validation && self.image_file.nil?
 
       # resource path
       local_var_path = '/words/online/post/watermarks/images'[7..-1]
@@ -131,9 +129,6 @@ module AsposeWordsCloud
         form_params.push({:'Name' => 'document', :'Data' => self.document, :'MimeType' =>'application/octet-stream'})
       end
 
-      if self.image_file.nil?
-        raise "Parameter ImageFile is required."
-      end
       unless self.image_file.nil?
         form_params.push({:'Name' => 'imageFile', :'Data' => self.image_file, :'MimeType' =>'application/octet-stream'})
       end
@@ -164,8 +159,6 @@ module AsposeWordsCloud
     def create_http_request(api_client)
       # verify the required parameter 'document' is set
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.insert_watermark_image_online' if api_client.config.client_side_validation && self.document.nil?
-      # verify the required parameter 'image_file' is set
-      raise ArgumentError, 'Missing the required parameter image_file when calling WordsApi.insert_watermark_image_online' if api_client.config.client_side_validation && self.image_file.nil?
 
       # resource path
       local_var_path = '/words/online/post/watermarks/images'[1..-1]
@@ -197,9 +190,6 @@ module AsposeWordsCloud
         form_params.push({:'Name' => 'document', :'Data' => self.document, :'MimeType' =>'application/octet-stream'})
       end
 
-      if self.image_file.nil?
-        raise "Parameter ImageFile is required."
-      end
       unless self.image_file.nil?
         form_params.push({:'Name' => 'imageFile', :'Data' => self.image_file, :'MimeType' =>'application/octet-stream'})
       end

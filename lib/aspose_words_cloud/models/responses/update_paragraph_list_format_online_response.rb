@@ -29,7 +29,8 @@ module AsposeWordsCloud
   # Response model for update_paragraph_list_format_online operation.
   #
   class UpdateParagraphListFormatOnlineResponse
-    # The response model.
+    # The REST response with a list format for a paragraph.
+    # This response is returned by the Service when handling "GET https://api.aspose.cloud/v4.0/words/Test.doc/paragraphs/{0}/listFormat" REST API requests.
     attr_accessor :model
 
     # The document after modification.

@@ -30,25 +30,34 @@ module AsposeWordsCloud
   # Container class for wml save options.
   class WordMLSaveOptionsData
     # Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false..
+    # Note, Word does not embed PostScript fonts, but can open documents with embedded fonts of this type.
+    # This option only works when Aspose.Words.Fonts.FontInfoCollection.EmbedTrueTypeFonts of the Aspose.Words.DocumentBase.FontInfos property is set to true.
+    # The default value is false.
     attr_accessor :allow_embedding_post_script_fonts
 
     # Gets or sets CustomTimeZoneInfo.
     attr_accessor :custom_time_zone_info_data
 
     # Gets or sets the value determining how 3D effects are rendered.
+    # The default value is Aspose.Words.Saving.Dml3DEffectsRenderingMode.Basic.
     attr_accessor :dml3_d_effects_rendering_mode
 
     # Gets or sets the value determining how DrawingML effects are rendered.
     # { Simplified | None | Fine }.
+    # The default value is Simplified.
+    # This property is used when the document is exported to fixed page formats.
     attr_accessor :dml_effects_rendering_mode
 
     # Gets or sets the option that controls how DrawingML shapes are rendered.
+    # { Fallback | DrawingML }. The default value is Fallback.
+    # This property is used when the document is exported to fixed page formats.
     attr_accessor :dml_rendering_mode
 
     # Gets or sets the name of destination file.
     attr_accessor :file_name
 
     # Gets or sets the value determining how ink (InkML) objects are rendered.
+    # The default value is Aspose.Words.Saving.ImlRenderingMode.InkML.
     attr_accessor :iml_rendering_mode
 
     # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving.
@@ -62,10 +71,12 @@ module AsposeWordsCloud
     attr_accessor :update_last_printed_property
 
     # Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
+    # The default value is false.
     attr_accessor :update_last_saved_time_property
 
     # Gets or sets a value indicating whether to zip output or not.
     # The default value is false.
+    # When set to true, output files will be zipped.
     attr_accessor :zip_output
 
     # Gets or sets a value indicating whether to use pretty formats output.

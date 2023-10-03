@@ -29,7 +29,8 @@ module AsposeWordsCloud
   # Response model for create_or_update_document_property_online operation.
   #
   class CreateOrUpdateDocumentPropertyOnlineResponse
-    # The response model.
+    # The REST response with a document property.
+    # This response should be returned by the service when handling: GET documentProperties/{propertyName}.
     attr_accessor :model
 
     # The document after modification.

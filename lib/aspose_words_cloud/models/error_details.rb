@@ -29,10 +29,10 @@ module AsposeWordsCloud
 
   # The error details.
   class ErrorDetails
-    # Error datetime.
+    # Gets or sets ErrorDateTime.
     attr_accessor :error_date_time
 
-    # The request id.
+    # Gets or sets RequestId.
     attr_accessor :request_id
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
