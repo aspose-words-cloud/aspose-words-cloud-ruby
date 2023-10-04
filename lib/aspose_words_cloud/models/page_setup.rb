@@ -28,11 +28,13 @@ require 'date'
 module AsposeWordsCloud
 
   # Represents the page setup properties of a section.
+  # PageSetup object contains all the page setup attributes of a section (left margin, bottom margin, paper size, and so on) as properties.
   class PageSetup
     # Gets or sets the link to the document.
     attr_accessor :link
 
     # Gets or sets a value indicating whether this section contains bidirectional (complex scripts) text.
+    # When true, the columns in this section are laid out from right to left.
     attr_accessor :bidi
 
     # Gets or sets a value indicating whether the page border is positioned relative to intersecting texts and objects.
@@ -70,6 +72,7 @@ module AsposeWordsCloud
     attr_accessor :line_number_count_by
 
     # Gets or sets the distance between the right edge of line numbers and the left edge of the document.
+    # Set this property to zero for automatic distance between the line numbers and text of the document.
     attr_accessor :line_number_distance_from_text
 
     # Gets or sets the way line numbering runs  that is, whether it starts over at the beginning of a new page or section or runs continuously.
@@ -79,6 +82,7 @@ module AsposeWordsCloud
     attr_accessor :line_starting_number
 
     # Gets or sets the orientation of the page.
+    # Changing Orientation swaps PageWidth and PageHeight.
     attr_accessor :orientation
 
     # Gets or sets the paper tray (bin) to be used for all but the first page of a section.
@@ -92,15 +96,18 @@ module AsposeWordsCloud
     attr_accessor :page_number_style
 
     # Gets or sets the starting page number of the section.
+    # The RestartPageNumbering property, if set to false, will override the PageStartingNumber property so that page numbering can continue from the previous section.
     attr_accessor :page_starting_number
 
     # Gets or sets the width of the page in points.
     attr_accessor :page_width
 
     # Gets or sets the paper size.
+    # Setting this property updates PageWidth and PageHeight values. Setting this value to Custom does not change existing values.
     attr_accessor :paper_size
 
     # Gets or sets a value indicating whether page numbering restarts at the beginning of the section.
+    # If set to false, the RestartPageNumbering property will override the PageStartingNumber property so that page numbering can continue from the previous section.
     attr_accessor :restart_page_numbering
 
     # Gets or sets the distance (in points) between the right edge of the page and the right boundary of the body text.

@@ -28,6 +28,7 @@ require 'date'
 module AsposeWordsCloud
 
   # The REST response with data on multi-class text classification.
+  # This response is returned by the Service when handling "PUT https://api.aspose.cloud/v4.0/words/classify" REST API requests.
   class ClassificationResponse
     # Gets or sets the request Id.
     attr_accessor :request_id

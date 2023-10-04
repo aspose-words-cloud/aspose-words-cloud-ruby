@@ -29,9 +29,6 @@ module AsposeWordsCloud
 
   # DTO for field options.
   class FieldOptions
-    # Gets or sets BuiltIn Templates Paths.
-    attr_accessor :built_in_templates_paths
-
     # Gets or sets Curren tUser.
     attr_accessor :current_user
 
@@ -70,6 +67,9 @@ module AsposeWordsCloud
     # Gets or sets if Use Invariant Culture Number Format.
     attr_accessor :use_invariant_culture_number_format
 
+    # Gets or sets BuiltIn Templates Paths.
+    attr_accessor :built_in_templates_paths
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -95,7 +95,6 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'built_in_templates_paths' => :'BuiltInTemplatesPaths',
         :'current_user' => :'CurrentUser',
         :'custom_toc_style_separator' => :'CustomTocStyleSeparator',
         :'default_document_author' => :'DefaultDocumentAuthor',
@@ -107,14 +106,14 @@ module AsposeWordsCloud
         :'legacy_number_format' => :'LegacyNumberFormat',
         :'pre_process_culture_name' => :'PreProcessCultureName',
         :'template_name' => :'TemplateName',
-        :'use_invariant_culture_number_format' => :'UseInvariantCultureNumberFormat'
+        :'use_invariant_culture_number_format' => :'UseInvariantCultureNumberFormat',
+        :'built_in_templates_paths' => :'BuiltInTemplatesPaths'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'built_in_templates_paths' => :'Array<String>',
         :'current_user' => :'UserInformation',
         :'custom_toc_style_separator' => :'String',
         :'default_document_author' => :'String',
@@ -126,7 +125,8 @@ module AsposeWordsCloud
         :'legacy_number_format' => :'BOOLEAN',
         :'pre_process_culture_name' => :'String',
         :'template_name' => :'String',
-        :'use_invariant_culture_number_format' => :'BOOLEAN'
+        :'use_invariant_culture_number_format' => :'BOOLEAN',
+        :'built_in_templates_paths' => :'Array<String>'
       }
     end
 
@@ -137,12 +137,6 @@ module AsposeWordsCloud
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.key?(:'BuiltInTemplatesPaths')
-        if (value = attributes[:'BuiltInTemplatesPaths']).is_a?(Array)
-          self.built_in_templates_paths = value
-        end
-      end
 
       if attributes.key?(:'CurrentUser')
         self.current_user = attributes[:'CurrentUser']
@@ -190,6 +184,12 @@ module AsposeWordsCloud
 
       if attributes.key?(:'UseInvariantCultureNumberFormat')
         self.use_invariant_culture_number_format = attributes[:'UseInvariantCultureNumberFormat']
+      end
+
+      if attributes.key?(:'BuiltInTemplatesPaths')
+        if (value = attributes[:'BuiltInTemplatesPaths']).is_a?(Array)
+          self.built_in_templates_paths = value
+        end
       end
     end
 
@@ -245,7 +245,6 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          built_in_templates_paths == other.built_in_templates_paths &&
           current_user == other.current_user &&
           custom_toc_style_separator == other.custom_toc_style_separator &&
           default_document_author == other.default_document_author &&
@@ -257,7 +256,8 @@ module AsposeWordsCloud
           legacy_number_format == other.legacy_number_format &&
           pre_process_culture_name == other.pre_process_culture_name &&
           template_name == other.template_name &&
-          use_invariant_culture_number_format == other.use_invariant_culture_number_format
+          use_invariant_culture_number_format == other.use_invariant_culture_number_format &&
+          built_in_templates_paths == other.built_in_templates_paths
     end
 
     # @see the `==` method
@@ -269,7 +269,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [built_in_templates_paths, current_user, custom_toc_style_separator, default_document_author, field_index_format, field_update_culture_name, field_update_culture_source, file_name, is_bidi_text_supported_on_update, legacy_number_format, pre_process_culture_name, template_name, use_invariant_culture_number_format].hash
+      [current_user, custom_toc_style_separator, default_document_author, field_index_format, field_update_culture_name, field_update_culture_source, file_name, is_bidi_text_supported_on_update, legacy_number_format, pre_process_culture_name, template_name, use_invariant_culture_number_format, built_in_templates_paths].hash
     end
 
     # Builds the object from hash

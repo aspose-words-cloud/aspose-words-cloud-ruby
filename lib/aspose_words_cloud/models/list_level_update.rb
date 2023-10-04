@@ -29,35 +29,45 @@ module AsposeWordsCloud
 
   # Represents a document list levels.
   class ListLevelUpdate
+    # Gets or sets the starting number for this list level.
+    # Default value is 1.
+    attr_accessor :start_at
+
+    # Gets or sets the number style for this list level.
+    attr_accessor :number_style
+
+    # Gets or sets the number format for the list level.
+    # Among normal text characters, the string can contain placeholder characters \\x0000 to \\x0008 representing the numbers from the corresponding list levels. For example, the string "\\x0000.\\x0001)" will generate a list label that looks something like "1.5)". The number "1" is the current number from the 1st list level, the number "5" is the current number from the 2nd list level. Null is not allowed, but an empty string meaning no number is valid.
+    attr_accessor :number_format
+
     # Gets or sets the justification of the actual number of the list item.
+    # The list label is justified relative to the Aspose.Words.Lists.ListLevel.NumberPosition
+    # property.
     attr_accessor :alignment
 
     # Gets or sets a value indicating whether the level turns all inherited numbers to Arabic, false if it preserves their number style.
     attr_accessor :is_legal
 
-    # Gets or sets the number format for the list level.
-    attr_accessor :number_format
-
-    # Gets or sets the position (in points) of the number or bullet for the list level.
-    attr_accessor :number_position
-
-    # Gets or sets the number style for this list level.
-    attr_accessor :number_style
-
     # Gets or sets the list level that must appear before the specified list level restarts numbering.
+    # The value of -1 means the numbering will continue.
     attr_accessor :restart_after_level
-
-    # Gets or sets the starting number for this list level.
-    attr_accessor :start_at
-
-    # Gets or sets the tab position (in points) for the list level.
-    attr_accessor :tab_position
-
-    # Gets or sets the position (in points) for the second line of wrapping text for the list level.
-    attr_accessor :text_position
 
     # Gets or sets the character to be inserted after the number for the list level.
     attr_accessor :trailing_character
+
+    # Gets or sets the tab position (in points) for the list level.
+    # Has effect only when Aspose.Words.Lists.ListLevel.TrailingCharacter is a tab.
+    # Aspose.Words.Lists.ListLevel.NumberPosition Aspose.Words.Lists.ListLevel.TextPosition.
+    attr_accessor :tab_position
+
+    # Gets or sets the position (in points) of the number or bullet for the list level.
+    # Aspose.Words.Lists.ListLevel.NumberPosition corresponds to LeftIndent plus FirstLineIndent of the paragraph. Aspose.Words.Lists.ListLevel.TextPosition Aspose.Words.Lists.ListLevel.TabPosition.
+    attr_accessor :number_position
+
+    # Gets or sets the position (in points) for the second line of wrapping text for the list level.
+    # Aspose.Words.Lists.ListLevel.TextPosition corresponds to LeftIndent of the paragraph.
+    # Aspose.Words.Lists.ListLevel.NumberPosition Aspose.Words.Lists.ListLevel.TabPosition.
+    attr_accessor :text_position
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -84,32 +94,32 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'start_at' => :'StartAt',
+        :'number_style' => :'NumberStyle',
+        :'number_format' => :'NumberFormat',
         :'alignment' => :'Alignment',
         :'is_legal' => :'IsLegal',
-        :'number_format' => :'NumberFormat',
-        :'number_position' => :'NumberPosition',
-        :'number_style' => :'NumberStyle',
         :'restart_after_level' => :'RestartAfterLevel',
-        :'start_at' => :'StartAt',
+        :'trailing_character' => :'TrailingCharacter',
         :'tab_position' => :'TabPosition',
-        :'text_position' => :'TextPosition',
-        :'trailing_character' => :'TrailingCharacter'
+        :'number_position' => :'NumberPosition',
+        :'text_position' => :'TextPosition'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'start_at' => :'Integer',
+        :'number_style' => :'String',
+        :'number_format' => :'String',
         :'alignment' => :'String',
         :'is_legal' => :'BOOLEAN',
-        :'number_format' => :'String',
-        :'number_position' => :'Float',
-        :'number_style' => :'String',
         :'restart_after_level' => :'Integer',
-        :'start_at' => :'Integer',
+        :'trailing_character' => :'String',
         :'tab_position' => :'Float',
-        :'text_position' => :'Float',
-        :'trailing_character' => :'String'
+        :'number_position' => :'Float',
+        :'text_position' => :'Float'
       }
     end
 
@@ -121,6 +131,18 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.key?(:'StartAt')
+        self.start_at = attributes[:'StartAt']
+      end
+
+      if attributes.key?(:'NumberStyle')
+        self.number_style = attributes[:'NumberStyle']
+      end
+
+      if attributes.key?(:'NumberFormat')
+        self.number_format = attributes[:'NumberFormat']
+      end
+
       if attributes.key?(:'Alignment')
         self.alignment = attributes[:'Alignment']
       end
@@ -129,36 +151,24 @@ module AsposeWordsCloud
         self.is_legal = attributes[:'IsLegal']
       end
 
-      if attributes.key?(:'NumberFormat')
-        self.number_format = attributes[:'NumberFormat']
-      end
-
-      if attributes.key?(:'NumberPosition')
-        self.number_position = attributes[:'NumberPosition']
-      end
-
-      if attributes.key?(:'NumberStyle')
-        self.number_style = attributes[:'NumberStyle']
-      end
-
       if attributes.key?(:'RestartAfterLevel')
         self.restart_after_level = attributes[:'RestartAfterLevel']
       end
 
-      if attributes.key?(:'StartAt')
-        self.start_at = attributes[:'StartAt']
+      if attributes.key?(:'TrailingCharacter')
+        self.trailing_character = attributes[:'TrailingCharacter']
       end
 
       if attributes.key?(:'TabPosition')
         self.tab_position = attributes[:'TabPosition']
       end
 
-      if attributes.key?(:'TextPosition')
-        self.text_position = attributes[:'TextPosition']
+      if attributes.key?(:'NumberPosition')
+        self.number_position = attributes[:'NumberPosition']
       end
 
-      if attributes.key?(:'TrailingCharacter')
-        self.trailing_character = attributes[:'TrailingCharacter']
+      if attributes.key?(:'TextPosition')
+        self.text_position = attributes[:'TextPosition']
       end
     end
 
@@ -172,28 +182,14 @@ module AsposeWordsCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      alignment_validator = EnumAttributeValidator.new('String', ["Left", "Center", "Right"])
-      return false unless alignment_validator.valid?(@alignment)
       number_style_validator = EnumAttributeValidator.new('String', ["Arabic", "UppercaseRoman", "LowercaseRoman", "UppercaseLetter", "LowercaseLetter", "Ordinal", "Number", "OrdinalText", "Hex", "ChicagoManual", "Kanji", "KanjiDigit", "AiueoHalfWidth", "IrohaHalfWidth", "ArabicFullWidth", "ArabicHalfWidth", "KanjiTraditional", "KanjiTraditional2", "NumberInCircle", "DecimalFullWidth", "Aiueo", "Iroha", "LeadingZero", "Bullet", "Ganada", "Chosung", "GB1", "GB2", "GB3", "GB4", "Zodiac1", "Zodiac2", "Zodiac3", "TradChinNum1", "TradChinNum2", "TradChinNum3", "TradChinNum4", "SimpChinNum1", "SimpChinNum2", "SimpChinNum3", "SimpChinNum4", "HanjaRead", "HanjaReadDigit", "Hangul", "Hanja", "Hebrew1", "Arabic1", "Hebrew2", "Arabic2", "HindiLetter1", "HindiLetter2", "HindiArabic", "HindiCardinalText", "ThaiLetter", "ThaiArabic", "ThaiCardinalText", "VietCardinalText", "NumberInDash", "LowercaseRussian", "UppercaseRussian", "None", "Custom"])
       return false unless number_style_validator.valid?(@number_style)
+      alignment_validator = EnumAttributeValidator.new('String', ["Left", "Center", "Right"])
+      return false unless alignment_validator.valid?(@alignment)
       trailing_character_validator = EnumAttributeValidator.new('String', ["Tab", "Space", "Nothing"])
       return false unless trailing_character_validator.valid?(@trailing_character)
 
       return true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] alignment Object to be assigned
-    def alignment=(alignment)
-      validator = EnumAttributeValidator.new('String', ["Left", "Center", "Right"])
-      if alignment.to_i == 0
-        unless validator.valid?(alignment)
-          raise ArgumentError, "invalid value for 'alignment', must be one of #{validator.allowable_values}."
-        end
-        @alignment = alignment
-      else
-        @alignment = validator.allowable_values[alignment.to_i]
-      end
     end
 
     # Custom attribute writer method checking allowed values (enum).
@@ -207,6 +203,20 @@ module AsposeWordsCloud
         @number_style = number_style
       else
         @number_style = validator.allowable_values[number_style.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] alignment Object to be assigned
+    def alignment=(alignment)
+      validator = EnumAttributeValidator.new('String', ["Left", "Center", "Right"])
+      if alignment.to_i == 0
+        unless validator.valid?(alignment)
+          raise ArgumentError, "invalid value for 'alignment', must be one of #{validator.allowable_values}."
+        end
+        @alignment = alignment
+      else
+        @alignment = validator.allowable_values[alignment.to_i]
       end
     end
 
@@ -230,16 +240,16 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
+          start_at == other.start_at &&
+          number_style == other.number_style &&
+          number_format == other.number_format &&
           alignment == other.alignment &&
           is_legal == other.is_legal &&
-          number_format == other.number_format &&
-          number_position == other.number_position &&
-          number_style == other.number_style &&
           restart_after_level == other.restart_after_level &&
-          start_at == other.start_at &&
+          trailing_character == other.trailing_character &&
           tab_position == other.tab_position &&
-          text_position == other.text_position &&
-          trailing_character == other.trailing_character
+          number_position == other.number_position &&
+          text_position == other.text_position
     end
 
     # @see the `==` method
@@ -251,7 +261,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [alignment, is_legal, number_format, number_position, number_style, restart_after_level, start_at, tab_position, text_position, trailing_character].hash
+      [start_at, number_style, number_format, alignment, is_legal, restart_after_level, trailing_character, tab_position, number_position, text_position].hash
     end
 
     # Builds the object from hash

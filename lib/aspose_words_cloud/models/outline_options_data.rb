@@ -29,13 +29,11 @@ module AsposeWordsCloud
 
   # Container class for outline options.
   class OutlineOptionsData
-    # Gets or sets the individual bookmarks outline level.
-    attr_accessor :bookmarks_outline_levels
-
     # Gets or sets a value indicating whether to create missing outline levels when the document is exported. The default value is false.
     attr_accessor :create_missing_outline_levels
 
     # Gets or sets a value indicating whether to create outlines for headings (paragraphs formatted with the Heading styles) inside tables.
+    # The default value is false.
     attr_accessor :create_outlines_for_headings_in_tables
 
     # Gets or sets the default level in the document outline at which to display Word bookmarks.
@@ -46,27 +44,30 @@ module AsposeWordsCloud
 
     # Gets or sets the number of levels of headings (paragraphs formatted with the Heading styles) to include in the document outline.
     attr_accessor :headings_outline_levels
+
+    # Gets or sets the individual bookmarks outline level.
+    attr_accessor :bookmarks_outline_levels
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'bookmarks_outline_levels' => :'BookmarksOutlineLevels',
         :'create_missing_outline_levels' => :'CreateMissingOutlineLevels',
         :'create_outlines_for_headings_in_tables' => :'CreateOutlinesForHeadingsInTables',
         :'default_bookmarks_outline_level' => :'DefaultBookmarksOutlineLevel',
         :'expanded_outline_levels' => :'ExpandedOutlineLevels',
-        :'headings_outline_levels' => :'HeadingsOutlineLevels'
+        :'headings_outline_levels' => :'HeadingsOutlineLevels',
+        :'bookmarks_outline_levels' => :'BookmarksOutlineLevels'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'bookmarks_outline_levels' => :'Array<BookmarksOutlineLevelData>',
         :'create_missing_outline_levels' => :'BOOLEAN',
         :'create_outlines_for_headings_in_tables' => :'BOOLEAN',
         :'default_bookmarks_outline_level' => :'Integer',
         :'expanded_outline_levels' => :'Integer',
-        :'headings_outline_levels' => :'Integer'
+        :'headings_outline_levels' => :'Integer',
+        :'bookmarks_outline_levels' => :'Array<BookmarksOutlineLevelData>'
       }
     end
 
@@ -77,12 +78,6 @@ module AsposeWordsCloud
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.key?(:'BookmarksOutlineLevels')
-        if (value = attributes[:'BookmarksOutlineLevels']).is_a?(Array)
-          self.bookmarks_outline_levels = value
-        end
-      end
 
       if attributes.key?(:'CreateMissingOutlineLevels')
         self.create_missing_outline_levels = attributes[:'CreateMissingOutlineLevels']
@@ -102,6 +97,12 @@ module AsposeWordsCloud
 
       if attributes.key?(:'HeadingsOutlineLevels')
         self.headings_outline_levels = attributes[:'HeadingsOutlineLevels']
+      end
+
+      if attributes.key?(:'BookmarksOutlineLevels')
+        if (value = attributes[:'BookmarksOutlineLevels']).is_a?(Array)
+          self.bookmarks_outline_levels = value
+        end
       end
     end
 
@@ -123,12 +124,12 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          bookmarks_outline_levels == other.bookmarks_outline_levels &&
           create_missing_outline_levels == other.create_missing_outline_levels &&
           create_outlines_for_headings_in_tables == other.create_outlines_for_headings_in_tables &&
           default_bookmarks_outline_level == other.default_bookmarks_outline_level &&
           expanded_outline_levels == other.expanded_outline_levels &&
-          headings_outline_levels == other.headings_outline_levels
+          headings_outline_levels == other.headings_outline_levels &&
+          bookmarks_outline_levels == other.bookmarks_outline_levels
     end
 
     # @see the `==` method
@@ -140,7 +141,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [bookmarks_outline_levels, create_missing_outline_levels, create_outlines_for_headings_in_tables, default_bookmarks_outline_level, expanded_outline_levels, headings_outline_levels].hash
+      [create_missing_outline_levels, create_outlines_for_headings_in_tables, default_bookmarks_outline_level, expanded_outline_levels, headings_outline_levels, bookmarks_outline_levels].hash
     end
 
     # Builds the object from hash

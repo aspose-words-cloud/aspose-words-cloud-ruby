@@ -29,7 +29,7 @@ module AsposeWordsCloud
   # Response model for insert_watermark_text_online operation.
   #
   class InsertWatermarkTextOnlineResponse
-    # The response model.
+    # The REST response with a document description.
     attr_accessor :model
 
     # The document after modification.

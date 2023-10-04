@@ -39,15 +39,18 @@ module AsposeWordsCloud
     attr_accessor :range_end
 
     # Gets or sets the author name for a comment.
+    # Cannot be null.Default is empty string.
     attr_accessor :author
 
     # Gets or sets the initials of the user associated with a specific comment.
+    # Cannot be null.Default is empty string.
     attr_accessor :initial
 
     # Gets or sets the date and time that the comment was made.
     attr_accessor :date_time
 
     # Gets or sets text of the comment.
+    # This method allows to quickly set text of a comment from a string. The string can contain paragraph breaks, this will create paragraphs of text in the comment accordingly.
     attr_accessor :text
 
     # Gets or sets the content of the comment.

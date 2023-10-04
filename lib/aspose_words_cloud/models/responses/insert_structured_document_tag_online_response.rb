@@ -29,7 +29,7 @@ module AsposeWordsCloud
   # Response model for insert_structured_document_tag_online operation.
   #
   class InsertStructuredDocumentTagOnlineResponse
-    # The response model.
+    # The REST response with a StructuredDocumentTag.
     attr_accessor :model
 
     # The document after modification.

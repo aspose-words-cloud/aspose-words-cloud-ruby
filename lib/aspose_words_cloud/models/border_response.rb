@@ -28,6 +28,7 @@ require 'date'
 module AsposeWordsCloud
 
   # The REST response with a border.
+  # This response is returned by the Service when handling "GET {nodeWithBorders}/borders" REST API requests.
   class BorderResponse
     # Gets or sets the request Id.
     attr_accessor :request_id

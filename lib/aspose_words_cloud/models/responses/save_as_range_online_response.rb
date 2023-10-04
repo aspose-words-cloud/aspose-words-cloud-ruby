@@ -29,7 +29,7 @@ module AsposeWordsCloud
   # Response model for save_as_range_online operation.
   #
   class SaveAsRangeOnlineResponse
-    # The response model.
+    # The REST response with a document description.
     attr_accessor :model
 
     # The document after modification.

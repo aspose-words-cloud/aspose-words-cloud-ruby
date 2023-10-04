@@ -29,7 +29,8 @@ module AsposeWordsCloud
   # Response model for update_list_level_online operation.
   #
   class UpdateListLevelOnlineResponse
-    # The response model.
+    # The REST response with a list information.
+    # This response is returned by the Service when handling "GET https://api.aspose.cloud/v4.0/words/Test.doc/lists/{n}" REST API requests.
     attr_accessor :model
 
     # The document after modification.

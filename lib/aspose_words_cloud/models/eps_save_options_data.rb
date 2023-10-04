@@ -30,25 +30,34 @@ module AsposeWordsCloud
   # Container class for eps save options.
   class EpsSaveOptionsData
     # Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false..
+    # Note, Word does not embed PostScript fonts, but can open documents with embedded fonts of this type.
+    # This option only works when Aspose.Words.Fonts.FontInfoCollection.EmbedTrueTypeFonts of the Aspose.Words.DocumentBase.FontInfos property is set to true.
+    # The default value is false.
     attr_accessor :allow_embedding_post_script_fonts
 
     # Gets or sets CustomTimeZoneInfo.
     attr_accessor :custom_time_zone_info_data
 
     # Gets or sets the value determining how 3D effects are rendered.
+    # The default value is Aspose.Words.Saving.Dml3DEffectsRenderingMode.Basic.
     attr_accessor :dml3_d_effects_rendering_mode
 
     # Gets or sets the value determining how DrawingML effects are rendered.
     # { Simplified | None | Fine }.
+    # The default value is Simplified.
+    # This property is used when the document is exported to fixed page formats.
     attr_accessor :dml_effects_rendering_mode
 
     # Gets or sets the option that controls how DrawingML shapes are rendered.
+    # { Fallback | DrawingML }. The default value is Fallback.
+    # This property is used when the document is exported to fixed page formats.
     attr_accessor :dml_rendering_mode
 
     # Gets or sets the name of destination file.
     attr_accessor :file_name
 
     # Gets or sets the value determining how ink (InkML) objects are rendered.
+    # The default value is Aspose.Words.Saving.ImlRenderingMode.InkML.
     attr_accessor :iml_rendering_mode
 
     # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving.
@@ -62,14 +71,18 @@ module AsposeWordsCloud
     attr_accessor :update_last_printed_property
 
     # Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
+    # The default value is false.
     attr_accessor :update_last_saved_time_property
 
     # Gets or sets a value indicating whether to zip output or not.
     # The default value is false.
+    # When set to true, output files will be zipped.
     attr_accessor :zip_output
 
     # Gets or sets the value determining how colors are rendered.
     # { Normal | Grayscale}.
+    # The default value is Normal.
+    # This property is used when the document is exported to fixed page formats.
     attr_accessor :color_mode
 
     # Gets or sets the quality of the JPEG images inside PDF document.
@@ -132,12 +145,17 @@ module AsposeWordsCloud
     attr_accessor :vertical_resolution
 
     # Gets or sets the height of a generated image in pixels.
+    # This property has effect only when saving to raster image formats
+    # and used in pair with ImageWidth.
     attr_accessor :image_height
 
     # Gets or sets the width of a generated image in pixels.
+    # This property has effect only when saving to raster image formats
+    # and used in pair with ImageHeight.
     attr_accessor :image_width
 
     # Gets or sets a value indicating whether to use GDI+ or Aspose.Words metafile renderer when saving to EMF.
+    # If set to true - GDI+ metafile renderer is used. I.e. content is written to GDI+ graphics object and saved to metafile.If set to false - Aspose.Words metafile renderer is used. I.e. content is written directly to the metafile format with Aspose.Words.The default value is true.Has effect only when saving to EMF.
     attr_accessor :use_gdi_emf_renderer
 
     # Gets the format of save.
