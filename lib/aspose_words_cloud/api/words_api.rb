@@ -11955,6 +11955,7 @@ module AsposeWordsCloud
     # @param request SaveAsTiffRequest
     # @return [SaveResponse]
     def save_as_tiff(request)
+        warn "This operation will be removed in the future."
         begin
         data, _status_code, _headers = save_as_tiff_with_http_info(request)
         rescue ApiError => e
@@ -11997,6 +11998,7 @@ module AsposeWordsCloud
     # @param request SaveAsTiffOnlineRequest
     # @return [SaveAsTiffOnlineResponse]
     def save_as_tiff_online(request)
+        warn "This operation will be removed in the future."
         begin
         data, _status_code, _headers = save_as_tiff_online_with_http_info(request)
         rescue ApiError => e
