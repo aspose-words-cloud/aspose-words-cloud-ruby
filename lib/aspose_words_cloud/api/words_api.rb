@@ -626,6 +626,7 @@ module AsposeWordsCloud
         [mp_data, status_code, headers]
     end
 
+    # Compress and resize images inside the document.
     # The default settings allows to reduce the size of the document without any visible degradation of images quality.
     # @param request CompressDocumentRequest
     # @return [CompressResponse]
@@ -643,6 +644,7 @@ module AsposeWordsCloud
         data
     end
 
+    # Compress and resize images inside the document.
     # The default settings allows to reduce the size of the document without any visible degradation of images quality.
     # @param request CompressDocumentRequest
     # @return [Array<(CompressResponse, Fixnum, Hash)>]
@@ -669,6 +671,7 @@ module AsposeWordsCloud
     end
 
     # Compress and resize images inside the document.
+    # The default settings allows to reduce the size of the document without any visible degradation of images quality.
     # @param request CompressDocumentOnlineRequest
     # @return [CompressDocumentOnlineResponse]
     def compress_document_online(request)
@@ -686,6 +689,7 @@ module AsposeWordsCloud
     end
 
     # Compress and resize images inside the document.
+    # The default settings allows to reduce the size of the document without any visible degradation of images quality.
     # @param request CompressDocumentOnlineRequest
     # @return [Array<(CompressDocumentOnlineResponse, Fixnum, Hash)>]
     # CompressDocumentOnlineResponse, response status code and response headers
@@ -968,6 +972,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
+    # Creates a new document in cloud storage in the format, determined by the file extension.
     # Supported all save format extensions.
     # @param request CreateDocumentRequest
     # @return [DocumentResponse]
@@ -985,6 +990,7 @@ module AsposeWordsCloud
         data
     end
 
+    # Creates a new document in cloud storage in the format, determined by the file extension.
     # Supported all save format extensions.
     # @param request CreateDocumentRequest
     # @return [Array<(DocumentResponse, Fixnum, Hash)>]
@@ -1395,6 +1401,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
+    # Removes a border from the document node.
     # The 'nodePath' parameter should refer to a paragraph, a cell or a row.
     # @param request DeleteBorderRequest
     # @return [BorderResponse]
@@ -1412,6 +1419,7 @@ module AsposeWordsCloud
         data
     end
 
+    # Removes a border from the document node.
     # The 'nodePath' parameter should refer to a paragraph, a cell or a row.
     # @param request DeleteBorderRequest
     # @return [Array<(BorderResponse, Fixnum, Hash)>]
@@ -1438,6 +1446,7 @@ module AsposeWordsCloud
     end
 
     # Removes a border from the document node.
+    # The 'nodePath' parameter should refer to a paragraph, a cell or a row.
     # @param request DeleteBorderOnlineRequest
     # @return [DeleteBorderOnlineResponse]
     def delete_border_online(request)
@@ -1455,6 +1464,7 @@ module AsposeWordsCloud
     end
 
     # Removes a border from the document node.
+    # The 'nodePath' parameter should refer to a paragraph, a cell or a row.
     # @param request DeleteBorderOnlineRequest
     # @return [Array<(DeleteBorderOnlineResponse, Fixnum, Hash)>]
     # DeleteBorderOnlineResponse, response status code and response headers
@@ -1483,6 +1493,7 @@ module AsposeWordsCloud
         [mp_data, status_code, headers]
     end
 
+    # Removes borders from the document node.
     # The 'nodePath' parameter should refer to a paragraph, a cell or a row.
     # @param request DeleteBordersRequest
     # @return [BordersResponse]
@@ -1500,6 +1511,7 @@ module AsposeWordsCloud
         data
     end
 
+    # Removes borders from the document node.
     # The 'nodePath' parameter should refer to a paragraph, a cell or a row.
     # @param request DeleteBordersRequest
     # @return [Array<(BordersResponse, Fixnum, Hash)>]
@@ -1526,6 +1538,7 @@ module AsposeWordsCloud
     end
 
     # Removes borders from the document node.
+    # The 'nodePath' parameter should refer to a paragraph, a cell or a row.
     # @param request DeleteBordersOnlineRequest
     # @return [DeleteBordersOnlineResponse]
     def delete_borders_online(request)
@@ -1543,6 +1556,7 @@ module AsposeWordsCloud
     end
 
     # Removes borders from the document node.
+    # The 'nodePath' parameter should refer to a paragraph, a cell or a row.
     # @param request DeleteBordersOnlineRequest
     # @return [Array<(DeleteBordersOnlineResponse, Fixnum, Hash)>]
     # DeleteBordersOnlineResponse, response status code and response headers
@@ -4017,6 +4031,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
+    # Reads a border from the document node.
     # The 'nodePath' parameter should refer to a paragraph, a cell or a row.
     # @param request GetBorderRequest
     # @return [BorderResponse]
@@ -4034,6 +4049,7 @@ module AsposeWordsCloud
         data
     end
 
+    # Reads a border from the document node.
     # The 'nodePath' parameter should refer to a paragraph, a cell or a row.
     # @param request GetBorderRequest
     # @return [Array<(BorderResponse, Fixnum, Hash)>]
@@ -4060,6 +4076,7 @@ module AsposeWordsCloud
     end
 
     # Reads a border from the document node.
+    # The 'nodePath' parameter should refer to a paragraph, a cell or a row.
     # @param request GetBorderOnlineRequest
     # @return [BorderResponse]
     def get_border_online(request)
@@ -4077,6 +4094,7 @@ module AsposeWordsCloud
     end
 
     # Reads a border from the document node.
+    # The 'nodePath' parameter should refer to a paragraph, a cell or a row.
     # @param request GetBorderOnlineRequest
     # @return [Array<(BorderResponse, Fixnum, Hash)>]
     # BorderResponse, response status code and response headers
@@ -11799,7 +11817,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Converts a document to the specified format.
+    # Converts a document in cloud storage to the specified format.
     # @param request SaveAsOnlineRequest
     # @return [SaveAsOnlineResponse]
     def save_as_online(request)
@@ -11816,7 +11834,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Converts a document to the specified format.
+    # Converts a document in cloud storage to the specified format.
     # @param request SaveAsOnlineRequest
     # @return [Array<(SaveAsOnlineResponse, Fixnum, Hash)>]
     # SaveAsOnlineResponse, response status code and response headers
@@ -11937,6 +11955,7 @@ module AsposeWordsCloud
     # @param request SaveAsTiffRequest
     # @return [SaveResponse]
     def save_as_tiff(request)
+        warn "This operation will be removed in the future."
         begin
         data, _status_code, _headers = save_as_tiff_with_http_info(request)
         rescue ApiError => e
@@ -11975,10 +11994,11 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Converts a document to TIFF format using detailed conversion settings.
+    # Converts a document in cloud storage to TIFF format using detailed conversion settings.
     # @param request SaveAsTiffOnlineRequest
     # @return [SaveAsTiffOnlineResponse]
     def save_as_tiff_online(request)
+        warn "This operation will be removed in the future."
         begin
         data, _status_code, _headers = save_as_tiff_online_with_http_info(request)
         rescue ApiError => e
@@ -11992,7 +12012,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Converts a document to TIFF format using detailed conversion settings.
+    # Converts a document in cloud storage to TIFF format using detailed conversion settings.
     # @param request SaveAsTiffOnlineRequest
     # @return [Array<(SaveAsTiffOnlineResponse, Fixnum, Hash)>]
     # SaveAsTiffOnlineResponse, response status code and response headers
@@ -12369,6 +12389,7 @@ module AsposeWordsCloud
         [mp_data, status_code, headers]
     end
 
+    # Updates a border in the document node.
     # The 'nodePath' parameter should refer to a paragraph, a cell or a row.
     # @param request UpdateBorderRequest
     # @return [BorderResponse]
@@ -12386,6 +12407,7 @@ module AsposeWordsCloud
         data
     end
 
+    # Updates a border in the document node.
     # The 'nodePath' parameter should refer to a paragraph, a cell or a row.
     # @param request UpdateBorderRequest
     # @return [Array<(BorderResponse, Fixnum, Hash)>]
@@ -12412,6 +12434,7 @@ module AsposeWordsCloud
     end
 
     # Updates a border in the document node.
+    # The 'nodePath' parameter should refer to a paragraph, a cell or a row.
     # @param request UpdateBorderOnlineRequest
     # @return [UpdateBorderOnlineResponse]
     def update_border_online(request)
@@ -12429,6 +12452,7 @@ module AsposeWordsCloud
     end
 
     # Updates a border in the document node.
+    # The 'nodePath' parameter should refer to a paragraph, a cell or a row.
     # @param request UpdateBorderOnlineRequest
     # @return [Array<(UpdateBorderOnlineResponse, Fixnum, Hash)>]
     # UpdateBorderOnlineResponse, response status code and response headers

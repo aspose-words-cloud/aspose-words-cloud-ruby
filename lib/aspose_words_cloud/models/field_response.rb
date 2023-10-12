@@ -28,6 +28,7 @@ require 'date'
 module AsposeWordsCloud
 
   # The REST response with a field.
+  # This response is returned by the Service when handling "GET https://api.aspose.cloud/v4.0/words/Test.doc/paragraphs/{0}/fields/{1}" REST API requests.
   class FieldResponse
     # Gets or sets the request Id.
     attr_accessor :request_id

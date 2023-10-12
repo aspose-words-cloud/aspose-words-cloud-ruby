@@ -28,6 +28,7 @@ require 'date'
 module AsposeWordsCloud
 
   # The REST response with an array of styles.
+  # This response is returned by the Service when handling "GET https://api.aspose.cloud/v4.0/words/Test.doc/styles" REST API requests.
   class StylesResponse
     # Gets or sets the request Id.
     attr_accessor :request_id

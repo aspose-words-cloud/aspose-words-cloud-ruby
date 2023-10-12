@@ -28,6 +28,7 @@ require 'date'
 module AsposeWordsCloud
 
   # The REST response with a collection of bookmarks.
+  # This response should be returned by the service when handling: GET bookmarks.
   class BookmarksResponse
     # Gets or sets the request Id.
     attr_accessor :request_id

@@ -28,6 +28,7 @@ require 'date'
 module AsposeWordsCloud
 
   # The REST response with a result of document splitting.
+  # This response should be returned by the service when handling: POST /{name}/split.
   class SplitDocumentResponse
     # Gets or sets the request Id.
     attr_accessor :request_id

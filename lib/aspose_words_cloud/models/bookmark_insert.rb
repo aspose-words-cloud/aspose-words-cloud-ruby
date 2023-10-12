@@ -35,18 +35,18 @@ module AsposeWordsCloud
     # Gets or sets text, enclosed in the bookmark.
     attr_accessor :text
 
-    # Gets or sets the link to end bookmark node.
-    attr_accessor :end_range
-
     # Gets or sets the link to start bookmark node.
     attr_accessor :start_range
+
+    # Gets or sets the link to end bookmark node.
+    attr_accessor :end_range
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'name' => :'Name',
         :'text' => :'Text',
-        :'end_range' => :'EndRange',
-        :'start_range' => :'StartRange'
+        :'start_range' => :'StartRange',
+        :'end_range' => :'EndRange'
       }
     end
 
@@ -55,8 +55,8 @@ module AsposeWordsCloud
       {
         :'name' => :'String',
         :'text' => :'String',
-        :'end_range' => :'NewDocumentPosition',
-        :'start_range' => :'NewDocumentPosition'
+        :'start_range' => :'NewDocumentPosition',
+        :'end_range' => :'NewDocumentPosition'
       }
     end
 
@@ -76,12 +76,12 @@ module AsposeWordsCloud
         self.text = attributes[:'Text']
       end
 
-      if attributes.key?(:'EndRange')
-        self.end_range = attributes[:'EndRange']
-      end
-
       if attributes.key?(:'StartRange')
         self.start_range = attributes[:'StartRange']
+      end
+
+      if attributes.key?(:'EndRange')
+        self.end_range = attributes[:'EndRange']
       end
     end
 
@@ -105,8 +105,8 @@ module AsposeWordsCloud
       self.class == other.class &&
           name == other.name &&
           text == other.text &&
-          end_range == other.end_range &&
-          start_range == other.start_range
+          start_range == other.start_range &&
+          end_range == other.end_range
     end
 
     # @see the `==` method
@@ -118,7 +118,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [name, text, end_range, start_range].hash
+      [name, text, start_range, end_range].hash
     end
 
     # Builds the object from hash

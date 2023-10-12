@@ -29,7 +29,8 @@ module AsposeWordsCloud
   # Response model for update_custom_xml_part_online operation.
   #
   class UpdateCustomXmlPartOnlineResponse
-    # The response model.
+    # The REST response with a custom xml part.
+    # This response is returned by the Service when handling "GET https://api.aspose.cloud/v4.0/words/Test.doc/customXmlParts/0" REST API requests.
     attr_accessor :model
 
     # The document after modification.

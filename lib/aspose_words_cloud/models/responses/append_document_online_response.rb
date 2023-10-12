@@ -29,7 +29,7 @@ module AsposeWordsCloud
   # Response model for append_document_online operation.
   #
   class AppendDocumentOnlineResponse
-    # The response model.
+    # The REST response with a document description.
     attr_accessor :model
 
     # The document after modification.

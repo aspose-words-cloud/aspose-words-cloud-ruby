@@ -29,17 +29,22 @@ module AsposeWordsCloud
 
   # Represents options for parsing CSV data.
   # To learn more, visit the LINQ Reporting Engine documentation article.
+  # An instance of this class can be passed into constructors of CsvDataSource.
   class CsvDataLoadOptions
     # Gets or sets the character that is used to comment lines of CSV data.
+    # The default value is '#' (number sign).
     attr_accessor :comment_char
 
     # Gets or sets the character to be used as a column delimiter.
+    # The default value is ',' (comma).
     attr_accessor :delimiter
 
     # Gets or sets a value indicating whether the first record of CSV data contains column names.
+    # The default value is false.
     attr_accessor :has_headers
 
     # Gets or sets the character that is used to quote field values.
+    # The default value is '"' (quotation mark).Double the character to place it into quoted text.
     attr_accessor :quote_char
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

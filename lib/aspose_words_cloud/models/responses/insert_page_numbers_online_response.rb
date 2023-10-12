@@ -29,7 +29,7 @@ module AsposeWordsCloud
   # Response model for insert_page_numbers_online operation.
   #
   class InsertPageNumbersOnlineResponse
-    # The response model.
+    # The REST response with a document description.
     attr_accessor :model
 
     # The document after modification.

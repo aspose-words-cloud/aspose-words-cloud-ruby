@@ -29,7 +29,7 @@ module AsposeWordsCloud
   # Response model for apply_style_to_document_element_online operation.
   #
   class ApplyStyleToDocumentElementOnlineResponse
-    # The response model.
+    # The base class for all responses.
     attr_accessor :model
 
     # The document after modification.

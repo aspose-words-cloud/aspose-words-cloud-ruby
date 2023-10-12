@@ -33,12 +33,15 @@ module AsposeWordsCloud
     attr_accessor :link
 
     # Gets or sets the option that controls how an inline table is aligned in the document.
+    # The default value is Left.
     attr_accessor :alignment
 
     # Gets or sets a value indicating whether to automatically resize cells in a table to fit their contents.
+    # The default value is true.
     attr_accessor :allow_auto_fit
 
     # Gets or sets a value indicating whether this is a right-to-left table.
+    # When true, the cells in this row are laid out right to left.The default value is false.
     attr_accessor :bidi
 
     # Gets or sets the amount of space (in points) to add below the contents of cells.

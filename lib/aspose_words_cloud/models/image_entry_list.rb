@@ -30,6 +30,7 @@ module AsposeWordsCloud
   # Represents a list of images which will be appended to the original resource document or image.
   class ImageEntryList
     # Gets or sets a value indicating whether each image should be added to a new page in the document.
+    # This value only has an effect when adding images to a document that supports pagination.
     attr_accessor :append_each_image_on_new_page
 
     # Gets or sets the list of images.

@@ -29,7 +29,8 @@ module AsposeWordsCloud
   # Response model for insert_footnote_online operation.
   #
   class InsertFootnoteOnlineResponse
-    # The response model.
+    # The REST response with a footnote.
+    # This response is returned by the Service when handling "GET https://api.aspose.cloud/v4.0/words/Test.doc/footnote/0" REST API requests.
     attr_accessor :model
 
     # The document after modification.

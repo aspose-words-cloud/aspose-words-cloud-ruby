@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="pcl_save_options_data.rb">
+# <copyright company="Aspose" file="eps_save_options_data.rb">
 #   Copyright (c) 2023 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -27,8 +27,8 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Container class for pcl save options.
-  class PclSaveOptionsData
+  # Container class for eps save options.
+  class EpsSaveOptionsData
     # Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false..
     # Note, Word does not embed PostScript fonts, but can open documents with embedded fonts of this type.
     # This option only works when Aspose.Words.Fonts.FontInfoCollection.EmbedTrueTypeFonts of the Aspose.Words.DocumentBase.FontInfos property is set to true.
@@ -105,13 +105,58 @@ module AsposeWordsCloud
     # Gets or sets the 0-based index of the first page to render.
     attr_accessor :page_index
 
-    # Gets or sets the font name, that will be used if no expected font is found in printer and built-in fonts collections.
-    # If no fallback is found, "Arial" font is used.
-    attr_accessor :falllback_font_name
+    # Gets or sets the horizontal resolution in dots per inch for the generated images.
+    # This property has effect only when saving to raster image formats.
+    # The default value is 96.
+    attr_accessor :horizontal_resolution
 
-    # Gets or sets a value indicating whether complex transformed elements should be rasterized before saving to PCL document.. The default value is true.
-    # PCL doesn't support some kind of transformations that are used by Aspose Words.  E.g. rotated, skewed images and texture brushes. To properly render such elements rasterization process is used, i.e. saving to image and clipping.  This process can take additional time and memory.  If flag is set to false, some content in output may be different as compared with the source document.
-    attr_accessor :rasterize_transformed_elements
+    # Gets or sets the brightness level of the image.
+    attr_accessor :image_brightness
+
+    # Gets or sets the color mode of the image.
+    attr_accessor :image_color_mode
+
+    # Gets or sets the contrast level of the image.
+    attr_accessor :image_contrast
+
+    # Gets or sets the background (paper) color of the image.
+    attr_accessor :paper_color
+
+    # Gets or sets the pixel format of the image.
+    attr_accessor :pixel_format
+
+    # Gets or sets both horizontal and vertical resolution in dots per inch for the generated images.
+    # This property has effect only when saving to raster image formats.
+    # The default value is 96.
+    attr_accessor :resolution
+
+    # Gets or sets the zoom factor of the image.
+    attr_accessor :scale
+
+    # Gets or sets a value indicating whether to use anti-aliasing for rendering.
+    attr_accessor :use_anti_aliasing
+
+    # Gets or sets a value indicating whether to use high quality (i.e. slow) rendering algorithms.
+    attr_accessor :use_high_quality_rendering
+
+    # Gets or sets the vertical resolution in dots per inch for the generated images.
+    # This property has effect only when saving to raster image formats.
+    # The default value is 96.
+    attr_accessor :vertical_resolution
+
+    # Gets or sets the height of a generated image in pixels.
+    # This property has effect only when saving to raster image formats
+    # and used in pair with ImageWidth.
+    attr_accessor :image_height
+
+    # Gets or sets the width of a generated image in pixels.
+    # This property has effect only when saving to raster image formats
+    # and used in pair with ImageHeight.
+    attr_accessor :image_width
+
+    # Gets or sets a value indicating whether to use GDI+ or Aspose.Words metafile renderer when saving to EMF.
+    # If set to true - GDI+ metafile renderer is used. I.e. content is written to GDI+ graphics object and saved to metafile.If set to false - Aspose.Words metafile renderer is used. I.e. content is written directly to the metafile format with Aspose.Words.The default value is true.Has effect only when saving to EMF.
+    attr_accessor :use_gdi_emf_renderer
 
     # Gets the format of save.
     attr_accessor :save_format
@@ -160,8 +205,20 @@ module AsposeWordsCloud
         :'optimize_output' => :'OptimizeOutput',
         :'page_count' => :'PageCount',
         :'page_index' => :'PageIndex',
-        :'falllback_font_name' => :'FalllbackFontName',
-        :'rasterize_transformed_elements' => :'RasterizeTransformedElements',
+        :'horizontal_resolution' => :'HorizontalResolution',
+        :'image_brightness' => :'ImageBrightness',
+        :'image_color_mode' => :'ImageColorMode',
+        :'image_contrast' => :'ImageContrast',
+        :'paper_color' => :'PaperColor',
+        :'pixel_format' => :'PixelFormat',
+        :'resolution' => :'Resolution',
+        :'scale' => :'Scale',
+        :'use_anti_aliasing' => :'UseAntiAliasing',
+        :'use_high_quality_rendering' => :'UseHighQualityRendering',
+        :'vertical_resolution' => :'VerticalResolution',
+        :'image_height' => :'ImageHeight',
+        :'image_width' => :'ImageWidth',
+        :'use_gdi_emf_renderer' => :'UseGdiEmfRenderer',
         :'save_format' => :'SaveFormat'
       }
     end
@@ -188,8 +245,20 @@ module AsposeWordsCloud
         :'optimize_output' => :'BOOLEAN',
         :'page_count' => :'Integer',
         :'page_index' => :'Integer',
-        :'falllback_font_name' => :'String',
-        :'rasterize_transformed_elements' => :'BOOLEAN',
+        :'horizontal_resolution' => :'Float',
+        :'image_brightness' => :'Float',
+        :'image_color_mode' => :'String',
+        :'image_contrast' => :'Float',
+        :'paper_color' => :'String',
+        :'pixel_format' => :'String',
+        :'resolution' => :'Float',
+        :'scale' => :'Float',
+        :'use_anti_aliasing' => :'BOOLEAN',
+        :'use_high_quality_rendering' => :'BOOLEAN',
+        :'vertical_resolution' => :'Float',
+        :'image_height' => :'Integer',
+        :'image_width' => :'Integer',
+        :'use_gdi_emf_renderer' => :'BOOLEAN',
         :'save_format' => :'String'
       }
     end
@@ -202,7 +271,7 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      self.save_format = 'pcl'
+      self.save_format = 'eps'
 
       if attributes.key?(:'AllowEmbeddingPostScriptFonts')
         self.allow_embedding_post_script_fonts = attributes[:'AllowEmbeddingPostScriptFonts']
@@ -280,12 +349,60 @@ module AsposeWordsCloud
         self.page_index = attributes[:'PageIndex']
       end
 
-      if attributes.key?(:'FalllbackFontName')
-        self.falllback_font_name = attributes[:'FalllbackFontName']
+      if attributes.key?(:'HorizontalResolution')
+        self.horizontal_resolution = attributes[:'HorizontalResolution']
       end
 
-      if attributes.key?(:'RasterizeTransformedElements')
-        self.rasterize_transformed_elements = attributes[:'RasterizeTransformedElements']
+      if attributes.key?(:'ImageBrightness')
+        self.image_brightness = attributes[:'ImageBrightness']
+      end
+
+      if attributes.key?(:'ImageColorMode')
+        self.image_color_mode = attributes[:'ImageColorMode']
+      end
+
+      if attributes.key?(:'ImageContrast')
+        self.image_contrast = attributes[:'ImageContrast']
+      end
+
+      if attributes.key?(:'PaperColor')
+        self.paper_color = attributes[:'PaperColor']
+      end
+
+      if attributes.key?(:'PixelFormat')
+        self.pixel_format = attributes[:'PixelFormat']
+      end
+
+      if attributes.key?(:'Resolution')
+        self.resolution = attributes[:'Resolution']
+      end
+
+      if attributes.key?(:'Scale')
+        self.scale = attributes[:'Scale']
+      end
+
+      if attributes.key?(:'UseAntiAliasing')
+        self.use_anti_aliasing = attributes[:'UseAntiAliasing']
+      end
+
+      if attributes.key?(:'UseHighQualityRendering')
+        self.use_high_quality_rendering = attributes[:'UseHighQualityRendering']
+      end
+
+      if attributes.key?(:'VerticalResolution')
+        self.vertical_resolution = attributes[:'VerticalResolution']
+      end
+
+      if attributes.key?(:'ImageHeight')
+        self.image_height = attributes[:'ImageHeight']
+      end
+
+      if attributes.key?(:'ImageWidth')
+        self.image_width = attributes[:'ImageWidth']
+      end
+
+      if attributes.key?(:'UseGdiEmfRenderer')
+        self.use_gdi_emf_renderer = attributes[:'UseGdiEmfRenderer']
       end
     end
 
@@ -311,6 +428,10 @@ module AsposeWordsCloud
       return false unless color_mode_validator.valid?(@color_mode)
       numeral_format_validator = EnumAttributeValidator.new('String', ["European", "ArabicIndic", "EasternArabicIndic", "Context", "System"])
       return false unless numeral_format_validator.valid?(@numeral_format)
+      image_color_mode_validator = EnumAttributeValidator.new('String', ["None", "Grayscale", "BlackAndWhite"])
+      return false unless image_color_mode_validator.valid?(@image_color_mode)
+      pixel_format_validator = EnumAttributeValidator.new('String', ["Format16BppRgb555", "Format16BppRgb565", "Format16BppArgb1555", "Format24BppRgb", "Format32BppRgb", "Format32BppArgb", "Format32BppPArgb", "Format48BppRgb", "Format64BppArgb", "Format64BppPArgb", "Format1bppIndexed"])
+      return false unless pixel_format_validator.valid?(@pixel_format)
 
       return true
     end
@@ -399,6 +520,34 @@ module AsposeWordsCloud
       end
     end
 
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] image_color_mode Object to be assigned
+    def image_color_mode=(image_color_mode)
+      validator = EnumAttributeValidator.new('String', ["None", "Grayscale", "BlackAndWhite"])
+      if image_color_mode.to_i == 0
+        unless validator.valid?(image_color_mode)
+          raise ArgumentError, "invalid value for 'image_color_mode', must be one of #{validator.allowable_values}."
+        end
+        @image_color_mode = image_color_mode
+      else
+        @image_color_mode = validator.allowable_values[image_color_mode.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] pixel_format Object to be assigned
+    def pixel_format=(pixel_format)
+      validator = EnumAttributeValidator.new('String', ["Format16BppRgb555", "Format16BppRgb565", "Format16BppArgb1555", "Format24BppRgb", "Format32BppRgb", "Format32BppArgb", "Format32BppPArgb", "Format48BppRgb", "Format64BppArgb", "Format64BppPArgb", "Format1bppIndexed"])
+      if pixel_format.to_i == 0
+        unless validator.valid?(pixel_format)
+          raise ArgumentError, "invalid value for 'pixel_format', must be one of #{validator.allowable_values}."
+        end
+        @pixel_format = pixel_format
+      else
+        @pixel_format = validator.allowable_values[pixel_format.to_i]
+      end
+    end
+
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
@@ -424,8 +573,20 @@ module AsposeWordsCloud
           optimize_output == other.optimize_output &&
           page_count == other.page_count &&
           page_index == other.page_index &&
-          falllback_font_name == other.falllback_font_name &&
-          rasterize_transformed_elements == other.rasterize_transformed_elements &&
+          horizontal_resolution == other.horizontal_resolution &&
+          image_brightness == other.image_brightness &&
+          image_color_mode == other.image_color_mode &&
+          image_contrast == other.image_contrast &&
+          paper_color == other.paper_color &&
+          pixel_format == other.pixel_format &&
+          resolution == other.resolution &&
+          scale == other.scale &&
+          use_anti_aliasing == other.use_anti_aliasing &&
+          use_high_quality_rendering == other.use_high_quality_rendering &&
+          vertical_resolution == other.vertical_resolution &&
+          image_height == other.image_height &&
+          image_width == other.image_width &&
+          use_gdi_emf_renderer == other.use_gdi_emf_renderer &&
           save_format == other.save_format
     end
 
@@ -438,7 +599,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, falllback_font_name, rasterize_transformed_elements, save_format].hash
+      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, horizontal_resolution, image_brightness, image_color_mode, image_contrast, paper_color, pixel_format, resolution, scale, use_anti_aliasing, use_high_quality_rendering, vertical_resolution, image_height, image_width, use_gdi_emf_renderer, save_format].hash
     end
 
     # Builds the object from hash

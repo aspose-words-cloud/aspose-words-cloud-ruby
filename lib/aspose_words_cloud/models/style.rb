@@ -33,15 +33,18 @@ module AsposeWordsCloud
     attr_accessor :link
 
     # Gets or sets the character formatting of the style.
+    # For list styles this property returns null.
     attr_accessor :font
 
     # Gets or sets a value indicating whether this style is one of the built-in styles in MS Word.
     attr_accessor :built_in
 
     # Gets or sets the name of the style to be applied automatically to a new paragraph inserted after a paragraph formatted with the specified style.
+    # This property is not used by Aspose.Words. The next paragraph style will only be applied automatically when you edit the document in MS Word.
     attr_accessor :next_paragraph_style_name
 
     # Gets or sets the name of the style this style is based on.
+    # This will be an empty string if the style is not based on any other style and it can be set to an empty string.
     attr_accessor :base_style_name
 
     # Gets or sets a value indicating whether this style is shown in the Quick Style gallery inside MS Word UI.
@@ -60,9 +63,12 @@ module AsposeWordsCloud
     attr_accessor :aliases
 
     # Gets or sets the locale independent style identifier for a built-in style.
+    # For user defined (custom) styles, this property returns Aspose.Words.StyleIdentifier.User.
+    # Aspose.Words.Style.Name.
     attr_accessor :style_identifier
 
     # Gets or sets the name of the style.
+    # Can not be empty string. If there already is a style with such name in the collection, then this style will override it. All affected nodes will reference new style.
     attr_accessor :name
 
     class EnumAttributeValidator

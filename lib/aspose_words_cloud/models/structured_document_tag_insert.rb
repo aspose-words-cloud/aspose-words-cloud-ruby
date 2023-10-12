@@ -36,21 +36,31 @@ module AsposeWordsCloud
     attr_accessor :node_id
 
     # Gets or sets Aspose.Words.Markup.SdtListItemCollection associated with this SDT.
+    # Accessing this property will only work for Aspose.Words.Markup.SdtType.ComboBox or Aspose.Words.Markup.SdtType.DropDownList SDT types.
+    # For all other SDT types exception will occur.
     attr_accessor :list_items
 
     # Gets or sets a value indicating whether current state of the Checkbox SDT. Default value for this property.
+    # Accessing this property will only work for Aspose.Words.Markup.SdtType.Checkbox SDT types.
+    # For all other SDT types exception will occur.
     attr_accessor :checked
 
     # Gets or sets the appearance of a structured document tag.
     attr_accessor :appearance
 
     # Gets or sets the language format for the date displayed in this SDT.
+    # Accessing this property will only work for Aspose.Words.Markup.SdtType.Date SDT type.
+    # For all other SDT types exception will occur.
     attr_accessor :date_display_locale
 
     # Gets or sets String that represents the format in which dates are displayed. Can not be null. The dates for English (U.S.) is "mm/dd/yyyy".
+    # Accessing this property will only work for Aspose.Words.Markup.SdtType.Date SDT type.
+    # For all other SDT types exception will occur.
     attr_accessor :date_display_format
 
     # Gets or sets the full date and time last entered into this SDT.
+    # Accessing this property will only work for Aspose.Words.Markup.SdtType.Date SDT type.
+    # For all other SDT types exception will occur.
     attr_accessor :full_date
 
     # Gets or sets the friendly name associated with this SDT. Can not be null.
@@ -58,15 +68,24 @@ module AsposeWordsCloud
 
     # Gets or sets format in which the date for a date SDT is stored when the SDT is bound to an XML node in the document's data store.
     # Default value is Aspose.Words.Markup.SdtDateStorageFormat.DateTime.
+    # Accessing this property will only work for Aspose.Words.Markup.SdtType.Date SDT type.
+    # For all other SDT types exception will occur.
     attr_accessor :date_storage_format
 
     # Gets or sets type of building block for this SDT. Can not be null.
+    # Accessing this property will only work for Aspose.Words.Markup.SdtType.BuildingBlockGallery and Aspose.Words.Markup.SdtType.DocPartObj SDT types.
+    # It is read-only for SDT of the document part type.
+    # For all other SDT types exception will occur.
     attr_accessor :building_block_gallery
 
     # Gets or sets category of building block for this SDT node. Can not be null.
+    # Accessing this property will only work for Aspose.Words.Markup.SdtType.BuildingBlockGallery and Aspose.Words.Markup.SdtType.DocPartObj SDT types.
+    # It is read-only for SDT of the document part type. For all other SDT types exception will occur.
     attr_accessor :building_block_category
 
     # Gets or sets a value indicating whether this SDT allows multiple lines of text.
+    # Accessing this property will only work for Aspose.Words.Markup.SdtType.RichText and Aspose.Words.Markup.SdtType.PlainText SDT type.
+    # For all other SDT types exception will occur.
     attr_accessor :multiline
 
     # Gets or sets the color of the structured document tag.
@@ -76,6 +95,8 @@ module AsposeWordsCloud
     attr_accessor :style_name
 
     # Gets or sets the type of calendar for this SDT. Default is Aspose.Words.Markup.SdtCalendarType.Default.
+    # Accessing this property will only work for Aspose.Words.Markup.SdtType.Date SDT type.
+    # For all other SDT types exception will occur.
     attr_accessor :calendar_type
 
     # Gets or sets a value indicating whether this SDT shall be removed from the WordProcessingML document when its contents are modified.
@@ -102,9 +123,18 @@ module AsposeWordsCloud
     attr_accessor :is_showing_placeholder_text
 
     # Gets or sets a tag associated with the current SDT node. Can not be null.
+    # A tag is an arbitrary string which applications can associate with SDT in order to identify it without providing a visible friendly name.
     attr_accessor :tag
 
     # Gets or sets a unique read-only persistent numerical Id for this SDT.
+    # Id attribute shall follow these rules:
+    # - The document shall retain SDT ids only if the whole document is cloned Aspose.Words.Document.Clone.
+    # - During Aspose.Words.DocumentBase.ImportNode(Aspose.Words.Node,System.Boolean)
+    # - Id shall be retained if import does not cause conflicts with other SDT Ids in the target document.
+    # - If multiple SDT nodes specify the same decimal number value for the Id attribute, then the first SDT in the document shall maintain this original Id, and all subsequent
+    # - SDT nodes shall have new identifiers assigned to them when the document is loaded.
+    # - During standalone SDT Aspose.Words.Markup.StructuredDocumentTag.Clone(System.Boolean,Aspose.Words.INodeCloningListener) operation new unique ID will be generated for the cloned SDT node.
+    # - If Id is not specified in the source document, then the SDT node shall have a new unique identifier assigned to it when the document is loaded.
     attr_accessor :id
 
     # Gets a string that represents the XML contained within the node in the Aspose.Words.SaveFormat.FlatOpc format.
@@ -304,10 +334,6 @@ module AsposeWordsCloud
 
       if attributes.key?(:'Id')
         self.id = attributes[:'Id']
-      end
-
-      if attributes.key?(:'WordOpenXML')
-        self.word_open_xml = attributes[:'WordOpenXML']
       end
     end
 

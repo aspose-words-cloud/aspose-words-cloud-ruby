@@ -29,24 +29,24 @@ module AsposeWordsCloud
 
   # Field for update.
   class FieldUpdate
-    # Gets or sets the field code.
-    attr_accessor :field_code
-
     # Gets or sets the LCID of the field.
     attr_accessor :locale_id
+
+    # Gets or sets the field code.
+    attr_accessor :field_code
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'field_code' => :'FieldCode',
-        :'locale_id' => :'LocaleId'
+        :'locale_id' => :'LocaleId',
+        :'field_code' => :'FieldCode'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'field_code' => :'String',
-        :'locale_id' => :'String'
+        :'locale_id' => :'String',
+        :'field_code' => :'String'
       }
     end
 
@@ -58,12 +58,12 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'FieldCode')
-        self.field_code = attributes[:'FieldCode']
-      end
-
       if attributes.key?(:'LocaleId')
         self.locale_id = attributes[:'LocaleId']
+      end
+
+      if attributes.key?(:'FieldCode')
+        self.field_code = attributes[:'FieldCode']
       end
     end
 
@@ -85,8 +85,8 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          field_code == other.field_code &&
-          locale_id == other.locale_id
+          locale_id == other.locale_id &&
+          field_code == other.field_code
     end
 
     # @see the `==` method
@@ -98,7 +98,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [field_code, locale_id].hash
+      [locale_id, field_code].hash
     end
 
     # Builds the object from hash

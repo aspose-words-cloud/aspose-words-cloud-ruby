@@ -34,11 +34,19 @@ module AsposeWordsCloud
 
     # Gets or sets the HTML string color representation.
     attr_accessor :web
+
+    # Gets or sets the Alpha wrapper for serialization.
+    attr_accessor :xml_alpha
+
+    # Gets a value indicating whether Alpha is specified.
+    attr_accessor :xml_alpha_specified
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'alpha' => :'Alpha',
-        :'web' => :'Web'
+        :'web' => :'Web',
+        :'xml_alpha' => :'XmlAlpha',
+        :'xml_alpha_specified' => :'XmlAlphaSpecified'
       }
     end
 
@@ -46,7 +54,9 @@ module AsposeWordsCloud
     def self.swagger_types
       {
         :'alpha' => :'Integer',
-        :'web' => :'String'
+        :'web' => :'String',
+        :'xml_alpha' => :'Integer',
+        :'xml_alpha_specified' => :'BOOLEAN'
       }
     end
 
@@ -64,6 +74,10 @@ module AsposeWordsCloud
 
       if attributes.key?(:'Web')
         self.web = attributes[:'Web']
+      end
+
+      if attributes.key?(:'XmlAlpha')
+        self.xml_alpha = attributes[:'XmlAlpha']
       end
     end
 
@@ -86,7 +100,9 @@ module AsposeWordsCloud
       return true if self.equal?(other)
       self.class == other.class &&
           alpha == other.alpha &&
-          web == other.web
+          web == other.web &&
+          xml_alpha == other.xml_alpha &&
+          xml_alpha_specified == other.xml_alpha_specified
     end
 
     # @see the `==` method
@@ -98,7 +114,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [alpha, web].hash
+      [alpha, web, xml_alpha, xml_alpha_specified].hash
     end
 
     # Builds the object from hash
