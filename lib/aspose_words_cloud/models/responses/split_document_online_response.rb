@@ -29,7 +29,8 @@ module AsposeWordsCloud
   # Response model for split_document_online operation.
   #
   class SplitDocumentOnlineResponse
-    # The response model.
+    # The REST response with a result of document splitting.
+    # This response should be returned by the service when handling: POST /{name}/split.
     attr_accessor :model
 
     # The document after modification.

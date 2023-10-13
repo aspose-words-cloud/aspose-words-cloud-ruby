@@ -29,7 +29,7 @@ module AsposeWordsCloud
   # Response model for update_drawing_object_online operation.
   #
   class UpdateDrawingObjectOnlineResponse
-    # The response model.
+    # The REST response with a DrawingObject.
     attr_accessor :model
 
     # The document after modification.

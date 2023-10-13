@@ -29,7 +29,7 @@ module AsposeWordsCloud
   # Response model for accept_all_revisions_online operation.
   #
   class AcceptAllRevisionsOnlineResponse
-    # The response model.
+    # The REST response with a result of the modification operations for the revisions collection (now these are acceptAll and rejectAll).
     attr_accessor :model
 
     # The document after modification.

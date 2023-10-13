@@ -29,7 +29,7 @@ module AsposeWordsCloud
   # Response model for compress_document_online operation.
   #
   class CompressDocumentOnlineResponse
-    # The response model.
+    # The REST response of compressed document.
     attr_accessor :model
 
     # The document after modification.

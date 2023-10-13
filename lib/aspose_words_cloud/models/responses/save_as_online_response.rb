@@ -29,7 +29,7 @@ module AsposeWordsCloud
   # Response model for save_as_online operation.
   #
   class SaveAsOnlineResponse
-    # The response model.
+    # The REST response with a save result.
     attr_accessor :model
 
     # The document after modification.

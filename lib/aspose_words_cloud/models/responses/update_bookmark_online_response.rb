@@ -29,7 +29,8 @@ module AsposeWordsCloud
   # Response model for update_bookmark_online operation.
   #
   class UpdateBookmarkOnlineResponse
-    # The response model.
+    # The REST response with a bookmark.
+    # This response should be returned by the service when handling: GET bookmarks/{bookmarkName}.
     attr_accessor :model
 
     # The document after modification.

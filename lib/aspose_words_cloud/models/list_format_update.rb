@@ -29,24 +29,27 @@ module AsposeWordsCloud
 
   # Paragraph list format element for update.
   class ListFormatUpdate
-    # Gets or sets the list id of this paragraph.
-    attr_accessor :list_id
-
     # Gets or sets the list level number (0 to 8) for the paragraph.
+    # In Word documents, lists may consist of 1 or 9 levels, numbered 0 to 8. Has effect only when the Aspose.Words.ListFormat.List property is set to reference a valid list. Aspose.Words.ListFormat.List.
     attr_accessor :list_level_number
+
+    # Gets or sets the list id of this paragraph.
+    # The list that is being assigned to this property must belong to the current document.
+    # The list that is being assigned to this property must not be a list style definition.
+    attr_accessor :list_id
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'list_id' => :'ListId',
-        :'list_level_number' => :'ListLevelNumber'
+        :'list_level_number' => :'ListLevelNumber',
+        :'list_id' => :'ListId'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'list_id' => :'Integer',
-        :'list_level_number' => :'Integer'
+        :'list_level_number' => :'Integer',
+        :'list_id' => :'Integer'
       }
     end
 
@@ -58,12 +61,12 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'ListId')
-        self.list_id = attributes[:'ListId']
-      end
-
       if attributes.key?(:'ListLevelNumber')
         self.list_level_number = attributes[:'ListLevelNumber']
+      end
+
+      if attributes.key?(:'ListId')
+        self.list_id = attributes[:'ListId']
       end
     end
 
@@ -85,8 +88,8 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          list_id == other.list_id &&
-          list_level_number == other.list_level_number
+          list_level_number == other.list_level_number &&
+          list_id == other.list_id
     end
 
     # @see the `==` method
@@ -98,7 +101,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [list_id, list_level_number].hash
+      [list_level_number, list_id].hash
     end
 
     # Builds the object from hash

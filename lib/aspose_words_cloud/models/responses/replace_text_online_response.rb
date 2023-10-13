@@ -29,7 +29,7 @@ module AsposeWordsCloud
   # Response model for replace_text_online operation.
   #
   class ReplaceTextOnlineResponse
-    # The response model.
+    # The REST response with a number of occurrences of the captured text in the document.
     attr_accessor :model
 
     # The document after modification.

@@ -30,25 +30,34 @@ module AsposeWordsCloud
   # Container class for pdf save options.
   class PdfSaveOptionsData
     # Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false..
+    # Note, Word does not embed PostScript fonts, but can open documents with embedded fonts of this type.
+    # This option only works when Aspose.Words.Fonts.FontInfoCollection.EmbedTrueTypeFonts of the Aspose.Words.DocumentBase.FontInfos property is set to true.
+    # The default value is false.
     attr_accessor :allow_embedding_post_script_fonts
 
     # Gets or sets CustomTimeZoneInfo.
     attr_accessor :custom_time_zone_info_data
 
     # Gets or sets the value determining how 3D effects are rendered.
+    # The default value is Aspose.Words.Saving.Dml3DEffectsRenderingMode.Basic.
     attr_accessor :dml3_d_effects_rendering_mode
 
     # Gets or sets the value determining how DrawingML effects are rendered.
     # { Simplified | None | Fine }.
+    # The default value is Simplified.
+    # This property is used when the document is exported to fixed page formats.
     attr_accessor :dml_effects_rendering_mode
 
     # Gets or sets the option that controls how DrawingML shapes are rendered.
+    # { Fallback | DrawingML }. The default value is Fallback.
+    # This property is used when the document is exported to fixed page formats.
     attr_accessor :dml_rendering_mode
 
     # Gets or sets the name of destination file.
     attr_accessor :file_name
 
     # Gets or sets the value determining how ink (InkML) objects are rendered.
+    # The default value is Aspose.Words.Saving.ImlRenderingMode.InkML.
     attr_accessor :iml_rendering_mode
 
     # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving.
@@ -62,14 +71,18 @@ module AsposeWordsCloud
     attr_accessor :update_last_printed_property
 
     # Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
+    # The default value is false.
     attr_accessor :update_last_saved_time_property
 
     # Gets or sets a value indicating whether to zip output or not.
     # The default value is false.
+    # When set to true, output files will be zipped.
     attr_accessor :zip_output
 
     # Gets or sets the value determining how colors are rendered.
     # { Normal | Grayscale}.
+    # The default value is Normal.
+    # This property is used when the document is exported to fixed page formats.
     attr_accessor :color_mode
 
     # Gets or sets the quality of the JPEG images inside PDF document.
@@ -93,6 +106,8 @@ module AsposeWordsCloud
     attr_accessor :page_index
 
     # Gets or sets a value determining whether or not to cache graphics placed in document's background.
+    # Default value is true and background graphics are written to the PDF document as an xObject. When the value is false background graphics are not cached. Some shapes are not supported for caching(shapes with fields, bookmarks, HRefs). Document background graphic is various shapes, charts, images placed in the footer or header,
+    # well as background and border of a page.
     attr_accessor :cache_background_graphics
 
     # Gets or sets the PDF standards compliance level for output documents.
@@ -111,12 +126,19 @@ module AsposeWordsCloud
     attr_accessor :digital_signature_details
 
     # Gets or sets a value indicating whether the window’s title bar should display the document title taken from the Title entry of the document information dictionary.
+    # If false, the title bar should instead display the name of the PDF file containing the document.
+    # The default value is false.
     attr_accessor :display_doc_title
 
     # Gets or sets the downsample options.
     attr_accessor :downsample_options
 
     # Gets or sets a value determining whether or not to embed attachments to the PDF document.
+    # Default value is false and attachments are not embedded.
+    # When the value is true attachments are embedded to the PDF document.
+    # Embedding attachments is not supported when saving to PDF/A and PDF/UA compliance.
+    # false value will be used automatically.
+    # Embedding attachments is not supported when encryption is enabled. false value will be used automatically.
     attr_accessor :embed_attachments
 
     # Gets or sets a value indicating whether fonts are embedded into the resulting PDF documents.
@@ -129,6 +151,9 @@ module AsposeWordsCloud
     attr_accessor :export_document_structure
 
     # Gets or sets a value determining whether or not to create a "Span" tag in the document structure to export the text language.
+    # Default value is false and "Lang" attribute is attached to a marked-content sequence in a page content stream.
+    # When the value is true "Span" tag is created for the text with non-default language and "Lang" attribute is attached to this tag.
+    # This value is ignored when Aspose.Words.Saving.PdfSaveOptions.ExportDocumentStructure is false.
     attr_accessor :export_language_to_span_tag
 
     # Gets or sets the font embedding mode.
@@ -139,12 +164,14 @@ module AsposeWordsCloud
     attr_accessor :header_footer_bookmarks_export_mode
 
     # Gets or sets the option that controls how the color space will be selected for the images in PDF document.
+    # The default value is "Auto". If "SimpleCmyk" value is specified, ImageCompression option is ignored and Flate compression is used for all images in the document.
     attr_accessor :image_color_space_export_mode
 
     # Gets or sets the compression type to be used for all images in the document.
     attr_accessor :image_compression
 
     # Gets or sets a value indicating whether image interpolation shall be performed by a conforming reader. When false is specified, the flag is not written to the output document and the default behavior of reader is used instead.
+    # When the resolution of a source image is significantly lower than that of the output device, each source sample covers many device pixels. As a result, images can appear jaggy or blocky. These visual artifacts can be reduced by applying an image interpolation algorithm during rendering. Instead of painting all pixels covered by a source sample with the same color, image interpolation attempts to produce a smooth transition between adjacent sample values. A conforming Reader may choose to not implement this feature of PDF, or may use any specific implementation of interpolation that it wishes. The default value is false.
     attr_accessor :interpolate_images
 
     # Gets or sets a value indicating whether hyperlinks in the output Pdf document are forced to be opened in a new window (or tab) of a browser.
@@ -157,6 +184,8 @@ module AsposeWordsCloud
     attr_accessor :page_mode
 
     # Gets or sets a value indicating whether to preblend transparent images with black background color.
+    # Preblending images may improve PDF document visual appearance in Adobe Reader and remove anti-aliasing artifacts.In order to properly display preblended images, PDF viewer application must support /Matte entry in soft-mask image dictionary.
+    # Also preblending images may decrease PDF rendering performance.The default value is false.
     attr_accessor :preblend_images
 
     # Gets or sets a value indicating whether to preserve Microsoft Word form fields as form fields in PDF or convert them to text.

@@ -36,15 +36,19 @@ module AsposeWordsCloud
     attr_accessor :range_end
 
     # Gets or sets the author name for a comment.
+    # Cannot be null.Default is empty string.
     attr_accessor :author
 
-    # Gets or sets the date and time that the comment was made.
-    attr_accessor :date_time
-
     # Gets or sets the initials of the user associated with a specific comment.
+    # Cannot be null.Default is empty string.
     attr_accessor :initial
 
+    # Gets or sets the date and time that the comment was made.
+    # Default is MinValue03.01.0001.
+    attr_accessor :date_time
+
     # Gets or sets text of the comment.
+    # This method allows to quickly set text of a comment from a string. The string can contain paragraph breaks, this will create paragraphs of text in the comment accordingly.
     attr_accessor :text
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -52,8 +56,8 @@ module AsposeWordsCloud
         :'range_start' => :'RangeStart',
         :'range_end' => :'RangeEnd',
         :'author' => :'Author',
-        :'date_time' => :'DateTime',
         :'initial' => :'Initial',
+        :'date_time' => :'DateTime',
         :'text' => :'Text'
       }
     end
@@ -64,8 +68,8 @@ module AsposeWordsCloud
         :'range_start' => :'NewDocumentPosition',
         :'range_end' => :'NewDocumentPosition',
         :'author' => :'String',
-        :'date_time' => :'DateTime',
         :'initial' => :'String',
+        :'date_time' => :'DateTime',
         :'text' => :'String'
       }
     end
@@ -90,12 +94,12 @@ module AsposeWordsCloud
         self.author = attributes[:'Author']
       end
 
-      if attributes.key?(:'DateTime')
-        self.date_time = attributes[:'DateTime']
-      end
-
       if attributes.key?(:'Initial')
         self.initial = attributes[:'Initial']
+      end
+
+      if attributes.key?(:'DateTime')
+        self.date_time = attributes[:'DateTime']
       end
 
       if attributes.key?(:'Text')
@@ -124,8 +128,8 @@ module AsposeWordsCloud
           range_start == other.range_start &&
           range_end == other.range_end &&
           author == other.author &&
-          date_time == other.date_time &&
           initial == other.initial &&
+          date_time == other.date_time &&
           text == other.text
     end
 
@@ -138,7 +142,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [range_start, range_end, author, date_time, initial, text].hash
+      [range_start, range_end, author, initial, date_time, text].hash
     end
 
     # Builds the object from hash

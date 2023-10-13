@@ -29,17 +29,14 @@ module AsposeWordsCloud
 
   # Drawing object element for insert.
   class DrawingObjectInsert
-    # Gets or sets the height of the DrawingObject in points.
-    attr_accessor :height
-
-    # Gets or sets the distance in points from the origin to the left side of the image.
-    attr_accessor :left
-
     # Gets or sets the position, before which the DrawingObject will be inserted.
     attr_accessor :position
 
     # Gets or sets the relative horizontal position, from which the distance to the image is measured.
     attr_accessor :relative_horizontal_position
+
+    # Gets or sets the distance in points from the origin to the left side of the image.
+    attr_accessor :left
 
     # Gets or sets the relative vertical position, from which the distance to the image is measured.
     attr_accessor :relative_vertical_position
@@ -49,6 +46,9 @@ module AsposeWordsCloud
 
     # Gets or sets the width of the DrawingObjects in points.
     attr_accessor :width
+
+    # Gets or sets the height of the DrawingObject in points.
+    attr_accessor :height
 
     # Gets or sets the option indicating how to wrap text around the image.
     attr_accessor :wrap_type
@@ -78,13 +78,13 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'height' => :'Height',
-        :'left' => :'Left',
         :'position' => :'Position',
         :'relative_horizontal_position' => :'RelativeHorizontalPosition',
+        :'left' => :'Left',
         :'relative_vertical_position' => :'RelativeVerticalPosition',
         :'top' => :'Top',
         :'width' => :'Width',
+        :'height' => :'Height',
         :'wrap_type' => :'WrapType'
       }
     end
@@ -92,13 +92,13 @@ module AsposeWordsCloud
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'height' => :'Float',
-        :'left' => :'Float',
         :'position' => :'NewDocumentPosition',
         :'relative_horizontal_position' => :'String',
+        :'left' => :'Float',
         :'relative_vertical_position' => :'String',
         :'top' => :'Float',
         :'width' => :'Float',
+        :'height' => :'Float',
         :'wrap_type' => :'String'
       }
     end
@@ -111,20 +111,16 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'Height')
-        self.height = attributes[:'Height']
-      end
-
-      if attributes.key?(:'Left')
-        self.left = attributes[:'Left']
-      end
-
       if attributes.key?(:'Position')
         self.position = attributes[:'Position']
       end
 
       if attributes.key?(:'RelativeHorizontalPosition')
         self.relative_horizontal_position = attributes[:'RelativeHorizontalPosition']
+      end
+
+      if attributes.key?(:'Left')
+        self.left = attributes[:'Left']
       end
 
       if attributes.key?(:'RelativeVerticalPosition')
@@ -137,6 +133,10 @@ module AsposeWordsCloud
 
       if attributes.key?(:'Width')
         self.width = attributes[:'Width']
+      end
+
+      if attributes.key?(:'Height')
+        self.height = attributes[:'Height']
       end
 
       if attributes.key?(:'WrapType')
@@ -212,13 +212,13 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          height == other.height &&
-          left == other.left &&
           position == other.position &&
           relative_horizontal_position == other.relative_horizontal_position &&
+          left == other.left &&
           relative_vertical_position == other.relative_vertical_position &&
           top == other.top &&
           width == other.width &&
+          height == other.height &&
           wrap_type == other.wrap_type
     end
 
@@ -231,7 +231,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [height, left, position, relative_horizontal_position, relative_vertical_position, top, width, wrap_type].hash
+      [position, relative_horizontal_position, left, relative_vertical_position, top, width, height, wrap_type].hash
     end
 
     # Builds the object from hash

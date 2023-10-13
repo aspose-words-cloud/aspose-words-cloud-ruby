@@ -29,7 +29,7 @@ module AsposeWordsCloud
   # Response model for remove_range_online operation.
   #
   class RemoveRangeOnlineResponse
-    # The response model.
+    # The REST response with a document description.
     attr_accessor :model
 
     # The document after modification.

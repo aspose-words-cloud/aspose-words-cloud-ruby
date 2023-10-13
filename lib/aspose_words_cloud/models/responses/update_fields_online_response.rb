@@ -29,7 +29,7 @@ module AsposeWordsCloud
   # Response model for update_fields_online operation.
   #
   class UpdateFieldsOnlineResponse
-    # The response model.
+    # The REST response with a document description.
     attr_accessor :model
 
     # The document after modification.

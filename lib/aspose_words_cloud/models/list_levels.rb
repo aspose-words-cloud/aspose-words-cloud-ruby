@@ -33,6 +33,7 @@ module AsposeWordsCloud
     attr_accessor :link
 
     # Gets or sets the collection of list levels for this list.
+    # Use this property to access and modify formatting individual to each level of the list.
     attr_accessor :list_level
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

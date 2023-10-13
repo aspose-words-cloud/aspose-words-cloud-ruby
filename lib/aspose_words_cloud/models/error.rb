@@ -29,16 +29,16 @@ module AsposeWordsCloud
 
   # Error.
   class Error
-    # Code.
+    # Gets or sets Code.
     attr_accessor :code
 
-    # Description.
+    # Gets or sets Description.
     attr_accessor :description
 
-    # Inner Error.
+    # Gets or sets InnerError.
     attr_accessor :inner_error
 
-    # Message.
+    # Gets or sets Message.
     attr_accessor :message
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

@@ -30,25 +30,34 @@ module AsposeWordsCloud
   # Container class for mhtml save options.
   class MhtmlSaveOptionsData
     # Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false..
+    # Note, Word does not embed PostScript fonts, but can open documents with embedded fonts of this type.
+    # This option only works when Aspose.Words.Fonts.FontInfoCollection.EmbedTrueTypeFonts of the Aspose.Words.DocumentBase.FontInfos property is set to true.
+    # The default value is false.
     attr_accessor :allow_embedding_post_script_fonts
 
     # Gets or sets CustomTimeZoneInfo.
     attr_accessor :custom_time_zone_info_data
 
     # Gets or sets the value determining how 3D effects are rendered.
+    # The default value is Aspose.Words.Saving.Dml3DEffectsRenderingMode.Basic.
     attr_accessor :dml3_d_effects_rendering_mode
 
     # Gets or sets the value determining how DrawingML effects are rendered.
     # { Simplified | None | Fine }.
+    # The default value is Simplified.
+    # This property is used when the document is exported to fixed page formats.
     attr_accessor :dml_effects_rendering_mode
 
     # Gets or sets the option that controls how DrawingML shapes are rendered.
+    # { Fallback | DrawingML }. The default value is Fallback.
+    # This property is used when the document is exported to fixed page formats.
     attr_accessor :dml_rendering_mode
 
     # Gets or sets the name of destination file.
     attr_accessor :file_name
 
     # Gets or sets the value determining how ink (InkML) objects are rendered.
+    # The default value is Aspose.Words.Saving.ImlRenderingMode.InkML.
     attr_accessor :iml_rendering_mode
 
     # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving.
@@ -62,10 +71,12 @@ module AsposeWordsCloud
     attr_accessor :update_last_printed_property
 
     # Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
+    # The default value is false.
     attr_accessor :update_last_saved_time_property
 
     # Gets or sets a value indicating whether to zip output or not.
     # The default value is false.
+    # When set to true, output files will be zipped.
     attr_accessor :zip_output
 
     # Gets or sets a value indicating whether negative left and right indents of paragraphs are allowed (not normalized).
@@ -96,6 +107,8 @@ module AsposeWordsCloud
 
     # Gets or sets the flag, that controls how drop-down form fields are saved to HTML.
     # The default value is false.
+    # When set to true, exports drop-down form fields as normal text.
+    # When false, exports drop-down form fields as SELECT element in HTML.
     attr_accessor :export_drop_down_form_field_as_text
 
     # Gets or sets a value indicating whether font resources should be exported.
@@ -118,10 +131,12 @@ module AsposeWordsCloud
 
     # Gets or sets a value indicating whether the original URL should be used as the URL of the linked images.
     # The default value is false.
+    # If value is set to true - ResourceFolder value is used as the URL of linked images and linked images are not loaded into document's folder or ImagesFolder.If value is set to false - linked images are loaded into document's folder or ImagesFolder and URL of each linked image is constructed depending on document's folder, ImagesFolder and ImagesFolderAlias properties.
     attr_accessor :export_original_url_for_linked_images
 
     # Gets or sets a value indicating whether page margins are exported to HTML, MHTML or EPUB.
     # The default value is false.
+    # Aspose.Words does not show area of page margins by default. If any elements are completely or partially clipped by the document edge the displayed area can be extended with this option.
     attr_accessor :export_page_margins
 
     # Gets or sets a value indicating whether page setup is exported.
@@ -131,6 +146,7 @@ module AsposeWordsCloud
     attr_accessor :export_relative_font_size
 
     # Gets or sets a value indicating whether to write the roundtrip information when saving to HTML. The default value is true.
+    # Saving of the roundtrip information allows to restore document properties such as tab stops, comments, headers and footers during the HTML documents loading back into a Document object.When true, the roundtrip information is exported as -aw-* CSS properties of the corresponding HTML elements.When false, causes no roundtrip information to be output into produced files.
     attr_accessor :export_roundtrip_information
 
     # Gets or sets the flag, that controls how text input form fields are saved.
@@ -193,6 +209,7 @@ module AsposeWordsCloud
     attr_accessor :table_width_output_mode
 
     # Gets or sets a value indicating whether to use CID (Content-ID) URLs to reference resources (images, fonts, CSS) included in MHTML documents. The default value is false.
+    # By default, resources in MHTML documents are referenced by file name (for example, "image.png"), which are matched against "Content-Location" headers of MIME parts. This option enables an alternative method, where references to resource files are written as CID (Content-ID) URLs (for example, "cid:image.png") and are matched against "Content-ID" headers. In theory, there should be no difference between the two referencing methods and either of them should work fine in any browser or mail agent. In practice, however, some agents fail to fetch resources by file name. If your browser or mail agent refuses to load resources included in an MTHML document (doesn't show images or doesn't load CSS styles), try exporting the document with CID URLs.
     attr_accessor :export_cid_urls_for_mhtml_resources
 
     # Gets the format of save.
