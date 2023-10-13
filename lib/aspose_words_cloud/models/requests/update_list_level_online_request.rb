@@ -93,7 +93,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter list_id when calling WordsApi.update_list_level_online' if api_client.config.client_side_validation && self.list_id.nil?
       # verify the required parameter 'list_update' is set
       raise ArgumentError, 'Missing the required parameter list_update when calling WordsApi.update_list_level_online' if api_client.config.client_side_validation && self.list_update.nil?
-      # verify the required parameter 'list_level' is set
+      self.list_update.validate# verify the required parameter 'list_level' is set
       raise ArgumentError, 'Missing the required parameter list_level when calling WordsApi.update_list_level_online' if api_client.config.client_side_validation && self.list_level.nil?
 
       # resource path
@@ -172,7 +172,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter list_id when calling WordsApi.update_list_level_online' if api_client.config.client_side_validation && self.list_id.nil?
       # verify the required parameter 'list_update' is set
       raise ArgumentError, 'Missing the required parameter list_update when calling WordsApi.update_list_level_online' if api_client.config.client_side_validation && self.list_update.nil?
-      # verify the required parameter 'list_level' is set
+      self.list_update.validate# verify the required parameter 'list_level' is set
       raise ArgumentError, 'Missing the required parameter list_level when calling WordsApi.update_list_level_online' if api_client.config.client_side_validation && self.list_level.nil?
 
       # resource path

@@ -94,13 +94,6 @@ module AsposeWordsCloud
       end
     end
 
-    # Show invalid properties with the reasons. Usually used together with valid?
-    # @return Array for valid properies with the reasons
-    def list_invalid_properties
-      invalid_properties = []
-      return invalid_properties
-    end
-
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
@@ -242,6 +235,17 @@ module AsposeWordsCloud
     end
 
     def collectFilesContent(resultFilesContent)
+    end
+
+    def validate()
+      raise ArgumentError, 'Property is_match_case in ReplaceTextParameters is required.' if self.is_match_case.nil?
+
+      raise ArgumentError, 'Property is_match_whole_word in ReplaceTextParameters is required.' if self.is_match_whole_word.nil?
+
+      raise ArgumentError, 'Property is_old_value_regex in ReplaceTextParameters is required.' if self.is_old_value_regex.nil?
+
+      raise ArgumentError, 'Property old_value in ReplaceTextParameters is required.' if self.old_value.nil?
+
     end
 
   end

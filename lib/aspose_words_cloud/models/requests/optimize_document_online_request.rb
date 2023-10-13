@@ -81,7 +81,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.optimize_document_online' if api_client.config.client_side_validation && self.document.nil?
       # verify the required parameter 'options' is set
       raise ArgumentError, 'Missing the required parameter options when calling WordsApi.optimize_document_online' if api_client.config.client_side_validation && self.options.nil?
-
+      self.options.validate
       # resource path
       local_var_path = '/words/online/put/compatibility/optimize'[7..-1]
       local_var_path = local_var_path.sub('//', '/')
@@ -154,7 +154,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.optimize_document_online' if api_client.config.client_side_validation && self.document.nil?
       # verify the required parameter 'options' is set
       raise ArgumentError, 'Missing the required parameter options when calling WordsApi.optimize_document_online' if api_client.config.client_side_validation && self.options.nil?
-
+      self.options.validate
       # resource path
       local_var_path = '/words/online/put/compatibility/optimize'[1..-1]
       local_var_path = local_var_path.sub('//', '/')

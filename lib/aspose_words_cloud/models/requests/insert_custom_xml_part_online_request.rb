@@ -81,7 +81,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.insert_custom_xml_part_online' if api_client.config.client_side_validation && self.document.nil?
       # verify the required parameter 'custom_xml_part' is set
       raise ArgumentError, 'Missing the required parameter custom_xml_part when calling WordsApi.insert_custom_xml_part_online' if api_client.config.client_side_validation && self.custom_xml_part.nil?
-
+      self.custom_xml_part.validate
       # resource path
       local_var_path = '/words/online/post/customXmlParts'[7..-1]
       local_var_path = local_var_path.sub('//', '/')
@@ -154,7 +154,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.insert_custom_xml_part_online' if api_client.config.client_side_validation && self.document.nil?
       # verify the required parameter 'custom_xml_part' is set
       raise ArgumentError, 'Missing the required parameter custom_xml_part when calling WordsApi.insert_custom_xml_part_online' if api_client.config.client_side_validation && self.custom_xml_part.nil?
-
+      self.custom_xml_part.validate
       # resource path
       local_var_path = '/words/online/post/customXmlParts'[1..-1]
       local_var_path = local_var_path.sub('//', '/')

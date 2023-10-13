@@ -93,7 +93,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.insert_or_update_paragraph_tab_stop' if api_client.config.client_side_validation && self.index.nil?
       # verify the required parameter 'tab_stop_insert_dto' is set
       raise ArgumentError, 'Missing the required parameter tab_stop_insert_dto when calling WordsApi.insert_or_update_paragraph_tab_stop' if api_client.config.client_side_validation && self.tab_stop_insert_dto.nil?
-
+      self.tab_stop_insert_dto.validate
       # resource path
       local_var_path = '/words/{name}/{nodePath}/paragraphs/{index}/tabstops'[7..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)
@@ -164,7 +164,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.insert_or_update_paragraph_tab_stop' if api_client.config.client_side_validation && self.index.nil?
       # verify the required parameter 'tab_stop_insert_dto' is set
       raise ArgumentError, 'Missing the required parameter tab_stop_insert_dto when calling WordsApi.insert_or_update_paragraph_tab_stop' if api_client.config.client_side_validation && self.tab_stop_insert_dto.nil?
-
+      self.tab_stop_insert_dto.validate
       # resource path
       local_var_path = '/words/{name}/{nodePath}/paragraphs/{index}/tabstops'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)

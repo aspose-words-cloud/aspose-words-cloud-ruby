@@ -101,7 +101,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.insert_paragraph' if api_client.config.client_side_validation && self.name.nil?
       # verify the required parameter 'paragraph' is set
       raise ArgumentError, 'Missing the required parameter paragraph when calling WordsApi.insert_paragraph' if api_client.config.client_side_validation && self.paragraph.nil?
-
+      self.paragraph.validate
       # resource path
       local_var_path = '/words/{name}/{nodePath}/paragraphs'[7..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)
@@ -172,7 +172,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.insert_paragraph' if api_client.config.client_side_validation && self.name.nil?
       # verify the required parameter 'paragraph' is set
       raise ArgumentError, 'Missing the required parameter paragraph when calling WordsApi.insert_paragraph' if api_client.config.client_side_validation && self.paragraph.nil?
-
+      self.paragraph.validate
       # resource path
       local_var_path = '/words/{name}/{nodePath}/paragraphs'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)

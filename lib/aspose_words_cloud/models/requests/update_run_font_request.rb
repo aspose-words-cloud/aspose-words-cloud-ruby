@@ -105,7 +105,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_run_font' if api_client.config.client_side_validation && self.index.nil?
       # verify the required parameter 'font_dto' is set
       raise ArgumentError, 'Missing the required parameter font_dto when calling WordsApi.update_run_font' if api_client.config.client_side_validation && self.font_dto.nil?
-
+      self.font_dto.validate
       # resource path
       local_var_path = '/words/{name}/{paragraphPath}/runs/{index}/font'[7..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)
@@ -180,7 +180,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_run_font' if api_client.config.client_side_validation && self.index.nil?
       # verify the required parameter 'font_dto' is set
       raise ArgumentError, 'Missing the required parameter font_dto when calling WordsApi.update_run_font' if api_client.config.client_side_validation && self.font_dto.nil?
-
+      self.font_dto.validate
       # resource path
       local_var_path = '/words/{name}/{paragraphPath}/runs/{index}/font'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)

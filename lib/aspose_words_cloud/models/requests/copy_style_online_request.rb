@@ -81,7 +81,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.copy_style_online' if api_client.config.client_side_validation && self.document.nil?
       # verify the required parameter 'style_copy' is set
       raise ArgumentError, 'Missing the required parameter style_copy when calling WordsApi.copy_style_online' if api_client.config.client_side_validation && self.style_copy.nil?
-
+      self.style_copy.validate
       # resource path
       local_var_path = '/words/online/post/styles/copy'[7..-1]
       local_var_path = local_var_path.sub('//', '/')
@@ -154,7 +154,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.copy_style_online' if api_client.config.client_side_validation && self.document.nil?
       # verify the required parameter 'style_copy' is set
       raise ArgumentError, 'Missing the required parameter style_copy when calling WordsApi.copy_style_online' if api_client.config.client_side_validation && self.style_copy.nil?
-
+      self.style_copy.validate
       # resource path
       local_var_path = '/words/online/post/styles/copy'[1..-1]
       local_var_path = local_var_path.sub('//', '/')

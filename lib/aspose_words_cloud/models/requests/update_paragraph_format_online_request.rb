@@ -91,7 +91,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.update_paragraph_format_online' if api_client.config.client_side_validation && self.document.nil?
       # verify the required parameter 'paragraph_format_dto' is set
       raise ArgumentError, 'Missing the required parameter paragraph_format_dto when calling WordsApi.update_paragraph_format_online' if api_client.config.client_side_validation && self.paragraph_format_dto.nil?
-      # verify the required parameter 'index' is set
+      self.paragraph_format_dto.validate# verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_paragraph_format_online' if api_client.config.client_side_validation && self.index.nil?
 
       # resource path
@@ -168,7 +168,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.update_paragraph_format_online' if api_client.config.client_side_validation && self.document.nil?
       # verify the required parameter 'paragraph_format_dto' is set
       raise ArgumentError, 'Missing the required parameter paragraph_format_dto when calling WordsApi.update_paragraph_format_online' if api_client.config.client_side_validation && self.paragraph_format_dto.nil?
-      # verify the required parameter 'index' is set
+      self.paragraph_format_dto.validate# verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_paragraph_format_online' if api_client.config.client_side_validation && self.index.nil?
 
       # resource path

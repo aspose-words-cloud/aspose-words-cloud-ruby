@@ -188,13 +188,6 @@ module AsposeWordsCloud
       end
     end
 
-    # Show invalid properties with the reasons. Usually used together with valid?
-    # @return Array for valid properies with the reasons
-    def list_invalid_properties
-      invalid_properties = []
-      return invalid_properties
-    end
-
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
@@ -377,6 +370,19 @@ module AsposeWordsCloud
     end
 
     def collectFilesContent(resultFilesContent)
+    end
+
+    def validate()
+      raise ArgumentError, 'Property built_in in Style is required.' if self.built_in.nil?
+
+      raise ArgumentError, 'Property is_quick_style in Style is required.' if self.is_quick_style.nil?
+
+      raise ArgumentError, 'Property type in Style is required.' if self.type.nil?
+
+      raise ArgumentError, 'Property is_heading in Style is required.' if self.is_heading.nil?
+
+      raise ArgumentError, 'Property style_identifier in Style is required.' if self.style_identifier.nil?
+
     end
 
   end

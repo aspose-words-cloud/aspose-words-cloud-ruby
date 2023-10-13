@@ -91,7 +91,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.update_border_online' if api_client.config.client_side_validation && self.document.nil?
       # verify the required parameter 'border_properties' is set
       raise ArgumentError, 'Missing the required parameter border_properties when calling WordsApi.update_border_online' if api_client.config.client_side_validation && self.border_properties.nil?
-      # verify the required parameter 'border_type' is set
+      self.border_properties.validate# verify the required parameter 'border_type' is set
       raise ArgumentError, 'Missing the required parameter border_type when calling WordsApi.update_border_online' if api_client.config.client_side_validation && self.border_type.nil?
 
       # resource path
@@ -168,7 +168,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.update_border_online' if api_client.config.client_side_validation && self.document.nil?
       # verify the required parameter 'border_properties' is set
       raise ArgumentError, 'Missing the required parameter border_properties when calling WordsApi.update_border_online' if api_client.config.client_side_validation && self.border_properties.nil?
-      # verify the required parameter 'border_type' is set
+      self.border_properties.validate# verify the required parameter 'border_type' is set
       raise ArgumentError, 'Missing the required parameter border_type when calling WordsApi.update_border_online' if api_client.config.client_side_validation && self.border_type.nil?
 
       # resource path
