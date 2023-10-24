@@ -209,6 +209,10 @@ module AsposeWordsCloud
     end
 
     def validate()
+      unless self.split_result.nil?
+          self.split_result.validate
+      end
+
     end
 
   end

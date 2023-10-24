@@ -210,6 +210,17 @@ module AsposeWordsCloud
     end
 
     def validate()
+      unless self.link.nil?
+          self.link.validate
+      end
+      unless self.custom_xml_parts_list.nil?
+          for elementCustomXmlPartsList in self.custom_xml_parts_list
+              unless elementCustomXmlPartsList.nil?
+                  elementCustomXmlPartsList.validate
+              end
+          end
+      end
+
     end
 
   end

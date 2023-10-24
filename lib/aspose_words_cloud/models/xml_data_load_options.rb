@@ -204,7 +204,6 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property always_generate_root_object in XmlDataLoadOptions is required.' if self.always_generate_root_object.nil?
-
     end
 
   end

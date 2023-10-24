@@ -276,11 +276,8 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property alignment in TabStopInsert is required.' if self.alignment.nil?
-
       raise ArgumentError, 'Property leader in TabStopInsert is required.' if self.leader.nil?
-
       raise ArgumentError, 'Property position in TabStopInsert is required.' if self.position.nil?
-
     end
 
   end

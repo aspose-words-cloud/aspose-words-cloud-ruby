@@ -240,7 +240,6 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property ms_word_version in OptimizationOptions is required.' if self.ms_word_version.nil?
-
     end
 
   end

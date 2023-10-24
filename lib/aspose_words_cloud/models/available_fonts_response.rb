@@ -234,6 +234,28 @@ module AsposeWordsCloud
     end
 
     def validate()
+      unless self.additional_fonts.nil?
+          for elementAdditionalFonts in self.additional_fonts
+              unless elementAdditionalFonts.nil?
+                  elementAdditionalFonts.validate
+              end
+          end
+      end
+      unless self.custom_fonts.nil?
+          for elementCustomFonts in self.custom_fonts
+              unless elementCustomFonts.nil?
+                  elementCustomFonts.validate
+              end
+          end
+      end
+      unless self.system_fonts.nil?
+          for elementSystemFonts in self.system_fonts
+              unless elementSystemFonts.nil?
+                  elementSystemFonts.validate
+              end
+          end
+      end
+
     end
 
   end

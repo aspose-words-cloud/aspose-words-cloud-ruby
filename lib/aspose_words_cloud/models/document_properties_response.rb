@@ -209,6 +209,10 @@ module AsposeWordsCloud
     end
 
     def validate()
+      unless self.document_properties.nil?
+          self.document_properties.validate
+      end
+
     end
 
   end

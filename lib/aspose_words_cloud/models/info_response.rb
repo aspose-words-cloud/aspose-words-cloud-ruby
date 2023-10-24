@@ -230,6 +230,14 @@ module AsposeWordsCloud
     end
 
     def validate()
+      unless self.additional_info.nil?
+          for elementAdditionalInfo in self.additional_info
+              unless elementAdditionalInfo.nil?
+                  elementAdditionalInfo.validate
+              end
+          end
+      end
+
     end
 
   end

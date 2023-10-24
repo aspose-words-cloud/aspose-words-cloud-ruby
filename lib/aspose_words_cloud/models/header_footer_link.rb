@@ -250,6 +250,9 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property type in HeaderFooterLink is required.' if self.type.nil?
+      unless self.link.nil?
+          self.link.validate
+      end
 
     end
 

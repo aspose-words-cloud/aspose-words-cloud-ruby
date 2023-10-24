@@ -209,7 +209,6 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property node_id in NewDocumentPosition is required.' if self.node_id.nil?
-
     end
 
   end

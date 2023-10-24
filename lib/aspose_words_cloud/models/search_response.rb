@@ -219,6 +219,10 @@ module AsposeWordsCloud
     end
 
     def validate()
+      unless self.search_results.nil?
+          self.search_results.validate
+      end
+
     end
 
   end

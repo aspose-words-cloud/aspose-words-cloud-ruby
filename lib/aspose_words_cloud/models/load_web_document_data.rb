@@ -209,6 +209,9 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property loading_document_url in LoadWebDocumentData is required.' if self.loading_document_url.nil?
+      unless self.save_options.nil?
+          self.save_options.validate
+      end
 
     end
 

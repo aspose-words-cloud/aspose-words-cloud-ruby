@@ -337,8 +337,10 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property name in FormFieldCheckbox is required.' if self.name.nil?
-
       raise ArgumentError, 'Property checked in FormFieldCheckbox is required.' if self.checked.nil?
+      unless self.link.nil?
+          self.link.validate
+      end
 
     end
 

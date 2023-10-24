@@ -203,7 +203,9 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property file_reference in ImageEntry is required.' if self.file_reference.nil?
-      self.file_reference.validate
+      unless self.file_reference.nil?
+          self.file_reference.validate
+      end
 
     end
 

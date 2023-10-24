@@ -220,6 +220,20 @@ module AsposeWordsCloud
     end
 
     def validate()
+      unless self.dest_document.nil?
+          self.dest_document.validate
+      end
+      unless self.source_document.nil?
+          self.source_document.validate
+      end
+      unless self.additional_items.nil?
+          for elementAdditionalItems in self.additional_items
+              unless elementAdditionalItems.nil?
+                  elementAdditionalItems.validate
+              end
+          end
+      end
+
     end
 
   end

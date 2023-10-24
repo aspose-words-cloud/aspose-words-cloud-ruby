@@ -520,8 +520,10 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property file_name in TextSaveOptionsData is required.' if self.file_name.nil?
-
       raise ArgumentError, 'Property max_characters_per_line in TextSaveOptionsData is required.' if self.max_characters_per_line.nil?
+      unless self.custom_time_zone_info_data.nil?
+          self.custom_time_zone_info_data.validate
+      end
 
     end
 

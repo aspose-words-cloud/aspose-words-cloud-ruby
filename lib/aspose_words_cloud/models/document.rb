@@ -292,10 +292,18 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property is_encrypted in Document is required.' if self.is_encrypted.nil?
-
       raise ArgumentError, 'Property is_signed in Document is required.' if self.is_signed.nil?
-
       raise ArgumentError, 'Property source_format in Document is required.' if self.source_format.nil?
+      unless self.links.nil?
+          for elementLinks in self.links
+              unless elementLinks.nil?
+                  elementLinks.validate
+              end
+          end
+      end
+      unless self.document_properties.nil?
+          self.document_properties.validate
+      end
 
     end
 

@@ -217,9 +217,11 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property document_entries in DocumentEntryList is required.' if self.document_entries.nil?
-      for elementDocumentEntries in self.document_entries
-          unless elementDocumentEntries.nil?
-              elementDocumentEntries.validate
+      unless self.document_entries.nil?
+          for elementDocumentEntries in self.document_entries
+              unless elementDocumentEntries.nil?
+                  elementDocumentEntries.validate
+              end
           end
       end
 

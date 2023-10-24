@@ -210,6 +210,17 @@ module AsposeWordsCloud
     end
 
     def validate()
+      unless self.link.nil?
+          self.link.validate
+      end
+      unless self.paragraph_link_list.nil?
+          for elementParagraphLinkList in self.paragraph_link_list
+              unless elementParagraphLinkList.nil?
+                  elementParagraphLinkList.validate
+              end
+          end
+      end
+
     end
 
   end

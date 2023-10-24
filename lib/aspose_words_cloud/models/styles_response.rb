@@ -211,6 +211,14 @@ module AsposeWordsCloud
     end
 
     def validate()
+      unless self.styles.nil?
+          for elementStyles in self.styles
+              unless elementStyles.nil?
+                  elementStyles.validate
+              end
+          end
+      end
+
     end
 
   end

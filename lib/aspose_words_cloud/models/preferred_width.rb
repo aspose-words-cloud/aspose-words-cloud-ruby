@@ -250,7 +250,6 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property type in PreferredWidth is required.' if self.type.nil?
-
     end
 
   end

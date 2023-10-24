@@ -199,7 +199,6 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property document_name in RangeDocument is required.' if self.document_name.nil?
-
     end
 
   end

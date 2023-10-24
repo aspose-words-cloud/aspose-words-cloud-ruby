@@ -239,9 +239,7 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property is_top in PageNumber is required.' if self.is_top.nil?
-
       raise ArgumentError, 'Property set_page_number_on_first_page in PageNumber is required.' if self.set_page_number_on_first_page.nil?
-
     end
 
   end

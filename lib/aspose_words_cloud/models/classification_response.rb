@@ -232,6 +232,13 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property best_class_probability in ClassificationResponse is required.' if self.best_class_probability.nil?
+      unless self.best_results.nil?
+          for elementBestResults in self.best_results
+              unless elementBestResults.nil?
+                  elementBestResults.validate
+              end
+          end
+      end
 
     end
 

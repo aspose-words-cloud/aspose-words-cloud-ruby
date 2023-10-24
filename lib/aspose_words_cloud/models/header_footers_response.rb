@@ -209,6 +209,10 @@ module AsposeWordsCloud
     end
 
     def validate()
+      unless self.header_footers.nil?
+          self.header_footers.validate
+      end
+
     end
 
   end

@@ -250,7 +250,6 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property style_type in StyleInsert is required.' if self.style_type.nil?
-
     end
 
   end

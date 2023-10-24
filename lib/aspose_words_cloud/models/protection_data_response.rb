@@ -218,6 +218,13 @@ module AsposeWordsCloud
     end
 
     def validate()
+      unless self.document_link.nil?
+          self.document_link.validate
+      end
+      unless self.protection_data.nil?
+          self.protection_data.validate
+      end
+
     end
 
   end

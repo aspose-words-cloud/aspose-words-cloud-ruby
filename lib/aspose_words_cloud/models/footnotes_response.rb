@@ -209,6 +209,10 @@ module AsposeWordsCloud
     end
 
     def validate()
+      unless self.footnotes.nil?
+          self.footnotes.validate
+      end
+
     end
 
   end

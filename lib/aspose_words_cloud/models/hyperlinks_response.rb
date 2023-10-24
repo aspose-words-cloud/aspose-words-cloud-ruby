@@ -209,6 +209,10 @@ module AsposeWordsCloud
     end
 
     def validate()
+      unless self.hyperlinks.nil?
+          self.hyperlinks.validate
+      end
+
     end
 
   end

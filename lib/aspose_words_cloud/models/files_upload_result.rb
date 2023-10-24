@@ -212,6 +212,14 @@ module AsposeWordsCloud
     end
 
     def validate()
+      unless self.errors.nil?
+          for elementErrors in self.errors
+              unless elementErrors.nil?
+                  elementErrors.validate
+              end
+          end
+      end
+
     end
 
   end

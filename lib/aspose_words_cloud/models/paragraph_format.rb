@@ -591,6 +591,13 @@ module AsposeWordsCloud
     end
 
     def validate()
+      unless self.link.nil?
+          self.link.validate
+      end
+      unless self.shading.nil?
+          self.shading.validate
+      end
+
     end
 
   end

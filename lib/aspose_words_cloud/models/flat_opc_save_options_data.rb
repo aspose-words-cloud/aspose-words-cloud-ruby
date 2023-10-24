@@ -492,6 +492,9 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property file_name in FlatOpcSaveOptionsData is required.' if self.file_name.nil?
+      unless self.custom_time_zone_info_data.nil?
+          self.custom_time_zone_info_data.validate
+      end
 
     end
 

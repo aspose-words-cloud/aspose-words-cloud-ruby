@@ -235,13 +235,9 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property comment_char in CsvDataLoadOptions is required.' if self.comment_char.nil?
-
       raise ArgumentError, 'Property delimiter in CsvDataLoadOptions is required.' if self.delimiter.nil?
-
       raise ArgumentError, 'Property has_headers in CsvDataLoadOptions is required.' if self.has_headers.nil?
-
       raise ArgumentError, 'Property quote_char in CsvDataLoadOptions is required.' if self.quote_char.nil?
-
     end
 
   end

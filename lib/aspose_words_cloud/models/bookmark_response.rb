@@ -209,6 +209,10 @@ module AsposeWordsCloud
     end
 
     def validate()
+      unless self.bookmark.nil?
+          self.bookmark.validate
+      end
+
     end
 
   end

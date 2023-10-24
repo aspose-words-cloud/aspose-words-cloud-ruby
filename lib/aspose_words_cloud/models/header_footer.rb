@@ -282,6 +282,22 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property type in HeaderFooter is required.' if self.type.nil?
+      unless self.link.nil?
+          self.link.validate
+      end
+      unless self.child_nodes.nil?
+          for elementChildNodes in self.child_nodes
+              unless elementChildNodes.nil?
+                  elementChildNodes.validate
+              end
+          end
+      end
+      unless self.paragraphs.nil?
+          self.paragraphs.validate
+      end
+      unless self.drawing_objects.nil?
+          self.drawing_objects.validate
+      end
 
     end
 

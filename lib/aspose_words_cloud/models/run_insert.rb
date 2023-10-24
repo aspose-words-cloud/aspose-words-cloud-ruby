@@ -199,7 +199,6 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property text in RunInsert is required.' if self.text.nil?
-
     end
 
   end

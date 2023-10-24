@@ -241,7 +241,6 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property template in ListInsert is required.' if self.template.nil?
-
     end
 
   end

@@ -208,6 +208,10 @@ module AsposeWordsCloud
     end
 
     def validate()
+      unless self.structured_document_tag.nil?
+          self.structured_document_tag.validate
+      end
+
     end
 
   end

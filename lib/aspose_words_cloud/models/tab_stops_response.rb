@@ -211,6 +211,14 @@ module AsposeWordsCloud
     end
 
     def validate()
+      unless self.tab_stops.nil?
+          for elementTabStops in self.tab_stops
+              unless elementTabStops.nil?
+                  elementTabStops.validate
+              end
+          end
+      end
+
     end
 
   end

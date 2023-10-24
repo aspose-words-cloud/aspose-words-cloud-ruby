@@ -390,10 +390,11 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property name in FormFieldTextInput is required.' if self.name.nil?
-
       raise ArgumentError, 'Property text_input_format in FormFieldTextInput is required.' if self.text_input_format.nil?
-
       raise ArgumentError, 'Property text_input_default in FormFieldTextInput is required.' if self.text_input_default.nil?
+      unless self.link.nil?
+          self.link.validate
+      end
 
     end
 

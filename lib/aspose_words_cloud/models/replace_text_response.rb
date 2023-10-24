@@ -219,6 +219,9 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property matches in ReplaceTextResponse is required.' if self.matches.nil?
+      unless self.document_link.nil?
+          self.document_link.validate
+      end
 
     end
 

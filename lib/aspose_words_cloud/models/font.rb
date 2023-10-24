@@ -676,6 +676,22 @@ module AsposeWordsCloud
     end
 
     def validate()
+      unless self.link.nil?
+          self.link.validate
+      end
+      unless self.border.nil?
+          self.border.validate
+      end
+      unless self.color.nil?
+          self.color.validate
+      end
+      unless self.highlight_color.nil?
+          self.highlight_color.validate
+      end
+      unless self.underline_color.nil?
+          self.underline_color.validate
+      end
+
     end
 
   end

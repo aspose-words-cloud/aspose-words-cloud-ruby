@@ -209,7 +209,6 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property field_code in FieldUpdate is required.' if self.field_code.nil?
-
     end
 
   end

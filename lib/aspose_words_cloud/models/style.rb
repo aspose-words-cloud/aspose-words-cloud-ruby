@@ -374,14 +374,16 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property built_in in Style is required.' if self.built_in.nil?
-
       raise ArgumentError, 'Property is_quick_style in Style is required.' if self.is_quick_style.nil?
-
       raise ArgumentError, 'Property type in Style is required.' if self.type.nil?
-
       raise ArgumentError, 'Property is_heading in Style is required.' if self.is_heading.nil?
-
       raise ArgumentError, 'Property style_identifier in Style is required.' if self.style_identifier.nil?
+      unless self.link.nil?
+          self.link.validate
+      end
+      unless self.font.nil?
+          self.font.validate
+      end
 
     end
 

@@ -46,7 +46,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, field_folder + '/FormFilled.docx'), remote_data_folder + '/' + remote_file_name
 
-      request_form_field = FormFieldTextInput.new({:Name => 'FullName', :Enabled => true, :CalculateOnExit => true, :StatusText => '', :TextInputType => 'Regular', :TextInputDefault => 'No name'})
+      request_form_field = FormFieldTextInput.new({:Name => 'FullName', :Enabled => true, :CalculateOnExit => true, :StatusText => '', :TextInputType => 'Regular', :TextInputDefault => 'No name', :TextInputFormat => ''})
       request = UpdateFormFieldRequest.new(name: remote_file_name, index: 0, form_field: request_form_field, node_path: 'sections/0', folder: remote_data_folder, dest_file_name: remote_test_out + '/' + remote_file_name)
 
       result = @words_api.update_form_field(request)
@@ -58,7 +58,7 @@ module AsposeWordsCloud
     #
     def test_update_form_field_online
       request_document = File.open(File.join(local_test_folder, field_folder + '/FormFilled.docx'))
-      request_form_field = FormFieldTextInput.new({:Name => 'FullName', :Enabled => true, :CalculateOnExit => true, :StatusText => '', :TextInputType => 'Regular', :TextInputDefault => 'No name'})
+      request_form_field = FormFieldTextInput.new({:Name => 'FullName', :Enabled => true, :CalculateOnExit => true, :StatusText => '', :TextInputType => 'Regular', :TextInputDefault => 'No name', :TextInputFormat => ''})
       request = UpdateFormFieldOnlineRequest.new(document: request_document, form_field: request_form_field, index: 0, node_path: 'sections/0')
 
       result = @words_api.update_form_field_online(request)
@@ -73,7 +73,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, field_folder + '/FormFilled.docx'), remote_data_folder + '/' + remote_file_name
 
-      request_form_field = FormFieldTextInput.new({:Name => 'FullName', :Enabled => true, :CalculateOnExit => true, :StatusText => '', :TextInputType => 'Regular', :TextInputDefault => 'No name'})
+      request_form_field = FormFieldTextInput.new({:Name => 'FullName', :Enabled => true, :CalculateOnExit => true, :StatusText => '', :TextInputType => 'Regular', :TextInputDefault => 'No name', :TextInputFormat => ''})
       request = UpdateFormFieldRequest.new(name: remote_file_name, index: 0, form_field: request_form_field, folder: remote_data_folder, dest_file_name: remote_test_out + '/' + remote_file_name)
 
       result = @words_api.update_form_field(request)

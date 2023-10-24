@@ -221,6 +221,9 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property data in CustomXmlPart is required.' if self.data.nil?
+      unless self.link.nil?
+          self.link.validate
+      end
 
     end
 

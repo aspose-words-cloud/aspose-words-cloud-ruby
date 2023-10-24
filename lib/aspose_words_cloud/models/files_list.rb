@@ -200,6 +200,14 @@ module AsposeWordsCloud
     end
 
     def validate()
+      unless self.value.nil?
+          for elementValue in self.value
+              unless elementValue.nil?
+                  elementValue.validate
+              end
+          end
+      end
+
     end
 
   end

@@ -209,6 +209,10 @@ module AsposeWordsCloud
     end
 
     def validate()
+      unless self.paragraphs.nil?
+          self.paragraphs.validate
+      end
+
     end
 
   end

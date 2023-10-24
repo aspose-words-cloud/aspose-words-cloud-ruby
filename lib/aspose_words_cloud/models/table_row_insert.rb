@@ -209,7 +209,6 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property columns_count in TableRowInsert is required.' if self.columns_count.nil?
-
     end
 
   end

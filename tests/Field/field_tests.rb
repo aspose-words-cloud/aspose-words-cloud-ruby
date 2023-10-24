@@ -205,7 +205,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, 'Common/' + local_file_name), remote_data_folder + '/' + remote_file_name
 
-      request_page_number = PageNumber.new({:Alignment => 'center', :Format => '{PAGE} of {NUMPAGES}'})
+      request_page_number = PageNumber.new({:Alignment => 'center', :Format => '{PAGE} of {NUMPAGES}', :IsTop => true, :SetPageNumberOnFirstPage => true})
       request = InsertPageNumbersRequest.new(name: remote_file_name, page_number: request_page_number, folder: remote_data_folder, dest_file_name: remote_test_out + '/' + remote_file_name)
 
       result = @words_api.insert_page_numbers(request)
@@ -219,7 +219,7 @@ module AsposeWordsCloud
       local_file_name = 'test_multi_pages.docx'
 
       request_document = File.open(File.join(local_test_folder, 'Common/' + local_file_name))
-      request_page_number = PageNumber.new({:Alignment => 'center', :Format => '{PAGE} of {NUMPAGES}'})
+      request_page_number = PageNumber.new({:Alignment => 'center', :Format => '{PAGE} of {NUMPAGES}', :IsTop => true, :SetPageNumberOnFirstPage => true})
       request = InsertPageNumbersOnlineRequest.new(document: request_document, page_number: request_page_number)
 
       result = @words_api.insert_page_numbers_online(request)

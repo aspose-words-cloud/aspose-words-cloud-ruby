@@ -209,7 +209,6 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property error_date_time in ErrorDetails is required.' if self.error_date_time.nil?
-
     end
 
   end

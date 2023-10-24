@@ -209,7 +209,6 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property bookmarks_outline_level in BookmarksOutlineLevelData is required.' if self.bookmarks_outline_level.nil?
-
     end
 
   end

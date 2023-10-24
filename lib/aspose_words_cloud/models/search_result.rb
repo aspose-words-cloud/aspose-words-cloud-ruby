@@ -208,6 +208,13 @@ module AsposeWordsCloud
     end
 
     def validate()
+      unless self.range_start.nil?
+          self.range_start.validate
+      end
+      unless self.range_end.nil?
+          self.range_end.validate
+      end
+
     end
 
   end

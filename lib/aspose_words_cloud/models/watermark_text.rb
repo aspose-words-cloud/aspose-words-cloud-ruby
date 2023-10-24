@@ -209,9 +209,7 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property rotation_angle in WatermarkText is required.' if self.rotation_angle.nil?
-
       raise ArgumentError, 'Property text in WatermarkText is required.' if self.text.nil?
-
     end
 
   end

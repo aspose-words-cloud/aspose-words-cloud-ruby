@@ -209,7 +209,6 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property class_probability in ClassificationResult is required.' if self.class_probability.nil?
-
     end
 
   end

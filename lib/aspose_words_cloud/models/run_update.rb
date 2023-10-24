@@ -199,7 +199,6 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property text in RunUpdate is required.' if self.text.nil?
-
     end
 
   end

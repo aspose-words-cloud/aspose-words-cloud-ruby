@@ -217,6 +217,14 @@ module AsposeWordsCloud
     end
 
     def validate()
+      unless self.image_entries.nil?
+          for elementImageEntries in self.image_entries
+              unless elementImageEntries.nil?
+                  elementImageEntries.validate
+              end
+          end
+      end
+
     end
 
   end

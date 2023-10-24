@@ -209,6 +209,10 @@ module AsposeWordsCloud
     end
 
     def validate()
+      unless self.office_math_object.nil?
+          self.office_math_object.validate
+      end
+
     end
 
   end

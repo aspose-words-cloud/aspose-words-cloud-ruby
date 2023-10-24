@@ -282,9 +282,7 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property always_generate_root_object in JsonDataLoadOptions is required.' if self.always_generate_root_object.nil?
-
       raise ArgumentError, 'Property simple_value_parse_mode in JsonDataLoadOptions is required.' if self.simple_value_parse_mode.nil?
-
     end
 
   end

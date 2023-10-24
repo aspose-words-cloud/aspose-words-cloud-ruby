@@ -229,10 +229,11 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property paragraph_count in PageStatData is required.' if self.paragraph_count.nil?
-
       raise ArgumentError, 'Property word_count in PageStatData is required.' if self.word_count.nil?
-
       raise ArgumentError, 'Property page_number in PageStatData is required.' if self.page_number.nil?
+      unless self.footnotes_stat_data.nil?
+          self.footnotes_stat_data.validate
+      end
 
     end
 

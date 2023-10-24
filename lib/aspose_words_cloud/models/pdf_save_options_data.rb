@@ -945,6 +945,24 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property file_name in PdfSaveOptionsData is required.' if self.file_name.nil?
+      unless self.custom_time_zone_info_data.nil?
+          self.custom_time_zone_info_data.validate
+      end
+      unless self.metafile_rendering_options.nil?
+          self.metafile_rendering_options.validate
+      end
+      unless self.digital_signature_details.nil?
+          self.digital_signature_details.validate
+      end
+      unless self.downsample_options.nil?
+          self.downsample_options.validate
+      end
+      unless self.encryption_details.nil?
+          self.encryption_details.validate
+      end
+      unless self.outline_options.nil?
+          self.outline_options.validate
+      end
 
     end
 

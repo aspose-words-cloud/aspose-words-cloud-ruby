@@ -208,6 +208,10 @@ module AsposeWordsCloud
     end
 
     def validate()
+      unless self.document.nil?
+          self.document.validate
+      end
+
     end
 
   end

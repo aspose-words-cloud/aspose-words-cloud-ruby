@@ -208,6 +208,10 @@ module AsposeWordsCloud
     end
 
     def validate()
+      unless self.drawing_object.nil?
+          self.drawing_object.validate
+      end
+
     end
 
   end

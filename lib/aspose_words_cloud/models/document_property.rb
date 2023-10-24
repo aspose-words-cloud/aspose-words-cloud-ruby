@@ -230,6 +230,9 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property built_in in DocumentProperty is required.' if self.built_in.nil?
+      unless self.link.nil?
+          self.link.validate
+      end
 
     end
 

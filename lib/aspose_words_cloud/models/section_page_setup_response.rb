@@ -209,6 +209,10 @@ module AsposeWordsCloud
     end
 
     def validate()
+      unless self.page_setup.nil?
+          self.page_setup.validate
+      end
+
     end
 
   end

@@ -410,6 +410,13 @@ module AsposeWordsCloud
     end
 
     def validate()
+      unless self.link.nil?
+          self.link.validate
+      end
+      unless self.preferred_width.nil?
+          self.preferred_width.validate
+      end
+
     end
 
   end

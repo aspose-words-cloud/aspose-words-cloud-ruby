@@ -276,14 +276,19 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property list_id in ListInfo is required.' if self.list_id.nil?
-
       raise ArgumentError, 'Property is_multi_level in ListInfo is required.' if self.is_multi_level.nil?
-
       raise ArgumentError, 'Property is_restart_at_each_section in ListInfo is required.' if self.is_restart_at_each_section.nil?
-
       raise ArgumentError, 'Property is_list_style_definition in ListInfo is required.' if self.is_list_style_definition.nil?
-
       raise ArgumentError, 'Property is_list_style_reference in ListInfo is required.' if self.is_list_style_reference.nil?
+      unless self.link.nil?
+          self.link.validate
+      end
+      unless self.style.nil?
+          self.style.validate
+      end
+      unless self.list_levels.nil?
+          self.list_levels.validate
+      end
 
     end
 

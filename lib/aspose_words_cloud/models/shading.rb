@@ -259,6 +259,13 @@ module AsposeWordsCloud
     end
 
     def validate()
+      unless self.background_pattern_color.nil?
+          self.background_pattern_color.validate
+      end
+      unless self.foreground_pattern_color.nil?
+          self.foreground_pattern_color.validate
+      end
+
     end
 
   end

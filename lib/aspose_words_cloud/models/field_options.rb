@@ -379,6 +379,10 @@ module AsposeWordsCloud
     end
 
     def validate()
+      unless self.current_user.nil?
+          self.current_user.validate
+      end
+
     end
 
   end

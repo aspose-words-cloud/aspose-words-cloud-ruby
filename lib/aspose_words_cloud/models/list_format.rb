@@ -231,8 +231,10 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property list_level_number in ListFormat is required.' if self.list_level_number.nil?
-
       raise ArgumentError, 'Property is_list_item in ListFormat is required.' if self.is_list_item.nil?
+      unless self.link.nil?
+          self.link.validate
+      end
 
     end
 

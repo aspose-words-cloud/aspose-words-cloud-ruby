@@ -239,8 +239,10 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property author in CompareData is required.' if self.author.nil?
-
       raise ArgumentError, 'Property comparing_with_document in CompareData is required.' if self.comparing_with_document.nil?
+      unless self.compare_options.nil?
+          self.compare_options.validate
+      end
 
     end
 

@@ -209,6 +209,10 @@ module AsposeWordsCloud
     end
 
     def validate()
+      unless self.custom_xml_part.nil?
+          self.custom_xml_part.validate
+      end
+
     end
 
   end

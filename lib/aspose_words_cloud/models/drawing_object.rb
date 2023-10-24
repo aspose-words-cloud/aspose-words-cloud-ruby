@@ -383,6 +383,23 @@ module AsposeWordsCloud
     end
 
     def validate()
+      unless self.link.nil?
+          self.link.validate
+      end
+      unless self.render_links.nil?
+          for elementRenderLinks in self.render_links
+              unless elementRenderLinks.nil?
+                  elementRenderLinks.validate
+              end
+          end
+      end
+      unless self.ole_data_link.nil?
+          self.ole_data_link.validate
+      end
+      unless self.image_data_link.nil?
+          self.image_data_link.validate
+      end
+
     end
 
   end

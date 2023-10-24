@@ -330,8 +330,10 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property name in FormFieldDropDown is required.' if self.name.nil?
-
       raise ArgumentError, 'Property drop_down_items in FormFieldDropDown is required.' if self.drop_down_items.nil?
+      unless self.link.nil?
+          self.link.validate
+      end
 
     end
 

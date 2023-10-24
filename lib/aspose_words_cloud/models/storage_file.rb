@@ -239,9 +239,7 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property is_folder in StorageFile is required.' if self.is_folder.nil?
-
       raise ArgumentError, 'Property size in StorageFile is required.' if self.size.nil?
-
     end
 
   end

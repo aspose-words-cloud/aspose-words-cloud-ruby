@@ -209,6 +209,10 @@ module AsposeWordsCloud
     end
 
     def validate()
+      unless self.cell_format.nil?
+          self.cell_format.validate
+      end
+
     end
 
   end

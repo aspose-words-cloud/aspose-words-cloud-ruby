@@ -251,6 +251,14 @@ module AsposeWordsCloud
     end
 
     def validate()
+      unless self.bookmarks_outline_levels.nil?
+          for elementBookmarksOutlineLevels in self.bookmarks_outline_levels
+              unless elementBookmarksOutlineLevels.nil?
+                  elementBookmarksOutlineLevels.validate
+              end
+          end
+      end
+
     end
 
   end

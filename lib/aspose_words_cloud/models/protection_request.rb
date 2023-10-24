@@ -219,7 +219,6 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property password in ProtectionRequest is required.' if self.password.nil?
-
     end
 
   end

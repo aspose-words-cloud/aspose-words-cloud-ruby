@@ -266,9 +266,10 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property file_reference in DocumentEntry is required.' if self.file_reference.nil?
-      self.file_reference.validate
-
       raise ArgumentError, 'Property import_format_mode in DocumentEntry is required.' if self.import_format_mode.nil?
+      unless self.file_reference.nil?
+          self.file_reference.validate
+      end
 
     end
 

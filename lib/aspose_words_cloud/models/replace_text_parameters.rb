@@ -239,13 +239,9 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property is_match_case in ReplaceTextParameters is required.' if self.is_match_case.nil?
-
       raise ArgumentError, 'Property is_match_whole_word in ReplaceTextParameters is required.' if self.is_match_whole_word.nil?
-
       raise ArgumentError, 'Property is_old_value_regex in ReplaceTextParameters is required.' if self.is_old_value_regex.nil?
-
       raise ArgumentError, 'Property old_value in ReplaceTextParameters is required.' if self.old_value.nil?
-
     end
 
   end

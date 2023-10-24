@@ -292,6 +292,15 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property data_source_type in ReportEngineSettings is required.' if self.data_source_type.nil?
+      unless self.csv_data_load_options.nil?
+          self.csv_data_load_options.validate
+      end
+      unless self.json_data_load_options.nil?
+          self.json_data_load_options.validate
+      end
+      unless self.xml_data_load_options.nil?
+          self.xml_data_load_options.validate
+      end
 
     end
 

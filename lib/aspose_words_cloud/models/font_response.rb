@@ -209,6 +209,10 @@ module AsposeWordsCloud
     end
 
     def validate()
+      unless self.font.nil?
+          self.font.validate
+      end
+
     end
 
   end

@@ -253,10 +253,14 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property author in CommentUpdate is required.' if self.author.nil?
-
       raise ArgumentError, 'Property initial in CommentUpdate is required.' if self.initial.nil?
-
       raise ArgumentError, 'Property text in CommentUpdate is required.' if self.text.nil?
+      unless self.range_start.nil?
+          self.range_start.validate
+      end
+      unless self.range_end.nil?
+          self.range_end.validate
+      end
 
     end
 
