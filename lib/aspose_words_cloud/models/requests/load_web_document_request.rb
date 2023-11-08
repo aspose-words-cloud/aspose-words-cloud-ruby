@@ -49,7 +49,7 @@ module AsposeWordsCloud
     def to_batch_part(api_client, requestId, parentRequestId = nil)
       # verify the required parameter 'data' is set
       raise ArgumentError, 'Missing the required parameter data when calling WordsApi.load_web_document' if api_client.config.client_side_validation && self.data.nil?
-
+      self.data.validate
       # resource path
       local_var_path = '/words/loadWebDocument'[7..-1]
       local_var_path = local_var_path.sub('//', '/')
@@ -108,7 +108,7 @@ module AsposeWordsCloud
     def create_http_request(api_client)
       # verify the required parameter 'data' is set
       raise ArgumentError, 'Missing the required parameter data when calling WordsApi.load_web_document' if api_client.config.client_side_validation && self.data.nil?
-
+      self.data.validate
       # resource path
       local_var_path = '/words/loadWebDocument'[1..-1]
       local_var_path = local_var_path.sub('//', '/')

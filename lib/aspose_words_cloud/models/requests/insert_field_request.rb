@@ -101,7 +101,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.insert_field' if api_client.config.client_side_validation && self.name.nil?
       # verify the required parameter 'field' is set
       raise ArgumentError, 'Missing the required parameter field when calling WordsApi.insert_field' if api_client.config.client_side_validation && self.field.nil?
-
+      self.field.validate
       # resource path
       local_var_path = '/words/{name}/{nodePath}/fields'[7..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)
@@ -172,7 +172,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.insert_field' if api_client.config.client_side_validation && self.name.nil?
       # verify the required parameter 'field' is set
       raise ArgumentError, 'Missing the required parameter field when calling WordsApi.insert_field' if api_client.config.client_side_validation && self.field.nil?
-
+      self.field.validate
       # resource path
       local_var_path = '/words/{name}/{nodePath}/fields'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)

@@ -86,7 +86,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.insert_table_online' if api_client.config.client_side_validation && self.document.nil?
       # verify the required parameter 'table' is set
       raise ArgumentError, 'Missing the required parameter table when calling WordsApi.insert_table_online' if api_client.config.client_side_validation && self.table.nil?
-
+      self.table.validate
       # resource path
       local_var_path = '/words/online/post/{nodePath}/tables'[7..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', self.node_path.nil? ? '' : self.node_path.to_s)
@@ -160,7 +160,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.insert_table_online' if api_client.config.client_side_validation && self.document.nil?
       # verify the required parameter 'table' is set
       raise ArgumentError, 'Missing the required parameter table when calling WordsApi.insert_table_online' if api_client.config.client_side_validation && self.table.nil?
-
+      self.table.validate
       # resource path
       local_var_path = '/words/online/post/{nodePath}/tables'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', self.node_path.nil? ? '' : self.node_path.to_s)

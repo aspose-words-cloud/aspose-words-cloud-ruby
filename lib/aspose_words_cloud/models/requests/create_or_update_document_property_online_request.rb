@@ -88,7 +88,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter property_name when calling WordsApi.create_or_update_document_property_online' if api_client.config.client_side_validation && self.property_name.nil?
       # verify the required parameter 'property' is set
       raise ArgumentError, 'Missing the required parameter property when calling WordsApi.create_or_update_document_property_online' if api_client.config.client_side_validation && self.property.nil?
-
+      self.property.validate
       # resource path
       local_var_path = '/words/online/put/documentProperties/{propertyName}'[7..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('PropertyName') + '}', self.property_name.nil? ? '' : self.property_name.to_s)
@@ -164,7 +164,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter property_name when calling WordsApi.create_or_update_document_property_online' if api_client.config.client_side_validation && self.property_name.nil?
       # verify the required parameter 'property' is set
       raise ArgumentError, 'Missing the required parameter property when calling WordsApi.create_or_update_document_property_online' if api_client.config.client_side_validation && self.property.nil?
-
+      self.property.validate
       # resource path
       local_var_path = '/words/online/put/documentProperties/{propertyName}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('PropertyName') + '}', self.property_name.nil? ? '' : self.property_name.to_s)

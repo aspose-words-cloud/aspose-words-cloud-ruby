@@ -119,13 +119,6 @@ module AsposeWordsCloud
       end
     end
 
-    # Show invalid properties with the reasons. Usually used together with valid?
-    # @return Array for valid properies with the reasons
-    def list_invalid_properties
-      invalid_properties = []
-      return invalid_properties
-    end
-
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
@@ -285,6 +278,27 @@ module AsposeWordsCloud
     end
 
     def collectFilesContent(resultFilesContent)
+    end
+
+    def validate()
+      raise ArgumentError, 'Property type in HeaderFooter is required.' if self.type.nil?
+      unless self.link.nil?
+          self.link.validate
+      end
+      unless self.child_nodes.nil?
+          for elementChildNodes in self.child_nodes
+              unless elementChildNodes.nil?
+                  elementChildNodes.validate
+              end
+          end
+      end
+      unless self.paragraphs.nil?
+          self.paragraphs.validate
+      end
+      unless self.drawing_objects.nil?
+          self.drawing_objects.validate
+      end
+
     end
 
   end

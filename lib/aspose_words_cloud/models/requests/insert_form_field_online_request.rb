@@ -91,7 +91,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.insert_form_field_online' if api_client.config.client_side_validation && self.document.nil?
       # verify the required parameter 'form_field' is set
       raise ArgumentError, 'Missing the required parameter form_field when calling WordsApi.insert_form_field_online' if api_client.config.client_side_validation && self.form_field.nil?
-
+      self.form_field.validate
       # resource path
       local_var_path = '/words/online/post/{nodePath}/formfields'[7..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', self.node_path.nil? ? '' : self.node_path.to_s)
@@ -166,7 +166,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.insert_form_field_online' if api_client.config.client_side_validation && self.document.nil?
       # verify the required parameter 'form_field' is set
       raise ArgumentError, 'Missing the required parameter form_field when calling WordsApi.insert_form_field_online' if api_client.config.client_side_validation && self.form_field.nil?
-
+      self.form_field.validate
       # resource path
       local_var_path = '/words/online/post/{nodePath}/formfields'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', self.node_path.nil? ? '' : self.node_path.to_s)

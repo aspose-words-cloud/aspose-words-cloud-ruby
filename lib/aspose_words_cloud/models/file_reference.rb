@@ -211,5 +211,8 @@ module AsposeWordsCloud
         resultFilesContent.push(self)
       end
     end
+
+    def validate()
+    end
   end
 end

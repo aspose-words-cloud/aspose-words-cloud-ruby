@@ -93,7 +93,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter paragraph_path when calling WordsApi.update_run_online' if api_client.config.client_side_validation && self.paragraph_path.nil?
       # verify the required parameter 'run' is set
       raise ArgumentError, 'Missing the required parameter run when calling WordsApi.update_run_online' if api_client.config.client_side_validation && self.run.nil?
-      # verify the required parameter 'index' is set
+      self.run.validate# verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_run_online' if api_client.config.client_side_validation && self.index.nil?
 
       # resource path
@@ -172,7 +172,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter paragraph_path when calling WordsApi.update_run_online' if api_client.config.client_side_validation && self.paragraph_path.nil?
       # verify the required parameter 'run' is set
       raise ArgumentError, 'Missing the required parameter run when calling WordsApi.update_run_online' if api_client.config.client_side_validation && self.run.nil?
-      # verify the required parameter 'index' is set
+      self.run.validate# verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_run_online' if api_client.config.client_side_validation && self.index.nil?
 
       # resource path

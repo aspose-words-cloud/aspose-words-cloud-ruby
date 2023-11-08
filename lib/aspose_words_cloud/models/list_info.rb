@@ -128,13 +128,6 @@ module AsposeWordsCloud
       end
     end
 
-    # Show invalid properties with the reasons. Usually used together with valid?
-    # @return Array for valid properies with the reasons
-    def list_invalid_properties
-      invalid_properties = []
-      return invalid_properties
-    end
-
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
@@ -279,6 +272,24 @@ module AsposeWordsCloud
     end
 
     def collectFilesContent(resultFilesContent)
+    end
+
+    def validate()
+      raise ArgumentError, 'Property list_id in ListInfo is required.' if self.list_id.nil?
+      raise ArgumentError, 'Property is_multi_level in ListInfo is required.' if self.is_multi_level.nil?
+      raise ArgumentError, 'Property is_restart_at_each_section in ListInfo is required.' if self.is_restart_at_each_section.nil?
+      raise ArgumentError, 'Property is_list_style_definition in ListInfo is required.' if self.is_list_style_definition.nil?
+      raise ArgumentError, 'Property is_list_style_reference in ListInfo is required.' if self.is_list_style_reference.nil?
+      unless self.link.nil?
+          self.link.validate
+      end
+      unless self.style.nil?
+          self.style.validate
+      end
+      unless self.list_levels.nil?
+          self.list_levels.validate
+      end
+
     end
 
   end

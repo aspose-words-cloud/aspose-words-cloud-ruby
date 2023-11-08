@@ -81,7 +81,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.insert_or_update_paragraph_tab_stop_online' if api_client.config.client_side_validation && self.document.nil?
       # verify the required parameter 'tab_stop_insert_dto' is set
       raise ArgumentError, 'Missing the required parameter tab_stop_insert_dto when calling WordsApi.insert_or_update_paragraph_tab_stop_online' if api_client.config.client_side_validation && self.tab_stop_insert_dto.nil?
-      # verify the required parameter 'index' is set
+      self.tab_stop_insert_dto.validate# verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.insert_or_update_paragraph_tab_stop_online' if api_client.config.client_side_validation && self.index.nil?
 
       # resource path
@@ -156,7 +156,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.insert_or_update_paragraph_tab_stop_online' if api_client.config.client_side_validation && self.document.nil?
       # verify the required parameter 'tab_stop_insert_dto' is set
       raise ArgumentError, 'Missing the required parameter tab_stop_insert_dto when calling WordsApi.insert_or_update_paragraph_tab_stop_online' if api_client.config.client_side_validation && self.tab_stop_insert_dto.nil?
-      # verify the required parameter 'index' is set
+      self.tab_stop_insert_dto.validate# verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.insert_or_update_paragraph_tab_stop_online' if api_client.config.client_side_validation && self.index.nil?
 
       # resource path

@@ -78,7 +78,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter range_start_identifier when calling WordsApi.save_as_range_online' if api_client.config.client_side_validation && self.range_start_identifier.nil?
       # verify the required parameter 'document_parameters' is set
       raise ArgumentError, 'Missing the required parameter document_parameters when calling WordsApi.save_as_range_online' if api_client.config.client_side_validation && self.document_parameters.nil?
-
+      self.document_parameters.validate
       # resource path
       local_var_path = '/words/online/post/range/{rangeStartIdentifier}/{rangeEndIdentifier}/SaveAs'[7..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('RangeStartIdentifier') + '}', self.range_start_identifier.nil? ? '' : self.range_start_identifier.to_s)
@@ -152,7 +152,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter range_start_identifier when calling WordsApi.save_as_range_online' if api_client.config.client_side_validation && self.range_start_identifier.nil?
       # verify the required parameter 'document_parameters' is set
       raise ArgumentError, 'Missing the required parameter document_parameters when calling WordsApi.save_as_range_online' if api_client.config.client_side_validation && self.document_parameters.nil?
-
+      self.document_parameters.validate
       # resource path
       local_var_path = '/words/online/post/range/{rangeStartIdentifier}/{rangeEndIdentifier}/SaveAs'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('RangeStartIdentifier') + '}', self.range_start_identifier.nil? ? '' : self.range_start_identifier.to_s)

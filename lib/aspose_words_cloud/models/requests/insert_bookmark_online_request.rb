@@ -81,7 +81,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.insert_bookmark_online' if api_client.config.client_side_validation && self.document.nil?
       # verify the required parameter 'bookmark' is set
       raise ArgumentError, 'Missing the required parameter bookmark when calling WordsApi.insert_bookmark_online' if api_client.config.client_side_validation && self.bookmark.nil?
-
+      self.bookmark.validate
       # resource path
       local_var_path = '/words/online/post/bookmarks'[7..-1]
       local_var_path = local_var_path.sub('//', '/')
@@ -154,7 +154,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.insert_bookmark_online' if api_client.config.client_side_validation && self.document.nil?
       # verify the required parameter 'bookmark' is set
       raise ArgumentError, 'Missing the required parameter bookmark when calling WordsApi.insert_bookmark_online' if api_client.config.client_side_validation && self.bookmark.nil?
-
+      self.bookmark.validate
       # resource path
       local_var_path = '/words/online/post/bookmarks'[1..-1]
       local_var_path = local_var_path.sub('//', '/')

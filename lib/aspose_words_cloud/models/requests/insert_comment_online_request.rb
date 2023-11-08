@@ -81,7 +81,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.insert_comment_online' if api_client.config.client_side_validation && self.document.nil?
       # verify the required parameter 'comment' is set
       raise ArgumentError, 'Missing the required parameter comment when calling WordsApi.insert_comment_online' if api_client.config.client_side_validation && self.comment.nil?
-
+      self.comment.validate
       # resource path
       local_var_path = '/words/online/post/comments'[7..-1]
       local_var_path = local_var_path.sub('//', '/')
@@ -154,7 +154,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.insert_comment_online' if api_client.config.client_side_validation && self.document.nil?
       # verify the required parameter 'comment' is set
       raise ArgumentError, 'Missing the required parameter comment when calling WordsApi.insert_comment_online' if api_client.config.client_side_validation && self.comment.nil?
-
+      self.comment.validate
       # resource path
       local_var_path = '/words/online/post/comments'[1..-1]
       local_var_path = local_var_path.sub('//', '/')

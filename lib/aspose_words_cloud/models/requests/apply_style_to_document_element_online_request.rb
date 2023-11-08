@@ -88,7 +88,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter styled_node_path when calling WordsApi.apply_style_to_document_element_online' if api_client.config.client_side_validation && self.styled_node_path.nil?
       # verify the required parameter 'style_apply' is set
       raise ArgumentError, 'Missing the required parameter style_apply when calling WordsApi.apply_style_to_document_element_online' if api_client.config.client_side_validation && self.style_apply.nil?
-
+      self.style_apply.validate
       # resource path
       local_var_path = '/words/online/put/{styledNodePath}/style'[7..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('StyledNodePath') + '}', self.styled_node_path.nil? ? '' : self.styled_node_path.to_s)
@@ -164,7 +164,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter styled_node_path when calling WordsApi.apply_style_to_document_element_online' if api_client.config.client_side_validation && self.styled_node_path.nil?
       # verify the required parameter 'style_apply' is set
       raise ArgumentError, 'Missing the required parameter style_apply when calling WordsApi.apply_style_to_document_element_online' if api_client.config.client_side_validation && self.style_apply.nil?
-
+      self.style_apply.validate
       # resource path
       local_var_path = '/words/online/put/{styledNodePath}/style'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('StyledNodePath') + '}', self.styled_node_path.nil? ? '' : self.styled_node_path.to_s)

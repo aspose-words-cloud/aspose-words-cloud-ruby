@@ -81,7 +81,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.save_as' if api_client.config.client_side_validation && self.name.nil?
       # verify the required parameter 'save_options_data' is set
       raise ArgumentError, 'Missing the required parameter save_options_data when calling WordsApi.save_as' if api_client.config.client_side_validation && self.save_options_data.nil?
-
+      self.save_options_data.validate
       # resource path
       local_var_path = '/words/{name}/saveAs'[7..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)
@@ -148,7 +148,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.save_as' if api_client.config.client_side_validation && self.name.nil?
       # verify the required parameter 'save_options_data' is set
       raise ArgumentError, 'Missing the required parameter save_options_data when calling WordsApi.save_as' if api_client.config.client_side_validation && self.save_options_data.nil?
-
+      self.save_options_data.validate
       # resource path
       local_var_path = '/words/{name}/saveAs'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)

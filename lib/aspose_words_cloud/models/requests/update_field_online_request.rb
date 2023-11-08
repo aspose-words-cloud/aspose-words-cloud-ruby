@@ -91,7 +91,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.update_field_online' if api_client.config.client_side_validation && self.document.nil?
       # verify the required parameter 'field' is set
       raise ArgumentError, 'Missing the required parameter field when calling WordsApi.update_field_online' if api_client.config.client_side_validation && self.field.nil?
-      # verify the required parameter 'index' is set
+      self.field.validate# verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_field_online' if api_client.config.client_side_validation && self.index.nil?
 
       # resource path
@@ -168,7 +168,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.update_field_online' if api_client.config.client_side_validation && self.document.nil?
       # verify the required parameter 'field' is set
       raise ArgumentError, 'Missing the required parameter field when calling WordsApi.update_field_online' if api_client.config.client_side_validation && self.field.nil?
-      # verify the required parameter 'index' is set
+      self.field.validate# verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_field_online' if api_client.config.client_side_validation && self.index.nil?
 
       # resource path

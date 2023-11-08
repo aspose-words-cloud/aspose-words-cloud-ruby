@@ -91,7 +91,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.insert_comment' if api_client.config.client_side_validation && self.name.nil?
       # verify the required parameter 'comment' is set
       raise ArgumentError, 'Missing the required parameter comment when calling WordsApi.insert_comment' if api_client.config.client_side_validation && self.comment.nil?
-
+      self.comment.validate
       # resource path
       local_var_path = '/words/{name}/comments'[7..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)
@@ -160,7 +160,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.insert_comment' if api_client.config.client_side_validation && self.name.nil?
       # verify the required parameter 'comment' is set
       raise ArgumentError, 'Missing the required parameter comment when calling WordsApi.insert_comment' if api_client.config.client_side_validation && self.comment.nil?
-
+      self.comment.validate
       # resource path
       local_var_path = '/words/{name}/comments'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)

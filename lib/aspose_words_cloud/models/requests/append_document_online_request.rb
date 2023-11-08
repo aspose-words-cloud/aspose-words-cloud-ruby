@@ -81,7 +81,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.append_document_online' if api_client.config.client_side_validation && self.document.nil?
       # verify the required parameter 'document_list' is set
       raise ArgumentError, 'Missing the required parameter document_list when calling WordsApi.append_document_online' if api_client.config.client_side_validation && self.document_list.nil?
-
+      self.document_list.validate
       # resource path
       local_var_path = '/words/online/put/appendDocument'[7..-1]
       local_var_path = local_var_path.sub('//', '/')
@@ -155,7 +155,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.append_document_online' if api_client.config.client_side_validation && self.document.nil?
       # verify the required parameter 'document_list' is set
       raise ArgumentError, 'Missing the required parameter document_list when calling WordsApi.append_document_online' if api_client.config.client_side_validation && self.document_list.nil?
-
+      self.document_list.validate
       # resource path
       local_var_path = '/words/online/put/appendDocument'[1..-1]
       local_var_path = local_var_path.sub('//', '/')

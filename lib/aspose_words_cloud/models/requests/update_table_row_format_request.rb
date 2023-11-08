@@ -105,7 +105,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_table_row_format' if api_client.config.client_side_validation && self.index.nil?
       # verify the required parameter 'format' is set
       raise ArgumentError, 'Missing the required parameter format when calling WordsApi.update_table_row_format' if api_client.config.client_side_validation && self.format.nil?
-
+      self.format.validate
       # resource path
       local_var_path = '/words/{name}/{tablePath}/rows/{index}/rowformat'[7..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)
@@ -180,7 +180,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_table_row_format' if api_client.config.client_side_validation && self.index.nil?
       # verify the required parameter 'format' is set
       raise ArgumentError, 'Missing the required parameter format when calling WordsApi.update_table_row_format' if api_client.config.client_side_validation && self.format.nil?
-
+      self.format.validate
       # resource path
       local_var_path = '/words/{name}/{tablePath}/rows/{index}/rowformat'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)

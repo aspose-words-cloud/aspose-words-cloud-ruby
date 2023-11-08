@@ -98,7 +98,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter list_id when calling WordsApi.update_list' if api_client.config.client_side_validation && self.list_id.nil?
       # verify the required parameter 'list_update' is set
       raise ArgumentError, 'Missing the required parameter list_update when calling WordsApi.update_list' if api_client.config.client_side_validation && self.list_update.nil?
-
+      self.list_update.validate
       # resource path
       local_var_path = '/words/{name}/lists/{listId}'[7..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)
@@ -170,7 +170,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter list_id when calling WordsApi.update_list' if api_client.config.client_side_validation && self.list_id.nil?
       # verify the required parameter 'list_update' is set
       raise ArgumentError, 'Missing the required parameter list_update when calling WordsApi.update_list' if api_client.config.client_side_validation && self.list_update.nil?
-
+      self.list_update.validate
       # resource path
       local_var_path = '/words/{name}/lists/{listId}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)

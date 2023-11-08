@@ -81,7 +81,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.insert_watermark_text_online' if api_client.config.client_side_validation && self.document.nil?
       # verify the required parameter 'watermark_text' is set
       raise ArgumentError, 'Missing the required parameter watermark_text when calling WordsApi.insert_watermark_text_online' if api_client.config.client_side_validation && self.watermark_text.nil?
-
+      self.watermark_text.validate
       # resource path
       local_var_path = '/words/online/post/watermarks/texts'[7..-1]
       local_var_path = local_var_path.sub('//', '/')
@@ -154,7 +154,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.insert_watermark_text_online' if api_client.config.client_side_validation && self.document.nil?
       # verify the required parameter 'watermark_text' is set
       raise ArgumentError, 'Missing the required parameter watermark_text when calling WordsApi.insert_watermark_text_online' if api_client.config.client_side_validation && self.watermark_text.nil?
-
+      self.watermark_text.validate
       # resource path
       local_var_path = '/words/online/post/watermarks/texts'[1..-1]
       local_var_path = local_var_path.sub('//', '/')

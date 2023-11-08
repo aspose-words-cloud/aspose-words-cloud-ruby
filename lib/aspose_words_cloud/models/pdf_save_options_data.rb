@@ -532,13 +532,6 @@ module AsposeWordsCloud
       end
     end
 
-    # Show invalid properties with the reasons. Usually used together with valid?
-    # @return Array for valid properies with the reasons
-    def list_invalid_properties
-      invalid_properties = []
-      return invalid_properties
-    end
-
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
@@ -948,6 +941,29 @@ module AsposeWordsCloud
     end
 
     def collectFilesContent(resultFilesContent)
+    end
+
+    def validate()
+      raise ArgumentError, 'Property file_name in PdfSaveOptionsData is required.' if self.file_name.nil?
+      unless self.custom_time_zone_info_data.nil?
+          self.custom_time_zone_info_data.validate
+      end
+      unless self.metafile_rendering_options.nil?
+          self.metafile_rendering_options.validate
+      end
+      unless self.digital_signature_details.nil?
+          self.digital_signature_details.validate
+      end
+      unless self.downsample_options.nil?
+          self.downsample_options.validate
+      end
+      unless self.encryption_details.nil?
+          self.encryption_details.validate
+      end
+      unless self.outline_options.nil?
+          self.outline_options.validate
+      end
+
     end
 
   end

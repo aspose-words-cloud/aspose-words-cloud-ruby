@@ -98,7 +98,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter style_name when calling WordsApi.update_style' if api_client.config.client_side_validation && self.style_name.nil?
       # verify the required parameter 'style_update' is set
       raise ArgumentError, 'Missing the required parameter style_update when calling WordsApi.update_style' if api_client.config.client_side_validation && self.style_update.nil?
-
+      self.style_update.validate
       # resource path
       local_var_path = '/words/{name}/styles/{styleName}/update'[7..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)
@@ -170,7 +170,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter style_name when calling WordsApi.update_style' if api_client.config.client_side_validation && self.style_name.nil?
       # verify the required parameter 'style_update' is set
       raise ArgumentError, 'Missing the required parameter style_update when calling WordsApi.update_style' if api_client.config.client_side_validation && self.style_update.nil?
-
+      self.style_update.validate
       # resource path
       local_var_path = '/words/{name}/styles/{styleName}/update'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)

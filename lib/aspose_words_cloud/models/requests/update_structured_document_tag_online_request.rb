@@ -91,7 +91,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.update_structured_document_tag_online' if api_client.config.client_side_validation && self.document.nil?
       # verify the required parameter 'structured_document_tag' is set
       raise ArgumentError, 'Missing the required parameter structured_document_tag when calling WordsApi.update_structured_document_tag_online' if api_client.config.client_side_validation && self.structured_document_tag.nil?
-      # verify the required parameter 'index' is set
+      self.structured_document_tag.validate# verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_structured_document_tag_online' if api_client.config.client_side_validation && self.index.nil?
 
       # resource path
@@ -168,7 +168,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.update_structured_document_tag_online' if api_client.config.client_side_validation && self.document.nil?
       # verify the required parameter 'structured_document_tag' is set
       raise ArgumentError, 'Missing the required parameter structured_document_tag when calling WordsApi.update_structured_document_tag_online' if api_client.config.client_side_validation && self.structured_document_tag.nil?
-      # verify the required parameter 'index' is set
+      self.structured_document_tag.validate# verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_structured_document_tag_online' if api_client.config.client_side_validation && self.index.nil?
 
       # resource path
