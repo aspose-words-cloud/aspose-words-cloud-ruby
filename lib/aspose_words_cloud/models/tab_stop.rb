@@ -108,13 +108,6 @@ module AsposeWordsCloud
       end
     end
 
-    # Show invalid properties with the reasons. Usually used together with valid?
-    # @return Array for valid properies with the reasons
-    def list_invalid_properties
-      invalid_properties = []
-      return invalid_properties
-    end
-
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
@@ -289,6 +282,13 @@ module AsposeWordsCloud
     end
 
     def collectFilesContent(resultFilesContent)
+    end
+
+    def validate()
+      raise ArgumentError, 'Property alignment in TabStop is required.' if self.alignment.nil?
+      raise ArgumentError, 'Property leader in TabStop is required.' if self.leader.nil?
+      raise ArgumentError, 'Property position in TabStop is required.' if self.position.nil?
+      raise ArgumentError, 'Property is_clear in TabStop is required.' if self.is_clear.nil?
     end
 
   end

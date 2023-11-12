@@ -81,7 +81,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.replace_text_online' if api_client.config.client_side_validation && self.document.nil?
       # verify the required parameter 'replace_text' is set
       raise ArgumentError, 'Missing the required parameter replace_text when calling WordsApi.replace_text_online' if api_client.config.client_side_validation && self.replace_text.nil?
-
+      self.replace_text.validate
       # resource path
       local_var_path = '/words/online/put/replaceText'[7..-1]
       local_var_path = local_var_path.sub('//', '/')
@@ -154,7 +154,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.replace_text_online' if api_client.config.client_side_validation && self.document.nil?
       # verify the required parameter 'replace_text' is set
       raise ArgumentError, 'Missing the required parameter replace_text when calling WordsApi.replace_text_online' if api_client.config.client_side_validation && self.replace_text.nil?
-
+      self.replace_text.validate
       # resource path
       local_var_path = '/words/online/put/replaceText'[1..-1]
       local_var_path = local_var_path.sub('//', '/')

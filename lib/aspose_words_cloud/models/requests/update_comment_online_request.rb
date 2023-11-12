@@ -88,7 +88,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter comment_index when calling WordsApi.update_comment_online' if api_client.config.client_side_validation && self.comment_index.nil?
       # verify the required parameter 'comment' is set
       raise ArgumentError, 'Missing the required parameter comment when calling WordsApi.update_comment_online' if api_client.config.client_side_validation && self.comment.nil?
-
+      self.comment.validate
       # resource path
       local_var_path = '/words/online/put/comments/{commentIndex}'[7..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('CommentIndex') + '}', self.comment_index.nil? ? '' : self.comment_index.to_s)
@@ -164,7 +164,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter comment_index when calling WordsApi.update_comment_online' if api_client.config.client_side_validation && self.comment_index.nil?
       # verify the required parameter 'comment' is set
       raise ArgumentError, 'Missing the required parameter comment when calling WordsApi.update_comment_online' if api_client.config.client_side_validation && self.comment.nil?
-
+      self.comment.validate
       # resource path
       local_var_path = '/words/online/put/comments/{commentIndex}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('CommentIndex') + '}', self.comment_index.nil? ? '' : self.comment_index.to_s)

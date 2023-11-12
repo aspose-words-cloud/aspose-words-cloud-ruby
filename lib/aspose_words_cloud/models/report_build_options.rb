@@ -35,6 +35,7 @@ module AsposeWordsCloud
     INLINEERRORMESSAGES = "InlineErrorMessages".freeze
     USELEGACYHEADERFOOTERVISITING = "UseLegacyHeaderFooterVisiting".freeze
     RESPECTJPEGEXIFORIENTATION = "RespectJpegExifOrientation".freeze
+    UPDATEFIELDSSYNTAXAWARE = "UpdateFieldsSyntaxAware".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

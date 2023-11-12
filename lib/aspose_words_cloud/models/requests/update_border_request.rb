@@ -103,7 +103,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter border_type when calling WordsApi.update_border' if api_client.config.client_side_validation && self.border_type.nil?
       # verify the required parameter 'border_properties' is set
       raise ArgumentError, 'Missing the required parameter border_properties when calling WordsApi.update_border' if api_client.config.client_side_validation && self.border_properties.nil?
-
+      self.border_properties.validate
       # resource path
       local_var_path = '/words/{name}/{nodePath}/borders/{borderType}'[7..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)
@@ -176,7 +176,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter border_type when calling WordsApi.update_border' if api_client.config.client_side_validation && self.border_type.nil?
       # verify the required parameter 'border_properties' is set
       raise ArgumentError, 'Missing the required parameter border_properties when calling WordsApi.update_border' if api_client.config.client_side_validation && self.border_properties.nil?
-
+      self.border_properties.validate
       # resource path
       local_var_path = '/words/{name}/{nodePath}/borders/{borderType}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)

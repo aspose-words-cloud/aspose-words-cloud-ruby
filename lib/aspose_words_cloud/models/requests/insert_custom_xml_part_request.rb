@@ -91,7 +91,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.insert_custom_xml_part' if api_client.config.client_side_validation && self.name.nil?
       # verify the required parameter 'custom_xml_part' is set
       raise ArgumentError, 'Missing the required parameter custom_xml_part when calling WordsApi.insert_custom_xml_part' if api_client.config.client_side_validation && self.custom_xml_part.nil?
-
+      self.custom_xml_part.validate
       # resource path
       local_var_path = '/words/{name}/customXmlParts'[7..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)
@@ -160,7 +160,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.insert_custom_xml_part' if api_client.config.client_side_validation && self.name.nil?
       # verify the required parameter 'custom_xml_part' is set
       raise ArgumentError, 'Missing the required parameter custom_xml_part when calling WordsApi.insert_custom_xml_part' if api_client.config.client_side_validation && self.custom_xml_part.nil?
-
+      self.custom_xml_part.validate
       # resource path
       local_var_path = '/words/{name}/customXmlParts'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)

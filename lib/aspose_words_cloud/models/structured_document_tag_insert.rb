@@ -102,12 +102,6 @@ module AsposeWordsCloud
     # Gets or sets a value indicating whether this SDT shall be removed from the WordProcessingML document when its contents are modified.
     attr_accessor :is_temporary
 
-    # Gets or sets the level at which this SDT occurs in the document tree.
-    attr_accessor :level
-
-    # Gets or sets type of this Structured document tag.
-    attr_accessor :sdt_type
-
     # Gets or sets Name of the Aspose.Words.BuildingBlocks.BuildingBlock containing placeholder text.
     # Aspose.Words.BuildingBlocks.BuildingBlock with this name Aspose.Words.BuildingBlocks.BuildingBlock.Name has to be present in the Aspose.Words.Document.GlossaryDocument otherwise System.InvalidOperationException will occur.
     attr_accessor :placeholder_name
@@ -139,6 +133,12 @@ module AsposeWordsCloud
 
     # Gets a string that represents the XML contained within the node in the Aspose.Words.SaveFormat.FlatOpc format.
     attr_accessor :word_open_xml
+
+    # Gets or sets the level at which this SDT occurs in the document tree.
+    attr_accessor :level
+
+    # Gets or sets type of this Structured document tag.
+    attr_accessor :sdt_type
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -182,15 +182,15 @@ module AsposeWordsCloud
         :'style_name' => :'StyleName',
         :'calendar_type' => :'CalendarType',
         :'is_temporary' => :'IsTemporary',
-        :'level' => :'Level',
-        :'sdt_type' => :'SdtType',
         :'placeholder_name' => :'PlaceholderName',
         :'lock_content_control' => :'LockContentControl',
         :'lock_contents' => :'LockContents',
         :'is_showing_placeholder_text' => :'IsShowingPlaceholderText',
         :'tag' => :'Tag',
         :'id' => :'Id',
-        :'word_open_xml' => :'WordOpenXML'
+        :'word_open_xml' => :'WordOpenXML',
+        :'level' => :'Level',
+        :'sdt_type' => :'SdtType'
       }
     end
 
@@ -214,15 +214,15 @@ module AsposeWordsCloud
         :'style_name' => :'String',
         :'calendar_type' => :'String',
         :'is_temporary' => :'BOOLEAN',
-        :'level' => :'String',
-        :'sdt_type' => :'String',
         :'placeholder_name' => :'String',
         :'lock_content_control' => :'BOOLEAN',
         :'lock_contents' => :'BOOLEAN',
         :'is_showing_placeholder_text' => :'BOOLEAN',
         :'tag' => :'String',
         :'id' => :'Integer',
-        :'word_open_xml' => :'String'
+        :'word_open_xml' => :'String',
+        :'level' => :'String',
+        :'sdt_type' => :'String'
       }
     end
 
@@ -304,14 +304,6 @@ module AsposeWordsCloud
         self.is_temporary = attributes[:'IsTemporary']
       end
 
-      if attributes.key?(:'Level')
-        self.level = attributes[:'Level']
-      end
-
-      if attributes.key?(:'SdtType')
-        self.sdt_type = attributes[:'SdtType']
-      end
-
       if attributes.key?(:'PlaceholderName')
         self.placeholder_name = attributes[:'PlaceholderName']
       end
@@ -335,13 +327,14 @@ module AsposeWordsCloud
       if attributes.key?(:'Id')
         self.id = attributes[:'Id']
       end
-    end
 
-    # Show invalid properties with the reasons. Usually used together with valid?
-    # @return Array for valid properies with the reasons
-    def list_invalid_properties
-      invalid_properties = []
-      return invalid_properties
+      if attributes.key?(:'Level')
+        self.level = attributes[:'Level']
+      end
+
+      if attributes.key?(:'SdtType')
+        self.sdt_type = attributes[:'SdtType']
+      end
     end
 
     # Check to see if the all the properties in the model are valid
@@ -454,15 +447,15 @@ module AsposeWordsCloud
           style_name == other.style_name &&
           calendar_type == other.calendar_type &&
           is_temporary == other.is_temporary &&
-          level == other.level &&
-          sdt_type == other.sdt_type &&
           placeholder_name == other.placeholder_name &&
           lock_content_control == other.lock_content_control &&
           lock_contents == other.lock_contents &&
           is_showing_placeholder_text == other.is_showing_placeholder_text &&
           tag == other.tag &&
           id == other.id &&
-          word_open_xml == other.word_open_xml
+          word_open_xml == other.word_open_xml &&
+          level == other.level &&
+          sdt_type == other.sdt_type
     end
 
     # @see the `==` method
@@ -474,7 +467,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, node_id, list_items, checked, appearance, date_display_locale, date_display_format, full_date, title, date_storage_format, building_block_gallery, building_block_category, multiline, color, style_name, calendar_type, is_temporary, level, sdt_type, placeholder_name, lock_content_control, lock_contents, is_showing_placeholder_text, tag, id, word_open_xml].hash
+      [link, node_id, list_items, checked, appearance, date_display_locale, date_display_format, full_date, title, date_storage_format, building_block_gallery, building_block_category, multiline, color, style_name, calendar_type, is_temporary, placeholder_name, lock_content_control, lock_contents, is_showing_placeholder_text, tag, id, word_open_xml, level, sdt_type].hash
     end
 
     # Builds the object from hash
@@ -588,6 +581,22 @@ module AsposeWordsCloud
     end
 
     def collectFilesContent(resultFilesContent)
+    end
+
+    def validate()
+      raise ArgumentError, 'Property level in StructuredDocumentTagInsert is required.' if self.level.nil?
+      raise ArgumentError, 'Property sdt_type in StructuredDocumentTagInsert is required.' if self.sdt_type.nil?
+      unless self.link.nil?
+          self.link.validate
+      end
+      unless self.list_items.nil?
+          for elementListItems in self.list_items
+              unless elementListItems.nil?
+                  elementListItems.validate
+              end
+          end
+      end
+
     end
 
   end

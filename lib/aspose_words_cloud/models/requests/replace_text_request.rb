@@ -91,7 +91,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.replace_text' if api_client.config.client_side_validation && self.name.nil?
       # verify the required parameter 'replace_text' is set
       raise ArgumentError, 'Missing the required parameter replace_text when calling WordsApi.replace_text' if api_client.config.client_side_validation && self.replace_text.nil?
-
+      self.replace_text.validate
       # resource path
       local_var_path = '/words/{name}/replaceText'[7..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)
@@ -160,7 +160,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.replace_text' if api_client.config.client_side_validation && self.name.nil?
       # verify the required parameter 'replace_text' is set
       raise ArgumentError, 'Missing the required parameter replace_text when calling WordsApi.replace_text' if api_client.config.client_side_validation && self.replace_text.nil?
-
+      self.replace_text.validate
       # resource path
       local_var_path = '/words/{name}/replaceText'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)

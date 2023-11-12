@@ -71,7 +71,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter template when calling WordsApi.execute_mail_merge_online' if api_client.config.client_side_validation && self.template.nil?
       # verify the required parameter 'data' is set
       raise ArgumentError, 'Missing the required parameter data when calling WordsApi.execute_mail_merge_online' if api_client.config.client_side_validation && self.data.nil?
-
+      self.options&.validate
       # resource path
       local_var_path = '/words/MailMerge'[7..-1]
       local_var_path = local_var_path.sub('//', '/')
@@ -145,7 +145,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter template when calling WordsApi.execute_mail_merge_online' if api_client.config.client_side_validation && self.template.nil?
       # verify the required parameter 'data' is set
       raise ArgumentError, 'Missing the required parameter data when calling WordsApi.execute_mail_merge_online' if api_client.config.client_side_validation && self.data.nil?
-
+      self.options&.validate
       # resource path
       local_var_path = '/words/MailMerge'[1..-1]
       local_var_path = local_var_path.sub('//', '/')

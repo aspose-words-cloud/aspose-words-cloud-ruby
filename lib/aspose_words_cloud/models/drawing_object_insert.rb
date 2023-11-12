@@ -144,13 +144,6 @@ module AsposeWordsCloud
       end
     end
 
-    # Show invalid properties with the reasons. Usually used together with valid?
-    # @return Array for valid properies with the reasons
-    def list_invalid_properties
-      invalid_properties = []
-      return invalid_properties
-    end
-
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
@@ -345,6 +338,20 @@ module AsposeWordsCloud
     end
 
     def collectFilesContent(resultFilesContent)
+    end
+
+    def validate()
+      raise ArgumentError, 'Property relative_horizontal_position in DrawingObjectInsert is required.' if self.relative_horizontal_position.nil?
+      raise ArgumentError, 'Property left in DrawingObjectInsert is required.' if self.left.nil?
+      raise ArgumentError, 'Property relative_vertical_position in DrawingObjectInsert is required.' if self.relative_vertical_position.nil?
+      raise ArgumentError, 'Property top in DrawingObjectInsert is required.' if self.top.nil?
+      raise ArgumentError, 'Property width in DrawingObjectInsert is required.' if self.width.nil?
+      raise ArgumentError, 'Property height in DrawingObjectInsert is required.' if self.height.nil?
+      raise ArgumentError, 'Property wrap_type in DrawingObjectInsert is required.' if self.wrap_type.nil?
+      unless self.position.nil?
+          self.position.validate
+      end
+
     end
 
   end

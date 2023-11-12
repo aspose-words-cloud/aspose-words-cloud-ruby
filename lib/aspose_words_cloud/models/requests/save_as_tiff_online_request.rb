@@ -156,7 +156,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.save_as_tiff_online' if api_client.config.client_side_validation && self.document.nil?
       # verify the required parameter 'save_options' is set
       raise ArgumentError, 'Missing the required parameter save_options when calling WordsApi.save_as_tiff_online' if api_client.config.client_side_validation && self.save_options.nil?
-
+      self.save_options.validate
       # resource path
       local_var_path = '/words/online/put/saveAs/tiff'[7..-1]
       local_var_path = local_var_path.sub('//', '/')
@@ -244,7 +244,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.save_as_tiff_online' if api_client.config.client_side_validation && self.document.nil?
       # verify the required parameter 'save_options' is set
       raise ArgumentError, 'Missing the required parameter save_options when calling WordsApi.save_as_tiff_online' if api_client.config.client_side_validation && self.save_options.nil?
-
+      self.save_options.validate
       # resource path
       local_var_path = '/words/online/put/saveAs/tiff'[1..-1]
       local_var_path = local_var_path.sub('//', '/')

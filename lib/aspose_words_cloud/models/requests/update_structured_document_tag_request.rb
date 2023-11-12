@@ -103,7 +103,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_structured_document_tag' if api_client.config.client_side_validation && self.index.nil?
       # verify the required parameter 'structured_document_tag' is set
       raise ArgumentError, 'Missing the required parameter structured_document_tag when calling WordsApi.update_structured_document_tag' if api_client.config.client_side_validation && self.structured_document_tag.nil?
-
+      self.structured_document_tag.validate
       # resource path
       local_var_path = '/words/{name}/{nodePath}/sdt/{index}'[7..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)
@@ -176,7 +176,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_structured_document_tag' if api_client.config.client_side_validation && self.index.nil?
       # verify the required parameter 'structured_document_tag' is set
       raise ArgumentError, 'Missing the required parameter structured_document_tag when calling WordsApi.update_structured_document_tag' if api_client.config.client_side_validation && self.structured_document_tag.nil?
-
+      self.structured_document_tag.validate
       # resource path
       local_var_path = '/words/{name}/{nodePath}/sdt/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)

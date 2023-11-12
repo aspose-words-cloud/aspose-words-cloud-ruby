@@ -101,7 +101,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.insert_drawing_object' if api_client.config.client_side_validation && self.name.nil?
       # verify the required parameter 'drawing_object' is set
       raise ArgumentError, 'Missing the required parameter drawing_object when calling WordsApi.insert_drawing_object' if api_client.config.client_side_validation && self.drawing_object.nil?
-      # verify the required parameter 'image_file' is set
+      self.drawing_object.validate# verify the required parameter 'image_file' is set
       raise ArgumentError, 'Missing the required parameter image_file when calling WordsApi.insert_drawing_object' if api_client.config.client_side_validation && self.image_file.nil?
 
       # resource path
@@ -180,7 +180,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.insert_drawing_object' if api_client.config.client_side_validation && self.name.nil?
       # verify the required parameter 'drawing_object' is set
       raise ArgumentError, 'Missing the required parameter drawing_object when calling WordsApi.insert_drawing_object' if api_client.config.client_side_validation && self.drawing_object.nil?
-      # verify the required parameter 'image_file' is set
+      self.drawing_object.validate# verify the required parameter 'image_file' is set
       raise ArgumentError, 'Missing the required parameter image_file when calling WordsApi.insert_drawing_object' if api_client.config.client_side_validation && self.image_file.nil?
 
       # resource path

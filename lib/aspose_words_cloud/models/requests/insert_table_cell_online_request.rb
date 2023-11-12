@@ -88,7 +88,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter table_row_path when calling WordsApi.insert_table_cell_online' if api_client.config.client_side_validation && self.table_row_path.nil?
       # verify the required parameter 'cell' is set
       raise ArgumentError, 'Missing the required parameter cell when calling WordsApi.insert_table_cell_online' if api_client.config.client_side_validation && self.cell.nil?
-
+      self.cell.validate
       # resource path
       local_var_path = '/words/online/post/{tableRowPath}/cells'[7..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('TableRowPath') + '}', self.table_row_path.nil? ? '' : self.table_row_path.to_s)
@@ -164,7 +164,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter table_row_path when calling WordsApi.insert_table_cell_online' if api_client.config.client_side_validation && self.table_row_path.nil?
       # verify the required parameter 'cell' is set
       raise ArgumentError, 'Missing the required parameter cell when calling WordsApi.insert_table_cell_online' if api_client.config.client_side_validation && self.cell.nil?
-
+      self.cell.validate
       # resource path
       local_var_path = '/words/online/post/{tableRowPath}/cells'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('TableRowPath') + '}', self.table_row_path.nil? ? '' : self.table_row_path.to_s)

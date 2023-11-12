@@ -93,7 +93,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter paragraph_path when calling WordsApi.insert_run_online' if api_client.config.client_side_validation && self.paragraph_path.nil?
       # verify the required parameter 'run' is set
       raise ArgumentError, 'Missing the required parameter run when calling WordsApi.insert_run_online' if api_client.config.client_side_validation && self.run.nil?
-
+      self.run.validate
       # resource path
       local_var_path = '/words/online/post/{paragraphPath}/runs'[7..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('ParagraphPath') + '}', self.paragraph_path.nil? ? '' : self.paragraph_path.to_s)
@@ -170,7 +170,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter paragraph_path when calling WordsApi.insert_run_online' if api_client.config.client_side_validation && self.paragraph_path.nil?
       # verify the required parameter 'run' is set
       raise ArgumentError, 'Missing the required parameter run when calling WordsApi.insert_run_online' if api_client.config.client_side_validation && self.run.nil?
-
+      self.run.validate
       # resource path
       local_var_path = '/words/online/post/{paragraphPath}/runs'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('ParagraphPath') + '}', self.paragraph_path.nil? ? '' : self.paragraph_path.to_s)
