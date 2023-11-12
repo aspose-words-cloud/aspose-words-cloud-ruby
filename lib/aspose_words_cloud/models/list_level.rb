@@ -200,13 +200,6 @@ module AsposeWordsCloud
       end
     end
 
-    # Show invalid properties with the reasons. Usually used together with valid?
-    # @return Array for valid properies with the reasons
-    def list_invalid_properties
-      invalid_properties = []
-      return invalid_properties
-    end
-
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
@@ -406,6 +399,28 @@ module AsposeWordsCloud
     end
 
     def collectFilesContent(resultFilesContent)
+    end
+
+    def validate()
+      raise ArgumentError, 'Property start_at in ListLevel is required.' if self.start_at.nil?
+      raise ArgumentError, 'Property number_style in ListLevel is required.' if self.number_style.nil?
+      raise ArgumentError, 'Property alignment in ListLevel is required.' if self.alignment.nil?
+      raise ArgumentError, 'Property is_legal in ListLevel is required.' if self.is_legal.nil?
+      raise ArgumentError, 'Property restart_after_level in ListLevel is required.' if self.restart_after_level.nil?
+      raise ArgumentError, 'Property trailing_character in ListLevel is required.' if self.trailing_character.nil?
+      raise ArgumentError, 'Property tab_position in ListLevel is required.' if self.tab_position.nil?
+      raise ArgumentError, 'Property number_position in ListLevel is required.' if self.number_position.nil?
+      raise ArgumentError, 'Property text_position in ListLevel is required.' if self.text_position.nil?
+      unless self.link.nil?
+          self.link.validate
+      end
+      unless self.font.nil?
+          self.font.validate
+      end
+      unless self.linked_style.nil?
+          self.linked_style.validate
+      end
+
     end
 
   end

@@ -93,7 +93,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter paragraph_path when calling WordsApi.update_run_font_online' if api_client.config.client_side_validation && self.paragraph_path.nil?
       # verify the required parameter 'font_dto' is set
       raise ArgumentError, 'Missing the required parameter font_dto when calling WordsApi.update_run_font_online' if api_client.config.client_side_validation && self.font_dto.nil?
-      # verify the required parameter 'index' is set
+      self.font_dto.validate# verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_run_font_online' if api_client.config.client_side_validation && self.index.nil?
 
       # resource path
@@ -172,7 +172,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter paragraph_path when calling WordsApi.update_run_font_online' if api_client.config.client_side_validation && self.paragraph_path.nil?
       # verify the required parameter 'font_dto' is set
       raise ArgumentError, 'Missing the required parameter font_dto when calling WordsApi.update_run_font_online' if api_client.config.client_side_validation && self.font_dto.nil?
-      # verify the required parameter 'index' is set
+      self.font_dto.validate# verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_run_font_online' if api_client.config.client_side_validation && self.index.nil?
 
       # resource path

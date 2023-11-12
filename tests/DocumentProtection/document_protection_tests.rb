@@ -58,7 +58,7 @@ module AsposeWordsCloud
     #
     def test_protect_document_online
       request_document = File.open(File.join(local_test_folder, local_file))
-      request_protection_request = ProtectionRequest.new({:NewPassword => '123'})
+      request_protection_request = ProtectionRequest.new({:Password => '123', :ProtectionType => 'ReadOnly'})
       request = ProtectDocumentOnlineRequest.new(document: request_document, protection_request: request_protection_request)
 
       result = @words_api.protect_document_online(request)

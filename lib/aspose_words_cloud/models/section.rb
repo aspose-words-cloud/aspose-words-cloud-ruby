@@ -105,13 +105,6 @@ module AsposeWordsCloud
       end
     end
 
-    # Show invalid properties with the reasons. Usually used together with valid?
-    # @return Array for valid properies with the reasons
-    def list_invalid_properties
-      invalid_properties = []
-      return invalid_properties
-    end
-
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
@@ -254,6 +247,32 @@ module AsposeWordsCloud
     end
 
     def collectFilesContent(resultFilesContent)
+    end
+
+    def validate()
+      unless self.link.nil?
+          self.link.validate
+      end
+      unless self.child_nodes.nil?
+          for elementChildNodes in self.child_nodes
+              unless elementChildNodes.nil?
+                  elementChildNodes.validate
+              end
+          end
+      end
+      unless self.paragraphs.nil?
+          self.paragraphs.validate
+      end
+      unless self.page_setup.nil?
+          self.page_setup.validate
+      end
+      unless self.header_footers.nil?
+          self.header_footers.validate
+      end
+      unless self.tables.nil?
+          self.tables.validate
+      end
+
     end
 
   end

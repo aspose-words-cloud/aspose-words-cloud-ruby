@@ -98,7 +98,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter table_path when calling WordsApi.insert_table_row' if api_client.config.client_side_validation && self.table_path.nil?
       # verify the required parameter 'row' is set
       raise ArgumentError, 'Missing the required parameter row when calling WordsApi.insert_table_row' if api_client.config.client_side_validation && self.row.nil?
-
+      self.row.validate
       # resource path
       local_var_path = '/words/{name}/{tablePath}/rows'[7..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)
@@ -170,7 +170,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter table_path when calling WordsApi.insert_table_row' if api_client.config.client_side_validation && self.table_path.nil?
       # verify the required parameter 'row' is set
       raise ArgumentError, 'Missing the required parameter row when calling WordsApi.insert_table_row' if api_client.config.client_side_validation && self.row.nil?
-
+      self.row.validate
       # resource path
       local_var_path = '/words/{name}/{tablePath}/rows'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)

@@ -128,13 +128,6 @@ module AsposeWordsCloud
       end
     end
 
-    # Show invalid properties with the reasons. Usually used together with valid?
-    # @return Array for valid properies with the reasons
-    def list_invalid_properties
-      invalid_properties = []
-      return invalid_properties
-    end
-
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
@@ -295,6 +288,23 @@ module AsposeWordsCloud
     end
 
     def collectFilesContent(resultFilesContent)
+    end
+
+    def validate()
+      raise ArgumentError, 'Property is_encrypted in Document is required.' if self.is_encrypted.nil?
+      raise ArgumentError, 'Property is_signed in Document is required.' if self.is_signed.nil?
+      raise ArgumentError, 'Property source_format in Document is required.' if self.source_format.nil?
+      unless self.links.nil?
+          for elementLinks in self.links
+              unless elementLinks.nil?
+                  elementLinks.validate
+              end
+          end
+      end
+      unless self.document_properties.nil?
+          self.document_properties.validate
+      end
+
     end
 
   end

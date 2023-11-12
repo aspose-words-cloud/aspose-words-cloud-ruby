@@ -81,7 +81,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.insert_style_online' if api_client.config.client_side_validation && self.document.nil?
       # verify the required parameter 'style_insert' is set
       raise ArgumentError, 'Missing the required parameter style_insert when calling WordsApi.insert_style_online' if api_client.config.client_side_validation && self.style_insert.nil?
-
+      self.style_insert.validate
       # resource path
       local_var_path = '/words/online/post/styles/insert'[7..-1]
       local_var_path = local_var_path.sub('//', '/')
@@ -154,7 +154,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.insert_style_online' if api_client.config.client_side_validation && self.document.nil?
       # verify the required parameter 'style_insert' is set
       raise ArgumentError, 'Missing the required parameter style_insert when calling WordsApi.insert_style_online' if api_client.config.client_side_validation && self.style_insert.nil?
-
+      self.style_insert.validate
       # resource path
       local_var_path = '/words/online/post/styles/insert'[1..-1]
       local_var_path = local_var_path.sub('//', '/')

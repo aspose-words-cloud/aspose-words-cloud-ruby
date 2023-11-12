@@ -71,7 +71,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.unprotect_document_online' if api_client.config.client_side_validation && self.document.nil?
       # verify the required parameter 'protection_request' is set
       raise ArgumentError, 'Missing the required parameter protection_request when calling WordsApi.unprotect_document_online' if api_client.config.client_side_validation && self.protection_request.nil?
-
+      self.protection_request.validate
       # resource path
       local_var_path = '/words/online/delete/protection'[7..-1]
       local_var_path = local_var_path.sub('//', '/')
@@ -142,7 +142,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.unprotect_document_online' if api_client.config.client_side_validation && self.document.nil?
       # verify the required parameter 'protection_request' is set
       raise ArgumentError, 'Missing the required parameter protection_request when calling WordsApi.unprotect_document_online' if api_client.config.client_side_validation && self.protection_request.nil?
-
+      self.protection_request.validate
       # resource path
       local_var_path = '/words/online/delete/protection'[1..-1]
       local_var_path = local_var_path.sub('//', '/')

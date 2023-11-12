@@ -88,7 +88,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter section_index when calling WordsApi.update_section_page_setup_online' if api_client.config.client_side_validation && self.section_index.nil?
       # verify the required parameter 'page_setup' is set
       raise ArgumentError, 'Missing the required parameter page_setup when calling WordsApi.update_section_page_setup_online' if api_client.config.client_side_validation && self.page_setup.nil?
-
+      self.page_setup.validate
       # resource path
       local_var_path = '/words/online/put/sections/{sectionIndex}/pageSetup'[7..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('SectionIndex') + '}', self.section_index.nil? ? '' : self.section_index.to_s)
@@ -164,7 +164,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter section_index when calling WordsApi.update_section_page_setup_online' if api_client.config.client_side_validation && self.section_index.nil?
       # verify the required parameter 'page_setup' is set
       raise ArgumentError, 'Missing the required parameter page_setup when calling WordsApi.update_section_page_setup_online' if api_client.config.client_side_validation && self.page_setup.nil?
-
+      self.page_setup.validate
       # resource path
       local_var_path = '/words/online/put/sections/{sectionIndex}/pageSetup'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('SectionIndex') + '}', self.section_index.nil? ? '' : self.section_index.to_s)

@@ -98,7 +98,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter bookmark_name when calling WordsApi.update_bookmark' if api_client.config.client_side_validation && self.bookmark_name.nil?
       # verify the required parameter 'bookmark_data' is set
       raise ArgumentError, 'Missing the required parameter bookmark_data when calling WordsApi.update_bookmark' if api_client.config.client_side_validation && self.bookmark_data.nil?
-
+      self.bookmark_data.validate
       # resource path
       local_var_path = '/words/{name}/bookmarks/{bookmarkName}'[7..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)
@@ -170,7 +170,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter bookmark_name when calling WordsApi.update_bookmark' if api_client.config.client_side_validation && self.bookmark_name.nil?
       # verify the required parameter 'bookmark_data' is set
       raise ArgumentError, 'Missing the required parameter bookmark_data when calling WordsApi.update_bookmark' if api_client.config.client_side_validation && self.bookmark_data.nil?
-
+      self.bookmark_data.validate
       # resource path
       local_var_path = '/words/{name}/bookmarks/{bookmarkName}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)

@@ -40,6 +40,11 @@ module AsposeWordsCloud
     # or the display of the metafile in its default size.
     attr_accessor :emulate_rendering_to_size_on_page
 
+    # Gets or sets the resolution in pixels per inch for the emulation of metafile rendering to the size on page.
+    # This option is used only when EmulateRenderingToSizeOnPage is set to true.The default value is 96. This is a default display resolution. I.e. metafile rendering will emulate the display of
+    # the metafile in MS Word with a 100% zoom factor.
+    attr_accessor :emulate_rendering_to_size_on_page_resolution
+
     # Gets or sets the option that controls how metafile images should be rendered.
     attr_accessor :rendering_mode
 
@@ -74,6 +79,7 @@ module AsposeWordsCloud
         :'emf_plus_dual_rendering_mode' => :'EmfPlusDualRenderingMode',
         :'emulate_raster_operations' => :'EmulateRasterOperations',
         :'emulate_rendering_to_size_on_page' => :'EmulateRenderingToSizeOnPage',
+        :'emulate_rendering_to_size_on_page_resolution' => :'EmulateRenderingToSizeOnPageResolution',
         :'rendering_mode' => :'RenderingMode',
         :'use_emf_embedded_to_wmf' => :'UseEmfEmbeddedToWmf'
       }
@@ -85,6 +91,7 @@ module AsposeWordsCloud
         :'emf_plus_dual_rendering_mode' => :'String',
         :'emulate_raster_operations' => :'BOOLEAN',
         :'emulate_rendering_to_size_on_page' => :'BOOLEAN',
+        :'emulate_rendering_to_size_on_page_resolution' => :'Integer',
         :'rendering_mode' => :'String',
         :'use_emf_embedded_to_wmf' => :'BOOLEAN'
       }
@@ -110,6 +117,10 @@ module AsposeWordsCloud
         self.emulate_rendering_to_size_on_page = attributes[:'EmulateRenderingToSizeOnPage']
       end
 
+      if attributes.key?(:'EmulateRenderingToSizeOnPageResolution')
+        self.emulate_rendering_to_size_on_page_resolution = attributes[:'EmulateRenderingToSizeOnPageResolution']
+      end
+
       if attributes.key?(:'RenderingMode')
         self.rendering_mode = attributes[:'RenderingMode']
       end
@@ -117,13 +128,6 @@ module AsposeWordsCloud
       if attributes.key?(:'UseEmfEmbeddedToWmf')
         self.use_emf_embedded_to_wmf = attributes[:'UseEmfEmbeddedToWmf']
       end
-    end
-
-    # Show invalid properties with the reasons. Usually used together with valid?
-    # @return Array for valid properies with the reasons
-    def list_invalid_properties
-      invalid_properties = []
-      return invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
@@ -174,6 +178,7 @@ module AsposeWordsCloud
           emf_plus_dual_rendering_mode == other.emf_plus_dual_rendering_mode &&
           emulate_raster_operations == other.emulate_raster_operations &&
           emulate_rendering_to_size_on_page == other.emulate_rendering_to_size_on_page &&
+          emulate_rendering_to_size_on_page_resolution == other.emulate_rendering_to_size_on_page_resolution &&
           rendering_mode == other.rendering_mode &&
           use_emf_embedded_to_wmf == other.use_emf_embedded_to_wmf
     end
@@ -187,7 +192,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [emf_plus_dual_rendering_mode, emulate_raster_operations, emulate_rendering_to_size_on_page, rendering_mode, use_emf_embedded_to_wmf].hash
+      [emf_plus_dual_rendering_mode, emulate_raster_operations, emulate_rendering_to_size_on_page, emulate_rendering_to_size_on_page_resolution, rendering_mode, use_emf_embedded_to_wmf].hash
     end
 
     # Builds the object from hash
@@ -301,6 +306,9 @@ module AsposeWordsCloud
     end
 
     def collectFilesContent(resultFilesContent)
+    end
+
+    def validate()
     end
 
   end

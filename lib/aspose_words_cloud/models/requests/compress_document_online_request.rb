@@ -71,7 +71,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.compress_document_online' if api_client.config.client_side_validation && self.document.nil?
       # verify the required parameter 'compress_options' is set
       raise ArgumentError, 'Missing the required parameter compress_options when calling WordsApi.compress_document_online' if api_client.config.client_side_validation && self.compress_options.nil?
-
+      self.compress_options.validate
       # resource path
       local_var_path = '/words/online/put/compress'[7..-1]
       local_var_path = local_var_path.sub('//', '/')
@@ -142,7 +142,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.compress_document_online' if api_client.config.client_side_validation && self.document.nil?
       # verify the required parameter 'compress_options' is set
       raise ArgumentError, 'Missing the required parameter compress_options when calling WordsApi.compress_document_online' if api_client.config.client_side_validation && self.compress_options.nil?
-
+      self.compress_options.validate
       # resource path
       local_var_path = '/words/online/put/compress'[1..-1]
       local_var_path = local_var_path.sub('//', '/')

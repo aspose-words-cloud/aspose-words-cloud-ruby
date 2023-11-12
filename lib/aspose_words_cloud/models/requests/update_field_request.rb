@@ -103,7 +103,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_field' if api_client.config.client_side_validation && self.index.nil?
       # verify the required parameter 'field' is set
       raise ArgumentError, 'Missing the required parameter field when calling WordsApi.update_field' if api_client.config.client_side_validation && self.field.nil?
-
+      self.field.validate
       # resource path
       local_var_path = '/words/{name}/{nodePath}/fields/{index}'[7..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)
@@ -176,7 +176,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_field' if api_client.config.client_side_validation && self.index.nil?
       # verify the required parameter 'field' is set
       raise ArgumentError, 'Missing the required parameter field when calling WordsApi.update_field' if api_client.config.client_side_validation && self.field.nil?
-
+      self.field.validate
       # resource path
       local_var_path = '/words/{name}/{nodePath}/fields/{index}'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)

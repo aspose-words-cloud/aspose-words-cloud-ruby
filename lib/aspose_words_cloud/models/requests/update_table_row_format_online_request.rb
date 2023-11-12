@@ -93,7 +93,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter table_path when calling WordsApi.update_table_row_format_online' if api_client.config.client_side_validation && self.table_path.nil?
       # verify the required parameter 'format' is set
       raise ArgumentError, 'Missing the required parameter format when calling WordsApi.update_table_row_format_online' if api_client.config.client_side_validation && self.format.nil?
-      # verify the required parameter 'index' is set
+      self.format.validate# verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_table_row_format_online' if api_client.config.client_side_validation && self.index.nil?
 
       # resource path
@@ -172,7 +172,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter table_path when calling WordsApi.update_table_row_format_online' if api_client.config.client_side_validation && self.table_path.nil?
       # verify the required parameter 'format' is set
       raise ArgumentError, 'Missing the required parameter format when calling WordsApi.update_table_row_format_online' if api_client.config.client_side_validation && self.format.nil?
-      # verify the required parameter 'index' is set
+      self.format.validate# verify the required parameter 'index' is set
       raise ArgumentError, 'Missing the required parameter index when calling WordsApi.update_table_row_format_online' if api_client.config.client_side_validation && self.index.nil?
 
       # resource path

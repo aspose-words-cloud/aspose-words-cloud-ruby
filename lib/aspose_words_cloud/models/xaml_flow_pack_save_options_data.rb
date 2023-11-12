@@ -219,13 +219,6 @@ module AsposeWordsCloud
       end
     end
 
-    # Show invalid properties with the reasons. Usually used together with valid?
-    # @return Array for valid properies with the reasons
-    def list_invalid_properties
-      invalid_properties = []
-      return invalid_properties
-    end
-
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
@@ -443,6 +436,14 @@ module AsposeWordsCloud
     end
 
     def collectFilesContent(resultFilesContent)
+    end
+
+    def validate()
+      raise ArgumentError, 'Property file_name in XamlFlowPackSaveOptionsData is required.' if self.file_name.nil?
+      unless self.custom_time_zone_info_data.nil?
+          self.custom_time_zone_info_data.validate
+      end
+
     end
 
   end
