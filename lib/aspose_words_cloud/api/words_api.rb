@@ -2843,6 +2843,90 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
+    # Removes all office math objects from the document.
+    # @param request DeleteOfficeMathObjectsRequest
+    # @return [nil]
+    def delete_office_math_objects(request)
+        begin
+        data, _status_code, _headers = delete_office_math_objects_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_office_math_objects_with_http_info(request)
+            else
+            raise
+            end
+        end
+        nil
+    end
+
+    # Removes all office math objects from the document.
+    # @param request DeleteOfficeMathObjectsRequest
+    # @return [Array<(nil, Fixnum, Hash)>]
+    # nil, response status code and response headers
+    private def delete_office_math_objects_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteOfficeMathObjectsRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.delete_office_math_objects ...' if @api_client.config.debugging
+        request_data = request.create_http_request(@api_client)
+
+        data, status_code, headers = @api_client.call_api(
+                                                        request_data[:'method'],
+                                                        request_data[:'path'],
+                                                        header_params: request_data[:'header_params'],
+                                                        query_params: request_data[:'query_params'],
+                                                        body: request_data[:'body'])
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#delete_office_math_objects\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [data, status_code, headers]
+    end
+
+    # Removes all office math objects from the document.
+    # @param request DeleteOfficeMathObjectsOnlineRequest
+    # @return [FILES_COLLECTION]
+    def delete_office_math_objects_online(request)
+        begin
+        data, _status_code, _headers = delete_office_math_objects_online_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = delete_office_math_objects_online_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Removes all office math objects from the document.
+    # @param request DeleteOfficeMathObjectsOnlineRequest
+    # @return [Array<(FILES_COLLECTION, Fixnum, Hash)>]
+    # FILES_COLLECTION, response status code and response headers
+    private def delete_office_math_objects_online_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? DeleteOfficeMathObjectsOnlineRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.delete_office_math_objects_online ...' if @api_client.config.debugging
+        request_data = request.create_http_request(@api_client)
+
+        data, status_code, headers = @api_client.call_api(
+                                                        request_data[:'method'],
+                                                        request_data[:'path'],
+                                                        header_params: request_data[:'header_params'],
+                                                        query_params: request_data[:'query_params'],
+                                                        body: request_data[:'body'],
+                                                        return_type: 'FILES_COLLECTION')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#delete_office_math_objects_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        # FILES_COLLECTION #
+        [data, status_code, headers]
+    end
+
     # Removes a paragraph from the document node.
     # @param request DeleteParagraphRequest
     # @return [nil]
