@@ -56,7 +56,7 @@ module AsposeWordsCloud
       @default_headers = {
         'Content-Type' => "application/json",
         'x-aspose-client' => "ruby sdk",
-        'x-aspose-version' => AsposeWordsCloud::VERSION.to_s
+        'x-aspose-client-version' => AsposeWordsCloud::VERSION.to_s
       }
     end
 

@@ -10958,7 +10958,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Adds protection to the document.
+    # Changes the document protection. The previous protection will be overwritten if it exist.
     # @param request ProtectDocumentRequest
     # @return [ProtectionDataResponse]
     def protect_document(request)
@@ -10975,7 +10975,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Adds protection to the document.
+    # Changes the document protection. The previous protection will be overwritten if it exist.
     # @param request ProtectDocumentRequest
     # @return [Array<(ProtectionDataResponse, Fixnum, Hash)>]
     # ProtectionDataResponse, response status code and response headers
@@ -11000,7 +11000,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Adds protection to the document.
+    # Changes the document protection. The previous protection will be overwritten if it exist.
     # @param request ProtectDocumentOnlineRequest
     # @return [ProtectDocumentOnlineResponse]
     def protect_document_online(request)
@@ -11017,7 +11017,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Adds protection to the document.
+    # Changes the document protection. The previous protection will be overwritten if it exist.
     # @param request ProtectDocumentOnlineRequest
     # @return [Array<(ProtectDocumentOnlineResponse, Fixnum, Hash)>]
     # ProtectDocumentOnlineResponse, response status code and response headers
