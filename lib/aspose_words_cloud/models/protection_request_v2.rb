@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="protection_data.rb">
+# <copyright company="Aspose" file="protection_request_v2.rb">
 #   Copyright (c) 2023 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -27,9 +27,13 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Container for the data about protection of the document.
-  class ProtectionData
-    # Gets or sets type of the protection.
+  # Request on changing of protection.
+  class ProtectionRequestV2
+    # Gets or sets the new password for the document protection.
+    # This property is required, but empty value is allowed.
+    attr_accessor :protection_password
+
+    # Gets or sets the new type of the document protection.
     attr_accessor :protection_type
 
     class EnumAttributeValidator
@@ -57,6 +61,7 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'protection_password' => :'ProtectionPassword',
         :'protection_type' => :'ProtectionType'
       }
     end
@@ -64,6 +69,7 @@ module AsposeWordsCloud
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'protection_password' => :'String',
         :'protection_type' => :'String'
       }
     end
@@ -75,6 +81,10 @@ module AsposeWordsCloud
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.key?(:'ProtectionPassword')
+        self.protection_password = attributes[:'ProtectionPassword']
+      end
 
       if attributes.key?(:'ProtectionType')
         self.protection_type = attributes[:'ProtectionType']
@@ -110,6 +120,7 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
+          protection_password == other.protection_password &&
           protection_type == other.protection_type
     end
 
@@ -122,7 +133,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [protection_type].hash
+      [protection_password, protection_type].hash
     end
 
     # Builds the object from hash
@@ -239,7 +250,8 @@ module AsposeWordsCloud
     end
 
     def validate()
-      raise ArgumentError, 'Property protection_type in ProtectionData is required.' if self.protection_type.nil?
+      raise ArgumentError, 'Property protection_password in ProtectionRequestV2 is required.' if self.protection_password.nil?
+      raise ArgumentError, 'Property protection_type in ProtectionRequestV2 is required.' if self.protection_type.nil?
     end
 
   end

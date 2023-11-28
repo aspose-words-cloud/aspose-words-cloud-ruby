@@ -32,9 +32,6 @@ module AsposeWordsCloud
     # The filename of the input document.
     attr_accessor :name
 
-    # Protection request.
-    attr_accessor :protection_request
-
     # Original document folder.
     attr_accessor :folder
 
@@ -56,7 +53,6 @@ module AsposeWordsCloud
     #
     # Initializes a new instance.
     # @param name The filename of the input document.
-    # @param protection_request Protection request.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -64,9 +60,8 @@ module AsposeWordsCloud
     # @param encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
     # @param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
 
-    def initialize(name:, protection_request:, folder: nil, storage: nil, load_encoding: nil, password: nil, encrypted_password: nil, dest_file_name: nil)
+    def initialize(name:, folder: nil, storage: nil, load_encoding: nil, password: nil, encrypted_password: nil, dest_file_name: nil)
       self.name = name
-      self.protection_request = protection_request
       self.folder = folder
       self.storage = storage
       self.load_encoding = load_encoding
@@ -79,9 +74,7 @@ module AsposeWordsCloud
     def to_batch_part(api_client, requestId, parentRequestId = nil)
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.unprotect_document' if api_client.config.client_side_validation && self.name.nil?
-      # verify the required parameter 'protection_request' is set
-      raise ArgumentError, 'Missing the required parameter protection_request when calling WordsApi.unprotect_document' if api_client.config.client_side_validation && self.protection_request.nil?
-      self.protection_request.validate
+
       # resource path
       local_var_path = '/words/{name}/protection'[7..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)
@@ -101,9 +94,6 @@ module AsposeWordsCloud
       end
 
       header_params = {}
-      # header parameters
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = api_client.select_header_content_type(['application/xml', 'application/json'])
       header_params['RequestId'] = requestId
 
       if parentRequestId != nil
@@ -113,13 +103,6 @@ module AsposeWordsCloud
       # form parameters
       form_params = []
       files_content = []
-      if self.protection_request.nil?
-        raise "Parameter ProtectionRequest is required."
-      end
-      unless self.protection_request.nil?
-        form_params.push({:'Name' => 'protectionRequest', :'Data' => self.protection_request.to_body.to_json, :'MimeType' =>'application/json'})
-      end
-
 
       # http body (model)
       body = api_client.build_request_body_batch(header_params, form_params, files_content)
@@ -146,9 +129,7 @@ module AsposeWordsCloud
     def create_http_request(api_client)
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.unprotect_document' if api_client.config.client_side_validation && self.name.nil?
-      # verify the required parameter 'protection_request' is set
-      raise ArgumentError, 'Missing the required parameter protection_request when calling WordsApi.unprotect_document' if api_client.config.client_side_validation && self.protection_request.nil?
-      self.protection_request.validate
+
       # resource path
       local_var_path = '/words/{name}/protection'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)
@@ -171,13 +152,6 @@ module AsposeWordsCloud
       # form parameters
       form_params = []
       files_content = []
-      if self.protection_request.nil?
-        raise "Parameter ProtectionRequest is required."
-      end
-      unless self.protection_request.nil?
-        form_params.push({:'Name' => 'protectionRequest', :'Data' => self.protection_request.to_body.to_json, :'MimeType' =>'application/json'})
-      end
-
       body = api_client.build_request_body(header_params, form_params, files_content)
       {
         'method': :DELETE,

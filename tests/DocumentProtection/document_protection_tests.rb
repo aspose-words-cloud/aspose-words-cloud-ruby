@@ -46,7 +46,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request_protection_request = ProtectionRequest.new({:Password => '123', :ProtectionType => 'ReadOnly'})
+      request_protection_request = ProtectionRequestV2.new({:ProtectionPassword => '123', :ProtectionType => 'ReadOnly'})
       request = ProtectDocumentRequest.new(name: remote_file_name, protection_request: request_protection_request, folder: remote_data_folder, dest_file_name: remote_test_out + '/' + remote_file_name)
 
       result = @words_api.protect_document(request)
@@ -58,7 +58,7 @@ module AsposeWordsCloud
     #
     def test_protect_document_online
       request_document = File.open(File.join(local_test_folder, local_file))
-      request_protection_request = ProtectionRequest.new({:Password => '123', :ProtectionType => 'ReadOnly'})
+      request_protection_request = ProtectionRequestV2.new({:ProtectionPassword => '123', :ProtectionType => 'ReadOnly'})
       request = ProtectDocumentOnlineRequest.new(document: request_document, protection_request: request_protection_request)
 
       result = @words_api.protect_document_online(request)
@@ -100,8 +100,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file_path), remote_data_folder + '/' + remote_file_name
 
-      request_protection_request = ProtectionRequest.new({:Password => 'aspose'})
-      request = UnprotectDocumentRequest.new(name: remote_file_name, protection_request: request_protection_request, folder: remote_data_folder)
+      request = UnprotectDocumentRequest.new(name: remote_file_name, folder: remote_data_folder)
 
       result = @words_api.unprotect_document(request)
       assert_equal false, result.nil?
@@ -114,8 +113,7 @@ module AsposeWordsCloud
       local_file_path = 'DocumentActions/DocumentProtection/SampleProtectedBlankWordDocument.docx'
 
       request_document = File.open(File.join(local_test_folder, local_file_path))
-      request_protection_request = ProtectionRequest.new({:Password => 'aspose'})
-      request = UnprotectDocumentOnlineRequest.new(document: request_document, protection_request: request_protection_request)
+      request = UnprotectDocumentOnlineRequest.new(document: request_document)
 
       result = @words_api.unprotect_document_online(request)
       assert_equal false, result.nil?
