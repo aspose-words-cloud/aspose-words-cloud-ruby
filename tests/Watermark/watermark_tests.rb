@@ -75,7 +75,7 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
       upload_file File.join(local_test_folder, 'Common/aspose-cloud.png'), remote_image_path
 
-      request_watermark_data_image = AsposeWordsCloud::FileReference.fromRemoteFilePath(remote_data_folder + '/' + remote_file_name)
+      request_watermark_data_image = AsposeWordsCloud::FileReference.fromRemoteFilePath(remote_image_path)
       request_watermark_data = WatermarkDataImage.new({:Image => request_watermark_data_image})
       request = InsertWatermarkRequest.new(name: remote_file_name, watermark_data: request_watermark_data, folder: remote_data_folder, dest_file_name: remote_test_out + '/' + remote_file_name)
 
@@ -88,7 +88,7 @@ module AsposeWordsCloud
     #
     def test_insert_watermark_image_online
       request_document = File.open(File.join(local_test_folder, local_file))
-      request_watermark_data_imageStream = File.open(File.join(local_test_folder, local_file))
+      request_watermark_data_imageStream = File.open(File.join(local_test_folder, 'Common/aspose-cloud.png'))
       request_watermark_data_image = AsposeWordsCloud::FileReference.fromLocalFileContent(request_watermark_data_imageStream)
       request_watermark_data = WatermarkDataImage.new({:Image => request_watermark_data_image})
       request = InsertWatermarkOnlineRequest.new(document: request_document, watermark_data: request_watermark_data)
