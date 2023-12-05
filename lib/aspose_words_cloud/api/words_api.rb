@@ -10533,10 +10533,53 @@ module AsposeWordsCloud
         [mp_data, status_code, headers]
     end
 
+    # Insert a watermark to the document.
+    # @param request InsertWatermarkRequest
+    # @return [DocumentResponse]
+    def insert_watermark(request)
+        begin
+        data, _status_code, _headers = insert_watermark_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = insert_watermark_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Insert a watermark to the document.
+    # @param request InsertWatermarkRequest
+    # @return [Array<(DocumentResponse, Fixnum, Hash)>]
+    # DocumentResponse, response status code and response headers
+    private def insert_watermark_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? InsertWatermarkRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.insert_watermark ...' if @api_client.config.debugging
+        request_data = request.create_http_request(@api_client)
+
+        data, status_code, headers = @api_client.call_api(
+                                                        request_data[:'method'],
+                                                        request_data[:'path'],
+                                                        header_params: request_data[:'header_params'],
+                                                        query_params: request_data[:'query_params'],
+                                                        body: request_data[:'body'],
+                                                        return_type: 'DocumentResponse')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#insert_watermark\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [data, status_code, headers]
+    end
+
     # Inserts a new watermark image to the document.
     # @param request InsertWatermarkImageRequest
     # @return [DocumentResponse]
     def insert_watermark_image(request)
+        warn "This operation is deprecated and is used for backward compatibility only. Please use InsertWatermark instead."
         begin
         data, _status_code, _headers = insert_watermark_image_with_http_info(request)
         rescue ApiError => e
@@ -10579,6 +10622,7 @@ module AsposeWordsCloud
     # @param request InsertWatermarkImageOnlineRequest
     # @return [InsertWatermarkImageOnlineResponse]
     def insert_watermark_image_online(request)
+        warn "This operation is deprecated and is used for backward compatibility only. Please use InsertWatermark instead."
         begin
         data, _status_code, _headers = insert_watermark_image_online_with_http_info(request)
         rescue ApiError => e
@@ -10621,10 +10665,57 @@ module AsposeWordsCloud
         [mp_data, status_code, headers]
     end
 
+    # Insert a watermark to the document.
+    # @param request InsertWatermarkOnlineRequest
+    # @return [InsertWatermarkOnlineResponse]
+    def insert_watermark_online(request)
+        begin
+        data, _status_code, _headers = insert_watermark_online_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = insert_watermark_online_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Insert a watermark to the document.
+    # @param request InsertWatermarkOnlineRequest
+    # @return [Array<(InsertWatermarkOnlineResponse, Fixnum, Hash)>]
+    # InsertWatermarkOnlineResponse, response status code and response headers
+    private def insert_watermark_online_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? InsertWatermarkOnlineRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.insert_watermark_online ...' if @api_client.config.debugging
+        request_data = request.create_http_request(@api_client)
+
+        data, status_code, headers = @api_client.call_api(
+                                                        request_data[:'method'],
+                                                        request_data[:'path'],
+                                                        header_params: request_data[:'header_params'],
+                                                        query_params: request_data[:'query_params'],
+                                                        body: request_data[:'body'],
+                                                        multipart_response: true,
+                                                        return_type: 'InsertWatermarkOnlineResponse')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#insert_watermark_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        mp_data = InsertWatermarkOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'DocumentResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
+        [mp_data, status_code, headers]
+    end
+
     # Inserts a new watermark text to the document.
     # @param request InsertWatermarkTextRequest
     # @return [DocumentResponse]
     def insert_watermark_text(request)
+        warn "This operation is deprecated and is used for backward compatibility only. Please use InsertWatermark instead."
         begin
         data, _status_code, _headers = insert_watermark_text_with_http_info(request)
         rescue ApiError => e
@@ -10667,6 +10758,7 @@ module AsposeWordsCloud
     # @param request InsertWatermarkTextOnlineRequest
     # @return [InsertWatermarkTextOnlineResponse]
     def insert_watermark_text_online(request)
+        warn "This operation is deprecated and is used for backward compatibility only. Please use InsertWatermark instead."
         begin
         data, _status_code, _headers = insert_watermark_text_online_with_http_info(request)
         rescue ApiError => e
