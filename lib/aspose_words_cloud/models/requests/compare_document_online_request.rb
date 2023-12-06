@@ -35,9 +35,6 @@ module AsposeWordsCloud
     # Compare data.
     attr_accessor :compare_data
 
-    # The comparing document.
-    attr_accessor :comparing_document
-
     # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     attr_accessor :load_encoding
 
@@ -57,17 +54,15 @@ module AsposeWordsCloud
     # Initializes a new instance.
     # @param document The document.
     # @param compare_data Compare data.
-    # @param comparing_document The comparing document.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     # @param password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
     # @param encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
     # @param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
     # @param encrypted_password2 encrypted password for the second document.
 
-    def initialize(document:, compare_data:, comparing_document: nil, load_encoding: nil, password: nil, encrypted_password: nil, dest_file_name: nil, encrypted_password2: nil)
+    def initialize(document:, compare_data:, load_encoding: nil, password: nil, encrypted_password: nil, dest_file_name: nil, encrypted_password2: nil)
       self.document = document
       self.compare_data = compare_data
-      self.comparing_document = comparing_document
       self.load_encoding = load_encoding
       self.password = password
       self.encrypted_password = encrypted_password
@@ -123,10 +118,7 @@ module AsposeWordsCloud
       end
       unless self.compare_data.nil?
         form_params.push({:'Name' => 'compareData', :'Data' => self.compare_data.to_body.to_json, :'MimeType' =>'application/json'})
-      end
-
-      unless self.comparing_document.nil?
-        form_params.push({:'Name' => 'comparingDocument', :'Data' => self.comparing_document, :'MimeType' =>'application/octet-stream'})
+        self.compare_data.collectFilesContent(files_content)
       end
 
 
@@ -190,10 +182,7 @@ module AsposeWordsCloud
       end
       unless self.compare_data.nil?
         form_params.push({:'Name' => 'compareData', :'Data' => self.compare_data.to_body.to_json, :'MimeType' =>'application/json'})
-      end
-
-      unless self.comparing_document.nil?
-        form_params.push({:'Name' => 'comparingDocument', :'Data' => self.comparing_document, :'MimeType' =>'application/octet-stream'})
+        self.compare_data.collectFilesContent(files_content)
       end
 
       body = api_client.build_request_body(header_params, form_params, files_content)

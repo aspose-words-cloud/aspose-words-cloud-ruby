@@ -39,9 +39,68 @@ module AsposeWordsCloud
 
 
     #
-    # Test for adding watermark image.
+    # Test for adding watermark text.
+    #
+    def test_insert_watermark_text
+      remote_file_name = 'TestInsertWatermarkText.docx'
+
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+
+      request_watermark_data = WatermarkDataText.new({:Text => 'watermark text'})
+      request = InsertWatermarkRequest.new(name: remote_file_name, watermark_data: request_watermark_data, folder: remote_data_folder, dest_file_name: remote_test_out + '/' + remote_file_name)
+
+      result = @words_api.insert_watermark(request)
+      assert_equal false, result.nil?
+    end
+
+    #
+    # Test for adding watermark text online.
+    #
+    def test_insert_watermark_text_online
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request_watermark_data = WatermarkDataText.new({:Text => 'watermark text'})
+      request = InsertWatermarkOnlineRequest.new(document: request_document, watermark_data: request_watermark_data)
+
+      result = @words_api.insert_watermark_online(request)
+      assert_equal false, result.nil?
+    end
+
+    #
+    # Test for adding watermark text.
     #
     def test_insert_watermark_image
+      remote_file_name = 'TestInsertWatermarkImage.docx'
+      remote_image_path = remote_data_folder + '/TestInsertWatermarkImage.png'
+
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, 'Common/aspose-cloud.png'), remote_image_path
+
+      request_watermark_data_image = AsposeWordsCloud::FileReference.fromRemoteFilePath(remote_image_path)
+      request_watermark_data = WatermarkDataImage.new({:Image => request_watermark_data_image})
+      request = InsertWatermarkRequest.new(name: remote_file_name, watermark_data: request_watermark_data, folder: remote_data_folder, dest_file_name: remote_test_out + '/' + remote_file_name)
+
+      result = @words_api.insert_watermark(request)
+      assert_equal false, result.nil?
+    end
+
+    #
+    # Test for adding watermark text online.
+    #
+    def test_insert_watermark_image_online
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request_watermark_data_imageStream = File.open(File.join(local_test_folder, 'Common/aspose-cloud.png'))
+      request_watermark_data_image = AsposeWordsCloud::FileReference.fromLocalFileContent(request_watermark_data_imageStream)
+      request_watermark_data = WatermarkDataImage.new({:Image => request_watermark_data_image})
+      request = InsertWatermarkOnlineRequest.new(document: request_document, watermark_data: request_watermark_data)
+
+      result = @words_api.insert_watermark_online(request)
+      assert_equal false, result.nil?
+    end
+
+    #
+    # Test for adding watermark image.
+    #
+    def test_insert_watermark_image_deprecated
       remote_file_name = 'TestInsertWatermarkImage.docx'
       remote_image_path = remote_data_folder + '/TestInsertWatermarkImage.png'
 
@@ -57,7 +116,7 @@ module AsposeWordsCloud
     #
     # Test for adding watermark image online.
     #
-    def test_insert_watermark_image_online
+    def test_insert_watermark_image_deprecated_online
       request_document = File.open(File.join(local_test_folder, local_file))
       request_image_file = File.open(File.join(local_test_folder, 'Common/aspose-cloud.png'))
       request = InsertWatermarkImageOnlineRequest.new(document: request_document, image_file: request_image_file)
@@ -69,7 +128,7 @@ module AsposeWordsCloud
     #
     # Test for adding watermark text.
     #
-    def test_insert_watermark_text
+    def test_insert_watermark_text_deprecated
       remote_file_name = 'TestInsertWatermarkText.docx'
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
@@ -84,7 +143,7 @@ module AsposeWordsCloud
     #
     # Test for adding watermark text online.
     #
-    def test_insert_watermark_text_online
+    def test_insert_watermark_text_deprecated_online
       request_document = File.open(File.join(local_test_folder, local_file))
       request_watermark_text = WatermarkText.new({:Text => 'This is the text', :RotationAngle => 90})
       request = InsertWatermarkTextOnlineRequest.new(document: request_document, watermark_text: request_watermark_text)

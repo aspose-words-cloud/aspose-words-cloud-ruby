@@ -19,7 +19,7 @@ This repository contains Aspose.Words Cloud SDK for Ruby source code. This SDK a
 - Implemented DeleteOfficeMathObjects operation to delete all office math objects from document.
 - Parameter ProtectionRequest was removed from the UnprotectDocument operation. Now removing protection from a document does not require a password.
 - Model ProtectionRequest marked as deprecated, please use ProtectionRequestV2 instead for perform ProtectDocument operation. To change the password or protection type of protected document, the old password is no required.
-
+- Rename aspose-client header.
 
 ## Enhancements in Version 23.11
 
@@ -305,7 +305,7 @@ To use Aspose Words for Cloud Ruby SDK you need to register an account with [Asp
 To install this package do the following:
 update your Gemfile
 ```ruby
-gem 'aspose_words_cloud', '~> 23.11'
+gem 'aspose_words_cloud', '~> 23.12'
 ```
 or install directly
 ```bash
