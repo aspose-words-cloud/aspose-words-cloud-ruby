@@ -124,6 +124,7 @@ module AsposeWordsCloud
       end
       unless self.compare_data.nil?
         form_params.push({:'Name' => 'compareData', :'Data' => self.compare_data.to_body.to_json, :'MimeType' =>'application/json'})
+        self.compare_data.collectFilesContent(files_content)
       end
 
 
@@ -183,6 +184,7 @@ module AsposeWordsCloud
       end
       unless self.compare_data.nil?
         form_params.push({:'Name' => 'compareData', :'Data' => self.compare_data.to_body.to_json, :'MimeType' =>'application/json'})
+        self.compare_data.collectFilesContent(files_content)
       end
 
       body = api_client.build_request_body(header_params, form_params, files_content)

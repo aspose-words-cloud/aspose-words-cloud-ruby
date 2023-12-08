@@ -210,7 +210,7 @@ module AsposeWordsCloud
         :'building_block_gallery' => :'String',
         :'building_block_category' => :'String',
         :'multiline' => :'BOOLEAN',
-        :'color' => :'String',
+        :'color' => :'XmlColor',
         :'style_name' => :'String',
         :'calendar_type' => :'String',
         :'is_temporary' => :'BOOLEAN',
@@ -595,6 +595,9 @@ module AsposeWordsCloud
                   elementListItems.validate
               end
           end
+      end
+      unless self.color.nil?
+          self.color.validate
       end
 
     end

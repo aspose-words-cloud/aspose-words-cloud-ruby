@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="compare_data.rb">
+# <copyright company="Aspose" file="watermark_data_image.rb">
 #   Copyright (c) 2023 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -27,46 +27,32 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Container class for compare documents.
-  class CompareData
-    # Gets or sets the initials of the author to use for revisions.
-    attr_accessor :author
+  # Class for insert watermark image request building.
+  class WatermarkDataImage
+    # Gets or sets the watermark image.
+    attr_accessor :image
 
-    # Gets or sets the compare options.
-    attr_accessor :compare_options
+    # Gets or sets a boolean value which is responsible for washout effect of the watermark. The default value is true.
+    attr_accessor :is_washout
 
-    # Gets or sets the path to document to compare at the server.
-    attr_accessor :comparing_with_document
-
-    # Gets or sets the date and time to use for revisions.
-    attr_accessor :date_time
-
-    # Gets or sets the file reference.
-    attr_accessor :file_reference
-
-    # Gets or sets the result document format.
-    attr_accessor :result_document_format
+    # Gets or sets the scale factor expressed as a fraction of the image. The default value is 0 - auto.
+    # Valid values range from 0 to 65.5 inclusive. Auto scale means that the watermark will be scaled to its max width and max height relative to the page margins.
+    attr_accessor :scale
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'author' => :'Author',
-        :'compare_options' => :'CompareOptions',
-        :'comparing_with_document' => :'ComparingWithDocument',
-        :'date_time' => :'DateTime',
-        :'file_reference' => :'FileReference',
-        :'result_document_format' => :'ResultDocumentFormat'
+        :'image' => :'Image',
+        :'is_washout' => :'IsWashout',
+        :'scale' => :'Scale'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'author' => :'String',
-        :'compare_options' => :'CompareOptions',
-        :'comparing_with_document' => :'String',
-        :'date_time' => :'DateTime',
-        :'file_reference' => :'FileReference',
-        :'result_document_format' => :'String'
+        :'image' => :'FileReference',
+        :'is_washout' => :'BOOLEAN',
+        :'scale' => :'Float'
       }
     end
 
@@ -78,28 +64,16 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'Author')
-        self.author = attributes[:'Author']
+      if attributes.key?(:'Image')
+        self.image = attributes[:'Image']
       end
 
-      if attributes.key?(:'CompareOptions')
-        self.compare_options = attributes[:'CompareOptions']
+      if attributes.key?(:'IsWashout')
+        self.is_washout = attributes[:'IsWashout']
       end
 
-      if attributes.key?(:'ComparingWithDocument')
-        self.comparing_with_document = attributes[:'ComparingWithDocument']
-      end
-
-      if attributes.key?(:'DateTime')
-        self.date_time = attributes[:'DateTime']
-      end
-
-      if attributes.key?(:'FileReference')
-        self.file_reference = attributes[:'FileReference']
-      end
-
-      if attributes.key?(:'ResultDocumentFormat')
-        self.result_document_format = attributes[:'ResultDocumentFormat']
+      if attributes.key?(:'Scale')
+        self.scale = attributes[:'Scale']
       end
     end
 
@@ -114,12 +88,9 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          author == other.author &&
-          compare_options == other.compare_options &&
-          comparing_with_document == other.comparing_with_document &&
-          date_time == other.date_time &&
-          file_reference == other.file_reference &&
-          result_document_format == other.result_document_format
+          image == other.image &&
+          is_washout == other.is_washout &&
+          scale == other.scale
     end
 
     # @see the `==` method
@@ -131,7 +102,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [author, compare_options, comparing_with_document, date_time, file_reference, result_document_format].hash
+      [image, is_washout, scale].hash
     end
 
     # Builds the object from hash
@@ -245,21 +216,18 @@ module AsposeWordsCloud
     end
 
     def collectFilesContent(resultFilesContent)
-      if self.file_reference
-          self.file_reference.collectFilesContent(resultFilesContent)
+      if self.image
+          self.image.collectFilesContent(resultFilesContent)
       end
+
 
 
     end
 
     def validate()
-      raise ArgumentError, 'Property author in CompareData is required.' if self.author.nil?
-      raise ArgumentError, 'Property file_reference in CompareData is required.' if self.file_reference.nil?
-      unless self.compare_options.nil?
-          self.compare_options.validate
-      end
-      unless self.file_reference.nil?
-          self.file_reference.validate
+      raise ArgumentError, 'Property image in WatermarkDataImage is required.' if self.image.nil?
+      unless self.image.nil?
+          self.image.validate
       end
 
     end

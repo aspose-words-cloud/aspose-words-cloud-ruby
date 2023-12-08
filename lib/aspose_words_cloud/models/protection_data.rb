@@ -31,6 +31,29 @@ module AsposeWordsCloud
   class ProtectionData
     # Gets or sets type of the protection.
     attr_accessor :protection_type
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -61,8 +84,26 @@ module AsposeWordsCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      protection_type_validator = EnumAttributeValidator.new('String', ["AllowOnlyRevisions", "AllowOnlyComments", "AllowOnlyFormFields", "ReadOnly", "NoProtection"])
+      return false unless protection_type_validator.valid?(@protection_type)
+
       return true
     end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] protection_type Object to be assigned
+    def protection_type=(protection_type)
+      validator = EnumAttributeValidator.new('String', ["AllowOnlyRevisions", "AllowOnlyComments", "AllowOnlyFormFields", "ReadOnly", "NoProtection"])
+      if protection_type.to_i == 0
+        unless validator.valid?(protection_type)
+          raise ArgumentError, "invalid value for 'protection_type', must be one of #{validator.allowable_values}."
+        end
+        @protection_type = protection_type
+      else
+        @protection_type = validator.allowable_values[protection_type.to_i]
+      end
+    end
+
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
@@ -198,6 +239,7 @@ module AsposeWordsCloud
     end
 
     def validate()
+      raise ArgumentError, 'Property protection_type in ProtectionData is required.' if self.protection_type.nil?
     end
 
   end
