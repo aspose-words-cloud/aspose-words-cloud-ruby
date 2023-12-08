@@ -228,6 +228,10 @@ module AsposeWordsCloud
     end
 
     def validate()
+      raise ArgumentError, 'Property name in BookmarkInsert is required.' if self.name.nil?
+      raise ArgumentError, 'Property text in BookmarkInsert is required.' if self.text.nil?
+      raise ArgumentError, 'Property start_range in BookmarkInsert is required.' if self.start_range.nil?
+      raise ArgumentError, 'Property end_range in BookmarkInsert is required.' if self.end_range.nil?
       unless self.start_range.nil?
           self.start_range.validate
       end

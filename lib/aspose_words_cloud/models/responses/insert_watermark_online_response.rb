@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="version.rb">
+# <copyright company="Aspose" file="insert_watermark_online_response.rb">
 #   Copyright (c) 2023 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -24,5 +24,23 @@
 # ------------------------------------------------------------------------------------
 
 module AsposeWordsCloud
-  VERSION = "23.12.0".freeze
+
+  #
+  # Response model for insert_watermark_online operation.
+  #
+  class InsertWatermarkOnlineResponse
+    # The REST response with a document description.
+    attr_accessor :model
+
+    # The document after modification.
+    attr_accessor :document
+
+    #
+    # Initializes a new instance.
+    #
+    def initialize()
+      self.model = nil
+      self.document = nil
+    end
+  end
 end

@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="compare_data.rb">
+# <copyright company="Aspose" file="protection_request_v2.rb">
 #   Copyright (c) 2023 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -27,46 +27,50 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Container class for compare documents.
-  class CompareData
-    # Gets or sets the initials of the author to use for revisions.
-    attr_accessor :author
+  # Request on changing of protection.
+  class ProtectionRequestV2
+    # Gets or sets the new password for the document protection.
+    # This property is required, but empty value is allowed.
+    attr_accessor :protection_password
 
-    # Gets or sets the compare options.
-    attr_accessor :compare_options
+    # Gets or sets the new type of the document protection.
+    attr_accessor :protection_type
 
-    # Gets or sets the path to document to compare at the server.
-    attr_accessor :comparing_with_document
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
 
-    # Gets or sets the date and time to use for revisions.
-    attr_accessor :date_time
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
 
-    # Gets or sets the file reference.
-    attr_accessor :file_reference
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
 
-    # Gets or sets the result document format.
-    attr_accessor :result_document_format
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'author' => :'Author',
-        :'compare_options' => :'CompareOptions',
-        :'comparing_with_document' => :'ComparingWithDocument',
-        :'date_time' => :'DateTime',
-        :'file_reference' => :'FileReference',
-        :'result_document_format' => :'ResultDocumentFormat'
+        :'protection_password' => :'ProtectionPassword',
+        :'protection_type' => :'ProtectionType'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'author' => :'String',
-        :'compare_options' => :'CompareOptions',
-        :'comparing_with_document' => :'String',
-        :'date_time' => :'DateTime',
-        :'file_reference' => :'FileReference',
-        :'result_document_format' => :'String'
+        :'protection_password' => :'String',
+        :'protection_type' => :'String'
       }
     end
 
@@ -78,48 +82,46 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'Author')
-        self.author = attributes[:'Author']
+      if attributes.key?(:'ProtectionPassword')
+        self.protection_password = attributes[:'ProtectionPassword']
       end
 
-      if attributes.key?(:'CompareOptions')
-        self.compare_options = attributes[:'CompareOptions']
-      end
-
-      if attributes.key?(:'ComparingWithDocument')
-        self.comparing_with_document = attributes[:'ComparingWithDocument']
-      end
-
-      if attributes.key?(:'DateTime')
-        self.date_time = attributes[:'DateTime']
-      end
-
-      if attributes.key?(:'FileReference')
-        self.file_reference = attributes[:'FileReference']
-      end
-
-      if attributes.key?(:'ResultDocumentFormat')
-        self.result_document_format = attributes[:'ResultDocumentFormat']
+      if attributes.key?(:'ProtectionType')
+        self.protection_type = attributes[:'ProtectionType']
       end
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      protection_type_validator = EnumAttributeValidator.new('String', ["AllowOnlyRevisions", "AllowOnlyComments", "AllowOnlyFormFields", "ReadOnly", "NoProtection"])
+      return false unless protection_type_validator.valid?(@protection_type)
+
       return true
     end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] protection_type Object to be assigned
+    def protection_type=(protection_type)
+      validator = EnumAttributeValidator.new('String', ["AllowOnlyRevisions", "AllowOnlyComments", "AllowOnlyFormFields", "ReadOnly", "NoProtection"])
+      if protection_type.to_i == 0
+        unless validator.valid?(protection_type)
+          raise ArgumentError, "invalid value for 'protection_type', must be one of #{validator.allowable_values}."
+        end
+        @protection_type = protection_type
+      else
+        @protection_type = validator.allowable_values[protection_type.to_i]
+      end
+    end
+
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          author == other.author &&
-          compare_options == other.compare_options &&
-          comparing_with_document == other.comparing_with_document &&
-          date_time == other.date_time &&
-          file_reference == other.file_reference &&
-          result_document_format == other.result_document_format
+          protection_password == other.protection_password &&
+          protection_type == other.protection_type
     end
 
     # @see the `==` method
@@ -131,7 +133,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [author, compare_options, comparing_with_document, date_time, file_reference, result_document_format].hash
+      [protection_password, protection_type].hash
     end
 
     # Builds the object from hash
@@ -245,23 +247,11 @@ module AsposeWordsCloud
     end
 
     def collectFilesContent(resultFilesContent)
-      if self.file_reference
-          self.file_reference.collectFilesContent(resultFilesContent)
-      end
-
-
     end
 
     def validate()
-      raise ArgumentError, 'Property author in CompareData is required.' if self.author.nil?
-      raise ArgumentError, 'Property file_reference in CompareData is required.' if self.file_reference.nil?
-      unless self.compare_options.nil?
-          self.compare_options.validate
-      end
-      unless self.file_reference.nil?
-          self.file_reference.validate
-      end
-
+      raise ArgumentError, 'Property protection_password in ProtectionRequestV2 is required.' if self.protection_password.nil?
+      raise ArgumentError, 'Property protection_type in ProtectionRequestV2 is required.' if self.protection_type.nil?
     end
 
   end

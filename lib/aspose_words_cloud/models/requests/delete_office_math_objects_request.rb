@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="unprotect_document_request.rb">
+# <copyright company="Aspose" file="delete_office_math_objects_request.rb">
 #   Copyright (c) 2023 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -26,9 +26,9 @@
 module AsposeWordsCloud
 
   #
-  # Request model for unprotect_document operation.
+  # Request model for delete_office_math_objects operation.
   #
-  class UnprotectDocumentRequest
+  class DeleteOfficeMathObjectsRequest
     # The filename of the input document.
     attr_accessor :name
 
@@ -50,6 +50,12 @@ module AsposeWordsCloud
     # Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
     attr_accessor :dest_file_name
 
+    # Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+    attr_accessor :revision_author
+
+    # The date and time to use for revisions.
+    attr_accessor :revision_date_time
+
     #
     # Initializes a new instance.
     # @param name The filename of the input document.
@@ -59,8 +65,10 @@ module AsposeWordsCloud
     # @param password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
     # @param encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
     # @param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+    # @param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+    # @param revision_date_time The date and time to use for revisions.
 
-    def initialize(name:, folder: nil, storage: nil, load_encoding: nil, password: nil, encrypted_password: nil, dest_file_name: nil)
+    def initialize(name:, folder: nil, storage: nil, load_encoding: nil, password: nil, encrypted_password: nil, dest_file_name: nil, revision_author: nil, revision_date_time: nil)
       self.name = name
       self.folder = folder
       self.storage = storage
@@ -68,15 +76,17 @@ module AsposeWordsCloud
       self.password = password
       self.encrypted_password = encrypted_password
       self.dest_file_name = dest_file_name
+      self.revision_author = revision_author
+      self.revision_date_time = revision_date_time
     end
 
     # Creating batch part from request
     def to_batch_part(api_client, requestId, parentRequestId = nil)
       # verify the required parameter 'name' is set
-      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.unprotect_document' if api_client.config.client_side_validation && self.name.nil?
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_office_math_objects' if api_client.config.client_side_validation && self.name.nil?
 
       # resource path
-      local_var_path = '/words/{name}/protection'[7..-1]
+      local_var_path = '/words/{name}/OfficeMathObjects'[7..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)
       local_var_path = local_var_path.sub('//', '/')
 
@@ -88,6 +98,8 @@ module AsposeWordsCloud
       query_params[downcase_first_letter('Password')] = self.password unless self.password.nil?
       query_params[downcase_first_letter('EncryptedPassword')] = self.encrypted_password unless self.encrypted_password.nil?
       query_params[downcase_first_letter('DestFileName')] = self.dest_file_name unless self.dest_file_name.nil?
+      query_params[downcase_first_letter('RevisionAuthor')] = self.revision_author unless self.revision_author.nil?
+      query_params[downcase_first_letter('RevisionDateTime')] = self.revision_date_time unless self.revision_date_time.nil?
 
       if query_params
         query_params.each { |key, value| local_var_path = api_client.add_param_to_query(local_var_path, key, value) }
@@ -128,10 +140,10 @@ module AsposeWordsCloud
 
     def create_http_request(api_client)
       # verify the required parameter 'name' is set
-      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.unprotect_document' if api_client.config.client_side_validation && self.name.nil?
+      raise ArgumentError, 'Missing the required parameter name when calling WordsApi.delete_office_math_objects' if api_client.config.client_side_validation && self.name.nil?
 
       # resource path
-      local_var_path = '/words/{name}/protection'[1..-1]
+      local_var_path = '/words/{name}/OfficeMathObjects'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)
       local_var_path = local_var_path.sub('//', '/')
 
@@ -143,6 +155,8 @@ module AsposeWordsCloud
       query_params[downcase_first_letter('Password')] = self.password unless self.password.nil?
       query_params[downcase_first_letter('EncryptedPassword')] = self.encrypted_password unless self.encrypted_password.nil?
       query_params[downcase_first_letter('DestFileName')] = self.dest_file_name unless self.dest_file_name.nil?
+      query_params[downcase_first_letter('RevisionAuthor')] = self.revision_author unless self.revision_author.nil?
+      query_params[downcase_first_letter('RevisionDateTime')] = self.revision_date_time unless self.revision_date_time.nil?
 
       # header parameters
       header_params = {}
@@ -172,7 +186,7 @@ module AsposeWordsCloud
 
     # Get response type
     def get_response_type
-      'ProtectionDataResponse'
+      nil
     end
   end
 end

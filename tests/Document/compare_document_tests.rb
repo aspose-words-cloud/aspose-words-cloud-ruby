@@ -50,7 +50,8 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, local_folder + '/' + local_name1), remote_folder + '/' + remote_name1
       upload_file File.join(local_test_folder, local_folder + '/' + local_name2), remote_folder + '/' + remote_name2
 
-      request_compare_data = CompareData.new({:Author => 'author', :ComparingWithDocument => remote_folder + '/' + remote_name2, :DateTime => Date.iso8601('2015-10-26T00:00:00.0000000Z')})
+      request_compare_data_file_reference = AsposeWordsCloud::FileReference.fromRemoteFilePath(remote_folder + '/' + remote_name2)
+      request_compare_data = CompareData.new({:Author => 'author', :DateTime => Date.iso8601('2015-10-26T00:00:00.0000000Z'), :FileReference => request_compare_data_file_reference})
       request = CompareDocumentRequest.new(name: remote_name1, compare_data: request_compare_data, folder: remote_folder, dest_file_name: remote_test_out + '/TestCompareDocumentOut.doc')
 
       result = @words_api.compare_document(request)
@@ -68,7 +69,8 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, local_folder + '/' + local_name2), remote_folder + '/' + remote_name2
 
       request_document = File.open(File.join(local_test_folder, local_folder + '/' + local_name1))
-      request_compare_data = CompareData.new({:Author => 'author', :ComparingWithDocument => remote_folder + '/' + remote_name2, :DateTime => Date.iso8601('2015-10-26T00:00:00.0000000Z')})
+      request_compare_data_file_reference = AsposeWordsCloud::FileReference.fromRemoteFilePath(remote_folder + '/' + remote_name2)
+      request_compare_data = CompareData.new({:Author => 'author', :DateTime => Date.iso8601('2015-10-26T00:00:00.0000000Z'), :FileReference => request_compare_data_file_reference})
       request = CompareDocumentOnlineRequest.new(document: request_document, compare_data: request_compare_data, dest_file_name: remote_test_out + '/TestCompareDocumentOut.doc')
 
       result = @words_api.compare_document_online(request)
@@ -86,9 +88,10 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, local_folder + '/' + local_name2), remote_folder + '/' + remote_name2
 
       request_document = File.open(File.join(local_test_folder, local_folder + '/' + local_name1))
-      request_compare_data = CompareData.new({:Author => 'author', :ComparingWithDocument => remote_folder + '/' + remote_name2, :DateTime => Date.iso8601('2015-10-26T00:00:00.0000000Z')})
-      request_comparing_document = File.open(File.join(local_test_folder, local_folder + '/' + local_name2))
-      request = CompareDocumentOnlineRequest.new(document: request_document, compare_data: request_compare_data, comparing_document: request_comparing_document, dest_file_name: remote_test_out + '/TestCompareDocumentOut.doc')
+      request_compare_data_file_referenceStream = File.open(File.join(local_test_folder, local_folder + '/' + local_name2))
+      request_compare_data_file_reference = AsposeWordsCloud::FileReference.fromLocalFileContent(request_compare_data_file_referenceStream)
+      request_compare_data = CompareData.new({:Author => 'author', :DateTime => Date.iso8601('2015-10-26T00:00:00.0000000Z'), :FileReference => request_compare_data_file_reference})
+      request = CompareDocumentOnlineRequest.new(document: request_document, compare_data: request_compare_data, dest_file_name: remote_test_out + '/TestCompareDocumentOut.doc')
 
       result = @words_api.compare_document_online(request)
       assert_equal false, result.nil?
