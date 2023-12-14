@@ -59,7 +59,7 @@ module AsposeWordsCloud
       {
         :'source' => :'Source',
         :'reference' => :'Reference',
-        :'password' => :'Password'
+        :'password' => :'Password',
         :'encryptedPassword' => :'EncryptedPassword'
       }
     end
@@ -231,6 +231,7 @@ module AsposeWordsCloud
     end
 
     def validate()
+      # Do nothing
     end
   end
 end
