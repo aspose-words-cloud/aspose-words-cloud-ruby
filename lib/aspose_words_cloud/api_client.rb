@@ -406,7 +406,7 @@ module AsposeWordsCloud
     def build_request_body(header_params, form_params, files_references)
       # http form
       files_references.each do |file_reference|
-        if !file_reference.password.empty?
+        if !file_reference.password.nil?
             file_reference.encryptedPassword = self.config.encryptor.encrypt(file_reference.password)
             file_reference.password = nil
         end
@@ -457,7 +457,7 @@ module AsposeWordsCloud
     # @return [String] HTTP body data in the form of string
     def build_request_body_batch(header_params, form_params, files_references)
       files_references.each do |file_reference|
-        if !file_reference.password.empty?
+        if !file_reference.password.nil?
             file_reference.encryptedPassword = self.config.encryptor.encrypt(file_reference.password)
             file_reference.password = nil
         end
