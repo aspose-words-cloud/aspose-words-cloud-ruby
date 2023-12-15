@@ -36,6 +36,7 @@ module AsposeWordsCloud
 
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
+      @api_client.config.encryptor = self
       @rsa_key = nil
       require_all '../models/requests'
       require_all '../models/responses'
