@@ -96,5 +96,24 @@ module AsposeWordsCloud
       result = @words_api.compare_document_online(request)
       assert_equal false, result.nil?
     end
+
+    #
+    # Test for document comparison with password protection.
+    #
+    def test_compare_document_with_password
+      local_name = 'DocWithPassword.docx'
+      remote_name1 = 'TestCompareDocument1.docx'
+      remote_name2 = 'TestCompareDocument2.docx'
+
+      upload_file File.join(local_test_folder, 'Common/' + local_name), remote_folder + '/' + remote_name1
+      upload_file File.join(local_test_folder, 'Common/' + local_name), remote_folder + '/' + remote_name2
+
+      request_compare_data_file_reference = AsposeWordsCloud::FileReference.fromRemoteFilePathWithPassword(remote_folder + '/' + remote_name2, '12345')
+      request_compare_data = CompareData.new({:Author => 'author', :DateTime => Date.iso8601('2015-10-26T00:00:00.0000000Z'), :FileReference => request_compare_data_file_reference})
+      request = CompareDocumentRequest.new(name: remote_name1, compare_data: request_compare_data, folder: remote_folder, password: '12345', dest_file_name: remote_test_out + '/TestCompareDocumentOut.docx')
+
+      result = @words_api.compare_document(request)
+      assert_equal false, result.nil?
+    end
   end
 end

@@ -38,11 +38,19 @@ module AsposeWordsCloud
     # Gets or sets the file data.
     attr_accessor :content
 
+    # Gets or sets the password.
+    attr_accessor :password
+
+    # Gets or sets the encrypted password.
+    attr_accessor :encryptedPassword
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'source' => :'Source',
-        :'reference' => :'Reference'
+        :'reference' => :'Reference',
+        :'password' => :'Password',
+        :'encryptedPassword' => :'EncryptedPassword'
       }
     end
 
@@ -50,22 +58,34 @@ module AsposeWordsCloud
     def self.swagger_types
       {
         :'source' => :'Source',
-        :'reference' => :'Reference'
+        :'reference' => :'Reference',
+        :'password' => :'Password',
+        :'encryptedPassword' => :'EncryptedPassword'
       }
     end
 
-    def initialize(source, reference, content)
+    def initialize(source, reference, content, password)
       self.source = source
       self.reference = reference
       self.content = content
+      self.password = password
+      self.encryptedPassword = nil
     end
 
     def self.fromRemoteFilePath(remoteFilePath)
-      self.new('Storage', remoteFilePath, nil)
+      self.new('Storage', remoteFilePath, nil, nil)
+    end
+
+    def self.fromRemoteFilePathWithPassword(remoteFilePath, password)
+      self.new('Storage', remoteFilePath, nil, password)
     end
 
     def self.fromLocalFileContent(localFileContent)
-      self.new('Request', SecureRandom.uuid, localFileContent)
+      self.new('Request', SecureRandom.uuid, localFileContent, nil)
+    end
+
+    def self.fromLocalFileContentWithPassword(localFileContent, password)
+      self.new('Request', SecureRandom.uuid, localFileContent, password)
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -85,7 +105,7 @@ module AsposeWordsCloud
     # @param [Object] Object to be compared
     def ==(other)
       return true if self.equal?(other)
-      self.class == other.class && source == other.source && reference == other.reference
+      self.class == other.class && source == other.source && reference == other.reference && password == other.password && encryptedPassword == other.encryptedPassword
     end
 
     # @see the `==` method
@@ -97,7 +117,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [source, reference].hash
+      [source, reference, password, encryptedPassword].hash
     end
 
     # Builds the object from hash
@@ -207,12 +227,11 @@ module AsposeWordsCloud
     end
 
     def collectFilesContent(resultFilesContent)
-      if source == 'Request'
-        resultFilesContent.push(self)
-      end
+      resultFilesContent.push(self)
     end
 
     def validate()
+      # Do nothing
     end
   end
 end
