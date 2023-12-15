@@ -14384,7 +14384,7 @@ module AsposeWordsCloud
             modulus = @api_client.config.modulus
             exponent = @api_client.config.exponent
 
-            if modulus.to_s.empty || exponent.to_s.empty
+            if modulus.to_s.empty? || exponent.to_s.empty?
                 data = self.get_public_key GetPublicKeyRequest.new
                 modulus = data.modulus
                 exponent = data.exponent
