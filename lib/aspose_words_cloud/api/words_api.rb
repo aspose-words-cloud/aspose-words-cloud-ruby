@@ -14391,7 +14391,7 @@ module AsposeWordsCloud
             end
 
             @rsa_key = OpenSSL::PKey::RSA.new
-            @rsa_key.set_key(base64_to_long(modulus), base64_to_long(exponent), nil)            
+            @rsa_key.set_key(base64_to_long(exponent), base64_to_long(modulus), nil)
         end
 
         Base64.encode64(@rsa_key.public_encrypt(data.to_s.force_encoding("utf-8")))
