@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="aspose_words_cloud.rb">
-#   Copyright (c) 2023 Aspose.Words for Cloud
+#   Copyright (c) 2024 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -166,7 +166,6 @@ require_relative 'aspose_words_cloud/models/markdown_save_options_data'
 require_relative 'aspose_words_cloud/models/metafile_rendering_options_data'
 require_relative 'aspose_words_cloud/models/mhtml_save_options_data'
 require_relative 'aspose_words_cloud/models/modification_operation_result'
-require_relative 'aspose_words_cloud/models/new_document_position'
 require_relative 'aspose_words_cloud/models/node_link'
 require_relative 'aspose_words_cloud/models/odt_save_options_data'
 require_relative 'aspose_words_cloud/models/office_math_link'
@@ -197,6 +196,9 @@ require_relative 'aspose_words_cloud/models/pdf_encryption_details_data'
 require_relative 'aspose_words_cloud/models/pdf_permissions'
 require_relative 'aspose_words_cloud/models/pdf_save_options_data'
 require_relative 'aspose_words_cloud/models/png_save_options_data'
+require_relative 'aspose_words_cloud/models/position_after_node'
+require_relative 'aspose_words_cloud/models/position_before_node'
+require_relative 'aspose_words_cloud/models/position_inside_node'
 require_relative 'aspose_words_cloud/models/preferred_width'
 require_relative 'aspose_words_cloud/models/protection_data'
 require_relative 'aspose_words_cloud/models/protection_data_response'

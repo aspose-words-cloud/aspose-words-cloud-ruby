@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="insert_table_row_request.rb">
-#   Copyright (c) 2023 Aspose.Words for Cloud
+#   Copyright (c) 2024 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -32,11 +32,11 @@ module AsposeWordsCloud
     # The filename of the input document.
     attr_accessor :name
 
-    # The path to the table in the document tree.
-    attr_accessor :table_path
-
     # Table row parameters.
     attr_accessor :row
+
+    # The path to the table in the document tree.
+    attr_accessor :node_path
 
     # Original document folder.
     attr_accessor :folder
@@ -65,8 +65,8 @@ module AsposeWordsCloud
     #
     # Initializes a new instance.
     # @param name The filename of the input document.
-    # @param table_path The path to the table in the document tree.
     # @param row Table row parameters.
+    # @param node_path The path to the table in the document tree.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -76,10 +76,10 @@ module AsposeWordsCloud
     # @param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
     # @param revision_date_time The date and time to use for revisions.
 
-    def initialize(name:, table_path:, row:, folder: nil, storage: nil, load_encoding: nil, password: nil, encrypted_password: nil, dest_file_name: nil, revision_author: nil, revision_date_time: nil)
+    def initialize(name:, row:, node_path: nil, folder: nil, storage: nil, load_encoding: nil, password: nil, encrypted_password: nil, dest_file_name: nil, revision_author: nil, revision_date_time: nil)
       self.name = name
-      self.table_path = table_path
       self.row = row
+      self.node_path = node_path
       self.folder = folder
       self.storage = storage
       self.load_encoding = load_encoding
@@ -94,15 +94,13 @@ module AsposeWordsCloud
     def to_batch_part(api_client, requestId, parentRequestId = nil)
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.insert_table_row' if api_client.config.client_side_validation && self.name.nil?
-      # verify the required parameter 'table_path' is set
-      raise ArgumentError, 'Missing the required parameter table_path when calling WordsApi.insert_table_row' if api_client.config.client_side_validation && self.table_path.nil?
       # verify the required parameter 'row' is set
       raise ArgumentError, 'Missing the required parameter row when calling WordsApi.insert_table_row' if api_client.config.client_side_validation && self.row.nil?
       self.row.validate
       # resource path
-      local_var_path = '/words/{name}/{tablePath}/rows'[7..-1]
+      local_var_path = '/words/{name}/{nodePath}/rows'[7..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)
-      local_var_path = local_var_path.sub('{' + downcase_first_letter('TablePath') + '}', self.table_path.nil? ? '' : self.table_path.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', self.node_path.nil? ? '' : self.node_path.to_s)
       local_var_path = local_var_path.sub('//', '/')
 
       # query parameters
@@ -166,15 +164,13 @@ module AsposeWordsCloud
     def create_http_request(api_client)
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.insert_table_row' if api_client.config.client_side_validation && self.name.nil?
-      # verify the required parameter 'table_path' is set
-      raise ArgumentError, 'Missing the required parameter table_path when calling WordsApi.insert_table_row' if api_client.config.client_side_validation && self.table_path.nil?
       # verify the required parameter 'row' is set
       raise ArgumentError, 'Missing the required parameter row when calling WordsApi.insert_table_row' if api_client.config.client_side_validation && self.row.nil?
       self.row.validate
       # resource path
-      local_var_path = '/words/{name}/{tablePath}/rows'[1..-1]
+      local_var_path = '/words/{name}/{nodePath}/rows'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('Name') + '}', self.name.nil? ? '' : self.name.to_s)
-      local_var_path = local_var_path.sub('{' + downcase_first_letter('TablePath') + '}', self.table_path.nil? ? '' : self.table_path.to_s)
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', self.node_path.nil? ? '' : self.node_path.to_s)
       local_var_path = local_var_path.sub('//', '/')
 
       # query parameters

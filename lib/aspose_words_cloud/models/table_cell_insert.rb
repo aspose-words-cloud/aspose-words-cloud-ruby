@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="table_cell_insert.rb">
-#   Copyright (c) 2023 Aspose.Words for Cloud
+#   Copyright (c) 2024 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,11 +29,15 @@ module AsposeWordsCloud
 
   # DTO container with a table cell.
   class TableCellInsert
+    # Gets or sets the position of the table cell that will be used to determine the placement of a new cell.
+    attr_accessor :existing_cell_position
+
     # Gets or sets the 0-based index, the table cell will be inserted after.
     attr_accessor :insert_after
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'existing_cell_position' => :'ExistingCellPosition',
         :'insert_after' => :'InsertAfter'
       }
     end
@@ -41,6 +45,7 @@ module AsposeWordsCloud
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'existing_cell_position' => :'Position',
         :'insert_after' => :'Integer'
       }
     end
@@ -52,6 +57,10 @@ module AsposeWordsCloud
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.key?(:'ExistingCellPosition')
+        self.existing_cell_position = attributes[:'ExistingCellPosition']
+      end
 
       if attributes.key?(:'InsertAfter')
         self.insert_after = attributes[:'InsertAfter']
@@ -69,6 +78,7 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
+          existing_cell_position == other.existing_cell_position &&
           insert_after == other.insert_after
     end
 
@@ -81,7 +91,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [insert_after].hash
+      [existing_cell_position, insert_after].hash
     end
 
     # Builds the object from hash
@@ -198,6 +208,10 @@ module AsposeWordsCloud
     end
 
     def validate()
+      unless self.existing_cell_position.nil?
+          self.existing_cell_position.validate
+      end
+
     end
 
   end

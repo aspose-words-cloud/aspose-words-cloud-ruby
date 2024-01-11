@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="drawing_object_insert.rb">
-#   Copyright (c) 2023 Aspose.Words for Cloud
+#   Copyright (c) 2024 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,7 +29,7 @@ module AsposeWordsCloud
 
   # Drawing object element for insert.
   class DrawingObjectInsert
-    # Gets or sets the position, before which the DrawingObject will be inserted.
+    # Gets or sets the position, where the DrawingObject will be inserted.
     attr_accessor :position
 
     # Gets or sets the relative horizontal position, from which the distance to the image is measured.
@@ -92,7 +92,7 @@ module AsposeWordsCloud
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'position' => :'NewDocumentPosition',
+        :'position' => :'Position',
         :'relative_horizontal_position' => :'String',
         :'left' => :'Float',
         :'relative_vertical_position' => :'String',

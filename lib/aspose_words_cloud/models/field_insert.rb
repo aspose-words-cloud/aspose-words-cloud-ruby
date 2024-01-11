@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="field_insert.rb">
-#   Copyright (c) 2023 Aspose.Words for Cloud
+#   Copyright (c) 2024 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -34,11 +34,15 @@ module AsposeWordsCloud
 
     # Gets or sets the field code.
     attr_accessor :field_code
+
+    # Gets or sets the position of the node that will be used to determine the placement of a new field.
+    attr_accessor :position
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'locale_id' => :'LocaleId',
-        :'field_code' => :'FieldCode'
+        :'field_code' => :'FieldCode',
+        :'position' => :'Position'
       }
     end
 
@@ -46,7 +50,8 @@ module AsposeWordsCloud
     def self.swagger_types
       {
         :'locale_id' => :'String',
-        :'field_code' => :'String'
+        :'field_code' => :'String',
+        :'position' => :'Position'
       }
     end
 
@@ -65,6 +70,10 @@ module AsposeWordsCloud
       if attributes.key?(:'FieldCode')
         self.field_code = attributes[:'FieldCode']
       end
+
+      if attributes.key?(:'Position')
+        self.position = attributes[:'Position']
+      end
     end
 
     # Check to see if the all the properties in the model are valid
@@ -79,7 +88,8 @@ module AsposeWordsCloud
       return true if self.equal?(other)
       self.class == other.class &&
           locale_id == other.locale_id &&
-          field_code == other.field_code
+          field_code == other.field_code &&
+          position == other.position
     end
 
     # @see the `==` method
@@ -91,7 +101,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [locale_id, field_code].hash
+      [locale_id, field_code, position].hash
     end
 
     # Builds the object from hash
@@ -209,6 +219,10 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property field_code in FieldInsert is required.' if self.field_code.nil?
+      unless self.position.nil?
+          self.position.validate
+      end
+
     end
 
   end

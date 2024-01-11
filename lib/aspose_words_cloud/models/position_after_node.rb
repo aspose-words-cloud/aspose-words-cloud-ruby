@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="new_document_position.rb">
-#   Copyright (c) 2023 Aspose.Words for Cloud
+# <copyright company="Aspose" file="position_after_node.rb">
+#   Copyright (c) 2024 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,18 +27,18 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # DTO container with a new position in the document tree.
-  class NewDocumentPosition
+  # Describes the location of the node after specified node.
+  class PositionAfterNode
     # Gets or sets the node id.
     attr_accessor :node_id
 
-    # Gets or sets the offset in the node.
-    attr_accessor :offset
+    # Gets position type.
+    attr_accessor :type
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'node_id' => :'NodeId',
-        :'offset' => :'Offset'
+        :'type' => :'Type'
       }
     end
 
@@ -46,7 +46,7 @@ module AsposeWordsCloud
     def self.swagger_types
       {
         :'node_id' => :'String',
-        :'offset' => :'Integer'
+        :'type' => :'String'
       }
     end
 
@@ -58,12 +58,10 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      self.type = 'After'
+
       if attributes.key?(:'NodeId')
         self.node_id = attributes[:'NodeId']
-      end
-
-      if attributes.key?(:'Offset')
-        self.offset = attributes[:'Offset']
       end
     end
 
@@ -79,7 +77,7 @@ module AsposeWordsCloud
       return true if self.equal?(other)
       self.class == other.class &&
           node_id == other.node_id &&
-          offset == other.offset
+          type == other.type
     end
 
     # @see the `==` method
@@ -91,7 +89,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [node_id, offset].hash
+      [node_id, type].hash
     end
 
     # Builds the object from hash
@@ -208,7 +206,7 @@ module AsposeWordsCloud
     end
 
     def validate()
-      raise ArgumentError, 'Property node_id in NewDocumentPosition is required.' if self.node_id.nil?
+      raise ArgumentError, 'Property node_id in PositionAfterNode is required.' if self.node_id.nil?
     end
 
   end

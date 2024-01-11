@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="comment_update.rb">
-#   Copyright (c) 2023 Aspose.Words for Cloud
+#   Copyright (c) 2024 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -65,8 +65,8 @@ module AsposeWordsCloud
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'range_start' => :'NewDocumentPosition',
-        :'range_end' => :'NewDocumentPosition',
+        :'range_start' => :'PositionInsideNode',
+        :'range_end' => :'PositionInsideNode',
         :'author' => :'String',
         :'initial' => :'String',
         :'date_time' => :'DateTime',
