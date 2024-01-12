@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="words_api.rb">
-#   Copyright (c) 2023 Aspose.Words for Cloud
+#   Copyright (c) 2024 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,6 +36,7 @@ module AsposeWordsCloud
 
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
+      @api_client.config.encryptor = self
       @rsa_key = nil
       require_all '../models/requests'
       require_all '../models/responses'
@@ -14383,14 +14384,13 @@ module AsposeWordsCloud
             modulus = @api_client.config.modulus
             exponent = @api_client.config.exponent
 
-            if modulus.to_s.empty || exponent.to_s.empty
-                data = self.get_public_key GetPublicKeyRequest.new
-                modulus = data.modulus
-                exponent = data.exponent
+            if (modulus == nil || modulus.to_s.empty?) || (exponent == nil || exponent.to_s.empty?)
+                response = self.get_public_key GetPublicKeyRequest.new
+                modulus = response.modulus
+                exponent = response.exponent
             end
 
-            @rsa_key = OpenSSL::PKey::RSA.new
-            @rsa_key.set_key(base64_to_long(modulus), base64_to_long(exponent), nil)            
+            @rsa_key = rsa = create_rsa_key(modulus, exponent)
         end
 
         Base64.encode64(@rsa_key.public_encrypt(data.to_s.force_encoding("utf-8")))
@@ -14423,15 +14423,24 @@ module AsposeWordsCloud
       end
     end
 
+    private def create_rsa_key(n, e)
+      data_sequence = OpenSSL::ASN1::Sequence([
+                                                OpenSSL::ASN1::Integer(base64_to_long(n)),
+                                                OpenSSL::ASN1::Integer(base64_to_long(e))
+                                              ])
+      asn1 = OpenSSL::ASN1::Sequence(data_sequence)
+      OpenSSL::PKey::RSA.new(asn1.to_der)
+    end
+
     private def base64_to_long(data)
-      decoded_with_padding = Base64.urlsafe_decode64(data) + Base64.decode64('==')
-      decoded_with_padding.to_s.unpack('C*').map do |byte|
-        to_hex(byte)
+      decoded_with_padding = Base64.urlsafe_decode64(data) + Base64.decode64("==")
+      decoded_with_padding.to_s.unpack("C*").map do |byte|
+        byte_to_hex(byte)
       end.join.to_i(16)
     end
 
-    private def to_hex(int)
-      int < 16 ? '0' + int.to_s(16) : int.to_s(16)
+    private def byte_to_hex(int)
+      int < 16 ? "0" + int.to_s(16) : int.to_s(16)
     end
   end
 end

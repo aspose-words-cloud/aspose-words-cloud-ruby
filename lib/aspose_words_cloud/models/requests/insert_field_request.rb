@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="insert_field_request.rb">
-#   Copyright (c) 2023 Aspose.Words for Cloud
+#   Copyright (c) 2024 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -62,9 +62,6 @@ module AsposeWordsCloud
     # The date and time to use for revisions.
     attr_accessor :revision_date_time
 
-    # The index of the node. A new field will be inserted before the node with the specified node Id.
-    attr_accessor :insert_before_node
-
     #
     # Initializes a new instance.
     # @param name The filename of the input document.
@@ -78,9 +75,8 @@ module AsposeWordsCloud
     # @param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
     # @param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
     # @param revision_date_time The date and time to use for revisions.
-    # @param insert_before_node The index of the node. A new field will be inserted before the node with the specified node Id.
 
-    def initialize(name:, field:, node_path: nil, folder: nil, storage: nil, load_encoding: nil, password: nil, encrypted_password: nil, dest_file_name: nil, revision_author: nil, revision_date_time: nil, insert_before_node: nil)
+    def initialize(name:, field:, node_path: nil, folder: nil, storage: nil, load_encoding: nil, password: nil, encrypted_password: nil, dest_file_name: nil, revision_author: nil, revision_date_time: nil)
       self.name = name
       self.field = field
       self.node_path = node_path
@@ -92,7 +88,6 @@ module AsposeWordsCloud
       self.dest_file_name = dest_file_name
       self.revision_author = revision_author
       self.revision_date_time = revision_date_time
-      self.insert_before_node = insert_before_node
     end
 
     # Creating batch part from request
@@ -118,7 +113,6 @@ module AsposeWordsCloud
       query_params[downcase_first_letter('DestFileName')] = self.dest_file_name unless self.dest_file_name.nil?
       query_params[downcase_first_letter('RevisionAuthor')] = self.revision_author unless self.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = self.revision_date_time unless self.revision_date_time.nil?
-      query_params[downcase_first_letter('InsertBeforeNode')] = self.insert_before_node unless self.insert_before_node.nil?
 
       if query_params
         query_params.each { |key, value| local_var_path = api_client.add_param_to_query(local_var_path, key, value) }
@@ -189,7 +183,6 @@ module AsposeWordsCloud
       query_params[downcase_first_letter('DestFileName')] = self.dest_file_name unless self.dest_file_name.nil?
       query_params[downcase_first_letter('RevisionAuthor')] = self.revision_author unless self.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = self.revision_date_time unless self.revision_date_time.nil?
-      query_params[downcase_first_letter('InsertBeforeNode')] = self.insert_before_node unless self.insert_before_node.nil?
 
       # header parameters
       header_params = {}

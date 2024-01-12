@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="Comment_tests.rb">
-#   Copyright (c) 2023 Aspose.Words for Cloud
+#   Copyright (c) 2024 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -96,8 +96,8 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request_comment_range_start = NewDocumentPosition.new({:NodeId => '0.3.0.3', :Offset => 0})
-      request_comment_range_end = NewDocumentPosition.new({:NodeId => '0.3.0.3', :Offset => 0})
+      request_comment_range_start = PositionInsideNode.new({:NodeId => '0.3.0.3', :Offset => 0})
+      request_comment_range_end = PositionInsideNode.new({:NodeId => '0.3.0.3', :Offset => 0})
       request_comment = CommentInsert.new({:RangeStart => request_comment_range_start, :RangeEnd => request_comment_range_end, :Initial => 'IA', :Author => 'Imran Anwar', :Text => 'A new Comment'})
       request = InsertCommentRequest.new(name: remote_file_name, comment: request_comment, folder: remote_data_folder)
 
@@ -110,8 +110,8 @@ module AsposeWordsCloud
     #
     def test_insert_comment_online
       request_document = File.open(File.join(local_test_folder, local_file))
-      request_comment_range_start = NewDocumentPosition.new({:NodeId => '0.3.0.3', :Offset => 0})
-      request_comment_range_end = NewDocumentPosition.new({:NodeId => '0.3.0.3', :Offset => 0})
+      request_comment_range_start = PositionInsideNode.new({:NodeId => '0.3.0.3', :Offset => 0})
+      request_comment_range_end = PositionInsideNode.new({:NodeId => '0.3.0.3', :Offset => 0})
       request_comment = CommentInsert.new({:RangeStart => request_comment_range_start, :RangeEnd => request_comment_range_end, :Initial => 'IA', :Author => 'Imran Anwar', :Text => 'A new Comment'})
       request = InsertCommentOnlineRequest.new(document: request_document, comment: request_comment)
 
@@ -127,8 +127,8 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request_comment_range_start = NewDocumentPosition.new({:NodeId => '0.3.0', :Offset => 0})
-      request_comment_range_end = NewDocumentPosition.new({:NodeId => '0.3.0', :Offset => 0})
+      request_comment_range_start = PositionInsideNode.new({:NodeId => '0.3.0', :Offset => 0})
+      request_comment_range_end = PositionInsideNode.new({:NodeId => '0.3.0', :Offset => 0})
       request_comment = CommentUpdate.new({:RangeStart => request_comment_range_start, :RangeEnd => request_comment_range_end, :Initial => 'IA', :Author => 'Imran Anwar', :Text => 'A new Comment'})
       request = UpdateCommentRequest.new(name: remote_file_name, comment_index: 0, comment: request_comment, folder: remote_data_folder)
 
@@ -141,8 +141,8 @@ module AsposeWordsCloud
     #
     def test_update_comment_online
       request_document = File.open(File.join(local_test_folder, local_file))
-      request_comment_range_start = NewDocumentPosition.new({:NodeId => '0.3.0', :Offset => 0})
-      request_comment_range_end = NewDocumentPosition.new({:NodeId => '0.3.0', :Offset => 0})
+      request_comment_range_start = PositionInsideNode.new({:NodeId => '0.3.0', :Offset => 0})
+      request_comment_range_end = PositionInsideNode.new({:NodeId => '0.3.0', :Offset => 0})
       request_comment = CommentUpdate.new({:RangeStart => request_comment_range_start, :RangeEnd => request_comment_range_end, :Initial => 'IA', :Author => 'Imran Anwar', :Text => 'A new Comment'})
       request = UpdateCommentOnlineRequest.new(document: request_document, comment_index: 0, comment: request_comment)
 

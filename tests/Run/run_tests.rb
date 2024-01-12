@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="Run_tests.rb">
-#   Copyright (c) 2023 Aspose.Words for Cloud
+#   Copyright (c) 2024 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -74,7 +74,7 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
       request_run = RunInsert.new({:Text => 'run with text'})
-      request = InsertRunRequest.new(name: remote_file_name, paragraph_path: 'paragraphs/1', run: request_run, folder: remote_data_folder)
+      request = InsertRunRequest.new(name: remote_file_name, run: request_run, paragraph_path: 'paragraphs/1', folder: remote_data_folder)
 
       result = @words_api.insert_run(request)
       assert_equal false, result.nil?
@@ -86,7 +86,7 @@ module AsposeWordsCloud
     def test_insert_run_online
       request_document = File.open(File.join(local_test_folder, local_file))
       request_run = RunInsert.new({:Text => 'run with text'})
-      request = InsertRunOnlineRequest.new(document: request_document, paragraph_path: 'paragraphs/1', run: request_run)
+      request = InsertRunOnlineRequest.new(document: request_document, run: request_run, paragraph_path: 'paragraphs/1')
 
       result = @words_api.insert_run_online(request)
       assert_equal false, result.nil?

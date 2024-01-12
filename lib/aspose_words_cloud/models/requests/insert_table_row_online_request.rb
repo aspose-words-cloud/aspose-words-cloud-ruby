@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="insert_table_row_online_request.rb">
-#   Copyright (c) 2023 Aspose.Words for Cloud
+#   Copyright (c) 2024 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -32,11 +32,11 @@ module AsposeWordsCloud
     # The document.
     attr_accessor :document
 
-    # The path to the table in the document tree.
-    attr_accessor :table_path
-
     # Table row parameters.
     attr_accessor :row
+
+    # The path to the table in the document tree.
+    attr_accessor :node_path
 
     # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     attr_accessor :load_encoding
@@ -59,8 +59,8 @@ module AsposeWordsCloud
     #
     # Initializes a new instance.
     # @param document The document.
-    # @param table_path The path to the table in the document tree.
     # @param row Table row parameters.
+    # @param node_path The path to the table in the document tree.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     # @param password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
     # @param encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
@@ -68,10 +68,10 @@ module AsposeWordsCloud
     # @param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
     # @param revision_date_time The date and time to use for revisions.
 
-    def initialize(document:, table_path:, row:, load_encoding: nil, password: nil, encrypted_password: nil, dest_file_name: nil, revision_author: nil, revision_date_time: nil)
+    def initialize(document:, row:, node_path: nil, load_encoding: nil, password: nil, encrypted_password: nil, dest_file_name: nil, revision_author: nil, revision_date_time: nil)
       self.document = document
-      self.table_path = table_path
       self.row = row
+      self.node_path = node_path
       self.load_encoding = load_encoding
       self.password = password
       self.encrypted_password = encrypted_password
@@ -84,14 +84,12 @@ module AsposeWordsCloud
     def to_batch_part(api_client, requestId, parentRequestId = nil)
       # verify the required parameter 'document' is set
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.insert_table_row_online' if api_client.config.client_side_validation && self.document.nil?
-      # verify the required parameter 'table_path' is set
-      raise ArgumentError, 'Missing the required parameter table_path when calling WordsApi.insert_table_row_online' if api_client.config.client_side_validation && self.table_path.nil?
       # verify the required parameter 'row' is set
       raise ArgumentError, 'Missing the required parameter row when calling WordsApi.insert_table_row_online' if api_client.config.client_side_validation && self.row.nil?
       self.row.validate
       # resource path
-      local_var_path = '/words/online/post/{tablePath}/rows'[7..-1]
-      local_var_path = local_var_path.sub('{' + downcase_first_letter('TablePath') + '}', self.table_path.nil? ? '' : self.table_path.to_s)
+      local_var_path = '/words/online/post/{nodePath}/rows'[7..-1]
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', self.node_path.nil? ? '' : self.node_path.to_s)
       local_var_path = local_var_path.sub('//', '/')
 
       # query parameters
@@ -160,14 +158,12 @@ module AsposeWordsCloud
     def create_http_request(api_client)
       # verify the required parameter 'document' is set
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.insert_table_row_online' if api_client.config.client_side_validation && self.document.nil?
-      # verify the required parameter 'table_path' is set
-      raise ArgumentError, 'Missing the required parameter table_path when calling WordsApi.insert_table_row_online' if api_client.config.client_side_validation && self.table_path.nil?
       # verify the required parameter 'row' is set
       raise ArgumentError, 'Missing the required parameter row when calling WordsApi.insert_table_row_online' if api_client.config.client_side_validation && self.row.nil?
       self.row.validate
       # resource path
-      local_var_path = '/words/online/post/{tablePath}/rows'[1..-1]
-      local_var_path = local_var_path.sub('{' + downcase_first_letter('TablePath') + '}', self.table_path.nil? ? '' : self.table_path.to_s)
+      local_var_path = '/words/online/post/{nodePath}/rows'[1..-1]
+      local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', self.node_path.nil? ? '' : self.node_path.to_s)
       local_var_path = local_var_path.sub('//', '/')
 
       # query parameters

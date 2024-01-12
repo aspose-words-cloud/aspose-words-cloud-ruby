@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="insert_table_cell_online_request.rb">
-#   Copyright (c) 2023 Aspose.Words for Cloud
+#   Copyright (c) 2024 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -32,11 +32,11 @@ module AsposeWordsCloud
     # The document.
     attr_accessor :document
 
-    # The path to the table row in the document tree.
-    attr_accessor :table_row_path
-
     # Table cell parameters.
     attr_accessor :cell
+
+    # The path to the table row in the document tree.
+    attr_accessor :table_row_path
 
     # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     attr_accessor :load_encoding
@@ -59,8 +59,8 @@ module AsposeWordsCloud
     #
     # Initializes a new instance.
     # @param document The document.
-    # @param table_row_path The path to the table row in the document tree.
     # @param cell Table cell parameters.
+    # @param table_row_path The path to the table row in the document tree.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     # @param password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
     # @param encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
@@ -68,10 +68,10 @@ module AsposeWordsCloud
     # @param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
     # @param revision_date_time The date and time to use for revisions.
 
-    def initialize(document:, table_row_path:, cell:, load_encoding: nil, password: nil, encrypted_password: nil, dest_file_name: nil, revision_author: nil, revision_date_time: nil)
+    def initialize(document:, cell:, table_row_path: nil, load_encoding: nil, password: nil, encrypted_password: nil, dest_file_name: nil, revision_author: nil, revision_date_time: nil)
       self.document = document
-      self.table_row_path = table_row_path
       self.cell = cell
+      self.table_row_path = table_row_path
       self.load_encoding = load_encoding
       self.password = password
       self.encrypted_password = encrypted_password
@@ -84,8 +84,6 @@ module AsposeWordsCloud
     def to_batch_part(api_client, requestId, parentRequestId = nil)
       # verify the required parameter 'document' is set
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.insert_table_cell_online' if api_client.config.client_side_validation && self.document.nil?
-      # verify the required parameter 'table_row_path' is set
-      raise ArgumentError, 'Missing the required parameter table_row_path when calling WordsApi.insert_table_cell_online' if api_client.config.client_side_validation && self.table_row_path.nil?
       # verify the required parameter 'cell' is set
       raise ArgumentError, 'Missing the required parameter cell when calling WordsApi.insert_table_cell_online' if api_client.config.client_side_validation && self.cell.nil?
       self.cell.validate
@@ -160,8 +158,6 @@ module AsposeWordsCloud
     def create_http_request(api_client)
       # verify the required parameter 'document' is set
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.insert_table_cell_online' if api_client.config.client_side_validation && self.document.nil?
-      # verify the required parameter 'table_row_path' is set
-      raise ArgumentError, 'Missing the required parameter table_row_path when calling WordsApi.insert_table_cell_online' if api_client.config.client_side_validation && self.table_row_path.nil?
       # verify the required parameter 'cell' is set
       raise ArgumentError, 'Missing the required parameter cell when calling WordsApi.insert_table_cell_online' if api_client.config.client_side_validation && self.cell.nil?
       self.cell.validate
