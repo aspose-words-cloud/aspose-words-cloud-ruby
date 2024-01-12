@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="structured_document_tag_insert.rb">
-#   Copyright (c) 2023 Aspose.Words for Cloud
+#   Copyright (c) 2024 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -140,6 +140,9 @@ module AsposeWordsCloud
     # Gets or sets type of this Structured document tag.
     attr_accessor :sdt_type
 
+    # Gets or sets the position of the node that will be used to determine the placement of a new node.
+    attr_accessor :position
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -190,7 +193,8 @@ module AsposeWordsCloud
         :'id' => :'Id',
         :'word_open_xml' => :'WordOpenXML',
         :'level' => :'Level',
-        :'sdt_type' => :'SdtType'
+        :'sdt_type' => :'SdtType',
+        :'position' => :'Position'
       }
     end
 
@@ -222,7 +226,8 @@ module AsposeWordsCloud
         :'id' => :'Integer',
         :'word_open_xml' => :'String',
         :'level' => :'String',
-        :'sdt_type' => :'String'
+        :'sdt_type' => :'String',
+        :'position' => :'Position'
       }
     end
 
@@ -334,6 +339,10 @@ module AsposeWordsCloud
 
       if attributes.key?(:'SdtType')
         self.sdt_type = attributes[:'SdtType']
+      end
+
+      if attributes.key?(:'Position')
+        self.position = attributes[:'Position']
       end
     end
 
@@ -455,7 +464,8 @@ module AsposeWordsCloud
           id == other.id &&
           word_open_xml == other.word_open_xml &&
           level == other.level &&
-          sdt_type == other.sdt_type
+          sdt_type == other.sdt_type &&
+          position == other.position
     end
 
     # @see the `==` method
@@ -467,7 +477,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, node_id, list_items, checked, appearance, date_display_locale, date_display_format, full_date, title, date_storage_format, building_block_gallery, building_block_category, multiline, color, style_name, calendar_type, is_temporary, placeholder_name, lock_content_control, lock_contents, is_showing_placeholder_text, tag, id, word_open_xml, level, sdt_type].hash
+      [link, node_id, list_items, checked, appearance, date_display_locale, date_display_format, full_date, title, date_storage_format, building_block_gallery, building_block_category, multiline, color, style_name, calendar_type, is_temporary, placeholder_name, lock_content_control, lock_contents, is_showing_placeholder_text, tag, id, word_open_xml, level, sdt_type, position].hash
     end
 
     # Builds the object from hash
@@ -598,6 +608,9 @@ module AsposeWordsCloud
       end
       unless self.color.nil?
           self.color.validate
+      end
+      unless self.position.nil?
+          self.position.validate
       end
 
     end

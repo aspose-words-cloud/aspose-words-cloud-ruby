@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="insert_table_cell_request.rb">
-#   Copyright (c) 2023 Aspose.Words for Cloud
+#   Copyright (c) 2024 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -32,11 +32,11 @@ module AsposeWordsCloud
     # The filename of the input document.
     attr_accessor :name
 
-    # The path to the table row in the document tree.
-    attr_accessor :table_row_path
-
     # Table cell parameters.
     attr_accessor :cell
+
+    # The path to the table row in the document tree.
+    attr_accessor :table_row_path
 
     # Original document folder.
     attr_accessor :folder
@@ -65,8 +65,8 @@ module AsposeWordsCloud
     #
     # Initializes a new instance.
     # @param name The filename of the input document.
-    # @param table_row_path The path to the table row in the document tree.
     # @param cell Table cell parameters.
+    # @param table_row_path The path to the table row in the document tree.
     # @param folder Original document folder.
     # @param storage Original document storage.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -76,10 +76,10 @@ module AsposeWordsCloud
     # @param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
     # @param revision_date_time The date and time to use for revisions.
 
-    def initialize(name:, table_row_path:, cell:, folder: nil, storage: nil, load_encoding: nil, password: nil, encrypted_password: nil, dest_file_name: nil, revision_author: nil, revision_date_time: nil)
+    def initialize(name:, cell:, table_row_path: nil, folder: nil, storage: nil, load_encoding: nil, password: nil, encrypted_password: nil, dest_file_name: nil, revision_author: nil, revision_date_time: nil)
       self.name = name
-      self.table_row_path = table_row_path
       self.cell = cell
+      self.table_row_path = table_row_path
       self.folder = folder
       self.storage = storage
       self.load_encoding = load_encoding
@@ -94,8 +94,6 @@ module AsposeWordsCloud
     def to_batch_part(api_client, requestId, parentRequestId = nil)
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.insert_table_cell' if api_client.config.client_side_validation && self.name.nil?
-      # verify the required parameter 'table_row_path' is set
-      raise ArgumentError, 'Missing the required parameter table_row_path when calling WordsApi.insert_table_cell' if api_client.config.client_side_validation && self.table_row_path.nil?
       # verify the required parameter 'cell' is set
       raise ArgumentError, 'Missing the required parameter cell when calling WordsApi.insert_table_cell' if api_client.config.client_side_validation && self.cell.nil?
       self.cell.validate
@@ -166,8 +164,6 @@ module AsposeWordsCloud
     def create_http_request(api_client)
       # verify the required parameter 'name' is set
       raise ArgumentError, 'Missing the required parameter name when calling WordsApi.insert_table_cell' if api_client.config.client_side_validation && self.name.nil?
-      # verify the required parameter 'table_row_path' is set
-      raise ArgumentError, 'Missing the required parameter table_row_path when calling WordsApi.insert_table_cell' if api_client.config.client_side_validation && self.table_row_path.nil?
       # verify the required parameter 'cell' is set
       raise ArgumentError, 'Missing the required parameter cell when calling WordsApi.insert_table_cell' if api_client.config.client_side_validation && self.cell.nil?
       self.cell.validate

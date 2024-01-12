@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="footnote_update.rb">
-#   Copyright (c) 2023 Aspose.Words for Cloud
+#   Copyright (c) 2024 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,7 +29,7 @@ module AsposeWordsCloud
 
   # Footnote for update.
   class FootnoteUpdate
-    # Gets or sets the link to comment range start node.
+    # Gets or sets the link to range start node.
     attr_accessor :position
 
     # Gets or sets the option, that specifies whether this is a footnote or endnote.
@@ -79,7 +79,7 @@ module AsposeWordsCloud
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'position' => :'NewDocumentPosition',
+        :'position' => :'Position',
         :'footnote_type' => :'String',
         :'reference_mark' => :'String',
         :'text' => :'String'

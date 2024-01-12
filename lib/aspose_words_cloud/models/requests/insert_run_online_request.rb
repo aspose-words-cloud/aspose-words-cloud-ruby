@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="insert_run_online_request.rb">
-#   Copyright (c) 2023 Aspose.Words for Cloud
+#   Copyright (c) 2024 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -32,11 +32,11 @@ module AsposeWordsCloud
     # The document.
     attr_accessor :document
 
-    # The path to the paragraph in the document tree.
-    attr_accessor :paragraph_path
-
     # Run data.
     attr_accessor :run
+
+    # The path to the paragraph in the document tree.
+    attr_accessor :paragraph_path
 
     # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     attr_accessor :load_encoding
@@ -56,41 +56,34 @@ module AsposeWordsCloud
     # The date and time to use for revisions.
     attr_accessor :revision_date_time
 
-    # The index of the node. A new Run object will be inserted before the node with the specified node Id.
-    attr_accessor :insert_before_node
-
     #
     # Initializes a new instance.
     # @param document The document.
-    # @param paragraph_path The path to the paragraph in the document tree.
     # @param run Run data.
+    # @param paragraph_path The path to the paragraph in the document tree.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     # @param password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
     # @param encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
     # @param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
     # @param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
     # @param revision_date_time The date and time to use for revisions.
-    # @param insert_before_node The index of the node. A new Run object will be inserted before the node with the specified node Id.
 
-    def initialize(document:, paragraph_path:, run:, load_encoding: nil, password: nil, encrypted_password: nil, dest_file_name: nil, revision_author: nil, revision_date_time: nil, insert_before_node: nil)
+    def initialize(document:, run:, paragraph_path: nil, load_encoding: nil, password: nil, encrypted_password: nil, dest_file_name: nil, revision_author: nil, revision_date_time: nil)
       self.document = document
-      self.paragraph_path = paragraph_path
       self.run = run
+      self.paragraph_path = paragraph_path
       self.load_encoding = load_encoding
       self.password = password
       self.encrypted_password = encrypted_password
       self.dest_file_name = dest_file_name
       self.revision_author = revision_author
       self.revision_date_time = revision_date_time
-      self.insert_before_node = insert_before_node
     end
 
     # Creating batch part from request
     def to_batch_part(api_client, requestId, parentRequestId = nil)
       # verify the required parameter 'document' is set
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.insert_run_online' if api_client.config.client_side_validation && self.document.nil?
-      # verify the required parameter 'paragraph_path' is set
-      raise ArgumentError, 'Missing the required parameter paragraph_path when calling WordsApi.insert_run_online' if api_client.config.client_side_validation && self.paragraph_path.nil?
       # verify the required parameter 'run' is set
       raise ArgumentError, 'Missing the required parameter run when calling WordsApi.insert_run_online' if api_client.config.client_side_validation && self.run.nil?
       self.run.validate
@@ -107,7 +100,6 @@ module AsposeWordsCloud
       query_params[downcase_first_letter('DestFileName')] = self.dest_file_name unless self.dest_file_name.nil?
       query_params[downcase_first_letter('RevisionAuthor')] = self.revision_author unless self.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = self.revision_date_time unless self.revision_date_time.nil?
-      query_params[downcase_first_letter('InsertBeforeNode')] = self.insert_before_node unless self.insert_before_node.nil?
 
       if query_params
         query_params.each { |key, value| local_var_path = api_client.add_param_to_query(local_var_path, key, value) }
@@ -166,8 +158,6 @@ module AsposeWordsCloud
     def create_http_request(api_client)
       # verify the required parameter 'document' is set
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.insert_run_online' if api_client.config.client_side_validation && self.document.nil?
-      # verify the required parameter 'paragraph_path' is set
-      raise ArgumentError, 'Missing the required parameter paragraph_path when calling WordsApi.insert_run_online' if api_client.config.client_side_validation && self.paragraph_path.nil?
       # verify the required parameter 'run' is set
       raise ArgumentError, 'Missing the required parameter run when calling WordsApi.insert_run_online' if api_client.config.client_side_validation && self.run.nil?
       self.run.validate
@@ -184,7 +174,6 @@ module AsposeWordsCloud
       query_params[downcase_first_letter('DestFileName')] = self.dest_file_name unless self.dest_file_name.nil?
       query_params[downcase_first_letter('RevisionAuthor')] = self.revision_author unless self.revision_author.nil?
       query_params[downcase_first_letter('RevisionDateTime')] = self.revision_date_time unless self.revision_date_time.nil?
-      query_params[downcase_first_letter('InsertBeforeNode')] = self.insert_before_node unless self.insert_before_node.nil?
 
       # header parameters
       header_params = {}

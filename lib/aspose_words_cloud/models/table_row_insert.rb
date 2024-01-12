@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="table_row_insert.rb">
-#   Copyright (c) 2023 Aspose.Words for Cloud
+#   Copyright (c) 2024 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -32,12 +32,16 @@ module AsposeWordsCloud
     # Gets or sets the count of columns. The default value is 1.
     attr_accessor :columns_count
 
+    # Gets or sets the position of the table row that will be used to determine the placement of a new row.
+    attr_accessor :existing_row_position
+
     # Gets or sets table row will be inserted after row with specified 0-based index.
     attr_accessor :insert_after
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'columns_count' => :'ColumnsCount',
+        :'existing_row_position' => :'ExistingRowPosition',
         :'insert_after' => :'InsertAfter'
       }
     end
@@ -46,6 +50,7 @@ module AsposeWordsCloud
     def self.swagger_types
       {
         :'columns_count' => :'Integer',
+        :'existing_row_position' => :'Position',
         :'insert_after' => :'Integer'
       }
     end
@@ -60,6 +65,10 @@ module AsposeWordsCloud
 
       if attributes.key?(:'ColumnsCount')
         self.columns_count = attributes[:'ColumnsCount']
+      end
+
+      if attributes.key?(:'ExistingRowPosition')
+        self.existing_row_position = attributes[:'ExistingRowPosition']
       end
 
       if attributes.key?(:'InsertAfter')
@@ -79,6 +88,7 @@ module AsposeWordsCloud
       return true if self.equal?(other)
       self.class == other.class &&
           columns_count == other.columns_count &&
+          existing_row_position == other.existing_row_position &&
           insert_after == other.insert_after
     end
 
@@ -91,7 +101,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [columns_count, insert_after].hash
+      [columns_count, existing_row_position, insert_after].hash
     end
 
     # Builds the object from hash
@@ -209,6 +219,10 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property columns_count in TableRowInsert is required.' if self.columns_count.nil?
+      unless self.existing_row_position.nil?
+          self.existing_row_position.validate
+      end
+
     end
 
   end

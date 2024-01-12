@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="paragraph_insert.rb">
-#   Copyright (c) 2023 Aspose.Words for Cloud
+#   Copyright (c) 2024 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -31,17 +31,22 @@ module AsposeWordsCloud
   class ParagraphInsert
     # Gets or sets the paragraph's text.
     attr_accessor :text
+
+    # Gets or sets the position of the node that will be used to determine the placement of a new paragraph.
+    attr_accessor :position
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'text' => :'Text'
+        :'text' => :'Text',
+        :'position' => :'Position'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'text' => :'String'
+        :'text' => :'String',
+        :'position' => :'Position'
       }
     end
 
@@ -56,6 +61,10 @@ module AsposeWordsCloud
       if attributes.key?(:'Text')
         self.text = attributes[:'Text']
       end
+
+      if attributes.key?(:'Position')
+        self.position = attributes[:'Position']
+      end
     end
 
     # Check to see if the all the properties in the model are valid
@@ -69,7 +78,8 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          text == other.text
+          text == other.text &&
+          position == other.position
     end
 
     # @see the `==` method
@@ -81,7 +91,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [text].hash
+      [text, position].hash
     end
 
     # Builds the object from hash
@@ -199,6 +209,10 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property text in ParagraphInsert is required.' if self.text.nil?
+      unless self.position.nil?
+          self.position.validate
+      end
+
     end
 
   end

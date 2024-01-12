@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="table_insert.rb">
-#   Copyright (c) 2023 Aspose.Words for Cloud
+#   Copyright (c) 2024 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -32,7 +32,7 @@ module AsposeWordsCloud
     # Gets or sets the number of columns. The default value is 2.
     attr_accessor :columns_count
 
-    # Gets or sets the position to insert the table. The table will be inserted before the specified position.
+    # Gets or sets the position to insert the table. The table will be inserted using the specified position.
     attr_accessor :position
 
     # Gets or sets the number of rows. The default value is 2.
@@ -50,7 +50,7 @@ module AsposeWordsCloud
     def self.swagger_types
       {
         :'columns_count' => :'Integer',
-        :'position' => :'NewDocumentPosition',
+        :'position' => :'Position',
         :'rows_count' => :'Integer'
       }
     end

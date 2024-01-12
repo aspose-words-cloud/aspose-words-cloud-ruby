@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="Table_tests.rb">
-#   Copyright (c) 2023 Aspose.Words for Cloud
+#   Copyright (c) 2024 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -334,7 +334,7 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
       request_row = TableRowInsert.new({:ColumnsCount => 5})
-      request = InsertTableRowRequest.new(name: remote_file_name, table_path: 'sections/0/tables/2', row: request_row, folder: remote_data_folder)
+      request = InsertTableRowRequest.new(name: remote_file_name, row: request_row, node_path: 'sections/0/tables/2', folder: remote_data_folder)
 
       result = @words_api.insert_table_row(request)
       assert_equal false, result.nil?
@@ -346,7 +346,7 @@ module AsposeWordsCloud
     def test_insert_table_row_online
       request_document = File.open(File.join(local_test_folder, local_file))
       request_row = TableRowInsert.new({:ColumnsCount => 5})
-      request = InsertTableRowOnlineRequest.new(document: request_document, table_path: 'sections/0/tables/2', row: request_row)
+      request = InsertTableRowOnlineRequest.new(document: request_document, row: request_row, node_path: 'sections/0/tables/2')
 
       result = @words_api.insert_table_row_online(request)
       assert_equal false, result.nil?
@@ -462,7 +462,7 @@ module AsposeWordsCloud
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
       request_cell = TableCellInsert.new({})
-      request = InsertTableCellRequest.new(name: remote_file_name, table_row_path: 'sections/0/tables/2/rows/0', cell: request_cell, folder: remote_data_folder)
+      request = InsertTableCellRequest.new(name: remote_file_name, cell: request_cell, table_row_path: 'sections/0/tables/2/rows/0', folder: remote_data_folder)
 
       result = @words_api.insert_table_cell(request)
       assert_equal false, result.nil?
@@ -474,7 +474,7 @@ module AsposeWordsCloud
     def test_insert_table_cell_online
       request_document = File.open(File.join(local_test_folder, local_file))
       request_cell = TableCellInsert.new({})
-      request = InsertTableCellOnlineRequest.new(document: request_document, table_row_path: 'sections/0/tables/2/rows/0', cell: request_cell)
+      request = InsertTableCellOnlineRequest.new(document: request_document, cell: request_cell, table_row_path: 'sections/0/tables/2/rows/0')
 
       result = @words_api.insert_table_cell_online(request)
       assert_equal false, result.nil?
