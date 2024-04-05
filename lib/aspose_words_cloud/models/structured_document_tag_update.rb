@@ -340,7 +340,7 @@ module AsposeWordsCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      appearance_validator = EnumAttributeValidator.new('String', ["Default", "BoundingBox", "Tags", "Hidden"])
+      appearance_validator = EnumAttributeValidator.new('String', ["BoundingBox", "Default", "Tags", "Hidden"])
       return false unless appearance_validator.valid?(@appearance)
       date_storage_format_validator = EnumAttributeValidator.new('String', ["Date", "DateTime", "Default", "Text"])
       return false unless date_storage_format_validator.valid?(@date_storage_format)
@@ -357,7 +357,7 @@ module AsposeWordsCloud
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] appearance Object to be assigned
     def appearance=(appearance)
-      validator = EnumAttributeValidator.new('String', ["Default", "BoundingBox", "Tags", "Hidden"])
+      validator = EnumAttributeValidator.new('String', ["BoundingBox", "Default", "Tags", "Hidden"])
       if appearance.to_i == 0
         unless validator.valid?(appearance)
           raise ArgumentError, "invalid value for 'appearance', must be one of #{validator.allowable_values}."

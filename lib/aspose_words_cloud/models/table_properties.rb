@@ -220,7 +220,7 @@ module AsposeWordsCloud
       return false unless style_identifier_validator.valid?(@style_identifier)
       style_options_validator = EnumAttributeValidator.new('String', ["None", "FirstRow", "LastRow", "FirstColumn", "LastColumn", "RowBands", "Default", "ColumnBands", "Default2003"])
       return false unless style_options_validator.valid?(@style_options)
-      text_wrapping_validator = EnumAttributeValidator.new('String', ["Default", "None", "Around"])
+      text_wrapping_validator = EnumAttributeValidator.new('String', ["None", "Default", "Around"])
       return false unless text_wrapping_validator.valid?(@text_wrapping)
 
       return true
@@ -271,7 +271,7 @@ module AsposeWordsCloud
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] text_wrapping Object to be assigned
     def text_wrapping=(text_wrapping)
-      validator = EnumAttributeValidator.new('String', ["Default", "None", "Around"])
+      validator = EnumAttributeValidator.new('String', ["None", "Default", "Around"])
       if text_wrapping.to_i == 0
         unless validator.valid?(text_wrapping)
           raise ArgumentError, "invalid value for 'text_wrapping', must be one of #{validator.allowable_values}."
