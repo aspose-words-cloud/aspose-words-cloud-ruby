@@ -53,6 +53,9 @@ module AsposeWordsCloud
     # Gets or sets the option indicating how to wrap text around the image.
     attr_accessor :wrap_type
 
+    # Gets or sets a value indicating whether AspectRatioLocked option on or off.
+    attr_accessor :aspect_ratio_locked
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -85,7 +88,8 @@ module AsposeWordsCloud
         :'top' => :'Top',
         :'width' => :'Width',
         :'height' => :'Height',
-        :'wrap_type' => :'WrapType'
+        :'wrap_type' => :'WrapType',
+        :'aspect_ratio_locked' => :'AspectRatioLocked'
       }
     end
 
@@ -99,7 +103,8 @@ module AsposeWordsCloud
         :'top' => :'Float',
         :'width' => :'Float',
         :'height' => :'Float',
-        :'wrap_type' => :'String'
+        :'wrap_type' => :'String',
+        :'aspect_ratio_locked' => :'BOOLEAN'
       }
     end
 
@@ -141,6 +146,10 @@ module AsposeWordsCloud
 
       if attributes.key?(:'WrapType')
         self.wrap_type = attributes[:'WrapType']
+      end
+
+      if attributes.key?(:'AspectRatioLocked')
+        self.aspect_ratio_locked = attributes[:'AspectRatioLocked']
       end
     end
 
@@ -212,7 +221,8 @@ module AsposeWordsCloud
           top == other.top &&
           width == other.width &&
           height == other.height &&
-          wrap_type == other.wrap_type
+          wrap_type == other.wrap_type &&
+          aspect_ratio_locked == other.aspect_ratio_locked
     end
 
     # @see the `==` method
@@ -224,7 +234,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [position, relative_horizontal_position, left, relative_vertical_position, top, width, height, wrap_type].hash
+      [position, relative_horizontal_position, left, relative_vertical_position, top, width, height, wrap_type, aspect_ratio_locked].hash
     end
 
     # Builds the object from hash

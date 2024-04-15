@@ -10885,6 +10885,90 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
+    # Merge the section with the next one.
+    # @param request MergeWithNextRequest
+    # @return [nil]
+    def merge_with_next(request)
+        begin
+        data, _status_code, _headers = merge_with_next_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = merge_with_next_with_http_info(request)
+            else
+            raise
+            end
+        end
+        nil
+    end
+
+    # Merge the section with the next one.
+    # @param request MergeWithNextRequest
+    # @return [Array<(nil, Fixnum, Hash)>]
+    # nil, response status code and response headers
+    private def merge_with_next_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? MergeWithNextRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.merge_with_next ...' if @api_client.config.debugging
+        request_data = request.create_http_request(@api_client)
+
+        data, status_code, headers = @api_client.call_api(
+                                                        request_data[:'method'],
+                                                        request_data[:'path'],
+                                                        header_params: request_data[:'header_params'],
+                                                        query_params: request_data[:'query_params'],
+                                                        body: request_data[:'body'])
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#merge_with_next\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [data, status_code, headers]
+    end
+
+    # Merge the section with the next one.
+    # @param request MergeWithNextOnlineRequest
+    # @return [FILES_COLLECTION]
+    def merge_with_next_online(request)
+        begin
+        data, _status_code, _headers = merge_with_next_online_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = merge_with_next_online_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Merge the section with the next one.
+    # @param request MergeWithNextOnlineRequest
+    # @return [Array<(FILES_COLLECTION, Fixnum, Hash)>]
+    # FILES_COLLECTION, response status code and response headers
+    private def merge_with_next_online_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? MergeWithNextOnlineRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.merge_with_next_online ...' if @api_client.config.debugging
+        request_data = request.create_http_request(@api_client)
+
+        data, status_code, headers = @api_client.call_api(
+                                                        request_data[:'method'],
+                                                        request_data[:'path'],
+                                                        header_params: request_data[:'header_params'],
+                                                        query_params: request_data[:'query_params'],
+                                                        body: request_data[:'body'],
+                                                        return_type: 'FILES_COLLECTION')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#merge_with_next_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        # FILES_COLLECTION #
+        [data, status_code, headers]
+    end
+
     # Move file.
     # @param request MoveFileRequest
     # @return [nil]
