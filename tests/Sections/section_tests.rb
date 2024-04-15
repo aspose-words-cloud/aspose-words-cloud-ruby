@@ -113,6 +113,30 @@ module AsposeWordsCloud
     end
 
     #
+    # Test for merge a section with the next one.
+    #
+    def test_merge_with_next
+      remote_file_name = 'TestMergeWithNext.docx'
+
+      upload_file File.join(local_test_folder, 'DocumentElements/Sections/Source.docx'), remote_data_folder + '/' + remote_file_name
+
+      request = MergeWithNextRequest.new(name: remote_file_name, section_index: 0, folder: remote_data_folder)
+
+      @words_api.merge_with_next(request)
+    end
+
+    #
+    # Test for merge a section with the next one online.
+    #
+    def test_merge_with_next_online
+      request_document = File.open(File.join(local_test_folder, 'DocumentElements/Sections/Source.docx'))
+      request = MergeWithNextOnlineRequest.new(document: request_document, section_index: 0)
+
+      result = @words_api.merge_with_next_online(request)
+      assert_equal false, result.nil?
+    end
+
+    #
     # Test for insertion a section.
     #
     def test_insert_section

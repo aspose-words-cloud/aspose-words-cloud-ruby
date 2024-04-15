@@ -13,6 +13,12 @@ This repository contains Aspose.Words Cloud SDK for Ruby source code. This SDK a
 * Watermarks and protection
 * Full read & write access to Document Object Model, including sections, paragraphs, text, images, tables, headers/footers and many others
 
+## Enhancements in Version 24.4
+
+- Added the 'MergeWithNext' method to merge a section with the next one.
+- Added the 'LockAspectRatio' propperty for DrawingObjectInsert and DrawingObjectUpdate methods.
+
+
 ## Enhancements in Version 24.3
 
 - Added support for 'RemoveEmptyCells' option for the 'Cleanup' parameter in the insert 'MailMerge' API method.
@@ -321,7 +327,7 @@ To use Aspose Words for Cloud Ruby SDK you need to register an account with [Asp
 To install this package do the following:
 update your Gemfile
 ```ruby
-gem 'aspose_words_cloud', '~> 24.3'
+gem 'aspose_words_cloud', '~> 24.4'
 ```
 or install directly
 ```bash
