@@ -35,11 +35,14 @@ module AsposeWordsCloud
     # Drawing object parameters.
     attr_accessor :drawing_object
 
+    # The path to the node in the document tree.
+    attr_accessor :node_path
+
     # File with image.
     attr_accessor :image_file
 
-    # The path to the node in the document tree.
-    attr_accessor :node_path
+    # The link to the image.
+    attr_accessor :url
 
     # Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     attr_accessor :load_encoding
@@ -63,8 +66,9 @@ module AsposeWordsCloud
     # Initializes a new instance.
     # @param document The document.
     # @param drawing_object Drawing object parameters.
-    # @param image_file File with image.
     # @param node_path The path to the node in the document tree.
+    # @param image_file File with image.
+    # @param url The link to the image.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     # @param password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
     # @param encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
@@ -72,11 +76,12 @@ module AsposeWordsCloud
     # @param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
     # @param revision_date_time The date and time to use for revisions.
 
-    def initialize(document:, drawing_object:, image_file:, node_path: nil, load_encoding: nil, password: nil, encrypted_password: nil, dest_file_name: nil, revision_author: nil, revision_date_time: nil)
+    def initialize(document:, drawing_object:, node_path: nil, image_file: nil, url: nil, load_encoding: nil, password: nil, encrypted_password: nil, dest_file_name: nil, revision_author: nil, revision_date_time: nil)
       self.document = document
       self.drawing_object = drawing_object
-      self.image_file = image_file
       self.node_path = node_path
+      self.image_file = image_file
+      self.url = url
       self.load_encoding = load_encoding
       self.password = password
       self.encrypted_password = encrypted_password
@@ -91,9 +96,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.insert_drawing_object_online' if api_client.config.client_side_validation && self.document.nil?
       # verify the required parameter 'drawing_object' is set
       raise ArgumentError, 'Missing the required parameter drawing_object when calling WordsApi.insert_drawing_object_online' if api_client.config.client_side_validation && self.drawing_object.nil?
-      self.drawing_object.validate# verify the required parameter 'image_file' is set
-      raise ArgumentError, 'Missing the required parameter image_file when calling WordsApi.insert_drawing_object_online' if api_client.config.client_side_validation && self.image_file.nil?
-
+      self.drawing_object.validate
       # resource path
       local_var_path = '/words/online/post/{nodePath}/drawingObjects'[7..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', self.node_path.nil? ? '' : self.node_path.to_s)
@@ -101,6 +104,7 @@ module AsposeWordsCloud
 
       # query parameters
       query_params = {}
+      query_params[downcase_first_letter('Url')] = self.url unless self.url.nil?
       query_params[downcase_first_letter('LoadEncoding')] = self.load_encoding unless self.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = self.password unless self.password.nil?
       query_params[downcase_first_letter('EncryptedPassword')] = self.encrypted_password unless self.encrypted_password.nil?
@@ -139,9 +143,6 @@ module AsposeWordsCloud
         form_params.push({:'Name' => 'drawingObject', :'Data' => self.drawing_object.to_body.to_json, :'MimeType' =>'application/json'})
       end
 
-      if self.image_file.nil?
-        raise "Parameter ImageFile is required."
-      end
       unless self.image_file.nil?
         form_params.push({:'Name' => 'imageFile', :'Data' => self.image_file, :'MimeType' =>'application/octet-stream'})
       end
@@ -174,9 +175,7 @@ module AsposeWordsCloud
       raise ArgumentError, 'Missing the required parameter document when calling WordsApi.insert_drawing_object_online' if api_client.config.client_side_validation && self.document.nil?
       # verify the required parameter 'drawing_object' is set
       raise ArgumentError, 'Missing the required parameter drawing_object when calling WordsApi.insert_drawing_object_online' if api_client.config.client_side_validation && self.drawing_object.nil?
-      self.drawing_object.validate# verify the required parameter 'image_file' is set
-      raise ArgumentError, 'Missing the required parameter image_file when calling WordsApi.insert_drawing_object_online' if api_client.config.client_side_validation && self.image_file.nil?
-
+      self.drawing_object.validate
       # resource path
       local_var_path = '/words/online/post/{nodePath}/drawingObjects'[1..-1]
       local_var_path = local_var_path.sub('{' + downcase_first_letter('NodePath') + '}', self.node_path.nil? ? '' : self.node_path.to_s)
@@ -184,6 +183,7 @@ module AsposeWordsCloud
 
       # query parameters
       query_params = {}
+      query_params[downcase_first_letter('Url')] = self.url unless self.url.nil?
       query_params[downcase_first_letter('LoadEncoding')] = self.load_encoding unless self.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = self.password unless self.password.nil?
       query_params[downcase_first_letter('EncryptedPassword')] = self.encrypted_password unless self.encrypted_password.nil?
@@ -213,9 +213,6 @@ module AsposeWordsCloud
         form_params.push({:'Name' => 'drawingObject', :'Data' => self.drawing_object.to_body.to_json, :'MimeType' =>'application/json'})
       end
 
-      if self.image_file.nil?
-        raise "Parameter ImageFile is required."
-      end
       unless self.image_file.nil?
         form_params.push({:'Name' => 'imageFile', :'Data' => self.image_file, :'MimeType' =>'application/octet-stream'})
       end
