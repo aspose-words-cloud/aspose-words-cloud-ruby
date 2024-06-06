@@ -141,5 +141,30 @@ module AsposeWordsCloud
       result = @words_api.replace_with_text_online(request)
       assert_equal false, result.nil?
     end
+
+    #
+    # Test to translate node id to node path.
+    #
+    def test_translate_node_id
+      remote_file_name = 'TestTranslateNodeId.docx'
+
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+
+      request = TranslateNodeIdRequest.new(name: remote_file_name, node_id: 'id0.0.0')
+
+      result = @words_api.translate_node_id(request)
+      assert_equal false, result.nil?
+    end
+
+    #
+    # Test to translate node id to node path online.
+    #
+    def test_translate_node_id_online
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = TranslateNodeIdOnlineRequest.new(document: request_document, node_id: 'id0.0.0')
+
+      result = @words_api.translate_node_id_online(request)
+      assert_equal false, result.nil?
+    end
   end
 end
