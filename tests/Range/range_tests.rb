@@ -150,7 +150,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
 
-      request = TranslateNodeIdRequest.new(name: remote_file_name, node_id: 'id0.0.0')
+      request = TranslateNodeIdRequest.new(name: remote_file_name, node_id: 'id0.0.0', folder: remote_data_folder)
 
       result = @words_api.translate_node_id(request)
       assert_equal false, result.nil?
