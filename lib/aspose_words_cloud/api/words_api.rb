@@ -12474,6 +12474,90 @@ module AsposeWordsCloud
         [mp_data, status_code, headers]
     end
 
+    # Translate a node id to a node path.
+    # @param request TranslateNodeIdRequest
+    # @return [TranslateNodeIdResponse]
+    def translate_node_id(request)
+        begin
+        data, _status_code, _headers = translate_node_id_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = translate_node_id_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Translate a node id to a node path.
+    # @param request TranslateNodeIdRequest
+    # @return [Array<(TranslateNodeIdResponse, Fixnum, Hash)>]
+    # TranslateNodeIdResponse, response status code and response headers
+    private def translate_node_id_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? TranslateNodeIdRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.translate_node_id ...' if @api_client.config.debugging
+        request_data = request.create_http_request(@api_client)
+
+        data, status_code, headers = @api_client.call_api(
+                                                        request_data[:'method'],
+                                                        request_data[:'path'],
+                                                        header_params: request_data[:'header_params'],
+                                                        query_params: request_data[:'query_params'],
+                                                        body: request_data[:'body'],
+                                                        return_type: 'TranslateNodeIdResponse')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#translate_node_id\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [data, status_code, headers]
+    end
+
+    # Translate a node id to a node path.
+    # @param request TranslateNodeIdOnlineRequest
+    # @return [TranslateNodeIdResponse]
+    def translate_node_id_online(request)
+        begin
+        data, _status_code, _headers = translate_node_id_online_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = translate_node_id_online_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Translate a node id to a node path.
+    # @param request TranslateNodeIdOnlineRequest
+    # @return [Array<(TranslateNodeIdResponse, Fixnum, Hash)>]
+    # TranslateNodeIdResponse, response status code and response headers
+    private def translate_node_id_online_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? TranslateNodeIdOnlineRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.translate_node_id_online ...' if @api_client.config.debugging
+        request_data = request.create_http_request(@api_client)
+
+        data, status_code, headers = @api_client.call_api(
+                                                        request_data[:'method'],
+                                                        request_data[:'path'],
+                                                        header_params: request_data[:'header_params'],
+                                                        query_params: request_data[:'query_params'],
+                                                        body: request_data[:'body'],
+                                                        return_type: 'TranslateNodeIdResponse')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#translate_node_id_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [data, status_code, headers]
+    end
+
     # Removes protection from the document.
     # @param request UnprotectDocumentRequest
     # @return [ProtectionDataResponse]
