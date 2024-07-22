@@ -13,6 +13,11 @@ This repository contains Aspose.Words Cloud SDK for Ruby source code. This SDK a
 * Watermarks and protection
 * Full read & write access to Document Object Model, including sections, paragraphs, text, images, tables, headers/footers and many others
 
+## Enhancements in Version 24.7
+
+- Added support for azw3 (Amazon Kindle Format) documents.
+
+
 ## Enhancements in Version 24.6
 
 - Added the 'TranslateNodeId' method to transalate a node id to a node path.
@@ -337,7 +342,7 @@ To use Aspose Words for Cloud Ruby SDK you need to register an account with [Asp
 To install this package do the following:
 update your Gemfile
 ```ruby
-gem 'aspose_words_cloud', '~> 24.6'
+gem 'aspose_words_cloud', '~> 24.7'
 ```
 or install directly
 ```bash
