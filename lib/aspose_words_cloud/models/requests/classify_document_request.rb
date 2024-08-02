@@ -47,6 +47,9 @@ module AsposeWordsCloud
     # Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
     attr_accessor :encrypted_password
 
+    # The value indicates whether OpenType support is on.
+    attr_accessor :open_type_support
+
     # The number of the best classes to return.
     attr_accessor :best_classes_count
 
@@ -61,16 +64,18 @@ module AsposeWordsCloud
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     # @param password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
     # @param encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
+    # @param open_type_support The value indicates whether OpenType support is on.
     # @param best_classes_count The number of the best classes to return.
     # @param taxonomy The taxonomy to use.
 
-    def initialize(name:, folder: nil, storage: nil, load_encoding: nil, password: nil, encrypted_password: nil, best_classes_count: nil, taxonomy: nil)
+    def initialize(name:, folder: nil, storage: nil, load_encoding: nil, password: nil, encrypted_password: nil, open_type_support: nil, best_classes_count: nil, taxonomy: nil)
       self.name = name
       self.folder = folder
       self.storage = storage
       self.load_encoding = load_encoding
       self.password = password
       self.encrypted_password = encrypted_password
+      self.open_type_support = open_type_support
       self.best_classes_count = best_classes_count
       self.taxonomy = taxonomy
     end
@@ -92,6 +97,7 @@ module AsposeWordsCloud
       query_params[downcase_first_letter('LoadEncoding')] = self.load_encoding unless self.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = self.password unless self.password.nil?
       query_params[downcase_first_letter('EncryptedPassword')] = self.encrypted_password unless self.encrypted_password.nil?
+      query_params[downcase_first_letter('OpenTypeSupport')] = self.open_type_support unless self.open_type_support.nil?
       query_params[downcase_first_letter('BestClassesCount')] = self.best_classes_count unless self.best_classes_count.nil?
       query_params[downcase_first_letter('Taxonomy')] = self.taxonomy unless self.taxonomy.nil?
 
@@ -148,6 +154,7 @@ module AsposeWordsCloud
       query_params[downcase_first_letter('LoadEncoding')] = self.load_encoding unless self.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = self.password unless self.password.nil?
       query_params[downcase_first_letter('EncryptedPassword')] = self.encrypted_password unless self.encrypted_password.nil?
+      query_params[downcase_first_letter('OpenTypeSupport')] = self.open_type_support unless self.open_type_support.nil?
       query_params[downcase_first_letter('BestClassesCount')] = self.best_classes_count unless self.best_classes_count.nil?
       query_params[downcase_first_letter('Taxonomy')] = self.taxonomy unless self.taxonomy.nil?
 
