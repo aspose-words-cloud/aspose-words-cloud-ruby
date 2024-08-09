@@ -68,15 +68,7 @@ def runtests(dockerImageVersion)
     }
 }
 
-node('words-linux') {        
-    stage('oldruby'){
-		try {
-			runtests("2.7")
-		} finally {
-			cleanWs()
-		}
-	}
-	
+node('words-linux') {        	
 	stage('newruby'){
 		try {
 			runtests("3.1") 

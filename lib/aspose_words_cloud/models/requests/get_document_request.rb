@@ -47,6 +47,9 @@ module AsposeWordsCloud
     # Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
     attr_accessor :encrypted_password
 
+    # The value indicates whether OpenType support is on.
+    attr_accessor :open_type_support
+
     #
     # Initializes a new instance.
     # @param document_name The filename of the input document.
@@ -55,14 +58,16 @@ module AsposeWordsCloud
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     # @param password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
     # @param encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
+    # @param open_type_support The value indicates whether OpenType support is on.
 
-    def initialize(document_name:, folder: nil, storage: nil, load_encoding: nil, password: nil, encrypted_password: nil)
+    def initialize(document_name:, folder: nil, storage: nil, load_encoding: nil, password: nil, encrypted_password: nil, open_type_support: nil)
       self.document_name = document_name
       self.folder = folder
       self.storage = storage
       self.load_encoding = load_encoding
       self.password = password
       self.encrypted_password = encrypted_password
+      self.open_type_support = open_type_support
     end
 
     # Creating batch part from request
@@ -82,6 +87,7 @@ module AsposeWordsCloud
       query_params[downcase_first_letter('LoadEncoding')] = self.load_encoding unless self.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = self.password unless self.password.nil?
       query_params[downcase_first_letter('EncryptedPassword')] = self.encrypted_password unless self.encrypted_password.nil?
+      query_params[downcase_first_letter('OpenTypeSupport')] = self.open_type_support unless self.open_type_support.nil?
 
       if query_params
         query_params.each { |key, value| local_var_path = api_client.add_param_to_query(local_var_path, key, value) }
@@ -136,6 +142,7 @@ module AsposeWordsCloud
       query_params[downcase_first_letter('LoadEncoding')] = self.load_encoding unless self.load_encoding.nil?
       query_params[downcase_first_letter('Password')] = self.password unless self.password.nil?
       query_params[downcase_first_letter('EncryptedPassword')] = self.encrypted_password unless self.encrypted_password.nil?
+      query_params[downcase_first_letter('OpenTypeSupport')] = self.open_type_support unless self.open_type_support.nil?
 
       # header parameters
       header_params = {}
