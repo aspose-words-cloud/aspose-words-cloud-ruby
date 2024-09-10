@@ -15,9 +15,11 @@ This repository contains Aspose.Words Cloud SDK for Ruby source code. This SDK a
 
 ## Enhancements in Version 24.9
 
+- Added digital signature methds for DOC, DOCX, XPS, or ODT documents.
 - Added ReplaceBackslashWithYenSign property for XpsSaveOptions and HtmlSaveOptions.
 - Added DigitalSignature property for XpsSaveOptions.
 - Added UseSdtTagAsFormFieldName property for PdfSaveOptions.
+- Added MergeWholeDocument parameter to the MailMerge operations to update fields in whole document after executing of a mail merge with regions.
 
 
 ## Enhancements in Version 24.8
@@ -355,7 +357,7 @@ To use Aspose Words for Cloud Ruby SDK you need to register an account with [Asp
 To install this package do the following:
 update your Gemfile
 ```ruby
-gem 'aspose_words_cloud', '~> 24.8'
+gem 'aspose_words_cloud', '~> 24.9'
 ```
 or install directly
 ```bash
