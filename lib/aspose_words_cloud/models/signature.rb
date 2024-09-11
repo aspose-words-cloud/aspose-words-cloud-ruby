@@ -42,7 +42,7 @@ module AsposeWordsCloud
     # Gets or sets the type of the digital signature.
     attr_accessor :signature_type
 
-    # Gets or sets an array of bytes representing a signature value.
+    # Gets or sets an array of bytes representing a signature value as base64 string.
     attr_accessor :signature_value
 
     # Gets or sets the time the document was signed.
@@ -93,7 +93,7 @@ module AsposeWordsCloud
         :'issuer_name' => :'String',
         :'is_valid' => :'BOOLEAN',
         :'signature_type' => :'String',
-        :'signature_value' => :'File',
+        :'signature_value' => :'String',
         :'sign_time' => :'DateTime',
         :'subject_name' => :'String'
       }
