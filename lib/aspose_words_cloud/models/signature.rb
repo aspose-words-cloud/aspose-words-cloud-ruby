@@ -50,29 +50,6 @@ module AsposeWordsCloud
 
     # Gets or sets the subject distinguished name of the certificate that was used to sign the document.
     attr_accessor :subject_name
-
-    class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
-
-      def initialize(datatype, allowable_values)
-        @allowable_values = allowable_values.map do |value|
-          case datatype.to_s
-          when /Integer/i
-            value.to_i
-          when /Float/i
-            value.to_f
-          else
-            value
-          end
-        end
-      end
-
-      def valid?(value)
-        !value || allowable_values.include?(value)
-      end
-    end
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -139,26 +116,8 @@ module AsposeWordsCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      signature_type_validator = EnumAttributeValidator.new('String', ["Unknown", "CryptoApi", "XmlDsig"])
-      return false unless signature_type_validator.valid?(@signature_type)
-
       return true
     end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] signature_type Object to be assigned
-    def signature_type=(signature_type)
-      validator = EnumAttributeValidator.new('String', ["Unknown", "CryptoApi", "XmlDsig"])
-      if signature_type.to_i == 0
-        unless validator.valid?(signature_type)
-          raise ArgumentError, "invalid value for 'signature_type', must be one of #{validator.allowable_values}."
-        end
-        @signature_type = signature_type
-      else
-        @signature_type = validator.allowable_values[signature_type.to_i]
-      end
-    end
-
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
@@ -301,7 +260,6 @@ module AsposeWordsCloud
 
     def validate()
       raise ArgumentError, 'Property is_valid in Signature is required.' if self.is_valid.nil?
-      raise ArgumentError, 'Property signature_type in Signature is required.' if self.signature_type.nil?
       raise ArgumentError, 'Property sign_time in Signature is required.' if self.sign_time.nil?
     end
 
