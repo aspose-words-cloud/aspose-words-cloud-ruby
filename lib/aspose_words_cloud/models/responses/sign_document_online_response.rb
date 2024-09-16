@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="version.rb">
+# <copyright company="Aspose" file="sign_document_online_response.rb">
 #   Copyright (c) 2024 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -24,5 +24,24 @@
 # ------------------------------------------------------------------------------------
 
 module AsposeWordsCloud
-  VERSION = "24.9.0".freeze
+
+  #
+  # Response model for sign_document_online operation.
+  #
+  class SignDocumentOnlineResponse
+    # The REST response with a document signature collection.
+    # This response is returned by the Service when handling any "https://api.aspose.cloud/v4.0/words/Test.doc/signatures" REST API requests.
+    attr_accessor :model
+
+    # The document after modification.
+    attr_accessor :document
+
+    #
+    # Initializes a new instance.
+    #
+    def initialize()
+      self.model = nil
+      self.document = nil
+    end
+  end
 end

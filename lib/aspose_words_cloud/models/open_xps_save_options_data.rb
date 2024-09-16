@@ -108,6 +108,9 @@ module AsposeWordsCloud
     # Gets or sets the level in the XPS document outline at which to display Word bookmarks.
     attr_accessor :bookmarks_outline_level
 
+    # Gets or sets the details for signing the output document.
+    attr_accessor :digital_signature_details
+
     # Gets or sets the number of heading levels (paragraphs formatted with the Heading styles) to include in the XPS document outline.
     attr_accessor :headings_outline_levels
 
@@ -165,6 +168,7 @@ module AsposeWordsCloud
         :'page_count' => :'PageCount',
         :'page_index' => :'PageIndex',
         :'bookmarks_outline_level' => :'BookmarksOutlineLevel',
+        :'digital_signature_details' => :'DigitalSignatureDetails',
         :'headings_outline_levels' => :'HeadingsOutlineLevels',
         :'outline_options' => :'OutlineOptions',
         :'use_book_fold_printing_settings' => :'UseBookFoldPrintingSettings',
@@ -195,6 +199,7 @@ module AsposeWordsCloud
         :'page_count' => :'Integer',
         :'page_index' => :'Integer',
         :'bookmarks_outline_level' => :'Integer',
+        :'digital_signature_details' => :'DigitalSignatureDetails',
         :'headings_outline_levels' => :'Integer',
         :'outline_options' => :'OutlineOptionsData',
         :'use_book_fold_printing_settings' => :'BOOLEAN',
@@ -290,6 +295,10 @@ module AsposeWordsCloud
 
       if attributes.key?(:'BookmarksOutlineLevel')
         self.bookmarks_outline_level = attributes[:'BookmarksOutlineLevel']
+      end
+
+      if attributes.key?(:'DigitalSignatureDetails')
+        self.digital_signature_details = attributes[:'DigitalSignatureDetails']
       end
 
       if attributes.key?(:'HeadingsOutlineLevels')
@@ -434,6 +443,7 @@ module AsposeWordsCloud
           page_count == other.page_count &&
           page_index == other.page_index &&
           bookmarks_outline_level == other.bookmarks_outline_level &&
+          digital_signature_details == other.digital_signature_details &&
           headings_outline_levels == other.headings_outline_levels &&
           outline_options == other.outline_options &&
           use_book_fold_printing_settings == other.use_book_fold_printing_settings &&
@@ -449,7 +459,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, bookmarks_outline_level, headings_outline_levels, outline_options, use_book_fold_printing_settings, save_format].hash
+      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, bookmarks_outline_level, digital_signature_details, headings_outline_levels, outline_options, use_book_fold_printing_settings, save_format].hash
     end
 
     # Builds the object from hash
@@ -572,6 +582,9 @@ module AsposeWordsCloud
       end
       unless self.metafile_rendering_options.nil?
           self.metafile_rendering_options.validate
+      end
+      unless self.digital_signature_details.nil?
+          self.digital_signature_details.validate
       end
       unless self.outline_options.nil?
           self.outline_options.validate

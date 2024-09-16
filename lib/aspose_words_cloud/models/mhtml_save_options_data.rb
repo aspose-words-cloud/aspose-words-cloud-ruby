@@ -192,6 +192,13 @@ module AsposeWordsCloud
     # Gets or sets a value indicating whether to use pretty formats output.
     attr_accessor :pretty_format
 
+    # Gets or sets the flag that indicates whether backslash characters should be replaced with yen signs.
+    # Default value is false.
+    # By default, Aspose.Words mimics MS Word's behavior and doesn't replace backslash characters with yen signs in
+    # generated HTML documents. However, previous versions of Aspose.Words performed such replacements in certain
+    # scenarios. This flag enables backward compatibility with previous versions of Aspose.Words.
+    attr_accessor :replace_backslash_with_yen_sign
+
     # Gets or sets a value indicating whether font family names used in the document are resolved and substituted according to FontSettings when being written into HTML-based formats.
     # The default value is false.
     attr_accessor :resolve_font_names
@@ -285,6 +292,7 @@ module AsposeWordsCloud
         :'metafile_format' => :'MetafileFormat',
         :'office_math_output_mode' => :'OfficeMathOutputMode',
         :'pretty_format' => :'PrettyFormat',
+        :'replace_backslash_with_yen_sign' => :'ReplaceBackslashWithYenSign',
         :'resolve_font_names' => :'ResolveFontNames',
         :'resource_folder' => :'ResourceFolder',
         :'resource_folder_alias' => :'ResourceFolderAlias',
@@ -343,6 +351,7 @@ module AsposeWordsCloud
         :'metafile_format' => :'String',
         :'office_math_output_mode' => :'String',
         :'pretty_format' => :'BOOLEAN',
+        :'replace_backslash_with_yen_sign' => :'BOOLEAN',
         :'resolve_font_names' => :'BOOLEAN',
         :'resource_folder' => :'String',
         :'resource_folder_alias' => :'String',
@@ -541,6 +550,10 @@ module AsposeWordsCloud
 
       if attributes.key?(:'PrettyFormat')
         self.pretty_format = attributes[:'PrettyFormat']
+      end
+
+      if attributes.key?(:'ReplaceBackslashWithYenSign')
+        self.replace_backslash_with_yen_sign = attributes[:'ReplaceBackslashWithYenSign']
       end
 
       if attributes.key?(:'ResolveFontNames')
@@ -818,6 +831,7 @@ module AsposeWordsCloud
           metafile_format == other.metafile_format &&
           office_math_output_mode == other.office_math_output_mode &&
           pretty_format == other.pretty_format &&
+          replace_backslash_with_yen_sign == other.replace_backslash_with_yen_sign &&
           resolve_font_names == other.resolve_font_names &&
           resource_folder == other.resource_folder &&
           resource_folder_alias == other.resource_folder_alias &&
@@ -836,7 +850,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, zip_output, allow_negative_indent, css_class_name_prefix, css_style_sheet_file_name, css_style_sheet_type, document_split_criteria, document_split_heading_level, encoding, export_document_properties, export_drop_down_form_field_as_text, export_font_resources, export_fonts_as_base64, export_headers_footers_mode, export_images_as_base64, export_language_information, export_list_labels, export_original_url_for_linked_images, export_page_margins, export_page_setup, export_relative_font_size, export_roundtrip_information, export_text_input_form_field_as_text, export_toc_page_numbers, export_xhtml_transitional, font_resources_subsetting_size_threshold, fonts_folder, fonts_folder_alias, html_version, image_resolution, images_folder, images_folder_alias, metafile_format, office_math_output_mode, pretty_format, resolve_font_names, resource_folder, resource_folder_alias, scale_image_to_shape_size, table_width_output_mode, export_cid_urls_for_mhtml_resources, save_format].hash
+      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, zip_output, allow_negative_indent, css_class_name_prefix, css_style_sheet_file_name, css_style_sheet_type, document_split_criteria, document_split_heading_level, encoding, export_document_properties, export_drop_down_form_field_as_text, export_font_resources, export_fonts_as_base64, export_headers_footers_mode, export_images_as_base64, export_language_information, export_list_labels, export_original_url_for_linked_images, export_page_margins, export_page_setup, export_relative_font_size, export_roundtrip_information, export_text_input_form_field_as_text, export_toc_page_numbers, export_xhtml_transitional, font_resources_subsetting_size_threshold, fonts_folder, fonts_folder_alias, html_version, image_resolution, images_folder, images_folder_alias, metafile_format, office_math_output_mode, pretty_format, replace_backslash_with_yen_sign, resolve_font_names, resource_folder, resource_folder_alias, scale_image_to_shape_size, table_width_output_mode, export_cid_urls_for_mhtml_resources, save_format].hash
     end
 
     # Builds the object from hash
