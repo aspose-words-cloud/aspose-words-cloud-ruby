@@ -7858,6 +7858,90 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
+    # Gets signatures from the document.
+    # @param request GetSignaturesRequest
+    # @return [SignatureCollectionResponse]
+    def get_signatures(request)
+        begin
+        data, _status_code, _headers = get_signatures_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = get_signatures_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Gets signatures from the document.
+    # @param request GetSignaturesRequest
+    # @return [Array<(SignatureCollectionResponse, Fixnum, Hash)>]
+    # SignatureCollectionResponse, response status code and response headers
+    private def get_signatures_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? GetSignaturesRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.get_signatures ...' if @api_client.config.debugging
+        request_data = request.create_http_request(@api_client)
+
+        data, status_code, headers = @api_client.call_api(
+                                                        request_data[:'method'],
+                                                        request_data[:'path'],
+                                                        header_params: request_data[:'header_params'],
+                                                        query_params: request_data[:'query_params'],
+                                                        body: request_data[:'body'],
+                                                        return_type: 'SignatureCollectionResponse')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#get_signatures\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [data, status_code, headers]
+    end
+
+    # Gets signatures from the document.
+    # @param request GetSignaturesOnlineRequest
+    # @return [SignatureCollectionResponse]
+    def get_signatures_online(request)
+        begin
+        data, _status_code, _headers = get_signatures_online_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = get_signatures_online_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Gets signatures from the document.
+    # @param request GetSignaturesOnlineRequest
+    # @return [Array<(SignatureCollectionResponse, Fixnum, Hash)>]
+    # SignatureCollectionResponse, response status code and response headers
+    private def get_signatures_online_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? GetSignaturesOnlineRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.get_signatures_online ...' if @api_client.config.debugging
+        request_data = request.create_http_request(@api_client)
+
+        data, status_code, headers = @api_client.call_api(
+                                                        request_data[:'method'],
+                                                        request_data[:'path'],
+                                                        header_params: request_data[:'header_params'],
+                                                        query_params: request_data[:'query_params'],
+                                                        body: request_data[:'body'],
+                                                        return_type: 'SignatureCollectionResponse')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#get_signatures_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [data, status_code, headers]
+    end
+
     # Reads a StructuredDocumentTag (SDT) from the document node.
     # @param request GetStructuredDocumentTagRequest
     # @return [StructuredDocumentTagResponse]
@@ -11311,6 +11395,94 @@ module AsposeWordsCloud
         [mp_data, status_code, headers]
     end
 
+    # Removes all signatures of the document.
+    # @param request RemoveAllSignaturesRequest
+    # @return [SignatureCollectionResponse]
+    def remove_all_signatures(request)
+        begin
+        data, _status_code, _headers = remove_all_signatures_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = remove_all_signatures_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Removes all signatures of the document.
+    # @param request RemoveAllSignaturesRequest
+    # @return [Array<(SignatureCollectionResponse, Fixnum, Hash)>]
+    # SignatureCollectionResponse, response status code and response headers
+    private def remove_all_signatures_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? RemoveAllSignaturesRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.remove_all_signatures ...' if @api_client.config.debugging
+        request_data = request.create_http_request(@api_client)
+
+        data, status_code, headers = @api_client.call_api(
+                                                        request_data[:'method'],
+                                                        request_data[:'path'],
+                                                        header_params: request_data[:'header_params'],
+                                                        query_params: request_data[:'query_params'],
+                                                        body: request_data[:'body'],
+                                                        return_type: 'SignatureCollectionResponse')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#remove_all_signatures\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [data, status_code, headers]
+    end
+
+    # Removes all signatures of the document.
+    # @param request RemoveAllSignaturesOnlineRequest
+    # @return [RemoveAllSignaturesOnlineResponse]
+    def remove_all_signatures_online(request)
+        begin
+        data, _status_code, _headers = remove_all_signatures_online_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = remove_all_signatures_online_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Removes all signatures of the document.
+    # @param request RemoveAllSignaturesOnlineRequest
+    # @return [Array<(RemoveAllSignaturesOnlineResponse, Fixnum, Hash)>]
+    # RemoveAllSignaturesOnlineResponse, response status code and response headers
+    private def remove_all_signatures_online_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? RemoveAllSignaturesOnlineRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.remove_all_signatures_online ...' if @api_client.config.debugging
+        request_data = request.create_http_request(@api_client)
+
+        data, status_code, headers = @api_client.call_api(
+                                                        request_data[:'method'],
+                                                        request_data[:'path'],
+                                                        header_params: request_data[:'header_params'],
+                                                        query_params: request_data[:'query_params'],
+                                                        body: request_data[:'body'],
+                                                        multipart_response: true,
+                                                        return_type: 'RemoveAllSignaturesOnlineResponse')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#remove_all_signatures_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        mp_data = RemoveAllSignaturesOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'SignatureCollectionResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
+        [mp_data, status_code, headers]
+    end
+
     # Removes a range from the document.
     # @param request RemoveRangeRequest
     # @return [DocumentResponse]
@@ -12384,6 +12556,94 @@ module AsposeWordsCloud
         end
 
         [data, status_code, headers]
+    end
+
+    # Signs the document with given certificate.
+    # @param request SignDocumentRequest
+    # @return [SignatureCollectionResponse]
+    def sign_document(request)
+        begin
+        data, _status_code, _headers = sign_document_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = sign_document_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Signs the document with given certificate.
+    # @param request SignDocumentRequest
+    # @return [Array<(SignatureCollectionResponse, Fixnum, Hash)>]
+    # SignatureCollectionResponse, response status code and response headers
+    private def sign_document_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? SignDocumentRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.sign_document ...' if @api_client.config.debugging
+        request_data = request.create_http_request(@api_client)
+
+        data, status_code, headers = @api_client.call_api(
+                                                        request_data[:'method'],
+                                                        request_data[:'path'],
+                                                        header_params: request_data[:'header_params'],
+                                                        query_params: request_data[:'query_params'],
+                                                        body: request_data[:'body'],
+                                                        return_type: 'SignatureCollectionResponse')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#sign_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [data, status_code, headers]
+    end
+
+    # Signs the document with given certificate.
+    # @param request SignDocumentOnlineRequest
+    # @return [SignDocumentOnlineResponse]
+    def sign_document_online(request)
+        begin
+        data, _status_code, _headers = sign_document_online_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = sign_document_online_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Signs the document with given certificate.
+    # @param request SignDocumentOnlineRequest
+    # @return [Array<(SignDocumentOnlineResponse, Fixnum, Hash)>]
+    # SignDocumentOnlineResponse, response status code and response headers
+    private def sign_document_online_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? SignDocumentOnlineRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.sign_document_online ...' if @api_client.config.debugging
+        request_data = request.create_http_request(@api_client)
+
+        data, status_code, headers = @api_client.call_api(
+                                                        request_data[:'method'],
+                                                        request_data[:'path'],
+                                                        header_params: request_data[:'header_params'],
+                                                        query_params: request_data[:'query_params'],
+                                                        body: request_data[:'body'],
+                                                        multipart_response: true,
+                                                        return_type: 'SignDocumentOnlineResponse')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#sign_document_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        mp_data = SignDocumentOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'SignatureCollectionResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
+        [mp_data, status_code, headers]
     end
 
     # Splits a document into parts and saves them in the specified format.

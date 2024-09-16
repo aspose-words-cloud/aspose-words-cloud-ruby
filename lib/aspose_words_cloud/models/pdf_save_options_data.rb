@@ -200,6 +200,11 @@ module AsposeWordsCloud
     # Gets or sets a value indicating whether to substitute TrueType fonts Arial, Times New Roman, Courier New and Symbol with core PDF Type 1 fonts.
     attr_accessor :use_core_fonts
 
+    # Gets or sets a value indicating whether to use SDT control Tag or Id property as a name of form field in PDF.
+    # The default value is false.When set to false, SDT control Id property is used as a name of form field in PDF.When set to true, SDT control Tag property is used as a name of form field in PDF.If set to true and Tag is empty, Id property will be used as a form field name.If set to true and Tag values are not unique, duplicate Tag values will be altered to build
+    # unique PDF form field names.
+    attr_accessor :use_sdt_tag_as_form_field_name
+
     # Gets or sets the option that controls what type of zoom should be applied when a document is opened with a PDF viewer.
     attr_accessor :zoom_behavior
 
@@ -278,6 +283,7 @@ module AsposeWordsCloud
         :'text_compression' => :'TextCompression',
         :'use_book_fold_printing_settings' => :'UseBookFoldPrintingSettings',
         :'use_core_fonts' => :'UseCoreFonts',
+        :'use_sdt_tag_as_form_field_name' => :'UseSdtTagAsFormFieldName',
         :'zoom_behavior' => :'ZoomBehavior',
         :'zoom_factor' => :'ZoomFactor',
         :'save_format' => :'SaveFormat'
@@ -331,6 +337,7 @@ module AsposeWordsCloud
         :'text_compression' => :'String',
         :'use_book_fold_printing_settings' => :'BOOLEAN',
         :'use_core_fonts' => :'BOOLEAN',
+        :'use_sdt_tag_as_form_field_name' => :'BOOLEAN',
         :'zoom_behavior' => :'String',
         :'zoom_factor' => :'Integer',
         :'save_format' => :'String'
@@ -521,6 +528,10 @@ module AsposeWordsCloud
 
       if attributes.key?(:'UseCoreFonts')
         self.use_core_fonts = attributes[:'UseCoreFonts']
+      end
+
+      if attributes.key?(:'UseSdtTagAsFormFieldName')
+        self.use_sdt_tag_as_form_field_name = attributes[:'UseSdtTagAsFormFieldName']
       end
 
       if attributes.key?(:'ZoomBehavior')
@@ -813,6 +824,7 @@ module AsposeWordsCloud
           text_compression == other.text_compression &&
           use_book_fold_printing_settings == other.use_book_fold_printing_settings &&
           use_core_fonts == other.use_core_fonts &&
+          use_sdt_tag_as_form_field_name == other.use_sdt_tag_as_form_field_name &&
           zoom_behavior == other.zoom_behavior &&
           zoom_factor == other.zoom_factor &&
           save_format == other.save_format
@@ -827,7 +839,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, cache_background_graphics, compliance, create_note_hyperlinks, custom_properties_export, digital_signature_details, display_doc_title, downsample_options, embed_attachments, embed_full_fonts, encryption_details, export_document_structure, export_language_to_span_tag, font_embedding_mode, header_footer_bookmarks_export_mode, image_color_space_export_mode, image_compression, interpolate_images, open_hyperlinks_in_new_window, outline_options, page_mode, preblend_images, preserve_form_fields, text_compression, use_book_fold_printing_settings, use_core_fonts, zoom_behavior, zoom_factor, save_format].hash
+      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, cache_background_graphics, compliance, create_note_hyperlinks, custom_properties_export, digital_signature_details, display_doc_title, downsample_options, embed_attachments, embed_full_fonts, encryption_details, export_document_structure, export_language_to_span_tag, font_embedding_mode, header_footer_bookmarks_export_mode, image_color_space_export_mode, image_compression, interpolate_images, open_hyperlinks_in_new_window, outline_options, page_mode, preblend_images, preserve_form_fields, text_compression, use_book_fold_printing_settings, use_core_fonts, use_sdt_tag_as_form_field_name, zoom_behavior, zoom_factor, save_format].hash
     end
 
     # Builds the object from hash

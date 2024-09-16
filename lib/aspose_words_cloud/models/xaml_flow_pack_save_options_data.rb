@@ -85,6 +85,13 @@ module AsposeWordsCloud
     # Gets or sets the name of the folder used to construct image URIs.
     attr_accessor :images_folder_alias
 
+    # Gets or sets the flag that indicates whether backslash characters should be replaced with yen signs.
+    # Default value is false.
+    # By default, Aspose.Words mimics MS Word's behavior and doesn't replace backslash characters with yen signs in
+    # generated HTML documents. However, previous versions of Aspose.Words performed such replacements in certain
+    # scenarios. This flag enables backward compatibility with previous versions of Aspose.Words.
+    attr_accessor :replace_backslash_with_yen_sign
+
     # Gets the format of save.
     attr_accessor :save_format
 
@@ -127,6 +134,7 @@ module AsposeWordsCloud
         :'zip_output' => :'ZipOutput',
         :'images_folder' => :'ImagesFolder',
         :'images_folder_alias' => :'ImagesFolderAlias',
+        :'replace_backslash_with_yen_sign' => :'ReplaceBackslashWithYenSign',
         :'save_format' => :'SaveFormat'
       }
     end
@@ -148,6 +156,7 @@ module AsposeWordsCloud
         :'zip_output' => :'BOOLEAN',
         :'images_folder' => :'String',
         :'images_folder_alias' => :'String',
+        :'replace_backslash_with_yen_sign' => :'BOOLEAN',
         :'save_format' => :'String'
       }
     end
@@ -216,6 +225,10 @@ module AsposeWordsCloud
 
       if attributes.key?(:'ImagesFolderAlias')
         self.images_folder_alias = attributes[:'ImagesFolderAlias']
+      end
+
+      if attributes.key?(:'ReplaceBackslashWithYenSign')
+        self.replace_backslash_with_yen_sign = attributes[:'ReplaceBackslashWithYenSign']
       end
     end
 
@@ -310,6 +323,7 @@ module AsposeWordsCloud
           zip_output == other.zip_output &&
           images_folder == other.images_folder &&
           images_folder_alias == other.images_folder_alias &&
+          replace_backslash_with_yen_sign == other.replace_backslash_with_yen_sign &&
           save_format == other.save_format
     end
 
@@ -322,7 +336,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, zip_output, images_folder, images_folder_alias, save_format].hash
+      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, zip_output, images_folder, images_folder_alias, replace_backslash_with_yen_sign, save_format].hash
     end
 
     # Builds the object from hash

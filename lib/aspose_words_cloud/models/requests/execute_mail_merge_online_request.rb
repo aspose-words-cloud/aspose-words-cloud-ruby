@@ -41,6 +41,9 @@ module AsposeWordsCloud
     # The flag indicating whether to execute Mail Merge operation with regions.
     attr_accessor :with_regions
 
+    # The flag indicating whether fields in whole document are updated while executing of a mail merge with regions.
+    attr_accessor :merge_whole_document
+
     # The cleanup options.
     attr_accessor :cleanup
 
@@ -53,14 +56,16 @@ module AsposeWordsCloud
     # @param data File with mailmerge data.
     # @param options Field options.
     # @param with_regions The flag indicating whether to execute Mail Merge operation with regions.
+    # @param merge_whole_document The flag indicating whether fields in whole document are updated while executing of a mail merge with regions.
     # @param cleanup The cleanup options.
     # @param document_file_name The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.
 
-    def initialize(template:, data:, options: nil, with_regions: nil, cleanup: nil, document_file_name: nil)
+    def initialize(template:, data:, options: nil, with_regions: nil, merge_whole_document: nil, cleanup: nil, document_file_name: nil)
       self.template = template
       self.data = data
       self.options = options
       self.with_regions = with_regions
+      self.merge_whole_document = merge_whole_document
       self.cleanup = cleanup
       self.document_file_name = document_file_name
     end
@@ -79,6 +84,7 @@ module AsposeWordsCloud
       # query parameters
       query_params = {}
       query_params[downcase_first_letter('WithRegions')] = self.with_regions unless self.with_regions.nil?
+      query_params[downcase_first_letter('MergeWholeDocument')] = self.merge_whole_document unless self.merge_whole_document.nil?
       query_params[downcase_first_letter('Cleanup')] = self.cleanup unless self.cleanup.nil?
       query_params[downcase_first_letter('DocumentFileName')] = self.document_file_name unless self.document_file_name.nil?
 
@@ -153,6 +159,7 @@ module AsposeWordsCloud
       # query parameters
       query_params = {}
       query_params[downcase_first_letter('WithRegions')] = self.with_regions unless self.with_regions.nil?
+      query_params[downcase_first_letter('MergeWholeDocument')] = self.merge_whole_document unless self.merge_whole_document.nil?
       query_params[downcase_first_letter('Cleanup')] = self.cleanup unless self.cleanup.nil?
       query_params[downcase_first_letter('DocumentFileName')] = self.document_file_name unless self.document_file_name.nil?
 
