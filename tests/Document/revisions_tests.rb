@@ -34,7 +34,7 @@ module AsposeWordsCloud
     end
 
     def local_file
-      'Common/test_multi_pages.docx'
+      'DocumentElements/Revisions/TestRevisions.doc'
     end
 
 
