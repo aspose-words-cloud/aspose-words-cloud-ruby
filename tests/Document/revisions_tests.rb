@@ -34,7 +34,7 @@ module AsposeWordsCloud
     end
 
     def local_file
-      'Common/test_multi_pages.docx'
+      'DocumentElements/Revisions/TestRevisions.doc'
     end
 
 
@@ -85,6 +85,31 @@ module AsposeWordsCloud
       request = RejectAllRevisionsOnlineRequest.new(document: request_document)
 
       result = @words_api.reject_all_revisions_online(request)
+      assert_equal false, result.nil?
+    end
+
+    #
+    # Test for getting revisions from document.
+    #
+    def test_get_all_revisions
+      remote_file_name = 'TestAcceptAllRevisions.docx'
+
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+
+      request = GetAllRevisionsRequest.new(name: remote_file_name, folder: remote_data_folder)
+
+      result = @words_api.get_all_revisions(request)
+      assert_equal false, result.nil?
+    end
+
+    #
+    # Test for getting revisions online from document.
+    #
+    def test_get_all_revisions_online
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = GetAllRevisionsOnlineRequest.new(document: request_document)
+
+      result = @words_api.get_all_revisions_online(request)
       assert_equal false, result.nil?
     end
   end
