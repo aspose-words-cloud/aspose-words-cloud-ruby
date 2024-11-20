@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="document_entry_list.rb">
+# <copyright company="Aspose" file="revision.rb">
 #   Copyright (c) 2024 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -27,31 +27,36 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Represents a list of documents which will be appended to the original resource document.
-  class DocumentEntryList
-    # Gets or sets a value indicating whether to append all documents to the same section.
-    attr_accessor :append_all_entries_to_one_section
+  # Revision Dto.
+  class Revision
+    # Gets or sets the revision author.
+    attr_accessor :revision_author
 
-    # Gets or sets a value indicating whether to apply headers and footers from base document to appending documents. The default value is true.
-    attr_accessor :apply_base_document_headers_and_footers_to_appending_documents
+    # Gets or sets the revision date time.
+    attr_accessor :revision_date_time
 
-    # Gets or sets the list of documents.
-    attr_accessor :document_entries
+    # Gets or sets the revision text.
+    attr_accessor :revision_text
+
+    # Gets or sets the revision type.
+    attr_accessor :revision_type
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'append_all_entries_to_one_section' => :'AppendAllEntriesToOneSection',
-        :'apply_base_document_headers_and_footers_to_appending_documents' => :'ApplyBaseDocumentHeadersAndFootersToAppendingDocuments',
-        :'document_entries' => :'DocumentEntries'
+        :'revision_author' => :'RevisionAuthor',
+        :'revision_date_time' => :'RevisionDateTime',
+        :'revision_text' => :'RevisionText',
+        :'revision_type' => :'RevisionType'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'append_all_entries_to_one_section' => :'BOOLEAN',
-        :'apply_base_document_headers_and_footers_to_appending_documents' => :'BOOLEAN',
-        :'document_entries' => :'Array<DocumentEntry>'
+        :'revision_author' => :'String',
+        :'revision_date_time' => :'DateTime',
+        :'revision_text' => :'String',
+        :'revision_type' => :'String'
       }
     end
 
@@ -63,18 +68,20 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'AppendAllEntriesToOneSection')
-        self.append_all_entries_to_one_section = attributes[:'AppendAllEntriesToOneSection']
+      if attributes.key?(:'RevisionAuthor')
+        self.revision_author = attributes[:'RevisionAuthor']
       end
 
-      if attributes.key?(:'ApplyBaseDocumentHeadersAndFootersToAppendingDocuments')
-        self.apply_base_document_headers_and_footers_to_appending_documents = attributes[:'ApplyBaseDocumentHeadersAndFootersToAppendingDocuments']
+      if attributes.key?(:'RevisionDateTime')
+        self.revision_date_time = attributes[:'RevisionDateTime']
       end
 
-      if attributes.key?(:'DocumentEntries')
-        if (value = attributes[:'DocumentEntries']).is_a?(Array)
-          self.document_entries = value
-        end
+      if attributes.key?(:'RevisionText')
+        self.revision_text = attributes[:'RevisionText']
+      end
+
+      if attributes.key?(:'RevisionType')
+        self.revision_type = attributes[:'RevisionType']
       end
     end
 
@@ -89,9 +96,10 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          append_all_entries_to_one_section == other.append_all_entries_to_one_section &&
-          apply_base_document_headers_and_footers_to_appending_documents == other.apply_base_document_headers_and_footers_to_appending_documents &&
-          document_entries == other.document_entries
+          revision_author == other.revision_author &&
+          revision_date_time == other.revision_date_time &&
+          revision_text == other.revision_text &&
+          revision_type == other.revision_type
     end
 
     # @see the `==` method
@@ -103,7 +111,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [append_all_entries_to_one_section, apply_base_document_headers_and_footers_to_appending_documents, document_entries].hash
+      [revision_author, revision_date_time, revision_text, revision_type].hash
     end
 
     # Builds the object from hash
@@ -217,24 +225,10 @@ module AsposeWordsCloud
     end
 
     def collectFilesContent(resultFilesContent)
-      if self.document_entries
-          for element in self.document_entries do
-              element.collectFilesContent(resultFilesContent);
-          end
-      end
-
     end
 
     def validate()
-      raise ArgumentError, 'Property document_entries in DocumentEntryList is required.' if self.document_entries.nil?
-      unless self.document_entries.nil?
-          for elementDocumentEntries in self.document_entries
-              unless elementDocumentEntries.nil?
-                  elementDocumentEntries.validate
-              end
-          end
-      end
-
+      raise ArgumentError, 'Property revision_date_time in Revision is required.' if self.revision_date_time.nil?
     end
 
   end
