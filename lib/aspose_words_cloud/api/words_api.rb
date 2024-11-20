@@ -3906,6 +3906,90 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
+    # Get all information about revisions.
+    # @param request GetAllRevisionsRequest
+    # @return [RevisionsResponse]
+    def get_all_revisions(request)
+        begin
+        data, _status_code, _headers = get_all_revisions_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = get_all_revisions_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Get all information about revisions.
+    # @param request GetAllRevisionsRequest
+    # @return [Array<(RevisionsResponse, Fixnum, Hash)>]
+    # RevisionsResponse, response status code and response headers
+    private def get_all_revisions_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? GetAllRevisionsRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.get_all_revisions ...' if @api_client.config.debugging
+        request_data = request.create_http_request(@api_client)
+
+        data, status_code, headers = @api_client.call_api(
+                                                        request_data[:'method'],
+                                                        request_data[:'path'],
+                                                        header_params: request_data[:'header_params'],
+                                                        query_params: request_data[:'query_params'],
+                                                        body: request_data[:'body'],
+                                                        return_type: 'RevisionsResponse')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#get_all_revisions\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [data, status_code, headers]
+    end
+
+    # Get all information about revisions.
+    # @param request GetAllRevisionsOnlineRequest
+    # @return [RevisionsResponse]
+    def get_all_revisions_online(request)
+        begin
+        data, _status_code, _headers = get_all_revisions_online_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = get_all_revisions_online_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Get all information about revisions.
+    # @param request GetAllRevisionsOnlineRequest
+    # @return [Array<(RevisionsResponse, Fixnum, Hash)>]
+    # RevisionsResponse, response status code and response headers
+    private def get_all_revisions_online_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? GetAllRevisionsOnlineRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.get_all_revisions_online ...' if @api_client.config.debugging
+        request_data = request.create_http_request(@api_client)
+
+        data, status_code, headers = @api_client.call_api(
+                                                        request_data[:'method'],
+                                                        request_data[:'path'],
+                                                        header_params: request_data[:'header_params'],
+                                                        query_params: request_data[:'query_params'],
+                                                        body: request_data[:'body'],
+                                                        return_type: 'RevisionsResponse')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#get_all_revisions_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [data, status_code, headers]
+    end
+
     # Reads available fonts from the document.
     # @param request GetAvailableFontsRequest
     # @return [AvailableFontsResponse]
