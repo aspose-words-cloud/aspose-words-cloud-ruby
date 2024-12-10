@@ -191,6 +191,11 @@ module AsposeWordsCloud
     # Gets or sets a value indicating whether to preserve Microsoft Word form fields as form fields in PDF or convert them to text.
     attr_accessor :preserve_form_fields
 
+    # Gets or sets a value indicating whether to render PDF choice form field border.
+    # PDF choice form fields are used for export of SDT Combo Box Content Control, SDT Drop-Down List Content
+    # Control and legacy Drop-Down Form Field when PreserveFormFields option is enabled.The default value is true.
+    attr_accessor :render_choice_form_field_border
+
     # Gets or sets the compression type to be used for all textual content in the document.
     attr_accessor :text_compression
 
@@ -280,6 +285,7 @@ module AsposeWordsCloud
         :'page_mode' => :'PageMode',
         :'preblend_images' => :'PreblendImages',
         :'preserve_form_fields' => :'PreserveFormFields',
+        :'render_choice_form_field_border' => :'RenderChoiceFormFieldBorder',
         :'text_compression' => :'TextCompression',
         :'use_book_fold_printing_settings' => :'UseBookFoldPrintingSettings',
         :'use_core_fonts' => :'UseCoreFonts',
@@ -334,6 +340,7 @@ module AsposeWordsCloud
         :'page_mode' => :'String',
         :'preblend_images' => :'BOOLEAN',
         :'preserve_form_fields' => :'BOOLEAN',
+        :'render_choice_form_field_border' => :'BOOLEAN',
         :'text_compression' => :'String',
         :'use_book_fold_printing_settings' => :'BOOLEAN',
         :'use_core_fonts' => :'BOOLEAN',
@@ -516,6 +523,10 @@ module AsposeWordsCloud
 
       if attributes.key?(:'PreserveFormFields')
         self.preserve_form_fields = attributes[:'PreserveFormFields']
+      end
+
+      if attributes.key?(:'RenderChoiceFormFieldBorder')
+        self.render_choice_form_field_border = attributes[:'RenderChoiceFormFieldBorder']
       end
 
       if attributes.key?(:'TextCompression')
@@ -821,6 +832,7 @@ module AsposeWordsCloud
           page_mode == other.page_mode &&
           preblend_images == other.preblend_images &&
           preserve_form_fields == other.preserve_form_fields &&
+          render_choice_form_field_border == other.render_choice_form_field_border &&
           text_compression == other.text_compression &&
           use_book_fold_printing_settings == other.use_book_fold_printing_settings &&
           use_core_fonts == other.use_core_fonts &&
@@ -839,7 +851,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, cache_background_graphics, compliance, create_note_hyperlinks, custom_properties_export, digital_signature_details, display_doc_title, downsample_options, embed_attachments, embed_full_fonts, encryption_details, export_document_structure, export_language_to_span_tag, font_embedding_mode, header_footer_bookmarks_export_mode, image_color_space_export_mode, image_compression, interpolate_images, open_hyperlinks_in_new_window, outline_options, page_mode, preblend_images, preserve_form_fields, text_compression, use_book_fold_printing_settings, use_core_fonts, use_sdt_tag_as_form_field_name, zoom_behavior, zoom_factor, save_format].hash
+      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, cache_background_graphics, compliance, create_note_hyperlinks, custom_properties_export, digital_signature_details, display_doc_title, downsample_options, embed_attachments, embed_full_fonts, encryption_details, export_document_structure, export_language_to_span_tag, font_embedding_mode, header_footer_bookmarks_export_mode, image_color_space_export_mode, image_compression, interpolate_images, open_hyperlinks_in_new_window, outline_options, page_mode, preblend_images, preserve_form_fields, render_choice_form_field_border, text_compression, use_book_fold_printing_settings, use_core_fonts, use_sdt_tag_as_form_field_name, zoom_behavior, zoom_factor, save_format].hash
     end
 
     # Builds the object from hash

@@ -29,6 +29,9 @@ module AsposeWordsCloud
 
   # Class for document replace text request building.
   class ReplaceTextParameters
+    # Gets or sets a value indicating whether apply superscript to font or not.
+    attr_accessor :apply_superscript
+
     # Gets or sets a value indicating whether flag, true means the search is case-sensitive; false means the search is not case-sensitive.
     attr_accessor :is_match_case
 
@@ -46,6 +49,7 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'apply_superscript' => :'ApplySuperscript',
         :'is_match_case' => :'IsMatchCase',
         :'is_match_whole_word' => :'IsMatchWholeWord',
         :'is_old_value_regex' => :'IsOldValueRegex',
@@ -57,6 +61,7 @@ module AsposeWordsCloud
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'apply_superscript' => :'BOOLEAN',
         :'is_match_case' => :'BOOLEAN',
         :'is_match_whole_word' => :'BOOLEAN',
         :'is_old_value_regex' => :'BOOLEAN',
@@ -72,6 +77,10 @@ module AsposeWordsCloud
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.key?(:'ApplySuperscript')
+        self.apply_superscript = attributes[:'ApplySuperscript']
+      end
 
       if attributes.key?(:'IsMatchCase')
         self.is_match_case = attributes[:'IsMatchCase']
@@ -105,6 +114,7 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
+          apply_superscript == other.apply_superscript &&
           is_match_case == other.is_match_case &&
           is_match_whole_word == other.is_match_whole_word &&
           is_old_value_regex == other.is_old_value_regex &&
@@ -121,7 +131,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [is_match_case, is_match_whole_word, is_old_value_regex, new_value, old_value].hash
+      [apply_superscript, is_match_case, is_match_whole_word, is_old_value_regex, new_value, old_value].hash
     end
 
     # Builds the object from hash
