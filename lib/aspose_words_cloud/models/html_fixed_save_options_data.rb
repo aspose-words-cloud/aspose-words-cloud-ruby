@@ -127,6 +127,12 @@ module AsposeWordsCloud
     # Gets or sets the export format of fonts.
     attr_accessor :font_format
 
+    # Gets or sets a prefix that is prepended to all generated element IDs in the output document.
+    # Default value is null and no prefix is prepended.
+    # If the prefix is specified, it can contain only letters, digits, underscores, and hyphens,
+    # and must start with a letter.
+    attr_accessor :id_prefix
+
     # Gets or sets the horizontal alignment of pages in the HTML document.
     # The default value is HtmlFixedHorizontalPageAlignment.Center.
     attr_accessor :page_horizontal_alignment
@@ -210,6 +216,7 @@ module AsposeWordsCloud
         :'export_embedded_images' => :'ExportEmbeddedImages',
         :'export_form_fields' => :'ExportFormFields',
         :'font_format' => :'FontFormat',
+        :'id_prefix' => :'IdPrefix',
         :'page_horizontal_alignment' => :'PageHorizontalAlignment',
         :'page_margins' => :'PageMargins',
         :'resources_folder' => :'ResourcesFolder',
@@ -250,6 +257,7 @@ module AsposeWordsCloud
         :'export_embedded_images' => :'BOOLEAN',
         :'export_form_fields' => :'BOOLEAN',
         :'font_format' => :'String',
+        :'id_prefix' => :'String',
         :'page_horizontal_alignment' => :'String',
         :'page_margins' => :'Float',
         :'resources_folder' => :'String',
@@ -373,6 +381,10 @@ module AsposeWordsCloud
 
       if attributes.key?(:'FontFormat')
         self.font_format = attributes[:'FontFormat']
+      end
+
+      if attributes.key?(:'IdPrefix')
+        self.id_prefix = attributes[:'IdPrefix']
       end
 
       if attributes.key?(:'PageHorizontalAlignment')
@@ -571,6 +583,7 @@ module AsposeWordsCloud
           export_embedded_images == other.export_embedded_images &&
           export_form_fields == other.export_form_fields &&
           font_format == other.font_format &&
+          id_prefix == other.id_prefix &&
           page_horizontal_alignment == other.page_horizontal_alignment &&
           page_margins == other.page_margins &&
           resources_folder == other.resources_folder &&
@@ -590,7 +603,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, css_class_names_prefix, encoding, export_embedded_css, export_embedded_fonts, export_embedded_images, export_form_fields, font_format, page_horizontal_alignment, page_margins, resources_folder, resources_folder_alias, save_font_face_css_separately, show_page_border, use_target_machine_fonts, save_format].hash
+      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, css_class_names_prefix, encoding, export_embedded_css, export_embedded_fonts, export_embedded_images, export_form_fields, font_format, id_prefix, page_horizontal_alignment, page_margins, resources_folder, resources_folder_alias, save_font_face_css_separately, show_page_border, use_target_machine_fonts, save_format].hash
     end
 
     # Builds the object from hash

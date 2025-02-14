@@ -111,6 +111,12 @@ module AsposeWordsCloud
     # Gets or sets a value indicating whether the output SVG should fill the available viewport area (browser window or container). When set to true width and height of output SVG are set to 100%.
     attr_accessor :fit_to_view_port
 
+    # Gets or sets specifies a prefix that is prepended to all generated element IDs in the output document.
+    # Default value is null and no prefix is prepended.
+    # If the prefix is specified, it can contain only letters, digits, underscores, and hyphens,
+    # and must start with a letter.
+    attr_accessor :id_prefix
+
     # Gets or sets a value in pixels per inch that limits resolution of exported raster images.
     # If the value of this property is non-zero, it limits resolution of exported raster images.
     # That is, higher-resolution images are resampled down to the limit and lower-resolution images are exported as is.
@@ -177,6 +183,7 @@ module AsposeWordsCloud
         :'page_index' => :'PageIndex',
         :'export_embedded_images' => :'ExportEmbeddedImages',
         :'fit_to_view_port' => :'FitToViewPort',
+        :'id_prefix' => :'IdPrefix',
         :'max_image_resolution' => :'MaxImageResolution',
         :'resources_folder' => :'ResourcesFolder',
         :'resources_folder_alias' => :'ResourcesFolderAlias',
@@ -210,6 +217,7 @@ module AsposeWordsCloud
         :'page_index' => :'Integer',
         :'export_embedded_images' => :'BOOLEAN',
         :'fit_to_view_port' => :'BOOLEAN',
+        :'id_prefix' => :'String',
         :'max_image_resolution' => :'Integer',
         :'resources_folder' => :'String',
         :'resources_folder_alias' => :'String',
@@ -311,6 +319,10 @@ module AsposeWordsCloud
 
       if attributes.key?(:'FitToViewPort')
         self.fit_to_view_port = attributes[:'FitToViewPort']
+      end
+
+      if attributes.key?(:'IdPrefix')
+        self.id_prefix = attributes[:'IdPrefix']
       end
 
       if attributes.key?(:'MaxImageResolution')
@@ -480,6 +492,7 @@ module AsposeWordsCloud
           page_index == other.page_index &&
           export_embedded_images == other.export_embedded_images &&
           fit_to_view_port == other.fit_to_view_port &&
+          id_prefix == other.id_prefix &&
           max_image_resolution == other.max_image_resolution &&
           resources_folder == other.resources_folder &&
           resources_folder_alias == other.resources_folder_alias &&
@@ -497,7 +510,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, export_embedded_images, fit_to_view_port, max_image_resolution, resources_folder, resources_folder_alias, show_page_border, text_output_mode, save_format].hash
+      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, export_embedded_images, fit_to_view_port, id_prefix, max_image_resolution, resources_folder, resources_folder_alias, show_page_border, text_output_mode, save_format].hash
     end
 
     # Builds the object from hash
