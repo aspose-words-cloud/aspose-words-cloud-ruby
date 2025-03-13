@@ -569,7 +569,7 @@ module AsposeWordsCloud
       return false unless color_mode_validator.valid?(@color_mode)
       numeral_format_validator = EnumAttributeValidator.new('String', ["European", "ArabicIndic", "EasternArabicIndic", "Context", "System"])
       return false unless numeral_format_validator.valid?(@numeral_format)
-      compliance_validator = EnumAttributeValidator.new('String', ["Pdf17", "Pdf20", "PdfA1a", "PdfA1b", "PdfA2a", "PdfA2u", "PdfA4", "PdfA4Ua2", "PdfUa1", "PdfUa2"])
+      compliance_validator = EnumAttributeValidator.new('String', ["Pdf17", "Pdf20", "PdfA1a", "PdfA1b", "PdfA2a", "PdfA2u", "PdfA3a", "PdfA3u", "PdfA4", "PdfA4f", "PdfA4Ua2", "PdfUa1", "PdfUa2"])
       return false unless compliance_validator.valid?(@compliance)
       custom_properties_export_validator = EnumAttributeValidator.new('String', ["None", "Standard", "Metadata"])
       return false unless custom_properties_export_validator.valid?(@custom_properties_export)
@@ -676,7 +676,7 @@ module AsposeWordsCloud
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] compliance Object to be assigned
     def compliance=(compliance)
-      validator = EnumAttributeValidator.new('String', ["Pdf17", "Pdf20", "PdfA1a", "PdfA1b", "PdfA2a", "PdfA2u", "PdfA4", "PdfA4Ua2", "PdfUa1", "PdfUa2"])
+      validator = EnumAttributeValidator.new('String', ["Pdf17", "Pdf20", "PdfA1a", "PdfA1b", "PdfA2a", "PdfA2u", "PdfA3a", "PdfA3u", "PdfA4", "PdfA4f", "PdfA4Ua2", "PdfUa1", "PdfUa2"])
       if compliance.to_i == 0
         unless validator.valid?(compliance)
           raise ArgumentError, "invalid value for 'compliance', must be one of #{validator.allowable_values}."
