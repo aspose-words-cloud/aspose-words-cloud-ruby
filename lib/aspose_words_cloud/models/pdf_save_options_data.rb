@@ -60,6 +60,9 @@ module AsposeWordsCloud
     # The default value is Aspose.Words.Saving.ImlRenderingMode.InkML.
     attr_accessor :iml_rendering_mode
 
+    # Gets or sets a value indicating whether the font attributes will be changed according to the character code being used.
+    attr_accessor :update_ambiguous_text_font
+
     # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving.
     # Default value is false.
     attr_accessor :update_created_time_property
@@ -104,6 +107,12 @@ module AsposeWordsCloud
 
     # Gets or sets the 0-based index of the first page to render.
     attr_accessor :page_index
+
+    # Gets or sets a value determining how attachments are embedded to the PDF document.
+    # Default value is None and attachments are not embedded.
+    # PDF/A-1, PDF/A-2 and regular PDF/A-4 (not PDF/A-4f) standards do not allow embedded files.
+    # None value will be used automatically.
+    attr_accessor :attachments_embedding_mode
 
     # Gets or sets a value determining whether or not to cache graphics placed in document's background.
     # Default value is true and background graphics are written to the PDF document as an xObject. When the value is false background graphics are not cached. Some shapes are not supported for caching(shapes with fields, bookmarks, HRefs). Document background graphic is various shapes, charts, images placed in the footer or header,
@@ -251,6 +260,7 @@ module AsposeWordsCloud
         :'dml_rendering_mode' => :'DmlRenderingMode',
         :'file_name' => :'FileName',
         :'iml_rendering_mode' => :'ImlRenderingMode',
+        :'update_ambiguous_text_font' => :'UpdateAmbiguousTextFont',
         :'update_created_time_property' => :'UpdateCreatedTimeProperty',
         :'update_fields' => :'UpdateFields',
         :'update_last_printed_property' => :'UpdateLastPrintedProperty',
@@ -263,6 +273,7 @@ module AsposeWordsCloud
         :'optimize_output' => :'OptimizeOutput',
         :'page_count' => :'PageCount',
         :'page_index' => :'PageIndex',
+        :'attachments_embedding_mode' => :'AttachmentsEmbeddingMode',
         :'cache_background_graphics' => :'CacheBackgroundGraphics',
         :'compliance' => :'Compliance',
         :'create_note_hyperlinks' => :'CreateNoteHyperlinks',
@@ -306,6 +317,7 @@ module AsposeWordsCloud
         :'dml_rendering_mode' => :'String',
         :'file_name' => :'String',
         :'iml_rendering_mode' => :'String',
+        :'update_ambiguous_text_font' => :'BOOLEAN',
         :'update_created_time_property' => :'BOOLEAN',
         :'update_fields' => :'BOOLEAN',
         :'update_last_printed_property' => :'BOOLEAN',
@@ -318,6 +330,7 @@ module AsposeWordsCloud
         :'optimize_output' => :'BOOLEAN',
         :'page_count' => :'Integer',
         :'page_index' => :'Integer',
+        :'attachments_embedding_mode' => :'String',
         :'cache_background_graphics' => :'BOOLEAN',
         :'compliance' => :'String',
         :'create_note_hyperlinks' => :'BOOLEAN',
@@ -389,6 +402,10 @@ module AsposeWordsCloud
         self.iml_rendering_mode = attributes[:'ImlRenderingMode']
       end
 
+      if attributes.key?(:'UpdateAmbiguousTextFont')
+        self.update_ambiguous_text_font = attributes[:'UpdateAmbiguousTextFont']
+      end
+
       if attributes.key?(:'UpdateCreatedTimeProperty')
         self.update_created_time_property = attributes[:'UpdateCreatedTimeProperty']
       end
@@ -435,6 +452,10 @@ module AsposeWordsCloud
 
       if attributes.key?(:'PageIndex')
         self.page_index = attributes[:'PageIndex']
+      end
+
+      if attributes.key?(:'AttachmentsEmbeddingMode')
+        self.attachments_embedding_mode = attributes[:'AttachmentsEmbeddingMode']
       end
 
       if attributes.key?(:'CacheBackgroundGraphics')
@@ -569,6 +590,8 @@ module AsposeWordsCloud
       return false unless color_mode_validator.valid?(@color_mode)
       numeral_format_validator = EnumAttributeValidator.new('String', ["European", "ArabicIndic", "EasternArabicIndic", "Context", "System"])
       return false unless numeral_format_validator.valid?(@numeral_format)
+      attachments_embedding_mode_validator = EnumAttributeValidator.new('String', ["None", "Annotations", "DocumentEmbeddedFiles"])
+      return false unless attachments_embedding_mode_validator.valid?(@attachments_embedding_mode)
       compliance_validator = EnumAttributeValidator.new('String', ["Pdf17", "Pdf20", "PdfA1a", "PdfA1b", "PdfA2a", "PdfA2u", "PdfA3a", "PdfA3u", "PdfA4", "PdfA4f", "PdfA4Ua2", "PdfUa1", "PdfUa2"])
       return false unless compliance_validator.valid?(@compliance)
       custom_properties_export_validator = EnumAttributeValidator.new('String', ["None", "Standard", "Metadata"])
@@ -670,6 +693,20 @@ module AsposeWordsCloud
         @numeral_format = numeral_format
       else
         @numeral_format = validator.allowable_values[numeral_format.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] attachments_embedding_mode Object to be assigned
+    def attachments_embedding_mode=(attachments_embedding_mode)
+      validator = EnumAttributeValidator.new('String', ["None", "Annotations", "DocumentEmbeddedFiles"])
+      if attachments_embedding_mode.to_i == 0
+        unless validator.valid?(attachments_embedding_mode)
+          raise ArgumentError, "invalid value for 'attachments_embedding_mode', must be one of #{validator.allowable_values}."
+        end
+        @attachments_embedding_mode = attachments_embedding_mode
+      else
+        @attachments_embedding_mode = validator.allowable_values[attachments_embedding_mode.to_i]
       end
     end
 
@@ -798,6 +835,7 @@ module AsposeWordsCloud
           dml_rendering_mode == other.dml_rendering_mode &&
           file_name == other.file_name &&
           iml_rendering_mode == other.iml_rendering_mode &&
+          update_ambiguous_text_font == other.update_ambiguous_text_font &&
           update_created_time_property == other.update_created_time_property &&
           update_fields == other.update_fields &&
           update_last_printed_property == other.update_last_printed_property &&
@@ -810,6 +848,7 @@ module AsposeWordsCloud
           optimize_output == other.optimize_output &&
           page_count == other.page_count &&
           page_index == other.page_index &&
+          attachments_embedding_mode == other.attachments_embedding_mode &&
           cache_background_graphics == other.cache_background_graphics &&
           compliance == other.compliance &&
           create_note_hyperlinks == other.create_note_hyperlinks &&
@@ -851,7 +890,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, cache_background_graphics, compliance, create_note_hyperlinks, custom_properties_export, digital_signature_details, display_doc_title, downsample_options, embed_attachments, embed_full_fonts, encryption_details, export_document_structure, export_language_to_span_tag, font_embedding_mode, header_footer_bookmarks_export_mode, image_color_space_export_mode, image_compression, interpolate_images, open_hyperlinks_in_new_window, outline_options, page_mode, preblend_images, preserve_form_fields, render_choice_form_field_border, text_compression, use_book_fold_printing_settings, use_core_fonts, use_sdt_tag_as_form_field_name, zoom_behavior, zoom_factor, save_format].hash
+      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_ambiguous_text_font, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, attachments_embedding_mode, cache_background_graphics, compliance, create_note_hyperlinks, custom_properties_export, digital_signature_details, display_doc_title, downsample_options, embed_attachments, embed_full_fonts, encryption_details, export_document_structure, export_language_to_span_tag, font_embedding_mode, header_footer_bookmarks_export_mode, image_color_space_export_mode, image_compression, interpolate_images, open_hyperlinks_in_new_window, outline_options, page_mode, preblend_images, preserve_form_fields, render_choice_form_field_border, text_compression, use_book_fold_printing_settings, use_core_fonts, use_sdt_tag_as_form_field_name, zoom_behavior, zoom_factor, save_format].hash
     end
 
     # Builds the object from hash
