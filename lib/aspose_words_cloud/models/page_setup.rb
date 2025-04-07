@@ -364,7 +364,7 @@ module AsposeWordsCloud
       return false unless orientation_validator.valid?(@orientation)
       page_number_style_validator = EnumAttributeValidator.new('String', ["Arabic", "UppercaseRoman", "LowercaseRoman", "UppercaseLetter", "LowercaseLetter", "Ordinal", "Number", "OrdinalText", "Hex", "ChicagoManual", "Kanji", "KanjiDigit", "AiueoHalfWidth", "IrohaHalfWidth", "ArabicFullWidth", "ArabicHalfWidth", "KanjiTraditional", "KanjiTraditional2", "NumberInCircle", "DecimalFullWidth", "Aiueo", "Iroha", "LeadingZero", "Bullet", "Ganada", "Chosung", "GB1", "GB2", "GB3", "GB4", "Zodiac1", "Zodiac2", "Zodiac3", "TradChinNum1", "TradChinNum2", "TradChinNum3", "TradChinNum4", "SimpChinNum1", "SimpChinNum2", "SimpChinNum3", "SimpChinNum4", "HanjaRead", "HanjaReadDigit", "Hangul", "Hanja", "Hebrew1", "Arabic1", "Hebrew2", "Arabic2", "HindiLetter1", "HindiLetter2", "HindiArabic", "HindiCardinalText", "ThaiLetter", "ThaiArabic", "ThaiCardinalText", "VietCardinalText", "NumberInDash", "LowercaseRussian", "UppercaseRussian", "None", "Custom"])
       return false unless page_number_style_validator.valid?(@page_number_style)
-      paper_size_validator = EnumAttributeValidator.new('String', ["A3", "A4", "A5", "B4", "B5", "Executive", "Folio", "Ledger", "Legal", "Letter", "EnvelopeDL", "Quarto", "Statement", "Tabloid", "Paper10x14", "Paper11x17", "Number10Envelope", "Custom"])
+      paper_size_validator = EnumAttributeValidator.new('String', ["A3", "A4", "A5", "B4", "B5", "Executive", "Folio", "Ledger", "Legal", "Letter", "EnvelopeDL", "Quarto", "Statement", "Tabloid", "Paper10x14", "Paper11x17", "Number10Envelope", "JisB4", "JisB5", "Custom"])
       return false unless paper_size_validator.valid?(@paper_size)
       section_start_validator = EnumAttributeValidator.new('String', ["Continuous", "NewColumn", "NewPage", "EvenPage", "OddPage"])
       return false unless section_start_validator.valid?(@section_start)
@@ -447,7 +447,7 @@ module AsposeWordsCloud
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] paper_size Object to be assigned
     def paper_size=(paper_size)
-      validator = EnumAttributeValidator.new('String', ["A3", "A4", "A5", "B4", "B5", "Executive", "Folio", "Ledger", "Legal", "Letter", "EnvelopeDL", "Quarto", "Statement", "Tabloid", "Paper10x14", "Paper11x17", "Number10Envelope", "Custom"])
+      validator = EnumAttributeValidator.new('String', ["A3", "A4", "A5", "B4", "B5", "Executive", "Folio", "Ledger", "Legal", "Letter", "EnvelopeDL", "Quarto", "Statement", "Tabloid", "Paper10x14", "Paper11x17", "Number10Envelope", "JisB4", "JisB5", "Custom"])
       if paper_size.to_i == 0
         unless validator.valid?(paper_size)
           raise ArgumentError, "invalid value for 'paper_size', must be one of #{validator.allowable_values}."
