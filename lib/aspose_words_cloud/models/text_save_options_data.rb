@@ -60,6 +60,9 @@ module AsposeWordsCloud
     # The default value is Aspose.Words.Saving.ImlRenderingMode.InkML.
     attr_accessor :iml_rendering_mode
 
+    # Gets or sets a value indicating whether the font attributes will be changed according to the character code being used.
+    attr_accessor :update_ambiguous_text_font
+
     # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving.
     # Default value is false.
     attr_accessor :update_created_time_property
@@ -142,6 +145,7 @@ module AsposeWordsCloud
         :'dml_rendering_mode' => :'DmlRenderingMode',
         :'file_name' => :'FileName',
         :'iml_rendering_mode' => :'ImlRenderingMode',
+        :'update_ambiguous_text_font' => :'UpdateAmbiguousTextFont',
         :'update_created_time_property' => :'UpdateCreatedTimeProperty',
         :'update_fields' => :'UpdateFields',
         :'update_last_printed_property' => :'UpdateLastPrintedProperty',
@@ -169,6 +173,7 @@ module AsposeWordsCloud
         :'dml_rendering_mode' => :'String',
         :'file_name' => :'String',
         :'iml_rendering_mode' => :'String',
+        :'update_ambiguous_text_font' => :'BOOLEAN',
         :'update_created_time_property' => :'BOOLEAN',
         :'update_fields' => :'BOOLEAN',
         :'update_last_printed_property' => :'BOOLEAN',
@@ -222,6 +227,10 @@ module AsposeWordsCloud
 
       if attributes.key?(:'ImlRenderingMode')
         self.iml_rendering_mode = attributes[:'ImlRenderingMode']
+      end
+
+      if attributes.key?(:'UpdateAmbiguousTextFont')
+        self.update_ambiguous_text_font = attributes[:'UpdateAmbiguousTextFont']
       end
 
       if attributes.key?(:'UpdateCreatedTimeProperty')
@@ -377,6 +386,7 @@ module AsposeWordsCloud
           dml_rendering_mode == other.dml_rendering_mode &&
           file_name == other.file_name &&
           iml_rendering_mode == other.iml_rendering_mode &&
+          update_ambiguous_text_font == other.update_ambiguous_text_font &&
           update_created_time_property == other.update_created_time_property &&
           update_fields == other.update_fields &&
           update_last_printed_property == other.update_last_printed_property &&
@@ -402,7 +412,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, zip_output, encoding, export_headers_footers_mode, force_page_breaks, paragraph_break, add_bidi_marks, max_characters_per_line, preserve_table_layout, simplify_list_labels, save_format].hash
+      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_ambiguous_text_font, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, zip_output, encoding, export_headers_footers_mode, force_page_breaks, paragraph_break, add_bidi_marks, max_characters_per_line, preserve_table_layout, simplify_list_labels, save_format].hash
     end
 
     # Builds the object from hash

@@ -32,6 +32,9 @@ module AsposeWordsCloud
     # Gets or sets whether accept revisions before comparison or not.
     attr_accessor :accept_all_revisions_before_comparison
 
+    # Gets or sets the option indicating whether changes are tracked by character or by word.
+    attr_accessor :granularity
+
     # Gets or sets a value indicating whether documents comparison is case insensitive. By default comparison is case sensitive.
     attr_accessor :ignore_case_changes
 
@@ -85,6 +88,7 @@ module AsposeWordsCloud
     def self.attribute_map
       {
         :'accept_all_revisions_before_comparison' => :'AcceptAllRevisionsBeforeComparison',
+        :'granularity' => :'Granularity',
         :'ignore_case_changes' => :'IgnoreCaseChanges',
         :'ignore_comments' => :'IgnoreComments',
         :'ignore_fields' => :'IgnoreFields',
@@ -101,6 +105,7 @@ module AsposeWordsCloud
     def self.swagger_types
       {
         :'accept_all_revisions_before_comparison' => :'BOOLEAN',
+        :'granularity' => :'String',
         :'ignore_case_changes' => :'BOOLEAN',
         :'ignore_comments' => :'BOOLEAN',
         :'ignore_fields' => :'BOOLEAN',
@@ -123,6 +128,10 @@ module AsposeWordsCloud
 
       if attributes.key?(:'AcceptAllRevisionsBeforeComparison')
         self.accept_all_revisions_before_comparison = attributes[:'AcceptAllRevisionsBeforeComparison']
+      end
+
+      if attributes.key?(:'Granularity')
+        self.granularity = attributes[:'Granularity']
       end
 
       if attributes.key?(:'IgnoreCaseChanges')
@@ -165,10 +174,26 @@ module AsposeWordsCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      granularity_validator = EnumAttributeValidator.new('String', ["CharLevel", "WordLevel"])
+      return false unless granularity_validator.valid?(@granularity)
       target_validator = EnumAttributeValidator.new('String', ["Current", "New"])
       return false unless target_validator.valid?(@target)
 
       return true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] granularity Object to be assigned
+    def granularity=(granularity)
+      validator = EnumAttributeValidator.new('String', ["CharLevel", "WordLevel"])
+      if granularity.to_i == 0
+        unless validator.valid?(granularity)
+          raise ArgumentError, "invalid value for 'granularity', must be one of #{validator.allowable_values}."
+        end
+        @granularity = granularity
+      else
+        @granularity = validator.allowable_values[granularity.to_i]
+      end
     end
 
     # Custom attribute writer method checking allowed values (enum).
@@ -192,6 +217,7 @@ module AsposeWordsCloud
       return true if self.equal?(other)
       self.class == other.class &&
           accept_all_revisions_before_comparison == other.accept_all_revisions_before_comparison &&
+          granularity == other.granularity &&
           ignore_case_changes == other.ignore_case_changes &&
           ignore_comments == other.ignore_comments &&
           ignore_fields == other.ignore_fields &&
@@ -212,7 +238,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [accept_all_revisions_before_comparison, ignore_case_changes, ignore_comments, ignore_fields, ignore_footnotes, ignore_formatting, ignore_headers_and_footers, ignore_tables, ignore_textboxes, target].hash
+      [accept_all_revisions_before_comparison, granularity, ignore_case_changes, ignore_comments, ignore_fields, ignore_footnotes, ignore_formatting, ignore_headers_and_footers, ignore_tables, ignore_textboxes, target].hash
     end
 
     # Builds the object from hash
