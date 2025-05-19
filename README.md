@@ -13,6 +13,12 @@ This repository contains Aspose.Words Cloud SDK for Ruby source code. This SDK a
 * Watermarks and protection
 * Full read & write access to Document Object Model, including sections, paragraphs, text, images, tables, headers/footers and many others
 
+## Enhancements in Version 25.5
+
+- Added data models support for classes 'CommentRangeStart', 'CommentRangeEnd'.
+- Added data models support for classes 'FormFieldCheckboxLink', 'FormFieldDropDownLink', 'FormFieldTextInputLink'.
+
+
 ## Enhancements in Version 25.4
 
 - Added 'AttachmentsEmbeddingMode' property for PdfSaveOptionsData class.
@@ -381,7 +387,7 @@ To use Aspose Words for Cloud Ruby SDK you need to register an account with [Asp
 To install this package do the following:
 update your Gemfile
 ```ruby
-gem 'aspose_words_cloud', '~> 25.4'
+gem 'aspose_words_cloud', '~> 25.5'
 ```
 or install directly
 ```bash
