@@ -13,6 +13,10 @@ This repository contains Aspose.Words Cloud SDK for Ruby source code. This SDK a
 * Watermarks and protection
 * Full read & write access to Document Object Model, including sections, paragraphs, text, images, tables, headers/footers and many others
 
+## Enhancements in Version 25.8
+
+
+
 ## Enhancements in Version 25.6
 
 - Added support for SVG images format in Watermark API.
@@ -393,7 +397,7 @@ To use Aspose Words for Cloud Ruby SDK you need to register an account with [Asp
 To install this package do the following:
 update your Gemfile
 ```ruby
-gem 'aspose_words_cloud', '~> 25.7'
+gem 'aspose_words_cloud', '~> 25.8'
 ```
 or install directly
 ```bash
