@@ -4,9 +4,9 @@ Gem::Specification.new do |s|
   s.name        = 'aspose_words_cloud'
   s.version     = AsposeWordsCloud::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.author      = 'YaroslawEkimov'
-  s.email       = 'yaroslaw.ekimov@aspose.com'
-  s.homepage    = 'https://github.com/aspose-words-cloud/aspose-words-cloud-ruby'
+  s.author      = 'Aspose'
+  s.email       = 'aspose.cloud@aspose.com'
+  s.homepage    = 'https://products.aspose.cloud/words/family/'
   s.summary     = 'Ruby library for communicating with the Aspose.Words Cloud API'
   s.description = 'This SDK allows you to work with Aspose.Words Cloud REST APIs in your Ruby applications quickly and easily, with zero initial cost'
   s.license     = 'MIT'
