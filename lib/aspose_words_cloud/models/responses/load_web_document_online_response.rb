@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="LoadWebDocument_tests.rb">
+# <copyright company="Aspose" file="load_web_document_online_response.rb">
 #   Copyright (c) 2025 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -22,35 +22,25 @@
 #  SOFTWARE.
 # </summary>
 # ------------------------------------------------------------------------------------
+
 module AsposeWordsCloud
-  require_relative '../base_test_context'
 
   #
-  # Example of how to load web document.
+  # Response model for load_web_document_online operation.
   #
-  class LoadWebDocumentTests < BaseTestContext
-    #
-    # Test for loading web document.
-    #
-    def test_load_web_document
-      request_data_save_options = DocSaveOptionsData.new({:FileName => 'google.doc', :DmlEffectsRenderingMode => 'None', :DmlRenderingMode => 'DrawingML', :ZipOutput => false})
-      request_data = LoadWebDocumentData.new({:LoadingDocumentUrl => 'http://google.com', :SaveOptions => request_data_save_options})
-      request = LoadWebDocumentRequest.new(data: request_data)
+  class LoadWebDocumentOnlineResponse
+    # The REST response with a save result.
+    attr_accessor :model
 
-      result = @words_api.load_web_document(request)
-      assert_equal false, result.nil?
-    end
+    # The document after modification.
+    attr_accessor :document
 
     #
-    # Test for loading web document online.
+    # Initializes a new instance.
     #
-    def test_load_web_document_online
-      request_data_save_options = DocSaveOptionsData.new({:FileName => 'google.doc', :DmlEffectsRenderingMode => 'None', :DmlRenderingMode => 'DrawingML', :ZipOutput => false})
-      request_data = LoadWebDocumentData.new({:LoadingDocumentUrl => 'http://google.com', :SaveOptions => request_data_save_options})
-      request = LoadWebDocumentOnlineRequest.new(data: request_data)
-
-      result = @words_api.load_web_document_online(request)
-      assert_equal false, result.nil?
+    def initialize()
+      self.model = nil
+      self.document = nil
     end
   end
 end
