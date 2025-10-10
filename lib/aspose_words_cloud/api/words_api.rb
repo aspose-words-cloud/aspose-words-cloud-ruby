@@ -11053,6 +11053,52 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
+    # Downloads a document from the Web using URL and saves it to cloud storage in the specified format.
+    # @param request LoadWebDocumentOnlineRequest
+    # @return [LoadWebDocumentOnlineResponse]
+    def load_web_document_online(request)
+        begin
+        data, _status_code, _headers = load_web_document_online_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = load_web_document_online_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Downloads a document from the Web using URL and saves it to cloud storage in the specified format.
+    # @param request LoadWebDocumentOnlineRequest
+    # @return [Array<(LoadWebDocumentOnlineResponse, Fixnum, Hash)>]
+    # LoadWebDocumentOnlineResponse, response status code and response headers
+    private def load_web_document_online_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? LoadWebDocumentOnlineRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.load_web_document_online ...' if @api_client.config.debugging
+        request_data = request.create_http_request(@api_client)
+
+        data, status_code, headers = @api_client.call_api(
+                                                        request_data[:'method'],
+                                                        request_data[:'path'],
+                                                        header_params: request_data[:'header_params'],
+                                                        query_params: request_data[:'query_params'],
+                                                        body: request_data[:'body'],
+                                                        multipart_response: true,
+                                                        return_type: 'LoadWebDocumentOnlineResponse')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#load_web_document_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        mp_data = LoadWebDocumentOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'SaveResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
+        [mp_data, status_code, headers]
+    end
+
     # Merge the section with the next one.
     # @param request MergeWithNextRequest
     # @return [nil]
