@@ -225,6 +225,12 @@ module AsposeWordsCloud
     # Gets or sets the zoom factor (in percentages) for a document.
     attr_accessor :zoom_factor
 
+    # Gets or sets a value determining whether floating shapes are exported as inline tags in the document structure.
+    # Default value is false and floating shapes will be exported as block-level tags,
+    # placed after the paragraph in which they are anchored. When the value is true floating shapes will be exported as inline tags,
+    # placed within the paragraph where they are anchored. This value is ignored when ExportDocumentStructure is false.
+    attr_accessor :export_floating_shapes_as_inline_tag
+
     # Gets the format of save.
     attr_accessor :save_format
 
@@ -303,6 +309,7 @@ module AsposeWordsCloud
         :'use_sdt_tag_as_form_field_name' => :'UseSdtTagAsFormFieldName',
         :'zoom_behavior' => :'ZoomBehavior',
         :'zoom_factor' => :'ZoomFactor',
+        :'export_floating_shapes_as_inline_tag' => :'ExportFloatingShapesAsInlineTag',
         :'save_format' => :'SaveFormat'
       }
     end
@@ -360,6 +367,7 @@ module AsposeWordsCloud
         :'use_sdt_tag_as_form_field_name' => :'BOOLEAN',
         :'zoom_behavior' => :'String',
         :'zoom_factor' => :'Integer',
+        :'export_floating_shapes_as_inline_tag' => :'BOOLEAN',
         :'save_format' => :'String'
       }
     end
@@ -572,6 +580,10 @@ module AsposeWordsCloud
 
       if attributes.key?(:'ZoomFactor')
         self.zoom_factor = attributes[:'ZoomFactor']
+      end
+
+      if attributes.key?(:'ExportFloatingShapesAsInlineTag')
+        self.export_floating_shapes_as_inline_tag = attributes[:'ExportFloatingShapesAsInlineTag']
       end
     end
 
@@ -878,6 +890,7 @@ module AsposeWordsCloud
           use_sdt_tag_as_form_field_name == other.use_sdt_tag_as_form_field_name &&
           zoom_behavior == other.zoom_behavior &&
           zoom_factor == other.zoom_factor &&
+          export_floating_shapes_as_inline_tag == other.export_floating_shapes_as_inline_tag &&
           save_format == other.save_format
     end
 
@@ -890,7 +903,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_ambiguous_text_font, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, attachments_embedding_mode, cache_background_graphics, compliance, create_note_hyperlinks, custom_properties_export, digital_signature_details, display_doc_title, downsample_options, embed_attachments, embed_full_fonts, encryption_details, export_document_structure, export_language_to_span_tag, font_embedding_mode, header_footer_bookmarks_export_mode, image_color_space_export_mode, image_compression, interpolate_images, open_hyperlinks_in_new_window, outline_options, page_mode, preblend_images, preserve_form_fields, render_choice_form_field_border, text_compression, use_book_fold_printing_settings, use_core_fonts, use_sdt_tag_as_form_field_name, zoom_behavior, zoom_factor, save_format].hash
+      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_ambiguous_text_font, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, attachments_embedding_mode, cache_background_graphics, compliance, create_note_hyperlinks, custom_properties_export, digital_signature_details, display_doc_title, downsample_options, embed_attachments, embed_full_fonts, encryption_details, export_document_structure, export_language_to_span_tag, font_embedding_mode, header_footer_bookmarks_export_mode, image_color_space_export_mode, image_compression, interpolate_images, open_hyperlinks_in_new_window, outline_options, page_mode, preblend_images, preserve_form_fields, render_choice_form_field_border, text_compression, use_book_fold_printing_settings, use_core_fonts, use_sdt_tag_as_form_field_name, zoom_behavior, zoom_factor, export_floating_shapes_as_inline_tag, save_format].hash
     end
 
     # Builds the object from hash
