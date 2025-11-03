@@ -64,7 +64,7 @@ module AsposeWordsCloud
     attr_accessor :update_ambiguous_text_font
 
     # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving.
-    # Default value is false.
+    # The default value is false.
     attr_accessor :update_created_time_property
 
     # Gets or sets a value indicating whether fields should be updated before saving the document to a fixed page format. The default value is true.

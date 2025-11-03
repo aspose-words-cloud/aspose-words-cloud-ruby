@@ -64,7 +64,7 @@ module AsposeWordsCloud
     attr_accessor :update_ambiguous_text_font
 
     # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving.
-    # Default value is false.
+    # The default value is false.
     attr_accessor :update_created_time_property
 
     # Gets or sets a value indicating whether fields should be updated before saving the document to a fixed page format. The default value is true.
@@ -86,7 +86,7 @@ module AsposeWordsCloud
     attr_accessor :encoding
 
     # Gets or sets the option that controls whether to output headers and footers when exporting in plain text format.
-    # default value is TxtExportHeadersFootersMode.PrimaryOnly.
+    # The default value is TxtExportHeadersFootersMode.PrimaryOnly.
     attr_accessor :export_headers_footers_mode
 
     # Gets or sets a value indicating whether the page breaks should be preserved during export.
@@ -105,7 +105,7 @@ module AsposeWordsCloud
     attr_accessor :max_characters_per_line
 
     # Gets or sets a value that specifies how OfficeMath will be written to the output file.
-    # Default value is Text.
+    # The default value is Text.
     attr_accessor :office_math_export_mode
 
     # Gets or sets a value indicating whether the program should attempt to preserve layout of tables when saving in the plain text format.

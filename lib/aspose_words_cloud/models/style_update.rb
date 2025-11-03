@@ -41,7 +41,7 @@ module AsposeWordsCloud
     attr_accessor :is_quick_style
 
     # Gets or sets the name of the style.
-    # Can not be empty string. If there already is a style with such name in the collection, than this style will override it. All affected nodes will reference new style.
+    # Cannot be an empty string. If there already is a style with such name in the collection, than this style will override it. All affected nodes will reference new style.
     attr_accessor :name
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

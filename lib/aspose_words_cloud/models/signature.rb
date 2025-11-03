@@ -33,7 +33,7 @@ module AsposeWordsCloud
     # Gets or sets the signing purpose comment.
     attr_accessor :comments
 
-    # Gets or sets the subject distinguished name of the certificate isuuer.
+    # Gets or sets the subject distinguished name of the certificate issuer.
     attr_accessor :issuer_name
 
     # Gets or sets a value indicating whether this digital signature is valid.

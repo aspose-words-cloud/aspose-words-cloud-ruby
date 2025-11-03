@@ -65,7 +65,7 @@ module AsposeWordsCloud
       [data, status_code, headers]
     end
 
-    # Accepts all revisions in the document.
+    # Accepts all the revisions in the document.
     # @param request AcceptAllRevisionsRequest
     # @return [RevisionsModificationResponse]
     def accept_all_revisions(request)
@@ -82,7 +82,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Accepts all revisions in the document.
+    # Accepts all the revisions in the document.
     # @param request AcceptAllRevisionsRequest
     # @return [Array<(RevisionsModificationResponse, Fixnum, Hash)>]
     # RevisionsModificationResponse, response status code and response headers
@@ -107,7 +107,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Accepts all revisions in the document.
+    # Accepts all the revisions in the document.
     # @param request AcceptAllRevisionsOnlineRequest
     # @return [AcceptAllRevisionsOnlineResponse]
     def accept_all_revisions_online(request)
@@ -124,7 +124,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Accepts all revisions in the document.
+    # Accepts all the revisions in the document.
     # @param request AcceptAllRevisionsOnlineRequest
     # @return [Array<(AcceptAllRevisionsOnlineResponse, Fixnum, Hash)>]
     # AcceptAllRevisionsOnlineResponse, response status code and response headers
@@ -7312,7 +7312,7 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
-    # Get assymetric public key.
+    # Get asymmetric public key.
     # @param request GetPublicKeyRequest
     # @return [PublicKeyResponse]
     def get_public_key(request)
@@ -7329,7 +7329,7 @@ module AsposeWordsCloud
         data
     end
 
-    # Get assymetric public key.
+    # Get asymmetric public key.
     # @param request GetPublicKeyRequest
     # @return [Array<(PublicKeyResponse, Fixnum, Hash)>]
     # PublicKeyResponse, response status code and response headers

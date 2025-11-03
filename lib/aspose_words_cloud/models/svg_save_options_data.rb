@@ -64,7 +64,7 @@ module AsposeWordsCloud
     attr_accessor :update_ambiguous_text_font
 
     # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving.
-    # Default value is false.
+    # The default value is false.
     attr_accessor :update_created_time_property
 
     # Gets or sets a value indicating whether fields should be updated before saving the document to a fixed page format. The default value is true.
@@ -115,7 +115,7 @@ module AsposeWordsCloud
     attr_accessor :fit_to_view_port
 
     # Gets or sets specifies a prefix that is prepended to all generated element IDs in the output document.
-    # Default value is null and no prefix is prepended.
+    # The default value is null and no prefix is prepended.
     # If the prefix is specified, it can contain only letters, digits, underscores, and hyphens,
     # and must start with a letter.
     attr_accessor :id_prefix

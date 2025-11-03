@@ -30,7 +30,7 @@ module AsposeWordsCloud
   # Represents a document list levels.
   class ListLevelUpdate
     # Gets or sets the starting number for this list level.
-    # Default value is 1.
+    # The default value is 1.
     attr_accessor :start_at
 
     # Gets or sets the number style for this list level.

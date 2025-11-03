@@ -32,7 +32,7 @@ module AsposeWordsCloud
     # The document.
     attr_accessor :document
 
-    # certifate file path.
+    # certificate file path.
     attr_accessor :certificate_path
 
     # certificate password.
@@ -56,7 +56,7 @@ module AsposeWordsCloud
     #
     # Initializes a new instance.
     # @param document The document.
-    # @param certificate_path certifate file path.
+    # @param certificate_path certificate file path.
     # @param certificate_password certificate password.
     # @param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     # @param password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
