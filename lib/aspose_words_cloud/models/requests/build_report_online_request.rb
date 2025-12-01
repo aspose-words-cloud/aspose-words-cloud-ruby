@@ -32,10 +32,10 @@ module AsposeWordsCloud
     # File with template.
     attr_accessor :template
 
-    # A string providing a data to populate the specified template. The string must be of one of the following types: xml, json, csv.
+    # A string providing data to populate the specified template. The string must be of one of the following types: xml, json, csv.
     attr_accessor :data
 
-    # An object providing a settings of report engine.
+    # An object providing settings of a report engine.
     attr_accessor :report_engine_settings
 
     # The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.
@@ -44,8 +44,8 @@ module AsposeWordsCloud
     #
     # Initializes a new instance.
     # @param template File with template.
-    # @param data A string providing a data to populate the specified template. The string must be of one of the following types: xml, json, csv.
-    # @param report_engine_settings An object providing a settings of report engine.
+    # @param data A string providing data to populate the specified template. The string must be of one of the following types: xml, json, csv.
+    # @param report_engine_settings An object providing settings of a report engine.
     # @param document_file_name The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.
 
     def initialize(template:, data:, report_engine_settings:, document_file_name: nil)

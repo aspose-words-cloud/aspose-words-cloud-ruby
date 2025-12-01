@@ -32,7 +32,7 @@ module AsposeWordsCloud
     # Name of the document to sign.
     attr_accessor :name
 
-    # certifate file path.
+    # certificate file path.
     attr_accessor :certificate_path
 
     # certificate password.
@@ -62,7 +62,7 @@ module AsposeWordsCloud
     #
     # Initializes a new instance.
     # @param name Name of the document to sign.
-    # @param certificate_path certifate file path.
+    # @param certificate_path certificate file path.
     # @param certificate_password certificate password.
     # @param folder Original document folder.
     # @param storage Original document storage.

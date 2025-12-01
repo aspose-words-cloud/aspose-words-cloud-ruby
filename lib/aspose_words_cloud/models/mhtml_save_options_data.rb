@@ -64,7 +64,7 @@ module AsposeWordsCloud
     attr_accessor :update_ambiguous_text_font
 
     # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving.
-    # Default value is false.
+    # The default value is false.
     attr_accessor :update_created_time_property
 
     # Gets or sets a value indicating whether fields should be updated before saving the document to a fixed page format. The default value is true.
@@ -139,7 +139,7 @@ module AsposeWordsCloud
 
     # Gets or sets a value indicating whether page margins are exported to HTML, MHTML or EPUB.
     # The default value is false.
-    # Aspose.Words does not show area of page margins by default. If any elements are completely or partially clipped by the document edge the displayed area can be extended with this option.
+    # Aspose.Words does not show the area of page margins by default. If any elements are completely or partially clipped by the document edge the displayed area can be extended with this option.
     attr_accessor :export_page_margins
 
     # Gets or sets a value indicating whether page setup is exported.
@@ -171,7 +171,7 @@ module AsposeWordsCloud
     attr_accessor :fonts_folder_alias
 
     # Gets or sets the version of HTML standard, that should be used when saving the document to HTML or MHTML.
-    # Default value is Aspose.Words.Saving.HtmlVersion.Xhtml.
+    # The default value is Aspose.Words.Saving.HtmlVersion.Xhtml.
     attr_accessor :html_version
 
     # Gets or sets the output resolution for images when exporting.
@@ -202,7 +202,7 @@ module AsposeWordsCloud
     attr_accessor :remove_java_script_from_links
 
     # Gets or sets the flag that indicates whether backslash characters should be replaced with yen signs.
-    # Default value is false.
+    # The default value is false.
     # By default, Aspose.Words mimics MS Word's behavior and doesn't replace backslash characters with yen signs in
     # generated HTML documents. However, previous versions of Aspose.Words performed such replacements in certain
     # scenarios. This flag enables backward compatibility with previous versions of Aspose.Words.

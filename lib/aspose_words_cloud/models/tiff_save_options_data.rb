@@ -64,7 +64,7 @@ module AsposeWordsCloud
     attr_accessor :update_ambiguous_text_font
 
     # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving.
-    # Default value is false.
+    # The default value is false.
     attr_accessor :update_created_time_property
 
     # Gets or sets a value indicating whether fields should be updated before saving the document to a fixed page format. The default value is true.
@@ -162,7 +162,7 @@ module AsposeWordsCloud
     attr_accessor :use_gdi_emf_renderer
 
     # Gets or sets the threshold that determines the value of the binarization error in the Floyd-Steinberg method. when ImageBinarizationMethod is ImageBinarizationMethod.FloydSteinbergDithering.
-    # Default value is 128.
+    # The default value is 128.
     attr_accessor :threshold_for_floyd_steinberg_dithering
 
     # Gets or sets the method used while converting images to 1 bpp format.
