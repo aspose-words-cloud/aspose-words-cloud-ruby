@@ -55,7 +55,7 @@ module AsposeWordsCloud
 
       upload_file File.join(local_test_folder, local_file), test_delete_folder + '/TestDeleteFolder.docx'
 
-      request = DeleteFolderRequest.new(path: test_delete_folder)
+      request = DeleteFolderRequest.new(path: test_delete_folder, recursive: true)
 
       @words_api.delete_folder(request)
     end

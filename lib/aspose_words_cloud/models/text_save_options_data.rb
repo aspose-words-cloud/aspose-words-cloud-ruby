@@ -64,7 +64,7 @@ module AsposeWordsCloud
     attr_accessor :update_ambiguous_text_font
 
     # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving.
-    # Default value is false.
+    # The default value is false.
     attr_accessor :update_created_time_property
 
     # Gets or sets a value indicating whether fields should be updated before saving the document to a fixed page format. The default value is true.
@@ -86,7 +86,7 @@ module AsposeWordsCloud
     attr_accessor :encoding
 
     # Gets or sets the option that controls whether to output headers and footers when exporting in plain text format.
-    # default value is TxtExportHeadersFootersMode.PrimaryOnly.
+    # The default value is TxtExportHeadersFootersMode.PrimaryOnly.
     attr_accessor :export_headers_footers_mode
 
     # Gets or sets a value indicating whether the page breaks should be preserved during export.
@@ -103,6 +103,10 @@ module AsposeWordsCloud
     # Gets or sets an integer value that specifies the maximum number of characters per one line.
     # The default value is 0, that means no limit.
     attr_accessor :max_characters_per_line
+
+    # Gets or sets a value that specifies how OfficeMath will be written to the output file.
+    # The default value is Text.
+    attr_accessor :office_math_export_mode
 
     # Gets or sets a value indicating whether the program should attempt to preserve layout of tables when saving in the plain text format.
     attr_accessor :preserve_table_layout
@@ -157,6 +161,7 @@ module AsposeWordsCloud
         :'paragraph_break' => :'ParagraphBreak',
         :'add_bidi_marks' => :'AddBidiMarks',
         :'max_characters_per_line' => :'MaxCharactersPerLine',
+        :'office_math_export_mode' => :'OfficeMathExportMode',
         :'preserve_table_layout' => :'PreserveTableLayout',
         :'simplify_list_labels' => :'SimplifyListLabels',
         :'save_format' => :'SaveFormat'
@@ -185,6 +190,7 @@ module AsposeWordsCloud
         :'paragraph_break' => :'String',
         :'add_bidi_marks' => :'BOOLEAN',
         :'max_characters_per_line' => :'Integer',
+        :'office_math_export_mode' => :'String',
         :'preserve_table_layout' => :'BOOLEAN',
         :'simplify_list_labels' => :'BOOLEAN',
         :'save_format' => :'String'
@@ -277,6 +283,10 @@ module AsposeWordsCloud
         self.max_characters_per_line = attributes[:'MaxCharactersPerLine']
       end
 
+      if attributes.key?(:'OfficeMathExportMode')
+        self.office_math_export_mode = attributes[:'OfficeMathExportMode']
+      end
+
       if attributes.key?(:'PreserveTableLayout')
         self.preserve_table_layout = attributes[:'PreserveTableLayout']
       end
@@ -299,6 +309,8 @@ module AsposeWordsCloud
       return false unless iml_rendering_mode_validator.valid?(@iml_rendering_mode)
       export_headers_footers_mode_validator = EnumAttributeValidator.new('String', ["None", "PrimaryOnly", "AllAtEnd"])
       return false unless export_headers_footers_mode_validator.valid?(@export_headers_footers_mode)
+      office_math_export_mode_validator = EnumAttributeValidator.new('String', ["Text", "Latex"])
+      return false unless office_math_export_mode_validator.valid?(@office_math_export_mode)
 
       return true
     end
@@ -373,6 +385,20 @@ module AsposeWordsCloud
       end
     end
 
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] office_math_export_mode Object to be assigned
+    def office_math_export_mode=(office_math_export_mode)
+      validator = EnumAttributeValidator.new('String', ["Text", "Latex"])
+      if office_math_export_mode.to_i == 0
+        unless validator.valid?(office_math_export_mode)
+          raise ArgumentError, "invalid value for 'office_math_export_mode', must be one of #{validator.allowable_values}."
+        end
+        @office_math_export_mode = office_math_export_mode
+      else
+        @office_math_export_mode = validator.allowable_values[office_math_export_mode.to_i]
+      end
+    end
+
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
@@ -398,6 +424,7 @@ module AsposeWordsCloud
           paragraph_break == other.paragraph_break &&
           add_bidi_marks == other.add_bidi_marks &&
           max_characters_per_line == other.max_characters_per_line &&
+          office_math_export_mode == other.office_math_export_mode &&
           preserve_table_layout == other.preserve_table_layout &&
           simplify_list_labels == other.simplify_list_labels &&
           save_format == other.save_format
@@ -412,7 +439,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_ambiguous_text_font, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, zip_output, encoding, export_headers_footers_mode, force_page_breaks, paragraph_break, add_bidi_marks, max_characters_per_line, preserve_table_layout, simplify_list_labels, save_format].hash
+      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_ambiguous_text_font, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, zip_output, encoding, export_headers_footers_mode, force_page_breaks, paragraph_break, add_bidi_marks, max_characters_per_line, office_math_export_mode, preserve_table_layout, simplify_list_labels, save_format].hash
     end
 
     # Builds the object from hash

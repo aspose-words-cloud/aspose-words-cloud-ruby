@@ -29,7 +29,7 @@ module AsposeWordsCloud
 
   # DTO for field options.
   class FieldOptions
-    # Gets or sets Curren tUser.
+    # Gets or sets Current User.
     attr_accessor :current_user
 
     # Gets or sets Custom Toc Style Separator.

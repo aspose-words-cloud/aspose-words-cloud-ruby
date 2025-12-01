@@ -37,7 +37,7 @@ module AsposeWordsCloud
     attr_accessor :id
 
     # Gets or sets the custom xml part data.
-    # Cannot be null.Default is empty string.
+    # Cannot be null.Default is an empty string.
     attr_accessor :data
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
