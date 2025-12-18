@@ -38,6 +38,9 @@ module AsposeWordsCloud
     # Gets or sets the name of the file.
     attr_accessor :file_name
 
+    # Gets or sets the file size.
+    attr_accessor :file_size
+
     # Gets or sets a value indicating whether the document is encrypted and requires a password to open.
     attr_accessor :is_encrypted
 
@@ -75,6 +78,7 @@ module AsposeWordsCloud
         :'links' => :'Links',
         :'document_properties' => :'DocumentProperties',
         :'file_name' => :'FileName',
+        :'file_size' => :'FileSize',
         :'is_encrypted' => :'IsEncrypted',
         :'is_signed' => :'IsSigned',
         :'source_format' => :'SourceFormat'
@@ -87,6 +91,7 @@ module AsposeWordsCloud
         :'links' => :'Array<Link>',
         :'document_properties' => :'DocumentProperties',
         :'file_name' => :'String',
+        :'file_size' => :'Integer',
         :'is_encrypted' => :'BOOLEAN',
         :'is_signed' => :'BOOLEAN',
         :'source_format' => :'String'
@@ -113,6 +118,10 @@ module AsposeWordsCloud
 
       if attributes.key?(:'FileName')
         self.file_name = attributes[:'FileName']
+      end
+
+      if attributes.key?(:'FileSize')
+        self.file_size = attributes[:'FileSize']
       end
 
       if attributes.key?(:'IsEncrypted')
@@ -160,6 +169,7 @@ module AsposeWordsCloud
           links == other.links &&
           document_properties == other.document_properties &&
           file_name == other.file_name &&
+          file_size == other.file_size &&
           is_encrypted == other.is_encrypted &&
           is_signed == other.is_signed &&
           source_format == other.source_format
@@ -174,7 +184,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [links, document_properties, file_name, is_encrypted, is_signed, source_format].hash
+      [links, document_properties, file_name, file_size, is_encrypted, is_signed, source_format].hash
     end
 
     # Builds the object from hash
