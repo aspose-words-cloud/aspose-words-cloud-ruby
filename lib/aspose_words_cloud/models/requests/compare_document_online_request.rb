@@ -50,6 +50,9 @@ module AsposeWordsCloud
     # Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
     attr_accessor :dest_file_name
 
+    # Folder in filestorage with custom fonts.
+    attr_accessor :fonts_location
+
     #
     # Initializes a new instance.
     # @param document The document.
@@ -59,8 +62,9 @@ module AsposeWordsCloud
     # @param encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
     # @param open_type_support The value indicates whether OpenType support is on.
     # @param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+    # @param fonts_location Folder in filestorage with custom fonts.
 
-    def initialize(document:, compare_data:, load_encoding: nil, password: nil, encrypted_password: nil, open_type_support: nil, dest_file_name: nil)
+    def initialize(document:, compare_data:, load_encoding: nil, password: nil, encrypted_password: nil, open_type_support: nil, dest_file_name: nil, fonts_location: nil)
       self.document = document
       self.compare_data = compare_data
       self.load_encoding = load_encoding
@@ -68,6 +72,7 @@ module AsposeWordsCloud
       self.encrypted_password = encrypted_password
       self.open_type_support = open_type_support
       self.dest_file_name = dest_file_name
+      self.fonts_location = fonts_location
     end
 
     # Creating batch part from request
@@ -88,6 +93,7 @@ module AsposeWordsCloud
       query_params[downcase_first_letter('EncryptedPassword')] = self.encrypted_password unless self.encrypted_password.nil?
       query_params[downcase_first_letter('OpenTypeSupport')] = self.open_type_support unless self.open_type_support.nil?
       query_params[downcase_first_letter('DestFileName')] = self.dest_file_name unless self.dest_file_name.nil?
+      query_params[downcase_first_letter('FontsLocation')] = self.fonts_location unless self.fonts_location.nil?
 
       if query_params
         query_params.each { |key, value| local_var_path = api_client.add_param_to_query(local_var_path, key, value) }
@@ -161,6 +167,7 @@ module AsposeWordsCloud
       query_params[downcase_first_letter('EncryptedPassword')] = self.encrypted_password unless self.encrypted_password.nil?
       query_params[downcase_first_letter('OpenTypeSupport')] = self.open_type_support unless self.open_type_support.nil?
       query_params[downcase_first_letter('DestFileName')] = self.dest_file_name unless self.dest_file_name.nil?
+      query_params[downcase_first_letter('FontsLocation')] = self.fonts_location unless self.fonts_location.nil?
 
       # header parameters
       header_params = {}
