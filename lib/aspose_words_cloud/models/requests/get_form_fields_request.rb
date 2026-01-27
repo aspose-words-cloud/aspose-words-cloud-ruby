@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="get_form_fields_request.rb">
-#   Copyright (c) 2025 Aspose.Words for Cloud
+#   Copyright (c) 2026 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
