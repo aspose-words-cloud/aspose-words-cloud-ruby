@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="version.rb">
-#   Copyright (c) 2025 Aspose.Words for Cloud
+#   Copyright (c) 2026 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -24,5 +24,5 @@
 # ------------------------------------------------------------------------------------
 
 module AsposeWordsCloud
-  VERSION = "25.12".freeze
+  VERSION = "26.1".freeze
 end
