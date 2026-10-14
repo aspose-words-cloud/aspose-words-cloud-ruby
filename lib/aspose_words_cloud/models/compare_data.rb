@@ -29,6 +29,9 @@ module AsposeWordsCloud
 
   # Container class for compare documents.
   class CompareData
+    # Gets or sets advanced compare options that might help to produce more precise comparison output.
+    attr_accessor :advanced_options
+
     # Gets or sets the initials of the author to use for revisions.
     attr_accessor :author
 
@@ -49,6 +52,7 @@ module AsposeWordsCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'advanced_options' => :'AdvancedOptions',
         :'author' => :'Author',
         :'compare_options' => :'CompareOptions',
         :'comparing_with_document' => :'ComparingWithDocument',
@@ -61,6 +65,7 @@ module AsposeWordsCloud
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'advanced_options' => :'AdvancedCompareOptions',
         :'author' => :'String',
         :'compare_options' => :'CompareOptions',
         :'comparing_with_document' => :'String',
@@ -77,6 +82,10 @@ module AsposeWordsCloud
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.key?(:'AdvancedOptions')
+        self.advanced_options = attributes[:'AdvancedOptions']
+      end
 
       if attributes.key?(:'Author')
         self.author = attributes[:'Author']
@@ -114,6 +123,7 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
+          advanced_options == other.advanced_options &&
           author == other.author &&
           compare_options == other.compare_options &&
           comparing_with_document == other.comparing_with_document &&
@@ -131,7 +141,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [author, compare_options, comparing_with_document, date_time, file_reference, result_document_format].hash
+      [advanced_options, author, compare_options, comparing_with_document, date_time, file_reference, result_document_format].hash
     end
 
     # Builds the object from hash
@@ -255,6 +265,9 @@ module AsposeWordsCloud
     def validate()
       raise ArgumentError, 'Property author in CompareData is required.' if self.author.nil?
       raise ArgumentError, 'Property file_reference in CompareData is required.' if self.file_reference.nil?
+      unless self.advanced_options.nil?
+          self.advanced_options.validate
+      end
       unless self.compare_options.nil?
           self.compare_options.validate
       end
